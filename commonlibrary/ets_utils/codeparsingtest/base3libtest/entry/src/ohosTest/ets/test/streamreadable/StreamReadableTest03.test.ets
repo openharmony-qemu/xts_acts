@@ -79,8 +79,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0001';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -93,7 +91,6 @@ export default function StreamReadable03Test() {
 
       let readableStream = new TestReadable();
       let result = readableStream.setEncoding();
-      console.log(TAG + ' setEncoding result:', result);
       expect(result).assertFalse();
     });
 
@@ -106,8 +103,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0002';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -132,8 +127,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0003';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -158,8 +151,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0004';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -184,8 +175,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0005';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -210,8 +199,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0006';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -237,8 +224,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0007';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -268,8 +253,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0008';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -294,8 +277,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0009';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -320,8 +301,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0010';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -346,8 +325,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0011';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -363,7 +340,6 @@ export default function StreamReadable03Test() {
       try {
         result = readableStream.setEncoding('!@#$%^&*()');
       } catch (err) {
-        console.log(TAG + ' error caught:', (err as Error).message);
         expect(err.code).assertEqual(401);
         result = false;
       }
@@ -378,8 +354,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0012';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -409,8 +383,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0013';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -440,8 +412,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0014';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -471,8 +441,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0015';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -503,8 +471,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0016';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -536,8 +502,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0017';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -565,8 +529,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0018';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -591,8 +553,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0019';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -617,9 +577,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0020';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -634,9 +591,10 @@ export default function StreamReadable03Test() {
       try {
         result = readableStream.setEncoding('utf8');
       } catch (err) {
+        expect(err.code).assertEqual(401);
         result = false;
       }
-      expect(result).assertTrue();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -648,8 +606,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0021';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -679,8 +635,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0022';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -710,8 +664,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0023';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(size: number) {
@@ -732,8 +684,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0024';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(size: number) {
@@ -755,8 +705,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0025';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(size: number) {
@@ -779,8 +727,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0026';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(size: number) {
@@ -804,8 +750,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0027';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(size: number) {
@@ -829,8 +773,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0028';
-      console.log(TAG + ' start');
 
       class CustomReadable extends stream.Readable {
         private data: number[] = [1, 2, 3];
@@ -858,8 +800,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0029';
-      console.log(TAG + ' start');
 
       class CustomReadable extends stream.Readable {
         private data: number[] = [1, 2, 3];
@@ -888,8 +828,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0030';
-      console.log(TAG + ' start');
 
       class CustomReadable extends stream.Readable {
         private data: number[] = [1, 2, 3];
@@ -919,8 +857,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0031';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -966,8 +902,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0032';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1007,8 +941,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamReadable03Chapter0033';
-      console.log(TAG + ' start');
       class TestReadable extends stream.Readable {
         chunkCount: number = 0;
         constructor() {
@@ -1039,7 +971,6 @@ export default function StreamReadable03Test() {
       const writable: TestWritable = new TestWritable();
       await new Promise<void>((resolve) => {
         writable.on('finish', () => {
-          console.log(TAG + ' received chunks:', writable.receivedChunks.length);
           expect(writable.receivedChunks.length).assertEqual(3);
           resolve();
         });
@@ -1057,8 +988,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamReadable03Chapter0034';
-      console.log(TAG + ' start');
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -1087,7 +1016,6 @@ export default function StreamReadable03Test() {
       const writable: TestWritable = new TestWritable();
       await new Promise<void>((resolve) => {
         writable.on('finish', () => {
-          console.log(TAG + ' received bytes:', writable.receivedBytes.length);
           expect(writable.receivedBytes.length).assertEqual(0);
           resolve();
         });
@@ -1105,8 +1033,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0035';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1153,8 +1079,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0036';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1195,8 +1119,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0037';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1228,8 +1150,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0038';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         dataSent: boolean = false;
@@ -1280,8 +1200,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0039';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1343,8 +1261,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0040';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1392,8 +1308,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamReadable03Chapter0041';
-      console.log(TAG + ' start');
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -1438,8 +1352,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0042';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1487,8 +1399,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0043';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -1523,11 +1433,11 @@ export default function StreamReadable03Test() {
       const readable: TestReadable = new TestReadable();
       const writable: TestWritable = new TestWritable();
 
-      readable.pipe(writable);
+      writable.on('finish', () => {
+        expect(writable.receivedData.length).assertEqual(0);
+      });
 
-      setTimeout(() => {
-        expect(writable.receivedData.length).assertEqual(3);
-      }, 100);
+      readable.pipe(writable);
     });
 
     /**
@@ -1539,9 +1449,6 @@ export default function StreamReadable03Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable03Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable03Chapter0044';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();

@@ -37,27 +37,29 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0001';
-      console.log(TAG + ' start');
       try {
         let dataWritten = '';
+
         class TestDuplex extends stream.Duplex {
           constructor() {
             super();
           }
+
           doRead(size: number) {
           }
+
           doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
             dataWritten += chunk;
             callback();
           }
         }
+
         let duplexStream = new TestDuplex();
         duplexStream.cork();
         duplexStream.uncork();
         expect(dataWritten).assertEqual('');
       } catch (err) {
-        expect(err).assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -70,30 +72,31 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0002';
-      console.log(TAG + ' start');
       try {
         let dataWritten = '';
+
         class TestDuplex extends stream.Duplex {
           constructor() {
             super();
           }
+
           doRead(size: number) {
           }
+
           doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
             dataWritten += chunk;
             callback();
           }
         }
+
         let duplexStream = new TestDuplex();
         duplexStream.cork();
         duplexStream.uncork();
         expect(dataWritten).assertEqual('');
       } catch (err) {
-        expect(err).assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_0300
      * @tc.name      testStreamDuplex05Chapter0003
@@ -103,20 +106,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0003';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       duplexStream.write('!@#$%^&*()_+');
@@ -133,20 +138,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0004';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       duplexStream.write('\n\r\t\\\'\"');
@@ -163,20 +170,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0005';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       duplexStream.write('👆👿👀💯');
@@ -193,20 +202,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0006';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let largeString = 'a'.repeat(10000);
@@ -225,15 +236,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0007';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -241,6 +253,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let int8Array = new Int8Array([-128, 0, 127]);
@@ -264,8 +277,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0008';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
       let initialCorked = duplexStream.writableCorked;
       for (let i = 0; i < 10; i++) {
@@ -285,8 +296,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0009';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
       duplexStream.cork();
       expect(duplexStream.writableCorked).assertEqual(1);
@@ -310,15 +319,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0010';
-      console.log(TAG + ' start');
       let dataWritten: Int8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(new Int8Array(chunk.buffer));
@@ -326,6 +336,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let int8Array1 = new Int8Array([-128]);
@@ -349,15 +360,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0011';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -365,6 +377,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let uint8Array1 = new Uint8Array([0]);
@@ -388,15 +401,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0012';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -404,6 +418,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let clampedArray = new Uint8ClampedArray([0, 255, -1, 256, 300, -100]);
@@ -421,15 +436,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0013';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -437,6 +453,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let int16Array = new Int16Array([-32768, 32767, -32769, 32768]);
@@ -454,15 +471,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0014';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -470,6 +488,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let uint16Array = new Uint16Array([0, 65535, -1, 65536]);
@@ -487,15 +506,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0015';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -503,6 +523,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let int32Array = new Int32Array([-2147483648, 2147483647, -2147483649, 2147483648]);
@@ -520,15 +541,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0016';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -536,6 +558,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let uint32Array = new Uint32Array([0, 4294967295, -1, 4294967296]);
@@ -553,15 +576,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0017';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -569,6 +593,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let float32Array = new Float32Array([Infinity, -Infinity, NaN, 0, 1.5, -3.5e38]);
@@ -586,15 +611,16 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0018';
-      console.log(TAG + ' start');
       let dataWritten: Uint8Array[] = [];
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           if (chunk instanceof Uint8Array) {
             dataWritten.push(chunk);
@@ -602,6 +628,7 @@ export default function StreamDuplex05Test() {
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let float64Array = new Float64Array([
@@ -629,16 +656,17 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0019';
-      console.log(TAG + ' start');
       try {
         let dataWritten: Uint8Array[] = [];
+
         class TestDuplex extends stream.Duplex {
           constructor() {
             super();
           }
+
           doRead(size: number) {
           }
+
           doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
             if (chunk instanceof Uint8Array) {
               dataWritten.push(chunk);
@@ -646,6 +674,7 @@ export default function StreamDuplex05Test() {
             callback();
           }
         }
+
         let duplexStream = new TestDuplex();
         duplexStream.cork();
         let bigInt64Array = new BigInt64Array([
@@ -656,10 +685,9 @@ export default function StreamDuplex05Test() {
         duplexStream.uncork();
         expect(dataWritten.length).assertEqual(1);
       } catch (err) {
-        expect(err).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2000
      * @tc.name      testStreamDuplex05Chapter0020
@@ -669,16 +697,17 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0020';
-      console.log(TAG + ' start');
       try {
         let dataWritten: Uint8Array[] = [];
+
         class TestDuplex extends stream.Duplex {
           constructor() {
             super();
           }
+
           doRead(size: number) {
           }
+
           doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
             if (chunk instanceof Uint8Array) {
               dataWritten.push(chunk);
@@ -686,6 +715,7 @@ export default function StreamDuplex05Test() {
             callback();
           }
         }
+
         let duplexStream = new TestDuplex();
         duplexStream.cork();
         let bigUint64Array = new BigUint64Array([
@@ -696,10 +726,9 @@ export default function StreamDuplex05Test() {
         duplexStream.uncork();
         expect(dataWritten.length).assertEqual(1);
       } catch (err) {
-        expect(err).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTFIVE_2100
      * @tc.name      testStreamDuplex05Chapter0021
@@ -709,20 +738,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0021';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let asciiChars =
@@ -741,20 +772,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0022';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let repeatedChars = ' !!\"\"##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
@@ -772,20 +805,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0023';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let escapeStr = '\a\b\f\n\r\t\v\\\'\"\?';
@@ -803,20 +838,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0024';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let illegalUnicode = '\udc04\ud83d\udff4';
@@ -834,20 +871,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0025';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let keywords = ['0', 'NaN', 'undefined', 'null', 'true', 'false'];
@@ -867,20 +906,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0026';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let init: (size: number) => string = (size: number): string => {
@@ -906,20 +947,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0027';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let str = "{k1:value1,k2:value2}";
@@ -938,20 +981,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0028';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let hugeString = 'a'.repeat(1000000);
@@ -970,20 +1015,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0029';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let numbers = [
@@ -1020,20 +1067,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0030';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let booleans = [
@@ -1061,20 +1110,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0031';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let arrays = [
@@ -1100,46 +1151,56 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0032';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
+
       interface NestedD {
         e: number;
       }
+
       interface NestedB {
         c: number;
         d: NestedD;
       }
+
       interface Object1 {
         a: number;
         b: string;
         c: number[];
       }
+
       interface Object2 {
         a: number;
         b: NestedB;
       }
+
       interface Object3 {
         b: number;
       }
+
       interface Object4 {
         a: null;
         b: number;
       }
+
       interface Object5 {}
+
       type TestObject = Object1 | Object2 | Object3 | Object4 | Object5;
       const objects: TestObject[] = [
         { a: 1, b: "test", c: [1, 2, 3] } as Object1,
@@ -1166,20 +1227,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0033';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let specialArrays = [
@@ -1203,20 +1266,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const TAG = 'testStreamDuplex05Chapter0034';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       await new Promise<void>((resolve) => {
@@ -1238,20 +1303,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const TAG = 'testStreamDuplex05Chapter0035';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let promises: Promise<void>[] = [];
@@ -1277,16 +1344,17 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0036';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
+
       interface TestObject {
         a: number;
         b: number;
       }
+
       interface TestObject2 {
         b: number;
       }
+
       let obj1: TestObject = { a: 1, b: 2 };
       let obj2: TestObject2 = { b: 2 };
       duplexStream.cork();
@@ -1304,8 +1372,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0037';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
       let startTime = Date.now();
       let callCount = 1000;
@@ -1328,20 +1394,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0038';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let duplexStream = new TestDuplex();
       duplexStream.cork();
       let largeData = 'x'.repeat(5000000);
@@ -1361,20 +1429,22 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0039';
-      console.log(TAG + ' start');
       let dataWritten = '';
+
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           dataWritten += chunk;
           callback();
         }
       }
+
       let createLargeData = (): number => {
         let duplexStream = new TestDuplex();
         duplexStream.cork();
@@ -1397,8 +1467,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0040';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
       let errorCaught = false;
       try {
@@ -1407,6 +1475,7 @@ export default function StreamDuplex05Test() {
         expect(result).assertEqual(true);
       } catch (err) {
         errorCaught = true;
+        expect(err.code).assertEqual(undefined);
       }
       expect(errorCaught).assertEqual(false);
     });
@@ -1420,8 +1489,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0041';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
       let finallyExecuted = false;
       try {
@@ -1443,8 +1510,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0042';
-      console.log(TAG + ' start');
       'use strict';
       let duplexStream = new stream.Duplex();
       duplexStream.cork();
@@ -1462,14 +1527,14 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testStreamDuplex05Chapter0043';
-      console.log(TAG + ' start');
       let duplexStream = new stream.Duplex();
+
       interface ReadonlyStreamView {
         readonly cork: () => void;
         readonly uncork: () => boolean;
         readonly writableCorked: number;
       }
+
       const readonlyStream: ReadonlyStreamView = {
         cork: () => duplexStream.cork(),
         uncork: () => duplexStream.uncork(),
@@ -1490,8 +1555,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex05Chapter0043';
-      console.log(TAG + ' start');
       let duplexStream: stream.Duplex = new stream.Duplex();
       duplexStream.cork();
       let result: boolean = duplexStream.uncork();
@@ -1509,8 +1572,6 @@ export default function StreamDuplex05Test() {
      * @tc.level     Level 2
      */
     it('testStreamDuplex05Chapter0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex05Chapter0043';
-      console.log(TAG + ' start');
       let duplexStream: stream.Duplex = new stream.Duplex();
       duplexStream.cork();
       duplexStream.cork();

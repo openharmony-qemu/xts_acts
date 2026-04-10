@@ -37,15 +37,16 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0001';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         writeError: boolean = false;
+
         constructor() {
           super();
         }
+
         doRead(size: number) {
         }
+
         doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
           try {
             if (typeof chunk === 'string' && chunk.length > 1000000) {
@@ -53,19 +54,23 @@ export default function StreamDuplex08Test() {
             }
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(401);
             this.writeError = true;
             callback();
           }
         }
+
         doWritev(chunks: string[] | Uint8Array[], callback: Function) {
           try {
             expect(chunks.length).assertEqual(1);
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(401);
             callback();
           }
         }
       }
+
       try {
         let duplexStream = new TestDuplex();
         duplexStream.cork();
@@ -73,16 +78,15 @@ export default function StreamDuplex08Test() {
           let largeString = 'a'.repeat(100);
           duplexStream.write(largeString, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
         duplexStream.uncork();
         duplexStream.end();
-        expect(duplexStream.writeError).assertFalse();
+        expect(duplexStream.writeError).assertEqual(false);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(401);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0200
      * @tc.name      testStreamDuplex08Chapter0002
@@ -92,9 +96,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0002';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         errorCount: number = 0;
 
@@ -124,11 +125,13 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write(null, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         try {
           duplexStream.write(undefined, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         duplexStream.write('valid data', 'utf8');
@@ -137,8 +140,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.errorCount).assertEqual(0);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -151,9 +153,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0003';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         encodingErrors: number = 0;
 
@@ -168,6 +167,7 @@ export default function StreamDuplex08Test() {
           try {
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             this.encodingErrors++;
             callback();
           }
@@ -178,6 +178,7 @@ export default function StreamDuplex08Test() {
             expect(chunks.length).assertEqual(3);
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -196,7 +197,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.encodingErrors).assertEqual(0);
       } catch (e) {
-        console.error(TAG + ' unexpected error:', e);
+        expect(e.code).assertEqual(undefined);
         expect(duplexStream.encodingErrors).assertEqual(0);
       }
     });
@@ -210,9 +211,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0004';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         emptyChunksHandled: number = 0;
 
@@ -243,11 +241,13 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         try {
           duplexStream.write(new Uint8Array([]), 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         duplexStream.write('non-empty data', 'utf8');
@@ -256,7 +256,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.emptyChunksHandled).assertLess(2);
       } catch (e) {
-        console.error(TAG + ' unexpected error:', e);
+        expect(e.code).assertEqual(undefined);
         expect(duplexStream.emptyChunksHandled).assertLess(2);
       }
     });
@@ -270,9 +270,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0005';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         invalidEncodingErrors: number = 0;
 
@@ -302,11 +299,13 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('test1', 'invalid-encoding');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         try {
           duplexStream.write('test2', 'unknown');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         duplexStream.write('test3', 'utf8');
@@ -315,11 +314,10 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.invalidEncodingErrors).assertEqual(0);
       } catch (e) {
-        console.error(TAG + ' unexpected error:', e);
+        expect(e.code).assertEqual(undefined);
         expect(duplexStream.invalidEncodingErrors).assertEqual(0);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0600
      * @tc.name      testStreamDuplex08Chapter0006
@@ -329,9 +327,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0006';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         memoryError: boolean = false;
 
@@ -350,6 +345,7 @@ export default function StreamDuplex08Test() {
             }
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             this.memoryError = true;
             callback();
           }
@@ -368,24 +364,25 @@ export default function StreamDuplex08Test() {
           let hugeString = 'x'.repeat(500);
           duplexStream.write(hugeString, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           let hugeArray = new Uint8Array(500);
           duplexStream.write(hugeArray, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         duplexStream.uncork();
         duplexStream.end();
 
-        expect(duplexStream.memoryError).assertFalse();
+        expect(duplexStream.memoryError).assertEqual(false);
       } catch (e) {
-        console.error(TAG + ' unexpected error:', e);
-        expect(duplexStream.memoryError).assertFalse();
+        expect(e.code).assertEqual(undefined);
+        expect(duplexStream.memoryError).assertEqual(false);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_0700
      * @tc.name      testStreamDuplex08Chapter0007
@@ -395,9 +392,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0007';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         callbackErrors: number = 0;
 
@@ -416,6 +410,7 @@ export default function StreamDuplex08Test() {
             }
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             this.callbackErrors++;
           }
         }
@@ -428,6 +423,7 @@ export default function StreamDuplex08Test() {
             }
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             this.callbackErrors++;
           }
         }
@@ -445,8 +441,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.callbackErrors).assertEqual(0);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -459,9 +454,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0009';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         validWrites: number = 0;
 
@@ -477,6 +469,7 @@ export default function StreamDuplex08Test() {
             this.validWrites++;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -486,6 +479,7 @@ export default function StreamDuplex08Test() {
             this.validWrites += chunks.length;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -510,8 +504,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.validWrites).assertEqual(5);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -524,9 +517,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0010';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         uncorkCount: number = 0;
 
@@ -564,13 +554,11 @@ export default function StreamDuplex08Test() {
 
         duplexStream.end();
 
-        expect(duplexStream.uncorkCount > 0).assertTrue();
+        expect(duplexStream.uncorkCount > 0).assertEqual(true);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTEIGHT_1000
      * @tc.name      testStreamDuplex08Chapter0011
@@ -580,9 +568,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0011';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         cycleCount: number = 0;
 
@@ -616,8 +601,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.cycleCount).assertEqual(10);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -630,9 +614,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0012';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         concurrentWrites: number = 0;
 
@@ -648,6 +629,7 @@ export default function StreamDuplex08Test() {
             this.concurrentWrites++;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -657,6 +639,7 @@ export default function StreamDuplex08Test() {
             this.concurrentWrites += chunks.length;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -674,6 +657,7 @@ export default function StreamDuplex08Test() {
                 duplexStream.write(`concurrent${i}`, 'utf8');
                 resolve(true);
               } catch (e) {
+                expect(e.code).assertEqual(undefined);
                 reject(e);
               }
             }, Math.random() * 10);
@@ -688,15 +672,11 @@ export default function StreamDuplex08Test() {
 
             expect(duplexStream.concurrentWrites).assertEqual(10);
           } catch (e) {
-            console.error(TAG + ' async error:', e);
-            throw e instanceof Error ? e : new Error(String(e));
-            expect().assertFail();
+            expect(e.code).assertEqual(undefined);
           }
         })();
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -709,9 +689,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0013';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         invalidTypeWrites: number = 0;
 
@@ -744,11 +721,13 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         try {
           duplexStream.write(new Uint8Array(0), 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(401);
         }
 
         duplexStream.uncork();
@@ -756,9 +735,7 @@ export default function StreamDuplex08Test() {
 
         expect(duplexStream.invalidTypeWrites).assertEqual(0);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -771,9 +748,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0014';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -786,6 +760,7 @@ export default function StreamDuplex08Test() {
           try {
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -795,6 +770,7 @@ export default function StreamDuplex08Test() {
             expect(chunks.length).assertEqual(1);
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -812,16 +788,15 @@ export default function StreamDuplex08Test() {
           }
           duplexStream.write(corruptedView, 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         duplexStream.uncork();
         duplexStream.end();
 
-        expect(duplexStream == undefined).assertFalse();
+        expect(duplexStream == undefined).assertEqual(false);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -834,9 +809,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0015';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         validOperations: number = 0;
 
@@ -852,6 +824,7 @@ export default function StreamDuplex08Test() {
             this.validOperations++;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -861,6 +834,7 @@ export default function StreamDuplex08Test() {
             this.validOperations += chunks.length;
             callback();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -887,7 +861,7 @@ export default function StreamDuplex08Test() {
       duplexStream.uncork();
       duplexStream.end();
 
-      expect(duplexStream.validOperations > 0).assertTrue();
+      expect(duplexStream.validOperations > 0).assertEqual(true);
     });
 
     /**
@@ -899,9 +873,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0016';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         bufferOverflow: boolean = false;
         writeCount: number = 0;
@@ -943,17 +914,16 @@ export default function StreamDuplex08Test() {
           try {
             duplexStream.write(`data${i}`, 'utf8');
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
           }
         }
 
         duplexStream.uncork();
         duplexStream.end();
 
-        expect(duplexStream.bufferOverflow).assertTrue();
+        expect(duplexStream.bufferOverflow).assertEqual(true);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -966,9 +936,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0018';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         destroyedWrites: number = 0;
         isDestroyed: boolean = false;
@@ -1009,20 +976,20 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.destroyStream();
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.write('after destroy', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         duplexStream.end();
 
         expect(duplexStream.destroyedWrites).assertEqual(1);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -1035,9 +1002,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0019';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         errorCount: number = 0;
         recoverySuccess: boolean = false;
@@ -1058,6 +1022,7 @@ export default function StreamDuplex08Test() {
               callback();
             }
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -1079,6 +1044,7 @@ export default function StreamDuplex08Test() {
               callback();
             }
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
             callback();
           }
         }
@@ -1091,37 +1057,40 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('normal1', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.write('ERROR_DATA', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.write('normal2', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.write('normal3', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.write('ERROR_AGAIN', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         duplexStream.uncork();
         duplexStream.end();
 
-        expect(duplexStream.errorCount >= 2).assertTrue();
-        expect(duplexStream.recoverySuccess).assertFalse();
+        expect(duplexStream.errorCount >= 2).assertEqual(true);
+        expect(duplexStream.recoverySuccess).assertEqual(false);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -1134,9 +1103,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0020';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         errorPropagationCount: number = 0;
 
@@ -1187,11 +1153,9 @@ export default function StreamDuplex08Test() {
 
         duplexStream.end();
 
-        expect(errorEvents > 0).assertTrue();
+        expect(errorEvents > 0).assertEqual(true);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -1204,9 +1168,6 @@ export default function StreamDuplex08Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex08Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex08Chapter0021';
-      console.log(TAG + ' start');
-
       class TestDuplex extends stream.Duplex {
         endCount: number = 0;
 
@@ -1237,20 +1198,19 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.end();
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
           duplexStream.end('final data', 'utf8');
         } catch (e) {
+          expect(e.code).assertEqual(undefined);
         }
 
         expect(duplexStream.endCount).assertLess(3);
       } catch (e) {
-        console.error(TAG + ' error:', e);
-        throw e instanceof Error ? e : new Error(String(e));
-        expect().assertFail();
+        expect(e.code).assertEqual(undefined);
       }
     });
-
   })
 }

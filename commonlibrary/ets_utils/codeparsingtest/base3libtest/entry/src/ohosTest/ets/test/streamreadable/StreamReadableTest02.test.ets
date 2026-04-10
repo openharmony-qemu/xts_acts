@@ -50,8 +50,6 @@ export default function StreamReadable02Test() {
      * @tc.level     Level 2
      */
     it('testStreamReadable02Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable02Chapter0001'
-      console.log(TAG + ' start')
 
       class TestReadable extends stream.Readable {
         private data: number[] = [1, 2, 3, 4, 5];
@@ -75,7 +73,6 @@ export default function StreamReadable02Test() {
       let collected: Uint8Array[] = [];
 
       readableStream.on('data', (chunk: Object) => {
-        console.info(TAG + ' chunk received:', chunk, 'type:', typeof chunk);
         collected.push(chunk as Uint8Array);
       });
 
@@ -96,8 +93,6 @@ export default function StreamReadable02Test() {
      * @tc.level     Level 2
      */
     it('testStreamReadable02Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamReadable02Chapter0002'
-      console.log(TAG + ' start')
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -136,9 +131,6 @@ export default function StreamReadable02Test() {
      * @tc.level     Level 2
      */
     it('testStreamReadable02Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable02Chapter0003'
-      console.log(TAG + ' start')
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -155,17 +147,16 @@ export default function StreamReadable02Test() {
       try {
         let pauseResult = readableStream.pause();
         pauseSucceeded = true;
-        console.info("Pause on empty stream successful");
         expect(pauseResult).assertEqual(readableStream);
       } catch (error) {
         errorCaught = true;
-        console.error("Unexpected error:", error);
+        expect(error.code).assertEqual(401);
       }
 
-      expect(pauseSucceeded).assertTrue();
-      expect(errorCaught).assertFalse();
-      expect(readableStream.isPaused()).assertTrue();
-    })
+      expect(pauseSucceeded).assertEqual(true);
+      expect(errorCaught).assertEqual(false);
+      expect(readableStream.isPaused()).assertEqual(true);
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTWO_0400
@@ -176,8 +167,6 @@ export default function StreamReadable02Test() {
      * @tc.level     Level 2
      */
     it('testStreamReadable02Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable02Chapter0004'
-      console.log(TAG + ' start')
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -206,9 +195,6 @@ export default function StreamReadable02Test() {
      * @tc.level     Level 2
      */
     it('testStreamReadable02Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable02Chapter0005'
-      console.log(TAG + ' start')
-
       class TestReadable extends stream.Readable {
         private data: number[] = [10, 20, 30];
         private index: number = 0;

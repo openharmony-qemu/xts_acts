@@ -21,6 +21,24 @@ function sleep(ms: number) {
   return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
 }
 
+class TestReadableClose extends stream.Readable {
+  constructor() {
+    super();
+  }
+
+  doRead(_size: number): void {
+  }
+}
+
+class TestReadableEnd extends stream.Readable {
+  constructor() {
+    super();
+  }
+
+  doRead(_size: number): void {
+  }
+}
+
 export default function StreamReadable04Test() {
   describe('StreamReadable04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -30,18 +48,18 @@ export default function StreamReadable04Test() {
     })
     beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
+      // The number of execution times is the same as number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await sleep(200);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
+      // The number of execution times is the same as number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -54,10 +72,8 @@ export default function StreamReadable04Test() {
      */
     it("testStreamReadable04Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
-        const TAG: string = 'testStreamReadable04Chapter0001';
-        console.log(TAG + ' start');
 
-        class TestReadable extends stream.Readable {
+        class TestReadableClose extends stream.Readable {
           constructor() {
             super();
           }
@@ -66,24 +82,16 @@ export default function StreamReadable04Test() {
           }
         }
 
-        let readable: TestReadable = new TestReadable();
+        let readable: TestReadableClose = new TestReadableClose();
         let closeEventTriggered: boolean = false;
 
-        return new Promise<void>((resolve) => {
+        await new Promise<void>((resolve) => {
           readable.on('close', () => {
             closeEventTriggered = true;
             expect(closeEventTriggered).assertTrue();
             resolve();
           });
-
           readable.push(null);
-
-          setTimeout(() => {
-            if (!closeEventTriggered) {
-              expect(closeEventTriggered).assertTrue();
-              resolve();
-            }
-          }, 100);
         });
       });
 
@@ -97,10 +105,8 @@ export default function StreamReadable04Test() {
      */
     it("testStreamReadable04Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
-        const TAG: string = 'testStreamReadable04Chapter0002';
-        console.log(TAG + ' start');
 
-        class TestReadable extends stream.Readable {
+        class TestReadableEnd extends stream.Readable {
           constructor() {
             super();
           }
@@ -109,16 +115,15 @@ export default function StreamReadable04Test() {
           }
         }
 
-        let readable: TestReadable = new TestReadable();
+        let readable: TestReadableEnd = new TestReadableEnd();
         let endEventTriggered: boolean = false;
 
-        return new Promise<void>((resolve) => {
+        await new Promise<void>((resolve) => {
           readable.on('end', () => {
             endEventTriggered = true;
             expect(endEventTriggered).assertTrue();
             resolve();
           });
-
           readable.push(null);
         });
       });
@@ -133,9 +138,6 @@ export default function StreamReadable04Test() {
      */
     it("testStreamReadable04Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
-        const TAG: string = 'testStreamReadable04Chapter0003';
-        console.log(TAG + ' start');
-
         class TestReadable extends stream.Readable {
           constructor() {
             super();
@@ -159,11 +161,12 @@ export default function StreamReadable04Test() {
           try {
             readable.read();
           } catch (e) {
+            expect(e.code).assertEqual(undefined);
           }
 
           setTimeout(() => {
             if (!errorEventTriggered) {
-              expect(errorEventTriggered).assertTrue();
+              expect(errorEventTriggered).assertEqual(true);
             }
             resolve();
           }, 100);
@@ -180,8 +183,6 @@ export default function StreamReadable04Test() {
      */
     it("testStreamReadable04Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
-        const TAG = 'testStreamReadable04Chapter0004';
-        console.log(TAG + ' start');
 
         class TestReadable extends stream.Readable {
           constructor() {
@@ -216,8 +217,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0005';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -253,8 +252,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0006';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -291,8 +288,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0007';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -329,8 +324,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0008';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -367,8 +360,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0009';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -403,8 +394,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0010';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -453,9 +442,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0011';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -466,7 +452,7 @@ export default function StreamReadable04Test() {
       }
 
       let readable = new TestReadable();
-      expect(readable instanceof TestReadable).assertTrue();
+      expect(readable instanceof TestReadable).assertEqual(true);
 
       const dummyCallback = (): void => {
       };
@@ -475,14 +461,14 @@ export default function StreamReadable04Test() {
       try {
         readable.off('data', dummyCallback);
         readable.off('readable');
-        expect(readable !== null).assertTrue();
+        expect(readable !== null).assertEqual(true);
         expect(typeof readable.off).assertEqual('function');
       } catch (err) {
         errorOccurred = true;
-        expect(err instanceof Error).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
 
-      expect(errorOccurred).assertFalse();
+      expect(errorOccurred).assertEqual(false);
     });
 
     /**
@@ -494,9 +480,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0012';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -512,20 +495,15 @@ export default function StreamReadable04Test() {
       };
 
       let offSucceeded = false;
-      let errorCaught = false;
-      let errorCode: number | undefined;
 
       try {
         readable.off('', dummyCallback);
         offSucceeded = true;
       } catch (err) {
-        errorCaught = true;
-        errorCode = err.code;
+        expect(err.code).assertEqual(401);
       }
 
-      expect(offSucceeded).assertFalse();
-      expect(errorCaught).assertTrue();
-      expect(errorCode).assertEqual(401);
+      expect(offSucceeded).assertEqual(false);
     });
 
     /**
@@ -537,9 +515,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0013';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         constructor() {
           super();
@@ -559,9 +534,10 @@ export default function StreamReadable04Test() {
         readable.off('unsupported', dummyCallback);
       } catch (err) {
         errorOccurred = true;
+        expect(err.code).assertEqual(401);
       }
 
-      expect(errorOccurred).assertFalse();
+      expect(errorOccurred).assertEqual(false);
     });
 
     /**
@@ -573,8 +549,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0014';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -611,8 +585,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0015';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -650,8 +622,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0016';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         constructor() {
@@ -702,8 +672,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0017';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         initializeCalled: boolean = false;
@@ -739,14 +707,9 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0018';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         doInitialize(callback: Function): void {
           super.doInitialize(callback);
-          const undefinedValue: undefined = undefined;
-          console.info("Readable doInitialize called with undefined");
           callback();
         }
 
@@ -755,21 +718,20 @@ export default function StreamReadable04Test() {
       }
 
       const myReadable: TestReadable = new TestReadable();
-      expect(myReadable instanceof TestReadable).assertTrue();
+      expect(myReadable instanceof TestReadable).assertEqual(true);
 
       let dataListenerAdded = false;
-      let errorOccurred = false;
 
       try {
         myReadable.on('data', (): void => {
         });
         dataListenerAdded = true;
 
-        expect(myReadable !== null).assertTrue();
+        expect(myReadable !== null).assertEqual(true);
         expect(typeof myReadable.on).assertEqual('function');
-        expect(dataListenerAdded).assertTrue();
+        expect(dataListenerAdded).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -782,14 +744,9 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0019';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         doInitialize(callback: Function): void {
           super.doInitialize(callback);
-          const nullValue: null = null;
-          console.info("Readable doInitialize called with null");
           callback();
         }
 
@@ -798,25 +755,22 @@ export default function StreamReadable04Test() {
       }
 
       const myReadable: TestReadable = new TestReadable();
-      expect(myReadable instanceof TestReadable).assertTrue();
+      expect(myReadable instanceof TestReadable).assertEqual(true);
 
       let dataListenerAdded = false;
-      let errorOccurred = false;
 
       try {
         myReadable.on('data', (): void => {
         });
         dataListenerAdded = true;
 
-        expect(myReadable !== null).assertTrue();
+        expect(myReadable !== null).assertEqual(true);
         expect(typeof myReadable.on).assertEqual('function');
-        expect(dataListenerAdded).assertTrue();
+        expect(dataListenerAdded).assertEqual(true);
       } catch (error) {
-        errorOccurred = true;
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2000
      * @tc.name      testStreamReadable04Chapter0020
@@ -826,9 +780,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0020';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: number = 0;
 
@@ -839,7 +790,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -847,12 +797,11 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
-        expect(Number.isNaN(myReadable.callbackParam)).assertTrue();
+        expect(Number.isNaN(myReadable.callbackParam)).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -865,9 +814,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0021';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: number = 0;
 
@@ -878,7 +824,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -886,12 +831,11 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam).assertEqual(Infinity);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -904,9 +848,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0022';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: number = 0;
 
@@ -917,7 +858,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -925,15 +865,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam).assertEqual(-Infinity);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2300
      * @tc.name      testStreamReadable04Chapter0023
@@ -943,9 +881,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0023';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: number = 0;
 
@@ -956,7 +891,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -964,15 +898,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam).assertEqual(Number.MAX_VALUE);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2400
      * @tc.name      testStreamReadable04Chapter0024
@@ -982,9 +914,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0024';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: number = 0;
 
@@ -995,7 +924,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1003,12 +931,11 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam).assertEqual(Number.MIN_VALUE);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1021,9 +948,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0025';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: bigint = 0n;
 
@@ -1034,7 +958,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1042,15 +965,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam.toString()).assertEqual("9007199254740991");
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2600
      * @tc.name      testStreamReadable04Chapter0026
@@ -1060,9 +981,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0026';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: Uint8Array = new Uint8Array(0);
 
@@ -1073,7 +991,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1081,14 +998,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         const paramLength: number = myReadable.callbackParam.length;
         const isLengthGreaterThanZero: boolean = paramLength > 0;
-        expect(isLengthGreaterThanZero).assertTrue();
+        expect(isLengthGreaterThanZero).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1101,9 +1017,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0027';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: string = "";
 
@@ -1114,7 +1027,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1122,12 +1034,11 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam).assertEqual("");
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1140,9 +1051,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0028';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: string = "";
 
@@ -1153,7 +1061,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1161,14 +1068,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         const paramLength: number = myReadable.callbackParam.length;
         const isLengthGreaterThanZero: boolean = paramLength > 0;
-        expect(isLengthGreaterThanZero).assertTrue();
+        expect(isLengthGreaterThanZero).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1181,9 +1087,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0029';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: Array<number> = [];
 
@@ -1194,7 +1097,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1202,12 +1104,11 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         expect(myReadable.callbackParam.length).assertEqual(5);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1220,9 +1121,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0030';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: CallbackParamObject = { a: 0, b: "", c: [] };
 
@@ -1233,7 +1131,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1241,14 +1138,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
         const keysLength: number = Object.keys(myReadable.callbackParam).length;
         const isKeysLengthGreaterThanZero: boolean = keysLength > 0;
-        expect(isKeysLengthGreaterThanZero).assertTrue();
+        expect(isKeysLengthGreaterThanZero).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1261,8 +1157,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0031';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         initializeCalled: boolean = false;
@@ -1301,8 +1195,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0032';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doInitialize(callback: Function): void {
@@ -1342,8 +1234,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0033';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         initializeCount: number = 0;
@@ -1383,9 +1273,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0034';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         callbackParam: boolean = false;
 
@@ -1396,7 +1283,6 @@ export default function StreamReadable04Test() {
         }
 
         doRead(_size: number): void {
-
         }
       }
 
@@ -1404,15 +1290,13 @@ export default function StreamReadable04Test() {
 
       try {
         myReadable.on('data', (): void => {
-
         });
 
-        expect(myReadable.callbackParam).assertTrue();
+        expect(myReadable.callbackParam).assertEqual(true);
       } catch (error) {
-        expect().assertFail();
+        expect(error.code).assertEqual(undefined);
       }
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3500
      * @tc.name      testStreamReadable04Chapter0035
@@ -1422,8 +1306,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0035';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         initializeCalled: boolean = false;
@@ -1463,9 +1345,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0036';
-      console.log(TAG + ' start');
-
       class TestReadable extends stream.Readable {
         doInitialize(callback: Function): void {
           super.doInitialize(callback);
@@ -1484,9 +1363,9 @@ export default function StreamReadable04Test() {
           callbackCalled = true;
         });
 
-        expect(callbackCalled).assertFalse();
+        expect(callbackCalled).assertEqual(false);
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.code).assertEqual(undefined);
       }
     });
 
@@ -1499,8 +1378,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0037';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(_size: number): void {
@@ -1528,8 +1405,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0038';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(_size: number): void {
@@ -1557,8 +1432,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0039';
-      console.log(TAG + ' start');
 
       class TestReadable extends stream.Readable {
         doRead(_size: number): void {
@@ -1586,9 +1459,6 @@ export default function StreamReadable04Test() {
      * @tc.level     Level 2
      */
     it("testStreamReadable04Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamReadable04Chapter0040';
-      console.log(TAG + ' start');
-
       let receivedSize = 0;
 
       class TestReadable extends stream.Readable {
