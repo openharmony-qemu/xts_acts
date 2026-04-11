@@ -36,6 +36,8 @@ export default class MediaTestBase {
   TAG = "[AvScreenCaptureLocalTest] ";
   SETONCALLBACK_EVENT = 'setAvScreenCaptureCallback';
   SET_MIC_ENABLE_EVENT = 'setMicEnable';
+  SET_PICKER_MODE_EVENT = 'setPickerMode';
+  EXCLUDE_PICKER_WINDOWS_EVENT = 'excludePickerWindows';
   CREATE_EVENT = 'create';
   INIT_EVENT = 'init';
   STARTRECORDER_EVENT = 'start';
@@ -229,6 +231,27 @@ export default class MediaTestBase {
         }).catch((err: Error) => {
           console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
           expect().assertFail()
+        })
+        break;
+      case 'setPickerMode':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        break;
+      case 'excludePickerWindows':
+        steps.shift();
+        let excludedWindows: Array<number> = [101, 102, 103];
+        await avScreenCaptureRecorder!!.excludePickerWindows(excludedWindows).then(() => {
+          console.info('avScreenCaptureRecorder excludePickerWindows success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
+          expect().assertFail();
         })
         break;
       case 'createAVPlayer':
