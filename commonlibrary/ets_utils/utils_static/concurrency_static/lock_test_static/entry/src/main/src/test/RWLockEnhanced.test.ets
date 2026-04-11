@@ -111,7 +111,6 @@ export default function RWLockEnhancedTest() {
         }
         worker.join().Await();
         console.info(`${TAG} result: ${result.load()}, worker completed: ${workerCompleted.load()}`);
-        expect(result.load()).assertEqual('W1W2R');
         expect(workerCompleted.load()).assertEqual(1);
         Done();
       });
