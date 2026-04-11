@@ -84,11 +84,13 @@ export default function GetFrameNodeByUniqueIdTest() {
 
       let strJson = inspector.getInspectorByKey('testNode');
       let obj= JSON.parseJsonElement(strJson);
-      console.info("[GetFrameNodeByUniqueIdTest_0100] obj backgroundColor is: " + obj.getElement('$attrs').getString('backgroundColor'));
-      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFFF00');
+      console.info("[GetFrameNodeByUniqueIdTest_0100] obj width is: " + obj.getElement('$attrs').getString('width'));
+      console.info("[GetFrameNodeByUniqueIdTest_0100] obj height is: " + obj.getElement('$attrs').getString('height'));
+      expect(obj.getElement('$attrs').getString('width')).assertEqual('100.00vp');
+      expect(obj.getElement('$attrs').getString('height')).assertEqual('50.00vp');
 
-      console.info('GetFrameNodeByUniqueIdTest_0100 click testValidButton');
-      let button = await driver.findComponent(ON.id('testValidButton'));
+      console.info('GetFrameNodeByUniqueIdTest_0100 click GetFrameNodeByUniqueId_testValidButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeByUniqueId_testValidButton'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -98,8 +100,10 @@ export default function GetFrameNodeByUniqueIdTest() {
 
       let strJsonAfter = inspector.getInspectorByKey('testNode');
       let objAfter= JSON.parseJsonElement(strJsonAfter);
-      console.info("[GetFrameNodeByUniqueIdTest_0100] objAfter backgroundColor is: " + objAfter.getElement('$attrs').getString('backgroundColor'));
-      expect(objAfter.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF2787D9');
+      console.info("[GetFrameNodeByUniqueIdTest_0100] objAfter width is: " + objAfter.getElement('$attrs').getString('width'));
+      console.info("[GetFrameNodeByUniqueIdTest_0100] objAfter height is: " + objAfter.getElement('$attrs').getString('height'));
+      expect(objAfter.getElement('$attrs').getString('width')).assertEqual('120.00vp');
+      expect(objAfter.getElement('$attrs').getString('height')).assertEqual('60.00vp');
 
       console.info('[GetFrameNodeByUniqueIdTest_0100] END');
     })
@@ -117,8 +121,8 @@ export default function GetFrameNodeByUniqueIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByUniqueIdTest_0200 click testNonExistentButton');
-      let button = await driver.findComponent(ON.id('testNonExistentButton'));
+      console.info('GetFrameNodeByUniqueIdTest_0200 click GetFrameNodeByUniqueId_testNonExistentButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeByUniqueId_testNonExistentButton'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

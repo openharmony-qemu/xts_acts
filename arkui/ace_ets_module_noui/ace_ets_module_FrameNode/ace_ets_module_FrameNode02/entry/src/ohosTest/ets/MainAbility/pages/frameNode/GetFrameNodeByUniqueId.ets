@@ -28,7 +28,7 @@ class MyNodeController extends NodeController {
     this.rootNode.appendChild(col);
 
     let text1 = typeNode.createNode(uiContext, 'Text');
-    text1.initialize('Test Node').id('testNode').backgroundColor(Color.Yellow);
+    text1.initialize('Test Node').id('GetFrameNodeByUniqueId_testNode').backgroundColor(Color.Yellow);
     this.testUniqueId = text1.getUniqueId();
     col.appendChild(text1);
 
@@ -73,36 +73,39 @@ struct FrameNodeGetFrameNodeByUniqueId {
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
-        .width(300)
-        .height(300)
+        .width('90%')
+        .height('70%')
 
-      Button('Test Valid UniqueId')
-        .id('testValidButton')
-        .onClick(() => {
-          this.myNodeController.testValidUniqueId();
-        })
+      Row() {
+        Button('Valid')
+          .id('GetFrameNodeByUniqueId_testValidButton')
+          .onClick(() => {
+            this.myNodeController.testValidUniqueId();
+          })
 
-      Button('Test Non Existent UniqueId')
-        .id('testNonExistentButton')
-        .onClick(() => {
-          this.myNodeController.testNonExistentUniqueId();
-        })
+        Button('Non Exist')
+          .id('GetFrameNodeByUniqueId_testNonExistentButton')
+          .onClick(() => {
+            this.myNodeController.testNonExistentUniqueId();
+          })
+      }.height('10%')
 
-      Button('Test Null')
-        .id('testNullButton')
-        .onClick(() => {
-          this.myNodeController.testNull();
-        })
+      Row() {
+        Button('Null')
+          .id('GetFrameNodeByUniqueId_testNullButton')
+          .onClick(() => {
+            this.myNodeController.testNull();
+          })
 
-      Button('Test Undefined')
-        .id('testUndefinedButton')
-        .onClick(() => {
-          this.myNodeController.testUndefined();
-        })
+        Button('Undefined')
+          .id('GetFrameNodeByUniqueId_testUndefinedButton')
+          .onClick(() => {
+            this.myNodeController.testUndefined();
+          })
+      }.height('10%')
     }.width('100%')
-    .padding(20)
   }
 }

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { Entry, Column, ColumnOptions, Component, Button, ClickEvent, NodeContainer, Color } from '@ohos.arkui.component'
+import { Entry, Column, Row, ColumnOptions, Component, Button, ClickEvent, NodeContainer, Color } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node'
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
   public testUniqueId: int = -1;
   public nonExistentUniqueId: int = 999999;
@@ -32,7 +32,7 @@ class MyNodeController extends NodeController {
     this.rootNode!.appendChild(col);
 
     let text1 = typeNode.createTextNode(uiContext);
-    text1.initialize('Test Node').id('testNode').backgroundColor(Color.Yellow);
+    text1.initialize('Test Node').id('GetFrameNodeByUniqueId_testNode').width(100).height(50);
     this.testUniqueId = text1.getUniqueId();
     col.appendChild(text1);
 
@@ -43,7 +43,7 @@ class MyNodeController extends NodeController {
     if (this.rootNode) {
       let node = this.rootNode!.getFrameNodeByUniqueId(this.testUniqueId);
       if (node) {
-        node.commonAttribute.backgroundColor('rgb(39,135,217)');
+        node.commonAttribute.width(120).height(60);
       }
       AppStorage.setOrCreate<FrameNode | null>('getFrameNodeByUniqueIdValidResult', node);
     }
@@ -63,24 +63,25 @@ struct FrameNodeGetFrameNodeByUniqueId {
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 5 } as ColumnOptions) {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
-        .width(300)
-        .height(300)
+        .width('90%')
+        .height('70%')
 
-      Button('Test Valid UniqueId')
-        .id('testValidButton')
-        .onClick(() => {
-          this.myNodeController.testValidUniqueId();
-        })
+      Row() {
+        Button('Valid')
+          .id('GetFrameNodeByUniqueId_testValidButton')
+          .onClick(() => {
+            this.myNodeController.testValidUniqueId();
+          })
 
-      Button('Test Non Existent UniqueId')
-        .id('testNonExistentButton')
-        .onClick(() => {
-          this.myNodeController.testNonExistentUniqueId();
-        })
+        Button('Non Exist')
+          .id('GetFrameNodeByUniqueId_testNonExistentButton')
+          .onClick(() => {
+            this.myNodeController.testNonExistentUniqueId();
+          })
+      }.height('20%')
     }.width('100%')
-    .padding(20)
   }
 }

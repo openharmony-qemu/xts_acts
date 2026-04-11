@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import { Entry, Column, ColumnOptions, Component, Button, ClickEvent, NodeContainer, Color } from '@ohos.arkui.component'
+import { Entry, Column, Row, ColumnOptions, Component, Button, ClickEvent, NodeContainer, Color } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node'
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
-  public testNodeId: string = 'testNode';
-  public duplicateNodeId: string = 'duplicateNode';
-  public nonExistentNodeId: string = 'nonExistentNode';
+  public testNodeId: string = 'GetFrameNodeById_testNode';
+  public duplicateNodeId: string = 'GetFrameNodeById_duplicateNode';
+  public nonExistentNodeId: string = 'GetFrameNodeById_nonExistentNode';
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
@@ -33,11 +33,11 @@ class MyNodeController extends NodeController {
     this.rootNode!.appendChild(col);
 
     let text1 = typeNode.createTextNode(uiContext);
-    text1.initialize('Test Node').id(this.testNodeId).backgroundColor(Color.Yellow);
+    text1.initialize('Test Node').id(this.testNodeId).width(100).height(50);
     col.appendChild(text1);
 
     let text2 = typeNode.createTextNode(uiContext);
-    text2.initialize('Duplicate Node 1').id(this.duplicateNodeId);
+    text2.initialize('Duplicate Node 1').id(this.duplicateNodeId).width(100).height(50);
     col.appendChild(text2);
 
     let text3 = typeNode.createTextNode(uiContext);
@@ -47,11 +47,11 @@ class MyNodeController extends NodeController {
     return this.rootNode;
   }
 
-  setNodeBackgroundColor(id: string, color: string): void {
+  testValidUniqueId(id: string): void {
     if (this.rootNode) {
       let node = this.rootNode!.getFrameNodeById(id);
       if (node) {
-        node.commonAttribute.backgroundColor(color);
+        node.commonAttribute.width(120).height(60);
       }
     }
   }
@@ -74,6 +74,9 @@ class MyNodeController extends NodeController {
     if (this.rootNode) {
       let node = this.rootNode!.getFrameNodeById(this.duplicateNodeId);
       AppStorage.setOrCreate<FrameNode | null>('getFrameNodeByIdDuplicateResult', node);
+      if (node) {
+        node.commonAttribute.width(150).height(60);
+      }
     }
   }
 }
@@ -84,36 +87,39 @@ struct FrameNodeGetFrameNodeById {
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 5 } as ColumnOptions) {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
-        .width(300)
-        .height(300)
+        .width('90%')
+        .height('70%')
 
-      Button('Set Background Color')
-        .id('setButton')
-        .onClick(() => {
-          this.myNodeController.setNodeBackgroundColor(this.myNodeController.testNodeId, 'rgb(39,135,217)');
-        })
+      Row() {
+        Button('Valid')
+          .id('GetFrameNodeById_testValidButton')
+          .onClick(() => {
+            this.myNodeController.testValidUniqueId(this.myNodeController.testNodeId);
+          })
 
-      Button('Test Empty String')
-        .id('testEmptyStringButton')
-        .onClick(() => {
-          this.myNodeController.testEmptyString();
-        })
+        Button('Empty')
+          .id('GetFrameNodeById_testEmptyStringButton')
+          .onClick(() => {
+            this.myNodeController.testEmptyString();
+          })
+      }.height('10%')
 
-      Button('Test Non Existent Node')
-        .id('testNonExistentNodeButton')
-        .onClick(() => {
-          this.myNodeController.testNonExistentNode();
-        })
+      Row() {
+        Button('Non Exist')
+          .id('GetFrameNodeById_testNonExistentNodeButton')
+          .onClick(() => {
+            this.myNodeController.testNonExistentNode();
+          })
 
-      Button('Test Duplicate Node Id')
-        .id('testDuplicateNodeButton')
-        .onClick(() => {
-          this.myNodeController.testDuplicateNodeId();
-        })
+        Button('Duplicate')
+          .id('GetFrameNodeById_testDuplicateNodeButton')
+          .onClick(() => {
+            this.myNodeController.testDuplicateNodeId();
+          })
+      }.height('10%')
     }.width('100%')
-    .padding(20)
   }
 }

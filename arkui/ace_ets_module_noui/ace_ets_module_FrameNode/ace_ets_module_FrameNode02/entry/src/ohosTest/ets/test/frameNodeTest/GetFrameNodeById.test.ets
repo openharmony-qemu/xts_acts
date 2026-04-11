@@ -55,17 +55,17 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('testNode');
+      let strJson = getInspectorByKey('GetFrameNodeById_testNode');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('GetFrameNodeByIdTest_0100 obj backgroundColor:' + obj.$attrs.backgroundColor);
       expect(obj.$attrs.backgroundColor).assertEqual('#FFFFFF00');
 
-      console.info('GetFrameNodeByIdTest_0100 click setButton');
-      let button = await driver.findComponent(ON.id('setButton'));
+      console.info('GetFrameNodeByIdTest_0100 click GetFrameNodeById_testValidButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testValidButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
-      let strJsonAfter = getInspectorByKey('testNode');
+      let strJsonAfter = getInspectorByKey('GetFrameNodeById_testNode');
       let objAfter: Record<string, ESObject> = JSON.parse(strJsonAfter);
       console.info('GetFrameNodeByIdTest_0100 objAfter backgroundColor:' + objAfter.$attrs.backgroundColor);
       expect(objAfter.$attrs.backgroundColor).assertEqual('#FF2787D9');
@@ -86,17 +86,22 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0200 click testDuplicateNodeButton');
-      let button = await driver.findComponent(ON.id('testDuplicateNodeButton'));
+      console.info('GetFrameNodeByIdTest_0200 click GetFrameNodeById_testDuplicateNodeButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testDuplicateNodeButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       expect(AppStorage.get('getFrameNodeByIdDuplicateResult')).not().assertNull();
       AppStorage.delete('getFrameNodeByIdDuplicateResult');
 
-      let strJson = getInspectorByKey('duplicateNode');
+      let strJson = getInspectorByKey('GetFrameNodeById_duplicateNode');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('Duplicate Node 1');
+
+      console.info("[GetFrameNodeByIdTest_0200] obj width is: " + obj.$attrs.width));
+      console.info("[GetFrameNodeByIdTest_0200] obj height is: " + obj.$attrs.height);
+      expect(obj.$attrs.width).assertEqual('150.00vp');
+      expect(obj.$attrs.height).assertEqual('60.00vp');
 
       console.info('[GetFrameNodeByIdTest_0200] END');
     })
@@ -114,8 +119,8 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0300 click testEmptyStringButton');
-      let button = await driver.findComponent(ON.id('testEmptyStringButton'));
+      console.info('GetFrameNodeByIdTest_0300 click GetFrameNodeById_testEmptyStringButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testEmptyStringButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -138,8 +143,8 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0400 click testNullButton');
-      let button = await driver.findComponent(ON.id('testNullButton'));
+      console.info('GetFrameNodeByIdTest_0400 click GetFrameNodeById_testNullButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testNullButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -162,8 +167,8 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0500 click testUndefinedButton');
-      let button = await driver.findComponent(ON.id('testUndefinedButton'));
+      console.info('GetFrameNodeByIdTest_0500 click GetFrameNodeById_testUndefinedButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testUndefinedButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -186,8 +191,8 @@ export default function GetFrameNodeByIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      console.info('GetFrameNodeByIdTest_0600 click testNonExistentNodeButton');
-      let button = await driver.findComponent(ON.id('testNonExistentNodeButton'));
+      console.info('GetFrameNodeByIdTest_0600 click GetFrameNodeById_testNonExistentNodeButton');
+      let button = await driver.findComponent(ON.id('GetFrameNodeById_testNonExistentNodeButton'));
       await button.click();
       await CommonFunc.sleep(1000);
 
