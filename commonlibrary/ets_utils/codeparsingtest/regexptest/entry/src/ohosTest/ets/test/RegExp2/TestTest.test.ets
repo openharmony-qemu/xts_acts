@@ -402,7 +402,7 @@ export default function testTest() {
 
       /**
        * @tc.name testTest0123
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_2201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0400
        * @tc.desc   Test d flag unsupported when hasIndices not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1426,7 +1426,7 @@ export default function testTest() {
 
       /**
        * @tc.name testTest0191
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_8901
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0500
        * @tc.desc   Test compile absent when not on prototype
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

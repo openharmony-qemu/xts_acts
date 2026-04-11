@@ -111,7 +111,7 @@ export default function execBasicTest() {
 
     /**
      * @tc.name testExec0105
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0510
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_1100
      * @tc.desc   Test exec returns null when pattern does not match
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

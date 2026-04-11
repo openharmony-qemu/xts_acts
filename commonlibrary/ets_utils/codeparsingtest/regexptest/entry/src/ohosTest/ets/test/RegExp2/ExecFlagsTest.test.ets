@@ -113,7 +113,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExec0105
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0501
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0700
      * @tc.desc   Test d flag unsupported when hasIndices not available
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

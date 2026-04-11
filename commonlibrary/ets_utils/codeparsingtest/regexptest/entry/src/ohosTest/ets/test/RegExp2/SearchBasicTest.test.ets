@@ -187,7 +187,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4300
       * @tc.desc   Test dotAll flag unsupported when not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4400
       * @tc.desc   Test d flag unsupported when hasIndices not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -337,7 +337,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0121
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1901
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4500
       * @tc.desc   Test unicode property escapes unsupported when not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0128
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2501
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4600
       * @tc.desc   Test lookbehind unsupported when not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -506,7 +506,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0132
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2801
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4700
       * @tc.desc   Test coerces object/array to string when pattern is not comma
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -777,7 +777,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearch0147
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4800
       * @tc.desc   Test Hiragana script property unsupported when not available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

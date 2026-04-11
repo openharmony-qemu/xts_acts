@@ -89,7 +89,7 @@ export default function execSpecialTest() {
 
     /**
      * @tc.name testExec0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0301
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0500
      * @tc.desc   Test positive lookbehind yields no match when unsupported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function execSpecialTest() {
 
     /**
      * @tc.name testExec0105
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0401
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0600
      * @tc.desc   Test negative lookbehind yields no match when unsupported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

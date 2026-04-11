@@ -54,7 +54,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAll0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_UNSUPPORTED_TEST_0100
        * @tc.desc   Test positive lookbehind unsupported when pattern invalid
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAll0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_UNSUPPORTED_TEST_0200
        * @tc.desc   Test negative lookahead unsupported when pattern invalid
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAll0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0301
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_UNSUPPORTED_TEST_0300
        * @tc.desc   Test matchAll digits via \\d when unicode property escapes unsupported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
