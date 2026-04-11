@@ -803,7 +803,6 @@ export default function HiAppEvent1() {
         holder2.setSize(null);
         console.info("====> hiAppEventdfx10_size_null write undefined end 01");
         done();
-
       }catch(err){
         console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
         expect(Number(err.code) === 401).assertTrue();
