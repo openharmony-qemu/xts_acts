@@ -15,12 +15,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
 import image from '@ohos.multimedia.image';
-import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting, Camera_SmoothZoomMode } from './Constants';
-import account from '@ohos.account.osAccount';
-import MediaUtils from './MediaUtils';
-import media from '@ohos.multimedia.media';
-import { bundleManager } from '@kit.AbilityKit';
-import { abilityAccessCtrl, Context, PermissionRequestResult, common, Permissions } from '@kit.AbilityKit';
+import { Camera_SceneMode, Parameter_Setting } from './Constants';
+import { abilityAccessCtrl, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 
@@ -29,12 +25,8 @@ const CAMERA_OK = 0;
 const CAMERA_INVALID_ARGUMENT = 7400101;
 const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
 const CAMERA_SESSION_NOT_CONFIG = 7400103;
-const CAMERA_SERVICE_FATAL_ERROR = 7400201;
-const COLOR_SPACE_NOT_SUPPORTED = 3;
 let receiver: image.ImageReceiver;
 let mPhotoSurface: string;
-
-let mediaUtil = MediaUtils.getInstance();
 
 function setSceneMode(index_sceneMode: number) {
   let ret = cameraObj.oHCameraManagerSetSceneMode(index_sceneMode);
@@ -73,42 +65,6 @@ function getCameraManagerInstance() {
   }
 }
 
-function getSupportedFrameRates() {
-  let ret = cameraObj.oHPreviewOutputGetSupportedFrameRates(Parameter_Setting.ALL_PARAMETER_OK);
-  if (ret.errorCode != 0) {
-    console.error(TAG + "getSupportedFrameRates FAILED");
-    expect().assertFail();
-  }
-  return ret.frameRatesSize;
-}
-
-function getActiveFrameRate() {
-  let ret = cameraObj.oHPreviewOutputGetActiveFrameRate(Parameter_Setting.ALL_PARAMETER_OK);
-  if (ret.errorCode != 0) {
-    console.error(TAG + "getActiveFrameRate FAILED");
-    expect().assertFail();
-  }
-  return ret;
-}
-
-function getActiveColorSpace() {
-  let cameraInfo = cameraObj.oHCaptureSessionGetActiveColorSpace(Parameter_Setting.ALL_PARAMETER_OK);
-  if (cameraInfo.errorCode != 0) {
-    console.error(TAG + "getActiveColorSpace FAILED");
-    expect().assertFail();
-  }
-  return cameraInfo.activeColorSpace;
-}
-
-function getSupportedColorSpaces() {
-  let mPhotoOutput = cameraObj.oHCaptureSessionGetSupportedColorSpaces(Parameter_Setting.ALL_PARAMETER_OK);
-  if (mPhotoOutput.errorCode != 0) {
-    console.error(TAG + "getSupportedColorSpaces FAILED");
-    expect().assertFail();
-  }
-  return mPhotoOutput.colorSpacesSize;
-}
-
 function createCaptureSession() {
   console.info(TAG + "createCaptureSession start.");
   let ret = cameraObj.createSession();
@@ -120,24 +76,6 @@ function createCaptureSession() {
   if (registerCallback != 0) {
     console.error(TAG + "SessionRegisterCallback FAILED");
     expect().assertFail();
-  }
-}
-
-function addVideoOutput() {
-  let canAddVideoOutput = cameraObj.oHCaptureSessionCanAddVideoOutput(Parameter_Setting.ALL_PARAMETER_OK);
-  if (canAddVideoOutput.errorCode != 0) {
-    console.error(TAG + "canAddVideoOutput FAILED" + canAddVideoOutput.errorCode);
-    expect().assertFail();
-  }
-  console.info(TAG + "canAddVideoOutput: " + canAddVideoOutput.isAddVideoOutput);
-  if (!canAddVideoOutput.isAddVideoOutput) {
-    console.error(TAG + "addVideoOutput FAILED");
-  } else {
-    let addVideoOutput = cameraObj.sessionAddVideoOutput();
-    if (addVideoOutput != 0) {
-      console.error(TAG + "addVideoOutput FAILED" + addVideoOutput);
-      expect().assertFail();
-    }
   }
 }
 
@@ -196,15 +134,6 @@ function getSupportedCameraOutputCapability() {
   return true;
 }
 
-function getSupportedFullCameraOutputCapability() {
-  let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
-    Parameter_Setting.ALL_PARAMETER_OK);
-  if (ret != 0) {
-    console.error(TAG + "getSupportedFullCameraOutputCapability FAILED");
-    expect().assertFail();
-  }
-}
-
 function getSupportedCameraFullOutputCapability() {
   let cameraOutputCapability = cameraObj.getSupportedFullOutputCapability();
   console.info(TAG + 'cameraOutputCapability[0] = ' + cameraOutputCapability.previewProfilesSize);
@@ -212,9 +141,6 @@ function getSupportedCameraFullOutputCapability() {
   console.info(TAG + 'cameraOutputCapability[2] = ' + cameraOutputCapability.videoProfilesSize);
   console.info(TAG + 'cameraOutputCapability[3] = ' + cameraOutputCapability.metadataProfilesSize);
   return true;
-}
-function adjustHeifIdx(idx: number) {
-  return cameraObj.adjustHeifIdx(idx);
 }
 
 function setSessionMode() {
@@ -266,34 +192,6 @@ function sessionFlow() {
   }
 }
 
-function createPhotoOutputUsedInPreconfig(canPreconfig: boolean) {
-  if (canPreconfig) {
-    let ret = cameraObj.oHCameraManagerCreatePhotoOutputUsedInPreconfig(mPhotoSurface, 0);
-    if (ret != 0) {
-      console.error(TAG + "createPhotoOutputUsedInPreconfig FAILED");
-      expect().assertFail();
-    }
-  } else {
-    createPhotoOutput();
-  }
-}
-
-function createPhotoOutputWithoutSurface() {
-  let ret = cameraObj.oHCameraManagerCreatePhotoOutputWithoutSurface(Parameter_Setting.ALL_PARAMETER_OK);
-  if (ret != 0) {
-    console.error(TAG + "createPhotoOutputWithoutSurface FAILED");
-    expect().assertFail();
-  }
-}
-
-function createYuvPhotoOutputWithoutSurface() {
-  let ret = cameraObj.oHCameraManagerCreateYuvPhotoOutputWithoutSurface(Parameter_Setting.ALL_PARAMETER_OK);
-  if (ret != 0) {
-    console.error(TAG + "createPhotoOutputWithoutSurface FAILED");
-    expect().assertFail();
-  }
-}
-
 function sessionCommitConfig() {
   let commitConfig = cameraObj.sessionCommitConfig();
   if (commitConfig != 0) {
@@ -320,19 +218,6 @@ function addPhotoOutput() {
   }
 }
 
-function captureSessionstart() {
-  getCameraManagerInstance();
-  createCaptureSession();
-  getSupportedCamerasInstance();
-  getSupportedCameraOutputCapability();
-  getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
-  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
-  setSessionMode();
-  createPreviewOutput();
-  createCameraInput();
-  sessionFlow();
-}
-
 function PhysicalcaptureSessionstart() {
   getCameraManagerInstance();
   createCaptureSession();
@@ -349,64 +234,10 @@ function PhysicalcaptureSessionstart() {
   return false;
 }
 
-async function yuvCaptureSessionstart() {
-  createPreviewOutput();
-  createCameraInput();
-  sessionFlow();
-  getSupportedFullCameraOutputCapability();
-  createYuvPhotoOutputWithoutSurface();
-  addPhotoOutput();
-  sessionStart();
-  cameraObj.photoOutputCapture();
-  await sleep(5000);
-}
-
-function heifCaptureSessionstart(i: number) {
-  getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
-  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
-  setSessionMode();
-  createHeifPreviewOutput();
-  createCameraInput();
-  sessionFlow();
-  let ret = createHeifPhotoOutput(i);
-  addPhotoOutput();
-  sessionCommitConfig();
-  return ret;
-}
-
-function nativeBufferColorSpace() {
-  let ret = cameraObj.oHNativeBufferColorSpace();
-  console.info(TAG + "oHNativeBufferColorSpace.colorSpaceSupportSize: " + ret.colorSpaceSupportSize);
-  console.info(TAG + "oHNativeBufferColorSpace.colorSpacesSize: " + ret.colorSpacesSize);
-  console.info(TAG + "oHNativeBufferColorSpace.setcolorSpace: " + ret.setcolorSpace);
-  return ret;
-}
-
 function createPreviewOutput() {
 
   cameraObj.getSupportedFullOutputCapability();
 
-  let previewProfiles = cameraObj.getPreviewProfiles();
-  console.info("previewProfiles is "+ JSON.stringify(previewProfiles));
-  let previewProfileIndex = 0;
-  let previewProfileHeigth = 1080;
-  let previewProfileWidth = 1920;
-  //View the previewprofile with an aspect ratio of 4:3
-  for (let i = 0; i < previewProfiles.length; i++) {
-    if (Math.abs((previewProfiles[i].width / previewProfiles[i].height) - (4 / 3)) < 0.1) {
-      previewProfileWidth = previewProfiles[i].width;
-      previewProfileHeigth = previewProfiles[i].height;
-      previewProfileIndex = i;
-      break;
-    }
-  }
-  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
-    console.info(TAG + "createPreviewOutput FAILED");
-    expect().assertFail();
-  }
-}
-
-function createHeifPreviewOutput() {
   let previewProfiles = cameraObj.getPreviewProfiles();
   console.info("previewProfiles is "+ JSON.stringify(previewProfiles));
   let previewProfileIndex = 0;
@@ -435,11 +266,6 @@ function createPhotoOutput() {
   }
 }
 
-function createHeifPhotoOutput(i: number) {
-  let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
-  return mPhotoOutput;
-}
-
 function releaseCamera() {
   let ret = cameraObj.releaseCamera();
   if (ret != 0) {
@@ -448,22 +274,46 @@ function releaseCamera() {
   }
 }
 
-function sessionStart() {
-  let commitConfig = cameraObj.sessionCommitConfig();
-  if (commitConfig != 0) {
-    console.error(TAG + "commitConfig FAILED");
-    expect().assertFail();
-  }
-
-  let start = cameraObj.sessionStart();
-  if (start != 0) {
-    console.error(TAG + "start FAILED");
-    expect().assertFail();
-  }
+let getPermissions1 = () => {
+  let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let permissions: Array<Permissions> = ['ohos.permission.CAMERA'];
+  atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {
+    console.info('data:' + JSON.stringify(data))
+    console.info('data permissions:' + data.permissions)
+  }).catch((err: BusinessError) => {
+    console.info('data:' + JSON.stringify(err))
+  })
 }
 
-function readyCreatePhotoOutputWithoutSurface() {
-  let ret = cameraObj.readyCreatePhotoOutputWithoutSurface();
+let getPermissions2 = () => {
+  let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let permissions: Array<Permissions> = ['ohos.permission.MICROPHONE'];
+  atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {
+    console.info('data:' + JSON.stringify(data))
+    console.info('data permissions:' + data.permissions)
+  }).catch((err: BusinessError) => {
+    console.info('data:' + JSON.stringify(err))
+  })
+}
+
+function sleep(ms: number) {
+  return new Promise<number>(resolve => setTimeout(resolve, ms));
+}
+
+let driveFn = async () => {
+  let dr = Driver.create();
+  await sleep(500);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  await sleep(500);
+  await power?.click();
+  await sleep(500);
+}
+
+function isEmpty(data: cameraObj.cameraInfo | number) {
+  if (data == null || data == undefined) {
+    return true;
+  }
+  return false;
 }
 
 export default function CameraDevicePropertyTest() {
