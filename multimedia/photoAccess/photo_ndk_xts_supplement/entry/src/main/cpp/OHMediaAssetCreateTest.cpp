@@ -74,6 +74,7 @@
 #define IMAGE_EFFECT_5120 5120
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
+#define MinSize 480
 
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "OHMediaAssetCreateTestNDK"
@@ -213,12 +214,12 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     Camera_Profile *photoProfile = NULL;
     for (int i = 0; i < cameraOutputCapability->previewProfilesSize; i++) {
         Camera_Profile *currPre = cameraOutputCapability->previewProfiles[i];
-        if (currPre->size.width < 480 || currPre->size.height < 480) {
+        if (currPre->size.width < MinSize || currPre->size.height < MinSize) {
             continue;
         }
         for (int j = 0; j < cameraOutputCapability->photoProfilesSize; j++) {
             Camera_Profile *currPhoto = cameraOutputCapability->photoProfiles[j];
-            if (currPhoto->size.width < 480 || currPhoto->size.height < 480) {
+            if (currPhoto->size.width < MinSize || currPhoto->size.height < MinSize) {
                 continue;
             }
             if (currPre->size.width * currPhoto->size.height == currPhoto->size.width * currPre->size.height) {
