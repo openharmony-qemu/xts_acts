@@ -1985,6 +1985,63 @@ export default function deviceInfoTest() {
         expect(dv.getBigInt64(i * 8, true)).assertEqual(source[i]);
       }
 
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf, 0, 0);
+      const dv: DataView = new DataView(buf);
+      expect(bigInt64Arr.length).assertEqual(0);
+      expect(bigInt64Arr.byteLength).assertEqual(0);
+      expect(bigInt64Arr.buffer).assertEqual(buf);
+      dv.setBigInt64(0, 100n, true);
+      expect(dv.getBigInt64(0, true)).assertEqual(100n);
+
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const parentArr: BigInt64Array = new BigInt64Array(buf);
+      parentArr.set([1n, 2n, 3n]);
+      const subArr: BigInt64Array = parentArr.subarray(1, 3);
+      const dv: DataView = new DataView(buf);
+      subArr[0] = 20n;
+      subArr[1] = 30n;
+      expect(parentArr[1]).assertEqual(20n);
+      expect(parentArr[2]).assertEqual(30n);
+      expect(dv.getBigInt64(8, true)).assertEqual(20n);
+      expect(dv.getBigInt64(16, true)).assertEqual(30n);
+      dv.setBigInt64(0, 10n, true);
+      expect(parentArr[0]).assertEqual(10n);
+      expect(parentArr.length).assertEqual(3);
+      expect(subArr[0]).assertEqual(20n);
+      expect(subArr[1]).assertEqual(30n);
+      expect(subArr.length).assertEqual(2);
+
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const originalArr: BigInt64Array = new BigInt64Array(buf);
+      originalArr.set([10n, 20n]);
+      const slicedArr: BigInt64Array = originalArr.slice(0, 1);
+      const dv: DataView = new DataView(buf);
+      slicedArr[0] = 100n;
+      expect(originalArr[0]).assertEqual(10n);
+      expect(dv.getBigInt64(0, true)).assertEqual(10n);
+      dv.setBigInt64(0, 200n, true);
+      expect(originalArr[0]).assertEqual(200n);
+      expect(originalArr[1]).assertEqual(20n);
+      expect(slicedArr[0]).assertEqual(100n);
+      expect(slicedArr.length).assertEqual(1);
+      expect(originalArr.length).assertEqual(2);
+
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const dv: DataView = new DataView(buf);
+      let isRangeError: boolean = false;
+      try {
+        dv.getBigInt64(1, true);
+      } catch (e) {
+        isRangeError = (e as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
+      try {
+        dv.setBigInt64(8, 10n, true);
+      } catch (e) {
+        isRangeError = (e as Error).name === 'RangeError';
+      }
+      expect(isRangeError).assertEqual(true);
 
       });
     })
