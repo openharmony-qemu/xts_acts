@@ -646,3 +646,9 @@ export const oHCameraTestLogicCamDevsNullCam: () => number;
 export const oHCameraTestLogicCamDevsNullData: () => number;
 export const oHCameraTestLogicCamDevsNullSize: () => number;
 export const oHCameraTestLogicCamDevs: () => number;
+
+export const oHDeleteConstituentCameraDevices: (index:number) => number;
+
+export const oHGetLensFocalLength: (index:number) => number;
+
+export const oHGetMinimumFocusDistance: (index:number) => number;

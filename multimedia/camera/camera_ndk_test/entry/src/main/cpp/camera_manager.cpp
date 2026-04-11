@@ -4242,3 +4242,65 @@ Camera_ErrorCode NDKCamera::TestLogicCamDevs()
     return OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(
         &cameras_[cameraDeviceIndex_], &data, &size);
 }
+
+Camera_ErrorCode NDKCamera::DeleteConstituentCameraDevices(int useCaseCode)
+{
+    LOG("DeleteConstituentCameraDevices begin.");
+    ret_ = CAMERA_OK;
+    Camera_Device* constituentCameras;
+    uint32_t size;
+    for (int32_t i = 0; i < size_; i++) {
+        OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(&cameras_[i], &constituentCameras, &size);
+        LOG("ConstituentCamera ret:%{public}d.", ret_);
+        LOG("size size:%{public}d.", size);
+        if (useCaseCode == CAMERA_OK) {
+            if (size > 0) {
+                ret_ = OH_CameraDevice_DeleteConstituentCameraDevices(&cameras_[i], constituentCameras, size);
+                LOG("ConstituentCamera ret:%{public}d.", ret_);
+            } else {
+                ret_ = CAMERA_OK;
+            }
+        } else if (useCaseCode == PARAMETER1_ERROR) {
+            ret_ = OH_CameraDevice_DeleteConstituentCameraDevices(nullptr, constituentCameras, size);
+        } else if (useCaseCode == PARAMETER2_ERROR) {
+            ret_ = OH_CameraDevice_DeleteConstituentCameraDevices(&cameras_[i], nullptr, size);
+        }
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetLensFocalLength(int useCaseCode)
+{
+    LOG("GetLensFocalLength begin.");
+    ret_ = CAMERA_OK;
+    for (int32_t i = 0; i < size_; i++) {
+        float lensFocalLength;
+        if (useCaseCode == CAMERA_OK) {
+            ret_ = OH_CameraDevice_GetLensFocalLength(&cameras_[i], &lensFocalLength);
+            LOG("GetLensFocalLength ret:%{public}d.", lensFocalLength);
+        } else if (useCaseCode == PARAMETER1_ERROR) {
+            ret_ = OH_CameraDevice_GetLensFocalLength(nullptr, &lensFocalLength);
+        } else if (useCaseCode == PARAMETER2_ERROR) {
+            ret_ = OH_CameraDevice_GetLensFocalLength(&cameras_[i], nullptr);
+        }
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetMinimumFocusDistance(int useCaseCode)
+{
+    LOG("GetMinimumFocusDistance begin.");
+    ret_ = CAMERA_OK;
+    for (int32_t i = 0; i < size_; i++) {
+        float minimumFocusDistance;
+        if (useCaseCode == CAMERA_OK) {
+            ret_ = OH_CameraDevice_GetMinimumFocusDistance(&cameras_[i], &minimumFocusDistance);
+            LOG("minimumFocusDistance ret:%{public}d.", minimumFocusDistance);
+        } else if (useCaseCode == PARAMETER1_ERROR) {
+            ret_ = OH_CameraDevice_GetMinimumFocusDistance(nullptr, &minimumFocusDistance);
+        } else if (useCaseCode == PARAMETER2_ERROR) {
+            ret_ = OH_CameraDevice_GetMinimumFocusDistance(&cameras_[i], nullptr);
+        }
+    }
+    return ret_;
+}

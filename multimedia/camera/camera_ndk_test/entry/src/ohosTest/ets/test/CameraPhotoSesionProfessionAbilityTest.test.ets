@@ -881,6 +881,150 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0300 ends here");
       await releaseCameraSessionInstance();
     });
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100
+     * @tc.desc   Check capture session Delete Constituent CameraDevices CAMERA_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100--------------");
+      let ret = cameraObj.oHDeleteConstituentCameraDevices(0);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_OK)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0100 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200
+     * @tc.desc   Check capture session Delete Constituent CameraDevices  Errcode CAMERA_INVALID_ARGUMENT ,logicalCamera is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200--------------");
+      let ret = cameraObj.oHDeleteConstituentCameraDevices(1);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0200 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300
+     * @tc.desc   Check capture session Delete Constituent CameraDevices  Errcode CAMERA_INVALID_ARGUMENT ,constituentCameras is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300--------------");
+      let ret = cameraObj.oHDeleteConstituentCameraDevices(2);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_DELETE_CONSTIUENT_CAMERADEVICES_0300 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100
+     * @tc.desc   Check capture session get lensfocal length CAMERA_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100--------------");
+      let ret = cameraObj.oHGetLensFocalLength(0);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_OK)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0100 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200
+     * @tc.desc   Check capture session get lensfocal length  Errcode CAMERA_INVALID_ARGUMENT ,camera is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200--------------");
+      let ret = cameraObj.oHGetLensFocalLength(1);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0200 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300
+     * @tc.desc   Check capture session get lensfocal length  Errcode CAMERA_INVALID_ARGUMENT ,lensFocalLength is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300--------------");
+      let ret = cameraObj.oHGetLensFocalLength(2);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_LENSFOCAL_LENGTH_0300 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100
+     * @tc.desc   Check capture session get minimum focus distance CAMERA_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100--------------");
+      let ret = cameraObj.oHGetMinimumFocusDistance(0);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_OK)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0100 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200
+     * @tc.desc   Check capture session get minimum focus distance  Errcode CAMERA_INVALID_ARGUMENT ,camera is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200--------------");
+      let ret = cameraObj.oHGetMinimumFocusDistance(1);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0200 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300
+     * @tc.desc   Check capture session get minimum focus distance  Errcode CAMERA_INVALID_ARGUMENT ,minimumFocusDistance is null 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300--------------");
+      let ret = cameraObj.oHGetMinimumFocusDistance(2);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_MINIMUM_FOCUS_DISTANCE_0300 ends here");
+    });
 
   })
 }

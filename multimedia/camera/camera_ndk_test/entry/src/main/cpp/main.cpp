@@ -3643,6 +3643,57 @@ static napi_value OHCameraTestLogicCamDevs(napi_env env, napi_callback_info info
     return result;
 }
 
+static napi_value DeleteConstituentCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->DeleteConstituentCameraDevices(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetLensFocalLength(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetLensFocalLength(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetMinimumFocusDistance(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetMinimumFocusDistance(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3962,6 +4013,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "oHgetIso", nullptr, getIso, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "oHsetIso", nullptr, setIso, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHDeleteConstituentCameraDevices", nullptr, DeleteConstituentCameraDevices, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetLensFocalLength", nullptr, GetLensFocalLength, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetMinimumFocusDistance", nullptr, GetMinimumFocusDistance, nullptr, nullptr,
             nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
