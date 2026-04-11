@@ -154,7 +154,6 @@ napi_value OHMIDIClientGetDeviceCountInvalidCount(napi_env env, napi_callback_in
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             ret = OH_MIDIClient_GetDeviceCount(client, nullptr);
             if (ret == OH_MIDI_STATUS_GENERIC_INVALID_ARGUMENT) {
@@ -200,7 +199,6 @@ napi_value OHMIDIClientGetDeviceInfosInvalidInfos(napi_env env, napi_callback_in
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             size_t capacity = 0;
             size_t actualDeviceCount = 0;
@@ -228,7 +226,6 @@ napi_value OHMIDIClientGetDeviceInfosInvalidDeviceCount(napi_env env, napi_callb
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             OH_MIDIDeviceInformation* infos = (OH_MIDIDeviceInformation*)malloc(sizeof(OH_MIDIDeviceInformation));
             size_t capacity = 0;
@@ -257,7 +254,6 @@ napi_value OHMIDIClientOpenDeviceInvalidClient(napi_env env, napi_callback_info 
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             OH_MIDIDevice* device = nullptr;
@@ -286,7 +282,6 @@ napi_value OHMIDIClientOpenDeviceInvalidDevice(napi_env env, napi_callback_info 
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             ret = OH_MIDIClient_OpenDevice(client, deviceId, nullptr);
@@ -348,7 +343,6 @@ napi_value OHMIDIClientCloseDeviceInvalidDevice(napi_env env, napi_callback_info
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             OH_MIDIStatusCode ret = OH_MIDIClient_CloseDevice(client, nullptr);
             if (ret == OH_MIDI_STATUS_INVALID_DEVICE_HANDLE) {
@@ -392,7 +386,6 @@ napi_value OHMIDIClientGetPortCountInvalidDeviceId(napi_env env, napi_callback_i
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             size_t count = 0;
@@ -420,7 +413,6 @@ napi_value OHMIDIClientGetPortCountInvalidCount(napi_env env, napi_callback_info
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             ret = OH_MIDIClient_GetPortCount(client, deviceId, nullptr);
@@ -469,7 +461,6 @@ napi_value OHMIDIClientGetPortInfosInvalidDeviceId(napi_env env, napi_callback_i
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             OH_MIDIPortInformation* infos = (OH_MIDIPortInformation*)malloc(sizeof(OH_MIDIPortInformation));
@@ -501,7 +492,6 @@ napi_value OHMIDIClientGetPortInfosInvalidInfos(napi_env env, napi_callback_info
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             size_t capacity = 0;
@@ -531,7 +521,6 @@ napi_value OHMIDIClientGetPortInfosInvalidPortCount(napi_env env, napi_callback_
         OH_MIDIStatusCode ret;
         OH_MIDIClient* client = nullptr;
         ret = OH_MIDIClient_Create(&client, callbacks, userData);
-
         if (ret == OH_MIDI_STATUS_OK && client != nullptr) {
             int64_t deviceId = 0;
             OH_MIDIPortInformation* infos = (OH_MIDIPortInformation*)malloc(sizeof(OH_MIDIPortInformation));
