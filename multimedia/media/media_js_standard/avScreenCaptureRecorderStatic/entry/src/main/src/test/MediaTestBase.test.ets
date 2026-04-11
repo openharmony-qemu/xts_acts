@@ -245,7 +245,7 @@ export default class MediaTestBase {
         break;
       case 'excludePickerWindows':
         steps.shift();
-        let excludedWindows: Array<number> = [101, 102, 103];
+        let excludedWindows: Array<int> = [101, 102, 103];
         await avScreenCaptureRecorder!!.excludePickerWindows(excludedWindows).then(() => {
           console.info('avScreenCaptureRecorder excludePickerWindows success');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
