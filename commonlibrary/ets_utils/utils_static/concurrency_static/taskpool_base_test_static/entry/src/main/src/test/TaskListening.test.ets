@@ -23,6 +23,7 @@ export function asyncSleep(time: int): Promise<void> {
     }, time)
   })
 }
+
 async function promiseCase(): Promise<void> {
   await asyncSleep(100)
 }
@@ -63,74 +64,75 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest001';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onReceiveCount: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest001';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onReceiveCount: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let outerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-      outerTask.onEnqueued(() => {
-        console.log(`${caseName} outer onEnqueued start`);
-        onEnqueue++;
-        let innerTask1: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask1.onEnqueued(() => {
-          onEnqueue++;
+        let outerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+        outerTask.onEnqueued(() => {
+          console.log(`${caseName} outer onEnqueued start`);
+          onEnqueue.fetchAdd(1);
+          let innerTask1: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask1.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask1.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask1.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          innerTask1.onReceiveData((data: int) => {
+            onReceiveData = data;
+            onReceiveCount++;
+          })
+          taskpool.execute(innerTask1).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask1.onStartExecution(() => {
-          onStartExecution++;
+
+        outerTask.onStartExecution(() => {
+          onStartExecution.fetchAdd(1);
         })
-        innerTask1.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        innerTask1.onReceiveData((data: int) => {
-          onReceiveData = data;
+
+        outerTask.onReceiveData((data: int) => {
           onReceiveCount++;
         })
-        taskpool.execute(innerTask1).then((res) => {
-          console.log(`${caseName} inner task executed`);
+        outerTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
+        })
+
+        outerTask.onExecutionFailed(() => {
+          onExecutionFailed.fetchAdd(1);
+        })
+
+        taskpool.execute(outerTask, taskpool.Priority.HIGH).then((res) => {
+          console.log(`${caseName} outer task executed`);
           count++;
         });
-      })
 
-      outerTask.onStartExecution(() => {
-        onStartExecution++;
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        expect(onExecutionFailed.load()).assertEqual(0);
+        expect(onReceiveData).assertEqual(100);
+        expect(onReceiveCount).assertEqual(2);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      outerTask.onReceiveData((data: int) => {
-        onReceiveCount++;
-      })
-      outerTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      outerTask.onExecutionFailed(() => {
-        onExecutionFailed++;
-      })
-
-      taskpool.execute(outerTask, taskpool.Priority.HIGH).then((res) => {
-        console.log(`${caseName} outer task executed`);
-        count++;
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(2);
-      expect(onExecutionFailed).assertEqual(0);
-      expect(onReceiveData).assertEqual(100);
-      expect(onReceiveCount).assertEqual(2);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest002
@@ -140,83 +142,84 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest002';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
-      let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup('testGroup');
-      // Add main task to group
-      let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
-      mainTask.onEnqueued(() => {
-        console.log(`${caseName} main task onEnqueued start`);
-        onEnqueue++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+    it('TaskAllListeningTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest002';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup('testGroup');
+        // Add main task to group
+        let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
+        mainTask.onEnqueued(() => {
+          console.log(`${caseName} main task onEnqueued start`);
+          onEnqueue.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
+
+        mainTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
+
+        // Add additional tasks to group
+        let task1: taskpool.Task = new taskpool.Task(sleepFunc, 50);
+        task1.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+        task1.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
-          count++;
+
+        let task2: taskpool.Task = new taskpool.Task(sleepFunc, 75);
+        task2.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
+        })
+        task2.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
+        })
+
+        taskGroup.addTask(mainTask);
+        taskGroup.addTask(task1);
+        taskGroup.addTask(task2);
+
+        taskpool.execute(taskGroup, taskpool.Priority.MEDIUM).then((res: Array<Any>) => {
+          console.log(`${caseName} taskGroup executed, result length: ${res.length}`);
+          count += res.length;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
-      })
 
-      mainTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
+        while (count < 4) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(4);
+        expect(onEnqueue.load()).assertEqual(4); // mainTask + 2 inner tasks + 2 additional tasks
+        expect(onExecutionSucceeded.load()).assertEqual(4);
+        expect(onStartExecution.load()).assertEqual(1);
+        expect(onReceiveData).assertEqual(100);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      // Add additional tasks to group
-      let task1: taskpool.Task = new taskpool.Task(sleepFunc, 50);
-      task1.onEnqueued(() => {
-        onEnqueue++;
-      })
-      task1.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      let task2: taskpool.Task = new taskpool.Task(sleepFunc, 75);
-      task2.onEnqueued(() => {
-        onEnqueue++;
-      })
-      task2.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      taskGroup.addTask(mainTask);
-      taskGroup.addTask(task1);
-      taskGroup.addTask(task2);
-
-      taskpool.execute(taskGroup, taskpool.Priority.MEDIUM).then((res: Array<Any>) => {
-        console.log(`${caseName} taskGroup executed, result length: ${res.length}`);
-        count += res.length;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 4) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(4);
-      expect(onEnqueue).assertEqual(4); // mainTask + 2 inner tasks + 2 additional tasks
-      expect(onExecutionSucceeded).assertEqual(4);
-      expect(onStartExecution).assertEqual(1);
-      expect(onReceiveData).assertEqual(100);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest003
@@ -226,67 +229,68 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest003';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest003';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.HIGH);
-      let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
+        let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.HIGH);
+        let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
 
-      mainTask.onEnqueued(() => {
-        console.log(`${caseName} main task onEnqueued start`);
-        onEnqueue++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        mainTask.onEnqueued(() => {
+          console.log(`${caseName} main task onEnqueued start`);
+          onEnqueue.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+
+        mainTask.onStartExecution(() => {
+          onStartExecution.fetchAdd(1);
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
+
+        mainTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        sequenceRunner.execute(mainTask).then((res) => {
+          console.log(`${caseName} sequence task executed`);
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
+
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        expect(onReceiveData).assertEqual(100);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      mainTask.onStartExecution(() => {
-        onStartExecution++;
-      })
-
-      mainTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      sequenceRunner.execute(mainTask).then((res) => {
-        console.log(`${caseName} sequence task executed`);
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(2);
-      expect(onReceiveData).assertEqual(100);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest005
@@ -296,70 +300,71 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest005';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest005';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let longTask: taskpool.LongTask = new taskpool.LongTask(sleepFunc, 100);
+        let longTask: taskpool.LongTask = new taskpool.LongTask(sleepFunc, 100);
 
-      longTask.onEnqueued(() => {
-        console.log(`${caseName} longTask onEnqueued start`);
-        onEnqueue++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        longTask.onEnqueued(() => {
+          console.log(`${caseName} longTask onEnqueued start`);
+          onEnqueue.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onReceiveData((data: int) => {
+
+        longTask.onStartExecution(() => {
+          onStartExecution.fetchAdd(1);
+        })
+
+        longTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
+        })
+
+        longTask.onReceiveData((data: int) => {
           onReceiveData = data;
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
-        })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        taskpool.execute(longTask, taskpool.Priority.IDLE).then((res) => {
+          console.log(`${caseName} longTask executed`);
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
+
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        expect(onReceiveData).assertEqual(100);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      longTask.onStartExecution(() => {
-        onStartExecution++;
-      })
-
-      longTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      longTask.onReceiveData((data: int) => {
-        onReceiveData = data;
-      })
-
-      taskpool.execute(longTask, taskpool.Priority.IDLE).then((res) => {
-        console.log(`${caseName} longTask executed`);
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(2);
-      expect(onReceiveData).assertEqual(100);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest006
@@ -369,71 +374,72 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest006';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
-      let result: int = 0;
+    it('TaskAllListeningTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest006';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
+        let result: int = 0;
 
-      let genericsTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+        let genericsTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
 
-      genericsTask.onStartExecution(() => {
-        console.log(`${caseName} genericsTask onStartExecution start`);
-        onStartExecution++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        genericsTask.onStartExecution(() => {
+          console.log(`${caseName} genericsTask onStartExecution start`);
+          onStartExecution.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onReceiveData((data: int) => {
+
+        genericsTask.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
+        })
+        genericsTask.onReceiveData((data: int) => {
           onReceiveData = data;
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
+
+        genericsTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        taskpool.execute(genericsTask, taskpool.Priority.HIGH).then((res) => {
+          console.log(`${caseName} genericsTask executed, result: ${res}`);
+          result = res as int;
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
-      })
 
-      genericsTask.onEnqueued(() => {
-        onEnqueue++;
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        expect(onReceiveData).assertEqual(100);
+        console.log(`${caseName} end.`);
+        done();
       })
-      genericsTask.onReceiveData((data: int) => {
-        onReceiveData = data;
-      })
-
-      genericsTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      taskpool.execute(genericsTask, taskpool.Priority.HIGH).then((res) => {
-        console.log(`${caseName} genericsTask executed, result: ${res}`);
-        result = res as int;
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(2);
-      expect(onReceiveData).assertEqual(100);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest007
@@ -443,65 +449,66 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest007';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest007';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let delayedTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
+        let delayedTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
 
-      delayedTask.onEnqueued(() => {
-        console.log(`${caseName} delayedTask onEnqueued start`);
-        onEnqueue++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        delayedTask.onEnqueued(() => {
+          console.log(`${caseName} delayedTask onEnqueued start`);
+          onEnqueue.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+
+        delayedTask.onStartExecution(() => {
+          onStartExecution.fetchAdd(1);
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
+        delayedTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        taskpool.executeDelayed(200, delayedTask, taskpool.Priority.MEDIUM).then((res) => {
+          console.log(`${caseName} delayed task executed`);
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
-      })
 
-      delayedTask.onStartExecution(() => {
-        onStartExecution++;
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        expect(onReceiveData).assertEqual(100);
+        console.log(`${caseName} end.`);
+        done();
       })
-      delayedTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      taskpool.executeDelayed(200, delayedTask, taskpool.Priority.MEDIUM).then((res) => {
-        console.log(`${caseName} delayed task executed`);
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(2);
-      expect(onReceiveData).assertEqual(100);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest009
@@ -511,70 +518,71 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest009';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest009';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let errorTask: taskpool.Task = new taskpool.Task(sleepFuncErr, 100);
+        let errorTask: taskpool.Task = new taskpool.Task(sleepFuncErr, 100);
 
-      errorTask.onExecutionFailed(() => {
-        console.log(`${caseName} errorTask onEnqueued start`);
-        onExecutionFailed++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        errorTask.onExecutionFailed(() => {
+          console.log(`${caseName} errorTask onEnqueued start`);
+          onExecutionFailed.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onStartExecution(() => {
+            onStartExecution.fetchAdd(1);
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+
+        errorTask.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
         })
-        innerTask.onStartExecution(() => {
-          onStartExecution++;
+        errorTask.onStartExecution(() => {
+          onStartExecution.fetchAdd(1);
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
+
+        errorTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        taskpool.execute(errorTask, taskpool.Priority.HIGH).then((res) => {
+          console.log(`${caseName} errorTask executed unexpectedly`);
+        }).catch((err: Error) => {
+          console.log(`${caseName} errorTask caught error: ${err}`);
           count++;
         });
-      })
 
-      errorTask.onEnqueued(() => {
-        onEnqueue++;
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(2);
+        expect(onStartExecution.load()).assertEqual(2);
+        expect(onExecutionSucceeded.load()).assertEqual(1);
+        expect(onExecutionFailed.load()).assertEqual(1);
+        expect(onReceiveData).assertEqual(50);
+        console.log(`${caseName} end.`);
+        done();
       })
-      errorTask.onStartExecution(() => {
-        onStartExecution++;
-      })
-
-      errorTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      taskpool.execute(errorTask, taskpool.Priority.HIGH).then((res) => {
-        console.log(`${caseName} errorTask executed unexpectedly`);
-      }).catch((err: Error) => {
-        console.log(`${caseName} errorTask caught error: ${err}`);
-        count++;
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(2);
-      expect(onStartExecution).assertEqual(2);
-      expect(onExecutionSucceeded).assertEqual(1);
-      expect(onExecutionFailed).assertEqual(1);
-      expect(onReceiveData).assertEqual(50);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest010
@@ -584,84 +592,85 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest010';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest010';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let runner = new taskpool.AsyncRunner(caseName, 50);
-      let task1: taskpool.Task = new taskpool.Task(sleepFunc, 50);
-      task1.onEnqueued(() => {
-        onEnqueue++;
-      })
-      task1.onExecutionSucceeded(() => {
-        console.log(`${caseName} task1 onExecutionSucceeded`);
-        onExecutionSucceeded++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        let runner = new taskpool.AsyncRunner(caseName, 50);
+        let task1: taskpool.Task = new taskpool.Task(sleepFunc, 50);
+        task1.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+        task1.onExecutionSucceeded(() => {
+          console.log(`${caseName} task1 onExecutionSucceeded`);
+          onExecutionSucceeded.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+        runner.execute(task1).then((res) => {
+          console.log(`${caseName} task executed`);
           count++;
         });
-      })
-      runner.execute(task1).then((res) => {
-        console.log(`${caseName} task executed`);
-        count++;
-      });
-      let task2: taskpool.Task = new taskpool.Task(sleepFuncErr, 75);
-      task2.onEnqueued(() => {
-        onEnqueue++;
-      })
-      task2.onExecutionFailed(() => {
-        console.log(`${caseName} task2 onExecutionFailed`);
-        onExecutionFailed++;
-        let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        innerTask.onEnqueued(() => {
-          onEnqueue++;
+        let task2: taskpool.Task = new taskpool.Task(sleepFuncErr, 75);
+        task2.onEnqueued(() => {
+          onEnqueue.fetchAdd(1);
         })
-        innerTask.onReceiveData((data: int) => {
-          onReceiveData = data;
+        task2.onExecutionFailed(() => {
+          console.log(`${caseName} task2 onExecutionFailed`);
+          onExecutionFailed.fetchAdd(1);
+          let innerTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          innerTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          innerTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          innerTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          taskpool.execute(innerTask).then((res) => {
+            console.log(`${caseName} inner task executed`);
+            count++;
+          });
         })
-        innerTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        taskpool.execute(innerTask).then((res) => {
-          console.log(`${caseName} inner task executed`);
+
+        runner.execute(task2).then((res) => {
+          console.log(`${caseName} executed with HIGH priority`);
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
           count++;
         });
+
+        while (count < 4) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(4);
+        expect(onEnqueue.load()).assertEqual(4); // 3 main tasks + 1 inner task
+        expect(onExecutionSucceeded.load()).assertEqual(3);
+        expect(onExecutionFailed.load()).assertEqual(1);
+        expect(onReceiveData).assertEqual(50);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      runner.execute(task2).then((res) => {
-        console.log(`${caseName} executed with HIGH priority`);
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-        count++;
-      });
-
-      while (count < 4) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(4);
-      expect(onEnqueue).assertEqual(4); // 3 main tasks + 1 inner task
-      expect(onExecutionSucceeded).assertEqual(3);
-      expect(onExecutionFailed).assertEqual(1);
-      expect(onReceiveData).assertEqual(50);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
     /**
      * @tc.name   TaskAllListeningTest011
@@ -671,56 +680,57 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest011';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest011';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
+        let mainTask: taskpool.Task = new taskpool.Task(sleepFunc, 100);
 
-      mainTask.onExecutionSucceeded(() => {
-        console.log(`${caseName} mainTask onExecutionSucceeded`);
-        onExecutionSucceeded++;
+        mainTask.onExecutionSucceeded(() => {
+          console.log(`${caseName} mainTask onExecutionSucceeded`);
+          onExecutionSucceeded.fetchAdd(1);
 
-        // Create inner tasks with different priorities
-        let highTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        highTask.onEnqueued(() => {
-          onEnqueue++;
+          // Create inner tasks with different priorities
+          let highTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          highTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          highTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          highTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+          // Execute inner tasks with different priorities
+          taskpool.executeDelayed(100, highTask, taskpool.Priority.HIGH).then((res) => {
+            console.log(`${caseName} high priority task executed`);
+            count++;
+          });
         })
-        highTask.onReceiveData((data: int) => {
-          onReceiveData = data;
-        })
-        highTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-        // Execute inner tasks with different priorities
-        taskpool.executeDelayed(100, highTask, taskpool.Priority.HIGH).then((res) => {
-          console.log(`${caseName} high priority task executed`);
+
+        taskpool.execute(mainTask, taskpool.Priority.MEDIUM).then((res) => {
+          console.log(`${caseName} main task executed`);
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
+
+        while (count < 2) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(2);
+        expect(onEnqueue.load()).assertEqual(1);
+        expect(onExecutionSucceeded.load()).assertEqual(2);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      taskpool.execute(mainTask, taskpool.Priority.MEDIUM).then((res) => {
-        console.log(`${caseName} main task executed`);
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 2) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(2);
-      expect(onEnqueue).assertEqual(1);
-      expect(onExecutionSucceeded).assertEqual(2);
-      console.log(`${caseName} end.`);
-      done();
-    })
     /**
      * @tc.name   TaskAllListeningTest012
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_LISTENING_1200
@@ -729,94 +739,95 @@ export default function taskListeningTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TaskAllListeningTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName = 'TaskAllListeningTest012';
-      console.log(`${caseName} start.`);
-      let count: int = 0;
-      let onEnqueue: int = 0;
-      let onReceiveData: int = 0;
-      let onStartExecution: int = 0;
-      let onExecutionSucceeded: int = 0;
-      let onExecutionFailed: int = 0;
+    it('TaskAllListeningTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'TaskAllListeningTest012';
+        console.log(`${caseName} start.`);
+        let count: int = 0;
+        let onEnqueue = new AtomicInt(0);
+        let onReceiveData: int = 0;
+        let onStartExecution = new AtomicInt(0);
+        let onExecutionSucceeded = new AtomicInt(0);
+        let onExecutionFailed = new AtomicInt(0);
 
-      let mainTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
+        let mainTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 100);
 
-      mainTask.onReceiveData(() => {
-        console.log(`${caseName} mainTask onEnqueued`);
-        onEnqueue++;
+        mainTask.onReceiveData(() => {
+          console.log(`${caseName} mainTask onEnqueued`);
+          onEnqueue.fetchAdd(1);
 
-        // Create inner tasks with different priorities
-        let highTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        highTask.onEnqueued(() => {
-          onEnqueue++;
-        })
-        highTask.onReceiveData((data: int) => {
-          onReceiveData = data;
-        })
-        highTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
+          // Create inner tasks with different priorities
+          let highTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          highTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          highTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          highTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+
+          let mediumTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          mediumTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          mediumTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          mediumTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+
+          let lowTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
+          lowTask.onEnqueued(() => {
+            onEnqueue.fetchAdd(1);
+          })
+          lowTask.onReceiveData((data: int) => {
+            onReceiveData = data;
+          })
+          lowTask.onExecutionSucceeded(() => {
+            onExecutionSucceeded.fetchAdd(1);
+          })
+
+          // Execute inner tasks with different priorities
+          taskpool.execute(highTask, taskpool.Priority.HIGH).then((res) => {
+            console.log(`${caseName} high priority task executed`);
+            count++;
+          });
+
+          taskpool.execute(mediumTask, taskpool.Priority.MEDIUM).then((res) => {
+            console.log(`${caseName} medium priority task executed`);
+            count++;
+          });
+
+          taskpool.execute(lowTask, taskpool.Priority.LOW).then((res) => {
+            console.log(`${caseName} low priority task executed`);
+            count++;
+          });
+
         })
 
-        let mediumTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        mediumTask.onEnqueued(() => {
-          onEnqueue++;
-        })
-        mediumTask.onReceiveData((data: int) => {
-          onReceiveData = data;
-        })
-        mediumTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
+        mainTask.onExecutionSucceeded(() => {
+          onExecutionSucceeded.fetchAdd(1);
         })
 
-        let lowTask: taskpool.Task = new taskpool.Task(sleepFuncSend, 50);
-        lowTask.onEnqueued(() => {
-          onEnqueue++;
-        })
-        lowTask.onReceiveData((data: int) => {
-          onReceiveData = data;
-        })
-        lowTask.onExecutionSucceeded(() => {
-          onExecutionSucceeded++;
-        })
-
-        // Execute inner tasks with different priorities
-        taskpool.execute(highTask, taskpool.Priority.HIGH).then((res) => {
-          console.log(`${caseName} high priority task executed`);
+        taskpool.execute(mainTask, taskpool.Priority.MEDIUM).then((res) => {
+          console.log(`${caseName} main task executed`);
           count++;
+        }).catch((err: Error) => {
+          console.error(`${caseName} error: ${err}`);
         });
 
-        taskpool.execute(mediumTask, taskpool.Priority.MEDIUM).then((res) => {
-          console.log(`${caseName} medium priority task executed`);
-          count++;
-        });
-
-        taskpool.execute(lowTask, taskpool.Priority.LOW).then((res) => {
-          console.log(`${caseName} low priority task executed`);
-          count++;
-        });
-
+        while (count < 4) {
+          await promiseCase();
+        }
+        expect(count).assertEqual(4);
+        expect(onEnqueue.load()).assertEqual(4);
+        expect(onExecutionSucceeded.load()).assertEqual(4);
+        console.log(`${caseName} end.`);
+        done();
       })
-
-      mainTask.onExecutionSucceeded(() => {
-        onExecutionSucceeded++;
-      })
-
-      taskpool.execute(mainTask, taskpool.Priority.MEDIUM).then((res) => {
-        console.log(`${caseName} main task executed`);
-        count++;
-      }).catch((err: Error) => {
-        console.error(`${caseName} error: ${err}`);
-      });
-
-      while (count < 4) {
-        await promiseCase();
-      }
-      expect(count).assertEqual(4);
-      expect(onEnqueue).assertEqual(4);
-      expect(onExecutionSucceeded).assertEqual(4);
-      console.log(`${caseName} end.`);
-      done();
-    })
 
   })
 }
