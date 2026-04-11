@@ -121,6 +121,28 @@ static napi_value GetCameraHostType(napi_env env, napi_callback_info info)
     return jsValue;
 }
 
+static napi_value TestOHGetSensorPixelArraySizeWithoutCamera(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->TestOHGetSensorPixelArraySizeWithoutCamera();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->TestOHGetSensorPixelArraySizeWithoutCamera(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value TestOHGetSensorColorFilterArrangementWithoutCamera(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->TestOHGetSensorColorFilterArrangementWithoutCamera();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->TestOHGetSensorColorFilterArrangementWithoutCamera(), &jsValue);
+
+    return jsValue;
+}
+
 static napi_value GetCameraHostNameErrorParameter(napi_env env, napi_callback_info info)
 {
     ndkCamera_->GetCameraHostNameErrorParameter();
@@ -3656,6 +3678,10 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getCameraHostNameInspection", nullptr, GetCameraHostNameInspection, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getCameraHostName", nullptr, GetCameraHostName, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getCameraHostType", nullptr, GetCameraHostType, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testOHGetSensorPixelArraySizeWithoutCamera", nullptr, TestOHGetSensorPixelArraySizeWithoutCamera,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testOHGetSensorColorFilterArrangementWithoutCamera", nullptr, TestOHGetSensorColorFilterArrangementWithoutCamera,
+            nullptr, nullptr, nullptr, napi_default, nullptr },   
         { "getWhiteBalanceTest", nullptr, GetWhiteBalanceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMacroStatusChangeTest", nullptr, GetMacroStatusChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getIsoInfoChangeTest", nullptr, GetIsoInfoChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },

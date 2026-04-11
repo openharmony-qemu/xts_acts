@@ -438,6 +438,23 @@ Camera_ErrorCode NDKCamera::GetCameraHostType(void)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::TestOHGetSensorPixelArraySizeWithoutCamera(void)
+{
+    uint32_t pixelWidth = 0;
+    uint32_t pixelHeight = 0;
+    Camera_ErrorCode ret = OH_CameraDevice_GetSensorPixelArraySize(nullptr, &pixelWidth, &pixelHeight);
+
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::TestOHGetSensorColorFilterArrangementWithoutCamera(void)
+{
+    OH_Camera_SensorColorFilterArrangement sensorCFA;
+    Camera_ErrorCode ret = OH_CameraDevice_GetSensorColorFilterArrangement(nullptr, &sensorCFA);
+
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::GetSupportedOutputCapability(void)
 {
     if (cameraManager_ == nullptr) {

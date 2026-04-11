@@ -181,6 +181,8 @@ public:
     Camera_ErrorCode GetCameraHostNameInspection(void);
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
+    Camera_ErrorCode TestOHGetSensorPixelArraySizeWithoutCamera(void);
+    Camera_ErrorCode TestOHGetSensorColorFilterArrangementWithoutCamera(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
     Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
