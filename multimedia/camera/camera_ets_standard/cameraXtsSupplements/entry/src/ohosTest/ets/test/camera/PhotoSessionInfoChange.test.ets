@@ -146,15 +146,15 @@ export default function PhotoSessIsoInfoChangeTest() {
     });
 
     /**
-     * @tc.name: SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100
-     * @tc.number: SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100
-     * @tc.desc: onIsoInfoChange callback triggered test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_photoSessionInfoChange_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_photoSessionInfoChange_0100
+     * @tc.desc   photoSessionInfoChange normal test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      const testName: string = 'SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100';
+    it('SUB_MULTIMEDIA_CAMERA_photoSessionInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_photoSessionInfoChange_0100';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
       createPhotoOutput();
