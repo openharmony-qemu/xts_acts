@@ -1941,6 +1941,49 @@ export default function deviceInfoTest() {
       expect(bigInt64Arr[1].toString()).assertEqual('-8570200865478776867');
       expect(bigInt64Arr.length).assertEqual(2);
 
+      const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(sab);
+      const dv: DataView = new DataView(sab);
+      const val1: bigint = 1n;
+      const val2: bigint = -1n;
+      bigInt64Arr[0] = val1;
+      bigInt64Arr[1] = val2;
+      expect(dv.getBigInt64(0, true)).assertEqual(val1);
+      expect(dv.getBigInt64(8, true)).assertEqual(val2);
+      const newVal1: bigint = 100n;
+      const newVal2: bigint = -200n;
+      dv.setBigInt64(0, newVal1, true);
+      dv.setBigInt64(8, newVal2, true);
+      expect(bigInt64Arr[0]).assertEqual(newVal1);
+      expect(bigInt64Arr[1]).assertEqual(newVal2);
+      expect(bigInt64Arr.length).assertEqual(2);
+
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const overflowVal: bigint = 9223372036854775808n;
+      const underflowVal: bigint = -9223372036854775809n;
+      const expectedOverflow: bigint = -9223372036854775808n;
+      const expectedUnderflow: bigint = 9223372036854775807n;
+      bigInt64Arr[0] = overflowVal;
+      expect(bigInt64Arr[0]).assertEqual(expectedOverflow);
+      expect(dv.getBigInt64(0, true)).assertEqual(expectedOverflow);
+      bigInt64Arr[0] = underflowVal
+      expect(bigInt64Arr.length).assertEqual(1);
+      expect(bigInt64Arr[0]).assertEqual(expectedUnderflow);
+      expect(dv.getBigInt64(0, true)).assertEqual(expectedUnderflow);
+
+      const source: bigint[] = [10n, 20n, 30n];
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(source);
+      const dv: DataView = new DataView(bigInt64Arr.buffer);
+      expect(bigInt64Arr.length).assertEqual(source.length);
+      expect(bigInt64Arr[0]).assertEqual(10n);
+      expect(bigInt64Arr[1]).assertEqual(20n);
+      expect(bigInt64Arr[2]).assertEqual(30n);
+      expect(bigInt64Arr.byteLength).assertEqual(source.length * 8);
+      for (let i = 0; i < source.length; i++) {
+        expect(dv.getBigInt64(i * 8, true)).assertEqual(source[i]);
+      }
 
 
       });
