@@ -24,7 +24,7 @@ export default function MutexLockEnhancedTest() {
     })
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0100
      * @tc.name mutexLockEnhancedDeadlockCircularWait
      * @tc.desc Test circular wait deadlock scenario - Thread1: lockA->lockB, Thread2: lockB->lockA
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0200
      * @tc.name mutexLockEnhancedSelfLock
      * @tc.desc Test repeated locking by same thread
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0300
      * @tc.name mutexLockEnhancedNestedLocks
      * @tc.desc Test nested lock usage
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0400
      * @tc.name mutexLockEnhancedMultiLockDeadlock
      * @tc.desc Test circular wait deadlock with three locks
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0500
      * @tc.name mutexLockEnhancedDoubleUnlock
      * @tc.desc Test double unlock exception
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0600
      * @tc.name mutexLockEnhancedUnlockWithoutLock
      * @tc.desc Test unlock without lock
      * @tc.size MediumTest
@@ -273,7 +273,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0700
      * @tc.name mutexLockEnhancedStateAfterException
      * @tc.desc Test lock state after exception is thrown
      * @tc.size MediumTest
@@ -307,7 +307,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0800
      * @tc.name mutexLockEnhancedExceptionInWorker
      * @tc.desc Test impact of exception in Worker on lock
      * @tc.size MediumTest
@@ -353,7 +353,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_0900
      * @tc.name mutexLockEnhancedEmptyCriticalSection
      * @tc.desc Test empty critical section
      * @tc.size MediumTest
@@ -379,7 +379,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_1000
      * @tc.name mutexLockEnhancedLockGuard
      * @tc.desc Test lockGuard method
      * @tc.size MediumTest
@@ -418,7 +418,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_1100
      * @tc.name mutexLockEnhancedWithTaskPool
      * @tc.desc Test Mutex and taskpool combination
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_1200
      * @tc.name mutexLockEnhancedMultipleLocksSameWorker
      * @tc.desc Test same worker using multiple different locks
      * @tc.size MediumTest
@@ -490,7 +490,7 @@ export default function MutexLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_MutexLock_Enhanced_1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_MutexLock_Enhanced_1300
      * @tc.name mutexLockEnhancedSequentialLocking
      * @tc.desc Test sequential locking pattern
      * @tc.size MediumTest

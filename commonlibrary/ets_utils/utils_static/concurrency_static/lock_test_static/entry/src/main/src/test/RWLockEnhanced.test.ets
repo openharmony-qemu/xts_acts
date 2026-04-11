@@ -32,7 +32,7 @@ export default function RWLockEnhancedTest() {
     })
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0100
      * @tc.name rwLockEnhancedReadToWriteUpgrade
      * @tc.desc Test read lock upgrade to write lock
      * @tc.size MediumTest
@@ -72,7 +72,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0200
      * @tc.name rwLockEnhancedWriteToReadDowngrade
      * @tc.desc Test write lock downgrade to read lock
      * @tc.size MediumTest
@@ -117,7 +117,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0300
      * @tc.name rwLockEnhancedMultipleReadLocksNested
      * @tc.desc Test multiple read locks nesting
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0400
      * @tc.name rwLockEnhancedWriterStarvation
      * @tc.desc Test writer starvation scenario
      * @tc.size MediumTest
@@ -198,7 +198,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0500
      * @tc.name rwLockEnhancedReaderStarvation
      * @tc.desc Test reader starvation scenario
      * @tc.size MediumTest
@@ -248,7 +248,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0600
      * @tc.name rwLockEnhancedMassiveReadersWriters
      * @tc.desc Test massive readers and writers concurrency
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0700
      * @tc.name rwLockEnhancedAlternatingReadWrite
      * @tc.desc Test alternating read and write execution
      * @tc.size MediumTest
@@ -332,7 +332,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0800
      * @tc.name rwLockEnhancedReaderDataConsistency
      * @tc.desc Test reader concurrent read data consistency
      * @tc.size MediumTest
@@ -381,7 +381,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_0900
      * @tc.name rwLockEnhancedWriterExclusivity
      * @tc.desc Test writer exclusivity
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1000
      * @tc.name rwLockEnhancedReadLockDoubleUnlock
      * @tc.desc Test read lock double unlock exception
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1100
      * @tc.name rwLockEnhancedWriteLockDoubleUnlock
      * @tc.desc Test write lock double unlock exception
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1200
      * @tc.name rwLockEnhancedMixedLockUsage
      * @tc.desc Test mixed use of readLock and writeLock
      * @tc.size MediumTest
@@ -540,7 +540,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1300
      * @tc.name rwLockEnhancedConcurrentReadersSameLock
      * @tc.desc Test concurrent readers on same read lock
      * @tc.size MediumTest
@@ -578,7 +578,7 @@ export default function RWLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_RWLock_Enhanced_1400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1400
      * @tc.name rwLockEnhancedMultipleRWLockInstances
      * @tc.desc Test independence of multiple RWLock instances
      * @tc.size MediumTest

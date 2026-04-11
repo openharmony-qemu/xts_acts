@@ -32,7 +32,7 @@ export default function CombLockEnhancedTest() {
     })
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0100
      * @tc.name combLockEnhancedMutexRWLockDeadlock
      * @tc.desc Test Mutex and RWLock deadlock scenario
      * @tc.size MediumTest
@@ -88,7 +88,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0200
      * @tc.name combLockEnhancedLockOrderProtocol
      * @tc.desc Test unified lock order
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0300
      * @tc.name combLockEnhancedAsyncLockTimeout
      * @tc.desc Test AsyncLock timeout mechanism
      * @tc.size MediumTest
@@ -161,11 +161,12 @@ export default function CombLockEnhancedTest() {
 
         console.info(`${TAG} count: ${count.load()}, timeout: ${timeoutOccurred.load()}`);
         expect(count.load()).assertEqual(1);
+        expect(timeoutOccurred.load()).assertEqual(1);
         Done();
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0400
      * @tc.name combLockEnhancedAsyncLockSignalAbort
      * @tc.desc Test AsyncLock signal abort
      * @tc.size MediumTest
@@ -204,7 +205,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0500
      * @tc.name combLockEnhancedMutexRWLockAsyncLock
      * @tc.desc Test Mutex, RWLock, and AsyncLock combination
      * @tc.size MediumTest
@@ -234,7 +235,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0600
      * @tc.name combLockEnhancedNestedDifferentLocks
      * @tc.desc Test nested use of different lock types
      * @tc.size MediumTest
@@ -267,7 +268,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0700
      * @tc.name combLockEnhancedEventMutexSync
      * @tc.desc Test Event and Mutex combination for synchronization
      * @tc.size MediumTest
@@ -314,7 +315,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0800
      * @tc.name combLockEnhancedCondVarMutexPattern
      * @tc.desc Test producer-consumer pattern
      * @tc.size MediumTest
@@ -369,7 +370,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_0900
      * @tc.name combLockEnhancedLockViaMessage
      * @tc.desc Test passing locks through MessageHandler
      * @tc.size MediumTest
@@ -420,7 +421,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1000
      * @tc.name combLockEnhancedTaskPoolWithLocks
      * @tc.desc Test taskpool and lock combination
      * @tc.size MediumTest
@@ -456,7 +457,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1100
      * @tc.name combLockEnhancedSequenceRunnerWithLocks
      * @tc.desc Test SequenceRunner and lock combination
      * @tc.size MediumTest
@@ -489,7 +490,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1200
      * @tc.name combLockEnhancedAsyncRunnerWithLocks
      * @tc.desc Test AsyncRunner and lock combination
      * @tc.size MediumTest
@@ -528,7 +529,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1300
      * @tc.name combLockEnhancedTaskGroupWithLocks
      * @tc.desc Test TaskGroup and lock combination
      * @tc.size MediumTest
@@ -563,7 +564,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1400
      * @tc.name combLockEnhancedLockOrderMultipleTypes
      * @tc.desc Test lock order for multiple lock types
      * @tc.size MediumTest
@@ -601,7 +602,7 @@ export default function CombLockEnhancedTest() {
       });
 
     /**
-     * @tc.number SUB_CombLock_Enhanced_1500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CombLock_Enhanced_1500
      * @tc.name combLockEnhancedErrorRecoveryWithLocks
      * @tc.desc Test error recovery with lock combination
      * @tc.size MediumTest
