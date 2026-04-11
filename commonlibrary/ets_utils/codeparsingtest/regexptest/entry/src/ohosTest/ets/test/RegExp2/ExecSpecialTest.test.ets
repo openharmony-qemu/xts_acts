@@ -80,33 +80,65 @@ export default function execSpecialTest() {
     it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecial.matchPositiveLookbehind("test123");
       const result2 = ExecSpecial.matchPositiveLookbehind("abc123");
-      if (result1) {
-        expect(result1?.[0]).assertEqual("123");
-        expect(result2).assertEqual(null);
-      } else {
-        expect(result1).assertEqual(null);
-        expect(result2).assertEqual(null);
+      if (result1 === null) {
+        return;
       }
+      expect(result1?.[0]).assertEqual("123");
+      expect(result2).assertEqual(null);
     });
 
     /**
      * @tc.name testExec0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0301
+     * @tc.desc   Test positive lookbehind yields no match when unsupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result1 = ExecSpecial.matchPositiveLookbehind("test123");
+      const result2 = ExecSpecial.matchPositiveLookbehind("abc123");
+      if (result1 !== null) {
+        return;
+      }
+      expect(result1).assertEqual(null);
+      expect(result2).assertEqual(null);
+    });
+
+    /**
+     * @tc.name testExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec negative lookbehind (?<!) when supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecial.matchNegativeLookbehind("abc123");
       const result2 = ExecSpecial.matchNegativeLookbehind("test123");
-      if (result1) {
-        expect(result1?.[0]).assertEqual("123");
-        expect(result2).assertEqual(null);
-      } else {
-        expect(result1).assertEqual(null);
-        expect(result2).assertEqual(null);
+      if (result1 === null) {
+        return;
       }
+      expect(result1?.[0]).assertEqual("123");
+      expect(result2).assertEqual(null);
+    });
+
+    /**
+     * @tc.name testExec0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0401
+     * @tc.desc   Test negative lookbehind yields no match when unsupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result1 = ExecSpecial.matchNegativeLookbehind("abc123");
+      const result2 = ExecSpecial.matchNegativeLookbehind("test123");
+      if (result1 !== null) {
+        return;
+      }
+      expect(result1).assertEqual(null);
+      expect(result2).assertEqual(null);
     });
   });
 }

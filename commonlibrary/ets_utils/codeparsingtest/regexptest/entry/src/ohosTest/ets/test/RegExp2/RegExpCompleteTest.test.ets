@@ -465,7 +465,7 @@ export default function regExpCompleteTest() {
       /**
        * @tc.name   testRegExpComplete0127
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_2800
-       * @tc.desc   Test Unicode property escapes pL and pScriptHan when supported
+       * @tc.desc   Test Unicode property escape pL when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -477,11 +477,26 @@ export default function regExpCompleteTest() {
         const regex1 = new RegExp('\\p{L}', 'u');
         expect(regex1.test('a')).assertTrue();
         expect(regex1.test('\u4e2d')).assertTrue();
-        if (supportsRegExp('\\p{Script=Han}', 'u')) {
-          const regex2 = new RegExp('\\p{Script=Han}', 'u');
-          expect(regex2.test('\u4e2d\u6587')).assertTrue();
-          expect(regex2.test('abc')).assertFalse();
+      });
+
+      /**
+       * @tc.name   testRegExpComplete0154
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_5500
+       * @tc.desc   Test Unicode Script Han property when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testRegExpComplete0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (!supportsRegExp('\\p{L}', 'u')) {
+          return;
         }
+        if (!supportsRegExp('\\p{Script=Han}', 'u')) {
+          return;
+        }
+        const regex2 = new RegExp('\\p{Script=Han}', 'u');
+        expect(regex2.test('\u4e2d\u6587')).assertTrue();
+        expect(regex2.test('abc')).assertFalse();
       });
 
       /**
@@ -512,7 +527,7 @@ export default function regExpCompleteTest() {
       /**
        * @tc.name   testRegExpComplete0129
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_3000
-       * @tc.desc   Test \\w differs between ASCII and Unicode when supported
+       * @tc.desc   Test ASCII \\w does not match Greek letters
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -520,18 +535,44 @@ export default function regExpCompleteTest() {
       it('testRegExpComplete0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = '\u03B1\u03B2';
         expect(/\w/.test(str)).assertFalse();
-        if (supportsRegExp('\\w', 'u')) {
-          expect(new RegExp('\\w', 'u').test(str)).assertFalse();
+      });
+
+      /**
+       * @tc.name   testRegExpComplete0155
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_5600
+       * @tc.desc   Test \\w with u flag does not match Greek letters when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testRegExpComplete0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str = '\u03B1\u03B2';
+        if (!supportsRegExp('\\w', 'u')) {
+          return;
         }
-        if (supportsRegExp('\\p{L}', 'u')) {
-          expect(new RegExp('\\p{L}', 'u').test(str)).assertTrue();
+        expect(new RegExp('\\w', 'u').test(str)).assertFalse();
+      });
+
+      /**
+       * @tc.name   testRegExpComplete0156
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_5700
+       * @tc.desc   Test \\p{L} matches Greek letters when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testRegExpComplete0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str = '\u03B1\u03B2';
+        if (!supportsRegExp('\\p{L}', 'u')) {
+          return;
         }
+        expect(new RegExp('\\p{L}', 'u').test(str)).assertTrue();
       });
 
       /**
        * @tc.name   testRegExpComplete0130
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_3100
-       * @tc.desc   Test combining character matching with dot under u flag
+       * @tc.desc   Test combining character matches with dot without u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -539,9 +580,22 @@ export default function regExpCompleteTest() {
       it('testRegExpComplete0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = 'e\u0301';
         expect(/./.test(str)).assertTrue();
-        if (supportsRegExp('.', 'u')) {
-          expect(new RegExp('.', 'u').test(str)).assertTrue();
+      });
+
+      /**
+       * @tc.name   testRegExpComplete0157
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_5800
+       * @tc.desc   Test combining character with dot under u when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testRegExpComplete0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str = 'e\u0301';
+        if (!supportsRegExp('.', 'u')) {
+          return;
         }
+        expect(new RegExp('.', 'u').test(str)).assertTrue();
       });
     });
 

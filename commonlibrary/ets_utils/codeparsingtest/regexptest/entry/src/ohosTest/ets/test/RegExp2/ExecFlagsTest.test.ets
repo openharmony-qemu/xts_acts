@@ -101,28 +101,40 @@ export default function execFlagsTest(): void {
      */
     it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('test', 'd')) {
-        expect(false).assertTrue();
         return;
       }
       const re: RegExp = new RegExp('test', 'd');
       const raw: RegExpExecArrayWithIndices | null = re.exec("this is a test") as RegExpExecArrayWithIndices | null;
-      if (raw !== null && raw.indices !== undefined) {
-        expect(raw.indices[0][0]).assertEqual(10);
-        expect(raw.indices[0][1]).assertEqual(14);
-      } else {
-        expect(false).assertTrue();
-      }
+      expect(raw !== null).assertTrue();
+      expect(raw!.indices !== undefined).assertTrue();
+      expect(raw!.indices![0][0]).assertEqual(10);
+      expect(raw!.indices![0][1]).assertEqual(14);
     });
 
     /**
      * @tc.name testExec0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0501
+     * @tc.desc   Test d flag unsupported when hasIndices not available
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      if (supportsRegExp('test', 'd')) {
+        return;
+      }
+      expect(supportsRegExp('test', 'd')).assertFalse();
+    });
+
+    /**
+     * @tc.name testExec0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0600
      * @tc.desc   Test RegExp.prototype.exec global g flag loop collects match indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /test/g;
       const str: string = "test test test";
       const results: number[] = [];

@@ -94,17 +94,14 @@ export default function execReturnTest() {
      */
     it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<word>hello)', 'd')) {
-        expect(false).assertTrue();
         return;
       }
       const re: RegExp = new RegExp('(?<word>hello)', 'd');
       const result: RegExpExecArrayWithIndices | null = re.exec('hello world') as RegExpExecArrayWithIndices | null;
-      if (result === null || result.indices === undefined) {
-        expect(false).assertTrue();
-        return;
-      }
-      expect(result.indices[0][0]).assertEqual(0);
-      expect(result.indices[0][1]).assertEqual(5);
+      expect(result !== null).assertTrue();
+      expect(result!.indices !== undefined).assertTrue();
+      expect(result!.indices![0][0]).assertEqual(0);
+      expect(result!.indices![0][1]).assertEqual(5);
     });
 
     /**

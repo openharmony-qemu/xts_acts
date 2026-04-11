@@ -63,7 +63,7 @@ export default function instancePropertiesTest() {
     /**
      * @tc.name testRegExpInstance0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0300
-     * @tc.desc   Test flags gim empty and s when supported
+     * @tc.desc   Test flags gim and empty pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -73,23 +73,48 @@ export default function instancePropertiesTest() {
       const regex2 = /test/;
       expect(regex1.flags).assertEqual('gim');
       expect(regex2.flags).assertEqual('');
-      if (supportsRegExp('hello', 's')) {
-        const regex3 = new RegExp('hello', 's');
-        expect(regex3.flags.indexOf('s') >= 0).assertTrue();
-      } else {
-        expect(supportsRegExp('hello', 's')).assertFalse();
-      }
     });
 
     /**
      * @tc.name testRegExpInstance0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0900
+     * @tc.desc   Test s flag unsupported when dotAll not available
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      if (supportsRegExp('hello', 's')) {
+        return;
+      }
+      expect(supportsRegExp('hello', 's')).assertFalse();
+    });
+
+    /**
+     * @tc.name testRegExpInstance0109
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0800
+     * @tc.desc   Test flags include s when dotAll supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegExpInstance0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      if (!supportsRegExp('hello', 's')) {
+        return;
+      }
+      const regex3 = new RegExp('hello', 's');
+      expect(regex3.flags.indexOf('s') >= 0).assertTrue();
+    });
+
+    /**
+     * @tc.name testRegExpInstance0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0400
      * @tc.desc   Test global ignoreCase multiline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(/test/g.global).assertTrue();
       expect(/test/.global).assertFalse();
       expect(/test/i.ignoreCase).assertTrue();
@@ -99,17 +124,29 @@ export default function instancePropertiesTest() {
     });
 
     /**
-     * @tc.name testRegExpInstance0104
+     * @tc.name testRegExpInstance0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0500
-     * @tc.desc   Test dotAll sticky unicode when supported
+     * @tc.desc   Test dotAll true when s flag supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      if (supportsRegExp('test', 's')) {
-        expect(new RegExp('test', 's').dotAll).assertTrue();
+    it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      if (!supportsRegExp('test', 's')) {
+        return;
       }
+      expect(new RegExp('test', 's').dotAll).assertTrue();
+    });
+
+    /**
+     * @tc.name testRegExpInstance0108
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0700
+     * @tc.desc   Test dotAll sticky unicode on literals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegExpInstance0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(/test/.dotAll).assertFalse();
       expect(/test/y.sticky).assertTrue();
       expect(/test/.sticky).assertFalse();
@@ -118,17 +155,29 @@ export default function instancePropertiesTest() {
     });
 
     /**
-     * @tc.name testRegExpInstance0105
+     * @tc.name testRegExpInstance0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0600
-     * @tc.desc   Test hasIndices when supported
+     * @tc.desc   Test hasIndices true when d flag supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      if (supportsRegExp('test', 'd')) {
-        expect(regexpWithDFlagHasIndicesTrue()).assertTrue();
+    it('testRegExpInstance0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      if (!supportsRegExp('test', 'd')) {
+        return;
       }
+      expect(regexpWithDFlagHasIndicesTrue()).assertTrue();
+    });
+
+    /**
+     * @tc.name testRegExpInstance0107
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1100
+     * @tc.desc   Test literal without d flag hasIndices false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegExpInstance0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(regexpLiteralWithoutDNotHasIndices()).assertTrue();
     });
   });

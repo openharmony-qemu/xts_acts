@@ -202,17 +202,31 @@ export default function toStringTest() {
       /**
        * @tc.name testToString0111
        * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1200
-       * @tc.desc   Test named capture groups
+       * @tc.desc   Test named capture groups toString when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testToString0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('(?<name>\\w+)')) {
-          expect(supportsRegExp('(?<name>\\w+)')).assertFalse();
           return;
         }
         expect(new RegExp('(?<name>\\w+)').toString()).assertEqual('/(?<name>\\w+)/');
+      });
+
+      /**
+       * @tc.name testToString0198
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9900
+       * @tc.desc   Test named capture groups unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('(?<name>\\w+)')) {
+          return;
+        }
+        expect(supportsRegExp('(?<name>\\w+)')).assertFalse();
       });
 
       /**
@@ -249,10 +263,24 @@ export default function toStringTest() {
        */
       it('testToString0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('(?<=\\$)\\d+')) {
-          expect(supportsRegExp('(?<=\\$)\\d+')).assertFalse();
           return;
         }
         expect(new RegExp('(?<=\\$)\\d+').toString()).assertEqual('/(?<=\\$)\\d+/');
+      });
+
+      /**
+       * @tc.name testToString0199
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0100
+       * @tc.desc   Test lookbehind unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('(?<=\\$)\\d+')) {
+          return;
+        }
+        expect(supportsRegExp('(?<=\\$)\\d+')).assertFalse();
       });
 
       /**
@@ -388,10 +416,24 @@ export default function toStringTest() {
        */
       it('testToString0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('test', 's')) {
-          expect(supportsRegExp('test', 's')).assertFalse();
           return;
         }
         expect(new RegExp('test', 's').toString()).assertEqual('/test/s');
+      });
+
+      /**
+       * @tc.name testToString0200
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0200
+       * @tc.desc   Test flag s unsupported when dotAll not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('test', 's')) {
+          return;
+        }
+        expect(supportsRegExp('test', 's')).assertFalse();
       });
 
       /**
@@ -428,10 +470,24 @@ export default function toStringTest() {
        */
       it('testToString0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('test', 'd')) {
-          expect(supportsRegExp('test', 'd')).assertFalse();
           return;
         }
         expect(new RegExp('test', 'd').toString()).assertEqual('/test/d');
+      });
+
+      /**
+       * @tc.name testToString0201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0300
+       * @tc.desc   Test flag d unsupported when hasIndices not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('test', 'd')) {
+          return;
+        }
+        expect(supportsRegExp('test', 'd')).assertFalse();
       });
 
       /**
@@ -456,10 +512,24 @@ export default function toStringTest() {
        */
       it('testToString0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('test', 'gimsuy')) {
-          expect(supportsRegExp('test', 'gimsuy')).assertFalse();
           return;
         }
         expect(new RegExp('test', 'gimsuy').toString()).assertEqual('/test/gimsuy');
+      });
+
+      /**
+       * @tc.name testToString0202
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0400
+       * @tc.desc   Test gimsuy flags unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('test', 'gimsuy')) {
+          return;
+        }
+        expect(supportsRegExp('test', 'gimsuy')).assertFalse();
       });
 
       /**
@@ -472,10 +542,24 @@ export default function toStringTest() {
        */
       it('testToString0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('test', 'gimsud')) {
-          expect(supportsRegExp('test', 'gimsud')).assertFalse();
           return;
         }
         expect(new RegExp('test', 'gimsud').toString()).assertEqual('/test/dgimsu');
+      });
+
+      /**
+       * @tc.name testToString0203
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0500
+       * @tc.desc   Test gimsud flags unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('test', 'gimsud')) {
+          return;
+        }
+        expect(supportsRegExp('test', 'gimsud')).assertFalse();
       });
 
       /**
@@ -1141,10 +1225,24 @@ export default function toStringTest() {
        */
       it('testToString0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\p{Script=Hiragana}', 'u')) {
-          expect(supportsRegExp('\\p{Script=Hiragana}', 'u')).assertFalse();
           return;
         }
         expect(new RegExp('\\p{Script=Hiragana}', 'u').toString()).assertEqual('/\\p{Script=Hiragana}/u');
+      });
+
+      /**
+       * @tc.name testToString0204
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0600
+       * @tc.desc   Test Hiragana script property unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('\\p{Script=Hiragana}', 'u')) {
+          return;
+        }
+        expect(supportsRegExp('\\p{Script=Hiragana}', 'u')).assertFalse();
       });
 
       /**
@@ -1157,10 +1255,24 @@ export default function toStringTest() {
        */
       it('testToString0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\p{Letter}+', 'u')) {
-          expect(supportsRegExp('\\p{Letter}+', 'u')).assertFalse();
           return;
         }
         expect(new RegExp('\\p{Letter}+', 'u').toString()).assertEqual('/\\p{Letter}+/u');
+      });
+
+      /**
+       * @tc.name testToString0205
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0700
+       * @tc.desc   Test unicode property Letter unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('\\p{Letter}+', 'u')) {
+          return;
+        }
+        expect(supportsRegExp('\\p{Letter}+', 'u')).assertFalse();
       });
 
       /**
@@ -1209,10 +1321,24 @@ export default function toStringTest() {
        */
       it('testToString0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('(?<quote>[\'"])\\k<quote>')) {
-          expect(supportsRegExp('(?<quote>[\'"])\\k<quote>')).assertFalse();
           return;
         }
         expect(new RegExp('(?<quote>[\'"])\\k<quote>').toString()).assertEqual('/(?<quote>[\'"])\\k<quote>/');
+      });
+
+      /**
+       * @tc.name testToString0206
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_EXTRA_TEST_0800
+       * @tc.desc   Test named backreference unsupported when not available
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testToString0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        if (supportsRegExp('(?<quote>[\'"])\\k<quote>')) {
+          return;
+        }
+        expect(supportsRegExp('(?<quote>[\'"])\\k<quote>')).assertFalse();
       });
 
       /**

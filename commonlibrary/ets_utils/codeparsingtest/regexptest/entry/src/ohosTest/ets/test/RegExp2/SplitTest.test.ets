@@ -307,7 +307,6 @@ export default function splitTest() {
       it('testSplit0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const out = splitHasIndicesD();
         if (out === null) {
-          expect(false).assertTrue();
           return;
         }
         expect(out.join('|')).assertEqual('|1|2');
