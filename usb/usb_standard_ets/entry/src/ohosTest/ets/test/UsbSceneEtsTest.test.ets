@@ -177,17 +177,77 @@ export default function UsbSceneEtsTest() {
         expect(isDeviceConnected).assertFalse();
         done();
       } else {
-        console.info(TAG, `usb testUsbControlTransferSetFeature begin`);
+        console.info(TAG, `usb SET_FEATURE begin`);
         let param: PARA = {
           bmRequestType: 0x02;
-          bRequest: 0x03;
+          bRequest: 0x03; //SET_FEATURE
           wValue: 0x0000;
           wIndex: 0x0000;
           wLength: 0x0000;
           data: new Uint8Array(0)
         };
-        await executeUsbRequest(param, 0);
-        done();
+        try {
+          let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+          await usbMgr.requestRight(deviceList[0].name);
+          console.info(TAG, 'SET_FEATURE name = ${devicesList[0].name}');
+          let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
+          console.info(TAG, 'SET_FEATURE devicePipe = ${JSON.strigify(devicePipe)}');
+          let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
+          console.info(TAG, 'SET_FEATURE USBInterface = ${JSON.strigify(interfaces)}');
+          let claim: usbMgr.claimInterface(devicePipe, interfaces, true);
+          console.info(TAG, 'SET_FEATURE claim = ${calim}');
+          if (interfaces.endpoint.length > 0) {
+            param.wIndex = interfaces.endpoint.address;
+            let ret = await usbMgr.usbControlTransfer(devicePipe, param);
+            console.info(TAG, 'SET_FEATURE size = ${ret}');
+          }
+        } catch (err) {
+          console.info(TAG, 'SET_FEATURE error');
+          console.info(TAG, 'SET_FEATURE err.code = ${JSON.strigify(err)}');
+          console.info(TAG, 'SET_FEATURE end');
+        }
+      }
+      {
+        console.info(TAG, `usb CLEAR_FEATURE begin`);
+        let param: PARA = {
+          bmRequestType: 0x02;
+          bRequest: 0x01; //CLEAR_FEATURE
+          wValue: 0x0000; //FEATURE_SELECTOR_REMOTE_WAKEUP
+          wIndex: 0x0000;
+          wLength: 0x0000;
+          data: new Uint8Array(0)
+        };
+        let param: PARA = {
+          bmRequestType: 0x02; 
+          bRequest: 0x03; //SET_FEATURE
+          wValue: 0x0000;
+          wIndex: 0x0000;
+          wLength: 0x0000;
+          data: new Uint8Array(0)
+        };
+        try {
+          let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+          await usbMgr.requestRight(deviceList[0].name);
+          console.info(TAG, 'CLEAR_FEATURE name = ${devicesList[0].name}');
+          let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
+          console.info(TAG, 'CLEAR_FEATURE devicePipe = ${JSON.strigify(devicePipe)}');
+          let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
+          console.info(TAG, 'CLEAR_FEATURE USBInterface = ${JSON.strigify(interfaces)}');
+          let claim: usbMgr.claimInterface(devicePipe, interfaces, true);
+          console.info(TAG, 'CLEAR_FEATURE claim = ${calim}');
+          if (interfaces.endpoint.length > 0) {
+            param.wIndex = interfaces.endpoint.address;
+            param1.wIndex = interfaces.endpoint.address;
+            let res = await usbMgr.usbControlTransfer(devicePipe, param1);
+            console.info(TAG, 'CLEAR_FEATURE size = ${res}');
+            let ret = await usbMgr.usbControlTransfer(devicePipe, param);\
+            console.info(TAG, 'CLEAR_FEATURE size = ${res}');
+          }
+        } catch (err) {
+          console.info(TAG, 'CLEAR_FEATURE error');
+          console.info(TAG, 'CLEAR_FEATURE err.code = ${JSON.strigify(err)}');
+          console.info(TAG, 'CLEAR_FEATURE end');
+        }
       }
     });
 
