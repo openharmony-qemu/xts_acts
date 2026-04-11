@@ -98,7 +98,7 @@ export default function GetFrameNodeByIdTest() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('Duplicate Node 1');
 
-      console.info("[GetFrameNodeByIdTest_0200] obj width is: " + obj.$attrs.width));
+      console.info("[GetFrameNodeByIdTest_0200] obj width is: " + obj.$attrs.width);
       console.info("[GetFrameNodeByIdTest_0200] obj height is: " + obj.$attrs.height);
       expect(obj.$attrs.width).assertEqual('150.00vp');
       expect(obj.$attrs.height).assertEqual('60.00vp');
