@@ -82,7 +82,7 @@ export default function GetFrameNodeByUniqueIdTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('testNode');
+      let strJson = inspector.getInspectorByKey('GetFrameNodeByUniqueId_testNode');
       let obj= JSON.parseJsonElement(strJson);
       console.info("[GetFrameNodeByUniqueIdTest_0100] obj width is: " + obj.getElement('$attrs').getString('width'));
       console.info("[GetFrameNodeByUniqueIdTest_0100] obj height is: " + obj.getElement('$attrs').getString('height'));
@@ -98,7 +98,7 @@ export default function GetFrameNodeByUniqueIdTest() {
       expect(AppStorage.get<FrameNode | null>('getFrameNodeByUniqueIdValidResult')).not().assertNull();
       AppStorage.delete('getFrameNodeByUniqueIdValidResult');
 
-      let strJsonAfter = inspector.getInspectorByKey('testNode');
+      let strJsonAfter = inspector.getInspectorByKey('GetFrameNodeByUniqueId_testNode');
       let objAfter= JSON.parseJsonElement(strJsonAfter);
       console.info("[GetFrameNodeByUniqueIdTest_0100] objAfter width is: " + objAfter.getElement('$attrs').getString('width'));
       console.info("[GetFrameNodeByUniqueIdTest_0100] objAfter height is: " + objAfter.getElement('$attrs').getString('height'));
