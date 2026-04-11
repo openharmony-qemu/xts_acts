@@ -14,7 +14,7 @@
  */
 
 // leading zero handling according to the manual
-#include "Strverscmp.h"
+#include "include/strverscmp.h"
 #include <cstring>
 #include "libc_test_shim.h"
 int StrverscmpTest()

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <sys/FSUID.h>
+#include <sys/fsuid.h>
 
 #include "test.h"
 

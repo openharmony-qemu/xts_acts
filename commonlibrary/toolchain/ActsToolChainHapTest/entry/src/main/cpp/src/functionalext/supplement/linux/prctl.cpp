@@ -26,12 +26,10 @@ void Prctl0100(void)
 {
     char buf[BUFSIZ]{};
 
-    int result =
-        prctl(PR_SET_NAME,
-              reinterpret_cast<unsigned long>(reinterpret_cast<uintptr_t>(static_cast<const void*>("TestThread"))));
+    int result = prctl(PR_SET_NAME, reinterpret_cast<uintptr_t>(static_cast<const void*>("TestThread")));
     EXPECT_EQ("Prctl0100", result, 0);
 
-    result = prctl(PR_GET_NAME, reinterpret_cast<unsigned long>(reinterpret_cast<uintptr_t>(static_cast<void*>(buf))));
+    result = prctl(PR_GET_NAME, reinterpret_cast<uintptr_t>(static_cast<void*>(buf)));
     EXPECT_EQ("Prctl0100", result, 0);
     EXPECT_STREQ("Prctl0100", buf, "TestThread");
 }
