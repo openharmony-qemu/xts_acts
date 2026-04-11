@@ -2,12 +2,24 @@ import image from "@ohos.multimedia.image";
 
 interface ReadOnlyMetaDataRule {
   key: string;
-  newExpectValue: string | object | boolean | number | number[] | number[][];
+  newExpectValue: string | boolean | number | number[] | number[][];
 }
 
 const linearizationTable: number[] = [];
 for (let i: number = 0; i < 16384; i++) {
   linearizationTable.push(i);
+}
+const blackLevelDeltaArr: number[] = [];
+for (let i: number = 0; i < 32; i++) {
+  linearizationTable.push(0);
+}
+const profileHueSatMapDataArr: number[] = [];
+for (let i: number = 0; i < 27; i++) {
+  linearizationTable.push(1);
+}
+const profileLookTableDataArr: number[] = [];
+for (let i: number = 0; i < 27; i++) {
+  linearizationTable.push(0.5);
 }
 
 const dngMetadataMap: Map<image.DngPropertyKey, ReadOnlyMetaDataRule> = new Map<image.DngPropertyKey, ReadOnlyMetaDataRule>([
@@ -20,8 +32,8 @@ const dngMetadataMap: Map<image.DngPropertyKey, ReadOnlyMetaDataRule> = new Map<
   [image.DngPropertyKey.LINEARIZATION_TABLE,              { key: "linearizationTable",        newExpectValue: linearizationTable }],
   [image.DngPropertyKey.BLACK_LEVEL_REPEAT_DIM,           { key: "blackLevelRepeatDim",       newExpectValue: [2, 2] }],
   [image.DngPropertyKey.BLACK_LEVEL,                      { key: "blackLevel",                newExpectValue: [256, 256, 256, 256] }],
-  [image.DngPropertyKey.BLACK_LEVEL_DELTA_H,              { key: "blackLevelDeltaH",          newExpectValue: new Array(32).fill(0) }],
-  [image.DngPropertyKey.BLACK_LEVEL_DELTA_V,              { key: "blackLevelDeltaV",          newExpectValue: new Array(32).fill(0) }],
+  [image.DngPropertyKey.BLACK_LEVEL_DELTA_H,              { key: "blackLevelDeltaH",          newExpectValue: blackLevelDeltaArr }],
+  [image.DngPropertyKey.BLACK_LEVEL_DELTA_V,              { key: "blackLevelDeltaV",          newExpectValue: blackLevelDeltaArr }],
   [image.DngPropertyKey.WHITE_LEVEL,                      { key: "whiteLevel",                newExpectValue: [16383] }],
   [image.DngPropertyKey.DEFAULT_SCALE,                    { key: "defaultScale",              newExpectValue: [1, 1] }],
   [image.DngPropertyKey.DEFAULT_CROP_ORIGIN,              { key: "defaultCropOrigin",         newExpectValue: [0, 0] }],
@@ -67,8 +79,8 @@ const dngMetadataMap: Map<image.DngPropertyKey, ReadOnlyMetaDataRule> = new Map<
   [image.DngPropertyKey.NOISE_REDUCTION_APPLIED,          { key: "noiseReductionApplied",     newExpectValue: 0 }],
   [image.DngPropertyKey.PROFILE_NAME,                     { key: "profileName",               newExpectValue: "Adobe Standard" }],
   [image.DngPropertyKey.PROFILE_HUE_SAT_MAP_DIMS,         { key: "profileHueSatMapDims",      newExpectValue: [3, 3, 3] }],
-  [image.DngPropertyKey.PROFILE_HUE_SAT_MAP_DATA1,        { key: "profileHueSatMapData1",     newExpectValue: new Array(27).fill(1) }],
-  [image.DngPropertyKey.PROFILE_HUE_SAT_MAP_DATA2,        { key: "profileHueSatMapData2",     newExpectValue: new Array(27).fill(1) }],
+  [image.DngPropertyKey.PROFILE_HUE_SAT_MAP_DATA1,        { key: "profileHueSatMapData1",     newExpectValue: profileHueSatMapDataArr }],
+  [image.DngPropertyKey.PROFILE_HUE_SAT_MAP_DATA2,        { key: "profileHueSatMapData2",     newExpectValue: profileHueSatMapDataArr }],
   [image.DngPropertyKey.PROFILE_TONE_CURVE,               { key: "profileToneCurve",          newExpectValue: [0, 0, 1, 1] }],
   [image.DngPropertyKey.PROFILE_EMBED_POLICY,             { key: "profileEmbedPolicy",        newExpectValue: 0 }],
   [image.DngPropertyKey.PROFILE_COPYRIGHT,                { key: "profileCopyright",          newExpectValue: "Copyright (c) Fake Company 2025" }],
@@ -85,7 +97,7 @@ const dngMetadataMap: Map<image.DngPropertyKey, ReadOnlyMetaDataRule> = new Map<
   [image.DngPropertyKey.SUB_TILE_BLOCK_SIZE,              { key: "subTileBlockSize",          newExpectValue: [1, 1] }],
   [image.DngPropertyKey.ROW_INTERLEAVE_FACTOR,            { key: "rowInterleaveFactor",       newExpectValue: 1 }],
   [image.DngPropertyKey.PROFILE_LOOK_TABLE_DIMS,          { key: "profileLookTableDims",      newExpectValue: [3, 3, 3] }],
-  [image.DngPropertyKey.PROFILE_LOOK_TABLE_DATA,          { key: "profileLookTableData",      newExpectValue: new Array(27).fill(0.5) }],
+  [image.DngPropertyKey.PROFILE_LOOK_TABLE_DATA,          { key: "profileLookTableData",      newExpectValue: profileLookTableDataArr }],
   [image.DngPropertyKey.OPCODE_LIST1,                     { key: "opcodeList1",               newExpectValue: [0,0,0,4,0,0,0,9,1,3,0,0,0,0,0,1,0,0,20,40] }],
   [image.DngPropertyKey.OPCODE_LIST2,                     { key: "opcodeList2",               newExpectValue: [0,0,0,4,0,0,0,9,1,3,0,0,0,0,0,1,0,0,20,40] }],
   [image.DngPropertyKey.OPCODE_LIST3,                     { key: "opcodeList3",               newExpectValue: [0,0,0,4,0,0,0,9,1,3,0,0,0,0,0,1,0,0,20,40] }],
