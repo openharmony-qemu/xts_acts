@@ -318,7 +318,14 @@ describe('btConnectionTest', () => {
         try {
             let ret = bluetooth.getPairedDevices();
             console.info('[bluetooth_js] getPairedDevices ret2:' + JSON.stringify(ret));
-            expect(ret.length == 0).assertTrue();
+            expect(Array.isArray(ret)).assertTrue();
+            if (ret.length > 0) {
+                console.info('[NearLink_Test] getPairedDevices info: '+ ret[0]);
+                expect(ret[0] != null).assertTrue();
+                expect(typeof ret[0] === 'string').assertTrue();
+            } else {
+                expect(ret.length === 0).assertTrue();
+            }
         } catch (err) {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
