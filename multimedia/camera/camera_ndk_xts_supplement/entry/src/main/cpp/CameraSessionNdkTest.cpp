@@ -701,6 +701,160 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     return retValue;
 }
 
+napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info info)
+{
+    uint32_t cameraCount = 0;
+    Camera_Device *cameras = nullptr;
+    napi_value result = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
+    Camera_OutputCapability* outputCapability = nullptr;
+    OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &cameras[0], Camera_SceneMode::NORMAL_PHOTO, &outputCapability);
+    previewProfile = outputCapability->previewProfiles[0];
+
+    Camera_PreviewOutput* previewOutput = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreateDeferredPreviewOutput(cameraManager, previewProfile, &previewOutput);
+    if (ret != CAMERA_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateDeferredPreviewOutput failed. %{public}d", ret);
+        return result;
+    }
+
+    if (previewOutput) {
+        OH_PreviewOutput_Release(previewOutput);
+    }
+
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestCreateDeferredPreviewOutputWithNullArgs(napi_env env, napi_callback_info info)
+{
+    uint32_t cameraCount = 0;
+    Camera_Device *cameras = nullptr;
+    napi_value result = nullptr;
+
+    OH_Camera_GetCameraManager(&cameraManager);
+    OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
+    Camera_OutputCapability* outputCapability = nullptr;
+    OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &cameras[0], Camera_SceneMode::NORMAL_PHOTO, &outputCapability);
+    previewProfile = outputCapability->previewProfiles[0];
+    Camera_PreviewOutput* previewOutput = nullptr;
+
+    Camera_ErrorCode ret = OH_CameraManager_CreateDeferredPreviewOutput(nullptr, previewProfile, &previewOutput);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    ret = OH_CameraManager_CreateDeferredPreviewOutput(cameraManager, nullptr, &previewOutput);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateDeferredPreviewOutput failed. %{public}d", ret);
+        return result;
+    }
+
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_callback_info info)
+{
+    uint32_t cameraCount = 0;
+    Camera_Device *cameras = nullptr;
+    napi_value result = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
+
+    Camera_OutputCapability* outputCapability = nullptr;
+    OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &cameras[0], Camera_SceneMode::NORMAL_PHOTO, &outputCapability);
+    
+    Camera_Profile invalidProfile = *(outputCapability->previewProfiles[0]);
+    invalidProfile.size.width = 0;
+    invalidProfile.size.height = 0;
+
+    Camera_PreviewOutput* previewOutput = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreateDeferredPreviewOutput(
+        cameraManager, &invalidProfile, &previewOutput);
+    if (ret != CAMERA_SERVICE_FATAL_ERROR) {
+        napi_create_int32(env, ret, &result);
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateDeferredPreviewOutput failed. %{public}d", ret);
+        return result;
+    }
+
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool isSupported = false;
+    Camera_ErrorCode ret = OH_CameraManager_IsTorchLevelControlSupported(nullptr, &isSupported);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool isSupported = false;
+    
+    Camera_Manager* cameraManager = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    OH_LOG_ERROR(LOG_APP, "cameraManager is. %{public}d", cameraManager);
+    Camera_ErrorCode ret = OH_CameraManager_IsTorchLevelControlSupported(cameraManager, &isSupported);
+    if (ret != CAMERA_OK) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const double normalTorchLevel = 1.0;
+    const double negativeTorchLevel = -1.0;
+    const double overRangeTorchLevel = 1.1;
+    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, normalTorchLevel);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    Camera_Manager* cameraManager = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    if (!cameraManager) {
+        napi_create_int32(env, CAMERA_INVALID_ARGUMENT, &result);
+        return result;
+    }
+    
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, negativeTorchLevel);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, overRangeTorchLevel);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
