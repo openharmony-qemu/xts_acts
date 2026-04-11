@@ -74,7 +74,7 @@ export default function imageExifGetModifyByTypeTest(): void {
         imageSourceApi = image.createImageSource(filePath);
       }else if(type === "incremental") {
         const picBuffer = await getBuffer(fileName);
-        imageSourceApi = image.CreateIncrementalSource(picBuffer);
+        imageSourceApi = image.createIncrementalSource(picBuffer);
       }else{
         await getFd(fileName);
         imageSourceApi = image.createImageSource(fdNumber);
