@@ -69,7 +69,7 @@ it('testpolyLine_static_01', Level.LEVEL0, async (done: () => void): Promise<voi
       //与原生做对比
       console.info("[testpolyLine] obj points is : " + JSON.stringifyJsonElement(obj!.getElement('$attrs').getElement('points')));
       console.info("[testpolyLine] obj1 points is : " + JSON.stringifyJsonElement(obj1!.getElement('$attrs').getElement('points')));
-      expect(obj!.getElement('$attrs').getBoolean('points')).assertEqual(obj1!.getElement('$attrs').getBoolean('points'));
+      expect(JSON.stringifyJsonElement(obj!.getElement('$attrs').getElement('points'))).assertEqual(JSON.stringifyJsonElement(obj1!.getElement('$attrs').getElement('points')));
 
       console.info('[testpolyLine] END');
       done();
