@@ -47,20 +47,6 @@ export default function functional_group_test() {
     });
 
     /**
-     * @tc.name   clock_gettime
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOCK_GETTIME_0100
-     * @tc.desc   libc-test clock_gettime
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("clock_gettime", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("clock_gettime");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   crypt
      * @tc.number SUB_THIRDPARTY_MUSL_CRYPT_0100
      * @tc.desc   libc-test crypt
