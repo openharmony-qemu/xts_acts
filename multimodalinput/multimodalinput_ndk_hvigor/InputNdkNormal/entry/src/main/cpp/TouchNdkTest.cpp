@@ -1135,11 +1135,7 @@ static napi_value SetTouchEventPressure2(napi_env env, napi_callback_info info)
     Input_Result retResult1 = OH_Input_SetTouchEventPressure(touchEvent, 1.0);
     double retResult2 = OH_Input_GetTouchEventPressure(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult2 == 1.0) {
-        napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == 1.0) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == 1.0) ? 1 : 0, &result);
     return result;
 }
 
@@ -1187,11 +1183,7 @@ static napi_value SetTouchEventWindowX1(napi_env env, napi_callback_info info)
     OH_Input_SetTouchEventWindowX(touchEvent, windowX);
     int32_t retResult = OH_Input_GetTouchEventWindowX(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult == windowX) {
-        napi_create_int32(env, (retResult == windowX) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult == windowX) ? 1 : 0, &result);
     return result;
 }
 
@@ -1203,11 +1195,7 @@ static napi_value SetTouchEventWindowX2(napi_env env, napi_callback_info info)
     OH_Input_SetTouchEventWindowX(touchEvent, windowX);
     int32_t retResult = OH_Input_GetTouchEventWindowX(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult == windowX) {
-        napi_create_int32(env, (retResult == windowX) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult == windowX) ? 1 : 0, &result);
     return result;
 }
 
@@ -1239,11 +1227,7 @@ static napi_value SetTouchEventWindowY1(napi_env env, napi_callback_info info)
     OH_Input_SetTouchEventWindowY(touchEvent, windowY);
     int32_t retResult = OH_Input_GetTouchEventWindowY(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult == windowY) {
-        napi_create_int32(env, (retResult == windowY) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult == windowY) ? 1 : 0, &result);
     return result;
 }
 
@@ -1255,11 +1239,7 @@ static napi_value SetTouchEventWindowY2(napi_env env, napi_callback_info info)
     OH_Input_SetTouchEventWindowY(touchEvent, windowY);
     int32_t retResult = OH_Input_GetTouchEventWindowY(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult == windowY) {
-        napi_create_int32(env, (retResult == windowY) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult == windowY) ? 1 : 0, &result);
     return result;
 }
 
@@ -1290,11 +1270,7 @@ static napi_value SetTouchEventDownTime1(napi_env env, napi_callback_info info)
     OH_Input_SetTouchEventDownTime(touchEvent, 1);
     int64_t retResult = OH_Input_GetTouchEventDownTime(touchEvent);
     OH_Input_DestroyTouchEvent(&touchEvent);
-    if (retResult == 1) {
-        napi_create_int32(env, (retResult == 1) ? 1 : 0, &result);
-    } else {
-        napi_create_int32(env, (retResult == 0) ? 1 : 0, &result);
-    };
+    napi_create_int32(env, (retResult == 1) ? 1 : 0, &result);
     return result;
 }
 
@@ -1321,7 +1297,7 @@ static napi_value SetTouchEventToolType1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int resultVal1 = 0;
-    int resultVal2 = 0;
+    int arrLength = 8;
     struct Input_TouchEvent *touchEvent = OH_Input_CreateTouchEvent();
     Input_TouchEventToolType toolTypes[8] = {
         Input_TouchEventToolType::TOOL_TYPE_FINGER,
@@ -1333,20 +1309,17 @@ static napi_value SetTouchEventToolType1(napi_env env, napi_callback_info info)
         Input_TouchEventToolType::TOOL_TYPE_MOUSE,
         Input_TouchEventToolType::TOOL_TYPE_LENS
     };
-    for (int i = 0; i <= 7; i++) {
+    for (int i = 0; i < arrLength; i++) {
         Input_Result retResult1 = OH_Input_SetTouchEventToolType(touchEvent, toolTypes[i]);
         auto retResult2 = OH_Input_GetTouchEventToolType(touchEvent);
         if (retResult1 == INPUT_SUCCESS && retResult2 == toolTypes[i]) {
             resultVal1++;
-        } else if (retResult1 == INPUT_SUCCESS && retResult2 == Input_TouchEventToolType::TOOL_TYPE_FINGER) {
-            resultVal2++;
         } else {
             resultVal1 = 0;
-            resultVal2 = 0;
         };
     };
     OH_Input_DestroyTouchEvent(&touchEvent);
-    napi_create_int32(env, (resultVal1 == 8 || resultVal2 == 8) ? 1 : 0, &result);
+    napi_create_int32(env, (resultVal1 == arrLength) ? 1 : 0, &result);
     return result;
 }
 
