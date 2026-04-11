@@ -2043,6 +2043,69 @@ export default function deviceInfoTest() {
       }
       expect(isRangeError).assertEqual(true);
 
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const targetArr: BigInt64Array = new BigInt64Array(buf);
+      const sourceArr: BigInt64Array = new BigInt64Array([100n, 200n]);
+      const dv: DataView = new DataView(buf);
+      targetArr.set(sourceArr, 1);
+      expect(targetArr[0]).assertEqual(0n);
+      expect(targetArr[1]).assertEqual(100n);
+      expect(targetArr[2]).assertEqual(200n);
+      expect(targetArr.length).assertEqual(3);
+      expect(dv.getBigInt64(8, true)).assertEqual(100n);
+      expect(dv.getBigInt64(16, true)).assertEqual(200n);
+      sourceArr[0] = 150n;
+      targetArr.set(sourceArr, 1);
+      expect(dv.getBigInt64(8, true)).assertEqual(150n);
+  
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const fillVal: bigint = 500n;
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.fill(fillVal);
+      for (let i = 0; i < bigInt64Arr.length; i++) {
+        expect(bigInt64Arr[i]).assertEqual(fillVal);
+        expect(dv.getBigInt64(i * 8, true)).assertEqual(fillVal);
+      }
+      const newFillVal: bigint = 600n;
+      bigInt64Arr.fill(newFillVal, 1, 3);
+      expect(bigInt64Arr[0]).assertEqual(fillVal);
+      expect(bigInt64Arr[1]).assertEqual(newFillVal);
+      expect(bigInt64Arr[2]).assertEqual(newFillVal);
+      expect(dv.getBigInt64(8, true)).assertEqual(newFillVal);
+
+      const buf: ArrayBuffer = new ArrayBuffer(32);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      bigInt64Arr.set([10n, 20n, 30n, 40n]);
+      const fillVal: bigint = 99n;
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.fill(fillVal, -3, -1);
+      expect(bigInt64Arr[0]).assertEqual(10n);
+      expect(bigInt64Arr[1]).assertEqual(fillVal);
+      expect(bigInt64Arr[2]).assertEqual(fillVal);
+      expect(bigInt64Arr[3]).assertEqual(40n);
+      expect(bigInt64Arr.length).assertEqual(4)
+      expect(dv.getBigInt64(8, true)).assertEqual(fillVal);
+      expect(dv.getBigInt64(16, true)).assertEqual(fillVal);
+
+      const buf: ArrayBuffer = new ArrayBuffer(32);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      bigInt64Arr.set([1n, 2n, 3n, 4n]);
+      const dv: DataView = new DataView(buf);
+      bigInt64Arr.copyWithin(0, 2);
+      expect(bigInt64Arr[0]).assertEqual(3n);
+      expect(bigInt64Arr[1]).assertEqual(4n);
+      expect(bigInt64Arr[2]).assertEqual(3n);
+      expect(bigInt64Arr[3]).assertEqual(4n);
+      expect(bigInt64Arr.length).assertEqual(4)
+      expect(dv.getBigInt64(0, true)).assertEqual(3n);
+      expect(dv.getBigInt64(8, true)).assertEqual(4n);
+      expect(dv.getBigInt64(16, true)).assertEqual(3n);
+      bigInt64Arr.copyWithin(-2, 0, 2);
+      expect(bigInt64Arr[2]).assertEqual(3n);
+      expect(bigInt64Arr[3]).assertEqual(4n);
+
+      
       });
     })
 }
