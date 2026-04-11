@@ -3904,3 +3904,341 @@ Camera_ErrorCode NDKCamera::setIso(int useCaseCode)
     }
     return ret_;
 }
+
+Camera_ErrorCode NDKCamera::GetCameraDevices(void)
+{
+    Camera_Type type = CAMERA_TYPE_ULTRA_WIDE;
+    Camera_DeviceQueryInfo info ;
+    info.cameraPosition = CAMERA_POSITION_BACK;
+    info.cameraType = &type;
+    info.cameraTypeSize = 1;
+    info.connectionType = CAMERA_CONNECTION_BUILT_IN;
+    ret_ = OH_CameraManager_GetCameraDevices(cameraManager_, &info, &size_, &cameras_);
+    if (cameras_ == nullptr || ret_ != CAMERA_OK) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::TestPhyAptNullSession()
+{
+    uint32_t size = 0;
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    return OH_CaptureSession_GetSupportedPhysicalApertures(
+        nullptr, &apertures, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestPhyAptNullApts()
+{
+    if (captureSession_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 0;
+    return OH_CaptureSession_GetSupportedPhysicalApertures(
+        captureSession_, nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestPhyAptNoInput()
+{
+    if (cameraManager_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    Camera_CaptureSession* session = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(
+        cameraManager_, &session);
+    if (ret != CAMERA_OK || session == nullptr) {
+        return (ret != CAMERA_OK) ? ret : CAMERA_INVALID_ARGUMENT;
+    }
+
+    ret = OH_CaptureSession_BeginConfig(session);
+    if (ret != CAMERA_OK) {
+        OH_CaptureSession_Release(session);
+        return ret;
+    }
+
+    uint32_t size = 0;
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    ret = OH_CaptureSession_GetSupportedPhysicalApertures(
+        session, &apertures, &size);
+
+    if (apertures != nullptr) {
+        OH_CaptureSession_DeletePhysicalApertures(session, apertures, size);
+    }
+    OH_CaptureSession_Release(session);
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::TestPhyAptNoOutput()
+{
+    if (cameraManager_ == nullptr || cameraInput_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    Camera_CaptureSession* session = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(
+        cameraManager_, &session);
+    if (ret != CAMERA_OK || session == nullptr) {
+        return (ret != CAMERA_OK) ? ret : CAMERA_INVALID_ARGUMENT;
+    }
+
+    ret = OH_CaptureSession_BeginConfig(session);
+    if (ret != CAMERA_OK) {
+        OH_CaptureSession_Release(session);
+        return ret;
+    }
+
+    ret = OH_CaptureSession_AddInput(session, cameraInput_);
+    if (ret != CAMERA_OK) {
+        OH_CaptureSession_Release(session);
+        return ret;
+    }
+
+    uint32_t size = 0;
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    ret = OH_CaptureSession_GetSupportedPhysicalApertures(
+        session, &apertures, &size);
+
+    if (apertures != nullptr) {
+        OH_CaptureSession_DeletePhysicalApertures(session, apertures, size);
+    }
+    OH_CaptureSession_Release(session);
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::TestDelPhyApts()
+{
+    if (captureSession_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 0;
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedPhysicalApertures(
+        captureSession_, &apertures, &size);
+    if (ret != CAMERA_OK) {
+        return ret;
+    }
+
+    return OH_CaptureSession_DeletePhysicalApertures(
+        captureSession_, apertures, size);
+}
+
+Camera_ErrorCode NDKCamera::TestDelPhyAptsNullSession()
+{
+    if (captureSession_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 0;
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedPhysicalApertures(
+        captureSession_, &apertures, &size);
+    if (ret != CAMERA_OK) {
+        return ret;
+    }
+
+    ret = OH_CaptureSession_DeletePhysicalApertures(nullptr, apertures, size);
+    if (apertures != nullptr) {
+        OH_CaptureSession_DeletePhysicalApertures(
+            captureSession_, apertures, size);
+    }
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::TestDelPhyAptsNullApts()
+{
+    if (captureSession_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 1;
+    return OH_CaptureSession_DeletePhysicalApertures(
+        captureSession_, nullptr, size);
+}
+
+Camera_ErrorCode NDKCamera::TestLensDistNullCam()
+{
+    float* lens = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLensDistortion(nullptr, &lens, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestLensDistNullLens()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLensDistortion(&cameras_[cameraDeviceIndex_], nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestLensDistNullSize()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    float* lens = nullptr;
+    return OH_CameraDevice_GetLensDistortion(&cameras_[cameraDeviceIndex_], &lens, nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestIntrinsicNullCam()
+{
+    float* data = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetIntrinsicCalibration(nullptr, &data, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestIntrinsicNullData()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    uint32_t size = 0;
+    return OH_CameraDevice_GetIntrinsicCalibration(&cameras_[cameraDeviceIndex_], nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestIntrinsicNullSize()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    float* data = nullptr;
+    return OH_CameraDevice_GetIntrinsicCalibration(&cameras_[cameraDeviceIndex_], &data, nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestSensorSizeNullCam()
+{
+    float width = 0.0f;
+    float height = 0.0f;
+    return OH_CameraDevice_GetSensorPhysicalSize(nullptr, &width, &height);
+}
+
+Camera_ErrorCode NDKCamera::TestSensorSizeNullW()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    float height = 0.0f;
+    return OH_CameraDevice_GetSensorPhysicalSize(&cameras_[cameraDeviceIndex_], nullptr, &height);
+}
+
+Camera_ErrorCode NDKCamera::TestSensorSizeNullH()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    float width = 0.0f;
+    return OH_CameraDevice_GetSensorPhysicalSize(&cameras_[cameraDeviceIndex_], &width, nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestEqFocalNullCam()
+{
+    uint32_t* data = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLensEquivalentFocalLengths(nullptr, &data, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestEqFocalNullData()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLensEquivalentFocalLengths(
+        &cameras_[cameraDeviceIndex_], nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestEqFocalNullSize()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t* data = nullptr;
+    return OH_CameraDevice_GetLensEquivalentFocalLengths(
+        &cameras_[cameraDeviceIndex_], &data, nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestEqFocal()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t* data = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLensEquivalentFocalLengths(
+        &cameras_[cameraDeviceIndex_], &data, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestIsLogicNullCam()
+{
+    bool isLogical = false;
+    return OH_CameraDevice_IsLogicalCamera(nullptr, &isLogical);
+}
+
+Camera_ErrorCode NDKCamera::TestIsLogicNullFlag()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    return OH_CameraDevice_IsLogicalCamera(
+        &cameras_[cameraDeviceIndex_], nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestIsLogic()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    bool isLogical = false;
+    return OH_CameraDevice_IsLogicalCamera(
+        &cameras_[cameraDeviceIndex_], &isLogical);
+}
+
+Camera_ErrorCode NDKCamera::TestLogicCamDevsNullCam()
+{
+    Camera_Device* data = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(
+        nullptr, &data, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestLogicCamDevsNullData()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(
+        &cameras_[cameraDeviceIndex_], nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestLogicCamDevsNullSize()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    Camera_Device* data = nullptr;
+    return OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(
+        &cameras_[cameraDeviceIndex_], &data, nullptr);
+}
+
+Camera_ErrorCode NDKCamera::TestLogicCamDevs()
+{
+    if (cameras_ == nullptr || size_ <= 0 || cameraDeviceIndex_ >= size_) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    Camera_Device* data = nullptr;
+    uint32_t size = 0;
+    return OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(
+        &cameras_[cameraDeviceIndex_], &data, &size);
+}
