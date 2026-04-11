@@ -38,6 +38,7 @@ import CameraSessionMacroTest from './CameraSessionMacroTest.test';
 import CameraSessionSystemPressureLevelTest from './CameraSessionSystemPressureTest.test.ets';
 import CameraSessionControlCenterTest from './CameraSessionControlCenterTest.test.ets';
 import CameraPhotoSesionProfessionAbilityTest from './CameraPhotoSesionProfessionAbilityTest.test'
+import CameraDevicePropertyTest from './CameraDevicePropertyTest.test'
 
 let voice = call.hasVoiceCapability()
 
@@ -51,6 +52,7 @@ export default function testsuite() {
   VideoMirrorTest();
   CameraSessionMacroTest();
   CameraPhotoSesionProfessionAbilityTest();
+  CameraDevicePropertyTest();
 
   if (voice){
     CameraSessionExposureTest();
