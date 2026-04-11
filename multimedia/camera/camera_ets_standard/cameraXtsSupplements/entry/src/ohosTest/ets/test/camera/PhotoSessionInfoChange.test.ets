@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it,  TestType, Level, Size, expect } from '@ohos/hypium';
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import { closeFd, driveFn, getFd, getPermission, isEmpty, resourceName, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { media } from '@kit.MediaKit';
 import { JSON } from '@kit.ArkTS';
 
 const TAG = "CameraXts.CameraSessionIsoInfoChangeTest";
@@ -28,36 +27,9 @@ let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
-let mVideoOutput: camera.VideoOutput;
-let mVideoSurfaceId: string;
 let mPhotoSession: camera.PhotoSession;
-let mProfessionalSession: camera.ProfessionalPhotoSession;
-let mVideoSession: camera.VideoSession;
-let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
-let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-
-let CameraVideoProfile: media.AVRecorderProfile = {
-  audioBitrate: 48000,
-  audioChannels: 2,
-  audioCodec: media.CodecMimeType.AUDIO_AAC,
-  audioSampleRate: 48000,
-  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
-  videoBitrate: 2000000,
-  videoCodec: media.CodecMimeType.VIDEO_AVC,
-  videoFrameWidth: 640,
-  videoFrameHeight: 480,
-  videoFrameRate: 30
-};
-
-let videoConfig: media.AVRecorderConfig = {
-  videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
-  profile: CameraVideoProfile,
-  url: 'file://',
-  location: { latitude: 30, longitude: 130 } as camera.Location,
-  rotation: 0
-};
 
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
@@ -128,52 +100,8 @@ function createPhotoOutput() {
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
-function createProfessionalSessionOutput() {
-  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-  let haveValidDevice = false;
-  for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-    if (mSupportedModes.includes(camera.SceneMode.PROFESSIONAL_PHOTO)) {
-      useDevice = device;
-      haveValidDevice = true;
-      break;
-    }
-  }
-  if (!haveValidDevice) {
-    return;
-  }
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.PROFESSIONAL_PHOTO);
-  let previewProfile = cameraOutputCap.previewProfiles[0];
-  let photoProfile = cameraOutputCap.photoProfiles[0];
-  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
-      console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
-      console.log(TAG,
-        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
-      return Math.abs((indexPhotoProfile.size.width * indexPreviewProfiles.size.height) -
-        (indexPreviewProfiles.size.width * indexPhotoProfile.size.height)) < Number.EPSILON;
-    })
-    if (foundProfile) {
-      photoProfile = foundProfile;
-      previewProfile = indexPreviewProfiles;
-      break;
-    }
-  }
-  console.log(TAG, 'photoProfile: w: ' + photoProfile.size.width + 'h: ' + photoProfile.size.height);
-  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
-}
-async function getCreateProfessionalSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
-  console.info(TAG, 'getCreateProfessionalSession.');
-  mPhotoSession = mCameraManager.createSession(camera.SceneMode.PROFESSIONAL_PHOTO);
-  mPhotoSession.beginConfig();
-  mPhotoSession.addInput(mCameraInput);
-  await mCameraInput.open();
-  mPhotoSession.addOutput(previewOutput);
-  mPhotoSession.addOutput(photoOutput);
-  await mPhotoSession.commitConfig();
-}
+
+
 
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
@@ -185,39 +113,12 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   mPhotoSession.addOutput(photoOutput);
   await mPhotoSession.commitConfig();
 }
-
-async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
-}
-
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
   await mPreviewOutput?.release();
   await mPhotoOutput?.release();
   await mPhotoSession?.release();
 }
-
-async function releaseProfessionalSession() {
-  console.info(TAG, 'releasProfessionalSession.');
-  await mPreviewOutput?.release();
-  await mPhotoOutput?.release();
-  await mPhotoSession?.release();
-}
-
 export default function PhotoSessIsoInfoChangeTest() {
   describe('PhotoSessIsoInfoChangeTest', () => {
     beforeAll(async () => {
@@ -244,15 +145,13 @@ export default function PhotoSessIsoInfoChangeTest() {
       AppStorage.delete('string1')
     });
 
-
-
     /**
      * @tc.name: SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100
      * @tc.number: SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100
      * @tc.desc: onIsoInfoChange callback triggered test.
      * @tc.type: FUNCTION
-     * @tc.size: MediumTest
-     * @tc.level: Level1
+     * @tc.size: MEDIUMTEST
+     * @tc.level: LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const testName: string = 'SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100';
@@ -296,9 +195,9 @@ export default function PhotoSessIsoInfoChangeTest() {
      * @tc.name: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100
      * @tc.number: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100
      * @tc.desc: onExposureInfoChange callback triggered test.
-     * @tc.type: FUNCTION
+     * @tc.type: MEDIUMTEST
      * @tc.size: MediumTest
-     * @tc.level: Level1
+     * @tc.level: LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const testName: string = 'SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100';
