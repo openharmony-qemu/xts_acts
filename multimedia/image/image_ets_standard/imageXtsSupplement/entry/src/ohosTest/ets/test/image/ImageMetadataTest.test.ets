@@ -74,7 +74,7 @@ export default function ImageMetadataTest() {
           colorSpace:colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB)
         };
         mAuxiliaryPicture = image.createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo, image.AllocatorType.AUTO, null);
-        console.info(TAG, testName, 'createAuxiliaryPictureUsingAllocator success', JSON.stringify(mAuxiliaryPicture.getAuxiliaryPictureInfo()));
+        console.info(TAG, testName, 'createAuxiliaryPictureUsingAllocator success');
         let res = mAuxiliaryPicture.getAuxiliaryPictureInfo();
         expect(res.pixelFormat).assertEqual(auxiliaryPictureInfo.pixelFormat);
         await mAuxiliaryPicture!.release();
@@ -105,7 +105,7 @@ export default function ImageMetadataTest() {
           colorSpace:colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB)
         };
         mAuxiliaryPicture = image.createAuxiliaryPictureUsingAllocator(auxiliaryPictureInfo, image.AllocatorType.AUTO, undefined);
-        console.info(TAG, testName, 'createAuxiliaryPictureUsingAllocator success', JSON.stringify(mAuxiliaryPicture.getAuxiliaryPictureInfo()));
+        console.info(TAG, testName, 'createAuxiliaryPictureUsingAllocator success');
         let res = mAuxiliaryPicture.getAuxiliaryPictureInfo();
         expect(res.pixelFormat).assertEqual(auxiliaryPictureInfo.pixelFormat);
         await mAuxiliaryPicture!.release();
