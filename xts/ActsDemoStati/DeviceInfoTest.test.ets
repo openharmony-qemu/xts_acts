@@ -1913,6 +1913,36 @@ export default function deviceInfoTest() {
         expect(date.getHours()).assertEqual(18);
         expect(date.getMinutes()).assertEqual(45);
         expect(date.getSeconds()).assertEqual(30);
+
+        const buf: ArrayBuffer = new ArrayBuffer(8);
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
+      const dv: DataView = new DataView(buf);
+      const testVal: bigint = 9223372036854775807n;
+      bigInt64Arr[0] = testVal;
+      expect(dv.getBigInt64(0, true)).assertEqual(testVal);
+      const newVal: bigint = -9223372036854775808n;
+      dv.setBigInt64(0, newVal, true);
+      expect(bigInt64Arr[0]).assertEqual(newVal);
+      expect(bigInt64Arr.length).assertEqual(1);
+
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const offset: number = 8;
+      const bigInt64Arr: BigInt64Array = new BigInt64Array(buf, offset, 2);
+      const dv: DataView = new DataView(buf);
+      const val1: bigint = 1234567890123456789n;
+      const val2: bigint = -8570200862721897295n;
+      bigInt64Arr[0] = val1;
+      bigInt64Arr[1] = val2;
+      expect(dv.getBigInt64(offset, true)).assertEqual(val1);
+      expect(dv.getBigInt64(offset + 8, true)).assertEqual(val2);
+      const newVal: bigint = 4567890123456789012n;
+      dv.setBigInt64(offset + 4, newVal, true);
+      expect(bigInt64Arr[0].toString()).assertEqual('-7662810906284687083');
+      expect(bigInt64Arr[1].toString()).assertEqual('-8570200865478776867');
+      expect(bigInt64Arr.length).assertEqual(2);
+
+
+
       });
     })
 }
