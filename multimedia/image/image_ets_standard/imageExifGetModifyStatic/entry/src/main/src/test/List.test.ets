@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 import imageExifGetModifyTest from './ImageExifGetModify.test';
+import imageExifGetModifyByTypeTest from "./ImageExifGetModifyByType.test";
 import imageExifGetSyncTest from "./ImageExifGetSync.test"
-import imageExifGetModifyByTypeTest from "./ImageExifGetModifyByType.test"
 
 export default function testsuite() {
   imageExifGetModifyTest();
-  imageExifGetSyncTest();
   imageExifGetModifyByTypeTest();
+  imageExifGetSyncTest();
 }
