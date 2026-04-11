@@ -103,13 +103,13 @@ export default function RWLockEnhancedTest() {
 
         await sleep(200);
 
-        wLock.unlock();
         result.exchange(result.load() + 'W2');
+        wLock.unlock();
 
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
-
+        worker.join().Await();
         console.info(`${TAG} result: ${result.load()}, worker completed: ${workerCompleted.load()}`);
         expect(result.load()).assertEqual('W1W2R');
         expect(workerCompleted.load()).assertEqual(1);
