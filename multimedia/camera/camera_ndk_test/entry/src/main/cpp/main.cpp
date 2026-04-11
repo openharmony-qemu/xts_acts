@@ -3681,7 +3681,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testOHGetSensorPixelArraySizeWithoutCamera", nullptr, TestOHGetSensorPixelArraySizeWithoutCamera,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testOHGetSensorColorFilterArrangementWithoutCamera", nullptr,
-            TestOHGetSensorColorFilterArrangementWithoutCamera, nullptr, nullptr, napi_default, nullptr },
+            TestOHGetSensorColorFilterArrangementWithoutCamera, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getWhiteBalanceTest", nullptr, GetWhiteBalanceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMacroStatusChangeTest", nullptr, GetMacroStatusChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getIsoInfoChangeTest", nullptr, GetIsoInfoChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
