@@ -19,14 +19,14 @@ export default function replaceAdvancedTest() {
 
     describe('lastIndex_Property_Tests', () => {
       /**
-       * @tc.name testReplaceTest0100
+       * @tc.name testReplace0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0100
       * @tc.desc   Test Non-global replace honors lastIndex as search start
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc abc";
         const regex = /abc/;
         regex.lastIndex = 4;
@@ -35,14 +35,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0101
+       * @tc.name testReplace0101
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0200
       * @tc.desc   Test Global replace replaces all matches and resets lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc abc abc";
         const regex = /abc/g;
         regex.lastIndex = 4;
@@ -52,14 +52,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0102
+       * @tc.name testReplace0102
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0300
       * @tc.desc   Test Sticky replace respects lastIndex positioning
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "aaa";
         const regex = /a/y;
         regex.lastIndex = 1;
@@ -68,14 +68,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0103
+       * @tc.name testReplace0103
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0400
       * @tc.desc   Test Global replace after manually setting lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "test test";
         const regex = /test/g;
         regex.lastIndex = 5;
@@ -85,14 +85,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0104
+       * @tc.name testReplace0104
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0500
       * @tc.desc   Test lastIndex returns to zero after global replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc abc";
         const regex = /abc/g;
         const before = regex.lastIndex;
@@ -104,56 +104,56 @@ export default function replaceAdvancedTest() {
 
     describe('ReplaceAdvanced_Boundary_Value_Tests', () => {
       /**
-       * @tc.name testReplaceTest0105
+       * @tc.name testReplace0105
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0600
       * @tc.desc   Test Replace on empty source string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "";
         const result = str.replace(/a/, "b");
         expect(result).assertEqual("");
       });
 
       /**
-       * @tc.name testReplaceTest0106
+       * @tc.name testReplace0106
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0700
       * @tc.desc   Test Empty-match regex inserts replacement at position zero
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "test";
         const result = str.replace(/(?:)/, "_");
         expect(result).assertEqual("_test");
       });
 
       /**
-       * @tc.name testReplaceTest0107
+       * @tc.name testReplace0107
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0800
       * @tc.desc   Test Single-character string replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "a";
         const result = str.replace(/a/, "b");
         expect(result).assertEqual("b");
       });
 
       /**
-       * @tc.name testReplaceTest0108
+       * @tc.name testReplace0108
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0900
       * @tc.desc   Test Long string global replace preserves length
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "a".repeat(10000);
         const result = str.replace(/a/g, "b");
         expect(result.length).assertEqual(10000);
@@ -161,42 +161,42 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0109
+       * @tc.name testReplace0109
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1000
       * @tc.desc   Test Replace matched segment with empty string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace(/World/, "");
         expect(result).assertEqual("Hello ");
       });
 
       /**
-       * @tc.name testReplaceTest0110
+       * @tc.name testReplace0110
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1100
       * @tc.desc   Test Replace whole string using start/end anchors
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello";
         const result = str.replace(/^.*$/, "Bye");
         expect(result).assertEqual("Bye");
       });
 
       /**
-       * @tc.name testReplaceTest0111
+       * @tc.name testReplace0111
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1200
       * @tc.desc   Test Emoji replace with Unicode flag on surrogate pairs
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "\uD83D\uDE00\uD83D\uDE00";
         const resultWithU = str.replace(/\uD83D\uDE00/gu, "X");
         expect(resultWithU).assertEqual("XX");
@@ -205,56 +205,56 @@ export default function replaceAdvancedTest() {
 
     describe('Special_Chars_And_Unicode', () => {
       /**
-       * @tc.name testReplaceTest0112
+       * @tc.name testReplace0112
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1300
       * @tc.desc   Test Replace newline and tab with spaces
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello\nWorld\t!";
         const result = str.replace(/\n/g, " ").replace(/\t/g, "  ");
         expect(result).assertEqual("Hello World  !");
       });
 
       /**
-       * @tc.name testReplaceTest0113
+       * @tc.name testReplace0113
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1400
       * @tc.desc   Test Replace accented Unicode character
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "caf\u00e9";
         const result = str.replace(/\u00e9/, "e");
         expect(result).assertEqual("cafe");
       });
 
       /**
-       * @tc.name testReplaceTest0114
+       * @tc.name testReplace0114
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1500
       * @tc.desc   Test Replace emoji in plain text
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello \uD83D\uDE00 World";
         const result = str.replace(/\uD83D\uDE00/g, ":-)");
         expect(result).assertEqual("Hello :-) World");
       });
 
       /**
-       * @tc.name testReplaceTest0115
+       * @tc.name testReplace0115
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1600
       * @tc.desc   Test Replace Unicode math digit with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const mathSansHigh = 55349;
         const mathSansDigitZeroLow = 57240;
         const mathSansDigitOneLow = 57241;
@@ -269,14 +269,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0116
+       * @tc.name testReplace0116
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1700
       * @tc.desc   Test Surrogate pair handling with and without global u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "\uD83D\uDE00\uD83D\uDE00";
         const result1 = str.replace(/\uD83D\uDE00/u, "X");
         const result2 = str.replace(/\uD83D\uDE00/gu, "X");
@@ -285,42 +285,42 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0117
+       * @tc.name testReplace0117
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1800
       * @tc.desc   Test Combining character replace with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "e\u0301";
         const result = str.replace(/\u0301/u, "");
         expect(result).assertEqual("e");
       });
 
       /**
-       * @tc.name testReplaceTest0118
+       * @tc.name testReplace0118
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1900
       * @tc.desc   Test Partial replace in complex emoji sequence
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00";
         const result = str.replace(/\uD83D\uDE00/gu, "XX");
         expect(result).not().assertEqual(str);
       });
 
       /**
-       * @tc.name testReplaceTest0119
+       * @tc.name testReplace0119
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2000
       * @tc.desc   Test Unicode property escape Script=Greek
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "ABC \u03b1\u03b2\u03b3";
         const result = str.replace(/\p{Script=Greek}/gu, "X");
         expect(result).assertEqual("ABC XXX");
@@ -329,14 +329,14 @@ export default function replaceAdvancedTest() {
 
     describe('Regex_Flag_Interactions', () => {
       /**
-       * @tc.name testReplaceTest0120
+       * @tc.name testReplace0120
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2100
       * @tc.desc   Test Sticky y flag replace with lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "aaa";
         const regex = /a/y;
         regex.lastIndex = 1;
@@ -345,28 +345,28 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0121
+       * @tc.name testReplace0121
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2200
       * @tc.desc   Test dotAll s flag matches across newline
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello\nWorld";
         const result = str.replace(/Hello.World/s, "Hi");
         expect(result).assertEqual("Hi");
       });
 
       /**
-       * @tc.name testReplaceTest0122
+       * @tc.name testReplace0122
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2300
       * @tc.desc   Test Combined gim and sm flag replace behavior
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Test\nTEST\ntest";
         const result1 = str.replace(/test/gim, "XYZ");
         const result2 = str.replace(/.+/sm, "ABC");
@@ -375,14 +375,14 @@ export default function replaceAdvancedTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0123
+       * @tc.name testReplace0123
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2400
       * @tc.desc   Test Compare first-only vs global replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "test test test";
         const result1 = str.replace(/test/, "XYZ");
         const result2 = str.replace(/test/g, "XYZ");

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,83 +39,141 @@ class ExecBasic {
 export default function execBasicTest() {
   describe('Basic_Matching_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec simple pattern /hello/ match and index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecBasic.matchHello("hello world");
       expect(result?.[0]).assertEqual("hello");
       expect(result?.index).assertEqual(0);
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec returns null when pattern does not match
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecBasic.matchHello("world");
       expect(result).assertEqual(null);
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec /abc/ on empty string returns null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecBasic.matchAbc("");
       expect(result).assertEqual(null);
     });
 
     /**
-     * @tc.name testExecTest0103
+     * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec empty non-capturing pattern (?:)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecBasic.matchEmptyPattern("hello");
       expect(result?.[0]).assertEqual("");
       expect(result?.index).assertEqual(0);
     });
 
     /**
-     * @tc.name testExecTest0104
+     * @tc.name testExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0500
      * @tc.desc   Test String.search index aligns with exec match position for /a/ on abc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const result: number = ExecBasic.searchWithPattern("abc", /a/);
-      expect(result).assertEqual(0);
+    it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const re: RegExp = /a/;
+      const str: string = "abc";
+      const execResult: RegExpExecArray | null = re.exec(str);
+      if (execResult) {
+        const searchIndex: number = ExecBasic.searchWithPattern(str, re);
+        expect(execResult.index).assertEqual(searchIndex);
+      } else {
+        expect(false).assertTrue();
+      }
     });
 
     /**
-     * @tc.name testExecTest0105
+     * @tc.name testExec0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0600
-     * @tc.desc   Test String.search repeatability for same pattern and string
+     * @tc.desc   Boundary: exec /hello/ on empty string returns null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const result: number = ExecBasic.searchWithPattern("abc", /a/);
-      expect(result).assertEqual(0);
+    it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result = ExecBasic.matchHello('');
+      expect(result).assertEqual(null);
+    });
+
+    /**
+     * @tc.name testExec0106
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0700
+     * @tc.desc   Boundary: exec empty non-capturing pattern on empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result = ExecBasic.matchEmptyPattern('');
+      expect(result?.[0]).assertEqual('');
+      expect(result?.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testExec0107
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0800
+     * @tc.desc   Boundary: String.search returns -1 when pattern never matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(ExecBasic.searchWithPattern('abc', /z/)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name testExec0108
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0900
+     * @tc.desc   Boundary: String.search on empty string when pattern requires a character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(ExecBasic.searchWithPattern('', /a/)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name testExec0109
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_1000
+     * @tc.desc   Boundary: exec with whitespace-only input and no match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExec0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const result = ExecBasic.matchHello('   \t\n  ');
+      expect(result).assertEqual(null);
     });
   });
 }

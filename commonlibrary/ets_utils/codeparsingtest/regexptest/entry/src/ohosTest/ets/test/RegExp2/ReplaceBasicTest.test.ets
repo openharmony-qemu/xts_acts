@@ -19,70 +19,70 @@ export default function replaceBasicTest() {
 
     describe('String_Pattern_Replacement', () => {
       /**
-       * @tc.name testReplaceTest0100
+       * @tc.name testReplace0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0100
        * @tc.desc   Test Basic String Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World, Hello Universe";
         const result = str.replace("Hello", "Hi");
         expect(result).assertEqual("Hi World, Hello Universe");
       });
 
       /**
-       * @tc.name testReplaceTest0101
+       * @tc.name testReplace0101
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0200
        * @tc.desc   Test String Replaces First Match Only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "apple, apple, apple";
         const result = str.replace("apple", "orange");
         expect(result).assertEqual("orange, apple, apple");
       });
 
       /**
-       * @tc.name testReplaceTest0102
+       * @tc.name testReplace0102
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0300
        * @tc.desc   Test Empty String Pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "xxx";
         const result = str.replace("", "_");
         expect(result === "_xxx" || result === "xxx").assertTrue();
       });
 
       /**
-       * @tc.name testReplaceTest0103
+       * @tc.name testReplace0103
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0400
        * @tc.desc   Test Non Existent String Pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace("goodbye", "Hi");
         expect(result).assertEqual("Hello World");
       });
 
       /**
-       * @tc.name testReplaceTest0104
+       * @tc.name testReplace0104
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0500
        * @tc.desc   Test String Pattern Escapes Special Chars
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "a.b.c";
         const result = str.replace(".", "_");
         expect(result).assertEqual("a_b.c");
@@ -91,98 +91,98 @@ export default function replaceBasicTest() {
 
     describe('Regex_Pattern_Replacement', () => {
       /**
-       * @tc.name testReplaceTest0105
+       * @tc.name testReplace0105
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0600
        * @tc.desc   Test Basic Regex Replacement No Flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "cat, dog, cat";
         const result = str.replace(/cat/, "bird");
         expect(result).assertEqual("bird, dog, cat");
       });
 
       /**
-       * @tc.name testReplaceTest0106
+       * @tc.name testReplace0106
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0700
        * @tc.desc   Test Global Replacement g Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "cat, dog, cat";
         const result = str.replace(/cat/g, "bird");
         expect(result).assertEqual("bird, dog, bird");
       });
 
       /**
-       * @tc.name testReplaceTest0107
+       * @tc.name testReplace0107
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0800
        * @tc.desc   Test Case Insensitive Replacement i Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello world, hello universe";
         const result = str.replace(/hello/i, "Hi");
         expect(result).assertEqual("Hi world, hello universe");
       });
 
       /**
-       * @tc.name testReplaceTest0108
+       * @tc.name testReplace0108
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0900
        * @tc.desc   Test Multiline Replacement m Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Line1\nLine2\nLine3";
         const result = str.replace(/^Line/gm, "Row");
         expect(result).assertEqual("Row1\nRow2\nRow3");
       });
 
       /**
-       * @tc.name testReplaceTest0109
+       * @tc.name testReplace0109
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1000
        * @tc.desc   Test Combined Flags gi
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello HELLO hello HeLLo";
         const result = str.replace(/hello/gi, "Hi");
         expect(result).assertEqual("Hi Hi Hi Hi");
       });
 
       /**
-       * @tc.name testReplaceTest0110
+       * @tc.name testReplace0110
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1100
        * @tc.desc   Test dotAll Flag s
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello\nWorld";
         const result = str.replace(/Hello.World/s, "Hi");
         expect(result).assertEqual("Hi");
       });
 
       /**
-       * @tc.name testReplaceTest0111
+       * @tc.name testReplace0111
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1200
        * @tc.desc   Test Unicode Flag u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const mathSansHigh = 55349;
         const mathSansDigitZeroLow = 57240;
         const mathSansDigitOneLow = 57241;
@@ -197,14 +197,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0112
+       * @tc.name testReplace0112
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1300
        * @tc.desc   Test Sticky Flag y
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "aaa";
         const regex = /a/y;
         regex.lastIndex = 1;
@@ -213,14 +213,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0113
+       * @tc.name testReplace0113
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1400
        * @tc.desc   Test hasIndices Flag d
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "test123";
         try {
           const regex: RegExp = new RegExp('test(\\d+)', 'd');
@@ -234,140 +234,140 @@ export default function replaceBasicTest() {
 
     describe('Special_Replacement_Patterns', () => {
       /**
-       * @tc.name testReplaceTest0114
+       * @tc.name testReplace0114
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1500
        * @tc.desc   Test Insert Dollar Sign
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "price: 100";
         const result = str.replace(/\d+/, "$$");
         expect(result).assertEqual("price: $");
       });
 
       /**
-       * @tc.name testReplaceTest0115
+       * @tc.name testReplace0115
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1600
        * @tc.desc   Test Insert Entire Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace(/World/, "$&!");
         expect(result).assertEqual("Hello World!");
       });
 
       /**
-       * @tc.name testReplaceTest0116
+       * @tc.name testReplace0116
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1700
        * @tc.desc   Test Insert Text Before Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace(/World/, "[$`]");
         expect(result).assertEqual("Hello [Hello ]");
       });
 
       /**
-       * @tc.name testReplaceTest0117
+       * @tc.name testReplace0117
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1800
        * @tc.desc   Test Insert Text After Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace(/Hello/, "[$']");
         expect(result).assertEqual("[ World] World");
       });
 
       /**
-       * @tc.name testReplaceTest0118
+       * @tc.name testReplace0118
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1900
        * @tc.desc   Test Numbered Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "John Smith";
         const result = str.replace(/(\w+)\s(\w+)/, "$2, $1");
         expect(result).assertEqual("Smith, John");
       });
 
       /**
-       * @tc.name testReplaceTest0119
+       * @tc.name testReplace0119
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2000
        * @tc.desc   Test Multiple Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "2023-12-25";
         const result = str.replace(/(\d{4})-(\d{2})-(\d{2})/, "$3/$2/$1");
         expect(result).assertEqual("25/12/2023");
       });
 
       /**
-       * @tc.name testReplaceTest0120
+       * @tc.name testReplace0120
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2100
        * @tc.desc   Test Named Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "John Smith";
         const result = str.replace(/(?<first>\w+)\s(?<last>\w+)/, "$<last>, $<first>");
         expect(result).assertEqual("Smith, John");
       });
 
       /**
-       * @tc.name testReplaceTest0121
+       * @tc.name testReplace0121
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2200
        * @tc.desc   Test Non Existent Capture Group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "foo";
         const result = str.replace(/(f)/, "$2");
         expect(result).assertEqual("$2oo");
       });
 
       /**
-       * @tc.name testReplaceTest0122
+       * @tc.name testReplace0122
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2300
        * @tc.desc   Test String Pattern Ignores Dollar
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "foo";
         const result = str.replace("f", "$1");
         expect(result).assertEqual("$1oo");
       });
 
       /**
-       * @tc.name testReplaceTest0123
+       * @tc.name testReplace0123
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2400
        * @tc.desc   Test Nested Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc123";
         const result = str.replace(/((\w)(\w))/, "$1-$2-$3");
         expect(result).assertEqual("ab-a-bc123");
@@ -385,84 +385,84 @@ export default function replaceBasicTest() {
       }
 
       /**
-       * @tc.name testReplaceTest0124
+       * @tc.name testReplace0124
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2500
        * @tc.desc   Test Basic Function Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello World";
         const result = str.replace(/World/, (match: string) => match.toUpperCase());
         expect(result).assertEqual("Hello WORLD");
       });
 
       /**
-       * @tc.name testReplaceTest0125
+       * @tc.name testReplace0125
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2600
        * @tc.desc   Test Function Receives Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc123";
         const result = str.replace(/\d+/, (match: string) => `[${match}]`);
         expect(result).assertEqual("abc[123]");
       });
 
       /**
-       * @tc.name testReplaceTest0126
+       * @tc.name testReplace0126
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2700
        * @tc.desc   Test Function Receives Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "John Smith";
         const result = str.replace(/(\w+)\s(\w+)/, (match: string, p1: string, p2: string) => `${p2.toUpperCase()}, ${p1}`);
         expect(result).assertEqual("SMITH, John");
       });
 
       /**
-       * @tc.name testReplaceTest0127
+       * @tc.name testReplace0127
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2800
        * @tc.desc   Test Function Receives Offset
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abcde";
         const result = str.replace(/cd/, (match: string, offset: number) => `${match}@${offset}`);
         expect(result).assertEqual("abcd@2e");
       });
 
       /**
-       * @tc.name testReplaceTest0128
+       * @tc.name testReplace0128
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2900
        * @tc.desc   Test Function Receives String
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "Hello";
         const result = str.replace(/l/, (match: string, offset: number, string: string) => `${match}[${string.length}]`);
         expect(result).assertEqual("Hel[5]lo");
       });
 
       /**
-       * @tc.name testReplaceTest0129
+       * @tc.name testReplace0129
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3000
        * @tc.desc   Test Function Receives Named Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "John Smith";
         const result = str.replace(/(?<first>\w+)\s(?<last>\w+)/, (match: string, p1: string, p2: string, offset: number, string: string, groups?: NameGroups) => {
           return `${groups?.last}, ${groups?.first}`;
@@ -471,14 +471,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0130
+       * @tc.name testReplace0130
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3100
        * @tc.desc   Test Function Called Multiple Times Global
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "a1b2c3";
         const result = str.replace(/\d/g, (match: string) => {
           return (parseInt(match) * 10).toString();
@@ -487,14 +487,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0131
+       * @tc.name testReplace0131
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3200
        * @tc.desc   Test Unmatched Branch Capture Group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc";
         const result = str.replace(/(a)|(b)/g, (match: string, p1?: string, p2?: string) => {
           return p1 ? "A" : (p2 ? "B" : "?");
@@ -503,14 +503,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0132
+       * @tc.name testReplace0132
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3300
        * @tc.desc   Test Temperature Conversion Example
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const f2c = (() => {
           const convert = (str: string, p1: string): string => {
             return `${((parseFloat(p1) - 32) * 5) / 9}C`;
@@ -526,14 +526,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0133
+       * @tc.name testReplace0133
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3400
        * @tc.desc   Test Access Named Groups In Function
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "name:John,age:25";
         const result = str.replace(/(?<key>\w+):(?<value>\w+)/g, (match: string, p1: string, p2: string, offset: number, string: string, groups?: KeyValueGroups) => {
           return `${groups?.key}=${groups?.value}`;
@@ -542,14 +542,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0134
+       * @tc.name testReplace0134
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3500
        * @tc.desc   Test Function Returns Undefined
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc";
         const result = str.replace(/a/, (): string => {
           return String(undefined);
@@ -558,14 +558,14 @@ export default function replaceBasicTest() {
       });
 
       /**
-       * @tc.name testReplaceTest0135
+       * @tc.name testReplace0135
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3600
        * @tc.desc   Test Function Throws Exception
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testReplaceTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testReplace0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str = "abc";
         let caughtError = false;
         try {

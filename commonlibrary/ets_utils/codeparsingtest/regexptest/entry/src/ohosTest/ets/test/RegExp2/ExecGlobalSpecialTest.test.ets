@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 export default function execGlobalSpecialTest() {
   describe('Global_Flag_Special_Case_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec zero-length matches with ^ multiline global
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /^/gm;
       const str: string = "line1\nline2\nline3";
       let result: RegExpExecArray | null = null;
@@ -40,18 +40,18 @@ export default function execGlobalSpecialTest() {
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0200
      * @tc.desc   Test RegExp lastIndex reset when exec fails on a new string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /ab*/g;
 
       const result1: RegExpExecArray | null = re.exec("abbc");
-      expect(result1![0]).assertEqual("abb");
+      expect(result1?.[0]).assertEqual("abb");
       expect(re.lastIndex).assertEqual(3);
 
       const result2: RegExpExecArray | null = re.exec("xyz");
@@ -60,14 +60,14 @@ export default function execGlobalSpecialTest() {
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0300
      * @tc.desc   Test manual lastIndex reset before repeated exec on same string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /foo/g;
       const str: string = "foo foo foo";
       re.exec(str);

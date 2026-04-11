@@ -23,38 +23,38 @@ import {
 export default function replaceExtrasTest() {
   describe('Replace_Symbol_Replace', () => {
     /**
-     * @tc.name testReplaceTest0100
+     * @tc.name testReplace0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0100
      * @tc.desc   Test custom Symbol replace object for String replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReplaceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(stringReplaceCustomSymbolReplace()).assertTrue();
     });
 
     /**
-     * @tc.name testReplaceTest0101
+     * @tc.name testReplace0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0200
      * @tc.desc   Test Symbol replace undefined this throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReplaceTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(regexpReplaceCallUndefinedThrows()).assertTrue();
     });
 
     /**
-     * @tc.name testReplaceTest0102
+     * @tc.name testReplace0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0300
      * @tc.desc   Test Symbol replace null this throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testReplaceTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(regexpReplaceCallNullThrows()).assertTrue();
     });
   });

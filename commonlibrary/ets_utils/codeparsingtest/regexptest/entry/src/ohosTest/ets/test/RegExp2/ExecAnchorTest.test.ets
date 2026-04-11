@@ -40,14 +40,14 @@ class Anchor {
 export default function execAnchorTest() {
   describe('Anchor_Boundary_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec with start anchor ^hello
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchStartAnchor("hello world");
       const result2 = Anchor.matchStartAnchor("say hello");
       expect(result1?.[0]).assertEqual("hello");
@@ -55,14 +55,14 @@ export default function execAnchorTest() {
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec with end anchor world$
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchEndAnchor("hello world");
       const result2 = Anchor.matchEndAnchor("world hello");
       expect(result1?.[0]).assertEqual("world");
@@ -70,14 +70,14 @@ export default function execAnchorTest() {
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec with word boundary \\b for whole word test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchWordBoundary("test");
       const result2 = Anchor.matchWordBoundary("testing");
       const result3 = Anchor.matchWordBoundary("123 test 456");
@@ -87,17 +87,17 @@ export default function execAnchorTest() {
     });
 
     /**
-     * @tc.name testExecTest0103
+     * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec with non-word boundary \\B after test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchNonWordBoundary("testing");
       const result2 = Anchor.matchNonWordBoundary("test");
-      expect(result1![0]).assertEqual("test");
+      expect(result1?.[0]).assertEqual("test");
       expect(result2).assertEqual(null);
     });
   });

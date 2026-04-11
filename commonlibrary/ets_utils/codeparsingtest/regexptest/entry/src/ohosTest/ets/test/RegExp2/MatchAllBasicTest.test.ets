@@ -19,14 +19,14 @@ import { regexpSymbolMatchAll } from './RegExpHelper';
 export default function matchAllBasicTest() {
   describe('MatchAll_Basic_Function_Tests', () => {
     /**
-     * @tc.name testMatchAllTest0100
+     * @tc.name testMatchAll0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0100
      * @tc.desc   Test RegExp[Symbol.matchAll] basic call returns iterator matches and indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /t(e)(st(\d?))/g;
       const str: string = "test1test2";
       const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -36,14 +36,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0101
+     * @tc.name testMatchAll0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0200
      * @tc.desc   Test RegExp[Symbol.matchAll] equivalence with String.matchAll for global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /test/g;
       const str: string = "test test test";
       const result: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -51,14 +51,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0102
+     * @tc.name testMatchAll0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0300
      * @tc.desc   Test RegExp[Symbol.matchAll] returns an iterator object and can be advanced
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /test/g;
       const str: string = "test test";
       const result: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -69,14 +69,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0103
+     * @tc.name testMatchAll0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0400
      * @tc.desc   Test match results structure is consistent with exec-style match data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /t(e)(st(\d?))/g;
       const str: string = "test1";
       const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -92,14 +92,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0104
+     * @tc.name testMatchAll0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0500
      * @tc.desc   Test match object properties including groups behavior when no named groups
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /test/g;
       const str: string = "test";
       const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -114,14 +114,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0105
+     * @tc.name testMatchAll0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0600
      * @tc.desc   Test non-global RegExp returns a single match from matchAll protocol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /test/;
       const str: string = "test test";
       const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -134,14 +134,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0106
+     * @tc.name testMatchAll0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0700
      * @tc.desc   Test global g RegExp matchAll returns all matches
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /test/g;
       const str: string = "test test test";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -149,14 +149,14 @@ export default function matchAllBasicTest() {
     });
 
     /**
-     * @tc.name testMatchAllTest0107
+     * @tc.name testMatchAll0107
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0800
      * @tc.desc   Test non-global matchAll returns one match for a different pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMatchAllTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatchAll0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = /\d+/;
       const str: string = "123 456 789";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));

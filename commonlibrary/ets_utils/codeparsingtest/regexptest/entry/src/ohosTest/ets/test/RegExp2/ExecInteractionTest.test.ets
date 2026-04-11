@@ -19,14 +19,14 @@ import { regexpSymbolMatchAll, regexpSymbolSearch } from './RegExpHelper';
 export default function execInteractionTest() {
   describe('Method_Interaction_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0100
      * @tc.desc   Test exec and test share lastIndex on same global RegExp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /foo/g;
       const str: string = "foo foo";
       re.test(str);
@@ -37,14 +37,14 @@ export default function execInteractionTest() {
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0200
      * @tc.desc   Test exec results align with String.match for global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /foo/g;
       const str: string = "foo foo";
       const execResult1: RegExpExecArray | null = re.exec(str);
@@ -56,14 +56,14 @@ export default function execInteractionTest() {
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0300
      * @tc.desc   Test String.matchAll iterator yields same substrings as multiple exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /foo/g;
       const str: string = "foo foo";
       const matchAllIterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(re, str);
@@ -74,14 +74,14 @@ export default function execInteractionTest() {
     });
 
     /**
-     * @tc.name testExecTest0103
+     * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0400
      * @tc.desc   Test replace does not leave lastIndex mutated for non-global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /foo/;
       const str: string = "foo bar";
       const replaced: string = str.replace(re, "baz");
@@ -90,14 +90,14 @@ export default function execInteractionTest() {
     });
 
     /**
-     * @tc.name testExecTest0104
+     * @tc.name testExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0500
      * @tc.desc   Test exec match index equals RegExp @@search result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /hello/;
       const str: string = "say hello world";
       const execResult: RegExpExecArray | null = re.exec(str);

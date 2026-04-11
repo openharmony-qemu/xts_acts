@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 export default function testLastIndexTest() {
   describe('lastIndex', () => {
     /**
-     * @tc.name testRegExpProtoTest0210
+     * @tc.name testLastIndex0210
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0100
      * @tc.desc   Test global lastIndex update and reset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar foo';
       const re = /foo/g;
       expect(re.lastIndex).assertEqual(0);
@@ -38,14 +38,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0211
+     * @tc.name testLastIndex0211
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0200
      * @tc.desc   Test sticky lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo foo';
       const re = /foo/y;
       re.lastIndex = 0;
@@ -57,14 +57,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0212
+     * @tc.name testLastIndex0212
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0300
      * @tc.desc   Test manual reset lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo foo';
       const re = /foo/g;
       expect(re.test(str)).assertTrue();
@@ -73,14 +73,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0213
+     * @tc.name testLastIndex0213
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0400
      * @tc.desc   Test independence between instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar foo';
       const r1 = /foo/g;
       const r2 = /foo/g;
@@ -92,14 +92,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0214
+     * @tc.name testLastIndex0214
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0500
      * @tc.desc   Test lastIndex extremes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'test';
       const re = /test/g;
       re.lastIndex = -1;
@@ -113,14 +113,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0215
+     * @tc.name testLastIndex0215
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0600
      * @tc.desc   Test non global ignores lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo foo';
       const re = /foo/;
       re.lastIndex = 5;
@@ -129,14 +129,14 @@ export default function testLastIndexTest() {
     });
 
     /**
-     * @tc.name testRegExpProtoTest0216
+     * @tc.name testLastIndex0216
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0700
      * @tc.desc   Test lastIndex affects return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testRegExpProtoTest0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar';
       const re = /foo/g;
       re.lastIndex = 4;

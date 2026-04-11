@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 export default function execLastIndexTest() {
   describe('LastIndex_Behavior_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0100
      * @tc.desc   Test lastIndex initial value 0 for non-global RegExp after exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = /test/;
       expect(re.lastIndex).assertEqual(0);
       re.exec("test");
@@ -33,14 +33,14 @@ export default function execLastIndexTest() {
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0200
      * @tc.desc   Test sticky RegExp exec honors lastIndex for next attempt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = /test/y;
       const str = "test test";
       re.lastIndex = 0;
@@ -57,14 +57,14 @@ export default function execLastIndexTest() {
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0300
      * @tc.desc   Test global exec returns null when lastIndex exceeds string length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = /test/g;
       re.lastIndex = 100;
       const result = re.exec("test");
@@ -72,18 +72,18 @@ export default function execLastIndexTest() {
     });
 
     /**
-     * @tc.name testExecTest0103
+     * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0400
      * @tc.desc   Test negative lastIndex is treated as zero for global exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = /test/g;
       re.lastIndex = -1;
       const result = re.exec("test");
-      expect(result!.index).assertEqual(0);
+      expect(result?.index).assertEqual(0);
     });
   });
 }

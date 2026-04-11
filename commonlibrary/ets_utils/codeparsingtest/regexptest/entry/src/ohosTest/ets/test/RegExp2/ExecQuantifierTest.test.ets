@@ -44,53 +44,53 @@ class ExecQuantifier {
 export default function execQuantifierTest() {
   describe('Quantifier_Tests', () => {
     /**
-     * @tc.name testExecTest0100
+     * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec greedy quantifier .*
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecQuantifier.execGreedy("a123b456b");
       expect(result?.[0]).assertEqual("a123b456b");
     });
 
     /**
-     * @tc.name testExecTest0101
+     * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec non-greedy quantifier .*?
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecQuantifier.execNonGreedy("a123b456b");
       expect(result?.[0]).assertEqual("a123b");
     });
 
     /**
-     * @tc.name testExecTest0102
+     * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec fixed count quantifier a{3}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecQuantifier.execExact("aaab");
       expect(result?.[0]).assertEqual("aaa");
     });
 
     /**
-     * @tc.name testExecTest0103
+     * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec range quantifier a{2,4}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecQuantifier.execRange("aa");
       const result2 = ExecQuantifier.execRange("aaa");
       const result3 = ExecQuantifier.execRange("aaaa");
@@ -100,14 +100,14 @@ export default function execQuantifierTest() {
     });
 
     /**
-     * @tc.name testExecTest0104
+     * @tc.name testExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0500
      * @tc.desc   Test RegExp.prototype.exec zero-or-more quantifier a*
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecQuantifier.execZeroOrMore("b");
       const result2 = ExecQuantifier.execZeroOrMore("ab");
       const result3 = ExecQuantifier.execZeroOrMore("aaab");
@@ -117,14 +117,14 @@ export default function execQuantifierTest() {
     });
 
     /**
-     * @tc.name testExecTest0105
+     * @tc.name testExec0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0600
      * @tc.desc   Test RegExp.prototype.exec one-or-more quantifier a+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testExecTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecQuantifier.execOneOrMore("ab");
       const result2 = ExecQuantifier.execOneOrMore("aaab");
       expect(result1?.[0]).assertEqual("ab");

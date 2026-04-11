@@ -42,25 +42,18 @@ interface CustomObject {
   toString: () => string;
 }
 
-function findFirstMatch(str: string, regex: RegExp): RegExpMatchArray | undefined {
-  for (const match of regexpSymbolMatchAll(regex, str)) {
-    return match;
-  }
-  return undefined;
-}
-
 export default function matchAllAdvancedTest() {
 
     describe('MatchAll_Special_Pattern_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0100
+       * @tc.name testMatchAll0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0100
        * @tc.desc   Test RegExp[Symbol.matchAll] positive lookahead assertion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d+(?= dollars)/g;
         const str: string = "100 dollars, 200 dollars";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -71,14 +64,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0101
+       * @tc.name testMatchAll0101
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0200
        * @tc.desc   Test RegExp[Symbol.matchAll] negative lookahead assertion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d{3}(?! dollars)/g;
         const str: string = "100 dollars, 200 euro";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -88,14 +81,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0102
+       * @tc.name testMatchAll0102
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0300
        * @tc.desc   Test RegExp[Symbol.matchAll] line start anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /^test/gm;
         const str: string = "test\ntest";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -106,14 +99,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0103
+       * @tc.name testMatchAll0103
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0400
        * @tc.desc   Test RegExp[Symbol.matchAll] line end anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /test$/gm;
         const str: string = "test\ntest";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -124,14 +117,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0104
+       * @tc.name testMatchAll0104
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0500
        * @tc.desc   Test RegExp[Symbol.matchAll] word boundary matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\btest\b/g;
         const str: string = "test testing";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -142,14 +135,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0105
+       * @tc.name testMatchAll0105
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0600
        * @tc.desc   Test RegExp[Symbol.matchAll] emoji character matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const emoji = String.fromCodePoint(0x1F600);
         const regex: RegExp = new RegExp(emoji, 'g');
         const str: string = `Hello ${emoji} World`;
@@ -162,14 +155,14 @@ export default function matchAllAdvancedTest() {
 
     describe('Comparison_With_Other_Methods_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0106
+       * @tc.name testMatchAll0106
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0700
        * @tc.desc   Test matchAll results match an exec loop for global regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const pattern: string = "test";
         const regex1: RegExp = new RegExp(pattern, "g");
         const regex2: RegExp = new RegExp(pattern, "g");
@@ -190,20 +183,20 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0107
+       * @tc.name testMatchAll0107
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0800
        * @tc.desc   Test matchAll preserves capture groups compared with string match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /t(e)(st(\d?))/g;
         const str: string = "test1test2";
 
         const matchResult: RegExpMatchArray | null = str.match(regex);
-        expect(matchResult![0]).assertEqual("test1");
-        expect(matchResult![1]).assertEqual("test2");
+        expect(matchResult?.[0]).assertEqual("test1");
+        expect(matchResult?.[1]).assertEqual("test2");
 
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
         const matchAllResults: RegExpMatchArray[] = Array.from(iterator);
@@ -213,14 +206,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0108
+       * @tc.name testMatchAll0108
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0900
        * @tc.desc   Test matchAll does not change lastIndex unlike exec
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex1: RegExp = /test/g;
         const regex2: RegExp = /test/g;
         const str: string = "test test";
@@ -240,14 +233,14 @@ export default function matchAllAdvancedTest() {
 
     describe('This_Value_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0109
+       * @tc.name testMatchAll0109
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1000
        * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /test/g;
         const str: string = "test";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -259,14 +252,14 @@ export default function matchAllAdvancedTest() {
 
     describe('HasIndices_Flag_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0110
+       * @tc.name testMatchAll0110
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1100
        * @tc.desc   Test indices is undefined without d flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d+/g;
         const str: string = "123 456";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -278,14 +271,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0111
+       * @tc.name testMatchAll0111
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1200
        * @tc.desc   Test d flag behavior when it is not supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\w+/g;
         const str: string = "a b";
         const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -297,14 +290,14 @@ export default function matchAllAdvancedTest() {
 
     describe('Inheritance_Custom_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0112
+       * @tc.name testMatchAll0112
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1300
        * @tc.desc   Test RegExp[Symbol.matchAll] RegExp subclass case
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test test";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -317,14 +310,14 @@ export default function matchAllAdvancedTest() {
 
     describe('String_Parameter_Type_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0113
+       * @tc.name testMatchAll0113
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1400
        * @tc.desc   Test RegExp[Symbol.matchAll] converts number parameter to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /1/g;
         const num: number = 123;
         const str: string = String(num);
@@ -336,14 +329,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0114
+       * @tc.name testMatchAll0114
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1500
        * @tc.desc   Test RegExp[Symbol.matchAll] converts object parameter to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /object/g;
         interface EmptyObject {
         }
@@ -357,14 +350,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0115
+       * @tc.name testMatchAll0115
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1600
        * @tc.desc   Test RegExp[Symbol.matchAll] converts custom object via toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const obj: CustomObject = {
           toString: (): string => {
             return "test 123";
@@ -383,14 +376,14 @@ export default function matchAllAdvancedTest() {
 
     describe('Real_World_Application_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0116
+       * @tc.name testMatchAll0116
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1700
        * @tc.desc   Test RegExp[Symbol.matchAll] HTML tag extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /<(\w+)>([^<]*)<\/\1>/g;
         const html: string = "<div>content</div><span>text</span>";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, html);
@@ -404,14 +397,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0117
+       * @tc.name testMatchAll0117
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1800
        * @tc.desc   Test RegExp[Symbol.matchAll] URL query parameter extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /[?&](\w+)=([^&]+)/g;
         const url: string = "https://example.com?name=John&age=25";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, url);
@@ -425,14 +418,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0118
+       * @tc.name testMatchAll0118
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1900
        * @tc.desc   Test RegExp[Symbol.matchAll] log format parsing
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\[(\d{4}-\d{2}-\d{2})\]\s*\[(\w+)\]\s*(.+)/g;
         const log: string = "[2024-01-15] [ERROR] Database connection failed";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, log);
@@ -445,14 +438,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0119
+       * @tc.name testMatchAll0119
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2000
        * @tc.desc   Test RegExp[Symbol.matchAll] date extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\b(\d{4})-(\d{2})-(\d{2})\b/g;
         const text: string = "Dates: 2024-01-15, 2023-12-25";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -464,14 +457,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0120
+       * @tc.name testMatchAll0120
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2100
        * @tc.desc   Test RegExp[Symbol.matchAll] price extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\$\s*(\d+(?:\.\d{2})?)/g;
         const text: string = "Prices: $19.99, $100, $5.50";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -484,14 +477,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0121
+       * @tc.name testMatchAll0121
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2200
        * @tc.desc   Test RegExp[Symbol.matchAll] phone number extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b/g;
         const text: string = "Call us at 123-456-7890 or 555.123.4567";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -503,14 +496,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0122
+       * @tc.name testMatchAll0122
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2300
        * @tc.desc   Test RegExp[Symbol.matchAll] named capture groups extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g;
         const str: string = "2024-01-15 and 2023-12-25";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -534,14 +527,14 @@ export default function matchAllAdvancedTest() {
 
     describe('Complex_Scenario_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0123
+       * @tc.name testMatchAll0123
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2400
        * @tc.desc   Test RegExp[Symbol.matchAll] complex nested groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /((a|b)(c|d))+/g;
         const str: string = "ac bd ad bc";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -557,14 +550,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0124
+       * @tc.name testMatchAll0124
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2500
        * @tc.desc   Test RegExp[Symbol.matchAll] alternation patterns
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /cat|dog|bird|fish/g;
         const str: string = "cat dog bird fish cat";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -579,14 +572,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0125
+       * @tc.name testMatchAll0125
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2600
        * @tc.desc   Test RegExp[Symbol.matchAll] multiline text matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /^test/gm;
         const str: string = "test\nline2\ntest\nline4";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -598,14 +591,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0126
+       * @tc.name testMatchAll0126
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2700
        * @tc.desc   Test RegExp[Symbol.matchAll] dynamic regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const pattern: string = "test";
         const regex: RegExp = new RegExp(pattern, "g");
         const str: string = "test test test";
@@ -616,14 +609,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0127
+       * @tc.name testMatchAll0127
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2800
        * @tc.desc   Test RegExp[Symbol.matchAll] user input pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const userInput: string = "test";
         const regex: RegExp = new RegExp(userInput, "gi");
         const str: string = "TEST test Test";
@@ -634,14 +627,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0128
+       * @tc.name testMatchAll0128
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2900
        * @tc.desc   Test RegExp[Symbol.matchAll] many matches results
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d/g;
         const str: string = "0123456789";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -655,14 +648,14 @@ export default function matchAllAdvancedTest() {
 
     describe('Iterator_Boundary_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0129
+       * @tc.name testMatchAll0129
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3000
        * @tc.desc   Test RegExp[Symbol.matchAll] early termination in for-of
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d+/g;
         const str: string = "123 456 789";
         let count: number = 0;
@@ -678,17 +671,21 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0130
+       * @tc.name testMatchAll0130
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3100
        * @tc.desc   Test RegExp[Symbol.matchAll] early return first match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = /\d+/g;
         const str: string = "123 456 789";
-        const first: RegExpMatchArray | undefined = findFirstMatch(str, regex);
+        let first: RegExpMatchArray | undefined = undefined;
+        for (const match of regexpSymbolMatchAll(regex, str)) {
+          first = match;
+          break;
+        }
         expect(first).not().assertUndefined();
         if (first) {
           expect(first[0]).assertEqual("123");
@@ -698,14 +695,14 @@ export default function matchAllAdvancedTest() {
 
     describe('RegExp_Constructor_Tests', () => {
       /**
-      * @tc.name testMatchAllTest0131
+       * @tc.name testMatchAll0131
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3200
        * @tc.desc   Test RegExp[Symbol.matchAll] new RegExp form
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test test";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -717,14 +714,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0132
+       * @tc.name testMatchAll0132
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3300
        * @tc.desc   Test RegExp[Symbol.matchAll] constructor special escape characters
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const regex: RegExp = new RegExp("\\d+", "g");
         const str: string = "123 456";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -736,14 +733,14 @@ export default function matchAllAdvancedTest() {
       });
 
       /**
-      * @tc.name testMatchAllTest0133
+       * @tc.name testMatchAll0133
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3400
        * @tc.desc   Test RegExp[Symbol.matchAll] dynamic patterns constructed at runtime
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
-      it('testMatchAllTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      it('testMatchAll0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const keywords: string[] = ["cat", "dog", "bird"];
         const pattern: string = keywords.join("|");
         const regex: RegExp = new RegExp(pattern, "gi");
