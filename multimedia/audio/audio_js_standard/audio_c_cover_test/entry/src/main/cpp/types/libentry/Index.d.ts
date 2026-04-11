@@ -474,3 +474,57 @@ export const DeviceChangeRecommendToStopCode: () => number;
 export const AudioSessionStateChangedEventCode: () => number;
 
 export const AudioSessionStateChangedEventStateChangeHintCode: () => number;
+
+export const OHMIDIClientCreateInvalidClient: () => number;
+
+export const OHMIDIClientCreateTooManyClient: () => number;
+
+export const OHMIDIClientDestroyInvalidClient: () => number;
+
+export const OHMIDIClientGetDeviceCountInvalidClient: () => number;
+
+export const OHMIDIClientGetDeviceCountInvalidCount: () => number;
+
+export const OHMIDIClientGetDeviceInfosInvalidClient: () => number;
+
+export const OHMIDIClientGetDeviceInfosInvalidInfos: () => number;
+
+export const OHMIDIClientGetDeviceInfosInvalidDeviceCount: () => number;
+
+export const OHMIDIClientOpenDeviceInvalidClient: () => number;
+
+export const OHMIDIClientOpenDeviceInvalidDevice: () => number;
+
+export const OHMIDIClientOpenBLEDeviceInvalidClient: () => number;
+
+export const OHMIDIClientCloseDeviceInvalidClient: () => number;
+
+export const OHMIDIClientCloseDeviceInvalidDevice: () => number;
+
+export const OHMIDIClientGetPortCountInvalidClient: () => number;
+
+export const OHMIDIClientGetPortCountInvalidDeviceId: () => number;
+
+export const OHMIDIClientGetPortCountInvalidCount: () => number;
+
+export const OHMIDIClientGetPortInfosInvalidClient: () => number;
+
+export const OHMIDIClientGetPortInfosInvalidDeviceId: () => number;
+
+export const OHMIDIClientGetPortInfosInvalidInfos: () => number;
+
+export const OHMIDIClientGetPortInfosInvalidPortCount: () => number;
+
+export const OHMIDIDeviceOpenInputPortInvalidDevice: () => number;
+
+export const OHMIDIDeviceOpenOutputPortInvalidDevice: () => number;
+
+export const OHMIDIDeviceCloseInputPortInvalidDevice: () => number;
+
+export const OHMIDIDeviceCloseOutputPortInvalidDevice: () => number;
+
+export const OHMIDIDeviceSendInvalidDevice: () => number;
+
+export const OHMIDIDeviceSendSysExInvalidDevice: () => number;
+
+export const OHMIDIDeviceFlushOutputPortInvalidDevice: () => number;
