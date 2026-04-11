@@ -91,27 +91,7 @@ export default function execSpecialCharTest() {
     it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emoji = String.fromCodePoint(0x1F600);
       const result = ExecSpecialChar.execEmojiProperty(`Hello ${emoji} World`);
-      if (result === null) {
-        return;
-      }
       expect(result?.[0]).assertEqual(emoji);
-    });
-
-    /**
-     * @tc.name testExec0104
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0401
-     * @tc.desc   Test exec returns null when \\p{Emoji} unsupported or no match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const emoji = String.fromCodePoint(0x1F600);
-      const result = ExecSpecialChar.execEmojiProperty(`Hello ${emoji} World`);
-      if (result !== null) {
-        return;
-      }
-      expect(result).assertEqual(null);
     });
   });
 }
