@@ -584,19 +584,19 @@ export default function CameraFunctionTest() {
       expect(result).assertEqual(7400101);
     });
 
-    // /**
-    //  * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
-    //  * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
-    //  * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  * @tc.level    Level 0
-    //  */
-    // it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300', Level.LEVEL0, async () => {
-    //   let result = cameraObj.TestGetPhysicalApertureWithUnconfiguredSession();
-    //   console.info(TAG, result);
-    //   expect(result).assertEqual(7400103);
-    // });
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureWithUnconfiguredSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
 
     /**
      * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100
