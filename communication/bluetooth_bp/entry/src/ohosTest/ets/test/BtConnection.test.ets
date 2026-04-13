@@ -4327,12 +4327,12 @@ describe('btConnectionTest', () => {
         done();
     })
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0200
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0200
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200
      * @tc.desc   Test getVirtualAddressByHash 参数格式与规范不一致 api24.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
      it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let hashValue: string = "c10b57deb2e1aafd255596e0d4fd678";
