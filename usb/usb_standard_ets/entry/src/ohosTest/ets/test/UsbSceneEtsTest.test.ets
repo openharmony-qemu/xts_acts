@@ -60,7 +60,7 @@ async function executeUsbRequest(
 
     usbMgr.closePipe(devicePipe);
     return result;
-  }catch (err) {
+  } catch (err) {
     console.error(TAG, `executeUsbRequest failed: ${JSON.stringify(err)}`);
     expect().assertFail();
     throw new Error(`err: ${err.code}`);
