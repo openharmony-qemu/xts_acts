@@ -347,7 +347,7 @@ export default function avRecorderTest() {
           tracks: [{ 'testTag': '000' }]
         };
         let avConfig: media.AVRecorderConfig = {
-          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_RECOGNITION,
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT,
           profile: {
             audioBitrate: 48000,
             audioChannels: 2,
@@ -390,7 +390,7 @@ export default function avRecorderTest() {
         let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
         let done: () => void = data?.get('done') as (() => void)
         let avConfig: media.AVRecorderConfig = {
-          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_COMMUNICATION,
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT,
           profile: {
             audioBitrate: 48000,
             audioChannels: 2,
