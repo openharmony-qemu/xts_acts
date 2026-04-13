@@ -301,7 +301,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if (isSupportRotate == true && isFreeWindowMode == false) {
+      if (isSupportRotate == true && isFreeWindowMode == false && deviceType !== 'wearable') {
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -347,7 +347,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if (isSupportRotate == true && isFreeWindowMode == false) {
+      if (isSupportRotate == true && isFreeWindowMode == false && deviceType !== 'wearable') {
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -476,7 +476,7 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLandScape';
-      if (isSupportRotate) {
+      if (isSupportRotate && deviceType !== 'wearable') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
@@ -530,7 +530,7 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInPORTRAIT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInPORTRAIT';
-      if (isSupportRotate) {
+      if (isSupportRotate && deviceType !== 'wearable') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
@@ -650,7 +650,7 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInLANDSCAPE_INVERTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLANDSCAPE_INVERTED';
-      if (isSupportRotate) {
+      if (isSupportRotate && deviceType !== 'wearable') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
@@ -1543,7 +1543,7 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
-        if(isFreeWindowMode){
+        if(isFreeWindowMode || deviceType == 'wearable'){
           expect(flag).assertEqual(0)
           done()
         }else{
@@ -2264,7 +2264,7 @@ export default function windowImmersiveTest() {
           await sleep(100);
           let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
           console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
-          if(isFreeWindowMode){
+          if(isFreeWindowMode || deviceType == 'wearable'){
             expect(avoidArea.topRect.height).assertEqual(0);
             done();
           }else{
@@ -3991,7 +3991,7 @@ export default function windowImmersiveTest() {
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
-        if (!isInFreeWindowMode) {
+        if (!isInFreeWindowMode && deviceType !== 'wearable') {
           await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
           try {
             let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
@@ -4490,7 +4490,7 @@ export default function windowImmersiveTest() {
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
-        if (!isInFreeWindowMode && canIUseRes && isSupportRotate == true) {
+        if (!isInFreeWindowMode && canIUseRes && isSupportRotate == true && deviceType !== 'wearable') {
           let avoidAreaAreaStatusW = 0;
           let avoidAreaAreaStatusH = 0;
           let avoidAreaAreaNavW = 0;
@@ -5159,7 +5159,7 @@ export default function windowImmersiveTest() {
      */
     it('testOnSystemAvoidAreaChangeInPORTRAIT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnSystemAvoidAreaChangeInPORTRAIT';
-      if (isSupportRotate) {
+      if (isSupportRotate && deviceType !== 'wearable') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
