@@ -96,9 +96,13 @@ export default function DeviceInfoTest() {
          * @param {number} m
          * @param {number} n
          * @param {number} p
+         * @param {number} sub - 可选的括号内数字
          * @returns {string}
          */
-        function makeVersion(m, n, p) {
+        function makeVersion(m, n, p, sub) {
+            if (sub !== undefined) {
+                return `${m}.${n}.${p}(${sub})`;
+            }
             return `${m}.${n}.${p}`;
         }
 
@@ -110,17 +114,25 @@ export default function DeviceInfoTest() {
             const { major, minor, patch } = sysVersion;
 
             const cases = [
-                // 相等
+                // 1. 标准格式测试
                 { input: makeVersion(major, minor, patch), expected: true },
-                // 小于
+                
+                // 2. 带括号格式测试 (格式合法，应通过)
+                { input: makeVersion(major, minor, patch, 12), expected: true },
+                { input: makeVersion(major, minor, patch, 0), expected: true },
+                { input: makeVersion(major, minor, patch, 99), expected: true },
+
+                // 3. 小于当前版本 (标准格式)
                 ...(patch > 0 ? [{ input: makeVersion(major, minor, patch - 1), expected: true }] : []),
                 ...(minor > 0 ? [{ input: makeVersion(major, minor - 1, 99), expected: true }] : []),
                 ...(major > 1 ? [{ input: makeVersion(major - 1, 99, 99), expected: true }] : []),
-                // 大于
+
+                // 4. 大于当前版本 (标准格式)
                 ...(patch < 99 ? [{ input: makeVersion(major, minor, patch + 1), expected: false }] : []),
                 ...(minor < 99 ? [{ input: makeVersion(major, minor + 1, 0), expected: false }] : []),
                 ...(major < 99 ? [{ input: makeVersion(major + 1, 0, 0), expected: false }] : []),
-                // 边界
+
+                // 5. 边界测试
                 { input: "1.0.0", expected: versionLte({ major: 1, minor: 0, patch: 0 }, sysVersion) },
                 { input: "99.99.99", expected: versionLte({ major: 99, minor: 99, patch: 99 }, sysVersion) },
             ];
@@ -132,13 +144,22 @@ export default function DeviceInfoTest() {
             }
         }
 
+
         /**
          * 测试非法/越界版本
          */
         function runInvalidVersionTests() {
             const invalids = [
+                // 1. 基础版本越界
                 "0.0.0", "100.0.0", "1.100.0", "1.0.100",
-                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", ""
+                
+                // 2. 格式错误
+                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "",
+                
+                // 3. 带括号的非法用例
+                "5.0.0(100)",   // 括号内超过 99
+                "5.0.0(a)",     // 括号内非数字
+                "5.0.0()",      // 括号内为空
             ];
             for (const v of invalids) {
                 console.info(`Test invalid: apiAvailable("${v}")`);
