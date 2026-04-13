@@ -177,6 +177,7 @@ export default function UsbSceneEtsTest() {
         expect(devices == null).assertFalse();
         done();
       } else {
+        {
         console.info(TAG, 'usb SET_FEATURE begin');
         let param: PARA = {
           bmRequestType: 0x02,
@@ -208,8 +209,8 @@ export default function UsbSceneEtsTest() {
           console.info(TAG, 'SET_FEATURE end');
           done();
         }
-      }
-      {
+        }
+        {
         console.info(TAG, 'usb CLEAR_FEATURE begin');
         let param: PARA = {
           bmRequestType: 0x02, //Host to Device, Class: Standard, Recipient: Device
@@ -251,6 +252,7 @@ export default function UsbSceneEtsTest() {
           console.info(TAG, `CLEAR_FEATURE err.code = ${JSON.stringify(err)}`);
           console.info(TAG, 'CLEAR_FEATURE end');
           done();
+        }
         }
       }
     })
