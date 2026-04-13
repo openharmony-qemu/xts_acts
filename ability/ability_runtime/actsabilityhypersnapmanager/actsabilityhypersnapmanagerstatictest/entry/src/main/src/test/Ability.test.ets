@@ -58,7 +58,7 @@ export default function abilityTest() {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100";
       let onCreate:string | undefined = AppStorage.get<string>("onCreate")
       let onAboutToCreateAbility:string | undefined = AppStorage.get<string>("onAboutToCreateAbility")
-      expect(onAboutToCreateAbility).assertEqual(undefined);
+      expect(onAboutToCreateAbility).assertEqual('onAboutToCreateAbility');
       expect(onCreate).assertEqual('onCreate');
       done();
     })
