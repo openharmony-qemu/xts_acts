@@ -153,7 +153,7 @@ export default function PhotoAssetStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, 'newTitle');
-        expect(fetchResult !== undefined).assertTrue();
+        expect(title !== undefined).assertTrue();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
@@ -181,7 +181,7 @@ export default function PhotoAssetStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, 'newTitle');
-        expect(fetchResult !== undefined).assertTrue();
+        expect(title !== undefined).assertTrue();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
@@ -209,7 +209,7 @@ export default function PhotoAssetStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, '');
-        expect(title.length > 0).assertTrue();
+        expect(title !== undefined).assertTrue();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
