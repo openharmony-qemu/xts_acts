@@ -1088,15 +1088,15 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0001
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0001
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100
      * @tc.desc   AvScreenCaptureRecorder pause and resume
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0001', Level.LEVEL0, async (done: Function) => {
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0001 start')
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100 start')
 
       let mySteps = new Array(
         mediaTestBase.CREATE_EVENT,
@@ -1128,7 +1128,7 @@ export default function AVScreenCaptureRecorderTest() {
       mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
 
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0001 end');
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100 end');
       done();
     });
   })

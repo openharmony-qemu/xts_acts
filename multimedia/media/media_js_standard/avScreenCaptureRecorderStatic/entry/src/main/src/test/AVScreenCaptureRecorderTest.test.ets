@@ -307,15 +307,15 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0001
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0001
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0100
      * @tc.desc   AvScreenCaptureRecorder pause and resume
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0001 start');
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0100 start');
 
       let mySteps = new Array<string>(
         mediaTestBase.CREATE_EVENT,
@@ -342,7 +342,7 @@ export default function AVScreenCaptureRecorderTest() {
       expect(mediaTestBase.avScreenCaptureRecorder).assertNull();
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
 
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0001 end');
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_PAUSE_RESUME_0100 end');
     })
   })
 }
