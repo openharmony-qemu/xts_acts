@@ -298,7 +298,7 @@ export default function DownloadFileButtonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('fontStyleNormal', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100', Level.LEVEL1, (done: () => void) => {
       console.info('DownloadFileButtonTest: fontStyleNormal begin');
       expect(FontStyle.Normal).assertEqual(0);
       console.info('DownloadFileButtonTest: fontStyleNormal end');
@@ -313,7 +313,7 @@ export default function DownloadFileButtonTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('fontWeightMedium', Level.LEVEL1, (done: () => void) => {
+    it('SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200', Level.LEVEL1, (done: () => void) => {
       console.info('DownloadFileButtonTest: fontWeightMedium begin');
       expect(FontWeight.Medium).assertEqual(3);
       console.info('DownloadFileButtonTest: fontWeightMedium end');
