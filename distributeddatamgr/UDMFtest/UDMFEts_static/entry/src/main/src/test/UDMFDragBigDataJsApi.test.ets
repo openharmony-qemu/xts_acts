@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError, RecordData } from '@ohos.base';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
@@ -28,33 +28,31 @@ const LONG_TESTIN4M = LONG_TEST2M + LONG_TESTIN2M;
 let optionsValid: unifiedDataChannel.Options = {
   intention: unifiedDataChannel.Intention.DATA_HUB
 };
-let tag = 'ttt:';
 
 export default function UDMFDragBigDataJsApiTest() {
 
   describe("UDMFDragBigDataJsApiTest", (): void => {
-    beforeAll(() => {	 
-      console.info("beforeAll");	 
-      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
-        let size = data.length;	 
-        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
-      }).catch((error) => {	 
-        let err: BusinessError = error as BusinessError;	 
-        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
-      });	 
+    beforeAll(() => {
+      console.info("beforeAll");
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {
+        let size = data.length;
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);
+      }).catch((error) => {
+        let err: BusinessError = error as BusinessError;
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);
+      });
     })
 
-    afterAll(() => { 
-      console.info("afterAll"); 
-      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
-        let size = data.length; 
-        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
-      }).catch((error) => { 
-        let err: BusinessError = error as BusinessError; 
-        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
-      }); 
+    afterAll(() => {
+      console.info("afterAll");
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {
+        let size = data.length;
+        console.info(` [afterAll] success to deleteData data.size = ${size}`);
+      }).catch((error) => {
+        let err: BusinessError = error as BusinessError;
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);
+      });
     })
-
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragBigDataJsApiTest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_DragBigDataJsApiTest_0100
