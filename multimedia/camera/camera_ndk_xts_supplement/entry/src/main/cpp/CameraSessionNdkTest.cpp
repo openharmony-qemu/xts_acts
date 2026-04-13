@@ -16,6 +16,7 @@
 #include "CameraSessionNdkTest.h"
 #include <cstddef>
 #include <cstdint>
+#include <cmath>
 
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CameraSessionNDKLOGTAG"
@@ -1011,7 +1012,8 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     CreateCaptureSession();
     int32_t minExposureDuration;
     int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
+        captureSession, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);
@@ -1028,7 +1030,8 @@ napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, na
     napi_value result = nullptr;
     int32_t minExposureDuration;
     int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(nullptr, &minExposureDuration, &maxExposureDuration);
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
+        nullptr, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange fail: %{public}d", ret);
         napi_create_int32(env, ret, &result);
@@ -1048,7 +1051,8 @@ napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env 
     OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
     int32_t minExposureDuration;
     int32_t maxExposureDuration;
-    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
+        captureSession, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);
