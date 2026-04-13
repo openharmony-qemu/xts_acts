@@ -18,6 +18,7 @@
 #include <cstdint>
 #include "include/log_common.h"
 
+#define MAX_ALLOWED_SIZE 1024 * 1024 * 1024
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
 #define DRAWING_NUMBER_3 3
@@ -403,7 +404,11 @@ int TestPathConvertToSvgStringNormal2()
     size_t strSize = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathConvertToSvgString(path, nullptr, &strSize);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    char *str = (char *)malloc(sizeof(char *) * strSize);
+    if (strSize == 0 || strSize > MAX_ALLOWED_SIZE) {
+        OH_Drawing_PathDestroy(path);
+        return -DRAWING_NUMBER_1;
+    }
+    char *str = (char *)malloc(sizeof(char) * strSize);
     if (str == nullptr) {
         OH_Drawing_PathDestroy(path);
         return -DRAWING_NUMBER_1;
