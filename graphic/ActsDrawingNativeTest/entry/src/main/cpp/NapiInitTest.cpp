@@ -209,6 +209,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingRegionPart2QueryOperations),
     DECL_NAPI_DESC(DrawingPathIterator),
     DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
+    DECL_NAPI_DESC(DrawingPathPart4GetData),
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
     DECL_NAPI_DESC(DrawingLattice),
     DECL_NAPI_DESC(DrawingRectPart2OtherOperations),

@@ -118,6 +118,37 @@ napi_value DrawingPathPart4InverseFillType(napi_env env, napi_callback_info info
     });
 }
 
+// Path Part4 InverseFillType related functions
+napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, PATH_PART4_GET_DATA_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestPathGetPointDataNormal,
+            OHOS::Rosen::Drawing::TestPathGetPointDataNull,
+            OHOS::Rosen::Drawing::TestPathGetPointDatAbnormal,
+            OHOS::Rosen::Drawing::TestPathGetPointDataMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathGetVerbDataNormal,
+            OHOS::Rosen::Drawing::TestPathGetVerbDataNull,
+            OHOS::Rosen::Drawing::TestPathGetVerbDataAbnormal,
+            OHOS::Rosen::Drawing::TestPathGetVerbDataMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathGetConicWeightNormal,
+            OHOS::Rosen::Drawing::TestPathGetConicWeightNull,
+            OHOS::Rosen::Drawing::TestPathGetConicWeightAbnormal,
+            OHOS::Rosen::Drawing::TestPathGetConicWeightMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathConvertToSvgStringNormal1,
+            OHOS::Rosen::Drawing::TestPathConvertToSvgStringNormal2,
+            OHOS::Rosen::Drawing::TestPathConvertToSvgStringNull,
+            OHOS::Rosen::Drawing::TestPathConvertToSvgStringAbnormal,
+            OHOS::Rosen::Drawing::TestPathConvertToSvgStringMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
 // Canvas Part7 DrawPixelMapMesh related functions
 napi_value DrawingCanvasDrawPixelMapMesh(napi_env env, napi_callback_info info)
 {
