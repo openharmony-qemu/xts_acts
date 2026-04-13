@@ -32,12 +32,12 @@ async function executeUsbRequest(
 ): Promise<number> {
   try {
     const deviceslist =usbMgr.getDevices();
-    if (!deviceList || deviceList.length === 0) {
-      console.info(TAG, "No USB device connected");
+    if (!devicesList || devicesList.length === 0) {
+      console.info(TAG, "No USB devices connected");
       throw new Error("No devices available");
     }
 
-    const device = devicelist[0];
+    const device = deviceslist[0];
     if (!usbMgr.hasRight(device.name)) {
       console.info(TAG, `Requesting permission for device: ${device.name}`);
       await usbMgr.requestRight(device.name);
@@ -48,7 +48,7 @@ async function executeUsbRequest(
       throw new Error("Failed to connect device");
     }
 
-    const interface = device.configs[0].interfaces[0];
+    const Interfaces = device.configs[0].interfaces[0];
     const claimResult = usbMgr.claimInterface(devicePipe, interfaces, true);
     if (claimResult !== 0) {
       throw new Error(`Failed to claim interface: ${claimResult}`);
@@ -151,11 +151,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferGetStatus begin`);
         let param: PARA = {
-          bmRequestType: 0x80;
-          bRequest: 0x00;
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0002;
+          bmRequestType: 0x80,
+          bRequest: 0x00,
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0002,
           data: new Uint8Array(2)
         };
         await executeUsbRequest(param, 2);
@@ -179,23 +179,23 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb SET_FEATURE begin`);
         let param: PARA = {
-          bmRequestType: 0x02;
-          bRequest: 0x03; //SET_FEATURE
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0000;
+          bmRequestType: 0x02,
+          bRequest: 0x03, //SET_FEATURE
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0000,
           data: new Uint8Array(0)
         };
         try {
-          let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-          await usbMgr.requestRight(deviceList[0].name);
+          let devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+          await usbMgr.requestRight(devicesList[0].name);
           console.info(TAG, 'SET_FEATURE name = ${devicesList[0].name}');
           let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
-          console.info(TAG, 'SET_FEATURE devicePipe = ${JSON.strigify(devicePipe)}');
+          console.info(TAG, 'SET_FEATURE devicePipe = ${JSON.stringify(devicePipe)}');
           let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
-          console.info(TAG, 'SET_FEATURE USBInterface = ${JSON.strigify(interfaces)}');
-          let claim: usbMgr.claimInterface(devicePipe, interfaces, true);
-          console.info(TAG, 'SET_FEATURE claim = ${calim}');
+          console.info(TAG, 'SET_FEATURE Interfaces = ${JSON.stringify(interfaces)}');
+          let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
+          console.info(TAG, 'SET_FEATURE claim = ${claim}');
           if (interfaces.endpoint.length > 0) {
             param.wIndex = interfaces.endpoint.address;
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
@@ -203,49 +203,49 @@ export default function UsbSceneEtsTest() {
           }
         } catch (err) {
           console.info(TAG, 'SET_FEATURE error');
-          console.info(TAG, 'SET_FEATURE err.code = ${JSON.strigify(err)}');
+          console.info(TAG, 'SET_FEATURE err.code = ${JSON.stringify(err)}');
           console.info(TAG, 'SET_FEATURE end');
         }
       }
       {
         console.info(TAG, `usb CLEAR_FEATURE begin`);
         let param: PARA = {
-          bmRequestType: 0x02;
-          bRequest: 0x01; //CLEAR_FEATURE
-          wValue: 0x0000; //FEATURE_SELECTOR_REMOTE_WAKEUP
-          wIndex: 0x0000;
-          wLength: 0x0000;
+          bmRequestType: 0x02, //Host to Device, Class: Standard, Recipient: Device
+          bRequest: 0x01, //CLEAR_FEATURE
+          wValue: 0x0000, //FEATURE_SELECTOR_REMOTE_WAKEUP
+          wIndex: 0x0000,
+          wLength: 0x0000,
           data: new Uint8Array(0)
         };
-        let param: PARA = {
-          bmRequestType: 0x02; 
-          bRequest: 0x03; //SET_FEATURE
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0000;
+        let param1: PARA = {
+          bmRequestType: 0x02,
+          bRequest: 0x03, //SET_FEATURE
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0000,
           data: new Uint8Array(0)
         };
         try {
-          let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+          let devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
           await usbMgr.requestRight(deviceList[0].name);
           console.info(TAG, 'CLEAR_FEATURE name = ${devicesList[0].name}');
           let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
-          console.info(TAG, 'CLEAR_FEATURE devicePipe = ${JSON.strigify(devicePipe)}');
+          console.info(TAG, 'CLEAR_FEATURE devicePipe = ${JSON.stringify(devicePipe)}');
           let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
-          console.info(TAG, 'CLEAR_FEATURE USBInterface = ${JSON.strigify(interfaces)}');
+          console.info(TAG, 'CLEAR_FEATURE Interfaces = ${JSON.stringify(interfaces)}');
           let claim: usbMgr.claimInterface(devicePipe, interfaces, true);
-          console.info(TAG, 'CLEAR_FEATURE claim = ${calim}');
+          console.info(TAG, 'CLEAR_FEATURE claim = ${claim}');
           if (interfaces.endpoint.length > 0) {
-            param.wIndex = interfaces.endpoint.address;
-            param1.wIndex = interfaces.endpoint.address;
+            param.wIndex = interfaces.endpoints[0].address;
+            param1.wIndex = interfaces.endpoints[0].address;
             let res = await usbMgr.usbControlTransfer(devicePipe, param1);
             console.info(TAG, 'CLEAR_FEATURE size = ${res}');
-            let ret = await usbMgr.usbControlTransfer(devicePipe, param);\
-            console.info(TAG, 'CLEAR_FEATURE size = ${res}');
+            let ret = await usbMgr.usbControlTransfer(devicePipe, param);
+            console.info(TAG, 'CLEAR_FEATURE size = ${ret}');
           }
         } catch (err) {
           console.info(TAG, 'CLEAR_FEATURE error');
-          console.info(TAG, 'CLEAR_FEATURE err.code = ${JSON.strigify(err)}');
+          console.info(TAG, 'CLEAR_FEATURE err.code = ${JSON.stringify(err)}');
           console.info(TAG, 'CLEAR_FEATURE end');
         }
       }
@@ -269,11 +269,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferClearFeature begin`);
         let param: PARA = {
-          bmRequestType: 0x02;
-          bRequest: 0x01;
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0000;
+          bmRequestType: 0x02,
+          bRequest: 0x01,
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0000,
           data: new Uint8Array(0)
         };
         await executeUsbRequest(param, 0);
@@ -298,11 +298,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferGetDescriptor begin`);
         let param: PARA = {
-          bmRequestType: 0x80;
-          bRequest: 0x06;
-          wValue: 0x0100; // DEVICE_DESCRIPTOR
-          wIndex: 0x0000;
-          wLength: 18;
+          bmRequestType: 0x80,
+          bRequest: 0x06,
+          wValue: 0x0100, // DEVICE_DESCRIPTOR
+          wIndex: 0x0000,
+          wLength: 18,
           data: new Uint8Array(18)
         };
         await executeUsbRequest(param, 18);
@@ -327,11 +327,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferGetConfiguration begin`);
         let param: PARA = {
-          bmRequestType: 0x80;
-          bRequest: 0x08;
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0001;
+          bmRequestType: 0x80,
+          bRequest: 0x08,
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0001,
           data: new Uint8Array(1)
         };
         await executeUsbRequest(param, 1);
@@ -356,11 +356,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferGetInterface begin`);
         let param: PARA = {
-          bmRequestType: 0x81;
-          bRequest: 0x0A;
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0001;
+          bmRequestType: 0x81,
+          bRequest: 0x0A,
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0001,
           data: new Uint8Array(1)
         };
         await executeUsbRequest(param, 1);
@@ -384,11 +384,11 @@ export default function UsbSceneEtsTest() {
       } else {
         console.info(TAG, `usb testUsbControlTransferSetConfiguration begin`);
         let param: PARA = {
-          bmRequestType: 0x00;
-          bRequest: 0x09;
-          wValue: 0x0000;
-          wIndex: 0x0000;
-          wLength: 0x0000;
+          bmRequestType: 0x00,
+          bRequest: 0x09,
+          wValue: 0x0000,
+          wIndex: 0x0000,
+          wLength: 0x0000,
           data: new Uint8Array(0)
         };
         await executeUsbRequest(param, 0);
