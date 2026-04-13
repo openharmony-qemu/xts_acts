@@ -196,8 +196,8 @@ export default function UsbSceneEtsTest() {
           console.info(TAG, 'SET_FEATURE interfaces = ${JSON.stringify(interfaces)}');
           let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
           console.info(TAG, 'SET_FEATURE claim = ${claim}');
-          if (interfaces.endpoint.length > 0) {
-            param.wIndex = interfaces.endpoint.address;
+          if (interfaces.endpoints.length > 0) {
+            param.wIndex = interfaces.endpoints[0].address;
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, 'SET_FEATURE size = ${ret}');
           }
@@ -229,15 +229,15 @@ export default function UsbSceneEtsTest() {
         };
         try {
           let devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-          await usbMgr.requestRight(deviceList[0].name);
+          await usbMgr.requestRight(devicesList[0].name);
           console.info(TAG, 'CLEAR_FEATURE name = ${devicesList[0].name}');
           let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
           console.info(TAG, 'CLEAR_FEATURE devicePipe = ${JSON.stringify(devicePipe)}');
-          let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
-          console.info(TAG, 'CLEAR_FEATURE Interfaces = ${JSON.stringify(interfaces)}');
-          let claim: usbMgr.claimInterface(devicePipe, interfaces, true);
+          let interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
+          console.info(TAG, 'CLEAR_FEATURE interfaces = ${JSON.stringify(interfaces)}');
+          let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
           console.info(TAG, 'CLEAR_FEATURE claim = ${claim}');
-          if (interfaces.endpoint.length > 0) {
+          if (interfaces.endpoints.length > 0) {
             param.wIndex = interfaces.endpoints[0].address;
             param1.wIndex = interfaces.endpoints[0].address;
             let res = await usbMgr.usbControlTransfer(devicePipe, param1);
