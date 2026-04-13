@@ -15,7 +15,7 @@
 
 import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import usbMgr from "@ohos.usbManager"
-const TAG:string = "[UsbSceneEtsTest]";
+const TAG: string = "[UsbSceneEtsTest]";
 
 
 class PARA {
@@ -28,7 +28,7 @@ class PARA {
 }
 async function executeUsbRequest(
   request: PARA,
-  expectResult: number =0
+  expectResult: number = 0
 ): Promise<number> {
   try {
     const devicesList =usbMgr.getDevices();
@@ -69,10 +69,10 @@ async function executeUsbRequest(
 
 function deviceConnected(gDeviceList: Array<Readonly<usbMgr.USBDevice>>) {
   if (gDeviceList.length > 0) {
-    console.info(TAG, `Test USB devices connected`);
+    console.info(TAG, "Test USB devices connected");
     return true;
   }
-  console.info(TAG, `Test No USB devices connected`);
+  console.info(TAG, "Test No USB devices connected");
   return false;
 }
 
@@ -91,7 +91,7 @@ export default function UsbSceneEtsTest() {
       console.log('*************Usb Unit UsbSceneEtsTest Begin*************');
       let gDeviceList = usbMgr.getDevices();
       if (!gDeviceList || gDeviceList.length === 0) {
-        console.info(TAG, `No USB devices connected`);
+        console.info(TAG, 'No USB devices connected');
         return;
       }
       isDeviceConnected = deviceConnected(gDeviceList);
@@ -115,7 +115,7 @@ export default function UsbSceneEtsTest() {
     it("testConnectDeviceNormalApp001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testConnectDeviceNormalApp001 no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         try {
@@ -133,7 +133,7 @@ export default function UsbSceneEtsTest() {
         }
         done();
       }
-    });
+    })
     
     /**
      * @tc.name   testUsbControlTransferGetStatus
@@ -146,7 +146,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetStatus", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetStatus no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetStatus begin');
@@ -157,11 +157,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 0x0002,
           data: new Uint8Array(2)
-        };
+        }
         await executeUsbRequest(param, 2);
         done();
       }
-    });
+    })
 
     /**
      * @tc.name   testUsbControlTransferSetFeature
@@ -174,7 +174,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferSetFeature", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferSetFeature no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb SET_FEATURE begin');
@@ -253,7 +253,7 @@ export default function UsbSceneEtsTest() {
           done();
         }
       }
-    });
+    })
 
 
 
@@ -268,7 +268,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferClearFeature", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferClearFeature no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferClearFeature begin');
@@ -279,11 +279,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 0x0000,
           data: new Uint8Array(0)
-        };
+        }
         await executeUsbRequest(param, 0);
         done();
       }
-    });
+    })
 
 
     /**
@@ -297,7 +297,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetDescriptor", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetDescriptor no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetDescriptor begin');
@@ -308,12 +308,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 18,
           data: new Uint8Array(18)
-        };
+        }
         await executeUsbRequest(param, 18);
         done();
       }
-    });
-
+    })
 
     /**
      * @tc.name   testUsbControlTransferGetConfiguration
@@ -326,7 +325,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetConfiguration", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetConfiguration no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetConfiguration begin');
@@ -337,12 +336,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 0x0001,
           data: new Uint8Array(1)
-        };
+        }
         await executeUsbRequest(param, 1);
         done();
       }
-    });
-
+    })
     
     /**
      * @tc.name   testUsbControlTransferGetInterface
@@ -355,7 +353,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetInterface", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetInterface no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetInterface begin');
@@ -366,11 +364,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 0x0001,
           data: new Uint8Array(1)
-        };
+        }
         await executeUsbRequest(param, 1);
         done();
       }
-    });
+    })
 
     /**
      * @tc.name   testUsbControlTransferSetConfiguration
@@ -383,7 +381,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferSetConfiguration", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferSetConfiguration no device is connected');
-        expect(isDeviceConnected).assertFalse();
+        expect(devices == null).assertFalse();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferSetConfiguration begin');
@@ -394,12 +392,11 @@ export default function UsbSceneEtsTest() {
           wIndex: 0x0000,
           wLength: 0x0000,
           data: new Uint8Array(0)
-        };
+        }
         await executeUsbRequest(param, 0);
         done();
       }
-    });
+    })
   })
-
 }
 
