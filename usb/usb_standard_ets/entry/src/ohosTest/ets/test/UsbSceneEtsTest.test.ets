@@ -201,10 +201,12 @@ export default function UsbSceneEtsTest() {
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, 'SET_FEATURE size = ${ret}');
           }
+          done();
         } catch (err) {
           console.info(TAG, 'SET_FEATURE error');
           console.info(TAG, 'SET_FEATURE err.code = ${JSON.stringify(err)}');
           console.info(TAG, 'SET_FEATURE end');
+          done();
         }
       }
       {
@@ -243,10 +245,12 @@ export default function UsbSceneEtsTest() {
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, 'CLEAR_FEATURE size = ${ret}');
           }
+          done();
         } catch (err) {
           console.info(TAG, 'CLEAR_FEATURE error');
           console.info(TAG, 'CLEAR_FEATURE err.code = ${JSON.stringify(err)}');
           console.info(TAG, 'CLEAR_FEATURE end');
+          done();
         }
       }
     });
