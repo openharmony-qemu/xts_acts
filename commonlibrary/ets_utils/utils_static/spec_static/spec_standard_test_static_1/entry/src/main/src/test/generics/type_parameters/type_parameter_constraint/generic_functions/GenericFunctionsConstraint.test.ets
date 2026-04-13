@@ -99,7 +99,6 @@ function foo15<T extends Object>(p: T): T {
   return p
 }
 
-// 函数表达式定义
 function exprFoo1<T extends Int1 | Double1>(p: T): T {
   return p;
 }

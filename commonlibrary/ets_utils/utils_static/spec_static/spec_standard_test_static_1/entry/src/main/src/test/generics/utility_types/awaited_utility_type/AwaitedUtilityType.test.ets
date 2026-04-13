@@ -40,9 +40,6 @@ type o_0 = Awaited<p_0>
 type p_1 = Awaited<Array<number>>
 type o_1 = Awaited<p_1>
 
-type p_2 = Awaited<number[]>
-type o_2 = Awaited<p_2>
-
 type p_3 = Awaited<number[]>
 type o_3 = Awaited<p_3>
 
@@ -51,14 +48,6 @@ type o_4 = Awaited<p_4>
 
 type p_5 = Awaited<ENM_22>
 type o_5 = Awaited<p_5>
-
-async function foo_15(i: Awaited<"literal string">, j: "literal string") {
-  expect(i).assertEqual(j);
-}
-
-async function bar_1() {
-  foo_15(await Promise.resolve("literal string"), "literal string");
-}
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

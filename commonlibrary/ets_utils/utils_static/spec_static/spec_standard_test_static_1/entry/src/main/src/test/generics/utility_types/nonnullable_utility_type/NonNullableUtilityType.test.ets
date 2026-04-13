@@ -26,75 +26,35 @@ import {
   Level
 } from "../../../../../../hypium"
 
+type NullableString = null | undefined | string
+type ClearedString = NonNullable<NullableString>
 
-type NullableString_0 = null | undefined | string
-type ClearedString_0 = NonNullable<NullableString_0> // only type string is expected
+type NullableNumber = null | undefined | number
+type ClearedNumber = NonNullable<NullableNumber>
 
-type NullableString_1 = null | undefined | string
-type ClearedString_1 = NonNullable<NullableString_1> // only type string is expected
 
-type NullableString_2 = null | undefined | string
-type ClearedString_2 = NonNullable<NullableString_2> // only type string is expected
-
-type NullableString_3 = null | undefined | string
-type ClearedString_3 = NonNullable<NullableString_3> // only type string is expected
-
-type NullableString_4 = null | undefined | string
-type ClearedString_4 = NonNullable<NullableString_4> // only type string is expected
-
-type NullableString_5 = null | undefined | string
-type ClearedString_5 = NonNullable<NullableString_5> // only type string is expected
-
-function foo_0(param: NullableString_0): ClearedString_0 {
-    if (param != null) {
-        return param
-    }
-    return ""
+function toNonNullString(param: NullableString): ClearedString {
+  if (param != null) {
+    return param
+  }
+  return ""
 }
 
-function foo_1(param: NullableString_1): ClearedString_1 {
-    if (param != null) {
-        return param
-    }
-    return ""
-}
-
-function foo_2(param: NullableString_2): ClearedString_2 {
-    if (param != null) {
-        return param
-    }
-    return ""
-}
-
-function foo_3(param: NullableString_3): ClearedString_3 {
-    if (param != null) {
-        return param
-    }
-    return ""
-}
-
-function foo_4(param: NullableString_4): ClearedString_4 {
-    if (param != null) {
-        return param
-    }
-    return ""
-}
-
-function foo_5(param: NullableString_5): ClearedString_5 {
-    if (param != null) {
-        return param
-    }
-    return ""
+function toNonNullNumber(param: NullableNumber): ClearedNumber {
+  if (param != null) {
+    return param
+  }
+  return 0
 }
 
 type X_6 = Object | null | undefined
-type Y_6 = NonNullable<X_6> // That is Object
+type Y_6 = NonNullable<X_6>
 
 class A_6<T> {
-    field: NonNullable<T> // That non-nullable version of the type parameter
-    constructor (field: NonNullable<T>) {
-        this.field = field
-    }
+  field: NonNullable<T>
+  constructor (field: NonNullable<T>) {
+    this.field = field
+  }
 }
 
 async function sleep(time: int): Promise<int> {
@@ -137,10 +97,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_0 = null
-      let a2: NullableString_0 = undefined
-      let a3: NullableString_0 = "hello"
-      let b: ClearedString_0 = foo_0(null);
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString(null);
       expect(b).assertEqual('')
     })
 
@@ -153,10 +113,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_1 = null
-      let a2: NullableString_1 = undefined
-      let a3: NullableString_1 = "hello"
-      let b: ClearedString_1 = foo_1(undefined);
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString(undefined);
       expect(b).assertEqual('')
     })
 
@@ -169,10 +129,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_2 = null
-      let a2: NullableString_2 = undefined
-      let a3: NullableString_2 = "hello"
-      let b: ClearedString_2 = foo_2('undefined');
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString('undefined');
       expect(b).assertEqual('undefined')
     })
 
@@ -185,10 +145,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_3 = null
-      let a2: NullableString_3 = undefined
-      let a3: NullableString_3 = "hello"
-      let b: ClearedString_3 = foo_3(a1);
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString(a1);
       expect(b).assertEqual('')
     })
 
@@ -201,10 +161,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_4 = null
-      let a2: NullableString_4 = undefined
-      let a3: NullableString_4 = "hello"
-      let b: ClearedString_4 = foo_4(a2);
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString(a2);
       expect(b).assertEqual('')
     })
 
@@ -217,10 +177,10 @@ export default function NonNullableUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString_5 = null
-      let a2: NullableString_5 = undefined
-      let a3: NullableString_5 = "hello"
-      let b: ClearedString_5 = foo_5(a3);
+      let a1: NullableString = null
+      let a2: NullableString = undefined
+      let a3: NullableString = "hello"
+      let b: ClearedString = toNonNullString(a3);
       expect(b).assertEqual('hello')
     })
 

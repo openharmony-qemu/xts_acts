@@ -47,11 +47,6 @@ type TD_0 = Readonly<TC_0>
 type TE_0 = Readonly<TD_0>
 type TF_0 = NonNullable<TE_0>
 
-interface User_0<T> {
-  id: number;
-  generic?: T
-}
-
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {

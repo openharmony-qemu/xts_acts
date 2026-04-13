@@ -320,7 +320,7 @@ export default function RequiredUtilityTypeTest() {
      * @tc.name      testRequiredUtilityType0003
      * @tc.desc      No method (including any getter or setter) of T is part of the Required<T> type.
      *               If class T has a user-defined getter, setter, or both, then none of those is called
-     *               when object literal is used with Partial<T> variables. Object literal has its own
+     *               when object literal is used with Required<T> variables. Object literal has its own
      *               built-in getters and setters to modify its variables.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -338,7 +338,7 @@ export default function RequiredUtilityTypeTest() {
      * @tc.name      testRequiredUtilityType0004
      * @tc.desc      No method (including any getter or setter) of T is part of the Required<T> type.
      *               If class T has a user-defined getter, setter, or both, then none of those is called
-     *               when object literal is used with Partial<T> variables. Object literal has its own
+     *               when object literal is used with Required<T> variables. Object literal has its own
      *               built-in getters and setters to modify its variables.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -356,7 +356,7 @@ export default function RequiredUtilityTypeTest() {
      * @tc.name      testRequiredUtilityType0005
      * @tc.desc      No method (including any getter or setter) of T is part of the Required<T> type.
      *               If class T has a user-defined getter, setter, or both, then none of those is called
-     *               when object literal is used with Partial<T> variables. Object literal has its own
+     *               when object literal is used with Required<T> variables. Object literal has its own
      *               built-in getters and setters to modify its variables.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -374,7 +374,7 @@ export default function RequiredUtilityTypeTest() {
      * @tc.name      testRequiredUtilityType0006
      * @tc.desc      No method (including any getter or setter) of T is part of the Required<T> type.
      *               If class T has a user-defined getter, setter, or both, then none of those is called
-     *               when object literal is used with Partial<T> variables. Object literal has its own
+     *               when object literal is used with Required<T> variables. Object literal has its own
      *               built-in getters and setters to modify its variables.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -392,7 +392,7 @@ export default function RequiredUtilityTypeTest() {
      * @tc.name      testRequiredUtilityType0007
      * @tc.desc      No method (including any getter or setter) of T is part of the Required<T> type.
      *               Note. If class T has a user-defined getter, setter, or both, then none of those
-     *               is called when object literal is used with Partial<T> variables. Object literal
+     *               is called when object literal is used with Required<T> variables. Object literal
      *               has its own built-in getters and setters to modify its variables.
      * @tc.size      MediumTest
      * @tc.type      Function

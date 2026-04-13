@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium"
 
-//  (22)
-// 类型定义
 type R1_0 = Record<string, Error>
 function foo_0(p: R1_0): R1_0 {
     p["Null Pointer Error"] = new Error("NPE")
@@ -41,8 +39,8 @@ function foo_1(p: R1_1<string>): R1_1<string> {
 }
 
 class A_0 {
-    f1: Record<String, Boolean> = {}
-    f2: Record<Number, Boolean> = {}
+    f1: Record<string, boolean> = {}
+    f2: Record<number, boolean> = {}
 }
 
 let a_0 = 2, b_0 = 1;
@@ -97,9 +95,7 @@ class A_3<T extends Numeric> {
 type TT_0 = [number, number, string, boolean, Object]
 enum Color_0 { Red, Green, Blue }
 enum Commands_0 { Open = "fopen", Close = "fclose" }
-enum Commands_1 { Open = "fopen", Close = "fclose" }
-enum Color_1 { Red, Green, Blue }
-type CC_0 = Color_1 | Commands_1
+type CC_0 = Color_0 | Commands_0
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -280,7 +276,6 @@ export default function RecordUtilityTypeTest() {
         2: 202,
         3: 303,
       }
-      // casting record to object and back
       let obj: Object|null = to_obj_0(r)
       let q = to_rec_0(obj)
       expect(q[1] == 101 && q[2] == 202 && q[3] == 303).assertTrue()
@@ -399,7 +394,7 @@ export default function RecordUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<Int, FixedArray<String>> = {0: ['a', 'b', 'c']}
+      let r: Record<Int, FixedArray<string>> = {0: ['a', 'b', 'c']}
       expect(r[0]?.length).assertEqual(3)
     })
 
@@ -1163,11 +1158,11 @@ export default function RecordUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: CC_0 = Commands_1.Open, val1: CC_0 = Commands_1.Open
-      let key2: CC_0 = Commands_1.Close, val2: CC_0 = Commands_1.Close
-      let key3: CC_0 = Color_1.Red, val3: CC_0 = Color_1.Red
-      let key4: CC_0 = Color_1.Green, val4: CC_0 = Color_1.Green
-      let key5: CC_0 = Color_1.Blue, val5: CC_0 = Color_1.Blue
+      let key1: CC_0 = Commands_0.Open, val1: CC_0 = Commands_0.Open
+      let key2: CC_0 = Commands_0.Close, val2: CC_0 = Commands_0.Close
+      let key3: CC_0 = Color_0.Red, val3: CC_0 = Color_0.Red
+      let key4: CC_0 = Color_0.Green, val4: CC_0 = Color_0.Green
+      let key5: CC_0 = Color_0.Blue, val5: CC_0 = Color_0.Blue
 
       let r: Record<CC_0, CC_0> = {}
       r[key1] = val1

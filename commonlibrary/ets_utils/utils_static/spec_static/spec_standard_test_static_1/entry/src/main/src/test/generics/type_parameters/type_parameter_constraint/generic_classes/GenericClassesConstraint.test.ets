@@ -26,29 +26,28 @@ import {
 } from "../../../../../../../hypium"
 
 
-// 集中定义的类型、接口、类
 class Int1 {
-  value: number = 0
+  value: int = 0
 }
 
 class Double1 {
-  value: number = 0.0
+  value: double = 0.0
 }
 
 class Byte1 {
-  value: number = 0
+  value: byte = 0
 }
 
 class Short1 {
-  value: number = 0
+  value: short = 0
 }
 
 class Float1 {
-  value: number = 0.0
+  value: float = 0.0
 }
 
 class Long1 {
-  value: number = 0
+  value: long = 0
 }
 
 class NumberClass {
