@@ -444,7 +444,7 @@ export default function abilityTest() {
             await floatingBallController.stopFloatingBall();
             expect(err.message!=null).assertTrue();
             expect(err.code).assertEqual(1300019);
-            done()`1`
+            done()
           });
         } catch(e) {
           console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
