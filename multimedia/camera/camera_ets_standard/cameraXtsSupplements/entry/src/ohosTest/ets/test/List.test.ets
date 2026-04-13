@@ -48,8 +48,8 @@ import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
 import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
-import ApertureTest from './AIAPI24/Aperture.test';
-import ApertureQueryGetSupportedPhysicalAperturesTest from './AIAPI24/ApertureQueryGetSupportedPhysicalApertures.test';
+import ApertureTest from './camera/Aperture.test';
+import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQueryGetSupportedPhysicalApertures.test';
 import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
 
 
