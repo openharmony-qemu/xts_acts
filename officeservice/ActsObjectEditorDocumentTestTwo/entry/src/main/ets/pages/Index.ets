@@ -16,13 +16,13 @@
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World';
+  @State message: string = 'hello ActsObjectEditorDocumentTestTwo';
 
   build() {
     Row() {
       Column() {
         Text(this.message)
-          .fontSize(50)
+          .fontSize(30)
           .fontWeight(FontWeight.Bold)
       }
       .width('100%')

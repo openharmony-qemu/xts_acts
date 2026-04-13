@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsObjectEditorDocumentTestTwo_main") {
+ohos_app_assist_suite("ActsObjectEditorDocumentTwoTest_main") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsObjectEditorDocumentTestMainTestTwo"
+  hap_name = "ActsObjectEditorDocumentTestMainTwoTest"
   part_name = "object_editor"
   subsystem_name = "officeservice"
 }
 
-ohos_js_app_suite("ActsObjectEditorDocumentTestTwo") {
+ohos_js_app_suite("ActsObjectEditorDocumentTwoTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsObjectEditorDocumentTestTwo"
+  hap_name = "ActsObjectEditorDocumentTwoTest"
   part_name = "object_editor"
   subsystem_name = "officeservice"
-  deps = [ ":ActsObjectEditorDocumentTestTwo_main" ]
+  deps = [ ":ActsObjectEditorDocumentTwoTest_main" ]
 }

@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.ContentEmbed.ObjectEditor"
+                    "SystemCapability.Ability.AbilityRuntime.Core"
                 ]
             }
         ]

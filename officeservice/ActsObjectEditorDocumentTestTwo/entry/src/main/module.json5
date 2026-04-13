@@ -44,28 +44,6 @@
           }
         ]
       }
-    ],
-    "extensionAbilities": [
-      {
-        "name": "OEExtAbility",
-        "srcEntry": "./libentry.so",
-        "type": "contentEmbed",
-        "exported": true,
-        "metadata": [
-          {
-            "name": "content_embed_config",
-            "resource": "$profile:content_embed_config"
-          }
-        ]
-      }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.REGISTER_OBJECTEDITOR_EXTENSION"
-      },
-      {
-        "name": "ohos.permission.CONNECT_OBJECTEDITOR_EXTENSION"
-      }
     ]
   }
 }
