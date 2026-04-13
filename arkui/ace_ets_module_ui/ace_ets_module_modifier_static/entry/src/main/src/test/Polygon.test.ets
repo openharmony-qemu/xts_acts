@@ -96,6 +96,7 @@ it('testpolygon_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('testpolygon_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testpolygon_static_002 START');
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
@@ -103,12 +104,12 @@ it('testpolygon_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJsonNew = inspector.getInspectorByKey('polygon1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("testpolygon_static_002 objNew component  is: " + JSON.stringify(objNew.getElement('$attrs').getElement('points')));
-      expect(px2vp(objNew.$attrs.points[0][0])).assertEqual(1);
-      expect(px2vp(objNew.$attrs.points[0][1])).assertEqual(1);
-      expect(px2vp(objNew.$attrs.points[1][0])).assertEqual(50);
-      expect(px2vp(objNew.$attrs.points[1][1])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][0])).assertEqual(100);
-      expect(px2vp(objNew.$attrs.points[2][1])).assertEqual(0);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(1);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(1);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(50);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(0);
       console.info('testpolygon_static_002 END');
       done();
     });
