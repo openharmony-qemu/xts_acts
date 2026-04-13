@@ -128,5 +128,81 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_GetNotificationSetting_0200
+     * @tc.number SUB_Notification_Ans_GetNotificationSetting_0200
+     * @tc.desc   [Half-modal setting] The half-modal setting screen is displayed when openNotificationSettings is called to disable lock screen, notification, and badge badge and enable notifications. getNotificationSetting is successfully called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_GetNotificationSetting_0200', Level.LEVEL0, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_GetNotificationSetting_0200'
+      let driver: Driver = Driver.create();
+      let deviceTypeInfo: string = deviceInfo.deviceType;
+      try {
+        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
+        notificationManager.openNotificationSettingsWithResult(null).then((data) => {
+          hilog.info(0x0000, 'testTag',
+            `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(data.lockScreenEnabled).assertEqual(false)
+            done()
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, 'testTag',
+            `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          done()
+        });
+
+      } catch (err) {
+        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done()
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_GetNotificationSetting_0300
+     * @tc.number SUB_Notification_Ans_GetNotificationSetting_0300
+     * @tc.desc   [Half-modal setting] The half-modal setting screen is displayed when openNotificationSettings is called to disable lock screen, notification, and badge badge and enable notifications. getNotificationSetting is successfully called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_GetNotificationSetting_0300', Level.LEVEL0, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_GetNotificationSetting_0300'
+      let driver: Driver = Driver.create();
+      let deviceTypeInfo: string = deviceInfo.deviceType;
+      try {
+        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
+        notificationManager.openNotificationSettingsWithResult(undefined).then((data) => {
+          hilog.info(0x0000, 'testTag',
+            `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(data.lockScreenEnabled).assertEqual(false)
+            done()
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, 'testTag',
+            `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          done()
+        });
+
+      } catch (err) {
+        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done()
+        }
+      }
+    })
   })
 }
