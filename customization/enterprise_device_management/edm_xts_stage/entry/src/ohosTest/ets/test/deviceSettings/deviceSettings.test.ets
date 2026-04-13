@@ -1094,9 +1094,9 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let result: string = deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0);
-        expect(result.length == 0).assertTrue();
+        expect(false).assertTrue();
       } catch (error) {
-        expect().assertFail();
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1215,19 +1215,12 @@ export default function deviceSettingsTest() {
      */
     it("test_device_settings_set_value_for_account_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      let nameBefore: string = deviceSettings.getValueForAccount(SELFWANT,
-        deviceSettings.SettingsItem.DEVICE_NAME, 0);
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0, 'deviceName');
-        let result: string = deviceSettings.getValueForAccount(SELFWANT,
-          deviceSettings.SettingsItem.DEVICE_NAME, 0);
-        expect(result).not().assertUndefined();
+        expect(false).assertTrue();
       } catch (error) {
-        expect().assertFail();
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
-        if (nameBefore != "") {
-          deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0, nameBefore);
-        }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
