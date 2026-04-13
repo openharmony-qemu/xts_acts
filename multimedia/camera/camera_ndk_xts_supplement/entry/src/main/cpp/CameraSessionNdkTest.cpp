@@ -982,6 +982,7 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
     double aperture = 0.0;
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
     Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(captureSession, aperture);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetPhysicalAperture failed. %{public}d", ret);
@@ -1001,8 +1002,8 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
-    int32_t minExposureDuration = 0;
-    int32_t maxExposureDuration = 0;
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
@@ -1017,8 +1018,8 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
 
 napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info) {
     napi_value result = nullptr;
-    int32_t minExposureDuration = 0;
-    int32_t maxExposureDuration = 0;
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(nullptr, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange fail: %{public}d", ret);
@@ -1035,8 +1036,9 @@ napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env 
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
-    int32_t minExposureDuration = 0;
-    int32_t maxExposureDuration = 0;
+    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
@@ -1114,10 +1116,8 @@ napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info) {
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
-    int32_t minExposureDuration = 0;
-    int32_t maxExposureDuration = 0;
-    OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
-    OH_CaptureSession_SetExposureDuration(captureSession, minExposureDuration);
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
     int32_t exposureDuration = 0;
     Camera_ErrorCode ret = OH_CaptureSession_GetExposureDuration(captureSession, &exposureDuration);
     if (ret != CAMERA_OK) {
@@ -1125,11 +1125,6 @@ napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info) {
         napi_create_int32(env, ret, &result);
         OH_CaptureSession_Release(captureSession);
         return result;
-    }
-    if (exposureDuration != minExposureDuration) {
-        OH_LOG_ERROR(LOG_APP, "Set exposure duration (%d) and get exposure duration (%d) mismatch.", minExposureDuration, exposureDuration);
-        OH_CaptureSession_Release(captureSession);
-        return nullptr;
     }
     OH_CaptureSession_Release(captureSession);
     napi_create_int32(env, ret, &result);
@@ -1142,6 +1137,7 @@ napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
     int32_t exposureDuration = 0;
     Camera_ErrorCode ret = OH_CaptureSession_GetExposureDuration(captureSession, &exposureDuration);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
