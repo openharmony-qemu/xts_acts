@@ -19,17 +19,26 @@ import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
 import { BusinessError } from '@kit.BasicServicesKit';
 const TAG = "[ UdmfNdkTest ] ------ ";
+let tag = 'ttt:';
 
 export default function UdmfNdkTest() {
   describe('UdmfNdkTest', async () => {
-    beforeAll(async () => {
-    });
-    beforeEach(async () => {
-    });
-    afterEach(async () => {
-    });
-    afterAll(async () => {
-    });
+		beforeEach(async () => {
+			console.log(tag, `beforeEach`);
+			let options:unifiedDataChannel.Options = {
+				intention: unifiedDataChannel.Intention.DATA_HUB
+			};
+			try {
+				let data = await unifiedDataChannel.deleteData(options);
+				let size = JSON.stringify(data).length;
+				console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+			} catch (e) {
+				let error: BusinessError = e as BusinessError;
+				console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+				expect().assertFail();
+			}
+		})
+
     /**
      * @tc.name   OH_Udmf_CreatePropertiesFromUnifiedData001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0100

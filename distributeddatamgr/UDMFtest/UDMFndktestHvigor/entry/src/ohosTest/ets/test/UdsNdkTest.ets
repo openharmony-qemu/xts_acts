@@ -15,19 +15,29 @@
 import hilog from '@ohos.hilog';
 import testNapi from 'libUdsNdk.so'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 
 const TAG = "[ UdsNdkTest ] ------ ";
+let tag = 'ttt:';
 
 export default function UdsNdkTest() {
   describe('UdsNdkTest', async () => {
-    beforeAll(async () => {
-    });
-    beforeEach(() => {
-    });
-    afterEach(() => {
-    });
-    afterAll(() => {
-    });
+		beforeEach(async () => {
+			console.log(tag, `beforeEach`);
+			let options:unifiedDataChannel.Options = {
+				intention: unifiedDataChannel.Intention.DATA_HUB
+			};
+			try {
+				let data = await unifiedDataChannel.deleteData(options);
+				let size = JSON.stringify(data).length;
+				console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+			} catch (e) {
+				let error: BusinessError = e as BusinessError;
+				console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+				expect().assertFail();
+			}
+		})
+
     // PlainText =======================================================
     /**
      * @tc.name   OH_UdsPlainText_Create_0100

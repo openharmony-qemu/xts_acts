@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -59,34 +59,21 @@ export default function UDMFJsApiTest() {
   describe("UDMFJsApiTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'UDMFApiDescriptorTest start');
     let TAG = '';
-
-    beforeAll(() => {
-      console.info("beforeAll");
-      let options:unifiedDataChannel.Options = {
-        intention: unifiedDataChannel.Intention.DATA_HUB
-      };
-      unifiedDataChannel.deleteData(options).then((data: Array<unifiedDataChannel.UnifiedData>) => {
-        let size = data.length;
-        console.info(` [beforeAll] success to deleteData data.size = ${size}`);
-      }).catch((error) => {
-        let err: BusinessError = error as BusinessError;
-        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
-    })
-
-    afterAll(() => {
-      console.info("afterAll");
-      let options:unifiedDataChannel.Options = {
-        intention: unifiedDataChannel.Intention.DATA_HUB
-      };
-      unifiedDataChannel.deleteData(options).then((data: Array<unifiedDataChannel.UnifiedData>) => {
-        let size = data.length;
-        console.info(` [afterAll] success to deleteData data.size = ${size}`);
-      }).catch((error) => {
-        let err: BusinessError = error as BusinessError;
-        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);
-      });
-    })
+		beforeEach(async () => {
+			console.log(tag, `beforeEach`);
+			let options:unifiedDataChannel.Options = {
+				intention: unifiedDataChannel.Intention.DATA_HUB
+			};
+			try {
+				let data = await unifiedDataChannel.deleteData(options);
+				let size = JSON.stringify(data).length;
+				console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+			} catch (e) {
+				let error: BusinessError = e as BusinessError;
+				console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+				expect().assertFail();
+			}
+		})
 
     console.info('start UDMFApiTest');
     let text = new unifiedDataChannel.Text();
