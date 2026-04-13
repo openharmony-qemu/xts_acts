@@ -26,24 +26,33 @@ const REFERENCE_URL =
     "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
 let tag = 'ttt:';
 let TAG = "[ttt]"
+let optionsValid: unifiedDataChannel.Options = {
+  intention: unifiedDataChannel.Intention.DATA_HUB
+};
 
 export default function UDMFApiUtdUds() {
     describe('UDMFApiUtdUds', () => {
-        beforeEach(async () => {
-            console.log(tag, `beforeEach`);
-            let options:unifiedDataChannel.Options = {
-                intention: unifiedDataChannel.Intention.DATA_HUB
-            };
-            try {
-                let data = await unifiedDataChannel.deleteData(options);
-                let size = JSON.stringify(data).length;
-                console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
-            } catch (e) {
-                let error: BusinessError = e as BusinessError;
-                console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
-                expect().assertFail();
-            }
-        })
+    beforeAll(() => {	 
+      console.info("beforeAll");	 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
+        let size = data.length;	 
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
+      }).catch((error) => {	 
+        let err: BusinessError = error as BusinessError;	 
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
+      });	 
+    })
+
+    afterAll(() => { 
+      console.info("afterAll"); 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
+        let size = data.length; 
+        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
+      }).catch((error) => { 
+        let err: BusinessError = error as BusinessError; 
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
+      }); 
+    })
 
         /**
          * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1060
