@@ -23,21 +23,21 @@ let TAG = "[ttt]"
 let tag = 'ttt:';
 export default function UDMFApiDataStructTest() {
   describe('UDMFApiDataStructTest', () => {
-		beforeEach(async () => {
-			console.log(tag, `beforeEach`);
-			let options:unifiedDataChannel.Options = {
-				intention: unifiedDataChannel.Intention.DATA_HUB
-			};
-			try {
-				let data = await unifiedDataChannel.deleteData(options);
-				let size = JSON.stringify(data).length;
-				console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
-			} catch (e) {
-				let error: BusinessError = e as BusinessError;
-				console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
-				expect().assertFail();
-			}
-		})
+    beforeEach(async () => {
+      console.log(tag, `beforeEach`);
+      let options:unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let data = await unifiedDataChannel.deleteData(options);
+        let size = JSON.stringify(data).length;
+        console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+        expect().assertFail();
+      }
+    })
 
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100

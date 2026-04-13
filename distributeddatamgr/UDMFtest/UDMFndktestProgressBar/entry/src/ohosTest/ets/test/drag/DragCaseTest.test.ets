@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, TestType, Size, Level } from '@ohos/hypium'
+import { expect, describe, it, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium'
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest'
 import { Point } from '@ohos.UiTest';
 import Utils from '../common/Utils'
@@ -51,21 +51,26 @@ async function panAndPinchGesture(id: string) {
 export default function DragTest(){
 
   describe('DragTest', () => {
-		beforeEach(async () => {
-			console.log(tag, `beforeEach`);
-			let options:unifiedDataChannel.Options = {
-				intention: unifiedDataChannel.Intention.DATA_HUB
-			};
-			try {
-				let data = await unifiedDataChannel.deleteData(options);
-				let size = JSON.stringify(data).length;
-				console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
-			} catch (e) {
-				let error: BusinessError = e as BusinessError;
-				console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
-				expect().assertFail();
-			}
-		})
+    beforeEach(async () => {
+      console.log(tag, `beforeEach`);
+      let options:unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let data = await unifiedDataChannel.deleteData(options);
+        let size = JSON.stringify(data).length;
+        console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+        expect().assertFail();
+      }
+    })
+
+    afterEach(async (done: Function) => {	 
+       await Utils.sleep(100);	 
+       done();	 
+     })
 
     /**
      * @tc.name   UDMFCaseTest001
