@@ -24,20 +24,20 @@ class PARA {
   wValue: number = 0;
   wIndex: number = 0;
   wLength: number = 0;
-  data: uint8array = new uint8array();
+  data: Uint8Array = new Uint8Array();
 }
 async function executeUsbRequest(
   request: PARA,
   expectResult: number =0
 ): Promise<number> {
   try {
-    const deviceslist =usbMgr.getDevices();
+    const devicesList =usbMgr.getDevices();
     if (!devicesList || devicesList.length === 0) {
       console.info(TAG, "No USB devices connected");
       throw new Error("No devices available");
     }
 
-    const device = deviceslist[0];
+    const device = devicesList[0];
     if (!usbMgr.hasRight(device.name)) {
       console.info(TAG, `Requesting permission for device: ${device.name}`);
       await usbMgr.requestRight(device.name);
@@ -48,7 +48,7 @@ async function executeUsbRequest(
       throw new Error("Failed to connect device");
     }
 
-    const Interfaces = device.configs[0].interfaces[0];
+    const interfaces = device.configs[0].interfaces[0];
     const claimResult = usbMgr.claimInterface(devicePipe, interfaces, true);
     if (claimResult !== 0) {
       throw new Error(`Failed to claim interface: ${claimResult}`);
@@ -67,12 +67,12 @@ async function executeUsbRequest(
   }
 }
 
-function deviceConnected(gDevicelist: Array<Readonly<usbMgr.USBDevice>>) {
+function deviceConnected(gDeviceList: Array<Readonly<usbMgr.USBDevice>>) {
   if (gDeviceList.length > 0) {
     console.info(TAG, `Test USB devices connected`);
     return true;
   }
-  console.info(TAG, `Test NO USB devices connected`);
+  console.info(TAG, `Test No USB devices connected`);
   return false;
 }
 
@@ -84,7 +84,7 @@ export default function UsbSceneEtsTest() {
 
     const TAG: string = "[UsbSceneEtsTest]";
     let isDeviceConnected: boolean = false;
-    let devices: usbMgr.USBDevice[];
+    let devices: usbMgr.USBDevice;
     
 
     beforeAll(async () => {
@@ -123,9 +123,9 @@ export default function UsbSceneEtsTest() {
           let right = usbMgr.hasRight(gDeviceList[0].name);
           console.log(TAG, `hasRight result:` + right);
           if (!right) {
-            let devicePipe = usbMgr.connectDevice(gDeviceList[0]);
-            console.log(TAG, `connectDevice failed result：` + devicePipe);
-            expect(devicePipe === null).assertTrue();
+            let devicepipe = usbMgr.connectDevice(gDeviceList[0]);
+            console.log(TAG, `connectDevice failed result：` + devicepipe);
+            expect(devicepipe === null).assertTrue();
           }
         } catch (err) {
           console.info(TAG, `usb testConnectDeviceNormalApp001 catch err code:`,err.code, `, message: `, err.message);
@@ -192,8 +192,8 @@ export default function UsbSceneEtsTest() {
           console.info(TAG, 'SET_FEATURE name = ${devicesList[0].name}');
           let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
           console.info(TAG, 'SET_FEATURE devicePipe = ${JSON.stringify(devicePipe)}');
-          let Interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
-          console.info(TAG, 'SET_FEATURE Interfaces = ${JSON.stringify(interfaces)}');
+          let interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
+          console.info(TAG, 'SET_FEATURE interfaces = ${JSON.stringify(interfaces)}');
           let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
           console.info(TAG, 'SET_FEATURE claim = ${claim}');
           if (interfaces.endpoint.length > 0) {
