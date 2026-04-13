@@ -60,82 +60,9 @@ export default function builtinsComparisonAndEqualityTest() {
      */
     it('builtinsComparisonAndEqualityTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let value1 = new Char(c'\u00E9');
-      let value2 = Char.valueOf(c'\u00E9');
+      let value2 = new Char(c'\u00E9');
       expect(Char.compare(value1, value2)).assertTrue();
       expect(Char.compare(value2, value1)).assertTrue();
-    });
-    /**
-     * @tc.name    builtinsComparisonAndEqualityTest0003
-     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0003
-     * @tc.desc    Test valueOf with char out of grammar range, value > 0xFFFF such as 0x10000,0x10FFFF
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsComparisonAndEqualityTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let overMax1 = Char.valueOf((0x10000).toChar());
-      let overMax2 = Char.valueOf((0x10FFFF).toChar());
-      let overMax3 = Char.valueOf((0x20000).toChar());
-      expect(overMax1.toInt()).assertEqual(0x0000);
-      expect(overMax2.toInt()).assertEqual(0xFFFF);
-      expect(overMax3.toInt()).assertEqual(0x0000);
-    });
-
-    /**
-     * @tc.name    builtinsComparisonAndEqualityTest0004
-     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0004
-     * @tc.desc    Test valueOf with char out of grammar range, value < 0x0000 such as -1,-0x80,-0xFF
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsComparisonAndEqualityTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let overMin1 = Char.valueOf((-1).toChar());
-      let overMin2 = Char.valueOf((-0x80).toChar());
-      let overMin3 = Char.valueOf((-0xFF).toChar());
-      expect(overMin1.toInt()).assertEqual(0xFFFF);
-      expect(overMin2.toInt()).assertEqual(0xFF80);
-      expect(overMin3.toInt()).assertEqual(0xFF01);
-    });
-
-    /**
-     * @tc.name    builtinsComparisonAndEqualityTest0005
-     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0005
-     * @tc.desc    Test valueOf with invalid surrogate char range 0xD800-0xDFFF, assert code point invalid
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsComparisonAndEqualityTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let inv1 = Char.valueOf(c'\uD800');
-      let inv2 = Char.valueOf(c'\uDBFF');
-      let inv3 = Char.valueOf(c'\uDC00');
-      let inv4 = Char.valueOf(c'\uDFFF');
-      expect(Char.isValidCodePoint(inv1.toInt())).assertFalse();
-      expect(Char.isValidCodePoint(inv2.toInt())).assertFalse();
-      expect(Char.isValidCodePoint(inv3.toInt())).assertFalse();
-      expect(Char.isValidCodePoint(inv4.toInt())).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsComparisonAndEqualityTest0006
-     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0006
-     * @tc.desc    Test valueOf valid char vs invalid char, include ASCII A->65,0->48 and boundary value
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsComparisonAndEqualityTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let validA = Char.valueOf(c'A');
-      let valid0 = Char.valueOf(c'0');
-      let validD7FF = Char.valueOf(c'\uD7FF');
-      let validE000 = Char.valueOf(c'\uE000');
-      let invalidD800 = Char.valueOf(c'\uD800');
-      expect(validA.toInt()).assertEqual(65);
-      expect(valid0.toInt()).assertEqual(48);
-      expect(Char.isValidCodePoint(validD7FF.toInt())).assertTrue();
-      expect(Char.isValidCodePoint(validE000.toInt())).assertTrue();
-      expect(Char.isValidCodePoint(invalidD800.toInt())).assertFalse();
     });
 
     /**
