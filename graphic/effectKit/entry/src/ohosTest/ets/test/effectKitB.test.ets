@@ -31,7 +31,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testGetTopProportionColors'
+      let msgStr = 'www data testGetTopProportionColors'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -83,7 +83,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testInvert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testInvert'
+      let msgStr = 'www data testInvert'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -135,7 +135,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testSetColorMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testSetColorMatrix'
+      let msgStr = 'www data testSetColorMatrix'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -193,7 +193,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msg = 'testTileMode'
+      let msg = 'www data testTileMode'
       console.log(msg + ' begin')
       expect(effectKit.TileMode.CLAMP).assertEqual(0)
       expect(effectKit.TileMode.REPEAT).assertEqual(1)
@@ -211,7 +211,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testBlurTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testBlurTileMode'
+      let msgStr = 'www data testBlurTileMode'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -258,7 +258,7 @@ export default function effectKitBTest() {
       };
       image.createPixelMap(color, opts).then((pixelMap) => {
         effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(false).then(data => {
-          console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+          console.info('www data  getPixelBytesNumber = ', data.getPixelBytesNumber());
           done();
         }).catch((err: BusinessError) => {
           expect().assertFail();
@@ -287,7 +287,7 @@ export default function effectKitBTest() {
       };
       image.createPixelMap(color, opts).then((pixelMap) => {
         effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(true).then(data => {
-          console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', data.getPixelBytesNumber());
           done();
         }).catch((err: BusinessError) => {
           expect().assertFail();
@@ -305,7 +305,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testGetTopProportionColors_2'
+      let msgStr = 'www data testGetTopProportionColors_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
       imageSource.createPixelMap().then(pixelMap => {
@@ -340,7 +340,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'isBlackOrWhiteOrGrayColor_2'
+      let msgStr = 'www data isBlackOrWhiteOrGrayColor_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
       imageSource.createPixelMap().then(pixelMap => {
@@ -403,7 +403,7 @@ export default function effectKitBTest() {
      * @tc.level  LEVEL0
      */
     it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let caseName = 'createColorPicker_callback_0200';
+      let caseName = 'www data createColorPicker_callback_0200';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
@@ -450,6 +450,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let pixel = effectKit.createEffect(pixelMap);
           expect(pixel !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -479,6 +480,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let pixel = effectKit.createEffect(pixelMap);
           expect(pixel !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -508,6 +510,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let pixel = effectKit.createEffect(pixelMap);
         expect(pixel !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -536,6 +539,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let pixel = effectKit.createEffect(pixelMap);
         expect(pixel !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -564,6 +568,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -593,6 +598,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -623,6 +629,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -652,6 +659,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -680,6 +688,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -709,6 +718,7 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
@@ -739,6 +749,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -768,6 +779,7 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
@@ -796,14 +808,15 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
@@ -832,14 +845,15 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
@@ -869,14 +883,15 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -905,14 +920,15 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -940,14 +956,15 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
@@ -976,14 +993,15 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
@@ -1013,14 +1031,15 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -1049,14 +1068,15 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
   })
