@@ -986,7 +986,7 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
         return result;
     }
     OH_CaptureSession_Release(captureSession);
-    double aperture;
+    double aperture = apertures->apertures[0];
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
     OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
