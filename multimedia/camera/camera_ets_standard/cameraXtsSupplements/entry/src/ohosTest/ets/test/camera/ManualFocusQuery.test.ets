@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -20,7 +20,7 @@ import { camera } from '@kit.CameraKit';
 import { driveFn, getFd, getPermission, isEmpty, resourceName, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { media } from '@kit.MediaKit';
-
+ 
 const TAG = "CameraXts.ManualFocusQueryTest";
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
@@ -36,7 +36,7 @@ let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-
+ 
 let CameraVideoProfile: media.AVRecorderProfile = {
   audioBitrate: 48000,
   audioChannels: 2,
@@ -49,7 +49,7 @@ let CameraVideoProfile: media.AVRecorderProfile = {
   videoFrameHeight: 480,
   videoFrameRate: 30
 };
-
+ 
 let videoConfig: media.AVRecorderConfig = {
   videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
   profile: CameraVideoProfile,
@@ -57,7 +57,7 @@ let videoConfig: media.AVRecorderConfig = {
   location: { latitude: 30, longitude: 130 } as camera.Location,
   rotation: 0
 };
-
+ 
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
   mCameraManager = camera.getCameraManager(testContext);
@@ -67,7 +67,7 @@ function getCameraManager() {
   console.info(TAG, 'mCameraManager created successfully.');
   return true;
 }
-
+ 
 function getSupportedCameraDeviceArray() {
   console.info(TAG, 'getSupportedCameraDeviceArray.');
   mCameraDeviceArray = mCameraManager.getSupportedCameras();
@@ -77,7 +77,7 @@ function getSupportedCameraDeviceArray() {
   console.info(TAG, 'getSupportedCameraDeviceArray length: ' + mCameraDeviceArray.length);
   return true;
 }
-
+ 
 function getCameraInput() {
   console.info(TAG, 'getCameraInput.');
   if (mCameraDeviceArray.length) {
@@ -90,7 +90,7 @@ function getCameraInput() {
   console.info(TAG, 'cameraInput created successfully.');
   return false;
 }
-
+ 
 async function getVideoSurfaceId() {
   console.info(TAG, 'getVideoSurfaceId begin.');
   let fileName: string = resourceName();
@@ -111,12 +111,12 @@ async function getVideoSurfaceId() {
   mVideoSurfaceId = await mAVRecorder.getInputSurface();
   console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
 }
-
+ 
 function createPhotoOutput() {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
   let haveValidDevice = false;
   for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    mSupportedModes = mCameraManager.getSupportedSceneModes(device);
     if (mSupportedModes.includes(camera.SceneMode.NORMAL_PHOTO)) {
       useDevice = device;
       haveValidDevice = true;
@@ -148,7 +148,7 @@ function createPhotoOutput() {
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
-
+ 
 async function createVideoOutput() {
   await getVideoSurfaceId();
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
@@ -190,7 +190,7 @@ async function createVideoOutput() {
   mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
   console.log(TAG, 'create preview output' + mPreviewOutput, 'createVideoOutput', mVideoOutput);
 }
-
+ 
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
   mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
@@ -201,7 +201,7 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   mPhotoSession.addOutput(photoOutput);
   await mPhotoSession.commitConfig();
 }
-
+ 
 async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
   videoOutput: camera.VideoOutput) {
   console.info(TAG, 'getCreateVideoSession.');
@@ -219,14 +219,14 @@ async function getCreateVideoSession(testName: string, previewOutput: camera.Pre
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
 }
-
+ 
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
   await mPreviewOutput?.release();
   await mPhotoOutput?.release();
   await mPhotoSession?.release();
 }
-
+ 
 async function releaseVideoSession() {
   console.info(TAG, 'releaseVideoSession.');
   await mAVRecorder?.release();
@@ -234,7 +234,7 @@ async function releaseVideoSession() {
   await mVideoOutput?.release();
   await mVideoSession?.release();
 }
-
+ 
 export default function ManualFocusQueryTest() {
   describe('ManualFocusQueryTest', () => {
     beforeAll(async () => {
@@ -245,21 +245,20 @@ export default function ManualFocusQueryTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
-
+ 
     beforeEach(async () => {
       console.info(TAG, 'beforeEach case.');
     });
-
+ 
     afterEach(async () => {
       console.info(TAG, 'afterEach case.');
     });
-
+ 
     afterAll(async () => {
       console.info(TAG, 'afterAll case.');
     });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_FOCUS_DISTANCE_SUPPORTED_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_IS_FOCUS_DISTANCE_SUPPORTED_0100
@@ -290,7 +289,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_FOCUS_DISTANCE_SUPPORTED_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_IS_FOCUS_DISTANCE_SUPPORTED_0200
@@ -321,7 +320,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_FOCUS_DISTANCE_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_FOCUS_DISTANCE_0100
@@ -352,7 +351,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_FOCUS_DISTANCE_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_FOCUS_DISTANCE_0200
@@ -383,7 +382,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_FOCUS_DISTANCE_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SET_FOCUS_DISTANCE_0100
@@ -414,7 +413,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_FOCUS_DISTANCE_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_SET_FOCUS_DISTANCE_0200
@@ -445,7 +444,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_ISO_RANGE_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_ISO_RANGE_0100
@@ -476,7 +475,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_ISO_RANGE_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_ISO_RANGE_0200
@@ -507,7 +506,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_ISO_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_ISO_0100
@@ -538,7 +537,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_ISO_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_ISO_0200
@@ -569,7 +568,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_ISO_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SET_ISO_0100
@@ -600,7 +599,7 @@ export default function ManualFocusQueryTest() {
           done();
         }
       });
-
+ 
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SET_ISO_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_SET_ISO_0200
