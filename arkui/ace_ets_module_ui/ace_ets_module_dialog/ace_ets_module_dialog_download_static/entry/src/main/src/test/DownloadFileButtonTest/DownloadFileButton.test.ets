@@ -291,8 +291,8 @@ export default function DownloadFileButtonTest(): void {
     });
 
     /**
-     * @tc.number DownloadFileButtonTest_014
-     * @tc.name fontStyleNormal
+     * @tc.number SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100
+     * @tc.name SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100
      * @tc.desc Test FontStyle Normal enum value, verify Normal=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -306,8 +306,8 @@ export default function DownloadFileButtonTest(): void {
     });
 
     /**
-     * @tc.number DownloadFileButtonTest_015
-     * @tc.name fontWeightMedium
+     * @tc.number SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200
+     * @tc.name SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200
      * @tc.desc Test FontWeight Medium enum value, verify Medium=3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
