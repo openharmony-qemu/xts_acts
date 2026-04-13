@@ -34,9 +34,9 @@ const std::string DEFAULT_TAG = "ActsToolChainHapTest";
 int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
     size_t argc = index + 1;
-    napi_value args[index + 1];
+    std::vector<napi_value> args(argc);
+    napi_status status = napi_get_cb_info(env, info, &argc, args.data(), nullptr, nullptr);
 
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc <= index) {
         napi_throw_type_error(env, nullptr, "Argument missing");
         return defaultValue;
@@ -107,7 +107,7 @@ void OHVPrintf(const char* fmt, va_list args)
     OH_LOG_VPrint(LOG_APP, LOG_DEBUG, LOG_DOMAIN, DEFAULT_TAG.c_str(), fmtPublic, args);
 }
 
-int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
+int32_t SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 {
     if (!dst || !src) {
         return ERROR_CODE_NEGATIVE_ONE;
@@ -118,6 +118,23 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     if (len > dstSize) {
         return ERROR_CODE_NEGATIVE_TWO;
     }
-    memmove(dst, src, len);
+    // 处理重叠情况的安全复制
+    unsigned char* dstPtr = (unsigned char*)dst;
+    const unsigned char* srcPtr = static_cast<const unsigned char*>(src);
+    if (dstPtr == srcPtr) {
+        return SUCCESS_CODE; // 源和目标相同，无需复制
+    }
+    // 判断是否有重叠以及重叠类型
+    if (dstPtr < srcPtr) {
+        // 正向复制：目标在源前面，或者不重叠
+        for (size_t i = 0; i < len; ++i) {
+            dstPtr[i] = srcPtr[i];
+        }
+    } else if (dstPtr > srcPtr) {
+        // 反向复制：目标在源后面，有重叠
+        for (size_t i = len; i > 0; --i) {
+            dstPtr[i - 1] = srcPtr[i - 1];
+        }
+    }
     return SUCCESS_CODE;
 }

@@ -166,7 +166,7 @@ template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
 void OHPrintf(const char* fmt, ...);
 void OHVPrintf(const char* fmt, va_list args);
 
-int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
+int32_t SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
 #endif // COMMON_TOOL_H
 #endif // COMMONTOOL_H
