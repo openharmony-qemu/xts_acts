@@ -855,14 +855,15 @@ napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info) {
+napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
     OH_Camera_PhysicalAperture* apertures = nullptr;
-    uint32_t size = 0;
+    uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
@@ -872,7 +873,7 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info) {
     }
     double setAperture = apertures->apertures[0];
     OH_CaptureSession_SetPhysicalAperture(captureSession, setAperture);
-    double getAperture = 0.0;
+    double getAperture;
     Camera_ErrorCode ret = OH_CaptureSession_GetPhysicalAperture(captureSession, &getAperture);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetPhysicalAperture failed. %{public}d", ret);
@@ -890,9 +891,10 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestGetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info) {
+napi_value TestGetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
-    double aperture = 0.0;
+    double aperture;
     Camera_ErrorCode ret = OH_CaptureSession_GetPhysicalAperture(nullptr, &aperture);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetPhysicalAperture failed. %{public}d", ret);
@@ -903,9 +905,10 @@ napi_value TestGetPhysicalApertureWithNullSession(napi_env env, napi_callback_in
     return result;
 }
 
-napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_callback_info info) {
+napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
-    double aperture = 0.0;
+    double aperture;
     Camera_Manager *cameraManager = nullptr;
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
@@ -922,14 +925,15 @@ napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_cal
     return result;
 }
 
-napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info) {
+napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
     OH_Camera_PhysicalAperture* apertures = nullptr;
-    uint32_t size = 0;
+    uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
@@ -950,9 +954,10 @@ napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestSetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info) {
+napi_value TestSetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
-    double aperture = 0.0;
+    double aperture;
     Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(nullptr, aperture);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetPhysicalAperture fail. %{public}d", ret);
@@ -963,14 +968,15 @@ napi_value TestSetPhysicalApertureWithNullSession(napi_env env, napi_callback_in
     return result;
 }
 
-napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_callback_info info) {
+napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
     OH_Camera_PhysicalAperture* apertures = nullptr;
-    uint32_t size = 0;
+    uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
@@ -979,7 +985,7 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
         return result;
     }
     OH_CaptureSession_Release(captureSession);
-    double aperture = 0.0;
+    double aperture;
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
     OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
@@ -996,7 +1002,8 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
     return result;
 }
 
-napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback_info info) {
+napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
@@ -1016,7 +1023,8 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     return result;
 }
 
-napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info) {
+napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     int32_t minExposureDuration;
     int32_t maxExposureDuration;
@@ -1030,7 +1038,8 @@ napi_value TestGetSupportedExposureDurationRangeWithNullSession(napi_env env, na
     return result;
 }
 
-napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env env, napi_callback_info info) {
+napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     Camera_Manager *cameraManager = nullptr;
     OH_Camera_GetCameraManager(&cameraManager);
@@ -1051,14 +1060,15 @@ napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env 
     return result;
 }
 
-napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info) {
+napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
-    int32_t minExposureDuration = 0;
-    int32_t maxExposureDuration = 0;
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
     OH_CaptureSession_GetSupportedExposureDurationRange(captureSession, &minExposureDuration, &maxExposureDuration);
     Camera_ErrorCode ret = OH_CaptureSession_SetExposureDuration(captureSession, maxExposureDuration);
     if (ret != CAMERA_OK) {
@@ -1078,9 +1088,10 @@ napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestSetExposureDurationWithInvalidValue(napi_env env, napi_callback_info info) {
+napi_value TestSetExposureDurationWithInvalidValue(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
-    int32_t exposureDuration = 0;
+    int32_t exposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_SetExposureDuration(nullptr, exposureDuration);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetExposureDuration fail. %{public}d", ret);
@@ -1091,7 +1102,8 @@ napi_value TestSetExposureDurationWithInvalidValue(napi_env env, napi_callback_i
     return result;
 }
 
-napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_callback_info info) {
+napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     Camera_Manager *cameraManager = nullptr;
     OH_Camera_GetCameraManager(&cameraManager);
@@ -1110,7 +1122,8 @@ napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     return result;
 }
 
-napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info) {
+napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     char faceID[256];
     CreateAndOpenCamera();
@@ -1131,14 +1144,15 @@ napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_callback_info info) {
+napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     Camera_Manager *cameraManager = nullptr;
     OH_Camera_GetCameraManager(&cameraManager);
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
     OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
-    int32_t exposureDuration = 0;
+    int32_t exposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetExposureDuration(captureSession, &exposureDuration);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetExposureDuration failed. %{public}d", ret);
