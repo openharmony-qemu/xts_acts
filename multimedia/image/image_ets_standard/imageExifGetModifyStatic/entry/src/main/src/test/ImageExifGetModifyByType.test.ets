@@ -95,7 +95,7 @@ export default function imageExifGetModifyByTypeTest(): void {
       const imageSourceApiGet = await getImageSource(fileName, type);
       const exifValue: image.ImageMetadata = await imageSourceApiGet!.readImageMetadata(exifMetadataKey);
       for (let i = 0; i < exifMetadataKey.length; i++) {
-        const rule = rulesMap.get(exifMetadataKey[i]);
+        const rule = rulesMap.get(image.DngPropertyKey.fromValue(exifMetadataKey[i]));
         if (!rule) {
           console.info(`${testNum} No rule found for key: ${exifMetadataKey[i]}`);
           continue;
@@ -134,7 +134,7 @@ export default function imageExifGetModifyByTypeTest(): void {
         const key = keys[i];
         const rule = rulesMap.get(key);
         if (!rule) {
-          console.info(`${result} No rule found for key: ${key}`);
+          console.info(`${testTag} No rule found for key: ${key}`);
           continue;
         }
         try {
@@ -215,7 +215,10 @@ export default function imageExifGetModifyByTypeTest(): void {
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100", Level.LEVEL0, async (done: () => void) => {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100";
       try {
-        let keys: string[] = Object.values(image.DngPropertyKey);
+        let keys: string[] = []; //Object.values(image.DngPropertyKey);
+        for (let s of image.DngPropertyKey.values()) {
+          keys.push(s.toString());
+        }
         console.info(`${testTag} DNG metadata keys to read: ${keys}`);
         const ret = await verifyMetadataProperties(testTag, "test_fake.dng", "uri", "dngMetadata", keys, dngMetadataMap);
         expect(ret).assertTrue();
@@ -423,20 +426,18 @@ export default function imageExifGetModifyByTypeTest(): void {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_WEBP_METADATA_ERROR_0500", Level.LEVEL0, async (done: () => void) => {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_WEBP_METADATA_ERROR_0500";
-      let result: boolean = true;
       const imageSourceApi = await getImageSource("test_exif_v2.jpg", "uri");
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadataByType([image.MetadataType.WEBP_METADATA], 0);
         console.error(`${testTag} Unsupported metadata exifValue: ${exifValue}`);
-        result = false;
+        expect(true).assertFail();
       } catch (err) {
         console.error(`${testTag} Error processing err: ${err}`);
         expect(err.code).assertEqual(UNSUPPORTED_IMAGE_FORMATS);
       }  finally {
         await imageSourceApi?.release();
       }
-      console.info(`${testTag} webp metadata readImageMetadataByType result is: ${result}`);
-      expect(result).assertTrue();
+      // console.info(`${testTag} webp metadata readImageMetadataByType result is: ${result}`);
       done();
     });
 
