@@ -5,6 +5,7 @@
     "MainAbility/pages/frameNode/nodeContainer",
     "MainAbility/pages/index/index",
     "MainAbility/pages/frameNode/GetFrameNodeById",
-    "MainAbility/pages/frameNode/GetFrameNodeByUniqueId"
+    "MainAbility/pages/frameNode/GetFrameNodeByUniqueId",
+    "MainAbility/pages/frameNode/createFrameNodesUIContextInt"
   ]
 }
