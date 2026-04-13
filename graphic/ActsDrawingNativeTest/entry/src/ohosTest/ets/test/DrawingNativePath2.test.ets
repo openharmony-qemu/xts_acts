@@ -288,9 +288,9 @@ export default function DrawingNativePath2Test() {
      * @tc.desc   test for testPathGetPointDataNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPathGetPointDataNormal', Level.LEVEL3, () => {
+    it('testPathGetPointDataNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4GetData(0);
       expect(result).assertEqual(0);
     })
@@ -340,9 +340,9 @@ export default function DrawingNativePath2Test() {
      * @tc.desc   test for testPathGetVerbDataNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPathGetVerbDataNormal', Level.LEVEL3, () => {
+    it('testPathGetVerbDataNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4GetData(4);
       expect(result).assertEqual(0);
     })
@@ -392,9 +392,9 @@ export default function DrawingNativePath2Test() {
      * @tc.desc   test for testPathGetConicWeightNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPathGetConicWeightNormal', Level.LEVEL3, () => {
+    it('testPathGetConicWeightNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4GetData(8);
       expect(result).assertEqual(0);
     })
@@ -444,9 +444,9 @@ export default function DrawingNativePath2Test() {
      * @tc.desc   test for testPathConvertToSvgStringNormal1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPathConvertToSvgStringNormal1', Level.LEVEL3, () => {
+    it('testPathConvertToSvgStringNormal1', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingPathPart4GetData(12);
       expect(result).assertEqual(0);
     })
@@ -457,9 +457,9 @@ export default function DrawingNativePath2Test() {
      * @tc.desc   test for testPathConvertToSvgStringNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('testPathConvertToSvgStringNormal2', Level.LEVEL3, () => {
+    it('testPathConvertToSvgStringNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingPathPart4GetData(13);
       expect(result).assertEqual(0);
     })

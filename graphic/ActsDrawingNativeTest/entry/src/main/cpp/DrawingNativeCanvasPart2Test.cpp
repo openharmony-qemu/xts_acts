@@ -56,14 +56,6 @@ void DrawingNativeCanvasPart2TestTearDown()
     OH_Drawing_ErrorCodeReset();
     std::cout << "DrawingNativeCanvasPart2Test errorCodeReset after each test case." << std::endl;
 }
-/**
- * @tc.name   testCanvasDrawPixelMapRectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4300
- * @tc.desc   test for testCanvasDrawPixelMapRectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawPixelMapRectNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -228,14 +220,6 @@ static void TestDrawPixelMapRectWithInvalidDstRects(OH_Drawing_Canvas* canvas, O
     }
 }
 
-/**
- * @tc.name   testCanvasDrawPixelMapRectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4500
- * @tc.desc   test for testCanvasDrawPixelMapRectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPixelMapRectAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -277,14 +261,6 @@ int TestCanvasDrawPixelMapRectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPixelMapRectMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4600
- * @tc.desc   test for testCanvasDrawPixelMapRectMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPixelMapRectMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -343,14 +319,6 @@ int TestCanvasDrawPixelMapRectMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPixelMapRect4KBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4700
- * @tc.desc   test for testCanvasDrawPixelMapRect4KBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPixelMapRect4KBoundary()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -409,14 +377,6 @@ int TestCanvasDrawPixelMapRect4KBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPixelMapRectInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4800
- * @tc.desc   test for testCanvasDrawPixelMapRectInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPixelMapRectInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -426,14 +386,6 @@ int TestCanvasDrawPixelMapRectInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBackgroundNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4900
- * @tc.desc   test for testCanvasDrawBackgroundNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawBackgroundNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -456,14 +408,6 @@ int TestCanvasDrawBackgroundNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBackgroundNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5000
- * @tc.desc   test for testCanvasDrawBackgroundNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBackgroundNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -492,14 +436,6 @@ int TestCanvasDrawBackgroundNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBackgroundInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5DRAWING_NUMBER_100
- * @tc.desc   test for testCanvasDrawBackgroundInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBackgroundInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -511,14 +447,6 @@ int TestCanvasDrawBackgroundInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBackgroundMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5200
- * @tc.desc   test for testCanvasDrawBackgroundMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBackgroundMultipleCalls()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -542,14 +470,6 @@ int TestCanvasDrawBackgroundMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRegionNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5300
- * @tc.desc   test for testCanvasDrawRegionNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawRegionNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -581,14 +501,6 @@ int TestCanvasDrawRegionNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRegionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5400
- * @tc.desc   test for testCanvasDrawRegionNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRegionNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -631,14 +543,6 @@ int TestCanvasDrawRegionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRegionInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5500
- * @tc.desc   test for testCanvasDrawRegionInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRegionInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -648,14 +552,6 @@ int TestCanvasDrawRegionInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5600
- * @tc.desc   test for testCanvasDrawPointsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawPointsNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -698,14 +594,6 @@ int TestCanvasDrawPointsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5700
- * @tc.desc   test for testCanvasDrawPointsNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPointsNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -735,14 +623,6 @@ int TestCanvasDrawPointsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5800
- * @tc.desc   test for testCanvasDrawPointsAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPointsAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -786,14 +666,6 @@ int TestCanvasDrawPointsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsMismatch
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5900
- * @tc.desc   test for testCanvasDrawPointsMismatch.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPointsMismatch()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -822,14 +694,6 @@ int TestCanvasDrawPointsMismatch()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6000
- * @tc.desc   test for testCanvasDrawPointsMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPointsMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -865,14 +729,6 @@ int TestCanvasDrawPointsMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPointsInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6DRAWING_NUMBER_100
- * @tc.desc   test for testCanvasDrawPointsInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPointsInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -884,14 +740,6 @@ int TestCanvasDrawPointsInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6200
- * @tc.desc   test for testCanvasDrawBitmapNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawBitmapNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -958,14 +806,6 @@ int TestCanvasDrawBitmapNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6300
- * @tc.desc   test for testCanvasDrawBitmapNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1030,14 +870,6 @@ int TestCanvasDrawBitmapNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6400
- * @tc.desc   test for testCanvasDrawBitmapAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1065,14 +897,6 @@ int TestCanvasDrawBitmapAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6500
- * @tc.desc   test for testCanvasDrawBitmapMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1102,14 +926,6 @@ int TestCanvasDrawBitmapMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6600
- * @tc.desc   test for testCanvasDrawBitmapInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1121,14 +937,6 @@ int TestCanvasDrawBitmapInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6700
- * @tc.desc   test for testCanvasDrawBitmapBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawBitmapBoundary()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1192,14 +1000,6 @@ int TestCanvasDrawBitmapBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6800
- * @tc.desc   test for testCanvasDrawBitmapRectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawBitmapRectNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1296,14 +1096,6 @@ static void TestDrawBitmapRectWithDifferentBitmaps(OH_Drawing_Canvas* canvas, OH
     OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6900
- * @tc.desc   test for testCanvasDrawBitmapRectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapRectNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1381,14 +1173,6 @@ static void TestDrawBitmapRectWithInvalidDstCoordinates(OH_Drawing_Canvas* canva
     OH_Drawing_RectDestroy(dst);
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7000
- * @tc.desc   test for testCanvasDrawBitmapRectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapRectAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1420,14 +1204,6 @@ int TestCanvasDrawBitmapRectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7DRAWING_NUMBER_100
- * @tc.desc   test for testCanvasDrawBitmapRectMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapRectMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1474,14 +1250,6 @@ int TestCanvasDrawBitmapRectMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7200
- * @tc.desc   test for testCanvasDrawBitmapRectInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawBitmapRectInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1493,14 +1261,6 @@ int TestCanvasDrawBitmapRectInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawBitmapRectBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7300
- * @tc.desc   test for testCanvasDrawBitmapRectBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawBitmapRectBoundary()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1561,14 +1321,6 @@ int TestCanvasDrawBitmapRectBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7400
- * @tc.desc   test for testCanvasDrawRectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawRectNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1591,14 +1343,6 @@ int TestCanvasDrawRectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7500
- * @tc.desc   test for testCanvasDrawRectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRectNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1651,14 +1395,6 @@ int TestCanvasDrawRectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7600
- * @tc.desc   test for testCanvasDrawRectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRectAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1721,14 +1457,6 @@ int TestCanvasDrawRectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRectMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7700
- * @tc.desc   test for testCanvasDrawRectMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRectMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1764,14 +1492,6 @@ int TestCanvasDrawRectMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRectInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7800
- * @tc.desc   test for testCanvasDrawRectInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRectInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1783,14 +1503,6 @@ int TestCanvasDrawRectInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawCircleNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7900
- * @tc.desc   test for testCanvasDrawCircleNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawCircleNormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1814,14 +1526,6 @@ int TestCanvasDrawCircleNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawCircleNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8000
- * @tc.desc   test for testCanvasDrawCircleNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawCircleNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1854,14 +1558,6 @@ int TestCanvasDrawCircleNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawCircleAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8DRAWING_NUMBER_100
- * @tc.desc   test for testCanvasDrawCircleAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawCircleAbnormal()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1891,14 +1587,6 @@ int TestCanvasDrawCircleAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawCircleMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8200
- * @tc.desc   test for testCanvasDrawCircleMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawCircleMaximum()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1927,14 +1615,6 @@ int TestCanvasDrawCircleMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawCircleInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8300
- * @tc.desc   test for testCanvasDrawCircleInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawCircleInputDestroyed()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1944,14 +1624,6 @@ int TestCanvasDrawCircleInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawPixelMapRect4ByteAlignment
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_NUMBER_4
- * @tc.desc   test for CanvasDrawPixelMapRect4ByteAlignment.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawPixelMapRect4ByteAlignment()
 {
     DrawingNativeCanvasPart2TestSetUp();
