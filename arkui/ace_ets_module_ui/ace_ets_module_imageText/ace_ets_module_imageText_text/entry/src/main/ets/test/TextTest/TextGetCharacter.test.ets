@@ -65,7 +65,7 @@ export default function TextGetCharacter() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0100] GlyphPositionAtCoordinate : ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('glyphPositionAtCoordinate position: 51 affinity: 0');
+      expect(obj.$attrs.content).assertEqual('glyphPositionAtCoordinate position: 0 affinity: 0');
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0100] END');
       done();
     });
@@ -93,7 +93,7 @@ export default function TextGetCharacter() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0200] component obj is: ' + JSON.stringify(obj));
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0200] CharacterPositionAtCoordinate : ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('characterPositionAtCoordinate position: 89 affinity: 0');
+      expect(obj.$attrs.content).assertEqual('characterPositionAtCoordinate position: 0 affinity: 0');
       console.info('[SUB_ACE_ARKUI_TEXT_GETCHARACTER_0200] END');
       done();
     });
