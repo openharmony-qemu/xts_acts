@@ -591,7 +591,18 @@ napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
         if (buffer == nullptr) {
             continue;
         }
-        LOGI("OH_NativeBuffer_Alloc success num =%{public}d, index=%{public}d", success, index);
+        OH_NativeBuffer_Config get_config = {};
+        get_config.width = 0x0;
+        get_config.height = 0x0;
+        get_config.format = NUMBER_10000;
+        get_config.usage = 0x0;
+        OH_NativeBuffer_GetConfig(buffer, &get_config);
+        if (get_config.format == NUMBER_10000 || get_config.format != nativeBuffeFormat[index]) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
+        LOGI("OH_NativeBuffer_Alloc success num =%{public}d, index=%{public}d, get_config.format=%{public}d", success,
+             index, get_config.format);
         success += 1;
         OH_NativeBuffer_Unreference(buffer);
     }
