@@ -17,7 +17,7 @@ ohos_app_assist_suite("ActsToolChainMainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsToolChainMainTest"
-  subsystem_name = "thirdparty"
+  subsystem_name = "commonlibrary"
   part_name = "musl"
 }
 
@@ -27,7 +27,7 @@ ohos_js_app_suite("ActsToolChainHapTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsToolChainHapTest"
-  subsystem_name = "thirdparty"
+  subsystem_name = "commonlibrary"
   part_name = "musl"
   deps = [ ":ActsToolChainMainTest" ]
 }
