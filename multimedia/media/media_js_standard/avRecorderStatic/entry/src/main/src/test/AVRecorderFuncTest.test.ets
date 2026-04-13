@@ -505,7 +505,7 @@ export default function avRecorderTest() {
         let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
         let done: () => void = data?.get('done') as (() => void)
         let avConfig: media.AVRecorderConfig = {
-          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
           profile: {
             audioBitrate: 48000,
             audioChannels: 2,
@@ -733,6 +733,7 @@ export default function avRecorderTest() {
         let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
         let done: () => void = data?.get('done') as (() => void)
         let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: {
             audioBitrate: 48000,
             audioChannels: 2,
