@@ -44,6 +44,8 @@ import GenericFunctionsConstraintTest from "./generics/type_parameters/type_para
 import GenericMethodsConstraintTest from "./generics/type_parameters/type_parameter_constraint/generic_methods/GenericMethodsConstraint.test";
 import GenericTypeAliasConstraintTest from "./generics/type_parameters/type_parameter_constraint/generic_type_alias/GenericTypeAliasConstraint.test";
 import GenericTypeParameterDefaultTest from "./generics/type_parameters/type_parameter_default/GenericTypeParameterDefault.test";
+import GenericClassesVarianceTest from "./generics/type_parameters/type_parameter_variance/generic_classes/GenericClassesVariance.test";
+import GenericInterfacesVarianceTest from "./generics/type_parameters/type_parameter_variance/generic_interfaces/GenericInterfacesVariance.test";
 
 export default function testsuite() {
   AssignmentLikeContextsTest();
@@ -78,4 +80,6 @@ export default function testsuite() {
   GenericMethodsConstraintTest();
   GenericTypeAliasConstraintTest();
   GenericTypeParameterDefaultTest();
+  GenericClassesVarianceTest();
+  GenericInterfacesVarianceTest();
 }
