@@ -153,6 +153,7 @@ namespace ArkUICapiTest {
 #define PARAM_960000 960000
 #define PARAM_255 255
 #define PARAM_4242 4242
+#define PRECISION_DECIMAL_2 2
 
 /**
  * Log print domain.

@@ -45,7 +45,7 @@ static void UpdateTextContent(ArkUI_NodeHandle node, const std::string& prefix, 
         return;
     }
     std::ostringstream oss;
-    oss << prefix << std::fixed << std::setprecision(2) << value;
+    oss << prefix << std::fixed << std::setprecision(PRECISION_DECIMAL_2) << value;
     std::string result = oss.str();
     ArkUI_AttributeItem textItem = {.string = result.c_str()};
     nodeAPI->setAttribute(node, NODE_TEXT_CONTENT, &textItem);

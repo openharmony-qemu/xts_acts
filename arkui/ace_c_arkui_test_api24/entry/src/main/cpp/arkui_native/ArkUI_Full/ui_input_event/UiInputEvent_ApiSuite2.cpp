@@ -18,8 +18,6 @@
 
 namespace ArkUICapiTest {
 
-extern void EnsureArkUiUiInputEventModuleLoaded();
-
 static napi_value TestArkUICapi_501(napi_env env, napi_callback_info info)
 {
     (void)env;
