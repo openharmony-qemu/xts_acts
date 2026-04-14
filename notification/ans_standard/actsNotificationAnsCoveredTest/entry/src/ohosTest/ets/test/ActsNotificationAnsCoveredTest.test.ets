@@ -1054,7 +1054,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCode(null).then(() => {
               console.info(`Succeeded in setting code.`);
@@ -1068,7 +1068,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCode(undefined).then(() => {
               console.info(`Succeeded in setting code.`);
@@ -1082,7 +1082,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCodeSync(null)
             done()
@@ -1091,7 +1091,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(undefined)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCodeSync(undefined)
             done()
@@ -1100,7 +1100,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(undefined)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.getData(undefined)
           } catch (err) {
@@ -1108,7 +1108,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setData(null).then(() => {
               console.info(TAG + `Succeeded in setting data.`);
@@ -1122,7 +1122,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setData(undefined).then(() => {
               console.info(`Succeeded in setting data.`);
@@ -1136,7 +1136,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCodeAndData(null, null).then(() => {
               console.info(`Succeeded in setting code and data.`);
@@ -1148,6 +1148,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
+          await sleep(500)
           try {
             subscriber.setCodeAndData(undefined, undefined).then(() => {
               console.info(`Succeeded in setting code and data.`);
@@ -1189,8 +1190,7 @@ export default function actsNotificationAnsCovered() {
         } else {
           console.info(`Sub_Notification_CES_CommonEvent_1007 success ${commonEventSubscriber}`)
           subscriber = commonEventSubscriber
-
-
+          await sleep(500)
           try {
             subscriber.setDataSync('');
           } catch (err) {
@@ -1198,7 +1198,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(undefined)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setDataSync(null);
           } catch (err) {
@@ -1206,7 +1206,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(undefined)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setDataSync(undefined);
           } catch (err) {
@@ -1214,7 +1214,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(undefined)
             done()
           }
-
+          await sleep(500)
           let count = 0
           try {
             subscriber.setCodeAndData(1, '', (err) => {
@@ -1227,7 +1227,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCodeAndData(2, '').then(() => {
               count++
@@ -1242,7 +1242,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(401)
             done()
           }
-
+          await sleep(500)
           try {
             subscriber.setCodeAndDataSync(3, '')
             done()
@@ -2275,6 +2275,109 @@ export default function actsNotificationAnsCovered() {
         }
       })
     });
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_0100
+     * @tc.name    Sub_Notification_CES_CommonEvent_0100
+     * @tc.desc    test string 256 of publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_0100', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_0100"
+      let count = 0
+      let event = 'T'.repeat(256)
+      try {
+        //发布公共事件
+        let publishCB = (err: BusinessError) => {
+          if (err) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err).assertEqual(null);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            count++
+            expect(count).assertEqual(1);
+            done()
+          }
+        }
+        CommonEventManager.publish(event,
+          publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(false).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_0200
+     * @tc.name    Sub_Notification_CES_CommonEvent_0200
+     * @tc.desc    test string 1 of publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_0200', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_0200"
+      let count = 0
+      try {
+        //发布公共事件
+        let publishCB = (err: BusinessError) => {
+          if (err) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            count++
+            expect(count).assertEqual(1);
+            done()
+          }
+        }
+        CommonEventManager.publish('a',publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(false).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_0300
+     * @tc.name    Sub_Notification_CES_CommonEvent_0300
+     * @tc.desc    test string 256 +1 of publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_0300', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_0300"
+      let count = 0
+      let event = 'T'.repeat(257)
+      try {
+        //发布公共事件
+        let publishCB = (err: BusinessError) => {
+          if (err) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            count++
+            expect(count).assertEqual(1);
+            done()
+          }
+        }
+        CommonEventManager.publish(event,
+          publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(false).assertTrue();
+        done()
+      }
+    })
 
   })
 }
