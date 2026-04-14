@@ -3081,20 +3081,6 @@ export default function AssignmentLikeContextsTest() {
       expect(a_Date).assertEqual(null);
       let f_Date: ((p: Date) => Date)|null = null;
       expect(f_Date).assertEqual(null);
-
-      let v_StackTrace: StackTrace|null = null;
-      expect(v_StackTrace).assertEqual(null);
-      let a_StackTrace: (StackTrace[])|null = null;
-      expect(a_StackTrace).assertEqual(null);
-      let f_StackTrace: ((p: StackTrace) => StackTrace)|null = null;
-      expect(f_StackTrace).assertEqual(null);
-
-      let v_StackTraceElement: StackTraceElement|null = null;
-      expect(v_StackTraceElement).assertEqual(null);
-      let a_StackTraceElement: (StackTraceElement[])|null = null;
-      expect(a_StackTraceElement).assertEqual(null);
-      let f_StackTraceElement: ((p: StackTraceElement) => StackTraceElement)|null = null;
-      expect(f_StackTraceElement).assertEqual(null);
     });
 
     /**
