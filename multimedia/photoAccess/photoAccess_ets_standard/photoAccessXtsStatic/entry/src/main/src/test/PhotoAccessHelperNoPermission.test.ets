@@ -307,7 +307,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(context);
                     let trigger = false;
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, (
-                        err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
+                        err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>|undefined): void => {
                         console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
                         expect(err?.code).assertEqual(201);
                         trigger = true;
@@ -350,7 +350,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     };
                     let trigger = false;
                     helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-                        fetchOptions, (err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>): void => {
+                        fetchOptions, (err: BusinessError<void> | null, result: photoAccessHelper.FetchResult<photoAccessHelper.Album>|undefined): void => {
                             console.info(TAG, testName + 'getAssets failed. result:' + result + ' code:' + err?.code);
                             expect(err?.code).assertEqual(201);
                             trigger = true;

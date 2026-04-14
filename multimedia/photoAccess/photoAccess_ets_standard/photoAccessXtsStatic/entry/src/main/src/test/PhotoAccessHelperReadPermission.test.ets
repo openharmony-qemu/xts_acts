@@ -41,7 +41,7 @@ export default function photoAccessHelperReadPermissionStaticTest() {
                 console.info(TAG, 'getReadPermission start');
                 let atManager = abilityAccessCtrl.createAtManager();
                 let testContext: Context = Hypium.get("context") as Context;
-                let arr: Array<Permission> = new Array<Permission>();
+                let arr: Array<Permissions> = new Array<Permissions>();
                 arr.push('ohos.permission.READ_IMAGEVIDEO');
                 atManager.requestPermissionsFromUser(testContext, arr,
                     (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
