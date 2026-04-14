@@ -88,16 +88,16 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
     })
 
     /**
-     * @tc.number    : CAMERA_HDRVIDEORECORDER__MULTICONFIG_000
-     * @tc.name      : CAMERA_HDRVIDEORECORDER__MULTICONFIG_000
+     * @tc.number    : SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_000
+     * @tc.name      : SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_000
      * @tc.desc      : camera recorde HDR 1 video and Test HDR info
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('CAMERA_HDRVIDEORECORDER__MULTICONFIG_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let testNum = 'CAMERA_HDRVIDEORECORDER__MULTICONFIG_000';
+        let testNum = 'SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_000';
         //预制条件
         await getPermission();
         let helper = await getHelper();
@@ -234,16 +234,16 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
     })
 
     /**
-     * @tc.number    : CAMERA_HDRVIDEORECORDER__MULTICONFIG_001
-     * @tc.name      : CAMERA_HDRVIDEORECORDER__MULTICONFIG_00
+     * @tc.number    : SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_001
+     * @tc.name      : SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_001
      * @tc.desc      : camera recorde HDR 1 video and Test HDR info
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('CAMERA_HDRVIDEORECORDER__MULTICONFIG_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let testNum = 'CAMERA_HDRVIDEORECORDER__MULTICONFIG_001'
+        let testNum = 'SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_001'
         //预制条件
         await getPermission();
         let helper = await getHelper();
