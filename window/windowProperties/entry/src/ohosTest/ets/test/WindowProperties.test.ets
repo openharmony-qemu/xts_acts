@@ -5420,6 +5420,79 @@ export default function windowPropertiesTest() {
     })
 
     /**
+    * @tc.name   setImageForRecent_201
+    * @tc.number SUB_BASIC_WMS_setImageForRecent_0100
+    * @tc.desc   setImageForRecent_201
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('setImageForRecent_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'setImageForRecent_201';
+      console.log( caseName +' begin');
+      let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+      let pixelMap: image.PixelMap;
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      image.createPixelMap(color, {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+      }).then((data) => {
+        pixelMap = data;
+        console.info(caseName +` Succeeded in creating pixelMap`);
+        try {
+          let promise = windowStage.setImageForRecent(pixelMap, ImageFit.Fill);
+          promise.then(() => {
+            console.info(caseName +` Succeeded in setting image for recent`);
+            expect(false).assertTrue();
+            done()
+          }).catch((err: BusinessError) => {
+            console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to set image for recent.`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+    })
+
+    /**
+    * @tc.name   removeImageForRecent_201
+    * @tc.number SUB_BASIC_WMS_removeImageForRecent_0100
+    * @tc.desc   removeImageForRecent_201
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('removeImageForRecent_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'removeImageForRecent_201';
+      console.log( caseName +' begin');
+        try {
+          let promise = windowStage.removeImageForRecent();
+          promise.then(() => {
+            console.info(caseName +`Succeeded in removing image for recent`);
+            expect(false).assertTrue();
+            done()
+          }).catch((err: BusinessError) => {
+            console.error(caseName +`Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to remove image for recent.`);
+          expect(false).assertTrue();
+          done()
+        }
+    })
+
+    /**
      * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_0100
      * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0100
      * @tc.desc   开启/关闭窗口获焦能力后，主窗查询focusable属性
