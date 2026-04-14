@@ -191,38 +191,6 @@ def find_files(directory):
         for file in files:
             yield os.path.join(root, file)
 
-
-def check_video(video_path: str):
-    """
-    #====================================================================================
-    #   @Func               :  检测视频是否有绿图、坏图、白图、花图、黑图
-    #   @path               :  视频路径
-    #   @return             :  检测结果。字典类型的数据，包括code和msg两个字段
-    #====================================================================================
-    """
-    logger.info(f"开始检测视频：{video_path}")
-    # 定义返回数据
-    check_result = {
-        "code": 0,
-        "msg": "视频正常"
-    }
-    # 获取视频文件所在的目录
-    video_name = video_path.split("/")[-1].split(".")[0]
-    video_dir = os.path.join(os.path.dirname(video_path), video_name)
-    # 拆解视频为一帧一帧的图片
-    images_dir = video_to_images(video_path, video_dir)
-    # 检测每一帧图片
-    for img in os.listdir(images_dir):
-        img_path = os.path.join(images_dir, img)
-        res = check_image(img_path)
-        if res["code"] == 1:
-            data = {"code": 1, "msg": f"{res['msg']}"}
-            logger.error(f"AI检测结果：{data}")
-            return data
-        time.sleep(5)
-    print(f"AI检测结果：{check_result}")
-    return check_result
-
 def createDirectory(path):
     """
     #====================================================================================
@@ -241,7 +209,6 @@ def video_to_images(video_path, output_folder, frame_interval=30):
     #   @frame_interval     :  抽帧间隔,默认每隔30帧抽取一张图片
     #====================================================================================
     """
-    videoDisplayName = ''
     videoDisplayName = video_path.split('\\')[-1].split('.')[0]
     # 创建输出文件夹
     createDirectory(output_folder)
@@ -271,8 +238,9 @@ def video_to_images(video_path, output_folder, frame_interval=30):
         frame_count += 1
     # 释放资源
     cap.release()
-    logger.info(f"共提取了 {image_count} 帧图片，保存在 {output_folder} 文件夹中。")
-    return output_folder
+
+    logger.info(f"{video_path}共提取了 {image_count} 帧图片，保存在 {output_folder} 文件夹中。")
+    return output_folder, image_count
 
 def check_image(path: str):
     """
