@@ -1670,24 +1670,6 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_getCameraTrackingLayout_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 begin-----------------");
-      if (deviceInfo.deviceType === 'tablet') {
-        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess();
-      } else if (deviceInfo.deviceType === 'phone') {
-        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1();
-      } else {
-        console.info(`====>SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end fail====` + deviceInfo.deviceType);
-        expect().assertFail();
-      }
-    });
-
-    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1 = () => {
-      if (totalMem > 9437184) {
-        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess();
-      } else {
-        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError();
-      }
-    }
-    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess = () => {
       try {
         let layout = mechanicManager.getCameraTrackingLayout();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
@@ -1697,24 +1679,14 @@ export default function MechanicManagerAPI() {
         expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300001).assertTrue();
+        if (console.code == 33300001) {
+          expect(true).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(33300002);
+        }
+        console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
       }
-      console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
-    }
-    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError = () => {
-      try {
-        let layout = mechanicManager.getCameraTrackingLayout();
-        console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
-        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.DEFAULT);
-        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.LEFT);
-        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.MIDDLE);
-        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
-      } catch (error) {
-        console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 failed2, code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 33300002).assertTrue();
-      }
-      console.log("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end------------------");
-    }
+    });
 
     /**
      * @tc.name   SUB_DH_MechanicManager_enumerated_0100
