@@ -1679,10 +1679,10 @@ export default function MechanicManagerAPI() {
         expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
-        if (console.code == 33300001) {
-          expect(true).assertTrue();
+        if (error.code == 33300001) {
+          expect(error.code == 33300001).assertTrue();
         } else {
-          expect(Number(error.code)).assertEqual(33300002);
+          expect(error.code == 33300002).assertTrue();
         }
         console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
       }
