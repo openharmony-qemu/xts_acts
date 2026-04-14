@@ -19,8 +19,8 @@
   },
   "author": "",
   "modelVersion": "6.0.0",
-  "name": "myapplication",
-  "description": "Please describe the basic information.",
+  "name": "acts_toolchain_hap_test",
+  "description": "a test hap project for testing the Acts toolchain functionality",
   "main": "",
   "version": "1.0.0",
   "dependencies": {}
