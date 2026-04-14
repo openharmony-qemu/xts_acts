@@ -20,7 +20,7 @@ from cameraAiTestComFun import getMediaFileFromMediaLibrary
 import os
 import shutil
 
-class ActsCameraAiPyTest(TestSuite):
+class ActsCameraGrayBoxGTest(TestSuite):
 
     def setup(self):
         if os.path.exists('./mediaDir'):
