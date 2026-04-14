@@ -88,7 +88,7 @@ async function QuickOnDataPreparedPromiseTest(done: () => void, testName: string
 }
 
 export default function FetchResultStatic(): void {
-  describe('PhotoAssetStatic', () => {
+  describe('FetchResultStatic', () => {
     let testContext: Context = Hypium.get('Context') as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
     beforeAll(async () => {
