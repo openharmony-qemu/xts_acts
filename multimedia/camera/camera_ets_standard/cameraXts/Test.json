@@ -12,7 +12,6 @@
         {
             "type": "ShellKit",
             "run-command": [
-                "setenforce 0",
                 "hilog -Q pidoff",
                 "rm -rf /storage/media/100/local/files/Videos/*",
                 "power-shell wakeup",
