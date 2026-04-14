@@ -537,7 +537,7 @@ export default function DisplayNdkTest() {
     })
     /**
     * @tc.name   test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range
-    * @tc.number OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range_0100
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range_0100
     * @tc.desc   OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener超出范围
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -608,7 +608,7 @@ export default function DisplayNdkTest() {
     })
     /**
     * @tc.name   test_OH_NativeDisplayManager_registerDisplayChangeListener_Outer_Range
-    * @tc.number OH_NativeDisplayManager_UnregisterDisplayChangeListener_Outer_Range_0100
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayChangeListener_Outer_Range_0100
     * @tc.desc   OH_NativeDisplayManager_registerDisplayChangeListener超出范围
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -933,7 +933,7 @@ export default function DisplayNdkTest() {
     })
     /**
     * @tc.name   test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range
-    * @tc.number OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range_0100
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range_0100
     * @tc.desc   OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener超出范围
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
@@ -1063,7 +1063,7 @@ export default function DisplayNdkTest() {
     })
     /**
     * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange
-    * @tc.number OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange_0100
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange_0100
     * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener超出范围
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
