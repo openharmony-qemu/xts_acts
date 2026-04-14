@@ -67,14 +67,14 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000
-     * @tc.name      : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000
+     * @tc.number    : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_000
+     * @tc.name      : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_000
      * @tc.desc      : camera capture 1 dynamic photo with multi Different config
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000'
       try {
         //预制条件
