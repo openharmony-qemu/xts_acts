@@ -37,7 +37,7 @@ void Usleep0100(void)
     if (result != 0) {
         t_error("%s usleep get result is %d is not 0", __func__, result);
     }
-    long int difference = newTime.tv_sec - oldTime.tv_sec - 2000;
+    long int difference = newTime.tv_sec - oldTime.tv_sec - 2;
     if (difference > K_USLEEP_ELAPSED_SEC_TOLERANCE) {
         t_error("%s usleep get result is %ld is greater than 2 MS", __func__, difference);
     }

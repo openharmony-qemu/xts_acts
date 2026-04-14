@@ -26,6 +26,7 @@
 
 namespace {
 constexpr int K_BINARY_HALVE_DIVISOR = 2;
+constexpr size_t K_MEMFILL_MALLOC_ITER_MAX = 1000000U;
 } // namespace
 
 static size_t Mmax(int fd, size_t* start)
@@ -62,14 +63,15 @@ int TVmfill(void** p, size_t* n, int len)
         if (!m) {
             break;
         }
+        if (i >= len) {
+            break;
+        }
         q = mmap(nullptr, m, PROT_NONE, MAP_PRIVATE | MAP_ANONYMOUS, fd, 0);
         if (q == MAP_FAILED) {
             return -1;
         }
-        if (i < len) {
-            p[i] = q;
-            n[i] = m;
-        }
+        p[i] = q;
+        n[i] = m;
     }
     return i;
 }
@@ -85,7 +87,7 @@ int TMemfill()
         r = -1;
     }
     if (!r) {
-        while (malloc(1)) {
+        for (size_t n = 0; n < K_MEMFILL_MALLOC_ITER_MAX && malloc(1); ++n) {
         }
     }
     return r;

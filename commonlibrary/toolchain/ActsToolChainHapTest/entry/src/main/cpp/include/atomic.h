@@ -236,7 +236,7 @@ static inline void
 
 #ifndef A_BARRIER
 #define A_BARRIER A_BARRIER
-static void A_BARRIER()
+static inline void A_BARRIER()
 {
     volatile int tmp = 0;
     A_CAS(&tmp, 0, 0);

@@ -18,6 +18,21 @@
 #include <cwctype>
 #include "functionalext.h"
 
+namespace {
+struct LocaleGuard {
+    locale_t loc_;
+    explicit LocaleGuard(locale_t l) : loc_(l) {}
+    ~LocaleGuard()
+    {
+        if (loc_ != nullptr) {
+            freelocale(loc_);
+        }
+    }
+    locale_t get() const { return loc_; }
+};
+} // namespace
+
+
 const int COUNT = 62;
 
 /**
@@ -31,7 +46,8 @@ void IswctypeL0100(void)
     wchar_t c = L'0';
     wctype_t wt = wctype("alnum");
     EXPECT_NE("IswctypeL0100", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0100", ret, 0);
 }
@@ -47,7 +63,8 @@ void IswctypeL0200(void)
     wchar_t c = L'a';
     wctype_t wt = wctype("alpha");
     EXPECT_NE("IswctypeL0200", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0200", ret, 0);
 }
@@ -63,7 +80,8 @@ void IswctypeL0300(void)
     wchar_t c = L' ';
     wctype_t wt = wctype("blank");
     EXPECT_NE("IswctypeL0300", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0300", ret, 0);
 }
@@ -79,7 +97,8 @@ void IswctypeL0400(void)
     wchar_t c = L'\n';
     wctype_t wt = wctype("cntrl");
     EXPECT_NE("IswctypeL0400", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0400", ret, 0);
 }
@@ -95,7 +114,8 @@ void IswctypeL0500(void)
     wchar_t c = L'1';
     wctype_t wt = wctype("digit");
     EXPECT_NE("IswctypeL0500", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0500", ret, 0);
 }
@@ -111,7 +131,8 @@ void IswctypeL0600(void)
     wchar_t c = L'!';
     wctype_t wt = wctype("graph");
     EXPECT_NE("IswctypeL0600", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0600", ret, 0);
 }
@@ -127,7 +148,8 @@ void IswctypeL0700(void)
     wchar_t c = L'z';
     wctype_t wt = wctype("lower");
     EXPECT_NE("IswctypeL0700", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0700", ret, 0);
 }
@@ -143,7 +165,8 @@ void IswctypeL0800(void)
     wchar_t c = L'p';
     wctype_t wt = wctype("print");
     EXPECT_NE("IswctypeL0800", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0800", ret, 0);
 }
@@ -159,7 +182,8 @@ void IswctypeL0900(void)
     wchar_t c = L'/';
     wctype_t wt = wctype("punct");
     EXPECT_NE("IswctypeL0900", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL0900", ret, 0);
 }
@@ -175,7 +199,8 @@ void IswctypeL1000(void)
     wchar_t c = L'\n';
     wctype_t wt = wctype("space");
     EXPECT_NE("IswctypeL1000", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL1000", ret, 0);
 }
@@ -191,7 +216,8 @@ void IswctypeL1100(void)
     wchar_t c = L'A';
     wctype_t wt = wctype("upper");
     EXPECT_NE("IswctypeL1100", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL1100", ret, 0);
 }
@@ -207,7 +233,8 @@ void IswctypeL1200(void)
     wchar_t c = L'd';
     wctype_t wt = wctype("xdigit");
     EXPECT_NE("IswctypeL1200", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_NE("IswctypeL1200", ret, 0);
 }
@@ -223,7 +250,8 @@ void IswctypeL1300(void)
     wchar_t c = L'【';
     wctype_t wt = wctype("xdigit");
     EXPECT_NE("IswctypeL1300", wt, -1);
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr));
+    locale_t mLocale = locGuard.get();
     int ret = iswctype_l(c, wt, mLocale);
     EXPECT_EQ("IswctypeL1300", ret, 0);
 }

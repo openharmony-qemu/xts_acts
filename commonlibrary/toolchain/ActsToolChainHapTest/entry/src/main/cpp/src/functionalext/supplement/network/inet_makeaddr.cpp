@@ -55,7 +55,7 @@ void InetMakeaddr0300(void)
     const uint32_t net = 0x00020000;
     const uint32_t ip = 0x02000001;
     struct in_addr a = inet_makeaddr(net, HOST);
-    EXPECT_EQ("InetMakeaddr0200", htonl(ip), a.s_addr);
+    EXPECT_EQ("InetMakeaddr0300", htonl(ip), a.s_addr);
 }
 
 static int InetMakeaddrTestImpl(void)

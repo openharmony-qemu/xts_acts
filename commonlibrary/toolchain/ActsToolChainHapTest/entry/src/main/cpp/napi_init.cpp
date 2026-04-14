@@ -666,13 +666,10 @@ static int RunByNameForked(const std::string& name)
         return -K_RUN_TEST_FORK_FAILED;
     }
     if (pid == 0) {
-        OHPrintf("start testcase,name=%s,t_state=%d", name.c_str(), T_STATUS);
         int childRc = K_CHILD_EXIT_CAP;
         try {
             childRc = testFunc();
-            OHPrintf("end testcase,name=%s,t_state=%d", name.c_str(), T_STATUS);
         } catch (...) {
-            OHPrintf("end testcase,name=%s,t_state=%d", name.c_str(), T_STATUS);
             _exit(K_CHILD_EXIT_CAP);
         }
         if (childRc < 0) {
@@ -695,36 +692,6 @@ static int RunByNameForked(const std::string& name)
         return K_SIGNAL_EXIT_BASE + WTERMSIG(status);
     }
     return -K_RUN_TEST_UNKNOWN_EXIT;
-}
-
-static napi_value RunTest(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        size_t argc = 1;
-        napi_value args[1] = { nullptr };
-        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-        if (argc < 1) {
-            napi_throw_type_error(env, nullptr, "Argument missing");
-            return nullptr;
-        }
-
-        size_t len = 0;
-        napi_status st = napi_get_value_string_utf8(env, args[0], nullptr, 0, &len);
-        if (st != napi_ok) {
-            napi_throw_type_error(env, nullptr, "Argument must be a string");
-            return nullptr;
-        }
-
-        std::string name;
-        name.resize(len + 1); // keep an extra '\0' for safety
-        napi_get_value_string_utf8(env, args[0], &name[0], name.size(), &len);
-        name.resize(len);
-
-        int rc = RunByNameForked(name);
-        napi_value result;
-        napi_create_int32(env, rc, &result);
-        return result;
-    });
 }
 
 struct AsyncRunTestContext {
@@ -761,8 +728,6 @@ static void CompleteRunTestAsync(napi_env env, napi_status status, void* data)
 static napi_value RunTestAsync(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
-        OHPrintf("start testcase,22222333");
-
         size_t argc = 1;
         napi_value args[1] = { nullptr };
         napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -802,7 +767,6 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "runTest", nullptr, RunTestAsync, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "runTestAsync", nullptr, RunTestAsync, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

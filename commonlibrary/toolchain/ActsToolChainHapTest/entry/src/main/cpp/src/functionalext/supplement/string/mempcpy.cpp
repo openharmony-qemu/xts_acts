@@ -42,7 +42,7 @@ void Mempcpy0200(void)
 {
     const char src[TEST_BUFFER_SIZE] = "mempcpy_0200test";
     char dest[TEST_BUFFER_SIZE] = "";
-    void* rev = mempcpy(dest, src + TEST_DATA_LEN, TEST_DATA_LEN * strlen(src));
+    void* rev = mempcpy(dest, src + TEST_DATA_LEN, strlen(src + TEST_DATA_LEN));
     EXPECT_STREQ("Mempcpy0200", dest, "0200test");
 }
 
@@ -69,7 +69,7 @@ void Mempcpy0400(void)
     const char src[TEST_BUFFER_SIZE] = "Mempcpy0400";
     char dest[TEST_BUFFER_SIZE] = "";
     void* rev = mempcpy(dest, src, 0);
-    EXPECT_STREQ("Mempcpy0200", dest, "");
+    EXPECT_STREQ("Mempcpy0400", dest, "");
 }
 
 static int MempcpyTestImpl(void)

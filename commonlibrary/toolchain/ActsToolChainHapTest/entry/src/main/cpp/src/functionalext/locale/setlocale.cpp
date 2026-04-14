@@ -29,7 +29,7 @@ static const int LC_ARRY[TEST_LC_COUNT] = { LC_PAPER,       LC_NAME,           L
                                             LC_MEASUREMENT, LC_IDENTIFICATION, LC_ALL };
 
 static const char ENVFORLOCALE[][TEST_LC_LENGTH] = {
-    "LC_PAPER", "LC_NAME", "LC_ADDRESS", "LC_TELEPHONE", "LC_MEASUREMENT", "LC_IDENTIFICATION",
+    "LC_PAPER", "LC_NAME", "LC_ADDRESS", "LC_TELEPHONE", "LC_MEASUREMENT", "LC_IDENTIFICATION", "LC_ALL",
 };
 
 /**

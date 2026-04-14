@@ -93,9 +93,10 @@ void IsupperL0100(void)
 {
     const char* str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isupper_l(*p, nullptr);
         EXPECT_EQ("IsupperL0100", ret, ONREXPECT);
+        p++;
     }
 }
 
@@ -108,9 +109,10 @@ void IsupperL0200(void)
 {
     const char* str = "23!@abcdefg";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isupper_l(*p, nullptr);
         EXPECT_EQ("IsupperL0200", ret, CMPFLAG);
+        p++;
     }
 }
 

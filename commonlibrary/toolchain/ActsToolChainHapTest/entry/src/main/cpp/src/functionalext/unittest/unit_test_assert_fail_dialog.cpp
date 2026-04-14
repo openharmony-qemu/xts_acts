@@ -131,9 +131,15 @@ static int WaitChildrenAndCheckFiles(pid_t pid1, pid_t pid2, pid_t pid3)
     waitpid(pid2, &status, 0);
     waitpid(pid3, &status, 0);
 
-    char* bufferAbort = strdup(ReadFile(FILE_ABORT));
-    char* bufferIgnore = strdup(ReadFile(FILE_IGNORE));
-    char* bufferRetry = strdup(ReadFile(FILE_RETRY));
+    const char* abortTxt = ReadFile(FILE_ABORT);
+    const char* ignoreTxt = ReadFile(FILE_IGNORE);
+    const char* retryTxt = ReadFile(FILE_RETRY);
+    if (abortTxt == nullptr || ignoreTxt == nullptr || retryTxt == nullptr) {
+        return -1;
+    }
+    char* bufferAbort = strdup(abortTxt);
+    char* bufferIgnore = strdup(ignoreTxt);
+    char* bufferRetry = strdup(retryTxt);
     if (strcmp(bufferAbort, ASSERT_ABORT_INFO) == 0 && strcmp(bufferIgnore, ASSERT_IGNORE_INFO) == 0 &&
         strcmp(bufferRetry, ASSERT_RETRY_INFO) == 0) {
         printf("All processes finished.\n");

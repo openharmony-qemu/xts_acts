@@ -25,6 +25,12 @@
 void Chdir0100(void)
 {
     char buf[30]{};
+    char oldcwd[256]{};
+
+    if (getcwd(oldcwd, sizeof(oldcwd)) == nullptr) {
+        t_error("%s getcwd (before) failed\n", __func__);
+        return;
+    }
 
     int result = chdir("/data");
     if (result) {
@@ -34,12 +40,15 @@ void Chdir0100(void)
     char* ret = getcwd(buf, sizeof(buf));
     if (!ret) {
         t_error("%s getcwd failed\n", __func__);
+        (void)chdir(oldcwd);
+        return;
     }
 
     result = strcmp("/data", buf);
     if (result) {
         t_error("%s fchdir failed, buf is %s\n", __func__, buf);
     }
+    (void)chdir(oldcwd);
 }
 
 static int ChdirTestWithArgs(int argc, char* argv[])

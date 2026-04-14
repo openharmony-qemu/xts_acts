@@ -14,6 +14,7 @@
  */
 
 #include <sys/eventfd.h>
+#include <unistd.h>
 #include "functionalext.h"
 
 /**
@@ -25,6 +26,9 @@ void Eventfd0100(void)
 {
     int ret = eventfd(0, EFD_SEMAPHORE);
     EXPECT_TRUE("Eventfd0100", ret > 0);
+    if (ret > 0) {
+        (void)close(ret);
+    }
 }
 
 /**
@@ -36,6 +40,9 @@ void Eventfd0200(void)
 {
     int ret = eventfd(0, EFD_CLOEXEC);
     EXPECT_TRUE("Eventfd0200", ret > 0);
+    if (ret > 0) {
+        (void)close(ret);
+    }
 }
 
 /**
@@ -47,6 +54,9 @@ void Eventfd0300(void)
 {
     int ret = eventfd(0, EFD_NONBLOCK);
     EXPECT_TRUE("Eventfd0300", ret > 0);
+    if (ret > 0) {
+        (void)close(ret);
+    }
 }
 
 static int EventfdTestWithArgs(int argc, char* argv[])

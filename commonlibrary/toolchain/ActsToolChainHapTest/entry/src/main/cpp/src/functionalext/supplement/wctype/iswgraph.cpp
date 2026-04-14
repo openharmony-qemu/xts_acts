@@ -77,6 +77,9 @@ void Iswgraph0400(void)
         }
     }
     EXPECT_EQ("Iswgraph0400", total, COUNT);
+    if (mLocale != nullptr) {
+        freelocale(mLocale);
+    }
 }
 
 static int IswgraphTestImpl(void)

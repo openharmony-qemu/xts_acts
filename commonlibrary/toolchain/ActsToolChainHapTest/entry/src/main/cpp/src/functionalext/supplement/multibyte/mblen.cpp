@@ -36,6 +36,8 @@ void Mblen0100(void)
     EXPECT_NE("Mblen0100", result, -1);
     size_t ret = mblen(src, ARRY_MAX);
     EXPECT_EQ("Mblen0100", ret, 1);
+    free(src);
+    free(pwcs);
 }
 
 /**
@@ -46,7 +48,7 @@ void Mblen0100(void)
 void Mblen0200(void)
 {
     size_t ret = mblen(nullptr, ARRY_MAX);
-    EXPECT_EQ("Mblen0100", ret, 0);
+    EXPECT_EQ("Mblen0200", ret, 0);
 }
 
 static int MblenTestImpl(void)

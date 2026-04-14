@@ -20,6 +20,7 @@
 
 #include <cerrno>
 #include <sys/epoll.h>
+#include <unistd.h>
 #include "test.h"
 
 /**
@@ -37,6 +38,7 @@ void EpollCreate0100(void)
     if (errno != 0) {
         t_error("%s errno is %d, not 0\n", __func__, errno);
     }
+    (void)close(epollFd);
 }
 
 static int EpollCreateTestWithArgs(int argc, char* argv[])

@@ -93,9 +93,10 @@ void IslowerL0100(void)
 {
     const char* str = "abcdegfhijklmnopqrstuvwxyz";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = islower_l(*p, nullptr);
         EXPECT_EQ("IslowerL0100", ret, ONREXPECT);
+        p++;
     }
 }
 
@@ -108,9 +109,10 @@ void IslowerL0200(void)
 {
     const char* str = "23!@ABCHIJZ";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = islower_l(*p, nullptr);
         EXPECT_EQ("IslowerL0200", ret, CMPFLAG);
+        p++;
     }
 }
 

@@ -92,7 +92,7 @@ void Strndup0300(void)
  * @tc.desc      : The return value of __strndup when the number of test copies is different with the size of string
  * @tc.level     : Level 1
  */
-void Strndup0100(void)
+void StrndupMusl0100(void)
 {
     const char* src = "Hello, World!";
     // n is larger than the length of src
@@ -131,7 +131,7 @@ void Strndup0100(void)
  *                 4. Ultra long source string
  * @tc.level     : Level 1
  */
-void Strndup0200(void)
+void StrndupMusl0200(void)
 {
     // large n value (boundary test)
     const char* str = "Short";
@@ -174,7 +174,7 @@ void Strndup0200(void)
  * @tc.desc      : test __strndup when the source pointer is nullptr
  * @tc.level     : Level 1
  */
-void Strndup0300(void)
+void StrndupMusl0300(void)
 {
     const char* data = nullptr;
     pid_t pid = fork();
@@ -306,9 +306,9 @@ static int StrndupTestImpl(int argc, char* argv[])
     Strndup0200();
     Strndup0300();
 #ifdef MUSL_EXTERNAL_FUNCTION
-    Strndup0100();
-    Strndup0200();
-    Strndup0300();
+    StrndupMusl0100();
+    StrndupMusl0200();
+    StrndupMusl0300();
     strndup_0400();
     strndup_0500();
     strndup_0600();

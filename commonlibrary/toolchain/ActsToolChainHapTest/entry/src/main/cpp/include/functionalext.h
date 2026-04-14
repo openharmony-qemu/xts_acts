@@ -43,10 +43,11 @@
             t_error("[%s] failed \n", fun); \
     } while (0)
 
-#define EXPECT_EQ(fun, a, b)                               \
-    do {                                                   \
-        if ((a) != (b))                                    \
-            t_error("[%s] failed %d != %d \n", fun, a, b); \
+#define EXPECT_EQ(fun, a, b)                                                  \
+    do {                                                                      \
+        if ((a) != (b))                                                       \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),       \
+                    (long long)(b));                                         \
     } while (0)
 
 #define EXPECT_LT(fun, a, b)                                                              \
@@ -90,7 +91,7 @@
 #define FLOAT_EQUAL(fun, a, b)                                   \
     do {                                                         \
         if (!(fabs((a) - (b)) <= EPS))                           \
-            t_error("[%s] failed %fd != %fd \n", fun, (a), (b)); \
+            t_error("[%s] failed %g != %g \n", fun, (double)(a), (double)(b)); \
     } while (0)
 
 #define EXPECT_PTREQ(fun, a, b)                            \
@@ -119,10 +120,11 @@
             t_error("[%s] failed %ld != %ld \n", fun, a, b); \
     } while (0)
 
-#define EXPECT_LONGLONGEQ(fun, a, b)                           \
-    do {                                                       \
-        if ((long)(a) != (long)(b))                            \
-            t_error("[%s] failed %lld != %lld \n", fun, a, b); \
+#define EXPECT_LONGLONGEQ(fun, a, b)                                        \
+    do {                                                                    \
+        if ((long long)(a) != (long long)(b))                              \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),      \
+                    (long long)(b));                                        \
     } while (0)
 
 #define EXPECT_GT(fun, a, b)                               \

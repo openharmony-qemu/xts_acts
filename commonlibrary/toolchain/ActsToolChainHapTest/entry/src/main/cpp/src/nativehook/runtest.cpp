@@ -185,9 +185,6 @@ static void NativehookCase7()
     if (!(mallocDispatchTable == nullptr)) {
         t_error("mallocDispatchTable == nullptr failed: mallocDispatchTable shoud be nullptr\n");
     }
-    if (!(mallocDispatchTable == nullptr)) {
-        t_error("mallocDispatchTable == nullptr failed: mallocDispatchTable shoud be nullptr\n");
-    }
 }
 
 static int NativehookTestTestImpl(int argc, char** argv)

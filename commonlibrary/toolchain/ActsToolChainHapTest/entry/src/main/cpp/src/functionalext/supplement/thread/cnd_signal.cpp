@@ -14,6 +14,7 @@
  */
 
 #include <cstdint>
+#include <ctime>
 #include <threads.h>
 #include <unistd.h>
 #include "functionalext.h"
@@ -28,6 +29,8 @@ void CndTimedwaitfirst(void* arg)
 {
     int res = -1;
     struct timespec ts;
+    (void)clock_gettime(CLOCK_REALTIME, &ts);
+    ts.tv_sec += 60;
     (void)mtx_lock(&g_mtx);
     res = cnd_timedwait(&g_cndPut, &g_mtx, &ts);
     (void)mtx_unlock(&g_mtx);

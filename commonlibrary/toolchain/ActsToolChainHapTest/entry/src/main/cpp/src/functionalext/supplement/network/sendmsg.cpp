@@ -20,6 +20,7 @@
 #include <ctime>
 #include <netinet/ip.h>
 #include <sys/socket.h>
+#include <unistd.h>
 #include "test.h"
 
 namespace {
@@ -58,6 +59,7 @@ void Sendmsg0100(void)
     if (retval == -1) {
         t_error("Sendmsg0100 sendmsg error");
     }
+    (void)close(sockfd);
 }
 
 static int SendmsgTestImpl(int argc, char* argv[])

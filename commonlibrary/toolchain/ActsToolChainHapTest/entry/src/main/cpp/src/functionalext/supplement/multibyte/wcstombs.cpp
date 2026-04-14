@@ -31,7 +31,7 @@ void Wcstombs0100(void)
     wchar_t src[] = L"Hello";
 
     size_t result = wcstombs(buf, src, BUF_SIZE);
-    if (result < 0) {
+    if (result == static_cast<size_t>(-1)) {
         t_error("%s failed: wcstombs. result = %zu\n", __func__, result);
     }
 }

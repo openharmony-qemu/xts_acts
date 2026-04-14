@@ -32,6 +32,7 @@ void ChangeToAnotherObj()
     AA* a = new AA;
     void* handle = dlopen("libcfi_cross_dso_test_lib.z.so", RTLD_NOW);
     if (handle == nullptr) {
+        delete a;
         return;
     }
     void* (*createB)() = (void* (*)())dlsym(handle, "CreateObj");
@@ -45,6 +46,8 @@ void ChangeToAnotherObj()
         }
     }
     a->Test();
+    delete a;
+    (void)dlclose(handle);
 }
 
 int CfiCrossDsoTestExeTest()

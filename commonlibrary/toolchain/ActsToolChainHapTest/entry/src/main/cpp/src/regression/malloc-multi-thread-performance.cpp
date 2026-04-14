@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <atomic>
 #include <cerrno>
 #include <cstring>
 #include <ctime>
@@ -20,6 +21,10 @@
 #include <pthread.h>
 #include <sched.h>
 #include "test.h"
+
+namespace {
+std::atomic<int> g_mallocTestHadErr{0};
+} // namespace
 
 #define THREAD_MAX_N 8
 #define SIZE_ALIGN (4 * sizeof(size_t))
@@ -60,12 +65,16 @@ void* Func(void* arg)
             }
             ptr[num] = malloc(size);
             if (!ptr[num]) {
-                t_error("Thread %d malloc failed for size %u\n", *val, size);
+                g_mallocTestHadErr.store(1, std::memory_order_relaxed);
                 *val = errno;
                 return nullptr;
             }
             num++;
         }
+    }
+
+    for (int j = 0; j < num; j++) {
+        free(ptr[j]);
     }
 
     *val = 0;
@@ -81,6 +90,7 @@ static int MallocMultiThreadPerformanceTestImpl(int argc, char* argv[])
     int flag = 0;
     int ret;
     int i;
+    int created = 0;
 
     ret = pthread_attr_init(&attr);
     if (ret < 0) {
@@ -97,9 +107,10 @@ static int MallocMultiThreadPerformanceTestImpl(int argc, char* argv[])
             flag = -1;
             break;
         }
+        created++;
     }
 
-    for (i = 0; i < THREAD_MAX_N; ++i) {
+    for (i = 0; i < created; ++i) {
         ret = pthread_join(tids[i], nullptr);
         if (ret < 0) {
             t_error("Join thread %u failed: %s\n", i, strerror(errno));
@@ -114,6 +125,9 @@ static int MallocMultiThreadPerformanceTestImpl(int argc, char* argv[])
     if (!flag) {
         TPrintf("Malloc and free %d threads %d times cost %lf s\n", THREAD_MAX_N, MALLOC_TIME, cost / NANOSEC_PER_SEC);
         T_STATUS = 0;
+    }
+    if (g_mallocTestHadErr.load(std::memory_order_relaxed) != 0) {
+        t_error("Malloc test: malloc failed in worker thread\n");
     }
 
     return T_STATUS;

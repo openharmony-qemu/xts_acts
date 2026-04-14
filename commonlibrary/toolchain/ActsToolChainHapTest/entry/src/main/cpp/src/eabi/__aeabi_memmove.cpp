@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
@@ -167,6 +166,11 @@ static void Memmove0100(void)
     if (result == nullptr) {
         t_error("%s AeabiMemmove error get result is %d\n", __func__, result);
     }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemmove content check failed at %zu\n", __func__, i);
+        }
+    }
 }
 
 /**
@@ -182,6 +186,11 @@ static void Memmove0200(void)
     if (result == nullptr) {
         t_error("%s AeabiMemmove4 error get result is %d\n", __func__, result);
     }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemmove4 content check failed at %zu\n", __func__, i);
+        }
+    }
 }
 
 /**
@@ -196,6 +205,11 @@ static void Memmove0300(void)
     int* result = static_cast<int*>(AeabiMemmove8(dest, src, K_MEM_TEST_COPY_FOUR_INTS));
     if (result == nullptr) {
         t_error("%s AeabiMemmove8 error get result is %d\n", __func__, result);
+    }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemmove8 content check failed at %zu\n", __func__, i);
+        }
     }
 }
 

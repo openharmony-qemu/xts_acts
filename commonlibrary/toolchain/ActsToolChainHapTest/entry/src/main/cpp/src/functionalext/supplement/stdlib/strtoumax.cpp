@@ -16,6 +16,7 @@
 #include <cinttypes>
 #include <cstdio>
 #include <cstdlib>
+#include <cstdint>
 #include <cstring>
 #include "test.h"
 
@@ -27,10 +28,10 @@
 void Strtoumax0100(void)
 {
     char* p = nullptr;
-    intmax_t want = 18737357U;
-    intmax_t result = strtoumax("18737357foobar12", &p, 10);
+    uintmax_t want = 18737357U;
+    uintmax_t result = strtoumax("18737357foobar12", &p, 10);
     if (result != want) {
-        t_error("%s strtoumax get result is %zu are not 18737357U\n", __func__, result);
+        t_error("%s strtoumax get result is %" PRIuMAX " are not 18737357U\n", __func__, result);
     }
     if (strcmp(p, "foobar12") != 0) {
         t_error("%s strtoumax get is '%s' are not 'foobar12'\n", __func__, p);
@@ -45,10 +46,10 @@ void Strtoumax0100(void)
 void Strtoumax0200(void)
 {
     char* p = nullptr;
-    intmax_t want = 0x18737357fU;
-    intmax_t result = strtoumax("18737357foobar12", &p, 16);
+    uintmax_t want = 0x18737357fU;
+    uintmax_t result = strtoumax("18737357foobar12", &p, 16);
     if (result != want) {
-        t_error("%s strtoumax get result is %zu are not 0x18737357fU\n", __func__, result);
+        t_error("%s strtoumax get result is %" PRIuMAX " are not 0x18737357fU\n", __func__, result);
     }
     if (strcmp(p, "oobar12") != 0) {
         t_error("%s strtoumax get is '%s' are not 'oobar12'\n", __func__, p);
@@ -63,10 +64,10 @@ void Strtoumax0200(void)
 void Strtoumax0300(void)
 {
     char* p = nullptr;
-    intmax_t subnum = 18737357;
-    intmax_t result = strtoumax("-18737357foobar12", &p, 10);
+    uintmax_t subnum = 18737357;
+    uintmax_t result = strtoumax("-18737357foobar12", &p, 10);
     if (result != UINTMAX_MAX - subnum + 1) {
-        t_error("%s strtoumax get result error is %zu\n", __func__, result);
+        t_error("%s strtoumax get result error is %" PRIuMAX "\n", __func__, result);
     }
     if (strcmp(p, "foobar12") != 0) {
         t_error("%s strtoumax get is '%s' are not 'foobar12'\n", __func__, p);

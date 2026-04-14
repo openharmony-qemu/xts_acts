@@ -26,6 +26,7 @@ void CndInit0100(void)
     cnd_t buf;
     int result = cnd_init(&buf);
     EXPECT_EQ("CndInit0100", result, thrd_success);
+    cnd_destroy(&buf);
 }
 
 static int CndInitTestWithArgs(int argc, char* argv[])

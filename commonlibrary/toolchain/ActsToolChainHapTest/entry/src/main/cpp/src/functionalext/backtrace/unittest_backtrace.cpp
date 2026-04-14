@@ -50,11 +50,13 @@ int CheckString(char** btStrings, int btSize)
             continue;
         }
         for (; right != lastPtr; ++right) {
-            if (*right != '?') {
-                continue;
+            if (*right == '?') {
+                break;
             }
         }
-        return FAILURE_RESULT;
+        if (right == lastPtr) {
+            return FAILURE_RESULT;
+        }
     }
     return SUCCESS_RESULT;
 }

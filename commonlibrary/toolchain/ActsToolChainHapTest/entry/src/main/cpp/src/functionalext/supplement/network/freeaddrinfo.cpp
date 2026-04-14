@@ -30,14 +30,15 @@ void Freeaddrinfo0100(void)
 
     if (getaddrinfo(host, nullptr, nullptr, &ai) != 0) {
         t_error("%s getaddrinfo failed\n", __func__);
+        return;
     }
 
     if (!ai->ai_flags) {
-        freeaddrinfo(ai);
         EXPECT_TRUE(__FUNCTION__, true);
     } else {
         t_error("%s hint is nullptr, so ai->ai_flags should be 0, but now is %d\n", __func__, ai->ai_flags);
     }
+    freeaddrinfo(ai);
 }
 
 static int FreeaddrinfoTestImpl(int argc, char* argv[])

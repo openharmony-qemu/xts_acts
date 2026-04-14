@@ -19,7 +19,7 @@
 #include "test.h"
 
 /**
- * @tc.name      : memset_0100
+ * @tc.name      : Gmtime640100
  * @tc.desc      : test __gmtime64 method
  * @tc.level     : Level 1
  */

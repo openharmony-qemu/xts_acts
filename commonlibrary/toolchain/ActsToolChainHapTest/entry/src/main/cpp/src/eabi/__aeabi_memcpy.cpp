@@ -123,6 +123,11 @@ void Memcpy0100(void)
     if (result == nullptr) {
         t_error("%s AeabiMemcpy error get result is %d\n", __func__, result);
     }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemcpy content check failed at %zu\n", __func__, i);
+        }
+    }
 }
 
 /**
@@ -138,6 +143,11 @@ void Memcpy0200(void)
     if (result == nullptr) {
         t_error("%s AeabiMemcpy4 error get result is %d\n", __func__, result);
     }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemcpy4 content check failed at %zu\n", __func__, i);
+        }
+    }
 }
 
 /**
@@ -152,6 +162,11 @@ void Memcpy0300(void)
     void* result = AeabiMemcpy8(dest, src, K_MEM_TEST_COPY_FOUR_INTS);
     if (result == nullptr) {
         t_error("%s AeabiMemcpy8 error get result is %d\n", __func__, result);
+    }
+    for (size_t i = 0; i < 4; ++i) {
+        if (dest[i] != src[i]) {
+            t_error("%s AeabiMemcpy8 content check failed at %zu\n", __func__, i);
+        }
     }
 }
 

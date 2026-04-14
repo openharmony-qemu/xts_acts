@@ -30,7 +30,7 @@ void Strtoimax0100(void)
     intmax_t want = -18737357;
     intmax_t result = strtoimax("-18737357foobar12", &p, 10);
     if (result != want) {
-        t_error("%s strtoimax get result is %zu are not -18737357\n", __func__, result);
+        t_error("%s strtoimax get result is %" PRIdMAX " are not -18737357\n", __func__, result);
     }
     if (strcmp(p, "foobar12") != 0) {
         t_error("%s strtoimax get is '%s' are not 'foobar12'\n", __func__, p);
@@ -48,7 +48,7 @@ void Strtoimax0200(void)
     intmax_t want = -0x18737357f;
     intmax_t result = strtoimax("-18737357foobar12", &p, 16);
     if (result != want) {
-        t_error("%s strtoimax get result is %zu are not -0x18737357f\n", __func__, result);
+        t_error("%s strtoimax get result is %" PRIdMAX " are not -0x18737357f\n", __func__, result);
     }
     if (strcmp(p, "oobar12") != 0) {
         t_error("%s strtoimax get is '%s' are not 'oobar12'\n", __func__, p);

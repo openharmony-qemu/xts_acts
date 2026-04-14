@@ -92,11 +92,16 @@ int DaemonFailureTest(void)
     fdout = dup(1);
     if (fdout == -1) {
         t_error("dup(1) failed: %s\n", strerror(errno));
+        close(fd[0]);
+        close(fd[1]);
         return 1;
     }
     r = fork();
     if (r == -1) {
         t_error("fork failed: %s\n", strerror(errno));
+        close(fdout);
+        close(fd[0]);
+        close(fd[1]);
         return 1;
     }
     if (r == 0) {
@@ -104,6 +109,8 @@ int DaemonFailureTest(void)
         return DaemonFailureChild(fdout, fd, pid);
     }
     DaemonFailureParentCheck(r, fd[0], fd[1]);
+    close(fdout);
+    close(fd[0]);
 
     return T_STATUS;
 }

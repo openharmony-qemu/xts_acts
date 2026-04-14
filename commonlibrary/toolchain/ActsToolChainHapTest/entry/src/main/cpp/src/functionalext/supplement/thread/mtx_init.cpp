@@ -30,6 +30,7 @@ void MtxInit0100(void)
     int32_t ret = 0;
     ret = mtx_init(&g_mtx, mtx_plain);
     EXPECT_EQ("MtxInit0100", ret, thrd_success);
+    mtx_destroy(&g_mtx);
 }
 
 /**
@@ -42,6 +43,7 @@ void MtxInit0200(void)
     int32_t ret = 0;
     ret = mtx_init(&g_mtx, mtx_timed);
     EXPECT_EQ("MtxInit0200", ret, thrd_success);
+    mtx_destroy(&g_mtx);
 }
 
 /**
@@ -54,6 +56,7 @@ void MtxInit0300(void)
     int32_t ret = 0;
     ret = mtx_init(&g_mtx, mtx_plain | mtx_recursive);
     EXPECT_EQ("MtxInit0300", ret, thrd_success);
+    mtx_destroy(&g_mtx);
 }
 
 /**
@@ -66,6 +69,7 @@ void MtxInit0400(void)
     int32_t ret = 0;
     ret = mtx_init(&g_mtx, mtx_timed | mtx_recursive);
     EXPECT_EQ("MtxInit0400", ret, thrd_success);
+    mtx_destroy(&g_mtx);
 }
 
 static int MtxInitTestImpl(void)

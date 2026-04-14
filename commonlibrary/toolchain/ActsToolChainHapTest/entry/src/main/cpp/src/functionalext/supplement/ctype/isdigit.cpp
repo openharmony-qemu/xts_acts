@@ -25,9 +25,10 @@ void Isdigit0100(void)
 {
     const char* str = "0123456789";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isdigit(*p);
         EXPECT_EQ("Isdigit0100", ret, ONREXPECT);
+        p++;
     }
 }
 
@@ -40,9 +41,10 @@ void Isdigit0200(void)
 {
     const char* str = "!@hHiIjJZz";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isdigit(*p);
         EXPECT_EQ("Isdigit0200", ret, CMPFLAG);
+        p++;
     }
 }
 

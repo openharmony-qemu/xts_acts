@@ -63,6 +63,7 @@ static void CheckLogContent(char* file, const char* content)
     if (size <= 0) {
         (void)fclose(fp);
         t_error("FAIL %s size is <=0!\n", file);
+        return;
     }
 
     std::string buffer;

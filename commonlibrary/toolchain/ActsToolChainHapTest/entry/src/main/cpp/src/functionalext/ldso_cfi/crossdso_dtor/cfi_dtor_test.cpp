@@ -26,8 +26,12 @@ int CfiCrossDsoDtorTestExeTest()
     using CreateT = void (*)();
     auto* lib = dlopen("libcfi_cross_dso_dtor_test_use.z.so", RTLD_NOW);
     auto* fn = (CreateT)dlsym(lib, "create");
+    if (fn == nullptr) {
+        (void)dlclose(lib);
+        return 1;
+    }
     fn();
-    dlclose(lib);
+    (void)dlclose(lib);
     ExpectCfiOk();
     return 0;
 }

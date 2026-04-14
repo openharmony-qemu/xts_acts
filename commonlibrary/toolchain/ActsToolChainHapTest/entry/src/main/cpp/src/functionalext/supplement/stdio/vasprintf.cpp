@@ -15,6 +15,7 @@
 
 #include <cstdarg>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include "test.h"
 
@@ -32,15 +33,20 @@ void Vasprintf0100(char* v, ...)
 {
     va_list ap;
     va_start(ap, v);
-    char ta[] = " ";
-    char* temp = ta;
+    char* temp = nullptr;
     int result = vasprintf(&temp, v, ap);
     if (result == 0) {
         t_error("%s vasprintf result value is 0\n", __func__);
     }
+    if (temp == nullptr) {
+        t_error("%s vasprintf returned null buffer\n", __func__);
+        va_end(ap);
+        return;
+    }
     if (strcmp(temp, "value is 123 and 321.") != 0) {
         t_error("%s vasprintf get tmep is %s are not 'value is 123 and 321.'\n", __func__, temp);
     }
+    free(temp);
     va_end(ap);
 }
 
@@ -53,15 +59,20 @@ void Vasprintf0200(char* v, ...)
 {
     va_list ap;
     va_start(ap, v);
-    char ta[] = " ";
-    char* temp = ta;
+    char* temp = nullptr;
     int result = vasprintf(&temp, v, ap);
     if (result == 0) {
         t_error("%s vasprintf result value is 0\n", __func__);
     }
+    if (temp == nullptr) {
+        t_error("%s vasprintf returned null buffer\n", __func__);
+        va_end(ap);
+        return;
+    }
     if (strcmp(temp, "value is qer and erq.") != 0) {
         t_error("%s vasprintf get tmep is %s are not 'value is qer and erq.'\n", __func__, temp);
     }
+    free(temp);
     va_end(ap);
 }
 
@@ -74,15 +85,20 @@ void Vasprintf0300(char* v, ...)
 {
     va_list ap;
     va_start(ap, v);
-    char ta[] = " ";
-    char* temp = ta;
+    char* temp = nullptr;
     int result = vasprintf(&temp, v, ap);
     if (result == 0) {
         t_error("%s vasprintf result value is 0\n", __func__);
     }
+    if (temp == nullptr) {
+        t_error("%s vasprintf returned null buffer\n", __func__);
+        va_end(ap);
+        return;
+    }
     if (strcmp(temp, "value is qer and erq.") == 0) {
         t_error("%s vasprintf error get tmep is '%s'\n", __func__, temp);
     }
+    free(temp);
     va_end(ap);
 }
 

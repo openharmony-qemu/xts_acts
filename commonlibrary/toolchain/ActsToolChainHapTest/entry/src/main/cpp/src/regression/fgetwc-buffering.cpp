@@ -21,6 +21,10 @@
 #include <cwchar>
 #include <unistd.h>
 #include "libc_test_shim.h"
+
+namespace {
+constexpr int K_STDIN_FD = 0;
+} // namespace
 void TSetutf8(void)
 {
     if (!setlocale(LC_ALL, "C.UTF-8")) {
@@ -37,6 +41,12 @@ int FgetwcBufferingTest()
     TSetutf8();
 
     constexpr ssize_t kUtf8PartialWriteLen = 3;
+
+    int stdinSave = dup(K_STDIN_FD);
+    if (stdinSave < 0) {
+        LibcTestError(&status, "dup(STDIN) failed\n");
+        return status;
+    }
 
     int p[2];
     if (!(pipe(p) == 0)) {
@@ -76,5 +86,10 @@ int FgetwcBufferingTest()
     if (!(ferror(stdin) == 0)) {
         LibcTestError(&status, "ferror(stdin) == 0 failed\n");
     }
+    if (dup2(stdinSave, K_STDIN_FD) < 0) {
+        LibcTestError(&status, "dup2(restore stdin) failed\n");
+    }
+    (void)close(stdinSave);
+    (void)close(p[0]);
     return status;
 }

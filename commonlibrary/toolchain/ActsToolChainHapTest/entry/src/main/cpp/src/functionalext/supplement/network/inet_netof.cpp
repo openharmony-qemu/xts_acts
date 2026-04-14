@@ -21,7 +21,7 @@ const uint32_t NET = 0x0000007f;
 const uint32_t IP = 0x7f000001;
 
 /**
- * @tc.name      : InetNetof0100
+ * @tc.name      : InetNetof0200
  * @tc.desc      : Verify inet_netof process success
  * @tc.level     : Level 0
  */
@@ -40,7 +40,7 @@ void InetNetof0200(void)
 {
     const uint32_t net = 0x00008000;
     struct in_addr a = { htonl(0x80000001) };
-    EXPECT_EQ("InetNetof0100", inet_netof(a), net);
+    EXPECT_EQ("InetNetof0200", inet_netof(a), net);
 }
 
 static int InetNetofTestImpl(void)

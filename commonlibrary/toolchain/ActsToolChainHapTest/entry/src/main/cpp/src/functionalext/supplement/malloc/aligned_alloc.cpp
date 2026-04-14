@@ -27,6 +27,8 @@ void AlignedAlloc0100(void)
     void* p = aligned_alloc(pagesize, 1024 * sizeof(int));
     if (!p) {
         t_error("%s aligned_alloc failed\n", __func__);
+    } else {
+        free(p);
     }
 }
 

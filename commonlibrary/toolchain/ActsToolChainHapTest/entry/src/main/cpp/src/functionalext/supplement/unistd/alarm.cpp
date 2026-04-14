@@ -37,6 +37,7 @@ void Alarm0100()
     (void)signal(SIGALRM, Handler);
     unsigned int result = alarm(SLEEP_TIME);
     EXPECT_EQ("Alarm0100", result, 0);
+    (void)alarm(0);
 }
 
 static TEST_FUN g_gFunArray[] = {

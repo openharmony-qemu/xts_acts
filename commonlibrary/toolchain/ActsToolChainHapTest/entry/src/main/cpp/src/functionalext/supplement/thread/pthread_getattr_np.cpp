@@ -36,12 +36,13 @@ void PthreadGetattrNp0100(void)
     pthread_attr_init(&attr);
     void* threadResult = nullptr;
     int32_t ret = pthread_getattr_np(ph, &attr);
-    pthread_attr_destroy(&attr);
-    pthread_join(ph, &threadResult);
     void* stack = nullptr;
     size_t stacksize;
     pthread_attr_getstack(&attr, &stack, &stacksize);
+    EXPECT_EQ("PthreadGetattrNp0100", ret, 0);
     EXPECT_PTRNE("PthreadGetattrNp0100", stack, nullptr);
+    pthread_attr_destroy(&attr);
+    pthread_join(ph, &threadResult);
 }
 
 static int PthreadGetattrNpTestTestImpl(void)

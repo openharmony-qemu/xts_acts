@@ -23,7 +23,7 @@
  */
 void Getentropy0100(void)
 {
-    void* buffer[256];
+    char buffer[256];
     int result = getentropy(buffer, 256);
     EXPECT_EQ("getentrcopy_0100", result, 0);
 }

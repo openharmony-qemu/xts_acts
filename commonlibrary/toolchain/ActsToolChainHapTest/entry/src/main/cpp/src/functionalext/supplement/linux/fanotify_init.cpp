@@ -16,6 +16,7 @@
 #include <cerrno>
 #include <fcntl.h>
 #include <sys/fanotify.h>
+#include <unistd.h>
 #include "test.h"
 
 /**
@@ -50,12 +51,19 @@ void FanotifyInit0100(void)
                                AT_FDCWD,
                                ".");
     if (result) {
+        (void)close(fd);
         t_error("%s fanotify_mark (...) failed\n", __func__);
+        return;
     }
+
+    (void)close(fd);
 }
 
 static int FanotifyInitTestImpl(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
+//    FanotifyInit0100();
     return T_STATUS;
 }
 

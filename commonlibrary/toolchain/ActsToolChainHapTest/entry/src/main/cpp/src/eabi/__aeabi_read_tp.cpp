@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 #include <cstddef>
 #include <cstdio>
 #include <cstring>
@@ -34,7 +33,7 @@ void* AeabiReadTp(void)
 #endif
 
 /**
- * @tc.name      : memset_0100
+ * @tc.name      : AeabiReadTp0100
  * @tc.desc      : test AeabiReadTp method
  * @tc.level     : Level 1
  */

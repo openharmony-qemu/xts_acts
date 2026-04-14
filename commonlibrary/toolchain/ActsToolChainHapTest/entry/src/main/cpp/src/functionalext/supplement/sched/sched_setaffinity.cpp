@@ -45,6 +45,7 @@ void SchedSetaffinity0100(void)
     if (errno != EINVAL) {
         t_error("%s errno is %d", __func__, errno);
     }
+    CPU_FREE(set);
 }
 
 /*

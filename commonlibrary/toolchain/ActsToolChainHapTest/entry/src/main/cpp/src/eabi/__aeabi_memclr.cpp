@@ -113,6 +113,9 @@ void Memclr0100(void)
     if (AeabiMemclr(dest, sizeof(dest)) == K_AEABI_OP_SKIPPED) {
         t_error("%s AeabiMemclr", __func__);
     }
+    if (dest[0] != '\0' || dest[sizeof(dest) - 1] != '\0') {
+        t_error("%s AeabiMemclr content check failed", __func__);
+    }
 }
 
 /**
@@ -126,6 +129,9 @@ void Memclr0200(void)
     if (AeabiMemclr4(dest, sizeof(dest)) == K_AEABI_OP_SKIPPED) {
         t_error("%s AeabiMemclr4", __func__);
     }
+    if (dest[0] != '\0' || dest[sizeof(dest) - 1] != '\0') {
+        t_error("%s AeabiMemclr4 content check failed", __func__);
+    }
 }
 
 /**
@@ -138,6 +144,9 @@ void Memclr0300(void)
     char dest[] = "AeabiMemclr";
     if (AeabiMemclr8(dest, sizeof(dest)) == K_AEABI_OP_SKIPPED) {
         t_error("%s AeabiMemclr8", __func__);
+    }
+    if (dest[0] != '\0' || dest[sizeof(dest) - 1] != '\0') {
+        t_error("%s AeabiMemclr8 content check failed", __func__);
     }
 }
 

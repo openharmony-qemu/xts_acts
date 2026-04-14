@@ -15,6 +15,7 @@
 
 #include <cerrno>
 #include <sys/epoll.h>
+#include <unistd.h>
 #include "test.h"
 
 /**
@@ -34,6 +35,7 @@ void EpollWait0100(void)
     if (result != 0) {
         t_error("%s epoll_pwait failed\n", __func__);
     }
+    (void)close(epollFd);
 }
 
 static int EpollWaitTestWithArgs(int argc, char* argv[])

@@ -45,5 +45,5 @@ int PthreadGettidNpTest()
     if (!(tid == recvResult)) {
         LibcTestError(&status, "tid == recvResult failed: the tid of pthread or tid of pthread_gettid_np() is wrong\n");
     }
-    return SUCCESS_CODE;
+    return status;
 }

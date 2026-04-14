@@ -65,6 +65,10 @@ void Tmpnam0200(void)
 
 static int TmpnamTestImpl(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
+    Tmpnam0100();
+    Tmpnam0200();
     return T_STATUS;
 }
 

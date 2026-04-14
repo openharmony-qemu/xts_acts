@@ -57,7 +57,6 @@ int IconvTest(struct IconvParam* param)
     iconv_t cd = iconv_open(param->to, param->from);
     if (cd == reinterpret_cast<iconv_t>(static_cast<uintptr_t>(-1))) {
         t_error("iconv opened failed, from: %s, to: %s, error: %s \n", param->from, param->to, strerror(errno));
-        CloseIconv(cd);
         return 1;
     }
     char* input = param->input;

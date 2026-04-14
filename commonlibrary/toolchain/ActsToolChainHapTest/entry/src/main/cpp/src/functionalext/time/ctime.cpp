@@ -32,7 +32,7 @@ void Ctime0100(void)
     for (int32_t i = 0; i < (int32_t)(sizeof(TEST_ASCTIME_DATA) / sizeof(TEST_ASCTIME_DATA[0])); i++) {
         const char* handlerChar = TestHandlePath(TEST_ASCTIME_DATA[i].tz);
         if (!handlerChar) {
-            t_error("Ctime0100 failed: handlerChar is nullptr\n");
+            t_error("Ctime640100 failed: handlerChar is nullptr\n");
             continue;
         }
 
@@ -66,11 +66,11 @@ void Ctime640100(void)
         tzset();
         char* returnStr = CTIME64(&g_time);
         if (returnStr == nullptr) {
-            EXPECT_FALSE("Ctime0100", returnStr == nullptr);
+            EXPECT_FALSE("Ctime640100", returnStr == nullptr);
             return;
         }
         returnStr[strlen(returnStr) - 1] = 0x00;
-        EXPECT_STREQ("Ctime0100", returnStr, TEST_ASCTIME_DATA[i].result);
+        EXPECT_STREQ("Ctime640100", returnStr, TEST_ASCTIME_DATA[i].result);
     }
 }
 

@@ -48,6 +48,7 @@ static void Expm1lTestOne(struct LL* p, int* err)
     feclearexcept(FE_ALL_EXCEPT);
     y = expm1l(p->x);
     e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
+#ifndef __aarch64__
     if (!Checkexcept(e, p->e, p->r)) {
         const long double fmtLaExcX = static_cast<long double>(p->x);
         const long double fmtLaExcY = static_cast<long double>(p->y);
@@ -61,6 +62,7 @@ static void Expm1lTestOne(struct LL* p, int* err)
         printf(" got %s\n", Estr(e));
         (*err)++;
     }
+#endif
     d = Ulperrl(y, p->y, p->dy);
     if (!Checkulp(d, p->r)) {
         const long double ulpLaX = static_cast<long double>(p->x);

@@ -27,6 +27,7 @@ void Strdup0100(void)
 {
     char* ret = strdup("strduptest");
     EXPECT_STREQ("Strdup0100", ret, "strduptest");
+    free(ret);
 }
 
 static int StrdupTestImpl(void)

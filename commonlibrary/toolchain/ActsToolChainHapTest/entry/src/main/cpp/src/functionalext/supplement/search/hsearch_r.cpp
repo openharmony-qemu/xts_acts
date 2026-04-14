@@ -49,13 +49,13 @@ void HsearchR0200(void)
 {
     struct hsearch_data hData = {};
     int ret;
-    EXPECT_NE("HsearchR0100", hcreate_r(SIZE, &hData), 0);
+    EXPECT_NE("HsearchR0200", hcreate_r(SIZE, &hData), 0);
     ENTRY e;
     ENTRY* ep;
     for (int i = 0; i < SIZE; i++) {
         e.key = g_data[i];
         ret = hsearch_r(e, FIND, &ep, &hData);
-        EXPECT_EQ("HsearchR0100", ret, 0);
+        EXPECT_EQ("HsearchR0200", ret, 0);
     }
     hdestroy_r(&hData);
 }

@@ -26,7 +26,7 @@ const int FAILED = -1;
  */
 void Signal0100(void)
 {
-    struct sigaction act;
+    struct sigaction act = {};
     struct sigaction oldact;
     int ret = sigaction(SIGILL, &act, &oldact);
     EXPECT_EQ("Signal0100", ret, SUCCESS);
@@ -39,8 +39,7 @@ void Signal0100(void)
  */
 void Signal0200(void)
 {
-    int flag = 0;
-    struct sigaction act;
+    struct sigaction act = {};
     struct sigaction oldact;
     int ret = sigaction(-1, &act, &oldact);
     EXPECT_EQ("Signal0200", ret, FAILED);

@@ -36,7 +36,9 @@ constexpr double K_STRTOD_WANT17 = 17.0;
 static void CheckDoubleEq(int& status, const char* expr, double got, double expect, const char* msg)
 {
     if (got != expect) {
-        LibcTestError(&status, "%s failed (%s)\n", expr, msg, got, expect, got - expect);
+        LibcTestError(&status, "%s failed: ", expr);
+        LibcTestError(&status, msg, got, expect, got - expect);
+        LibcTestError(&status, "\n");
     }
 }
 

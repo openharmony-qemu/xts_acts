@@ -15,30 +15,32 @@
 
 #include <cstdio>
 #include <pthread.h>
+#include <unistd.h>
 #include "test.h"
 
-pthread_cond_t g_cond;
-pthread_mutex_t g_mutex;
+pthread_cond_t g_cond = PTHREAD_COND_INITIALIZER;
+pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 int g_flag = 0;
 pthread_t g_pid1;
 pthread_t g_pid2;
 
 void* Threadfunc1(void* arg)
 {
+    (void)arg;
     pthread_mutex_lock(&g_mutex);
     pthread_cond_wait(&g_cond, &g_mutex);
     g_flag++;
+    pthread_mutex_unlock(&g_mutex);
     return nullptr;
 }
 
 void* Threadfunc2(void* arg)
 {
+    (void)arg;
     sleep(1);
     pthread_mutex_lock(&g_mutex);
     pthread_cond_signal(&g_cond);
-    if (g_flag != 1) {
-        t_error("PthreadCondWait0100 pthread_cond_wait error get g_flag is %d are not want 1\n", g_flag);
-    }
+    pthread_mutex_unlock(&g_mutex);
     return nullptr;
 }
 
@@ -49,12 +51,20 @@ void* Threadfunc2(void* arg)
  */
 void PthreadCondWait0100(void)
 {
+    g_flag = 0;
     pthread_create(&g_pid1, nullptr, Threadfunc1, nullptr);
     pthread_create(&g_pid2, nullptr, Threadfunc2, nullptr);
+    pthread_join(g_pid1, nullptr);
+    pthread_join(g_pid2, nullptr);
+    if (g_flag != 1) {
+        t_error("PthreadCondWait0100 pthread_cond_wait error get g_flag is %d are not want 1\n", g_flag);
+    }
 }
 
 static int PthreadCondWaitTestImpl(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
     PthreadCondWait0100();
     return T_STATUS;
 }

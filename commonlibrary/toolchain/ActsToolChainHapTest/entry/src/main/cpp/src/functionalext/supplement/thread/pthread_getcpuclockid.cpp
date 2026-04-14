@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <ctime>
 #include <pthread.h>
 #include <sched.h>
+#include <unistd.h>
 #include "functionalext.h"
 
 int g_gthreadExitFlag = 0;
@@ -46,7 +46,7 @@ void PthreadGetcpuclockid0100(void)
     EXPECT_EQ("PthreadGetcpuclockid0100", ret, 0);
     EXPECT_TRUE("PthreadGetcpuclockid0100", cid != 0);
     g_gthreadExitFlag = 1;
-    sleep(1);
+    (void)pthread_join(thread, nullptr);
 }
 
 static int PthreadGetcpuclockidTestImpl(void)

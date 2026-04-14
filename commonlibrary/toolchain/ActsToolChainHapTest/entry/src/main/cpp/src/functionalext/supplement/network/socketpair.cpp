@@ -17,6 +17,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <sys/socket.h>
+#include <unistd.h>
 #include "test.h"
 
 /**
@@ -73,6 +74,8 @@ void Socketpair0300(void)
     if (strcmp(buf, str) != 0) {
         t_error("%s socketpair get buf is %s are not %s\n", __func__, buf, str);
     }
+    (void)close(fb[0]);
+    (void)close(fb[1]);
 }
 
 static int SocketpairTestImpl(int argc, char* argv[])

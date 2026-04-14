@@ -43,7 +43,7 @@ void Getdomainname0200(void)
 {
     struct utsname u;
     int ret = uname(&u);
-    EXPECT_EQ("Getdomainname0100", ret, 0);
+    EXPECT_EQ("Getdomainname0200", ret, 0);
 
     char buf[sizeof(u.domainname)];
     int result = getdomainname(buf, 0);
@@ -59,7 +59,7 @@ void Getdomainname0300(void)
 {
     struct utsname u;
     int ret = uname(&u);
-    EXPECT_EQ("Getdomainname0100", ret, 0);
+    EXPECT_EQ("Getdomainname0300", ret, 0);
 
     char buf[sizeof(u.domainname)];
     int result = getdomainname(buf, 1);

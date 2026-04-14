@@ -55,10 +55,10 @@ void Freeifaddrs0100(void)
         t_error("%s loInet4 is nullptr\n", __func__);
     }
     if (loInet6 == nullptr) {
-        t_error("%s loInet4 is nullptr\n", __func__);
+        t_error("%s loInet6 is nullptr\n", __func__);
     }
     if (loPacket == nullptr) {
-        t_error("%s loInet4 is nullptr\n", __func__);
+        t_error("%s loPacket is nullptr\n", __func__);
     }
 
     freeifaddrs(addrs);

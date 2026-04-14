@@ -34,6 +34,7 @@ void PthreadAttrInit0100(void)
     pthread_attr_t attr;
     int back = pthread_attr_init(&attr);
     EXPECT_EQ("PthreadAttrInit0100", back, SUCCESS);
+    (void)pthread_attr_destroy(&attr);
 }
 
 /**
@@ -51,6 +52,7 @@ void PthreadAttrInit0200(void)
     pthread_join(myThread1, nullptr);
     EXPECT_EQ("PthreadAttrInit0200", back, SUCCESS);
     EXPECT_EQ("PthreadAttrInit0200", result, SUCCESS);
+    (void)pthread_attr_destroy(&attr);
 }
 
 static int PthreadAttrInitTestImpl(int argc, char* argv[])

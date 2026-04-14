@@ -14,8 +14,10 @@
  */
 
 #include <csignal>
+#include <cstdlib>
 #include <malloc.h>
 #include <sched.h>
+#include <sys/wait.h>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -41,6 +43,10 @@ void Clone0100(void)
                  nullptr);
     sleep(1);
     EXPECT_NE("Clone0100", cpid, -1);
+    if (cpid > 0) {
+        (void)waitpid(cpid, nullptr, 0);
+    }
+    free(stack);
 }
 
 /**
@@ -55,6 +61,10 @@ void Clone0200(void)
     cpid = clone(reinterpret_cast<int (*)(void*)>(Test), static_cast<char*>(stack) + STACK_SIZE, 0, nullptr);
     sleep(1);
     EXPECT_NE("Clone0200", cpid, -1);
+    if (cpid > 0) {
+        (void)waitpid(cpid, nullptr, 0);
+    }
+    free(stack);
 }
 
 /**

@@ -20,6 +20,7 @@
 
 #include <cerrno>
 #include <sys/epoll.h>
+#include <unistd.h>
 #include "test.h"
 
 /**
@@ -68,6 +69,7 @@ void EpollCtl0100(void)
 
     close(fds[0]);
     close(fds[1]);
+    (void)close(fd);
 }
 
 static int EpollCtlTestWithArgs(int argc, char* argv[])

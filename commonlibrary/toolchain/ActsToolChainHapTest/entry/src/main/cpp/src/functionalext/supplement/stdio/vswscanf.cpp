@@ -23,10 +23,9 @@
 
 int GetStrValue(const wchar_t* buffer, const wchar_t* format, ...)
 {
-    int result = 0;
     va_list args;
     va_start(args, format);
-    (void)std::vswscanf(buffer, format, args);
+    int result = std::vswscanf(buffer, format, args);
     va_end(args);
     return result;
 }
@@ -42,8 +41,8 @@ void Vswscanf0100(void)
     wchar_t symbol[] = L"\u0fd7\u00c6\u20b9\u2127\u17d8";
     wchar_t str[20];
     int result = GetStrValue(symbol, L"%ls", str);
-    if (result != 0) {
-        t_error("%s vswscanf get result is %d are not want 0\n", __func__, result);
+    if (result != 1) {
+        t_error("%s vswscanf get result is %d are not want 1\n", __func__, result);
     }
     if (wcscmp(symbol, str) != 0) {
         t_error("%s vswscanf error %ls are not eq %ls\n", __func__, symbol, str);
@@ -61,8 +60,8 @@ void Vswscanf0200(void)
     wchar_t str[20];
     wchar_t strs[20];
     int result = GetStrValue(symbol, L"%ls %ls", str, strs);
-    if (result != 0) {
-        t_error("%s vswscanf get result is %d are not want 0\n", __func__, result);
+    if (result != 2) {
+        t_error("%s vswscanf get result is %d are not want 2\n", __func__, result);
     }
     if (wcscmp(str, L"ABC") != 0) {
         t_error("%s vswscanf error %ls are not eq ABC\n", __func__, str);

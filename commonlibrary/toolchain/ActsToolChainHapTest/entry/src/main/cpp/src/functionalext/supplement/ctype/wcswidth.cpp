@@ -31,7 +31,7 @@ void Wcswidth0100(void)
 {
     int result = wcswidth(L"abc", WIDTH);
     if (result != WIDTH) {
-        t_error("%s wcswidth get result is %s are not want 2\n", __func__, result);
+        t_error("%s wcswidth get result is %d are not want 2\n", __func__, result);
     }
 }
 
@@ -44,7 +44,7 @@ void Wcswidth0200(void)
 {
     int result = wcswidth(L"ab\t", WIDTH);
     if (result != WIDTH) {
-        t_error("%s wcswidth get result is %s are not want 2\n", __func__, result);
+        t_error("%s wcswidth get result is %d are not want 2\n", __func__, result);
     }
 }
 
@@ -57,7 +57,7 @@ void Wcswidth0300(void)
 {
     int result = wcswidth(L"a\tb", WIDTH);
     if (result != ERR_RESULT) {
-        t_error("%s wcswidth get result is %s are not want -1\n", __func__, result);
+        t_error("%s wcswidth get result is %d are not want -1\n", __func__, result);
     }
 }
 

@@ -19,6 +19,21 @@
 #include <cwchar>
 #include "functionalext.h"
 
+namespace {
+struct LocaleGuard {
+    locale_t loc_;
+    explicit LocaleGuard(locale_t l) : loc_(l) {}
+    ~LocaleGuard()
+    {
+        if (loc_ != nullptr) {
+            freelocale(loc_);
+        }
+    }
+    locale_t get() const { return loc_; }
+};
+} // namespace
+
+
 static void EXPECT_DOUBLE_EQ(double a, double b)
 {
     if (!((a == b) || (fabs(a - b) < DBL_EPSILON))) {
@@ -95,7 +110,8 @@ static struct {
  */
 void WcstodL0100(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr));
+    locale_t loc = locGuard.get();
     int i;
     double x;
     wchar_t* p;
@@ -113,7 +129,8 @@ void WcstodL0100(void)
  */
 void WcstodL0200(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"123.45xxx";
     const double target = 123.45;
     wchar_t str1[] = L"xxx";
@@ -132,7 +149,8 @@ void WcstodL0200(void)
  */
 void WcstodL0300(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"+123.45xxx";
     const double target = 123.45;
     wchar_t str1[] = L"xxx";
@@ -151,7 +169,8 @@ void WcstodL0300(void)
  */
 void WcstodL0400(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"-123.45xxx";
     const double target = -123.45;
     wchar_t str1[] = L"xxx";
@@ -170,7 +189,8 @@ void WcstodL0400(void)
  */
 void WcstodL0500(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"  123.45xxx";
     const double target = 123.45;
     wchar_t str1[] = L"xxx";
@@ -189,7 +209,8 @@ void WcstodL0500(void)
  */
 void WcstodL0600(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"xxx123.45";
     const double target = 0;
     wchar_t str1[] = L"xxx123.45";
@@ -208,7 +229,8 @@ void WcstodL0600(void)
  */
 void WcstodL0700(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"+INF";
     const double target = INFINITY;
     wchar_t* end;
@@ -223,7 +245,8 @@ void WcstodL0700(void)
  */
 void WcstodL0800(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"infinity";
     const double target = INFINITY;
     wchar_t* end;
@@ -238,7 +261,8 @@ void WcstodL0800(void)
  */
 void WcstodL0900(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"infinixxx";
     const double target = INFINITY;
     wchar_t str1[] = L"inixxx";
@@ -257,7 +281,8 @@ void WcstodL0900(void)
  */
 void WcstodL1000(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"-INF";
     const double target = -INFINITY;
     wchar_t* end;
@@ -272,7 +297,8 @@ void WcstodL1000(void)
  */
 void WcstodL1100(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"+NAN";
     const double target = NAN;
     wchar_t* end;
@@ -289,7 +315,8 @@ void WcstodL1100(void)
  */
 void WcstodL1200(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"-NAN";
     const double target = NAN;
     wchar_t* end;
@@ -307,7 +334,8 @@ void WcstodL1200(void)
  */
 void WcstodL1300(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"0X1.BC";
     const double target = 0;
     wchar_t str1[] = L"X1.BC";
@@ -326,7 +354,8 @@ void WcstodL1300(void)
  */
 void WcstodL1400(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"";
     const double target = 0;
     wchar_t* end;
@@ -341,7 +370,8 @@ void WcstodL1400(void)
  */
 void WcstodL1500(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"   xxx";
     const double target = 0;
     wchar_t str1[] = L"   xxx";
@@ -360,7 +390,8 @@ void WcstodL1500(void)
  */
 void WcstodL1600(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"123.45你好";
     const double target = 123.45;
     wchar_t str1[] = L"你好";
@@ -380,7 +411,8 @@ void WcstodL1600(void)
  */
 void WcstodL1700(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "de_DE", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "de_DE", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"1234.56";
     const double target = 1234.56;
     wchar_t str1[] = L"";
@@ -399,7 +431,8 @@ void WcstodL1700(void)
  */
 void WcstodL1800(void)
 {
-    locale_t loc = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
+    LocaleGuard locGuard(newlocale(LC_CTYPE_MASK, "zh_CN", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"     ";
     const double target = 0;
     wchar_t str1[] = L"     ";
@@ -418,7 +451,8 @@ void WcstodL1800(void)
  */
 void WcstodL1900(void)
 {
-    locale_t loc = newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr);
+    LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr));
+    locale_t loc = locGuard.get();
     wchar_t* str = L"123.45";
     const double target = 123.45;
     double num = wcstod_l(str, nullptr, loc);

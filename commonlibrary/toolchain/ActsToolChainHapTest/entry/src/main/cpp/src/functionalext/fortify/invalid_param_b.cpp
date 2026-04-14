@@ -32,7 +32,7 @@ constexpr size_t K_SETVBUF_PROBE_BUF_BYTES = 1024U;
 
 /**
  * @tc.name      : Ftell0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify ftell with invalid parameter
  * @tc.level     : Level 2
  */
 void Ftell0100(void)
@@ -54,7 +54,7 @@ void Ftell0100(void)
 
 /**
  * @tc.name      : Fwrite0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify fwrite with invalid parameter
  * @tc.level     : Level 2
  */
 void Fwrite0100(void)
@@ -77,7 +77,7 @@ void Fwrite0100(void)
 
 /**
  * @tc.name      : Getc0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify getc with invalid parameter
  * @tc.level     : Level 2
  */
 void Getc0100(void)
@@ -99,7 +99,7 @@ void Getc0100(void)
 
 /**
  * @tc.name      : Pclose0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify pclose with invalid parameter
  * @tc.level     : Level 2
  */
 void Pclose0100(void)
@@ -121,7 +121,7 @@ void Pclose0100(void)
 
 /**
  * @tc.name      : Rewind0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify rewind with invalid parameter
  * @tc.level     : Level 2
  */
 void Rewind0100(void)
@@ -143,7 +143,7 @@ void Rewind0100(void)
 
 /**
  * @tc.name      : Setvbuf0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify setvbuf with invalid parameter
  * @tc.level     : Level 2
  */
 void Setvbuf0100(void)
@@ -166,7 +166,7 @@ void Setvbuf0100(void)
 
 /**
  * @tc.name      : Wcsnrtombs0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify wcsnrtombs with invalid parameter
  * @tc.level     : Level 2
  */
 void Wcsnrtombs0100(void)
@@ -193,7 +193,7 @@ void Wcsnrtombs0100(void)
 
 /**
  * @tc.name      : Unsetenv0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify unsetenv with invalid parameter
  * @tc.level     : Level 2
  */
 void Unsetenv0100(void)
@@ -215,7 +215,7 @@ void Unsetenv0100(void)
 
 /**
  * @tc.name      : Readdir0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify readdir with invalid parameter
  * @tc.level     : Level 2
  */
 static void Readdir0100(void)
@@ -237,7 +237,7 @@ static void Readdir0100(void)
 
 /**
  * @tc.name      : PthreadJoin0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify pthread_join with invalid parameter
  * @tc.level     : Level 2
  */
 void PthreadJoin0100(void)
@@ -261,7 +261,7 @@ void PthreadJoin0100(void)
 
 /**
  * @tc.name      : PthreadKill0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify pthread_kill with invalid parameter
  * @tc.level     : Level 2
  */
 void PthreadKill0100(void)
@@ -285,7 +285,7 @@ void PthreadKill0100(void)
 
 /**
  * @tc.name      : PthreadSetschedparam0100
- * @tc.desc      : Verify clearerr with invalid parameter
+ * @tc.desc      : Verify pthread_setschedparam with invalid parameter
  * @tc.level     : Level 2
  */
 void PthreadSetschedparam0100(void)

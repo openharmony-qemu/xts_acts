@@ -100,7 +100,7 @@ void PthreadAtfork0100(void)
     if (ret != 0) {
         return;
     }
-    sleep(1);
+    sleep(TEST_THREAD_SLEEP + 1);
 
     pid_t pid = fork();
     if (pid == 0) {

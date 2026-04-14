@@ -18,6 +18,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <sys/wait.h>
+#include <unistd.h>
 #include "test.h"
 
 #ifdef __cplusplus
@@ -73,7 +75,9 @@ void Sigtimedwait0100(void)
     pid = fork();
     if (pid == -1) {
         exit(1);
-    } else if (pid) {
+    } else if (pid == 0) {
+        _exit(0);
+    } else {
         sigset_t set2;
         siginfo_t siginfo;
         struct timespec timeout = { 3, 0 };
@@ -84,6 +88,7 @@ void Sigtimedwait0100(void)
         if (signal < 0) {
             t_error("%s sigtimedwait error get result is %d\n", __func__, signal);
         }
+        (void)waitpid(pid, nullptr, 0);
     }
 }
 
@@ -102,7 +107,9 @@ void SigtimedwaitTime640100(void)
     pid = fork();
     if (pid == -1) {
         exit(1);
-    } else if (pid) {
+    } else if (pid == 0) {
+        _exit(0);
+    } else {
         sigset_t set2;
         siginfo_t siginfo;
         struct timespec timeout = { 3, 0 };
@@ -113,6 +120,7 @@ void SigtimedwaitTime640100(void)
         if (signal < 0) {
             t_error("%s SigtimedwaitTime64 error get result is %d\n", __func__, signal);
         }
+        (void)waitpid(pid, nullptr, 0);
     }
 }
 

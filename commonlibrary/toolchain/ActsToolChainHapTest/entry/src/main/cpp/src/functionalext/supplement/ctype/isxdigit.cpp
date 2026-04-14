@@ -108,9 +108,10 @@ void IsxdigitL0100(void)
 {
     const char* str = "0123456789AaBbCcDdEeFf";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isxdigit_l(*p, nullptr);
         EXPECT_EQ("IsxdigitL0100", ret, ONREXPECT);
+        p++;
     }
 }
 
@@ -123,9 +124,10 @@ void IsxdigitL0200(void)
 {
     const char* str = "!@hHiIjJZz";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isxdigit_l(*p, nullptr);
         EXPECT_EQ("IsxdigitL0200", ret, CMPFLAG);
+        p++;
     }
 }
 

@@ -14,6 +14,7 @@
  */
 
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <dlfcn.h>
 #include "test.h"
@@ -46,6 +47,7 @@ void Tempnam0100(void)
     if (!strstr(result, pte)) {
         t_error("%s tempnam get result not contain %s\n", __func__, pte);
     }
+    free(result);
 }
 
 /**
@@ -61,6 +63,7 @@ void Tempnam0200(void)
     if (!result) {
         t_error("%s tempnam error cannot create temp file\n", __func__);
     }
+    free(result);
 }
 
 /**
@@ -79,6 +82,7 @@ void Tempnam0300(void)
     if (!strstr(result, pte)) {
         t_error("%s tempnam get result not contain %s\n", __func__, pte);
     }
+    free(result);
 }
 
 /**
@@ -97,6 +101,7 @@ void Tempnam0400(void)
     if (!strstr(result, pte)) {
         t_error("%s tempnam get result not contain %s\n", __func__, pte);
     }
+    free(result);
 }
 
 /**
@@ -115,10 +120,18 @@ void Tempnam0500(void)
     if (!strstr(result, pte)) {
         t_error("%s tempnam get result not contain %s\n", __func__, pte);
     }
+    free(result);
 }
 
 static int TempnamTestImpl(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
+    Tempnam0100();
+    Tempnam0200();
+    Tempnam0300();
+    Tempnam0400();
+    Tempnam0500();
     return T_STATUS;
 }
 

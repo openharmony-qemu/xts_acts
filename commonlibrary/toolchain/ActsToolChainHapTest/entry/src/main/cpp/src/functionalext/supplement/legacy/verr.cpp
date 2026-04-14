@@ -17,6 +17,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <err.h>
+#include <sys/wait.h>
+#include <unistd.h>
 #include "libc_test_shim.h"
 /*
  * @tc.name      : Veer0100
@@ -33,8 +35,18 @@ void Veer0100(int status, char* fmt, ...)
 
 int VerrTest()
 {
-    int status = SUCCESS_CODE;
-
-    Veer0100(status, "Veer0100 printf info: %s", "this is msg");
-    return status;
+    pid_t pid = fork();
+    if (pid < 0) {
+        return -1;
+    }
+    if (pid == 0) {
+        int status = SUCCESS_CODE;
+        Veer0100(status, "Veer0100 printf info: %s", "this is msg");
+        _exit(0);
+    }
+    int st = 0;
+    if (waitpid(pid, &st, 0) < 0) {
+        return -1;
+    }
+    return SUCCESS_CODE;
 }

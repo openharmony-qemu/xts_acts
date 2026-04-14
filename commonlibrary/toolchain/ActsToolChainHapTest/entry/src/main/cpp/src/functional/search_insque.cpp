@@ -41,12 +41,15 @@ static struct Q* NewNode(int i)
 int SearchInsqueTest()
 {
     int status = SUCCESS_CODE;
+    struct Q* nodes[K_INSQUE_CHAIN_LENGTH] = { nullptr };
+    int nodeCount = 0;
 
     struct Q* cur = NewNode(0);
     if (cur == nullptr) {
         LibcTestError(&status, "%s malloc failed\n", __func__);
         return status;
     }
+    nodes[nodeCount++] = cur;
     struct Q* p;
     int i;
 
@@ -55,8 +58,12 @@ int SearchInsqueTest()
         struct Q* next = NewNode(i);
         if (next == nullptr) {
             LibcTestError(&status, "%s malloc failed\n", __func__);
+            for (int k = 0; k < nodeCount; ++k) {
+                free(nodes[k]);
+            }
             return status;
         }
+        nodes[nodeCount++] = next;
         insque(next, cur);
         cur = cur->n;
     }
@@ -73,6 +80,9 @@ int SearchInsqueTest()
     }
     if (p->p->n->i != p->i) {
         LibcTestError(&status, "remque: got %d, wanted %d\n", p->p->n->i, p->i);
+    }
+    for (int k = 0; k < nodeCount; ++k) {
+        free(nodes[k]);
     }
     return status;
 }

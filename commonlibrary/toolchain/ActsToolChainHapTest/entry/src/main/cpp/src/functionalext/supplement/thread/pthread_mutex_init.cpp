@@ -29,6 +29,7 @@ void PthreadMutexInit0100(void)
 {
     int32_t ret = pthread_mutex_init(&g_mutex, nullptr);
     EXPECT_EQ("PthreadMutexInit0100", ret, 0);
+    (void)pthread_mutex_destroy(&g_mutex);
 }
 
 /**
@@ -38,9 +39,15 @@ void PthreadMutexInit0100(void)
  */
 void PthreadMutexInit0200(void)
 {
-    int32_t type = PTHREAD_MUTEX_RECURSIVE;
-    int32_t ret = pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutexattr_t attr;
+    int32_t ret = pthread_mutexattr_init(&attr);
     EXPECT_EQ("PthreadMutexInit0200", ret, 0);
+    ret = pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+    EXPECT_EQ("PthreadMutexInit0200", ret, 0);
+    ret = pthread_mutex_init(&g_mutex, &attr);
+    EXPECT_EQ("PthreadMutexInit0200", ret, 0);
+    (void)pthread_mutexattr_destroy(&attr);
+    (void)pthread_mutex_destroy(&g_mutex);
 }
 
 /**
@@ -50,9 +57,15 @@ void PthreadMutexInit0200(void)
  */
 void PthreadMutexInit0300(void)
 {
-    int32_t type = PTHREAD_MUTEX_ERRORCHECK;
-    int32_t ret = pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutexattr_t attr;
+    int32_t ret = pthread_mutexattr_init(&attr);
     EXPECT_EQ("PthreadMutexInit0300", ret, 0);
+    ret = pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_ERRORCHECK);
+    EXPECT_EQ("PthreadMutexInit0300", ret, 0);
+    ret = pthread_mutex_init(&g_mutex, &attr);
+    EXPECT_EQ("PthreadMutexInit0300", ret, 0);
+    (void)pthread_mutexattr_destroy(&attr);
+    (void)pthread_mutex_destroy(&g_mutex);
 }
 
 static int PthreadMutexInitTestTestImpl(void)

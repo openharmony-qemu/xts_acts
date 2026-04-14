@@ -25,9 +25,10 @@ void Isgraph0100(void)
 {
     const char* str = "1qw@#";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isgraph(*p);
         EXPECT_EQ("Isgraph0100", ret, ONREXPECT);
+        p++;
     }
 }
 
@@ -40,9 +41,10 @@ void Isgraph0200(void)
 {
     const char* str = " ";
     const char* p = str;
-    while (*p++ && *p != '\0') {
+    while (*p != '\0') {
         int ret = isgraph(*p);
         EXPECT_EQ("Isgraph0200", ret, CMPFLAG);
+        p++;
     }
 }
 

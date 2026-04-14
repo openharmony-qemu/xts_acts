@@ -50,13 +50,13 @@ void PthreadRwlockTrywrlock0200(void)
     pthread_rwlock_init(&rwlock, &rwlockattr);
 
     int ret = pthread_rwlock_wrlock(&rwlock);
-    EXPECT_EQ("PthreadRwlockTrywrlock0100", ret, CMPFLAG);
+    EXPECT_EQ("PthreadRwlockTrywrlock0200", ret, CMPFLAG);
 
     ret = pthread_rwlock_trywrlock(&rwlock);
-    EXPECT_EQ("PthreadRwlockTrywrlock0100", ret, EBUSY);
+    EXPECT_EQ("PthreadRwlockTrywrlock0200", ret, EBUSY);
 
     ret = pthread_rwlock_unlock(&rwlock);
-    EXPECT_EQ("PthreadRwlockTrywrlock0100", ret, CMPFLAG);
+    EXPECT_EQ("PthreadRwlockTrywrlock0200", ret, CMPFLAG);
 
     pthread_rwlock_destroy(&rwlock);
     pthread_rwlockattr_destroy(&rwlockattr);

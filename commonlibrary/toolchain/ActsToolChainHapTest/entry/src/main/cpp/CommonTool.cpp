@@ -43,8 +43,8 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
     }
 
     napi_valuetype valuetype;
-    napi_typeof(env, args[index], &valuetype);
-    if (valuetype != napi_number) {
+    napi_status typeofSt = napi_typeof(env, args[index], &valuetype);
+    if (typeofSt != napi_ok || valuetype != napi_number) {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
         return defaultValue;
     }

@@ -58,6 +58,10 @@ void Setfsgid0200(void)
 
 static int SetfsgidTestImpl(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
+//    Setfsgid0100();
+//    Setfsgid0200();
     return T_STATUS;
 }
 

@@ -43,9 +43,15 @@ void DlopenNsSpecial0100(void)
     void* handle3 = dlopen_ns(&dlns, DLL_NAME, RTLD_LAZY);
     EXPECT_TRUE("DlopenNsSpecial0100", handle3);
 
-    dlclose(handle1);
-    dlclose(handle2);
-    dlclose(handle3);
+    if (handle1) {
+        dlclose(handle1);
+    }
+    if (handle2) {
+        dlclose(handle2);
+    }
+    if (handle3) {
+        dlclose(handle3);
+    }
 }
 
 /**
@@ -76,9 +82,15 @@ void DlopenNsSpecial0200(void)
     void* handle3 = dlopen_ns(&dlns_wrong_lib_path, DLL_NAME, RTLD_LAZY);
     EXPECT_TRUE("DlopenNsSpecial0200", handle3);
 
-    dlclose(handle1);
-    dlclose(handle2);
-    dlclose(handle3);
+    if (handle1) {
+        dlclose(handle1);
+    }
+    if (handle2) {
+        dlclose(handle2);
+    }
+    if (handle3) {
+        dlclose(handle3);
+    }
 }
 
 /**
@@ -93,7 +105,9 @@ void DlopenNsSysPath0100(void)
     dlns_init(&dlns, "default");
     void* handle = dlopen_ns(&dlns, DLL_NAME, RTLD_LAZY);
     EXPECT_TRUE("DlopenNsSysPath0100", handle);
-    dlclose(handle);
+    if (handle) {
+        dlclose(handle);
+    }
 }
 
 int DlnsSpecialSceneTestTest(void)

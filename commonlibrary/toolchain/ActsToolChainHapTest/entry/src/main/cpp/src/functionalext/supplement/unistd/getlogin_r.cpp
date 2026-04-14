@@ -53,7 +53,7 @@ void GetloginR0200(void)
 {
     int ret = 0;
     char login[K_LOGIN_BUF_BYTES];
-    ret = getlogin_r("login", 0);
+    ret = getlogin_r(login, 0);
     EXPECT_NE("GetloginR0200", ret, 0);
 }
 
