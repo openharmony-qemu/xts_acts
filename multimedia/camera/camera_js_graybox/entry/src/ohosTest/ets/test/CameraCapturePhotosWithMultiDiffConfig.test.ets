@@ -75,7 +75,7 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      * @tc.level     : Level 0
      */
     it('CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = 'CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000'
+      let testNum = 'CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_000'
       try {
         //预制条件
         let capturePhotoNum = 1;
