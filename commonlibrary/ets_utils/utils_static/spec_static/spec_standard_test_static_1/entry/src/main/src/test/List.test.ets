@@ -23,6 +23,7 @@ import ExpressionsAdditiveOperatorsTest from "./expressions/additive_expressions
 import ExpressionsAdditiveStringTest from "./expressions/additive_expressions/string_concatenation/ExpressionsAdditiveString.test";
 import ExpressionsArrayLiteralTest from "./expressions/array_literal/ExpressionsArrayLiteral.test";
 import ExpressionsContestInferenceTest from "./expressions/array_literal/type_inference_from_context/ExpressionsContestInference.test";
+import ExpressionsContestInferenceOneTest from "./expressions/array_literal/type_inference_from_context/ExpressionsContestInference_1.test";
 import ExpressionsElementsInferenceTest from "./expressions/array_literal/type_inference_from_types_of_elements/ExpressionsElementsInference.test";
 // import AssignmentTest from "./expressions/assignment/Assignment.test";
 // import CompoundAssignmentOperatorsTest from "./expressions/assignment/compound_assignment_operators/CompoundAssignmentOperators.test";
@@ -155,6 +156,7 @@ export default function testsuite() {
   ExpressionsAdditiveStringTest();
   ExpressionsArrayLiteralTest();
   ExpressionsContestInferenceTest();
+  ExpressionsContestInferenceOneTest();
   ExpressionsElementsInferenceTest();
   // AssignmentTest();
   // CompoundAssignmentOperatorsTest();
