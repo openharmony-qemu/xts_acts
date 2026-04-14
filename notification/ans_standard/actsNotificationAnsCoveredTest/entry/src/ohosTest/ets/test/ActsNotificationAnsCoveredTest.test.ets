@@ -2277,15 +2277,15 @@ export default function actsNotificationAnsCovered() {
     });
 
     /**
-     * @tc.number  Sub_Notification_CES_CommonEvent_0100
-     * @tc.name    Sub_Notification_CES_CommonEvent_0100
+     * @tc.number  SUB_Notification_CES_CommonEvent_0100
+     * @tc.name    SUB_Notification_CES_CommonEvent_0100
      * @tc.desc    test string 256 of publish
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it('Sub_Notification_CES_CommonEvent_0100', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_0100"
+    it('SUB_Notification_CES_CommonEvent_0100', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "SUB_Notification_CES_CommonEvent_0100"
       let count = 0
       let event = 'T'.repeat(256)
       try {
@@ -2312,15 +2312,15 @@ export default function actsNotificationAnsCovered() {
     })
 
     /**
-     * @tc.number  Sub_Notification_CES_CommonEvent_0200
-     * @tc.name    Sub_Notification_CES_CommonEvent_0200
+     * @tc.number  SUB_Notification_CES_CommonEvent_0200
+     * @tc.name    SUB_Notification_CES_CommonEvent_0200
      * @tc.desc    test string 1 of publish
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it('Sub_Notification_CES_CommonEvent_0200', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_0200"
+    it('SUB_Notification_CES_CommonEvent_0200', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "SUB_Notification_CES_CommonEvent_0200"
       let count = 0
       try {
         //发布公共事件
@@ -2345,15 +2345,15 @@ export default function actsNotificationAnsCovered() {
     })
 
     /**
-     * @tc.number  Sub_Notification_CES_CommonEvent_0300
-     * @tc.name    Sub_Notification_CES_CommonEvent_0300
+     * @tc.number  SUB_Notification_CES_CommonEvent_0300
+     * @tc.name    SUB_Notification_CES_CommonEvent_0300
      * @tc.desc    test string 256 +1 of publish
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 2
      */
-    it('Sub_Notification_CES_CommonEvent_0300', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_0300"
+    it('SUB_Notification_CES_CommonEvent_0300', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "SUB_Notification_CES_CommonEvent_0300"
       let count = 0
       let event = 'T'.repeat(257)
       try {
