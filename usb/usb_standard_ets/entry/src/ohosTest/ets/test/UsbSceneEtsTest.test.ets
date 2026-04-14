@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -199,29 +199,33 @@ export default function UsbSceneEtsTest() {
         };
         try {
           let devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-          await usbMgr.requestRight(devicesList[0].name);
-          console.info(TAG, `SET_FEATURE name = ${devicesList[0].name}`);
-          let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
+          if (!devicesList || devicesList.length === 0) {
+            console.info(TAG, "No USB devices connected");
+            throw new Error("No devices available");
+          }
+          await usbMgr.requestRight(devicesList?.[0]?.name);
+          console.info(TAG, `SET_FEATURE name = ${devicesList?.[0]?.name}`);
+          let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList?.[0]);
           console.info(TAG, `SET_FEATURE devicePipe = ${JSON.stringify(devicePipe)}`);
-          let interfaces: usbMgr.USBInterface = devicesList[0].configs[0].interfaces[0];
+          let interfaces: usbMgr.USBInterface = devicesList?.[0]?.configs?.[0]?.interfaces?.[0];
           console.info(TAG, `SET_FEATURE interfaces = ${JSON.stringify(interfaces)}`);
           let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
           console.info(TAG, `SET_FEATURE claim = ${claim}`);
-          except(claim == 0).assertEqual(true);
+          expect(claim == 0).assertEqual(true);
           if (interfaces.endpoints.length > 0) {
             param.wIndex = interfaces.endpoints[0].address;
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, `SET_FEATURE size = ${ret}`);
-            except(ret == 0).assertEqual(true);
+            expect(ret == 0).assertEqual(true);
             usbMgr.removeRight(devicesList[0].name);
-            usbMgr.closePipe(devicepipe);
+            usbMgr.closePipe(devicePipe);
           }
           done();
         } catch (err) {
           console.info(TAG, `SET_FEATURE error`);
           console.info(TAG, `SET_FEATURE err.code = ${JSON.stringify(err)}`);
           console.info(TAG, 'SET_FEATURE end');
-          except().assertFail();
+          expect().assertFail();
           done();
         }
         }
@@ -258,19 +262,19 @@ export default function UsbSceneEtsTest() {
             param1.wIndex = interfaces.endpoints[0].address;
             let res = await usbMgr.usbControlTransfer(devicePipe, param1);
             console.info(TAG, `CLEAR_FEATURE size = ${res}`);
-            except(ret == 0).assertEqual(true);
+            expect(res == 0).assertEqual(true);
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, `CLEAR_FEATURE size = ${ret}`);
-            except(ret == 0).assertEqual(true);
+            expect(ret == 0).assertEqual(true);
             usbMgr.removeRight(devicesList[0].name);
-            usbMgr.closePipe(devicepipe);
+            usbMgr.closePipe(devicePipe);
           }
           done();
         } catch (err) {
           console.info(TAG, `CLEAR_FEATURE error`);
           console.info(TAG, `CLEAR_FEATURE err.code = ${JSON.stringify(err)}`);
           console.info(TAG, 'CLEAR_FEATURE end');
-          except().assertFail();
+          expect().assertFail();
           done();
         }
         }
