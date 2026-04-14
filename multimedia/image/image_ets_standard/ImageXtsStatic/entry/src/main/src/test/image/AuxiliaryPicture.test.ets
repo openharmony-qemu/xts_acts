@@ -305,14 +305,14 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
       }
     });
 
-    /**
-     //  * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
-     //  * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
-     //  * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
-     //  * @tc.type   FUNCTION
-     //  * @tc.size   MEDIUMTEST
-     //  * @tc.level  LEVEL0
-     //  */
+     /**
+       * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
+       * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
+       * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+      */
     it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400';
 
