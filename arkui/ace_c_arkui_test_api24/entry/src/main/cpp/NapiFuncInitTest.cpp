@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "matrix4/ErrorCodeTest.cpp"
+#include "StrategyEnum.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -37,6 +38,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestErrorCode010", nullptr, TestErrorCode010, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestErrorCode011", nullptr, TestErrorCode011, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestErrorCode012", nullptr, TestErrorCode012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"StrategyEnumTest_001", nullptr, StrategyEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"StrategyEnumTest_002", nullptr, StrategyEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

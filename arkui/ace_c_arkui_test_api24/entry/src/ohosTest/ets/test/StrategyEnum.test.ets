@@ -34,7 +34,7 @@ export default function StrategyEnumTest() {
      */
     it('SUB_ARKUI_COMPETITION_STRATEGY_DEFAULT_VALUE_0100', Level.LEVEL1, async () => {
       console.info('SUB_ARKUI_COMPETITION_STRATEGY_DEFAULT_VALUE_0100 START');
-      expect(ARKUI_COMPETITION_STRATEGY_DEFAULT).assertEqual(0);
+      expect(nativeFunc.StrategyEnumTest_001()).assertEqual(0)
       console.info('SUB_ARKUI_TEXTAREA_HORIZONTALSCROLLING_PARAM_0100 END');
     });
 
@@ -48,7 +48,7 @@ export default function StrategyEnumTest() {
      */
     it('SUB_ARKUI_COMPETITION_STRATEGY_COMPETITION_VALUE_0100', Level.LEVEL1, async () => {
       console.info('SUB_ARKUI_COMPETITION_STRATEGY_COMPETITION_VALUE_0100 START');
-      expect(ARKUI_COMPETITION_STRATEGY_COMPETITION).assertEqual(1);
+      expect(nativeFunc.StrategyEnumTest_002()).assertEqual(0)
       console.info('SUB_ARKUI_COMPETITION_STRATEGY_COMPETITION_VALUE_0100 END');
     });
   });

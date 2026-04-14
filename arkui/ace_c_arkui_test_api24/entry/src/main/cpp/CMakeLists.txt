@@ -27,6 +27,7 @@ add_library(nativerender SHARED
     EllipsisMode/EllipsisModeCenterTest.cpp
     EllipsisMode/EllipsisModeStartTest.cpp
     TextGetCharacter/TextGetCharacterTest.cpp
+    StrategyEnum.cpp
 )
 
 add_library(nativefunc SHARED
