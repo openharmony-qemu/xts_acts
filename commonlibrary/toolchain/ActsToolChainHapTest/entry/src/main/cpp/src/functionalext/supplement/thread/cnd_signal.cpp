@@ -21,6 +21,7 @@
 
 namespace {
 constexpr unsigned K_CND_SIGNAL_THREAD_DELAY_SEC = 2U;
+constexpr time_t K_CND_SIGNAL_WAIT_TIMEOUT_SEC = 60;
 } // namespace
 
 mtx_t g_mtx;
@@ -30,7 +31,7 @@ void CndTimedwaitfirst(void* arg)
     int res = -1;
     struct timespec ts;
     (void)clock_gettime(CLOCK_REALTIME, &ts);
-    ts.tv_sec += 60;
+    ts.tv_sec += K_CND_SIGNAL_WAIT_TIMEOUT_SEC;
     (void)mtx_lock(&g_mtx);
     res = cnd_timedwait(&g_cndPut, &g_mtx, &ts);
     (void)mtx_unlock(&g_mtx);

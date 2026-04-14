@@ -21,6 +21,10 @@
 #include <cwchar>
 #include "test.h"
 
+namespace {
+constexpr int K_VSWSCANF_MULTI_MATCH_COUNT = 2;
+} // namespace
+
 int GetStrValue(const wchar_t* buffer, const wchar_t* format, ...)
 {
     va_list args;
@@ -60,7 +64,7 @@ void Vswscanf0200(void)
     wchar_t str[20];
     wchar_t strs[20];
     int result = GetStrValue(symbol, L"%ls %ls", str, strs);
-    if (result != 2) {
+    if (result != K_VSWSCANF_MULTI_MATCH_COUNT) {
         t_error("%s vswscanf get result is %d are not want 2\n", __func__, result);
     }
     if (wcscmp(str, L"ABC") != 0) {

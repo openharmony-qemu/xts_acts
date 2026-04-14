@@ -35,19 +35,8 @@ static struct LL t[] = {
 #endif
 };
 
-static void Expm1lTestOne(struct LL* p, int* err)
+static void CheckExpm1lException(const struct LL* p, int e, int* err)
 {
-#pragma STDC FENV_ACCESS ON
-    long double y;
-    float d;
-    int e;
-    if (p->r < 0) {
-        return;
-    }
-    fesetround(p->r);
-    feclearexcept(FE_ALL_EXCEPT);
-    y = expm1l(p->x);
-    e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 #ifndef __aarch64__
     if (!Checkexcept(e, p->e, p->r)) {
         const long double fmtLaExcX = static_cast<long double>(p->x);
@@ -62,8 +51,15 @@ static void Expm1lTestOne(struct LL* p, int* err)
         printf(" got %s\n", Estr(e));
         (*err)++;
     }
+#else
+    (void)p;
+    (void)e;
+    (void)err;
 #endif
-    d = Ulperrl(y, p->y, p->dy);
+}
+
+static void CheckExpm1lUlp(const struct LL* p, long double y, float d, int* err)
+{
     if (!Checkulp(d, p->r)) {
         const long double ulpLaX = static_cast<long double>(p->x);
         const long double ulpLaY = static_cast<long double>(p->y);
@@ -87,6 +83,24 @@ static void Expm1lTestOne(struct LL* p, int* err)
                ulpMinusDy,
                dyVal);
     }
+}
+
+static void Expm1lTestOne(struct LL* p, int* err)
+{
+#pragma STDC FENV_ACCESS ON
+    long double y;
+    float d;
+    int e;
+    if (p->r < 0) {
+        return;
+    }
+    fesetround(p->r);
+    feclearexcept(FE_ALL_EXCEPT);
+    y = expm1l(p->x);
+    e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
+    CheckExpm1lException(p, e, err);
+    d = Ulperrl(y, p->y, p->dy);
+    CheckExpm1lUlp(p, y, d, err);
 }
 
 static int Expm1lTestImpl(void)

@@ -22,15 +22,15 @@
 
 namespace {
 struct LocaleGuard {
-    locale_t loc_;
-    explicit LocaleGuard(locale_t l) : loc_(l) {}
+    locale_t loc;
+    explicit LocaleGuard(locale_t l) : loc(l) {}
     ~LocaleGuard()
     {
-        if (loc_ != nullptr) {
-            freelocale(loc_);
+        if (loc != nullptr) {
+            freelocale(loc);
         }
     }
-    locale_t get() const { return loc_; }
+    locale_t Get() const { return loc; }
 };
 } // namespace
 
@@ -112,7 +112,7 @@ static struct {
 void StrtodL0100(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     int i;
     double x;
     char* p;
@@ -131,7 +131,7 @@ void StrtodL0100(void)
 void StrtodL0200(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "123.45xxx";
     const double target = 123.45;
     char str1[] = "xxx";
@@ -151,7 +151,7 @@ void StrtodL0200(void)
 void StrtodL0300(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "+123.45xxx";
     const double target = 123.45;
     char str1[] = "xxx";
@@ -171,7 +171,7 @@ void StrtodL0300(void)
 void StrtodL0400(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "-123.45xxx";
     const double target = -123.45;
     char str1[] = "xxx";
@@ -191,7 +191,7 @@ void StrtodL0400(void)
 void StrtodL0500(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "  123.45xxx";
     const double target = 123.45;
     char str1[] = "xxx";
@@ -211,7 +211,7 @@ void StrtodL0500(void)
 void StrtodL0600(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "xxx123.45";
     const double target = 0;
     char str1[] = "xxx123.45";
@@ -231,7 +231,7 @@ void StrtodL0600(void)
 void StrtodL0700(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "+INF";
     const double target = INFINITY;
     char* end;
@@ -247,7 +247,7 @@ void StrtodL0700(void)
 void StrtodL0800(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "infinity";
     const double target = INFINITY;
     char* end;
@@ -263,7 +263,7 @@ void StrtodL0800(void)
 void StrtodL0900(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "infinixxx";
     const double target = INFINITY;
     char str1[] = "inixxx";
@@ -283,7 +283,7 @@ void StrtodL0900(void)
 void StrtodL1000(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "-INF";
     const double target = -INFINITY;
     char* end;
@@ -299,7 +299,7 @@ void StrtodL1000(void)
 void StrtodL1100(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "+NAN";
     const double target = NAN;
     char* end;
@@ -317,7 +317,7 @@ void StrtodL1100(void)
 void StrtodL1200(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "-NAN";
     const double target = NAN;
     char* end;
@@ -336,7 +336,7 @@ void StrtodL1200(void)
 void StrtodL1300(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "0X1.BC";
     const double target = 0;
     char str1[] = "X1.BC";
@@ -356,7 +356,7 @@ void StrtodL1300(void)
 void StrtodL1400(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "";
     const double target = 0;
     char* end;
@@ -372,7 +372,7 @@ void StrtodL1400(void)
 void StrtodL1500(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "   xxx";
     const double target = 0;
     char str1[] = "   xxx";
@@ -393,7 +393,7 @@ void StrtodL1500(void)
 void StrtodL1600(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "de_DE", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "1234.56";
     const double target = 1234.56;
     char str1[] = "";
@@ -413,7 +413,7 @@ void StrtodL1600(void)
 void StrtodL1700(void)
 {
     LocaleGuard locGuard(newlocale(LC_CTYPE_MASK, "zh_CN", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "     ";
     const double target = 0;
     char str1[] = "     ";
@@ -433,7 +433,7 @@ void StrtodL1700(void)
 void StrtodL1800(void)
 {
     LocaleGuard locGuard(newlocale(LC_ALL_MASK, "zh_CN.UTF-8", nullptr));
-    locale_t loc = locGuard.get();
+    locale_t loc = locGuard.Get();
     char* str = "123.45";
     const double target = 123.45;
     double num = strtod_l(str, nullptr, loc);

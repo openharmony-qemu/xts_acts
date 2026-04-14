@@ -23,6 +23,7 @@ constexpr uintptr_t K_ALIGN_MASK32 = 0x3U;
 constexpr uintptr_t K_ALIGN_MASK64 = 0x7U;
 constexpr size_t K_WORD_BYTES32 = 4U;
 constexpr size_t K_WORD_BYTES64 = 8U;
+constexpr size_t K_MEM_TEST_INT_COUNT = 4U;
 constexpr size_t K_MEM_TEST_COPY_FOUR_INTS = sizeof(int) * 4U;
 } // namespace
 
@@ -123,7 +124,7 @@ void Memcpy0100(void)
     if (result == nullptr) {
         t_error("%s AeabiMemcpy error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemcpy content check failed at %zu\n", __func__, i);
         }
@@ -143,7 +144,7 @@ void Memcpy0200(void)
     if (result == nullptr) {
         t_error("%s AeabiMemcpy4 error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemcpy4 content check failed at %zu\n", __func__, i);
         }
@@ -163,7 +164,7 @@ void Memcpy0300(void)
     if (result == nullptr) {
         t_error("%s AeabiMemcpy8 error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemcpy8 content check failed at %zu\n", __func__, i);
         }

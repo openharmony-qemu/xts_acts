@@ -60,8 +60,6 @@ static int SetfsuidTestImpl(int argc, char* argv[])
 {
     (void)argc;
     (void)argv;
-//    Setfsuid0100();
-//    Setfsuid0200();
     return T_STATUS;
 }
 

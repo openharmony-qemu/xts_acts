@@ -24,6 +24,7 @@ constexpr uintptr_t K_ALIGN_MASK32 = 0x3U;
 constexpr uintptr_t K_ALIGN_MASK64 = 0x7U;
 constexpr size_t K_WORD_BYTES32 = 4U;
 constexpr size_t K_WORD_BYTES64 = 8U;
+constexpr size_t K_MEM_TEST_INT_COUNT = 4U;
 constexpr size_t K_MEM_TEST_COPY_FOUR_INTS = sizeof(int) * 4U;
 } // namespace
 
@@ -166,7 +167,7 @@ static void Memmove0100(void)
     if (result == nullptr) {
         t_error("%s AeabiMemmove error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemmove content check failed at %zu\n", __func__, i);
         }
@@ -186,7 +187,7 @@ static void Memmove0200(void)
     if (result == nullptr) {
         t_error("%s AeabiMemmove4 error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemmove4 content check failed at %zu\n", __func__, i);
         }
@@ -206,7 +207,7 @@ static void Memmove0300(void)
     if (result == nullptr) {
         t_error("%s AeabiMemmove8 error get result is %d\n", __func__, result);
     }
-    for (size_t i = 0; i < 4; ++i) {
+    for (size_t i = 0; i < K_MEM_TEST_INT_COUNT; ++i) {
         if (dest[i] != src[i]) {
             t_error("%s AeabiMemmove8 content check failed at %zu\n", __func__, i);
         }

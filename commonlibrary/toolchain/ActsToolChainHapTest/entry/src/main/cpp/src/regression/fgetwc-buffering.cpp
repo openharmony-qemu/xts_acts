@@ -24,6 +24,14 @@
 
 namespace {
 constexpr int K_STDIN_FD = 0;
+
+void RestoreStdin(int stdinSave, int* status)
+{
+    if (dup2(stdinSave, K_STDIN_FD) < 0) {
+        LibcTestError(status, "dup2(restore stdin) failed\n");
+    }
+    (void)close(stdinSave);
+}
 } // namespace
 void TSetutf8(void)
 {
@@ -86,10 +94,7 @@ int FgetwcBufferingTest()
     if (!(ferror(stdin) == 0)) {
         LibcTestError(&status, "ferror(stdin) == 0 failed\n");
     }
-    if (dup2(stdinSave, K_STDIN_FD) < 0) {
-        LibcTestError(&status, "dup2(restore stdin) failed\n");
-    }
-    (void)close(stdinSave);
+    RestoreStdin(stdinSave, &status);
     (void)close(p[0]);
     return status;
 }
