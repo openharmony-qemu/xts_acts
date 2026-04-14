@@ -787,7 +787,7 @@ static napi_value injectTouchEventInit(napi_env env, napi_value exports)
         { "getDisplayPosition", nullptr, GetDisplayPosition, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "getDisplayPosition_ErrCode140004", nullptr, GetDisplayPosition_ErrCode140004, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
+            nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
