@@ -27,40 +27,31 @@ import cv2
 import re
 import sqlite3
 
-pillow_heif.register_heif_opener()
-def heif_to_jpg_pillow(heif_path, jpg_path):
-    with Image.open(heif_path) as im:
-        im.convert("RGB").save(jpg_path, "JPEG")
+ # === 配置 ===
+API_KEY = "sk-59c64c9efdeb4403b0287741bfd98bc4"  # 替换为你自己的 DashScope API Key
+BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+MODEL_NAME = "qwen3-vl-flash"  # 或 qwen-vl-max，根据你使用的模型调整
 
-BASE_URL = "http://10.91.22.178:8000/v1"
-MODEL = "qwen"
+# === 工具函数：将图片转为 base64 ===
+def image_to_base64(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
 
-# 构造 system_msg，强调输出风格
-SYSTEM_PROMPT = (
-    "你是一个人物图像理解与描述生成器。"
-    "请根据输入的图像生成细腻、真实、优雅的中文描述，且不要提及这个人的姓名，就直接描述这幅图像"
-    "包括人物的性别、表情、姿态、氛围、场景等。"
-    "输出必须是自然语言描述，控制在220字以内，不要包含任何额外说明或 Markdown。"
-)
-
+# === 绿图画图检测主逻辑 ===
 def chat_with_llm(image_path):
-    headers = {
-        "Content-Type": "application/json",
-    }
+    # 检查文件是否存在
+    if not os.path.exists(image_path):
+        raise FileNotFoundError(f"Image file not found: {image_path}")
 
-    # 将图像转为 base64
-    with open(image_path, "rb") as f:
-        image_bytes = f.read()
-    image_base64 = base64.b64encode(image_bytes).decode("utf-8")
+    # 转 base64
+    img_b64 = image_to_base64(image_path)
 
-    payload = {
-        "model": MODEL,
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": """检测这个图片是否是绿图、花图、黑图,只需要回答这是x图,这不是x图就行,不需要其他的回复,绿图、花图、黑图的检测规则有两套，两套规则都满足的情况下才能证明这个图片是绿图或者花图或者黑图，两套规则如下：
+    # 构造多模态消息
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": """检测这个图片是否是绿图、花图、黑图,只需要回答这是x图,这不是x图就行,不需要其他的回复,绿图、花图、黑图的检测规则有两套，两套规则都满足的情况下才能证明这个图片是绿图或者花图或者黑图，两套规则如下：
                             规则1：{
                                 1. 黑图
                                 成像特征(以下两个特征都要满足才是黑图)：
@@ -103,23 +94,30 @@ def chat_with_llm(image_path):
                                 - 高饱和度(> 150) + G通道主导 → 确认为绿图
                                 }
 
-                            另外的要求：如果检测出这个图片是绿图或者花图或者黑图，那需要再重新检测2次，如果三次结果中有两次都是绿图或者花图或者黑图，那这个图片就是绿图或者花图或者黑图，否则不是"""
-                     },
-                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image_base64}"}}
-                ]
-            }
-        ]
-    }
+                            另外的要求：如果检测出这个图片是绿图或者花图或者黑图，那需要再重新检测2次，如果三次结果中有两次都是绿图或者花图或者黑图，那这个图片就是绿图或者花图或者黑图，否则不是"""},
+                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{img_b64}"}}
+            ]
+        }
+    ]
 
-    url = f"{BASE_URL}/chat/completions"
+    # 初始化客户端
+    client = OpenAI(
+        api_key=API_KEY,
+        base_url=BASE_URL
+    )
+
     try:
-        response = requests.post(url, headers=headers, json=payload, timeout=60, proxies={"http": None, "https": None})
-        response.raise_for_status()
+        # 调用模型
+        response = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=messages,
+            max_tokens=30000
+        )
+
         result = response.json()
         return result["choices"][0]["message"]["content"]
     except Exception as e:
         return f"Error: {e}"
-
 
 def get_logger():
     """
