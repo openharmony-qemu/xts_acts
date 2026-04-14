@@ -16,7 +16,11 @@
 import ArrayLikeStringTest from './ArrayLikeTest/ArrayLikeStringTest.test';
 import Env001 from './envTest/Env001.test';
 import PerGlobalConnectTest from './PersistenceV2Test/PerGlobalConnectTest.test';
+import persistenceV2NotifyOnErrorTest from './PersistenceV2Test/PersistenceV2NotifyOnErrorTest.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
+import reuseOptionsDynamicReuseIdTest from './ReuseV2Test/ReuseOptionsDynamicReuseIdTest.test';
+import monitorWildcardTest from './MonitorTest/MonitorWildcardTest.test';
+import addMonitorWildcardTest from './MonitorTest/AddMonitorWildcardTest.test';
 import Monitor1Test from './MonitorTest/Monitor1.test';
 import Monitor2Test from './MonitorTest/Monitor2.test';
 import Monitor3Test from './MonitorTest/Monitor3.test';
@@ -77,7 +81,11 @@ export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
     PerGlobalConnectTest();
+    persistenceV2NotifyOnErrorTest();
     ReuseV2Test0030();
+    reuseOptionsDynamicReuseIdTest();
+    monitorWildcardTest();
+    addMonitorWildcardTest();
     Monitor1Test();
     Monitor2Test();
     Monitor3Test();
