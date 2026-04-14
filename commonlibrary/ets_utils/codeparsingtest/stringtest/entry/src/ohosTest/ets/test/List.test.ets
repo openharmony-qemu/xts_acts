@@ -28,6 +28,26 @@ import stringPadEndBasicTest from './String_PadEnd/StringPadEndBasicTest';
 import stringPadStartBasicTest from './String_PadStart/StringPadStartBasicTest';
 import stringToWellFormedBasicTest from './String_ToWellFormed/StringToWellFormedBasicTest';
 
+import StringReplaceTest1 from './String_Replace/StringReplaceTest1.test';
+import StringReplaceTest2 from './String_Replace/StringReplaceTest2.test';
+import StringReplaceAllTest1 from '.String_ReplaceAll/StringReplaceAllTest1.test';
+import StringReplaceAllTest2 from './String_ReplaceAll/StringReplaceAllTest2.test';
+import StringTrimTest01 from './String_Trim/StringTrimTest1.test';
+import StringTrimTest02 from './String_Trim/StringTrimTest2.test';
+import StringLengthTest1 from './String_Length/StringLengthTest1.test';
+import StringSymbolIteratorTest1 from './String_Symbol/StringSymbolIteratorTest1.test';
+import StringSymbolIteratorTest2 from './String_Symbol/StringSymbolIteratorTest2.test';
+import StringTrimEndTest1 from './String_trimEnd/StringTrimEndTest1.test';
+import StringTrimStartTest1 from './String_trimStart/StringTrimStartTest1.test';
+import StringValueOfTest1 from '.String_ValueOf/StringValueOfTest1.test';
+import StringToLocaleLowerCaseTest1 from './String_LocaleLowerCase/StringToLocaleLowerCaseTest1.test';
+import StringSearchTest1 from './String_Search/StringSearchTest.test';
+import StringSearchTest2 from './String_Search/StringSearchTest2.test';
+import StringSearchTest3 from './String_Search/StringSearchTest3.test';
+import StringStartsWithTest1 from './String_StartsWith/StringStartsWithTest1.test';
+import StringStartsWithTest2 from './String_StartsWith/StringStartsWithTest2.test';
+import StringRepeatTest1 from './String_Repeat/StringRepeatTest1.test';
+
 export default function testsuite() {
   StringBasicTest();
   stringFromCharCodeTest();
@@ -57,4 +77,23 @@ export default function testsuite() {
   stringPadEndBasicTest();
   stringPadStartBasicTest();
   stringToWellFormedBasicTest();
+  StringReplaceTest1();
+  StringReplaceTest2();
+  StringReplaceAllTest1();
+  StringReplaceAllTest2();
+  StringTrimTest01();
+  StringTrimTest02();
+  StringLengthTest1();
+  StringSymbolIteratorTest1();
+  StringSymbolIteratorTest2();
+  StringTrimEndTest1();
+  StringTrimStartTest1();
+  StringValueOfTest1();
+  StringToLocaleLowerCaseTest1();
+  StringSearchTest1();
+  StringSearchTest2();
+  StringSearchTest3();
+  StringStartsWithTest1();
+  StringStartsWithTest2();
+  StringRepeatTest1();
 }
