@@ -1169,7 +1169,8 @@ napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     return result;
 }
 
-napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
+napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -1190,7 +1191,8 @@ napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info) {
+napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     size_t uuidLen = 0;
     size_t argc = 1;
