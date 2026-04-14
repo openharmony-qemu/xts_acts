@@ -22,10 +22,6 @@ export default function ObserverSimJsunit() {
   describe('ObserverSimJsunit', ()=>{
     console.log("************* Observer Test start *************");
 
-    
-
-   
-
     /**
      * @tc.name   Telephony_observer_LockReason_SIM_NONE_0100
      * @tc.number Telephony_observer_LockReason_SIM_NONE_0100
