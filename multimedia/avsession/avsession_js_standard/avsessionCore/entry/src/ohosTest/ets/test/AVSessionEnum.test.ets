@@ -1147,7 +1147,7 @@ export default function abilityTest() {
      * @tc.type        Function
      * @tc.level       Level2
      */
-    it('SUB_MULTIMEDIA_AVSESSION_BACKGROUNDPLAYMODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       console.info(`TestLog: DLNA_DIDL_LITE is ${avSession.ExtraKey.DLNA_DIDL_LITE}`);
       expect(avSession.ExtraKey.DLNA_DIDL_LITE).assertEqual('DIDL-Lite' as avSession.ExtraKey);
       console.info(`TestLog: DLNA_CURRENT_URI_METADATA is ${avSession.ExtraKey.DLNA_CURRENT_URI_METADATA}`);
