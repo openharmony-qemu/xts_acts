@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import { abilityAccessCtrl, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
 import { BusinessError } from "@kit.BasicServicesKit";
 import { Driver, MatchPattern, ON } from "@kit.TestKit";
@@ -22,25 +22,25 @@ import Utils from "./Util.test";
 import { Context } from "@kit.ArkUI";
 import { Hypium } from "../../../hypium";
 import { hilog } from "@kit.PerformanceAnalysisKit";
-
+ 
 const TAG = "cameraXts.common";
-
+ 
 const COMMON_WAIT_DURATION: number = 500;
 const domain = 0x0000;
 const tag = 'ListTest';
-
-
-export function resourceName():string {
+ 
+ 
+export function resourceName(): string {
   let timestamp = Date.now();
   let filename = `avRecorder_${timestamp}.mp4`;
   return filename;
 }
-
+ 
 export async function getPermission(name?: Permissions): Promise<void> {
   try {
-
+ 
     console.info(TAG, 'getPermission start', name);
-
+ 
     let context = Hypium.get('Context') as Context;
     hilog.info(domain, tag, '%{public}s', '  beforeAll get Context');
     // 相机权限
@@ -51,18 +51,16 @@ export async function getPermission(name?: Permissions): Promise<void> {
     arr.push('ohos.permission.GRANT_SENSITIVE_PERMISSIONS')
     arr.push('ohos.permission.MICROPHONE')
     arr.push('ohos.permission.MEDIA_LOCATION')
-    arr.push('ohos.permission.READ_IMAGEVIDEO')
-    arr.push('ohos.permission.WRITE_IMAGEVIDEO')
     hilog.info(domain, tag, '%{public}s', '  beforeAll requestPermissionsFromUser');
     atManager.requestPermissionsFromUser(context, arr,
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
         hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
       });
     await Utils.msSleep(500);
-
+ 
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
-    for (let i = 0; i < 4; i++) {
-
+    for (let i = 0; i < arr.length; i++) {
+ 
       let dr = Driver.create();
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
       if (power != null) {
