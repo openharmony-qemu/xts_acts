@@ -3518,6 +3518,554 @@ export default function ExpressionsContestInferenceTest() {
       expect(arr4_a_29.length).assertEqual(1);
     })
 
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16300
+     * @tc.name      testExpressionsContestInference0163
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_30 = [[true, 1, 'a', null]];
+      expect(arr4_a_30[0][0] as boolean).assertTrue();
+      expect(arr4_a_30[0][1] as number).assertEqual(1);
+      expect(arr4_a_30[0][2] as string).assertEqual('a');
+      expect(arr4_a_30[0][3]).assertEqual(null);
+      expect(arr4_a_30.length).assertEqual(1);
+    })
 
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16400
+     * @tc.name      testExpressionsContestInference0164
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_31 = [[true, 1, 'a', null]];
+      expect(arr4_a_31[0][0] as boolean).assertTrue();
+      expect(arr4_a_31[0][1] as number).assertEqual(1);
+      expect(arr4_a_31[0][2] as string).assertEqual('a');
+      expect(arr4_a_31[0][3]).assertEqual(null);
+      expect(arr4_a_31.length).assertEqual(1);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16500
+     * @tc.name      testExpressionsContestInference0165
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_32 = [[arr4_e_32], [false], [(p: string) => p + p], [42]];
+      expect(arr4_a_32[0][0] as Error).assertEqual(arr4_e_32);
+      expect(arr4_a_32[1][0] as boolean).assertFalse();
+      expect((arr4_a_32[2][0] as ((p: string) => string))('a')).assertEqual('aa');
+      expect(arr4_a_32[3][0] as number).assertEqual(42);
+      expect(arr4_a_32.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16600
+     * @tc.name      testExpressionsContestInference0166
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_33 = [[arr4_e_33], [false], [(p: string) => p + p], [42]];
+      expect(arr4_a_33[0][0] as Error).assertEqual(arr4_e_33);
+      expect(arr4_a_33[1][0] as boolean).assertFalse();
+      expect((arr4_a_33[2][0] as ((p: string) => string))('a')).assertEqual('aa');
+      expect(arr4_a_33[3][0] as number).assertEqual(42);
+      expect(arr4_a_33.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16700
+     * @tc.name      testExpressionsContestInference0167
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_34 = [[arr4_e_34], [false], [(p: string) => p + p], [42]];
+      expect(arr4_a_34[0][0] as Error).assertEqual(arr4_e_34);
+      expect(arr4_a_34[1][0] as boolean).assertFalse();
+      expect((arr4_a_34[2][0] as ((p: string) => string))('a')).assertEqual('aa');
+      expect(arr4_a_34[3][0] as number).assertEqual(42);
+      expect(arr4_a_34.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16800
+     * @tc.name      testExpressionsContestInference0168
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_35 = [[arr4_e_35], [false], [(p: string) => p + p], [42]];
+      expect(arr4_a_35[0][0] as Error).assertEqual(arr4_e_35);
+      expect(arr4_a_35[1][0] as boolean).assertFalse();
+      expect((arr4_a_35[2][0] as ((p: string) => string))('a')).assertEqual('aa');
+      expect(arr4_a_35[3][0] as number).assertEqual(42);
+      expect(arr4_a_35.length).assertEqual(4);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_16900
+     * @tc.name      testExpressionsContestInference0169
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_36 = [false, true, false];
+      expect((arr4_a_36 as boolean[])[0]).assertFalse();
+      expect((arr4_a_36 as boolean[])[1]).assertTrue();
+      expect((arr4_a_36 as boolean[])[2]).assertFalse();
+      expect((arr4_a_36 as boolean[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17000
+     * @tc.name      testExpressionsContestInference0170
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_37 = [false, true, false];
+      expect((arr4_a_37 as boolean[])[0]).assertFalse();
+      expect((arr4_a_37 as boolean[])[1]).assertTrue();
+      expect((arr4_a_37 as boolean[])[2]).assertFalse();
+      expect((arr4_a_37 as boolean[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17100
+     * @tc.name      testExpressionsContestInference0171
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_38 = [1, 2, 43];
+      expect((arr4_a_38 as number[])[0]).assertEqual(1);
+      expect((arr4_a_38 as number[])[1]).assertEqual(2);
+      expect((arr4_a_38 as number[])[2]).assertEqual(43);
+      expect((arr4_a_38 as number[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17200
+     * @tc.name      testExpressionsContestInference0172
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_39 = [1, 2, 43];
+      expect((arr4_a_39 as number[])[0]).assertEqual(1);
+      expect((arr4_a_39 as number[])[1]).assertEqual(2);
+      expect((arr4_a_39 as number[])[2]).assertEqual(43);
+      expect((arr4_a_39 as number[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17300
+     * @tc.name      testExpressionsContestInference0173
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_40 = ['1', '2', arr4_s_40 + '3'];
+      expect((arr4_a_40 as string[])[0]).assertEqual('1');
+      expect((arr4_a_40 as string[])[1]).assertEqual('2');
+      expect((arr4_a_40 as string[])[2]).assertEqual('43');
+      expect((arr4_a_40 as string[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17400
+     * @tc.name      testExpressionsContestInference0174
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_41 = ['1', '2', arr4_s_41 + '3'];
+      expect((arr4_a_41 as string[])[0]).assertEqual('1');
+      expect((arr4_a_41 as string[])[1]).assertEqual('2');
+      expect((arr4_a_41 as string[])[2]).assertEqual('43');
+      expect((arr4_a_41 as string[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17500
+     * @tc.name      testExpressionsContestInference0175
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_42 = ['1', '2', arr4_s_42 + '3'];
+      expect((arr4_a_42 as string[])[0]).assertEqual('1');
+      expect((arr4_a_42 as string[])[1]).assertEqual('2');
+      expect((arr4_a_42 as string[])[2]).assertEqual('43');
+      expect((arr4_a_42 as string[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17600
+     * @tc.name      testExpressionsContestInference0176
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arr4_a_43 = ['1', '2', '43'];
+      expect((arr4_a_43 as string[])[0]).assertEqual('1');
+      expect((arr4_a_43 as string[])[1]).assertEqual('2');
+      expect((arr4_a_43 as string[])[2]).assertEqual('43');
+      expect((arr4_a_43 as string[]).length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17700
+     * @tc.name      testExpressionsContestInference0177
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_44: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_44) && typeof arr4_a_44[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_44[0]).assertEqual(1);
+        expect(arr4_a_44[1]).assertEqual(2);
+        expect(arr4_a_44[2]).assertEqual(3);
+        expect(arr4_a_44.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17800
+     * @tc.name      testExpressionsContestInference0178
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_45: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_45) && typeof arr4_a_45[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_45[0]).assertEqual(1);
+        expect(arr4_a_45[1]).assertEqual(2);
+        expect(arr4_a_45[2]).assertEqual(3);
+        expect(arr4_a_45.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_17900
+     * @tc.name      testExpressionsContestInference0179
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_46: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_46) && typeof arr4_a_46[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_46[0]).assertEqual(1);
+        expect(arr4_a_46[1]).assertEqual(2);
+        expect(arr4_a_46[2]).assertEqual(3);
+        expect(arr4_a_46.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18000
+     * @tc.name      testExpressionsContestInference0180
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_47: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_47) && typeof arr4_a_47[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_47[0]).assertEqual(1);
+        expect(arr4_a_47[1]).assertEqual(2);
+        expect(arr4_a_47[2]).assertEqual(3);
+        expect(arr4_a_47.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18100
+     * @tc.name      testExpressionsContestInference0181
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_48: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
+
+      if (Array.isArray(arr4_a_48) && typeof arr4_a_48[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_48[0]).assertEqual('1');
+        expect(arr4_a_48[1]).assertEqual('2');
+        expect(arr4_a_48[2]).assertEqual('3');
+        expect(arr4_a_48.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18200
+     * @tc.name      testExpressionsContestInference0182
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_49: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
+
+      if (Array.isArray(arr4_a_49) && typeof arr4_a_49[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_49[0]).assertEqual('1');
+        expect(arr4_a_49[1]).assertEqual('2');
+        expect(arr4_a_49[2]).assertEqual('3');
+        expect(arr4_a_49.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18300
+     * @tc.name      testExpressionsContestInference0183
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_50: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
+
+      if (Array.isArray(arr4_a_50) && typeof arr4_a_50[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_50[0]).assertEqual('1');
+        expect(arr4_a_50[1]).assertEqual('2');
+        expect(arr4_a_50[2]).assertEqual('3');
+        expect(arr4_a_50.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18400
+     * @tc.name      testExpressionsContestInference0184
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_51: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
+
+      if (Array.isArray(arr4_a_51) && typeof arr4_a_51[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_51[0]).assertEqual('1');
+        expect(arr4_a_51[1]).assertEqual('2');
+        expect(arr4_a_51[2]).assertEqual('3');
+        expect(arr4_a_51.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18500
+     * @tc.name      testExpressionsContestInference0185
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_52: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_52) && typeof arr4_a_52[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_52[0]).assertEqual(1);
+        expect(arr4_a_52[1]).assertEqual(2);
+        expect(arr4_a_52[2]).assertEqual(3);
+        expect(arr4_a_52.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18600
+     * @tc.name      testExpressionsContestInference0186
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_53: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_53) && typeof arr4_a_53[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_53[0]).assertEqual(1);
+        expect(arr4_a_53[1]).assertEqual(2);
+        expect(arr4_a_53[2]).assertEqual(3);
+        expect(arr4_a_53.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18700
+     * @tc.name      testExpressionsContestInference0187
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_54: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_54) && typeof arr4_a_54[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_54[0]).assertEqual(1);
+        expect(arr4_a_54[1]).assertEqual(2);
+        expect(arr4_a_54[2]).assertEqual(3);
+        expect(arr4_a_54.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18800
+     * @tc.name      testExpressionsContestInference0188
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_55: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
+
+      if (Array.isArray(arr4_a_55) && typeof arr4_a_55[0] === 'number') {
+        // 类型推断为数字数组
+        expect(arr4_a_55[0]).assertEqual(1);
+        expect(arr4_a_55[1]).assertEqual(2);
+        expect(arr4_a_55[2]).assertEqual(3);
+        expect(arr4_a_55.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_18900
+     * @tc.name      testExpressionsContestInference0189
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_56: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
+
+      if (Array.isArray(arr4_a_56) && typeof arr4_a_56[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_56[0]).assertEqual('1');
+        expect(arr4_a_56[1]).assertEqual('2');
+        expect(arr4_a_56[2]).assertEqual('3');
+        expect(arr4_a_56.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_19000
+     * @tc.name      testExpressionsContestInference0190
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_57: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
+
+      if (Array.isArray(arr4_a_57) && typeof arr4_a_57[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_57[0]).assertEqual('1');
+        expect(arr4_a_57[1]).assertEqual('2');
+        expect(arr4_a_57[2]).assertEqual('3');
+        expect(arr4_a_57.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_19100
+     * @tc.name      testExpressionsContestInference0191
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_58: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
+
+      if (Array.isArray(arr4_a_58) && typeof arr4_a_58[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_58[0]).assertEqual('1');
+        expect(arr4_a_58[1]).assertEqual('2');
+        expect(arr4_a_58[2]).assertEqual('3');
+        expect(arr4_a_58.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_19200
+     * @tc.name      testExpressionsContestInference0192
+     * @tc.desc      The type of an array literal can be inferred from the assignment context.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsContestInference0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr4_a_59: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
+
+      if (Array.isArray(arr4_a_59) && typeof arr4_a_59[0] === 'string') {
+        // 类型推断为字符串数组
+        expect(arr4_a_59[0]).assertEqual('1');
+        expect(arr4_a_59[1]).assertEqual('2');
+        expect(arr4_a_59[2]).assertEqual('3');
+        expect(arr4_a_59.length).assertEqual(3);
+      }
+    });
   })
 }
