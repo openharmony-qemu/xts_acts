@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
