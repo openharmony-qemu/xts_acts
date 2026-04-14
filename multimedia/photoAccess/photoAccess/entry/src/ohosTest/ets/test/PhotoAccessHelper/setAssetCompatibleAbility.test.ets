@@ -164,7 +164,7 @@ export default function setAssetCompatibleCapabilityTest () {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600';
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
-                supportedHighResolution: true,
+                supportedHighResolution: false,
             };
             await helper.setAssetCompatibleCapability(cfg);
             await helper.setAssetCompatibleCapability(cfg);
