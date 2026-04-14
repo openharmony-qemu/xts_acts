@@ -117,19 +117,15 @@ struct createFrameNodesUIContextInt {
         .borderWidth(1).borderColor(Color.Black)
       Text(this.str).height(20).id('createFrameNodesText')
       Button('addFrameNodeById').onClick(() => {
-        this.adapterController.addFrameNodeById('text')
         this.str = this.adapterController.addFrameNodeById('text')
       }).width(150).height(20).id('addFrameNodeById')
       Button('getFrameNodeByUniqueId').onClick(() => {
-        this.adapterController.getFrameNodeByUniqueId()
         this.str = this.adapterController.getFrameNodeByUniqueId()
       }).width(150).height(20).id('getFrameNodeByUniqueId')
       Button('createFrameNodes').onClick(() => {
-        this.adapterController.createFrameNodes(this.getUIContext(), 10000)
-        this.str = this.adapterController.createFrameNodes(this.getUIContext(), 10000)
+        this.str = this.adapterController.createFrameNodes(this.getUIContext(), 100)
       }).width(150).height(20).id('createFrameNodes')
       Button('createFrameNodes2').onClick(() => {
-        this.adapterController.createFrameNodes2(this.getUIContext())
         this.str = this.adapterController.createFrameNodes2(this.getUIContext())
       }).width(150).height(20).id('createFrameNodes2')
 

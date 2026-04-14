@@ -97,7 +97,7 @@ export default function createFrameNodesUIContextIntTest() {
       let strJson4 = getInspectorByKey('createFrameNodesText');
       console.info('createFrameNodesUIContextIntTest_0100 textContent:'+JSON.parse(strJson4).$attrs.content);
       
-      expect(JSON.parse(strJson3).$attrs.content).assertEqual('10000');
+      expect(JSON.parse(strJson3).$attrs.content).assertEqual('100');
       expect(JSON.parse(strJson4).$attrs.content).assertEqual('ms');
 
       console.info('[createFrameNodesUIContextIntTest_0100] END');

@@ -20,6 +20,7 @@ import nodeContainerTest from './frameNodeTest/nodeContainerTest.test';
 import frameNodeGetInterfaceTest from './frameNodeTest/frameNodeTestGetInterface.test';
 import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
 import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
+import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUIContextIntTest.test';
 
 export default function testsuite() {
   frameNodeGetInterfaceTest()
@@ -28,4 +29,5 @@ export default function testsuite() {
   nodeContainerTest()
   GetFrameNodeByIdTest()
   GetFrameNodeByUniqueIdTest()
+  createFrameNodesUIContextIntTest()
 }
