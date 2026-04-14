@@ -65,6 +65,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestSetExposureDurationWithUnconfiguredStream", TestSetExposureDurationWithUnconfiguredStream),
     DESCRIPTOR("TestGetExposureDurationSucc", TestGetExposureDurationSucc),
     DESCRIPTOR("TestGetExposureDurationWithUnconfiguredStream", TestGetExposureDurationWithUnconfiguredStream),
+    DESCRIPTOR("TestAddDeferredSurfaceSucc", TestAddDeferredSurfaceSucc),
+    DESCRIPTOR("TestAddDeferredSurfaceErr", TestAddDeferredSurfaceErr),
     DESCRIPTOR("OHCaptureSessionGetSupportedEffectTypesSupp", OHCaptureSessionGetSupportedEffectTypesSupp),
     DESCRIPTOR("captureSessionRegisterIsoChangeCallback", captureSessionRegisterIsoChangeCallback),
     DESCRIPTOR("captureSessionUnregisterIsoChangeCallback", captureSessionUnregisterIsoChangeCallback),
