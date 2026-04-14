@@ -30,7 +30,7 @@ import sqlite3
  # === 配置 ===
 API_KEY = "sk-59c64c9efdeb4403b0287741bfd98bc4"  # 替换为你自己的 DashScope API Key
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-MODEL_NAME = "qwen3-vl-flash"  # 或 qwen-vl-max，根据你使用的模型调整
+MODEL_NAME = "qwen-vl-max"  # 或 qwen-vl-max，根据你使用的模型调整
 
 # === 工具函数：将图片转为 base64 ===
 def image_to_base64(image_path):
@@ -114,8 +114,8 @@ def chat_with_llm(image_path):
             max_tokens=30000
         )
 
-        result = response.json()
-        return result["choices"][0]["message"]["content"]
+        result = response.choices[0].message.content.strip()
+        return result
     except Exception as e:
         return f"Error: {e}"
 
