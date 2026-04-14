@@ -27,7 +27,8 @@
     {
         "type": "PushKit",
         "push": [
-            "./resource/audio/H264_AAC.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files/"
+            "./resource/audio/H264_AAC.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files/",
+            "./resource/media/metadata/mjpeg_mp3.mp3 -> /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files/"
         ]
     },{
         "type": "ShellKit",
