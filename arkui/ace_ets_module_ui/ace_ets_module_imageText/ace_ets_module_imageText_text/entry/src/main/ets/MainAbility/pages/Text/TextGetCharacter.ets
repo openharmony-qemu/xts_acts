@@ -78,48 +78,51 @@ struct TextExample10 {
         Text(this.textStr, { controller: this.textController }) {
           // Span("\n")
           ImageSpan($r('app.media.jpg'))
-            .width(73)
-            .height(73)
+            .width(20)
+            .height(20)
           ImageSpan($r('app.media.gif'))
-            .width(73)
-            .height(73)
+            .width(20)
+            .height(20)
           SymbolSpan($r('sys.symbol.ohos_trash'))
             .fontWeight(FontWeight.Lighter)
-            .fontSize(40)
+            //.fontSize(40)
           Span('45678🎄🐀🙂🧭🚗abcd~!@#$%^&*(\n中文\n！￥👩‍👧‍👦🏛️\t')
         }
         .copyOption(CopyOptions.InApp)
-        .width('100%')
+        .width('60%')
         .decoration(this.myDecoration)
         .textDirection(this.myDirection)
         .textAlign(this.myTextAlign)
         .textIndent(this.myTextIndent)
         .textOverflow(this.myTextOverflow)
-        .fontSize(25)
+        //.fontSize(25)
         .borderWidth(1)
 
-        Text(this.str1).id('glyphPositionAtCoordinateText')
-        Text(this.str2).id('characterPositionAtCoordinateText')
-        Text(this.str3).id('getGlyphText')
-        Text(this.str4).id('getCharacterText')
+        Text(this.str1)
+          .fontSize(5)
+          .id('glyphPositionAtCoordinateText')
+        Text(this.str2)
+          .fontSize(5)
+          .id('characterPositionAtCoordinateText')
+        Text(this.str3)
+          .fontSize(5)
+          .id('getGlyphText')
+        Text(this.str4)
+          .fontSize(5)
+          .id('getCharacterText')
 
         Row() {
-          Button('[200,300]').id('glyphPositionAtCoordinateButton')
+          Button('[0,0]').id('glyphPositionAtCoordinateButton')
             .onClick(() => {
-            this.queryX = 200;
-            this.queryY = 300
-          }).backgroundColor(Color.Orange)
-        }.margin(5)
-
-        Text('传入的start和end分别为：' + this.start + ',' + this.end)
-
-        Row() {
+              this.queryX = 0;
+              this.queryY = 0
+            }).backgroundColor(Color.Orange)
           Button('0,1').id('getCharacterButton')
             .onClick(() => {
-            this.start = 0;
-            this.end = 1
-          })
-        }.margin(5)
+              this.start = 0;
+              this.end = 1
+            })
+        }
 
         Button('获取具体文本字符/字型信息').id('AccessButton')
           .backgroundColor(Color.Pink)
@@ -147,7 +150,7 @@ struct TextExample10 {
             console.info('liufeng getGlyphRangeForCharacterRange 字型数 ' + ranges1[0].start + ' ' + ranges1[0].end)
             console.info('liufeng getGlyphRangeForCharacterRange 实际字符数 ' + ranges1[1].start + ' ' + ranges1[1].end)
             this.str3 = 'getGlyph(入参字符,返回字型) 字型数 ' + ranges1[0].start + ' ' + ranges1[0].end +
-              'getGlyph 实际字符数 ' + ranges1[1].start + ' ' + ranges1[1].end 
+              'getGlyph 实际字符数 ' + ranges1[1].start + ' ' + ranges1[1].end
 
             let range2: TextRange = { start: this.start, end: this.end };
             let ranges2: Array<TextRange> = layoutManager.getCharacterRangeForGlyphRange(range2) as Array<TextRange>
@@ -156,10 +159,9 @@ struct TextExample10 {
             this.str4 = 'getCharacter(入参字型,返回字符) 字符数 ' + ranges2[0].start + ' ' + ranges2[0].end +
               'getCharacter 实际字型数 ' + ranges2[1].start + ' ' + ranges2[1].end
           })
-          .margin(7)
       }
-      .width('100%')
-      .height('100%')
+      .width('80%')
+      .height('80%')
     }
   }
 }
