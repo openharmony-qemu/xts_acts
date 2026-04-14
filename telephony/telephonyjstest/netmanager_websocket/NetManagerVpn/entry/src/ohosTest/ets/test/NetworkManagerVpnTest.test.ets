@@ -197,7 +197,7 @@ export default function NetworkManagerVpnTest() {
       }
       catch (error) {
         console.log(`${caseName} startVpnExtensionAbility fail ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -220,7 +220,7 @@ export default function NetworkManagerVpnTest() {
       }
       catch (error) {
         console.log(`${caseName} startVpnExtensionAbility fail ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -243,7 +243,7 @@ export default function NetworkManagerVpnTest() {
         done();
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -265,7 +265,7 @@ export default function NetworkManagerVpnTest() {
         done();
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -287,7 +287,7 @@ export default function NetworkManagerVpnTest() {
         done();
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -358,7 +358,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -386,7 +386,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -414,7 +414,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -442,7 +442,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -484,7 +484,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -543,7 +543,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -571,7 +571,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -599,7 +599,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -627,7 +627,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -655,7 +655,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -700,7 +700,7 @@ export default function NetworkManagerVpnTest() {
       }
       catch (error) {
         console.log(`${caseName} stopVpnExtensionAbility fail ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -722,7 +722,7 @@ export default function NetworkManagerVpnTest() {
       }
       catch (error) {
         console.log(`${caseName} stopVpnExtensionAbility fail ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -749,7 +749,7 @@ export default function NetworkManagerVpnTest() {
         })
       } catch (error) {
         console.log(`${caseName} generateVpnId error ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -777,7 +777,7 @@ export default function NetworkManagerVpnTest() {
         })
       } catch (error) {
         console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -804,7 +804,7 @@ export default function NetworkManagerVpnTest() {
         })
       } catch (error) {
         console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -831,7 +831,7 @@ export default function NetworkManagerVpnTest() {
         })
       } catch (error) {
         console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -854,12 +854,12 @@ export default function NetworkManagerVpnTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
-          expect(err.code == 401).assertTrue();
+          expect(err.code === 401).assertTrue();
           done();
         })
       } catch (error) {
         console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -909,7 +909,7 @@ export default function NetworkManagerVpnTest() {
         })
       }
       catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
