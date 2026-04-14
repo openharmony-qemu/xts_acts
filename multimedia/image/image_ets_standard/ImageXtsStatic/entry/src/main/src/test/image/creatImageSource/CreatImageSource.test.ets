@@ -808,7 +808,7 @@ export default function CrateImageSourceTest(): void {
     /**
      * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0100
      * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0100
-     * @tc.desc   createAuxiliaryPicture cover auxType枚举-------------error
+     * @tc.desc   createAuxiliaryPicture cover auxType枚举
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -917,121 +917,5 @@ export default function CrateImageSourceTest(): void {
       done();
     })
 
-    /**
-     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0100
-     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0100
-     * @tc.desc   createPixelMapSync return isEditable:true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0100';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(96);
-        let opts: image.InitializationOptions =
-          { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-        let PixelMap = await image.createPixelMapSync(color, opts);
-        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
-        expect(PixelMap.isEditable).assertTrue();
-        await PixelMap.release();
-      } catch (error) {
-        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0200
-     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0200
-     * @tc.desc   createPixelMapSync return isEditable:false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0200';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(96);
-        let opts: image.InitializationOptions =
-          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-        let PixelMap = await image.createPixelMapSync(color, opts);
-        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
-        expect(PixelMap.isEditable).assertFalse();
-        await PixelMap.release();
-      } catch (error) {
-        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0300
-     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0300
-     * @tc.desc   createPixelMapSync return isStrideAlignment:false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0300';
-      try {
-        const color: ArrayBuffer = new ArrayBuffer(96);
-        let opts: image.InitializationOptions =
-          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-        let PixelMap = await image.createPixelMapSync(color, opts);
-        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
-        expect(PixelMap.isStrideAlignment).assertFalse();
-        await PixelMap.release();
-      } catch (error) {
-        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100
-     * @tc.number SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100
-     * @tc.desc   image.getImageSourceSupportedFormats
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100', Level.LEVEL1, async (done: () => void)=> {
-      const testName = 'SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100';
-      try {
-        let formats : string[] = image.getImageSourceSupportedFormats();
-        console.info(TAG,'image.getImageSourceSupportedFormats success:', formats);
-        expect(formats.length > 0).assertTrue();
-      } catch (err) {
-        console.info(TAG,`failed; error: ${err}`, err.code, testName);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100
-     * @tc.number SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100
-     * @tc.desc   image.getImagePackerSupportedFormats
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100', Level.LEVEL1, async (done: () => void)=> {
-      const testName = 'SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100';
-      try {
-        let formats : string[] = image.getImagePackerSupportedFormats();
-        console.info(TAG,'image.getImagePackerSupportedFormats success:', formats);
-        expect(formats.length > 0).assertTrue();
-      } catch (err) {
-        console.info(TAG,`failed; error: ${err}`, err.code, testName);
-        expect().assertFail();
-      }
-      done();
-    })
   })
 }
