@@ -51,6 +51,7 @@ import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
 import ApertureTest from './camera/Aperture.test';
 import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQueryGetSupportedPhysicalApertures.test';
 import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
+import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 
 
 export default function testsuite() {
@@ -106,4 +107,5 @@ export default function testsuite() {
   ApertureTest();
   ApertureQueryGetSupportedPhysicalAperturesTest();
   PhotoSessIsoInfoChangeTest();
+  ManualFocusQueryTest();
 }
