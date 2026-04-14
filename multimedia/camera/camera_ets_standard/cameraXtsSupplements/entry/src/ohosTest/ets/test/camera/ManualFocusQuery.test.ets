@@ -154,7 +154,7 @@ async function createVideoOutput() {
   let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
   let haveValidDevice = false;
   for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+    mSupportedModes = mCameraManager.getSupportedSceneModes(device);
     if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
       useDevice = device;
       haveValidDevice = true;
