@@ -14,6 +14,7 @@
  */
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
+import nativeFunc from 'libnativefunc.so'
 
 export default function StrategyEnumTest() {
   describe('StrategyEnumTest', () => {
