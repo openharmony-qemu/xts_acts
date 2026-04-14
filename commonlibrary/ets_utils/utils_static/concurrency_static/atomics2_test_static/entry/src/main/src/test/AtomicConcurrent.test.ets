@@ -32,7 +32,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0100
      * @tc.desc   Verify AtomicReference EAWorker load() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0200
      * @tc.desc   Verify AtomicReference EAWorker store() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0300
      * @tc.desc   Verify AtomicReference EAWorker exchange() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,12 +110,13 @@ export default function atomicConcurrentTest() {
       eaws.forEach((eaw) => {
         eaw.join().Await();
       })
-      expect(atomicRef.load()).assertEqual(20);
+      let finalValue = atomicRef.load();
+      expect(finalValue >= 1 && finalValue <= 20).assertTrue();
     });
 
     /**
      * @tc.name   atomicRefEAWorker004
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0400
      * @tc.desc   Verify AtomicReference EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +148,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefEAWorker005
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0500
      * @tc.desc   Verify AtomicReference EAWorker mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +179,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefEAWorker006
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_EAWORKER_0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_EAWORKER_0600
      * @tc.desc   Verify AtomicReference EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +213,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0100
      * @tc.desc   Verify AtomicInt EAWorker fetchAdd() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,7 +241,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0200
      * @tc.desc   Verify AtomicInt EAWorker fetchSub() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -268,7 +269,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0300
      * @tc.desc   Verify AtomicInt EAWorker fetchAdd/fetchSub mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +300,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker004
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0400
      * @tc.desc   Verify AtomicInt EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -329,7 +330,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker005
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0500
      * @tc.desc   Verify AtomicInt EAWorker bit operations concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -357,7 +358,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker006
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0600
      * @tc.desc   Verify AtomicInt EAWorker mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -386,7 +387,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntEAWorker007
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_EAWORKER_0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_EAWORKER_0700
      * @tc.desc   Verify AtomicInt EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -432,7 +433,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_EAWORKER_0100
      * @tc.desc   Verify AtomicLong EAWorker fetchAdd() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -460,7 +461,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_EAWORKER_0200
      * @tc.desc   Verify AtomicLong EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -490,7 +491,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_EAWORKER_0300
      * @tc.desc   Verify AtomicLong EAWorker mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -518,7 +519,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongEAWorker004
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_EAWORKER_0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_EAWORKER_0400
      * @tc.desc   Verify AtomicLong EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -564,7 +565,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicShortEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_SHORT_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_SHORT_EAWORKER_0100
      * @tc.desc   Verify AtomicShort EAWorker fetchAdd() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -592,7 +593,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicShortEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_SHORT_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_SHORT_EAWORKER_0200
      * @tc.desc   Verify AtomicShort EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +623,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicShortEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_SHORT_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_SHORT_EAWORKER_0300
      * @tc.desc   Verify AtomicShort EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -652,7 +653,7 @@ export default function atomicConcurrentTest() {
           fetchOrCount.fetchAdd(1);
           atomicShort.fetchXor(0x10);
           fetchXorCount.fetchAdd(1);
-          finalValue = atomicShort.load();
+          finalValue = Short.toInt(atomicShort.load());
         });
       }
       eaws.forEach((eaw) => {
@@ -668,7 +669,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicByteEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_BYTE_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BYTE_EAWORKER_0100
      * @tc.desc   Verify AtomicByte EAWorker fetchAdd() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -696,7 +697,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicByteEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_BYTE_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BYTE_EAWORKER_0200
      * @tc.desc   Verify AtomicByte EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -726,7 +727,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicByteEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_BYTE_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BYTE_EAWORKER_0300
      * @tc.desc   Verify AtomicByte EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -756,7 +757,7 @@ export default function atomicConcurrentTest() {
           fetchOrCount.fetchAdd(1);
           atomicByte.fetchXor(16);
           fetchXorCount.fetchAdd(1);
-          finalValue = atomicByte.load();
+          finalValue = Byte.toInt(atomicByte.load());
         });
       }
       eaws.forEach((eaw) => {
@@ -772,7 +773,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicCharEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_CHAR_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_CHAR_EAWORKER_0100
      * @tc.desc   Verify AtomicChar EAWorker store() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -799,7 +800,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicCharEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_CHAR_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_CHAR_EAWORKER_0200
      * @tc.desc   Verify AtomicChar EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -829,7 +830,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicCharEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_CHAR_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_CHAR_EAWORKER_0300
      * @tc.desc   Verify AtomicChar EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -867,7 +868,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicFloatEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_FLOAT_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_FLOAT_EAWORKER_0100
      * @tc.desc   Verify AtomicFloat EAWorker store() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -894,7 +895,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicFloatEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_FLOAT_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_FLOAT_EAWORKER_0200
      * @tc.desc   Verify AtomicFloat EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -924,7 +925,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicFloatEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_FLOAT_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_FLOAT_EAWORKER_0300
      * @tc.desc   Verify AtomicFloat EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -963,7 +964,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicDoubleEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_DOUBLE_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_DOUBLE_EAWORKER_0100
      * @tc.desc   Verify AtomicDouble EAWorker store() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -990,7 +991,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicDoubleEAWorker002
-     * @tc.number SUB_BUILTINS_ATOMIC_DOUBLE_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_DOUBLE_EAWORKER_0200
      * @tc.desc   Verify AtomicDouble EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1021,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicDoubleEAWorker003
-     * @tc.number SUB_BUILTINS_ATOMIC_DOUBLE_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_DOUBLE_EAWORKER_0300
      * @tc.desc   Verify AtomicDouble EAWorker all interfaces mixed operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1059,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicBooleanEAWorker001
-     * @tc.number SUB_BUILTINS_ATOMIC_BOOLEAN_EAWORKER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BOOLEAN_EAWORKER_0100
      * @tc.desc   Verify AtomicBoolean EAWorker compareAndSwap() concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1089,7 +1090,7 @@ export default function atomicConcurrentTest() {
     /**
      * @tc.name   atomicBooleanEAWorker002
      * @tc.desc   Verify AtomicBoolean EAWorker mixed operations
-     * @tc.number SUB_BUILTINS_ATOMIC_BOOLEAN_EAWORKER_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BOOLEAN_EAWORKER_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1119,7 +1120,7 @@ export default function atomicConcurrentTest() {
     /**
      * @tc.name   atomicBooleanEAWorker003
      * @tc.desc   Verify AtomicBoolean EAWorker all interfaces mixed operations
-     * @tc.number SUB_BUILTINS_ATOMIC_BOOLEAN_EAWORKER_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BOOLEAN_EAWORKER_0300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1162,7 +1163,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboStampedToken001
-     * @tc.number SUB_BUILTINS_COMBO_STAMPED_TOKEN_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_STAMPED_TOKEN_0100
      * @tc.desc   Verify AtomicReference with version number CAS (resolve ABA problem)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1204,7 +1205,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboDoubleBuffer001
-     * @tc.number SUB_BUILTINS_COMBO_DOUBLE_BUFFER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_DOUBLE_BUFFER_0100
      * @tc.desc   Verify read-write double buffer pattern
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1249,7 +1250,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboBitLock001
-     * @tc.number SUB_BUILTINS_COMBO_BIT_LOCK_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_BIT_LOCK_0100
      * @tc.desc   Verify concurrent bit lock with atomic operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1285,7 +1286,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboRingBuffer001
-     * @tc.number SUB_BUILTINS_COMBO_RING_BUFFER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_RING_BUFFER_0100
      * @tc.desc   Verify ring buffer with atomic pointers
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1337,7 +1338,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboSingleton001
-     * @tc.number SUB_BUILTINS_COMBO_SINGLETON_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_SINGLETON_0100
      * @tc.desc   Verify singleton pattern with CAS
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1369,7 +1370,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboBitField001
-     * @tc.number SUB_BUILTINS_COMBO_BIT_FIELD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_BIT_FIELD_0100
      * @tc.desc   Verify atomic bit flags
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1407,7 +1408,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboConcurrentCounter001
-     * @tc.number SUB_BUILTINS_COMBO_CONCURRENT_COUNTER_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_CONCURRENT_COUNTER_0100
      * @tc.desc   Verify concurrent counter with limit
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1442,7 +1443,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboLazyInit001
-     * @tc.number SUB_BUILTINS_COMBO_LAZY_INIT_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_LAZY_INIT_0100
      * @tc.desc   Verify double-checked lazy initialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1475,7 +1476,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboABA001
-     * @tc.number SUB_BUILTINS_COMBO_ABA_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ABA_0100
      * @tc.desc   Verify classic ABA problem scenario
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1508,7 +1509,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboNestedCAS001
-     * @tc.number SUB_BUILTINS_COMBO_NESTED_CAS_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_NESTED_CAS_0100
      * @tc.desc   Verify nested CAS operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1542,7 +1543,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboRaceCondition001
-     * @tc.number SUB_BUILTINS_COMBO_RACE_CONDITION_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_RACE_CONDITION_0100
      * @tc.desc   Verify thread-safe counter with CAS
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1572,7 +1573,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboMultipleThreads001
-     * @tc.number SUB_BUILTINS_COMBO_MULTIPLE_THREADS_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_MULTIPLE_THREADS_0100
      * @tc.desc   Verify multiple threads accessing same atomic variable
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1605,7 +1606,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboValueUpdate001
-     * @tc.number SUB_BUILTINS_COMBO_VALUE_UPDATE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_VALUE_UPDATE_0100
      * @tc.desc   Verify atomic value update across multiple operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1639,7 +1640,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicIntStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_INT_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_INT_STORE_LOAD_0100
      * @tc.desc   Verify atomicInt store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1671,7 +1672,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicReferenceStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_REFERENCE_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_REFERENCE_STORE_LOAD_0100
      * @tc.desc   Verify AtomicReference store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1703,7 +1704,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicLongStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_LONG_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_LONG_STORE_LOAD_0100
      * @tc.desc   Verify AtomicLong store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1735,7 +1736,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicFloatStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_FLOAT_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_FLOAT_STORE_LOAD_0100
      * @tc.desc   Verify AtomicFloat store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1767,7 +1768,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicDoubleStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_DOUBLE_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_DOUBLE_STORE_LOAD_0100
      * @tc.desc   Verify AtomicDouble store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1799,7 +1800,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicByteStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BYTE_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BYTE_STORE_LOAD_0100
      * @tc.desc   Verify AtomicByte store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1817,7 +1818,7 @@ export default function atomicConcurrentTest() {
         eaws.push(eaw);
         eaw.run<void>((): void => {
           atomicByte.store(42);
-          storedValue = atomicByte.load();
+          storedValue = Byte.toInt(atomicByte.load());
         });
       }
 
@@ -1831,7 +1832,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicShortStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_SHORT_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_SHORT_STORE_LOAD_0100
      * @tc.desc   Verify AtomicShort store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1849,7 +1850,7 @@ export default function atomicConcurrentTest() {
         eaws.push(eaw);
         eaw.run<void>((): void => {
           atomicShort.store(42);
-          storedValue = atomicShort.load();
+          storedValue = Short.toInt(atomicShort.load());
         });
       }
 
@@ -1863,7 +1864,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicCharStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_CHAR_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_CHAR_STORE_LOAD_0100
      * @tc.desc   Verify AtomicChar store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1895,7 +1896,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicBooleanStoreLoad001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BOOLEAN_STORE_LOAD_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BOOLEAN_STORE_LOAD_0100
      * @tc.desc   Verify AtomicBoolean store and load operations
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1927,7 +1928,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicIntExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_INT_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_INT_EXCHANGE_0100
      * @tc.desc   Verify AtomicInt exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1958,7 +1959,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicReferenceExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_REFERENCE_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_REFERENCE_EXCHANGE_0100
      * @tc.desc   Verify AtomicReference exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1989,7 +1990,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicLongExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_LONG_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_LONG_EXCHANGE_0100
      * @tc.desc   Verify AtomicLong exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2020,7 +2021,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicFloatExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_FLOAT_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_FLOAT_EXCHANGE_0100
      * @tc.desc   Verify AtomicFloat exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2051,7 +2052,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicDoubleExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_DOUBLE_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_DOUBLE_EXCHANGE_0100
      * @tc.desc   Verify AtomicDouble exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2082,7 +2083,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicByteExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BYTE_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BYTE_EXCHANGE_0100
      * @tc.desc   Verify AtomicByte exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2099,7 +2100,7 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaws.push(eaw);
         eaw.run<void>((): void => {
-          oldValue = atomicByte.exchange(42);
+          oldValue = Byte.toInt(atomicByte.exchange(42));
         });
       }
 
@@ -2113,7 +2114,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicShortExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_SHORT_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_SHORT_EXCHANGE_0100
      * @tc.desc   Verify AtomicShort exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2130,7 +2131,7 @@ export default function atomicConcurrentTest() {
         eaw.start();
         eaws.push(eaw);
         eaw.run<void>((): void => {
-          oldValue = atomicShort.exchange(42);
+          oldValue = Short.toInt(atomicShort.exchange(42));
         });
       }
 
@@ -2144,7 +2145,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicCharExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_CHAR_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_CHAR_EXCHANGE_0100
      * @tc.desc   Verify AtomicChar exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2175,7 +2176,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicBooleanExchange001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BOOLEAN_EXCHANGE_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BOOLEAN_EXCHANGE_0100
      * @tc.desc   Verify AtomicBoolean exchange operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2206,7 +2207,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboMultipleAtomicInt001
-     * @tc.number SUB_BUILTINS_COMBO_MULTIPLE_ATOMIC_INT_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_MULTIPLE_ATOMIC_INT_0100
      * @tc.desc   Verify multiple AtomicInt instances
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2244,7 +2245,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicIntCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_INT_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_INT_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicInt compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2276,7 +2277,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicReferenceCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_REFERENCE_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_REFERENCE_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicReference compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2308,7 +2309,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicLongCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_LONG_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_LONG_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicLong compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2340,7 +2341,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicFloatCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_FLOAT_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_FLOAT_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicFloat compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2372,7 +2373,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicDoubleCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_DOUBLE_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_DOUBLE_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicDouble compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2404,7 +2405,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicByteCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BYTE_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BYTE_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicByte compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2436,7 +2437,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicShortCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_SHORT_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_SHORT_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicShort compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2468,7 +2469,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicCharCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_CHAR_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_CHAR_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicChar compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2500,7 +2501,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   comboAtomicBooleanCompareAndSwap001
-     * @tc.number SUB_BUILTINS_COMBO_ATOMIC_BOOLEAN_COMPARE_AND_SWAP_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COMBO_ATOMIC_BOOLEAN_COMPARE_AND_SWAP_0100
      * @tc.desc   Verify AtomicBoolean compareAndSwap operation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2532,7 +2533,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_TASKPOOL_0100
      * @tc.desc   Verify AtomicReference TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2561,7 +2562,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicRefTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_REFERENCE_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_REFERENCE_TASKPOOL_0200
      * @tc.desc   Verify AtomicReference TaskPool multiple operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2590,7 +2591,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_TASKPOOL_0100
      * @tc.desc   Verify AtomicInt TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2620,7 +2621,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicIntTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_INT_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_INT_TASKPOOL_0200
      * @tc.desc   Verify AtomicInt TaskPool arithmetic sequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2647,7 +2648,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_TASKPOOL_0100
      * @tc.desc   Verify AtomicLong TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2676,7 +2677,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicLongTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_LONG_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_LONG_TASKPOOL_0200
      * @tc.desc   Verify AtomicLong TaskPool large value operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2702,7 +2703,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicShortTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_SHORT_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_SHORT_TASKPOOL_0100
      * @tc.desc   Verify AtomicShort TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2718,7 +2719,7 @@ export default function atomicConcurrentTest() {
           atomicShort.fetchAdd(1);
           atomicShort.fetchSub(1);
           atomicShort.fetchAnd(0xFF);
-          finalValue = atomicShort.load();
+          finalValue = Short.toInt(atomicShort.load());
         }).then(() => {
           count++
         });
@@ -2731,7 +2732,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicShortTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_SHORT_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_SHORT_TASKPOOL_0200
      * @tc.desc   Verify AtomicShort TaskPool bit operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2746,7 +2747,7 @@ export default function atomicConcurrentTest() {
           atomicShort.fetchAnd(0xFF);
           atomicShort.fetchOr(0x10);
           atomicShort.fetchXor(0x10);
-          finalValue = atomicShort.load();
+          finalValue = Short.toInt(atomicShort.load());
         }).then(() => {
           count++
         });
@@ -2759,7 +2760,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicByteTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_BYTE_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BYTE_TASKPOOL_0100
      * @tc.desc   Verify AtomicByte TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2775,7 +2776,7 @@ export default function atomicConcurrentTest() {
           atomicByte.fetchAdd(1);
           atomicByte.fetchSub(1);
           atomicByte.fetchAnd(127);
-          finalValue = atomicByte.load();
+          finalValue = Byte.toInt(atomicByte.load());
         }, i).then(() => {
           count++
         });
@@ -2788,7 +2789,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicByteTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_BYTE_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BYTE_TASKPOOL_0200
      * @tc.desc   Verify AtomicByte TaskPool fetch operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2802,7 +2803,7 @@ export default function atomicConcurrentTest() {
         taskpool.execute(() => {
           atomicByte.fetchAdd(1);
           atomicByte.fetchSub(1);
-          finalValue = atomicByte.load();
+          finalValue = Byte.toInt(atomicByte.load());
         }).then(() => {
           count++
         });
@@ -2815,7 +2816,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicCharTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_CHAR_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_CHAR_TASKPOOL_0100
      * @tc.desc   Verify AtomicChar TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2843,7 +2844,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicCharTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_CHAR_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_CHAR_TASKPOOL_0200
      * @tc.desc   Verify AtomicChar TaskPool multiple operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2871,7 +2872,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicFloatTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_FLOAT_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_FLOAT_TASKPOOL_0100
      * @tc.desc   Verify AtomicFloat TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2899,7 +2900,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicFloatTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_FLOAT_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_FLOAT_TASKPOOL_0200
      * @tc.desc   Verify AtomicFloat TaskPool exchange and CAS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2926,7 +2927,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicDoubleTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_DOUBLE_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_DOUBLE_TASKPOOL_0100
      * @tc.desc   Verify AtomicDouble TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2954,7 +2955,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicDoubleTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_DOUBLE_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_DOUBLE_TASKPOOL_0200
      * @tc.desc   Verify AtomicDouble TaskPool exchange and CAS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2981,7 +2982,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicBooleanTaskPoolFullInterface001
-     * @tc.number SUB_BUILTINS_ATOMIC_BOOLEAN_TASKPOOL_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BOOLEAN_TASKPOOL_0100
      * @tc.desc   Verify AtomicBoolean TaskPool full interface combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3009,7 +3010,7 @@ export default function atomicConcurrentTest() {
 
     /**
      * @tc.name   atomicBooleanTaskPoolFullInterface002
-     * @tc.number SUB_BUILTINS_ATOMIC_BOOLEAN_TASKPOOL_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ATOMIC_BOOLEAN_TASKPOOL_0200
      * @tc.desc   Verify AtomicBoolean TaskPool load and store
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

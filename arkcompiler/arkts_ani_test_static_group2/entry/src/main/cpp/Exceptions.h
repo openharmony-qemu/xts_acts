@@ -745,7 +745,7 @@ ani_int test_Handling_Error_38([[maybe_unused]] ani_env *env, [[maybe_unused]] a
 
     std::string stack = GetErrorProperty(env, error, "stack");
     std::stringstream ss(stack);
-    std::regex pattern(R"(\s*at .*(\d+):(\d+)\))");
+    std::regex pattern(R"(\s*at .*(?:(\d+):(\d+)\)|Native Method\)))");
     std::string token;
 
     while (std::getline(ss, token, '\n')) {

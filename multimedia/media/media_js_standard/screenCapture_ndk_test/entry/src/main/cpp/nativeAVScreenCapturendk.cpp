@@ -68,6 +68,7 @@ static OH_AVScreenCapture *screenCaptureRecording;
 static OH_AVScreenCapture *screenCaptureSurface;
 static OH_AVScreenCapture *screenCaptureContentChange;
 static OH_AVScreenCapture *screenCaptureStrategyForPrivacyMaskMode;
+static OH_AVScreenCapture *screenCapturePauseResume = nullptr;
 static OH_AVSCREEN_CAPTURE_ErrCode screenCaptureResult = AV_SCREEN_CAPTURE_ERR_EXTEND_START;
 static OHNativeWindow *nativeWindowTest;
 static napi_env screenCaptureEnv;
@@ -2266,7 +2267,7 @@ static napi_value normalAVScreenCaptureStrategyForClosedMode(napi_env env, napi_
     if (result != AV_SCREEN_CAPTURE_ERR_OK) {
         napi_throw_error((env), nullptr, "error : expect SetCaptureAreaHighlight is 0 ");
     }
-    
+
     if (screenCaptureNormal) {
         result = OH_AVScreenCapture_Release(screenCaptureNormal);
     }
@@ -2723,6 +2724,154 @@ static napi_value OH_AVScreenCapture_SetPrivacyProtectCallback0101(napi_env env,
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
+
+static napi_value normalAVScreenCaptureStrategyForPauseFalse(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCapture_CaptureStrategy* strategy = nullptr;
+    OH_AVSCREEN_CAPTURE_ErrCode resultStrategy = OH_AVScreenCapture_StrategyForPause(strategy, false);
+    OH_LOG_INFO(LOG_APP, "StrategyForPause resultStrategy = %{public}d", resultStrategy);
+    if (resultStrategy != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect resultStrategy is 3 ");
+    }
+    strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_StrategyForPause(strategy, false);
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureNormal, strategy);
+    }
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureStrategyForPauseTrue(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_StrategyForPause(strategy, true);
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureNormal, strategy);
+    }
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCapturePauseResumeTest(napi_env env, napi_callback_info info)
+{
+    screenCapturePauseResume = OH_AVScreenCapture_Create();
+    if (screenCapturePauseResume == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapturePauseResume is not nullptr");
+    }
+    OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
+
+    bool isMicrophone = false;
+    OH_AVScreenCapture_SetMicrophoneEnabled(screenCapturePauseResume, isMicrophone);
+    OH_AVScreenCapture_SetErrorCallback(screenCapturePauseResume, OnError, nullptr);
+    OH_AVScreenCapture_SetStateCallback(screenCapturePauseResume, OnStateChange, nullptr);
+    OH_AVScreenCapture_SetDataCallback(screenCapturePauseResume, OnBufferAvailable, nullptr);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_Init(screenCapturePauseResume, config_);
+    OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_StartScreenCapture(screenCapturePauseResume);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result2 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCapturePauseResumeTestStop(napi_env env, napi_callback_info info)
+{
+    usleep(g_recordTimeHalf);
+    OH_AVSCREEN_CAPTURE_ErrCode pauseResult = OH_AVScreenCapture_PauseScreenCapture(nullptr);
+    OH_LOG_INFO(LOG_APP, "PauseScreenCapture pauseResult = %{public}d", pauseResult);
+    if (pauseResult != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect pauseResult is 3");
+    }
+    pauseResult = OH_AVScreenCapture_PauseScreenCapture(screenCapturePauseResume);
+    OH_LOG_INFO(LOG_APP, "PauseScreenCapture pauseResult = %{public}d", pauseResult);
+
+    usleep(g_recordTimeHalf);
+    OH_AVSCREEN_CAPTURE_ErrCode resumeResult = OH_AVScreenCapture_ResumeScreenCapture(nullptr);
+    OH_LOG_INFO(LOG_APP, "ResumeScreenCapture resumeResult = %{public}d", resumeResult);
+    if (resumeResult != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect resumeResult is 3");
+    }
+    resumeResult = OH_AVScreenCapture_ResumeScreenCapture(screenCapturePauseResume);
+    OH_LOG_INFO(LOG_APP, "ResumeScreenCapture resumeResult = %{public}d", resumeResult);
+
+    usleep(g_recordTimeHalf);
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_StopScreenCapture(screenCapturePauseResume);
+    OH_LOG_INFO(LOG_APP, "StopScreenCapture result1 = %{public}d", result1);
+    OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_Release(screenCapturePauseResume);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result1 == AV_SCREEN_CAPTURE_ERR_OK && result2 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCapturePauseScreenCaptureErr(napi_env env, napi_callback_info info)
+{
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_PauseScreenCapture(nullptr);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureResumeScreenCaptureErr(napi_env env, napi_callback_info info)
+{
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResumeScreenCapture(nullptr);
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalMultiDisplayCaptureCapabilityTest(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2893,6 +3042,18 @@ static napi_value Init(napi_env env, napi_value exports)
             OH_AVScreenCapture_SetPrivacyProtectCallback0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_AVScreenCapture_SetPrivacyProtectCallback0101", nullptr,
             OH_AVScreenCapture_SetPrivacyProtectCallback0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForPauseFalse", nullptr,
+            normalAVScreenCaptureStrategyForPauseFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForPauseTrue", nullptr,
+            normalAVScreenCaptureStrategyForPauseTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCapturePauseResumeTest", nullptr,
+            normalAVScreenCapturePauseResumeTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCapturePauseResumeTestStop", nullptr,
+            normalAVScreenCapturePauseResumeTestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCapturePauseScreenCaptureErr", nullptr,
+            normalAVScreenCapturePauseScreenCaptureErr, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureResumeScreenCaptureErr", nullptr,
+            normalAVScreenCaptureResumeScreenCaptureErr, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

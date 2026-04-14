@@ -121,7 +121,7 @@ export default function RichEditorOnWillChange010() {
       let onDidBefore = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"end":1,"start":1}');
+      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"start":1,"end":1}');
       expect(onDidBefore.indexOf('onDidChange rangeBefore') == 0).assertEqual(true);
       expect(onDidBefore.indexOf('"start":1') > 0).assertEqual(true);
       expect(onDidBefore.indexOf('"end":1') > 0).assertEqual(true);

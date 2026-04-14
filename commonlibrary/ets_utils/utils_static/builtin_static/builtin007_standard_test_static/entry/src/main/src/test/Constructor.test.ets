@@ -557,7 +557,7 @@ export default function constructorTest() {
           expect().assertFail();
           return;
         }
-        expect(Byte.valueOf(result)).assertEqual(127);
+        expect(result).assertEqual(127);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);

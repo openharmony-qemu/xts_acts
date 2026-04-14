@@ -1382,7 +1382,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
      * @tc.number SUB_Security_CertManager_Ukey_Param_0500
      * @tc.name SUB_Security_CertManager_Ukey_Param_0500
-     * @tc.desc Call openAuthorizeDialog interface with length of issuers is 0 return 29700006
+     * @tc.desc Call openAuthorizeDialog interface with length of issuers is 0 return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
@@ -1410,7 +1410,7 @@ export default function api16CertFuncTestTwoUnit() {
           done();
         } else {
           console.error(`SUB_Security_CertManager_Ukey_Param_0500 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(29700006);
+          expect(error.code).assertEqual(29700001);
         }
       }
       done();

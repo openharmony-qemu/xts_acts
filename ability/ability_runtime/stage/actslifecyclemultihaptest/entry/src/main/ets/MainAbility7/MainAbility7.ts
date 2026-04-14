@@ -14,6 +14,7 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility'
+import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 export default class MainAbility7 extends Ability {
     onCreate(want, launchParam) {
@@ -43,7 +44,7 @@ export default class MainAbility7 extends Ability {
 
         globalThis.mainAbility7ListKey = [];
         var abilityName = "";
-        let AbilityLifecycleCallback = {
+        let AbilityLifecycleCallback:AbilityLifecycleCallback = {
             onAbilityCreate(ability) {
                 abilityName = ability.context.abilityInfo.name;
                 console.log(abilityName + " onAbilityCreate")
@@ -89,7 +90,7 @@ export default class MainAbility7 extends Ability {
             }
         }
         globalThis.ApplicationContext7 = globalThis.ability7context.getApplicationContext();
-        globalThis.mainAbility7CallBackId = globalThis.ApplicationContext7.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+        globalThis.mainAbility7CallBackId = globalThis.ApplicationContext7.on('abilityLifecycle', AbilityLifecycleCallback);
         setTimeout(() => {
             globalThis.testEvent.push('MainAbility7onForeground');
         }, 1500);

@@ -65,12 +65,13 @@ export default function MutexLockEnhancedTest() {
           worker2Completed.fetchAdd(1);
         });
 
-        worker1.join();
-        worker2.join();
 
         while (worker1Completed.load() < 1 || worker2Completed.load() < 1) {
           await sleep(50);
         }
+
+        worker1.join();
+        worker2.join();
 
         console.info(`${TAG} result: ${result.load()}`);
         expect(result.load().length).assertLargerOrEqual(4);
@@ -109,14 +110,13 @@ export default function MutexLockEnhancedTest() {
 
         await sleep(200);
         lock.unlock();
-
         job.Await();
-        worker.join();
 
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
 
+        worker.join();
         console.info(`${TAG} lock count: ${lockCount.load()}`);
         expect(lockCount.load()).assertEqual(2);
         expect(workerCompleted.load()).assertEqual(1);
@@ -201,12 +201,11 @@ export default function MutexLockEnhancedTest() {
           worker2Completed.fetchAdd(1);
         });
 
-        worker1.join();
-        worker2.join();
-
         while (worker1Completed.load() < 1 || worker2Completed.load() < 1) {
           await sleep(50);
         }
+        worker1.join();
+        worker2.join();
 
         console.info(`${TAG} completed workers: ${resultCount.load()}`);
         expect(resultCount.load()).assertLargerOrEqual(2);
@@ -336,11 +335,11 @@ export default function MutexLockEnhancedTest() {
           throw new Error("worker exception");
         });
 
-        worker.join();
-
         while (exceptionHandled.load() < 1) {
           await sleep(50);
         }
+
+        worker.join();
 
         lock.lock();
         count.fetchAdd(1);

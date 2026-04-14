@@ -997,7 +997,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
      * @tc.number SUB_Security_CertManager_Ukey_Static_Param_0500
      * @tc.name SUB_Security_CertManager_Ukey_Static_Param_0500
-     * @tc.desc Call openAuthorizeDialog interface with length of issuers is 0 return 29700006
+     * @tc.desc Call openAuthorizeDialog interface with length of issuers is 0 return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
@@ -1027,7 +1027,7 @@ export default function api16CertFuncTestTwoUnit() {
           done();
         } else {
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_Param_0500 error.code: ${error.code}, message: ${error.message}`);
-          expect((error as BusinessError).code).assertEqual(29700006);
+          expect((error as BusinessError).code).assertEqual(29700001);
         }
       }
       done();

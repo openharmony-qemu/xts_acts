@@ -73,12 +73,12 @@ export default function CombLockEnhancedTest() {
           worker2Completed.fetchAdd(1);
         });
 
-        worker1.join();
-        worker2.join();
-
         while (worker1Completed.load() < 1 || worker2Completed.load() < 1) {
           await sleep(50);
         }
+
+        worker1.join();
+        worker2.join();
 
         console.info(`${TAG} completed: ${resultCount.load()}`);
         expect(resultCount.load()).assertLargerOrEqual(4);
@@ -355,13 +355,11 @@ export default function CombLockEnhancedTest() {
           event.Fire();
           mutex.unlock();
         });
-
-        consumer.join();
-        producer.join();
-
         while (produced.load() < 1 || consumed.load() < 1) {
           await sleep(50);
         }
+        consumer.join();
+        producer.join();
 
         console.info(`${TAG} produced: ${produced.load()}, consumed: ${consumed.load()}`);
         expect(produced.load()).assertEqual(1);
@@ -406,12 +404,13 @@ export default function CombLockEnhancedTest() {
           worker2Completed.fetchAdd(1);
         });
 
-        worker1.join();
-        worker2.join();
 
         while (worker1Completed.load() < 1 || worker2Completed.load() < 1) {
           await sleep(50);
         }
+
+        worker1.join();
+        worker2.join();
 
         console.info(`${TAG} result: ${result.load()}, w1: ${worker1Completed.load()}, w2: ${worker2Completed.load()}`);
         expect(worker1Completed.load()).assertEqual(1);
