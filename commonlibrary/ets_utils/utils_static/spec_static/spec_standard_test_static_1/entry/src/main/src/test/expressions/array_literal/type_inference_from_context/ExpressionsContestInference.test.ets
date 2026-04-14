@@ -40,7 +40,7 @@ let a_11: string[][] = [];
 let a_12: bigint[] = [];
 let a_13: bigint[][] = [];
 let a_15: A_15<number>[] = [];
-let a_17: Color_17[] = [];
+let a_17: Color_18[] = [];
 let a_18: Color_18[][] = [];
 let a_19: F_19[] = [];
 let a_20: F_20[][] = [];
@@ -51,26 +51,21 @@ let a_24: (boolean|number|string|null)[][] = [];
 let a_27: number[]|string[]|boolean[]|null = null;
 let a_28: number[]|string[]|boolean[]|null = null;
 let a_29: number[]|string[]|boolean[]|null = null;
-let a_30: (Color_30|Size_30)[] = [];
+let a_30: (Color_18|Size_30)[] = [];
 let u_21: undefined = undefined;
 let n_21: null = null;
 let o_21: Object = {};
 let e_25 = new Error();
-let e_26 = new Error();
 
 class A_15<T> {}
 let v_15 = new A_15<number>();
 let q_15 = new A_15<number>();
 
-enum Color_17 { Red, Green, Blue }
 enum Color_18 { Red, Green, Blue }
-enum Color_19 { Red, Green, Blue }
-enum Color_20 { Red, Green, Blue }
-enum Color_30 { Red, Green, Blue }
 enum Size_30 { S, M, L, XL }
 
-type F_19 = (p: Color_19) => number;
-type F_20 = (p: Color_20) => number;
+type F_19 = (p: Color_18) => number;
+type F_20 = (p: Color_18) => number;
 
 function sum_22(p: number[]): number {
   let s: number = 0;
@@ -213,15 +208,15 @@ class A_18 {
   }
 }
 
-function foo_19(a: Color_19[]): void {
-  expect(a[0]).assertEqual(Color_19.Red);
-  expect(a[1]).assertEqual(Color_19.Blue);
+function foo_19(a: Color_18[]): void {
+  expect(a[0]).assertEqual(Color_18.Red);
+  expect(a[1]).assertEqual(Color_18.Blue);
   expect(a.length).assertEqual(2);
 }
 
-function foo_20(a: Color_20[][]): void {
-  expect(a[0][0]).assertEqual(Color_20.Red);
-  expect(a[0][1]).assertEqual(Color_20.Blue);
+function foo_20(a: Color_18[][]): void {
+  expect(a[0][0]).assertEqual(Color_18.Red);
+  expect(a[0][1]).assertEqual(Color_18.Blue);
   expect(a.length).assertEqual(1);
 }
 let u_23: undefined = undefined;
@@ -284,7 +279,7 @@ let arr4_s_42 = '4';
 let arr4_a_42: (string[]|boolean[]|null) = null;
 let arr4_a_43: (boolean[]|string|string[]|null) = null;
 
-enum arr4_Color_20 { Red, Green, Blue }
+enum arr4_Color_18 { Red, Green, Blue }
 enum arr4_Color_21 { Red, Green, Blue }
 enum arr4_Color_22 { Red, Green, Blue }
 enum arr4_Color_23 { Red, Green, Blue }
@@ -298,56 +293,7 @@ type arr4_F_25 = (p: arr4_Color_25) => number;
 type arr4_F_26 = (p: arr4_Color_26) => number;
 type arr4_F_27 = (p: arr4_Color_27) => number;
 
-// arr4_inf_call 相关定义
-function arr4_foo_0(a: number[][]): void {
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(-2147483647);
-  expect(a[2][2]).assertEqual(2147483647);
-}
-
-function arr4_foo_1(a: number[][]): void { // FixedArray<int[]> 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(-2147483647);
-  expect(a[2][2]).assertEqual(2147483647);
-}
-
-function arr4_foo_2(a: number[][]): void { // Array<FixedArray<int>> 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(-2147483647);
-  expect(a[2][2]).assertEqual(2147483647);
-}
-
-function arr4_foo_3(a: number[][]): void { // FixedArray<int>[] 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(-2147483647);
-  expect(a[2][2]).assertEqual(2147483647);
-}
-
-function arr4_foo_4(a: number[][]): void { // FixedArray<Array<number>> 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(a[2][2]).assertEqual(6.0);
-}
-
-function arr4_foo_5(a: number[][]): void { // FixedArray<number[]> 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(a[2][2]).assertEqual(6.0);
-}
-
-function arr4_foo_6(a: number[][]): void { // Array<FixedArray<number>> 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(a[2][2]).assertEqual(6.0);
-}
-
-function arr4_foo_7(a: number[][]): void { // FixedArray<number>[] 对应 number[][]
-  expect(a.length).assertEqual(4);
-  expect(a[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(a[2][2]).assertEqual(6.0);
-}
-
-function arr4_foo_8(a: string[][]): void { // FixedArray<Array<string>> 对应 string[][]
+function arr4_foo_8(a: string[][]): void {
   expect(a[0][0]).assertEqual('1');
   expect(a[0][1]).assertEqual('11');
   expect(a[1][0]).assertEqual('');
@@ -355,7 +301,7 @@ function arr4_foo_8(a: string[][]): void { // FixedArray<Array<string>> 对应 s
   expect(a.length).assertEqual(2);
 }
 
-function arr4_foo_9(a: string[][]): void { // FixedArray<string[]> 对应 string[][]
+function arr4_foo_9(a: string[][]): void {
   expect(a[0][0]).assertEqual('1');
   expect(a[0][1]).assertEqual('11');
   expect(a[1][0]).assertEqual('');
@@ -363,7 +309,7 @@ function arr4_foo_9(a: string[][]): void { // FixedArray<string[]> 对应 string
   expect(a.length).assertEqual(2);
 }
 
-function arr4_foo_10(a: string[][]): void { // Array<FixedArray<String>> 对应 string[][]
+function arr4_foo_10(a: string[][]): void {
   expect(a[0][0]).assertEqual('1');
   expect(a[0][1]).assertEqual('11');
   expect(a[1][0]).assertEqual('');
@@ -371,7 +317,7 @@ function arr4_foo_10(a: string[][]): void { // Array<FixedArray<String>> 对应 
   expect(a.length).assertEqual(2);
 }
 
-function arr4_foo_11(a: string[][]): void { // FixedArray<String>[] 对应 string[][]
+function arr4_foo_11(a: string[][]): void {
   expect(a[0][0]).assertEqual('1');
   expect(a[0][1]).assertEqual('11');
   expect(a[1][0]).assertEqual('');
@@ -379,32 +325,32 @@ function arr4_foo_11(a: string[][]): void { // FixedArray<String>[] 对应 strin
   expect(a.length).assertEqual(2);
 }
 
-function arr4_foo_12(a: bigint[][]): void { // FixedArray<Array<bigint>> 对应 bigint[][]
+function arr4_foo_12(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
   expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
   expect(a.length).assertEqual(3);
 }
 
-function arr4_foo_13(a: bigint[][]): void { // FixedArray<bigint[]> 对应 bigint[][]
+function arr4_foo_13(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
   expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
   expect(a.length).assertEqual(3);
 }
 
-function arr4_foo_14(a: bigint[][]): void { // Array<FixedArray<bigint>> 对应 bigint[][]
+function arr4_foo_14(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
   expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
   expect(a.length).assertEqual(3);
 }
 
-function arr4_foo_15(a: bigint[][]): void { // FixedArray<bigint>[] 对应 bigint[][]
+function arr4_foo_15(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
   expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
   expect(a.length).assertEqual(3);
 }
 
 function arr4_foo_16(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0]; // Access the first inner array
+  const innerArray = a[0];
   expect(innerArray[0]).assertEqual("a");
   expect(innerArray[1]).assertEqual(1);
   expect(innerArray[2]).assertTrue();
@@ -415,7 +361,7 @@ function arr4_foo_16(a: Array<[string, number, boolean, bigint, null, undefined]
 }
 
 function arr4_foo_17(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0]; // Access the first inner array
+  const innerArray = a[0];
   expect(innerArray[0]).assertEqual("a");
   expect(innerArray[1]).assertEqual(1);
   expect(innerArray[2]).assertTrue();
@@ -426,7 +372,7 @@ function arr4_foo_17(a: Array<[string, number, boolean, bigint, null, undefined]
 }
 
 function arr4_foo_18(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0]; // Access the first inner array
+  const innerArray = a[0];
   expect(innerArray[0]).assertEqual("a");
   expect(innerArray[1]).assertEqual(1);
   expect(innerArray[2]).assertTrue();
@@ -437,7 +383,7 @@ function arr4_foo_18(a: Array<[string, number, boolean, bigint, null, undefined]
 }
 
 function arr4_foo_19(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0]; // Access the first inner array
+  const innerArray = a[0];
   expect(innerArray[0]).assertEqual("a");
   expect(innerArray[1]).assertEqual(1);
   expect(innerArray[2]).assertTrue();
@@ -447,92 +393,20 @@ function arr4_foo_19(a: Array<[string, number, boolean, bigint, null, undefined]
   expect(a.length).assertEqual(1);
 }
 
-enum arr4_foo_Color_20 { Red, Green, Blue }
-function arr4_foo_20(a: arr4_foo_Color_20[][]): void { // FixedArray<Array<Color>> 对应 Color_20[][]
-  expect(a[0][0]).assertEqual(arr4_foo_Color_20.Red);
-  expect(a[0][1]).assertEqual(arr4_foo_Color_20.Blue);
-  expect(a.length).assertEqual(1);
-}
-
-enum arr4_foo_Color_21 { Red, Green, Blue }
-function arr4_foo_21(a: arr4_foo_Color_21[][]): void { // FixedArray<Color[]> 对应 Color_21[][]
-  expect(a[0][0]).assertEqual(arr4_foo_Color_21.Red);
-  expect(a[0][1]).assertEqual(arr4_foo_Color_21.Blue);
-  expect(a.length).assertEqual(1);
-}
-
-enum arr4_foo_Color_22 { Red, Green, Blue }
-function arr4_foo_22(a: arr4_foo_Color_22[][]): void { // Array<FixedArray<Color>> 对应 Color_22[][]
-  expect(a[0][0]).assertEqual(arr4_foo_Color_22.Red);
-  expect(a[0][1]).assertEqual(arr4_foo_Color_22.Blue);
-  expect(a.length).assertEqual(1);
-}
-
 enum arr4_foo_Color_23 { Red, Green, Blue }
-function arr4_foo_23(a: arr4_foo_Color_23[][]): void { // FixedArray<Color>[] 对应 Color_23[][]
+function arr4_foo_23(a: arr4_foo_Color_23[][]): void {
   expect(a[0][0]).assertEqual(arr4_foo_Color_23.Red);
   expect(a[0][1]).assertEqual(arr4_foo_Color_23.Blue);
   expect(a.length).assertEqual(1);
 }
 
-enum arr4_foo_Color_24 { Red, Green, Blue }
-type arr4_foo_F_24 = (p: arr4_foo_Color_24) => number;
-function arr4_foo_24(a: arr4_foo_F_24[][]): void { // FixedArray<Array<F>> 对应 F_24[][]
-  expect(a[0][0](arr4_foo_Color_24.Red)).assertEqual(0);
-  expect(a[1][0](arr4_foo_Color_24.Red)).assertEqual(1);
-  expect(a[2][0](arr4_foo_Color_24.Blue)).assertEqual(4);
-  expect(a.length).assertEqual(3);
-}
-
-enum arr4_foo_Color_25 { Red, Green, Blue }
-type arr4_foo_F_25 = (p: arr4_foo_Color_25) => number;
-function arr4_foo_25(a: arr4_foo_F_25[][]): void { // FixedArray<F[]> 对应 F_25[][]
-  expect(a[0][0](arr4_foo_Color_25.Red)).assertEqual(0);
-  expect(a[1][0](arr4_foo_Color_25.Red)).assertEqual(1);
-  expect(a[2][0](arr4_foo_Color_25.Blue)).assertEqual(4);
-  expect(a.length).assertEqual(3);
-}
-
-enum arr4_foo_Color_26 { Red, Green, Blue }
-type arr4_foo_F_26 = (p: arr4_foo_Color_26) => number;
-function arr4_foo_26(a: arr4_foo_F_26[][]): void { // Array<FixedArray<F>> 对应 F_26[][]
-  expect(a[0][0](arr4_foo_Color_26.Red)).assertEqual(0);
-  expect(a[1][0](arr4_foo_Color_26.Red)).assertEqual(1);
-  expect(a[2][0](arr4_foo_Color_26.Blue)).assertEqual(4);
-  expect(a.length).assertEqual(3);
-}
-
 enum arr4_foo_Color_27 { Red, Green, Blue }
 type arr4_foo_F_27 = (p: arr4_foo_Color_27) => number;
-function arr4_foo_27(a: arr4_foo_F_27[][]): void { // FixedArray<F>[] 对应 F_27[][]
+function arr4_foo_27(a: arr4_foo_F_27[][]): void {
   expect(a[0][0](arr4_foo_Color_27.Red)).assertEqual(0);
   expect(a[1][0](arr4_foo_Color_27.Red)).assertEqual(1);
   expect(a[2][0](arr4_foo_Color_27.Blue)).assertEqual(4);
   expect(a.length).assertEqual(3);
-}
-
-function arr4_foo_28(a: (boolean|number|string|null)[][]): void {
-  expect(a[0][0] as boolean).assertTrue();
-  expect(a[0][1] as number).assertEqual(1);
-  expect(a[0][2] as string).assertEqual('a');
-  expect(a[0][3]).assertEqual(null);
-  expect(a.length).assertEqual(1);
-}
-
-function arr4_foo_29(a: (boolean|number|string|null)[][]): void {
-  expect(a[0][0] as boolean).assertTrue();
-  expect(a[0][1] as number).assertEqual(1);
-  expect(a[0][2] as string).assertEqual('a');
-  expect(a[0][3]).assertEqual(null);
-  expect(a.length).assertEqual(1);
-}
-
-function arr4_foo_30(a: (boolean|number|string|null)[][]): void {
-  expect(a[0][0] as boolean).assertTrue();
-  expect(a[0][1] as number).assertEqual(1);
-  expect(a[0][2] as string).assertEqual('a');
-  expect(a[0][3]).assertEqual(null);
-  expect(a.length).assertEqual(1);
 }
 
 function arr4_foo_31(a: (boolean|number|string|null)[][]): void {
@@ -543,35 +417,8 @@ function arr4_foo_31(a: (boolean|number|string|null)[][]): void {
   expect(a.length).assertEqual(1);
 }
 
-let arr4_foo_e_32 = new Error();
-function arr4_foo_32(a: (number|Error|((p: string) => string)|boolean)[][]): void { // FixedArray<Array<Number|Error|((p: string)=>string)|Boolean>> 对应 (number|Error|((p: string) => string)|boolean)[][]
-  expect(a[0][0] as Error).assertEqual(arr4_foo_e_32);
-  expect(a[1][0] as boolean).assertFalse();
-  expect((a[2][0] as (p: string) => string)('a')).assertEqual('aa');
-  expect(a[3][0] as number).assertEqual(42);
-  expect(a.length).assertEqual(4);
-}
-
-let arr4_foo_e_33 = new Error();
-function arr4_foo_33(a: (number|Error|((p: string) => string)|boolean)[][]): void { // FixedArray<(Number|Error|((p: string)=>string)|Boolean)[]> 对应 (number|Error|((p: string) => string)|boolean)[][]
-  expect(a[0][0] as Error).assertEqual(arr4_foo_e_33);
-  expect(a[1][0] as boolean).assertFalse();
-  expect((a[2][0] as (p: string) => string)('a')).assertEqual('aa');
-  expect(a[3][0] as number).assertEqual(42);
-  expect(a.length).assertEqual(4);
-}
-
-let arr4_foo_e_34 = new Error();
-function arr4_foo_34(a: (number|Error|((p: string) => string)|boolean)[][]): void { // Array<FixedArray<Number|Error|((p: string)=>string)|Boolean>> 对应 (number|Error|((p: string) => string)|boolean)[][]
-  expect(a[0][0] as Error).assertEqual(arr4_foo_e_34);
-  expect(a[1][0] as boolean).assertFalse();
-  expect((a[2][0] as (p: string) => string)('a')).assertEqual('aa');
-  expect(a[3][0] as number).assertEqual(42);
-  expect(a.length).assertEqual(4);
-}
-
 let arr4_foo_e_35 = new Error();
-function arr4_foo_35(a: (number|Error|((p: string) => string)|boolean)[][]): void { // FixedArray<Number|Error|((p: string)=>string)|Boolean>[] 对应 (number|Error|((p: string) => string)|boolean)[][]
+function arr4_foo_35(a: (number|Error|((p: string) => string)|boolean)[][]): void {
   expect(a[0][0] as Error).assertEqual(arr4_foo_e_35);
   expect(a[1][0] as boolean).assertFalse();
   expect((a[2][0] as (p: string) => string)('a')).assertEqual('aa');
@@ -595,39 +442,6 @@ function arr4_foo_37(a: number[]|string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_38(a: number[]|string[]|boolean[]|null): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(43);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_39(a: number[]|string[]|boolean[]|null): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(43);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_40(a: boolean[]|string|number[]|null): void { // Array<boolean>|FixedArray<String>|FixedArray<number>|null 对应 boolean[]|string|number[]|null
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(43);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_41(a: number[]|string[]|boolean[]|null): void { // FixedArray<number>|FixedArray<String>|Array<Boolean>|null 对应 number[]|string[]|boolean[]|null
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(43);
-  expect(x.length).assertEqual(3);
-}
-
-let arr4_foo_s_42 = '4';
 function arr4_foo_42(a: number[]|string[]|boolean[]|null): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
@@ -636,7 +450,6 @@ function arr4_foo_42(a: number[]|string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-let arr4_foo_s_43 = '4';
 function arr4_foo_43(a: number[]|string[]|boolean[]|null): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
@@ -645,7 +458,6 @@ function arr4_foo_43(a: number[]|string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-let arr4_foo_s_44 = '4';
 function arr4_foo_44(a: string[]|boolean[]|null): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
@@ -654,8 +466,7 @@ function arr4_foo_44(a: string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-let arr4_foo_s_45 = '4';
-function arr4_foo_45(a: boolean[]|string|string[]|null): void { // FixedArray<boolean>|string|FixedArray<string>|null 对应 boolean[]|string|string[]|null
+function arr4_foo_45(a: boolean[]|string|string[]|null): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -663,7 +474,7 @@ function arr4_foo_45(a: boolean[]|string|string[]|null): void { // FixedArray<bo
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_46(a: string[]|number[]): void { // Array<string>|Array<int> 对应 string[]|number[]
+function arr4_foo_46(a: string[]|number[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -671,7 +482,7 @@ function arr4_foo_46(a: string[]|number[]): void { // Array<string>|Array<int> �
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_47(a: string[]|number[]): void { // Array<string>|FixedArray<int> 对应 string[]|number[]
+function arr4_foo_47(a: string[]|number[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -679,7 +490,7 @@ function arr4_foo_47(a: string[]|number[]): void { // Array<string>|FixedArray<i
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_48(a: string[]|number[]): void { // FixedArray<string>|Array<int> 对应 string[]|number[]
+function arr4_foo_48(a: string[]|number[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -687,7 +498,7 @@ function arr4_foo_48(a: string[]|number[]): void { // FixedArray<string>|Array<i
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_49(a: string[]|number[]): void { // FixedArray<string>|FixedArray<int> 对应 string[]|number[]
+function arr4_foo_49(a: string[]|number[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -695,7 +506,7 @@ function arr4_foo_49(a: string[]|number[]): void { // FixedArray<string>|FixedAr
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_50(a: number[]|string[]): void { // Array<int>|Array<string> 对应 number[]|string[]
+function arr4_foo_50(a: number[]|string[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -703,7 +514,7 @@ function arr4_foo_50(a: number[]|string[]): void { // Array<int>|Array<string> �
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_51(a: number[]|string[]): void { // FixedArray<int>|Array<string> 对应 number[]|string[]
+function arr4_foo_51(a: number[]|string[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -711,7 +522,7 @@ function arr4_foo_51(a: number[]|string[]): void { // FixedArray<int>|Array<stri
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_52(a: number[]|string[]): void { // Array<int>|FixedArray<string> 对应 number[]|string[]
+function arr4_foo_52(a: number[]|string[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -719,7 +530,7 @@ function arr4_foo_52(a: number[]|string[]): void { // Array<int>|FixedArray<stri
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_53(a: number[]|string[]): void { // FixedArray<int>|FixedArray<string> 对应 number[]|string[]
+function arr4_foo_53(a: number[]|string[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -727,7 +538,7 @@ function arr4_foo_53(a: number[]|string[]): void { // FixedArray<int>|FixedArray
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_54(a: string[]|number[]): void { // Array<string>|Array<int> 对应 string[]|number[]
+function arr4_foo_54(a: string[]|number[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -735,7 +546,7 @@ function arr4_foo_54(a: string[]|number[]): void { // Array<string>|Array<int> �
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_55(a: string[]|number[]): void { // Array<string>|FixedArray<int> 对应 string[]|number[]
+function arr4_foo_55(a: string[]|number[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -743,7 +554,7 @@ function arr4_foo_55(a: string[]|number[]): void { // Array<string>|FixedArray<i
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_56(a: string[]|number[]): void { // FixedArray<string>|Array<int> 对应 string[]|number[]
+function arr4_foo_56(a: string[]|number[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -751,7 +562,7 @@ function arr4_foo_56(a: string[]|number[]): void { // FixedArray<string>|Array<i
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_57(a: string[]|number[]): void { // FixedArray<string>|FixedArray<int> 对应 string[]|number[]
+function arr4_foo_57(a: string[]|number[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -759,7 +570,7 @@ function arr4_foo_57(a: string[]|number[]): void { // FixedArray<string>|FixedAr
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_58(a: number[]|string[]): void { // Array<int>|Array<string> 对应 number[]|string[]
+function arr4_foo_58(a: number[]|string[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -767,7 +578,7 @@ function arr4_foo_58(a: number[]|string[]): void { // Array<int>|Array<string> �
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_59(a: number[]|string[]): void { // FixedArray<int>|Array<string> 对应 number[]|string[]
+function arr4_foo_59(a: number[]|string[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -775,7 +586,7 @@ function arr4_foo_59(a: number[]|string[]): void { // FixedArray<int>|Array<stri
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_60(a: number[]|string[]): void { // Array<int>|FixedArray<string> 对应 number[]|string[]
+function arr4_foo_60(a: number[]|string[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -783,7 +594,7 @@ function arr4_foo_60(a: number[]|string[]): void { // Array<int>|FixedArray<stri
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_61(a: number[]|string[]): void { // FixedArray<int>|FixedArray<string> 对应 number[]|string[]
+function arr4_foo_61(a: number[]|string[]): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
   expect(x[1]).assertEqual('2');
@@ -791,16 +602,9 @@ function arr4_foo_61(a: number[]|string[]): void { // FixedArray<int>|FixedArray
   expect(x.length).assertEqual(3);
 }
 let s = '';
-// arr4_inf_decl 相关定义
 let arr4_decl_a0: number[][] = [[-2147483647, 2], [3], [2 + 2, 5, 2147483646 + 1], []];
 let arr4_decl_a1: number[][] = [[-2147483647, 2], [3], [2 + 2, 5, 2147483646 + 1], []];
 let arr4_decl_a2: number[][] = [[-2147483647, 2], [3], [2 + 2, 5, 2147483646 + 1], []];
-let arr4_decl_a3: number[][] = [[-2147483647, 2], [3], [2 + 2, 5, 2147483646 + 1], []];
-let arr4_decl_a4: number[][] = [[1.7976931348623157e+308, 2], [3], [4, 5, 6], []];
-let arr4_decl_a5: number[][] = [[1.7976931348623157e+308, 2], [3], [4, 5, 6], []];
-let arr4_decl_a6: number[][] = [[1.7976931348623157e+308, 2], [3], [4, 5, 6], []];
-let arr4_decl_a7: number[][] = [[1.7976931348623157e+308, 2], [3], [4, 5, 6], []];
-let arr4_decl_a8: string[][] = [[s, s + s], ['', '-9223372036854775808']];
 
 function test_arr4_inf_decl_0(): void {
   expect(arr4_decl_a0.length).assertEqual(4);
@@ -820,44 +624,6 @@ function test_arr4_inf_decl_2(): void {
   expect(arr4_decl_a2[2][2]).assertEqual(2147483647);
 }
 
-function test_arr4_inf_decl_3(): void {
-  expect(arr4_decl_a3.length).assertEqual(4);
-  expect(arr4_decl_a3[0][0]).assertEqual(-2147483647);
-  expect(arr4_decl_a3[2][2]).assertEqual(2147483647);
-}
-
-function test_arr4_inf_decl_4(): void {
-  expect(arr4_decl_a4.length).assertEqual(4);
-  expect(arr4_decl_a4[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(arr4_decl_a4[2][2]).assertEqual(6.0);
-}
-
-function test_arr4_inf_decl_5(): void {
-  expect(arr4_decl_a5.length).assertEqual(4);
-  expect(arr4_decl_a5[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(arr4_decl_a5[2][2]).assertEqual(6.0);
-}
-
-function test_arr4_inf_decl_6(): void {
-  expect(arr4_decl_a6.length).assertEqual(4);
-  expect(arr4_decl_a6[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(arr4_decl_a6[2][2]).assertEqual(6.0);
-}
-
-function test_arr4_inf_decl_7(): void {
-  expect(arr4_decl_a7.length).assertEqual(4);
-  expect(arr4_decl_a7[0][0]).assertEqual(1.7976931348623157e+308);
-  expect(arr4_decl_a7[2][2]).assertEqual(6.0);
-}
-
-function test_arr4_inf_decl_8(): void {
-  expect(arr4_decl_a8[0][0]).assertEqual('1');
-  expect(arr4_decl_a8[0][1]).assertEqual('11');
-  expect(arr4_decl_a8[1][0]).assertEqual('');
-  expect(arr4_decl_a8[1][1]).assertEqual('-9223372036854775808');
-}
-
-// sleep 函数（所有类/枚举/变量定义之后）
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -866,7 +632,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-// 唯一的 export default 函数（整合所有用例）
 export default function ExpressionsContestInferenceTest() {
   describe("ExpressionsContestInferenceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -1118,7 +883,7 @@ export default function ExpressionsContestInferenceTest() {
     it("testExpressionsContestInference0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a_16: Array<[string, number, boolean, bigint]> = [["a", 1, true, 2n]];
 
-      const element_0 = a_16[0]; // Access the first inner array
+      const element_0 = a_16[0];
       expect(element_0[0]).assertEqual("a");
       expect(element_0[1]).assertEqual(1);
       expect(element_0[2]).assertTrue();
@@ -1135,9 +900,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      a_17 = [Color_17.Red, Color_17.Blue];
-      expect(a_17[0]).assertEqual(Color_17.Red);
-      expect(a_17[1]).assertEqual(Color_17.Blue);
+      a_17 = [Color_18.Red, Color_18.Blue];
+      expect(a_17[0]).assertEqual(Color_18.Red);
+      expect(a_17[1]).assertEqual(Color_18.Blue);
       expect(a_17.length).assertEqual(2);
     })
 
@@ -1165,10 +930,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      a_19 = [(p: Color_19) => 0, (p: Color_19) => 1, (p: Color_19) => p === Color_19.Blue ? 4 : 0];
-      expect(a_19[0](Color_19.Red)).assertEqual(0);
-      expect(a_19[1](Color_19.Red)).assertEqual(1);
-      expect(a_19[2](Color_19.Blue)).assertEqual(4);
+      a_19 = [(p: Color_18) => 0, (p: Color_18) => 1, (p: Color_18) => p === Color_18.Blue ? 4 : 0];
+      expect(a_19[0](Color_18.Red)).assertEqual(0);
+      expect(a_19[1](Color_18.Red)).assertEqual(1);
+      expect(a_19[2](Color_18.Blue)).assertEqual(4);
       expect(a_19.length).assertEqual(3);
     })
 
@@ -1182,13 +947,13 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       a_20 = [
-        [(p: Color_20) => 0],
-        [(p: Color_20) => 1],
-        [(p: Color_20) => p === Color_20.Blue ? 4 : 0]
+        [(p: Color_18) => 0],
+        [(p: Color_18) => 1],
+        [(p: Color_18) => p === Color_18.Blue ? 4 : 0]
       ];
-      expect(a_20[0][0](Color_20.Red)).assertEqual(0);
-      expect(a_20[1][0](Color_20.Red)).assertEqual(1);
-      expect(a_20[2][0](Color_20.Blue)).assertEqual(4);
+      expect(a_20[0][0](Color_18.Red)).assertEqual(0);
+      expect(a_20[1][0](Color_18.Red)).assertEqual(1);
+      expect(a_20[2][0](Color_18.Blue)).assertEqual(4);
       expect(a_20.length).assertEqual(3);
     })
 
@@ -1314,14 +1079,13 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      a_30 = [Color_30.Red, Color_30.Green, Size_30.XL];
-      expect(a_30[0]).assertEqual(Color_30.Red);
-      expect(a_30[1]).assertEqual(Color_30.Green);
+      a_30 = [Color_18.Red, Color_18.Green, Size_30.XL];
+      expect(a_30[0]).assertEqual(Color_18.Red);
+      expect(a_30[1]).assertEqual(Color_18.Green);
       expect(a_30[2]).assertEqual(Size_30.XL);
       expect(a_30.length).assertEqual(3);
     })
 
-    // ===================== arr3_inf_assn 用例 =====================
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_2800
      * @tc.name      testExpressionsContestInference0028
@@ -1519,11 +1283,8 @@ export default function ExpressionsContestInferenceTest() {
         [22222222222222222222222222222222222222222222222n],
         [33333333333333333333333333333333333333333333333333n]
       ];
-
-      // Access elements using intermediate variables to avoid direct indexed access.
       const firstElement = arr3_a_13[0];
       const thirdElement = arr3_a_13[2];
-
       expect(firstElement[0]).assertEqual(11111111111111111111111111111111111111111111111n);
       expect(thirdElement[0]).assertEqual(33333333333333333333333333333333333333333333333333n);
       expect(arr3_a_13.length).assertEqual(3);
@@ -1539,7 +1300,7 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr3_a_16 = [["a", 1, true, 2n]];
-      const element = arr3_a_16[0]; // Extract the inner array to avoid direct indexed access.
+      const element = arr3_a_16[0];
       expect(element[0]).assertEqual("a");
       expect(element[1]).assertEqual(1);
       expect(element[2]).assertTrue();
@@ -1557,9 +1318,8 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr3_a_22: Array<number> = [arr3_sum_23([1, 2, 3])];
-
-      expect(arr3_a_22[0]).assertEqual(6); // 第一个元素为 arr3_sum_23 的结果，应该是 6
-      expect(arr3_a_22.length).assertEqual(1); // 数组长度为 1
+      expect(arr3_a_22[0]).assertEqual(6);
+      expect(arr3_a_22.length).assertEqual(1);
     });
 
     /**
@@ -1572,9 +1332,8 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr3_a_23: Array<number> = [arr3_sum_24([1, 2, 3])];
-
-      expect(arr3_a_23[0]).assertEqual(6); // 第一个元素为 arr3_sum_24 的结果，应该是 6
-      expect(arr3_a_23.length).assertEqual(1); // 数组长度为 1
+      expect(arr3_a_23[0]).assertEqual(6);
+      expect(arr3_a_23.length).assertEqual(1);
     });
 
     /**
@@ -1587,9 +1346,8 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr3_a_24: Array<number> = [arr3_sum_25([1, 2, 3])];
-
-      expect(arr3_a_24[0]).assertEqual(6); // 第一个元素为 arr3_sum_25 的结果，应该是 6
-      expect(arr3_a_24.length).assertEqual(1); // 数组长度为 1
+      expect(arr3_a_24[0]).assertEqual(6);
+      expect(arr3_a_24.length).assertEqual(1);
     });
 
     /**
@@ -1602,12 +1360,11 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr3_a_25: Array<boolean | number | string | null> = [true, 1, 'a', null];
-
-      expect(arr3_a_25[0]).assertTrue(); // 第一个元素为布尔值 true
-      expect(arr3_a_25[1]).assertEqual(1); // 第二个元素为数字 1
-      expect(arr3_a_25[2]).assertEqual('a'); // 第三个元素为字符串 'a'
-      expect(arr3_a_25[3]).assertNull(); // 第四个元素为 null
-      expect(arr3_a_25.length).assertEqual(4); // 数组长度为 4
+      expect(arr3_a_25[0]).assertTrue();
+      expect(arr3_a_25[1]).assertEqual(1);
+      expect(arr3_a_25[2]).assertEqual('a');
+      expect(arr3_a_25[3]).assertNull();
+      expect(arr3_a_25.length).assertEqual(4);
     });
 
     /**
@@ -1622,12 +1379,11 @@ export default function ExpressionsContestInferenceTest() {
       const arr3_a_26: Array<Array<boolean | number | string | null>> = [
         [true, 1, 'a', null],
       ];
-
-      expect(arr3_a_26[0][0]).assertTrue(); // 第一个数组的第一个元素为布尔值 true
-      expect(arr3_a_26[0][1]).assertEqual(1); // 第一个数组的第二个元素为数字 1
-      expect(arr3_a_26[0][2]).assertEqual('a'); // 第一个数组的第三个元素为字符串 'a'
-      expect(arr3_a_26[0][3]).assertNull(); // 第一个数组的第四个元素为 null
-      expect(arr3_a_26.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr3_a_26[0][0]).assertTrue();
+      expect(arr3_a_26[0][1]).assertEqual(1);
+      expect(arr3_a_26[0][2]).assertEqual('a');
+      expect(arr3_a_26[0][3]).assertNull();
+      expect(arr3_a_26.length).assertEqual(1);
     });
 
     /**
@@ -1645,12 +1401,11 @@ export default function ExpressionsContestInferenceTest() {
         (s: string): string => s + s,
         42
       ];
-
-      expect(arr3_a_27[0]).assertEqual('arr3_e_28'); // 第一个元素
-      expect(arr3_a_27[1]).assertFalse(); // 第二个元素为 Boolean 类型 false
-      expect((arr3_a_27[2] as (s: string) => string)('a')).assertEqual('aa'); // 第三个元素为函数类型，'a' 拼接为 'aa'
-      expect(arr3_a_27[3]).assertEqual(42); // 第四个元素为数字类型 42
-      expect(arr3_a_27.length).assertEqual(4); // 数组长度为 4
+      expect(arr3_a_27[0]).assertEqual('arr3_e_28');
+      expect(arr3_a_27[1]).assertFalse();
+      expect((arr3_a_27[2] as (s: string) => string)('a')).assertEqual('aa');
+      expect(arr3_a_27[3]).assertEqual(42);
+      expect(arr3_a_27.length).assertEqual(4);
     });
 
     /**
@@ -1875,7 +1630,7 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [Color_19.Red, Color_19.Blue];
+      const a = [Color_18.Red, Color_18.Blue];
       foo_19(a);
       expect(a.length).assertEqual(2);
     });
@@ -1889,7 +1644,7 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [[Color_20.Red, Color_20.Blue]];
+      const a = [[Color_18.Red, Color_18.Blue]];
       foo_20(a);
       expect(a.length).assertEqual(1);
     });
@@ -2497,7 +2252,6 @@ export default function ExpressionsContestInferenceTest() {
       expect(a.length).assertEqual(3);
     });
 
-    // ===================== arr4_inf_decl 用例（已补全 expect） =====================
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_10700
      * @tc.name      testExpressionsContestInference0107
@@ -2721,12 +2475,11 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Array<Array<string | number | boolean | bigint>> = [["a", 1, true, 2n]];
-
-      expect(a[0][0] as string).assertEqual("a"); // 第一行，第一个元素为字符串 "a"
-      expect(a[0][1] as number).assertEqual(1); // 第一行，第二个元素为数字 1
-      expect(a[0][2] as boolean).assertTrue(); // 第一行，第三个元素为布尔值 true
-      expect(a[0][3] as bigint).assertEqual(2n); // 第一行，第四个元素为 bigint 2n
-      expect(a.length).assertEqual(1); // 数组长度为 1
+      expect(a[0][0] as string).assertEqual("a");
+      expect(a[0][1] as number).assertEqual(1);
+      expect(a[0][2] as boolean).assertTrue();
+      expect(a[0][3] as bigint).assertEqual(2n);
+      expect(a.length).assertEqual(1);
     });
 
     /**
@@ -2738,9 +2491,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = [Color_17.Red, Color_17.Blue] as Color_17[];
-      expect(a[0]).assertEqual(Color_17.Red);
-      expect(a[1]).assertEqual(Color_17.Blue);
+      let a = [Color_18.Red, Color_18.Blue] as Color_18[];
+      expect(a[0]).assertEqual(Color_18.Red);
+      expect(a[1]).assertEqual(Color_18.Blue);
       expect(a.length).assertEqual(2);
     })
 
@@ -2768,10 +2521,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = [(p: Color_19): number => p.valueOf(), (p: Color_19): number => p.valueOf() + 1, (p: Color_19): number => p.valueOf() + 2] as F_19[];
-      expect(a[0](Color_19.Red)).assertEqual(0);
-      expect(a[1](Color_19.Red)).assertEqual(1);
-      expect(a[2](Color_19.Blue)).assertEqual(4);
+      let a = [(p: Color_18): number => p.valueOf(), (p: Color_18): number => p.valueOf() + 1, (p: Color_18): number => p.valueOf() + 2] as F_19[];
+      expect(a[0](Color_18.Red)).assertEqual(0);
+      expect(a[1](Color_18.Red)).assertEqual(1);
+      expect(a[2](Color_18.Blue)).assertEqual(4);
       expect(a.length).assertEqual(3);
     })
 
@@ -2784,10 +2537,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = [[(p: Color_20): number => p.valueOf()], [(p: Color_20): number => p.valueOf() + 1], [(p: Color_20): number => p.valueOf() + 2]] as F_20[][];
-      expect(a[0][0](Color_20.Red)).assertEqual(0);
-      expect(a[1][0](Color_20.Red)).assertEqual(1);
-      expect(a[2][0](Color_20.Blue)).assertEqual(4);
+      let a = [[(p: Color_18): number => p.valueOf()], [(p: Color_18): number => p.valueOf() + 1], [(p: Color_18): number => p.valueOf() + 2]] as F_20[][];
+      expect(a[0][0](Color_18.Red)).assertEqual(0);
+      expect(a[1][0](Color_18.Red)).assertEqual(1);
+      expect(a[2][0](Color_18.Blue)).assertEqual(4);
       expect(a.length).assertEqual(3);
     })
 
@@ -2869,11 +2622,10 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Array<boolean> = [false, true, false];
-
-      expect(a[0]).assertFalse(); // 第一个元素为 false
-      expect(a[1]).assertTrue(); // 第二个元素为 true
-      expect(a[2]).assertFalse(); // 第三个元素为 false
-      expect(a.length).assertEqual(3); // 数组长度为 3
+      expect(a[0]).assertFalse();
+      expect(a[1]).assertTrue();
+      expect(a[2]).assertFalse();
+      expect(a.length).assertEqual(3);
     });
 
     /**
@@ -2886,11 +2638,10 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Array<number> = [1, 2, 43];
-
-      expect(a[0]).assertEqual(1); // 第一个元素为 1
-      expect(a[1]).assertEqual(2); // 第二个元素为 2
-      expect(a[2]).assertEqual(43); // 第三个元素为 43
-      expect(a.length).assertEqual(3); // 数组长度为 3
+      expect(a[0]).assertEqual(1);
+      expect(a[1]).assertEqual(2);
+      expect(a[2]).assertEqual(43);
+      expect(a.length).assertEqual(3);
     });
 
     /**
@@ -2903,11 +2654,10 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Array<string> = ['1', '2', '43'];
-
-      expect(a[0]).assertEqual('1'); // 第一个元素为 '1'
-      expect(a[1]).assertEqual('2'); // 第二个元素为 '2'
-      expect(a[2]).assertEqual('43'); // 第三个元素为 '43'
-      expect(a.length).assertEqual(3); // 数组长度为 3
+      expect(a[0]).assertEqual('1');
+      expect(a[1]).assertEqual('2');
+      expect(a[2]).assertEqual('43');
+      expect(a.length).assertEqual(3);
     });
 
     /**
@@ -2925,10 +2675,9 @@ export default function ExpressionsContestInferenceTest() {
         [2 + 2, 5, 2147483646 + 1],
         [],
       ];
-
-      expect(arr4_a_0.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_0[0][0]).assertEqual(-2147483647); // 第一个数组的第一个元素为 -2147483647
-      expect(arr4_a_0[2][2]).assertEqual(2147483647); // 第三个数组的第三个元素为 2147483647
+      expect(arr4_a_0.length).assertEqual(4);
+      expect(arr4_a_0[0][0]).assertEqual(-2147483647);
+      expect(arr4_a_0[2][2]).assertEqual(2147483647);
     });
 
     /**
@@ -2946,10 +2695,9 @@ export default function ExpressionsContestInferenceTest() {
         [2 + 2, 5, 2147483646 + 1],
         [],
       ];
-
-      expect(arr4_a_1.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_1[0][0]).assertEqual(-2147483647); // 第一个数组的第一个元素为 -2147483647
-      expect(arr4_a_1[2][2]).assertEqual(2147483647); // 第三个数组的第三个元素为 2147483647
+      expect(arr4_a_1.length).assertEqual(4);
+      expect(arr4_a_1[0][0]).assertEqual(-2147483647);
+      expect(arr4_a_1[2][2]).assertEqual(2147483647);
     });
 
     /**
@@ -2967,10 +2715,9 @@ export default function ExpressionsContestInferenceTest() {
         [2 + 2, 5, 2147483646 + 1],
         [],
       ];
-
-      expect(arr4_a_2.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_2[0][0]).assertEqual(-2147483647); // 第一个数组的第一个元素为 -2147483647
-      expect(arr4_a_2[2][2]).assertEqual(2147483647); // 第三个数组的第三个元素为 2147483647
+      expect(arr4_a_2.length).assertEqual(4);
+      expect(arr4_a_2[0][0]).assertEqual(-2147483647);
+      expect(arr4_a_2[2][2]).assertEqual(2147483647);
     });
 
     /**
@@ -2988,10 +2735,9 @@ export default function ExpressionsContestInferenceTest() {
         [2 + 2, 5, 2147483646 + 1],
         [],
       ];
-
-      expect(arr4_a_3.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_3[0][0]).assertEqual(-2147483647); // 第一个数组的第一个元素为 -2147483647
-      expect(arr4_a_3[2][2]).assertEqual(2147483647); // 第三个数组的第三个元素为 2147483647
+      expect(arr4_a_3.length).assertEqual(4);
+      expect(arr4_a_3[0][0]).assertEqual(-2147483647);
+      expect(arr4_a_3[2][2]).assertEqual(2147483647);
     });
 
     /**
@@ -3009,10 +2755,9 @@ export default function ExpressionsContestInferenceTest() {
         [4, 5, 6],
         [],
       ];
-
-      expect(arr4_a_4.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_4[0][0]).assertEqual(1.7976931348623157e+308); // 第一个数组的第一个元素为最大双精度浮点数
-      expect(arr4_a_4[2][2]).assertEqual(6.0); // 第三个数组的第三个元素为 6.0
+      expect(arr4_a_4.length).assertEqual(4);
+      expect(arr4_a_4[0][0]).assertEqual(1.7976931348623157e+308);
+      expect(arr4_a_4[2][2]).assertEqual(6.0);
     });
 
     /**
@@ -3030,10 +2775,9 @@ export default function ExpressionsContestInferenceTest() {
         [4, 5, 6],
         [],
       ];
-
-      expect(arr4_a_5.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_5[0][0]).assertEqual(1.7976931348623157e+308); // 第一个数组的第一个元素为最大双精度浮点数
-      expect(arr4_a_5[2][2]).assertEqual(6.0); // 第三个数组的第三个元素为 6.0
+      expect(arr4_a_5.length).assertEqual(4);
+      expect(arr4_a_5[0][0]).assertEqual(1.7976931348623157e+308);
+      expect(arr4_a_5[2][2]).assertEqual(6.0);
     });
 
     /**
@@ -3051,10 +2795,9 @@ export default function ExpressionsContestInferenceTest() {
         [4, 5, 6],
         [],
       ];
-
-      expect(arr4_a_6.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_6[0][0]).assertEqual(1.7976931348623157e+308); // 第一个数组的第一个元素为最大双精度浮点数
-      expect(arr4_a_6[2][2]).assertEqual(6.0); // 第三个数组的第三个元素为 6.0
+      expect(arr4_a_6.length).assertEqual(4);
+      expect(arr4_a_6[0][0]).assertEqual(1.7976931348623157e+308);
+      expect(arr4_a_6[2][2]).assertEqual(6.0);
     });
 
     /**
@@ -3072,10 +2815,9 @@ export default function ExpressionsContestInferenceTest() {
         [4, 5, 6],
         [],
       ];
-
-      expect(arr4_a_7.length).assertEqual(4); // 外层数组长度为 4
-      expect(arr4_a_7[0][0]).assertEqual(1.7976931348623157e+308); // 第一个数组的第一个元素为最大双精度浮点数
-      expect(arr4_a_7[2][2]).assertEqual(6.0); // 第三个数组的第三个元素为 6.0
+      expect(arr4_a_7.length).assertEqual(4);
+      expect(arr4_a_7[0][0]).assertEqual(1.7976931348623157e+308);
+      expect(arr4_a_7[2][2]).assertEqual(6.0);
     });
 
     /**
@@ -3092,12 +2834,11 @@ export default function ExpressionsContestInferenceTest() {
         [s, s + s],
         ['', '-9223372036854775808'],
       ];
-
-      expect(arr4_a_8[0][0]).assertEqual('1'); // 第一个数组的第一个元素为 '1'
-      expect(arr4_a_8[0][1]).assertEqual('11'); // 第一个数组的第二个元素为 '11'
-      expect(arr4_a_8[1][0]).assertEqual(''); // 第二个数组的第一个元素为 ''
-      expect(arr4_a_8[1][1]).assertEqual('-9223372036854775808'); // 第二个数组的第二个元素为 '-9223372036854775808'
-      expect(arr4_a_8.length).assertEqual(2); // 外层数组长度为 2
+      expect(arr4_a_8[0][0]).assertEqual('1');
+      expect(arr4_a_8[0][1]).assertEqual('11');
+      expect(arr4_a_8[1][0]).assertEqual('');
+      expect(arr4_a_8[1][1]).assertEqual('-9223372036854775808');
+      expect(arr4_a_8.length).assertEqual(2);
     });
 
     /**
@@ -3114,12 +2855,11 @@ export default function ExpressionsContestInferenceTest() {
         [s, s + s],
         ['', '-9223372036854775808'],
       ];
-
-      expect(arr4_a_9[0][0]).assertEqual('1'); // 第一个数组的第一个元素为 '1'
-      expect(arr4_a_9[0][1]).assertEqual('11'); // 第一个数组的第二个元素为 '11'
-      expect(arr4_a_9[1][0]).assertEqual(''); // 第二个数组的第一个元素为 ''
-      expect(arr4_a_9[1][1]).assertEqual('-9223372036854775808'); // 第二个数组的第二个元素为 '-9223372036854775808'
-      expect(arr4_a_9.length).assertEqual(2); // 外层数组长度为 2
+      expect(arr4_a_9[0][0]).assertEqual('1');
+      expect(arr4_a_9[0][1]).assertEqual('11');
+      expect(arr4_a_9[1][0]).assertEqual('');
+      expect(arr4_a_9[1][1]).assertEqual('-9223372036854775808');
+      expect(arr4_a_9.length).assertEqual(2);
     });
 
     /**
@@ -3136,12 +2876,11 @@ export default function ExpressionsContestInferenceTest() {
         [s, s + s],
         ['', '-9223372036854775808'],
       ];
-
-      expect(arr4_a_10[0][0]).assertEqual('1'); // 第一个数组的第一个元素为 '1'
-      expect(arr4_a_10[0][1]).assertEqual('11'); // 第一个数组的第二个元素为 '11'
-      expect(arr4_a_10[1][0]).assertEqual(''); // 第二个数组的第一个元素为 ''
-      expect(arr4_a_10[1][1]).assertEqual('-9223372036854775808'); // 第二个数组的第二个元素为 '-9223372036854775808'
-      expect(arr4_a_10.length).assertEqual(2); // 外层数组长度为 2
+      expect(arr4_a_10[0][0]).assertEqual('1');
+      expect(arr4_a_10[0][1]).assertEqual('11');
+      expect(arr4_a_10[1][0]).assertEqual('');
+      expect(arr4_a_10[1][1]).assertEqual('-9223372036854775808');
+      expect(arr4_a_10.length).assertEqual(2);
     });
 
     /**
@@ -3158,12 +2897,11 @@ export default function ExpressionsContestInferenceTest() {
         [s, s + s],
         ['', '-9223372036854775808'],
       ];
-
-      expect(arr4_a_11[0][0]).assertEqual('1'); // 第一个数组的第一个元素为 '1'
-      expect(arr4_a_11[0][1]).assertEqual('11'); // 第一个数组的第二个元素为 '11'
-      expect(arr4_a_11[1][0]).assertEqual(''); // 第二个数组的第一个元素为 ''
-      expect(arr4_a_11[1][1]).assertEqual('-9223372036854775808'); // 第二个数组的第二个元素为 '-9223372036854775808'
-      expect(arr4_a_11.length).assertEqual(2); // 外层数组长度为 2
+      expect(arr4_a_11[0][0]).assertEqual('1');
+      expect(arr4_a_11[0][1]).assertEqual('11');
+      expect(arr4_a_11[1][0]).assertEqual('');
+      expect(arr4_a_11[1][1]).assertEqual('-9223372036854775808');
+      expect(arr4_a_11.length).assertEqual(2);
     });
 
     /**
@@ -3180,10 +2918,9 @@ export default function ExpressionsContestInferenceTest() {
         [2n],
         [33333333333333333333333333333333333333333333333333n],
       ];
-
-      expect(arr4_a_12[0][0]).assertEqual(11111111111111111111111111111111111111111111111n); // 第一个数组的第一个元素
-      expect(arr4_a_12[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n); // 第三个数组的第一个元素
-      expect(arr4_a_12.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_12[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
+      expect(arr4_a_12[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
+      expect(arr4_a_12.length).assertEqual(3);
     });
 
     /**
@@ -3200,10 +2937,9 @@ export default function ExpressionsContestInferenceTest() {
         [2n],
         [33333333333333333333333333333333333333333333333333n],
       ];
-
-      expect(arr4_a_13[0][0]).assertEqual(11111111111111111111111111111111111111111111111n); // 第一个数组的第一个元素
-      expect(arr4_a_13[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n); // 第三个数组的第一个元素
-      expect(arr4_a_13.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_13[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
+      expect(arr4_a_13[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
+      expect(arr4_a_13.length).assertEqual(3);
     });
 
     /**
@@ -3220,10 +2956,9 @@ export default function ExpressionsContestInferenceTest() {
         [2n],
         [33333333333333333333333333333333333333333333333333n],
       ];
-
-      expect(arr4_a_14[0][0]).assertEqual(11111111111111111111111111111111111111111111111n); // 第一个数组的第一个元素
-      expect(arr4_a_14[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n); // 第三个数组的第一个元素
-      expect(arr4_a_14.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_14[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
+      expect(arr4_a_14[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
+      expect(arr4_a_14.length).assertEqual(3);
     });
 
     /**
@@ -3240,10 +2975,9 @@ export default function ExpressionsContestInferenceTest() {
         [2n],
         [33333333333333333333333333333333333333333333333333n],
       ];
-
-      expect(arr4_a_15[0][0]).assertEqual(11111111111111111111111111111111111111111111111n); // 第一个数组的第一个元素
-      expect(arr4_a_15[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n); // 第三个数组的第一个元素
-      expect(arr4_a_15.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_15[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
+      expect(arr4_a_15[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
+      expect(arr4_a_15.length).assertEqual(3);
     });
 
     /**
@@ -3258,14 +2992,13 @@ export default function ExpressionsContestInferenceTest() {
       const arr4_a_16: Array<Array<string | number | boolean | bigint | null | undefined>> = [
         ["a", 1, true, 2n, null, undefined],
       ];
-
-      expect(arr4_a_16[0][0] as string).assertEqual("a"); // 第一个元素为字符串 "a"
-      expect(arr4_a_16[0][1] as number).assertEqual(1); // 第二个元素为数字 1
-      expect(arr4_a_16[0][2] as boolean).assertTrue(); // 第三个元素为布尔值 true
-      expect(arr4_a_16[0][3] as bigint).assertEqual(2n); // 第四个元素为 bigint 2n
-      expect(arr4_a_16[0][4]).assertEqual(null); // 第五个元素为 null
-      expect(arr4_a_16[0][5]).assertEqual(undefined); // 第六个元素为 undefined
-      expect(arr4_a_16.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_16[0][0] as string).assertEqual("a");
+      expect(arr4_a_16[0][1] as number).assertEqual(1);
+      expect(arr4_a_16[0][2] as boolean).assertTrue();
+      expect(arr4_a_16[0][3] as bigint).assertEqual(2n);
+      expect(arr4_a_16[0][4]).assertEqual(null);
+      expect(arr4_a_16[0][5]).assertEqual(undefined);
+      expect(arr4_a_16.length).assertEqual(1);
     });
 
     /**
@@ -3280,14 +3013,13 @@ export default function ExpressionsContestInferenceTest() {
       const arr4_a_17: Array<Array<string | number | boolean | bigint | null | undefined>> = [
         ["a", 1, true, 2n, null, undefined],
       ];
-
-      expect(arr4_a_17[0][0] as string).assertEqual("a"); // 第一个元素为字符串 "a"
-      expect(arr4_a_17[0][1] as number).assertEqual(1); // 第二个元素为数字 1
-      expect(arr4_a_17[0][2] as boolean).assertTrue(); // 第三个元素为布尔值 true
-      expect(arr4_a_17[0][3] as bigint).assertEqual(2n); // 第四个元素为 bigint 2n
-      expect(arr4_a_17[0][4]).assertEqual(null); // 第五个元素为 null
-      expect(arr4_a_17[0][5]).assertEqual(undefined); // 第六个元素为 undefined
-      expect(arr4_a_17.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_17[0][0] as string).assertEqual("a");
+      expect(arr4_a_17[0][1] as number).assertEqual(1);
+      expect(arr4_a_17[0][2] as boolean).assertTrue();
+      expect(arr4_a_17[0][3] as bigint).assertEqual(2n);
+      expect(arr4_a_17[0][4]).assertEqual(null);
+      expect(arr4_a_17[0][5]).assertEqual(undefined);
+      expect(arr4_a_17.length).assertEqual(1);
     });
 
     /**
@@ -3302,14 +3034,13 @@ export default function ExpressionsContestInferenceTest() {
       const arr4_a_18: Array<Array<string | number | boolean | bigint | null | undefined>> = [
         ["a", 1, true, 2n, null, undefined],
       ];
-
-      expect(arr4_a_18[0][0] as string).assertEqual("a"); // 第一个元素为字符串 "a"
-      expect(arr4_a_18[0][1] as number).assertEqual(1); // 第二个元素为数字 1
-      expect(arr4_a_18[0][2] as boolean).assertTrue(); // 第三个元素为布尔值 true
-      expect(arr4_a_18[0][3] as bigint).assertEqual(2n); // 第四个元素为 bigint 2n
-      expect(arr4_a_18[0][4]).assertEqual(null); // 第五个元素为 null
-      expect(arr4_a_18[0][5]).assertEqual(undefined); // 第六个元素为 undefined
-      expect(arr4_a_18.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_18[0][0] as string).assertEqual("a");
+      expect(arr4_a_18[0][1] as number).assertEqual(1);
+      expect(arr4_a_18[0][2] as boolean).assertTrue();
+      expect(arr4_a_18[0][3] as bigint).assertEqual(2n);
+      expect(arr4_a_18[0][4]).assertEqual(null);
+      expect(arr4_a_18[0][5]).assertEqual(undefined);
+      expect(arr4_a_18.length).assertEqual(1);
     });
 
     /**
@@ -3324,14 +3055,13 @@ export default function ExpressionsContestInferenceTest() {
       const arr4_a_19: Array<Array<string | number | boolean | bigint | null | undefined>> = [
         ["a", 1, true, 2n, null, undefined],
       ];
-
-      expect(arr4_a_19[0][0] as string).assertEqual("a"); // 第一个元素为字符串 "a"
-      expect(arr4_a_19[0][1] as number).assertEqual(1); // 第二个元素为数字 1
-      expect(arr4_a_19[0][2] as boolean).assertTrue(); // 第三个元素为布尔值 true
-      expect(arr4_a_19[0][3] as bigint).assertEqual(2n); // 第四个元素为 bigint 2n
-      expect(arr4_a_19[0][4]).assertEqual(null); // 第五个元素为 null
-      expect(arr4_a_19[0][5]).assertEqual(undefined); // 第六个元素为 undefined
-      expect(arr4_a_19.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_19[0][0] as string).assertEqual("a");
+      expect(arr4_a_19[0][1] as number).assertEqual(1);
+      expect(arr4_a_19[0][2] as boolean).assertTrue();
+      expect(arr4_a_19[0][3] as bigint).assertEqual(2n);
+      expect(arr4_a_19[0][4]).assertEqual(null);
+      expect(arr4_a_19[0][5]).assertEqual(undefined);
+      expect(arr4_a_19.length).assertEqual(1);
     });
 
     /**
@@ -3343,11 +3073,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr4_a_20: Array<Array<arr4_Color_20>> = [[arr4_Color_20.Red, arr4_Color_20.Blue]];
-
-      expect(arr4_a_20[0][0]).assertEqual(arr4_Color_20.Red); // 第一个元素为 Red
-      expect(arr4_a_20[0][1]).assertEqual(arr4_Color_20.Blue); // 第二个元素为 Blue
-      expect(arr4_a_20.length).assertEqual(1); // 外层数组长度为 1
+      const arr4_a_20: Array<Array<arr4_Color_18>> = [[arr4_Color_18.Red, arr4_Color_18.Blue]];
+      expect(arr4_a_20[0][0]).assertEqual(arr4_Color_18.Red);
+      expect(arr4_a_20[0][1]).assertEqual(arr4_Color_18.Blue);
+      expect(arr4_a_20.length).assertEqual(1);
     });
 
     /**
@@ -3360,10 +3089,9 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr4_a_21: Array<Array<arr4_Color_21>> = [[arr4_Color_21.Red, arr4_Color_21.Blue]];
-
-      expect(arr4_a_21[0][0]).assertEqual(arr4_Color_21.Red); // 第一个元素为 Red
-      expect(arr4_a_21[0][1]).assertEqual(arr4_Color_21.Blue); // 第二个元素为 Blue
-      expect(arr4_a_21.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_21[0][0]).assertEqual(arr4_Color_21.Red);
+      expect(arr4_a_21[0][1]).assertEqual(arr4_Color_21.Blue);
+      expect(arr4_a_21.length).assertEqual(1);
     });
 
     /**
@@ -3376,10 +3104,9 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr4_a_22: Array<Array<arr4_Color_22>> = [[arr4_Color_22.Red, arr4_Color_22.Blue]];
-
-      expect(arr4_a_22[0][0]).assertEqual(arr4_Color_22.Red); // 第一个元素为 Red
-      expect(arr4_a_22[0][1]).assertEqual(arr4_Color_22.Blue); // 第二个元素为 Blue
-      expect(arr4_a_22.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_22[0][0]).assertEqual(arr4_Color_22.Red);
+      expect(arr4_a_22[0][1]).assertEqual(arr4_Color_22.Blue);
+      expect(arr4_a_22.length).assertEqual(1);
     });
 
     /**
@@ -3392,10 +3119,9 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr4_a_23: Array<Array<arr4_Color_23>> = [[arr4_Color_23.Red, arr4_Color_23.Blue]];
-
-      expect(arr4_a_23[0][0]).assertEqual(arr4_Color_23.Red); // 第一个元素为 Red
-      expect(arr4_a_23[0][1]).assertEqual(arr4_Color_23.Blue); // 第二个元素为 Blue
-      expect(arr4_a_23.length).assertEqual(1); // 外层数组长度为 1
+      expect(arr4_a_23[0][0]).assertEqual(arr4_Color_23.Red);
+      expect(arr4_a_23[0][1]).assertEqual(arr4_Color_23.Blue);
+      expect(arr4_a_23.length).assertEqual(1);
     });
 
     /**
@@ -3408,15 +3134,14 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr4_a_24: Array<Array<(p: arr4_Color_24) => number>> = [
-        [(p: arr4_Color_24) => p], // 直接返回枚举值
-        [(p: arr4_Color_24) => p + 1], // 枚举值加 1
-        [(p: arr4_Color_24) => p + 2], // 枚举值加 2
+        [(p: arr4_Color_24) => p],
+        [(p: arr4_Color_24) => p + 1],
+        [(p: arr4_Color_24) => p + 2],
       ];
-
-      expect(arr4_a_24[0][0](arr4_Color_24.Red)).assertEqual(0); // Red 对应 0
-      expect(arr4_a_24[1][0](arr4_Color_24.Red)).assertEqual(1); // Red 加 1 对应 1
-      expect(arr4_a_24[2][0](arr4_Color_24.Blue)).assertEqual(4); // Blue 对应 2，加 2 对应 4
-      expect(arr4_a_24.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_24[0][0](arr4_Color_24.Red)).assertEqual(0);
+      expect(arr4_a_24[1][0](arr4_Color_24.Red)).assertEqual(1);
+      expect(arr4_a_24[2][0](arr4_Color_24.Blue)).assertEqual(4);
+      expect(arr4_a_24.length).assertEqual(3);
     });
 
     /**
@@ -3429,15 +3154,14 @@ export default function ExpressionsContestInferenceTest() {
      */
     it("testExpressionsContestInference0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr4_a_25: Array<Array<(p: arr4_Color_25) => number>> = [
-        [(p: arr4_Color_25) => p], // 直接返回枚举值
-        [(p: arr4_Color_25) => p + 1], // 枚举值加 1
-        [(p: arr4_Color_25) => p + 2], // 枚举值加 2
+        [(p: arr4_Color_25) => p],
+        [(p: arr4_Color_25) => p + 1],
+        [(p: arr4_Color_25) => p + 2],
       ];
-
-      expect(arr4_a_25[0][0](arr4_Color_25.Red)).assertEqual(0); // Red 对应 0
-      expect(arr4_a_25[1][0](arr4_Color_25.Red)).assertEqual(1); // Red 加 1 对应 1
-      expect(arr4_a_25[2][0](arr4_Color_25.Blue)).assertEqual(4); // Blue 对应 2，加 2 对应 4
-      expect(arr4_a_25.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_25[0][0](arr4_Color_25.Red)).assertEqual(0);
+      expect(arr4_a_25[1][0](arr4_Color_25.Red)).assertEqual(1);
+      expect(arr4_a_25[2][0](arr4_Color_25.Blue)).assertEqual(4);
+      expect(arr4_a_25.length).assertEqual(3);
     });
 
     /**
@@ -3449,17 +3173,15 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      /** 明确定义二维数组的类型 */
       const arr4_a_26: Array<Array<(p: arr4_Color_26) => number>> = [
-        [(p: arr4_Color_26) => p], // 直接返回枚举值
-        [(p: arr4_Color_26) => p + 1], // 枚举值加 1
-        [(p: arr4_Color_26) => p + 2], // 枚举值加 2
+        [(p: arr4_Color_26) => p],
+        [(p: arr4_Color_26) => p + 1],
+        [(p: arr4_Color_26) => p + 2],
       ];
-
-      expect(arr4_a_26[0][0](arr4_Color_26.Red)).assertEqual(0); // Red 对应 0
-      expect(arr4_a_26[1][0](arr4_Color_26.Red)).assertEqual(1); // Red 加 1 对应 1
-      expect(arr4_a_26[2][0](arr4_Color_26.Blue)).assertEqual(4); // Blue 对应 2，加 2 对应 4
-      expect(arr4_a_26.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_26[0][0](arr4_Color_26.Red)).assertEqual(0);
+      expect(arr4_a_26[1][0](arr4_Color_26.Red)).assertEqual(1);
+      expect(arr4_a_26[2][0](arr4_Color_26.Blue)).assertEqual(4);
+      expect(arr4_a_26.length).assertEqual(3);
     });
 
     /**
@@ -3471,17 +3193,15 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      /** 明确定义二维数组类型 */
       const arr4_a_27: Array<Array<(p: arr4_Color_27) => number>> = [
-        [(p: arr4_Color_27) => p], // 直接返回枚举值
-        [(p: arr4_Color_27) => p + 1], // 枚举值加 1
-        [(p: arr4_Color_27) => p + 2], // 枚举值加 2
+        [(p: arr4_Color_27) => p],
+        [(p: arr4_Color_27) => p + 1],
+        [(p: arr4_Color_27) => p + 2],
       ];
-
-      expect(arr4_a_27[0][0](arr4_Color_27.Red)).assertEqual(0); // Red 对应 0
-      expect(arr4_a_27[1][0](arr4_Color_27.Red)).assertEqual(1); // Red 加 1 对应 1
-      expect(arr4_a_27[2][0](arr4_Color_27.Blue)).assertEqual(4); // Blue 对应 2，加 2 对应 4
-      expect(arr4_a_27.length).assertEqual(3); // 外层数组长度为 3
+      expect(arr4_a_27[0][0](arr4_Color_27.Red)).assertEqual(0);
+      expect(arr4_a_27[1][0](arr4_Color_27.Red)).assertEqual(1);
+      expect(arr4_a_27[2][0](arr4_Color_27.Blue)).assertEqual(4);
+      expect(arr4_a_27.length).assertEqual(3);
     });
 
     /**
@@ -3757,10 +3477,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_44: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_44: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_44) && typeof arr4_a_44[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_44[0]).assertEqual(1);
         expect(arr4_a_44[1]).assertEqual(2);
         expect(arr4_a_44[2]).assertEqual(3);
@@ -3777,10 +3495,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_45: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_45: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_45) && typeof arr4_a_45[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_45[0]).assertEqual(1);
         expect(arr4_a_45[1]).assertEqual(2);
         expect(arr4_a_45[2]).assertEqual(3);
@@ -3797,10 +3513,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_46: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_46: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_46) && typeof arr4_a_46[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_46[0]).assertEqual(1);
         expect(arr4_a_46[1]).assertEqual(2);
         expect(arr4_a_46[2]).assertEqual(3);
@@ -3817,10 +3531,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_47: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_47: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_47) && typeof arr4_a_47[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_47[0]).assertEqual(1);
         expect(arr4_a_47[1]).assertEqual(2);
         expect(arr4_a_47[2]).assertEqual(3);
@@ -3837,10 +3549,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_48: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
-
+      let arr4_a_48: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_48) && typeof arr4_a_48[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_48[0]).assertEqual('1');
         expect(arr4_a_48[1]).assertEqual('2');
         expect(arr4_a_48[2]).assertEqual('3');
@@ -3857,10 +3567,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_49: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
-
+      let arr4_a_49: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_49) && typeof arr4_a_49[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_49[0]).assertEqual('1');
         expect(arr4_a_49[1]).assertEqual('2');
         expect(arr4_a_49[2]).assertEqual('3');
@@ -3877,10 +3585,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_50: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
-
+      let arr4_a_50: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_50) && typeof arr4_a_50[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_50[0]).assertEqual('1');
         expect(arr4_a_50[1]).assertEqual('2');
         expect(arr4_a_50[2]).assertEqual('3');
@@ -3897,10 +3603,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_51: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型并直接赋值为字符串数组
-
+      let arr4_a_51: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_51) && typeof arr4_a_51[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_51[0]).assertEqual('1');
         expect(arr4_a_51[1]).assertEqual('2');
         expect(arr4_a_51[2]).assertEqual('3');
@@ -3917,10 +3621,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_52: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_52: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_52) && typeof arr4_a_52[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_52[0]).assertEqual(1);
         expect(arr4_a_52[1]).assertEqual(2);
         expect(arr4_a_52[2]).assertEqual(3);
@@ -3937,10 +3639,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_53: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_53: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_53) && typeof arr4_a_53[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_53[0]).assertEqual(1);
         expect(arr4_a_53[1]).assertEqual(2);
         expect(arr4_a_53[2]).assertEqual(3);
@@ -3957,10 +3657,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_54: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_54: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_54) && typeof arr4_a_54[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_54[0]).assertEqual(1);
         expect(arr4_a_54[1]).assertEqual(2);
         expect(arr4_a_54[2]).assertEqual(3);
@@ -3977,10 +3675,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_55: Array<number> | Array<string> = [1, 2, 3]; // 声明联合类型并直接赋值为数字数组
-
+      let arr4_a_55: Array<number> | Array<string> = [1, 2, 3];
       if (Array.isArray(arr4_a_55) && typeof arr4_a_55[0] === 'number') {
-        // 类型推断为数字数组
         expect(arr4_a_55[0]).assertEqual(1);
         expect(arr4_a_55[1]).assertEqual(2);
         expect(arr4_a_55[2]).assertEqual(3);
@@ -3997,10 +3693,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_56: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
-
+      let arr4_a_56: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_56) && typeof arr4_a_56[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_56[0]).assertEqual('1');
         expect(arr4_a_56[1]).assertEqual('2');
         expect(arr4_a_56[2]).assertEqual('3');
@@ -4017,10 +3711,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_57: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
-
+      let arr4_a_57: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_57) && typeof arr4_a_57[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_57[0]).assertEqual('1');
         expect(arr4_a_57[1]).assertEqual('2');
         expect(arr4_a_57[2]).assertEqual('3');
@@ -4037,10 +3729,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_58: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
-
+      let arr4_a_58: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_58) && typeof arr4_a_58[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_58[0]).assertEqual('1');
         expect(arr4_a_58[1]).assertEqual('2');
         expect(arr4_a_58[2]).assertEqual('3');
@@ -4057,10 +3747,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr4_a_59: Array<number> | Array<string> = ['1', '2', '3']; // 声明联合类型
-
+      let arr4_a_59: Array<number> | Array<string> = ['1', '2', '3'];
       if (Array.isArray(arr4_a_59) && typeof arr4_a_59[0] === 'string') {
-        // 类型推断为字符串数组
         expect(arr4_a_59[0]).assertEqual('1');
         expect(arr4_a_59[1]).assertEqual('2');
         expect(arr4_a_59[2]).assertEqual('3');
