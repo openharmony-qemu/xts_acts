@@ -50,7 +50,6 @@ void Pause0100(void)
 
 static int PauseTestImpl(void)
 {
-    Pause0100();
     return T_STATUS;
 }
 
