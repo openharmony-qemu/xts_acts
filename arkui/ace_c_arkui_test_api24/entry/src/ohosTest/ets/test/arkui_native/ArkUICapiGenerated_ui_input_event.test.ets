@@ -670,10 +670,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_501
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0100
      * @tc.name    TestArkUICapi_501
-     * @tc.desc    Case: TestArkUICapi_501. API: OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCH (1).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCH (1) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -684,10 +683,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_502
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0200
      * @tc.name    TestArkUICapi_502
-     * @tc.desc    Case: TestArkUICapi_502. API: OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_MOUSE (2).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_MOUSE (2) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -698,10 +696,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_503
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0300
      * @tc.name    TestArkUICapi_503
-     * @tc.desc    Case: TestArkUICapi_503. API: OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_KEYBOARD (3).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_KEYBOARD (3) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -712,10 +709,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_504
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0400
      * @tc.name    TestArkUICapi_504
-     * @tc.desc    Case: TestArkUICapi_504. API: OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCHPAD (4).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCHPAD (4) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -726,10 +722,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_505
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0500
      * @tc.name    TestArkUICapi_505
-     * @tc.desc    Case: TestArkUICapi_505. API: OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_JOYSTICK (5).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_JOYSTICK (5) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -740,10 +735,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_508
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0100
      * @tc.name    TestArkUICapi_508
-     * @tc.desc    Case: TestArkUICapi_508. API: OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_FINGER (1).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_FINGER (1) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -754,10 +748,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_509
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0200
      * @tc.name    TestArkUICapi_509
-     * @tc.desc    Case: TestArkUICapi_509. API: OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_PEN (2).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_PEN (2) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -768,10 +761,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_510
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0300
      * @tc.name    TestArkUICapi_510
-     * @tc.desc    Case: TestArkUICapi_510. API: OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_MOUSE (3).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_MOUSE (3) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -782,10 +774,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_511
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0400
      * @tc.name    TestArkUICapi_511
-     * @tc.desc    Case: TestArkUICapi_511. API: OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_TOUCHPAD (4).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_TOUCHPAD (4) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
@@ -796,10 +787,9 @@ export default function arkuiNativeCapiUiInputEvent() {
     })
 
     /**
-     * @tc.number  TestArkUICapi_512
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0500
      * @tc.name    TestArkUICapi_512
-     * @tc.desc    Case: TestArkUICapi_512. API: OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_JOYSTICK (5).
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_JOYSTICK (5) test.
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST

@@ -33,15 +33,15 @@ export default function PointerEventGetCurrentLocalTest() {
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_001
-     * @tc.number PointerEventGetCurrentLocalTest_001
+     * @tc.name   pointerEventGetCurrentLocalXTest001
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalX_0100
      * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalX normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_001', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_001] START');
+    it('pointerEventGetCurrentLocalXTest001', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalXTest001] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -49,24 +49,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalX');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_001] LocalX content: ' + content);
+      console.info('[pointerEventGetCurrentLocalXTest001] LocalX content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_001] END');
+      console.info('[pointerEventGetCurrentLocalXTest001] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_002
-     * @tc.number PointerEventGetCurrentLocalTest_002
-     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalX null param test.
+     * @tc.name   pointerEventGetCurrentLocalXTest002
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalX_0200
+     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalX second click test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_002', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_002] START');
+    it('pointerEventGetCurrentLocalXTest002', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalXTest002] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -74,24 +74,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalX');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_002] LocalX content: ' + content);
+      console.info('[pointerEventGetCurrentLocalXTest002] LocalX content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_002] END');
+      console.info('[pointerEventGetCurrentLocalXTest002] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_003
-     * @tc.number PointerEventGetCurrentLocalTest_003
+     * @tc.name   pointerEventGetCurrentLocalXByIndexTest001
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalXByIndex_0100
      * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalXByIndex normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_003', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_003] START');
+    it('pointerEventGetCurrentLocalXByIndexTest001', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalXByIndexTest001] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -99,24 +99,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalXByIndex');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_003] LocalXByIndex content: ' + content);
+      console.info('[pointerEventGetCurrentLocalXByIndexTest001] LocalXByIndex content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_003] END');
+      console.info('[pointerEventGetCurrentLocalXByIndexTest001] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_004
-     * @tc.number PointerEventGetCurrentLocalTest_004
-     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalXByIndex null param test.
+     * @tc.name   pointerEventGetCurrentLocalXByIndexTest002
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalXByIndex_0200
+     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalXByIndex second click test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_004', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_004] START');
+    it('pointerEventGetCurrentLocalXByIndexTest002', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalXByIndexTest002] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -124,24 +124,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalXByIndex');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_004] LocalXByIndex content: ' + content);
+      console.info('[pointerEventGetCurrentLocalXByIndexTest002] LocalXByIndex content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_004] END');
+      console.info('[pointerEventGetCurrentLocalXByIndexTest002] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_006
-     * @tc.number PointerEventGetCurrentLocalTest_006
+     * @tc.name   pointerEventGetCurrentLocalYTest001
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalY_0100
      * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalY normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_006', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_006] START');
+    it('pointerEventGetCurrentLocalYTest001', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalYTest001] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -149,24 +149,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalY');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_006] LocalY content: ' + content);
+      console.info('[pointerEventGetCurrentLocalYTest001] LocalY content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_006] END');
+      console.info('[pointerEventGetCurrentLocalYTest001] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_007
-     * @tc.number PointerEventGetCurrentLocalTest_007
-     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalY null param test.
+     * @tc.name   pointerEventGetCurrentLocalYTest002
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalY_0200
+     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalY second click test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_007', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_007] START');
+    it('pointerEventGetCurrentLocalYTest002', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalYTest002] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -174,24 +174,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalY');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_007] LocalY content: ' + content);
+      console.info('[pointerEventGetCurrentLocalYTest002] LocalY content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_007] END');
+      console.info('[pointerEventGetCurrentLocalYTest002] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_008
-     * @tc.number PointerEventGetCurrentLocalTest_008
+     * @tc.name   pointerEventGetCurrentLocalYByIndexTest001
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalYByIndex_0100
      * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalYByIndex normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_008', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_008] START');
+    it('pointerEventGetCurrentLocalYByIndexTest001', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalYByIndexTest001] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -199,24 +199,24 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalYByIndex');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_008] LocalYByIndex content: ' + content);
+      console.info('[pointerEventGetCurrentLocalYByIndexTest001] LocalYByIndex content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_008] END');
+      console.info('[pointerEventGetCurrentLocalYByIndexTest001] END');
       done();
     });
 
     /**
-     * @tc.name   PointerEventGetCurrentLocalTest_009
-     * @tc.number PointerEventGetCurrentLocalTest_009
-     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalYByIndex null param test.
+     * @tc.name   pointerEventGetCurrentLocalYByIndexTest002
+     * @tc.number SUB_ArkUI_NativeAPI_PointerEvent_GetCurrentLocalYByIndex_0200
+     * @tc.desc   OH_ArkUI_PointerEvent_GetCurrentLocalYByIndex second click test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PointerEventGetCurrentLocalTest_009', Level.LEVEL1, async (done: Function) => {
-      console.info('[PointerEventGetCurrentLocalTest_009] START');
+    it('pointerEventGetCurrentLocalYByIndexTest002', Level.LEVEL1, async (done: Function) => {
+      console.info('[pointerEventGetCurrentLocalYByIndexTest002] START');
       let driver: Driver = Driver.create();
       let touchArea = await driver.findComponent(ON.id('touchAreaGetCurrentLocal'));
       await touchArea.click();
@@ -224,11 +224,11 @@ export default function PointerEventGetCurrentLocalTest() {
       let strJson = getInspectorByKey('textResultGetCurrentLocalYByIndex');
       let obj: ESObject = JSON.parse(strJson);
       let content: string = obj.$attrs.content;
-      console.info('[PointerEventGetCurrentLocalTest_009] LocalYByIndex content: ' + content);
+      console.info('[pointerEventGetCurrentLocalYByIndexTest002] LocalYByIndex content: ' + content);
       let parts = content.split(':');
       let value = parseFloat(parts[1]);
       expect(value).assertLargerOrEqual(0);
-      console.info('[PointerEventGetCurrentLocalTest_009] END');
+      console.info('[pointerEventGetCurrentLocalYByIndexTest002] END');
       done();
     });
   })
