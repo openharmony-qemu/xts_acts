@@ -751,6 +751,34 @@ export default function CameraFunctionTest() {
       console.info(TAG, result);
       expect(result).assertEqual(7400103);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceErr();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
     
   })
 }
