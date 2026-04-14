@@ -88,16 +88,16 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
     })
 
     /**
-     * @tc.number    : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0000
-     * @tc.name      : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0000
+     * @tc.number    : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_000
+     * @tc.name      : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_000
      * @tc.desc      : camera recorde HDR 1 video and Test HDR info
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let testNum = 'CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0000';
+        let testNum = 'CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_000';
         //预制条件
         await getPermission();
         let helper = await getHelper();
@@ -234,16 +234,16 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
     })
 
     /**
-     * @tc.number    : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0001
-     * @tc.name      : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0001
+     * @tc.number    : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_001
+     * @tc.name      : CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_001
      * @tc.desc      : camera recorde HDR 1 video and Test HDR info
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let testNum = 'CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_0001'
+        let testNum = 'CAMERA_HDR_VIDEO_RECORDER_WITH_DEFAULT_CONFIG_001'
         //预制条件
         await getPermission();
         let helper = await getHelper();
