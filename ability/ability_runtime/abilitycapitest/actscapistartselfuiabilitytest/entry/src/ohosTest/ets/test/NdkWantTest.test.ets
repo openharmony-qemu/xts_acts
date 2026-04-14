@@ -17,8 +17,6 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 
-import testNapi from 'libentry.so';
-
 const TAG = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityTest';
 let isEnabled:string;
 export default function ndkTest() {
