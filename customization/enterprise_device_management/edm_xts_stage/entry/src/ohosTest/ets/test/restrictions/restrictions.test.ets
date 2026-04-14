@@ -16,10 +16,12 @@
 import { describe, expect, it, Level } from '@ohos/hypium';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, DEFAULT_USER_ID, APP_IDS_1 } from '../commom';
 
-import { usbManager } from '@kit.MDMKit';
+import { applicationManager, deviceSettings, usbManager } from '@kit.MDMKit';
 import adminManager from '@ohos.enterprise.adminManager';
+import common from '@ohos.enterprise.common';
 import restrictions from '@ohos.enterprise.restrictions';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import { osAccount } from '@kit.BasicServicesKit';
 
 const LABEL_BLUETOOTH = "bluetooth";
 const LABEL_MODIFY_DATETIME = "modifyDateTime";
@@ -83,6 +85,8 @@ export default function restrictionsTest() {
     testGetUserRestrictedPolicy();
     testSetUserRestrictionForAccountPolicy();
     testGetUserRestrictedForAccountPolicy();
+    testSetDisallowedForAccountPolicy26();
+    testGetDisallowedForAccountPolicy26();
   })
 }
 
@@ -8001,6 +8005,633 @@ function testGetUserRestrictedForAccountPolicy() {
       console.info('test_get_user_restricted_for_account_0104 error 801 is expected, actually catch: '
         + error.code);
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetDisallowedForAccountPolicy26() {
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_26_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0100
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_26_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true,
+        DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_26_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0200
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_26_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true,
+        DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0300
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0300
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub then nonStop
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+      let userNonStopApps: Array<common.ApplicationInstance> = [
+        {
+          appIdentifier:"5765880207854114601",
+          accountId:DEFAULT_USER_ID,
+          appIndex:0
+        }
+      ];
+      applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0400
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0400
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub after nonStop
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let userNonStopApps: Array<common.ApplicationInstance> = [
+        {
+          appIdentifier:"5765880207854114601",
+          accountId:DEFAULT_USER_ID,
+          appIndex:0
+        }
+      ];
+      applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0500
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0500
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub before removeHiddenSettingsMenu
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+
+      const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
+        deviceSettings.SettingsMenu.SUPERHUB,
+        deviceSettings.SettingsMenu.WIFI
+      ];
+      deviceSettings.addHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+      deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0600
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0600
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub other accountId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId + 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else if (Number(error.code) === 401) {
+        expect(Number(error.code) === 401).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0700
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0700
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub true
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, localId);
+      expect(ret).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0800
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0800
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub false
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, false, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, localId);
+      expect(ret).assertFalse();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0900
+   * @tc.name      : test_set_disallowed_policy_for_account_26_0900
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub null admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_0900", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_1000
+   * @tc.name      : test_set_disallowed_policy_for_account_26_1000
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub undefined admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_1000", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_1100
+   * @tc.name      : test_set_disallowed_policy_for_account_26_1100
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub null feature
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_1200
+   * @tc.name      : test_set_disallowed_policy_for_account_26_1200
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub undefined feature
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, undefined, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_1300
+   * @tc.name      : test_set_disallowed_policy_for_account_26_1300
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub null localId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_1300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_1400
+   * @tc.name      : test_set_disallowed_policy_for_account_26_1400
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub undefined localId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_26_1400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetDisallowedForAccountPolicy26() {
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_26_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0100
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_26_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_26_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0200
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_26_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0300
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0300
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub other accountId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, localId + 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else if (Number(error.code) === 401) {
+        expect(Number(error.code) === 401).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0400
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0400
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub null admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0400", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.SUPER_HUB, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0500
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0500
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub undefined admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0500", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.SUPER_HUB, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0600
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0600
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub null feature
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, null, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0700
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0700
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub undefined feature
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, undefined, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0800
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0800
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub null localId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0900
+   * @tc.name      : test_get_disallowed_policy_for_account_26_0900
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount superhub undefined localId
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_26_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
