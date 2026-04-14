@@ -38,10 +38,9 @@ class ActsCameraVideoAiTest(TestCase):
         for videoFile in find_files(folder_path):
             if videoFile.lower().endswith((".mp4")):
                 output_folder, image_count = video_to_images(videoFile, videoDir)
-        if image_count <= 0:
-            print(f"{videoFile} 当前视频帧数为{image_count}，视频为空视频")
-            logger.info(f"{videoFile} 当前视频帧数过少{image_count}，视频为空视频")
-            assert image_count <= 0
+                if image_count <= 1:
+                    logger.info(f"{videoFile} 当前视频帧数过少{image_count}，视频为空视频")
+                    assert False, f"{videoFile} 当前视频帧数过少{image_count}，视频为空视频"
 
         for videoImageFile in find_files(videoDir):
             CheckRes = check_image(videoImageFile)
