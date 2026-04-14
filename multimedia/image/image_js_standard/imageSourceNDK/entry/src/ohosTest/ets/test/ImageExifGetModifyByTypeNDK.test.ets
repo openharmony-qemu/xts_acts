@@ -48,6 +48,10 @@ interface ModifyRule2 {
   expectValueDNG: number | Array<number> | Array<number | null> | null | ArrayBuffer;
 }
 
+interface ReadOnlyMetaDataRule {
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
+
 const testArrayBufferU8: Uint8Array = new Uint8Array([1, 2, 2, 3]);
 const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 
@@ -55,7 +59,7 @@ const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 async function getPropertyValue(
   fd: number,
   type: string,
-  key: image.PropertyKey | image.DngPropertyKey
+  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   let task = new taskpool.Task(getPropertyValueTest, fd, type, key);
   let ret = (await taskpool.execute(task)) as number | Array<number> | Array<number | null> | ArrayBuffer | string;
@@ -66,7 +70,7 @@ async function getPropertyValue(
 async function getPropertyValueTest(
   fd: number,
   type: string,
-  key: image.PropertyKey | image.DngPropertyKey
+  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   console.log("start first time");
   // 模拟异步操作
@@ -276,7 +280,7 @@ export default function ImageExifGetModifyByTypeNDK() {
     const TestGetImagePropertyByTypeError = async (
       testNum: string,
       fileName: string,
-      Key: image.PropertyKey,
+      Key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey,
       type: string,
       errorCode: number
     ): Promise<boolean> => {
@@ -5879,6 +5883,198 @@ export default function ImageExifGetModifyByTypeNDK() {
       let result = mdkTest.TestDestroyImageRawDataInvalidParam();
       console.info(`${testTag} TestDestroyImageRawDataInvalidParam result is: ${result}`);
       expect(result).assertEqual(7700204);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+     * @tc.desc        Verify reading WEBP metadata as short type
+     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as short type
+     *                 3.Verify each actual value equals rule.newExpectValue
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.WebPPropertyKey> = ImagePropertyConfig.webpMetadatas.keys;
+      let webpRules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule> = ImagePropertyConfig.webpMetadatas.rules;
+      let fd: number = await getFd("loop_count_9.webp");
+      for (const key of propertyKeys) {
+        const rule = webpRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        const actualValue = await getPropertyValue(fd, "short", key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} webp metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+     * @tc.desc        Verify reading WEBP metadata as long type
+     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as long type
+     *                 3.Verify each actual value equals rule.newExpectValue
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.WebPPropertyKey> = ImagePropertyConfig.webpMetadatas.keys;
+      let webpRules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule> = ImagePropertyConfig.webpMetadatas.rules;
+      let fd: number = await getFd("loop_count_9.webp");
+      for (const key of propertyKeys) {
+        const rule = webpRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        const actualValue = await getPropertyValue(fd, "long", key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} webp metadata TestGetImageProperty Long result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+     * @tc.desc        Verify reading WEBP metadata as intArray type
+     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as intArray type
+     *                 3.Verify each actual value equals [rule.newExpectValue]
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300";
+      let result: boolean = true;
+      let propertyKeys: Array<image.WebPPropertyKey> = ImagePropertyConfig.webpMetadatas.keys;
+      let webpRules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule> = ImagePropertyConfig.webpMetadatas.rules;
+      let fd: number = await getFd("loop_count_9.webp");
+      for (const key of propertyKeys) {
+        const rule = webpRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = [rule.newExpectValue] as number[];
+        const actualValue = await getPropertyValue(fd, "intArray", key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read CANVAS_WIDTH using unsupported type double
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_WIDTH, "double", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read CANVAS_HEIGHT using unsupported type string
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_HEIGHT, "string", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+    *                 1.Create image source from WEBP file (loop_count_9.webp)
+    *                 2.Read DELAY_TIME using unsupported type doubleArray
+    *                 3.Verify API returns READ_FAILED
+    * @tc.size        MEDIUM
+    * @tc.type        Functional
+    * @tc.level       Level 0
+    */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "doubleArray", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+    *                 1.Create image source from WEBP file (loop_count_9.webp)
+    *                 2.Read DELAY_TIME using unsupported type arrayBuffer
+    *                 3.Verify API returns READ_FAILED
+    * @tc.size        MEDIUM
+    * @tc.type        Functional
+    * @tc.level       Level 0
+    */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "arrayBuffer", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
       done();
     });
     
