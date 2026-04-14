@@ -1020,7 +1020,7 @@ export default function DisplayNdkTest() {
     })
     /**
      * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range
-     * @tc.number OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range
+     * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range_0100
      * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener超出范围
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
