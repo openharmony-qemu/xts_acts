@@ -793,7 +793,7 @@ static napi_value injectTouchEventInit(napi_env env, napi_value exports)
     return exports;
 }
 static napi_value displayInit(napi_env env, napi_value exports)
-{   
+{
     injectTouchEventInit(env, exports);
     napi_property_descriptor desc[] = {
         { "registerAvailableAreaChangeListener", nullptr, RegisterAvailableAreaChangeListener, nullptr, nullptr,
