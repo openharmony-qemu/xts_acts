@@ -18,8 +18,10 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, DEFAULT_USER_ID, APP_IDS
 
 import { applicationManager, deviceSettings, usbManager } from '@kit.MDMKit';
 import adminManager from '@ohos.enterprise.adminManager';
+import common from '@ohos.enterprise.common';
 import restrictions from '@ohos.enterprise.restrictions';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import { osAccount } from '@kit.BasicServicesKit';
 
 const LABEL_BLUETOOTH = "bluetooth";
 const LABEL_MODIFY_DATETIME = "modifyDateTime";
