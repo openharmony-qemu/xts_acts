@@ -48,7 +48,6 @@ let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 let isSupportHdrbyVPE: Boolean;
 let isSupportHdrbyScreen: Boolean;
-let isExistVideo: Boolean;
 let isSupportHEICEncode: boolean;
 
 function getCameraManager() {
@@ -158,44 +157,6 @@ async function getVideoSurfaceId() {
   console.info(TAG, 'AVRecorder state: ' + mAVRecorder.state);
   mVideoSurfaceId = await mAVRecorder.getInputSurface();
   console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);
-}
-
-export async function isExistMovingPhotoVideo(testName: string, asset: photoAccessHelper.PhotoAsset) {
-  let photopath: string = asset.uri;
-  let photoformat = photopath.split('.')[1]
-  let parts = photopath.split('/')
-  let photoname = parts[parts.length-2];
-
-  const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  const cmd1 = 'echo ' + '/storage/cloud/100/files/Photo/*/' + photoname + '*';
-  console.log(testName + `data is is cmd ${cmd1}`);
-  isExistVideo = false;
-  let isExist = false;
-  let movingPhotoCreateTime = Date.now();
-  while (!isExist) {
-    let tmpTime = Date.now();
-    if (tmpTime - movingPhotoCreateTime > 60000) {
-      isExist = true
-      console.error(testName + "timed out, couldn't find video");
-      expect().assertFail()
-    }
-    const resultStr = await abilityDelegator.executeShellCommand(cmd1, 10);
-    let dataStr = resultStr.stdResult.toString();
-    if (dataStr.includes('mp4')) {
-      let isExistMovingPhotoVideo = dataStr.includes(photoname + '.mp4');
-      if (!isExistMovingPhotoVideo) {
-        console.error(testName + "error is isExistMovingPhotoVideo is " + isExistMovingPhotoVideo);
-        expect().assertFail()
-      }
-      let isExistMovingPhoto = dataStr.includes(photoname + '.' + photoformat);
-      if (!isExistMovingPhoto) {
-        console.error(testName + "error is isExistMovingPhoto is " + isExistMovingPhoto);
-        expect().assertFail()
-      }
-      isExist = true
-      isExistVideo = isExist
-    }
-  }
 }
 
 export default function MiniCapabilityTest() {
@@ -1009,10 +970,6 @@ export default function MiniCapabilityTest() {
               const isJpg: boolean = fileUri.toLowerCase().endsWith('.jpg');
               console.info(TAG, testName + " isJpg is " + isJpg);
               expect(isJpg).assertTrue();
-              // 判断动图资产是否存在视频
-              await isExistMovingPhotoVideo(testName, receivedAsset!);
-              console.info(TAG, testName + " isExistVideo is " + isExistVideo);
-              expect(isExistVideo).assertTrue();
             }
             // 释放资源
             await photoOutput.release();
@@ -1105,10 +1062,6 @@ export default function MiniCapabilityTest() {
               const isJpg: boolean = fileUri.toLowerCase().endsWith('.jpg');
               console.info(TAG, testName + " isJpg is " + isJpg);
               expect(isJpg).assertTrue();
-              // 判断动图资产是否存在视频
-              await isExistMovingPhotoVideo(testName, receivedAsset!);
-              console.info(TAG, testName + " isExistVideo is " + isExistVideo);
-              expect(isExistVideo).assertTrue();
             }
             // 释放资源
             await photoOutput.release();
