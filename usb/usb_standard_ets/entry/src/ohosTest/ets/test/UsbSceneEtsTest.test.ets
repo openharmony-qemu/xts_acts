@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ async function executeUsbRequest(
   request: PARA,
   expectResult: number = 0
 ): Promise<number> {
+  let devicePipe: usbMgr.USBDevicePipe | undefined;
   try {
     const devicesList =usbMgr.getDevices();
     if (!devicesList || devicesList.length === 0) {
@@ -48,7 +49,7 @@ async function executeUsbRequest(
       throw new Error("Failed to connect device");
     }
 
-    const interfaces = device.configs[0].interfaces[0];
+    const interfaces = device.configs?.[0]?.interfaces?[0]?;
     const claimResult = usbMgr.claimInterface(devicePipe, interfaces, true);
     if (claimResult !== 0) {
       throw new Error(`Failed to claim interface: ${claimResult}`);
@@ -59,11 +60,20 @@ async function executeUsbRequest(
     expect(result).assertEqual(expectResult);
 
     usbMgr.closePipe(devicePipe);
+    devicePipe = undefined;
     return result;
   } catch (err) {
     console.error(TAG, `executeUsbRequest failed: ${JSON.stringify(err)}`);
     expect().assertFail();
     throw new Error(`err: ${err.code}`);
+  } finally {
+    if (devicePipe) {
+      try {
+        usbMgr.closePipe(devicePipe);
+      } catch (closeErr) {
+        console.error(TAG, `failed to close pipe in finally block: ${(closeErr)}`);
+      }
+    }
   }
 }
 
@@ -115,7 +125,7 @@ export default function UsbSceneEtsTest() {
     it("testConnectDeviceNormalApp001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testConnectDeviceNormalApp001 no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         try {
@@ -146,7 +156,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetStatus", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetStatus no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetStatus begin');
@@ -174,7 +184,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferSetFeature", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferSetFeature no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         {
@@ -197,16 +207,21 @@ export default function UsbSceneEtsTest() {
           console.info(TAG, `SET_FEATURE interfaces = ${JSON.stringify(interfaces)}`);
           let claim = usbMgr.claimInterface(devicePipe, interfaces, true);
           console.info(TAG, `SET_FEATURE claim = ${claim}`);
+          except(claim == 0).assertEqual(true);
           if (interfaces.endpoints.length > 0) {
             param.wIndex = interfaces.endpoints[0].address;
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, `SET_FEATURE size = ${ret}`);
+            except(ret == 0).assertEqual(true);
+            usbMgr.removeRight(devicesList[0].name);
+            usbMgr.closePipe(devicepipe);
           }
           done();
         } catch (err) {
           console.info(TAG, `SET_FEATURE error`);
           console.info(TAG, `SET_FEATURE err.code = ${JSON.stringify(err)}`);
           console.info(TAG, 'SET_FEATURE end');
+          except().assertFail();
           done();
         }
         }
@@ -243,14 +258,19 @@ export default function UsbSceneEtsTest() {
             param1.wIndex = interfaces.endpoints[0].address;
             let res = await usbMgr.usbControlTransfer(devicePipe, param1);
             console.info(TAG, `CLEAR_FEATURE size = ${res}`);
+            except(ret == 0).assertEqual(true);
             let ret = await usbMgr.usbControlTransfer(devicePipe, param);
             console.info(TAG, `CLEAR_FEATURE size = ${ret}`);
+            except(ret == 0).assertEqual(true);
+            usbMgr.removeRight(devicesList[0].name);
+            usbMgr.closePipe(devicepipe);
           }
           done();
         } catch (err) {
           console.info(TAG, `CLEAR_FEATURE error`);
           console.info(TAG, `CLEAR_FEATURE err.code = ${JSON.stringify(err)}`);
           console.info(TAG, 'CLEAR_FEATURE end');
+          except().assertFail();
           done();
         }
         }
@@ -270,7 +290,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferClearFeature", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferClearFeature no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferClearFeature begin');
@@ -299,7 +319,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetDescriptor", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetDescriptor no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetDescriptor begin');
@@ -327,7 +347,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetConfiguration", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetConfiguration no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetConfiguration begin');
@@ -355,7 +375,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferGetInterface", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferGetInterface no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferGetInterface begin');
@@ -383,7 +403,7 @@ export default function UsbSceneEtsTest() {
     it("testUsbControlTransferSetConfiguration", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (!isDeviceConnected) {
         console.info(TAG, 'usb testUsbControlTransferSetConfiguration no device is connected');
-        expect(devices == null).assertFalse();
+        expect(devices == null).assertTrue();
         done();
       } else {
         console.info(TAG, 'usb testUsbControlTransferSetConfiguration begin');
