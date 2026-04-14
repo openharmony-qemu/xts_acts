@@ -805,7 +805,7 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue();
+        expect(Number(err.code)  === 401).assertTrue();
         done();
       }
     })
@@ -828,7 +828,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_size_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue();
+        expect(Number(err.code)  === 401).assertTrue();
         done();
       }
     })
@@ -851,7 +851,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_row_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue();
+        expect(Number(err.code)  === 401).assertTrue();
         done();
       }
     })
@@ -874,7 +874,7 @@ export default function HiAppEvent1() {
 
       }catch(err){
         console.error(`====>hiAppEventdfx10_row_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue();
+        expect(Number(err.code)  === 401).assertTrue();
         done();
       }
     })
@@ -895,7 +895,7 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx11_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue()
+        expect(Number(err.code)  === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx11_null end");
@@ -917,7 +917,7 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>HiAppEventTest_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(Number(err.code) === 401).assertTrue()
+        expect(Number(err.code)  === 401).assertTrue()
         done();
       }
       console.info("HiAppEventTest_undefined end");
