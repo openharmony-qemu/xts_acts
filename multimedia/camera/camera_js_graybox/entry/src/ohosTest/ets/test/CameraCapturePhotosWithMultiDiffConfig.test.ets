@@ -32,13 +32,16 @@ import {
   getPhotoOutputFromProfile,
   createPreviewOutputFromProfile,
   setImageColorSpace,
-  IsexistMovingPhotoVideo
+  IsexistMovingPhotoVideo,
+  generateNameForAsset,
+  renameAsset
 } from './CameraCommonAPI'
 
 import {
   enableMovingPhoto,
 } from './CameraCommonAPI'
 
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { camera } from '@kit.CameraKit';
 
 
@@ -109,10 +112,11 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
                 await onPreviewOutputFrameStart(previewOutPut!);
                 enableMovingPhoto(photoOutput)
                 setFocusMode(session);
-
+                let assetArray: photoAccessHelper.PhotoAsset[] = []
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
                 if (zoomRatioRange != undefined) {
                 for (let zoomRatio of zoomRatioRange!) {
+                    let newTitle: string = await generateNameForAsset(camera.SceneMode.NORMAL_PHOTO, camreId, photoOutputProfile, previewOutPutProfile, zoomRatio)
                     const befortCount = await getAllPhotoAssetsCount();
                     setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
 
@@ -121,7 +125,10 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
                     onCaptureReady(photoOutput);
                     await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum);
                     let assets = await offPhotoOutputPhotoAssetAvailable(photoOutput, capturePhotoNum, fileNames, true)
+                    // 重命名资产
+                    renameAsset(assets[0], `${newTitle}`)
                     await expectEqualPhotoCount(befortCount, capturePhotoNum);
+                    assetArray.push(assets[0])
                     if (globalThis.isSupportMovingPhoto) {
                     await IsexistMovingPhotoVideo(assets);
                     }
@@ -140,7 +147,6 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
                 }
                 await sleep(3000);
                 }
-
                 //恢复过程
                 offCaptureReady(photoOutput);
                 offPreviewOutputFrameStart(previewOutPut!);

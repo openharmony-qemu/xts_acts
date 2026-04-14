@@ -129,7 +129,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                   camreType is ${camreId.connectionType}`);
                   // 创建空的视频文件
                   let videoName =
-                    await generateNameForAsset(camera.SceneMode.NORMAL_VIDEO, camreId, videoProfile, previewProfile)
+                    await generateNameForAsset(camera.SceneMode.NORMAL_VIDEO, camreId, videoProfile, previewProfile, 1, frameRate)
                   let videoUri: string = `file://${getContext().filesDir}/${videoName}.mp4`; // 本地沙箱路径。
                   let file: fs.File = await createVideoFile(videoUri)
                   avRecoder = await createAvRecorder();
