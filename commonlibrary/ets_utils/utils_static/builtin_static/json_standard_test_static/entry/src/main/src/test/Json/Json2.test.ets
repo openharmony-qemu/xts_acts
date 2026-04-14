@@ -1027,7 +1027,7 @@ export default function Json2Test() {
     it('Json2Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: Obj50 = { name: "张三", age: 30 };
       const jsonStr = JSON.stringify(obj);
-      expect(jsonStr).assertEqual('{"age":30,"name":"张三"}');
+      expect(jsonStr).assertEqual('{"name":"张三","age":30}');
     });
     /**
      * @tc.name   Json2Test051
@@ -1916,7 +1916,7 @@ export default function Json2Test() {
     it('Json2Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: Obj123 = { name: "王五", age: 28, score: 95.5 };
       const jsonStr = JSON.stringify(obj);
-      expect(jsonStr).assertEqual('{"age":28,"name":"王五","score":95.5}');
+      expect(jsonStr).assertEqual('{"name":"王五","age":28,"score":95.5}');
     });
 
     /**
