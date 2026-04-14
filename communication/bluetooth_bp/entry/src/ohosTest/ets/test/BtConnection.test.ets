@@ -4334,7 +4334,7 @@ describe('btConnectionTest', () => {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) =>  {
         let hashValue: string = "c10b57deb2e1aafd255596e0d4fd678";
         try {
             let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
