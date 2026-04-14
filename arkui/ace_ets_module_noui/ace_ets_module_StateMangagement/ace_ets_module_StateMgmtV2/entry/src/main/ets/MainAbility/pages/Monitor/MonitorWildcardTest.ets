@@ -38,8 +38,8 @@ class MonitorTestClass {
   @Trace public date: Date = new Date();
   @Trace public person: Person = new Person();
 
-  @Trace monitorCallbackCount: number = 0;
-  @Trace monitorDirtyPaths: string[] = [];
+  @Trace public monitorCallbackCount: number = 0;
+  @Trace public monitorDirtyPaths: string[] = [];
 
   @Monitor({ enableWildcard: true }, 'propA')
   onPropAChange(monitor: IMonitor) {

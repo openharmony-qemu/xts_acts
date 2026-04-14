@@ -53,20 +53,21 @@ export default function persistenceV2NotifyOnErrorTest() {
     });
 
     /**
-     * @tc.name   PersistenceV2_notifyOnError_oldValue_001
-     * @tc.number SUB_ARUI_PERSISTENCEV2_NOTIFYONERROR_OLDVALUE_001
+     * @tc.name   SUB_ARUI_PERSISTENCEV2_NOTIFYONERROR_OLDVALUE_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_NOTIFYONERROR_OLDVALUE_0100
      * @tc.desc   Test PersistenceV2.notifyOnError callback with oldValue parameter (serialization error scenario)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('PersistenceV2_notifyOnError_oldValue_001', Level.LEVEL2, async () => {
+    it('SUB_ARUI_PERSISTENCEV2_NOTIFYONERROR_OLDVALUE_0100', Level.LEVEL2, async () => {
       console.info('[PersistenceV2_notifyOnError_oldValue_001] START');
 
       try {
         let oldValue: string| undefined =  AppStorage.get('PersistenceV2_notifyOnError_oldValue')
         expect(oldValue).assertEqual('isUndefined')
         AppStorage.delete('PersistenceV2_notifyOnError_oldValue')
+        PersistenceV2.remove('SampleOld')
         console.info('[PersistenceV2_notifyOnError_oldValue_001] END');
       } catch (err) {
         console.error('[PersistenceV2_notifyOnError_oldValue_001] Error: ' + JSON.stringify(err));

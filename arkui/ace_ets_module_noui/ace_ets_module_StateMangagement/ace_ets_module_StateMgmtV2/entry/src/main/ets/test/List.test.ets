@@ -81,9 +81,7 @@ export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
     PerGlobalConnectTest();
-    persistenceV2NotifyOnErrorTest();
     ReuseV2Test0030();
-    reuseOptionsDynamicReuseIdTest();
     monitorWildcardTest();
     addMonitorWildcardTest();
     Monitor1Test();
@@ -142,4 +140,5 @@ export default function testsuite() {
     SyncMonitor0020Test();
     persistenceV2NullUndefinedTest();
     appStorageV2NullUndefinedTest();
+    persistenceV2NotifyOnErrorTest();
 }

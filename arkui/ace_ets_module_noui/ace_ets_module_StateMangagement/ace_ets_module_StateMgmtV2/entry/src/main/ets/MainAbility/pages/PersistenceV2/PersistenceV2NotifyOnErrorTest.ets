@@ -23,31 +23,27 @@ PersistenceV2.notifyOnError((key: string, reason: string, msg: string, oldValue?
 });
 
 @ObservedV2
-class SampleChild {
+class SampleChildOldValue {
   @Trace public  id: number | null = null;
   @Trace public count: number = 10;
 }
 
 @ObservedV2
-class Sample {
-  @Type(SampleChild)
-  @Trace public sampleChild: SampleChild = new SampleChild();
+class SampleOldValue {
+  @Type(SampleChildOldValue)
+  @Trace public sampleChild: SampleChildOldValue = new SampleChildOldValue();
 }
 
 @Entry
 @ComponentV2
 struct PersistenceV2NotifyOnErrorTest {
   @Local refresh: number = 0;
-  // 调用connect或globalConnect存储
-  @Local p: Sample = PersistenceV2.connect(Sample, 'SampleOld', () => new Sample())!;
-  // @Local p: Sample = PersistenceV2.globalConnect({ type: Sample, key: 'connectSample', defaultCreator: () => new Sample() })!;
+  @Local p: SampleOldValue = PersistenceV2.connect(SampleOldValue, 'SampleOld', () => new SampleOldValue())!;
 
   build() {
     Column({ space: 5 }) {
-      // 显示数据
       Text('Key connectSample: ' + this.p.sampleChild.count.toString())
         .id('PersistenceV2NotifyOnErrorTest_01')
-
 
     }
     .width('100%')
