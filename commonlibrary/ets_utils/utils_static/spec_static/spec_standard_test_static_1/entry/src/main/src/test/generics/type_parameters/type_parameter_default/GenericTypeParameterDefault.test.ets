@@ -205,7 +205,7 @@ type SomeType19 = SomeTypeType19
 class OtherTypeType19 {}
 type OtherType19 = OtherTypeType19
 
-class BaseType19<T, U = SomeType19, V = OtherType19> {}
+interface BaseType19<T, U = SomeType19, V = OtherType19> {}
 type Base19<T, U = SomeType19, V = OtherType19> = BaseType19<T, U, V>
 
 class C {
@@ -216,6 +216,15 @@ class C {
 function foo<T, U = string>(a: T, b: U): T {
   return a
 }
+class ImplBaseType9 implements BaseType9<number> {}
+class ImplBaseType9_2 implements BaseType9<number, OtherType9> {}
+class ImplBaseType9_3 implements BaseType9<number, Object, SomeType9> {}
+class ImplBaseType10 implements BaseType10<number> {}
+class ImplBaseType10_2 implements BaseType10<number, OtherType10> {}
+
+class ImplBaseType19 implements BaseType19<SomeType19> {}
+class ImplBaseType19_2 implements BaseType19<SomeType19, OtherType19> {}
+class ImplBaseType19_3 implements BaseType19<SomeType19, Object, OtherType19> {}
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -257,8 +266,13 @@ export default function GenericTypeParameterDefaultTest() {
     it("testGenericTypeParameterDefault0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new Derived1()
       expect(a instanceof BaseType).assertTrue()
+      // Verify type compatibility by assigning to a variable of the expected default type
+      let baseA: BaseType<SomeType1> = a;
+      expect(baseA instanceof BaseType).assertTrue()
       let b = new Derived2()
       expect(b instanceof BaseType2).assertTrue()
+      let baseB: BaseType2<OtherType2> = b;
+      expect(baseB instanceof BaseType2).assertTrue()
     })
 
     /**
@@ -315,15 +329,14 @@ export default function GenericTypeParameterDefaultTest() {
      * @tc.level     Level 2
      */
     it("testGenericTypeParameterDefault0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base9<number> = {}
-      let b: Base9<number, OtherType9> = {}
-      let c: Base9<number, Object, SomeType9> = {}
+      let a: Base9<number> = new ImplBaseType9()
+      let b: Base9<number, OtherType9> = new ImplBaseType9_2()
+      let c: Base9<number, Object, SomeType9> = new ImplBaseType9_3()
       expect(a instanceof BaseType9).assertTrue()
       expect(b instanceof BaseType9).assertTrue()
       expect(c instanceof BaseType9).assertTrue()
-
-      let d: Base10<number> = {}
-      let e: Base10<number, OtherType10> = {}
+      let d: Base10<number> = new ImplBaseType10()
+      let e: Base10<number, OtherType10> = new ImplBaseType10_2()
       let f: Base10<number, Object, SomeType10> = {}
       expect(d instanceof BaseType10).assertTrue()
       expect(e instanceof BaseType10).assertTrue()
@@ -399,9 +412,9 @@ export default function GenericTypeParameterDefaultTest() {
      * @tc.level     Level 2
      */
     it("testGenericTypeParameterDefault0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new Base19<SomeType19>()
-      let b = new Base19<SomeType19, OtherType19>()
-      let c = new Base19<SomeType19, Object, OtherType19>()
+      let a = new ImplBaseType19()
+      let b = new ImplBaseType19_2()
+      let c = new ImplBaseType19_3()
       expect(a instanceof BaseType19).assertTrue()
       expect(b instanceof BaseType19).assertTrue()
       expect(c instanceof BaseType19).assertTrue()
