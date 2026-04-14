@@ -761,7 +761,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestAddDeferredSurfaceSucc();
+      let result = cameraObj.TestAddDeferredSurfaceSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -775,7 +775,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200', Level.LEVEL0, async () => {
-      let result = cameraObj.TestAddDeferredSurfaceErr();
+      let result = cameraObj.TestAddDeferredSurfaceErr(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(7400101);
     });
