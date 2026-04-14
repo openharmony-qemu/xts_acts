@@ -18,7 +18,7 @@
 #include <cstdint>
 #include "include/log_common.h"
 
-#define MAX_ALLOWED_SIZE 1024 * 1024 * 1024
+#define MAX_ALLOWED_SIZE (1024 * 1024 * 1024)
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
 #define DRAWING_NUMBER_3 3
