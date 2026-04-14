@@ -233,15 +233,15 @@ export default function MiniCapabilityTest() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0100
      * @tc.desc   must contain SceneMode.NORMAL_PHOTO and SceneMode.NORMAL_VIDEO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_001';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0100';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
@@ -264,15 +264,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_1
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0101
      * @tc.desc   HDR device, photoSession must support DISPLAY_P3 or BT2020_HLG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0101', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0101';
       if (!isSupportHdrbyVPE) {
         console.info(testName + 'VPE does not support HDR');
         done();
@@ -332,15 +332,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_2
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0102
      * @tc.desc   HDR device, videoSession must support BT2020_HLG or BT2020_HLG_LIMIT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_2', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_002_2';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0102', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0102';
       if (!isSupportHdrbyVPE) {
         console.info(testName + 'VPE does not support HDR');
         done();
@@ -404,15 +404,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0103
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0103
      * @tc.desc   check support session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_003';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0103', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0103';
       console.info(TAG, testName + ' begin.');
       let session: ESObject;
       try {
@@ -450,15 +450,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_004
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_004
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0104
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0104
      * @tc.desc   photoSession must support 4 streams: 2 previews, 1 photo, 1 metadata
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_004';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0104', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0104';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -511,15 +511,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_005
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_005
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0105
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0105
      * @tc.desc   videoSession must support 4 streams: 2 previews, 1 video, 1 metadata
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_005';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0105', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0105';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -572,15 +572,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_007
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_007
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0106
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0106
      * @tc.desc   check support CAMERA_FORMAT_JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_007';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0106', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0106';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -630,15 +630,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_008
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_008
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0107
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0107
      * @tc.desc   check fullOutputCapability support CAMERA_FORMAT_YUV_420_SP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_008', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_008';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0107', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0107';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -674,15 +674,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_1
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0108
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0108
      * @tc.desc   check support CAMERA_FORMAT_YUV_420_SP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_1', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_1';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0108', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0108';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -757,15 +757,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_2
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0109
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0109
      * @tc.desc   check support CAMERA_FORMAT_JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_2', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_009_2';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0109', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0109';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -842,15 +842,15 @@ export default function MiniCapabilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_010
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_010
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0110
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0110
      * @tc.desc   支持拍摄CAMERA_FORMAT_HEIC格式照片
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_010', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_010';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0110', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0110';
       console.info(TAG, testName + ' begin.');
       if (!isSupportHEICEncode) {
         console.info(TAG, testName, 'device does not support HEIC');
@@ -933,15 +933,15 @@ export default function MiniCapabilityTest() {
     })
     
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_011
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_011
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0111
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0111
      * @tc.desc   support movingPhoto、encoding is AVC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_011', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_011';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0111', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0111';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
@@ -1029,15 +1029,15 @@ export default function MiniCapabilityTest() {
     })
     
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_012
-     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_012
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0112
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0112
      * @tc.desc   support movingPhoto、encoding is HEVC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_012', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_012';
+    it('SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0112', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_MINI_CAPABILITY_0112';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmpty(mCameraManager) || isEmpty(mCameraDeviceArray)) {
