@@ -19,9 +19,6 @@
 #include <arkui/native_node.h>
 #include <hilog/log.h>
 
-#define NUMBER_0 0
-#define NUMBER_1 1
-
 namespace ArkUICapiTest {
 
 static napi_value StrategyEnumTest_001(napi_env env, napi_callback_info info)
@@ -29,7 +26,7 @@ static napi_value StrategyEnumTest_001(napi_env env, napi_callback_info info)
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "ARKUI_COMPETITION_STRATEGY_DEFAULT StrategyEnumTest_001 result=%{public}d", ARKUI_COMPETITION_STRATEGY_DEFAULT);
-    ASSERT_EQ(NUMBER_0, ARKUI_COMPETITION_STRATEGY_DEFAULT);
+    ASSERT_EQ(PARAM_0, ARKUI_COMPETITION_STRATEGY_DEFAULT);
     NAPI_END;
 }
 
@@ -38,6 +35,6 @@ static napi_value StrategyEnumTest_002(napi_env env, napi_callback_info info)
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "ARKUI_COMPETITION_STRATEGY_COMPETITION StrategyEnumTest_002 result=%{public}d", ARKUI_COMPETITION_STRATEGY_COMPETITION);
-    ASSERT_EQ(NUMBER_1, ARKUI_COMPETITION_STRATEGY_COMPETITION);
+    ASSERT_EQ(PARAM_1, ARKUI_COMPETITION_STRATEGY_COMPETITION);
     NAPI_END;
 }

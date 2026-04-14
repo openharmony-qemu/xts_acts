@@ -149,6 +149,39 @@ namespace ArkUICapiTest {
 #define PARAM_255 255
 #define PARAM_4242 4242
 
+
+#define NAPI_START(componentName, componentType)
+    auto nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
+    auto(componentName) = nodeAPI->createNode(componentType);
+    do {
+        if ((env == nullptr) || (info == nullptr)) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NAPI_CHECK_PARAMS", "GetContext env or info is null");
+            return nullptr;
+        }
+    } while (0)
+
+#define ASSERT_EQ(result, expect)
+    do {
+        if ((result) != (expect)) {
+            std::string assertStr = "assert equal failed, expect is " + std::to_string(expect) + " and result is " +
+                                    std::to_string(result);
+            char assertChars[assertStr.size() + PARAM_1];
+            strcpy(assertChars, assertStr.c_str());
+            napi_throw_error((env), nullptr, assertChars);
+            napi_value errorResult = nullptr;
+            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+            return errorResult;
+        }
+    } while (0)
+
+#define NAPI_END
+    do {
+        napi_value result = nullptr;
+        napi_create_int32(env, SUCCESS, &result);
+        return result;
+    } while (0)
+
 /**
  * Log print domain.
  */
