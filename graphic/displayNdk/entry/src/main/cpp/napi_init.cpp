@@ -767,8 +767,7 @@ napi_value TestNativeDisplayManager_SourceMode_enum(napi_env env, napi_callback_
     }
     return retValue;
 }
-
-static napi_value displayInit(napi_env env, napi_value exports)
+static napi_value injectTouchEventInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "createAvailableArea", nullptr, CreateAvailableArea, nullptr, nullptr,
@@ -789,6 +788,14 @@ static napi_value displayInit(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "getDisplayPosition_ErrCode140004", nullptr, GetDisplayPosition_ErrCode140004, nullptr, nullptr,
             nullptr, napi_default, nullptr },
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+static napi_value displayInit(napi_env env, napi_value exports)
+{   
+    injectTouchEventInit(env, exports);
+    napi_property_descriptor desc[] = {
         { "registerAvailableAreaChangeListener", nullptr, RegisterAvailableAreaChangeListener, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "unregisterAvailableAreaChangeListener", nullptr, UnregisterAvailableAreaChangeListener, nullptr, nullptr,
@@ -807,8 +814,8 @@ static napi_value displayInit(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "registerDisplayRemoveListener_ErrCode140004", nullptr, RegisterDisplayRemoveListener_ErrCode140004,
             nullptr, nullptr, nullptr, napi_default, nullptr },
-         { "unregisterDisplayRemoveListenerOutRange", nullptr, UnregisterDisplayRemoveListenerOutRange,
-       nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "unregisterDisplayRemoveListenerOutRange", nullptr, UnregisterDisplayRemoveListenerOutRange,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterDisplayAddListenerOutRange", nullptr, UnregisterDisplayAddListenerOutRange,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterAvailableAreaChangeListenerOutRange", nullptr, UnregisterAvailableAreaChangeListenerOutRange,
@@ -816,7 +823,7 @@ static napi_value displayInit(napi_env env, napi_value exports)
         { "unregisterFoldDisplayModeChangeListenerOutRange", nullptr, UnregisterFoldDisplayModeChangeListenerOutRange,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterDisplayChangeListenerOutRange", nullptr, UnregisterDisplayChangeListenerOutRange,
-           nullptr, nullptr, nullptr, napi_default, nullptr },
+            nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
