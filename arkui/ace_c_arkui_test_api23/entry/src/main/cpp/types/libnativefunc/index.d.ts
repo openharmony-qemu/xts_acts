@@ -148,6 +148,10 @@ export const testImageAntialiased004: () => number;
 
 export const testImageAntialiased005: () => number;
 
+export const testImageAntialiased006: () => number;
+
+export const testImageAntialiased007: () => number;
+
 export const ListEmptyTest_001: () => number;
 export const ListEmptyTest_002: () => number;
 export const ListEmptyTest_003: () => number;
