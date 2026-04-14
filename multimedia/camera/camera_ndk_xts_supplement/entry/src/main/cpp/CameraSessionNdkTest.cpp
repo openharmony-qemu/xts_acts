@@ -1171,7 +1171,12 @@ napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
 
 napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(previewOutput, faceID);
@@ -1187,7 +1192,12 @@ napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info) {
 
 napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info) {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(nullptr, faceID);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
