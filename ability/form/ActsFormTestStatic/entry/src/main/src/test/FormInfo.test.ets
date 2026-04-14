@@ -230,7 +230,7 @@ export default function formInfoTest() {
         * @tc.level  LEVEL1
         */
         it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            const itName: string = 'FormInfoStaticTest004';
+            const it string = 'FormInfoStaticTest004';
             hilog.info(DOMAIN, TAG, `${itName} start`);
             expect(-1).assertEqual(formInfo.FormUpdateReason.UNKNOWN);
             expect(0).assertEqual(formInfo.FormUpdateReason.FORM_NODE_REUSE);
