@@ -86,7 +86,7 @@ export default function setAssetCompatibleCapabilityTest () {
      * @tc.type        Function
      * @tc.level       Level 2
      */
-    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0300';
         let abnormalResolution: ESObject = undefined;
         try {
@@ -94,7 +94,7 @@ export default function setAssetCompatibleCapabilityTest () {
                 supportedHighResolution: abnormalResolution,
             };
             await helper.setAssetCompatibleCapability(cfg);
-            expect().assertFalse();
+            expect().assertFail();
             done();
         } catch (error) {
             console.error(`${testNum} fail, error is ${error}, ${error.code}`);
@@ -111,7 +111,7 @@ export default function setAssetCompatibleCapabilityTest () {
      * @tc.type        Function
      * @tc.level       Level 2
      */
-    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400', Level.LEVEL2, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0400';
         let abnormalResolution: ESObject = null;
         try {
@@ -119,7 +119,7 @@ export default function setAssetCompatibleCapabilityTest () {
                 supportedHighResolution: abnormalResolution,
             };
             await helper.setAssetCompatibleCapability(cfg);
-            expect().assertFalse();
+            expect().assertFail();
             done();
         } catch (error) {
             console.error(`${testNum} fail, error is ${error}, ${error.code}`);
@@ -136,7 +136,7 @@ export default function setAssetCompatibleCapabilityTest () {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500', Level.LEVEL1, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0500';
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
@@ -160,7 +160,7 @@ export default function setAssetCompatibleCapabilityTest () {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600', Level.LEVEL1, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0600';
         try {
             let cfg : photoAccessHelper.AssetCompatibleCapability = {
@@ -184,7 +184,7 @@ export default function setAssetCompatibleCapabilityTest () {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700', Level.LEVEL1, async (done: Function) => {
         let testNum: string = 'SUB_MultiMedia_MediaLibrary_setAssetCompatibleCapability_Test_0700';
         try {
             let firstCfg : photoAccessHelper.AssetCompatibleCapability = {
