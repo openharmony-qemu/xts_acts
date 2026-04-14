@@ -955,15 +955,15 @@ export default function ndkTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300
-     * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4400
+     * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4400
      * @tc.desc   Test empty string backgroundColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300', Level.LEVEL3, (done: Function) => {
-      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300';
+    it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4400', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4400';
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
         let result = testNapi.ndkStartAbilityWithOptions_4400();
         hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} execute result:` + result);
