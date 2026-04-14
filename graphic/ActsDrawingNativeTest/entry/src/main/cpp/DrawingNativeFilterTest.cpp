@@ -36,14 +36,6 @@ void DrawingNativeFilterTestTearDown()
     std::cout << "DrawingNativeFilterTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testFilterCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0100
- * @tc.desc   Test for creating and destroying a filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFilterCreateDestroyNormal()
 {
     DrawingNativeFilterTestSetUp();
@@ -55,14 +47,6 @@ int TestFilterCreateDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterCreateDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0101
- * @tc.desc   Test for destroying a filter with NULL parameter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterCreateDestroyNULL()
 {
     DrawingNativeFilterTestSetUp();
@@ -73,14 +57,6 @@ int TestFilterCreateDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterCreateDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0102
- * @tc.desc   Test for creating and destroying a filter multiple times and in loops.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterCreateDestroyMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
@@ -93,14 +69,6 @@ int TestFilterCreateDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetImageFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0200
- * @tc.desc   Test for setting an image filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFilterSetImageFilterNormal()
 {
     DrawingNativeFilterTestSetUp();
@@ -122,14 +90,6 @@ int TestFilterSetImageFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetImageFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0201
- * @tc.desc   Test for setting an image filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetImageFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
@@ -152,14 +112,6 @@ int TestFilterSetImageFilterNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetImageFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0202
- * @tc.desc   Test for setting an image filter multiple times with different objects.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetImageFilterMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
@@ -182,14 +134,6 @@ int TestFilterSetImageFilterMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetMaskFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0300
- * @tc.desc   Test for setting a mask filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFilterSetMaskFilterNormal()
 {
     DrawingNativeFilterTestSetUp();
@@ -213,14 +157,6 @@ int TestFilterSetMaskFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetMaskFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0301
- * @tc.desc   Test for setting a mask filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetMaskFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
@@ -251,14 +187,6 @@ int TestFilterSetMaskFilterNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetMaskFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0302
- * @tc.desc   Test for setting a mask filter multiple times with different objects.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetMaskFilterMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
@@ -280,14 +208,6 @@ int TestFilterSetMaskFilterMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetColorFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0400
- * @tc.desc   Test for setting a color filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFilterSetColorFilterNormal()
 {
     DrawingNativeFilterTestSetUp();
@@ -320,14 +240,6 @@ int TestFilterSetColorFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetColorFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0401
- * @tc.desc   Test for setting a color filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetColorFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
@@ -375,14 +287,6 @@ int TestFilterSetColorFilterNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFilterSetColorFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0402
- * @tc.desc   Test for setting a color filter multiple times with different objects.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFilterSetColorFilterMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();

@@ -281,5 +281,226 @@ export default function DrawingNativePath2Test() {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(7);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testPathGetPointDataNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0100
+     * @tc.desc   test for testPathGetPointDataNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathGetPointDataNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetPointDataNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0200
+     * @tc.desc   test for testPathGetPointDataNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetPointDataNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetPointDataAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0300
+     * @tc.desc   test for testPathGetPointDataAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetPointDataAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetPointDataMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0400
+     * @tc.desc   test for testPathGetPointDataMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetPointDataMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetVerbDataNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0500
+     * @tc.desc   test for testPathGetVerbDataNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathGetVerbDataNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetVerbDataNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0600
+     * @tc.desc   test for testPathGetVerbDataNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetVerbDataNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetVerbDataAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0700
+     * @tc.desc   test for testPathGetVerbDataAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetVerbDataAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetVerbDataMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0800
+     * @tc.desc   test for testPathGetVerbDataMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetVerbDataMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetConicWeightNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_0900
+     * @tc.desc   test for testPathGetConicWeightNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathGetConicWeightNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetConicWeightNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1000
+     * @tc.desc   test for testPathGetConicWeightNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetConicWeightNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetConicWeightAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1100
+     * @tc.desc   test for testPathGetConicWeightAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetConicWeightAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetConicWeightMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1200
+     * @tc.desc   test for testPathGetConicWeightMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetConicWeightMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathConvertToSvgStringNormal1
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1300
+     * @tc.desc   test for testPathConvertToSvgStringNormal1
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathConvertToSvgStringNormal1', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathConvertToSvgStringNormal2
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1400
+     * @tc.desc   test for testPathConvertToSvgStringNormal2
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPathConvertToSvgStringNormal2', Level.LEVEL1, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathConvertToSvgStringNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1500
+     * @tc.desc   test for testPathConvertToSvgStringNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathConvertToSvgStringNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathConvertToSvgStringAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1600
+     * @tc.desc   test for testPathConvertToSvgStringAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathConvertToSvgStringAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathConvertToSvgStringMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1700
+     * @tc.desc   test for testPathConvertToSvgStringMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathConvertToSvgStringMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(16);
+      expect(result).assertEqual(0);
+    })
   })
 }

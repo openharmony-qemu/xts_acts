@@ -38,14 +38,6 @@ void DrawingNativeTypeFaceTestTearDown()
     std::cout << "DrawingNativeTypeFaceTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testTypefaceCreateDefaultNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0100
- * @tc.desc   test for testTypefaceCreateDefaultNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateDefaultNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -70,14 +62,6 @@ int TestTypefaceCreateDefaultNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateDefaultNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0101
- * @tc.desc   test for testTypefaceCreateDefaultNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateDefaultNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -108,14 +92,6 @@ int TestTypefaceCreateDefaultNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0200
- * @tc.desc   test for testTypefaceCreateFromFileNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateFromFileNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -144,14 +120,6 @@ int TestTypefaceCreateFromFileNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0201
- * @tc.desc   test for testTypefaceCreateFromFileNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromFileNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -183,14 +151,6 @@ int TestTypefaceCreateFromFileNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromStreamNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0300
- * @tc.desc   test for testTypefaceCreateFromStreamNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateFromStreamNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -218,14 +178,6 @@ int TestTypefaceCreateFromStreamNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromStreamNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0301
- * @tc.desc   test for testTypefaceCreateFromStreamNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromStreamNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -256,14 +208,6 @@ int TestTypefaceCreateFromStreamNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0400
- * @tc.desc   test for testTypefaceCreateDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateDestroyNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -277,14 +221,6 @@ int TestTypefaceCreateDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0401
- * @tc.desc   test for testTypefaceCreateDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateDestroyNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -296,14 +232,6 @@ int TestTypefaceCreateDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileWithArugumentsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0500
- * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateFromFileWithArugumentsNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -326,14 +254,6 @@ int TestTypefaceCreateFromFileWithArugumentsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileWithArugumentsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0501
- * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromFileWithArugumentsNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -360,14 +280,6 @@ int TestTypefaceCreateFromFileWithArugumentsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileWithArugumentsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0502
- * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromFileWithArugumentsAbnormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -393,14 +305,6 @@ int TestTypefaceCreateFromFileWithArugumentsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromFileWithArugumentsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0503
- * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -426,14 +330,6 @@ int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromCurrentNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0600
- * @tc.desc   test for testTypefaceCreateFromCurrentNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceCreateFromCurrentNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -464,14 +360,6 @@ int TestTypefaceCreateFromCurrentNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromCurrentNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0601
- * @tc.desc   test for testTypefaceCreateFromCurrentNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromCurrentNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -504,14 +392,6 @@ int TestTypefaceCreateFromCurrentNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceCreateFromCurrentMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0602
- * @tc.desc   test for testTypefaceCreateFromCurrentMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceCreateFromCurrentMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -543,14 +423,6 @@ int TestTypefaceCreateFromCurrentMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsBoldNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0700
- * @tc.desc   test for testTypefaceIsBoldNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceIsBoldNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -569,14 +441,6 @@ int TestTypefaceIsBoldNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsBoldNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0701
- * @tc.desc   test for testTypefaceIsBoldNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceIsBoldNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -595,14 +459,6 @@ int TestTypefaceIsBoldNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsBoldMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0702
- * @tc.desc   test for testTypefaceIsBoldMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceIsBoldMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -618,14 +474,6 @@ int TestTypefaceIsBoldMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsItalicNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0800
- * @tc.desc   test for testTypefaceIsItalicNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceIsItalicNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -644,14 +492,6 @@ int TestTypefaceIsItalicNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsItalicNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0801
- * @tc.desc   test for testTypefaceIsItalicNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestTypefaceIsItalicNull()
 {
     DrawingNativeTypeFaceTestSetUp();
@@ -670,14 +510,6 @@ int TestTypefaceIsItalicNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testTypefaceIsItalicMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0802
- * @tc.desc   test for testTypefaceIsItalicMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestTypefaceIsItalicMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();

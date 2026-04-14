@@ -36,14 +36,6 @@ void DrawingNativeColorSpaceTestTearDown()
     std::cout << "DrawingNativeColorSpaceTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testColorSpaceCreateSrgbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100
- * @tc.desc   Test for creating an sRGB color space with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorSpaceCreateSrgbNormal()
 {
     DrawingNativeColorSpaceTestSetUp();
@@ -54,14 +46,6 @@ int TestColorSpaceCreateSrgbNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSpaceDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101
- * @tc.desc   Test for destroying a color space with a NULL parameter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSpaceDestroyNull()
 {
     DrawingNativeColorSpaceTestSetUp();
@@ -72,14 +56,6 @@ int TestColorSpaceDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSpaceCreateSrgbMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0102
- * @tc.desc   Test for creating an sRGB color space with multiple calls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSpaceCreateSrgbMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
@@ -92,14 +68,6 @@ int TestColorSpaceCreateSrgbMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSpaceCreateSrgbLinearNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0200
- * @tc.desc   Test for creating an sRGB linear color space with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorSpaceCreateSrgbLinearNormal()
 {
     DrawingNativeColorSpaceTestSetUp();
@@ -110,14 +78,6 @@ int TestColorSpaceCreateSrgbLinearNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSpaceCreateSrgbLinearMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0201
- * @tc.desc   Test for creating an sRGB linear color space with multiple calls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSpaceCreateSrgbLinearMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
