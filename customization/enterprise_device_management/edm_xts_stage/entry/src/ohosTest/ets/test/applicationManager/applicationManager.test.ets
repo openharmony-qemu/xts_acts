@@ -10243,5 +10243,337 @@ export default function applicationManagerTest() {
       });
       done();
     })
+
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0100
+     * @tc.desc   test queryBundleStatsInfos method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0200
+     * @tc.desc   test queryBundleStatsInfos method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0300
+     * @tc.desc   test queryBundleStatsInfos method with super admin and invalid accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, INVALID_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0400
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0400", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         applicationManager.queryBundleStatsInfos(null, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0500
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0500", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         applicationManager.queryBundleStatsInfos(undefined, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0600
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0600", Level.LEVEL2, async (done: Function) => {
+       try {
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, null, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0700
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0700", Level.LEVEL2, async (done: Function) => {
+       try {
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, undefined, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0800
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0800", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, null, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0900
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0900", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, undefined, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1000
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1000", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, null);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1100
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1100", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, undefined);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1200
+     * @tc.desc   test queryBundleStatsInfos method with super admin and negative startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1200", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = -1;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1300
+     * @tc.desc   test queryBundleStatsInfos method with super admin and negative endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = -1;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1400
+     * @tc.desc   test queryBundleStatsInfos method with super admin and startTime is greater than endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1400", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = Date.now() + 888888;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1500
+     * @tc.desc   test queryBundleStatsInfos method with super admin success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1500", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         let res = applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(res.length >= 0).assertTrue();
+       } catch (error) {
+         expect(false).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
   })
 }
