@@ -555,6 +555,202 @@ export default function CameraFunctionTest() {
       console.info(TAG, result);
       expect(result).assertEqual(7400101);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureWithUnconfiguredSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationWithInvalidValue();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100
+     * @tc.desc     OH_CaptureSession_GetExposureDuration - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetExposureDurationSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200
+     * @tc.desc     OH_CaptureSession_GetExposureDuration - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetExposureDurationWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
     
   })
 }
