@@ -1386,6 +1386,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
       avMetadataExtractor.cancelAllFetchFrames();
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
       avMetadataExtractor.release();
       done();
     });
@@ -1437,6 +1438,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(null, queryOption, null, null);
       avMetadataExtractor.cancelAllFetchFrames();
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
       avMetadataExtractor.release();
       done();
     });
