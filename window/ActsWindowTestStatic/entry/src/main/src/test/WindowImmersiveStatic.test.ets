@@ -131,12 +131,12 @@ export default function WindowImmersiveStaticTest() {
             done();
             let systemBarProperty = win!.getWindowSystemBarProperties();
             hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
-            expect(systemBarProperty.statusBarColor == '#ff00ff').assertTrue();
+            expect(systemBarProperty.statusBarColor == '#FFFF00FF').assertTrue();
             expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.statusBarContentColor =='#ffffff').assertTrue();
-            expect(systemBarProperty.navigationBarColor =='#00ff00').assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#FFFFFFFF').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#FF00FF00').assertTrue();
             expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.navigationBarContentColor =='#00ffff').assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#FF00FFFF').assertTrue();
             expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
             expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
           }).catch((err: Error): PromiseLike<void> | undefined => {
@@ -354,6 +354,8 @@ export default function WindowImmersiveStaticTest() {
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
         try {
+          let isImmersive_before: boolean = win!.isImmersiveLayout();
+          hilog.info(domain, tag, msgStr + 'Succeeded in checking isImmersive_before layout: ' + isImmersive_before);
           let enabled: boolean = true;
           win!.setWindowLayoutFullScreen(enabled);
           hilog.info(domain, tag, caseName + ' setWindowLayoutFullScreen: ' + enabled);
@@ -362,8 +364,13 @@ export default function WindowImmersiveStaticTest() {
 
           let isImmersive: boolean = win!.isImmersiveLayout();
           hilog.info(domain, tag, msgStr + 'Succeeded in checking immersive layout: ' + isImmersive);
-          expect(isImmersive).assertEqual(enabled);
-          done();
+          if(isFreeWindowMode){
+             expect(isImmersive).assertEqual(isImmersive_before);
+            done();
+          }else{
+            expect(isImmersive).assertEqual(enabled);
+            done();
+          }
         } catch (exception) {
           exception = exception as BusinessError;
           if (exception.code === 801) {

@@ -403,6 +403,27 @@ function testSetDisallowedPolicy() {
   });
 
   /**
+   * @tc.name   test_set_disallowed_policy_uinput_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_UINPUT_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
    * @tc.name   test_set_disallowed_policy_0200
    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_0200
    * @tc.desc   test restrictions setDisallowedPolicy with normal admin
@@ -417,6 +438,31 @@ function testSetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_0300
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -744,6 +790,52 @@ function testGetDisallowedPolicy() {
     } catch (error) {
       console.info(' --- test_get_disallowed_policy_0113 error 201 is expected, actually catch: ' + error.code);
       expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_uinput_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_UINPUT_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_uinput_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.LOCAL_INPUT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICY_0200
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

@@ -22,6 +22,8 @@ import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceMan
 import columnAllowForceDarkTest from './column/ColumnAllowForceDark.test';
 import GetContextNullUndefinedTest from './getUIContext/GetContextNullUndefined.test';
 import PostDelayedFrameCallbackParamTest from './getUIContext/PostDelayedFrameCallbackParamTest.test';
+import GetPageRootNodeErrorCodeTest from './getUIContext/GetPageRootNodeErrorCodeTest.test';
+import GetPageRootNodeNullTest from './getUIContext/GetPageRootNodeNullTest.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
@@ -34,4 +36,6 @@ export default function testsuite() {
   columnAllowForceDarkTest();
   GetContextNullUndefinedTest();
   PostDelayedFrameCallbackParamTest();
+  GetPageRootNodeErrorCodeTest();
+  GetPageRootNodeNullTest();
 }

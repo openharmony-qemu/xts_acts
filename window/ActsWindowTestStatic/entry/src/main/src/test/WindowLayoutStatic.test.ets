@@ -77,7 +77,7 @@ export default function WindowLayoutStaticTest() {
                         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
                         await Utils.msSleep(1000)
                         let titlePoint = await title!.getBounds()
-                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 2000)
+                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 10000)
                         await Utils.msSleep(2000)
                         windowStatus = windowClass.getWindowStatus()
                         hilog.info(domain, tag, caseName + `windowStatus2: ${windowStatus}`);
@@ -1104,15 +1104,15 @@ export default function WindowLayoutStaticTest() {
 
         // todo minimize
         /**
-         * @tc.number      SUB_WINDOW_minimize_Callback_001
-         * @tc.name        testMinimize_Callback_MainWindow_static_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Callback_0100
+         * @tc.name        testMinimize_Callback_SubWindow_static_001
          * @tc.desc        minimize callback main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Callback_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Callback_MainWindow_static_001';
+        it('testMinimize_Callback_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Callback_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -1201,15 +1201,15 @@ export default function WindowLayoutStaticTest() {
         })
 
         /**
-         * @tc.number      SUB_WINDOW_minimize_Promise_001
-         * @tc.name        testMinimize_Promise_MainWindow_static_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Promise_0100
+         * @tc.name        testMinimize_Promise_SubWindow_static_001
          * @tc.desc        minimize promise main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Promise_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Promise_MainWindow_static_001';
+        it('testMinimize_Promise_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Promise_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -1434,12 +1434,9 @@ export default function WindowLayoutStaticTest() {
                         } else {
                             hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(false).assertTrue();
-                            done();
+                            done();  
                         }
                     });
-                    await mainWindow.recover();
-                    hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
-                    done();
                 } catch (exception) {
                     exception === exception as BusinessError;
                     hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
@@ -1571,9 +1568,9 @@ export default function WindowLayoutStaticTest() {
                     let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
                     hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                     if(isFreeWindowMode){
-                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         await mainWindow.recover();
                         hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         done();
                     }else{
                         expect(windowStatus).assertEqual(windowStatus_before);
@@ -1621,9 +1618,9 @@ export default function WindowLayoutStaticTest() {
                         let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
                         hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         if(isFreeWindowMode){
-                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             await mainWindow.recover();
                             hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             done();
                         }else{
                             expect(windowStatus).assertEqual(windowStatus_before);
@@ -1641,9 +1638,6 @@ export default function WindowLayoutStaticTest() {
                             done();
                         }
                     });
-                    await mainWindow.recover();
-                    hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
-                    done();
                 } catch (exception) {
                     exception === exception as BusinessError;
                     hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);

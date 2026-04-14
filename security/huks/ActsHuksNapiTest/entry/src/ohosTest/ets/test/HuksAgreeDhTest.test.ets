@@ -28,14 +28,14 @@ export default function HuksAgreeDhTest() {
     })
     
     /**
-     * @tc.name   SecurityHuksNapiAgreeDh0100
-     * @tc.number Security_HUKS_NAPI_Agree_DH_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_AGREE_DH_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_AGREE_DH_0100
      * @tc.desc   alg-DH, pur-AGREE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SecurityHuksNapiAgreeDh0100', Level.LEVEL1, () => {
+    it('SUB_SECURITY_HUKS_NAPI_AGREE_DH_0100', Level.LEVEL1, () => {
       const result = libHuks.HuksAgreeDhTest(0);
       expect(result).assertEqual(0);
     })

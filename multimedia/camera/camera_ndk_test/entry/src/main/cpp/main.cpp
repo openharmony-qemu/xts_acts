@@ -3267,6 +3267,433 @@ static napi_value GetIsoInfoChangeTest(napi_env env, napi_callback_info info)
     return jsValue;
 }
 
+static napi_value TestRegisterFlashStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->TestRegisterFlashStateChangeCallback(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestUnregisterFlashStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->TestUnregisterFlashStateChangeCallback(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value IsExposureMeteringModeSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->IsExposureMeteringModeSupported(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetExposureMeteringMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetExposureMeteringMode(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value SetExposureMeteringMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->SetExposureMeteringMode(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetSupportedISORange(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetSupportedISORange(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value getIso(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->getIso(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value setIso(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->setIso(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetCameraDevices(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetCameraDevices();
+
+    napi_value cameraInfo = nullptr;
+    if (ndkCamera_->cameras_ != nullptr) {
+        napi_create_object(env, &cameraInfo);
+        napi_value jsValue = nullptr;
+        napi_create_int32(env, ndkCamera_->cameras_->cameraPosition, &jsValue);
+        napi_set_named_property(env, cameraInfo, "cameraPosition", jsValue);
+
+        napi_create_int32(env, ndkCamera_->cameras_->cameraType, &jsValue);
+        napi_set_named_property(env, cameraInfo, "cameraType", jsValue);
+
+        napi_create_int32(env, ndkCamera_->cameras_->connectionType, &jsValue);
+        napi_set_named_property(env, cameraInfo, "connectionType", jsValue);
+
+        napi_create_string_utf8(env, ndkCamera_->cameras_->cameraId,
+            sizeof(ndkCamera_->cameras_->cameraId) + 1, &jsValue);
+        napi_set_named_property(env, cameraInfo, "cameraId", jsValue);
+    }
+    return cameraInfo;
+}
+
+static napi_value OHCaptureSessionTestPhyAptNullSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestPhyAptNullSession();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestPhyAptNullApts(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestPhyAptNullApts();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestPhyAptNoInput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestPhyAptNoInput();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestPhyAptNoOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestPhyAptNoOutput();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestDelPhyApts(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestDelPhyApts();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestDelPhyAptsNullSession(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestDelPhyAptsNullSession();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCaptureSessionTestDelPhyAptsNullApts(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestDelPhyAptsNullApts();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLensDistNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLensDistNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLensDistNullLens(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLensDistNullLens();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLensDistNullSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLensDistNullSize();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIntrinsicNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIntrinsicNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIntrinsicNullData(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIntrinsicNullData();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIntrinsicNullSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIntrinsicNullSize();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestSensorSizeNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestSensorSizeNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestSensorSizeNullW(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestSensorSizeNullW();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestSensorSizeNullH(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestSensorSizeNullH();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestEqFocalNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestEqFocalNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestEqFocalNullData(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestEqFocalNullData();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestEqFocalNullSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestEqFocalNullSize();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestEqFocal(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestEqFocal();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIsLogicNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIsLogicNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIsLogicNullFlag(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIsLogicNullFlag();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestIsLogic(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestIsLogic();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLogicCamDevsNullCam(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLogicCamDevsNullCam();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLogicCamDevsNullData(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLogicCamDevsNullData();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLogicCamDevsNullSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLogicCamDevsNullSize();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraTestLogicCamDevs(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestLogicCamDevs();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value DeleteConstituentCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->DeleteConstituentCameraDevices(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetLensFocalLength(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetLensFocalLength(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetMinimumFocusDistance(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetMinimumFocusDistance(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3485,6 +3912,62 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"oHCameraManagerSetSceneMode", nullptr, OHCameraManagerSetSceneMode, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+
+        { "getCameraDevices", nullptr, GetCameraDevices, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionTestPhyAptNullSession", nullptr, OHCaptureSessionTestPhyAptNullSession, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHCaptureSessionTestPhyAptNullApts", nullptr, OHCaptureSessionTestPhyAptNullApts, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCaptureSessionTestPhyAptNoInput", nullptr, OHCaptureSessionTestPhyAptNoInput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCaptureSessionTestPhyAptNoOutput", nullptr, OHCaptureSessionTestPhyAptNoOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCaptureSessionTestDelPhyApts", nullptr, OHCaptureSessionTestDelPhyApts, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCaptureSessionTestDelPhyAptsNullSession", nullptr, OHCaptureSessionTestDelPhyAptsNullSession, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionTestDelPhyAptsNullApts", nullptr, OHCaptureSessionTestDelPhyAptsNullApts, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHCameraTestLensDistNullCam", nullptr, OHCameraTestLensDistNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLensDistNullLens", nullptr, OHCameraTestLensDistNullLens, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLensDistNullSize", nullptr, OHCameraTestLensDistNullSize, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIntrinsicNullCam", nullptr, OHCameraTestIntrinsicNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIntrinsicNullData", nullptr, OHCameraTestIntrinsicNullData, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIntrinsicNullSize", nullptr, OHCameraTestIntrinsicNullSize, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestSensorSizeNullCam", nullptr, OHCameraTestSensorSizeNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestSensorSizeNullW", nullptr, OHCameraTestSensorSizeNullW, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestSensorSizeNullH", nullptr, OHCameraTestSensorSizeNullH, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestEqFocalNullCam", nullptr, OHCameraTestEqFocalNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestEqFocalNullData", nullptr, OHCameraTestEqFocalNullData, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestEqFocalNullSize", nullptr, OHCameraTestEqFocalNullSize, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestEqFocal", nullptr, OHCameraTestEqFocal, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIsLogicNullCam", nullptr, OHCameraTestIsLogicNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIsLogicNullFlag", nullptr, OHCameraTestIsLogicNullFlag, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestIsLogic", nullptr, OHCameraTestIsLogic, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLogicCamDevsNullCam", nullptr, OHCameraTestLogicCamDevsNullCam, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLogicCamDevsNullData", nullptr, OHCameraTestLogicCamDevsNullData, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLogicCamDevsNullSize", nullptr, OHCameraTestLogicCamDevsNullSize, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHCameraTestLogicCamDevs", nullptr, OHCameraTestLogicCamDevs, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
     };
     napi_property_descriptor desc2[] = {
         {"oHCameraManagerCreatePreviewOutputUsedInPreconfig", nullptr,
@@ -3515,6 +3998,28 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHPhotoOutputDeleteProfile", nullptr, OHPhotoOutputDeleteProfile, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        { "oHTestRegisterFlashStateChangeCallback", nullptr, TestRegisterFlashStateChangeCallback, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHTestUnregisterFlashStateChangeCallback", nullptr, TestUnregisterFlashStateChangeCallback, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHIsExposureMeteringModeSupported", nullptr, IsExposureMeteringModeSupported, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetExposureMeteringMode", nullptr, GetExposureMeteringMode, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHSetExposureMeteringMode", nullptr, SetExposureMeteringMode, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetSupportedISORange", nullptr, GetSupportedISORange, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHgetIso", nullptr, getIso, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHsetIso", nullptr, setIso, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHDeleteConstituentCameraDevices", nullptr, DeleteConstituentCameraDevices, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetLensFocalLength", nullptr, GetLensFocalLength, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetMinimumFocusDistance", nullptr, GetMinimumFocusDistance, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,
