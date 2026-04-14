@@ -401,10 +401,9 @@ export default function CameraDevicePropertyTest() {
      * @tc.level  LEVEL0
      */
     it('testOHPhysicalAperture_0500', Level.LEVEL0, () => {
-      if (PhysicalcaptureSessionstart()) {
+        getCameraManagerInstance();
         let ret: number = cameraObj.oHCaptureSessionTestPhyAptNoOutput();
         expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
-      }
     })
 
     /**

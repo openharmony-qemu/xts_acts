@@ -3972,38 +3972,45 @@ Camera_ErrorCode NDKCamera::TestPhyAptNoInput()
 
 Camera_ErrorCode NDKCamera::TestPhyAptNoOutput()
 {
-    if (cameraManager_ == nullptr || cameraInput_ == nullptr) {
-        return CAMERA_INVALID_ARGUMENT;
-    }
+    LOG("TestPhyAptNoOutput begin.");
 
     Camera_CaptureSession* session = nullptr;
-    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(
-        cameraManager_, &session);
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(cameraManager_, &session);
     if (ret != CAMERA_OK || session == nullptr) {
         return (ret != CAMERA_OK) ? ret : CAMERA_INVALID_ARGUMENT;
     }
 
-    ret = OH_CaptureSession_BeginConfig(session);
-    if (ret != CAMERA_OK) {
-        OH_CaptureSession_Release(session);
-        return ret;
-    }
-
-    ret = OH_CaptureSession_AddInput(session, cameraInput_);
-    if (ret != CAMERA_OK) {
-        OH_CaptureSession_Release(session);
-        return ret;
-    }
+    LOG("TestPhyAptNoOutput no output configured, only input added.");
 
     uint32_t size = 0;
     OH_Camera_PhysicalAperture* apertures = nullptr;
-    ret = OH_CaptureSession_GetSupportedPhysicalApertures(
-        session, &apertures, &size);
+
+    ret = OH_CaptureSession_GetSupportedPhysicalApertures(session, &apertures, &size);
+    LOG("OH_CaptureSession_GetSupportedPhysicalApertures ret = %d, apertures = %p, size = %u.",
+        ret, apertures, size);
+
+    if (ret != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetSupportedPhysicalApertures failed. %d ", ret);
+    }
 
     if (apertures != nullptr) {
-        OH_CaptureSession_DeletePhysicalApertures(session, apertures, size);
+        LOG("OH_CaptureSession_DeletePhysicalApertures begin, apertures = %p, size = %u.", apertures, size);
+        Camera_ErrorCode delRet = OH_CaptureSession_DeletePhysicalApertures(session, apertures, size);
+        LOG("OH_CaptureSession_DeletePhysicalApertures ret = %d.", delRet);
+        if (delRet != CAMERA_OK) {
+            LOG("OH_CaptureSession_DeletePhysicalApertures failed. %d ", delRet);
+        }
+    } else {
+        LOG("OH_CaptureSession_DeletePhysicalApertures not needed, apertures is nullptr.");
     }
-    OH_CaptureSession_Release(session);
+
+    Camera_ErrorCode releaseRet = OH_CaptureSession_Release(session);
+    LOG("OH_CaptureSession_Release ret = %d.", releaseRet);
+    if (releaseRet != CAMERA_OK) {
+        LOG("OH_CaptureSession_Release failed. %d ", releaseRet);
+    }
+
+    LOG("TestPhyAptNoOutput end. final ret = %d.", ret);
     return ret;
 }
 
@@ -4159,7 +4166,7 @@ Camera_ErrorCode NDKCamera::TestEqFocalNullSize()
 
     uint32_t* data = nullptr;
     return OH_CameraDevice_GetLensEquivalentFocalLengths(
-        &cameras_[cameraDeviceIndex_], &data, nullptr);
+        &cameras_[cameraDeviceIndex_], nullptr, nullptr);
 }
 
 Camera_ErrorCode NDKCamera::TestEqFocal()
