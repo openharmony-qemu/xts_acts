@@ -425,7 +425,7 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_05400';
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.FRAGMENT_MAP;
       await getAuxiliaryTypeTest(done, testName,  AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.FRAGMENT_MAP);
