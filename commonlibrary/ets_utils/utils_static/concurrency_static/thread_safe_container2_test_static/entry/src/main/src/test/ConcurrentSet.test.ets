@@ -1111,7 +1111,7 @@ export default function ConcurrentSetTest() {
           const expectedSize: Number = 100 * 100;
           expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(expectedSize));
         }
-      }, 10);
+      }, 10).toDouble();
     })
 
     /**
@@ -2281,7 +2281,7 @@ export default function ConcurrentSetTest() {
         flag++;
         arrayKeys.push(key);
         arrayValues.push(value);
-        setSize = set.size;
+        setSize = set.size.toDouble();
       });
       expect(JSON.stringify(arrayKeys.length)).assertEqual(JSON.stringify(totalCount));
       expect(JSON.stringify(arrayValues.length)).assertEqual(JSON.stringify(totalCount));

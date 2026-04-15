@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,9 +94,9 @@ it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void)
       console.log('GestureRecognizerIsValid_001 item height and width', areaHeight, areaWidth)
       // child scroll
       let driver = Driver.create();
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth / 2) as Int,
-        Math.round(areaObj1.bottom - areaHeight * 0.2) as Int, Math.round(areaObj1.left + areaWidth / 2) as Int,
-        Math.round(areaObj1.top) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(areaObj1.left + areaWidth / 2).toInt(),
+        Math.round(areaObj1.bottom - areaHeight * 0.2).toInt(), Math.round(areaObj1.left + areaWidth / 2).toInt(),
+        Math.round(areaObj1.top).toInt())) as Promise<void>);
       await CommonFunc.sleep(3000);
       let strJson1 = inspector.getInspectorByKey('recognizer_text');
       console.info('[GestureRecognizerIsValid_001] component strJson1 is: ' +
@@ -115,9 +115,9 @@ it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void)
       let areaWidth2 = areaObj2.right - areaObj2.left
       console.log('GestureRecognizerIsValid_001 text height and width', areaHeight2, areaWidth2)
       // parent scroll
-      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 / 2) as Int,
-        Math.round(areaObj1.bottom - areaHeight2 * 0.1) as Int, Math.round(areaObj2.left + areaWidth2 / 2) as Int,
-        Math.round(areaObj1.top - areaHeight2 * 0.3) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
+        Math.round(areaObj1.bottom - areaHeight2 * 0.1).toInt(), Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
+        Math.round(areaObj1.top - areaHeight2 * 0.3).toInt())) as Promise<void>);
 
       await CommonFunc.sleep(3000);
       let strJson2 = inspector.getInspectorByKey('recognizer_text');

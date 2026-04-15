@@ -323,7 +323,7 @@ export default function atomicsSubTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 10;
-      const oldValue = Atomics.sub(ia, 0, 3.8 as long); // Coerced to 3
+      const oldValue = Atomics.sub(ia, 0, 3.8.toLong()); // Coerced to 3
       expect(oldValue).assertEqual(10);
       expect(ia[0]).assertEqual(7);
     });
@@ -403,7 +403,7 @@ export default function atomicsSubTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 18;
-      const subWrapper = (arr: Int32Array, idx: int, val: number) => Atomics.sub(arr, idx as int, val as long);
+      const subWrapper = (arr: Int32Array, idx: int, val: number) => Atomics.sub(arr, idx as int, val.toLong());
       const oldValue = subWrapper(ia, 0, 6);
       expect(oldValue).assertEqual(18);
       expect(ia[0]).assertEqual(12);
@@ -423,7 +423,7 @@ export default function atomicsSubTest() {
       ba[0] = 50n;
 
       const outerFunc = (arr: BigInt64Array): bigint => {
-        const innerSub = (idx: number, val: bigint) => Atomics.sub(arr, idx as int, val as bigint);
+        const innerSub = (idx: number, val: bigint) => Atomics.sub(arr, idx.toInt(), val as bigint);
         return innerSub(0, 15n);
       };
 
@@ -543,7 +543,7 @@ export default function atomicsSubTest() {
       const getDynamicValue = (base: number, offset: number) => base - offset;
       const dynamicSub = (arr: Int32Array, idx: int, base: number, offset: number) => {
         const val = getDynamicValue(base, offset);
-        return Atomics.sub(arr, idx as int, val as long);
+        return Atomics.sub(arr, idx as int, val.toLong());
       };
 
       const oldValue = dynamicSub(ia, 0, 15, 5); // val = 15 - 5 = 10
@@ -563,7 +563,7 @@ export default function atomicsSubTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       try {
-        Atomics.sub(ia, 0.5 as int, 3);
+        Atomics.sub(ia, 0.5.toInt(), 3);
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -677,7 +677,7 @@ export default function atomicsSubTest() {
       const outerValue: int = 25; // Captured from outer scope
 
       const outer = (arr: Int32Array): number => {
-        const inner = (idx: number) => Atomics.sub(arr, idx as int, outerValue as long);
+        const inner = (idx: number) => Atomics.sub(arr, idx.toInt(), outerValue.toLong());
         return inner(0);
       };
 
@@ -700,7 +700,7 @@ export default function atomicsSubTest() {
       ia[0] = 100;
 
       const chainSub = (arr: Int32Array, idx: int, ...values: number[]) => {
-        return values.map(val => Atomics.sub(arr, idx as int, val as long));
+        return values.map(val => Atomics.sub(arr, idx as int, val.toLong()));
       };
 
       const oldValues = chainSub(ia, 0, 10, 20, 15);
@@ -746,7 +746,7 @@ export default function atomicsSubTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 45;
-      const oldValue = Atomics.sub(ia, 0, NaN as long); // Coerced to 0
+      const oldValue = Atomics.sub(ia, 0, NaN.toLong()); // Coerced to 0
       expect(oldValue).assertEqual(45);
       expect(ia[0]).assertEqual(45); // 45 - 0 = 45
     });
@@ -771,10 +771,10 @@ export default function atomicsSubTest() {
       Atomics.sub(ia, 0, 10);
       const allocated: int = 10;
       // Record allocation (lock-free)
-      Atomics.exchange(ia, 1, allocated as long);
+      Atomics.exchange(ia, 1, allocated.toLong());
 
       // Rollback allocation (lock-free)
-      Atomics.add(ia, 0, allocated as long);
+      Atomics.add(ia, 0, allocated.toLong());
       Atomics.exchange(ia, 1, 0);
 
       expect(Atomics.load(ia, 0)).assertEqual(30);
@@ -796,7 +796,7 @@ export default function atomicsSubTest() {
 
       const conditionalSub = (arr: Int32Array, idx: int, useSmallValue: boolean) => {
         const getValue = () => useSmallValue ? 10 : 25;
-        return Atomics.sub(arr, idx as int, getValue() as long);
+        return Atomics.sub(arr, idx as int, getValue().toLong());
       };
 
       const oldValue = conditionalSub(ia, 0, true); // Use small value (10)
@@ -838,7 +838,7 @@ export default function atomicsSubTest() {
 
       Atomics.sub(ia, 0, -6); // Repay 6: -10 +6 = -4
       const remaining = Atomics.load(ia, 0);
-      Atomics.compareExchange(ia, 0, remaining as long, 0); // Clear remaining debt
+      Atomics.compareExchange(ia, 0, remaining.toLong(), 0); // Clear remaining debt
 
       expect(ia[0]).assertEqual(0);
     });
@@ -892,7 +892,7 @@ export default function atomicsSubTest() {
       ia[0] = 90;
 
       const subAndGetNew = (arr: Int32Array, idx: int, val: number) => {
-        Atomics.sub(arr, idx as int, val as long);
+        Atomics.sub(arr, idx as int, val.toLong());
         return arr[idx];
       };
 
@@ -917,7 +917,7 @@ export default function atomicsSubTest() {
       const asyncSub = (arr: Int32Array, idx: int, val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.sub(arr, idx as int, val as long);
+            const oldValue = Atomics.sub(arr, idx as int, val.toLong());
             resolve(oldValue);
           }, 10);
         });
@@ -978,7 +978,7 @@ export default function atomicsSubTest() {
       const createSubPromise = (arr: Int32Array, idx: int, val: number) => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1014,7 +1014,7 @@ export default function atomicsSubTest() {
         return async (val: number) => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, targetIdx as int, val as long);
+              const old = Atomics.sub(arr, targetIdx as int, val.toLong());
               resolve(old);
             }, 10);
           });
@@ -1048,7 +1048,7 @@ export default function atomicsSubTest() {
 
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, validVal as long);
+            const old = Atomics.sub(arr, idx as int, validVal.toLong());
             resolve(old);
           }, 5);
         });
@@ -1153,7 +1153,7 @@ export default function atomicsSubTest() {
         const val = await mockValueApi();
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1264,7 +1264,7 @@ export default function atomicsSubTest() {
       const performSub = (arr: Int32Array, idx: int, val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 8);
         });
@@ -1314,7 +1314,7 @@ export default function atomicsSubTest() {
         return async (val: number) => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, targetIdx as int, val as long);
+              const old = Atomics.sub(arr, targetIdx as int, val.toLong());
               resolve(old);
             }, 10);
           });
@@ -1375,7 +1375,7 @@ export default function atomicsSubTest() {
       const safeSub = async (arr: Int32Array, idx: int, val: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -1412,7 +1412,7 @@ export default function atomicsSubTest() {
           indexes.map((idx, i: int) => {
             return new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.sub(arr, idx as int, values[i] as long);
+                const old = Atomics.sub(arr, idx as int, values[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1588,7 +1588,7 @@ export default function atomicsSubTest() {
           valLog.push(val); // Log subtract value before use
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, idx as int, val as long);
+              const old = Atomics.sub(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -1634,7 +1634,7 @@ export default function atomicsSubTest() {
         const val = await getConditionalVal(currentValue);
         const innerSub = () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1709,7 +1709,7 @@ export default function atomicsSubTest() {
         const derivedVal: number = firstOld / 4.0; // Derive value: 80 / 4 = 20
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, 0, derivedVal as long); // 60 → 40
+            const old = Atomics.sub(arr, 0, derivedVal.toLong()); // 60 → 40
             resolve(old);
           }, 5);
         });
@@ -1771,7 +1771,7 @@ export default function atomicsSubTest() {
       const safeSub = async (arr: Int32Array, idx: int, val: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -1821,7 +1821,7 @@ export default function atomicsSubTest() {
           indexes.map((idx, i: int): Promise<long> => {
             const innerSub = () => new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.sub(arr, idx as int, values[i] as long);
+                const old = Atomics.sub(arr, idx as int, values[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1954,7 +1954,7 @@ export default function atomicsSubTest() {
           usedVals.add(val);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, idx as int, val as long);
+              const old = Atomics.sub(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2089,7 +2089,7 @@ export default function atomicsSubTest() {
           cumulativeVal += val; // Track total subtracted value
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, idx as int, val as long);
+              const old = Atomics.sub(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2300,7 +2300,7 @@ export default function atomicsSubTest() {
           usedVals.add(val);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, idx as int, val as long);
+              const old = Atomics.sub(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2346,7 +2346,7 @@ export default function atomicsSubTest() {
           .then(getValStep3);
         const innerSub = () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 6);
         });
@@ -2419,7 +2419,7 @@ export default function atomicsSubTest() {
         const val = await getDerivedVal(arr, idx);
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.sub(arr, idx as int, val as long);
+            const old = Atomics.sub(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -2479,7 +2479,7 @@ export default function atomicsSubTest() {
           }
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.sub(arr, idx as int, val as long);
+              const old = Atomics.sub(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2523,7 +2523,7 @@ export default function atomicsSubTest() {
                 if (typeof values[i] === 'number') {
                   successIndexes.push(idx);
                 }
-                const old = Atomics.sub(arr, idx as int, validVal as long);
+                const old = Atomics.sub(arr, idx.toInt(), validVal.toLong());
                 resolve(old);
               }, 5);
             });
@@ -2616,7 +2616,7 @@ export default function atomicsSubTest() {
           indexes.map((idx: int, i: int, indexes: int[]) => {
             return new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.sub(arr, idx as int, values[i] as long);
+                const old = Atomics.sub(arr, idx as int, values[i].toLong());
                 log.push(`Sub index ${idx}: old=${old}, new=${arr[idx]}`);
                 resolve(old);
               }, 5);

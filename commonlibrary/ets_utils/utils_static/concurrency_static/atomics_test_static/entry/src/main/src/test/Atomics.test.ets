@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -135,7 +135,7 @@ export default function AtomicsTest() {
                 const localArray: BigInt64Array = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
                   const index = i % ARRAY_SIZE;
-                  Atomics.xor(localArray, index as int, 15n);
+                  Atomics.xor(localArray, index.toInt(), 15n);
                 }
                 resolve('Worker1 (XOR) completed');
               } catch (err) {
@@ -153,7 +153,7 @@ export default function AtomicsTest() {
                 const localArray = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
                   const index = i % ARRAY_SIZE;
-                  Atomics.store(localArray, index as int, BigInt(index * 3));
+                  Atomics.store(localArray, index.toInt(), BigInt(index * 3));
                 }
                 resolve('Worker2 (STORE) completed');
               } catch (err) {
@@ -169,7 +169,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.and(localArray, index as int, 255n);
+                Atomics.and(localArray, index.toInt(), 255n);
               }
               return 'Task1 (AND) completed';
             } catch (err) {
@@ -184,7 +184,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.exchange(localArray, index as int, BigInt(index + 100));
+                Atomics.exchange(localArray, index.toInt(), BigInt(index + 100));
               }
               return 'Task2 (EXCHANGE) completed';
             } catch (err) {
@@ -199,7 +199,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.or(localArray, index as int, 1n);
+                Atomics.or(localArray, index.toInt(), 1n);
               }
               return 'Task3 (OR) completed';
             } catch (err) {
@@ -214,7 +214,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.sub(localArray, index as int, 10n);
+                Atomics.sub(localArray, index.toInt(), 10n);
               }
               return 'Task4 (SUB) completed';
             } catch (err) {

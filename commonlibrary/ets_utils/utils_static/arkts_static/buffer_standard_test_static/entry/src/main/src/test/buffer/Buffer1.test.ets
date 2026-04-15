@@ -203,7 +203,7 @@ export default function BufferTest1() {
     it('testAlloc0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAlloc0014";
       try {
-        let buf = buffer.alloc(5.5 as int);
+        let buf = buffer.alloc(5.5.toInt());
         expect(String(buf.length)).assertEqual('5');
       } catch (err) {
         err = err as BusinessError;
@@ -282,7 +282,7 @@ export default function BufferTest1() {
     it('testAllocUninitialized0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAllocUninitialized0004";
       try {
-        let buf = buffer.allocUninitialized(5.5 as int);
+        let buf = buffer.allocUninitialized(5.5.toInt());
         expect(String(buf.length)).assertEqual('5');
       } catch (err) {
         err = err as BusinessError;
@@ -362,7 +362,7 @@ export default function BufferTest1() {
     it('testAllocUninitializedFromPool0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testAllocUninitializedFromPool0004";
       try {
-        let buf = buffer.allocUninitializedFromPool(5.5 as int);
+        let buf = buffer.allocUninitializedFromPool(5.5.toInt());
         expect(String(buf.length)).assertEqual('5');
       } catch (err) {
         err = err as BusinessError;

@@ -826,7 +826,7 @@ export default function Array_09Test() {
     it('testToLocaleString0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0042';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, '');
         expect().assertFail();
       } catch (err) {
@@ -846,7 +846,7 @@ export default function Array_09Test() {
     it('testToLocaleString0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0043';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
       } catch (err) {
@@ -886,7 +886,7 @@ export default function Array_09Test() {
     it('testToLocaleString0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0045';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, '', '');
         expect().assertFail();
       } catch (err) {
@@ -906,7 +906,7 @@ export default function Array_09Test() {
     it('testToLocaleString0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0046';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
       } catch (err) {
@@ -926,7 +926,7 @@ export default function Array_09Test() {
     it('testToLocaleString0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0047';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
       } catch (err) {
@@ -946,7 +946,7 @@ export default function Array_09Test() {
     it('testToLocaleString0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = 'testToLocaleString0048';
       try {
-        let arr: FixedArray<float> = [1.401298464324817E-45 as float];
+        let arr: FixedArray<float> = [(1.401298464324817E-45).toFloat()];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
       } catch (err) {

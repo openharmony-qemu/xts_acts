@@ -4311,7 +4311,7 @@ export function testAssignmentLikeContexts0147(){
 export function testAssignmentLikeContexts0148(){
   const TAG = 'testAssignmentLikeContexts0148';
   let src: int = 300;
-        let dst: byte = src as byte;
+        let dst: byte = src.toByte();
   if(dst !== 44){
         console.info(`${TAG} Task execution failed: dst: ${dst}`);
         throw new Error('dst check failed, expected 44');

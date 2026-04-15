@@ -276,10 +276,10 @@ export default function ForEachTest() {
     it('testForEachfloat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG: string = "testForEachfloat0001";
       try {
-        const arr: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float] as FixedArray<float>;
-        let sum: float = 0.0 as float;
+        const arr: FixedArray<float> = [1.5 .toFloat(), 2.5 .toFloat(), 3.5 .toFloat()] as FixedArray<float>;
+        let sum: float = 0.0.toFloat();
         forEach(arr, (value: float): void => {
-          sum = (sum + value) as float;
+          sum = (sum + value) .toFloat();
         });
         expect(Math.abs(sum - 7.5) < 0.0001).assertTrue();
       } catch (err) {
@@ -325,7 +325,7 @@ export default function ForEachTest() {
         let arr: FixedArray<float> = [1.5f, 2.5f, 3.5f];
         let sum: number = 0.0;
         forEach(arr, (value: float) => {
-          sum += value as number;
+          sum += value.toDouble();
         });
         expect(sum).assertClose(7.5, 0.000001);
       } catch (err) {
@@ -373,7 +373,7 @@ export default function ForEachTest() {
         forEach(arr, (value: float) => {
           sum += value;
         });
-        expect(sum as number).assertClose(4.5, 0.000001);
+        expect(sum.toDouble()).assertClose(4.5, 0.000001);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
