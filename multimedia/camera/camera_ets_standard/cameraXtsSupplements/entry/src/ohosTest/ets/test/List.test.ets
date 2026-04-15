@@ -41,7 +41,6 @@ import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVide
 import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
 import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
-import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
 import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
 import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
@@ -53,6 +52,7 @@ import ApertureTest from './camera/Aperture.test';
 import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQueryGetSupportedPhysicalApertures.test';
 import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
 import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
+import CameraOISQueryTest from './camera/CameraOISQuery.test';
 
 
 export default function testsuite() {
@@ -97,7 +97,6 @@ export default function testsuite() {
   CameraManagerCreateVideoOutputTest();
   CameraInputOnerrorTest();
   createCameraInput();
-  CameraOISQueryTest();
   CameraSessionSetWhiteBalanceModeTest();
   CameraGetActiveProfileTest();
   CameraSessionBandSuppTest();
@@ -110,4 +109,5 @@ export default function testsuite() {
   ApertureQueryGetSupportedPhysicalAperturesTest();
   PhotoSessIsoInfoChangeTest();
   ManualFocusQueryTest();
+  CameraOISQueryTest(); 
 }
