@@ -1169,6 +1169,55 @@ napi_value TestGetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
     return result;
 }
 
+napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    createPhotoOutput(faceID);
+    Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(previewOutput, faceID);
+    if (ret != CAMERA_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_PreviewOutput_Release(previewOutput);
+        return result;
+    }
+    OH_PreviewOutput_Release(previewOutput);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(nullptr, faceID);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    CreateAndOpenCamera();
+    createPhotoOutput(faceID);
+    ret = OH_PreviewOutput_AddDeferredSurface(previewOutput, nullptr);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        OH_PreviewOutput_Release(previewOutput);
+        return result;
+    }
+    OH_PreviewOutput_Release(previewOutput);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
