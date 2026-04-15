@@ -261,7 +261,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0500';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0500');
         try {
           let subWindowLimits = subWindowClass.getWindowLimits()
@@ -377,7 +379,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0600';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0600');
         try {
           let subWindowLimits = subWindowClass.getWindowLimits()
@@ -493,7 +497,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0700';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0700');
         try {
           let subWindowLimits = subWindowClass.getWindowLimits()
@@ -690,7 +696,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0900';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass = await windowStage.createSubWindow('test_RotationChange_0900');
         let timer = 0;
         try {
@@ -982,7 +990,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1200';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let config: window.Configuration = {
           name: "test_RotationChange_1200",
           windowType: window.WindowType.TYPE_DIALOG,
@@ -1104,7 +1114,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1300';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_1300');
         try {
           let subWindowLimits = subWindowClass.getWindowLimits()
@@ -1222,7 +1234,9 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1400';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_1400');
         try {
           let subWindowLimits = subWindowClass.getWindowLimits()
@@ -1383,7 +1397,9 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationLandscapeToPortrait_Inverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
 
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
@@ -1450,7 +1466,9 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationLandscape_InvertedToPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1516,7 +1534,9 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationUserPortraitToUserLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1583,7 +1603,9 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1649,7 +1671,9 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationFollowDeskTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
-      if (isSupportRotate) {
+      if (wearable) {
+        done();
+      } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
