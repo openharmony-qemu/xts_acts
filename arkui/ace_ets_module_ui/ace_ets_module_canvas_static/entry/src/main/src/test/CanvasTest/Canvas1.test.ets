@@ -1,3 +1,5 @@
+'use static';
+
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +15,6 @@
  * limitations under the License.
  */
 
-'use static';
-
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -27,35 +27,35 @@ import inspector from '@ohos.arkui.inspector';
 const SLEEP_TIME = 1000;
 
 export default function Canvas1Test() {
-  describe('CanvasTest', () => {
+  describe('Canvas1Test', () => {
     beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] CanvasTest beforeAll start');
+      console.info('[ARKUI_NEW] Canvas1Test beforeAll start');
       await UtilsTest.msSleep(2000);
       await UtilsTest.startAbility("com.arkui.ace.canvas.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] CanvasTest beforeEach start');
+      console.info('[ARKUI_NEW] Canvas1Test beforeEach start');
       let options: router.RouterOptions = { url: 'MainAbility/pages/Canvas/CanvasIndex1' };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('[ARKUI_NEW] CanvasTest state pages: ' + JSON.stringify(pages));
-        if (pages.name !== "CanvasIndex") {
+        console.info('[ARKUI_NEW] Canvas1Test state pages: ' + JSON.stringify(pages));
+        if (pages.name !== "CanvasIndex1") {
           routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
-        console.error('[ARKUI_NEW] CanvasTest replaceUrl error: ' + err);
+        console.error('[ARKUI_NEW] Canvas1Test replaceUrl error: ' + err);
         expect().assertFail();
       }
     });
 
     afterEach(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] CanvasTest afterEach start');
+      console.info('[ARKUI_NEW] Canvas1Test afterEach start');
       await Utils.sleep(SLEEP_TIME);
-      console.info('[ARKUI_NEW] CanvasTest afterEach end');
+      console.info('[ARKUI_NEW] Canvas1Test afterEach end');
     });
 
     /**
