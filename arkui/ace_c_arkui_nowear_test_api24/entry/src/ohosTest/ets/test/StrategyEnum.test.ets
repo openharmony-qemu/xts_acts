@@ -36,7 +36,7 @@ export default function StrategyEnumTest() {
     it('SUB_ARKUI_COMPETITION_STRATEGY_DEFAULT_VALUE_0100', Level.LEVEL1, async () => {
       console.info('SUB_ARKUI_COMPETITION_STRATEGY_DEFAULT_VALUE_0100 START');
       expect(nativeFunc.StrategyEnumTest_001()).assertEqual(0)
-      console.info('SUB_ARKUI_TEXTAREA_HORIZONTALSCROLLING_PARAM_0100 END');
+      console.info('SUB_ARKUI_COMPETITION_STRATEGY_DEFAULT_VALUE_0100 END');
     });
 
     /**
