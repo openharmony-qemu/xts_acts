@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
-#include "manager/plugin_manager.h"
+#include "manager/PluginManagerTest.h"
 #include <arkui/native_render.h>
 #include <arkui/native_node_napi.h>
 #include <arkui/native_node.h>
@@ -25,7 +25,8 @@ static napi_value StrategyEnumTest_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "ARKUI_COMPETITION_STRATEGY_DEFAULT StrategyEnumTest_001 result=%{public}d", ARKUI_COMPETITION_STRATEGY_DEFAULT);
+        "ARKUI_COMPETITION_STRATEGY_DEFAULT StrategyEnumTest_001 result=%{public}d",
+        ARKUI_COMPETITION_STRATEGY_DEFAULT);
     ASSERT_EQ(PARAM_0, ARKUI_COMPETITION_STRATEGY_DEFAULT);
     NAPI_END;
 }
@@ -34,7 +35,8 @@ static napi_value StrategyEnumTest_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "ARKUI_COMPETITION_STRATEGY_COMPETITION StrategyEnumTest_002 result=%{public}d", ARKUI_COMPETITION_STRATEGY_COMPETITION);
+        "ARKUI_COMPETITION_STRATEGY_COMPETITION StrategyEnumTest_002 result=%{public}d",
+        ARKUI_COMPETITION_STRATEGY_COMPETITION);
     ASSERT_EQ(PARAM_1, ARKUI_COMPETITION_STRATEGY_COMPETITION);
     NAPI_END;
 }
