@@ -21,3 +21,5 @@ export const EllipsisModeCenterTest: (a: string) => void;
 export const EllipsisModeStartTest: (a: string) => void;
 
 export const TextGetCharacterTest: (a: string) => void;
+
+export const PointerEventGetCurrentLocalTest: (a: string) => void;
