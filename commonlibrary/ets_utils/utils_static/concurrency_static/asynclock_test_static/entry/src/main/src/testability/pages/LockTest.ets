@@ -618,28 +618,26 @@ export async function sequentialLockWorkerTest() {
   });
   let p = new Promise<void>((resolve, reject) => {
     let lockA = new AsyncLock();
-    lockA.lockAsync((): void =>{
-      waitForCompletion(async () => {
-        // busy loop
-        hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>bloop');
-        while (Atomics.load(flagBuf, 0) != 1) {
-          await sleep(100)
+    lockA.lockAsync(async (): Promise<void> =>{
+      // busy loop
+      hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>bloop');
+      while (Atomics.load(flagBuf, 0) != 1) {
+        await sleep(100)
+      }
+      hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '<bloop');
+      let lockB = AsyncLock.request(lockNameB);
+      lockB.lockAsync((): void =>{
+        let old = Atomics.load(flagBuf, 0);
+        if (old == 2) {
+          resolve(undefined);
+        } else {
+          reject(new Error('Expected 2, but was: ' + old));
         }
-        hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '<bloop');
-        let lockB = AsyncLock.request(lockNameB);
-        lockB.lockAsync((): void =>{
-          let old = Atomics.load(flagBuf, 0);
-          if (old == 2) {
-            resolve(undefined);
-          } else {
-            reject(new Error('Expected 2, but was: ' + old));
-          }
-        });
-        let old = Atomics.compareExchange(flagBuf, 0, 1, 2);
-        if (old != 1) {
-          reject(new Error('Expected 1, but was: ' + old));
-        }
-      })
+      });
+      let old = Atomics.compareExchange(flagBuf, 0, 1, 2);
+      if (old != 1) {
+        reject(new Error('Expected 1, but was: ' + old));
+      }
     });
   });
   return check('sequentialLockWorkerTest', Promise.all([p1, p]));

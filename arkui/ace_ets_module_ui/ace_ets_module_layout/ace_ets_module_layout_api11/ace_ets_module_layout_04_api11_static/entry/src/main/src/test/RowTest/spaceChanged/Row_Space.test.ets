@@ -78,10 +78,10 @@ it('testRowSpaceUnfill_static_01', Level.LEVEL0, async (done: () => void): Promi
         name: 'addSpace', value: 10
       });
       await CommonFunc.sleep(3000);
-      let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
-      let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
-      let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');
-      let Row_Space_01: RectValue = CommonFunc.getComponentRect('Row_Space_01');
+      let Row_Space_011: RectValue = await CommonFunc.getComponentRect('Row_Space_011');
+      let Row_Space_012: RectValue = await CommonFunc.getComponentRect('Row_Space_012');
+      let Row_Space_013: RectValue = await CommonFunc.getComponentRect('Row_Space_013');
+      let Row_Space_01: RectValue = await CommonFunc.getComponentRect('Row_Space_01');
       expect(Math.abs(Math.round(Row_Space_011.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_011.bottom)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_012.bottom)) <= 1)
@@ -125,10 +125,10 @@ it('testRowSpaceFill_static_02', Level.LEVEL0, async (done: () => void): Promise
         name: 'addSpace', value: 25
       });
       await CommonFunc.sleep(3000);
-      let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
-      let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
-      let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');
-      let Row_Space_01: RectValue = CommonFunc.getComponentRect('Row_Space_01');
+      let Row_Space_011: RectValue = await CommonFunc.getComponentRect('Row_Space_011');
+      let Row_Space_012: RectValue = await CommonFunc.getComponentRect('Row_Space_012');
+      let Row_Space_013: RectValue = await CommonFunc.getComponentRect('Row_Space_013');
+      let Row_Space_01: RectValue = await CommonFunc.getComponentRect('Row_Space_01');
       expect(Math.abs(Math.round(Row_Space_011.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_011.bottom)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_012.bottom)) <= 1)
@@ -173,10 +173,10 @@ it('testRowSpaceOverflow_static_03', Level.LEVEL0, async (done: () => void): Pro
         name: 'addSpace', value: 30
       });
       await CommonFunc.sleep(3000);
-      let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
-      let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
-      let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');
-      let Row_Space_01: RectValue = CommonFunc.getComponentRect('Row_Space_01');
+      let Row_Space_011: RectValue = await CommonFunc.getComponentRect('Row_Space_011');
+      let Row_Space_012: RectValue = await CommonFunc.getComponentRect('Row_Space_012');
+      let Row_Space_013: RectValue = await CommonFunc.getComponentRect('Row_Space_013');
+      let Row_Space_01: RectValue = await CommonFunc.getComponentRect('Row_Space_01');
       expect(Math.abs(Math.round(Row_Space_011.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_011.bottom)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.top - Row_Space_01.top) - Math.round(Row_Space_01.bottom - Row_Space_012.bottom)) <= 1)
