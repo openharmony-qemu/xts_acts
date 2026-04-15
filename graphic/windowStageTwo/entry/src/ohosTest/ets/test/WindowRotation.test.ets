@@ -261,7 +261,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0500';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0500');
@@ -379,7 +379,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0600';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0600');
@@ -497,7 +497,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0700';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0700');
@@ -696,7 +696,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_0900';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass = await windowStage.createSubWindow('test_RotationChange_0900');
@@ -990,7 +990,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1200';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let config: window.Configuration = {
@@ -1114,7 +1114,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1300';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_1300');
@@ -1234,7 +1234,7 @@ export default function windowRotationTest() {
       let caseName: string = 'test_RotationChange_1400';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_1400');
@@ -1397,7 +1397,7 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationLandscapeToPortrait_Inverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
 
@@ -1466,7 +1466,7 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationLandscape_InvertedToPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
@@ -1534,7 +1534,7 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationUserPortraitToUserLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
@@ -1603,7 +1603,7 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
@@ -1671,7 +1671,7 @@ export default function windowRotationTest() {
      */
     it('testSetPreferredOrientationFollowDeskTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
-      if (wearable) {
+      if (deviceInfo.deviceType === 'wearable') {
         done();
       } else if (isSupportRotate) {
         // 1、拉起另一个Abllity主窗
