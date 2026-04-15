@@ -123,6 +123,7 @@ import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test';
 import arcSwiperContent from './ArcSwiperTest/arcSwiperContent.test';
 import SwiperContentUpdateOne from './SwiperTest/SwiperContentUpdate/SwiperContentUpdateOne.test';
 import SwiperContentUpdateTwo from './SwiperTest/SwiperContentUpdate/SwiperContentUpdateTwo.test';
+import SwiperCachedCountTest from './SwiperTest/SwiperCachedCount.test';
 
 export default function testsuite() {
   Swiper07Test();
@@ -232,4 +233,5 @@ export default function testsuite() {
   arcSwiperContent();
   SwiperContentUpdateOne();
   SwiperContentUpdateTwo();
+  SwiperCachedCountTest();
 } 

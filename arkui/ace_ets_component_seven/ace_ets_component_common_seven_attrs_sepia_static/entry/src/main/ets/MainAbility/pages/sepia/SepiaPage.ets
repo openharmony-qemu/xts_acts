@@ -61,7 +61,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLinkAttribute,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -339,15 +338,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mSepia: number = 10
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
-    instance.sepia(this.mSepia)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mSepia: number = 10
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
     instance.sepia(this.mSepia)
   }
@@ -928,12 +918,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1332,7 +1316,6 @@ struct sepiaPage {
   @State _sepiaFlexMod: FlexModifier = new FlexModifier()
   @State _sepiaFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _sepiaFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _sepiaFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _sepiaGaugeMod: GaugeModifier = new GaugeModifier()
   @State _sepiaGridMod: GridModifier = new GridModifier()
   @State _sepiaGridColMod: GridColModifier = new GridColModifier()

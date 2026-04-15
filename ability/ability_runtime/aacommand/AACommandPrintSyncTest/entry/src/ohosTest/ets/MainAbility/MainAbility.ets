@@ -92,6 +92,18 @@ export default class MainAbility extends Ability {
       await startAbilityTest('ACTS_AACommand_printSync_01_0400', this.context);
     })
 
+    await sleep(3000);
+
+    cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
+      'AACommandPrintTest#SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 -s unittest OpenHarmonyTestRunner';
+    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+      console.log('ACTS_AACommand_printSync_01_0500 start err: ' + JSON.stringify(err));
+      console.log('ACTS_AACommand_printSync_01_0500 stdResult = ' + data.stdResult);
+      AppStorage.setOrCreate<string>("stdResult5", data.stdResult);
+      console.log('ACTS_AACommand_printSync_01_0500 - executeShellCommand: end ');
+      await startAbilityTest('ACTS_AACommand_printSync_01_0500', this.context);
+    })
+
     setTimeout(() => {
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     }, 6000)

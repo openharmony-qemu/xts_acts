@@ -56,6 +56,7 @@ export default function webViewGetCertificate() {
       console.info("web beforeEach start");
 
     })
+
     /**
      * @tc.name   testGetCertificateCallbackStatic
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0100
@@ -88,6 +89,158 @@ export default function webViewGetCertificate() {
       emitKey="emitGetCertificatePromise";
       Utils.emitEvent(emitKey, 10)
       Utils.registerEvent("testGetCertificatePromise",true,404,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testGetCertificateNullStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0300
+     * @tc.desc   test interface of getCertificate with Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetCertificateNullStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitGetCertificateNull";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testGetCertificateNull","17100001",4043191,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testGetCertificateEmptyStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0400
+     * @tc.desc   test interface of getCertificate with Empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetCertificateEmptyStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitGetCertificateEmpty";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testGetCertificateEmpty","17100002",4043192,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testGetAttachStateStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0500
+     * @tc.desc   test GetAttachState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetAttachStateStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitWebViewGetAttachState";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testGetAttachStateStatic",true,16013191,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWaitForAttachedStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0600
+     * @tc.desc   test waitForAttached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWaitForAttachedStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitWebViewWaitForAttached";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testWaitForAttachedStatic",false,160131913,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testGetProgressStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0700
+     * @tc.desc   test GetProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProgressStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitWebViewGetProgress";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testGetProgressStatic",true,16013194,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnRefreshAccessedHistoryEventStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0800
+     * @tc.desc   test OnRefreshAccessedHistoryEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnRefreshAccessedHistoryEventStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitOnRefreshAccessedHistoryEvent01";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testOnRefreshAccessedHistoryEventStatic01","success",160131941,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnRefreshAccessedHistoryEventStatic02
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0900
+     * @tc.desc   test OnRefreshAccessedHistoryEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnRefreshAccessedHistoryEventStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitOnRefreshAccessedHistoryEvent02";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testOnRefreshAccessedHistoryEventStatic02","success",160131942,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewGetCertificate',10,'');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnRefreshAccessedHistoryEventStatic03
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_1000
+     * @tc.desc   test OnRefreshAccessedHistoryEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnRefreshAccessedHistoryEventStatic03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      emitKey="emitOnRefreshAccessedHistoryEvent03";
+      Utils.emitEvent(emitKey, 10)
+      Utils.registerEvent("testOnRefreshAccessedHistoryEventStatic03",false,160131943,done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewGetCertificate',10,'');
       await Utils.msSleep(5000);

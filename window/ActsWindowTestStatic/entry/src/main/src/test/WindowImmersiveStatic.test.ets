@@ -104,6 +104,60 @@ export default function WindowImmersiveStaticTest() {
         }
       })
 
+       /**git 
+     * @tc.number      SUB_WINDOW_IMMERSIVE_GetWindowSystemBarProperties_0100
+     * @tc.name        testGetWindowSystemBarProperties_All_001
+     * @tc.desc        setWindowSystemBarProperties all properties test.
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level3
+     */
+    it('testGetWindowSystemBarProperties_All_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testGetWindowSystemBarProperties_All_001';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let systemBarProperties: window.SystemBarProperties = {
+            statusBarColor: '#ff00ff',
+            navigationBarColor: '#00ff00',
+            statusBarContentColor: '#ffffff',
+            navigationBarContentColor: '#00ffff',
+            enableStatusBarAnimation: true,
+            enableNavigationBarAnimation: true
+          };
+          win!.setWindowSystemBarProperties(systemBarProperties).then(() => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in setting system bar properties.');
+            done();
+            let systemBarProperty = win!.getWindowSystemBarProperties();
+            hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
+            expect(systemBarProperty.statusBarColor == '#FFFF00FF').assertTrue();
+            expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#FFFFFFFF').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#FF00FF00').assertTrue();
+            expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#FF00FFFF').assertTrue();
+            expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
+            expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
+          }).catch((err: Error): PromiseLike<void> | undefined => {
+            err = err as BusinessError;
+            if (err.code === 801) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
     /**
      * @tc.number      SUB_WINDOW_getStatusBarProperty_002
      * @tc.name        testGetStatusBarProperty_ErrorCode1300002_static_002
@@ -120,13 +174,14 @@ export default function WindowImmersiveStaticTest() {
         try {
           let subWin: window.Window = await windowStage!.createSubWindow(caseName);
           expect(!!subWin).assertTrue();
+          await subWin.destroyWindow()
           let statusBarProperty: window.StatusBarProperty = subWin.getStatusBarProperty();
           hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
           expect(false).assertTrue();
           done();
         } catch (exception) {
           exception = exception as BusinessError;
-          if (exception.code === 1300004) {
+          if (exception.code === 1300002) {
             hilog.info(domain, tag, msgStr + 'Window state abnormal as expected.');
             done();
           } else if (exception.code === 801) {
@@ -224,22 +279,27 @@ export default function WindowImmersiveStaticTest() {
         let caseName: string = 'testGetImmersiveModeEnabledState_static_001';
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
-        try {
-          let enabled: boolean = false;
-          win!.setImmersiveModeEnabledState(enabled);
-          hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
+        if(isFreeWindowMode){
+           hilog.info(domain, tag, msgStr + 'not support');
+           done();
+        }else{
+          try {
+            let enabled: boolean = false;
+            win!.setImmersiveModeEnabledState(enabled);
+            hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
 
-          await Utils.msSleep(100);
+            await Utils.msSleep(100);
 
-          let isEnabled: boolean = win!.getImmersiveModeEnabledState();
-          hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
-          expect(isEnabled).assertEqual(enabled);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(false).assertTrue();
-          done();
+            let isEnabled: boolean = win!.getImmersiveModeEnabledState();
+            hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
+            expect(isEnabled).assertEqual(enabled);
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
 
@@ -256,22 +316,27 @@ export default function WindowImmersiveStaticTest() {
         let caseName: string = 'testGetImmersiveModeEnabledState_AfterSet_static_002';
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
-        try {
-          let enabled: boolean = true;
-          win!.setImmersiveModeEnabledState(enabled);
-          hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
+        if(isFreeWindowMode){
+           hilog.info(domain, tag, msgStr + 'not support');
+           done();
+        }else{
+          try {
+            let enabled: boolean = true;
+            win!.setImmersiveModeEnabledState(enabled);
+            hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
 
-          await Utils.msSleep(100);
+            await Utils.msSleep(100);
 
-          let isEnabled: boolean = win!.getImmersiveModeEnabledState();
-          hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
-          expect(isEnabled).assertEqual(enabled);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(false).assertTrue();
-          done();
+            let isEnabled: boolean = win!.getImmersiveModeEnabledState();
+            hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
+            expect(isEnabled).assertEqual(enabled);
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
 
@@ -289,6 +354,8 @@ export default function WindowImmersiveStaticTest() {
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
         try {
+          let isImmersive_before: boolean = win!.isImmersiveLayout();
+          hilog.info(domain, tag, msgStr + 'Succeeded in checking isImmersive_before layout: ' + isImmersive_before);
           let enabled: boolean = true;
           win!.setWindowLayoutFullScreen(enabled);
           hilog.info(domain, tag, caseName + ' setWindowLayoutFullScreen: ' + enabled);
@@ -297,8 +364,13 @@ export default function WindowImmersiveStaticTest() {
 
           let isImmersive: boolean = win!.isImmersiveLayout();
           hilog.info(domain, tag, msgStr + 'Succeeded in checking immersive layout: ' + isImmersive);
-          expect(isImmersive).assertEqual(enabled);
-          done();
+          if(isFreeWindowMode){
+             expect(isImmersive).assertEqual(isImmersive_before);
+            done();
+          }else{
+            expect(isImmersive).assertEqual(enabled);
+            done();
+          }
         } catch (exception) {
           exception = exception as BusinessError;
           if (exception.code === 801) {

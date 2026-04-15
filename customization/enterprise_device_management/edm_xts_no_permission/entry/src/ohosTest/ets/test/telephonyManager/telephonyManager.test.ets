@@ -24,6 +24,10 @@ export default function telephonyManagerTest() {
     testSetSimDisabled();
     testSetSimEnabled();
     testIsSimDisabled();
+    testActiveSim();
+    testDeactiveSim();
+    testSetDefaultData();
+    testGetDefaultData();
     testAddOutgoingCallPolicyNumbers();
     testRemoveOutgoingCallPolicyNumbers();
     testGetOutgoingCallPolicyNumbers();
@@ -267,6 +271,114 @@ function testRemoveIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testActiveSim() {
+  /**
+   * @tc.name   test_ActiveSim_normal_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ACTIVESIM_0100
+   * @tc.desc   test ActiveSim with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_ActiveSim_normal_admin_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.activeSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testDeactiveSim() {
+  /**
+   * @tc.name   test_DeactiveSim_normal_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_DEACTIVESIM_0100
+   * @tc.desc   test DeactiveSim with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_DeactiveSim_normal_admin_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.deactiveSim(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetDefaultData() {
+  /**
+   * @tc.name   test_setDefaultData_normal_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDEFAULTDATA_0100
+   * @tc.desc   test setDefaultData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setDefaultData_normal_admin_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.setDefaultData(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetDefaultData() {
+  /**
+   * @tc.name   test_getDefaultData_normal_admin_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDEFAULTDATA_0100
+   * @tc.desc   test getDefaultData with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getDefaultData_normal_admin_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.getDefaultData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {

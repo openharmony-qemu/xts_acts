@@ -47,7 +47,6 @@ const valueBucket: relationalStore.ValuesBucket = {
   'CODES': value4,
   'IDENTITY': value5,
 };
-
 /**
  * Corrupt database file to simulate database corruption
  * @param fileName Database file path
@@ -64,7 +63,6 @@ async function corruptDatabaseFile(fileName: string)
   uint8Array.fill(fChar);
   await fs.write(file.fd, buffer, { offset: 0, length: bufferSize });
 }
-
 /**
  * Remove database file to simulate I/O error
  * @param filePath Database file path
@@ -74,7 +72,6 @@ async function moveDatabaseFile(filePath: string): Promise<void> {
   expect(true).assertTrue();
   fs.unlinkSync(filePath);
 }
-
 /**
  * Change file to read-only mode
  * @param filePath File path
@@ -85,7 +82,6 @@ async function changeFileModeOnlyRead(filePath: string): Promise<void> {
   let file = await fs.open(filePath, fs.OpenMode.READ_ONLY);
   await fs.close(file.fd);
 }
-
 /**
  * Cleanup test-related database files
  * @param dbName Database name
@@ -95,7 +91,6 @@ async function cleanupDatabaseFiles(dbName: string): Promise<void> {
   const dbPathWal = dbPath + "-wal";
   const dbPathShm = dbPath + "-shm";
   const dbPathKey = context!.databaseDir + "/rdb/key/" + dbName.replace('.db', '.pub_key_v2');
-
   try {
     fs.accessSync(dbPath);
     fs.unlinkSync(dbPath);
@@ -196,7 +191,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.error(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest001 failed. Code:${err.code}, message:${err.message}`);
         expect().assertFail();
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -230,7 +225,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest002: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800001).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest002 end *************");
@@ -246,7 +241,6 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
      */
     it('RelationalStore_Ark_getRdbStoreSyncTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest003 start *************");
-
       let cryptoParam: relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
         iterationCount: -1,
@@ -269,12 +263,11 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest003: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800001).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest003 end *************");
     })
-
     /**
      * @tc.name RelationalStore_Ark_getRdbStoreSyncTest005
      * @tc.number SUB_DistributedData_RelationalStore_Ark_getRdbStoreSyncTest005
@@ -304,10 +297,9 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest005: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800001).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
-
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest005 end *************");
     })
     /**
@@ -338,7 +330,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest006: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800001).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest006 end *************");
@@ -372,7 +364,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest007: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800010).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest007 end *************");
@@ -402,14 +394,14 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
         await rdbstore.execute(SQL_CREATE_TABLE);
         rdbstore.insertSync('EMPLOYEE', valueBucket);
-        rdbstore.close();
+        await rdbstore.close();
         rdbstore = undefined;
         hilog.info(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest008: Database created and closed successfully");
         hilog.info(DOMAIN, TAG, "Step 2: Change encryption key to [6,5,4,3,2,1]");
         cryptoParam.encryptionKey = new Uint8Array([6, 5, 4, 3, 2, 1]);
         hilog.info(DOMAIN, TAG, "Step 3: Try to open database with wrong key");
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
-        rdbstore.close();
+        await rdbstore.close();
         hilog.error(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest008: Should have thrown an error");
         expect().assertFail();
       } catch (e) {
@@ -418,7 +410,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         expect(14800011).assertEqual(Number(err.code));
         hilog.info(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest008: Successfully caught 14800011 error");
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -452,7 +444,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest010: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14801002).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest010 end *************");
@@ -490,7 +482,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest011: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800017).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -526,7 +518,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
         await rdbstore.execute(SQL_CREATE_TABLE);
         rdbstore.insertSync('EMPLOYEE', valueBucket);
-        rdbstore.close();
+        await rdbstore.close();
         rdbstore = undefined;
         hilog.info(DOMAIN, TAG, "Step 1: Encrypted database created successfully");
         hilog.info(DOMAIN, TAG, "Step 2: Rename database and key files");
@@ -561,14 +553,13 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest012: Error code: ${errorCode}, Expected: 14800020`);
         expect(errorCode).assertEqual(14800020);
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await cleanupDatabaseFiles(dbName);
         await cleanupDatabaseFiles(newDbName);
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest012 end *************");
     })
-
     /**
      * @tc.name RelationalStore_Ark_getRdbStoreSyncTest013
      * @tc.number SUB_DistributedData_RelationalStore_Ark_getRdbStoreSyncTest013
@@ -597,7 +588,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.info(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest013: Caught expected error. Code:${err.code}, message:${err.message}`);
         expect(14800021).assertEqual(Number(err.code));
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -630,7 +621,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
         await rdbstore.execute(SQL_CREATE_TABLE);
         rdbstore.insertSync('EMPLOYEE', valueBucket);
-        rdbstore.close();
+        await rdbstore.close();
         rdbstore = undefined;
         hilog.info(DOMAIN, TAG, "Step 2: Change files to read-only");
         try {
@@ -658,7 +649,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
           expect(errorCode).assertEqual(14800027);
         }
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -690,7 +681,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
         hilog.info(DOMAIN, TAG, "Step 2: Remove database file");
         await moveDatabaseFile(dbPath);
-        rdbstore.close();
+        await rdbstore.close();
         hilog.info(DOMAIN, TAG, "Step 3: Try to operate on deleted database");
         rdbstore = relationalStore.getRdbStoreSync(context!, storeConfig);
         await rdbstore.execute(SQL_CREATE_TABLE);
@@ -705,7 +696,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
           expect(errorCode).assertEqual(14800028);
         }
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -744,7 +735,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
           expect(errorCode).assertEqual(14800029);
         }
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -780,7 +771,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
           expect(errorCode).assertEqual(14800030);
         }
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -824,7 +815,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         hilog.error(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest018: Unexpected error. Code:${err.code}, message:${err.message}`);
         expect().assertFail();
       } finally {
-        rdbstore?.close();
+        await rdbstore?.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();
@@ -867,11 +858,11 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         expect(errorCode).assertEqual(14800017);
         hilog.info(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest019: Successfully caught 14800017 error");
       } finally {
-        rdbstore?.close();
-        relationalStore.deleteRdbStore(context!, originalConfig);
+        await rdbstore?.close();
+        await relationalStore.deleteRdbStore(context!, originalConfig);
+        await relationalStore.deleteRdbStore(context!, changedConfig);
       }
       done();
-
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest019 end *************");
     })
     /**
@@ -911,8 +902,9 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         expect(errorCode).assertEqual(14800017);
         hilog.info(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest020: Successfully caught 14800017 error");
       } finally {
-        rdbstore?.close();
-        relationalStore.deleteRdbStore(context!, originalConfig);
+        await rdbstore?.close();
+        await relationalStore.deleteRdbStore(context!, originalConfig);
+        await relationalStore.deleteRdbStore(context!, changedConfig);
       }
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest020 end *************");
@@ -970,13 +962,12 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
         expect(deleteResult >= 0).assertTrue();
         hilog.info(DOMAIN, TAG, "Step 7: Close rdbstore");
         hilog.info(DOMAIN, TAG, "RelationalStore_Ark_getRdbStoreSyncTest021: All steps passed");
-        done();
       } catch (e) {
         const err = e as BusinessError;
         hilog.error(DOMAIN, TAG, `RelationalStore_Ark_getRdbStoreSyncTest021 failed. Code:${err.code}, message:${err.message}`);
         expect().assertFail();
       } finally {
-        rdbstore!.close();
+        await rdbstore!.close();
         await relationalStore.deleteRdbStore(context!, storeConfig);
       }
       done();

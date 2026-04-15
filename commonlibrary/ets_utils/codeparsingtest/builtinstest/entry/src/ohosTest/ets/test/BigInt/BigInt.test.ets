@@ -705,14 +705,14 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.name   testBigInt.prototype.toString0016
+     * @tc.name   testBigIntprototypetoString0016Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3500
      * @tc.desc   Test the function of the interface .prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBigInt.prototype.toString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testBigIntprototypetoString0016Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testBigInt.prototype.toString0016';
       try {
         let s = -10n;
@@ -725,14 +725,14 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.name   testBigInt.prototype.toString0017
+     * @tc.name   testBigIntprototypetoString0017Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3600
      * @tc.desc   Test the function of the interface .prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBigInt.prototype.toString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testBigIntprototypetoString0017Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testBigInt.prototype.toString0017';
       try {
         let s = -10n;
@@ -745,14 +745,14 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.name   testBigInt.prototype.toString0018
+     * @tc.name   testBigIntprototypetoString0018Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3700
      * @tc.desc   Test the function of the interface .prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBigInt.prototype.toString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testBigIntprototypetoString0018Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testBigInt.prototype.toString0018';
       try {
         let s = -10n;
@@ -764,14 +764,14 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.name   testBigInt.prototype.toString0019
+     * @tc.name   testBigIntprototypetoString0019Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3800
      * @tc.desc   Test the function of the interface .prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBigInt.prototype.toString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testBigIntprototypetoString0019Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testBigInt.prototype.toString0019';
       try {
         let s = -10n;
@@ -783,14 +783,14 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.name   testBigInt.prototype.toString0020
+     * @tc.name   testBigIntprototypetoString0020Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3900
      * @tc.desc   Test the function of the interface .prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testBigInt.prototype.toString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testBigIntprototypetoString0020Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testBigInt.prototype.toString0020';
       try {
         let s = -10n;

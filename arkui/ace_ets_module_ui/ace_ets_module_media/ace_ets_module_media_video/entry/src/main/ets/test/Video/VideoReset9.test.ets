@@ -55,13 +55,11 @@ export default function VideoReset9() {
         if (data.connState == wifiMg.ConnState.CONNECTED) {
           console.info("======> WLAN connection established ");
         } else {
-          expect().message("======> WLAN Network error").assertFail(); //方式一
-          //throw new Error("======> WLAN Network error");//方式二
+          expect().message("======> WLAN Network error").assertFail(); 
           done();
         }
         if (data.chload >= 900 || data.rssi <= -80) {
-          expect().message("======> WLAN Network error").assertFail();//方式一
-          //throw new Error("======> WLAN Network error");//方式二
+          expect().message("======> WLAN Network error").assertFail();
           done();
         } else if (data.chload >= 500) {
           console.info("======> The internet connection is poor. ");

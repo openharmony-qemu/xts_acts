@@ -147,6 +147,24 @@ export default function jsMessageExt() {
     })
 
     /**
+     * @tc.name   testJsMessageExtGetTypeStatic006
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETTYPE_0600
+     * @tc.desc   test JsMessageExtGetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testJsMessageExtGetTypeStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetType006', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetType006', 1, 30211, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
      * @tc.name   testJsMessageExtJsMessageTypeStatic001
      * @tc.number SUB_WEB_JSMESSAGEEXT_JSMESSAGETYPE_0100
      * @tc.desc   test JsMessageType
@@ -340,6 +358,24 @@ export default function jsMessageExt() {
       Utils.emitEvent('testJsMessageExtGetArray001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetArray001', true, 100018, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testJsMessageExtGetErrorDescriptionStatic001
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_0100
+     * @tc.desc   test JsMessageExtGetErrorDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testJsMessageExtGetErrorDescriptionStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetErrorDescription001', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetErrorDescription001', true, 100019, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);

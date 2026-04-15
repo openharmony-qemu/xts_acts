@@ -167,10 +167,10 @@ export default function ActsInputmethodThreeTest() {
      * @tc.desc   test IME_ENTER_KEY_NEXT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200 start====");

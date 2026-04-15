@@ -688,5 +688,91 @@ export default function inputMethodAuthorityJSUnit() {
       done();
     });
 
+    /**
+     * @tc.name   Sub_InputMethod_IMF_EasyConn_0700
+     * @tc.number SUB_INPUTMETHOD_IMF_EASYCONN_0700
+     * @tc.desc   onAttachmentDidFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_EasyConn_0700', Level.LEVEL3, async (done: Function) => {
+      try{
+        let flage:boolean = true;
+        let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
+          (reason: inputMethod.AttachFailureReason): void => {
+            flage = false;
+            console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 Attachment failed with reason: ${reason}.`);
+            if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
+              console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 Failure reason is CALLER_NOT_FOCUSED.`);
+            }
+          };
+        inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 onAttachmentDidFail success`);
+        inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 onAttachmentDidFail success`);
+        inputMethod.offAttachmentDidFail();
+        inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 offAttachmentDidFail success`);
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          expect(flage).assertTrue();
+          console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 setTimeout offAttachmentDidFail success`);
+          done();
+        }, 500)
+      } catch (err){
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0700 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      };
+    });
+    /**
+     * @tc.name   Sub_InputMethod_IMF_EasyConn_0800
+     * @tc.number SUB_INPUTMETHOD_IMF_EASYCONN_0800
+     * @tc.desc   onAttachmentDidFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_EasyConn_0800', Level.LEVEL3, async (done: Function) => {
+      try{
+        let flage:boolean = true;
+        let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
+          (reason: inputMethod.AttachFailureReason): void => {
+            flage = false;
+            console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 Attachment failed with reason: ${reason}.`);
+            if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
+              console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 Failure reason is CALLER_NOT_FOCUSED.`);
+            }
+          };
+
+        let attachmentDidFailCallback1: Callback<inputMethod.AttachFailureReason> =
+          (reason: inputMethod.AttachFailureReason): void => {
+            flage = false;
+            console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 Attachment failed with reason1: ${reason}.`);
+            if (reason === inputMethod.AttachFailureReason.IME_ABNORMAL) {
+              console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 Failure reason1 is IME_ABNORMAL.`);
+            }
+          };
+        inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 onAttachmentDidFail success`);
+        inputMethod.onAttachmentDidFail(attachmentDidFailCallback1);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 onAttachmentDidFail1 success`);
+        inputMethod.offAttachmentDidFail();
+        inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 offAttachmentDidFail success`);
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          expect(flage).assertTrue();
+          console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 setTimeout offAttachmentDidFail success`);
+          done();
+        }, 500)
+      } catch (err){
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0800 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      };
+    });
+
   });
 };

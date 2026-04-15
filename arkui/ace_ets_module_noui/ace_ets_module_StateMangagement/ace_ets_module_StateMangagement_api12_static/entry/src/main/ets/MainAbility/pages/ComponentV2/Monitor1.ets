@@ -42,7 +42,7 @@ struct MonitorLocal {
   @Monitor(['message', 'name'])
   onStrChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.log(`${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
+      console.log(`${path} changed from ${monitor.value<String>(path)?.before} to ${monitor.value<String>(path)?.now}`)
     })
   }
   build() {

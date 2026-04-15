@@ -35,7 +35,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             'HarmonyOS Sans', text.SystemFontType.GENERIC
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameNormal success ${JSON.stringify(descriptor)}`);
           expect(descriptor !== undefined).assertTrue();
           expect(descriptor.fullName).assertEqual('HarmonyOS Sans');
@@ -93,7 +93,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             '', text.SystemFontType.STYLISH
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameFullNameEmpty401 success `,JSON.stringify(descriptor))
           expect(descriptor).assertUndefined();
           done();
@@ -118,7 +118,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             null, text.SystemFontType.STYLISH
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameFullNameNull401 success ${JSON.stringify(descriptor)}`)
           expect().assertFail();
           done();
@@ -169,7 +169,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             'Arial', text.SystemFontType.STYLISH
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameFontTypeStylish success`, JSON.stringify(descriptor));
           expect(descriptor === undefined).assertTrue();
           done();
@@ -194,7 +194,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             'Times New Roman', text.SystemFontType.GENERIC
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameFontTypeGeneric success fontType=`,
             JSON.stringify(descriptor));
           expect(descriptor === undefined).assertTrue();
@@ -220,7 +220,7 @@ export default function GraphicTextAdd02Test() {
           const descriptor = await text.getFontDescriptorByFullName(
             'CustomFont', text.SystemFontType.INSTALLED
           );
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorByFullNameFontTypeInstalled success`,JSON.stringify(descriptor));
           expect(descriptor === undefined).assertTrue();
           done();
@@ -243,7 +243,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const fontTypes = [text.SystemFontType.STYLISH, text.SystemFontType.GENERIC, text.SystemFontType.INSTALLED];
-          
+
           for (const fontType of fontTypes) {
             const descriptor: text.FontDescriptor = await text.getFontDescriptorByFullName('TestFont', fontType);
             console.info(`${LOG_PREFIX} getFontDescriptorByFullNameAllFontTypes success `, JSON.stringify(descriptor));
@@ -343,12 +343,14 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsFontSubfamilyNotNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
-            fontSubfamily: 'Arial'
+            fontSubfamily: 'Arial',
+            variationAxisRecords: [],
+            variationInstanceRecords: []
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsFontSubfamilyNotNull success `, JSON.stringify(descriptors));
           expect(descriptors.length == 0).assertTrue();
           done();
@@ -370,12 +372,21 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
-            weight: text.FontWeight.W100
+            weight: text.FontWeight.W100,
+            variationAxisRecords: [{
+              key: '', name: '', localName: '',
+              minValue: 10, maxValue: 20, defaultValue: 20,
+              flags: 0
+            }],
+            variationInstanceRecords: [{
+              name: '', localName: '',
+              coordinates: []
+            }]
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW100 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -399,12 +410,21 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
-            weight: text.FontWeight.W200
+            weight: text.FontWeight.W200,
+            variationAxisRecords: [{
+              key: 'aa', name: 'bb', localName: 'cc',
+              minValue: 10, maxValue: 20, defaultValue: 20,
+              flags: 1
+            }],
+            variationInstanceRecords: [{
+              name: 'dd', localName: 'ee',
+              coordinates: [{axis: '',value: 5, isNormalized: true}]
+            }]
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW200 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -428,12 +448,21 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
-            weight: text.FontWeight.W300
+            weight: text.FontWeight.W300,
+            variationAxisRecords: [{
+              key: 'aa', name: 'bb', localName: 'cc',
+              minValue: 10, maxValue: 20, defaultValue: 20,
+              flags: 1
+            }],
+            variationInstanceRecords: [{
+              name: 'dd', localName: 'ee',
+              coordinates: [{axis: 'ff',value: 5, isNormalized: false}]
+            }]
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW300 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -457,12 +486,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W400
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW400 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -486,12 +515,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W500
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW500 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -515,12 +544,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W600
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW600 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -544,12 +573,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W700
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW700 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -573,12 +602,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W800
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW800 success`, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -602,12 +631,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsWeightW900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             weight: text.FontWeight.W900
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsWeightW900 success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -631,12 +660,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsMonoSpaceTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Consolas',
             monoSpace: true
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsMonoSpaceTrue success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -660,12 +689,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsMonoSpaceFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             monoSpace: false
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsMonoSpaceFalse success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -689,12 +718,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsSymbolicTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Wingdings',
             symbolic: true
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsSymbolicTrue success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -718,12 +747,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsSymbolicFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             symbolic: false
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsSymbolicFalse success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -747,12 +776,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsLocalPostscriptNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             localPostscriptName: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsLocalPostscriptNameEmpty success `,
             JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
@@ -777,12 +806,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsLocalFullNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             localFullName: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsLocalFullNameEmpty success`, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -806,12 +835,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsLocalFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             localFamilyName: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsLocalFamilyNameEmpty success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -835,12 +864,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsLocalSubFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             localSubFamilyName: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsLocalSubFamilyNameEmpty success `,
             JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
@@ -865,12 +894,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsVersionEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             version: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsVersionEmpty success`, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -894,12 +923,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsManufactureEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             manufacture: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsManufactureEmpty success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -923,12 +952,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsCopyrightEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             copyright: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsCopyrightEmpty success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -952,12 +981,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsTrademarkEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             trademark: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsTrademarkEmpty success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -981,12 +1010,12 @@ export default function GraphicTextAdd02Test() {
     it('matchFontDescriptorsLicenseEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          const desc: text.FontDescriptor = { 
+          const desc: text.FontDescriptor = {
             fullName: 'Arial',
             license: ''
           };
           const descriptors: text.FontDescriptor[] = await text.matchFontDescriptors(desc);
-          
+
           console.info(`${LOG_PREFIX} matchFontDescriptorsLicenseEmpty success `, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -1011,7 +1040,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const descriptors: text.FontDescriptor[] = await text.getFontDescriptorsFromPath('/data/local/tmp/fonts');
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorsFromPathNormal success`, JSON.stringify(descriptors));
           expect(descriptors !== undefined).assertTrue();
           expect(Array.isArray(descriptors)).assertTrue();
@@ -1036,7 +1065,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const descriptors: text.FontDescriptor[] = await text.getFontDescriptorsFromPath(null);
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorsFromPathNull401 success`, JSON.stringify(descriptors));
           expect(descriptors.length == 0).assertTrue();
           done();
@@ -1059,7 +1088,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const descriptors: text.FontDescriptor[] = await text.getFontDescriptorsFromPath(undefined);
-          
+
           console.info(`${LOG_PREFIX} getFontDescriptorsFromPathUndefined401 success`, JSON.stringify(descriptors));
           expect(descriptors.length == 0).assertTrue();
           done();
@@ -1082,7 +1111,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const isSupported: boolean = text.isFontSupported('/data/local/tmp/test.ttf');
-          
+
           console.info(`${LOG_PREFIX} isFontSupportedStringNormal success ${isSupported}`);
           expect(typeof isSupported === 'boolean').assertTrue();
           done();
@@ -1105,7 +1134,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const isSupported: boolean = text.isFontSupported('');
-          
+
           console.info(`${LOG_PREFIX} isFontSupportedStringEmpty401 success ${isSupported}`);
           expect(isSupported).assertFalse();
           done();
@@ -1128,7 +1157,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const isSupported: boolean = text.isFontSupported(null);
-          
+
           console.info(`${LOG_PREFIX} isFontSupportedStringNull401 success ${isSupported}`);
           expect().assertFail();
           done();
@@ -1151,7 +1180,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const isSupported: boolean = text.isFontSupported(undefined);
-          
+
           console.info(`${LOG_PREFIX} isFontSupportedStringUndefined401 success ${isSupported}`);
           expect().assertFail();
           done();
@@ -1174,7 +1203,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet('/data/local/tmp/test.ttf', 0);
-          
+
           console.info(`${LOG_PREFIX} getFontUnicodeSetNormal success count=${unicodeSet.length}`);
           expect(unicodeSet !== undefined).assertTrue();
           expect(Array.isArray(unicodeSet)).assertTrue();
@@ -1199,7 +1228,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet(null, 0);
-          
+
           console.info(`${LOG_PREFIX} getFontUnicodeSetPathNull401 success`);
           expect().assertFail();
           done();
@@ -1222,7 +1251,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet(undefined, 0);
-          
+
           console.info(`${LOG_PREFIX} getFontUnicodeSetPathUndefined401 success`);
           expect().assertFail();
           done();
@@ -1245,7 +1274,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet('/data/local/tmp/test.ttf', null);
-          
+
           console.info(`${LOG_PREFIX} getFontUnicodeSetIndexNull401 success`);
           expect().assertFail();
           done();
@@ -1268,7 +1297,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet('/data/local/tmp/test.ttf', undefined);
-          
+
           console.info(`${LOG_PREFIX} getFontUnicodeSetIndexUndefined401 success`);
           expect().assertFail();
           done();
@@ -1291,7 +1320,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const count: number = text.getFontCount('/data/local/tmp/fonts');
-          
+
           console.info(`${LOG_PREFIX} getFontCountNormal success ${count}`);
           expect().assertFail();
           done();
@@ -1314,7 +1343,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const count: number = text.getFontCount(null);
-          
+
           console.info(`${LOG_PREFIX} getFontCountPathNull401 success`);
           expect().assertFail();
           done();
@@ -1337,7 +1366,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const count: number = text.getFontCount(undefined);
-          
+
           console.info(`${LOG_PREFIX} getFontCountPathUndefined401 success`);
           expect().assertFail();
           done();
@@ -1360,7 +1389,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.STYLISH);
-          
+
           console.info(`${LOG_PREFIX} getFontPathsByTypeStylish success count=${paths.length}`);
           expect(paths !== undefined).assertTrue();
           expect(Array.isArray(paths)).assertTrue();
@@ -1385,7 +1414,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.GENERIC);
-          
+
           console.info(`${LOG_PREFIX} getFontPathsByTypeGeneric success count=${paths.length}`);
           expect(paths !== undefined).assertTrue();
           expect(Array.isArray(paths)).assertTrue();
@@ -1410,7 +1439,7 @@ export default function GraphicTextAdd02Test() {
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.INSTALLED);
-          
+
           console.info(`${LOG_PREFIX} getFontPathsByTypeInstalled success count=${paths.length}`);
           expect(paths !== undefined).assertTrue();
           expect(Array.isArray(paths)).assertTrue();
@@ -1422,7 +1451,7 @@ export default function GraphicTextAdd02Test() {
           done();
         }
       });
-      
+
     /**
      * @tc.name   getTextRangeNormal
      * @tc.number textLineGetTextRangeTest_001
@@ -1445,7 +1474,7 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeNormal success start=${textRange.start} end=${textRange.end}`);
           expect(textRange !== undefined).assertTrue();
           expect(textRange.start !== undefined).assertTrue();
@@ -1484,7 +1513,7 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeStartProperty success start=${textRange.start}`);
           expect(textRange.start !== undefined).assertTrue();
           expect(typeof textRange.start === 'number').assertTrue();
@@ -1520,7 +1549,7 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeEndProperty success end=${textRange.end}`);
           expect(textRange.end !== undefined).assertTrue();
           expect(typeof textRange.end === 'number').assertTrue();
@@ -1556,13 +1585,13 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           expect(lines.length >= 2).assertTrue();
-          
+
           const firstLineRange: text.Range = lines[0].getTextRange();
           const secondLineRange: text.Range = lines[1] ? lines[1].getTextRange() : lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeMultipleLines success first=${firstLineRange.start}-`
             + `${firstLineRange.end} second=${secondLineRange.start}-${secondLineRange.end}`);
-          
+
           expect(firstLineRange !== undefined).assertTrue();
           expect(secondLineRange !== undefined).assertTrue();
           expect(firstLineRange.start >= 0).assertTrue();
@@ -1636,10 +1665,10 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeLongText success start=${textRange.start} end=`
-          + `${textRange.end} length=${textRange.end - textRange.start}`);
-          
+            + `${textRange.end} length=${textRange.end - textRange.start}`);
+
           expect(textRange !== undefined).assertTrue();
           expect(textRange.start >= 0).assertTrue();
           expect(textRange.end > textRange.start).assertTrue();
@@ -1674,9 +1703,9 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeWithSpaces success start=${textRange.start} end=${textRange.end}`);
-          
+
           expect(textRange !== undefined).assertTrue();
           expect(textRange.start !== undefined).assertTrue();
           expect(textRange.end !== undefined).assertTrue();
@@ -1712,10 +1741,10 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeSingleCharacter success start=${textRange.start} end=`
-          + `${textRange.end}`)
-          
+            + `${textRange.end}`)
+
           expect(textRange !== undefined).assertTrue();
           expect(textRange.start === 0).assertTrue();
           expect(textRange.end === 1).assertTrue();
@@ -1750,10 +1779,10 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeSpecialCharacters success start=`
-           + `${textRange.start} end=${textRange.end}`)
-          
+            + `${textRange.start} end=${textRange.end}`)
+
           expect(textRange !== undefined).assertTrue();
           expect(textRange.start >= 0).assertTrue();
           expect(textRange.end > textRange.start).assertTrue();
@@ -1787,9 +1816,9 @@ export default function GraphicTextAdd02Test() {
 
           const lines: text.TextLine[] = paragraph.getTextLines();
           const textRange: text.Range = lines[0].getTextRange();
-          
+
           console.info(`${LOG_PREFIX} getTextRangeZeroStart success start=${textRange.start}`);
-          
+
           expect(textRange.start === 0).assertTrue();
           expect(textRange.end > 0).assertTrue();
           done();

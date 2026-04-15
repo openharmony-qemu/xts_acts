@@ -22,11 +22,10 @@ namespace ArkUICapiTest {
 
 namespace {
 /*
- * styled_string.h，并对照 OpenHarmony 公开文档「属性字符串」指南与 capi-styled-string-h.md：
- * 对 GetLength/GetString/IsEqual/SubStyledString/GetStyles 及修改类接口，文档允许 INVALID_STYLED_STRING；
- * 入参须为有效属性串。单独 Descriptor_Create() 无文本内容时多属无效。
- * API 24 CreateWithString：length 为 span 样式槽数量，与 UTF-8 文本字节长度一致（每字节一槽，槽可为 nullptr）。
- * SpanStyle/ParagraphStyle 等 Set* 的入参对象成功设置后仍须由调用方 Destroy（与头文件 @note 一致）。
+ * styled_string 用例约定：
+ * 1) 需要有效描述符的接口统一通过 XtsDescriptorFromUtf8 构造输入/输出对象；
+ * 2) 带 ** 输出参数的接口需提供可写目标（已创建对象槽或可写缓冲区），不传空写入目标；
+ * 3) Set* 成功后由调用方负责 Destroy 入参对象。
  */
 ArkUI_StyledString_Descriptor* XtsDescriptorFromUtf8(const char* utf8)
 {
@@ -552,7 +551,7 @@ static napi_value TestArkUICapi_257(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_StyledString_Descriptor *,
  *     ArkUI_StyledString_Descriptor *, uint32_t, uint32_t)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 源串用 CreateWithString 保证有效；输出槽仍 Create()，截取 "ab" 的子串长度 1。
+ * 实际测试: 源串和输出描述符均使用 XtsDescriptorFromUtf8 构造，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
 {
@@ -563,7 +562,7 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    auto *outDesc = OH_ArkUI_StyledString_Descriptor_Create();
+    auto *outDesc = XtsDescriptorFromUtf8(".");
     if (outDesc == nullptr) {
         OH_ArkUI_StyledString_Descriptor_Destroy(obj);
         return nullptr;
@@ -589,8 +588,7 @@ static napi_value TestArkUICapi_258(napi_env env, napi_callback_info info)
  *     OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledString_Descriptor *, uint32_t, uint32_t,
  *     OH_ArkUI_StyledStringKey, OH_ArkUI_SpanStyle **, uint32_t, uint32_t *)
  * 预期效果: 在 SDK 创建的合法对象上调用接口并返回成功错误码。
- * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)，再 GetStyles(range length 1, FONT, stylesSize 1)。
- * 成功后仅 OH_ArkUI_StyledString_Descriptor_Destroy(descriptor)，不对输出槽中的 OH_ArkUI_SpanStyle* 调用 SpanStyle_Destroy。
+ * 实际测试: 先 SetStyle 绑定 FONT(TextStyle)，styles[] 传已创建 SpanStyle 槽，断言返回 ARKUI_ERROR_CODE_NO_ERROR。
  */
 static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
 {
@@ -616,21 +614,29 @@ static napi_value TestArkUICapi_259(napi_env env, napi_callback_info info)
             return napiAssertErr;
         }
     }
-    OH_ArkUI_SpanStyle* holder4 = nullptr;
-    OH_ArkUI_SpanStyle** outPtr4 = &holder4;
+    auto *recv = OH_ArkUI_SpanStyle_Create();
+    if (recv == nullptr) {
+        OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+        OH_ArkUI_SpanStyle_Destroy(sty);
+        OH_ArkUI_TextStyle_Destroy(ts);
+        return nullptr;
+    }
+    OH_ArkUI_SpanStyle* styleSlots[1] = { recv };
     uint32_t v6 = 0U;
     auto ec = OH_ArkUI_StyledString_Descriptor_GetStyles(
-        obj, 0U, 1U, OH_ARKUI_STYLEDSTRINGKEY_FONT, outPtr4, 1U, &v6);
+        obj, 0U, 1U, OH_ARKUI_STYLEDSTRINGKEY_FONT, styleSlots, 1U, &v6);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {
             OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+            OH_ArkUI_SpanStyle_Destroy(recv);
             OH_ArkUI_SpanStyle_Destroy(sty);
             OH_ArkUI_TextStyle_Destroy(ts);
             return napiAssertErr;
         }
     }
     OH_ArkUI_StyledString_Descriptor_Destroy(obj);
+    OH_ArkUI_SpanStyle_Destroy(recv);
     OH_ArkUI_SpanStyle_Destroy(sty);
     OH_ArkUI_TextStyle_Destroy(ts);
     return ::ArkUICapiTest::NapiReturnSuccessInt32(env);
@@ -645,13 +651,13 @@ static napi_value TestArkUICapi_260(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
-    auto *obj = XtsDescriptorFromUtf8("");
+    auto *obj = XtsDescriptorFromUtf8("x");
     if (((obj)) == nullptr) {
         return nullptr;
     }
 
-    char buf1[32] = {0};
-    auto ec = OH_ArkUI_StyledString_Descriptor_FromHtml(obj, buf1);
+    const char html[] = "a";
+    auto ec = OH_ArkUI_StyledString_Descriptor_FromHtml(obj, html);
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(env, (ec), (ARKUI_ERROR_CODE_NO_ERROR));
         if (napiAssertErr != nullptr) {

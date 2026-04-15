@@ -1,4 +1,4 @@
-/**
+/***
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,17 +54,15 @@ export default function webOnFirstContentfulPaint() {
       console.info('web beforeEach start');
     })
 
-
-
     /**
      * @tc.name   testOnFirstContentfulPaintStatic001
-     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_TC01
      * @tc.desc   test onFirstContentfulPaint with Visibility.None
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFirstContentfulPaintStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('testOnFirstContentfulPaintStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnFirstContentfulPaint001', false, 520, done);
@@ -80,13 +78,13 @@ export default function webOnFirstContentfulPaint() {
 
     /**
      * @tc.name   testOnFirstContentfulPaintStatic002
-     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_TC02
      * @tc.desc   test onFirstContentfulPaint with Visibility.Visible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
+    it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint002', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnFirstContentfulPaintStatic002', true, 522, done);
@@ -96,5 +94,23 @@ export default function webOnFirstContentfulPaint() {
         done();
       }, 10000);
     })
+
+    /**
+    * @tc.name        SwitchNextPageStatic
+    * @tc.number      SUB_WEB_SWITCH_NEXT_PAGE_522
+    * @tc.desc        test SwitchNextPageStatic
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }

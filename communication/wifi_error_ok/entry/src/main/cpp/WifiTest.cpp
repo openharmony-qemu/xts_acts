@@ -297,6 +297,29 @@ static napi_value GetDeviceMacAddress0800(napi_env env, napi_callback_info info)
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
+static napi_value GetLinkedInfo0100(napi_env env, napi_callback_info info)
+{
+    OH_WifiLinkedInfo wifiLinkedInfo;
+    int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+static napi_value GetLinkedInfo0200(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_Wifi_GetLinkedInfo(nullptr);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+static napi_value GetLinkedInfo0300(napi_env env, napi_callback_info info)
+{
+    OH_WifiLinkedInfo wifiLinkedInfo;
+    int32_t result = OH_Wifi_GetLinkedInfo(&wifiLinkedInfo);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -313,6 +336,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetDeviceMacAddress0600", nullptr, GetDeviceMacAddress0600, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0700", nullptr, GetDeviceMacAddress0700, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0800", nullptr, GetDeviceMacAddress0800, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetLinkedInfo0100", nullptr, GetLinkedInfo0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetLinkedInfo0200", nullptr, GetLinkedInfo0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetLinkedInfo0300", nullptr, GetLinkedInfo0300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetBluetoothSwitchState0100", nullptr, GetBluetoothSwitchState0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"GetBluetoothSwitchState0101", nullptr, GetBluetoothSwitchState0101, nullptr, nullptr, nullptr, napi_default,

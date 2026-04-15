@@ -144,7 +144,6 @@ export default function ActsDAGetSetTestStatic() {
           expect(data.status).assertEqual(account.DistributedAccountStatus.NOT_LOGGED_IN);
           expect(1).assertEqual(account.DistributedAccountStatus.LOGGED_IN);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>test0100 err:' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -190,7 +189,6 @@ export default function ActsDAGetSetTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>test002 err:' + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -229,7 +227,6 @@ export default function ActsDAGetSetTestStatic() {
           };
           await accountAbility.setOsAccountDistributedInfo(obj1);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>Assert Fail, err:' + JSON.stringify(err));
         }
         accountAbility.getOsAccountDistributedInfo((err: BusinessError<void> | null, data: account.DistributedInfo | undefined): void => {
@@ -328,7 +325,6 @@ export default function ActsDAGetSetTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setInfo_test003 catch exception: ' + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -357,7 +353,6 @@ export default function ActsDAGetSetTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setInfo_test0031 err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
         }
@@ -502,7 +497,6 @@ export default function ActsDAGetSetTestStatic() {
           await accountAbility.setOsAccountDistributedInfo(obj1);
           hilog.info(0x0000, tag, '====>setInfo_test006 end');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setOsAccountDistributedInfo_test006 err:' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -598,7 +592,6 @@ export default function ActsDAGetSetTestStatic() {
           await accountAbility.setOsAccountDistributedInfo(obj1);
           hilog.info(0x0000, tag, '====>setInfo_test008 end');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setOsAccountDistributedInfo_test008 err:' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -677,7 +670,6 @@ export default function ActsDAGetSetTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setInfo_test010 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           done();
@@ -765,7 +757,6 @@ export default function ActsDAGetSetTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setInfo_test012 throw_err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           done();
@@ -837,7 +828,6 @@ export default function ActsDAGetSetTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setInfo_test014 throw_err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           done();
@@ -861,7 +851,6 @@ export default function ActsDAGetSetTestStatic() {
           hilog.info(0x0000, tag, "====>DistributedAccountEnum_0100 success:");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>DistributedAccountEnum_0100 throw_err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -885,7 +874,6 @@ export default function ActsDAGetSetTestStatic() {
           hilog.info(0x0000, tag, "====>DistributedAccountEnum_0200 success:");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>DistributedAccountEnum_0200 throw_err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -982,7 +970,6 @@ export default function ActsDAGetSetTestStatic() {
           await accountAbility.setOsAccountDistributedInfo(obj1);
           hilog.info(0x0000, tag, '====>optionalParameter_0200 end');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>optionalParameter_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1073,7 +1060,6 @@ export default function ActsDAGetSetTestStatic() {
           await accountAbility.setOsAccountDistributedInfo(obj1);
           hilog.info(0x0000, tag, '====>optionalParameter_0600 end');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>DistributedAccountOptionalParameter_1000 err: " + JSON.stringify(err));
           expect().assertFail();
         }

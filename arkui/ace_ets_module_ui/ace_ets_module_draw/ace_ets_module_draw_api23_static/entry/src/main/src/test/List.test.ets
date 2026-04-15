@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +17,12 @@
 
 import DrawableDescriptorTest from './DrawableDescriptorTest/DrawableDescriptor.test';
 import AnimationOptionsTest from './AnimationOptionsTest/AnimationOptions.test';
+import MeasureUtilsGetParagraphsTest from './MeasureUtilsGetParagraphsTest/MeasureUtilsGetParagraphs.test';
+import CanvasRoundRectErrorCodeTest from './Canvas/CanvasRoundRectErrorCodeTest.test';
 
 export default function testsuite() {
   DrawableDescriptorTest();
   AnimationOptionsTest();
+  MeasureUtilsGetParagraphsTest();
+  CanvasRoundRectErrorCodeTest();
 }

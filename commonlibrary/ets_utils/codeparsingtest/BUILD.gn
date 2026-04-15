@@ -43,6 +43,7 @@ group("codeparsingtest") {
       "cachecombotest:ActsCacheComboTest",
       "base2libtest:ActsBase2LibTest",
       "base3libtest:ActsBase3LibTest",
+      "annotationtest:ActsAnnotationTest",
     ]
   }
 }

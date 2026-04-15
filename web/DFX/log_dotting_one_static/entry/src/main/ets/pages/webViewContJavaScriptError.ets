@@ -93,6 +93,28 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'emitRunJavaScriptEmptyString': {
+              try {
+                this.controllerTwo.runJavaScript(
+                  "",
+                  (error, result) => {
+                    if (error) {
+                      console.info(`run JavaScript empty string error: ` + JSON.stringify(error));
+                      return;
+                    }
+                    if (result) {
+                      this.webResult = result;
+                      console.info('run empty string result: ' + result);
+                    }
+                  });
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`emitRunJavaScriptEmptyString ErrorCode: ${error.code}`);
+                Utils.emitEvent(error.code, 653)
+              }
+              break;
+            }
+
             case 'emitRunJavaScriptPromiseInitErr': {
               try {
                 this.controllerTwo.runJavaScript('test()')
@@ -108,6 +130,23 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 Utils.emitEvent(error.code, 654)
               }
 
+              break;
+            }
+
+            case 'emitRunJavaScriptPromiseEmptyString': {
+              try {
+                this.controllerTwo.runJavaScript("")
+                  .then((result) => {
+                    console.log('empty string result: ' + result);
+                  })
+                  .catch((error) => {
+                    console.error('empty string error: ' + error);
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`emitRunJavaScriptPromiseEmptyString ErrorCode: ${error.code}`);
+                Utils.emitEvent(error.code, 655)
+              }
               break;
             }
 
@@ -129,8 +168,27 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 console.error(`emitRunJavaScriptExtCallbackInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 656)
               }
+              break;
+            }
 
-
+            case 'emitRunJavaScriptExtCallbackEmptyString': {
+              try {
+                this.controllerTwo.runJavaScriptExt(
+                  "",
+                  (error, result) => {
+                    if (error) {
+                      console.info(`run JavaScriptExt error: ` + JSON.stringify(error));
+                      return;
+                    }
+                    if (result) {
+                      console.info(`The empty string return value is: ${result}`);
+                    }
+                  });
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`emitRunJavaScriptExtCallbackEmptyString ErrorCode: ${error.code}`);
+                Utils.emitEvent(error.code, 657)
+              }
               break;
             }
 
@@ -152,6 +210,22 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'emitRunJavaScriptExtPromiseEmptyString': {
+              try {
+                this.controllerTwo.runJavaScriptExt("")
+                  .then((result) => {
+                    console.log('empty string result: ' + result);
+                  })
+                  .catch((error) => {
+                    console.error('empty string error: ' + error);
+                  })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`emitRunJavaScriptExtPromiseEmptyString ErrorCode: ${error.code}`);
+                Utils.emitEvent(error.code, 659)
+              }
+              break;
+            }
           }
         })
       }

@@ -2304,10 +2304,10 @@ export default function adminManagerTest() {
     it("test_startAdminProvision_011_1", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_startAdminProvision_011_1  -------- START --------');
       try {
-        adminManager.startAdminProvision(null, adminManager.AdminType.ADMIN_TYPE_BYOD,
+        let ret = adminManager.startAdminProvision(null, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_1 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret === undefined).assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_1 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2328,10 +2328,10 @@ export default function adminManagerTest() {
     it("test_startAdminProvision_011_2", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_startAdminProvision_011_2  -------- START --------');
       try {
-        adminManager.startAdminProvision(undefined, adminManager.AdminType.ADMIN_TYPE_BYOD,
+        let ret = adminManager.startAdminProvision(undefined, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_2 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret === undefined).assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_2 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2352,10 +2352,10 @@ export default function adminManagerTest() {
     it("test_startAdminProvision_011_3", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_startAdminProvision_011_3  -------- START --------');
       try {
-        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+        let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           undefined, PARAMETERS_LOWER_BOUND);
         console.info(' --- test_startAdminProvision_011_3 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret === undefined).assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_3 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2376,10 +2376,10 @@ export default function adminManagerTest() {
     it("test_startAdminProvision_011_4", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_startAdminProvision_011_4  -------- START --------');
       try {
-        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+        let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), null);
         console.info(' --- test_startAdminProvision_011_4 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret === undefined).assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_4 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
@@ -2400,10 +2400,10 @@ export default function adminManagerTest() {
     it("test_startAdminProvision_011_5", Level.LEVEL2, async (done: Function) => {
       console.info(' --- test_startAdminProvision_011_5  -------- START --------');
       try {
-        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+        let ret = adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("test"), undefined);
         console.info(' --- test_startAdminProvision_011_5 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret === undefined).assertTrue();
       } catch (error) {
         console.info(' --- test_startAdminProvision_011_5 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();

@@ -150,7 +150,9 @@ export default function TextAreaSpecialAttrsTest() {
       let strJson: string = getInspectorByKey('key_textArea_fontSize_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[textAreaFontSize_0100] obj is: " + JSON.stringify(obj.$attrs.fontSize));
-      expect(obj.$attrs.fontSize).assertEqual('16.00fp');
+      let resourceSize = getContext().resourceManager.getNumber($r('sys.float.textfield_font_size').id)
+      let resourceFontSize = Math.round(px2fp(resourceSize))
+      expect(obj.$attrs.fontSize).assertContain(resourceFontSize+'');
       console.info('[textAreaFontSize_0100] END');
     });
 
@@ -167,7 +169,9 @@ export default function TextAreaSpecialAttrsTest() {
       let strJson: string = getInspectorByKey('key_textArea_fontSize_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[textAreaFontSize_0200] obj is: " + JSON.stringify(obj.$attrs.fontSize));
-      expect(obj.$attrs.fontSize).assertEqual('16.00fp');
+      let resourceSize = getContext().resourceManager.getNumber($r('sys.float.textfield_font_size').id)
+      let resourceFontSize = Math.round(px2fp(resourceSize))
+      expect(obj.$attrs.fontSize).assertContain(resourceFontSize+'');
       console.info('[textAreaFontSize_0200] END');
     });
 
@@ -185,7 +189,9 @@ export default function TextAreaSpecialAttrsTest() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[textAreaFontSize_0300] obj is: " + JSON.stringify(obj.$attrs.fontSize));
       // Empty string should revert to default value
-      expect(obj.$attrs.fontSize).assertEqual('16.00fp');
+      let resourceSize = getContext().resourceManager.getNumber($r('sys.float.textfield_font_size').id)
+      let resourceFontSize = Math.round(px2fp(resourceSize))
+      expect(obj.$attrs.fontSize).assertContain(resourceFontSize+'');
       console.info('[textAreaFontSize_0300] END');
     });
 

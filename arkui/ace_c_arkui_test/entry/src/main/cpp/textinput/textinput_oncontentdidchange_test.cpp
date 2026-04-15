@@ -59,7 +59,7 @@ static auto CreateButton(ArkUI_NativeNodeAPI_1* nodeAPI)
 static auto CreateChildNode(ArkUI_NativeNodeAPI_1* nodeAPI)
 {
     float width = 200;
-    float height = 200;
+    float height = 30;
     textInput = nodeAPI->createNode(ARKUI_NODE_TEXT_INPUT);
     ArkUI_NumberValue widthValue[] = { { .f32 = width } };
     ArkUI_AttributeItem widthItem = { widthValue, sizeof(widthValue) / sizeof(ArkUI_NumberValue) };

@@ -955,7 +955,35 @@ export default function proxyChannelManagerTest() {
         await Utils.msSleep(1000);
         hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_2400----------------");
       });
-
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_2401
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_2401
+     * @tc.desc   proxyChannelManager.offReceiveData接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelManager_static_2401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_proxyChannelManager_static_2401----------------");
+        let flag = false;
+        let channelId = 1;
+        try {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 channelId is " + channelId);
+          proxyChannelManager.offReceiveData(channelId);
+        } catch (error) {
+          flag = true;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 error.code is " + error.code);
+          hilog.info(domain, tag,
+            "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 error.message is " + error.message);
+          expect(error.code === 32390004).assertTrue();
+          expect(error.message !== null).assertTrue();
+        } finally {
+          expect(flag).assertTrue();
+        }
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_2401----------------");
+      });
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_2500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_2500
@@ -1195,7 +1223,35 @@ export default function proxyChannelManagerTest() {
         await Utils.msSleep(1000);
         hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_3200----------------");
       });
-
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_3201
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_3201
+     * @tc.desc   proxyChannelManager.offChannelStateChange接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelManager_static_3201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_proxyChannelManager_static_3201----------------");
+        let flag = false;
+        let channelId = 1;
+        try {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_3201 channelId is " + channelId);
+          proxyChannelManager.offChannelStateChange(channelId);
+        } catch (error) {
+          flag = true;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_3201 error.code is " + error.code);
+          hilog.info(domain, tag,
+            "SUB_DSoftbus_Trans_proxyChannelManager_static_3200 error.message is " + error.message);
+          expect(error.code === 32390004).assertTrue();
+          expect(error.message !== null).assertTrue();
+        } finally {
+          expect(flag).assertTrue();
+        }
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_3201----------------");
+      });
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_3300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_3300

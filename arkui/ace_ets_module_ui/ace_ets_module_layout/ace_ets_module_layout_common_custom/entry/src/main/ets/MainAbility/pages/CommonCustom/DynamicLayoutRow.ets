@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
- import {
+import {
   LengthMetrics,
   RowLayoutAlgorithm,
   DynamicLayout, DynamicLayoutAttribute} from '@kit.ArkUI';
@@ -21,32 +21,29 @@
 @Entry
 @ComponentV2
 struct DynamicLayoutRow {
+  @Local algorithm: RowLayoutAlgorithm = new RowLayoutAlgorithm({
+    space: LengthMetrics.vp(0),
+    alignItems: VerticalAlign.Center,
+    justifyContent: FlexAlign.Start,
+    isReverse: false
+  });
   @Local rowSpace: number = 0
   @Local rowAlignItems: VerticalAlign | undefined = VerticalAlign.Center
   @Local rowJustifyContent: FlexAlign | undefined= FlexAlign.Start
-  @Local rowIsReverse: boolean | undefined | null = false;
-
-  @Local dynamicLayoutSpace: number|null|undefined = 0
-  @Local dynamicLayoutAlignItems: VerticalAlign |null| undefined = VerticalAlign.Center
-  @Local dynamicLayoutJustifyContent: FlexAlign |null| undefined = FlexAlign.Start
-  @Local dynamicLayoutIsReverse: boolean | undefined | null = false;
+  @Local rowIsReverse: boolean | undefined  = false;
 
   public uiContext: UIContext | undefined = undefined;
   public rowAlignItemsArr: VerticalAlign [] = [VerticalAlign.Center, VerticalAlign.Top, VerticalAlign.Bottom]
   public rowAlignItemsIndex: number = 0
-  public rowJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, 
-  FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
+  public rowJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End,
+    FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
   public rowJustifyContentIndex: number = 0
   public flag: boolean = false
 
   build() {
     Column({space:2}) {
       Row({space: 2}) {
-        DynamicLayout(new RowLayoutAlgorithm({
-          space: LengthMetrics.vp(this.dynamicLayoutSpace),
-          alignItems: this.dynamicLayoutAlignItems,
-          justifyContent: this.dynamicLayoutJustifyContent,
-          isReverse: this.dynamicLayoutIsReverse})) {
+        DynamicLayout(new RowLayoutAlgorithm(this.algorithm)) {
           Row()
             .id('RowLayoutAlgorithm1')
             .backgroundColor(Color.Blue)
@@ -68,7 +65,7 @@ struct DynamicLayoutRow {
         Button(`Space++ ${this.rowSpace}`)
           .onClick(()=>{
             this.rowSpace += 2
-            this.dynamicLayoutSpace = this.rowSpace
+            this.algorithm.space = LengthMetrics.vp(this.rowSpace)
           })
           .id('RowLayoutAlgorithmSpace++')
           .width(90)
@@ -77,7 +74,7 @@ struct DynamicLayoutRow {
         Button(`Space-- ${this.rowSpace}`)
           .onClick(()=>{
             this.rowSpace -= 2
-            this.dynamicLayoutSpace = this.rowSpace
+            this.algorithm.space = LengthMetrics.vp(this.rowSpace)
           })
           .id('RowLayoutAlgorithmSpace--')
           .width(90)
@@ -91,7 +88,7 @@ struct DynamicLayoutRow {
               this.rowAlignItemsIndex = 0
             }
             this.rowAlignItems = this.rowAlignItemsArr[this.rowAlignItemsIndex]
-            this.dynamicLayoutAlignItems = this.rowAlignItemsArr[this.rowAlignItemsIndex]
+            this.algorithm.alignItems = this.rowAlignItemsArr[this.rowAlignItemsIndex]
           })
           .id('RowLayoutAlgorithmAlignItems')
           .width(90)
@@ -104,7 +101,7 @@ struct DynamicLayoutRow {
               this.rowJustifyContentIndex = 0
             }
             this.rowJustifyContent= this.rowJustifyContentArr[this.rowJustifyContentIndex]
-            this.dynamicLayoutJustifyContent = this.rowJustifyContent
+            this.algorithm.justifyContent = this.rowJustifyContent
           })
           .id('RowLayoutAlgorithmJustifyContent')
           .width(100)
@@ -114,7 +111,7 @@ struct DynamicLayoutRow {
         Button(`isReverse: ${JSON.stringify(this.rowIsReverse)}`)
           .onClick(()=>{
             this.rowIsReverse = !this.rowIsReverse
-            this.dynamicLayoutIsReverse = this.rowIsReverse
+            this.algorithm.isReverse = this.rowIsReverse
           })
           .id('RowLayoutAlgorithmIsReverse')
           .width(100)
@@ -122,30 +119,20 @@ struct DynamicLayoutRow {
         Button('get')
           .onClick(()=>{
             let strJson1 = getInspectorByKey('DynamicLayoutRow');
-            console.info('hello1:'+JSON.parse(strJson1).$attrs.space);
+            console.info('hello:'+JSON.parse(strJson1).$attrs.space);
             console.info('hello:'+JSON.parse(strJson1).$attrs.alignItems);
-            console.info('hello1:'+JSON.parse(strJson1).$attrs.justifyContent);
+            console.info('hello:'+JSON.parse(strJson1).$attrs.justifyContent);
           })
           .width(100)
           .height(20)
       }
       Row(){
-        Button('null')
-          .onClick(()=>{
-            this.dynamicLayoutSpace = null
-            this.dynamicLayoutAlignItems = null
-            this.dynamicLayoutIsReverse = null
-            this.dynamicLayoutJustifyContent = null
-          })
-          .id('RowLayoutAlgorithmNull')
-          .width(80)
-          .height(20)
         Button('undefined')
           .onClick(()=>{
-            this.dynamicLayoutSpace = undefined
-            this.dynamicLayoutAlignItems = undefined
-            this.dynamicLayoutIsReverse = undefined
-            this.dynamicLayoutJustifyContent = undefined
+            this.algorithm.space = undefined
+            this.algorithm.alignItems = undefined
+            this.algorithm.justifyContent = undefined
+            this.algorithm.isReverse = undefined
           })
           .id('RowLayoutAlgorithmUndefined')
           .width(80)

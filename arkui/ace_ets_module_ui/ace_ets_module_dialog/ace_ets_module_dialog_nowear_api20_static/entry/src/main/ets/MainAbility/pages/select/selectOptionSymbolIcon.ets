@@ -21,11 +21,11 @@ import {
   Color,
   $r,
   ColumnOptions,
-  SymbolGlyphModifier,
   SelectOption,
   ResourceStr,
   Select
 } from '@ohos.arkui.component'
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 interface SelectOptionItem  {

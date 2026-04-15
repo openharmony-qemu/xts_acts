@@ -467,6 +467,9 @@ export default function printTest() {
       defaultOrientation?: print.PrintOrientationMode;
       borderless?: boolean;
       options?: string;
+      defaultColorMode?: print.PrintColorMode;
+      defaultCollate?: boolean;
+      defaultReverse?: boolean;
     }
 
     class MyPrinterInformation implements print.PrinterInformation {
@@ -480,6 +483,38 @@ export default function printTest() {
       preferences?: print.PrinterPreferences;
       alias?: string;
       options?: string;
+      selectedDriver?: print.PpdInfo;
+      selectedProtocol?: string;
+    }
+
+    class MyPrintMargin implements  print.PrintMargin {
+      top: number = 123;
+      bottom: number = 123;
+      left: number = 123;
+      right: number = 123;
+    }
+
+    class MyPrintResolution implements  print.PrintResolution {
+      id: string = '123';
+      horizontalDpi: number = 123;
+      verticalDpi: number = 123;
+    }
+
+    class MyPreviewAttribute implements  print.PreviewAttribute {
+      previewRange: print.PrinterRange = new MyPrinterRange();
+      result?: number;
+    }
+
+    class MyPpdInfo implements  print.PpdInfo {
+      manufacturer: string = '123';
+      nickName: string = '123';
+      ppdName: string = '123';
+    }
+
+    class MySharedHost implements  print.SharedHost {
+      ip: string = '123';
+      shareName: string = '123';
+      workgroupName: string = '123';
     }
 
     /**
@@ -539,9 +574,15 @@ export default function printTest() {
       printerInformation.preferences.defaultOrientation = print.PrintOrientationMode.ORIENTATION_MODE_NONE;
       printerInformation.preferences.borderless = false;
       printerInformation.preferences.options = 'testOptions';
+      printerInformation.preferences.defaultColorMode = print.PrintColorMode.COLOR_MODE_MONOCHROME;
+      printerInformation.preferences.defaultCollate = true;
+      printerInformation.preferences.defaultReverse = false;
 
       printerInformation.alias = 'testAlias';
       printerInformation.options = 'testOptions';
+
+      printerInformation.selectedDriver = new MyPpdInfo();
+      printerInformation.selectedProtocol = '123';
 
       // Permissions required: ohos.permission.PRINT
       await print.addPrinterToDiscovery(printerInformation).then((data : void) => {
@@ -928,7 +969,10 @@ export default function printTest() {
         print.PrintErrorCode.E_PRINT_INVALID_PRINTER,
         print.PrintErrorCode.E_PRINT_INVALID_PRINT_JOB,
         print.PrintErrorCode.E_PRINT_FILE_IO,
-        print.PrintErrorCode.E_PRINT_TOO_MANY_FILES
+        print.PrintErrorCode.E_PRINT_TOO_MANY_FILES,
+        print.PrintErrorCode.E_PRINT_SMB_LOGIN_LOCKOUT,
+        print.PrintErrorCode.E_PRINT_SMB_CONNECTION_FAILURE,
+        print.PrintErrorCode.E_PRINT_SMB_INVALID_CREDENTIALS
       ];
       console.log('errorCodes: ' + JSON.stringify(errorCodes));
 
@@ -1398,6 +1442,1544 @@ export default function printTest() {
       }).catch((err: BusinessError) => {
         console.log('print_function_1600 expect failed by required real printer');
         expect(err).assertEqual(13100005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_01
+     * @tc.number print_function_addPrinter_01
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_01', Level.LEVEL1, async (done: Function) => {
+      let printName: string = '123';
+      let printerUri: string = '123';
+      let printerPpdName: string = '123';
+      let printerOption: string = '123';
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(printName, printerUri, printerPpdName, printerOption).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(201);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_02
+     * @tc.number print_function_addPrinter_02
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_02', Level.LEVEL1, async (done: Function) => {
+      let printName: string = '';
+      let printerUri: string = '';
+      let printerPpdName: string = '';
+      let printerOption: string = '';
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(printName, printerUri, printerPpdName, printerOption).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(201);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_03
+     * @tc.number print_function_addPrinter_03
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_03', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(null, null, null, null).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_addPrinter_04
+     * @tc.number print_function_addPrinter_04
+     * @tc.desc   check success of addPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_addPrinter_04', Level.LEVEL1, async (done: Function) => {
+      // Permissions required: ohos.permission.PRINTER_DRIVER
+      await print.addPrinter(undefined, undefined, undefined, undefined).then((data: boolean) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_addPrinter_01 expect failed by required real printer');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   print_function_printProperties
+     * @tc.number print_function_printProperties
+     * @tc.desc   check success of print properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_printProperties', Level.LEVEL1, async (done: Function) => {
+      let pageRange: print.PrinterRange = new MyPrinterRange();
+      pageRange.startPage = 0;
+      pageRange.endPage = 5;
+      pageRange.pages = [1, 3];
+
+      let printMargin: print.PrintMargin = new MyPrintMargin();
+      printMargin.top = 1;
+      printMargin.bottom = 1;
+      printMargin.left = 1;
+      printMargin.right = 1;
+
+      let previewAttribute: print.PreviewAttribute = new MyPreviewAttribute();
+      previewAttribute.previewRange = new MyPrinterRange();
+      previewAttribute.result = 123;
+
+      let printResolution: print.PrintResolution = new MyPrintResolution();
+      printResolution.id = '123';
+      printResolution.horizontalDpi = 123;
+      printResolution.verticalDpi = 123;
+
+      let sharedHost: print.SharedHost = new MySharedHost();
+      sharedHost.ip = '123';
+      sharedHost.shareName = '123';
+      sharedHost.workgroupName = '123';
+
+      let ppdInfo: print.PpdInfo = new MyPpdInfo();
+      ppdInfo.manufacturer = '123';
+      ppdInfo.nickName = '123';
+      ppdInfo.ppdName = '123';
+
+      expect(!!ppdInfo).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.desc   check success of updatePrintJobState function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrintJobState_0100', Level.LEVEL1, async (done: Function) => {
+      let jobId : string = "";
+      let state = print.PrintJobState.PRINT_JOB_PREPARE;
+      let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      state = print.PrintJobState.PRINT_JOB_QUEUED;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_FAILED;
+
+      print.updatePrintJobState(null, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_FAILED expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      state = print.PrintJobState.PRINT_JOB_RUNNING;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_CANCELLED;
+
+      print.updatePrintJobState(undefined, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_CANCELLED expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      state = print.PrintJobState.PRINT_JOB_BLOCKED;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_FILE_CORRUPTED;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      state = print.PrintJobState.PRINT_JOB_COMPLETED;
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OFFLINE;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OFFLINE expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_BUSY;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_BUSY expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_CANCELLED;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_CANCELLED expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_PAPER;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_INK;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_TONER;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_JAMMED;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_JAMMED expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DOOR_OPEN;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SERVICE_REQUEST;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LOW_ON_INK;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LOW_ON_TONER;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_REALLY_LOW_ON_INK;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_BAD_CERTIFICATE;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_ACCOUNT_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 ' +
+              'PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_NETWORK_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LARGE_FILE_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_FILE_PARSING_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_RUNNING_UPLOADING_FILES;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_RUNNING_CONVERTING_FILES;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_INTERRUPT expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log(
+              'SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_UNKNOWN;
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 PRINT_JOB_BLOCK_UNKNOWN expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.desc   check success of updatePrintJobState function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrintJobState_0200', Level.LEVEL1, async (done: Function) => {
+      let jobId : string = "";
+      let state = print.PrintJobState.PRINT_JOB_PREPARE;
+      let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      state = print.PrintJobState.PRINT_JOB_QUEUED;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_FAILED;
+
+      await print.updatePrintJobState(null, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_FAILED expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      state = print.PrintJobState.PRINT_JOB_RUNNING;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_CANCELLED;
+
+      await print.updatePrintJobState(undefined, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_CANCELLED expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      state = print.PrintJobState.PRINT_JOB_BLOCKED;
+      subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_FILE_CORRUPTED;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_COMPLETED_FILE_CORRUPTED expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      state = print.PrintJobState.PRINT_JOB_COMPLETED;
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OFFLINE;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OFFLINE expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_BUSY;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_BUSY expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_CANCELLED;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_CANCELLED expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_PAPER;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_PAPER expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_INK;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_INK expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_OUT_OF_TONER;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_OUT_OF_TONER expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_JAMMED;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_JAMMED expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DOOR_OPEN;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DOOR_OPEN expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SERVICE_REQUEST;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SERVICE_REQUEST expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LOW_ON_INK;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LOW_ON_INK expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LOW_ON_TONER;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LOW_ON_TONER expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_REALLY_LOW_ON_INK;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_REALLY_LOW_ON_INK expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_BAD_CERTIFICATE;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_BAD_CERTIFICATE expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_EXCEPTION;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DRIVER_EXCEPTION expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_ACCOUNT_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_ACCOUNT_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINT_PERMISSION_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log(
+          'SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINT_COLOR_PERMISSION_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_NETWORK_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_NETWORK_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log(
+          'SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SERVER_CONNECTION_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_LARGE_FILE_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_LARGE_FILE_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_FILE_PARSING_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_FILE_PARSING_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_SLOW_FILE_CONVERSION expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_RUNNING_UPLOADING_FILES;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_RUNNING_UPLOADING_FILES expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_RUNNING_CONVERTING_FILES;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_RUNNING_CONVERTING_FILES expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_FILE_UPLOADING_ERROR expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_DRIVER_MISSING;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_DRIVER_MISSING expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_INTERRUPT;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_INTERRUPT expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_PRINTER_UNAVAILABLE expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+
+      subState = print.PrintJobSubState.PRINT_JOB_BLOCK_UNKNOWN;
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 PRINT_JOB_BLOCK_UNKNOWN expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0100
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0100
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0100', Level.LEVEL1, async (done: Function) => {
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_NONE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_DRAFT,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+        borderless: true,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_MONOCHROME,
+        defaultCollate: true,
+        defaultReverse: true,
+        options: '',
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [],
+        supportedColorModes: [],
+        supportedDuplexModes: [],
+        supportedMediaTypes: [],
+        supportedQualities: [],
+        supportedOrientations: [],
+        options: '',
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_UNAVAILABLE,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0100 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0200
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0200
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0200', Level.LEVEL1, async (done: Function) => {
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_NORMAL,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+        borderless: false,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+        defaultCollate: false,
+        defaultReverse: false,
+        options: '',
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [
+          {
+            id: '',
+            name: '',
+            width: 210,
+            height: 297,
+          }
+        ],
+        supportedColorModes: [
+          print.PrintColorMode.COLOR_MODE_MONOCHROME,
+          print.PrintColorMode.COLOR_MODE_COLOR
+        ],
+        supportedDuplexModes: [
+          print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE
+        ],
+        supportedMediaTypes: [''],
+        supportedQualities: [
+          print.PrintQuality.QUALITY_DRAFT,
+          print.PrintQuality.QUALITY_NORMAL,
+          print.PrintQuality.QUALITY_HIGH
+        ],
+        supportedOrientations: [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_NONE],
+        options: '',
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_IDLE,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0200 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0300
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0300
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0300', Level.LEVEL1, async (done: Function) => {
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_HIGH,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+        borderless: false,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+        defaultCollate: false,
+        defaultReverse: false,
+        options: '',
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [
+          {
+            id: '',
+            name: '',
+            width: 210,
+            height: 297,
+          }
+        ],
+        supportedColorModes: [
+          print.PrintColorMode.COLOR_MODE_MONOCHROME,
+          print.PrintColorMode.COLOR_MODE_COLOR
+        ],
+        supportedDuplexModes: [
+          print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE
+        ],
+        supportedMediaTypes: [''],
+        supportedQualities: [
+          print.PrintQuality.QUALITY_DRAFT,
+          print.PrintQuality.QUALITY_NORMAL,
+          print.PrintQuality.QUALITY_HIGH
+        ],
+        supportedOrientations: [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_NONE],
+        options: '',
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_BUSY,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0300 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0400
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0400
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0400', Level.LEVEL1, async (done: Function) => {
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_HIGH,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+        borderless: false,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+        defaultCollate: false,
+        defaultReverse: false,
+        options: '',
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [
+          {
+            id: '',
+            name: '',
+            width: 210,
+            height: 297,
+          }
+        ],
+        supportedColorModes: [
+          print.PrintColorMode.COLOR_MODE_MONOCHROME,
+          print.PrintColorMode.COLOR_MODE_COLOR
+        ],
+        supportedDuplexModes: [
+          print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE
+        ],
+        supportedMediaTypes: [''],
+        supportedQualities: [
+          print.PrintQuality.QUALITY_DRAFT,
+          print.PrintQuality.QUALITY_NORMAL,
+          print.PrintQuality.QUALITY_HIGH
+        ],
+        supportedOrientations: [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_NONE],
+        options: '',
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_BUSY,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0400 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0500
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0500
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0500', Level.LEVEL1, async (done: Function) => {
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_HIGH,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_NONE,
+        borderless: false,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+        defaultCollate: false,
+        defaultReverse: false,
+        options: '',
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [
+          {
+            id: '',
+            name: '',
+            width: 210,
+            height: 297,
+          }
+        ],
+        supportedColorModes: [
+          print.PrintColorMode.COLOR_MODE_MONOCHROME,
+          print.PrintColorMode.COLOR_MODE_COLOR
+        ],
+        supportedDuplexModes: [
+          print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE
+        ],
+        supportedMediaTypes: [''],
+        supportedQualities: [
+          print.PrintQuality.QUALITY_DRAFT,
+          print.PrintQuality.QUALITY_NORMAL,
+          print.PrintQuality.QUALITY_HIGH
+        ],
+        supportedOrientations: [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_NONE],
+        options: '',
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_BUSY,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0500 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0600
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0600
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0600', Level.LEVEL1, async (done: Function) => {
+      let printerInformation: print.PrinterInformation | null = null;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0600 expect success');
+        expect(err).assertEqual(401);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0700
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0700
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0700', Level.LEVEL1, async (done: Function) => {
+      let printerInformation: print.PrinterInformation | undefined = undefined;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrinterInformation(printerInformation).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrinterInformation_0700 expect success');
+        expect(err).assertEqual(401);
         done();
       })
     })

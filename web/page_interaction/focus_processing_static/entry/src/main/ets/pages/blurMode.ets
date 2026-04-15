@@ -21,6 +21,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component

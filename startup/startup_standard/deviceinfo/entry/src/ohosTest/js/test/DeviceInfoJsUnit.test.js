@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,6 +46,198 @@ export default function DeviceInfoTest() {
         })
 
         console.info('start################################start');
+
+        /**
+         * 校验并解析系统版本字符串，返回 {major, minor, patch} 或 null
+         * @param {string} versionStr
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersion(versionStr) {
+            const strictRegex = /^\d+\.\d+\.\d+$/;
+            if (!strictRegex.test(versionStr)) {
+                console.error(`Invalid format: "${versionStr}"`);
+                return null;
+            }
+
+            const parts = versionStr.split('.');
+            const m = Number(parts[0]);
+            const n = Number(parts[1]);
+            const p = Number(parts[2]);
+
+            if (!Number.isInteger(m) || !Number.isInteger(n) || !Number.isInteger(p)) {
+                console.error('Non-integer components');
+                return null;
+            }
+
+            if (m < 1 || m > 99 || n < 0 || n > 99 || p < 0 || p > 99) {
+                console.error(`Out of range: ${m}.${n}.${p}`);
+                return null;
+            }
+
+            return { major: m, minor: n, patch: p };
+        }
+
+        /**
+         * 判断 version1 <= version2
+         * @param {{major: number, minor: number, patch: number}} version1
+         * @param {{major: number, minor: number, patch: number}} version2
+         * @returns {boolean}
+         */
+        function versionLte(version1, version2) {
+            if (version1.major !== version2.major)
+                return version1.major < version2.major;
+            if (version1.minor !== version2.minor)
+                return version1.minor < version2.minor;
+            return version1.patch <= version2.patch;
+        }
+
+        /**
+         * 安全生成版本字符串
+         * @param {number} m
+         * @param {number} n
+         * @param {number} p
+         * @param {number} sub - 可选的括号内数字
+         * @returns {string}
+         */
+        function makeVersion(m, n, p, sub) {
+            if (sub !== undefined) {
+                return `${m}.${n}.${p}(${sub})`;
+            }
+            return `${m}.${n}.${p}`;
+        }
+
+        /**
+         * 测试合法范围内的版本
+         * @param {{major: number, minor: number, patch: number}} sysVersion
+         */
+        function runValidVersionTests(sysVersion) {
+            const { major, minor, patch } = sysVersion;
+
+            const cases = [
+                // 1. 标准格式测试
+                { input: makeVersion(major, minor, patch), expected: true },
+                
+                // 2. 带括号格式测试 (格式合法，应通过)
+                { input: makeVersion(major, minor, patch, 12), expected: true },
+                { input: makeVersion(major, minor, patch, 0), expected: true },
+                { input: makeVersion(major, minor, patch, 99), expected: true },
+
+                // 3. 小于当前版本 (标准格式)
+                ...(patch > 0 ? [{ input: makeVersion(major, minor, patch - 1), expected: true }] : []),
+                ...(minor > 0 ? [{ input: makeVersion(major, minor - 1, 99), expected: true }] : []),
+                ...(major > 1 ? [{ input: makeVersion(major - 1, 99, 99), expected: true }] : []),
+
+                // 4. 大于当前版本 (标准格式)
+                ...(patch < 99 ? [{ input: makeVersion(major, minor, patch + 1), expected: false }] : []),
+                ...(minor < 99 ? [{ input: makeVersion(major, minor + 1, 0), expected: false }] : []),
+                ...(major < 99 ? [{ input: makeVersion(major + 1, 0, 0), expected: false }] : []),
+
+                // 5. 边界测试
+                { input: "1.0.0", expected: versionLte({ major: 1, minor: 0, patch: 0 }, sysVersion) },
+                { input: "99.99.99", expected: versionLte({ major: 99, minor: 99, patch: 99 }, sysVersion) },
+            ];
+
+            for (const { input, expected } of cases) {
+                console.info(`Test valid: apiAvailable("${input}") → ${expected}`);
+                const result = deviceinfo.apiAvailable(input);
+                expect(result).assertEqual(expected);
+            }
+        }
+
+
+        /**
+         * 测试非法/越界版本
+         */
+        function runInvalidVersionTests() {
+            const invalids = [
+                // 1. 基础版本越界
+                "0.0.0", "100.0.0", "1.100.0", "1.0.100",
+                
+                // 2. 格式错误
+                "1.-1.0", "50.50.50.1", "a.b.c", "1.2", "",
+                
+                // 3. 带括号的非法用例
+                "5.0.0(100)",   // 括号内超过 99
+                "5.0.0(a)",     // 括号内非数字
+                "5.0.0()",      // 括号内为空
+            ];
+            for (const v of invalids) {
+                console.info(`Test invalid: apiAvailable("${v}")`);
+                const result = deviceinfo.apiAvailable(v);
+                expect(result).assertEqual(false);
+            }
+        }
+
+        /**
+         * 将六位整数 API 版本（如 654321）解析为 {major, minor, patch}
+         * 规则：654321 → major=65, minor=43, patch=21
+         * @param {number} apiVersionInt - 六位整数，如 654321
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function parseHarmonyOSApiVersion(apiVersionInt) {
+            // 合法范围：10000 (1.0.0) ~ 999999 (99.99.99)
+            if (!Number.isInteger(apiVersionInt) || apiVersionInt < 10000 || apiVersionInt > 999999) {
+                console.error(`Invalid Harmony OS API version: ${apiVersionInt} (must be 10000~999999)`);
+                return null;
+            }
+
+            const patch = apiVersionInt % 100;
+            const minor = Math.floor(apiVersionInt / 100) % 100;
+            const major = Math.floor(apiVersionInt / 10000);
+
+            // 防御性检查
+            if (major > 99 || minor > 99 || patch > 99) {
+                console.error(`Parsed version out of range: ${major}.${minor}.${patch}`);
+                return null;
+            }
+
+            return { major, minor, patch };
+        }
+
+        /**
+         * 从字符串 "x.y.z" 解析并校验版本
+         * @param {string} versionStr
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersionFromString(versionStr) {
+            const strictRegex = /^\d+\.\d+\.\d+$/;
+            if (!strictRegex.test(versionStr)) {
+                console.error(`Invalid version string format: "${versionStr}"`);
+                return null;
+            }
+            const [m, n, p] = versionStr.split('.').map(Number);
+            return validateVersionNumbers(m, n, p);
+        }
+
+        /**
+         * 从三个整数校验版本
+         * @param {number} major
+         * @param {number} minor
+         * @param {number} patch
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateSystemVersionFromIntegers(major, minor, patch) {
+            return validateVersionNumbers(major, minor, patch);
+        }
+
+        /**
+         * 统一校验版本号范围：major(1-99), minor/patch(0-99)
+         * @param {number} m
+         * @param {number} n
+         * @param {number} p
+         * @returns {{major: number, minor: number, patch: number} | null}
+         */
+        function validateVersionNumbers(m, n, p) {
+            if (!Number.isInteger(m) || !Number.isInteger(n) || !Number.isInteger(p)) {
+                console.error('Version components are not integers');
+                return null;
+            }
+            if (m < 1 || m > 99 || n < 0 || n > 99 || p < 0 || p > 99) {
+                console.error(`Version out of range: ${m}.${n}.${p}`);
+                return null;
+            }
+            return { major: m, minor: n, patch: p };
+        }
 
         /**
          * @tc.name   device_info_test_001
@@ -1417,6 +1609,157 @@ export default function DeviceInfoTest() {
 
             console.info('testGetSecurityPatchTag02 : end');
         })
+
+        /**
+         * @tc.name      device_info_test_062
+         * @tc.number    testGetSdkMinorApiVersion01
+         * @tc.desc      Get the Minor API version number, which return value type is number and return value is greater than or equal to 0.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('device_info_test_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetSdkMinorApiVersion01 start');
+            let ret = false;
+            let sdkMinorApiVersionInfo = deviceinfo.sdkMinorApiVersion;
+            console.info('the value of the deviceinfo sdkMinorApiVersion is :' + sdkMinorApiVersionInfo);
+
+            expect(sdkMinorApiVersionInfo).assertInstanceOf('Number');
+            if (sdkMinorApiVersionInfo >= 0) {
+                ret = true;
+                expect(ret).assertTrue();
+                done();
+            } else {
+                console.info('the return value sdkMinorApiVersion is not greater than 0.');
+                expect(false).assertTrue();
+                done();
+            }
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = sdkMinorApiVersionInfo.toString().match(str);
+            let substr = arr.join('');
+            let numstr = parseInt(substr);
+            console.info('the value of the bufferstr is :' + numstr);
+            expect(sdkMinorApiVersionInfo).assertEqual(numstr);
+
+            console.info('testGetSdkMinorApiVersion01 ：end');
+        })
+
+        /**
+         * @tc.name      device_info_test_063
+         * @tc.number    testGetSdkPatchApiVersion01
+         * @tc.desc      Get the Patch API version number, which return value type is number and return value is greater than or equal to 0.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level 0
+         */
+        it('device_info_test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetSdkPatchApiVersion01 start');
+            let ret = false;
+            let sdkPatchApiVersionInfo = deviceinfo.sdkPatchApiVersion;
+            console.info('the value of the deviceinfo sdkPatchApiVersion is :' + sdkPatchApiVersionInfo);
+
+            expect(sdkPatchApiVersionInfo).assertInstanceOf('Number');
+            if (sdkPatchApiVersionInfo >= 0) {
+                ret = true;
+                expect(ret).assertTrue();
+                done();
+            } else {
+                console.info('the return value sdkPatchApiVersion is not greater than 0.');
+                expect(false).assertTrue();
+                done();
+            }
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = sdkPatchApiVersionInfo.toString().match(str);
+            let substr = arr.join('');
+            let numstr = parseInt(substr);
+            console.info('the value of the bufferstr is :' + numstr);
+            expect(sdkPatchApiVersionInfo).assertEqual(numstr);
+
+            console.info('testGetSdkPatchApiVersion01 ：end');
+        })
+
+        /**
+         * @tc.number device_apiAvailable_test_001
+         * @tc.name device_apiAvailable_test_001
+         * @tc.desc Test apiAvailable 
+         */
+        it('device_apiAvailable_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            let caseName = "device_apiAvailable_test_001"
+            console.info(`${caseName} START`);
+
+            const originMajor = deviceinfo.sdkApiVersion;
+            console.info('apiAvailable, origin major:' + originMajor);
+
+            console.info('--- 校验：传入数字类型的非法数值 ---');
+            let result = deviceinfo.apiAvailable(-1); // major负数
+            expect(result).assertEqual(false);
+            result = deviceinfo.apiAvailable(0); // major传0
+            expect(result).assertEqual(false);
+            result = deviceinfo.apiAvailable(100); // major超大数
+            expect(result).assertEqual(false);
+           
+            /************************ 第二部分：合法传参-版本相等 ************************/
+            console.info('--- 校验：合法传参，版本号等于系统版本 ---');
+            result = deviceinfo.apiAvailable(originMajor);
+            expect(result).assertEqual(true);
+            // 验证传参小于系统版本时（且版本号为合法版本）返回1
+            if(originMajor - 1 > 0) {
+                result = deviceinfo.apiAvailable(originMajor - 1);
+                expect(result).assertEqual(true);
+            }
+             // 验证传参大于系统版本时（且版本号为合法版本）返回0
+            if(originMajor + 1 < 100) {
+                result = deviceinfo.apiAvailable(originMajor + 1);
+                expect(result).assertEqual(false);
+            }
+            console.info(`${caseName} END`);
+            done();
+        });
+
+        /**
+         * @tc.number device_apiAvailable_test_002
+         * @tc.name device_apiAvailable_test_002
+         * @tc.desc Test apiAvailable
+         */
+        it('device_apiAvailable_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            const caseName = "device_apiAvailable_test_002";
+            console.info(`${caseName} START`);
+
+            const osName = deviceinfo.distributionOSName;
+            console.info(`OS Name: ${osName}`);
+
+            let sysVer = null;
+            const HARMONY_OS_NAME = ["Harm", "onyOS"].join("");
+            if (osName === HARMONY_OS_NAME) {
+                const apiVersionInt = deviceinfo.distributionOSApiVersion;
+                console.info(`Harmony OS API Version Integer: ${apiVersionInt}`);
+                sysVer = parseHarmonyOSApiVersion(apiVersionInt);
+            } else {
+                // OpenHarmony or other: use integer fields
+                const major = deviceinfo.sdkApiVersion;
+                const minor = deviceinfo.sdkMinorApiVersion;
+                const patch = deviceinfo.sdkPatchApiVersion;
+                console.info(`Non-Harmony OS Version Integers: ${major}.${minor}.${patch}`);
+                sysVer = validateSystemVersionFromIntegers(major, minor, patch);
+            }
+
+            if (!sysVer) {
+                expect(false).assertTrue();
+                done();
+                return;
+            }
+
+            console.info(`Valid system version: ${sysVer.major}.${sysVer.minor}.${sysVer.patch}`);
+
+            runValidVersionTests(sysVer);
+            runInvalidVersionTests();
+
+            console.info(`${caseName} END`);
+            done();
+        });
+
 
         /**
          * @tc.name   device_info_test_0665

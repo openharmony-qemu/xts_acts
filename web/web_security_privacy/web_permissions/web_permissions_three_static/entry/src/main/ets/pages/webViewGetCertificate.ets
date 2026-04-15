@@ -20,6 +20,7 @@ import {
   Column,
   Component,
   Entry,
+  OnRefreshAccessedHistoryEvent,
   Row,
   Web } from '@ohos.arkui.component'
 import { State, } from '@ohos.arkui.stateManagement'
@@ -66,6 +67,7 @@ class StringFields {
 struct webViewGetCertificate {
   stringObj: StringFields = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = "emitGetCertificateCallback";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -77,8 +79,13 @@ struct webViewGetCertificate {
     "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State outputStr: string = ''
   @State certificateResult: boolean = false;
+  @State waitForAttachedTag: boolean = false;
+  @State curProgress: number = -1;
+  @State urlTag: string = ''
+  @State isMainFrameTag: boolean|undefined = false;
+  @State isRefreshedTag: boolean = false;
 
-aboutToAppear() {
+  aboutToAppear() {
   let valueChangeEvent: events_emitter.InnerEvent = {
     eventId: 10,
     priority: events_emitter.EventPriority.LOW
@@ -103,6 +110,31 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
         Button("getCertTest").key('webViewGetCertificate').onClick((e: ClickEvent) => {
           console.info("key==>" + this.stringObj.str)
           switch (this.stringObj.str) {
+            case 'emitWebViewWaitForAttached': {
+              try {
+                this.controller.refresh()
+                this.controller.waitForAttached(1000).then((state: webview.ControllerAttachState) => {
+                  if (state == webview.ControllerAttachState.ATTACHED) {
+                    console.info('Controller is attached.');
+                  }
+                })
+                  const state = this.controller.waitForAttached(1000);
+                  if (state == webview.ControllerAttachState.ATTACHED) {
+                    Utils.emitEvent(true,160131913)
+                    console.info('Controller is attached.');
+                  }
+                  else{
+                    Utils.emitEvent(false,160131913)
+                  }
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,160131913)
+              }
+              break;
+            }
+
+
             case "emitGetCertificateCallback": {
               try {
                 this.controller.loadUrl('https://expired.badssl.com');
@@ -149,6 +181,141 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               })
               break;
             }
+
+            case "emitGetCertificateNull": {
+              try {
+                this.controllerOne.clearHistory();
+                this.controllerOne.loadUrl('https://expired.badssl.com');
+                this.controllerOne.getCertificate().then(x509CertArray => {
+                  this.outputStr = ParseX509CertInfo(x509CertArray);
+                })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 4043191);
+              }
+              console.log("getCertificate result of this page: " + this.outputStr);
+              if ((this.outputStr).includes("failed")) {
+                this.certificateResult = false
+              } else {
+                this.certificateResult = true
+              }
+              try {
+              this.controllerOne.runJavaScript("test()", (res) => {
+                Utils.emitEvent(this.certificateResult, 4043191)
+              })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 4043191);
+              }
+              break;
+            }
+
+            case "emitGetCertificateEmpty": {
+              try {
+                this.controller.clearHistory();
+                this.controller.loadUrl('');
+                this.controller.getCertificate().then(x509CertArray => {
+                  this.outputStr = ParseX509CertInfo(x509CertArray);
+                })
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 40431912);
+              }
+              console.log("getCertificate result of this page: " + this.outputStr);
+              if ((this.outputStr).includes("failed")) {
+                this.certificateResult = false
+              } else {
+                this.certificateResult = true
+              }
+              this.controller.runJavaScript("test()", (res) => {
+                Utils.emitEvent(this.certificateResult, 40431912)
+              })
+              break;
+            }
+
+            case 'emitWebViewGetAttachState': {
+              try {
+                if (this.controller.getAttachState() == webview.ControllerAttachState.ATTACHED) {
+                  Utils.emitEvent(true,16013191)
+                } else {
+                  Utils.emitEvent(false,16013191)
+                }
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,16013191)
+              }
+              break;
+            }
+            case 'emitWebViewGetProgress': {
+              try {
+                this.controller.loadUrl("www.baidu.com")
+                if(this.curProgress >= 0){
+                  Utils.emitEvent(true,16013194)
+                }
+                else{
+                  Utils.emitEvent(false,16013194)
+                }
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,16013194)
+              }
+              break;
+            }
+
+            case 'emitOnRefreshAccessedHistoryEvent01': {
+              try {
+                this.controller.loadUrl("www.baidu.com")
+                this.controller.refresh()
+                setTimeout(() => {
+                  Utils.emitEvent("success",160131941)
+                }, 3000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,160131941)
+              }
+              break;
+            }
+
+            case 'emitOnRefreshAccessedHistoryEvent02': {
+              try {
+                this.controller.loadUrl("www.baidu.com")
+                this.controller.refresh()
+                setTimeout(() => {
+                  Utils.emitEvent("success",160131942)
+                }, 3000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,160131942)
+              }
+              break;
+            }
+
+            case 'emitOnRefreshAccessedHistoryEvent03': {
+              try {
+                this.controller.loadUrl("www.baidu.com")
+                this.controller.refresh()
+                if(this.isMainFrameTag){
+                  Utils.emitEvent(true,160131943)
+                }
+                else{
+                  Utils.emitEvent(false,160131943)
+                }
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,160131943)
+              }
+              break;
+            }
+
+
           }
         })
       }
@@ -160,8 +327,20 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .onPageBegin(() => {
+          this.curProgress = this.controller.getProgress();
+          console.info("current page loading progress is :" + this.curProgress);
+        })
         .onPageEnd((e) => {
           this.outputStr = 'onPageEnd : url = ' + e.url
+        })
+        .onRefreshAccessedHistory((e: OnRefreshAccessedHistoryEvent) => {
+          this.urlTag = e.url
+          this.isRefreshedTag = e.isRefreshed
+          this.isMainFrameTag = e.isMainFrame
+          console.log("webTest : onRefreshAccessedHistory .url : " + e.url);
+          console.log("webTest : onRefreshAccessedHistory .isRefreshed : " + e.isRefreshed);
+          console.log("webTest : onRefreshAccessedHistory .isMainFrame : " + e.isMainFrame);
         })
     }
   }

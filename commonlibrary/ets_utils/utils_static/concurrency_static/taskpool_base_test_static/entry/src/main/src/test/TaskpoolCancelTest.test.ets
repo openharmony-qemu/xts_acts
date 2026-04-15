@@ -90,6 +90,9 @@ export function printArgs(args: int): number {
 }
 
 export function cancelById(taskId: int) {
+  let start: number = Date.now();
+  while (Date.now() - start < 500) {
+  }
   taskpool.cancel(taskId);
 }
 
@@ -187,13 +190,15 @@ export default function taskpoolCancelTest() {
         str = 'cancel success';
         terminate = true;
       });
-      let cancelTask = new taskpool.Task(cancelById, task.taskId);
-      taskpool.execute(cancelTask);
+      let eaw = new EAWorker();
+      eaw.start();
+      eaw.run<void>(cancelById, task.taskId)
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }
       console.log(`${caseName} result: ` + str);
-      expect(str).assertEqual('finish');
+      expect(str).assertEqual('canceled');
       done()
     })
 
@@ -209,16 +214,23 @@ export default function taskpoolCancelTest() {
       let caseName = 'TaskPoolTestClass227';
       console.info(`${caseName} start`);
       let result = "";
+      let count = 0;
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
         let task3: taskpool.Task = new taskpool.Task(printArgs, 300);
-        taskpool.execute(task1);
-        taskpool.execute(task2);
-        taskpool.execute(task3);
+        taskpool.execute(task1).then(()=>{
+          count++;
+        });
+        taskpool.execute(task2).then(()=>{
+          count++;
+        });
+        taskpool.execute(task3).then(()=>{
+          count++;
+        });
         let start: number = new Date().getTime();
-        while (new Date().getTime() - start < 1000) {
-          continue;
+        while (count < 3) {
+          await sleep(100);
         }
         taskpool.cancel(task1.taskId);
       } catch (e) {
@@ -252,22 +264,15 @@ export default function taskpoolCancelTest() {
         str = 'cancel success';
         terminate = true;
       });
-      let cancelTask = new taskpool.Task(cancelById, task.taskId);
-      taskpool.execute(cancelTask).then((data: Any) => {
-        console.info(`${caseName} cancel then`);
-        str = data as string;
-        terminate = true;
-      }).catch(() => {
-        console.info(`${caseName} cancel catch`);
-        str = 'cancel success';
-        terminate = true;
-      });
-      ;
+      let eaw = new EAWorker();
+      eaw.start();
+      eaw.run<void>(cancelById, task.taskId)
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }
       console.log(`${caseName} result: ` + str);
-      expect(str).assertEqual('cancel success');
+      expect(str).assertEqual('canceled');
       done()
     })
 

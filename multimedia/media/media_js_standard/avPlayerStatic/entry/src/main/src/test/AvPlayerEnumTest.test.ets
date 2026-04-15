@@ -315,6 +315,32 @@ export default function AvPlayerEnumTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0006
+     * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0007
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0007
+     * @tc.desc   AVPlayer Enumeration test - AVMetricsEventType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.FetchResult.FETCH_FAILED)).assertEqual(0);
+      expect(Number(media.FetchResult.FETCH_SUCCEEDED)).assertEqual(1);
+      expect(Number(media.FetchResult.FETCH_CANCELED)).assertEqual(2);
+      done();
+    });
   })
 }
 

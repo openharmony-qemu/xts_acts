@@ -26,6 +26,7 @@ group("WebLoad") {
       "preload_link_rending:ActsWebPreloadLinkRendingTest",
       "resource_interception:ActsWebResourceInterceptionTest",
       "web_error_page:ActsWebErrorPageTest",
+      "web_error_page_static:ActsWebErrorPageStaticTest",
       "web_hosting:ActsWebHostingTest",
       "website_certificate:ActsWebsiteCertificateTest",
       "ActsWebCloudServiceTestStatic:ActsWebCloudServiceStaticTest",

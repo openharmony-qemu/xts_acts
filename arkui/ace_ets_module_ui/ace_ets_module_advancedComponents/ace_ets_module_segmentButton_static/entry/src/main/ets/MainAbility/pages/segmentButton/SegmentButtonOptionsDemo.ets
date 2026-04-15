@@ -82,7 +82,8 @@ struct Index {
 
           SegmentButton({
             options: this.multiplySelectCapsuleOptions,
-            selectedIndexes: this.multiplySelectCapsuleSelectedIndexes
+            selectedIndexes: this.multiplySelectCapsuleSelectedIndexes,
+            onItemClicked: undefined
           })
           Text(`${this.ints}` +  '').height('5%').id('onItemClickedIndex')
         }.width('90%')

@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, ResourceStr, AlignRuleOption } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderOptions, ResourceStr, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -181,14 +181,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
-		instance.backgroundImage(this.mBackgroundImage)
-	}
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.backgroundImage(this.mBackgroundImage)
 	}
 }
@@ -710,7 +702,6 @@ struct BackgroundImagePage {
 	@State _backgroundImageEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _backgroundImageFlexModifier: FlexModifier = new FlexModifier()
 	@State _backgroundImageFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _backgroundImageFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _backgroundImageGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _backgroundImageGridModifier: GridModifier = new GridModifier()
 	@State _backgroundImageGridColModifier: GridColModifier = new GridColModifier()
@@ -813,7 +804,6 @@ struct BackgroundImagePage {
 			this._backgroundImageEllipseModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageFlexModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageFlowItemModifier.mBackgroundImage = value.backgroundImage
-			this._backgroundImageFormLinkModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageGaugeModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageGridModifier.mBackgroundImage = value.backgroundImage
 			this._backgroundImageGridColModifier.mBackgroundImage = value.backgroundImage
@@ -1510,17 +1500,6 @@ struct BackgroundImagePage {
 					.backgroundColor('#FFFF00')
 					
 					.attributeModifier(this._backgroundImageCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					
-					.attributeModifier(this._backgroundImageFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

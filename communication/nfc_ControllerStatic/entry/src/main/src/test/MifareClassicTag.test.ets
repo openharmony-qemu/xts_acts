@@ -870,6 +870,86 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1701
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1701
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1701', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mifareclassicTaginfo: tag.TagInfo = {
+        "uid": [0x01, 0x02, 0x03, 0x04],
+        "technology": [1, 8],
+        "extrasData": [
+          {
+            "Sak": "0x10", "Atqa": "B000",
+          },
+          {
+            "Sak": 0x10, "Atqa": "B000",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+      if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+        try{
+          let getType: tag.MifareClassicType = nfcmifareClassicTag.getType();
+          expect(getType).assertEqual(tag.MifareClassicType.TYPE_PLUS);
+        } catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1701 getType error is ' + error.code + " - " + error);
+          expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1702
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1702
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_1702', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mifareclassicTaginfo: tag.TagInfo = {
+        "uid": [0x01, 0x02, 0x03, 0x04],
+        "technology": [1, 8],
+        "extrasData": [
+          {
+            "Sak": "0xB8", "Atqa": "B000",
+          },
+          {
+            "Sak": 0xB8, "Atqa": "B000",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
+      if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
+        try{
+          let getType: tag.MifareClassicType = nfcmifareClassicTag.getType();
+          expect(getType).assertEqual(tag.MifareClassicType.TYPE_PRO);
+        } catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1702 getType error is ' + error.code + " - " + error);
+          expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'{public}s','[NFC_test] nfcmifareClassicTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800
      * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800
      * @tc.desc Check whether the NFC function is enabled.

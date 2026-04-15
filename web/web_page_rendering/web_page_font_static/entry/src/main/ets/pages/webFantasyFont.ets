@@ -19,6 +19,7 @@ import emitter from '@ohos.events.emitter';
 import { BusinessError, RecordData } from '@ohos.base';
 import { State } from "@ohos.arkui.stateManagement";
 import { Callback } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { CopyOptions,WebMediaOptions,Entry, Component, Column, Row, Button,Text,ClickEvent, Web } from "@ohos.arkui.component";
 
 class StringFields {
@@ -72,7 +73,14 @@ struct webFantasyFont {
               case 'emitWebFantasyFont001': {
                     console.info('emitWebFantasyFont001 start');
                     Utils.emitEvent(0, 20253322);
-            }
+               }
+              case 'emitOnSwitchNextPage2': {
+                console.log('emitonSwitchNextPage in in in')
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebCursiveFontFant' })
+                console.log('push URL success')
+              }
           }
         })
       }

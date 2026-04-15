@@ -1,5 +1,7 @@
-import videoDecoderTest from './VideoDecoderTest.test';
+import actsApiTest from './ActsApiTest.test'
+import actsFuncTest from './ActsFuncTest.test'
 
 export default function testsuite() {
-  videoDecoderTest();
+  actsApiTest();
+  actsFuncTest();
 }

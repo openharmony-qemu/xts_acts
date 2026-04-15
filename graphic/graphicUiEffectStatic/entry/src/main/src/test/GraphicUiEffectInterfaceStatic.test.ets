@@ -156,5 +156,36 @@ export default function GraphicUiEffectInterfaceStatic() {
         }
       })
 
+    /**
+     * @tc.name   testHdrBrightnessRatio_static_permissions
+     * @tc.number SUB_GRAPHIC_UIEFFECT_FILTER_0200
+     * @tc.desc   Filter testHdrBrightnessRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHdrBrightnessRatio_static_permissions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = " =====www data testHdrBrightnessRatio_static_noPermissions==== "
+        try {
+          let filter : uiEffect.Filter = uiEffect.createFilter()
+          console.log(msgStr + " Succeed in uiEffect.createFilter ")
+          expect(filter !== undefined).assertTrue();
+          try {
+            let ratio = filter.hdrBrightnessRatio(2.0)
+            console.info(msgStr + 'success ratio 111', JSON.stringify(ratio));
+          } catch (err) {
+            console.info(msgStr + 'failed to ratio 222', JSON.stringify(err.code));
+            expect().assertFail();
+          }
+          done()
+        } catch (err) {
+          console.log(msgStr + " Failed in uiEffect.createFilter 444 " + JSON.stringify(err))
+          console.log(msgStr + " Failed in uiEffect.createFilter 444 " + err)
+          expect().assertFail()
+          done()
+        }
+      })
+
   })
 }

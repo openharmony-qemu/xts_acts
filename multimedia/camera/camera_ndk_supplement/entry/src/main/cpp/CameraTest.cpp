@@ -1021,6 +1021,9 @@ Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(int32_t type)
     if (type == CONTROL_CENTER_EFFECT_TYPE_PORTRAIT) {
         checkType = CONTROL_CENTER_EFFECT_TYPE_PORTRAIT;
     }
+    if (type == CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING) {
+        checkType = CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING;
+    }
 
     Camera_ControlCenterEffectType *effectType = new Camera_ControlCenterEffectType[1];
     uint32_t size;

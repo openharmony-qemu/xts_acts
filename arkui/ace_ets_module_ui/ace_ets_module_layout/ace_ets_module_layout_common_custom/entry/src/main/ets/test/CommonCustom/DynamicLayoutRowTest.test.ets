@@ -114,22 +114,15 @@ export default function DynamicLayoutRowTest() {
       let strJson9 = getInspectorByKey('DynamicLayoutRow');
       console.info('DynamicLayoutRowTest_0100 justifyContent:'+JSON.parse(strJson9).$attrs.justifyContent);
 
-      let button10 = await driver.findComponent(ON.id('RowLayoutAlgorithmNull'));
+      let button10 = await driver.findComponent(ON.id('RowLayoutAlgorithmUndefined'));
       await button10.click();
       await Utils.sleep(2000)
       let strJson10 = getInspectorByKey('DynamicLayoutRow');
       console.info('DynamicLayoutRowTest_0100 alignItems:'+JSON.parse(strJson10).$attrs.alignItems);
       console.info('DynamicLayoutRowTest_0100 justifyContent:'+JSON.parse(strJson10).$attrs.justifyContent);
 
-      let button11 = await driver.findComponent(ON.id('RowLayoutAlgorithmUndefined'));
+      let button11 = await driver.findComponent(ON.id('RowLayoutAlgorithmIsReverse'));
       await button11.click();
-      await Utils.sleep(2000)
-      let strJson11 = getInspectorByKey('DynamicLayoutRow');
-      console.info('DynamicLayoutRowTest_0100 alignItems:'+JSON.parse(strJson11).$attrs.alignItems);
-      console.info('DynamicLayoutRowTest_0100 justifyContent:'+JSON.parse(strJson11).$attrs.justifyContent);
-
-      let button12 = await driver.findComponent(ON.id('RowLayoutAlgorithmIsReverse'));
-      await button12.click();
       await Utils.sleep(2000)
       
       expect(JSON.parse(strJson).$attrs.space).assertEqual('0.00vp');
@@ -151,9 +144,6 @@ export default function DynamicLayoutRowTest() {
       expect(JSON.parse(strJson10).$attrs.alignItems).assertEqual('VerticalAlign.Center');
       expect(JSON.parse(strJson10).$attrs.justifyContent).assertEqual('FlexAlign.Start');
 
-      expect(JSON.parse(strJson11).$attrs.alignItems).assertEqual('VerticalAlign.Center');
-      expect(JSON.parse(strJson11).$attrs.justifyContent).assertEqual('FlexAlign.Start');
-      
       console.info('[DynamicLayoutRowTest_0100] END');
       done();
     });

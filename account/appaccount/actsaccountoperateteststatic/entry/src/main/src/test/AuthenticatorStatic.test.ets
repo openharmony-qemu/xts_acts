@@ -184,7 +184,6 @@ export default function ActsAccountAuthenticatorStatic() {
           await accountManager.removeAccount(name);
           hilog.info(0x0000, tag, '====>ActsAccountCheckAppAccess_0200 removeAccount_success');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>ActsAccountCheckAppAccess_0100 removeAccount_err');
           expect().assertFail();
         }
@@ -258,7 +257,6 @@ export default function ActsAccountAuthenticatorStatic() {
           await accountManager.removeAccount(name);
           hilog.info(0x0000, tag, '====>ActsAccountDeleteCredential_0200 removeAccount_success');
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>ActsAccountDeleteCredential_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }

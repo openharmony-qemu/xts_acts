@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,10 +30,7 @@ export default class Utils {
     Utils.rect_right = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[0]
     Utils.rect_bottom = JSON.parse('[' + JSON.parse('[' + JSON.parse(strJson).$rect + ']')[1] + ']')[1]
     return Utils.rect_value = {
-      left: Utils.rect_left,
-      top: Utils.rect_top,
-      right: Utils.rect_right,
-      bottom: Utils.rect_bottom
+      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
     }
   }
 
@@ -58,7 +55,7 @@ export default class Utils {
     yStep = 0;
     ret = false;
     swipeSteps = steps;
-    if (swipeSteps === 0) {
+    if (swipeSteps == 0) {
       swipeSteps = 1;
     }
     xStep = (upX - downX) / swipeSteps;
@@ -79,7 +76,9 @@ export default class Utils {
     console.info('down touch started: ' + JSON.stringify(downPoint))
     sendTouchEvent(downPoint);
     console.info('start to move')
-    Utils.sleep(500)
+    if (true) {
+      Utils.sleep(500)
+    }
     for (let i = 1; i <= swipeSteps; i++) {
       let movePoint: TouchObject = {
         id: 1,
@@ -95,13 +94,15 @@ export default class Utils {
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
-      if (ret === false) {
+      if (ret == false) {
         break;
       }
       Utils.sleep(5)
     }
     console.info('start to up')
-    Utils.sleep(100)
+    if (true) {
+      Utils.sleep(100)
+    }
     let upPoint: TouchObject = {
       id: 1,
       x: upX,
@@ -119,4 +120,7 @@ export default class Utils {
     Utils.sleep(500)
   }
 }
+
+
+
 

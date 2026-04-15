@@ -8,6 +8,7 @@
     "MainAbility/pages/segmentButton/TabSegmentButtonOptions",
     "MainAbility/pages/segmentButton/SegBtnItem0010",
     "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
+    "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2UndefinedPage",
     "MainAbility/pages/capsuleSegmentButtonV2/SegmentButtonV2Test",
     "MainAbility/pages/segmentButtonV2/SegmentButtonV20010",
     "MainAbility/pages/SegmentButtonAttribute/CapsuleSegmentButtonAttributeTest",
@@ -18,6 +19,7 @@
     "MainAbility/pages/segmentButton/SegmentButtonBorder",
     "MainAbility/pages/segmentButton/SegmentButtonDirection",
     "MainAbility/pages/segmentButton/SegmentBtnItem0010",
-    "MainAbility/pages/segmentButton/SegmentButtonIndex"
+    "MainAbility/pages/segmentButton/SegmentButtonIndex",
+    "MainAbility/pages/segmentButton/segmentButtonEnableStateAnimation"
   ]
 }
