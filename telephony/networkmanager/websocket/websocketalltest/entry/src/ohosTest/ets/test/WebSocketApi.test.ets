@@ -4912,7 +4912,7 @@ export default function WebSocketApiTest() {
         ws.on('error', onErrorCallback01);
         ws.on('error', onErrorCallback02);
         ws.off('error', onErrorCallback01);
-        ws.connect('ws://124.222.6.66:12423', (error: BusinessError, value: boolean) => {
+        ws.connect('ws://www.baidu.com', (error: BusinessError, value: boolean) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
         })
       } catch (err) {
