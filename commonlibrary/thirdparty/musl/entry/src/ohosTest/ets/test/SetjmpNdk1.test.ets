@@ -30,9 +30,9 @@ export default function muslSetJmpNdk1Test() {
      * @tc.desc   test longjmp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSetjmpLongjmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSetjmpLongjmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = setjmp.longjmp();
       expect(result).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function muslSetJmpNdk1Test() {
      * @tc.desc   test _setjmp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSetjmpSetjmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSetjmpSetjmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = setjmp._setjmp();
       expect(a).assertEqual(0);
       done()
@@ -58,9 +58,9 @@ export default function muslSetJmpNdk1Test() {
      * @tc.desc   test _longjmp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSetjmpLongJmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSetjmpLongJmp1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = setjmp._longjmp();
       expect(a).assertEqual(0);
       done()

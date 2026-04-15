@@ -22,6 +22,7 @@ import {
   GeometryType,
   Light,
   LightType,
+  Mat4x4,
   Morpher,
   Node,
   NodeType,
@@ -58,15 +59,15 @@ export default function sceneNodeTest() {
     let directionalLight: DirectionalLight;
 
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testGetNodeByPathFromRoot
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0100
-     * @tc.desc   Used to obtain the node according to the path, and return empty if it cannot be obtained
+     * @tc.desc   Used to obtain the node according to the path from scene.root, and return empty if it cannot be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testGetNodeByPath";
+    it('testGetNodeByPathFromRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetNodeByPathFromRoot";
       console.info(msg + ' begin ');
       try {
         let sceneUri = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
@@ -75,9 +76,38 @@ export default function sceneNodeTest() {
         console.info(msg + " get scene success ");
         node = scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') as Node;
         expect(node != null).assertTrue();
-        console.info(msg + " Succeed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+        console.info(msg + " Succeed in scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+
+        // Cover all Node property fields
+        expect(node!.position != null).assertTrue();
+        console.info(msg + " node.position is not null ");
+        expect(node!.rotation != null).assertTrue();
+        console.info(msg + " node.rotation is not null ");
+        expect(node!.scale != null).assertTrue();
+        console.info(msg + " node.scale is not null ");
+        node!.visible = true;
+        expect(node!.visible).assertTrue();
+        console.info(msg + " node.visible is " + node!.visible);
+        expect(node!.nodeType != null).assertTrue();
+        console.info(msg + " node.nodeType is " + JSON.stringify(node!.nodeType));
+        expect(node!.layerMask != null).assertTrue();
+        console.info(msg + " node.layerMask is not null ");
+        expect(node!.path != null).assertTrue();
+        console.info(msg + " node.path is " + node!.path);
+        expect(node!.parent != null).assertTrue();
+        console.info(msg + " node.parent is not null ");
+        expect(node!.children != null).assertTrue();
+        console.info(msg + " node.children is not null ");
+
         let nullNode: Node | null = scene!.root!.getNodeByPath('Scene/1234/456');
         expect(nullNode).assertNull();
+        try {
+          let emptyStringNode: Node | null = scene!.root!.getNodeByPath("");
+          console.info(msg + " getNodeByPath with empty string: " + JSON.stringify(emptyStringNode));
+          expect(emptyStringNode != null).assertTrue();
+        } catch (emptyStringErr) {
+          console.info(msg + " getNodeByPath with empty string threw error: " + JSON.stringify(emptyStringErr));
+        }
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') " +
@@ -835,6 +865,34 @@ export default function sceneNodeTest() {
       }
     })
     /**
+     * @tc.name   testCreateGeometryEmptyName
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0595
+     * @tc.desc   Test createGeometry with empty string name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateGeometryEmptyName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateGeometryEmptyName";
+      console.info(msg + ' begin ');
+      try {
+        let cubeGeom = new CubeGeometry();
+        expect(cubeGeom != null).assertTrue();
+        cubeGeom.size = { x: 0.5, y: 0.5, z: 0.5 };
+        let meshRes = await rf!.createMesh({ name: "mesh for empty name test" }, cubeGeom);
+        expect(meshRes != null).assertTrue();
+        let geometry = await rf!.createGeometry({ name: "" }, meshRes);
+        expect(geometry != null).assertTrue();
+        console.info(msg + " createGeometry with empty name success");
+        scene?.root?.children.append(geometry);
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateGeometryEmptyName " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testImportNode
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0600
      * @tc.desc   Used to import a node
@@ -980,6 +1038,12 @@ export default function sceneNodeTest() {
         expect(hit.hitPosition != null).assertTrue();
         console.info(msg + " Hit position:", JSON.stringify(hit.hitPosition));
 
+        scene.root?.children.clear();
+        raycastNode = scene.root as Node;
+        viewPos = {x: -1, y: 1};
+        results = await camera.raycast(viewPos, { rootNode: raycastNode });
+        expect(results.length).assertEqual(0);
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -988,5 +1052,186 @@ export default function sceneNodeTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testLightIntensityDirectional
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1160
+     * @tc.desc   Test Light.intensity property getter and setter for DIRECTIONAL light
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLightIntensityDirectional', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testLightIntensityDirectional";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let light: Light = await rf.createLight({ name: "TestLight" }, LightType.DIRECTIONAL);
+        expect(light != null).assertTrue();
+
+        light.intensity = 1000.0;
+        expect(light.intensity).assertEqual(1000.0);
+        console.info(msg + " intensity set to 1000.0 successfully");
+
+        light.intensity = 0.0;
+        expect(light.intensity).assertEqual(0.0);
+        console.info(msg + " intensity set to 0.0 successfully");
+
+        light.intensity = 500.5;
+        expect(light.intensity).assertEqual(500.5);
+        console.info(msg + " intensity set to 500.5 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSpotLightInnerAngle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1170
+     * @tc.desc   Test SpotLight.innerAngle property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSpotLightInnerAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testSpotLightInnerAngle";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let spotLight: SpotLight = await rf.createLight({ name: "TestSpotLight" }, LightType.SPOT) as SpotLight;
+        expect(spotLight != null).assertTrue();
+
+        spotLight.innerAngle = 30.0;
+        expect(spotLight.innerAngle).assertEqual(30.0);
+        console.info(msg + " innerAngle set to 30.0 successfully");
+
+        spotLight.innerAngle = 45.0;
+        expect(spotLight.innerAngle).assertEqual(45.0);
+        console.info(msg + " innerAngle set to 45.0 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSpotLightOuterAngle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1180
+     * @tc.desc   Test SpotLight.outerAngle property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSpotLightOuterAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testSpotLightOuterAngle";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let spotLight: SpotLight = await rf.createLight({ name: "TestSpotLight" }, LightType.SPOT) as SpotLight;
+        expect(spotLight != null).assertTrue();
+
+        spotLight.outerAngle = 60.0;
+        expect(spotLight.outerAngle).assertEqual(60.0);
+        console.info(msg + " outerAngle set to 60.0 successfully");
+
+        spotLight.outerAngle = 90.0;
+        expect(spotLight.outerAngle).assertEqual(90.0);
+        console.info(msg + " outerAngle set to 90.0 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testCameraGetViewMatrixBasic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1420
+     * @tc.desc   Test Camera.getViewMatrix method returns valid Mat4x4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetViewMatrixBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrixBasic";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+
+        let viewMatrix: Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+        console.info(msg + " getViewMatrix returned Mat4x4 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1430
+     * @tc.desc   Test Camera.getProjectionMatrix method returns valid Mat4x4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+
+        let projectionMatrix: Mat4x4 = camera.getProjectionMatrix();
+        expect(projectionMatrix != null).assertTrue();
+        console.info(msg + " getProjectionMatrix returned Mat4x4 successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

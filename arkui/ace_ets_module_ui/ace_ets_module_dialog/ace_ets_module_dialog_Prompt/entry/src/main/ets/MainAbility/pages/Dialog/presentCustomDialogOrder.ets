@@ -52,6 +52,7 @@ struct presentCustomDialogOrder {
               this.customDialogComponent()
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(100),
+              offset: { dx: 0, dy: 30 },
               isModal: false,
               alignment: DialogAlignment.Center
             })
@@ -71,6 +72,7 @@ struct presentCustomDialogOrder {
               this.customDialogComponent()
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(100001),
+              offset: { dx: 0, dy: 30 },
               isModal: false,
               alignment: DialogAlignment.Center
             })
@@ -92,6 +94,7 @@ struct presentCustomDialogOrder {
               this.customDialogComponent()
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(-100001),
+              offset: { dx: 0, dy: 30 },
               isModal: false,
               alignment: DialogAlignment.Center
             })
@@ -111,6 +114,7 @@ struct presentCustomDialogOrder {
               this.customDialogComponent()
             }, this.dialogController, {
               levelOrder: LevelOrder.clamp(undefined),
+              offset: { dx: 0, dy: 30 },
               isModal: false,
               alignment: DialogAlignment.Center
             })
@@ -136,5 +140,6 @@ struct presentCustomDialogOrder {
     }
     .width('100%')
     .height('100%')
+    .margin({top:10})
   }
 }

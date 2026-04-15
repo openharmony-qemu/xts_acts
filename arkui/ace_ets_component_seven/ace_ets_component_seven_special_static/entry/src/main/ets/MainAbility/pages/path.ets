@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, PathAttribute, Flex, Text, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, Path } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class PathModifier1 implements AttributeModifier<PathAttribute> {
+export class PathModifier1 implements AttributeModifier<PathAttribute> {
   applyNormalAttribute(instance: PathAttribute): void {
     instance.commands("M100 0 L0 100 L50 200 L150 200 L200 100 Z")
   }

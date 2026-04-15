@@ -19,6 +19,7 @@ import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { common } from '@kit.AbilityKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -31,12 +32,10 @@ export default function actsApplicationStartAbilityTest2() {
       deviceType = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
       hilog.info(0x0000, 'testTag', '%{public}s',
           `current device is ` + deviceType);
-      setTimeout(() => {
-        context = getContext() as common.UIAbilityContext;
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Succeeded in starting SpecifiedAbility11ww11` + JSON.stringify(context));
-        done();
-      }, 2000);
+      context = getContext() as common.UIAbilityContext;
+      hilog.info(0x0000, 'testTag', '%{public}s',
+        `Succeeded in starting SpecifiedAbility11ww11` + JSON.stringify(context));
+      done();
     });
 
     beforeEach(async () => {
@@ -84,11 +83,12 @@ export default function actsApplicationStartAbilityTest2() {
                     expect(onCreateFlag).assertTrue();
                     expect(onWindowStageCreateFlag).assertTrue();
                     expect(onForegroundFlag).assertTrue();
+                    eventBusPlus.emit('Auxiliary_2_MultipleEntryAbility_onForegroundHap_1');
+                    await eventBusPlus.onWait('Auxiliary_2_MultipleEntryAbility_onDestroy');
                   } else if (onForegroundFlagNumber == 2) {
                     expect(onCreateFlag).assertTrue();
                     expect(onWindowStageCreateFlag).assertTrue();
                     expect(onForegroundFlag).assertTrue();
-                    await sleep(1000);
                     commonEventManager.unsubscribe(subscriber, (err, data) => {
                       done();
                     });
@@ -263,17 +263,18 @@ export default function actsApplicationStartAbilityTest2() {
                 expect(onCreateFlag).assertTrue();
                 expect(onWindowStageCreateFlag).assertTrue();
                 expect(onForegroundFlag).assertTrue();
+                globalThis.EntryAbility11.terminateSelf();
               } else if (commonEventData.event === `${TEST_CASE_NAME}_onBackgroundHap_1`) {
                 hilog.info(0x0000, 'testTag', '%{public}s',
                   `eventInfosubscribe ${TEST_CASE_NAME} ${JSON.stringify(commonEventData)}`);
                 let onBackgroundFlag = commonEventData.parameters?.data?.onBackgroundFlag as boolean;
                 expect(onBackgroundFlag).assertTrue();
+                globalThis.EntryAbility10.terminateSelf();
               } else if (commonEventData.event === `${TEST_CASE_NAME}_onDestroyHap_1`) {
                 hilog.info(0x0000, 'testTag', '%{public}s',
                   `eventInfosubscribe ${TEST_CASE_NAME} onDestroyFlag: ${JSON.stringify(commonEventData)}`);
                 let onDestroyFlag = commonEventData.parameters?.data?.onDestroyFlag as boolean;
                 expect(onDestroyFlag).assertTrue();
-                sleep(1000);
                 commonEventManager.unsubscribe(subscriber, (err, data) => {
                   done();
                 });
@@ -358,6 +359,7 @@ export default function actsApplicationStartAbilityTest2() {
                   `eventInfosubscribe ${TEST_CASE_NAME} onBackgroundFlag: ${JSON.stringify(commonEventData)}`);
                 let onBackgroundFlag = commonEventData.parameters?.data?.onBackgroundFlag as boolean;
                 expect(onBackgroundFlag).assertTrue();
+                globalThis.EntryAbility3.terminateSelf();
               }
               if (commonEventData.event === `${TEST_CASE_NAME}_onDestroyHap_1`) {
                 hilog.info(0x0000, 'testTag', '%{public}s',
@@ -462,7 +464,8 @@ export default function actsApplicationStartAbilityTest2() {
                   `eventInfosubscribe ${TEST_CASE_NAME}: ${JSON.stringify(commonEventData)}`);
                 let onForegroundFlag = commonEventData.parameters?.data?.onForegroundFlag as boolean;
                 expect(onForegroundFlag).assertTrue();
-                await sleep(2000)
+                globalThis.EntryAbility6.terminateSelf();
+                await eventBusPlus.onWait('abilitytest_EntryAbility6_onDestroy');
                 commonEventManager.unsubscribe(subscriber, (err, data) => {
                   done();
                 });
@@ -531,6 +534,7 @@ export default function actsApplicationStartAbilityTest2() {
                 expect(onCreateFlag).assertTrue();
                 expect(onWindowStageCreateFlag).assertTrue();
                 expect(onForegroundFlag).assertTrue();
+                globalThis.EntryAbility7.terminateSelf();
               }
               if (commonEventData.event === `${TEST_CASE_NAME}_onForegroundHap_2`) {
                 hilog.info(0x0000, 'testTag', '%{public}s',
@@ -563,7 +567,6 @@ export default function actsApplicationStartAbilityTest2() {
                   `eventInfosubscribe ${TEST_CASE_NAME} onBackgroundFlag: ${JSON.stringify(commonEventData)}`);
                 let onBackgroundFlag = commonEventData.parameters?.data?.onBackgroundFlag as boolean;
                 expect(onBackgroundFlag).assertTrue();
-                sleep(1000)
                 commonEventManager.unsubscribe(subscriber, (err, data) => {
                   done();
                 });
@@ -585,7 +588,6 @@ export default function actsApplicationStartAbilityTest2() {
             instanceKey: TEST_CASE_NAME
           }
         };
-        await sleep(2000)
         await context.startAbility(want).then((data) => {
           hilog.info(0x0000, 'testTag', '%{public}s',
             `${TEST_CASE_NAME} Succeeded in starting SpecifiedAbility EntryAbility1 ${data}`);
@@ -614,7 +616,7 @@ export default function actsApplicationStartAbilityTest2() {
           `${TEST_CASE_NAME}_onBackgroundHap_2`],
       };
       await commonEventManager.createSubscriber(subscriberInfo_startdebugapp).then(async (subscriber) => {
-        commonEventManager.subscribe(subscriber, (err, commonEventData) => {
+        commonEventManager.subscribe(subscriber, async (err, commonEventData) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `eventInfosubscribe ${TEST_CASE_NAME}`);
           if (err) {
             hilog.info(0x0000, 'testTag', '%{public}s',
@@ -656,13 +658,14 @@ export default function actsApplicationStartAbilityTest2() {
                   `eventInfosubscribe ${TEST_CASE_NAME} onBackgroundFlag: ${JSON.stringify(commonEventData)}`);
                 let onBackgroundFlag = commonEventData.parameters?.data?.onBackgroundFlag as boolean;
                 expect(onBackgroundFlag).assertTrue();
+                globalThis.EntryAbility9.terminateSelf();
+                await eventBusPlus.onWait('abilitytest_EntryAbility9_onDestroy');
               }
               if (commonEventData.event === `${TEST_CASE_NAME}_onBackgroundHap_2`) {
                 hilog.info(0x0000, 'testTag', '%{public}s',
                   `eventInfosubscribe ${TEST_CASE_NAME} onBackgroundFlag: ${JSON.stringify(commonEventData)}`);
                 let onBackgroundFlag = commonEventData.parameters?.data?.onBackgroundFlag as boolean;
                 expect(onBackgroundFlag).assertTrue();
-                sleep(1000);
                 commonEventManager.unsubscribe(subscriber, (err, data) => {
                   done();
                 });
@@ -732,11 +735,12 @@ export default function actsApplicationStartAbilityTest2() {
                   expect(onCreateFlag).assertTrue();
                   expect(onWindowStageCreateFlag).assertTrue();
                   expect(onForegroundFlag).assertTrue();
+                  eventBusPlus.emit('Auxiliary_2_SingleEntryAbility4_onForegroundHap_1');
+                  await eventBusPlus.onWait('Auxiliary_2_SingleEntryAbility4_onDestroy');
                 } else if (onForegroundFlagNumber == 2) {
                   expect(onCreateFlag).assertTrue();
                   expect(onWindowStageCreateFlag).assertTrue();
                   expect(onForegroundFlag).assertTrue();
-                  sleep(1000)
                   commonEventManager.unsubscribe(subscriber, (err, data) => {
                     done();
                   });
@@ -863,7 +867,7 @@ export default function actsApplicationStartAbilityTest2() {
           `${TEST_CASE_NAME}_onBackgroundHap_2`, `${TEST_CASE_NAME}_onBackgroundHap_3`],
       };
       await commonEventManager.createSubscriber(subscriberInfo).then((subscriber) => {
-        commonEventManager.subscribe(subscriber, (err, commonEventData) => {
+        commonEventManager.subscribe(subscriber, async (err, commonEventData) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `eventInfosubscribe ${TEST_CASE_NAME}`);
           if (err) {
             hilog.info(0x0000, 'testTag', '%{public}s', `${TEST_CASE_NAME} onBackground fail:${JSON.stringify(err)}`);
@@ -887,6 +891,10 @@ export default function actsApplicationStartAbilityTest2() {
               expect(onCreateFlag).assertTrue();
               expect(onWindowStageCreateFlag).assertTrue();
               expect(onForegroundFlag).assertTrue();
+              if(commonEventData.event === `${TEST_CASE_NAME}_onForegroundHap_3`){
+                eventBusPlus.emit('Auxiliary_MultipleEntryAbility_onForegroundHap_3');
+                await eventBusPlus.onWait('Auxiliary_MultipleEntryAbility_onDestroy');
+              };
             } else if (commonEventData.event === `${TEST_CASE_NAME}_onBackgroundHap_1`) {
               hilog.info(0x0000, 'testTag', '%{public}s',
                 `eventInfosubscribe ${TEST_CASE_NAME}: ${JSON.stringify(commonEventData)}`);
@@ -945,7 +953,7 @@ export default function actsApplicationStartAbilityTest2() {
       let subscriberInfo_startdebugapp: commonEventManager.CommonEventSubscribeInfo = {
         events: [TEST_CASE_NAME, 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400_1'],
       };
-      await commonEventManager.createSubscriber(subscriberInfo_startdebugapp).then((subscriber) => {
+      await commonEventManager.createSubscriber(subscriberInfo_startdebugapp).then(async (subscriber) => {
         let onForegroundFlagNumber = 0;
         commonEventManager.subscribe(subscriber, async (err, commonEventData) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `eventInfosubscribe ${TEST_CASE_NAME}`);
@@ -975,7 +983,7 @@ export default function actsApplicationStartAbilityTest2() {
                   instanceKey: TEST_CASE_NAME
                 }
               };
-              await sleep(2000);
+              await eventBusPlus.onWait('Auxiliary_SingleEntryAbility6_onBackground');
               context.startAbility(want).then(() => {
                 hilog.info(0x0000, 'testTag', '%{public}s',
                   `${TEST_CASE_NAME} Succeeded in starting SpecifiedAbility`);
@@ -990,6 +998,8 @@ export default function actsApplicationStartAbilityTest2() {
               expect(onCreateFlag).assertFalse();
               expect(onWindowStageCreateFlag).assertFalse();
               expect(onForegroundFlag).assertTrue();
+              eventBusPlus.emit('Auxiliary_SingleEntryAbility6_onForegroundHap');
+              await eventBusPlus.onWait('Auxiliary_SingleEntryAbility6_onDestroy');
               commonEventManager.unsubscribe(subscriber, (err, data) => {
                 done();
               });

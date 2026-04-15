@@ -32,7 +32,7 @@ struct ScrollNestedScrollTest {
 
   aboutToAppear() {
     Utils.registerEvent(this.PAGE_TAG, 6600, (data: Double) => {
-      this.libUtil.scrollNestedScrollChangeTestType(data as int);
+      this.libUtil.scrollNestedScrollChangeTestType(data.toInt());
     })
     this.libUtil.scrollNestedScrollTest(this.rootSlot)
   }

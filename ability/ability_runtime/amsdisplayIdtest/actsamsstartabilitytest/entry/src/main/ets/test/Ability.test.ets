@@ -38,7 +38,7 @@ class WantParameters {
 }
 
 export default function abilityTest() {
-  describe('ActsGetDisplayIdStartAbilityTest', () => {
+  describe('ActsGetDisplayIdStartAbilityTestAdapt002', () => {
 
     beforeEach(async (done: Function) => {
       setTimeout(() => {

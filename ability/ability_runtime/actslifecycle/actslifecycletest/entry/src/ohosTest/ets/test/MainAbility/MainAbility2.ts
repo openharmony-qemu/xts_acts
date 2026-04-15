@@ -19,6 +19,8 @@ import window from '@ohos.window';
 import { Want } from '@kit.AbilityKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 
+let event = 'MainAbility2 onForeground';
+
 const TAG: string = 'testTag-MainAbility2 ';
 export default class MainAbility2 extends UIAbility {
     onCreate(want, launchParam): void {
@@ -52,6 +54,9 @@ export default class MainAbility2 extends UIAbility {
     
       onForeground(): void {
         hilog.info(0x0000, TAG, '%{public}s', 'MainAbility2 onForeground');
+        commonEventManager.publish(event, (err: BusinessError) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'publish ' + event);
+         });
       }
     
       onBackground(): void {

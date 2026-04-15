@@ -2382,5 +2382,359 @@ export default function VideoPlayerAPICallbackTest() {
           FINISH_EVENT, SETSPEED_EVENT, '4', RELEASE_EVENT, END_EVENT);
       toNextStep(videoPlayer, mySteps, done)
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0001
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0001', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(null, () => {
+              console.info('playbackCompleted called!');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0002', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(undefined, () => {
+              console.info('playbackCompleted called!');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0003', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(null, (infoType: media.BufferingInfoType, value: number) => {
+            console.info('video bufferingInfo type: ');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0004', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(undefined, (infoType: media.BufferingInfoType, value: number) => {
+            console.info('video bufferingInfo type: ');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0005', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(null, (width: number, height: number) => {
+              console.info('video width is: ');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0006', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(undefined, (width: number, height: number) => {
+              console.info('video width is: ');
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0007', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(null, (error: BusinessError) => {
+              console.error(`video error called, error: ${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**  
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0008', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.on(undefined, (error: BusinessError) => {
+              console.error(`video error called, error: ${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface('', (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(null, (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(undefined, (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface('').then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(null).then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(undefined).then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }

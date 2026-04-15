@@ -24,7 +24,7 @@ class TmpClass {
 }
 
 @Observed
-class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class MyNavigationModifier implements AttributeModifier<NavigationAttribute> {
   public isUndefined: boolean = false;
 
   applyNormalAttribute(instance: NavigationAttribute): void {

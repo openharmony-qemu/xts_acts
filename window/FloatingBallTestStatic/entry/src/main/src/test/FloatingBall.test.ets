@@ -379,11 +379,13 @@ export default function FloatingBallTest() {
             expect(false).assertTrue();
             done();
           }).catch((err: Error):void => {
+            waitForCompletion(async () => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300021);
             expect(err.message!=null).assertTrue();
             done();
+            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -432,11 +434,13 @@ export default function FloatingBallTest() {
             expect(false).assertTrue();
             done();
           }).catch((err: Error):void => {
+            waitForCompletion(async () => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300022);
             expect(err.message!=null).assertTrue();
             done();
+            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -2031,25 +2035,27 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall().then(() => {
-            console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
-            await Utils.msSleep(800);
-            floatingBallController.startFloatingBall(startParams).then(() => {
-              console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
-              floatingBallController.stopFloatingBall().then(() => {
-                console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-                done()
+            waitForCompletion(async () => {
+              console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
+              await Utils.msSleep(800);
+              floatingBallController.startFloatingBall(startParams).then(() => {
+                console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
+                floatingBallController.stopFloatingBall().then(() => {
+                  console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+                  done()
+                }).catch((err: Error):void => {
+                  console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                  expect(err.message!=null).assertTrue();
+                  expect(false).assertTrue();
+                  done()
+                });
               }).catch((err: Error):void => {
-                console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
                 expect(err.message!=null).assertTrue();
                 expect(false).assertTrue();
-                done()
+                done();
               });
-            }).catch((err: Error):void => {
-              console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
-              expect(err.message!=null).assertTrue();
-              expect(false).assertTrue();
-              done();
-            });
+            })
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
@@ -2843,6 +2849,65 @@ export default function FloatingBallTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   test_set_floatingball_visibility_static_inapp
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_SET_VISIBILITY_0100
+     * @tc.desc   设置应用内隐藏后闪控球隐藏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_set_floatingball_visibility_static_inapp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_set_floatingball_visibility_static_inapp';
+      let time:number = 0;
+      let driver:Driver = Driver.create();
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      console.log(CaseName + ' issupportFloatingBall: ' + issupportFloatingBall);
+
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context!,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        if (issupportFloatingBall) {
+          let floatingBallController = await floatingBall.create(config);
+          await floatingBallController.startFloatingBall(startParams);
+          await Utils.msSleep(200);
+
+          //能查询到floatBall
+          let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          expect(button !== null).assertTrue();
+
+          await floatingBallController.setFloatingBallVisibilityInApp(false);
+          await Utils.msSleep(200);
+          //查不询到floatBall
+          button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          console.info(CaseName+ ' button after set false: ' + button);
+          expect(button === null).assertTrue();
+
+          await floatingBallController.setFloatingBallVisibilityInApp(true);
+          await Utils.msSleep(200);
+          //能查到floatBall
+          button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          console.info(CaseName+ ' button after set true: ' + button);
+          expect(button !== null).assertTrue();
+          await floatingBallController.stopFloatingBall();
+          done();
+        } else {
+          done();
+        }
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
     /**
      * @tc.name   test_restoreMainWindow_ability
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
@@ -2904,6 +2969,8 @@ export default function FloatingBallTest() {
         }
       }
     })
+
+    
 
 
 

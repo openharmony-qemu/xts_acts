@@ -58,8 +58,13 @@ export default function customKeyboardTextInputTest() {
       console.info('[customKeyboardTextInputTest_0010] START');
 
       let driver:Driver = Driver.create();
-      let button: Component = await driver.findComponent(ON.id('BtnDelete'));
-      let text = await button.getText();
+      let textInputTest: Component = await driver.findComponent(ON.id('textInputTest'));
+      await CommonFunc.sleep(500);
+      await textInputTest.click();
+      await CommonFunc.sleep(1000);
+      let buttonTest: Component = await driver.findComponent(ON.id('TextInputBtnDelete'));
+      await CommonFunc.sleep(1000);
+      let text = await buttonTest.getText();
       
       console.info('[customKeyboardTextInputTest_0010] textContent: ' + text);
       expect(text).assertEqual('delete');

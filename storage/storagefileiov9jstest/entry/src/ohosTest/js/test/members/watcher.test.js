@@ -18,7 +18,7 @@ import {
   fileIO, FILE_CONTENT, prepareFile, sleep, nextFileName,
   describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
   const WAIT_HALF_SECOND = 500;
   const watcherEvent = {
@@ -827,7 +827,6 @@ export default function fileIOWatcher() {
   it('fileIO_test_watcher_025', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_025';
     let fpath = await nextFileName(testNum);
-
     try {
       let watcher = fileIO.createWatcher(fpath, watcherEvent.IN_ACCESS, (data) => {});
       watcher.start();
@@ -835,6 +834,176 @@ export default function fileIOWatcher() {
     } catch (e) {
       console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_026
+    * @tc.number SUB_DF_FILEIO_WATCHER_2600
+    * @tc.desc   Test createWatcher() interface. Path is empty string.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_026';
+    try {
+      let watcher = fileIO.createWatcher("", watcherEvent.IN_ACCESS, (data) => {});
+      watcher.start();
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900002);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_027
+    * @tc.number SUB_DF_FILEIO_WATCHER_2700
+    * @tc.desc   Test createWatcher() interface. Path is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_027';
+    try {
+      let watcher = fileIO.createWatcher(null, watcherEvent.IN_ACCESS, (data) => {});
+      watcher.start();
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_028
+    * @tc.number SUB_DF_FILEIO_WATCHER_2800
+    * @tc.desc   Test createWatcher() interface. Path is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_028';
+    try {
+      let watcher = fileIO.createWatcher(undefined, watcherEvent.IN_ACCESS, (data) => {});
+      watcher.start();
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_029
+    * @tc.number SUB_DF_FILEIO_WATCHER_2900
+    * @tc.desc   Test createWatcher() interface. Events is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_029';
+    let dpath = await nextFileName(testNum);
+    fileIO.mkdirSync(dpath);
+    try {
+      let watcher = fileIO.createWatcher(dpath, null, (data) => {});
+      watcher.start();
+      expect(false).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (e) {
+      fileIO.rmdirSync(dpath);
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_030
+    * @tc.number SUB_DF_FILEIO_WATCHER_3000
+    * @tc.desc   Test createWatcher() interface. Events is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_030';
+    let dpath = await nextFileName(testNum);
+    fileIO.mkdirSync(dpath);
+    try {
+      let watcher = fileIO.createWatcher(dpath, undefined, (data) => {});
+      watcher.start();
+      expect(false).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (e) {
+      fileIO.rmdirSync(dpath);
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_031
+    * @tc.number SUB_DF_FILEIO_WATCHER_3100
+    * @tc.desc   Test createWatcher() interface. Listener is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_031';
+    let dpath = await nextFileName(testNum);
+    fileIO.mkdirSync(dpath);
+    try {
+      let watcher = fileIO.createWatcher(dpath, watcherEvent.IN_ACCESS, null);
+      watcher.start();
+      expect(false).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (e) {
+      fileIO.rmdirSync(dpath);
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_watcher_032
+    * @tc.number SUB_DF_FILEIO_WATCHER_3200
+    * @tc.desc   Test createWatcher() interface. Listener is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+  it('fileIO_test_watcher_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let testNum = 'fileIO_test_watcher_032';
+    let dpath = await nextFileName(testNum);
+    fileIO.mkdirSync(dpath);
+    try {
+      let watcher = fileIO.createWatcher(dpath, watcherEvent.IN_ACCESS, undefined);
+      watcher.start();
+      expect(false).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (e) {
+      fileIO.rmdirSync(dpath);
+      console.log(testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
       done();
     }
   });

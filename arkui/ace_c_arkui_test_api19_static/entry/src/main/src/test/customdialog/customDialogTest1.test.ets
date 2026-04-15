@@ -47,13 +47,13 @@ export default function customDialogTest1() {
       let btn:Component = await driver.findComponent(ON.id('buttonId')) as Component;
       await btn.click();
       console.info("[customDialogTest1_0010] openDialog");
-      await Utils.sleep(1000);
+      await Utils.sleep(500);
       let btn1:Component = await driver.findComponent(ON.id('button1')) as Component;
       expect(btn1!= null).assertTrue()
       await btn1.click();
 
       console.info("[customDialogTest1_0010] updateDialog");
-      await Utils.sleep(1000);
+      await Utils.sleep(500);
 
       await driver.triggerKey(2070)
       console.info('customDialogTest1_0010  END');

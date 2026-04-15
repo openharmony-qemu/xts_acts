@@ -52,12 +52,13 @@ export default function HttpRequestOffTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNetworkMgrHttpHttpRequestOff0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
+    it('testNetworkMgrHttpHttpRequestOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0100';
       console.info(`${caseName}---Start`);
+
       try {
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-          if (data.netId == 0) {
+          if (data.netId === 0) {
             console.info(`${caseName} Please connect to the network`);
             ExpectFail();
             done();
@@ -68,12 +69,16 @@ export default function HttpRequestOffTest() {
             const callback: (header: Object) => void = (header: Object) => {
               count = count + 1;
               console.info(`${caseName} callback header: ${JSON.stringify(header)}`);
-              console.info(`${caseName} callback  count: ${count}`);
-            }
-            httpRequest.on("headersReceive", callback);
-            httpRequest.off("headersReceive", callback);
-            httpRequest.request(XTS_TEST_HTTP_URL,
-             async (err: BusinessError) => {
+              console.info(`${caseName} callback count: ${count}`);
+            };
+            try {
+              httpRequest.on("headersReceive", (header: Object) => {
+                console.info(`${caseName} headersReceive header success: ${JSON.stringify(header)}`);
+                ExpectTrue(header != null);
+              });
+
+              httpRequest.off("headersReceive", callback);
+              httpRequest.request(XTS_TEST_HTTP_URL, async (err: BusinessError) => {
                 if (err) {
                   console.info(`${caseName} request err: ${JSON.stringify(err)}`);
                   ExpectFail();
@@ -82,11 +87,17 @@ export default function HttpRequestOffTest() {
                 } else {
                   await sleep(100);
                   console.info(`${caseName} count: ${count}`);
-                  ExpectTrue(count == 1);
+                  ExpectTrue(count === 1);
                   httpRequest.destroy();
                   done();
                 }
               });
+            } catch (requestErr) {
+              console.error(`${caseName} request failed: ${JSON.stringify(requestErr)}`);
+              ExpectFail();
+              httpRequest.destroy();
+              done();
+            }
           }
         });
       } catch (err) {
@@ -94,6 +105,7 @@ export default function HttpRequestOffTest() {
         ExpectFail();
         done();
       }
+
       console.info(`${caseName}---End`);
     });
 

@@ -31,9 +31,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sighold
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSighold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSighold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sighold(0,0);
       expect(a).assertEqual(0);
       done();
@@ -45,9 +45,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sighold
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSighold002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSighold002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sighold(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -59,9 +59,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sighold
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSighold003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSighold003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sighold(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -73,9 +73,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigrelse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigrelse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigrelse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigrelse(0,0);
       expect(a).assertEqual(0);
       done();
@@ -87,9 +87,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigrelse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigrelse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigrelse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigrelse(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -101,9 +101,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigrelse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigrelse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigrelse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigrelse(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -115,9 +115,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigdelset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigdelset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigdelset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigdelset(0,0);
       expect(a).assertEqual(0);
       done();
@@ -129,9 +129,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigdelset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigdelset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigdelset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigdelset(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -143,9 +143,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigdelset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigdelset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigdelset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigdelset(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -157,9 +157,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigemptyset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigemptyset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigemptyset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigemptyset();
       expect(a).assertEqual(0);
       done();
@@ -171,9 +171,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigfillset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigfillset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigfillset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigfillset();
       expect(a).assertEqual(0);
       done();
@@ -185,9 +185,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigaddset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaddset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaddset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaddset(0,0);
       expect(a).assertEqual(0);
       done();
@@ -199,9 +199,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigaddset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaddset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaddset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaddset(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -213,9 +213,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaddset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaddset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaddset(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -227,9 +227,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaction(0,0);
       expect(a).assertEqual(0);
       done();
@@ -241,9 +241,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaction(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -255,9 +255,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaction(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -269,9 +269,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaltstack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaltstack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaltstack(0);
       expect(a).assertEqual(0);
       done();
@@ -283,9 +283,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigaltstack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigaltstack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigaltstack(-1);
       expect(a).assertEqual(0);
       done();
@@ -297,9 +297,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigignore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigignore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigignore(0,0);
       expect(a).assertEqual(0);
       done();
@@ -311,9 +311,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigignore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigignore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigignore(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -325,9 +325,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigignore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigignore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigignore(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -339,9 +339,9 @@ export default function signalNdkTest() {
      * @tc.desc   test SignalTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigpause001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigpause001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigpause();
       expect(a).assertEqual(0);
       done();
@@ -353,9 +353,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigpending
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigpending001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigpending001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigpending();
       expect(a).assertEqual(0);
       done();
@@ -367,9 +367,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigprocmask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigprocmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigprocmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigprocmask(0,0);
       expect(a).assertEqual(0);
       done();
@@ -381,9 +381,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigprocmask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigprocmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigprocmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigprocmask(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -395,9 +395,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigprocmask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigprocmask003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigprocmask003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigprocmask(-1, -1);
       expect(a).assertEqual(0);
       done();
@@ -409,9 +409,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigismember
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigismember001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigismember001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigismember(0,0);
       expect(a).assertEqual(0);
       done();
@@ -423,9 +423,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigismember
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigismember002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigismember002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigismember(-1, 99999);
       expect(a).assertEqual(0);
       done();
@@ -437,9 +437,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigwait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigwait();
       expect(a).assertEqual(0);
       done();
@@ -451,9 +451,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigwaitinfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigwaitinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigwaitinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigwaitinfo();
       expect(a).assertEqual(0);
       done();
@@ -464,9 +464,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigismember
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigismember003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigismember003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigismember(-1, 0);
       expect(a).assertEqual(0);
       done();
@@ -478,9 +478,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigismember
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigismember004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigismember004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigismember(1,0);
       expect(a).assertEqual(0);
       done();
@@ -492,9 +492,9 @@ export default function signalNdkTest() {
      * @tc.desc   test signal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.signal();
       expect(a).assertEqual(0);
       done();
@@ -506,9 +506,9 @@ export default function signalNdkTest() {
      * @tc.desc   test signalfd
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSignalfd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSignalfd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.signalfd();
       expect(a).assertEqual(0);
       done();
@@ -520,9 +520,9 @@ export default function signalNdkTest() {
      * @tc.desc   test siginterrupt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSiginterrupt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSiginterrupt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.siginterrupt();
       expect(a).assertEqual(0);
       done();
@@ -534,9 +534,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigset(0);
       expect(a).assertEqual(0);
       done();
@@ -548,9 +548,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigset(1);
       expect(a).assertEqual(0);
       done();
@@ -562,9 +562,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigtimedwait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigtimedwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigtimedwait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.sigtimedwait();
       expect(a).assertEqual(0);
       done();
@@ -576,9 +576,9 @@ export default function signalNdkTest() {
      * @tc.desc   test kill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalKill001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalKill001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.kill();
       expect(a).assertEqual(0);
       done();
@@ -590,9 +590,9 @@ export default function signalNdkTest() {
      * @tc.desc   test killpg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalKillpg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalKillpg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.killpg();
       expect(a).assertEqual(0);
       done();
@@ -605,9 +605,9 @@ export default function signalNdkTest() {
      * @tc.desc   test psignal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalPsignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalPsignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 10, b = "SIGUSR1";
       let data: number = signal.psignal(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -621,9 +621,9 @@ export default function signalNdkTest() {
      * @tc.desc   test psignal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalPsignal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalPsignal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 10, b = " ";
       let data: number = signal.psignal(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -637,9 +637,9 @@ export default function signalNdkTest() {
      * @tc.desc   test psignal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalPsignal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalPsignal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = -1, b = " ";
       let data: number = signal.psignal(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -653,9 +653,9 @@ export default function signalNdkTest() {
      * @tc.desc   test psigInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalPsiginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalPsiginfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = signal.pSigInfo();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(0);
@@ -668,9 +668,9 @@ export default function signalNdkTest() {
      * @tc.desc   test raise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalRaise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalRaise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = signal.raise();
       expect(a).assertEqual(0);
       done();
@@ -682,9 +682,9 @@ export default function signalNdkTest() {
      * @tc.desc   test bsd_signal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalBsdSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalBsdSignal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number= signal.bsdSignal();
       expect(a).assertEqual(0);
       done();
@@ -696,9 +696,9 @@ export default function signalNdkTest() {
      * @tc.desc   test sigsuspend
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSignalSigsuspend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSignalSigsuspend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number= signal.sigsuspend();
       expect(a).assertEqual(0);
       done();

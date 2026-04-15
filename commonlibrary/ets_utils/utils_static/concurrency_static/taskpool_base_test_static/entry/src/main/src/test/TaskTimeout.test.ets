@@ -172,7 +172,7 @@ export default function taskTimeoutTest() {
         const TAG: string = 'TaskTimeoutTest005';
         console.info(`${TAG} test start`);
         try {
-          let task = new taskpool.Task(longFunc, 5000);
+          let task = new taskpool.Task(longFunc, 1000);
           let res = await taskpool.execute(task, { timeout: 0 });
           expect(res as string).assertEqual('success');
         } catch (err) {

@@ -16,7 +16,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ColumnAttribute> {
+export class MyModifier implements AttributeModifier<ColumnAttribute> {
   @State public isOnKeyEventDispatchUndefined: boolean = true;
   @State public text: string = ''
 

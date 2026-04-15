@@ -156,7 +156,7 @@ export default function singleKvStoreEnumTest(){
     it('SUB_DDM_DKV_SINGLEKVSTOREENUM_LONG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let longType = factory.ValueType.LONG;
       console.info('LONG = ' + longType);
-      expect(longType == 4).assertTrue()
+      expect(longType == 6).assertTrue()
     })
 
     /**
@@ -170,7 +170,7 @@ export default function singleKvStoreEnumTest(){
     it('SUB_DDM_DKV_SINGLEKVSTOREENUM_DOUBLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let douType = factory.ValueType.DOUBLE;
       console.info('double = ' + douType);
-      expect(douType == 3).assertTrue()
+      expect(douType == 5).assertTrue()
     })
 
     /**
@@ -184,7 +184,7 @@ export default function singleKvStoreEnumTest(){
     it('SUB_DDM_DKV_SINGLEKVSTOREENUM_BYTEARRAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let byteArray = factory.ValueType.BYTE_ARRAY;
       console.info('byteArray = ' + byteArray);
-      expect(byteArray == 1).assertTrue()
+      expect(byteArray == 3).assertTrue()
     })
 
     /**
@@ -198,7 +198,7 @@ export default function singleKvStoreEnumTest(){
     it('SUB_DDM_DKV_SINGLEKVSTOREENUM_BOOLEAN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let boType = factory.ValueType.BOOLEAN;
       console.info('boolean = ' + boType);
-      expect(boType == 2).assertTrue()
+      expect(boType == 4).assertTrue()
     })
 
     /**

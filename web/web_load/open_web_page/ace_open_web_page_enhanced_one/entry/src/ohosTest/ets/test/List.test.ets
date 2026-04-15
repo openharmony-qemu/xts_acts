@@ -21,8 +21,8 @@ import webAttributeEnhancedTest from './WebAttributeEnhancedTest.test'
 
 export default function testsuite() {
   webInitTest()
+  webAttribute()
   webAttributeTest()
   webController()
-  webAttribute()
   webAttributeEnhancedTest()
 }

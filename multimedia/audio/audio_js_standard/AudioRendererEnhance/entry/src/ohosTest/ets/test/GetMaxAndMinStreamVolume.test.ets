@@ -393,7 +393,6 @@ export default function audioRendererTest() {
           expect(data).assertEqual(env.OUTPUT_NUMBER_1);
           audioRen.setVolume(data).then(() => {
             console.info(`${TagFrmwkRender}: setVolume to maxVolume Success! maxVolume: ${data}`);
-            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -540,7 +539,6 @@ export default function audioRendererTest() {
           expect(data).assertEqual(env.OUTPUT_NUMBER_0);
           audioRen.setVolume(data).then(() => {
             console.info(`${TagFrmwkRender}: setVolume to minVolume Success! minVolume: ${data}`);
-            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -690,7 +688,6 @@ export default function audioRendererTest() {
           expect(maxVolume).assertEqual(env.OUTPUT_NUMBER_1);
           audioRen.setVolume(maxVolume).then(() => {
             console.info(`${TagFrmwkRender}: setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
-            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: setVolume ERROR! : code: ${err.code}, mesage: ${err.message}`);
@@ -831,7 +828,6 @@ export default function audioRendererTest() {
           expect(minVolume).assertEqual(env.OUTPUT_NUMBER_0);
           audioRen.setVolume(minVolume).then(() => {
             console.info(`${TagFrmwkRender}: setVolume to minVolume Success! minVolume: ${minVolume}`);
-            expect(true).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);

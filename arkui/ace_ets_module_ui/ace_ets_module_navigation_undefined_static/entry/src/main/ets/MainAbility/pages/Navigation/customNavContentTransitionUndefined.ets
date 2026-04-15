@@ -68,7 +68,6 @@ import {
   ResourceStr,
   OptionWidthMode,
   Dimension,
-  SymbolGlyphModifier,
   Entry,
   NavDestination,
   ColumnOptions

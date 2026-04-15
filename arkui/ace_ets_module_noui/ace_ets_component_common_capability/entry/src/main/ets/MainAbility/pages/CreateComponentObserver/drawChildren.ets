@@ -31,9 +31,10 @@ struct TextTimerExample {
     console.log('neuTest2: onDrawComplete');
   }
   build() {
-    Column({ space: 8 }) {
-        Column(){
-          Column(){
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      Column({ space: 8 }) {
+        Column() {
+          Column() {
             Text('text1')
               .width(this.Text_w_1)
               .border({ width: 1 })
@@ -42,15 +43,16 @@ struct TextTimerExample {
               })
           }.id('Column1').borderWidth(1)
 
-          Column(){
+          Column() {
             Text('text2').width(100)
               .border({ width: 1 })
               .rotate({
-              angle: this.Text_A_1,
-            })
+                angle: this.Text_A_1,
+              })
           }.id('Column2')
         }
-        Column(){
+
+        Column() {
           Text('text1尺寸' + this.message1).onClick(() => {
             this.Text_w_1 += 10;
           }).id('Button1')
@@ -62,7 +64,11 @@ struct TextTimerExample {
             this.Text_w_1 += 10;
           }).id('Button3')
         }
+      }
     }
+    .width('100%')
+    .height('100%')
+    .padding(0)
   }
   listener1: inspector.ComponentObserver = inspector.createComponentObserver('Column1');
   listener2: inspector.ComponentObserver = inspector.createComponentObserver('Column2');

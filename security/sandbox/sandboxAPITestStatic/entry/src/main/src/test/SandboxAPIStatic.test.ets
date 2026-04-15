@@ -85,92 +85,92 @@ export default function SandboxAPIStaticTest() {
         })
 
         /**
-         * @tc.name   AcquireAccessJsTest004
-         * @tc.number AcquireAccessJsTest004
+         * @tc.name   SUB_Security_EL5_AcquireAccessJsTest_004
+         * @tc.number SUB_Security_EL5_AcquireAccessJsTest_004
          * @tc.desc   acquireAccess DataType MEDIA_DATA
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('AcquireAccessJsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------AcquireAccessJsTest004---------------------------');
+        it('SUB_Security_EL5_AcquireAccessJsTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_AcquireAccessJsTest_004---------------------------');
             let value = screenLockFileManager.DataType.MEDIA_DATA;
-            hilog.info(domain, tag, 'AcquireAccessJsTest004 value is: ' + value);
+            hilog.info(domain, tag, 'SUB_Security_EL5_AcquireAccessJsTest_004 value is: ' + value);
             expect(value).assertEqual(1);
             done();
         })
 
         /**
-         * @tc.name   AcquireAccessJsTest005
-         * @tc.number AcquireAccessJsTest005
+         * @tc.name   SUB_Security_EL5_AcquireAccessJsTest_005
+         * @tc.number SUB_Security_EL5_AcquireAccessJsTest_005
          * @tc.desc   acquireAccess DataType ALL_DATA
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('AcquireAccessJsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------AcquireAccessJsTest005---------------------------');
+        it('SUB_Security_EL5_AcquireAccessJsTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_AcquireAccessJsTest_005---------------------------');
             let value = screenLockFileManager.DataType.ALL_DATA;
-            hilog.info(domain, tag, 'AcquireAccessJsTest005 value is: ' + value);
+            hilog.info(domain, tag, 'SUB_Security_EL5_AcquireAccessJsTest_005 value is: ' + value);
             expect(value).assertEqual(-1);
             done();
         })
 
         /**
-         * @tc.name   AcquireAccessJsTest002
-         * @tc.number AcquireAccessJsTest002
+         * @tc.name   SUB_Security_EL5_AcquireAccessJsTest_002
+         * @tc.number SUB_Security_EL5_AcquireAccessJsTest_002
          * @tc.desc   acquireAccess AccessStatus ACCESS_DENIED
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('AcquireAccessJsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------AcquireAccessJsTest002---------------------------');
+        it('SUB_Security_EL5_AcquireAccessJsTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_AcquireAccessJsTest_002---------------------------');
             let value = screenLockFileManager.AccessStatus.ACCESS_DENIED;
             expect(value).assertEqual(-1);
             done();
         })
 
         /**
-         * @tc.name   AcquireAccessJsTest003
-         * @tc.number AcquireAccessJsTest003
+         * @tc.name   SUB_Security_EL5_AcquireAccessJsTest_003
+         * @tc.number SUB_Security_EL5_AcquireAccessJsTest_003
          * @tc.desc   acquireAccess AccessStatus ACCESS_GRANTED
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('AcquireAccessJsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------AcquireAccessJsTest003---------------------------');
+        it('SUB_Security_EL5_AcquireAccessJsTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_AcquireAccessJsTest_003---------------------------');
             let value = screenLockFileManager.AccessStatus.ACCESS_GRANTED;
             expect(value).assertEqual(0);
             done();
         })
 
         /**
-         * @tc.name   ReleaseAccessJsTest002
-         * @tc.number ReleaseAccessJsTest002
+         * @tc.name   SUB_Security_EL5_ReleaseAccessJsTest_002
+         * @tc.number SUB_Security_EL5_ReleaseAccessJsTest_002
          * @tc.desc   acquireAccess ReleaseStatus RELEASE_DENIED
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('ReleaseAccessJsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------ReleaseAccessJsTest002---------------------------');
+        it('SUB_Security_EL5_ReleaseAccessJsTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_ReleaseAccessJsTest_002---------------------------');
             let value = screenLockFileManager.ReleaseStatus.RELEASE_DENIED;
             expect(value).assertEqual(-1);
             done();
         })
 
         /**
-         * @tc.name   ReleaseAccessJsTest003
-         * @tc.number ReleaseAccessJsTest003
+         * @tc.name   SUB_Security_EL5_ReleaseAccessJsTest_003
+         * @tc.number SUB_Security_EL5_ReleaseAccessJsTest_003
          * @tc.desc   acquireAccess ReleaseStatus RELEASE_GRANTED
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('ReleaseAccessJsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            hilog.info(domain, tag, '----------------------ReleaseAccessJsTest003---------------------------');
+        it('SUB_Security_EL5_ReleaseAccessJsTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_EL5_ReleaseAccessJsTest_003---------------------------');
             let value = screenLockFileManager.ReleaseStatus.RELEASE_GRANTED;
             expect(value).assertEqual(0);
             done();
@@ -225,17 +225,17 @@ export default function SandboxAPIStaticTest() {
         })
 
         /**
-         * @tc.name   AcquireAccessJsTest001
-         * @tc.number AcquireAccessJsTest001
+         * @tc.name   SUB_Security_EL5_AcquireAccessJsTest_001
+         * @tc.number SUB_Security_EL5_AcquireAccessJsTest_001
          * @tc.desc   screenLockFileManager acquireAccess AccessStatus.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('AcquireAccessJsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        it('SUB_Security_EL5_AcquireAccessJsTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             try {
                 let AccessStatus = screenLockFileManager.acquireAccess();
-                hilog.info(domain, tag, 'AcquireAccessJsTest001 AccessStatus is: ' + AccessStatus);
+                hilog.info(domain, tag, 'SUB_Security_EL5_AcquireAccessJsTest_001 AccessStatus is: ' + AccessStatus);
                 expect(AccessStatus).assertEqual(screenLockFileManager.AccessStatus.ACCESS_GRANTED);
                 done();
             } catch (error) {
@@ -243,7 +243,7 @@ export default function SandboxAPIStaticTest() {
                 if (error.code == 801) {
                     done();
                 } else {
-                    hilog.info(domain, tag, 'AcquireAccessJsTest001 err.code is: ' + error.code)
+                    hilog.info(domain, tag, 'SUB_Security_EL5_AcquireAccessJsTest_001 err.code is: ' + error.code)
                     expect(error.code).assertEqual(29300003);
                     done();
                 }
@@ -251,17 +251,17 @@ export default function SandboxAPIStaticTest() {
         })
 
         /**
-         * @tc.name   ReleaseAccessJsTest001
-         * @tc.number ReleaseAccessJsTest001
+         * @tc.name   SUB_Security_EL5_ReleaseAccessJsTest_001
+         * @tc.number SUB_Security_EL5_ReleaseAccessJsTest_001
          * @tc.desc   screenLockFileManager releaseAccess ReleaseStatus.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('ReleaseAccessJsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        it('SUB_Security_EL5_ReleaseAccessJsTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             try {
                 let ReleaseStatus = screenLockFileManager.releaseAccess();
-                hilog.info(domain, tag, 'ReleaseAccessJsTest001 ReleaseStatus is: ' + ReleaseStatus);
+                hilog.info(domain, tag, 'SUB_Security_EL5_ReleaseAccessJsTest_001 ReleaseStatus is: ' + ReleaseStatus);
                 expect(ReleaseStatus).assertEqual(screenLockFileManager.ReleaseStatus.RELEASE_GRANTED);
                 done();
             } catch (error) {
@@ -269,7 +269,7 @@ export default function SandboxAPIStaticTest() {
                 if (error.code == 801) {
                     done();
                 } else {
-                    hilog.info(domain, tag, 'ReleaseAccessJsTest001 err.code is: ' + error.code)
+                    hilog.info(domain, tag, 'SUB_Security_EL5_ReleaseAccessJsTest_001 err.code is: ' + error.code)
                     expect(error.code).assertEqual(29300003);
                     done();
                 }
@@ -277,17 +277,17 @@ export default function SandboxAPIStaticTest() {
         })
 
         /**
-         * @tc.name   QueryAppKeyStateTest0100
-         * @tc.number QueryAppKeyStateTest0100
+         * @tc.name   SUB_Security_EL5_QueryAppKeyStateTest_0100
+         * @tc.number SUB_Security_EL5_QueryAppKeyStateTest_0100
          * @tc.desc   screenLockFileManager releaseAccess ReleaseStatus.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('QueryAppKeyStateTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        it('SUB_Security_EL5_QueryAppKeyStateTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             try {
                 let keyStatus = screenLockFileManager.queryAppKeyState();
-                console.info('QueryAppKeyStateTest0100 keyStatus is: ' + keyStatus);
+                console.info('SUB_Security_EL5_QueryAppKeyStateTest_0100 keyStatus is: ' + keyStatus);
                 expect(keyStatus).assertEqual(screenLockFileManager.KeyStatus.KEY_NOT_EXIST);
                 done();
             } catch (error) {
@@ -295,13 +295,63 @@ export default function SandboxAPIStaticTest() {
                 if (error.code == 801) {
                     done();
                 } else {
-                    hilog.info(domain, tag, 'QueryAppKeyStateTest0100 err.code is: ' + error.code)
+                    hilog.info(domain, tag, 'SUB_Security_EL5_QueryAppKeyStateTest_0100 err.code is: ' + error.code)
                     expect(error.code).assertEqual(29300003);
                     done();
                 }
             }
         })
 
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0100
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0100
+         * @tc.desc   Test fileShare OperationMode CREATE_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0100---------------------------');
+            let value = fileShare.OperationMode.CREATE_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0100 value is: ' + value);
+            expect(value).assertEqual(0b100);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0200
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0200
+         * @tc.desc   Test fileShare OperationMode DELETE_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0200---------------------------');
+            let value = fileShare.OperationMode.DELETE_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0200 value is: ' + value);
+            expect(value).assertEqual(0b1000);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0300
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0300
+         * @tc.desc   Test fileShare OperationMode RENAME_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0300---------------------------');
+            let value = fileShare.OperationMode.RENAME_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0300 value is: ' + value);
+            expect(value).assertEqual(0b10000);
+            done();
+        })
     })
 
 }

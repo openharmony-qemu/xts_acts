@@ -44,7 +44,7 @@ static void PushBackIntToData(std::vector<int32_t>& data, int32_t value)
 ArkUI_NodeHandle TextInputOnTextSelectionChangeTest::CreateSubTextInputNode(ArkUI_NativeNodeAPI_1* nodeApi)
 {
     float width = 200;
-    float height = 200;
+    float height = 30;
     auto textInput = nodeApi->createNode(ARKUI_NODE_TEXT_INPUT);
 
     ArkUI_NumberValue widthValue[] = { { .f32 = width } };

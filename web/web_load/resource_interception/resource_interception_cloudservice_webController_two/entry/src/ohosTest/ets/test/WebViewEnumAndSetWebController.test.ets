@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -73,6 +74,38 @@ export default function WebViewEnumAndSetWebController() {
       if (await Utils.waitForExist(() => isReturn, 'testOnTouchIconUrlReceived001' + '_returnCheck', 1, 1000)) {
         done();
       }
+    })
+    /**
+     * @tc.name   testOnTouchIconUrlReceived002
+     * @tc.number SUB_WEB_ONTOUCHICONURLRECEIVED_0200
+     * @tc.desc   test onTouchIconUrlReceived precomposed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnTouchIconUrlReceived002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitOnTouchIconUrlReceived02", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent('testOnTouchIconUrlReceived002', false, 26031001, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('buttonEnumAndSetWebController', 10, '');
+    })
+    /**
+     * @tc.name   testOnFaviconReceived001
+     * @tc.number SUB_WEB_ONFAVICONRECEIVED_0100
+     * @tc.desc   test onFaviconReceived favicon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnFaviconReceived001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitOnFaviconReceived001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent('testOnFaviconReceived001', true, 26031002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('buttonEnumAndSetWebController', 10, '');
     })
   })
 }

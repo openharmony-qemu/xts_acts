@@ -29,7 +29,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class MyPointModifier implements AttributeModifier<ImageAnimatorAttribute> {
   public isDuration: boolean = true;
   public isIterations: boolean = true;
   public isFillMode: boolean = true;

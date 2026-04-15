@@ -60,19 +60,19 @@ struct RichEditorStyledStringTest2 {
   @State rangeBefore: string = "";
   @State rangeAfter: string = "";
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: 'HarmonyOS Sans',
     fontColor: Color.Green,
     fontStyle: FontStyle.Normal
-  } as TextStyle
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  });
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  });
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString("start",
     [{ start: 0, length: 5, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);

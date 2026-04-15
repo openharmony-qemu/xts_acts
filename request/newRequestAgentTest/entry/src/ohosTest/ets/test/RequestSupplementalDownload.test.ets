@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import Server from '../common/ServerDownload'
 
 export default function requestSupplementalDownTest() {
   describe('requestSupplementalDownJSTest', () => {
@@ -46,6 +47,9 @@ export default function requestSupplementalDownTest() {
      */
     beforeAll(async (done: Function) => {
       try {
+        console.info('====>beforeAll: startServer');
+        new Server().startServer();
+        console.info('====>beforeAll: startServer success!');
         let context: common.Context | undefined = AppStorage.get('context');
         await sleep(2000);
         if (context !== undefined){
@@ -1389,7 +1393,7 @@ export default function requestSupplementalDownTest() {
       console.info("====>-----------------------SUB_Request_download_Supplemental_5100 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test005.hap',
+        url: 'http://127.0.0.1:3374',
         data:'',
         saveas: './SUB_Request_download_Supplemental_5100.txt',
         network: request.agent.Network.ANY,
@@ -1445,7 +1449,7 @@ export default function requestSupplementalDownTest() {
       console.info("====>-----------------------SUB_Request_download_Supplemental_5200 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test006.hap',
+        url: 'http://127.0.0.1:3374',
         data:'',
         saveas: './SUB_Request_download_Supplemental_5200.txt',
         network: request.agent.Network.ANY,
@@ -1477,6 +1481,229 @@ export default function requestSupplementalDownTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5300
+     * @tc.number SUB_Request_download_Supplemental_5300
+     * @tc.desc   downloadFile off param is null and callback is not empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5300', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_download_Supplemental_5300 is starting-----------------------");
+      let downloadFilePath = `${baseContext.cacheDir}/SUB_Request_download_Supplemental_5300.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext.cacheDir}/SUB_Request_download_Supplemental_5300.txt`)
+      let config:request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test008.hap',
+        filePath: downloadFilePath,
+        background: true,
+      };
+      try{
+        let downloadTask: request.DownloadTask = await request.downloadFile(baseContext, config);
+        console.info("====>SUB_Request_download_Supplemental_5300 downloadFile success");
+        expect(downloadTask !== undefined).assertTrue();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_5300 catch err: ${JSON.stringify(err.message)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5400
+     * @tc.number SUB_Request_download_Supplemental_5400
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5400 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test007.hap',
+        data:'',
+        title:'downloadTest',
+        description: 'properties cover',
+        saveas: './SUB_Request_download_Supplemental_5400.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        request.agent.create(baseContext, config, async (err, task) => {
+          try {
+            if(err){
+              console.info("====>SUB_Request_download_Supplemental_5400 create err: " + JSON.stringify(err));
+              expect().assertFail();
+            }
+            console.info(`====>SUB_Request_download_Supplemental_5400 config: ${JSON.stringify(task.config)}`);
+            console.info(`====>SUB_Request_download_Supplemental_5400 tid: ${JSON.stringify(task.tid)}`);
+            expect(task.tid !== undefined).assertTrue();
+            expect(task.config.action !== undefined).assertTrue();
+            expect(task.config.url !== undefined).assertTrue();
+            expect(task.config.title !== undefined).assertTrue();
+            expect(task.config.description !== undefined).assertTrue();
+            expect(task.config.mode === undefined).assertTrue();
+            expect(task.config.overwrite === undefined).assertTrue();
+            expect(task.config.method === undefined).assertTrue();
+            expect(task.config.headers === undefined).assertTrue();
+            expect(task.config.data !== undefined).assertTrue();
+            expect(task.config.saveas !== undefined).assertTrue();
+            expect(task.config.network !== undefined).assertTrue();
+            expect(task.config.metered === undefined).assertTrue();
+            expect(task.config.roaming === undefined).assertTrue();
+            expect(task.config.retry === undefined).assertTrue();
+            expect(task.config.redirect === undefined).assertTrue();
+            expect(task.config.proxy === undefined).assertTrue();
+            expect(task.config.index === undefined).assertTrue();
+            expect(task.config.begins === undefined).assertTrue();
+            expect(task.config.ends === undefined).assertTrue();
+            expect(task.config.gauge === undefined).assertTrue();
+            expect(task.config.precise === undefined).assertTrue();
+            expect(task.config.token === undefined).assertTrue();
+            expect(task.config.priority === undefined).assertTrue();
+            expect(task.config.extras === undefined).assertTrue();
+            expect(task.config.multipart === undefined).assertTrue();
+            expect(task.config.notification === undefined).assertTrue();
+            expect(task.config.minSpeed === undefined).assertTrue();
+            expect(task.config.timeout === undefined).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_5400 catch err: " + JSON.stringify(err));
+            await request.agent.remove(task.tid);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5400 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5500
+     * @tc.number SUB_Request_download_Supplemental_5500
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5500 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test007.hap',
+        data:'',
+        title:'downloadTest',
+        description: 'properties cover',
+        saveas: './SUB_Request_download_Supplemental_5500.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        let task1 = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_5500 config task1: ${JSON.stringify(task1.config)}`);
+        let task = await request.agent.getTask(baseContext, task1.tid);
+        console.info(`====>SUB_Request_download_Supplemental_5500 config task: ${JSON.stringify(task.config)}`);
+        console.info(`====>SUB_Request_download_Supplemental_5500 tid: ${JSON.stringify(task.tid)}`);
+        expect(task.tid !== undefined).assertTrue();
+        expect(task.config.action !== undefined).assertTrue();
+        expect(task.config.url !== undefined).assertTrue();
+        expect(task.config.title !== undefined).assertTrue();
+        expect(task.config.description !== undefined).assertTrue();
+        expect(task.config.mode === undefined).assertTrue();
+        expect(task.config.overwrite === undefined).assertTrue();
+        expect(task.config.method === undefined).assertTrue();
+        expect(task.config.headers === undefined).assertTrue();
+        expect(task.config.data !== undefined).assertTrue();
+        expect(task.config.saveas !== undefined).assertTrue();
+        expect(task.config.network !== undefined).assertTrue();
+        expect(task.config.metered === undefined).assertTrue();
+        expect(task.config.roaming === undefined).assertTrue();
+        expect(task.config.retry === undefined).assertTrue();
+        expect(task.config.redirect === undefined).assertTrue();
+        expect(task.config.proxy === undefined).assertTrue();
+        expect(task.config.index === undefined).assertTrue();
+        expect(task.config.begins === undefined).assertTrue();
+        expect(task.config.ends === undefined).assertTrue();
+        expect(task.config.gauge === undefined).assertTrue();
+        expect(task.config.precise === undefined).assertTrue();
+        expect(task.config.token === undefined).assertTrue();
+        expect(task.config.priority === undefined).assertTrue();
+        expect(task.config.extras === undefined).assertTrue();
+        expect(task.config.multipart === undefined).assertTrue();
+        expect(task.config.notification === undefined).assertTrue();
+        expect(task.config.minSpeed === undefined).assertTrue();
+        expect(task.config.timeout === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5500 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_5600
+     * @tc.number SUB_Request_download_Supplemental_5600
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_5600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_5600 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test007.hap',
+        data:'',
+        title:'downloadTest',
+        description: 'properties cover',
+        saveas: './SUB_Request_download_Supplemental_5600.txt',
+        network: request.agent.Network.ANY,
+        token: 'Supplemental5600'
+      };
+      try {
+        let task1 = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_5600 config task1: ${JSON.stringify(task1.config)}`);
+        let task = await request.agent.getTask(baseContext, task1.tid, 'Supplemental5600');
+        console.info(`====>SUB_Request_download_Supplemental_5600 config task: ${JSON.stringify(task.config)}`);
+        console.info(`====>SUB_Request_download_Supplemental_5600 tid: ${JSON.stringify(task.tid)}`);
+        expect(task.tid !== undefined).assertTrue();
+        expect(task.config.action !== undefined).assertTrue();
+        expect(task.config.url !== undefined).assertTrue();
+        expect(task.config.title !== undefined).assertTrue();
+        expect(task.config.description !== undefined).assertTrue();
+        expect(task.config.mode === undefined).assertTrue();
+        expect(task.config.overwrite === undefined).assertTrue();
+        expect(task.config.method === undefined).assertTrue();
+        expect(task.config.headers === undefined).assertTrue();
+        expect(task.config.data !== undefined).assertTrue();
+        expect(task.config.saveas !== undefined).assertTrue();
+        expect(task.config.network !== undefined).assertTrue();
+        expect(task.config.metered === undefined).assertTrue();
+        expect(task.config.roaming === undefined).assertTrue();
+        expect(task.config.retry === undefined).assertTrue();
+        expect(task.config.redirect === undefined).assertTrue();
+        expect(task.config.proxy === undefined).assertTrue();
+        expect(task.config.index === undefined).assertTrue();
+        expect(task.config.begins === undefined).assertTrue();
+        expect(task.config.ends === undefined).assertTrue();
+        expect(task.config.gauge === undefined).assertTrue();
+        expect(task.config.precise === undefined).assertTrue();
+        expect(task.config.token === 'Supplemental5600').assertTrue();
+        expect(task.config.priority === undefined).assertTrue();
+        expect(task.config.extras === undefined).assertTrue();
+        expect(task.config.multipart === undefined).assertTrue();
+        expect(task.config.notification === undefined).assertTrue();
+        expect(task.config.minSpeed === undefined).assertTrue();
+        expect(task.config.timeout === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_5600 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
 
   });
 };

@@ -16,7 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import entry from 'libentry.so';
 export default function ffrtTest() {
-  describe('ActsFfrtTest', () => {
+  describe('ActsFfrtTestAdapt001', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-package test
 enum Colors {Red = 1, Green = 2, Blue = 3}
 
 function CreateTuple(a: int, b: long): [int, long] {
@@ -179,7 +178,7 @@ class Overload {
         return 3 * x;
     }
 
-    overload method {method1, method2, method3}
+    private overload method {method1, method2, method3}
 }
 
 function CreatePartial(a: int): Partial<UnusualTypes> {

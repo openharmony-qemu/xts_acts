@@ -18,7 +18,13 @@ import observer from '@ohos.telephony.observer';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from "@ohos.base";
 
-
+const ExpectFail =() =>{
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -50,18 +56,18 @@ export default function observerManagerSimStateTest1() {
   describe('ObserverManagerSimStateTest1', () => {
 
     /**
-     * @tc.name   testTelephonyObserverSimStateChangeOnOptions1700
-     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1700
+     * @tc.name   testTelephonyObserverOnSimStateChange0100
+     * @tc.number SUB_Telephony_Observer_On_SimStateChange_0100
      * @tc.desc   Subscribe to sim state change events with options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverSimStateChangeOnOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions1700';
+    it('testTelephonyObserverOnSimStateChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnSimStateChange0100';
       console.info(`${caseName} test start`);
       try {
-        observer.on('simStateChange', {
+        observer.onSimStateChange( {
           slotId: 3
         }, (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
@@ -76,14 +82,14 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverSimStateChangeOff0300
-     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0300
+     * @tc.name   testTelephonyObserverOffSimStateChange0100
+     * @tc.number SUB_Telephony_Observer_Off_SimStateChange_0100
      * @tc.desc   Unsubscribe to sim state change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverSimStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testTelephonyObserverOffSimStateChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0300';
       console.info(`${caseName} test start`);
       try {
@@ -93,9 +99,8 @@ export default function observerManagerSimStateTest1() {
           myNumber++;
           console.info(`${caseName} myNumber ` + myNumber);
         };
-        observer.on('simStateChange', callback);
-        observer.off('simStateChange', callback);
-        observer.off('simStateChange', callback);
+        observer.onSimStateChange(callback);
+        observer.offSimStateChange(callback);
         ExpectTrue(true);
         done();
       } catch (error) {
@@ -107,15 +112,15 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverSimStateChangeOff0400
-     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0400
+     * @tc.name   testTelephonyObserverOffSimStateChange0200
+     * @tc.number SUB_Telephony_Observer_Off_SimStateChange_0200
      * @tc.desc   Unsubscribe to sim state change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverSimStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverSimStateChangeOff0400';
+    it('testTelephonyObserverOffSimStateChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffSimStateChange0200';
       console.info(`${caseName} test start`);
       try {
         let myNumber: int = 1;
@@ -124,7 +129,7 @@ export default function observerManagerSimStateTest1() {
           myNumber++;
           console.info(`${caseName} myNumber ` + myNumber);
         };
-        observer.off('simStateChange', callback);
+        observer.offSimStateChange(callback);
         ExpectTrue(myNumber === 1);
         done();
       } catch (error) {
@@ -136,15 +141,15 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn0100
-     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_0100
+     * @tc.name   testTelephonyObserverOnIccAccountInfoChange0100
+     * @tc.number SUB_Telephony_Observer_On_IccAccountInfoChange_0100
      * @tc.desc   Subscribe to accountInfo of icc change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTelephonyObserverIccAccountInfoChangeOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn0100';
+    it('testTelephonyObserverOnIccAccountInfoChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnIccAccountInfoChange0100';
       let simState = sim.getSimStateSync(0);
       if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
         console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
@@ -153,11 +158,13 @@ export default function observerManagerSimStateTest1() {
       } else {
         runTestCaseWithJudgeHasSimCard(caseName, done, async () => {
           try {
-            observer.on('iccAccountInfoChange', () => {
-              let accInfo: sim.IccAccountInfo = await sim.getSimAccountInfo(0);
-              console.info(`${caseName} data ${JSON.stringify(accInfo)}`);
-              ExpectTrue(accInfo.isActive);
-              done();
+            observer.onIccAccountInfoChange( () => {
+              waitForCompletion(async () => {
+                let accInfo: sim.IccAccountInfo = await sim.getSimAccountInfo(0);
+                console.info(`${caseName} data ${JSON.stringify(accInfo)}`);
+                ExpectTrue(accInfo.isActive);
+                done();
+              })
             });
             // await sim.activateSim(0);
             done();
@@ -171,15 +178,15 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0400
-     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0400
+     * @tc.name   testTelephonyObserverOffIccAccountInfoChange0200
+     * @tc.number SUB_Telephony_Observer_Off_IccAccountInfoChange_0200
      * @tc.desc   Unsubscribe to accountInfo of icc change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTelephonyObserverIccAccountInfoChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0400';
+    it('testTelephonyObserverOffIccAccountInfoChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffIccAccountInfoChange0200';
       console.info(`${caseName} test start`);
       try {
         let myNumber: int = 1;
@@ -187,12 +194,91 @@ export default function observerManagerSimStateTest1() {
           myNumber++;
         };
         console.info(caseName + 'myNmuber -> ' + myNumber);
-        observer.off('iccAccountInfoChange', callback);
+        observer.offIccAccountInfoChange(callback);
         ExpectTrue(myNumber == 1);
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnSimStateChange2300
+     * @tc.number SUB_Telephony_Observer_OnSimStateChange_2300
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnSimStateChange2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnSimStateChange2300';
+      console.info(`${caseName} test start`);
+      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
+      if (!hasSimCard) {
+        console.info(`${caseName} failed, No SIM exists in slot 0`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+      try {
+        let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
+
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          if (simStateAry.includes(data.state) && simStateAry1.includes(data.type) &&
+          simStateAry2.includes(data.reason)) {
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            observer.offSimStateChange();
+            done();
+          } else {
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            done();
+          }
+        }
+        observer.onSimStateChange(callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end`);

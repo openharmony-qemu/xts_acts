@@ -163,7 +163,7 @@ it('textInputJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0105] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').getString('selectionMenuHidden')).assertEqual('true');
       console.info('textInputJsunit_static_0105 END');
       done();
     });
@@ -199,7 +199,7 @@ it('textInputJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0107] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual('true');
       console.info('textInputJsunit_static_0107 END');
       done();
     });

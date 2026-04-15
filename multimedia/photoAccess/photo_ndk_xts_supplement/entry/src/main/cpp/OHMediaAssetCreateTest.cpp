@@ -74,6 +74,7 @@
 #define IMAGE_EFFECT_5120 5120
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
+#define MIN_SIZE 480
 
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "OHMediaAssetCreateTestNDK"
@@ -194,12 +195,6 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     Camera_OutputCapability *cameraOutputCapability = nullptr;
     code = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(cameraManager, cameras, sceneMode,
                                                                             &cameraOutputCapability);
-    LOGI("Get 5  %{public}d", code);
-    Camera_Profile *profile = cameraOutputCapability->previewProfiles[0];
-    Camera_PreviewOutput *previewOutput = nullptr;
-    code = OH_CameraManager_CreatePreviewOutput(cameraManager, profile, surfaceId, &previewOutput);
-    LOGI("Get 6  %{public}d", code);
-    code = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
     LOGI("Get 7  %{public}d", code);
     Camera_Input *cameraInput = nullptr;
     code = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &cameraInput);
@@ -215,14 +210,43 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     LOGI("Get 12  %{public}d", code);
     code = OH_CaptureSession_AddInput(captureSession, cameraInput);
     LOGI("Get 13  %{public}d", code);
+    Camera_Profile *preProfile = NULL;
+    Camera_Profile *photoProfile = NULL;
+    for (int32_t i = 0; i < cameraOutputCapability->previewProfilesSize; i++) {
+        Camera_Profile *currPre = cameraOutputCapability->previewProfiles[i];
+        if (currPre->size.width < MIN_SIZE || currPre->size.height < MIN_SIZE) {
+            continue;
+        }
+        for (int32_t j = 0; j < cameraOutputCapability->photoProfilesSize; j++) {
+            Camera_Profile *currPhoto = cameraOutputCapability->photoProfiles[j];
+            if (currPhoto->size.width < MIN_SIZE || currPhoto->size.height < MIN_SIZE) {
+                continue;
+            }
+            if (currPre->size.width * currPhoto->size.height == currPhoto->size.width * currPre->size.height) {
+                preProfile = currPre;
+                photoProfile = currPhoto;
+                goto match_end; // 直接跳出所有循环
+            }
+        }
+    }
+    match_end:
+// 兜底
+    if (!preProfile)
+        preProfile = cameraOutputCapability->previewProfiles[0];
+    if (!photoProfile)
+        photoProfile = cameraOutputCapability->photoProfiles[0];
+    Camera_PreviewOutput *previewOutput = nullptr;
+    code = OH_CameraManager_CreatePreviewOutput(cameraManager, preProfile, surfaceId, &previewOutput);
+    LOGI("Get 5  %{public}d", code);
+    code = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
+    LOGI("Get 6  %{public}d", code);
     isSuccess = false;
     code = OH_CaptureSession_CanAddPreviewOutput(captureSession, previewOutput, &isSuccess);
     LOGI("Get 14  %{public}d", code);
     code = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
     LOGI("Get 15  %{public}d", code);
-    profile = cameraOutputCapability->photoProfiles[0];
     Camera_PhotoOutput *photoOutput = nullptr;
-    code = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, profile, &photoOutput);
+    code = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
     LOGI("Get 16  %{public}d", code);
     isSuccess = false;
     code = OH_CaptureSession_CanAddPhotoOutput(captureSession, photoOutput, &isSuccess);

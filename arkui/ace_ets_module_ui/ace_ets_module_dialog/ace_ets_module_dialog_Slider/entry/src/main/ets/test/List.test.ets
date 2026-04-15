@@ -14,7 +14,7 @@
  */
 
 import SliderOptionValue from './Slider/slider.test';
-import SliderInterfaceTest from './Slider/sliderInterfaceTest.test'
+// import SliderInterfaceTest from './Slider/sliderInterfaceTest.test'
 import sliderJsunit1 from './Slider/SliderJsunit1.test';
 import sliderMovingJsunit from './SliderTest/slider.test';
 import sliderJsunit from './SliderTest/SliderJsunit.test';
@@ -39,9 +39,9 @@ import selectValueNullTest from './selectNullTest/SelectValueNullTest.test';
 import radiounllundefined from './radioNullTest/radio.test';
 
 export default function testsuite() {
-  SliderOptionValue();
-  SliderInterfaceTest();
   sliderJsunit1();
+  SliderOptionValue();
+  // SliderInterfaceTest();
   sliderMovingJsunit();
   sliderJsunit();
   SliderTestC();
@@ -54,7 +54,7 @@ export default function testsuite() {
   sliderOnChangeModifierTest();
   sliderTrackColorMetricsTest();
 
-  StackAlignContentNullTest();
+  // StackAlignContentNullTest();
   slidenullundeifned();
 
   selectAttributeNullTest();

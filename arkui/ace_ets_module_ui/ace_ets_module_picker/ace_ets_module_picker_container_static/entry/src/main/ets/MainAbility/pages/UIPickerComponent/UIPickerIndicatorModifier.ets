@@ -31,7 +31,7 @@ class IndicatorPickerModifier implements AttributeModifier<UIPickerComponentAttr
     instance.selectionIndicator(this.style)
   }
 }
-class MyModifier2 implements AttributeModifier<UIPickerComponentAttribute> {
+export class MyModifier2 implements AttributeModifier<UIPickerComponentAttribute> {
   applyNormalAttribute(instance: UIPickerComponentAttribute): void {
     instance.selectionIndicator({type: PickerIndicatorType.DIVIDER,
       strokeWidth: LengthMetrics.vp(5),

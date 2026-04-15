@@ -30,9 +30,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLround001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLround001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llround(0);
       expect(result).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLround002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLround002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llround(0.5);
       expect(result).assertEqual(1);
       done()
@@ -58,9 +58,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLround003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLround003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llround(0.4);
       expect(result).assertEqual(0);
       done()
@@ -72,9 +72,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLround004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLround004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llround(-0.5);
       expect(result).assertEqual(-1);
       done()
@@ -86,9 +86,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLround005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLround005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llround(-0.4);
       expect(result).assertEqual(0);
       done()
@@ -101,9 +101,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundF(0);
       expect(result).assertEqual(0);
       done()
@@ -115,9 +115,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundF(0.5);
       expect(result).assertEqual(1);
       done()
@@ -129,9 +129,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundF(0.4);
       expect(result).assertEqual(0);
       done()
@@ -143,9 +143,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundF(-0.5);
       expect(result).assertEqual(-1);
       done()
@@ -157,9 +157,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundF(-0.4);
       expect(result).assertEqual(0);
       done()
@@ -171,9 +171,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundL(0);
       expect(result).assertEqual(0);
       done()
@@ -185,9 +185,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundL(0.5);
       expect(result).assertEqual(1);
       done()
@@ -199,9 +199,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundL(0.4);
       expect(result).assertEqual(0);
       done()
@@ -213,9 +213,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundL(-0.5);
       expect(result).assertEqual(-1);
       done()
@@ -227,9 +227,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llroundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLroundL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLroundL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llroundL(-0.4);
       expect(result).assertEqual(0);
       done()
@@ -241,9 +241,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrint(0);
       expect(result).assertEqual(0);
       done()
@@ -255,9 +255,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrint(0.5);
       expect(result).assertEqual(0);
       done()
@@ -269,9 +269,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrint(0.4);
       expect(result).assertEqual(0);
       done()
@@ -284,9 +284,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintF(0);
       expect(result).assertEqual(0);
       done()
@@ -298,9 +298,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintF(0.5);
       expect(result).assertEqual(0);
       done()
@@ -312,9 +312,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintF(0.4);
       expect(result).assertEqual(0);
       done()
@@ -326,9 +326,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintL(0);
       expect(result).assertEqual(0);
       done()
@@ -340,9 +340,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintL(0.5);
       expect(result).assertEqual(0);
       done()
@@ -354,9 +354,9 @@ export default function mathNdkTest() {
      * @tc.desc   test llrintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLLrintL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLLrintL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.llrintL(0.4);
       expect(result).assertEqual(0);
       done()
@@ -368,9 +368,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaR(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -381,9 +381,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaR(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -394,9 +394,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaR(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -408,9 +408,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammafR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammafR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammafR(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -421,9 +421,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammafR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammafR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammafR(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -434,9 +434,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammafR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammafR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammafR(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -448,9 +448,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammalR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammalR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammalR(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -461,9 +461,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammalR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammalR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammalR(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -474,9 +474,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammalR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammalR004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammalR(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -488,9 +488,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgamma(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -501,9 +501,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgamma(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -514,9 +514,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgamma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgamma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgamma(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -528,9 +528,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaf(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -542,9 +542,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaf(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -555,9 +555,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammaf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammaf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammaf(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -569,9 +569,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammal(math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -582,9 +582,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammal(1);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -595,9 +595,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLgammal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLgammal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.lgammal(2);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(0.0));
       done()
@@ -609,9 +609,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ldexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexp(2.3, 3);
       expect(result).assertEqual(18.4);
       done()
@@ -623,9 +623,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexp(Math.sqrt(-1), 2);
       expect(result).assertNaN();
       done()
@@ -637,9 +637,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexp(2.3, 0);
       expect(result).assertEqual(2.3);
       done()
@@ -650,9 +650,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexpf(Math.sqrt(-1), 2);
       expect(result).assertNaN();
       done()
@@ -664,9 +664,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexpl(2.3, 3);
       expect(result).assertEqual(18.4);
       done()
@@ -678,9 +678,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexpl(Math.sqrt(-1), 2);
       expect(result).assertNaN();
       done()
@@ -692,9 +692,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Ldexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLdexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLdexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ldexpl(2.3, 0);
       expect(result).assertEqual(2.3);
       done()
@@ -706,9 +706,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j0(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -720,9 +720,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j0(1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -734,9 +734,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ0f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ0f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j0f(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -748,9 +748,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ0f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ0f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j0f(1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -762,9 +762,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1(1);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.440051));
       done()
@@ -776,9 +776,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -790,9 +790,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1(1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -804,9 +804,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1f(1);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.440051));
       done()
@@ -818,9 +818,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1f(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -832,9 +832,9 @@ export default function mathNdkTest() {
      * @tc.desc   test J1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJ1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJ1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.j1f(1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -846,9 +846,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jn(2, 1);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.114903));
       done()
@@ -860,9 +860,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jn(2, Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -874,9 +874,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jn(2, 1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -888,9 +888,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jnf(2, 1);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.114903));
       done()
@@ -902,9 +902,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jnf(2, Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -916,9 +916,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Jnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathJnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathJnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.jnf(2, 1.7976931348623157e+309);
       expect(result).assertEqual(0);
       done()
@@ -930,9 +930,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 6.0;
       let param2 = 3.0;
       let result: number = math.remainder(param, param2);
@@ -947,9 +947,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rmainder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainder002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainder002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 5.0;
       let param2 = 0;
       let result: number = math.remainder(param, param2);
@@ -964,9 +964,9 @@ export default function mathNdkTest() {
      * @tc.desc   text remainder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainder003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainder003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 18;
       let param2 = 4;
       let result: number = math.remainder(param, param2);
@@ -981,9 +981,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 6;
       let param2 = 2;
       let result: number = math.remainderf(param, param2);
@@ -998,9 +998,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 5;
       let param2 = 0;
       let result: number = math.remainderf(param, param2);
@@ -1015,9 +1015,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 18;
       let param2 = 4;
       let result: number = math.remainderf(param, param2);
@@ -1032,9 +1032,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12.0;
       let param2 = 2;
       let result: number = math.remainderl(param, param2);
@@ -1049,9 +1049,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0;
       let param2 = 0;
       let result: number = math.remainderl(param, param2);
@@ -1066,9 +1066,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remainderl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemainderl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemainderl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 18;
       let param2 = 4;
       let result: number = math.remainderl(param, param2);
@@ -1083,9 +1083,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12.5;
       let param2 = 2;
       let param3 = 1;
@@ -1101,9 +1101,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let param2 = 0;
       let param3 = 1;
@@ -1119,9 +1119,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -12.5;
       let param2 = 2;
       let param3 = 1;
@@ -1137,9 +1137,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 14.5;
       let param2 = 2;
       let param3 = 1;
@@ -1155,9 +1155,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 16.0;
       let param2 = 0;
       let param3 = 1;
@@ -1173,9 +1173,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -16.5;
       let param2 = 2;
       let param3 = 1;
@@ -1191,9 +1191,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 16.5;
       let param2 = 2;
       let param3 = 1;
@@ -1209,9 +1209,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12.5;
       let param2 = 0;
       let param3 = 1;
@@ -1227,9 +1227,9 @@ export default function mathNdkTest() {
      * @tc.desc   test remquol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRemquol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRemquol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -12.5;
       let param2 = 2;
       let param3 = 1;
@@ -1245,9 +1245,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.rint(param);
       console.info("Test rint result = " + JSON.stringify(result));
@@ -1261,9 +1261,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.rint(param);
       console.info("Test rint result = " + JSON.stringify(result));
@@ -1277,9 +1277,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.rint(param);
       console.info("Test rint result = " + JSON.stringify(result));
@@ -1293,9 +1293,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.rintf(param);
       console.info("Test rintf result = " + JSON.stringify(result));
@@ -1309,9 +1309,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.rintf(param);
       console.info("Test rintF result = " + JSON.stringify(result));
@@ -1325,9 +1325,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.rintf(param);
       console.info("Test rintf result = " + JSON.stringify(result));
@@ -1341,9 +1341,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.rintl(param);
       console.info("Test rintl result = " + JSON.stringify(result));
@@ -1357,9 +1357,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.rintl(param);
       console.info("Test rintl result = " + JSON.stringify(result));
@@ -1373,9 +1373,9 @@ export default function mathNdkTest() {
      * @tc.desc   test rintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.rintl(param);
       console.info("Test rintl result = " + JSON.stringify(result));
@@ -1389,9 +1389,9 @@ export default function mathNdkTest() {
      * @tc.desc   test round
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.round(param);
       console.info("Test round result = " + JSON.stringify(result));
@@ -1405,9 +1405,9 @@ export default function mathNdkTest() {
      * @tc.desc   test round
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.round(param);
       console.info("Test round result = " + JSON.stringify(result));
@@ -1421,9 +1421,9 @@ export default function mathNdkTest() {
      * @tc.desc   test round
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.round(param);
       console.info("Test round result = " + JSON.stringify(result));
@@ -1437,9 +1437,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.roundf(param);
       console.info("Test roundf result = " + JSON.stringify(result));
@@ -1453,9 +1453,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.roundf(param);
       console.info("Test roundf result = " + JSON.stringify(result));
@@ -1469,9 +1469,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.roundf(param);
       console.info("Test roundf result = " + JSON.stringify(result));
@@ -1485,9 +1485,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.roundl(param);
       console.info("Test roundl result = " + JSON.stringify(result));
@@ -1501,9 +1501,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.87;
       let result: number = math.roundl(param);
       console.info("Test roundl result = " + JSON.stringify(result));
@@ -1517,9 +1517,9 @@ export default function mathNdkTest() {
      * @tc.desc   test roundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.roundl(param);
       console.info("Test roundL result = " + JSON.stringify(result));
@@ -1533,9 +1533,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbln
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbln001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbln001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let param2 = 1;
       let result: number = math.scalbln(param, param2);
@@ -1550,9 +1550,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbln
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbln002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbln002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let param2 = 0;
       let result: number = math.scalbln(param, param2);
@@ -1567,9 +1567,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbln
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbln003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbln003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / -0;
       let param2 = 0;
       let result: number = math.scalbln(param, param2);
@@ -1584,9 +1584,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let result: number = math.tan(a);
       console.info("Test tan result= " + result);
@@ -1600,9 +1600,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tan(a);
       console.info("Test tan result= " + result);
@@ -1616,9 +1616,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tan(a);
       console.info("Test tan result= " + result)
@@ -1632,9 +1632,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tan(a);
       console.info("Test tan result= " + result)
@@ -1648,9 +1648,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let result: number = math.tanf(a);
       console.info("Test tanf result= " + result);
@@ -1664,9 +1664,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tanf(a);
       console.info("Test tanf result= " + result);
@@ -1680,9 +1680,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tanf(a);
       console.info("Test tanf result= " + result);
@@ -1696,9 +1696,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tanf(a);
       console.info("Test tanf result= " + result);
@@ -1712,9 +1712,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tanh(a);
       console.info("Test tanh result= " + result);
@@ -1728,9 +1728,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       ;
       let result: number = math.tanh(a);
@@ -1745,9 +1745,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tanh(a);
       console.info("Test tanh result= " + result);
@@ -1761,9 +1761,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tanh(a);
       console.info("Test tanh result= " + result);
@@ -1777,9 +1777,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tanhf(a);
       console.info("Test tanhf result= " + result);
@@ -1793,9 +1793,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let result: number = math.tanhf(a);
       console.info("Test tanhf result= " + result);
@@ -1809,9 +1809,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tanhf(a);
       console.info("Test tanhf result= " + result);
@@ -1825,9 +1825,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tanhf(a);
       console.info("Test tanhf result= " + result);
@@ -1841,9 +1841,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tanhl(a);
       console.info("Test tanhl result= " + result);
@@ -1857,9 +1857,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let result: number = math.tanhl(a);
       console.info("Test tanhl result= " + result);
@@ -1873,9 +1873,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tanhl(a);
       console.info("Test tanhl result= " + result);
@@ -1889,9 +1889,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanhl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanhl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tanhl(a);
       console.info("Test tanhl result= " + result);
@@ -1905,9 +1905,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = math.tanl(a);
       console.info("Test tanl result= " + result);
@@ -1921,9 +1921,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let result: number = math.tanl(a);
       console.info("Test tanl result= " + result);
@@ -1937,9 +1937,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tanl(a);
       console.info("Test tanl result= " + result);
@@ -1953,9 +1953,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTanl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTanl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tanl(a);
       console.info("Test tanl result= " + result);
@@ -1969,9 +1969,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgamma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgamma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: number = math.tgamma(a);
       console.info("Test tgamma result= " + result);
@@ -1985,9 +1985,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgamma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tgamma(a);
       console.info("Test tgamma result= " + result);
@@ -2001,9 +2001,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgamma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgamma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tgamma(a);
       console.info("Test tgamma result= " + result);
@@ -2017,9 +2017,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammaf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammaf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: number = math.tgammaf(a);
       console.info("Test tgammaf result= " + result)
@@ -2033,9 +2033,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammaf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tgammaf(a);
       console.info("Test tgammaf data= " + result);
@@ -2049,9 +2049,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammaf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tgammaf(a);
       console.info("Test tgammaf result= " + result);
@@ -2065,9 +2065,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: number = math.tgammal(a);
       console.info("Test tgammal result= " + result)
@@ -2081,9 +2081,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / 0;
       let result: number = math.tgammal(a);
       console.info("Test tgammal result= " + result);
@@ -2097,9 +2097,9 @@ export default function mathNdkTest() {
      * @tc.desc   test tgammal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTgammal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 200 / -0;
       let result: number = math.tgammal(a);
       console.info("Test tgammal result= " + result);
@@ -2113,9 +2113,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 7
       let c = -4
       let a: number = math.scalbn(b, c);
@@ -2129,9 +2129,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1 / 0
       let c = -1
       let a: number = math.scalbn(b, c);
@@ -2145,9 +2145,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = -1074
       let a: number = math.scalbn(b, c);
@@ -2162,9 +2162,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbn004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbn004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = 1024
       let a: number = math.scalbn(b, c);
@@ -2178,9 +2178,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 7
       let c = -4
       let a: number = math.scalblnl(b, c);
@@ -2194,9 +2194,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1 / 0
       let c = -1
       let a: number = math.scalblnl(b, c);
@@ -2210,9 +2210,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = -1074
       let a: number = math.scalblnl(b, c);
@@ -2226,9 +2226,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = 1024
       let a: number = math.scalblnl(b, c);
@@ -2242,9 +2242,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 7
       let c = -4
       let a: number = math.scalblnf(b, c);
@@ -2258,9 +2258,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1 / 0
       let c = -1
       let a: number = math.scalblnf(b, c);
@@ -2274,9 +2274,9 @@ export default function mathNdkTest() {
      * @tc.desc   test  scalblnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = -1074
       let a: number = math.scalblnf(b, c);
@@ -2290,9 +2290,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalblnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalblnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalblnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = 1024
       let a: number = math.scalblnf(b, c);
@@ -2306,9 +2306,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 7
       let c = -4
       let a: number = math.scalbnf(b, c);
@@ -2322,9 +2322,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1 / 0
       let c = -1
       let a: number = math.scalbnf(b, c);
@@ -2338,9 +2338,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = -1074
       let a: number = math.scalbnf(b, c);
@@ -2354,9 +2354,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = 1024
       let a: number = math.scalbnf(b, c);
@@ -2370,9 +2370,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 7
       let c = -4
       let a: number = math.scalbnl(b, c);
@@ -2386,9 +2386,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1 / 0
       let c = -1
       let a: number = math.scalbnl(b, c);
@@ -2402,9 +2402,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = -1074
       let a: number = math.scalbnl(b, c);
@@ -2418,9 +2418,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbnl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbnl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1
       let c = 1024
       let a: number = math.scalbnl(b, c);
@@ -2434,9 +2434,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 1 / 2;
       let result: number = math.aSin(Param);
@@ -2450,9 +2450,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 0;
       let result: number = math.aSin(Param);
@@ -2466,9 +2466,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1 / 2;
       let result: number = math.aSin(Param);
@@ -2482,9 +2482,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aSin(Param);
       expect(result).assertNaN;
@@ -2497,9 +2497,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 1 / 2;
       let result: number = math.aSinF(Param);
@@ -2513,9 +2513,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 0;
       let result: number = math.aSinF(Param);
@@ -2529,9 +2529,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1 / 2;
       let result: number = math.aSinF(Param);
@@ -2545,9 +2545,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aSinF(Param);
       expect(result).assertNaN;
@@ -2560,9 +2560,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 1 / 2;
       let result: number = math.aSinL(Param);
@@ -2576,9 +2576,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = 0;
       let result: number = math.aSinL(Param);
@@ -2592,9 +2592,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1 / 2;
       let result: number = math.aSinL(Param);
@@ -2608,9 +2608,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aSinL(Param);
       expect(result).assertNaN;
@@ -2623,9 +2623,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultless: number = 0.881;
       let resultlarger: number = 0.882;
       let Param = 1;
@@ -2641,9 +2641,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 0;
       let result: number = math.aSinH(Param);
@@ -2657,9 +2657,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.89;
       let Param = -1;
       let result: number = Math.floor(math.aSinH(Param) * 100) / 100;
@@ -2673,9 +2673,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.aSinH(Math.sqrt(-1));
       expect(result).assertNaN;
       done()
@@ -2687,9 +2687,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultless: number = 0.881;
       let resultlarger: number = 0.882;
       let Param = 1;
@@ -2705,9 +2705,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 0;
       let result: number = math.aSinHF(Param);
@@ -2721,9 +2721,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.89;
       let Param = -1;
       let result: number = Math.floor(math.aSinHF(Param) * 100) / 100;
@@ -2737,9 +2737,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.aSinHF(Math.sqrt(-1));
       expect(result).assertNaN;
       done()
@@ -2751,9 +2751,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultless: number = 0.881;
       let resultlarger: number = 0.882;
       let Param = 1;
@@ -2769,9 +2769,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 0;
       let result: number = math.aSinHL(Param);
@@ -2785,9 +2785,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.89;
       let Param = -1;
       let result: number = Math.floor(math.aSinHL(Param) * 100) / 100;
@@ -2801,9 +2801,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ASinHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathASinHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathASinHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.aSinHL(Math.sqrt(-1));
       expect(result).assertNaN;
       done()
@@ -2815,9 +2815,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI;
       let Param = -1;
       let result: number = math.aCos(Param);
@@ -2831,9 +2831,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
       let Param = 0;
       let result: number = math.aCos(Param);
@@ -2847,9 +2847,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCos(Param);
@@ -2863,9 +2863,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aCos(Param);
       expect(result).assertNaN;
@@ -2878,9 +2878,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCos(Param);
       expect(result).assertNaN;
@@ -2893,9 +2893,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCos(Param);
       expect(result).assertNaN;
@@ -2908,9 +2908,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultless: number = 3.141;
       let resultlarger: number = 3.142;
       let Param = -1;
@@ -2926,9 +2926,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param = 0;
       let result: string = (math.aCosF(Param)).toFixed(2);
@@ -2942,9 +2942,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCosF(Param);
@@ -2958,9 +2958,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aCosF(Param);
       expect(result).assertNaN;
@@ -2973,9 +2973,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCosF(Param);
       expect(result).assertNaN;
@@ -2988,9 +2988,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCosF(Param);
       expect(result).assertNaN;
@@ -3003,9 +3003,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI;
       let Param = -1;
       let result: number = math.aCosL(Param);
@@ -3019,9 +3019,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
       let Param = 0;
       let result: number = math.aCosL(Param);
@@ -3035,9 +3035,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCosL(Param);
@@ -3051,9 +3051,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 3;
       let result: number = math.aCosL(Param);
       expect(result).assertNaN;
@@ -3066,9 +3066,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCosL(Param);
       expect(result).assertNaN;
@@ -3081,9 +3081,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCosL(Param);
       expect(result).assertNaN;
@@ -3096,9 +3096,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -1;
       let result: number = math.aCosH(Param);
       expect(result).assertNaN;
@@ -3111,9 +3111,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 0;
       let result: number = math.aCosH(Param);
       expect(result).assertNaN();
@@ -3126,9 +3126,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCosH(Param);
@@ -3142,9 +3142,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -3;
       let result: number = math.aCosH(Param);
       expect(result).assertNaN;
@@ -3157,9 +3157,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCosH(Param);
       expect(result).assertNaN;
@@ -3172,9 +3172,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosH006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosH006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCosH(Param);
       expect(result).assertPosUnlimited();
@@ -3187,9 +3187,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -1;
       let result: number = math.aCosHF(Param);
       expect(result).assertNaN;
@@ -3202,9 +3202,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 0;
       let result: number = math.aCosHF(Param);
       expect(result).assertNaN();
@@ -3217,9 +3217,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCosHF(Param);
@@ -3233,9 +3233,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -3;
       let result: number = math.aCosHF(Param);
       expect(result).assertNaN;
@@ -3248,9 +3248,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCosHF(Param);
       expect(result).assertNaN;
@@ -3263,9 +3263,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCosHF(Param);
       expect(result).assertPosUnlimited();
@@ -3278,9 +3278,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -1;
       let result: number = math.aCosHL(Param);
       expect(result).assertNaN;
@@ -3293,9 +3293,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 0;
       let result: number = math.aCosHL(Param);
       expect(result).assertNaN();
@@ -3308,9 +3308,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.aCosHL(Param);
@@ -3324,9 +3324,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = -3;
       let result: number = math.aCosHL(Param);
       expect(result).assertNaN;
@@ -3339,9 +3339,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = Math.sqrt(-1);
       let result: number = math.aCosHL(Param);
       expect(result).assertNaN;
@@ -3354,9 +3354,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ACosHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathACosHL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathACosHL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param = 1.0 / 0.0;
       let result: number = math.aCosHL(Param);
       expect(result).assertPosUnlimited();
@@ -3369,9 +3369,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1;
       let result: number = math.aTan(Param);
@@ -3385,9 +3385,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let param = 0;
       let result: number = math.aTan(param);
@@ -3401,9 +3401,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let param = 1;
       let result: number = math.aTan(param);
@@ -3417,9 +3417,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI / 2;
       let param = 1.0 / 0.0;
       let result: number = math.aTan(param);
@@ -3433,9 +3433,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.aTan(param);
       expect(result).assertNaN;
@@ -3448,9 +3448,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -Math.PI / 2;
       let param = -1.0 / 0.0;
       let result: number = math.aTan(param);
@@ -3464,9 +3464,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1;
       let result: number = math.aTanF(Param);
@@ -3480,9 +3480,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let param = 0;
       let result: number = math.aTanF(param);
@@ -3496,9 +3496,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let param = 1;
       let result: number = math.aTanF(param);
@@ -3512,9 +3512,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let param = 1.0 / 0.0;
       let result: string = (math.aTanF(param)).toFixed(2);
@@ -3528,9 +3528,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.aTanF(param);
       expect(result).assertNaN;
@@ -3543,9 +3543,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let param = -1.0 / 0.0;
       let result: string = (math.aTanF(param)).toFixed(2);
@@ -3559,9 +3559,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let Param = -1;
       let result: number = math.aTanL(Param);
@@ -3575,9 +3575,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let param = 0;
       let result: number = math.aTanL(param);
@@ -3591,9 +3591,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 1;
       let param = 1;
       let result: number = math.aTanL(param);
@@ -3607,9 +3607,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let param = 1.0 / 0.0;
       let result: string = (math.aTanL(param)).toFixed(2);
@@ -3623,9 +3623,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.aTanL(param);
       expect(result).assertNaN;
@@ -3638,9 +3638,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let param = -1.0 / 0.0;
       let result: string = (math.aTanL(param)).toFixed(2);
@@ -3654,9 +3654,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 0;
       let Param1 = -1;
@@ -3671,9 +3671,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let Param1 = 1;
@@ -3688,9 +3688,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1;
       let Param1 = 0;
@@ -3705,9 +3705,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1;
       let Param1 = 0;
@@ -3722,9 +3722,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let Param1 = -1;
       let result: number = math.aTan2(Param0, Param1);
@@ -3738,9 +3738,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 0;
       let Param1 = 0;
       let result: Number = math.aTan2(Param0, Param1);
@@ -3754,9 +3754,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = Math.PI / 4;
       let Param0 = 1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -3771,9 +3771,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -3788,9 +3788,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -3805,9 +3805,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -3 * Math.PI / 4;
       let Param0 = -1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -3822,9 +3822,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 0;
       let Param1 = -1;
@@ -3839,9 +3839,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let Param1 = 1;
@@ -3856,9 +3856,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1;
       let Param1 = 0;
@@ -3873,9 +3873,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1;
       let Param1 = 0;
@@ -3890,9 +3890,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let Param1 = -1;
       let result: number = math.aTan2F(Param0, Param1);
@@ -3906,9 +3906,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let Param1 = 0;
@@ -3923,9 +3923,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 4).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -3940,9 +3940,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -3957,9 +3957,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -3974,9 +3974,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-3 * Math.PI / 4).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -3991,9 +3991,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 0;
       let Param1 = -1;
@@ -4008,9 +4008,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let Param1 = 1;
@@ -4025,9 +4025,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1;
       let Param1 = 0;
@@ -4042,9 +4042,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1;
       let Param1 = 0;
@@ -4059,9 +4059,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 60;
       let result: number = 0.50;
       let data: Number = math.cos(a);
@@ -4075,9 +4075,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = 1.00;
       let data: Number = math.cos(a);
@@ -4091,9 +4091,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 90;
       let result: number = 0.00;
       let data: Number = math.cos(a);
@@ -4107,9 +4107,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 10;
       let data: Number = math.erf(a);
       let result: boolean = false;
@@ -4126,9 +4126,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -10;
       let data: Number = math.erf(a);
       let result: boolean = false;
@@ -4145,9 +4145,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let data: Number = math.erf(a);
       let result: boolean = false;
@@ -4164,9 +4164,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let data: Number = math.erf(a);
       expect(data).assertEqual(0);
@@ -4179,9 +4179,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 11;
       let b = -2;
       let data: Number = math.copysign(a, b);
@@ -4195,9 +4195,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -11;
       let b = -2;
       let data: Number = math.copysign(a, b);
@@ -4211,9 +4211,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -11;
       let b = 2;
       let data: Number = math.copysign(a, b);
@@ -4227,9 +4227,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: number = 0.367879;
       let data: Number = math.exp(a);
@@ -4243,9 +4243,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let data: Number = math.exp(a);
       expect(data).assertEqual(1);
@@ -4258,9 +4258,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let data: Number = math.fabs(a);
       expect(data).assertEqual(7.5);
@@ -4273,9 +4273,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdim
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDim001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDim001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let b = 2.3;
       let data: Number = math.fdim(a, b);
@@ -4289,9 +4289,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdim
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDim002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDim002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2.3;
       let data: Number = math.fdim(a, b);
@@ -4305,9 +4305,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdim
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDim003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDim003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = -3.57;
       let data: Number = math.fdim(a, b);
@@ -4321,9 +4321,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let data: Number = math.floor(a);
       expect(data).assertEqual(1);
@@ -4336,9 +4336,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -10.5;
       let data: Number = math.floor(a);
       expect(data).assertEqual(-11);
@@ -4351,9 +4351,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2;
       let c = 2.5;
@@ -4368,9 +4368,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let c = 2.5;
@@ -4385,9 +4385,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmax
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fmax(a, b);
@@ -4401,9 +4401,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmax
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1.5;
       let data: Number = math.fmax(a, b);
@@ -4417,9 +4417,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmax
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMax003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMax003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1;
       let data: Number = math.fmax(a, b);
@@ -4433,9 +4433,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fmin(a, b);
@@ -4449,9 +4449,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0;
       let data: Number = math.fmin(a, b);
@@ -4465,9 +4465,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.56;
       let b = 0;
       let data: Number = math.fmin(a, b);
@@ -4481,9 +4481,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let b = 2.1;
       let result: number = 1.1999;
@@ -4503,9 +4503,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 2.1;
       let result: number = 0;
@@ -4525,9 +4525,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.5;
       let b = 0;
       let result: number = 0;
@@ -4547,9 +4547,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 12.19;
       let b = -3;
       let result: number = 0.189999;
@@ -4569,9 +4569,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -7.5;
       let data: Number = math.fabsf(a);
       expect(data).assertEqual(7.5);
@@ -4584,9 +4584,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 90;
       let result: number = 2.50918;
       let data: Number = math.cosh(a);
@@ -4600,9 +4600,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let result: number = 1;
       let data: Number = math.cosh(a);
@@ -4616,9 +4616,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -30;
       let result: number = 1.14023;
       let data: Number = math.cosh(a);
@@ -4632,9 +4632,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: boolean = false;
       let data: Number = math.exp2(a);
@@ -4651,9 +4651,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.0 / 0.0;
       let data: Number = math.exp2(a);
       expect(data).assertPosUnlimited();
@@ -4666,9 +4666,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4.7;
       let result: boolean = false;
       let data: Number = math.exp2(a);
@@ -4685,9 +4685,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4;
       let result: boolean = false;
       let data: Number = math.expm1(a);
@@ -4704,9 +4704,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.0 / 0.0;
       let data: Number = math.expm1(a);
       expect(data).assertPosUnlimited();
@@ -4719,9 +4719,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: boolean = false;
       let data: Number = math.expm1(a);
@@ -4738,9 +4738,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 9.6;
       let b = 4.75;
       let result: number = 0.1;
@@ -4768,9 +4768,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4.7;
       let b = 9.6;
       let result: number = 0;
@@ -4798,9 +4798,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4.7;
       let b = 0;
       let result: number = 0;
@@ -4829,9 +4829,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 9.6;
       let b = 4.75;
       let result: number = 0.1;
@@ -4846,9 +4846,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4.7;
       let b = 9.6;
       let result: number = 0;
@@ -4876,9 +4876,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4.7;
       let b = 0;
       let result: number = 0;
@@ -4907,9 +4907,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fminf(a, b);
@@ -4923,9 +4923,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0;
       let data: Number = math.fminf(a, b);
@@ -4939,9 +4939,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.56;
       let b = 0;
       let data: Number = math.fminf(a, b);
@@ -4955,9 +4955,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fminl(a, b);
@@ -4971,9 +4971,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0;
       let data: Number = math.fminl(a, b);
@@ -4987,9 +4987,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.56;
       let b = 0;
       let data: Number = math.fminl(a, b);
@@ -5003,9 +5003,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fmaxf(a, b);
@@ -5019,9 +5019,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1.5;
       let data: Number = math.fmaxf(a, b);
@@ -5035,9 +5035,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1;
       let data: Number = math.fmaxf(a, b);
@@ -5051,9 +5051,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let data: Number = math.fmaxl(a, b);
@@ -5067,9 +5067,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1.5;
       let data: Number = math.fmaxl(a, b);
@@ -5083,9 +5083,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 1;
       let data: Number = math.fmaxl(a, b);
@@ -5099,9 +5099,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2;
       let c = 2.5;
@@ -5116,9 +5116,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let c = 2.5;
@@ -5133,9 +5133,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2;
       let c = 2.5;
@@ -5150,9 +5150,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1.5;
       let b = 2;
       let c = 2.5;
@@ -5167,9 +5167,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let result: number = 1;
       let data: Number = math.floorf(a);
@@ -5183,9 +5183,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -10.5;
       let result: number = -11;
       let data: Number = math.floorf(a);
@@ -5199,9 +5199,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let result: number = 1;
       let data: Number = math.floorl(a);
@@ -5215,9 +5215,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -10.5;
       let result: number = -11;
       let data: Number = math.floorl(a);
@@ -5231,9 +5231,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdimf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let b = 2.3;
       let result: number = 5.199;
@@ -5248,9 +5248,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdimf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2.3;
       let result: number = 0;
@@ -5265,9 +5265,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdimf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = -3.57;
       let result: number = 5.069;
@@ -5282,9 +5282,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdiml
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let b = 2.3;
       let data: Number = math.fdiml(a, b);
@@ -5298,9 +5298,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdiml
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = 2.3;
       let data: Number = math.fdiml(a, b);
@@ -5314,9 +5314,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdiml
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.5;
       let b = -3.57;
       let data: Number = math.fdiml(a, b);
@@ -5330,9 +5330,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 7.5;
       let data: Number = math.fabsl(a);
       expect(data).assertEqual(7.5);
@@ -5345,9 +5345,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceil
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeil001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeil001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -7.5;
       let data: Number = math.ceil(a);
       expect(data).assertEqual(-7);
@@ -5360,9 +5360,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceil
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeil002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeil002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.1;
       let data: Number = math.ceil(a);
       expect(data).assertEqual(2);
@@ -5375,9 +5375,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceilf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -7.5;
       let data: Number = math.ceilf(a);
       expect(data).assertEqual(-7);
@@ -5390,9 +5390,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceilf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.1;
       let data: Number = math.ceilf(a);
       expect(data).assertEqual(2);
@@ -5405,9 +5405,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -7.5;
       let data: Number = math.ceill(a);
       expect(data).assertEqual(-7);
@@ -5420,9 +5420,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.1;
       let data: Number = math.ceill(a);
       expect(data).assertEqual(2);
@@ -5435,9 +5435,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 4;
       let result: boolean = false;
       let data: Number = math.expm1f(a);
@@ -5454,9 +5454,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1.0 / 0.0;
       let data: Number = math.expm1f(a);
       expect(data).assertPosUnlimited();
@@ -5469,9 +5469,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1;
       let result: boolean = false;
       let data: Number = math.expm1f(a);
@@ -5488,9 +5488,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log(10);
       console.info("math.log result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(2.302585))
@@ -5503,9 +5503,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log10(10);
       console.info("math.log10 result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(1))
@@ -5518,9 +5518,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log10f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog10f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog10f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log10f(10);
       console.info("math.log10f result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(1))
@@ -5533,9 +5533,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log10l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog10l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog10l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log10l(10);
       console.info("math.log10l result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(1))
@@ -5548,9 +5548,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log1p
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog1p001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog1p001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log1p(1.0);
       console.info("math.log1p result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.693147))
@@ -5563,9 +5563,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log1pf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog1pf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog1pf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log1pf(1.0);
       console.info("math.log1pf result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.693147))
@@ -5578,9 +5578,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log1pl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog1pl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog1pl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log1pl(1.0);
       console.info("math.log1pl result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(0.693147))
@@ -5593,9 +5593,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log2(4);
       console.info("math.log2 result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(2))
@@ -5608,9 +5608,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log2f(4);
       console.info("math.log2f result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(2))
@@ -5623,9 +5623,9 @@ export default function mathNdkTest() {
      * @tc.desc   test Log2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLog2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLog2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.log2l(4);
       console.info("math.log2l result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(2))
@@ -5638,9 +5638,9 @@ export default function mathNdkTest() {
      * @tc.desc   test LogB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLogB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLogB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.logB(8);
       console.info("math.logB result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(3))
@@ -5653,9 +5653,9 @@ export default function mathNdkTest() {
      * @tc.desc   test LogBf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLogBf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLogBf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.logBf(8);
       console.info("math.logBf result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(3))
@@ -5668,9 +5668,9 @@ export default function mathNdkTest() {
      * @tc.desc   test LogBl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLogBl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLogBl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.logBl(8);
       console.info("math.logBl result = " + result);
       expect(result.toFixed(0)).assertEqual(JSON.stringify(3))
@@ -5683,9 +5683,9 @@ export default function mathNdkTest() {
      * @tc.desc   test LogF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLogF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLogF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.logF(8);
       console.info("math.logF result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(2.079442))
@@ -5698,9 +5698,9 @@ export default function mathNdkTest() {
      * @tc.desc   test LogL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLogL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLogL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.logL(8);
       console.info("math.logL result = " + result);
       expect(result.toFixed(6)).assertEqual(JSON.stringify(2.079442))
@@ -5713,9 +5713,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sin(b);
@@ -5729,9 +5729,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sin(b);
       expect(a).assertNaN();
@@ -5744,9 +5744,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sin(b);
       expect(a).assertNaN();
@@ -5759,9 +5759,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sinf(b);
@@ -5775,9 +5775,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sinf(b);
       expect(a).assertNaN();
@@ -5790,9 +5790,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sinf(b);
       expect(a).assertNaN();
@@ -5805,9 +5805,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sinl(b);
@@ -5821,9 +5821,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sinl(b);
       expect(a).assertNaN();
@@ -5836,9 +5836,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sinl(b);
       expect(a).assertNaN();
@@ -5851,9 +5851,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0;
       let c = 0;
       let a: number = math.sinh(b);
@@ -5867,9 +5867,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sinh(b);
       expect(a).assertNaN();
@@ -5882,9 +5882,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c = 0;
       let a: number = math.sinh(c);
       let b = (a != null)
@@ -5898,9 +5898,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0;
       let c = 0
       let a: number = math.sinhf(b);
@@ -5914,9 +5914,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sinhf(b);
       expect(a).assertNaN();
@@ -5929,9 +5929,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 180;
       let a: number = math.sinhf(b);
       expect(a).assertEqual(100 / 0);
@@ -5944,9 +5944,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0;
       let c = 0
       let a: number = math.sinhl(b);
@@ -5960,9 +5960,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sinhl(b);
       expect(a).assertNaN();
@@ -5975,9 +5975,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSinhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSinhl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sinhl(b);
       expect(a).assertEqual(100 / 0);
@@ -5990,9 +5990,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 9;
       let c = 3
       let a: number = math.sqrt(b);
@@ -6006,9 +6006,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sqrt(b);
       expect(a).assertEqual(100 / 0);
@@ -6021,9 +6021,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sqrt(b);
       expect(a).assertNaN();
@@ -6036,9 +6036,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1;
       let a: number = math.sqrt(b);
       expect(a).assertNaN();
@@ -6051,9 +6051,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 25.00;
       let c = 5.0
       let a: number = math.sqrtf(b);
@@ -6067,9 +6067,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 100 / 0;
       let a: number = math.sqrtf(b);
       expect(a).assertEqual(100 / 0);
@@ -6082,9 +6082,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sqrtf(b);
       expect(a).assertNaN();
@@ -6097,9 +6097,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1;
       let a: number = math.sqrtf(b);
       expect(a).assertNaN();
@@ -6112,9 +6112,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 900;
       let c = 30
       let a: number = math.sqrtl(b);
@@ -6128,9 +6128,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = +100 / 0;
       let a: number = math.sqrtl(b);
       expect(a).assertEqual(+100 / 0);
@@ -6143,9 +6143,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sqrtl(b);
       expect(a).assertNaN();
@@ -6158,9 +6158,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sqrtl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSqrtl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSqrtl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = -1;
       let a: number = math.sqrtl(b);
       expect(a).assertNaN();
@@ -6173,9 +6173,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -30;
       let result: number = 0.87;
       let data: Number = math.cos(firstParam);
@@ -6189,9 +6189,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result: number = 1.00;
       let data: Number = math.cos(firstParam);
@@ -6205,9 +6205,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result: number = -1.00;
       let data: Number = math.cos(firstParam);
@@ -6221,9 +6221,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.cos(firstParam);
       expect(data).assertNaN();
@@ -6236,9 +6236,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCos008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCos008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.cos(firstParam);
       expect(data).assertNaN();
@@ -6251,9 +6251,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1;
       let result: number = 0.8427;
       let data: Number = math.erf(firstParam);
@@ -6267,9 +6267,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let result: number = 1;
       let data: Number = math.erf(firstParam);
@@ -6283,9 +6283,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result: number = -1;
       let data: Number = math.erf(firstParam);
@@ -6299,9 +6299,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = 2;
       let data: Number = math.copysign(firstParam, secondParam);
@@ -6315,9 +6315,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -2;
       let data: Number = math.copysign(firstParam, secondParam);
@@ -6331,9 +6331,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySign006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySign006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.copysign(firstParam, secondParam);
@@ -6347,9 +6347,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1;
       let result: number = 2.71828;
       let data: Number = math.exp(firstParam);
@@ -6363,9 +6363,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.19;
       let result: number = 3.28708;
       let data: Number = math.exp(firstParam);
@@ -6379,9 +6379,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.19;
       let result: number = 0.30422;
       let data: Number = math.exp(firstParam);
@@ -6395,9 +6395,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result: number = 0;
       let data: Number = math.exp(firstParam);
@@ -6411,9 +6411,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.exp(firstParam);
       expect(data).assertPosUnlimited();
@@ -6426,9 +6426,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -7.5;
       let data: Number = math.fabs(firstParam);
       expect(data).assertEqual(7.5);
@@ -6441,9 +6441,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.fabs(firstParam);
       expect(data).assertPosUnlimited();
@@ -6456,9 +6456,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -0;
       let data: Number = math.fabs(firstParam);
       expect(data).assertEqual(0);
@@ -6471,9 +6471,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdim
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDim004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDim004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 0;
       let data: Number = math.fdim(firstParam, secondParam);
@@ -6487,9 +6487,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdim
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDim005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDim005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fdim(firstParam, secondParam);
@@ -6503,9 +6503,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: Number = math.floor(firstParam);
       expect(data).assertEqual(firstParam);
@@ -6518,9 +6518,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.floor(firstParam);
       expect(data).assertNegUnlimited();
@@ -6533,9 +6533,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.floor(firstParam);
       expect(data).assertPosUnlimited();
@@ -6548,9 +6548,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -6565,9 +6565,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -6582,9 +6582,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -6599,9 +6599,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = -1.0 / 0.0;
@@ -6616,9 +6616,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFma007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFma007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = 1.0 / 0.0;
@@ -6633,9 +6633,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmax
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMax004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMax004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fmax(firstParam, secondParam);
@@ -6649,9 +6649,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmax
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMax005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMax005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fmax(firstParam, secondParam);
@@ -6665,9 +6665,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fmin(firstParam, secondParam);
@@ -6681,9 +6681,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fmin(firstParam, secondParam);
@@ -6697,9 +6697,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -3;
       let data: Number = math.fmod(firstParam, secondParam);
@@ -6713,9 +6713,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -3;
       let data: Number = math.fmod(firstParam, secondParam);
@@ -6729,9 +6729,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmod007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmod007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 12.19;
       let secondParam = -1.0 / 0.0;
       let result: number = 12.19;
@@ -6746,9 +6746,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 7.5;
       let data: Number = math.fabsf(firstParam);
       expect(data).assertEqual(7.5);
@@ -6761,9 +6761,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -0;
       let data: Number = math.fabsf(firstParam);
       expect(data).assertEqual(0);
@@ -6776,9 +6776,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.fabsf(firstParam);
       expect(data).assertPosUnlimited();
@@ -6791,9 +6791,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -60;
       let result: number = 1.60;
       let data: Number = math.cosh(firstParam);
@@ -6807,9 +6807,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result: number = 1.00;
       let data: Number = math.cosh(firstParam);
@@ -6823,9 +6823,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result: number = 11.59;
       let data: Number = math.cosh(firstParam);
@@ -6839,9 +6839,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.cosh(firstParam);
       expect(data).assertPosUnlimited();
@@ -6854,9 +6854,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.cosh(firstParam);
       expect(data).assertPosUnlimited();
@@ -6869,9 +6869,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result: boolean = false;
       let data: Number = math.exp2(firstParam);
@@ -6888,9 +6888,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result: boolean = false;
       let data: Number = math.exp2(firstParam);
@@ -6907,9 +6907,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result: boolean = false;
       let data: Number = math.expm1(firstParam);
@@ -6926,9 +6926,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result: boolean = false;
       let data: Number = math.expm1(firstParam);
@@ -6945,9 +6945,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.9;
       let result: boolean = false;
       let data: Number = math.expm1(firstParam);
@@ -6964,9 +6964,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.9;
       let result: boolean = false;
       let data: Number = math.expm1(firstParam);
@@ -6983,9 +6983,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 3.5;
       let data: Number = math.fmodf(firstParam, secondParam);
@@ -6999,9 +6999,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -4.7;
       let secondParam = -2.3;
       let result: number = -0.10;
@@ -7016,9 +7016,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -4.7;
       let secondParam = -9.5;
       let result: number = 0;
@@ -7047,9 +7047,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 4.7;
       let secondParam = -1.0 / 0.0;
       let result: number = 4.7;
@@ -7064,9 +7064,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 3.5;
       let data: Number = math.fmodl(firstParam, secondParam);
@@ -7080,9 +7080,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -4.7;
       let secondParam = -2.3;
       let result: number = -0.10;
@@ -7097,9 +7097,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -4.7;
       let secondParam = -9.5;
       let result: number = 0;
@@ -7128,9 +7128,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmodl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmodL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmodL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 4.7;
       let secondParam = -1.0 / 0.0;
       let result: number = 4.7;
@@ -7145,9 +7145,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fminf(firstParam, secondParam);
@@ -7161,9 +7161,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fminf(firstParam, secondParam);
@@ -7177,9 +7177,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fminl(firstParam, secondParam);
@@ -7193,9 +7193,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fminl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMinL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMinL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fminl(firstParam, secondParam);
@@ -7209,9 +7209,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fmaxf(firstParam, secondParam);
@@ -7225,9 +7225,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fmaxf(firstParam, secondParam);
@@ -7241,9 +7241,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 1.0 / 0.0;
       let data: Number = math.fmaxl(firstParam, secondParam);
@@ -7257,9 +7257,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaxl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFMaxL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFMaxL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fmaxl(firstParam, secondParam);
@@ -7273,9 +7273,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7290,9 +7290,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7307,9 +7307,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7324,9 +7324,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = -1.0 / 0.0;
@@ -7341,9 +7341,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmaf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = 1.0 / 0.0;
@@ -7358,9 +7358,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7375,9 +7375,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7392,9 +7392,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let secondParam = 2;
       let thirdParam = 2.5;
@@ -7409,9 +7409,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = -1.0 / 0.0;
@@ -7426,9 +7426,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fmal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFmaL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFmaL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2.5;
       let secondParam = 2;
       let thirdParam = 1.0 / 0.0;
@@ -7443,9 +7443,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result: number = 0;
       let data: Number = math.floorf(firstParam);
@@ -7459,9 +7459,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.floorf(firstParam);
       expect(data).assertNegUnlimited();
@@ -7474,9 +7474,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.floorf(firstParam);
       expect(data).assertPosUnlimited();
@@ -7489,9 +7489,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result: number = 0;
       let data: Number = math.floorl(firstParam);
@@ -7505,9 +7505,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.floorl(firstParam);
       expect(data).assertNegUnlimited();
@@ -7520,9 +7520,9 @@ export default function mathNdkTest() {
      * @tc.desc   test floorl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFloorL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFloorL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.floorl(firstParam);
       expect(data).assertPosUnlimited();
@@ -7535,9 +7535,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdimf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 0;
       let data: Number = math.fdimf(firstParam, secondParam);
@@ -7551,9 +7551,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdimf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fdimf(firstParam, secondParam);
@@ -7567,9 +7567,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdiml
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let secondParam = 0;
       let data: Number = math.fdiml(firstParam, secondParam);
@@ -7583,9 +7583,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fdiml
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFDimL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFDimL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -1.0 / 0.0;
       let data: Number = math.fdiml(firstParam, secondParam);
@@ -7599,9 +7599,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -7.5;
       let data: Number = math.fabsl(firstParam);
       expect(data).assertEqual(7.5);
@@ -7614,9 +7614,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -0;
       let data: Number = math.fabsl(firstParam);
       expect(data).assertEqual(0);
@@ -7629,9 +7629,9 @@ export default function mathNdkTest() {
      * @tc.desc   test fabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFAbsL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFAbsL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.fabsl(firstParam);
       expect(data).assertPosUnlimited();
@@ -7644,9 +7644,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceil
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeil003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeil003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: Number = math.ceil(firstParam);
       expect(data).assertEqual(0);
@@ -7659,9 +7659,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceil
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeil004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeil004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.ceil(firstParam);
       expect(data).assertPosUnlimited();
@@ -7674,9 +7674,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceil
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeil005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeil005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.ceil(firstParam);
       expect(data).assertNegUnlimited();
@@ -7689,9 +7689,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceilf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: Number = math.ceilf(firstParam);
       expect(data).assertEqual(0);
@@ -7704,9 +7704,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceilf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.ceilf(firstParam);
       expect(data).assertPosUnlimited();
@@ -7719,9 +7719,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceilf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.ceilf(firstParam);
       expect(data).assertNegUnlimited();
@@ -7734,9 +7734,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: Number = math.ceill(firstParam);
       expect(data).assertEqual(0);
@@ -7749,9 +7749,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: Number = math.ceill(firstParam);
       expect(data).assertPosUnlimited();
@@ -7764,9 +7764,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ceill
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCeilL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCeilL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: Number = math.ceill(firstParam);
       expect(data).assertNegUnlimited();
@@ -7779,9 +7779,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result: boolean = false;
       let data: Number = math.expm1f(firstParam);
@@ -7798,9 +7798,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result: boolean = false;
       let data: Number = math.expm1f(firstParam);
@@ -7817,9 +7817,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.9;
       let result: boolean = false;
       let data: Number = math.expm1f(firstParam);
@@ -7836,9 +7836,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1f007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1f007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.9;
       let result: boolean = false;
       let data: Number = math.expm1f(firstParam);
@@ -7855,9 +7855,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let Param1 = -1;
       let result: number = math.aTan2L(Param0, Param1);
@@ -7871,9 +7871,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let Param1 = 0;
@@ -7888,9 +7888,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 4).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -7905,9 +7905,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI * 3 / 4).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -7922,9 +7922,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 4).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 1.0 / 0.0;
@@ -7939,9 +7939,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-3 * Math.PI / 4).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = -1.0 / 0.0;
@@ -7956,9 +7956,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 2;
@@ -7973,9 +7973,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = 2;
@@ -7990,9 +7990,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 2;
       let Param1 = -1.0 / 0.0;
@@ -8007,9 +8007,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
       let Param0 = -2;
       let Param1 = -1.0 / 0.0;
@@ -8024,9 +8024,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2L
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2L015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2L015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 2;
       let Param1 = 1.0 / 0.0;
@@ -8041,9 +8041,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 2;
@@ -8058,9 +8058,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = 2;
@@ -8075,9 +8075,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 2;
       let Param1 = -1.0 / 0.0;
@@ -8092,9 +8092,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
       let Param0 = -2;
       let Param1 = -1.0 / 0.0;
@@ -8109,9 +8109,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2F
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2F015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2F015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 2;
       let Param1 = 1.0 / 0.0;
@@ -8126,9 +8126,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI / 2).toFixed(2);
       let Param0 = -1.0 / 0.0;
       let Param1 = 2;
@@ -8143,9 +8143,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI / 2).toFixed(2);
       let Param0 = 1.0 / 0.0;
       let Param1 = 2;
@@ -8160,9 +8160,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (Math.PI).toFixed(2);
       let Param0 = 2;
       let Param1 = -1.0 / 0.0;
@@ -8177,9 +8177,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = (-Math.PI).toFixed(2);
       let Param0 = -2;
       let Param1 = -1.0 / 0.0;
@@ -8194,9 +8194,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATan2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATan2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATan2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 2;
       let Param1 = 1.0 / 0.0;
@@ -8211,9 +8211,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1;
       let result: number = math.aTanH(Param0);
       expect(result).assertPosUnlimited();
@@ -8226,9 +8226,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanH002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.aTanH(Param0);
@@ -8242,9 +8242,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanH003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 3;
       let result: number = math.aTanH(Param0);
       expect(result).assertNaN();
@@ -8257,9 +8257,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanH004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1;
       let result: number = math.aTanH(Param0);
       expect(result).assertNegUnlimited();
@@ -8272,9 +8272,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanH005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
       let Param0 = 1 / 2;
       let result: string = Number(math.aTanH(Param0)).toFixed(2);
@@ -8288,9 +8288,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1;
       let result: number = math.aTanHF(Param0);
       expect(result).assertPosUnlimited();
@@ -8303,9 +8303,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.aTanHF(Param0);
@@ -8319,9 +8319,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 3;
       let result: number = math.aTanHF(Param0);
       expect(result).assertNaN();
@@ -8334,9 +8334,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1;
       let result: number = math.aTanHF(Param0);
       expect(result).assertNegUnlimited();
@@ -8349,9 +8349,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
       let Param0 = 1 / 2;
       let result: string = Number(math.aTanHF(Param0)).toFixed(2);
@@ -8365,9 +8365,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1;
       let result: number = math.aTanHL(Param0);
       expect(result).assertPosUnlimited();
@@ -8380,9 +8380,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.aTanHL(Param0);
@@ -8396,9 +8396,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 3;
       let result: number = math.aTanHL(Param0);
       expect(result).assertNaN();
@@ -8411,9 +8411,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1;
       let result: number = math.aTanHL(Param0);
       expect(result).assertNegUnlimited();
@@ -8426,9 +8426,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ATanHL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathATanHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathATanHL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(0.55).toFixed(2);
       let Param0 = 1 / 2;
       let result: string = Number(math.aTanHL(Param0)).toFixed(2);
@@ -8441,9 +8441,9 @@ export default function mathNdkTest() {
      * @tc.desc   test modF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathMODF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathMODF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.59;
       let result: number = math.modF(Param0);
       expect(result).assertEqual(1);
@@ -8455,9 +8455,9 @@ export default function mathNdkTest() {
      * @tc.desc   test modFf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathModFf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathModFf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.59;
       let result: number = math.modFf(Param0);
       expect(result).assertEqual(1);
@@ -8469,9 +8469,9 @@ export default function mathNdkTest() {
      * @tc.desc   test modFl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathMODFl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathMODFl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.59;
       let result: number = math.modFl(Param0);
       expect(result).assertEqual(1);
@@ -8483,9 +8483,9 @@ export default function mathNdkTest() {
      * @tc.desc   test mrand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathMRand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathMRand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.mRand48();
       expect(result).assertEqual(0);
       done()
@@ -8497,9 +8497,9 @@ export default function mathNdkTest() {
      * @tc.desc   test pow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2;
       let b = 3;
       let data: Number = math.pow(a, b);
@@ -8514,9 +8514,9 @@ export default function mathNdkTest() {
      * @tc.desc   test pow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPow002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPow002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       let a: number = 0.5, b = 0.3;
       let data: Number = math.pow(a, b);
@@ -8531,9 +8531,9 @@ export default function mathNdkTest() {
      * @tc.desc   test pow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPow003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPow003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0, b = 0;
       let data: Number = math.pow(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8547,9 +8547,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -1, b = -2;
       let data: Number = math.powf(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8563,9 +8563,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       let a: number = 4, b = 2;
       let data: Number = math.powf(a, b);
@@ -8580,9 +8580,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       let a: number = 2.12, b = 3.24;
       let data: Number = math.powf(a, b);
@@ -8597,9 +8597,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       let a: number = 2.12, b = 3.24;
       let data: Number = math.powl(a, b);
@@ -8614,9 +8614,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       let a: number = 0, b = 0;
       let data: Number = math.powl(a, b);
@@ -8631,9 +8631,9 @@ export default function mathNdkTest() {
      * @tc.desc   test powl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathPowl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathPowl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2, b = 3;
       let data: Number = math.powl(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8647,9 +8647,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = 1;
       let data: Number = math.nextafter(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8663,9 +8663,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
       let data: Number = math.nextafter(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8679,9 +8679,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
       let data: Number = math.nextafter(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8695,9 +8695,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = 1;
       let data: Number = math.nextafterf(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8711,9 +8711,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
       let data: Number = math.nextafterf(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8727,9 +8727,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
       let data: Number = math.nextafterf(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8743,9 +8743,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = 1;
       let data: Number = math.nextafterl(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8759,9 +8759,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1, b = Math.sqrt(-1);
       let data: Number = math.nextafterl(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8775,9 +8775,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nextafterl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNextafterl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNextafterl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0.0, b = 0.1;
       let data: Number = math.nextafterl(a, b);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8791,9 +8791,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.2;
       let data: Number = math.nearbyint(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8807,9 +8807,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.6;
       let data: Number = math.nearbyint(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8823,9 +8823,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.2;
       let data: Number = math.nearbyint(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8839,9 +8839,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyint004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyint004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.6;
       let data: Number = math.nearbyint(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8855,9 +8855,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyint005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyint005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let data: Number = math.nearbyint(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8871,9 +8871,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.26;
       let data: Number = math.nearbyintf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8887,9 +8887,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.66;
       let data: Number = math.nearbyintf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8903,9 +8903,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.29;
       let data: Number = math.nearbyintf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8919,9 +8919,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.62;
       let data: Number = math.nearbyintf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8935,9 +8935,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let data: Number = math.nearbyintf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8951,9 +8951,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.26;
       let data: Number = math.nearbyintl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8967,9 +8967,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 2.66;
       let data: Number = math.nearbyintl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8983,9 +8983,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.29;
       let data: Number = math.nearbyintl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -8999,9 +8999,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = -2.62;
       let data: Number = math.nearbyintl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9015,9 +9015,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nearbyintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNearbyintl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNearbyintl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = Math.sqrt(-1);
       let data: Number = math.nearbyintl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9031,9 +9031,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "adc";
       let data: number = math.nan(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9047,9 +9047,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "123";
       let data: Number = math.nan(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9063,9 +9063,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "abc123";
       let data: Number = math.nan(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9079,9 +9079,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "123";
       let data: Number = math.nanf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9095,9 +9095,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "abc";
       let data: number = math.nanf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9111,9 +9111,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "abc123";
       let data: number = math.nanf(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9127,9 +9127,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "abc";
       let data: number = math.nanl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9143,9 +9143,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "123";
       let data: Number = math.nanl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9159,9 +9159,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNanl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: string = "abc123";
       let data: Number = math.nanl(a);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -9175,9 +9175,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttoward
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttoward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttoward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = 1;
       let data: Number = math.nextToward(a, b);
@@ -9192,9 +9192,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttoward
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttoward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttoward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = Math.sqrt(-1);
       let data: Number = math.nextToward(a, b);
@@ -9209,9 +9209,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttoward
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttoward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttoward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0.1;
       let data: Number = math.nextToward(a, b);
@@ -9226,9 +9226,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = 1;
       let data: Number = math.nextTowardF(a, b);
@@ -9243,9 +9243,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = Math.sqrt(-1);
       let data: Number = math.nextTowardF(a, b);
@@ -9260,9 +9260,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0.1;
       let data: Number = math.nextTowardF(a, b);
@@ -9277,9 +9277,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = 1;
       let data: Number = math.nextTowardL(a, b);
@@ -9294,9 +9294,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 1;
       let b = Math.sqrt(-1);
       let data: Number = math.nextTowardL(a, b);
@@ -9311,9 +9311,9 @@ export default function mathNdkTest() {
      * @tc.desc   test nexttowarl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathNexttowardL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathNexttowardL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = 0;
       let b = 0.1;
       let data: Number = math.nextTowardL(a, b);
@@ -9329,9 +9329,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 3.7;
       let result: number = math.lRint(param);
       console.info("Test lRint result = " + JSON.stringify(result));
@@ -9345,9 +9345,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -1.1;
       let result: number = math.lRint(param);
       console.info("Test lRint result = " + JSON.stringify(result));
@@ -9361,9 +9361,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRint003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0.3;
       let result: number = math.lRint(param);
       console.info("Test lRint result = " + JSON.stringify(result));
@@ -9377,9 +9377,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.8;
       let result: number = math.lRintf(param);
       console.info("Test lRintf result = " + JSON.stringify(result));
@@ -9393,9 +9393,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -5.1;
       let result: number = math.lRintf(param);
       console.info("Test lRintF result = " + JSON.stringify(result));
@@ -9409,9 +9409,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0.6;
       let result: number = math.lRintf(param);
       console.info("Test lRintf result = " + JSON.stringify(result));
@@ -9425,9 +9425,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 5.1;
       let result: number = math.lRintl(param);
       console.info("Test lRintl result = " + JSON.stringify(result));
@@ -9441,9 +9441,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -0.6;
       let result: number = math.lRintl(param);
       console.info("Test lRintl result = " + JSON.stringify(result));
@@ -9457,9 +9457,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRintl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRintl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = (4.6);
       let result: number = math.lRintl(param);
       console.info("Test lRintl result = " + JSON.stringify(result));
@@ -9474,9 +9474,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 5.1;
       let result: number = math.lRound(param);
       expect(result).assertEqual(5);
@@ -9489,9 +9489,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRound
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -1.1;
       let result: number = math.lRound(param);
       console.info("Test lRound result = " + JSON.stringify(result));
@@ -9505,9 +9505,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRound
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.lRound(param);
       console.info("Test lRound result = " + JSON.stringify(result));
@@ -9521,9 +9521,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.lRoundf(param);
       console.info("Test lRoundf result = " + JSON.stringify(result));
@@ -9537,9 +9537,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -11.1;
       let result: number = math.lRoundf(param);
       console.info("Test lRoundf result = " + JSON.stringify(result));
@@ -9553,9 +9553,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.5;
       let result: number = math.lRoundf(param);
       console.info("Test lRoundf result = " + JSON.stringify(result));
@@ -9569,9 +9569,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.87;
       let result: number = math.lRoundl(param);
       console.info("Test lRoundl result = " + JSON.stringify(result));
@@ -9585,9 +9585,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -1.1;
       let result: number = math.lRoundl(param);
       console.info("Test lRoundl result = " + JSON.stringify(result));
@@ -9601,9 +9601,9 @@ export default function mathNdkTest() {
      * @tc.desc   test lRoundl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathLRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathLRoundl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 11.2;
       let result: number = math.lRoundl(param);
       console.info("Test lRoundL result = " + JSON.stringify(result));
@@ -9617,9 +9617,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 16.81;
       let result: number = math.ilogb(param);
       expect(result).assertEqual(4);
@@ -9631,9 +9631,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0.19;
       let result: number = math.ilogb(param);
       console.info("Test ILogb result = " + JSON.stringify(result));
@@ -9647,9 +9647,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 8.00;
       let result: number = math.ilogbf(param);
       console.info("Test ILogb result = " + JSON.stringify(result));
@@ -9663,9 +9663,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0.19;
       let result: number = math.ilogbf(param);
       console.info("Test ILogb result = " + JSON.stringify(result));
@@ -9679,9 +9679,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogbl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogbl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogbl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 17.0;
       let result: number = math.ilogbl(param);
       console.info("Test ILogb result = " + JSON.stringify(result));
@@ -9695,9 +9695,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ilogbl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathILogbl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathILogbl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0.19;
       let result: number = math.ilogbl(param);
       console.info("Test ILogb result = " + JSON.stringify(result));
@@ -9712,9 +9712,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypot
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathHYpot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathHYpot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 3;
       let y = 4;
       let result: number = math.hypot(x, y);
@@ -9728,9 +9728,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypot
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathHYpot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathHYpot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 9;
       let y = 12;
       let result: number = math.hypot(x, y);
@@ -9745,9 +9745,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypotf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathhypotf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathhypotf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 6;
       let y = 8;
       let result: number = math.hypotf(x, y);
@@ -9761,9 +9761,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypotf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathhypotf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathhypotf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 8;
       let y = 15;
       let result: number = math.hypotf(x, y);
@@ -9776,9 +9776,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypotl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathHYpotl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathHYpotl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 7;
       let y = 24;
       let result: number = math.hypotl(x, y);
@@ -9792,9 +9792,9 @@ export default function mathNdkTest() {
      * @tc.desc   test hypotl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathHYpotl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathHYpotl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 65;
       let y = 72;
       let result: number = math.hypotl(x, y);
@@ -9807,9 +9807,9 @@ export default function mathNdkTest() {
      * @tc.desc   test signgam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignGam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignGam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let x = 0.5;
       let result: number = math.signGam(x);
       expect(result).assertEqual(1);
@@ -9823,9 +9823,9 @@ export default function mathNdkTest() {
      * @tc.desc   test yn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathYn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathYn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.yn();
       expect(result).assertEqual(0);
       done()
@@ -9837,9 +9837,9 @@ export default function mathNdkTest() {
      * @tc.desc   test ynf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathYnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathYnf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.ynf();
       expect(result).assertEqual(0);
       done()
@@ -9850,9 +9850,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sincosl(b, 1);
@@ -9865,9 +9865,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincosl(b, 1);
       expect(a).assertNaN();
@@ -9879,9 +9879,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = -0.45
       let a: number = math.sincosl(b, 2);
@@ -9894,9 +9894,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincosl(b, 2);
       expect(a).assertNaN();
@@ -9908,9 +9908,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sincos(b, 1);
@@ -9923,9 +9923,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincos(b, 1);
       expect(a).assertNaN();
@@ -9937,9 +9937,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = -0.45
       let a: number = math.sincos(b, 2);
@@ -9952,9 +9952,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincos(b, 2);
       expect(a).assertNaN();
@@ -9967,9 +9967,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = 0.89
       let a: number = math.sincosf(b, 1);
@@ -9982,9 +9982,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincosf(b, 1);
       expect(a).assertNaN();
@@ -9996,9 +9996,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 90;
       let c = -0.45
       let a: number = math.sincosf(b, 2);
@@ -10011,9 +10011,9 @@ export default function mathNdkTest() {
      * @tc.desc   test sincosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSincosf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSincosf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = Math.sqrt(-1);
       let a: number = math.sincosf(b, 2);
       expect(a).assertNaN();
@@ -10026,9 +10026,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0.0
       let a: number = math.significand(b);
       expect(a).assertEqual(0.0);
@@ -10041,9 +10041,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1 / 0
       let a: number = math.significand(b);
       expect(a).assertEqual(1 / 0);
@@ -10056,9 +10056,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 12.25
       let a: number = math.significand(b);
       expect(a).assertEqual(1.53125);
@@ -10071,9 +10071,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significandf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificandf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificandf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0.0
       let a: number = math.significandf(b);
       expect(a).assertEqual(0.0);
@@ -10086,9 +10086,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significandf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificandf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificandf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1 / 0
       let a: number = math.significandf(b);
       expect(a).assertEqual(1 / 0);
@@ -10101,9 +10101,9 @@ export default function mathNdkTest() {
      * @tc.desc   test significandf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignificandf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignificandf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 12.25
       let a: number = math.significandf(b);
       expect(a).assertEqual(1.53125);
@@ -10116,9 +10116,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let param2 = 1;
       let result: number = math.scalb(param, param2);
@@ -10133,9 +10133,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalb002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let param2 = 0;
       let result: number = math.scalb(param, param2);
@@ -10150,9 +10150,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalb003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalb003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / -0;
       let param2 = 0;
       let result: number = math.scalb(param, param2);
@@ -10167,9 +10167,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let param2 = 1;
       let result: number = math.scalbf(param, param2);
@@ -10184,9 +10184,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let param2 = 0;
       let result: number = math.scalbf(param, param2);
@@ -10201,9 +10201,9 @@ export default function mathNdkTest() {
      * @tc.desc   test scalbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathScalbf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathScalbf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / -0;
       let param2 = 0;
       let result: number = math.scalbf(param, param2);
@@ -10218,9 +10218,9 @@ export default function mathNdkTest() {
      * @tc.desc   test trunc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTrunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTrunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let result: number = math.trunc(param);
       console.info("Test trunc result = " + JSON.stringify(result));
@@ -10234,9 +10234,9 @@ export default function mathNdkTest() {
      * @tc.desc   test trunc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTrunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTrunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 10.25;
       let result: number = math.trunc(param);
       console.info("Test trunc result = " + JSON.stringify(result));
@@ -10250,9 +10250,9 @@ export default function mathNdkTest() {
      * @tc.desc   test trunc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTrunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTrunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let result: number = math.trunc(param);
       console.info("Test trunc result = " + JSON.stringify(result));
@@ -10266,9 +10266,9 @@ export default function mathNdkTest() {
      * @tc.desc   test trunc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTrunc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTrunc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.trunc(param);
       console.info("Test trunc result = " + JSON.stringify(result));
@@ -10282,9 +10282,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let result: number = math.truncf(param);
       console.info("Test truncf result = " + JSON.stringify(result));
@@ -10298,9 +10298,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 10.25;
       let result: number = math.truncf(param);
       console.info("Test truncf result = " + JSON.stringify(result));
@@ -10314,9 +10314,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let result: number = math.truncf(param);
       console.info("Test trunc result = " + JSON.stringify(result));
@@ -10330,9 +10330,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.truncf(param);
       console.info("Test truncf result = " + JSON.stringify(result));
@@ -10346,9 +10346,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 12;
       let result: number = math.truncl(param);
       console.info("Test truncl result = " + JSON.stringify(result));
@@ -10362,9 +10362,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 10.25;
       let result: number = math.truncl(param);
       console.info("Test truncl result = " + JSON.stringify(result));
@@ -10378,9 +10378,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 200 / 0;
       let result: number = math.truncl(param);
       console.info("Test truncl result = " + JSON.stringify(result));
@@ -10394,9 +10394,9 @@ export default function mathNdkTest() {
      * @tc.desc   test truncl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathTruncl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathTruncl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.truncl(param);
       console.info("Test truncfl result = " + JSON.stringify(result));
@@ -10410,9 +10410,9 @@ export default function mathNdkTest() {
      * @tc.desc   test y0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathY0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathY0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.y0(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -10426,9 +10426,9 @@ export default function mathNdkTest() {
      * @tc.desc   test y0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathY0f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathY0f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.y0f(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -10442,9 +10442,9 @@ export default function mathNdkTest() {
      * @tc.desc   test y1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathY1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathY1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.y1(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -10458,9 +10458,9 @@ export default function mathNdkTest() {
      * @tc.desc   test y1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathY1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathY1f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = Math.sqrt(-1);
       let result: number = math.y1f(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -10474,9 +10474,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
       let Param0 = -1;
       let result: string = Number(math.cbrt(Param0)).toFixed(2);
@@ -10490,9 +10490,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.cbrt(Param0);
@@ -10506,9 +10506,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
       let Param0 = 1;
       let result: string = Number(math.cbrt(Param0)).toFixed(2);
@@ -10521,9 +10521,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.cbrt(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10535,9 +10535,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.cbrt(Param0);
       expect(result).assertPosUnlimited();
@@ -10550,9 +10550,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.cbrt(Param0);
       expect(result).assertNegUnlimited();
@@ -10565,9 +10565,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
       let Param0 = -1;
       let result: string = Number(math.cbrtf(Param0)).toFixed(2);
@@ -10581,9 +10581,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.cbrtf(Param0);
@@ -10597,9 +10597,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
       let Param0 = 1;
       let result: string = Number(math.cbrtf(Param0)).toFixed(2);
@@ -10612,9 +10612,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.cbrtf(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10626,9 +10626,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.cbrtf(Param0);
       expect(result).assertPosUnlimited();
@@ -10641,9 +10641,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.cbrtf(Param0);
       expect(result).assertNegUnlimited();
@@ -10656,9 +10656,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(-1.00).toFixed(2);
       let Param0 = -1;
       let result: string = Number(math.cbrtl(Param0)).toFixed(2);
@@ -10672,9 +10672,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param0 = 0;
       let result: number = math.cbrtl(Param0);
@@ -10688,9 +10688,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: string = Number(1.00).toFixed(2);
       let Param0 = 1;
       let result: string = Number(math.cbrtl(Param0)).toFixed(2);
@@ -10703,9 +10703,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.cbrtl(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10717,9 +10717,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.cbrtl(Param0);
       expect(result).assertPosUnlimited();
@@ -10732,9 +10732,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cbrtL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCbrtL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCbrtL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.cbrtl(Param0);
       expect(result).assertNegUnlimited();
@@ -10747,9 +10747,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.5;
       let Param0 = -1;
       let result: number = math.frexp(Param0);
@@ -10763,9 +10763,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let result: number = math.frexp(Param0);
       expect(result).assertNaN();
@@ -10778,9 +10778,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0.5;
       let Param0 = 1;
       let result: number = math.frexp(Param0);
@@ -10794,9 +10794,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.frexp(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10808,9 +10808,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.frexp(Param0);
       expect(result).assertPosUnlimited();
@@ -10823,9 +10823,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.frexp(Param0);
       expect(result).assertNegUnlimited();
@@ -10838,9 +10838,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.5;
       let Param0 = -1;
       let result: number = math.frexpl(Param0);
@@ -10854,9 +10854,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let result: number = math.frexpl(Param0);
       expect(result).assertNaN();
@@ -10869,9 +10869,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0.5;
       let Param0 = 1;
       let result: number = math.frexpl(Param0);
@@ -10885,9 +10885,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.frexpl(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10899,9 +10899,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.frexpl(Param0);
       expect(result).assertPosUnlimited();
@@ -10914,9 +10914,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.frexpl(Param0);
       expect(result).assertNegUnlimited();
@@ -10929,9 +10929,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = -0.5;
       let Param0 = -1;
       let result: number = math.frexpf(Param0);
@@ -10945,9 +10945,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = Math.sqrt(-1);
       let result: number = math.frexpf(Param0);
       expect(result).assertNaN();
@@ -10960,9 +10960,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0.5;
       let Param0 = 1;
       let result: number = math.frexpf(Param0);
@@ -10976,9 +10976,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = math.frexpf(Math.sqrt(-1));
       expect(result).assertNaN();
       done()
@@ -10990,9 +10990,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = 1.0 / 0.0;
       let result: number = math.frexpf(Param0);
       expect(result).assertPosUnlimited();
@@ -11005,9 +11005,9 @@ export default function mathNdkTest() {
      * @tc.desc   test frexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFrexpf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFrexpf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let Param0 = -1.0 / 0.0;
       let result: number = math.frexpf(Param0);
       expect(result).assertNegUnlimited();
@@ -11020,9 +11020,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __fpclassifyl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFpclassifyl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFpclassifyl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 2;
       let Param = 0;
       let result: number = math.fpclassifyl(Param);
@@ -11036,9 +11036,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __fpclassifyf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFpclassifyf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFpclassifyf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 2;
       let Param = 0;
       let result: number = math.fpclassifyf(Param);
@@ -11052,9 +11052,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __fpclassify
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathFpclassify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathFpclassify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 2;
       let Param = 0;
       let result: number = math.fpclassify(Param);
@@ -11068,9 +11068,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __signbit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignbit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignbit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.signbit(Param);
@@ -11084,9 +11084,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __signbitf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignbitf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignbitf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.signbitf(Param);
@@ -11100,9 +11100,9 @@ export default function mathNdkTest() {
      * @tc.desc   test __signbitl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathSignbitl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathSignbitl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue: number = 0;
       let Param = 1;
       let result: number = math.signbitl(Param);
@@ -11116,9 +11116,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.9;
       let result = false;
       let data: number = math.expm1l(firstParam);
@@ -11135,9 +11135,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 4;
       let result = false;
       let data:number = math.expm1l(firstParam);
@@ -11154,9 +11154,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.expm1l(firstParam);
       expect(data).assertPosUnlimited();
@@ -11169,9 +11169,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1;
       let result = false;
       let data:number = math.expm1l(firstParam);
@@ -11188,9 +11188,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result = false;
       let data:number = math.expm1l(firstParam);
@@ -11207,9 +11207,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let result = false;
       let data:number = math.expm1l(firstParam);
@@ -11226,9 +11226,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1;
       let result = 0.367879;
       let data:number = math.expl(firstParam);
@@ -11242,9 +11242,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let data:number = math.expl(firstParam);
       expect(data).assertEqual(1);
@@ -11257,9 +11257,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1;
       let result: number = 2.718;
       let data:number = math.expl(firstParam);
@@ -11273,9 +11273,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1.19;
       let result: number = 3.287;
       let data:number = math.expl(firstParam);
@@ -11289,9 +11289,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1.19;
       let result: number = 0.304;
       let data:number = math.expl(firstParam);
@@ -11305,9 +11305,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data:number = math.expl(firstParam);
       expect(data).assertEqual(0);
@@ -11320,9 +11320,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.expl(firstParam);
       expect(data).assertPosUnlimited();
@@ -11335,9 +11335,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1;
       let result: number = 0.367879;
       let data:number = math.expf(firstParam);
@@ -11351,9 +11351,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let data:number = math.expf(firstParam);
       expect(data).assertEqual(1);
@@ -11366,9 +11366,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1;
       let result: number = 2.718;
       let data:number = math.expf(firstParam);
@@ -11382,9 +11382,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1.19;
       let result: number = 3.287;
       let data:number = math.expf(firstParam);
@@ -11398,9 +11398,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1.19;
       let result: number = 0.304;
       let data:number = math.expf(firstParam);
@@ -11414,9 +11414,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data:number = math.expf(firstParam);
       expect(data).assertEqual(0);
@@ -11429,9 +11429,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.expf(firstParam);
       expect(data).assertPosUnlimited();
@@ -11444,9 +11444,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2l001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1;
       let result = false;
       let data:number = math.exp2l(firstParam);
@@ -11463,9 +11463,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2l002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.exp2l(firstParam);
       expect(data).assertPosUnlimited();
@@ -11478,9 +11478,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2l003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 4.7;
       let result = false;
       let data:number = math.exp2l(firstParam);
@@ -11497,9 +11497,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2l004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let result = false;
       let data:number = math.exp2l(firstParam);
@@ -11516,9 +11516,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2l005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result = false;
       let data:number = math.exp2l(firstParam);
@@ -11535,9 +11535,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2f001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1;
       let result = false;
       let data:number = math.exp2f(firstParam);
@@ -11554,9 +11554,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2f002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.exp2f(firstParam);
       expect(data).assertPosUnlimited();
@@ -11569,9 +11569,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2f003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 4.7;
       let result = false;
       let data:number = math.exp2f(firstParam);
@@ -11588,9 +11588,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2f004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let result = false;
       let data:number = math.exp2f(firstParam);
@@ -11607,9 +11607,9 @@ export default function mathNdkTest() {
      * @tc.desc   test exp2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExp2f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExp2f005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let result = false;
       let data:number = math.exp2f(firstParam);
@@ -11626,9 +11626,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erff
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1;
       let data:number = math.erff(firstParam);
       let result = false;
@@ -11645,9 +11645,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1;
       let data:number = math.erfl(firstParam);
       let result = false;
@@ -11664,9 +11664,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data:number = math.erfcl(firstParam);
       let result = 2;
@@ -11680,9 +11680,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data:number = math.erfcl(firstParam);
       let result = 0;
@@ -11696,9 +11696,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 1.0;
       let data:number = math.erfcl(firstParam);
       let result = 0.16;
@@ -11712,9 +11712,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = 0;
       let data:number = math.erfcl(firstParam);
       expect(data).assertEqual(1);
@@ -11727,9 +11727,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam: number = -1.9;
       let result: number = 1.992;
       let data:number = math.erfcl(firstParam);
@@ -11743,9 +11743,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data:number = math.erfcf(firstParam);
       let result = 2;
@@ -11759,9 +11759,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let result = 0;
       let data:number = math.erfcf(firstParam);
@@ -11775,9 +11775,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = -2;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11791,9 +11791,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -11;
       let secondParam = -2;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11807,9 +11807,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -11;
       let secondParam = 2;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11823,9 +11823,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = 2;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11839,9 +11839,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -2;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11855,9 +11855,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = -1.0 / 0.0;
       let data: number = math.copysignf(firstParam, secondParam);
@@ -11871,9 +11871,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = -2;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11887,9 +11887,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -11;
       let secondParam = -2;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11903,9 +11903,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -11;
       let secondParam = 2;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11919,9 +11919,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = 2;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11935,9 +11935,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let secondParam = -2;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11951,9 +11951,9 @@ export default function mathNdkTest() {
      * @tc.desc   test copysignl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCopySignL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCopySignL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 11;
       let secondParam = -1.0 / 0.0;
       let data: number = math.copysignl(firstParam, secondParam);
@@ -11967,9 +11967,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 60;
       let result = 0.50;
       let data: number = math.cosf(firstParam);
@@ -11983,9 +11983,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result = 1.00;
       let data: number = math.cosf(firstParam);
@@ -11999,9 +11999,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 90;
       let result = "-0.00";
       let data: number = math.cosf(firstParam);
@@ -12015,9 +12015,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -30;
       let result = 0.87;
       let data: number = math.cosf(firstParam);
@@ -12031,9 +12031,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result = 1.00;
       let data: number = math.cosf(firstParam);
@@ -12047,9 +12047,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result = -1.00;
       let data: number = math.cosf(firstParam);
@@ -12063,9 +12063,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: number = math.cosf(firstParam);
       expect(data).assertNaN();
@@ -12078,9 +12078,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: number = math.cosf(firstParam);
       expect(data).assertNaN();
@@ -12093,9 +12093,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 60;
       let result = 0.50;
       let data: number = math.cosl(firstParam);
@@ -12109,9 +12109,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result = 1.00;
       let data: number = math.cosl(firstParam);
@@ -12125,9 +12125,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 90;
       let result = 0.00;
       let data: number = math.cosl(firstParam);
@@ -12141,9 +12141,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -30;
       let result = 0.87;
       let data: number = math.cosl(firstParam);
@@ -12157,9 +12157,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result = 1.00;
       let data: number = math.cosl(firstParam);
@@ -12173,9 +12173,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result = -1.00;
       let data: number = math.cosl(firstParam);
@@ -12189,9 +12189,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: number = math.cosl(firstParam);
       expect(data).assertNaN();
@@ -12204,9 +12204,9 @@ export default function mathNdkTest() {
      * @tc.desc   test cosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCosL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCosL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: number = math.cosl(firstParam);
       expect(data).assertNaN();
@@ -12219,9 +12219,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 90;
       let result = 2.50918;
       let data: number = math.coshf(firstParam);
@@ -12235,9 +12235,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result = 1;
       let data: number = math.coshf(firstParam);
@@ -12251,9 +12251,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -30;
       let result = 1.14023;
       let data: number = math.coshf(firstParam);
@@ -12267,9 +12267,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -60;
       let result = 1.60;
       let data: number = math.coshf(firstParam);
@@ -12283,9 +12283,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result = 1.00;
       let data: number = math.coshf(firstParam);
@@ -12299,9 +12299,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result = 11.59;
       let data: number = math.coshf(firstParam);
@@ -12315,9 +12315,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: number = math.coshf(firstParam);
       expect(data).assertPosUnlimited();
@@ -12330,9 +12330,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshF008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: number = math.coshf(firstParam);
       expect(data).assertPosUnlimited();
@@ -12345,9 +12345,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 90;
       let result = 2.50918;
       let data: number = math.coshl(firstParam);
@@ -12361,9 +12361,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let result = 1;
       let data: number = math.coshl(firstParam);
@@ -12377,9 +12377,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -30;
       let result = 1.14023;
       let data: number = math.coshl(firstParam);
@@ -12393,9 +12393,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -60;
       let result = 1.60;
       let data: number = math.coshl(firstParam);
@@ -12409,9 +12409,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0.99;
       let result = 1.00;
       let data: number = math.coshl(firstParam);
@@ -12425,9 +12425,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 179.99;
       let result = 11.59;
       let data: number = math.coshl(firstParam);
@@ -12441,9 +12441,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: number = math.coshl(firstParam);
       expect(data).assertPosUnlimited();
@@ -12456,9 +12456,9 @@ export default function mathNdkTest() {
      * @tc.desc   test coshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathCoshL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathCoshL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: number = math.coshl(firstParam);
       expect(data).assertPosUnlimited();
@@ -12471,9 +12471,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.0 / 0.0;
       let data: number = math.erfc(firstParam);
       let result = 2;
@@ -12487,9 +12487,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0 / 0.0;
       let data: number = math.erfc(firstParam);
       let result = 0;
@@ -12503,9 +12503,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0;
       let data: number = math.erfc(firstParam);
       let result = 0.16;
@@ -12519,9 +12519,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: number = math.erfc(firstParam);
       expect(data).assertEqual(1);
@@ -12534,9 +12534,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.9;
       let result = 1.992;
       let data: number = math.erfc(firstParam);
@@ -12550,9 +12550,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 1.0;
       let data: number = math.erfcf(firstParam);
       let result = 0.16;
@@ -12566,9 +12566,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 0;
       let data: number = math.erfcf(firstParam);
       expect(data).assertEqual(1);
@@ -12581,9 +12581,9 @@ export default function mathNdkTest() {
      * @tc.desc   test erfcf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathErfCf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathErfCf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.9;
       let result = 1.992;
       let data: number = math.erfcf(firstParam);
@@ -12597,9 +12597,9 @@ export default function mathNdkTest() {
      * @tc.desc   test expm1l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMathExpM1l006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMathExpM1l006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = -1.9;
       let result = false;
       let data: number = math.expm1l(firstParam);

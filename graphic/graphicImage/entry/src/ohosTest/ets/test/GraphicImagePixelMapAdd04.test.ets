@@ -50,8 +50,10 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} scale001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
             console.info(`${LOG_PREFIX} scale001: Succeeded in scaling.`);
+            pixelMap.release();
             done();
           }
         });
@@ -83,6 +85,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.scale(0.5, 0.5);
         console.info(`${LOG_PREFIX} scale002: Succeeded in scaling.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale002 failed: ${error}`);
@@ -115,10 +118,13 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} scaleNull001: Failed with null x as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            pixelMap.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleNull001: Unexpected error: ${error}`);
@@ -151,10 +157,13 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} scaleNull002: Failed with null y as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            pixelMap.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleNull002: Unexpected error: ${error}`);
@@ -184,6 +193,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.scale(0.5, 0.5, image.AntiAliasingLevel.MEDIUM);
         console.info(`${LOG_PREFIX} scale003: Succeeded in scaling with anti-aliasing.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale003 failed: ${error}`);
@@ -217,6 +227,7 @@ export default function graphicImagePixelMapAdd04() {
         await pixelMap.scale(0.5, 0.5, image.AntiAliasingLevel.HIGH);
 
         console.info(`${LOG_PREFIX} scale004: Succeeded in testing all anti-aliasing enum values.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale004 failed: ${error}`);
@@ -248,8 +259,11 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} translate001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            pixelMap.release();
+            done();
           } else {
             console.info(`${LOG_PREFIX} translate001: Succeeded in translating.`);
+            pixelMap.release();
             done();
           }
         });
@@ -284,10 +298,13 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} translateNull001: Failed with null x as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            pixelMap.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} translateNull001: Unexpected error: ${error}`);
@@ -319,7 +336,9 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} rotate001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
+            pixelMap.release();
             console.info(`${LOG_PREFIX} rotate001: Succeeded in rotating.`);
             done();
           }
@@ -354,8 +373,10 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} flip001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
             console.info(`${LOG_PREFIX} flip001: Succeeded in flipping horizontally.`);
+            pixelMap.release();
             done();
           }
         });
@@ -391,6 +412,7 @@ export default function graphicImagePixelMapAdd04() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flip002: Succeeded in flipping vertically.`);
+            pixelMap.release();
             done();
           }
         });
@@ -430,6 +452,7 @@ export default function graphicImagePixelMapAdd04() {
         };
         await pixelMap.crop(region);
         console.info(`${LOG_PREFIX} crop001: Succeeded in cropping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop001 failed: ${error}`);
@@ -462,11 +485,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.crop(null);
           console.info(`${LOG_PREFIX} cropNull001 crop sucess`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} cropNull001 crop error `, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropNull001: Failed with null region as expected, code: ${error.code}`);
         expect().assertFail();
@@ -495,6 +520,7 @@ export default function graphicImagePixelMapAdd04() {
 
         // Note: ColorSpaceManager is not available in the test environment
         // This test verifies the API exists and can be called
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} setColorSpace001 failed: ${error}`);
@@ -530,11 +556,13 @@ export default function graphicImagePixelMapAdd04() {
           pixelMap.setColorSpace(null);
           console.info(`${LOG_PREFIX} setColorSpaceNull001 success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} setColorSpaceNull001 error.`, JSON.stringify(err));
           expect(Number(err.code) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} setColorSpaceNull001: Failed with null as expected, code: ${error.code}`);
         expect().assertFail();
@@ -564,6 +592,8 @@ export default function graphicImagePixelMapAdd04() {
         const scaledPixelMap = await pixelMap.createScaledPixelMap(2.0, 2.0);
         expect(scaledPixelMap != null).assertTrue();
         console.info(`${LOG_PREFIX} createScaledPixelMap001: Succeeded in creating scaled pixel map.`);
+        await pixelMap.release();
+        await scaledPixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMap001 failed: ${error}`);
@@ -598,6 +628,8 @@ export default function graphicImagePixelMapAdd04() {
         console.info(
           `${LOG_PREFIX} createScaledPixelMap002: Succeeded in creating scaled pixel map with anti-aliasing.`
         );
+        await pixelMap.release();
+        await scaledPixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMap002 failed: ${error}`);
@@ -628,11 +660,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(null, 1.0);
           console.info(`${LOG_PREFIX} scalePromiseNull001: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scalePromiseNull001: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scalePromiseNull001: Failed with null x as expected, code: ${error.code}`);
         expect().assertFail();
@@ -662,11 +696,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(1.0, null);
           console.info(`${LOG_PREFIX} scalePromiseNull002: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scalePromiseNull002: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scalePromiseNull002: Failed with null y as expected, code: ${error.code}`);
         expect().assertFail();
@@ -696,11 +732,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(undefined, 1.0);
           console.info(`${LOG_PREFIX} scalePromiseUndefined001: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scalePromiseUndefined001: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(
           `${LOG_PREFIX} scalePromiseUndefined001: Failed with undefined x as expected, code: ${error.code}`
@@ -732,11 +770,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(1.0, undefined);
           console.info(`${LOG_PREFIX} scalePromiseUndefined002: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scalePromiseUndefined002: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(
           `${LOG_PREFIX} scalePromiseUndefined002: Failed with undefined y as expected, code: ${error.code}`
@@ -769,10 +809,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} scaleAsyncUndefined001: Failed with undefined x as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleAsyncUndefined001: Unexpected error: ${error}`);
@@ -804,10 +846,13 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} scaleAsyncUndefined002: Failed with undefined y as expected, code: ${error}`);
             expect(Number(error)).assertEqual(62980115);
+            pixelMap.release();
+            done();
+          done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleAsyncUndefined002: Unexpected error: ${error}`);
@@ -837,6 +882,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.scale(0.5, 0.5, image.AntiAliasingLevel.NONE);
         console.info(`${LOG_PREFIX} scale005: Succeeded in scaling with NONE anti-aliasing.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale005 failed: ${error}`);
@@ -866,6 +912,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.scale(0.5, 0.5, image.AntiAliasingLevel.HIGH);
         console.info(`${LOG_PREFIX} scale006: Succeeded in scaling with HIGH anti-aliasing.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale006 failed: ${error}`);
@@ -896,11 +943,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(null, 1.0, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scale003Null001: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scale003Null001: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale003Null001: Failed with null x as expected, code: ${error}`);
         expect().assertFail();
@@ -930,11 +979,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(1.0, null, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scale003Null002: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scale003Null002: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale003Null002: Failed with null y as expected, code: ${error}`);
         expect().assertFail();
@@ -964,11 +1015,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(undefined, 1.0, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scale003Undefined001: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scale003Undefined001: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale003Undefined001: Failed with undefined x as expected, code: ${error}`);
         expect().assertFail();
@@ -998,11 +1051,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.scale(1.0, undefined, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scale003Undefined002: scale success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scale003Undefined002: scale error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scale003Undefined002: Failed with undefined y as expected, code: ${error}`);
         expect().assertFail();
@@ -1031,6 +1086,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.translate(10, 20);
         console.info(`${LOG_PREFIX} translate002: Succeeded in translating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translate002 failed: ${error}`);
@@ -1062,10 +1118,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} translateNull002: Failed with null y as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} translateNull002: Unexpected error: ${error}`);
@@ -1097,10 +1155,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} translateUndefined001: Failed with undefined x as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} translateUndefined001: Unexpected error: ${error}`);
@@ -1132,10 +1192,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} translateUndefined002: Failed with undefined y as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} translateUndefined002: Unexpected error: ${error}`);
@@ -1165,6 +1227,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.rotate(90);
         console.info(`${LOG_PREFIX} rotate002: Succeeded in rotating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotate002 failed: ${error}`);
@@ -1196,10 +1259,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} rotateNull001: Failed with null angle as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateNull001: Unexpected error: ${error}`);
@@ -1231,10 +1296,12 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} rotateUndefined001: Failed with undefined angle as expected, code: ${error}`);
             expect(Number(error) === 62980115).assertTrue();
+            pixelMap.release();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateUndefined001: Unexpected error: ${error}`);
@@ -1265,11 +1332,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.rotate(null);
           console.info(`${LOG_PREFIX} rotate003: rotate success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} rotate003: rotate error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotate003: Failed with null angle as expected, code: ${error}`);
         expect().assertFail();
@@ -1299,11 +1368,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.rotate(undefined);
           console.info(`${LOG_PREFIX} rotate004: rotate success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} rotate004: rotate error.`, JSON.stringify(err));
           expect(Number(err) === 62980115).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotate004: Failed with undefined angle as expected, code: ${error}`);
         expect().assertFail();
@@ -1332,11 +1403,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.rotateSync(null);
           console.info(`${LOG_PREFIX} rotateSyncNull001: rotateSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} rotateSyncNull001: rotateSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateSyncNull001: Failed with null angle as expected, code: ${error}`);
         expect().assertFail();
@@ -1365,11 +1438,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.rotateSync(undefined);
           console.info(`${LOG_PREFIX} rotateSyncUndefined001: rotateSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} rotateSyncUndefined001: rotateSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateSyncUndefined001: Failed with undefined angle as expected, code: ${error}`);
         expect().assertFail();
@@ -1402,6 +1477,7 @@ export default function graphicImagePixelMapAdd04() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flip003: Succeeded in flipping both axes.`);
+            pixelMap.release();
             done();
           }
         });
@@ -1437,6 +1513,7 @@ export default function graphicImagePixelMapAdd04() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flip004: Succeeded in flipping with no flip.`);
+            pixelMap.release();
             done();
           }
         });
@@ -1468,6 +1545,7 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.flip(true, false);
         console.info(`${LOG_PREFIX} flip005: Succeeded in flipping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flip005 failed: ${error}`);
@@ -1497,6 +1575,8 @@ export default function graphicImagePixelMapAdd04() {
 
         await pixelMap.flip(false, true);
         console.info(`${LOG_PREFIX} flip006: Succeeded in flipping.`);
+        await pixelMap.release();
+        done();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flip006 failed: ${error}`);
@@ -1526,6 +1606,8 @@ export default function graphicImagePixelMapAdd04() {
 
         pixelMap.scaleSync(0.5, 0.5);
         console.info(`${LOG_PREFIX} scaleSync001: Succeeded in scaling.`);
+        await pixelMap.release();
+        done();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync001 failed: ${error}`);
@@ -1555,11 +1637,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(null, 1.0);
           console.info(`${LOG_PREFIX} scaleSyncNull001: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSyncNull001: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSyncNull001: Failed with null x as expected, code: ${error}`);
         expect().assertFail();
@@ -1588,11 +1672,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(1.0, null);
           console.info(`${LOG_PREFIX} scaleSyncNull002: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSyncNull002: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSyncNull002: Failed with null y as expected, code: ${error}`);
         expect().assertFail();
@@ -1621,11 +1707,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(undefined, 1.0);
           console.info(`${LOG_PREFIX} scaleSyncUndefined001: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSyncUndefined001: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSyncUndefined001: Failed with undefined x as expected, code: ${error}`);
         expect().assertFail();
@@ -1654,11 +1742,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(1.0, undefined);
           console.info(`${LOG_PREFIX} scaleSyncUndefined002: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSyncUndefined002: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSyncUndefined002: Failed with undefined y as expected, code: ${error}`);
         expect().assertFail();
@@ -1687,6 +1777,7 @@ export default function graphicImagePixelMapAdd04() {
 
         pixelMap.scaleSync(0.5, 0.5, image.AntiAliasingLevel.MEDIUM);
         console.info(`${LOG_PREFIX} scaleSync003: Succeeded in scaling with anti-aliasing.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync003 failed: ${error}`);
@@ -1720,6 +1811,7 @@ export default function graphicImagePixelMapAdd04() {
         pixelMap.scaleSync(0.5, 0.5, image.AntiAliasingLevel.HIGH);
 
         console.info(`${LOG_PREFIX} scaleSync004: Succeeded in testing all anti-aliasing enum values.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync004 failed: ${error}`);
@@ -1749,11 +1841,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(null, 1.0, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scaleSync005: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSync005: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync005: Failed with null x as expected, code: ${error}`);
         expect().assertFail();
@@ -1782,11 +1876,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(1.0, null, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scaleSync006: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSync006: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync006: Failed with null y as expected, code: ${error}`);
         expect().assertFail();
@@ -1815,11 +1911,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(undefined, 1.0, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scaleSync007: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSync007: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync007: Failed with undefined x as expected, code: ${error}`);
         expect().assertFail();
@@ -1848,11 +1946,13 @@ export default function graphicImagePixelMapAdd04() {
         try {
           pixelMap.scaleSync(1.0, undefined, image.AntiAliasingLevel.MEDIUM);
           console.info(`${LOG_PREFIX} scaleSync008: scaleSync success.`);
+          await pixelMap.release();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} scaleSync008: scaleSync error.`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleSync008: Failed with undefined y as expected, code: ${error}`);
         expect().assertFail();
@@ -1886,6 +1986,7 @@ export default function graphicImagePixelMapAdd04() {
         console.info(
           `${LOG_PREFIX} createScaledPixelMap003: Succeeded in creating scaled pixel map with NONE anti-aliasing.`
         );
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMap003 failed: ${error}`);
@@ -1920,6 +2021,7 @@ export default function graphicImagePixelMapAdd04() {
         console.info(
           `${LOG_PREFIX} createScaledPixelMap004: Succeeded in creating scaled pixel map with MEDIUM anti-aliasing.`
         );
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMap004 failed: ${error}`);
@@ -1950,11 +2052,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.createScaledPixelMap(null, 1.0);
           console.info(`${LOG_PREFIX} createScaledPixelMapNull001: createScaledPixelMap success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} createScaledPixelMapNull001: createScaledPixelMap error.`, JSON.stringify(err));
           expect(Number(err.code) === 401).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMapNull001: Failed with null x as expected, code: ${error}`);
         expect().assertFail();
@@ -1984,11 +2088,13 @@ export default function graphicImagePixelMapAdd04() {
           await pixelMap.createScaledPixelMap(1.0, null);
           console.info(`${LOG_PREFIX} createScaledPixelMapNull002: createScaledPixelMap success.`);
           expect().assertFail();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} createScaledPixelMapNull002: createScaledPixelMap error.`, JSON.stringify(err));
           expect(Number(err.code) === 401).assertTrue();
+          await pixelMap.release();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMapNull002: Failed with null y as expected, code: ${error}`);
         expect().assertFail();
@@ -2021,14 +2127,16 @@ export default function graphicImagePixelMapAdd04() {
             await pixelMap.createScaledPixelMap(undefined, 1.0);
             console.info(`${LOG_PREFIX} createScaledPixelMapUndefined001: createScaledPixelMap success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapUndefined001: createScaledPixelMap error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapUndefined001: Failed with undefined x as expected, code: ${error}`
@@ -2064,14 +2172,16 @@ export default function graphicImagePixelMapAdd04() {
             await pixelMap.createScaledPixelMap(1.0, undefined);
             console.info(`${LOG_PREFIX} createScaledPixelMapUndefined002: createScaledPixelMap success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapUndefined002: createScaledPixelMap error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapUndefined002: Failed with undefined y as expected, code: ${error}`
@@ -2104,6 +2214,8 @@ export default function graphicImagePixelMapAdd04() {
         const scaledPixelMap = pixelMap.createScaledPixelMapSync(2.0, 2.0);
         expect(scaledPixelMap != null).assertTrue();
         console.info(`${LOG_PREFIX} createScaledPixelMapSync001: Succeeded in creating scaled pixel map.`);
+        await pixelMap.release();
+        await scaledPixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMapSync001 failed: ${error}`);
@@ -2138,6 +2250,8 @@ export default function graphicImagePixelMapAdd04() {
         console.info(
           `${LOG_PREFIX} createScaledPixelMapSync002: Succeeded in creating scaled pixel map with anti-aliasing.`
         );
+        await pixelMap.release();
+        await scaledPixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMapSync002 failed: ${error}`);
@@ -2175,6 +2289,10 @@ export default function graphicImagePixelMapAdd04() {
         expect(scaledPixelMap3 != null).assertTrue();
 
         console.info(`${LOG_PREFIX} createScaledPixelMapSync003: Succeeded in testing all anti-aliasing enum values.`);
+        await pixelMap.release();
+        await scaledPixelMap1.release();
+        await scaledPixelMap2.release();
+        await scaledPixelMap3.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createScaledPixelMapSync003 failed: ${error}`);
@@ -2206,14 +2324,16 @@ export default function graphicImagePixelMapAdd04() {
             pixelMap.createScaledPixelMapSync(null, 1.0);
             console.info(`${LOG_PREFIX} createScaledPixelMapSyncNull001: createScaledPixelMapSync success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapSyncNull001: createScaledPixelMapSync error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapSyncNull001: Failed with null x as expected, code: ${error}`
@@ -2247,14 +2367,16 @@ export default function graphicImagePixelMapAdd04() {
             pixelMap.createScaledPixelMapSync(1.0, null);
             console.info(`${LOG_PREFIX} createScaledPixelMapSyncNull002: createScaledPixelMapSync success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapSyncNull002: createScaledPixelMapSync error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapSyncNull002: Failed with null y as expected, code: ${error}`
@@ -2288,14 +2410,16 @@ export default function graphicImagePixelMapAdd04() {
             pixelMap.createScaledPixelMapSync(undefined, 1.0);
             console.info(`${LOG_PREFIX} createScaledPixelMapSyncUndefined001: createScaledPixelMapSync success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapSyncUndefined001: createScaledPixelMapSync error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapSyncUndefined001: Failed with undefined x as expected, code: ${error}`
@@ -2329,14 +2453,16 @@ export default function graphicImagePixelMapAdd04() {
             pixelMap.createScaledPixelMapSync(1.0, undefined);
             console.info(`${LOG_PREFIX} createScaledPixelMapSyncUndefined002: createScaledPixelMapSync success.`);
             expect().assertFail();
+            done();
           } catch (err) {
             console.info(
               `${LOG_PREFIX} createScaledPixelMapSyncUndefined002: createScaledPixelMapSync error.`,
               JSON.stringify(err)
             );
             expect(Number(err.code) === 401).assertTrue();
+            await pixelMap.release();
+            done();
           }
-          done();
         } catch (error) {
           console.error(
             `${LOG_PREFIX} createScaledPixelMapSyncUndefined002: Failed with undefined y as expected, code: ${error}`
@@ -2368,6 +2494,7 @@ export default function graphicImagePixelMapAdd04() {
 
         // Note: HdrMetadataKey and HdrMetadataValue are not available in test environment
         // This test verifies the API exists
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} setMetadata001 failed: ${error}`);
@@ -2397,6 +2524,7 @@ export default function graphicImagePixelMapAdd04() {
 
         // Test with null value parameter
         // Note: HdrMetadataKey and HdrMetadataValue are not available in test environment
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} setMetadataNull001 failed: ${error}`);
@@ -2429,6 +2557,7 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.info(`${LOG_PREFIX} opacityNull001: As expected, failed with null parameter. Code: ${error}`);
             expect(error).assertEqual(62980115); // 参数错误
+            pixelMap.release();
             done();
           } else {
             console.error(`${LOG_PREFIX} opacityNull001: Unexpectedly succeeded with null parameter`);
@@ -2465,6 +2594,7 @@ export default function graphicImagePixelMapAdd04() {
         // 测试正常参数
         await pixelMap.opacity(0.5);
         console.info(`${LOG_PREFIX} opacityPromiseNone001: Succeeded in opacity with valid parameter.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityPromiseNone001 failed: code ${error.code}, message ${error.message}`);
@@ -2495,6 +2625,7 @@ export default function graphicImagePixelMapAdd04() {
         // 测试 AntiAliasingLevel.NONE 枚举值
         await pixelMap.scale(1.0, 1.0, image.AntiAliasingLevel.NONE);
         console.info(`${LOG_PREFIX} scalePromiseNone001: Succeeded in scaling with AntiAliasingLevel.NONE.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scalePromiseNone001 failed: code ${error.code}, message ${error.message}`);
@@ -2525,6 +2656,7 @@ export default function graphicImagePixelMapAdd04() {
         // 测试 AntiAliasingLevel.HIGH 枚举值
         await pixelMap.scale(1.0, 1.0, image.AntiAliasingLevel.HIGH);
         console.info(`${LOG_PREFIX} scalePromiseHigh001: Succeeded in scaling with AntiAliasingLevel.HIGH.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scalePromiseHigh001 failed: code ${error.code}, message ${error.message}`);
@@ -2559,6 +2691,7 @@ export default function graphicImagePixelMapAdd04() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flipTrueFalse001: Succeeded in flipping with horizontal=true, vertical=false.`);
+            pixelMap.release();
             done();
           }
         });
@@ -2595,6 +2728,7 @@ export default function graphicImagePixelMapAdd04() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flipFalseTrue001: Succeeded in flipping with horizontal=false, vertical=true.`);
+            pixelMap.release();
             done();
           }
         });
@@ -2636,9 +2770,11 @@ export default function graphicImagePixelMapAdd04() {
           if (error) {
             console.error(`${LOG_PREFIX} readPixels001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
             expect(pixelMap.isEditable).assertTrue();
             console.info(`${LOG_PREFIX} readPixels001: Succeeded in reading pixels.`);
+            pixelMap.release();
             done();
           }
         });
@@ -2680,6 +2816,7 @@ export default function graphicImagePixelMapAdd04() {
         expect(pixelMap.isEditable).assertTrue();
 
         console.info(`${LOG_PREFIX} readPixels002: Succeeded in reading pixels.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} readPixels002 failed: ${error}`);
@@ -2709,7 +2846,7 @@ export default function graphicImagePixelMapAdd04() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
         expect(pixelMap.isEditable).assertTrue();
 
         const buffer = new ArrayBuffer(16);
@@ -2723,6 +2860,7 @@ export default function graphicImagePixelMapAdd04() {
         expect(buffer.byteLength).assertEqual(16);
 
         console.info(`${LOG_PREFIX} readPixels003: Succeeded in reading pixels after crop.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} readPixels003 failed: ${error}`);

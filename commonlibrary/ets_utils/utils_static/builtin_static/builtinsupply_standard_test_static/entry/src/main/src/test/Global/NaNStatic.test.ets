@@ -1506,7 +1506,7 @@ export default function NaNTest() {
      */
     it('NaNTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1.0, 2.0, NaN, 3.0];
-      const sum = arr.reduce((acc, curr) => acc + curr, 0);
+      const sum = arr.reduce((acc, curr) => acc + curr, 0.);
       expect(Number.isNaN(sum)).assertEqual(true);
     });
 

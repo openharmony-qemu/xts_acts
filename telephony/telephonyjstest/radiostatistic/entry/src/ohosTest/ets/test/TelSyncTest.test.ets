@@ -626,5 +626,68 @@ export default function telSyncTest() {
         })
       }
     });
+
+    /**
+ 	   * @tc.name   Telephony_CallManager_MakeCall_Promise_1100
+ 	   * @tc.number SUB_Telephony_CallManager_MakeCall_Promise_1100
+ 	   * @tc.desc   Function test
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL1
+ 	   */
+    it("Telephony_CallManager_MakeCall_Promise_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let caseName: string = "Telephony_CallManager_MakeCall_Promise_1100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+        try {
+          let option: call.MakeCallOptions = {
+            isHideDialScreen : true
+          }
+          call.makeCall("138xxxxxxxx", option).then(async () => {
+            console.log(`${caseName} makeCall callback success`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.log(`${caseName} makeCall callback: err->` + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.log(`${caseName} makeCall callback: catch err->` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_MakeCall_Promise_1200
+     * @tc.number SUB_Telephony_CallManager_MakeCall_Promise_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Telephony_CallManager_MakeCall_Promise_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let caseName: string = "Telephony_CallManager_MakeCall_Promise_1200";
+      console.log(`==========> ${caseName} Test start ==========>`);
+        try {
+          let option: call.MakeCallOptions = {
+            isHideDialScreen : false
+          }
+          call.makeCall("138xxxxxxxx", option).then(() => {
+            console.log(`${caseName} makeCall callback success`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.log(`${caseName} makeCall callback: err->` + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.log(`${caseName} makeCall callback: catch err->` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
   });
 }

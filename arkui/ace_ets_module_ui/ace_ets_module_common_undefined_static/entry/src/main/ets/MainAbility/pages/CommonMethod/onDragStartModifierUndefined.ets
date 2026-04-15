@@ -18,7 +18,7 @@ import { AttributeModifier, CommonAttribute, DragEvent, DragItemInfo } from '@oh
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class DragStartModifier implements AttributeModifier<CommonAttribute> {
+export class DragStartModifier implements AttributeModifier<CommonAttribute> {
   @State public change: boolean | undefined = true;
   @State public count: Int = 0
 

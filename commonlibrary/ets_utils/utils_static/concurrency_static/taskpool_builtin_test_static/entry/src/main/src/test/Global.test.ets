@@ -28,7 +28,7 @@ import {sleep} from '../testability/pages/utils'
 let concurrentNum: int = 100
 
 export default function globalTest() {
-  describe('globalTest', () => {
+  describe('globalTestAdapt001', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

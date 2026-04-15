@@ -17,7 +17,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 
 @Observed
-class FocusableModifier implements AttributeModifier<CommonAttribute> {
+export class FocusableModifier implements AttributeModifier<CommonAttribute> {
   @State public focusable: boolean | undefined = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

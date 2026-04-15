@@ -660,7 +660,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mPhotoSession.setWhiteBalance(null);
             let whiteBalance = mPhotoSession.getWhiteBalance();
             console.info(TAG, testName, "getWhiteBalance :", whiteBalance);
-            expect(whiteBalance).assertEqual(range[0]);
+            expect(whiteBalance).assertEqual(0);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }
@@ -696,7 +696,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mPhotoSession.setWhiteBalance(undefined);
             let whiteBalance = mPhotoSession.getWhiteBalance();
             console.info(TAG, testName, "getWhiteBalance :", whiteBalance);
-            expect(whiteBalance).assertEqual(range[0]);
+            expect(whiteBalance).assertEqual(0);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }
@@ -732,7 +732,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setWhiteBalance(null);
             let whiteBalance = mVideoSession.getWhiteBalance();
             console.info(TAG, testName, "getWhiteBalance :", whiteBalance);
-            expect(whiteBalance).assertEqual(range[0]);
+            expect(whiteBalance).assertEqual(0);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }
@@ -768,7 +768,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setWhiteBalance(undefined);
             let whiteBalance = mVideoSession.getWhiteBalance();
             console.info(TAG, testName, "getWhiteBalance :", whiteBalance);
-            expect(whiteBalance).assertEqual(range[0]);
+            expect(whiteBalance).assertEqual(0);
           } else {
             console.info(TAG, testName, "该设备不支持");
          }
@@ -798,16 +798,24 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           console.info(TAG, testName, ' getCreateVideoSession .');
+          await mVideoSession.start()
           let zoomRatioRange: Array<number> = []
           zoomRatioRange = mVideoSession.getZoomRatioRange();
           console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
+            console.info(TAG, testName, "setZoomRatio,zoomRatioRange[0]",zoomRatioRange[0]);
             mVideoSession.setZoomRatio(zoomRatioRange[0]);
-            mVideoSession.setZoomRatio(null);
+            await sleep(1000);
             let res = mVideoSession.getZoomRatio();
-            console.info(TAG, testName, ' setZoomRatio.');
+            console.info(TAG, testName, "getZoomRatio normal", res);
             expect(res).assertEqual(zoomRatioRange[0])
-          }else{
+            console.info(TAG, testName, "setZoomRatio, null");
+            mVideoSession.setZoomRatio(null);
+            await sleep(1000);
+            res = mVideoSession.getZoomRatio();
+            console.info(TAG, testName, "getZoomRatio abnormal", res);
+            expect(res).assertEqual(zoomRatioRange[0])
+          } else {
             console.info(TAG, testName, "该设备不支持");
           }
         }
@@ -842,11 +850,17 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
             mVideoSession.setZoomRatio(zoomRatioRange[0]);
-            mVideoSession.setZoomRatio(undefined);
+            await sleep(1000);
             let res = mVideoSession.getZoomRatio();
-            console.info(TAG, testName, ' setZoomRatio.');
+            console.info(TAG, testName, "getZoomRatio normal", res);
             expect(res).assertEqual(zoomRatioRange[0])
-          }else{
+            console.info(TAG, testName, "setZoomRatio, undefined");
+            mVideoSession.setZoomRatio(undefined);
+            await sleep(1000);
+            res = mVideoSession.getZoomRatio();
+            console.info(TAG, testName, "getZoomRatio abnormal", res);
+            expect(res).assertEqual(zoomRatioRange[0])
+          } else{
             console.info(TAG, testName, "该设备不支持");
           }
         }
@@ -874,16 +888,22 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         }else {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.setZoomRatio(null);
+          await mPhotoSession.start();
           console.info(TAG, testName, ' setZoomRatio.');
           let zoomRatioRange: Array<number> = []
           zoomRatioRange = mPhotoSession.getZoomRatioRange();
           console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
+            console.info(TAG, testName, ' setZoomRatio. zoomRatioRange[0]', zoomRatioRange[0]);
             mPhotoSession.setZoomRatio(zoomRatioRange[0]);
-            mPhotoSession.setZoomRatio(null);
+            await sleep(1000)
             let res = mPhotoSession.getZoomRatio();
-            console.info(TAG, testName, ' setZoomRatio.');
+            console.info(TAG, testName, ' getZoomRatio.:', res);
+            expect(res).assertEqual(zoomRatioRange[0])
+            console.info(TAG, testName, ' setZoomRatio. null');
+            mPhotoSession.setZoomRatio(null);
+            await sleep(1000)
+            res = mPhotoSession.getZoomRatio();
             expect(res).assertEqual(zoomRatioRange[0])
           }else{
             console.info(TAG, testName, "该设备不支持");
@@ -913,15 +933,22 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         }else {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          await mPhotoSession.start();
           console.info(TAG, testName, ' setZoomRatio.');
           let zoomRatioRange: Array<number> = []
           zoomRatioRange = mPhotoSession.getZoomRatioRange();
           console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
+            console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
             mPhotoSession.setZoomRatio(zoomRatioRange[0]);
-            mPhotoSession.setZoomRatio(undefined);
             let res = mPhotoSession.getZoomRatio();
-            console.info(TAG, testName, ' setZoomRatio.');
+            console.info(TAG, testName, ' setZoomRatio.zoomRatioRange[0]', zoomRatioRange[0]);
+            expect(res).assertEqual(zoomRatioRange[0])
+            await sleep(1000)
+            mPhotoSession.setZoomRatio(undefined);
+            await sleep(1000)
+            res = mPhotoSession.getZoomRatio();
+            console.info(TAG, testName, ' setZoomRatio.undefined');
             expect(res).assertEqual(zoomRatioRange[0])
           }else{
             console.info(TAG, testName, "该设备不支持");
@@ -1188,6 +1215,47 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           mVideoOutput.setFrameRate(supportedFrameRatesArray[0]['min']+1, supportedFrameRatesArray[0]['max']-1);
           let activeFrameRate = mVideoOutput.getActiveFrameRate();
           expect(activeFrameRate["max"] == supportedFrameRatesArray[0]['max']-1).assertTrue()
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011
+     * @tc.number CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_SESSION_SET_WHITE_BALANCE_MODE_011';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.LOCKED;
+          let status = mVideoSession.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            let mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.MANUAL);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.LOCKED);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.LOCKED);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);

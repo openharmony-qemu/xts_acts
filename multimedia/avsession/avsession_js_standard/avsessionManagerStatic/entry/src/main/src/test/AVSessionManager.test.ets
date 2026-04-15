@@ -67,7 +67,6 @@ export default function AVSessionManager() {
                 currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                 if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
-                    expect(true).assertTrue();
                 }
                 else {
                     console.info('TestLog: avSession create failed');
@@ -118,7 +117,6 @@ export default function AVSessionManager() {
                 currentAVSession = await avSession.createAVSession(context!, tag, "video")
                 if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
-                    expect(true).assertTrue();
                 }
                 else {
                     console.info('TestLog: avSession create failed');
@@ -157,7 +155,6 @@ export default function AVSessionManager() {
                 console.error(`getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`getAVCastController promise successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -192,7 +189,6 @@ export default function AVSessionManager() {
                 console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getAVCastController callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -218,7 +214,6 @@ export default function AVSessionManager() {
                                 console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                             } else {
                                 console.info(`stopCasting successfully`);
-                                expect(true).assertTrue();
                             }
                         })
                     }catch(err){
@@ -229,7 +224,6 @@ export default function AVSessionManager() {
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`stopCasting callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -255,17 +249,14 @@ export default function AVSessionManager() {
                 try{
                     currentAVSession?.stopCasting()
                     console.info(`stopCasting successfully`);
-                    expect(true).assertTrue();
                 }catch(err){
                     console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 };
             }catch(error){
                 console.error(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`)
-                if (error.message == "Cannot read property then of undefined") {
-                    console.info(`stopCasting promise successfully`);
-                    expect(true).assertTrue()
-                }
+                expect(error.message).assertEqual("Cannot read property then of undefined");
+                console.info(`stopCasting promise successfully`);
             }
             done();
         })
@@ -303,10 +294,8 @@ export default function AVSessionManager() {
                 });
             }catch(error){
                 console.error(`getCurrentItem BusinessError2: code: ${error.code}, message: ${error.message}`)
-                if (error.message == "Cannot read property then of undefined") {
-                    console.info(`getCurrentItem callback successfully`);
-                    expect(true).assertTrue()
-                }
+                expect(error.message).assertEqual("Cannot read property then of undefined");
+                console.info(`stopCasting promise successfully`);
             }
             done();
         })

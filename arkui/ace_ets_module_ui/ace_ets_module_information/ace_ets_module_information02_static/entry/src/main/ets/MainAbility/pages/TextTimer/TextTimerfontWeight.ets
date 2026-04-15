@@ -29,7 +29,7 @@ import { LevelOrder, LevelMode } from '@ohos.promptAction'
 import { UIContext } from '@ohos.arkui.UIContext'
 
 @Observed
-class MyModifier1 implements AttributeModifier<TextTimerAttribute> {
+export class MyModifier1 implements AttributeModifier<TextTimerAttribute> {
   private value: Int | FontWeight | ResourceStr | undefined = undefined;
 
   constructor(v: Int | FontWeight | ResourceStr | undefined) {

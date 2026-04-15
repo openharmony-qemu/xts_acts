@@ -71,5 +71,62 @@ export default function WebAttributeTest() {
       await Utils.msSleep(5000);
       done();
     })
+
+    /**
+     * @tc.name   testOnLoadStartedStatic001
+     * @tc.number SUB_WEB_ONLOADSTARTED_0100
+     * @tc.desc   test onLoadStarted normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnLoadStartedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000);
+      Utils.emitEvent("emitOnLoadStarted001", 10)
+      await Utils.msSleep(6000);
+      Utils.registerEvent("testOnLoadStarted001", 'resource://rawfile/second.html', 20260318, done);
+      await Utils.msSleep(5000);
+      inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnLoadFinishedStatic001
+     * @tc.number SUB_WEB_ONLOADFINISHED_0100
+     * @tc.desc   test onLoadFinished normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnLoadFinishedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000);
+      Utils.emitEvent("emitOnLoadFinished001", 10)
+      await Utils.msSleep(6000);
+      Utils.registerEvent("testOnLoadFinished001", 'resource://rawfile/second.html', 20260319, done);
+      await Utils.msSleep(5000);
+      inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnPageVisibleStatic001
+     * @tc.number SUB_WEB_ONPAGEVISIBLE_0100
+     * @tc.desc   test onPageVisible normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000);
+      Utils.emitEvent("emitOnPageVisible001", 10)
+      await Utils.msSleep(6000);
+      Utils.registerEvent("testOnPageVisible001", 'resource://rawfile/second.html', 20260320, done);
+      await Utils.msSleep(5000);
+      inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
   })
 }

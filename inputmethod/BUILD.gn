@@ -27,5 +27,8 @@ group("inputmethod") {
     "InputMethodTest_ets_static:ActsInputMethodEtsStaticTest",
     "InputMethodAuthorityTestStatic:ActsInputMethodAuthorityStaticTest",
     "InputMethodEditBox:ActsInputMethodEditBoxTest",
+    "InputMethodEngineStatic:ActsInputMethodEngineStaticTest",
+    "InputMethodListTestStatic:ActsInputMethodListStaticTest",
+    "InputMethodWindManageStatic:ActsInputMethodWindManageStaticTest",
   ]
 }

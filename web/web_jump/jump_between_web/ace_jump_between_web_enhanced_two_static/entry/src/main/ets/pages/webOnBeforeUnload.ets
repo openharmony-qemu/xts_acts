@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Text, Button, ClickEvent, Web, $rawfile, Visibility, CacheMode, OnBeforeUnloadEvent } from "@ohos.arkui.component";
+import { Entry, Component, Column, Row, Text, Button, ClickEvent, Web, $rawfile, Visibility, CacheMode, OnBeforeUnloadEvent, NestedScrollMode, OnDataResubmittedEvent } from "@ohos.arkui.component";
 import { State } from "@ohos.arkui.stateManagement";
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -94,11 +94,18 @@ struct WebOnBeforeUnload {
       Web({ src: 'resource://rawfile/onBeforeUnloadTest.html', controller: this.controller })
         .key('onBeforeUnloadWebView')
         .javaScriptAccess(this.javaScriptAccess)
+        .webSansSerifFont('sans-serif')
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .nestedScroll({
+          scrollUp: NestedScrollMode.SELF_FIRST,
+          scrollDown: NestedScrollMode.PARENT_FIRST,
+          scrollLeft: NestedScrollMode.SELF_FIRST,
+          scrollRight: NestedScrollMode.SELF_FIRST,
+        })
         .onBeforeUnload((event: OnBeforeUnloadEvent): boolean => {
           if (event) {
             Utils.emitEvent(event.url, this.firstId)
@@ -107,10 +114,16 @@ struct WebOnBeforeUnload {
             }
             console.log("event.url:" + event.url)
             console.log("event.message:" + event.message)
+            console.log("event.result:" + event.result)
+            console.log("event.isReload:" + event.isReload)
             console.log("event.result.handleCancel: " + event?.result.handleCancel());
             console.log("event.result.handleConfirm: " + event?.result.handleConfirm());
           }
           return true
+        })
+        .onDataResubmitted((event:OnDataResubmittedEvent) => {
+          console.log('onDataResubmitted');
+          event.handler.resend();
         })
     }
   }

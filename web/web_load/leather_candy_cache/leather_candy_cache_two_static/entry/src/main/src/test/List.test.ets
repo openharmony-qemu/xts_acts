@@ -13,10 +13,15 @@
  * limitations under the License.
  */
 
-import ClearPrefetchedResourceTest from './ClearPrefetchedResourceTest.test'
-import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test'
+import WebBlanklessErrorCodeJsunit from './WebBlanklessErrorCode.test';
+import ClearPrefetchedResourceTest from './ClearPrefetchedResourceTest.test';
+import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test';
+import SetBlanklessLoadingWithParams from "./SetBlanklessLoadingWithParams.test";
+
 
 export default function testsuite() {
+  WebBlanklessErrorCodeJsunit();
   ClearPrefetchedResourceTest();
   InjectOfflineResourcesTest();
+  SetBlanklessLoadingWithParams();
 }

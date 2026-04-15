@@ -123,6 +123,12 @@ struct WebSiteIsolationMode {
         .domStorageAccess(true)
         .imageAccess(true)
         .databaseAccess(true)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('onPageEnd url:' + event.url);
+          }
+        })
 
     }
   }

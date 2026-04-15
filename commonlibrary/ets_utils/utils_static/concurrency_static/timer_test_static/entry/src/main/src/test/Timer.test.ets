@@ -61,9 +61,9 @@ export default function TimerTest1() {
       console.info(`${TAG} test start`);
       try {
         const timer = setTimeout("delay：-100.1", 100 as Int);
-        let startTime = new Date().getTime();
+        let startTime: Long = Chrono.nanoNow();
         setTimeout(() => {
-          const elapsed = new Date().getTime() - startTime;
+          const elapsed = Chrono.nanoNow() - startTime;
           expect(elapsed > 0).assertTrue();
           clearTimeout(timer);
         }, 0);
@@ -986,8 +986,10 @@ export default function TimerTest1() {
       let taskCompleted = false;
       try {
         setTimeout(() => {
-          await Utils.msSleep(1000);
-          taskCompleted = true;
+          waitForCompletion(async () => {
+            await Utils.msSleep(1000);
+            taskCompleted = true;
+          })
         }, 50);
         setTimeout(() => {
           try {
@@ -1271,20 +1273,21 @@ export default function TimerTest1() {
       console.info(`${TAG} test start`);
       // Define a task with timer that returns a boolean
       const timerTask = (): boolean => {
-        let timerExecuted: boolean = false;
-        let timeoutId: number | null = null;
-        timeoutId = setTimeout(() => {
-          timerExecuted = true;
-          console.log(`${TAG}: Timer executed in taskpool`);
-        }, 1000);
-
-        const startTime: number = Date.now();
-        await Utils.msSleep(500);
-        if (timeoutId !== null) {
-          clearTimeout(timeoutId as int);
-          console.log(`${TAG}: Timer cleared in taskpool`);
-        }
-        return timerExecuted;
+        return waitForCompletion(async () => {
+          let timerExecuted: boolean = false;
+          let timeoutId: number | null = null;
+          timeoutId = setTimeout(() => {
+            timerExecuted = true;
+            console.log(`${TAG}: Timer executed in taskpool`);
+          }, 1000);
+          const startTime: number = Date.now();
+          await Utils.msSleep(500);
+          if (timeoutId !== null) {
+            clearTimeout(timeoutId as int);
+            console.log(`${TAG}: Timer cleared in taskpool`);
+          }
+          return timerExecuted;
+        })
       };
       try {
         const task1 = taskpool.execute(timerTask);

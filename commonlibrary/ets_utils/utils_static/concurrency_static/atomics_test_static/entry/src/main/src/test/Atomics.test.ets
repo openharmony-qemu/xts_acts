@@ -59,7 +59,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   if (i % 2 === 0) {
@@ -130,7 +130,7 @@ export default function AtomicsTest() {
         try {
           const worker1Promise = new Promise<string>((resolve, reject) => {
             worker1.start()
-            worker1.run(() => {
+            worker1.run<void>(() => {
               try {
                 const localArray: BigInt64Array = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
@@ -148,7 +148,7 @@ export default function AtomicsTest() {
 
           const worker2Promise = new Promise<string>((resolve, reject) => {
             worker2.start()
-            worker2.run(() => {
+            worker2.run<void>(() => {
               try {
                 const localArray = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
@@ -254,9 +254,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest004';
         console.info(`${TAG} test start`);
@@ -293,9 +293,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest005';
         console.info(`${TAG} test start`);
@@ -308,7 +308,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.store(inputArray, 0, 2);
                 resolve(inputArray);
@@ -352,9 +352,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest006';
         console.info(`${TAG} test start`);
@@ -365,7 +365,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1n);
                 Atomics.notify(inputArray, 0);
@@ -411,9 +411,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest007';
         console.info(`${TAG} test start`);
@@ -444,9 +444,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest008';
         console.info(`${TAG} test start`);
@@ -458,7 +458,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<void>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.and(array, i, i);
@@ -492,9 +492,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 0
      */
-    it('AtomicsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest009';
         console.info(`${TAG} test start`);
@@ -539,7 +539,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.exchange(array, i, 1);
@@ -623,7 +623,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.store(array, i, 1);
@@ -710,7 +710,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.sub(array, i, 1n);
@@ -745,9 +745,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 2
      */
-    it('AtomicsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest015';
         console.info(`${TAG} test start`);
@@ -788,9 +788,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 2
      */
-    it('AtomicsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest016';
         console.info(`${TAG} test start`);
@@ -801,7 +801,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1);
                 Atomics.notify(inputArray, 0);
@@ -846,9 +846,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 2
      */
-    it('AtomicsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest017';
         console.info(`${TAG} test start`);
@@ -892,9 +892,9 @@ export default function AtomicsTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+      * @tc.level Level 2
      */
-    it('AtomicsTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('AtomicsTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'AtomicsTest018';
         console.info(`${TAG} test start`);
@@ -954,7 +954,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = await new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.notify(inputArray, 0);
                 setTimeout(() => {
@@ -1033,15 +1033,17 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                setTimeout(() => {
-                  Atomics.store(sharedArray, 0, 1n);
-                  const notifiedCount = Atomics.notify(sharedArray, 0);
-                  Atomics.store(sharedArray, 0, 0n);
-                  resolve(undefined);
-                }, 500);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  setTimeout(() => {
+                    Atomics.store(sharedArray, 0, 1n);
+                    const notifiedCount = Atomics.notify(sharedArray, 0);
+                    Atomics.store(sharedArray, 0, 0n);
+                    resolve(undefined);
+                  }, 500);
+                });
+              })
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {
@@ -1102,16 +1104,18 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                setTimeout(() => {
-                  const newValue = BigInt(i + 1);
-                  Atomics.store(sharedArray, 0, newValue);
-                  const notifiedCount = Atomics.notify(sharedArray, 0);
-                  Atomics.store(sharedArray, 0, 1n);
-                  resolve(undefined);
-                }, 500);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  setTimeout(() => {
+                    const newValue = BigInt(i + 1);
+                    Atomics.store(sharedArray, 0, newValue);
+                    const notifiedCount = Atomics.notify(sharedArray, 0);
+                    Atomics.store(sharedArray, 0, 1n);
+                    resolve(undefined);
+                  }, 500);
+                });
+              })
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {
@@ -1173,13 +1177,15 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                const newValue = BigInt(i + 1);
-                Atomics.store(sharedArray, i, newValue);
-                const notifiedCount = Atomics.notify(sharedArray, i);
-                resolve(undefined);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  const newValue = BigInt(i + 1);
+                  Atomics.store(sharedArray, i, newValue);
+                  const notifiedCount = Atomics.notify(sharedArray, i);
+                  resolve(undefined);
+                });
+              })
             }));
           }
           await Promise.all([...waitTasks, ...notifyTasks]);

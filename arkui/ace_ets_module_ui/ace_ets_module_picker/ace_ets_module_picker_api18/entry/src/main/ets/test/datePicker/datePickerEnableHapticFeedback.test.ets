@@ -18,7 +18,7 @@ import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
 
 export default function EnableHapticFeedbackTest() {
-  describe('EnableHapticFeedbackTest', () => {
+  describe('EnableHapticFeedbackTestAdapt001', () => {
     beforeEach(async (done: Function) => {
       console.info('datePickerEnableHapticFeedback beforeEach start');
       let options: router.RouterOptions = {

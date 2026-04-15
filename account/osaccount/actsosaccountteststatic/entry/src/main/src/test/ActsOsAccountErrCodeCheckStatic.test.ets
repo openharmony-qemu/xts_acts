@@ -59,7 +59,6 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -101,7 +100,6 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -134,7 +132,6 @@ export default function ActsOsAccountErrCodeCheckStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -168,7 +165,6 @@ export default function ActsOsAccountErrCodeCheckStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -206,11 +202,36 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
         }
       });
+
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2800
+     * @tc.number OsAccountErrCodeCheck_2800
+     * @tc.desc   err code check 12300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('OsAccountErrCodeCheck_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>start====");
+      try {
+        hilog.info(0x0000, tag, "====>start getOsAccountLocalIdForSerialNumber");
+        let data = await accountManager.getOsAccountLocalIdForSerialNumber(-1);
+        hilog.info(0x0000, tag, tag + "data: " + JSON.stringify(data));
+        hilog.info(0x0000, tag, "====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, tag + "catch err: " + JSON.stringify(err));
+        hilog.info(0x0000, tag, tag + "end====");
+        expect(err.code).assertEqual(12300003);
+        done();
+      }
+    });
   })
 }

@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 type ProgressBuilder = @Builder(config:ProgressConfiguration) => void;
 
-class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
+export class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
   public color: Color = Color.White
 
   constructor(color: Color) {
@@ -78,7 +78,7 @@ function myProgress(config: ProgressConfiguration) {
 }
 
 @Observed
-class MyModifier1 implements AttributeModifier<ProgressAttribute> {
+export class MyModifier1 implements AttributeModifier<ProgressAttribute> {
   public colorValue: boolean = true;
   public privacySensitiveValue: boolean = true;
   public styleValue: boolean = true;
@@ -99,7 +99,7 @@ class MyModifier1 implements AttributeModifier<ProgressAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<ProgressAttribute> {
+export class MyModifier2 implements AttributeModifier<ProgressAttribute> {
   public contentModifierValue: boolean = true;
   public modifier: MyProgressModifier = new MyProgressModifier(Color.Red);
   public progressStyle: ProgressStyleOptions = {

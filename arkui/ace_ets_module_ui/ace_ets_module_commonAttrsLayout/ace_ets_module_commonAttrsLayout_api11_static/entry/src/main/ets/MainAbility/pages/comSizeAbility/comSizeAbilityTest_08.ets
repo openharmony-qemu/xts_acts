@@ -43,7 +43,7 @@ struct comSizeAbilityTest_08 {
         Column() {
           Navigation() {
             List({ space: 0, initialIndex: 0 }) {
-              ForEach(this.NavRouterArr, (item: string, index: number = 0) => {
+              ForEach(this.NavRouterArr, (item: string, index: int = 0) => {
                 ListItem() {
                   // NavRouter() {
                   //   Row() {
@@ -93,7 +93,7 @@ struct comSizeAbilityTest_08 {
 
         Column() {
           Navigation() {
-          //   ForEach(this.NavRouterArr, (item: string, index: number = 0) => {
+          //   ForEach(this.NavRouterArr, (item: string, index: int = 0) => {
           // NavRouter() {
           //   Row() {
           //     Text(`NavRouter${item + 1}`)

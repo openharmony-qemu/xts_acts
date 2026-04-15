@@ -30,9 +30,9 @@ export default function msgNdkTest() {
      * @tc.desc   test msgget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMsgMsgget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMsgMsgget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = msg.msgget();
       expect(result).assertEqual(1)
       done()
@@ -43,9 +43,9 @@ export default function msgNdkTest() {
      * @tc.desc   test msgsnd
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMsgMsgsnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMsgMsgsnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = msg.msgsnd();
       expect(result).assertEqual(1)
       done()
@@ -56,9 +56,9 @@ export default function msgNdkTest() {
      * @tc.desc   test msgrcv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMsgMsgrcv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMsgMsgrcv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = msg.msgrcv();
       expect(result).assertEqual(1)
       done()
@@ -69,9 +69,9 @@ export default function msgNdkTest() {
      * @tc.desc   test msgctl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMsgMsgctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMsgMsgctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = msg.msgctl();
       expect(result).assertEqual(1)
       done()

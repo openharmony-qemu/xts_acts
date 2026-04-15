@@ -237,6 +237,42 @@ export default function networkSecurityTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerification_static_1000
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerification__1000
+     * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityCertVerification_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityCertVerification_static_1000';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          const cert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
+          };
+          networkSecurity.certVerification(cert, undefined).then((result: int) => {
+            hilog.info(domain, tag, '%{public}s', caseName + ':Certificate verification result:->' + result);
+            ExpectFail();
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s' + ' Certificate verification failed:  ' + JSON.stringify(err));
+            ExpectTrue(err.code == 2305069);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+      });
+
+
         /**
          * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_0100
          * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_0100
@@ -426,6 +462,140 @@ export default function networkSecurityTest() {
             }
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityCertVerificationSync_static_1000
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_CertVerificationSync_1000
+     * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityCertVerificationSync_static_1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityCertVerificationSync_static_1000';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          const cert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
+          };
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: '-----BEGIN CERTIFICATE-----\n... (CA certificate data) ...\n-----END CERTIFICATE-----',
+          };
+          try {
+            let resultSync: int = networkSecurity.certVerificationSync(cert, undefined);
+            hilog.info(domain, tag, '%{public}s', caseName + ': Synchronous Verification Result: ->' + resultSync);
+            ExpectTrue(resultSync == 2305069);
+            done();
+          } catch (err) {
+            hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+            ExpectFail();
+            done();
+          }
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermitted_static_0100
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0100';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          let resultSync: boolean = networkSecurity.isCleartextPermitted();
+          hilog.info(domain, tag, '%{public}s', caseName + '  result is ' + resultSync);
+          ExpectTrue(resultSync == true);
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermitted_static_0200
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermitted_static_0200';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          let resultSync: boolean = networkSecurity.isCleartextPermitted();
+          hilog.info(domain, tag, '%{public}s', caseName + '  result is ' + resultSync);
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          ExpectTrue(Number(err.code) === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_static_0100
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0100';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          let result: boolean = networkSecurity.isCleartextPermittedByHostName('');
+          hilog.info(domain, tag, '%{public}s', caseName + '  result is ' + result);
+          ExpectTrue(result == true);
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0200
+     * @tc.number testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0200
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_static_0200';
+        hilog.info(domain, tag, '%{public}s' + ' start');
+        try {
+          let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName('');
+          hilog.info(domain, tag, '%{public}s', caseName + '  result is ' + resultSync);
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          ExpectTrue(Number(err.code) === 201);
+          done();
+        }
+      });
+
 
     })
 }

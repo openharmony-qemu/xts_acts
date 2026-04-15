@@ -20,6 +20,7 @@
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <multimedia/player_framework/native_avbuffer.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -38,6 +39,11 @@ OH_AVFormat *sourceFormat = nullptr;
 OH_AVFormat *trackFormat = nullptr;
 OH_AVMemory *memory = nullptr;
 int32_t g_trackCount = 0;
+
+// Skip sample相关常量
+static constexpr size_t SKIP_SAMPLE_BUFFER_SIZE = 10;
+static constexpr int MP3_SKIP_FRAME_INDEX_3051 = 3051;
+static constexpr int OGG_SKIP_FRAME_INDEX_6862 = 6862;
 
 int GetSecureRandomInt(int max)
 {
@@ -232,4 +238,133 @@ void CleanupResources()
 {
     CleanupDemuxerResources(&source, &demuxer, &sourceFormat, &trackFormat, &memory);
     g_trackCount = 0;
+}
+
+int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *expected)
+{
+    if (buffSize != SKIP_SAMPLE_BUFFER_SIZE) {
+        return -1;
+    }
+    for (size_t i = 0; i < buffSize; i++) {
+        if (addr[i] != expected[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+void CleanupSkipSampleResources(OH_AVFormat *format, int fd)
+{
+    if (format != nullptr) {
+        OH_AVFormat_Destroy(format);
+    }
+    if (fd >= 0) {
+        close(fd);
+    }
+}
+
+int ValidateMp3SkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
+{
+    if (params.audioFrame == 0) {
+        uint8_t expected0[] = {0x51, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected0) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    } else if (params.audioFrame == MP3_SKIP_FRAME_INDEX_3051) {
+        uint8_t expected3051[] = {0x00, 0x00, 0x00, 0x00, 0xa3, 0x01, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected3051) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    }
+    return 0;
+}
+
+int ValidateOggSkipData(SkipSampleValidationParams &params, OH_AVFormat *format)
+{
+    if (params.audioFrame == OGG_SKIP_FRAME_INDEX_6862) {
+        uint8_t expected6862[] = {0x00, 0x00, 0x00, 0x00, 0xf4, 0x00, 0x00, 0x00, 0x00, 0x00};
+        if (ValidateSkipData(params.addr, params.buffSize, params.audioFrame, expected6862) != 0) {
+            CleanupSkipSampleResources(format, params.fd);
+            return -1;
+        }
+    }
+    return 0;
+}
+
+int ProcessMp3SkipSampleFrame(SkipSampleFrameContext &ctx)
+{
+    OH_AVBuffer *avBuffer = OH_AVBuffer_Create(ctx.size);
+    if (avBuffer == nullptr) {
+        close(ctx.fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &ctx.attr) != AV_ERR_OK) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
+    if (format == nullptr) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    OH_AVBuffer_Destroy(avBuffer);
+    uint8_t *addr = nullptr;
+    size_t buffSize = 0;
+    if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+        ctx.skipSampleCounts++;
+        SkipSampleValidationParams validParams = {ctx.audioFrame, addr, buffSize, ctx.fd};
+        if (ValidateMp3SkipData(validParams, format) != 0) {
+            return -1;
+        }
+    }
+    SetAudioValue(ctx.attr, ctx.audioIsEnd, ctx.audioFrame, ctx.aKeyCount);
+    OH_AVFormat_Destroy(format);
+    return 0;
+}
+
+int ProcessOggSkipSampleFrame(SkipSampleFrameContext &ctx)
+{
+    OH_AVBuffer *avBuffer = OH_AVBuffer_Create(ctx.size);
+    if (avBuffer == nullptr) {
+        close(ctx.fd);
+        return -1;
+    }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    if (OH_AVBuffer_GetBufferAttr(avBuffer, &ctx.attr) != AV_ERR_OK) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
+    if (format == nullptr) {
+        OH_AVBuffer_Destroy(avBuffer);
+        close(ctx.fd);
+        return -1;
+    }
+    OH_AVBuffer_Destroy(avBuffer);
+    uint8_t *addr = nullptr;
+    size_t buffSize = 0;
+    if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+        ctx.skipSampleCounts++;
+        SkipSampleValidationParams validParams = {ctx.audioFrame, addr, buffSize, ctx.fd};
+        if (ValidateOggSkipData(validParams, format) != 0) {
+            return -1;
+        }
+    }
+    SetAudioValue(ctx.attr, ctx.audioIsEnd, ctx.audioFrame, ctx.aKeyCount);
+    OH_AVFormat_Destroy(format);
+    return 0;
 }

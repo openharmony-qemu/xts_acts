@@ -25,6 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import Want from '@ohos.app.ability.Want';
 import { Driver, ON } from '@ohos.UiTest';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import abilityManager from "@ohos.app.ability.abilityManager"
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -226,6 +227,7 @@ export default function abilitystaticTest() {
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0200';
         hilog.info(domain, tag, `${itName} start`);
+        let offInvokeSuccess = false;
         try {
           const observer = new CustomApplicationStateObserver();
           const observerId = appManager.onApplicationStateChange(observer);
@@ -273,7 +275,15 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
-          await appManager.offApplicationStateChange(observerId);
+          await appManager.offApplicationStateChange(observerId).then(() => {
+            hilog.info(domain, tag, `${itName} offApplicationStateChange success`);
+            offInvokeSuccess = true;
+          }).catch((e: Error) => {
+            const err = e as BusinessError;
+            hilog.info(domain, tag, `${itName} off err: code ${err.code}, message ${err.message}`);
+            expect().assertFail();
+          })
+          expect(offInvokeSuccess).assertTrue();
         } catch (err) {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
@@ -282,6 +292,62 @@ export default function abilitystaticTest() {
         }
         hilog.info(domain, tag, `${itName} end`);
         done()
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0600
+     * @tc.desc   Registering an Application Status Listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0600';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} off applicationState`);
+          appManager.offApplicationStateChange(-1, (err: BusinessError<void> | null): void => {
+            hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
+            expect(err?.code).assertEqual(401);
+            done();
+          })
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
+            expect(err?.code).assertEqual(401);
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0700
+     * @tc.desc   Registering an Application Status Listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0700';
+        hilog.info(domain, tag, `${itName} start`);
+        let bundleNameList = ['bundleName1', 'bundleName2'];
+        try {
+          const observer = new CustomApplicationStateObserver();
+          const observerId = appManager.onApplicationStateChange(observer, bundleNameList);
+          hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
+          expect(observerId).assertLarger(0);
+          done();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
+            expect().assertFail();
+            done();
+          }
+        }
       })
 
     /**
@@ -495,5 +561,35 @@ export default function abilitystaticTest() {
           done();
         }
       })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001
+     * @tc.number SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001
+     * @tc.desc   getAbilityRunningInfos Promise with Permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let tag = 'SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001';
+      abilityManager.getAbilityRunningInfos()
+      .then((data: abilityManager.AbilityRunningInfo[]): void => {
+        hilog.info(domain, tag, 'data: ' + JSON.stringify(data[0]));
+        expect(data[0].ability.bundleName).assertEqual('com.acts.startuiserviceextensionrely.static');
+        expect(data[0].pid).assertLargerOrEqual(0);
+        expect(data[0].uid).assertLargerOrEqual(0);
+        expect(data[0].processName).assertEqual("com.acts.startuiserviceextensionrely.static");
+        expect(data[0].abilityState).not().assertNull();
+        expect(data[0].startTime).assertLarger(0);
+        done();
+      })
+      .catch((err): void => {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, ' err:' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+    })
   })
 }

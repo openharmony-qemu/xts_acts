@@ -30,9 +30,9 @@ export default function prctlNdkTest() {
      * @tc.desc   test prctl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPrctlPrctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPrctlPrctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = prctl.prctl();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import { RichEditorModifier } from "@ohos.arkui.modifier";
 
 // @Observed
-// class CustomModifier implements AttributeModifier<RichEditorAttribute> {
+// export class CustomModifier implements AttributeModifier<RichEditorAttribute> {
 //   copyOptions:CopyOptions = CopyOptions.InApp
 //   applyNormalAttribute(instance: RichEditorAttribute): void {
 //     instance.copyOptions(this.copyOptions)
@@ -37,7 +37,7 @@ import { RichEditorModifier } from "@ohos.arkui.modifier";
 
 
 
- class CustomModifier extends RichEditorModifier {
+ export class CustomModifier extends RichEditorModifier {
   applyNormalAttribute(instance: RichEditorAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }

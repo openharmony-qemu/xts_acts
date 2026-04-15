@@ -74,13 +74,13 @@ export default function textAreaInputTest() {
      * @tc.level   Level.LEVEL0
      */
     it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textAreaInputTest textAreaInputTest0001 START');
+      await CommonFunc.sleep(1000);
+      let textArea1 = await (driver.findComponent(ON.id('textArea1')) as Promise<Component>);
+      await CommonFunc.sleep(500);
+      let textArea2 = await (driver.findComponent(ON.id('textArea2')) as Promise<Component>);
       if (AppStorage.get<number>("winLeft") == 0) {
-        let driver = Driver.create();
-        console.info('textAreaInputTest textAreaInputTest0001 START');
-        await CommonFunc.sleep(1000);
-        let textArea1 = await (driver.findComponent(ON.id('textArea1')) as Promise<Component>);
-        await CommonFunc.sleep(500);
-        let textArea2 = await (driver.findComponent(ON.id('textArea2')) as Promise<Component>);
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
@@ -151,6 +151,13 @@ export default function textAreaInputTest() {
           }
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');
+      }else {
+        await textArea2.inputText('aaa');
+        await CommonFunc.sleep(500);
+        let area2Text = await textArea2.getText();
+        if(area2Text != 'aaa'){
+          await driver.triggerKey(2047)
+        }
       }
       
       expect("").assertEqual("");

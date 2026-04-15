@@ -192,6 +192,20 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_AA_Test_InsightIntent_Static_0200
+     * @tc.number SUB_AA_Test_InsightIntent_Static_0200
+     * @tc.desc   Test insightIntent.ReturnMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AA_Test_InsightIntent_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect(0).assertEqual(insightIntent.ReturnMode.CALLBACK);
+      expect(1).assertEqual(insightIntent.ReturnMode.FUNCTION);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_AA_AbilityAppManager_Static_0100
      * @tc.number SUB_AA_AbilityAppManager_Static_0100
      * @tc.desc   The form of a promise getRunningProcessInformation
@@ -462,6 +476,7 @@ export default function ApiCoverStaticTest() {
           hilog.info(domain, tag, `${itName} connect`);
           const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
+          expect(connectId).assertLarger(0);
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
           expect(options.isConnect).assertTrue();
@@ -624,6 +639,35 @@ export default function ApiCoverStaticTest() {
         expect(err.code == 16000061).assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetElementName_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetElementName_Static_0100
+     * @tc.desc   AbilityStageContext.launchElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetElementName_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_Ability_AbilityRuntime_GetElementName_Static_0100`;
+      console.log(`${tag}, it begin`);
+      let stageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>("abilityStageContext") as common.AbilityStageContext;
+      let deviceId: string | undefined = stageContext.launchElement?.deviceId;
+      let uri: string | undefined = stageContext.launchElement?.uri;
+      let shortName: string | undefined = stageContext.launchElement?.shortName;
+      let bundleName: string | undefined = stageContext.launchElement?.bundleName;
+      let moduleName: string | undefined = stageContext.launchElement?.moduleName;
+      let abilityName: string | undefined = stageContext.launchElement?.abilityName;
+      console.info(tag + `GetLaunchElement, deviceId is ${deviceId}, uri is ${uri}, shortName is ${shortName}`);
+      console.info(tag + `GetLaunchElement, bundleName is ${bundleName}, moduleName is ${moduleName}, abilityName is ${abilityName}`);
+      expect(deviceId).assertEqual('');
+      expect(uri).assertUndefined();
+      expect(shortName).assertUndefined();
+      expect(bundleName).assertEqual('com.example.apicoverhaptest.static');
+      expect(moduleName).assertEqual('entry');
+      expect(abilityName).assertEqual('EntryAbility');
+      done();
     });
   })
 }

@@ -69,7 +69,7 @@ export default function checkboxGroupThemeTest() {
       }
     })
     /**
-     * @tc.name   ActsCheckBoxGroupThemeColors_0100
+     * @tc.name   `ActsCheckBoxGroupThemeColors_0100`
      * @tc.number ActsCheckBoxGroupThemeColors_0100
      * @tc.desc   Check checkboxGroup system colors
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function checkboxGroupThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsCheckBoxGroupThemeColors_0200
+     * @tc.name   `ActsCheckBoxGroupThemeColors_0200`
      * @tc.number ActsCheckBoxGroupThemeColors_0200
      * @tc.desc   Check checkboxGroup theme colors
      * @tc.type   FUNCTION
@@ -123,7 +123,7 @@ export default function checkboxGroupThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsCheckBoxGroupThemeColors_0300
+     * @tc.name   `ActsCheckBoxGroupThemeColors_0300`
      * @tc.number ActsCheckBoxGroupThemeColors_0300
      * @tc.desc   Check checkboxGroup theme colors after change theme
      * @tc.type   FUNCTION

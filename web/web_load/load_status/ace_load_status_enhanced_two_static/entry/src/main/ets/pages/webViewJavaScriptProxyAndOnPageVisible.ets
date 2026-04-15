@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, MixedMode, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -69,6 +70,13 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webViewEnumAndSetWebController' })
+              console.log('push URL success')
+            }
+
           }
         })
       }
@@ -76,6 +84,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
       Web({ src: 'resource://rawfile/indexThree.html', controller: this.controller })
         .key('WebViewJavaScriptProxyAndOnPageVisibleWebView')
         .defaultFontSize(this.fontSize)
+        .mixedMode(MixedMode.NONE)
         .onShowFileSelector((event: OnShowFileSelectorEvent): Boolean => {
           console.log('onShowFileSelector =====>')
           if (event) {

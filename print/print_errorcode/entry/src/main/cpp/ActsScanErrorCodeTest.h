@@ -32,4 +32,5 @@ napi_value OH_Scan_SetScannerParameter1(napi_env env, napi_callback_info info);
 napi_value OH_Scan_StartScan1(napi_env env, napi_callback_info info);
 napi_value OH_Scan_CancelScan1(napi_env env, napi_callback_info info);
 napi_value OH_Scan_GetPictureScanProgress1(napi_env env, napi_callback_info info);
+napi_value OH_Scan_GetScannerParameter(napi_env env, napi_callback_info info);
 #endif //PRINT_ERRORCODE_ACTSSCANERRORCODETEST_H

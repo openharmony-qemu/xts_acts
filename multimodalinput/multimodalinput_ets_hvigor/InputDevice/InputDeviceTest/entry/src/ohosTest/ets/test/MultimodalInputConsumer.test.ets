@@ -51,6 +51,9 @@ export default function MultimodalInputConsumerTest() {
         };
         let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
           console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+          console.info(`${caseName} preKeys: ${JSON.stringify(hotkeyOptions.preKeys)}`);
+          console.info(`${caseName} finalKey: ${JSON.stringify(hotkeyOptions.finalKey)}`);
+          console.info(`${caseName} isRepeat: ${JSON.stringify(hotkeyOptions.isRepeat)}`);
         }
         let ifInputConsumerOnSuccess = 0;
         try {
@@ -474,7 +477,7 @@ export default function MultimodalInputConsumerTest() {
           done();
         } catch (error) {
           console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(4200002);
+          expect(error.code).assertEqual(401);
           done();
         }
       } catch (error) {
@@ -1292,7 +1295,7 @@ export default function MultimodalInputConsumerTest() {
           done();
         } catch (error) {
           console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(4200002);
+          expect(error.code).assertEqual(401);
           done();
         }
       } catch (error) {
@@ -1439,6 +1442,18 @@ export default function MultimodalInputConsumerTest() {
         }
         let callback = (event: KeyEvent) => {
           console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
+          console.info(`${caseName} action is: ${JSON.stringify(event.action)}`);
+          console.info(`${caseName} key is: ${JSON.stringify(event.key)}`);
+          console.info(`${caseName} unicodeChar is: ${JSON.stringify(event.unicodeChar)}`);
+          console.info(`${caseName} keys is: ${JSON.stringify(event.keys)}`);
+          console.info(`${caseName} ctrlKey is: ${JSON.stringify(event.ctrlKey)}`);
+          console.info(`${caseName} altKey is: ${JSON.stringify(event.altKey)}`);
+          console.info(`${caseName} shiftKey is: ${JSON.stringify(event.shiftKey)}`);
+          console.info(`${caseName} logoKey is: ${JSON.stringify(event.logoKey)}`);
+          console.info(`${caseName} fnKey is: ${JSON.stringify(event.fnKey)}`);
+          console.info(`${caseName} capsLock is: ${JSON.stringify(event.capsLock)}`);
+          console.info(`${caseName} numLock is: ${JSON.stringify(event.numLock)}`);
+          console.info(`${caseName} scrollLock is: ${JSON.stringify(event.scrollLock)}`);                    
         }
         let ifInputConsumerOnSuccess = 0;
         try {

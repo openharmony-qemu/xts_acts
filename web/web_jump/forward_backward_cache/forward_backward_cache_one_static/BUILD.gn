@@ -14,7 +14,7 @@
 import("//test/xts/tools/build/suite.gni")
 
 
-# xts_acts_arkts1.2/web/web_jump/forward_backward_cache/forward_backward_cache_one
+# xts_acts_arkts1.2/web/web_jump/forward_backward_cache/forward_backward_cache_one_static
 ohos_js_app_static_suite("ActsWebForwardBackwardCacheOneStaticTest") {
 #   test_hap = true
   testonly = true

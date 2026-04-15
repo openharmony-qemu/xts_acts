@@ -6,7 +6,7 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Scroll, Margin
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class ModifierAutoPlay4 implements AttributeModifier<SwiperAttribute> {
+export class ModifierAutoPlay4 implements AttributeModifier<SwiperAttribute> {
   public isUndefined: boolean = false;
   applyNormalAttribute(instance: SwiperAttribute): void {
     instance

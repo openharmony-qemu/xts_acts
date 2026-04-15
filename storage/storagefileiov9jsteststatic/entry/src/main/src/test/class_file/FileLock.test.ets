@@ -46,7 +46,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -73,7 +72,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(true);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -100,7 +98,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(false);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -128,7 +125,6 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -156,7 +152,6 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(true);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -184,7 +179,6 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(false);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -211,7 +205,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.tryLock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -237,7 +230,6 @@ export default function fileIOFileLock() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -264,7 +256,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(undefined);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -292,7 +283,6 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(undefined);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
@@ -319,7 +309,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock((err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -347,7 +336,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock(true, (err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -375,7 +363,6 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock(false, (err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();

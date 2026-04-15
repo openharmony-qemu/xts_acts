@@ -45,6 +45,8 @@ void addScanErrorCodeTest(std::vector<napi_property_descriptor>& descData)
             nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OH_Scan_GetPictureScanProgress1", nullptr, OH_Scan_GetPictureScanProgress1,
             nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OH_Scan_GetScannerParameter", nullptr, OH_Scan_GetScannerParameter,
+            nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 napi_value OHScanNoError(napi_env env, napi_callback_info info)
@@ -94,8 +96,8 @@ napi_value OH_Scan_StartScannerDiscovery1(napi_env env, napi_callback_info info)
     Scan_ScannerDiscoveryCallback callback;
     napi_value result = nullptr;
     int32_t errorCode = OH_Scan_StartScannerDiscovery(ScannerDiscoveryCallback);
-    napi_create_int32(env, ((errorCode == SCAN_ERROR_GENERIC_FAILURE) || (errorCode == SCAN_ERROR_NONE))
-    ? 0 : -1, &result);
+    bool ret = (errorCode == SCAN_ERROR_GENERIC_FAILURE) || (errorCode == SCAN_ERROR_NONE);
+    napi_create_int32(env, ret ? 0 : -1, &result);
     return result;
 }
 
@@ -152,5 +154,14 @@ napi_value OH_Scan_GetPictureScanProgress1(napi_env env, napi_callback_info info
     int32_t paraOption = 0;
     int32_t errorCode = OH_Scan_GetPictureScanProgress(nullptr, nullptr);
     napi_create_int32(env, errorCode == SCAN_ERROR_INVALID_PARAMETER ? 0 : -1, &result);
+    return result;
+}
+
+napi_value OH_Scan_GetScannerParameter(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t errorCode = 0;
+    auto scannerOptions = OH_Scan_GetScannerParameter(SCANNER_ID, &errorCode);
+    napi_create_int32(env, scannerOptions == nullptr ? 0 : -1, &result);
     return result;
 }

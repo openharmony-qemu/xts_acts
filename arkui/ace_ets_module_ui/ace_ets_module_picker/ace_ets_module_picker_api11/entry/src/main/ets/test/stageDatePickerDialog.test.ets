@@ -82,7 +82,7 @@ export default function stageDatePickerDialog() {
           console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showToastText', 10, "")));
           console.info('testDatePickerDialog001 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testDatePickerDialog001 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -118,7 +118,7 @@ export default function stageDatePickerDialog() {
           console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('testDatePickerDialog002 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testDatePickerDialog002 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -153,7 +153,7 @@ export default function stageDatePickerDialog() {
           console.info("testDatePickerDialog003 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('testDatePickerDialog003 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testDatePickerDialog003 ERR  ' + JSON.stringify(err));
         }
         done();

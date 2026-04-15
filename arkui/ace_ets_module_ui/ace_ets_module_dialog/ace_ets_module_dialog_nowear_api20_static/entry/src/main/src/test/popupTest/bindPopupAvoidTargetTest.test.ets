@@ -109,7 +109,7 @@ export default function BindPopupAvoidTargetTest() {
           `[BindPopup_AvoidTargetPopup_0010] + ${buttonRect.left}, ${buttonRect.top}, ${buttonRect.right},
                 ${buttonRect.bottom}`
         );
-        expect(popupRect.top).assertLargerOrEqual(buttonRect.bottom);
+        expect(popupRect.right).assertLargerOrEqual(buttonRect.right);
         await (button?.click() as Promise<void>);
         console.info('[' + tagName + '] END ===========================');
         done();
@@ -242,7 +242,7 @@ export default function BindPopupAvoidTargetTest() {
           `[BindPopup_AvoidTargetPopup_0040] + ${buttonRect.left}, ${buttonRect.top}, ${buttonRect.right},
                 ${buttonRect.bottom}`
         );
-        expect(popupRect.top).assertLargerOrEqual(buttonRect.bottom);
+        expect(popupRect.right).assertLargerOrEqual(buttonRect.left)
         await (button?.click() as Promise<void>);
         console.info('[' + tagName + '] END ===========================');
         done();

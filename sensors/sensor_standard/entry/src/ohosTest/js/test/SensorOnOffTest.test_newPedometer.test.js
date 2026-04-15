@@ -36,6 +36,7 @@ const PERMISSION_DENIED_CODE = 201
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
 const PERMISSION_DENIED_MSG = 'Permission denied.'
 let tokenID = undefined
+let sensortempcode = true;
 let permissionNameUser = 'ohos.permission.ACTIVITY_MOTION'
 async function grantPerm(){
     try {
@@ -88,7 +89,7 @@ describe("SensorJsTest_sensor_56", function () {
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
         } else {
             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -101,7 +102,7 @@ describe("SensorJsTest_sensor_56", function () {
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback2 accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
         } else {
             console.info('callback2 invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -241,7 +242,7 @@ describe("SensorJsTest_sensor_56", function () {
                     try {
                         sensor.once(sensor.SensorId.PEDOMETER, callback);
                         setTimeout(() => {
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                             done();
                         }, 4000);
                     } catch (error) {
@@ -277,7 +278,7 @@ describe("SensorJsTest_sensor_56", function () {
                     try {
                         sensor.once(sensor.SensorId.PEDOMETER, callback, 5);
                         setTimeout(() => {
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                             done();
                         }, 4000);
                     } catch (error) {
@@ -533,7 +534,7 @@ describe("SensorJsTest_sensor_56", function () {
                             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                                 console.info('callback accuracy verified' + JSON.stringify(data));
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                             } else {
                                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                                 expect(false).assertTrue();
@@ -729,7 +730,7 @@ describe("SensorJsTest_sensor_56", function () {
                             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                                 console.info('callback accuracy verified' + JSON.stringify(data));
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                             } else {
                                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                                 expect(false).assertTrue();
@@ -742,7 +743,7 @@ describe("SensorJsTest_sensor_56", function () {
                             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                                 console.info('callback accuracy verified' + JSON.stringify(data));
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                             } else {
                                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                                 expect(false).assertTrue();
@@ -791,7 +792,7 @@ describe("SensorJsTest_sensor_56", function () {
                             if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
                                 sensor.SensorAccuracy.ACCURACY_HIGH) {
                                 console.info('callback accuracy verified' + JSON.stringify(data));
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                             } else {
                                 console.info('callback invalid accuracy encountered' + JSON.stringify(data));
                                 expect(false).assertTrue();

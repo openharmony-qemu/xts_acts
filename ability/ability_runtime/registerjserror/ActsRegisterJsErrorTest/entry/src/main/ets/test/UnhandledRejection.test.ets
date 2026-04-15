@@ -24,7 +24,7 @@ const SLEEP_DURATION = 800;
 const TIMEOUT_DUARATION = 300;
 
 export default function unhandledRejectionTest() {
-  describe('ActsUnhandledRejectionTest', () => {
+  describe('ActsUnhandledRejectionTestAdapt001', () => {
     beforeEach(async () => {
       errorManager.off("unhandledRejection");
       await sleep(SLEEP_DURATION);

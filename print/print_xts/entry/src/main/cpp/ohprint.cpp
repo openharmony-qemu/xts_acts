@@ -172,8 +172,9 @@ static napi_value OHPrintStartPrintByNative(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value CreateEnumType1()
+static napi_value OHPrintCreateEnum1(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     Print_ErrorCode errorCode = Print_ErrorCode::PRINT_ERROR_NONE;
     errorCode = Print_ErrorCode::PRINT_ERROR_NO_PERMISSION;
     errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_PARAMETER;
@@ -213,10 +214,13 @@ static napi_value CreateEnumType1()
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_LANDSCAPE;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_PORTRAIT;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_NONE;
+    napi_create_int32(env, static_cast<int32_t>(Print_ErrorCode::PRINT_ERROR_NONE), &result);
+    return result;
 }
 
-static napi_value CreateEnumType2()
+static napi_value OHPrintCreateEnum2(napi_env env, napi_callback_info info)
 {
+    napi_value result = nullptr;
     Print_Quality quality = Print_Quality::PRINT_QUALITY_DRAFT;
     quality = Print_Quality::PRINT_QUALITY_NORMAL;
     quality = Print_Quality::PRINT_QUALITY_HIGH;
@@ -234,6 +238,24 @@ static napi_value CreateEnumType2()
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_BLOCK;
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY_FOR_CANCELED;
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY_FOR_STARTED;
+    
+    OH_Print_JobState jobState = OH_Print_JobState::OH_PRINT_JOB_SUCCEED;
+    jobState = OH_Print_JobState::OH_PRINT_JOB_FAIL;
+    jobState = OH_Print_JobState::OH_PRINT_JOB_CANCEL;
+    jobState = OH_Print_JobState::OH_PRINT_JOB_BLOCK;
+    
+    Print_Resolution resolution;
+    resolution.horizontalDpi = 1;
+    resolution.verticalDpi = 1;
+    
+    Print_Margin margin;
+    margin.leftMargin = 1;
+    margin.rightMargin = 1;
+    
+    Print_PrinterCapability capability;
+    Print_DefaultValue defaultValue;
+    napi_create_int32(env, static_cast<int32_t>(Print_ErrorCode::PRINT_ERROR_NONE), &result);
+    return result;
 }
 
 static napi_value CreateStruct()
@@ -279,4 +301,11 @@ static napi_value CreateStruct()
     printJob->printQuality = Print_Quality::PRINT_QUALITY_DRAFT;
     printJob->documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
     printJob->advancedOptions = str;
+    
+    if (printerInfo) {
+        delete printerInfo;
+    }
+    if (printJob) {
+        delete printJob;
+    }
 }

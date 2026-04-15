@@ -33,9 +33,9 @@ export default function direntNdkTest() {
      * @tc.desc   test opendir
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentOpendir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentOpendir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dir = "./sdcard/log/hrs.log";
       let data: number = dirent.opendir(dir);
       console.info("Test NAPI data = \"" + data + "\"");
@@ -49,9 +49,9 @@ export default function direntNdkTest() {
      * @tc.desc   test scandir64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentScandir64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentScandir64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let context = abilityDelegator.getAppContext();
       let filesDir = context.filesDir;
@@ -77,9 +77,9 @@ export default function direntNdkTest() {
      * @tc.desc   test scandir
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentScandir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentScandir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let context = abilityDelegator.getAppContext();
       let filesDir = context.filesDir;
@@ -106,9 +106,9 @@ export default function direntNdkTest() {
      * @tc.desc   test seekdir
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentSeekdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentSeekdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = dirent.seekdir(0);
       expect(a).assertEqual(0);
       done()
@@ -120,9 +120,9 @@ export default function direntNdkTest() {
      * @tc.desc   test seekdir
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentSeekdir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentSeekdir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = dirent.seekdir(1);
       expect(a).assertEqual(0);
       done()
@@ -134,9 +134,9 @@ export default function direntNdkTest() {
      * @tc.desc   test getdents
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentGetdents001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentGetdents001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 0;
       let result: number = dirent.getdents();
       expect(result).assertEqual(resultValue);
@@ -149,9 +149,9 @@ export default function direntNdkTest() {
      * @tc.desc   test getdents64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDirentGetdents64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDirentGetdents64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 0;
       let result: number = dirent.getdents64();
       expect(result).assertEqual(resultValue);

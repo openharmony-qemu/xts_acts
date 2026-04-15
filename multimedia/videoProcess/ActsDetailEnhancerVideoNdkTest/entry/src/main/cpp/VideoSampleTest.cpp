@@ -90,7 +90,10 @@ int32_t VideoSample::InitVideoSample(VideoProcessParam param)
 {
     OH_VideoProcessing_InitializeEnvironment();
     param_ = param;
-    OH_VideoProcessing_Create(&videoProcessor_, VIDEO_PROCESSING_TYPE_DETAIL_ENHANCER);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor_, VIDEO_PROCESSING_TYPE_DETAIL_ENHANCER);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return ret;
+    }
     customImage_ = OH_ConsumerSurface_Create();
     outWindow_ = OH_NativeImage_AcquireNativeWindow(customImage_);
     OH_OnFrameAvailableListener listener;

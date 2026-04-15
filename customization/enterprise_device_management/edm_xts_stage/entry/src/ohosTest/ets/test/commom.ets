@@ -50,12 +50,18 @@ const NOT_EXIST_WANT: Want = {
 
 const AUTOSTARTAPP1: Want = {
   bundleName: "com.edm.acts.normal",
-  abilityName: "TestAbility"
+  abilityName: "TestAbility",
+  parameters: {
+    isHiddenStart: false
+  }
 };
 
 const AUTOSTARTAPP2: Want = {
   bundleName: "com.example.extensionzerotest",
-  abilityName: "com.example.extensionzerotest.MainAbility"
+  abilityName: "com.example.extensionzerotest.MainAbility",
+  parameters: {
+    isHiddenStart: false
+  }
 };
 const SELFHAPNAME = "com.edm.acts.normal"
 const COMPANYNAME2 = "company2"
@@ -149,6 +155,7 @@ function appIdsInit(){
 
 let BUNDLE_NAME_200: Array<string> = new Array<string>(200);
 let BUNDLE_NAME_201: Array<string> = new Array<string>(201);
+let BUNDLE_NAME_ONE_REAL_200: Array<string> = new Array<string>(200);
 
 function bundleNamesInit(){
   for (let i = 0; i < BUNDLE_NAME_201.length; i++) {
@@ -156,6 +163,13 @@ function bundleNamesInit(){
     if (i < BUNDLE_NAME_200.length) {
       BUNDLE_NAME_200[i] = String(i);
     }
+  }
+}
+
+function bundleNamesOneRealInit() {
+  BUNDLE_NAME_ONE_REAL_200[0] = 'com.edm.acts.normal';
+  for (let i = 1; i < BUNDLE_NAME_ONE_REAL_200.length; i++) {
+    BUNDLE_NAME_ONE_REAL_200[i] = String(i);
   }
 }
 
@@ -275,19 +289,34 @@ function setWifiState(WifiState: boolean){
   WIFI_STATE = WifiState;
 }
 
+function getErrorCode(err: BusinessError): number | undefined {
+  if (err && typeof err === 'object') {
+    if (err && err.code) {
+      const code = err.code;
+      if (typeof code === 'string' && !isNaN(Number(code))) {
+        return Number(code);
+      }
+      if (typeof code === 'number') {
+        return code;
+      }
+    }
+  }
+  return undefined;
+}
+
 export {
   BUNDLENAME1, ENTINFO1, SELFWANT, AUTOSTARTAPP1, AUTOSTARTAPP2, SELFHAPNAME, COMPANYNAME2, DESCRIPTION2,
   ENTINFO2, NETWORK_ETH_LOCAL, NETWORK_ETH_INVALID, DEFAULT_USER_ID, INVALID_USER_ID,
   SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS, HAP_FILE_PATH, HAP_FILE_PATH_ERROR, EMPTY_HAP_FILE_PATH,
-  appIdsInit, EDM_INSTALL_PARAM, EDM_INSTALL_PARAM_FOR_ALL_USER, APP_IDS_1,
+  appIdsInit, EDM_INSTALL_PARAM, EDM_INSTALL_PARAM_FOR_ALL_USER, APP_IDS_1, BUNDLE_NAME_ONE_REAL_200,
   APP_IDS_200, APP_IDS_201, TEST_APP_ID_1, TEST_APP_ID_2, TEST_POLICIES, TEST_POLICY_NAME, TEST_POLICY_VALUE,
   INVALID_WANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY, UPDATE_VERSION, INVALID_UPDATE_VERSION, getPixelMap,
   PIXEL_MAP, WATERMARK_BUNDLE_NAME, TEST_BUNDLENAME, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS,
   INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1,
   INVALID_BUNDLE_NAME, CURRENT_USER_ID, getCurrentUserId, DEFAULT_APP_INDEX, INVALID_APP_INDEX,
-  bundleNamesInit, BUNDLE_NAME_200, BUNDLE_NAME_201, TEST_PERMISSION_MANAGED_STATE_GRANTED,
+  bundleNamesInit, bundleNamesOneRealInit, BUNDLE_NAME_200, BUNDLE_NAME_201, TEST_PERMISSION_MANAGED_STATE_GRANTED,
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
-  getBluetoothState, setBluetoothState, getWifiState, setWifiState
+  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode
 }

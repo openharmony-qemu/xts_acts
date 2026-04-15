@@ -5,6 +5,7 @@
     "MainAbility/pages/Popup/PopupApi/PopupApi",
     "MainAbility/pages/Popup/DismissReason",
     "MainAbility/pages/Popup/popupKeyboardAvoidMode",
+    "MainAbility/pages/Popup/AdvancedPopup",
     "MainAbility/pages/dialog/showActionSheetOrder",
     "MainAbility/pages/Popup/Maxwidth", 
     "MainAbility/pages/UIContext/showActionSheetBackgroundEffect",

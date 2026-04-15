@@ -18,22 +18,23 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import AbilityLifecycleCallback from '@ohos.app.ability.AbilityLifecycleCallback';
 import { BusinessError } from '@ohos.base';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class MainAbility9 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log("[Demo] MainAbility9 onCreate")
+    console.log('[Demo] MainAbility9 onCreate');
     globalThis.abilityWant9 = want;
     globalThis.ability9 = this.context;
     globalThis.mainAbility9ListKey = [];
-    let abilityName: string = "";
+    let abilityName: string = '';
     let AbilityLifecycleCallback: AbilityLifecycleCallback = {
       onAbilityCreate(ability) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onAbilityCreate");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onAbilityCreate');
       },
       onWindowStageCreate(ability, windowStage) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onWindowStageCreate");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onWindowStageCreate');
       },
       onWindowStageActive(ability, windowStage) {
         abilityName = ability.context.abilityInfo.name;
@@ -43,39 +44,45 @@ export default class MainAbility9 extends Ability {
       },
       onAbilityForeground(ability) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onAbilityForeground");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onAbilityForeground');
       },
       onAbilityBackground(ability) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onAbilityBackground");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onAbilityBackground');
       },
       onWindowStageDestroy(ability, windowStage) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onWindowStageDestroy");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onWindowStageDestroy');
       },
       onAbilityDestroy(ability) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onAbilityDestroy");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onAbilityDestroy');
+        commonEventManager.publish(`${abilityName}In9_onAbilityDestroy`, (err, data) => {
+          console.log(`${abilityName}In9 onAbilityDestroy publish succeed` + JSON.stringify(err) + JSON.stringify(data));
+        });
       },
       onAbilityContinue(ability) {
         abilityName = ability.context.abilityInfo.name;
-        globalThis.mainAbility9ListKey.push(abilityName + " onAbilityContinue");
+        globalThis.mainAbility9ListKey.push(abilityName + ' onAbilityContinue');
       }
     }
     globalThis.applicationContext9 = this.context.getApplicationContext();
     let callBackId = globalThis.applicationContext9.on('abilityLifecycle', AbilityLifecycleCallback);
     globalThis.MainAbility9onForeground = true;
     globalThis.mainAbility9CallBackId = callBackId
-    console.log("callBackId is aaa :" + callBackId);
+    console.log('callBackId is aaa :' + callBackId);
   }
 
-  onDestroy() {
-    console.log("[Demo] MainAbility9 onDestroy")
+  async onDestroy():Promise<void> {
+    console.log('[Demo] MainAbility9 onDestroy');
+    commonEventManager.publish('MainAbility9_onDestroy', (err, data) => {
+      console.log('MainAbility9 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility9 onWindowStageCreate")
+    console.log('[Demo] MainAbility9 onWindowStageCreate');
 
     windowStage.loadContent('TestAbility/pages/index9', (err: BusinessError) => {
       if (err.code) {
@@ -88,17 +95,17 @@ export default class MainAbility9 extends Ability {
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility9 onWindowStageDestroy")
+    console.log('[Demo] MainAbility9 onWindowStageDestroy');
   }
 
   onForeground() {
-    setTimeout(() => {
-      globalThis.testEvent.push('MainAbility9onForeground');
-    }, 800);
+    commonEventManager.publish('MainAbility9_onForeground', (err, data) => {
+      console.log('MainAbility9 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("[Demo] MainAbility9 onBackground")
+    console.log('[Demo] MainAbility9 onBackground');
   }
 };

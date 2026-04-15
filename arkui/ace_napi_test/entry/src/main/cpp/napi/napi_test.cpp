@@ -17986,6 +17986,2039 @@ static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback
     return result;
 }
 
+static napi_value NapiRunScriptPathTest01(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/Xqkdvzms.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest02(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/OpenHarmony_NAPI_测试文件_成功回调与失败.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest03(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/Test：File.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest04(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/NoExistFile.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest05(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/index.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest06(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/Size0.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest07(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path is abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest08(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/test.abc";
+    size_t argc = 100;
+    for (size_t n = 0; n < argc; n += 1) { 
+        napi_status status = napi_run_script_path(env, path, &value);
+        NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+        NAPI_ASSERT(env, value != nullptr, "napi_run_script_path get value fail");
+    }
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest09(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/test.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path fail");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path get value fail");
+
+    path =  "/entry/resources/rawfile/B.abc";
+    status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path ok");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path success");
+
+    path =  "/entry/resources/rawfile/C.abc";
+    status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path ok");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path success");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest10(napi_env env, napi_callback_info info)
+{
+    const char* path =  "/entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(env, path, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "napi_run_script_path ok");
+
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest11(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(nullptr, path, &value);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "napi_run_script_path abnormal");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest01(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos*/:hilog";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest02(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+
+    napi_status status = napi_load_module(env, nullptr, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value == nullptr, "napi_load_module value abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest03(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos.display";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest04(napi_env env, napi_callback_info info)
+{
+    const char* path =  "@ohos.hilog";
+    size_t argc = 1000;
+    for (size_t n = 0; n < argc; n += 1) {
+        napi_value value = nullptr;
+        napi_status status = napi_load_module(env, path, &value);
+        NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+        NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    }
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest05(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos.hilog";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+
+    path =  "@ohos.net.statistics";
+    status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+        napi_load_module_with_info(env, "pages?/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status != napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = napi_load_module_with_info(env, nullptr, "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status == napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils == nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest03(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+        napi_load_module_with_info(env, "pages/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status != napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest04(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1000;
+    for (size_t n = 0; n < argc; n += 1) {
+        napi_value objectUtils = nullptr;
+        napi_status status = 
+        napi_load_module_with_info(env, "@ohos.hilog", "com.acts.ace.napitest/entry_test", &objectUtils);
+        NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+        NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    }
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest05(napi_env env, napi_callback_info info)
+{
+
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+    napi_load_module_with_info(env, "@ohos.hilog", nullptr, &objectUtils);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+
+    napi_value indexModule = nullptr;
+    status = 
+    napi_load_module_with_info(env, "@ohos.display", nullptr, &indexModule);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+    NAPI_ASSERT(env, indexModule != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// ========================== callsite info tests ========================== //
+// --- Group 1: napi_create_callsite_info ---
+static napi_value NapiCreateCallsiteInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_callsite_info csInfo = nullptr;
+    status = napi_create_callsite_info(env, &csInfo);
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_callsite_info should succeed.");
+    NAPI_ASSERT(env, csInfo != nullptr, "callsite info should be non-null.");
+
+    napi_callsite_info csInfo2 = nullptr;
+    status = napi_create_callsite_info(env, &csInfo2);
+    NAPI_ASSERT(env, status == napi_ok, "second create should succeed.");
+    NAPI_ASSERT(env, csInfo2 != nullptr, "second info should be non-null.");
+    NAPI_ASSERT(env, csInfo != csInfo2, "two infos should be distinct.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_delete_callsite_info(env, csInfo2);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCreateCallsiteInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    status = napi_create_callsite_info(env, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "null result should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCreateCallsiteInfoTest03(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_callsite_info csInfo = nullptr;
+    status = napi_create_callsite_info(nullptr, &csInfo);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env=null should return napi_invalid_arg.");
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 2: napi_delete_callsite_info ---
+
+static napi_value NapiDeleteCallsiteInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+    status = napi_delete_callsite_info(env, csInfo);
+    NAPI_ASSERT(env, status == napi_ok, "delete valid info should succeed.");
+    status = napi_delete_callsite_info(env, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "info=null should return napi_invalid_arg.");
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiDeleteCallsiteInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+    status = napi_delete_callsite_info(nullptr, csInfo);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env=null should return napi_invalid_arg.");
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 3: napi_get_property_with_callsite_info — valid params ---
+
+static napi_value NapiGetPropCallsiteInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "happy path get should succeed.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "got value should be 42.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result1 = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, csInfo, &result1, nullptr);
+
+    napi_value result2 = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &result2, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "IC reuse get should succeed.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result2, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "IC reuse value should be 42.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest03(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, undefined, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "key=undefined should succeed.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest04(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, nullptr, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "info=nullptr should work via slow path.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "slow path value should be 42.");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest05(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "nonexistent", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "non-existent key should succeed.");
+    napi_valuetype type;
+    napi_typeof(env, result, &type);
+    NAPI_ASSERT(env, type == napi_undefined, "non-existent key should return undefined.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest06(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value funcVal = nullptr;
+    napi_create_function(env, "testFunc", NAPI_AUTO_LENGTH, [](napi_env e, napi_callback_info i) -> napi_value {
+        napi_value undef;
+        napi_get_undefined(e, &undef);
+        return undef;
+    }, nullptr, &funcVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "funcProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 7, &val);
+    napi_set_property(env, funcVal, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, funcVal, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "function receiver should succeed.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 7, "function receiver value should be 7.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 4: napi_get_property_with_callsite_info — invalid params ---
+
+static napi_value NapiGetPropCallsiteInfoTest07(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, undefined, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=undefined should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest08(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, nullptr, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "object=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest09(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, nullptr, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "key=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest10(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, nullptr, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "result=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest11(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(nullptr, obj, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env=null should return napi_invalid_arg.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest12(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    status = napi_get_property_with_callsite_info(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "all null should return napi_invalid_arg.");
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest13(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value numVal = nullptr;
+    napi_create_int32(env, 123, &numVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, numVal, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=number should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest14(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value boolVal = nullptr;
+    napi_get_boolean(env, true, &boolVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, boolVal, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=boolean should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest15(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value nullVal = nullptr;
+    napi_get_null(env, &nullVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, nullVal, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=null(JS) should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetPropCallsiteInfoTest16(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value strVal = nullptr;
+    napi_create_string_utf8(env, "hello", NAPI_AUTO_LENGTH, &strVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, strVal, key, csInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=string should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 5: napi_set_property_with_callsite_info — valid params ---
+
+static napi_value NapiSetPropCallsiteInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, obj, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "happy path set should succeed.");
+    napi_value result = nullptr;
+    napi_get_property(env, obj, key, &result);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "normal get should return 42.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value val1 = nullptr;
+    napi_create_int32(env, 42, &val1);
+    napi_set_property_with_callsite_info(env, obj, key, val1, csInfo, nullptr);
+
+    napi_value val2 = nullptr;
+    napi_create_int32(env, 100, &val2);
+    status = napi_set_property_with_callsite_info(env, obj, key, val2, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "IC overwrite set should succeed.");
+    napi_value result = nullptr;
+    napi_get_property(env, obj, key, &result);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 100, "overwrite value should be 100.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest03(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, obj, undefined, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "key=undefined should succeed.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest04(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, obj, key, undefined, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "value=undefined should succeed.");
+
+    // Verify stored value is actually undefined
+    napi_value readBack = nullptr;
+    napi_get_property(env, obj, key, &readBack);
+    napi_valuetype readType;
+    napi_typeof(env, readBack, &readType);
+    NAPI_ASSERT(env, readType == napi_undefined, "stored value should be undefined.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest05(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "testKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+
+    status = napi_set_property_with_callsite_info(env, obj, key, val, nullptr, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "info=nullptr should work via slow path.");
+    napi_value result = nullptr;
+    napi_get_property(env, obj, key, &result);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "slow path value should be 42.");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest06(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value funcVal = nullptr;
+    napi_create_function(env, "testFunc", NAPI_AUTO_LENGTH, [](napi_env e, napi_callback_info i) -> napi_value {
+        napi_value undef;
+        napi_get_undefined(e, &undef);
+        return undef;
+    }, nullptr, &funcVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "funcProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 7, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, funcVal, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "function receiver set should succeed.");
+    napi_value result = nullptr;
+    napi_get_property(env, funcVal, key, &result);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 7, "function receiver value should be 7.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 6: napi_set_property_with_callsite_info — invalid params ---
+
+static napi_value NapiSetPropCallsiteInfoTest07(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, undefined, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=undefined should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest08(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, nullptr, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "object=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest09(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, obj, nullptr, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "key=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest10(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, obj, key, nullptr, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "value=null should return napi_invalid_arg.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_invalid_arg);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest11(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(nullptr, obj, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env=null should return napi_invalid_arg.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest12(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    status = napi_set_property_with_callsite_info(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "all null should return napi_invalid_arg.");
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest13(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value numVal = nullptr;
+    napi_create_int32(env, 123, &numVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, numVal, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=number should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest14(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value boolVal = nullptr;
+    napi_get_boolean(env, true, &boolVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, boolVal, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=boolean should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest15(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value nullVal = nullptr;
+    napi_get_null(env, &nullVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, nullVal, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=null(JS) should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiSetPropCallsiteInfoTest16(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value strVal = nullptr;
+    napi_create_string_utf8(env, "hello", NAPI_AUTO_LENGTH, &strVal);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 1, &val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    status = napi_set_property_with_callsite_info(env, strVal, key, val, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_object_expected, "object=string should return napi_object_expected.");
+    NAPI_CHECK_GET_LAST_ERROR_INFO(env, status == napi_object_expected);
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 7: Cross-direction reuse ---
+
+static napi_value NapiCallsiteInfoCrossUseTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "crossKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    // Populate IC with get direction — verify warm-up succeeded
+    napi_value getResult = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &getResult, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "warm-up get should succeed.");
+    int32_t warmUpVal = 0;
+    napi_get_value_int32(env, getResult, &warmUpVal);
+    NAPI_ASSERT(env, warmUpVal == 42, "warm-up get value should be 42.");
+
+    // Cross-use: set with get-populated info → falls back to slow path, still works
+    napi_value newVal = nullptr;
+    napi_create_int32(env, 99, &newVal);
+    status = napi_set_property_with_callsite_info(env, obj, key, newVal, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "cross-use get→set should succeed via slow path.");
+    napi_value verifyResult = nullptr;
+    napi_get_property(env, obj, key, &verifyResult);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, verifyResult, &intResult);
+    NAPI_ASSERT(env, intResult == 99, "cross-use set value should be 99.");
+
+    // Original direction (get) should still work after cross-use
+    napi_value reGetResult = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &reGetResult, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "original direction get should still work.");
+    int32_t reGetVal = 0;
+    napi_get_value_int32(env, reGetResult, &reGetVal);
+    NAPI_ASSERT(env, reGetVal == 99, "re-get after cross-use should be 99.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoCrossUseTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "crossKey2", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 10, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    // Populate IC with set direction — verify warm-up succeeded
+    napi_value newVal = nullptr;
+    napi_create_int32(env, 20, &newVal);
+    status = napi_set_property_with_callsite_info(env, obj, key, newVal, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "warm-up set should succeed.");
+
+    // Cross-use: get with set-populated info → falls back to slow path, still works
+    napi_value getResult = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &getResult, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "cross-use set→get should succeed via slow path.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, getResult, &intResult);
+    NAPI_ASSERT(env, intResult == 20, "cross-use get value should be 20.");
+
+    // Original direction (set) should still work after cross-use
+    napi_value newVal2 = nullptr;
+    napi_create_int32(env, 30, &newVal2);
+    status = napi_set_property_with_callsite_info(env, obj, key, newVal2, csInfo, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "original direction set should still work.");
+    napi_value reVerify = nullptr;
+    napi_get_property(env, obj, key, &reVerify);
+    int32_t reVerifyVal = 0;
+    napi_get_value_int32(env, reVerify, &reVerifyVal);
+    NAPI_ASSERT(env, reVerifyVal == 30, "re-set after cross-use should be 30.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoCrossUseTest03(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "crossHitKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 77, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    // First get: miss
+    bool hit1 = true;
+    napi_value r1 = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, csInfo, &r1, &hit1);
+    NAPI_ASSERT(env, hit1 == false, "first get should be IC miss.");
+
+    // Second get: hit
+    bool hit2 = false;
+    napi_value r2 = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, csInfo, &r2, &hit2);
+    NAPI_ASSERT(env, hit2 == true, "second get should be IC hit.");
+
+    // Cross-use set: succeeds via slow path, hit stays false
+    bool hitSet = true;
+    napi_value newVal = nullptr;
+    napi_create_int32(env, 88, &newVal);
+    status = napi_set_property_with_callsite_info(env, obj, key, newVal, csInfo, &hitSet);
+    NAPI_ASSERT(env, status == napi_ok, "cross-use set should succeed.");
+    NAPI_ASSERT(env, hitSet == false, "cross-use set hit should be false.");
+
+    // Verify the property was actually updated (matches jsnapi_third_tests.cpp:4192)
+    napi_value verifyResult = nullptr;
+    napi_get_property(env, obj, key, &verifyResult);
+    int32_t verifyVal = 0;
+    napi_get_value_int32(env, verifyResult, &verifyVal);
+    NAPI_ASSERT(env, verifyVal == 88, "cross-use set should have updated value to 88.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 8: Round-trip interop ---
+
+static napi_value NapiCallsiteInfoRoundTripTest01(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "rtKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+
+    napi_callsite_info setInfo = nullptr;
+    napi_create_callsite_info(env, &setInfo);
+    napi_callsite_info getInfo = nullptr;
+    napi_create_callsite_info(env, &getInfo);
+
+    napi_set_property_with_callsite_info(env, obj, key, val, setInfo, nullptr);
+    napi_value result = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, getInfo, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "round trip get should succeed.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "round trip value should be 42.");
+
+    napi_delete_callsite_info(env, setInfo);
+    napi_delete_callsite_info(env, getInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoRoundTripTest02(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+
+    // normal set → fast get
+    napi_value key1 = nullptr;
+    napi_create_string_utf8(env, "normalSet", NAPI_AUTO_LENGTH, &key1);
+    napi_value val1 = nullptr;
+    napi_create_int32(env, 7, &val1);
+    napi_set_property(env, obj, key1, val1);
+
+    napi_callsite_info getInfo = nullptr;
+    napi_create_callsite_info(env, &getInfo);
+    napi_value result1 = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key1, getInfo, &result1, nullptr);
+    int32_t intResult1 = 0;
+    napi_get_value_int32(env, result1, &intResult1);
+    NAPI_ASSERT(env, intResult1 == 7, "normal set → fast get should be 7.");
+
+    // fast set → normal get
+    napi_value key2 = nullptr;
+    napi_create_string_utf8(env, "fastSet", NAPI_AUTO_LENGTH, &key2);
+    napi_value val2 = nullptr;
+    napi_create_int32(env, 99, &val2);
+    napi_callsite_info setInfo = nullptr;
+    napi_create_callsite_info(env, &setInfo);
+    napi_set_property_with_callsite_info(env, obj, key2, val2, setInfo, nullptr);
+
+    napi_value result2 = nullptr;
+    napi_get_property(env, obj, key2, &result2);
+    int32_t intResult2 = 0;
+    napi_get_value_int32(env, result2, &intResult2);
+    NAPI_ASSERT(env, intResult2 == 99, "fast set → normal get should be 99.");
+
+    napi_delete_callsite_info(env, getInfo);
+    napi_delete_callsite_info(env, setInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 9: IC polymorphism ---
+
+static napi_value NapiCallsiteInfoMultiObjectTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "shared", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info setInfo = nullptr;
+    napi_create_callsite_info(env, &setInfo);
+    napi_callsite_info getInfo = nullptr;
+    napi_create_callsite_info(env, &getInfo);
+
+    napi_value obj1 = nullptr;
+    napi_create_object(env, &obj1);
+    napi_value val1 = nullptr;
+    napi_create_int32(env, 1, &val1);
+    napi_set_property_with_callsite_info(env, obj1, key, val1, setInfo, nullptr);
+
+    napi_value obj2 = nullptr;
+    napi_create_object(env, &obj2);
+    napi_value extraKey = nullptr;
+    napi_create_string_utf8(env, "extra", NAPI_AUTO_LENGTH, &extraKey);
+    napi_value extraVal = nullptr;
+    napi_create_int32(env, 999, &extraVal);
+    napi_set_property(env, obj2, extraKey, extraVal);
+    napi_value val2 = nullptr;
+    napi_create_int32(env, 2, &val2);
+    napi_set_property_with_callsite_info(env, obj2, key, val2, setInfo, nullptr);
+
+    napi_value result1 = nullptr;
+    napi_get_property_with_callsite_info(env, obj1, key, getInfo, &result1, nullptr);
+    int32_t intResult1 = 0;
+    napi_get_value_int32(env, result1, &intResult1);
+    NAPI_ASSERT(env, intResult1 == 1, "obj1 value should be 1.");
+
+    napi_value result2 = nullptr;
+    napi_get_property_with_callsite_info(env, obj2, key, getInfo, &result2, nullptr);
+    int32_t intResult2 = 0;
+    napi_get_value_int32(env, result2, &intResult2);
+    NAPI_ASSERT(env, intResult2 == 2, "obj2 value should be 2.");
+
+    napi_delete_callsite_info(env, setInfo);
+    napi_delete_callsite_info(env, getInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 10: Value types ---
+
+static napi_value NapiCallsiteInfoValueTypeTest01(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "strProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_string_utf8(env, "hello", NAPI_AUTO_LENGTH, &val);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_set_property_with_callsite_info(env, obj, key, val, si, nullptr);
+    napi_value result = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, gi, &result, nullptr);
+    napi_valuetype type;
+    napi_typeof(env, result, &type);
+    NAPI_ASSERT(env, type == napi_string, "string type check failed.");
+    char buf[64];
+    size_t copied = 0;
+    napi_get_value_string_utf8(env, result, buf, sizeof(buf), &copied);
+    NAPI_ASSERT(env, copied == 5 && strcmp(buf, "hello") == 0, "string content should be 'hello'.");
+
+    napi_delete_callsite_info(env, si);
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoValueTypeTest02(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "boolProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_get_boolean(env, true, &val);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_set_property_with_callsite_info(env, obj, key, val, si, nullptr);
+    napi_value result = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, gi, &result, nullptr);
+    napi_valuetype type;
+    napi_typeof(env, result, &type);
+    NAPI_ASSERT(env, type == napi_boolean, "boolean type check failed.");
+    bool boolOut = false;
+    napi_get_value_bool(env, result, &boolOut);
+    NAPI_ASSERT(env, boolOut == true, "boolean value check failed.");
+
+    napi_delete_callsite_info(env, si);
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoValueTypeTest03(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "dblProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_double(env, 3.14, &val);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_set_property_with_callsite_info(env, obj, key, val, si, nullptr);
+    napi_value result = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, gi, &result, nullptr);
+    napi_valuetype type;
+    napi_typeof(env, result, &type);
+    NAPI_ASSERT(env, type == napi_number, "double type check failed.");
+    double dblOut = 0.0;
+    napi_get_value_double(env, result, &dblOut);
+    NAPI_ASSERT(env, dblOut == 3.14, "double value check failed.");
+
+    napi_delete_callsite_info(env, si);
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoValueTypeTest04(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "nullProp", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_get_null(env, &val);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_set_property_with_callsite_info(env, obj, key, val, si, nullptr);
+    napi_value result = nullptr;
+    napi_get_property_with_callsite_info(env, obj, key, gi, &result, nullptr);
+    napi_valuetype type;
+    napi_typeof(env, result, &type);
+    NAPI_ASSERT(env, type == napi_null, "null type check failed.");
+
+    napi_delete_callsite_info(env, si);
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 11: Hit parameter ---
+
+static napi_value NapiCallsiteInfoHitGetTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "hitKey", NAPI_AUTO_LENGTH, &key);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_property(env, obj, key, val);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    bool hit1 = true;
+    napi_value r1 = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &r1, &hit1);
+    NAPI_ASSERT(env, status == napi_ok, "first get should succeed.");
+    NAPI_ASSERT(env, hit1 == false, "first get should be IC miss.");
+
+    bool hit2 = false;
+    napi_value r2 = nullptr;
+    status = napi_get_property_with_callsite_info(env, obj, key, csInfo, &r2, &hit2);
+    NAPI_ASSERT(env, status == napi_ok, "second get should succeed.");
+    NAPI_ASSERT(env, hit2 == true, "second get should be IC hit.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, r2, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "IC hit value should be 42.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCallsiteInfoHitSetTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "hitSetKey", NAPI_AUTO_LENGTH, &key);
+    // Predefine the property so first fast-set is "update", not "add" (different store shape).
+    // Matches upstream: jsnapi_third_tests.cpp:1605
+    napi_value initVal = nullptr;
+    napi_create_int32(env, 0, &initVal);
+    napi_set_property(env, obj, key, initVal);
+
+    napi_callsite_info csInfo = nullptr;
+    napi_create_callsite_info(env, &csInfo);
+
+    napi_value val1 = nullptr;
+    napi_create_int32(env, 100, &val1);
+    bool hit1 = true;
+    status = napi_set_property_with_callsite_info(env, obj, key, val1, csInfo, &hit1);
+    NAPI_ASSERT(env, status == napi_ok, "first set should succeed.");
+    NAPI_ASSERT(env, hit1 == false, "first set should be IC miss.");
+
+    napi_value val2 = nullptr;
+    napi_create_int32(env, 200, &val2);
+    bool hit2 = false;
+    status = napi_set_property_with_callsite_info(env, obj, key, val2, csInfo, &hit2);
+    NAPI_ASSERT(env, status == napi_ok, "second set should succeed.");
+    NAPI_ASSERT(env, hit2 == true, "second set should be IC hit.");
+
+    napi_value result = nullptr;
+    napi_get_property(env, obj, key, &result);
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 200, "final value should be 200.");
+
+    napi_delete_callsite_info(env, csInfo);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 12: Mega state (>4 shapes) ---
+
+static napi_value NapiCallsiteInfoMegaStateTest(napi_env env, napi_callback_info info)
+{
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    // Create 5 objects with different Shapes by giving each a unique extra property
+    const char* extraKeys[] = {"a", "b", "c", "d", "e"};
+    for (uint32_t i = 0; i < 5; i++) {
+        napi_value obj = nullptr;
+        napi_create_object(env, &obj);
+        napi_value extraKey = nullptr;
+        napi_create_string_utf8(env, extraKeys[i], NAPI_AUTO_LENGTH, &extraKey);
+        napi_value extraVal = nullptr;
+        napi_create_int32(env, i, &extraVal);
+        napi_set_property(env, obj, extraKey, extraVal);
+        napi_value val = nullptr;
+        napi_create_int32(env, (i + 1) * 10, &val);
+        napi_set_property(env, obj, key, val);
+
+        bool hit = true;
+        napi_value result = nullptr;
+        napi_status status = napi_get_property_with_callsite_info(env, obj, key, gi, &result, &hit);
+        NAPI_ASSERT(env, status == napi_ok, "mega state get should still succeed.");
+        NAPI_ASSERT(env, hit == false, "first encounter of each new shape should be IC miss.");
+        int32_t intResult = 0;
+        napi_get_value_int32(env, result, &intResult);
+        NAPI_ASSERT(env, intResult == (i + 1) * 10, "mega state value should be correct.");
+    }
+
+    // 6th access with yet another shape — should be mega state, hit=false
+    napi_value obj6 = nullptr;
+    napi_create_object(env, &obj6);
+    napi_value fKey = nullptr;
+    napi_create_string_utf8(env, "f", NAPI_AUTO_LENGTH, &fKey);
+    napi_value fVal = nullptr;
+    napi_create_int32(env, 99, &fVal);
+    napi_set_property(env, obj6, fKey, fVal);
+    napi_value xVal = nullptr;
+    napi_create_int32(env, 60, &xVal);
+    napi_set_property(env, obj6, key, xVal);
+
+    bool hitMega = true;
+    napi_value result6 = nullptr;
+    napi_status status = napi_get_property_with_callsite_info(env, obj6, key, gi, &result6, &hitMega);
+    NAPI_ASSERT(env, status == napi_ok, "mega state 6th get should succeed.");
+    NAPI_ASSERT(env, hitMega == false, "mega state should always miss.");
+    int32_t intResult6 = 0;
+    napi_get_value_int32(env, result6, &intResult6);
+    NAPI_ASSERT(env, intResult6 == 60, "mega state 6th value should be 60.");
+
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+
+// --- Group 13: Prototype chain property ---
+
+static napi_value NapiCallsiteInfoPrototypeTest(napi_env env, napi_callback_info info)
+{
+    napi_value proto = nullptr;
+    napi_create_object(env, &proto);
+    napi_value inhKey = nullptr;
+    napi_create_string_utf8(env, "inherited", NAPI_AUTO_LENGTH, &inhKey);
+    napi_value inhVal = nullptr;
+    napi_create_int32(env, 42, &inhVal);
+    napi_set_property(env, proto, inhKey, inhVal);
+
+    // Object.create(proto)
+    napi_value global = nullptr;
+    napi_get_global(env, &global);
+    napi_value objectCtor = nullptr;
+    napi_value objectCtorKey = nullptr;
+    napi_create_string_utf8(env, "Object", NAPI_AUTO_LENGTH, &objectCtorKey);
+    napi_get_property(env, global, objectCtorKey, &objectCtor);
+    napi_value createKey = nullptr;
+    napi_create_string_utf8(env, "create", NAPI_AUTO_LENGTH, &createKey);
+    napi_value createFn = nullptr;
+    napi_get_property(env, objectCtor, createKey, &createFn);
+
+    napi_value child = nullptr;
+    napi_call_function(env, objectCtor, createFn, 1, &proto, &child);
+
+    napi_value ownKey = nullptr;
+    napi_create_string_utf8(env, "own", NAPI_AUTO_LENGTH, &ownKey);
+    napi_value ownVal = nullptr;
+    napi_create_int32(env, 1, &ownVal);
+    napi_set_property(env, child, ownKey, ownVal);
+
+    // Get inherited property via callsite IC
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_value result = nullptr;
+    napi_status status = napi_get_property_with_callsite_info(env, child, inhKey, gi, &result, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "prototype chain get should succeed.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 42, "inherited value should be 42.");
+
+    // Verify own property also works with a separate callsite info
+    napi_callsite_info gi2 = nullptr;
+    napi_create_callsite_info(env, &gi2);
+    napi_value ownResult = nullptr;
+    status = napi_get_property_with_callsite_info(env, child, ownKey, gi2, &ownResult, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "own property get should succeed.");
+    int32_t ownIntResult = 0;
+    napi_get_value_int32(env, ownResult, &ownIntResult);
+    NAPI_ASSERT(env, ownIntResult == 1, "own value should be 1.");
+
+    napi_delete_callsite_info(env, gi);
+    napi_delete_callsite_info(env, gi2);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 14: Mega state SET direction ---
+
+static napi_value NapiCallsiteInfoMegaStateSetTest(napi_env env, napi_callback_info info)
+{
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+
+    const char* extraKeys[] = {"a", "b", "c", "d", "e", "f"};
+    for (uint32_t i = 0; i < 6; i++) {
+        napi_value obj = nullptr;
+        napi_create_object(env, &obj);
+        napi_value extraKey = nullptr;
+        napi_create_string_utf8(env, extraKeys[i], NAPI_AUTO_LENGTH, &extraKey);
+        napi_value extraVal = nullptr;
+        napi_create_int32(env, i, &extraVal);
+        napi_set_property(env, obj, extraKey, extraVal);
+        napi_value placeholder = nullptr;
+        napi_create_int32(env, 0, &placeholder);
+        napi_set_property(env, obj, key, placeholder);
+
+        napi_value newVal = nullptr;
+        napi_create_int32(env, (i + 1) * 100, &newVal);
+        bool hit = true;
+        napi_status status = napi_set_property_with_callsite_info(env, obj, key, newVal, si, &hit);
+        NAPI_ASSERT(env, status == napi_ok, "mega set should succeed.");
+        NAPI_ASSERT(env, hit == false, "each new shape should be IC miss for set.");
+
+        napi_value readBack = nullptr;
+        napi_get_property(env, obj, key, &readBack);
+        int32_t intResult = 0;
+        napi_get_value_int32(env, readBack, &intResult);
+        NAPI_ASSERT(env, intResult == (i + 1) * 100, "set mega value should be correct.");
+    }
+
+    napi_delete_callsite_info(env, si);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 15: Mega state permanence ---
+
+static napi_value NapiCallsiteInfoMegaStatePermanentTest(napi_env env, napi_callback_info info)
+{
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "x", NAPI_AUTO_LENGTH, &key);
+
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    const char* extraKeys[] = {"a", "b", "c", "d", "e"};
+    napi_value objects[5];
+    for (uint32_t i = 0; i < 5; i++) {
+        napi_create_object(env, &objects[i]);
+        napi_value extraKey = nullptr;
+        napi_create_string_utf8(env, extraKeys[i], NAPI_AUTO_LENGTH, &extraKey);
+        napi_value extraVal = nullptr;
+        napi_create_int32(env, i, &extraVal);
+        napi_set_property(env, objects[i], extraKey, extraVal);
+        napi_value val = nullptr;
+        napi_create_int32(env, (i + 1) * 10, &val);
+        napi_set_property(env, objects[i], key, val);
+        napi_value tmp = nullptr;
+        napi_get_property_with_callsite_info(env, objects[i], key, gi, &tmp, nullptr);
+    }
+
+    bool hit = true;
+    napi_value result = nullptr;
+    napi_status status = napi_get_property_with_callsite_info(env, objects[0], key, gi, &result, &hit);
+    NAPI_ASSERT(env, status == napi_ok, "re-access after mega should succeed.");
+    NAPI_ASSERT(env, hit == false, "mega state is permanent — re-access should still miss.");
+    int32_t intResult = 0;
+    napi_get_value_int32(env, result, &intResult);
+    NAPI_ASSERT(env, intResult == 10, "first object value should still be 10.");
+
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 16: Prototype hit tracking ---
+
+static napi_value NapiCallsiteInfoPrototypeHitTest(napi_env env, napi_callback_info info)
+{
+    napi_value proto = nullptr;
+    napi_create_object(env, &proto);
+    napi_value inhKey = nullptr;
+    napi_create_string_utf8(env, "inherited", NAPI_AUTO_LENGTH, &inhKey);
+    napi_value inhVal = nullptr;
+    napi_create_int32(env, 42, &inhVal);
+    napi_set_property(env, proto, inhKey, inhVal);
+
+    napi_value global = nullptr;
+    napi_get_global(env, &global);
+    napi_value objectCtor = nullptr;
+    napi_value objectCtorKey = nullptr;
+    napi_create_string_utf8(env, "Object", NAPI_AUTO_LENGTH, &objectCtorKey);
+    napi_get_property(env, global, objectCtorKey, &objectCtor);
+    napi_value createKey = nullptr;
+    napi_create_string_utf8(env, "create", NAPI_AUTO_LENGTH, &createKey);
+    napi_value createFn = nullptr;
+    napi_get_property(env, objectCtor, createKey, &createFn);
+
+    napi_value child = nullptr;
+    napi_call_function(env, objectCtor, createFn, 1, &proto, &child);
+
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    bool hit1 = true;
+    napi_value result1 = nullptr;
+    napi_status status = napi_get_property_with_callsite_info(env, child, inhKey, gi, &result1, &hit1);
+    NAPI_ASSERT(env, status == napi_ok, "prototype first get should succeed.");
+    NAPI_ASSERT(env, hit1 == false, "first access should be IC miss.");
+    int32_t val1 = 0;
+    napi_get_value_int32(env, result1, &val1);
+    NAPI_ASSERT(env, val1 == 42, "inherited value should be 42.");
+
+    bool hit2 = false;
+    napi_value result2 = nullptr;
+    status = napi_get_property_with_callsite_info(env, child, inhKey, gi, &result2, &hit2);
+    NAPI_ASSERT(env, status == napi_ok, "prototype second get should succeed.");
+    NAPI_ASSERT(env, hit2 == true, "second access on same shape should be IC hit.");
+    int32_t val2 = 0;
+    napi_get_value_int32(env, result2, &val2);
+    NAPI_ASSERT(env, val2 == 42, "inherited value should still be 42.");
+
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 17: Prototype shadow via SET ---
+
+static napi_value NapiCallsiteInfoPrototypeShadowTest(napi_env env, napi_callback_info info)
+{
+    napi_value proto = nullptr;
+    napi_create_object(env, &proto);
+    napi_value sharedKey = nullptr;
+    napi_create_string_utf8(env, "shared", NAPI_AUTO_LENGTH, &sharedKey);
+    napi_value protoVal = nullptr;
+    napi_create_int32(env, 100, &protoVal);
+    napi_set_property(env, proto, sharedKey, protoVal);
+
+    napi_value global = nullptr;
+    napi_get_global(env, &global);
+    napi_value objectCtor = nullptr;
+    napi_value objectCtorKey = nullptr;
+    napi_create_string_utf8(env, "Object", NAPI_AUTO_LENGTH, &objectCtorKey);
+    napi_get_property(env, global, objectCtorKey, &objectCtor);
+    napi_value createKey = nullptr;
+    napi_create_string_utf8(env, "create", NAPI_AUTO_LENGTH, &createKey);
+    napi_value createFn = nullptr;
+    napi_get_property(env, objectCtor, createKey, &createFn);
+
+    napi_value child = nullptr;
+    napi_call_function(env, objectCtor, createFn, 1, &proto, &child);
+
+    napi_callsite_info si = nullptr;
+    napi_create_callsite_info(env, &si);
+    napi_value childVal = nullptr;
+    napi_create_int32(env, 999, &childVal);
+    napi_status status = napi_set_property_with_callsite_info(env, child, sharedKey, childVal, si, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "shadow set should succeed.");
+
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+    napi_value childResult = nullptr;
+    status = napi_get_property_with_callsite_info(env, child, sharedKey, gi, &childResult, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "child get should succeed.");
+    int32_t childInt = 0;
+    napi_get_value_int32(env, childResult, &childInt);
+    NAPI_ASSERT(env, childInt == 999, "child should have shadowed value 999.");
+
+    napi_value protoResult = nullptr;
+    napi_get_property(env, proto, sharedKey, &protoResult);
+    int32_t protoInt = 0;
+    napi_get_value_int32(env, protoResult, &protoInt);
+    NAPI_ASSERT(env, protoInt == 100, "proto should still have original value 100.");
+
+    bool hasOwn = false;
+    napi_has_own_property(env, child, sharedKey, &hasOwn);
+    NAPI_ASSERT(env, hasOwn == true, "child should have own property after shadow set.");
+
+    napi_delete_callsite_info(env, si);
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// --- Group 18: Prototype invalidation after mutation ---
+
+static napi_value NapiCallsiteInfoPrototypeInvalidationTest(napi_env env, napi_callback_info info)
+{
+    napi_value proto = nullptr;
+    napi_create_object(env, &proto);
+    napi_value inhKey = nullptr;
+    napi_create_string_utf8(env, "inherited", NAPI_AUTO_LENGTH, &inhKey);
+    napi_value inhVal = nullptr;
+    napi_create_int32(env, 42, &inhVal);
+    napi_set_property(env, proto, inhKey, inhVal);
+
+    napi_value global = nullptr;
+    napi_get_global(env, &global);
+    napi_value objectCtor = nullptr;
+    napi_value objectCtorKey = nullptr;
+    napi_create_string_utf8(env, "Object", NAPI_AUTO_LENGTH, &objectCtorKey);
+    napi_get_property(env, global, objectCtorKey, &objectCtor);
+    napi_value createKey = nullptr;
+    napi_create_string_utf8(env, "create", NAPI_AUTO_LENGTH, &createKey);
+    napi_value createFn = nullptr;
+    napi_get_property(env, objectCtor, createKey, &createFn);
+
+    napi_value child = nullptr;
+    napi_call_function(env, objectCtor, createFn, 1, &proto, &child);
+
+    napi_callsite_info gi = nullptr;
+    napi_create_callsite_info(env, &gi);
+
+    napi_value r1 = nullptr;
+    napi_get_property_with_callsite_info(env, child, inhKey, gi, &r1, nullptr);
+    bool hitWarm = false;
+    napi_value r2 = nullptr;
+    napi_get_property_with_callsite_info(env, child, inhKey, gi, &r2, &hitWarm);
+    NAPI_ASSERT(env, hitWarm == true, "should be IC hit after warm-up.");
+    int32_t warmVal = 0;
+    napi_get_value_int32(env, r2, &warmVal);
+    NAPI_ASSERT(env, warmVal == 42, "warm-up value should be 42.");
+
+    napi_value newVal = nullptr;
+    napi_create_int32(env, 99, &newVal);
+    napi_set_property(env, proto, inhKey, newVal);
+
+    napi_value r3 = nullptr;
+    napi_status status = napi_get_property_with_callsite_info(env, child, inhKey, gi, &r3, nullptr);
+    NAPI_ASSERT(env, status == napi_ok, "get after proto mutation should succeed.");
+    int32_t afterVal = 0;
+    napi_get_value_int32(env, r3, &afterVal);
+    NAPI_ASSERT(env, afterVal == 99, "must return new proto value 99, not stale 42.");
+
+    napi_delete_callsite_info(env, gi);
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -18752,6 +20785,83 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessError", NapiThrowBusinessError),
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPar", NapiThrowBusinessErrorPar),
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPendingError", NapiThrowBusinessErrorPendingError),
+        { "napiRunScriptPathTest01", nullptr, NapiRunScriptPathTest01, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest02", nullptr, NapiRunScriptPathTest02, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest03", nullptr, NapiRunScriptPathTest03, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest04", nullptr, NapiRunScriptPathTest04, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest05", nullptr, NapiRunScriptPathTest05, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest06", nullptr, NapiRunScriptPathTest06, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest07", nullptr, NapiRunScriptPathTest07, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest08", nullptr, NapiRunScriptPathTest08, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest09", nullptr, NapiRunScriptPathTest09, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest10", nullptr, NapiRunScriptPathTest10, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest11", nullptr, NapiRunScriptPathTest11, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiLoadModuleTest01", nullptr, NapiLoadModuleTest01, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest02", nullptr, NapiLoadModuleTest02, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiLoadModuleTest03", nullptr, NapiLoadModuleTest03, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest04", nullptr, NapiLoadModuleTest04, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest05", nullptr, NapiLoadModuleTest05, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest01", nullptr, NapiLoadModuleInfoTest01, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest02", nullptr, NapiLoadModuleInfoTest02, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest03", nullptr, NapiLoadModuleInfoTest03, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest04", nullptr, NapiLoadModuleInfoTest04, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest05", nullptr, NapiLoadModuleInfoTest05, nullptr, nullptr, nullptr, napi_default, nullptr },
+        DECLARE_NAPI_FUNCTION("NapiCreateCallsiteInfoTest01", NapiCreateCallsiteInfoTest01),
+        DECLARE_NAPI_FUNCTION("NapiCreateCallsiteInfoTest02", NapiCreateCallsiteInfoTest02),
+        DECLARE_NAPI_FUNCTION("NapiCreateCallsiteInfoTest03", NapiCreateCallsiteInfoTest03),
+        DECLARE_NAPI_FUNCTION("NapiDeleteCallsiteInfoTest01", NapiDeleteCallsiteInfoTest01),
+        DECLARE_NAPI_FUNCTION("NapiDeleteCallsiteInfoTest02", NapiDeleteCallsiteInfoTest02),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest01", NapiGetPropCallsiteInfoTest01),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest02", NapiGetPropCallsiteInfoTest02),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest03", NapiGetPropCallsiteInfoTest03),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest04", NapiGetPropCallsiteInfoTest04),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest05", NapiGetPropCallsiteInfoTest05),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest06", NapiGetPropCallsiteInfoTest06),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest07", NapiGetPropCallsiteInfoTest07),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest08", NapiGetPropCallsiteInfoTest08),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest09", NapiGetPropCallsiteInfoTest09),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest10", NapiGetPropCallsiteInfoTest10),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest11", NapiGetPropCallsiteInfoTest11),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest12", NapiGetPropCallsiteInfoTest12),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest13", NapiGetPropCallsiteInfoTest13),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest14", NapiGetPropCallsiteInfoTest14),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest15", NapiGetPropCallsiteInfoTest15),
+        DECLARE_NAPI_FUNCTION("NapiGetPropCallsiteInfoTest16", NapiGetPropCallsiteInfoTest16),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest01", NapiSetPropCallsiteInfoTest01),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest02", NapiSetPropCallsiteInfoTest02),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest03", NapiSetPropCallsiteInfoTest03),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest04", NapiSetPropCallsiteInfoTest04),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest05", NapiSetPropCallsiteInfoTest05),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest06", NapiSetPropCallsiteInfoTest06),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest07", NapiSetPropCallsiteInfoTest07),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest08", NapiSetPropCallsiteInfoTest08),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest09", NapiSetPropCallsiteInfoTest09),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest10", NapiSetPropCallsiteInfoTest10),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest11", NapiSetPropCallsiteInfoTest11),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest12", NapiSetPropCallsiteInfoTest12),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest13", NapiSetPropCallsiteInfoTest13),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest14", NapiSetPropCallsiteInfoTest14),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest15", NapiSetPropCallsiteInfoTest15),
+        DECLARE_NAPI_FUNCTION("NapiSetPropCallsiteInfoTest16", NapiSetPropCallsiteInfoTest16),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoCrossUseTest01", NapiCallsiteInfoCrossUseTest01),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoCrossUseTest02", NapiCallsiteInfoCrossUseTest02),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoCrossUseTest03", NapiCallsiteInfoCrossUseTest03),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoRoundTripTest01", NapiCallsiteInfoRoundTripTest01),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoRoundTripTest02", NapiCallsiteInfoRoundTripTest02),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoMultiObjectTest", NapiCallsiteInfoMultiObjectTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoValueTypeTest01", NapiCallsiteInfoValueTypeTest01),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoValueTypeTest02", NapiCallsiteInfoValueTypeTest02),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoValueTypeTest03", NapiCallsiteInfoValueTypeTest03),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoValueTypeTest04", NapiCallsiteInfoValueTypeTest04),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoHitGetTest", NapiCallsiteInfoHitGetTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoHitSetTest", NapiCallsiteInfoHitSetTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoMegaStateTest", NapiCallsiteInfoMegaStateTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoPrototypeTest", NapiCallsiteInfoPrototypeTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoMegaStateSetTest", NapiCallsiteInfoMegaStateSetTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoMegaStatePermanentTest", NapiCallsiteInfoMegaStatePermanentTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoPrototypeHitTest", NapiCallsiteInfoPrototypeHitTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoPrototypeShadowTest", NapiCallsiteInfoPrototypeShadowTest),
+        DECLARE_NAPI_FUNCTION("NapiCallsiteInfoPrototypeInvalidationTest", NapiCallsiteInfoPrototypeInvalidationTest),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 

@@ -15,8 +15,10 @@
 
 import WebInitTest from './WebInitTest.test'
 import webJsunit from './CreatePdfJsunit.test'
+import ActsAceWebViewOnPdfLoadEvent from './WebViewOnPdfLoadEvent.test'
 
 export default function testsuite() {
     WebInitTest();
     webJsunit();
+    ActsAceWebViewOnPdfLoadEvent();
 }

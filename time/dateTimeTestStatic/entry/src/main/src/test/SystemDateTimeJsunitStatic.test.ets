@@ -246,7 +246,44 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTimezoneSync_sync_Static_0130 end-----------------");
     });
 
+    /**
+     * @tc.name   SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100
+     * @tc.number SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100
+     * @tc.desc   Test systemTimeDate_getAutoTimeStatus API functionality..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, '====>----SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100 start----------------');
+      try {
+        let status: boolean = systemDateTime.getAutoTimeStatus();
+        hilog.info(domain, tag, `====>SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100 status:${status}`);
+        expect(typeof(status) === 'boolean').assertTrue();
+        done(); 
+      } catch (err) {
+        hilog.info(domain, tag, `====>SUB_systemDateTime_getAutoTimeStatus_sync_Static_0100 err.code:${err.code}, err.message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
-    })
+    /**
+     * @tc.name   SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200
+     * @tc.number SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200
+     * @tc.desc   Test systemTimeDate_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200', Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 start----------------");
+      let status: boolean = systemDateTime.getAutoTimeStatus();
+      hilog.info(domain, tag, "====>SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 currentTime: " + JSON.stringify(status));
+      expect(status == true || status == false).assertTrue();
+      done();
+      hilog.info(domain, tag, "====>----------SUB_systemDateTime_getAutoTimeStatus_sync_Static_0200 end-----------------");
+    });
 
+  })
 }

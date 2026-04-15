@@ -31,7 +31,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyOutlineColorModifier implements AttributeModifier<CommonAttribute> {
+export class MyOutlineColorModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

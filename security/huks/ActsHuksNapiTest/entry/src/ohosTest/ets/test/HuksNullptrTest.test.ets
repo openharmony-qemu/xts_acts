@@ -14,14 +14,14 @@ export default function HuksNullptrTest() {
     })
     
     /**
-     * @tc.name   SecurityHuksNapiNullptr0100
-     * @tc.number Security_HUKS_NAPI_nullptr_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_NULLPTR_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_NULLPTR_0100
      * @tc.desc   use nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiNullptr0100', Level.LEVEL0, () => {
+    it('SUB_SECURITY_HUKS_NAPI_NULLPTR_0100', Level.LEVEL0, () => {
       const result = libHuks.HuksNullptrTest(0);
       expect(result).assertEqual(0);
     })

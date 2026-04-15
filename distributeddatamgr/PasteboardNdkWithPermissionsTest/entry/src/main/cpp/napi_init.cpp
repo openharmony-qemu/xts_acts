@@ -82,6 +82,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress001(napi_env env, napi_callba
     const char *uri = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps/";
     
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri, strlen(uri));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);
@@ -131,6 +132,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress002(napi_env env, napi_callba
     const char *uri = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps/daily/";
 
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri, strlen(uri));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);
@@ -179,6 +181,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress003(napi_env env, napi_callba
     
     const char *uri1 = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps11/";
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri1, strlen(uri1));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);
@@ -978,6 +981,45 @@ static napi_value OH_Pasteboard_GetDataWithProgress021(napi_env env, napi_callba
     return result;
 }
 
+static napi_value OH_Pasteboard_GetDataWithProgress022(napi_env env, napi_callback_info info)
+{
+    const char *uri = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/dstFile.txt";
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdmfData* unifiedData = OH_UdmfData_Create();
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdsFileUri* fileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(fileUri, uri);
+    OH_UdmfRecord_AddFileUri(record, fileUri);
+    OH_UdmfData_AddRecord(unifiedData, record);
+    int ret = OH_Pasteboard_SetData(pasteboard, unifiedData);
+    NAPI_ASSERT(env, ret == ERR_OK, "OH_Pasteboard_SetData is fail.");
+    
+    const char* uri1 = "";
+    g_params = OH_Pasteboard_GetDataParams_Create();
+    int num = strlen(uri1);
+    OH_Pasteboard_GetDataParams_SetDestUri(g_params, uri1, num);
+    OH_Pasteboard_GetDataParams_SetFileConflictOptions(g_params, PASTEBOARD_SKIP);
+    OH_Pasteboard_GetDataParams_SetProgressIndicator(g_params, PASTEBOARD_NONE);
+    OH_Pasteboard_GetDataParams_SetProgressListener(g_params, Pasteboard_ProgressListener);
+    int status = -1;
+    
+    OH_UdmfData* getData = OH_Pasteboard_GetDataWithProgress(pasteboard, g_params, &status);
+    NAPI_ASSERT(env, status == ERR_OK, "OH_Pasteboard_GetDataWithProgress is fail.");
+    NAPI_ASSERT(env, getData != nullptr, "OH_Pasteboard_GetDataWithProgress is fail.");
+
+    OH_Pasteboard_ClearData(pasteboard);
+
+    int recode = 0;
+    napi_value result;
+    napi_create_int32(env, recode, &result);
+    OH_Pasteboard_Destroy(pasteboard);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(unifiedData);
+    OH_UdsFileUri_Destroy(fileUri);
+    OH_Pasteboard_GetDataParams_Destroy(g_params);
+    g_params = nullptr;
+    return result;
+}
 
 static napi_value OH_Pasteboard_GetChangeCount0100(napi_env env, napi_callback_info info)
 {
@@ -1087,6 +1129,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_GetDataWithProgress020", nullptr, OH_Pasteboard_GetDataWithProgress020,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_GetDataWithProgress021", nullptr, OH_Pasteboard_GetDataWithProgress021,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_GetDataWithProgress022", nullptr, OH_Pasteboard_GetDataWithProgress022,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_GetChangeCount0100", nullptr, OH_Pasteboard_GetChangeCount0100,
          nullptr, nullptr, nullptr, napi_default, nullptr},

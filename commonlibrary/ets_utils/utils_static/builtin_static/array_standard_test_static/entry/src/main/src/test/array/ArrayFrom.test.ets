@@ -1058,7 +1058,7 @@ export default function ArrayFromTest() {
      */
     it('testArrayFrom0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Create sparse array with empty slots
-      const sparseArr: (number | undefined)[] = new Array<number | undefined>(4);
+      const sparseArr: (number | undefined)[] = new Array<number | undefined>(4, (i) => undefined);
       sparseArr[0] = 10;
       sparseArr[2] = 30;
       sparseArr.length = 4;
@@ -1076,7 +1076,7 @@ export default function ArrayFromTest() {
      * @tc.level  LEVEL1
      */
     it('testArrayFrom0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const sparseArr: (number | undefined)[] = new Array<number | undefined>(5);
+      const sparseArr: (number | undefined)[] = new Array<number | undefined>(5, (i) => undefined);
       sparseArr[0] = 1;
       sparseArr[3] = 4;
       sparseArr.length = 5;

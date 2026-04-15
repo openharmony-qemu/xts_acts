@@ -29,7 +29,9 @@ import {
   DoCipher,
   GetCipherDataLenArr,
   ReBuildCipherData,
-  CipherForGcm
+  CipherForGcm,
+  GetGcmNoPaddingAadOptions,
+  GetCcmNoPaddingAadOptions
 } from './utils/huks/CipherUtils';
 import { GetDataBySize } from './utils/common/CommonUtils';
 import { GetGcmNoPaddingOptions } from './utils/huks/CipherUtils';
@@ -1925,7 +1927,7 @@ export default function SecurityHuksCipherAesTest() {
         if (useSoftware) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CRYPTO_FAIL);
         } else {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_ERROR);
         }
       }
     })
@@ -1989,6 +1991,355 @@ export default function SecurityHuksCipherAesTest() {
         }
       }
     })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_0100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_0100
+     * @tc.desc   test aes ccm noPadding cipher with aad
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_0100";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCcmNoPaddingAadOptions());
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 4;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        let decryptResult: CipherData = await CipherForCcm(keyAlias, cipherOptions, cipherData, tagLength);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_5700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_5700
+     * @tc.desc   test aes gcm noPadding cipher with aad
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_5700";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingAadOptions());
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 16;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        let decryptResult: CipherData = await CipherForGcm(keyAlias, cipherOptions, cipherData, tagLength);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_7600
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_7600
+     * @tc.desc   test aes gcm noPadding cipher with aad parameter is empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_7600";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingAadOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD, StringToUint8Array(""))
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_7700
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_7700
+     * @tc.desc   test aes gcm noPadding cipher with aad parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_7700";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingAadOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD, false)
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_7800
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_7800
+     * @tc.desc   test aes gcm noPadding cipher with aad parameter is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_7800";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingAadOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD, 0)
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_7900
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_7900
+     * @tc.desc   test aes gcm noPadding cipher with associatedData parameter is empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_7900";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array(""))
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8000
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8000
+     * @tc.desc   test aes gcm noPadding cipher with associatedData parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8000";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, false)
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8100
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8100
+     * @tc.desc   test aes gcm noPadding cipher with associatedData parameter is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8100";
+      let keyAlias: string = testNumber;
+
+      cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, 0)
+
+      try {
+        await huks.initSession(keyAlias, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8200
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8200
+     * @tc.desc   test aes ccm noPadding cipher with aad and associatedData, encrypt with aad only, decrypt with aad and associatedData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8200";
+      let keyAlias: string = testNumber;
+
+      let cipherOptions: huks.HuksOptions = MergeOptions(GetAesGenerateOptions(128), GetCcmNoPaddingAadOptions());
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 4;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+        let encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890333"));
+        let offset = encryptResult.finishData!.length - tagLength;
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset));
+        encryptResult.finishData = encryptResult.finishData!.slice(0, offset);
+        let decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8300
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8300
+     * @tc.desc   test aes ccm noPadding cipher with aad and associatedData, encrypt with aad and associatedData, decrypt with aad only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8300";
+      let keyAlias: string = testNumber;
+
+      let cipherOptions: huks.HuksOptions = MergeOptions(GetAesGenerateOptions(128), GetCcmNoPaddingAadOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890333"));
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 4;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+        let encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+        DeleteParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA);
+        let offset = encryptResult.finishData!.length - tagLength;
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset));
+        encryptResult.finishData = encryptResult.finishData!.slice(0, offset);
+        let decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8400
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8400
+     * @tc.desc   test aes gcm noPadding cipher with aad and associatedData, encrypt with associatedData only, decrypt with aad and associatedData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8400";
+      let keyAlias: string = testNumber;
+
+      let cipherOptions: huks.HuksOptions = MergeOptions(GetAesGenerateOptions(128), GetGcmNoPaddingOptions());
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 16;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+        let encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD, StringToUint8Array("1601234567890123"));
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890333"));
+        let offset = encryptResult.finishData!.length - tagLength;
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset));
+        encryptResult.finishData = encryptResult.finishData!.slice(0, offset);
+        let decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API24_Func_8500
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API24_Func_8500
+     * @tc.desc   test aes gcm noPadding cipher with aad and associatedData, encrypt with aad and associatedData, decrypt with associatedData only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API24_Func_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API24_Func_8500";
+      let keyAlias: string = testNumber;
+
+      let cipherOptions: huks.HuksOptions = MergeOptions(GetAesGenerateOptions(128), GetCcmNoPaddingOptions());
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD, StringToUint8Array("1601234567890333"));
+      let cipherData: CipherData = BuildCipherData([64]);
+      let tagLength: number = 16;
+
+      try {
+        await huks.generateKeyItem(keyAlias, genKeyOptions);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG_LEN, tagLength);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+        let encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+        DeleteParam(cipherOptions, huks.HuksTag.HUKS_TAG_AAD);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890333"));
+        let offset = encryptResult.finishData!.length - tagLength;
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset));
+        encryptResult.finishData = encryptResult.finishData!.slice(0, offset);
+        let decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+        expect(CompareCipherData(cipherData, decryptResult)).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
 
   }
   )

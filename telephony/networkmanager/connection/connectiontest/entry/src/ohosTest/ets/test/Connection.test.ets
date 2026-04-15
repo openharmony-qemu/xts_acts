@@ -667,31 +667,31 @@ export default function ConnectionTest() {
       }
     });
 		
-    /**
-     * @tc.name   testConnectionGetPacFileUrl0300
-     * @tc.number SUB_Network_Connection_getPacFileUrl_0300
-     * @tc.desc   Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testConnectionGetPacFileUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const caseName: string = 'testConnectionGetPacFileUrl0300';
-      console.info(`${caseName}---Start`);
-      try {
-        const pacFileUrl: string = "www.ab.com/ab.pac";
-        connection.setPacFileUrl(pacFileUrl);
-        const result = connection.getPacFileUrl();
-        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`);
-        ExpectTrue(result == pacFileUrl);
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch err is ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100002);
-        done();
-      }
-    });
-		
+    /** 
+    * @tc.name   testConnectionGetPacFileUrl0300 
+    * @tc.number SUB_Network_Connection_getPacFileUrl_0300 
+    * @tc.desc   Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL. 
+    * @tc.type   FUNCTION 
+    * @tc.size   MEDIUMTEST 
+    * @tc.level  LEVEL3 
+    */ 
+    it('testConnectionGetPacFileUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => { 
+      const caseName: string = 'testConnectionGetPacFileUrl0300'; 
+      console.info(`${caseName}---Start`); 
+      try { 
+        const pacFileUrl: string = "unavailableURLString"; 
+        connection.setPacFileUrl(pacFileUrl); 
+        const result = connection.getPacFileUrl(); 
+        console.info(`${caseName} getPacFileUrl success, result: ${JSON.stringify(result)}`); 
+        ExpectTrue(result == pacFileUrl); 
+        done(); 
+      } catch (err) { 
+        console.info(`${caseName} catch err is ${JSON.stringify(err)}`); 
+        ExpectTrue(err.code == 2100002); 
+        done(); 
+      } 
+    }); 
+  
   /**
    * @tc.name   testConnectionFindProxyForUrl0200
    * @tc.number SUB_Network_Connection_findProxyForUrl_0200

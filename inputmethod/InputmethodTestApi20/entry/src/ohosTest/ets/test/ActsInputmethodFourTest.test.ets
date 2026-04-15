@@ -140,9 +140,9 @@ export default function ActsInputmethodFourTest() {
      * @tc.desc   test IME_EXTEND_ACTION_COPY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000', Level.LEVEL2, async (done: Function) => {
+    it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000', Level.LEVEL0, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0

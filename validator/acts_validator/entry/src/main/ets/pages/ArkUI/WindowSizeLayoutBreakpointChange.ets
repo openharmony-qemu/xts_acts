@@ -28,7 +28,7 @@ import window from '@ohos.window';
 @Entry
 @Component
 struct TabBarIndicatorPixmap {
-  @State name: string = 'RichEditior ComponentContent Keyboard';
+  @State name: string = 'WindowSizeLayoutBreakpointInfo';
   @State stepTips: string = '操作步骤:\n' + '1.注册窗口尺寸布局断点变化监听 \n' +
     '2.点击横屏 最上方出现文本，文本信息搜索log.\n' +'3.点击竖屏 最上方出现文本，文本信息搜索log.\n'+ '4.如果在非手机设备上进行测试，不使用23步。通过手动调整窗口大小来进行打印\n'+
     '预期结果：\n' + '234.触发widthBreakpoint和heightBreakpoint的callback回调，具体值与demo上方text文本一致\n'

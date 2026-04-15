@@ -6,7 +6,8 @@
     "testability/pages/WebOnPermissionRequest",
     "testability/pages/WebViewEnumAndFontLibrary",
     "testability/pages/WebElementType",
-    "testability/pages/WebPreviewMenuOptions"
+    "testability/pages/WebPreviewMenuOptions",
+    "testability/pages/SaveImageMenu"
   ]
 }
 

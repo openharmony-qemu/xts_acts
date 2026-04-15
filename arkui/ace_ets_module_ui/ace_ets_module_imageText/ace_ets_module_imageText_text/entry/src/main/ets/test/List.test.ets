@@ -17,6 +17,7 @@ import InputPresetTest from './PresetTest/InputPresetTest.test';
 import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test';
 import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier.test';
 import ContainerSpanModifierTest1 from './ContainerSpanTest/ContainerSpanModifierTest1.test';
+import ContainerSpanPropertiesNullUndefinedTest from './ContainerSpanTest/ContainerSpanPropertiesNullUndefinedTest.test';
 
 import ImageLoadResultTest from './ImageSpanTest/ImageLoadResultTest.test';
 import ImageSpanJsunit from './ImageSpanTest/ImageSpanJsunit.test';
@@ -45,6 +46,8 @@ import SpanPageTest from './SpanTest/SpanPageTest.test';
 import SpanTextShadowTest from './SpanTest/SpanTextShadowTest.test';
 import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
 import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
+import SpanFontConfigsTest from './SpanTest/SpanFontConfigsTest.test';
+import SpanFontWeightTest from './SpanTest/SpanFontWeightTest.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
@@ -138,6 +141,11 @@ import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
+import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
+import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test';
+import TextGetCharacter from './TextTest/TextGetCharacter.test';
+import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
+
 
 
 export default function testsuite() {
@@ -146,6 +154,7 @@ export default function testsuite() {
   APITextBackgroundStyleJsunit()
   ContainerSpanModifierTest()
   ContainerSpanModifierTest1()
+  ContainerSpanPropertiesNullUndefinedTest()
   // ImageSpanTest
   ImageLoadResultTest()
   ImageSpanJsunit()
@@ -173,6 +182,8 @@ export default function testsuite() {
   SpanTextShadowTest()
   SpanUIJsunitTest()
   SpanPropertiesNullUndefinedTest()
+  SpanFontConfigsTest()
+  SpanFontWeightTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
@@ -267,4 +278,9 @@ export default function testsuite() {
   TextLayoutOptionsNullTest();
   TextSpecialAttrsNullTest();
   TextMethodsNullTest();
+  TextEditMenuOptionsNullTest();
+  LayoutManagerTextCommonTest();
+  TextGetCharacter();
+  TextLayoutManagerMethodsTest();
+
 }

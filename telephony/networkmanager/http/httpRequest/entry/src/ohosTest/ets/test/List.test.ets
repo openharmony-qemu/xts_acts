@@ -26,12 +26,20 @@ import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
 import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirectsInterceptor.test';
 import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
 import HttpRequestSniTest from './HttpRequestSni.test';
+import HttpRequestCustomResponseHeaderTest from './HttpRequestCustomResponseHeader.test';
+import HttpRequestInactivityMsTest from './HttpRequestInactivityMs.test';
+import HttpRequestPatchTest from './HttpRequestPatch.test';
+import HttpRequestSyncTest from './HttpRequestSync.test';
+import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
+import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
 
 export default function testsuite() {
+  HttpInterceptorForSafeCheckTest();
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
   HttpRequestMaxAutoRedirectsWithInterceptorTest();
   HttpRequestCustomMethodTest();
+  HttpRequestCustomResponseHeaderTest();
   if (sim.getMaxSimCount() > 1) {
     HttpRequestGmssl();
     HttpRequestDataCATest();
@@ -41,6 +49,10 @@ export default function testsuite() {
     HttpRequestOptionsTest();
     HttpRequestSniTest();
     httpErrorCodeTest();
+    HttpRequestInactivityMsTest();
+    HttpRequestPatchTest();
+    HttpRequestSyncTest();
+    HttpRequestReuseConnectionsTest();
   } else {
     EmptyTest()
   }

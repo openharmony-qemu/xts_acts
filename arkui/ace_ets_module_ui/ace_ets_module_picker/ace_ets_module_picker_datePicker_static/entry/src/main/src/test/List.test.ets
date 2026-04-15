@@ -16,7 +16,11 @@
 
 import DataPickerCanLoopTest from './datePickerTest/DataPickerCanLoop.test'
 import DataPickerCanLoopModifierTest from './datePickerTest/DataPickerCanLoopModifier.test'
+import DatePickerTest from './datePickerTest/DataPickerCanLoopModifier.test'
+import DataPanelTest from './DataPanelTest/DataPanel.test'
 export default function testsuite() {
   DataPickerCanLoopTest();
   DataPickerCanLoopModifierTest();
+  DatePickerTest();
+  DataPanelTest();
 }

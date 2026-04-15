@@ -1005,6 +1005,28 @@ export default function abilityTest() {
  	       });
  	     })
 
+       /**
+ 	       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200
+ 	       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200
+ 	       * @tc.desc    The result of isSeniorModeEnabled() should be boolean type.
+ 	       * @tc.size    SmallTest
+ 	       * @tc.type    User
+ 	       * @tc.level   Level 0
+ 	       */
+ 	     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200');
+ 	 
+ 	       accessibility.isSeniorModeEnabled().then((result) => {
+ 	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200 result: ${result}`);
+ 	         expect(typeof (result)).assertEqual('boolean');
+ 	         done();
+ 	       }).catch((err: Error) => {
+ 	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200 has error: ${err.code},msg: ${err.message}`);
+ 	         expect(null).assertFail();
+ 	         done();
+ 	       });
+ 	     })
+
      /**
  	      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1100
  	      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1100
@@ -1079,7 +1101,7 @@ export default function abilityTest() {
  	     /**
  	      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1400
  	      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1400
- 	      * @tc.desc   onFlashReminderStateChange
+ 	      * @tc.desc   onAudioMonoStateChange
  	      * @tc.type   FUNCTION
  	      * @tc.size   MEDIUMTEST
  	      * @tc.level  LEVEL0
@@ -1095,6 +1117,30 @@ export default function abilityTest() {
  	         done();
  	       } catch (error) {
  	         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1400 failed');
+ 	         expect(null).assertFail();
+ 	         done();
+ 	       }
+ 	     })
+
+       /**
+ 	      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500
+ 	      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500
+ 	      * @tc.desc   onSeniorModeStateChange
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL0
+ 	      */
+ 	     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+ 	       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500');
+ 	       let callbackdata = (data:boolean) => {
+ 	         expect(data).assertEqual(false);
+ 	       }
+ 	       try {
+ 	         accessibility.onSeniorModeStateChange(callbackdata);
+ 	         accessibility.offSeniorModeStateChange(callbackdata);
+ 	         done();
+ 	       } catch (error) {
+ 	         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500 failed');
  	         expect(null).assertFail();
  	         done();
  	       }

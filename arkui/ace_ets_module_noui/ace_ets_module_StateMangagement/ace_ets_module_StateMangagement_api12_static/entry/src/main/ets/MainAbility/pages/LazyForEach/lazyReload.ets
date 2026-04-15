@@ -55,7 +55,7 @@ import common from '@ohos.app.ability.common';
 
 interface Type1 {type: DataOperationType}
 
-class BasicDataSourceB implements IDataSource<string> {
+export class BasicDataSourceB implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -89,7 +89,7 @@ class BasicDataSourceB implements IDataSource<string> {
   }
 }
 
-class MyDataSourceB extends BasicDataSourceB {
+export class MyDataSourceB extends BasicDataSourceB {
   public dataArray: string[] = [];
 
   public totalCount(): int {

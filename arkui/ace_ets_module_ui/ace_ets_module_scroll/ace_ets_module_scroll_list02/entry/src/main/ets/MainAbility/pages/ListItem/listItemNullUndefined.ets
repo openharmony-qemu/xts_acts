@@ -135,6 +135,23 @@ struct ListItemNullUndefinedExample {
         .width('25%')
         .height('100%')
         .backgroundColor(0xF0F0F0)
+
+        // Test editable with false
+        List() {
+          ListItem() {
+            Text('Item 4')
+              .width('100%')
+              .height(40)
+              .fontSize(14)
+              .textAlign(TextAlign.Center)
+              .backgroundColor(0xF9CF93)
+          }
+          .editable(false)
+          .id('listItem_editable_false')
+        }
+        .width('25%')
+        .height('100%')
+        .backgroundColor(0xF0F0F0)
       }
       .width('100%')
       .height('10%')
@@ -247,6 +264,23 @@ struct ListItemNullUndefinedExample {
           }
           .selected(undefined)
           .id('listItem_selected_undefined')
+        }
+        .width('25%')
+        .height('100%')
+        .backgroundColor(0xF0F0F0)
+
+        // Test selected with false
+        List() {
+          ListItem() {
+            Text('Item 4')
+              .width('100%')
+              .height(40)
+              .fontSize(14)
+              .textAlign(TextAlign.Center)
+              .backgroundColor(0xF9CF93)
+          }
+          .selected(false)
+          .id('listItem_selected_false')
         }
         .width('25%')
         .height('100%')

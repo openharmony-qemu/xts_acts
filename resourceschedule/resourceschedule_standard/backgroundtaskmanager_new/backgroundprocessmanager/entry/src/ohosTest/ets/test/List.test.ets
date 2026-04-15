@@ -14,8 +14,10 @@
  */
 import ActsBackgroundProcessManagerTest from './ActsBackgroundProcessManagerTest.test';
 import ActsBackgroundProcessManagerNapTest from './ActsBackgroundProcessManagerNapTest.test';
+import ActsBackgroundProcessManagerNewTest from './ActsBackgroundProcessManagerNewTest.test';
 
 export default function testsuite() {
   ActsBackgroundProcessManagerTest();
   ActsBackgroundProcessManagerNapTest();
+  ActsBackgroundProcessManagerNewTest();
 }

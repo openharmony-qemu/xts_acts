@@ -58,12 +58,12 @@ export default function typefaceTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0100
-     * @tc.name      : testTypefaceArgumentsConstructorNormalStatic
-     * @tc.desc      : Test for testTypefaceArgumentsConstructorNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name      testTypefaceArgumentsConstructorNormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0100
+     * @tc.desc      Test for testTypefaceArgumentsConstructorNormalStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('testTypefaceArgumentsConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTypefaceArgumentsConstructorNormalStatic';
@@ -76,12 +76,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0101
-     * @tc.name      : testTypefaceArgumentsConstructorMultipleCallsStatic
-     * @tc.desc      : Test for testTypefaceArgumentsConstructorMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name      testTypefaceArgumentsConstructorMultipleCallsStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0101
+     * @tc.desc      Test for testTypefaceArgumentsConstructorMultipleCallsStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
      */
     it('testTypefaceArgumentsConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypefaceArgumentsConstructorMultipleCallsStatic';
@@ -93,6 +93,201 @@ export default function typefaceTest() {
           console.info(msg + ` TypefaceArguments errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
           expect().assertFail();
         }
+      }
+    });
+    /**
+     * @tc.name      testTypefaceArgumentsAddVariationNormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0200
+     * @tc.desc      Test for testTypefaceArgumentsAddVariationNormalStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testTypefaceArgumentsAddVariationNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testTypefaceArgumentsAddVariationNormalStatic';
+      let typeFaceArgument = new drawing.TypefaceArguments();
+      try {
+        typeFaceArgument.addVariation('wght', 100);
+        console.info(msg + ' TypefaceArguments typeFaceArgument successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments typeFaceArgument errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let font = new drawing.Font();
+        typeFaceArgument.addVariation('wght', 100);
+        let myTypeFace = drawing.Typeface.makeFromFileWithArguments(str, typeFaceArgument);
+        console.info(msg + ' makeFromFileWithArguments myTypeFace successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` makeFromFileWithArguments myTypeFace errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', 1);
+        console.info(msg + ' TypefaceArguments 1 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', -1);
+        console.info(msg + ' TypefaceArguments -1 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments -1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', 900);
+        console.info(msg + ' TypefaceArguments 900 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments 900 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', 901);
+        console.info(msg + ' TypefaceArguments 901 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments 901 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', 1.5);
+        console.info(msg + ' TypefaceArguments 1.5 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments 1.5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wght', -1.5);
+        console.info(msg + ' TypefaceArguments -1.5 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments -1.5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('9999', 100);
+        console.info(msg + ' TypefaceArguments 9999 100 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments 9999 100 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('a123', 100);
+        console.info(msg + ' TypefaceArguments a123 100 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments a123 100 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wdth', 100);
+        console.info(msg + ' TypefaceArguments wdth 100 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments wdth 100 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        typeFaceArgument.addVariation('wdth', 0);
+        console.info(msg + ' TypefaceArguments wdth 0 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` TypefaceArguments wdth 0 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name      testTypefaceArgumentsAddVariationCallsStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0201
+     * @tc.desc      Test for testTypefaceArgumentsAddVariationCallsStatic.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testTypefaceArgumentsAddVariationCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testTypefaceArgumentsAddVariationCallsStatic';
+
+      let font = new drawing.Font();
+      let typeface = font.getTypeface();
+      for (let i = 0; i < 20; i++) {
+        try {
+          let typeFaceArgument = new drawing.TypefaceArguments();
+          typeFaceArgument.addVariation('wght', Math.random() * 200)
+          console.info(msg + ' addVariation successed step: ' + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` addVariation errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.name      testTypefaceArgumentsAddVariationAbnormalStatic
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACEARGUMENTS_STATIC_0202
+     * @tc.desc      testTypefaceArgumentsAddVariationAbnormalStatic
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('testTypefaceArgumentsAddVariationAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testTypefaceArgumentsAddVariationAbnormalStatic';
+      let typeFaceArgument = new drawing.TypefaceArguments();
+      try {
+        typeFaceArgument.addVariation('wghta', 100);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` addVariation wghta errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
+        typeFaceArgument.addVariation('wgh', 100);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` addVariation wgh errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
+        typeFaceArgument.addVariation('√123', 100);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` addVariation √123 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
+        typeFaceArgument.addVariation('※×√×', 100);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` addVariation ※×√× errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
+        typeFaceArgument.addVariation('11w×', 100)
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` addVariation 11w× errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
+        typeFaceArgument.addVariation('', 100);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` addVariation '' errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
       }
     });
   })

@@ -31,11 +31,11 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let dealTime = 2000;
-      let timeout = 1000;
+    it('TaskTimeoutTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 100;
       let terminate = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, dealTime);
       let config: taskpool.Configs = {timeout: timeout};
@@ -57,10 +57,10 @@ export default function TaskTimeoutTest() {
      * @tc.desc   GenericsTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let dealTime = 2000;
+    it('TaskTimeoutTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 1200;
       let timeout = 1000;
       let terminate = false;
       let task: taskpool.Task = new taskpool.GenericsTask<[number], number>(timeoutDemo, dealTime);
@@ -80,11 +80,11 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let dealTime = 2000;
-      let timeout = 1000;
+    it('TaskTimeoutTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 500;
+      let timeout = 200;
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, dealTime);
@@ -109,10 +109,10 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout TaskGroup execute again
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let dealTime = 2000;
+    it('TaskTimeoutTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 1200;
       let timeout = 1000;
       let count = 0;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -145,9 +145,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   configs set undefined, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       try {
         await taskpool.execute(task, undefined);
@@ -163,12 +163,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When configs is an empty object, default values are used for execution
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 3000);
+    it('TaskTimeoutTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {});
-      expect(result).assertEqual(3000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -178,9 +178,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When only the priority is set in configs, the timeout defaults to 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 300);
       let result = await taskpool.execute(task, {priority: taskpool.Priority.HIGH});
       expect(result).assertEqual(300);
@@ -194,7 +194,7 @@ export default function TaskTimeoutTest() {
       expect(result3).assertEqual(500);
 
       let task4: taskpool.Task = new taskpool.Task(timeoutDemo, 600);
-      let result4 = await taskpool.execute(task4, {priority: taskpool.Priority.IDLE});
+      let result4 = await taskpool.execute(task4, {priority: taskpool.Priority.HIGH});
       expect(result4).assertEqual(600);
       done();
     })
@@ -205,9 +205,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   configs set priority and timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 500);
       let result = await taskpool.execute(task, {priority: taskpool.Priority.HIGH, timeout: 1000});
       expect(result).assertEqual(500);
@@ -220,9 +220,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   configs type error, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       try {
         await taskpool.execute(task, 123);
@@ -238,12 +238,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is 0, it means that no timeout has been set and the task has been completed normally
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 3000);
+    it('TaskTimeoutTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {timeout: 0});
-      expect(result).assertEqual(3000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -253,9 +253,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is negative -1, it is processed as 0, indicating that timeout has not been set
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: -1});
       expect(result).assertEqual(100);
@@ -268,9 +268,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is negative -100, it is processed as 0, indicating that timeout has not been set
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: -100});
       expect(result).assertEqual(100);
@@ -283,10 +283,10 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout is executed normally when it is a decimal
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 2000);
+    it('TaskTimeoutTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1200);
       let terminate = false;
       taskpool.execute(task, {timeout: 1000.5}).catch((e:BusinessError) => {
         terminate = true;
@@ -304,9 +304,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is set to Infinity, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: Infinity});
       expect(result).assertEqual(100);
@@ -319,9 +319,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is set to -Infinity, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: -Infinity});
       expect(result).assertEqual(100);
@@ -334,12 +334,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is set to NaN, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 2000);
+    it('TaskTimeoutTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {timeout: NaN});
-      expect(result).assertEqual(2000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -349,12 +349,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is set to undefined, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
+    it('TaskTimeoutTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: undefined});
-      expect(result).assertEqual(1000);
+      expect(result).assertEqual(100);
       done();
     })
 
@@ -364,9 +364,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Different priorities
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let task3: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
@@ -393,9 +393,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Priority is 999, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       try {
         taskpool.execute(task, { priority: 999, timeout: 1000 });
@@ -411,9 +411,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Use default MEDIUM priority when priority is undefined
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1500);
       let terminate = false;
       taskpool.execute(task, {priority: undefined, timeout: 1000}).catch((e:BusinessError) => {
@@ -432,9 +432,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout is 10
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let terminate = false;
       taskpool.execute(task, {timeout: 10}).then(() => {
@@ -455,9 +455,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout is less than or equal to int32_max, task cannot be executed again
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let time = 2147483647;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: time});
@@ -476,9 +476,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout greater than int32_max, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let time = 2147483648;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: time});
@@ -494,9 +494,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is Number.MAX_SAFE_INTEGER, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let time = Number.MAX_SAFE_INTEGER;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: time});
@@ -512,9 +512,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout equals the task execution time
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let terminate = false;
       taskpool.execute(task, {timeout: 1000}).then((res) => {
@@ -536,9 +536,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Return results normally when timeout is slightly greater than task execution time
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let result = await taskpool.execute(task, {timeout: 1100});
       expect(result).assertEqual(1000);
@@ -551,9 +551,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Timeout slightly less than the task execution time, throwing 10200058 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       taskpool.execute(task, {timeout: 900}).catch((e: BusinessError) => {
@@ -572,9 +572,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   When timeout is Number.MIN_VALUE, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let time = Number.MIN_VALUE;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: time});
@@ -590,9 +590,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Verify serialization error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let task2: taskpool.Task = new taskpool.Task(taskFunc, task);
       try {
@@ -609,9 +609,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   AsyncTask can not set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10);
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       runner.execute(task);
@@ -629,9 +629,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Executed task can not set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       taskpool.execute(task);
       try {
@@ -648,9 +648,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task throw error before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(taskError, 100);
       let terminate = false;
       taskpool.execute(task, { timeout: 1000 }).catch((e:BusinessError) => {
@@ -669,9 +669,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(taskError, 1000);
       let terminate = false;
       taskpool.execute(task, { timeout: 500 }).catch((e:BusinessError) => {
@@ -690,9 +690,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup task throw error before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(taskError, 200);
@@ -715,9 +715,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(taskError, 1000);
@@ -740,9 +740,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(timeoutDemo, 100);
@@ -765,9 +765,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Empty TaskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskpool.execute(taskGroup, {timeout: 500}).then((res) => {
@@ -787,9 +787,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Executed Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task);
       expect(result).assertEqual(100);
@@ -807,9 +807,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   DelayedTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.executeDelayed(100, task);
       expect(result).assertEqual(100);
@@ -827,9 +827,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   PeriodicallyTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       taskpool.executePeriodically(100, task);
       try {
@@ -847,9 +847,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   SequenceTask can not set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       runner.execute(task);
@@ -867,9 +867,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask can not addDependency
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       task.addDependency(task2);
@@ -888,9 +888,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task can not addDependency TimeoutTask
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       task.addDependency(task2);
@@ -908,9 +908,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Normal taskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(timeoutDemo, 100);
@@ -934,11 +934,11 @@ export default function TaskTimeoutTest() {
      * @tc.desc   LongTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
-      let task: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 3000);
+      let task: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 1200);
       taskpool.execute(task, {timeout: 1000}).catch((e: BusinessError) => {
         terminate = true;
         expect(e.code).assertEqual(10200058);
@@ -956,9 +956,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task can be executed repeatedly when timeout=0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result1 = await taskpool.execute(task, {timeout: 0});
       let result2 = await taskpool.execute(task, {timeout: 0});
@@ -973,9 +973,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task can be executed again when timeout=0, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result1 = await taskpool.execute(task);
       let result2 = await taskpool.execute(task, {timeout: 0});
@@ -990,9 +990,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Tasks can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result1 = await taskpool.execute(task, {priority: taskpool.Priority.HIGH});
       let result2 = await taskpool.execute(task, {priority: taskpool.Priority.HIGH});
@@ -1007,9 +1007,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Constraint not applicable when negative timeout occurs, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result1 = await taskpool.execute(task, {timeout: -1});
       let result2 = await taskpool.execute(task, {timeout: -1});
@@ -1024,9 +1024,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Constraint not applicable when empty configs, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result1 = await taskpool.execute(task, {});
       let result2 = await taskpool.execute(task, {});
@@ -1041,9 +1041,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup can be executed again when timeout=0, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(timeoutDemo, 100);
       taskGroup.addTask(timeoutDemo, 200);
@@ -1062,9 +1062,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TaskGroup can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(timeoutDemo, 100);
       taskGroup.addTask(timeoutDemo, 200);
@@ -1083,9 +1083,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   DelayedTask can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.executeDelayed(100, task);
       expect(result).assertEqual(100);
@@ -1100,9 +1100,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask can addDependency task when timeout = 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       task.addDependency(task2);
@@ -1127,9 +1127,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Task can addDependency timeoutTask when timeout = 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       task.addDependency(task2);
@@ -1154,9 +1154,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Do not trigger onExecutionFailed after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let failedCalled = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
@@ -1180,12 +1180,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Do not trigger sendData after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
-      let task: taskpool.Task = new taskpool.Task(demoSenddata, 5000);
+      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1500);
       task.onReceiveData(() => {
         count++;
       });
@@ -1206,12 +1206,12 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Do trigger sendData before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
-      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1000);
+      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1200);
       task.onReceiveData(() => {
         count++;
       });
@@ -1231,9 +1231,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Normal completion trigger onExecutionSucceeded
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
@@ -1256,9 +1256,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   OnEnqueued status verification after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let enqueuedCalled = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
@@ -1282,9 +1282,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   onStartExecution status verification after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let startCalled = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
@@ -1308,28 +1308,32 @@ export default function TaskTimeoutTest() {
      * @tc.desc   Different priorities
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let task2: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let task3: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let task4: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
       let terminate = false;
       let str = '';
-      taskpool.execute(task, {priority: taskpool.Priority.HIGH, timeout: 500}).catch((e:BusinessError) => {
+      let config1: taskpool.Configs = {priority: taskpool.Priority.HIGH, timeout: 500};
+      taskpool.execute(task, config1).catch((e:BusinessError) => {
         str += 'a';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task2, {priority: taskpool.Priority.MEDIUM, timeout: 500}).catch((e:BusinessError) => {
+      let config2: taskpool.Configs = {priority: taskpool.Priority.MEDIUM, timeout: 500};
+      taskpool.execute(task2, config2).catch((e:BusinessError) => {
         str += 'b';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task3, {priority: taskpool.Priority.LOW, timeout: 500}).catch((e:BusinessError) => {
+      let config3: taskpool.Configs = {priority: taskpool.Priority.LOW, timeout: 500};
+      taskpool.execute(task3, config3).catch((e:BusinessError) => {
         str += 'c';
         expect(e.code).assertEqual(10200058);
       })
-      taskpool.execute(task4, {priority: taskpool.Priority.IDLE, timeout: 500}).catch((e:BusinessError) => {
+      let config4: taskpool.Configs = {priority: taskpool.Priority.IDLE, timeout: 500};
+      taskpool.execute(task4, config4).catch((e:BusinessError) => {
         str += 'd';
         terminate = true;
         expect(e.code).assertEqual(10200058);
@@ -1347,9 +1351,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use sendable params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let task1 = new taskpool.Task(sendableFuncWithTime, sendableFunc, 500);
@@ -1377,9 +1381,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use sendable params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let task1 = new taskpool.Task(sendableFuncWithTime, sendableFunc, 500);
@@ -1407,9 +1411,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use ArrayBuffer params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = 0;
       let isTerminate: boolean = false;
       let buffer: ArrayBuffer = new ArrayBuffer(8);
@@ -1436,9 +1440,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use ArrayBuffer params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = 0;
       let isTerminate: boolean = false;
       let buffer: ArrayBuffer = new ArrayBuffer(8);
@@ -1465,9 +1469,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use setCloneList
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arr: Array<number> = [1, 2, 3, 4];
       let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
       let arrayInt: Int32Array = new Int32Array(arrayBuffer);
@@ -1493,9 +1497,9 @@ export default function TaskTimeoutTest() {
      * @tc.desc   TimeoutTask use setCloneList
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskTimeoutTestClass068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskTimeoutTestClass068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arr: Array<number> = [1, 2, 3, 4];
       let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
       let arrayInt: Int32Array = new Int32Array(arrayBuffer);
@@ -1512,6 +1516,116 @@ export default function TaskTimeoutTest() {
       while (!isTerminate) {
         await promiseCase()
       }
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1001
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('', timeoutDemo, dealTime);
+      let config: taskpool.Configs = {priority: taskpool.Priority.IDLE, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1002
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('timeoutDemo', timeoutDemo, [dealTime]);
+      let config: taskpool.Configs = {priority: taskpool.Priority.MEDIUM, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1003
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('1', timeoutDemo, []);
+      let config: taskpool.Configs = {priority: taskpool.Priority.HIGH, timeout: timeout};
+      taskpool.execute(task, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200058);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   TaskTimeoutTestClass072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1004
+     * @tc.desc   Task set timeout
+     * @tc.type   Function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TaskTimeoutTestClass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let dealTime = 300;
+      let timeout = 300;
+      let terminate = false;
+      let task: taskpool.Task = new taskpool.Task('', timeoutDemo, dealTime);
+      let group: taskpool.TaskGroup = new taskpool.TaskGroup('');
+      group.addTask(task);
+      let config: taskpool.Configs = {priority: taskpool.Priority.LOW, timeout: timeout};
+      taskpool.execute(group, config).then((res) => {
+        terminate = true;
+      }).catch((e:BusinessError) => {
+        terminate = true;
+        expect(e.code).assertEqual(10200070);
+      })
+      while (!terminate) {
+        await promiseCase();
+      }
+      expect(terminate).assertEqual(true);
       done();
     })
   })

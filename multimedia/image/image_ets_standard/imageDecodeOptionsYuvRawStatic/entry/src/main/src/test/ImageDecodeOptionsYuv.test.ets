@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -132,30 +132,32 @@ export default function imageDecodeOptionsYuvTest() {
       decodingOptions: image.DecodingOptions
     ) => {
       imageSourceApi.createPixelMap(decodingOptions, (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
-        if (err && err.code) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-          await imageSourceApi.release();
-        } else {
-          globalPixelMap = pixelMap!;
-          await imageSourceApi.release();
-          let imageInfo = await pixelMap!.getImageInfo();
-          if (imageInfo != undefined) {
-            g_callbackResult = true;
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
-            let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
-            let desiredPixelFormat = decodingOptions.desiredPixelFormat
-            let desiredSize = decodingOptions.desiredSize as image.Size
-            let fitDensity = decodingOptions.fitDensity
-            if (imageInfo.pixelFormat === desiredPixelFormat &&
-              imageInfo.size.width === desiredSize.width &&
-              imageInfo.size.height === desiredSize.height &&
-              imageInfo.density === fitDensity &&
-              pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
-              result = true
+        waitForCompletion(async () => {
+          if (err && err.code) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+            await imageSourceApi.release();
+          } else {
+            globalPixelMap = pixelMap!;
+            await imageSourceApi.release();
+            let imageInfo = await pixelMap!.getImageInfo();
+            if (imageInfo != undefined) {
+              g_callbackResult = true;
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
+              let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
+              let desiredPixelFormat = decodingOptions.desiredPixelFormat
+              let desiredSize = decodingOptions.desiredSize as image.Size
+              let fitDensity = decodingOptions.fitDensity
+              if (imageInfo.pixelFormat === desiredPixelFormat &&
+                imageInfo.size.width === desiredSize.width &&
+                imageInfo.size.height === desiredSize.height &&
+                imageInfo.density === fitDensity &&
+                pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
+                result = true
+              }
             }
           }
-        }
+        })
       })
     }
 
@@ -210,7 +212,7 @@ export default function imageDecodeOptionsYuvTest() {
           index: 0,
           fitDensity: 240,
           desiredColorSpace: desiredColorSpace,
-          desiredDynamicRange: 0 as image.DecodingDynamicRange
+          desiredDynamicRange: image.DecodingDynamicRange.fromValue(0)
         };
         switch (serviceName){
           case 'promiseCreate':
@@ -253,7 +255,7 @@ export default function imageDecodeOptionsYuvTest() {
           index: 0,
           fitDensity: 240,
           desiredColorSpace: desiredColorSpace,
-          desiredDynamicRange: 0 as image.DecodingDynamicRange
+          desiredDynamicRange: image.DecodingDynamicRange.fromValue(0)
         };
         switch (serviceName) {
           case 'promiseCreate':

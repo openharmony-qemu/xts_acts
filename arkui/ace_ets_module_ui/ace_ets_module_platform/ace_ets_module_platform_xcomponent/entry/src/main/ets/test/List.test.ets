@@ -17,6 +17,8 @@ import SetXComponentSurfaceConfigTest from './XComponent/SetXComponentSurfaceCon
 import XComponentKeyMouseEventTest from './XComponent/XComponentKeyMouseEventTest.test'
 import NodeXComponentTest from './XComponent/NodeXComponentTest.test'
 import NodeContentTest from './XComponent/NodeContentTest.test'
+import xComponentControllerNullAndUndefinedTest from './XComponentNullAndUndefined/xComponentControllerNullAndUndefinedTest.test';
+import XComponentHdrTest from './XComponent/XComponentHdr.test';
 
 export default function testsuite() {
   SetXComponentSurfaceConfigTest()
@@ -24,4 +26,6 @@ export default function testsuite() {
   XComponentKeyMouseEventTest()
   NodeXComponentTest()
   NodeContentTest()
+  xComponentControllerNullAndUndefinedTest()
+  XComponentHdrTest()
 }

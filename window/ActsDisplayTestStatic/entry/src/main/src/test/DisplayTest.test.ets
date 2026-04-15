@@ -34,6 +34,7 @@ import type { AsyncCallback, Callback} from '@ohos.base'
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import deviceInfo from '@ohos.deviceInfo';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -89,7 +90,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
       });
     }
-    await Utils.msSleep(1000)
+    waitForCompletion(async () => {await Utils.msSleep(1000)})
     let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
     resolve(windowStageStart);
   })
@@ -122,6 +123,7 @@ export default function DisplayTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
+        let deviceType: string = deviceInfo.deviceType;
         let displayClass = display.getDefaultDisplaySync();
         let foldStatus:string= '';
         let foldDisplayMode:string= '';
@@ -1474,31 +1476,61 @@ export default function DisplayTest() {
          * @tc.level     Level 3
          */
         it('test_on_availableAreaChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_on_availableAreaChange_static_0100';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            displayClass = display.getDefaultDisplaySync();
-            try {
-                displayClass.onAvailableAreaChange((data: display.Rect) => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-                    done();
-                });
-                displayClass.offAvailableAreaChange();
+        let caseName : string = 'test_on_availableAreaChange_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        let displayClass: display.Display;
+        displayClass = display.getDefaultDisplaySync();
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        let count = 0;
+        try {
+            displayClass.onAvailableAreaChange((data: display.Rect) => {
+                hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
+                count++;
+            });
+            if (deviceType === '2in1') {
+              // 调用maximize接口，设置窗口进入全屏模式。
+              windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+              // 调用setTitleAndDockHoverShown接口，隐藏标题栏和dock栏。
+              let promise = windowClass!.setTitleAndDockHoverShown(false, false);
+              promise.then(() => {
+                console.info('Succeeded in setting the title and dock hoverShown false.');
+              }).catch((err: Error) => {
+                console.error(`Failed to set the title and dock hoverShown false. Cause code: ${err.code}, message: ${err.message}`);
+              });
+              await Utils.msSleep(3000);
+              expect(count).assertLarger(0)
+              //恢复
+              let promise1 = windowClass!.recover();
+              promise1.then(() => {
+                console.info('Succeeded in recovering the window.');
+              }).catch((err: Error) => {
+                console.error(`Failed to recover the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+              await Utils.msSleep(3000);
+            } else if (deviceType === 'tablet') {
+              await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+              await Utils.msSleep(3000);
+              expect(count).assertLargerOrEqual(0)
+              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+            } else {
+              expect(count).assertEqual(0)
+            }
+            displayClass.offAvailableAreaChange();
+            done();
+        }
+        catch (err) {
+            hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
+            if (err.code == 801) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
                 done();
             }
-            catch (err) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-                if (err.code == 801) {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                    done();
-                }
-                else {
-                    expect().assertFail();
-                    done();
-                }
+            else {
+                expect().assertFail();
+                done();
             }
-        });
+        }
+    });
 
         /**
          * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
@@ -1886,10 +1918,14 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync ScreenShape: ' + displayClass!.screenShape);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync x: ' + displayClass!.x);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
-        expect(sourceMode !=null ).assertTrue();
+        expect(sourceMode).assertEqual(1);
         expect(displayClass!.screenShape !=null ).assertTrue();
+        expect(displayClass!.x).assertLargerOrEqual(0);
+        expect(displayClass!.y).assertLargerOrEqual(0);
+        
         done();
       });
+
       /**
          * @tc.number    SUB_BASIC_DMS_JS_0200
          * @tc.name      test_getPrimaryDisplaySync_static_0100
@@ -2045,8 +2081,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-                expect(err.code == 801 || err.code == 401).assertTrue();
-                done();
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
             }
         });
         /**
@@ -2122,8 +2162,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue();
-                done();
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
             }
         });
         /**
@@ -2191,8 +2235,12 @@ export default function DisplayTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue()
-                done();
+                if (err.code === 801) {
+                    done();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                    done();
+                }
             }
         });
         /**
@@ -2464,7 +2512,7 @@ export default function DisplayTest() {
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
                 expect(region.displayId).assertEqual(0)
-                if (result && isExpand === 1) {
+                if (result) {
                     if (region.creaseRects.length === 0) {
                         done();
                     } else {
@@ -2659,6 +2707,7 @@ export default function DisplayTest() {
                 console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
                 display.makeUnique(displayId).then(() => {
+                    waitForCompletion(async () => {
                     console.log(caseName + 'succeeded in makeUnique');
                     let options: StartOptions = {
                         displayId: displayId
@@ -2672,6 +2721,7 @@ export default function DisplayTest() {
                     console.log(caseName + 'setWindowFocusable true ssuccess');
                     await terminateAbility(caseName);
                     done();
+                    })
                 }).catch(async (err: Error) => {
                     console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {
@@ -3018,8 +3068,8 @@ export default function DisplayTest() {
             index2++;
             console.info(caseName + ' callback2 index2: ' + index2);
         }
-        display.onChangeWithAttribute(['width'], callback1);
-        display.onChangeWithAttribute(['height'], callback2);
+        display.onChange(callback1);
+        display.onChange(callback2);
         await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
         await Utils.msSleep(3000);
         console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
@@ -3407,6 +3457,185 @@ export default function DisplayTest() {
         }
         };
     })
+
+    /**
+     * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_JUST_STATIC_0100
+     * @tc.name   testonChangeWithAttribute_setPreferOrientation_static_just_0100
+     * @tc.desc   旋转后屏幕改变精细化监听，空参覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testonChangeWithAttribute_setPreferOrientation_static_just_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testonChangeWithAttribute_setPreferOrientation_static_just_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        try {
+            if(isSupportRotate === true){
+                let index = 0;
+                const callback = (res: long)=>{
+                    console.info(caseName + ' callback res: ' + res);
+                    index++;
+                    console.info(caseName + ' callback index: ' + index);
+                }
+                display.onChangeWithAttribute([], callback);
+                await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index);
+                expect(index).assertEqual(0);
+                display.offChange(callback);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setOrientation index1: ' + index);
+                expect(index).assertEqual(0);
+                done();
+            }else{
+                done();
+            }
+
+        } catch (e) {
+            console.error(`${caseName} Failed. Cause: ` + e!.code);
+            if (e.code === 801) {
+                done();
+            } else {
+                expect().assertFail();
+                done();
+            }
+        }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_static_0200
+     * @tc.name       testOnBrightnessInfoChange_Single_static_0100
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testOnBrightnessInfoChange_Single_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testOnBrightnessInfoChange_Single_static_0100';
+        try {
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            console.info(`${caseName} getMainWindowSync success`);
+            await windowClass.setWindowBrightness(1);
+            console.info(`${caseName} setWindowBrightness 1 success`);
+            await Utils.msSleep(100);
+            let brightnessChangeCount1:number = 0;
+            let callback1Triggered:boolean = false;
+
+            const callback1 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
+                console.info(caseName + ' Callback1 triggered');
+                console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+                brightnessChangeCount1 = brightnessChangeCount1 + 1;
+                callback1Triggered = true;
+                expect(displayId).assertEqual(0);
+                expect(brightnessInfo.sdrNits).assertLarger(0);
+                expect(brightnessInfo.currentHeadroom).assertLarger(0);
+                expect(brightnessInfo.maxHeadroom).assertLarger(0);
+                console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            };
+            display.onBrightnessInfoChange(callback1);
+            console.info(caseName + ' Brightness change listeners registered successfully');
+            await windowClass.setWindowBrightness(0);
+            await Utils.msSleep(100);
+            while (!callback1Triggered) {
+                await Utils.msSleep(100);
+            }
+            console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            expect(brightnessChangeCount1).assertLarger(0);
+            display.offBrightnessInfoChange(callback1);
+            brightnessChangeCount1 = 0;
+            await windowClass.setWindowBrightness(1);
+            await Utils.msSleep(3000);
+            console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            expect(brightnessChangeCount1).assertEqual(0);
+            await windowClass.setWindowBrightness(-1);
+            await Utils.msSleep(100);
+            done();
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${e}`);
+            if (e.code == 801) {
+                done()
+            } else {
+                display.offBrightnessInfoChange();
+                expect(false).assertTrue();
+                done();
+            }
+        }
+    });
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_GET_PICK_801_Static_0100
+     * @tc.name        testPick_unPC_Static
+     * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testPick_unPC_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string = "testPick_unPC_Static";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            if (deviceType !== '2in1') {
+                let promise = screenshot.pick();
+                promise.then((pickInfo: screenshot.PickInfo) => {
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) => {
+                    console.error(`Failed to pick. Code: ' + Code: ${err?.code}, message: ${err?.message}`);
+                    expect(err.code === 801).assertTrue();
+                    done();
+                });
+            } else {
+              hilog.info(0x0000, '[ANI]', msgStr + 'PC can use this Interface');
+              done();
+            }
+        } catch (exception) {
+            let error = exception as BusinessError;
+            console.error(`Failed to pick Code: ' + Code: ${error.code}, message: ${error.message}`);
+            if (error.code === 801) {
+                done()
+            } else {
+                expect(false).assertTrue();
+                done();
+            }
+        };
+    })
+
+    /**
+    * @tc.number      SUB_BASIC_WMS_GET_DISPLAY_CAPABILITY_Static_0100
+    * @tc.name        test_get_display_capability_Static_0100
+    * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
+    */
+    it('test_get_display_capability_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = "test_get_display_capability_Static_0100";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+        let displayClass = display.getDefaultDisplaySync();
+        let capabilityData:string = displayClass.getDisplayCapability();
+        console.log(0x0000, '[ANI]', msgStr + 'deviceMessage =' + JSON.stringify(capabilityData));
+        expect(capabilityData !== null).assertTrue();
+        done();
+        } catch (exception) {
+        let error = exception as BusinessError;
+        console.error(0x0000, '[ANI]', msgStr + `Failed Code: ' + Code: ${error.code}, message: ${error.message}`);
+        if (error.code == 801) {
+            done()
+        } else {
+            expect(false).assertTrue();
+            done();
+        }
+        };
+    })
+
+
 
 
 

@@ -52,104 +52,104 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       console.info('TextPickerDialogEnableHapticFeedback beforeEach end');
     });
      
-/**
+    /**
      * @tc.number   TextPickerDialog_EnableHapticFeedback_static_001
      * @tc.name     TextPickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     TextPickerDialog_EnableHapticFeedback_static_001
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TextPickerDialog_EnableHapticFeedback_static_001';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TextPickerDialog1', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TextPickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextPickerDialog_EnableHapticFeedback_static_001 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TextPickerDialog1'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let textPicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0])
-      console.info("[TextPickerDialog_EnableHapticFeedback_static_001] obj1 is: " + textPicker1);
-      console.info("[TextPickerDialog_EnableHapticFeedback_static_001] obj1 is: " + JSON.stringify(JSON.parseJsonElement(textPicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      expect(JSON.parseJsonElement(textPicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      inspector.sendEventByKey('TextPickerDialog1', 10, "")
-      await CommonFunc.sleep(2000);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_001 getElement start');
+      let textPicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0];    
+      let enableHapticFeedbackVal = textPicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TextPickerDialog_EnableHapticFeedback_static_001] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_001 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
-
-   
-/**
+  
+    /**
      * @tc.number   TextPickerDialog_EnableHapticFeedback_static_002
      * @tc.name     TextPickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     TextPickerDialog_EnableHapticFeedback_static_002
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TextPickerDialog_EnableHapticFeedback_static_002';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TextPickerDialog2', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    it('TextPickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextPickerDialog_EnableHapticFeedback_static_002 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TextPickerDialog2'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let textPicker2 = JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0])
-      console.info("[TextPickerDialog_EnableHapticFeedback_static_002] obj2 is: " + textPicker2);
-      console.info("[TextPickerDialog_EnableHapticFeedback_static_002] obj2 is: " + JSON.stringify(JSON.parseJsonElement(textPicker2).getElement('$attrs').getString('enableHapticFeedback')));
-      expect(JSON.parseJsonElement(textPicker2).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      inspector.sendEventByKey('TextPickerDialog2', 10, "")
-      await CommonFunc.sleep(2000);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_002 getElement start');
+      let textPicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0];    
+      let enableHapticFeedbackVal = textPicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TextPickerDialog_EnableHapticFeedback_static_002] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(false);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_002 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
       done();
     });
-
-    
-/**
+   
+    /**
      * @tc.number   TextPickerDialog_EnableHapticFeedback_static_003
      * @tc.name     TextPickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     TextPickerDialog_EnableHapticFeedback_static_003
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let tagName = 'TextPickerDialog_EnableHapticFeedback_static_003';
-        console.info('[' + tagName + '] START============================');
-        await CommonFunc.sleep(1000);
-        inspector.sendEventByKey('TextPickerDialog3', 10, "")
-        await CommonFunc.sleep(1000);
-        let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await CommonFunc.sleep(2000);
-        let textPicker3 = JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0])
-        console.info("[TextPickerDialog_EnableHapticFeedback_static_003] obj3 is: " + textPicker3);
-        console.info("[TextPickerDialog_EnableHapticFeedback_static_003] obj3 is: " + JSON.stringify(JSON.parseJsonElement(textPicker3).getElement('$attrs').getString('enableHapticFeedback')));
-        expect(JSON.parseJsonElement(textPicker3).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('TextPickerDialog3', 10, "")
-        await CommonFunc.sleep(2000);
-        done();
-      });
+    it('TextPickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextPickerDialog_EnableHapticFeedback_static_003 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TextPickerDialog3'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      await CommonFunc.sleep(2000);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_003 getElement start');
+      let textPicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0];    
+      let enableHapticFeedbackVal = textPicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TextPickerDialog_EnableHapticFeedback_static_003] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_003 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      done();
+    });
 
-
-      
-/**
+    /**
      * @tc.number   TextPickerDialog_EnableHapticFeedback_static_004
      * @tc.name     TextPickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     TextPickerDialog_EnableHapticFeedback_static_004
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let tagName = 'TextPickerDialog_EnableHapticFeedback_static_004';
-        console.info('[' + tagName + '] START============================');
-        await CommonFunc.sleep(1000);
-        inspector.sendEventByKey('TextPickerDialog4', 10, "")
-        await CommonFunc.sleep(1000);
-        let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await CommonFunc.sleep(2000);
-        let textPicker4 = JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0])
-        console.info("[TextPickerDialog_EnableHapticFeedback_static_004] obj4 is: " + textPicker4);
-        console.info("[TextPickerDialog_EnableHapticFeedback_static_004] obj4 is: " + JSON.stringify(JSON.parseJsonElement(textPicker4).getElement('$attrs').getString('enableHapticFeedback')));
-        expect(JSON.parseJsonElement(textPicker4).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
-        console.info('[' + tagName + '] END ===========================');
-        inspector.sendEventByKey('TextPickerDialog4', 10, "")
-        await CommonFunc.sleep(2000);
-        done();
-      });
-    })
+    it('TextPickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextPickerDialog_EnableHapticFeedback_static_004 start ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TextPickerDialog4'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      await CommonFunc.sleep(2000);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_004 getElement start');
+      let textPicker1 = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0];    
+      let enableHapticFeedbackVal = textPicker1.getElement('$attrs').getBoolean('enableHapticFeedback');
+      console.info("[TextPickerDialog_EnableHapticFeedback_static_004] tree enableHapticFeedbackVal is: " + enableHapticFeedbackVal);
+      expect(enableHapticFeedbackVal).assertEqual(true);
+      console.info('TextPickerDialog_EnableHapticFeedback_static_004 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      done();
+    });
+  })
 }

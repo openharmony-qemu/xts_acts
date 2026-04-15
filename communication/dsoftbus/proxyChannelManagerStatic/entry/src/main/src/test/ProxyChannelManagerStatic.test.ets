@@ -70,6 +70,8 @@ async function requestPermission() {
 const receivedDataCallback = (dataInfo: proxyChannelManager.DataInfo) => {
   hilog.info(domain, tag, 'receivedDataCallback, data is ' + JSON.stringify(dataInfo.data));
   hilog.info(domain, tag, 'receivedDataCallback, channelId is ' + JSON.stringify(dataInfo.channelId));
+  expect(typeof(dataInfo.data)).assertEqual('ArrayBuffer');
+  expect(typeof(dataInfo.channelId)).assertEqual('int');
 }
 
 // 注册接收通道状态回调
@@ -79,15 +81,19 @@ const receivedStatusCallback = (channelStateInfo: proxyChannelManager.ChannelSta
   switch (channelStateInfo.state) {
     case proxyChannelManager.ChannelState.CHANNEL_WAIT_RESUME:
       hilog.info(domain, tag, 'connection has been disconnected, the channel is unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_WAIT_RESUME);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_RESUME:
       hilog.info(domain, tag, 'connection has been restored, the channel is available');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_RESUME);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_EXCEPTION_SOFTWARE_FAILED:
       hilog.info(domain, tag, 'other software errors caused the channel to be unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_EXCEPTION_SOFTWARE_FAILED);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_BR_NO_PAIRED:
       hilog.info(domain, tag, 'bluetooth pairing relationship has been deleted, the channel is unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_BR_NO_PAIRED);
       break;
     default:
       hilog.info(domain, tag, 'channelStateInfo state is invalid');
@@ -949,7 +955,35 @@ export default function proxyChannelManagerTest() {
         await Utils.msSleep(1000);
         hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_2400----------------");
       });
-
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_2401
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_2401
+     * @tc.desc   proxyChannelManager.offReceiveData接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelManager_static_2401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_proxyChannelManager_static_2401----------------");
+        let flag = false;
+        let channelId = 1;
+        try {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 channelId is " + channelId);
+          proxyChannelManager.offReceiveData(channelId);
+        } catch (error) {
+          flag = true;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 error.code is " + error.code);
+          hilog.info(domain, tag,
+            "SUB_DSoftbus_Trans_proxyChannelManager_static_2401 error.message is " + error.message);
+          expect(error.code === 32390004).assertTrue();
+          expect(error.message !== null).assertTrue();
+        } finally {
+          expect(flag).assertTrue();
+        }
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_2401----------------");
+      });
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_2500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_2500
@@ -1189,7 +1223,35 @@ export default function proxyChannelManagerTest() {
         await Utils.msSleep(1000);
         hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_3200----------------");
       });
-
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_3201
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_3201
+     * @tc.desc   proxyChannelManager.offChannelStateChange接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelManager_static_3201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        hilog.info(domain, tag, "----------start SUB_DSoftbus_Trans_proxyChannelManager_static_3201----------------");
+        let flag = false;
+        let channelId = 1;
+        try {
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_3201 channelId is " + channelId);
+          proxyChannelManager.offChannelStateChange(channelId);
+        } catch (error) {
+          flag = true;
+          hilog.info(domain, tag, "SUB_DSoftbus_Trans_proxyChannelManager_static_3201 error.code is " + error.code);
+          hilog.info(domain, tag,
+            "SUB_DSoftbus_Trans_proxyChannelManager_static_3200 error.message is " + error.message);
+          expect(error.code === 32390004).assertTrue();
+          expect(error.message !== null).assertTrue();
+        } finally {
+          expect(flag).assertTrue();
+        }
+        await Utils.msSleep(1000);
+        hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_proxyChannelManager_static_3201----------------");
+      });
     /**
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelManager_static_3300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelManager_static_3300
@@ -1214,6 +1276,7 @@ export default function proxyChannelManagerTest() {
               chlId = channelId;
               hilog.info(domain, tag,
                 "SUB_DSoftbus_Trans_proxyChannelManager_static_3300 openProxyChannel chlId:" + chlId);
+              expect(typeof(channelId)).assertEqual('int');
             });
           await Utils.msSleep(3000);
         } catch (error) {
@@ -1253,6 +1316,7 @@ export default function proxyChannelManagerTest() {
               chlId = channelId;
               hilog.info(domain, tag,
                 "SUB_DSoftbus_Trans_proxyChannelManager_static_3400 openProxyChannel chlId:" + chlId);
+                expect(typeof(channelId)).assertEqual('int');  
             });
           await Utils.msSleep(3000);
         } catch (error) {

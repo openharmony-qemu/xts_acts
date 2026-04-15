@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyRotateModifier implements AttributeModifier<ButtonAttribute> {
+export class MyRotateModifier implements AttributeModifier<ButtonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {

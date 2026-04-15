@@ -484,7 +484,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
         console.info('playPauseLoopWithCallBack play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         playPauseCount++;
-        await mediaTestBase.msleepAsync(playTime);
+        waitForCompletion(async () => {await mediaTestBase.msleepAsync(playTime);})
         if (playPauseCount == 1001) {
           // step 4: playing -> stop -> release
           avPlayer?.stop().then(() => {
@@ -519,12 +519,14 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -554,6 +556,7 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -594,14 +597,17 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
       default:
         break;
     }
+  })
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -635,8 +641,8 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
         avPlayer!!.surfaceId = surfaceID;
         console.info('playToCompletedLoop play state is INITIALIZED')
         // step 1: initialized -> prepared -> play
-        await preparePromise(avPlayer!);
-        await sleep(2000);
+        waitForCompletion(async () => {await preparePromise(avPlayer!);})
+        waitForCompletion(async () => {await sleep(2000);})
         avPlayer?.play()
         break;
       case PLAYING:
@@ -680,12 +686,14 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -785,12 +793,14 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -848,12 +858,14 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -920,12 +932,14 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -942,6 +956,7 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop2 in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -987,14 +1002,17 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
       default:
         break;
     }
+    })
   });
   avPlayer?.onError((err: BusinessError) => {
+    waitForCompletion(async () => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
       avPlayer = null;
       done();
     });
+    })
   });
 }
 
@@ -1982,6 +2000,262 @@ export async function setSpeedTimeWithoutCallback(src: string | media.AVFileDesc
   done();
 }
 
+export async function setSpeedTimeWithoutCallback1(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback1 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback1 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback1 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_75_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback1 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback1 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback1 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback1 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback2(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback2 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback2 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback2 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_25_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback2 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback2 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback2 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback2 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback3(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback3 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback3 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback3 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_75_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback3 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback3 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback3 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback3 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback4(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback4 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback4 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback4 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_50_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback4 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback4 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback4 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback4 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback5(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback5 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback5 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback5 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_50_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback5 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback5 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback5 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback5 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback6(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback6 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback6 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback6 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_3_00_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback6 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback6 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback6 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback6 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback7(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback7 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback7 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback7 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_25_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback7 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback7 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback7 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback7 avg time  is :" + avg)
+  done();
+}
+export async function setSpeedTimeWithoutCallback8(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  let totalTime: number = 0;
+  let surfaceID: string = globalThis.value;
+  for (let i = 0; i < 10; i++) {
+    avPlayer = await idle(src, avPlayer!)
+    await setSource(avPlayer!, src);
+    console.info('setSpeedTimeWithoutCallback8 setSource');
+    await sleep(20)
+    if (avPlayer) {
+      avPlayer!!.surfaceId = surfaceID;
+    }
+    await avPlayer!!.prepare().then(() => {
+      expect(avPlayer?.state).assertEqual(PREPARED);
+      console.info('setSpeedTimeWithoutCallback8 avPlayer state is prepared')
+    }).catch(mediaTestBase.catchCallback);
+    let start = Date.now();
+    console.info(`setSpeedTimeWithoutCallback8 start time is : ${start}`)
+    avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_125_X);
+    let end = Date.now();
+    console.info(`setSpeedTimeWithoutCallback8 end time is : ${end}`)
+    let execution = (end - start)
+    console.info("setSpeedTimeWithoutCallback8 execution time  is :" + execution)
+    totalTime = totalTime + execution;
+    await avPlayer!!.release().then(() => {
+      console.info('setSpeedTimeWithoutCallback8 avPlayer is release')
+      expect(avPlayer?.state).assertEqual(RELEASED);
+    }).catch(mediaTestBase.catchCallback);
+  }
+  let avg = totalTime / 10;
+  console.info("setSpeedTimeWithoutCallback8 avg time  is :" + avg)
+  done();
+}
 export async function setSpeedTimeWithCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
   avPlayer = await idle(src, avPlayer!)
   await setSpeedTimeCallback(avPlayer, done)
@@ -2311,10 +2585,10 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
         console.info('setAVPlayerPlay play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         if (avPlayer && avPlayer.duration > 3000) {
-          await mediaTestBase.msleepAsync(3000);
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(3000);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         } else {
-          await mediaTestBase.msleepAsync(500);
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(500);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         }
         break;
@@ -2339,12 +2613,14 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 

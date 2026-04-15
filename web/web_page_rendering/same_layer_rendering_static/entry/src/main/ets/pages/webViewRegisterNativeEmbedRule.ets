@@ -57,13 +57,14 @@ struct webViewRegisterNativeEmbedRule {
     Column() {
       Button('web click').key('webViewRegisterNativeEmbedRule')
         .onClick((e: ClickEvent) => {
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'emitWebViewRegisterNativeEmbedRule': {
               console.info('>>>>>registerNativeEmbedRule:' + this.isObject)
               Utils.emitEvent(this.isObject, 10003)
               break;
             }
-            case 'emitonSwitchNextPage2': {
+            case 'emitSwitchNextPage3': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webViewObjectEmbed' })

@@ -89,7 +89,7 @@ export default function KVManagerPromiseTest(){
     })
 
     beforeEach(async (done: () => void) => {
-      kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         hilog.info(domain, tag, 'beforeEach getKVStore success');
         done();
@@ -102,11 +102,13 @@ export default function KVManagerPromiseTest(){
       hilog.info(domain, tag, 'afterEach');
       try {
         await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then((error) => {
-          hilog.info(domain, tag, 'afterEach closeKVStore success ' );
-          await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-          hilog.info(domain, tag, 'afterEach deleteKVStore success ');
-          kvStore = null;
-          done();
+          waitForCompletion(async () => {
+            hilog.info(domain, tag, 'afterEach closeKVStore success ' );
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+            hilog.info(domain, tag, 'afterEach deleteKVStore success ');
+            kvStore = null;
+            done();
+          })
         }).catch((err: Error) => {
           hilog.error(domain, tag, 'afterEach closeKVStore and deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           done();

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,10 +63,10 @@ struct TextExample1 {
         this.lineHeight = message.value as string
       }
       if (message.name == 'textAlign') {
-        this.textAlign = message.value as TextAlign
+        this.textAlign = TextAlign.fromValue(message.value as int)
       }
       if (message.name == 'textOverflow') {
-        this.textOverflow = message.value as TextOverflow
+        this.textOverflow = TextOverflow.fromValue(message.value as int)
       }
     }
     let callbackTextAlign: CallbackBase<TextAlign> = (message: MessageBase<TextAlign>) => {

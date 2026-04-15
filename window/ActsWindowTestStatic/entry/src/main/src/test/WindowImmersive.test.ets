@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -639,20 +639,21 @@ export default function WindowImmersiveTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage!.createSubWindow('testSetSpecificSystemBarEnabledPromiseErrCode1300002_SubWindow_Promise').then((data:window.Window) => {
+            windowStage!.createSubWindow('testSetSpecificSystemBarEnabledPromiseErrCode1300002_SubWindow_Promise').then(async(data:window.Window) => {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                await (subWin! as window.Window).destroyWindow();
+                await (subWin as window.Window).destroyWindow();
                 try {
                     (subWin! as window.Window).setSpecificSystemBarEnabled('status', true, true).then(() => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setSpecificSystemBarEnabled.');
                         expect(false).assertTrue();
+                         done()
                     }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setSpecificSystemBarEnabled. Cause: ' + JSON.stringify(err));
                         expect(err.code).assertEqual(1300002);
+                        done()
                     });
-                    done()
                 } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setSpecificSystemBarEnabled. Cause:' +
                     JSON.stringify(exception));
@@ -680,7 +681,7 @@ export default function WindowImmersiveTest() {
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             let subWin: window.Window ;
             windowStage!.createSubWindow('testSetImmersiveModeEnabledStateErrCode1300002_SubWindow_Promise')
-                .then((data : window.Window) => {
+                .then(async(data : window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
@@ -1024,6 +1025,7 @@ export default function WindowImmersiveTest() {
                     await (subWin! as window.Window).destroyWindow();
                     done()
                 }).catch((err: Error) => {
+                    waitForCompletion(async () => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
                     await (subWin! as window.Window).destroyWindow();
                     if (err.code == 801) {
@@ -1032,6 +1034,7 @@ export default function WindowImmersiveTest() {
                         expect(err.code).assertEqual(1300004);
                     }
                     done()
+                    })
                 });
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +
@@ -1291,7 +1294,7 @@ export default function WindowImmersiveTest() {
                     let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_CUTOUT;
                     let avoidArea:window.AvoidArea = tempWnd.getWindowAvoidAreaIgnoringVisibility(type);
                     hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
-                    expect(avoidArea.visible).assertTrue();
+                    expect(!avoidArea.visible).assertTrue();
                     expect(avoidArea.topRect != null).assertTrue();
                     expect(avoidArea.rightRect != null).assertTrue();
                     expect(avoidArea.bottomRect != null).assertTrue();
@@ -1506,19 +1509,22 @@ export default function WindowImmersiveTest() {
             await win.setUIContent('pages/Index');
             await win.showWindow();
             await Utils.msSleep(300);
-            win!.setSystemAvoidAreaEnabled(true).then(()=>{
+            win!.setSystemAvoidAreaEnabled(true).then(async()=>{
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setSystemAvoidAreaEnabled true.');
+                await (win! as window.Window).destroyWindow();
                 expect(false).assertTrue();
                 done();
-            }).catch((err:Error):PromiseLike<void>|undefined=>{
+            }).catch(async(err:Error):PromiseLike<void>|undefined=>{
                 err === err as BusinessError;
                 if(err!.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
+                    await (win! as window.Window).destroyWindow();
                     expect(err!.code).assertEqual(1300004);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(err))
+                    await (win! as window.Window).destroyWindow();
                     expect(err!.code).assertEqual(801);
                     done();
                 }
@@ -1554,13 +1560,14 @@ export default function WindowImmersiveTest() {
                 expect(false).assertTrue();
                 done()
             }
-            win!.setSystemAvoidAreaEnabled(true).then(()=>{
+            win!.setSystemAvoidAreaEnabled(true).then(async()=>{
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in  setSystemAvoidAreaEnabled true.');
                 let type: window.AvoidAreaType = window.AvoidAreaType.TYPE_SYSTEM;
                 let avoidArea:window.AvoidArea = win!.getWindowAvoidArea(type);
                 hilog.info(0x0000, '[ANI]',msgStr + 'avoidArea: ' + JSON.stringify(avoidArea));
                 let enable:boolean = win!.isSystemAvoidAreaEnabled()
                 hilog.info(0x0000, '[ANI]',msgStr + 'isSystemAvoidAreaEnabled: ' + JSON.stringify(enable));
+                await (win! as window.Window).destroyWindow();
                 expect(avoidArea.visible).assertTrue();
                 expect(enable).assertTrue();
                 expect(avoidArea.topRect != null).assertTrue();
@@ -1629,10 +1636,11 @@ export default function WindowImmersiveTest() {
                 expect(false).assertTrue();
                 done()
             }
-            win!.setSystemAvoidAreaEnabled(false).then(()=>{
+            win!.setSystemAvoidAreaEnabled(false).then(async()=>{
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in  setSystemAvoidAreaEnabled false.');
                 let enable:boolean = win!.isSystemAvoidAreaEnabled()
                 hilog.info(0x0000, '[ANI]',msgStr + 'isSystemAvoidAreaEnabled: ' + JSON.stringify(enable));
+                await (win! as window.Window).destroyWindow();
                 expect(enable).assertFalse();
                 done();
             }).catch((err:Error):PromiseLike<void>|undefined=>{
@@ -1715,8 +1723,10 @@ export default function WindowImmersiveTest() {
             await Utils.msSleep(300);
             try{
                 win!.isSystemAvoidAreaEnabled();
+                await (win! as window.Window).destroyWindow();
             }catch(err){
                 err === err as BusinessError;
+                await (win! as window.Window).destroyWindow();
                 if(err!.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to get isSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300004);

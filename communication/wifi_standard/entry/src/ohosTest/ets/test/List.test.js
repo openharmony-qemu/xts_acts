@@ -18,6 +18,8 @@ import actsWifiManagerCandidateNetWorkTest from './WifiManagerCandidateNetWork.t
 import actsWifiFunctionsTest from './WifiStationFunctions.test.js'
 import actsWifiEventTest from './WifiStationEvent.test.js'
 import actsWifiManagerEventTest from './WifiManagerStationEvent.test.js'
+import wifiReturnValue from './WifiReturnValue.test.js'
+import wifiCoverageTest from './WifiCoverage.test.js'
 export default function testsuite() {
     actsWifiManagerFunctionsTest()
     actsWifiCandidateNetWorkTest()
@@ -25,5 +27,8 @@ export default function testsuite() {
     actsWifiFunctionsTest()
     actsWifiEventTest()
     actsWifiManagerEventTest()
+    wifiReturnValue()
+    wifiCoverageTest()
 }
+
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,6 +53,15 @@ import ExpandSafeAreaNullUndefinedTest from './CommonAttrs/ExpandSafeAreaNullUnd
 
 import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaNullUndefinedTest.test';
 import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
+import pixelRoundNullUndefinedTest from './CommonCustom/pixelRoundNullUndefinedTest.test';
+import getContext2DFromDrawingContextNullUndefinedTest from './CommonCustom/getContext2DFromDrawingContextNullUndefinedTest.test';
+import CommonApiNullUndefinedTest from './CommonCustom/CommonApiNullUndefinedTest.test';
+
+import DynamicLayoutColumnTest from './CommonCustom/DynamicLayoutColumnTest.test';
+import DynamicLayoutRowTest from './CommonCustom/DynamicLayoutRowTest.test';
+import DynamicLayoutStackTest from './CommonCustom/DynamicLayoutStackTest.test';
+import DynamicLayoutGridTest from './CommonCustom/DynamicLayoutGridTest.test';
+import DynamicLayoutCustomTest from './CommonCustom/DynamicLayoutCustomTest.test';
 
 export default function testsuite() {
   Calc01();
@@ -95,4 +104,13 @@ export default function testsuite() {
 
   MediaQueryMatchMediaNullUndefinedTest();
   MediaQueryMatchMediaSyncNullUndefinedTest();
+  pixelRoundNullUndefinedTest();
+  getContext2DFromDrawingContextNullUndefinedTest();
+  CommonApiNullUndefinedTest();
+
+  DynamicLayoutColumnTest();
+  DynamicLayoutRowTest();
+  DynamicLayoutStackTest();
+  DynamicLayoutGridTest();
+  DynamicLayoutCustomTest();
 }

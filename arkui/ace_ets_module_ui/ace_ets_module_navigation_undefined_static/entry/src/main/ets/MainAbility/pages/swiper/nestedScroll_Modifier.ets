@@ -34,7 +34,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // 1. 定义 AttributeModifier —— 作用在 Swiper 上
 @Observed
-class SwiperNestedScrollModifierTest0 implements AttributeModifier<SwiperAttribute> {
+export class SwiperNestedScrollModifierTest0 implements AttributeModifier<SwiperAttribute> {
   public isUndefined: boolean = false;
   applyNormalAttribute(instance: SwiperAttribute): void {
     instance

@@ -90,6 +90,30 @@ export default function HttpCreateHttpResponseCacheTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
+    /**
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache_static_0400
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0400
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrHttpCreateHttpResponseCache_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache_static_0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let httpRequest = http.createHttp();
+          ExpectTrue(typeof httpRequest == 'object');
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+      });
+
     })
 
 }

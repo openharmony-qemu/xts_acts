@@ -113,23 +113,23 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-            call.getCallState((err: BusinessError, data: call.CallState) => {
-              if (err) {
-                console.info(`${caseName} getCallState fail, err->${JSON.stringify(err)}`);
-                ExpectFail();
-              } else {
-                const callStateAry: number[] = [
-                  call.CallState.CALL_STATE_UNKNOWN,
-                  call.CallState.CALL_STATE_IDLE,
-                  call.CallState.CALL_STATE_RINGING,
-                  call.CallState.CALL_STATE_OFFHOOK,
-                  call.CallState.CALL_STATE_ANSWERED
-                ]
-                ExpectTrue(callStateAry.includes(data));
-                console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
-              }
-              done();
-            });
+          call.getCallState((err: BusinessError, data: call.CallState) => {
+            if (err) {
+              console.info(`${caseName} getCallState fail, err->${JSON.stringify(err)}`);
+              ExpectFail();
+            } else {
+              const callStateAry: number[] = [
+                call.CallState.CALL_STATE_UNKNOWN,
+                call.CallState.CALL_STATE_IDLE,
+                call.CallState.CALL_STATE_RINGING,
+                call.CallState.CALL_STATE_OFFHOOK,
+                call.CallState.CALL_STATE_ANSWERED
+              ]
+              ExpectTrue(callStateAry.includes(data));
+              console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
+            }
+            done();
+          });
         } catch (err) {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -155,22 +155,22 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-            call.getCallState().then((data: call.CallState) => {
-              const callStateAry: number[] = [
-                call.CallState.CALL_STATE_UNKNOWN,
-                call.CallState.CALL_STATE_IDLE,
-                call.CallState.CALL_STATE_RINGING,
-                call.CallState.CALL_STATE_OFFHOOK,
-                call.CallState.CALL_STATE_ANSWERED
-              ]
-              ExpectTrue(callStateAry.includes(data));
-              console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
-              done();
-            }).catch((err: BusinessError) => {
-              console.info(`${caseName} getCallState fail, err->${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
-            });
+          call.getCallState().then((data: call.CallState) => {
+            const callStateAry: number[] = [
+              call.CallState.CALL_STATE_UNKNOWN,
+              call.CallState.CALL_STATE_IDLE,
+              call.CallState.CALL_STATE_RINGING,
+              call.CallState.CALL_STATE_OFFHOOK,
+              call.CallState.CALL_STATE_ANSWERED
+            ]
+            ExpectTrue(callStateAry.includes(data));
+            console.info(`${caseName} getCallState success, data->${JSON.stringify(data)}`);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} getCallState fail, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
         } catch (err) {
           console.info(`${caseName} fail,promise: err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -196,17 +196,17 @@ export default function HasCard2PublicNeedCardTest() {
       console.info(`${caseName} test start`);
       if (isSimActive == true) {
         try {
-            let callState: number = call.getCallStateSync();
-            const callStateSyncAry: number[] = [
-              call.CallState.CALL_STATE_UNKNOWN,
-              call.CallState.CALL_STATE_IDLE,
-              call.CallState.CALL_STATE_RINGING,
-              call.CallState.CALL_STATE_OFFHOOK,
-              call.CallState.CALL_STATE_ANSWERED
-            ]
-            ExpectTrue(callStateSyncAry.includes(callState));
-            console.info(`${caseName} getCallState success, callState->${JSON.stringify(callState)}`);
-            done();
+          let callState: number = call.getCallStateSync();
+          const callStateSyncAry: number[] = [
+            call.CallState.CALL_STATE_UNKNOWN,
+            call.CallState.CALL_STATE_IDLE,
+            call.CallState.CALL_STATE_RINGING,
+            call.CallState.CALL_STATE_OFFHOOK,
+            call.CallState.CALL_STATE_ANSWERED
+          ]
+          ExpectTrue(callStateSyncAry.includes(callState));
+          console.info(`${caseName} getCallState success, callState->${JSON.stringify(callState)}`);
+          done();
         } catch (err) {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
           ExpectFail();
@@ -634,34 +634,34 @@ export default function HasCard2PublicNeedCardTest() {
       let caseName: string = 'testTelephonySmsNoPermission0200';
       console.info(`${caseName} test start`);
       if(sim.getMaxSimCount()>1){
-      try {
-        let hasSim: boolean = sim.hasSimCardSync(0);
-        ExpectTrue(hasSim);
-        if (hasSim) {
-          let sendOptions: sms.SendMessageOptions = {
-            slotId: 1,
-            content: '',
-            destinationHost: '',
-          };
-          sms.sendShortMessage(sendOptions).then(() => {
-            console.info(`${caseName} success`);
+        try {
+          let hasSim: boolean = sim.hasSimCardSync(0);
+          ExpectTrue(hasSim);
+          if (hasSim) {
+            let sendOptions: sms.SendMessageOptions = {
+              slotId: 1,
+              content: '',
+              destinationHost: '',
+            };
+            sms.sendShortMessage(sendOptions).then(() => {
+              console.info(`${caseName} success`);
+              ExpectFail();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 201);
+              done();
+            });
+          } else {
+            console.info(`${caseName} no sim`);
             ExpectFail();
             done();
-          }).catch((err: BusinessError) => {
-            console.info(`${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
-            ExpectTrue(err.code == 201);
-            done();
-          });
-        } else {
-          console.info(`${caseName} no sim`);
+          }
+        } catch (err) {
+          console.info(`${caseName} err:${err}`);
           ExpectFail();
           done();
         }
-      } catch (err) {
-        console.info(`${caseName} err:${err}`);
-        ExpectFail();
-        done();
-      }
       }else{
         console.info(`${caseName}：Not support dual SIM cards.`);
         ExpectTrue(true);
@@ -735,5 +735,340 @@ export default function HasCard2PublicNeedCardTest() {
         done();
       });
     });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0300
+     * @tc.number Telephony_CallManager_Dial_Async_0300
+     * @tc.desc   PhoneNumber: 10086, has options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0300';
+      try {
+        let dialOptions: call.DialOptions = {
+          extras: true
+        }
+        call.dial("", dialOptions, (err, data) => {
+          expect(data === undefined).assertTrue();
+          console.info(CaseName + " case success" + JSON.stringify(data));
+          done();
+        });
+      } catch (err) {
+        console.info(CaseName + ' case error' + JSON.stringify(err));
+        expect(err).assertFalse();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0400
+     * @tc.number Telephony_CallManager_Dial_Async_0400
+     * @tc.desc   PhoneNumber: 10086, has options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0400';
+      try {
+        call.dial(null, {
+          extras: false
+        }, (err, data) => {
+          expect(err).assertFalse();
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0500
+     * @tc.number Telephony_CallManager_Dial_Async_0500
+     * @tc.desc   PhoneNumber: 10086, has options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0500';
+      try {
+        call.dial(undefined, {
+          extras: false
+        }, (err, data) => {
+          expect(err).assertFalse();
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0600
+     * @tc.number Telephony_CallManager_Dial_Async_0600
+     * @tc.desc   PhoneNumber: 10086, has options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0600';
+      try {
+        call.dial(CALL_NUMBER, {
+          extras: null
+        }, (err, data) => {
+          expect(data === undefined).assertTrue();
+          console.info(CaseName + " case success" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case error' + JSON.stringify(err));
+        expect(err).assertFalse();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0700
+     * @tc.number Telephony_CallManager_Dial_Async_0700
+     * @tc.desc   PhoneNumber: 10086, has options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0700';
+      try {
+        call.dial(CALL_NUMBER, {
+          extras: undefined
+        }, (err, data) => {
+          expect(data === undefined).assertTrue();
+          console.info(CaseName + " case success" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case error' + JSON.stringify(err));
+        expect(err).assertFalse();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0300
+     * @tc.number Telephony_CallManager_Dial_Promise_0300
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0300';
+      call.dial(CALL_NUMBER,{
+        extras: true
+      }).then((data) => {
+        console.info(CaseName + " case fail" + JSON.stringify(data));
+        expect(data).assertFalse();
+        done();
+        return;
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0400
+     * @tc.number Telephony_CallManager_Dial_Promise_0400
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0400';
+      call.dial("",{
+        extras: true
+      }).then((data) => {
+        console.info(CaseName + " case fail" + JSON.stringify(data));
+        expect(data).assertFalse();
+        done();
+        return;
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0500
+     * @tc.number Telephony_CallManager_Dial_Promise_0500
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0500';
+      try {
+        call.dial(null,{
+          extras: true
+        }).then((data) => {
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          expect(data).assertFalse();
+          done();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + ' case error' + JSON.stringify(err));
+          expect(err).assertFalse();
+          done();
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0600
+     * @tc.number Telephony_CallManager_Dial_Promise_0600
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0600';
+      try {
+        call.dial(undefined,{
+          extras: true
+        }).then((data) => {
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          expect(data).assertFalse();
+          done();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + ' case error' + JSON.stringify(err));
+          expect(err).assertFalse();
+          done();
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0700
+     * @tc.number Telephony_CallManager_Dial_Promise_0700
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0700';
+      call.dial(CALL_NUMBER,{
+        extras: null
+      }).then((data) => {
+        console.info(CaseName + " case fail" + JSON.stringify(data));
+        expect(data).assertFalse();
+        done();
+        return;
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Promise_0800
+     * @tc.number Telephony_CallManager_Dial_Promise_0800
+     * @tc.desc   PhoneNumber: 10086, has options. Call dila api by permise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Promise_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Promise_0800';
+      call.dial(CALL_NUMBER,{
+        extras: undefined
+      }).then((data) => {
+        console.info(CaseName + " case fail" + JSON.stringify(data));
+        expect(data).assertFalse();
+        done();
+        return;
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0800
+     * @tc.number Telephony_CallManager_Dial_Async_0800
+     * @tc.desc   PhoneNumber: 10086, no options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0800';
+      try {
+        call.dial(null, (err, data) => {
+          expect(data).assertFalse();
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Telephony_CallManager_Dial_Async_0900
+     * @tc.number Telephony_CallManager_Dial_Async_0900
+     * @tc.desc   PhoneNumber: 10086, no options. Call dial api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_CallManager_Dial_Async_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName = 'Telephony_CallManager_Dial_Async_0900';
+      try {
+        call.dial(undefined, (err, data) => {
+          expect(data).assertFalse();
+          console.info(CaseName + " case fail" + JSON.stringify(data));
+          done();
+          return;
+        });
+      } catch (err) {
+        console.info(CaseName + ' case success' + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
   });
 }

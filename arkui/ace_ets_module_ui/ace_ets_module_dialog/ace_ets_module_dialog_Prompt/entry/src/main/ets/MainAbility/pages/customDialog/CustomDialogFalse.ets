@@ -95,7 +95,7 @@ struct CustomDialogFalseExample {
     cancel: this.exitApp,
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: 20 },
     gridCount: 4,
     showInSubWindow: false,
     customStyle: false,
@@ -120,7 +120,7 @@ struct CustomDialogFalseExample {
   build() {
     Column() {
       Button(this.inputValue)
-        .margin(100)
+
         .id("CustomDialogFalse")
         .onClick(() => {
           if (this.dialogController != null) {

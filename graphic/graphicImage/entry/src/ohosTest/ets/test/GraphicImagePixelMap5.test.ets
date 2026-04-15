@@ -419,7 +419,7 @@ export default function graphicImagePixelMap5() {
     it('graphicImagePixelMap5_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await image.createPixelMapFromSurfaceWithTransformation('111111', true)
-          .then((pixelMap: image.PixelMap) => {
+          .then(async (pixelMap: image.PixelMap) => {
             console.info('graphicImagePixelMap5_2900 PixelMap created successfully.');
             expect(pixelMap !== null).assertTrue();
 
@@ -429,6 +429,7 @@ export default function graphicImagePixelMap5() {
 
             console.info(`graphicImagePixelMap5_3200 success`);
             expect().assertFail();
+            await pixelMap?.release();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
@@ -449,7 +450,7 @@ export default function graphicImagePixelMap5() {
     it('graphicImagePixelMap5_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await image.createPixelMapFromSurfaceWithTransformation('', true)
-          .then((pixelMap: image.PixelMap) => {
+          .then(async (pixelMap: image.PixelMap) => {
             console.info('graphicImagePixelMap5_3000 PixelMap created successfully.');
             expect(pixelMap !== null).assertTrue();
 
@@ -459,6 +460,7 @@ export default function graphicImagePixelMap5() {
 
             console.info(`graphicImagePixelMap5_3200 success`);
             expect().assertFail();
+            await pixelMap?.release();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
@@ -489,6 +491,7 @@ export default function graphicImagePixelMap5() {
 
           console.info(`graphicImagePixelMap5_3200 success`);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch (e) {
           const error = e as BusinessError;
@@ -520,6 +523,7 @@ export default function graphicImagePixelMap5() {
 
           console.info(`graphicImagePixelMap5_3200 success`);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch (e) {
           const error = e as BusinessError;
@@ -623,6 +627,7 @@ export default function graphicImagePixelMap5() {
           console.info('www data createCroppedAndScaledPixelMapSync error 555', JSON.stringify(err));
           expect().assertFail();
         }
+        await pixelMap?.release();
         done();
       })
 
@@ -646,11 +651,14 @@ export default function graphicImagePixelMap5() {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('graphicImagePixelMap5_3500 pass');
           expect().assertFail();
+          await pixelMap?.release();
+          done();
         }catch(err){
           console.info('graphicImagePixelMap5_3500 error', JSON.stringify(err.code));
           expect(Number(err.code) === 7600204).assertTrue();
+          await pixelMap?.release();
+          done();
         }
-        done();
       })
 
     /**
@@ -674,11 +682,14 @@ export default function graphicImagePixelMap5() {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('graphicImagePixelMap5_3600 pass');
           expect().assertFail();
+          await pixelMap?.release();
+          done();
         }catch(err){
           console.info('graphicImagePixelMap5_3600 error', JSON.stringify(err.code));
           expect(Number(err.code) === 7600201).assertTrue();
+          await pixelMap?.release();
+          done();
         }
-        done();
       })
 
     /**
@@ -701,11 +712,14 @@ export default function graphicImagePixelMap5() {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('graphicImagePixelMap5_3700 pass');
           expect().assertFail();
+          await pixelMap?.release();
+          done();
         }catch(err){
           console.info('graphicImagePixelMap5_3700 error', JSON.stringify(err.code));
           expect(Number(err.code) === 7600205).assertTrue();
+          await pixelMap?.release();
+          done();
         }
-        done();
       })
 
     /**
@@ -754,6 +768,7 @@ export default function graphicImagePixelMap5() {
           console.info('www data createCroppedAndScaledPixelMap error 555', JSON.stringify(err));
           expect().assertFail();
         });
+        await pixelMap?.release();
         done();
       })
 
@@ -780,6 +795,7 @@ export default function graphicImagePixelMap5() {
           console.info('graphicImagePixelMap5_3900 error', JSON.stringify(err.code));
           expect(Number(err.code) === 7600204).assertTrue();
         });
+        await pixelMap?.release();
         done();
       })
 
@@ -808,10 +824,12 @@ export default function graphicImagePixelMap5() {
             console.info('graphicImagePixelMap5_4000 error', JSON.stringify(err.code));
             expect(Number(err.code) === 7600201).assertTrue();
           });
+          await pixelMap?.release();
+          done();
         } catch(err){
           expect(Number(err.code) === 7600201).assertTrue();
+          done();
         }
-        done();
       })
 
     /**
@@ -837,6 +855,7 @@ export default function graphicImagePixelMap5() {
           console.info('graphicImagePixelMap5_4100 error', JSON.stringify(err.code));
           expect(Number(err.code) === 7600205).assertTrue();
         });
+        await pixelMap?.release();
         done();
       })
 
@@ -878,6 +897,8 @@ export default function graphicImagePixelMap5() {
             expect().assertFail();
             done();
           } else {
+            srcPixelmap?.release();
+            dstPixelMap?.release();
             console.info(msg + ' Succeeded in converting pixelmap.');
             done();
           }
@@ -918,12 +939,13 @@ export default function graphicImagePixelMap5() {
         let dstPixelMap = image.createPixelMapSync(optsForPre);
         await image.createPremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
           console.info(msg + 'Succeeded in converting pixelmap.');
-          done();
         }).catch((error: Error) => {
           console.error(msg + `Failed to convert pixelmap, error code is ${error}`);
           expect().assertFail();
-          done();
         })
+        await srcPixelmap?.release();
+        await dstPixelMap?.release();
+        done();
       })
 
     /**
@@ -962,6 +984,8 @@ export default function graphicImagePixelMap5() {
               expect().assertFail()
               done()
             } else {
+              srcPixelmap?.release();
+              dstPixelMap?.release();
               console.log(" www data 3.3" + msg)
               console.info(msg + ' Succeeded in converting pixelmap.');
               done()
@@ -1004,9 +1028,11 @@ export default function graphicImagePixelMap5() {
           let srcPixelmap = image.createPixelMapSync(color, opts2);
           let dstPixelMap = image.createPixelMapSync(opts3);
           console.log(" www data 4.2" + msg)
-          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
+          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(async () => {
             console.log(" www data 4.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
+            await srcPixelmap?.release();
+            await dstPixelMap?.release();
             done()
           }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -1046,6 +1072,7 @@ export default function graphicImagePixelMap5() {
 
           console.info(`graphicImagePixelMap5_0100 success`);
           expect(false).assertTrue();
+          await pixelMap?.release();
           done();
         } catch (error) {
           const err = error as BusinessError;
@@ -1081,6 +1108,7 @@ export default function graphicImagePixelMap5() {
 
           console.info(`graphicImagePixelMap5_0200 success`);
           expect(false).assertTrue();
+          await pixelMap?.release();
           done();
         } catch (error) {
           const err = error as BusinessError;
@@ -1167,12 +1195,14 @@ export default function graphicImagePixelMap5() {
         let pixelMap = image.createPixelMapSync(opts);
         try {
           pixelMap?.setMemoryNameSync('');
+          await pixelMap?.release();
+          done();
         } catch (err) {
           err = err as BusinessError;
           console.info('graphicImagePixelMap5_0500 error code ' + JSON.stringify(err.code))
           expect(Number(err.code)).assertEqual(401);
+          done();
         }
-        done();
       })
 
     /**

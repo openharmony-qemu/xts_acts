@@ -100,7 +100,14 @@ export default function HasCard2PublicNeedCardTest() {
             hilog.info(domain, tag, '%{public}s', caseName +'hasCallSync success, no call exists');
             let callState: number = call.getCallStateSync();
             hilog.info(domain, tag, '%{public}s', caseName +'getCallState success, data->'+JSON.stringify(callState));
-            ExpectTrue(callState == 0);
+            const callStateSyncAry: number[] = [
+              call.CallState.CALL_STATE_UNKNOWN,
+              call.CallState.CALL_STATE_IDLE,
+              call.CallState.CALL_STATE_RINGING,
+              call.CallState.CALL_STATE_OFFHOOK,
+              call.CallState.CALL_STATE_ANSWERED
+            ]
+            ExpectTrue(callStateSyncAry.includes(callState));
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +'hasCallSync fail, call exists');

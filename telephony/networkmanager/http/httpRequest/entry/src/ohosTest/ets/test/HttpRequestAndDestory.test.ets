@@ -527,5 +527,44 @@ export default function HttpRequestAndDestroyTest() {
       }
       console.info(`${caseName} test End`);
     });
+    /**
+     * @tc.name   testHttpDestroy1200
+     * @tc.number SUB_NetworkMgr_Http_Destroy_1200
+     * @tc.desc   test destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHttpDestroy1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testHttpDestroy1200";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (data.netId == 0) {
+            console.info(`${caseName} Please connect to the network`);
+            ExpectFail();
+            done();
+          } else {
+            console.info(`${caseName} Network connected`);
+            let httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.request(ADDR_TEST_DOMAIN_HTTPS)
+              .then((data: http.HttpResponse) => {
+                console.info(`${caseName} httpRequest.destroy fail ${JSON.stringify(data)}`);
+                done();
+              }).catch((err: BusinessError) => {
+              console.info(`${caseName} httpRequest.destroy success ${JSON.stringify(err)}`);
+              ExpectTrue(err.code == 2300023);
+              done();
+            });
+            httpRequest.destroy()
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} outer trycatch err:  ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test End`);
+    });
   });
 }

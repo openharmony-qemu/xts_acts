@@ -20,7 +20,6 @@ struct showActionMenuFalseExample {
   build() {
     Column({ space: 5 }) {
       Button('showActionMenuFalse')
-        .margin(100)
         .id("showActionMenuFalse")
         .onClick(() => {
           promptAction.showActionMenu({

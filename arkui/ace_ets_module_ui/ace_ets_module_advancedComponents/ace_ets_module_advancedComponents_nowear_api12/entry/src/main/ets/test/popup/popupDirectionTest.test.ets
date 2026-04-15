@@ -83,14 +83,14 @@ export default function popupDirectionTest() {
     });
 
     /**
-     * @tc.name   testPopupDirectionTest_0100
+     * @tc.name   testPopupDirectionTest_0100Adapt001
      * @tc.number button direction
      * @tc.desc   Test Popup page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPopupDirectionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testPopupDirectionTest_0100Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("testPopupDirectionTest_0100 ", "START");
       const driver = await Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));

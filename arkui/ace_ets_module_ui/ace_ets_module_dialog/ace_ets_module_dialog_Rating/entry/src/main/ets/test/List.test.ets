@@ -22,7 +22,7 @@ import RatingContentModifier from './RatingTest/RatingContentModifier.test';
 import RatingAdvancedTest2 from './RatingTest/RatingAdvanced2.test';
 import ratingNodeTest from './rating/ratingNode.test';
 import ratingOnChangeModifierTest from './rating/ratingOnChangeModifier.test';
-
+import RatingNullTest from './RatingTest/RatingNull.test';
 export default function testsuite() {
   ratingStarStyle();
   ratingJsunit();
@@ -33,7 +33,7 @@ export default function testsuite() {
   RatingAdvancedTest2();
   ratingNodeTest();
   ratingOnChangeModifierTest();
-
+  RatingNullTest();
 
 
 

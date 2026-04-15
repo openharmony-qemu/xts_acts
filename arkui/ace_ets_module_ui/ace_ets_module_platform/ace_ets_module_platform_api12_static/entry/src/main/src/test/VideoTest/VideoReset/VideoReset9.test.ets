@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,13 +36,12 @@ import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
-
+import wifiMg from '@ohos.wifiManager';
 
 export default function VideoReset9() {
   describe('VideoReset9', () => {
     beforeAll(async (): Promise<void> => {
 
-      
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
       
     });
@@ -64,6 +63,30 @@ export default function VideoReset9() {
       } catch (err) {
         console.error("push VideoReset9 page error: " + err);
       }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+            
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); 
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+            
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+      }
+
     });
 
     afterEach(async () => {

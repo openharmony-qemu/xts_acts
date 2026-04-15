@@ -27,10 +27,10 @@ export default function SpanPropertiesNullUndefinedTest() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get SpanPropertiesNullUndefinedTest state success " + JSON.stringify(pages));
-        let result = await router.replaceUrl(options);
+        console.info("get SpanPropertiesNullUndefinedTest state success " + JSON.stringify(pages)); 
         if (!("SpanPropertiesNullUndefinedTest" == pages.name)) {
           console.info("get SpanPropertiesNullUndefinedTest state success " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push SpanPropertiesNullUndefinedTest page success " + JSON.stringify(result));
         }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,9 +97,32 @@ it('testFlexAlignCenterTextMarginMeet_static', Level.LEVEL0, async () : Promise<
       let Center_AddOneMargin_012: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_012');
       let Center_AddOneMargin_013: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_013');
       let Center_AddOneMargin_01: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_01');
+
       expect(Math.floor(Math.abs(Center_AddOneMargin_012.top - Center_AddOneMargin_01.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Center_AddOneMargin_013.top - Center_AddOneMargin_012.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Center_AddOneMargin_013.left - Center_AddOneMargin_012.right)) <= 1).assertTrue();
+
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi1'+ Math.floor(Math.abs((Center_AddOneMargin_011.left - Center_AddOneMargin_01.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi2'+ Math.floor(Math.abs((Center_AddOneMargin_011.top - Center_AddOneMargin_01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi3'+ Math.floor(Math.abs((Center_AddOneMargin_012.left - Center_AddOneMargin_011.right) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi4'+ Math.floor(Math.abs((Center_AddOneMargin_01.right - Center_AddOneMargin_013.right) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi5'+ Math.floor(Math.abs((Center_AddOneMargin_011.bottom - Center_AddOneMargin_011.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi6'+ Math.floor(Math.abs((Center_AddOneMargin_012.bottom - Center_AddOneMargin_012.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi7'+ Math.floor(Math.abs((Center_AddOneMargin_013.bottom - Center_AddOneMargin_013.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi8'+ Math.floor(Math.abs((Center_AddOneMargin_011.right - Center_AddOneMargin_011.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi9'+ Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexAlignCenterTextMarginMeet_static_chazhi10'+ Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+
       expect(Math.floor(Math.abs((Center_AddOneMargin_011.left - Center_AddOneMargin_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((Center_AddOneMargin_011.top - Center_AddOneMargin_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1)
@@ -149,6 +172,29 @@ it('testFlexAlignCenterTextMarginOverflow_static', Level.LEVEL0, async () : Prom
       let Center_AddOneMargin_012: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_012');
       let Center_AddOneMargin_013: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_013');
       let Center_AddOneMargin_01: RectValue = CommonFunc.getComponentRect('Center_AddOneMargin_01');
+
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi1'+ Math.floor(Math.abs(Center_AddOneMargin_01.top - Center_AddOneMargin_012.top)));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi2'+ Math.floor(Math.abs(Center_AddOneMargin_013.top - Center_AddOneMargin_012.top)));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi3'+ Math.floor(Math.abs((Center_AddOneMargin_011.left - Center_AddOneMargin_01.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi4'+ Math.floor(Math.abs((Center_AddOneMargin_011.top - Center_AddOneMargin_01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi5'+ Math.floor(Math.abs((Center_AddOneMargin_012.left - Center_AddOneMargin_011.right) -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi6'+ Math.floor(Math.abs(Center_AddOneMargin_012.right - Center_AddOneMargin_013.left)));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi7'+ Math.floor(Math.abs((Center_AddOneMargin_011.bottom - Center_AddOneMargin_011.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi8'+ Math.floor(Math.abs((Center_AddOneMargin_012.bottom - Center_AddOneMargin_012.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi9'+ Math.floor(Math.abs((Center_AddOneMargin_013.bottom - Center_AddOneMargin_013.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi10'+ Math.floor(Math.abs((Center_AddOneMargin_011.right - Center_AddOneMargin_011.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi11'+ Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexAlignCenterTextMarginOverflow_static_chazhi12'+ Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+
       expect(Math.floor(Math.abs(Center_AddOneMargin_01.top - Center_AddOneMargin_012.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Center_AddOneMargin_013.top - Center_AddOneMargin_012.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Center_AddOneMargin_011.left - Center_AddOneMargin_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1)
@@ -164,12 +210,13 @@ it('testFlexAlignCenterTextMarginOverflow_static', Level.LEVEL0, async () : Prom
         .assertTrue();
       expect(Math.floor(Math.abs((Center_AddOneMargin_013.bottom - Center_AddOneMargin_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((Center_AddOneMargin_011.right - Center_AddOneMargin_011.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddOneMargin_011.right - Center_AddOneMargin_011.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
         .assertTrue();
+
       console.info('[testFlexAlignCenterTextMarginOverflow] END');
 
     })

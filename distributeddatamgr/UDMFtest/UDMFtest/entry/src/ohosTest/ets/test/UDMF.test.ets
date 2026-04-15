@@ -5636,7 +5636,7 @@ export default function UDMFApiTest() {
     it('testUnifiedDataChannelQueryDataErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0600 start');
       try {
-        let ret = await unifiedDataChannel.queryData(null);
+        let ret = await unifiedDataChannel.queryData(undefined);
         console.info(TAG + `queryData success`);   
         expect().assertFail();     
       } catch (error) {
@@ -5644,6 +5644,40 @@ export default function UDMFApiTest() {
         expect(error.code).assertEqual("401");
       }
       console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0600 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0700
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0700 start');
+      let options1: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+        key:"",
+        visibility:unifiedDataChannel.Visibility.OWN_PROCESS
+      };
+      try {
+        unifiedDataChannel.queryData(options1,async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+            expect(size > 0).assertTrue();
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0700 end");
     })
 
     /**

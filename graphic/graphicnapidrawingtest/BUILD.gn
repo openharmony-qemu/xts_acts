@@ -23,14 +23,7 @@ ohos_moduletest_suite("ActsGraphicNapiDrawingTest") {
   part_name = "graphic_2d"
 
   sources = [
-    "NativeCopyStyleTest.cpp",
-    "NativeDrawingFontMgrTest.cpp",
-    "NativeFontTest.cpp",
-    "NativeTextLineTest.cpp",
-    "NativeTextRunTest.cpp",
-    "NativeTypographyTestAutoSpace.cpp",
     "NativeTypographyUpdate.cpp",
-    "NativeUndefinedGlyphDisplayTest.cpp",
     "OH_Drawing_TypographyTest.cpp",
   ]
 

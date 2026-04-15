@@ -18,6 +18,7 @@ import media from '@ohos.multimedia.media';
 import { idle, offCallback, PlayTest, setSource, setSubtitle, testAVPlayerFun, } from './AVPlayerTestBase';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
+import drm from '@ohos.multimedia.drm';
 import {
   LOG_TAG,
   SLEEP_TIME_500,
@@ -804,7 +805,6 @@ async function setMediaMutedPromise(src: string | media.AVFileDescriptor, avPlay
     } else {
       console.info(TAG, testName + ' succeed to cancel mute playback.');
     }
-    expect(true).assertTrue();
   }).catch(mediaTestBase.catchCallback);
   await avPlayer?.release().then(() => {
   }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
@@ -831,7 +831,6 @@ async function setMediaMutedPromiseAbnormal(src: string | media.AVFileDescriptor
     } else {
       console.info(TAG, testName + ' succeed to cancel mute playback.');
     }
-    expect(true).assertTrue();
   }).catch((error: BusinessError) => {
     console.error(TAG, testName + ' Failed to set MediaMuted, code: ' + error.code + ', msg: ' + error.message);
     expect(error.code).assertEqual(MediaErrorCode.PARAMETER_ERROR);
@@ -936,7 +935,6 @@ async function setSuperResolutionPromise(src: string | media.AVFileDescriptor, a
         expect(avPlayer.state).assertEqual(INITIALIZED);
         await avPlayer?.setPlaybackStrategy(strategy).then(() => {
           console.info(TAG, testName + ' succeed to set PlaybackStrategy');
-          expect(true).assertTrue();
         }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         console.info(TAG, testName + ' set PlaybackStrategy end');
         await avPlayer?.prepare();
@@ -1028,7 +1026,6 @@ async function setVideoWindowSizePromise(src: string | media.AVFileDescriptor, a
         expect(avPlayer.state).assertEqual(INITIALIZED);
         await avPlayer?.setPlaybackStrategy(strategy).then(() => {
           console.info(TAG, testName + ' succeed to set PlaybackStrategy');
-          expect(true).assertTrue();
         }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         console.info(TAG, testName + ' set PlaybackStrategy end');
         await avPlayer?.prepare();
@@ -2567,6 +2564,2856 @@ export default function AVPlayerTest() {
       expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual("total_loading_bytes");
       expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual("stalling_count");
       expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual("total_stalling_time");
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_001
+     * @tc.number avPlayerNullUndefinedTest_001
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_001', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.messagee);
+        expect().assertFail();       
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_002
+     * @tc.number avPlayerNullUndefinedTest_002
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_002', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.messagee);
+        expect().assertFail(); 
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_003
+     * @tc.number avPlayerNullUndefinedTest_003
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_003', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_004
+     * @tc.number avPlayerNullUndefinedTest_004
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_004', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_005
+     * @tc.number avPlayerNullUndefinedTest_005
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_005', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, async (state: string, reason: media.StateChangeReason) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_006
+     * @tc.number avPlayerNullUndefinedTest_006
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_006', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, async (state: string, reason: media.StateChangeReason) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_007
+     * @tc.number avPlayerNullUndefinedTest_007
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_007', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.on('stateChange', undefined => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_008
+     * @tc.number avPlayerNullUndefinedTest_008
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_008', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, async (state: string, reason: media.StateChangeReason) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_009
+     * @tc.number avPlayerNullUndefinedTest_009
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_009', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, async (state: string, reason: media.StateChangeReason) => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_011
+     * @tc.number avPlayerNullUndefinedTest_011
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_011', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.off('stateChange', undefined => {
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_012
+     * @tc.number avPlayerNullUndefinedTest_012
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_012', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (vol: number) => {
+            console.info('volumeChange called,and new volume is :' + vol);
+          });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_013
+     * @tc.number avPlayerNullUndefinedTest_013
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_013', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (vol: number) => {
+            console.info('volumeChange called,and new volume is :' + vol);
+          });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_014
+     * @tc.number avPlayerNullUndefinedTest_014
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_014', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (vol: number) => {
+            console.info('volumeChange called,and new volume is :' + vol);
+          });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_015
+     * @tc.number avPlayerNullUndefinedTest_015
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_015', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (vol: number) => {
+            console.info('volumeChange called,and new volume is :' + vol);
+          });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_016
+     * @tc.number avPlayerNullUndefinedTest_016
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_016', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, () => {
+          console.info('endOfStream called');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_017
+     * @tc.number avPlayerNullUndefinedTest_017
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_017', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, () => {
+          console.info('endOfStream called');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_018
+     * @tc.number avPlayerNullUndefinedTest_018
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_018', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, () => {
+          console.info('endOfStream called');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_019
+     * @tc.number avPlayerNullUndefinedTest_019
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_019', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, () => {
+          console.info('endOfStream called');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_020
+     * @tc.number avPlayerNullUndefinedTest_020
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_020', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (seekDoneTime:number) => {
+          console.info('seekDone called,and seek time is:' + seekDoneTime);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_021
+     * @tc.number avPlayerNullUndefinedTest_021
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_021', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (seekDoneTime:number) => {
+          console.info('seekDone called,and seek time is:' + seekDoneTime);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_022
+     * @tc.number avPlayerNullUndefinedTest_022
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_022', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (seekDoneTime:number) => {
+          console.info('seekDone called,and seek time is:' + seekDoneTime);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_023
+     * @tc.number avPlayerNullUndefinedTest_023
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_023', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (seekDoneTime:number) => {
+          console.info('seekDone called,and seek time is:' + seekDoneTime);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_024
+     * @tc.number avPlayerNullUndefinedTest_024
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_024', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (speed:number) => {
+          console.info('speedDone called,and speed value is:' + speed);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_025
+     * @tc.number avPlayerNullUndefinedTest_025
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_025', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (speed:number) => {
+          console.info('speedDone called,and speed value is:' + speed);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_026
+     * @tc.number avPlayerNullUndefinedTest_026
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_026', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (speed:number) => {
+          console.info('speedDone called,and speed value is:' + speed);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_027
+     * @tc.number avPlayerNullUndefinedTest_027
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_027', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (speed:number) => {
+          console.info('speedDone called,and speed value is:' + speed);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_028
+     * @tc.number avPlayerNullUndefinedTest_028
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_028', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (rate:number) => {
+          console.info('playbackRateDone called,and rate value is:' + rate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_029
+     * @tc.number avPlayerNullUndefinedTest_029
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_029', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (rate:number) => {
+          console.info('playbackRateDone called,and rate value is:' + rate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_031
+     * @tc.number avPlayerNullUndefinedTest_031
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_031', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on('playbackRateDone', undefined => {
+          console.info('playbackRateDone called,and rate value is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_032
+     * @tc.number avPlayerNullUndefinedTest_032
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_032', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (rate:number) => {
+          console.info('playbackRateDone called,and rate value is:' + rate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_033
+     * @tc.number avPlayerNullUndefinedTest_033
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_033', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (rate:number) => {
+          console.info('playbackRateDone called,and rate value is:' + rate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_035
+     * @tc.number avPlayerNullUndefinedTest_035
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_035', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off('playbackRateDone', undefined => {
+          console.info('playbackRateDone called,and rate value is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_036
+     * @tc.number avPlayerNullUndefinedTest_036
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_036', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (bitrate:number) => {
+          console.info('bitrateDone called,and bitrate value is:' + bitrate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_037
+     * @tc.number avPlayerNullUndefinedTest_037
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_037', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (bitrate:number) => {
+          console.info('bitrateDone called,and bitrate value is:' + bitrate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_038
+     * @tc.number avPlayerNullUndefinedTest_038
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_038', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (bitrate:number) => {
+          console.info('bitrateDone called,and bitrate value is:' + bitrate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_039
+     * @tc.number avPlayerNullUndefinedTest_039
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_039', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (bitrate:number) => {
+          console.info('bitrateDone called,and bitrate value is:' + bitrate);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_040
+     * @tc.number avPlayerNullUndefinedTest_040
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_040', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (time:number) => {
+          console.info('timeUpdate called,and new time is :' + time);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_041
+     * @tc.number avPlayerNullUndefinedTest_041
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_041', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (time:number) => {
+          console.info('timeUpdate called,and new time is :' + time);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_042
+     * @tc.number avPlayerNullUndefinedTest_042
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_042', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (time:number) => {
+          console.info('timeUpdate called,and new time is :' + time);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_043
+     * @tc.number avPlayerNullUndefinedTest_043
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_043', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (time:number) => {
+          console.info('timeUpdate called,and new time is :' + time);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_044
+     * @tc.number avPlayerNullUndefinedTest_044
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_044', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (duration: number) => {
+          console.info('durationUpdate called,new duration is :' + duration);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_045
+     * @tc.number avPlayerNullUndefinedTest_045
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_045', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (duration: number) => {
+          console.info('durationUpdate called,new duration is :' + duration);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_046
+     * @tc.number avPlayerNullUndefinedTest_046
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_046', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (duration: number) => {
+          console.info('durationUpdate called,new duration is :' + duration);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_047
+     * @tc.number avPlayerNullUndefinedTest_047
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_047', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (duration: number) => {
+          console.info('durationUpdate called,new duration is :' + duration);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_048
+     * @tc.number avPlayerNullUndefinedTest_048
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_048', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (infoType: media.BufferingInfoType, value: number) => {
+          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_049
+     * @tc.number avPlayerNullUndefinedTest_049
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_049', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (infoType: media.BufferingInfoType, value: number) => {
+          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_050
+     * @tc.number avPlayerNullUndefinedTest_050
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_050', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (infoType: media.BufferingInfoType, value: number) => {
+          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_051
+     * @tc.number avPlayerNullUndefinedTest_051
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_051', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (infoType: media.BufferingInfoType, value: number) => {
+          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_052
+     * @tc.number avPlayerNullUndefinedTest_052
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_052', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (width: number, height: number) => {
+          console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_053
+     * @tc.number avPlayerNullUndefinedTest_053
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_053', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (width: number, height: number) => {
+          console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_055
+     * @tc.number avPlayerNullUndefinedTest_055
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_055', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.on('videoSizeChange', undefined => {
+          console.info('videoSizeChange called,and width is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_056
+     * @tc.number avPlayerNullUndefinedTest_056
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_056', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (width: number, height: number) => {
+          console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_057
+     * @tc.number avPlayerNullUndefinedTest_057
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_057', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (width: number, height: number) => {
+          console.info('videoSizeChange called,and width is:' + width + ', height is :' + height);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_059
+     * @tc.number avPlayerNullUndefinedTest_059
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_059', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.off('videoSizeChange', undefined => {
+          console.info('videoSizeChange called,and width is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_060
+     * @tc.number avPlayerNullUndefinedTest_060
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_060', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (info: audio.InterruptEvent) => {
+          console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_061
+     * @tc.number avPlayerNullUndefinedTest_061
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_061', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (info: audio.InterruptEvent) => {
+          console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_062
+     * @tc.number avPlayerNullUndefinedTest_062
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_062', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (info: audio.InterruptEvent) => {
+          console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_063
+     * @tc.number avPlayerNullUndefinedTest_063
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_063', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (info: audio.InterruptEvent) => {
+          console.info('audioInterrupt called,and InterruptEvent info is:' + info);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_064
+     * @tc.number avPlayerNullUndefinedTest_064
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_064', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (bitrates: Array<number>) => {
+          console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_065
+     * @tc.number avPlayerNullUndefinedTest_065
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_065', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (bitrates: Array<number>) => {
+          console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_066
+     * @tc.number avPlayerNullUndefinedTest_066
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_066', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (bitrates: Array<number>) => {
+          console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_067
+     * @tc.number avPlayerNullUndefinedTest_067
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_067', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (bitrates: Array<number>) => {
+          console.info('availableBitrates called,and availableBitrates length is:' + bitrates.length);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_068
+     * @tc.number avPlayerNullUndefinedTest_068
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_068', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message);
+          console.info('error happened,and error code is :' + error.code);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_069
+     * @tc.number avPlayerNullUndefinedTest_069
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_069', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message);
+          console.info('error happened,and error code is :' + error.code);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_070
+     * @tc.number avPlayerNullUndefinedTest_070
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_070', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message);
+          console.info('error happened,and error code is :' + error.code);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_071
+     * @tc.number avPlayerNullUndefinedTest_071
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_071', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message);
+          console.info('error happened,and error code is :' + error.code);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_072
+     * @tc.number avPlayerNullUndefinedTest_072
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_072', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (data: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${JSON.stringify(data)}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_073
+     * @tc.number avPlayerNullUndefinedTest_073
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_073', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (data: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${JSON.stringify(data)}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_074
+     * @tc.number avPlayerNullUndefinedTest_074
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_074', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (data: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${JSON.stringify(data)}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_075
+     * @tc.number avPlayerNullUndefinedTest_075
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_075', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (data: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${JSON.stringify(data)}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_076
+     * @tc.number avPlayerNullUndefinedTest_076
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_076', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+        avPlayer.on(null, async (info: media.SubtitleInfo) => {
+        console.info('subtitleUpdate info: text');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_077
+     * @tc.number avPlayerNullUndefinedTest_077
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_077', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+        avPlayer.on(undefined, async (info: media.SubtitleInfo) => {
+        console.info('subtitleUpdate info: text');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_078
+     * @tc.number avPlayerNullUndefinedTest_078
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_078', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+        avPlayer.off(null, async (info: media.SubtitleInfo) => {
+        console.info('subtitleUpdate info: text');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_079
+     * @tc.number avPlayerNullUndefinedTest_079
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_079', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (index: number, isSelect: boolean) => {
+          console.info('trackChange info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_080
+     * @tc.number avPlayerNullUndefinedTest_080
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_080', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (index: number, isSelect: boolean) => {
+          console.info('trackChange info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_082
+     * @tc.number avPlayerNullUndefinedTest_082
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_082', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.on('trackChange', undefined => {
+          console.info('trackChange info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+      /**
+     * @tc.name   avPlayerNullUndefinedTest_083
+     * @tc.number avPlayerNullUndefinedTest_083
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_083', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (index: number, isSelect: boolean) => {
+          console.info('trackChange info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_084
+     * @tc.number avPlayerNullUndefinedTest_084
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_084', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (index: number, isSelect: boolean) => {
+          console.info('trackChange info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_085
+     * @tc.number avPlayerNullUndefinedTest_085
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_085', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (info: Array<media.MediaDescription>) => {
+          console.info('track info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_086
+     * @tc.number avPlayerNullUndefinedTest_086
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_086', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (info: Array<media.MediaDescription>) => {
+          console.info('track info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_087
+     * @tc.number avPlayerNullUndefinedTest_087
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_087', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (info: Array<media.MediaDescription>) => {
+          console.info('track info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_088
+     * @tc.number avPlayerNullUndefinedTest_088
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_088', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (info: Array<media.MediaDescription>) => {
+          console.info('track info: index');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_089
+     * @tc.number avPlayerNullUndefinedTest_089
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_089', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (value: Array<number>) => {
+          console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_090
+     * @tc.number avPlayerNullUndefinedTest_090
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_090', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (value: Array<number>) => {
+          console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_091
+     * @tc.number avPlayerNullUndefinedTest_091
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_091', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (value: Array<number>) => {
+          console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_092
+     * @tc.number avPlayerNullUndefinedTest_092
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_092', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (value: Array<number>) => {
+          console.info(`amplitudeUpdate called,and amplitudeUpdate = ${value}`);
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_093
+     * @tc.number avPlayerNullUndefinedTest_093
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_093', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_094
+     * @tc.number avPlayerNullUndefinedTest_094
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_094', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_095
+     * @tc.number avPlayerNullUndefinedTest_095
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_095', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on('seiMessageReceived', null, (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_096
+     * @tc.number avPlayerNullUndefinedTest_096
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_096', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on('seiMessageReceived', undefined, (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_097
+     * @tc.number avPlayerNullUndefinedTest_097
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_097', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_098
+     * @tc.number avPlayerNullUndefinedTest_098
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_098', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_099
+     * @tc.number avPlayerNullUndefinedTest_099
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_099', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off('seiMessageReceived', null, (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_100
+     * @tc.number avPlayerNullUndefinedTest_100
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_100', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off('seiMessageReceived', undefined, (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_101
+     * @tc.number avPlayerNullUndefinedTest_101
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_101', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on('seiMessageReceived', [], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_102
+     * @tc.number avPlayerNullUndefinedTest_102
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_102', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off('seiMessageReceived', [], (messages: Array<media.SeiMessage>, playbackPosition?: number) =>{
+          console.info('seiMessageReceived playbackPosition');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_103
+     * @tc.number avPlayerNullUndefinedTest_103
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_103', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(null, (enabled: boolean) => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_104
+     * @tc.number avPlayerNullUndefinedTest_104
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_104', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.on(undefined, (enabled: boolean) => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_106
+     * @tc.number avPlayerNullUndefinedTest_106
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_106', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.on('superResolutionChanged', undefined => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_107
+     * @tc.number avPlayerNullUndefinedTest_107
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_107', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(null, (enabled: boolean) => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_108
+     * @tc.number avPlayerNullUndefinedTest_108
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_108', Level.LEVEL0,async (done: Function) => {
+      try {
+            let avPlayer = await media.createAVPlayer();
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+          avPlayer.off(undefined, (enabled: boolean) => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_110
+     * @tc.number avPlayerNullUndefinedTest_110
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_110', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+          avPlayer.off('superResolutionChanged', undefined => {
+          console.info('superResolutionChanged called, and enabled is:');
+        });
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_111
+     * @tc.number avPlayerNullUndefinedTest_111
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_111', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(null, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_112
+     * @tc.number avPlayerNullUndefinedTest_112
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_112', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(undefined, 6000, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_113
+     * @tc.number avPlayerNullUndefinedTest_113
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_113', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(0, null, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_114
+     * @tc.number avPlayerNullUndefinedTest_114
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_114', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setPlaybackRange(0, undefined, media.SeekMode.SEEK_CLOSEST).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_115
+     * @tc.number avPlayerNullUndefinedTest_115
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_115', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(null, 1080).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_116
+     * @tc.number avPlayerNullUndefinedTest_116
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_116', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(undefined, 1080).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_117
+     * @tc.number avPlayerNullUndefinedTest_117
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_117', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(1920, null).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_118
+     * @tc.number avPlayerNullUndefinedTest_118
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_118', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      avPlayer.setVideoWindowSize(1920, undefined).then(() => {
+        console.info('Succeeded setPlaybackRange');
+      }).catch((err: BusinessError) => {
+        console.error('Failed to setPlaybackRange' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_119
+     * @tc.number avPlayerNullUndefinedTest_119
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_119', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(5400108);
+          });
+            avPlayer.setPlaybackRate(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_120
+     * @tc.number avPlayerNullUndefinedTest_120
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_120', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(5400108);
+          });
+            avPlayer.setPlaybackRate(undefined);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_121
+     * @tc.number avPlayerNullUndefinedTest_121
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_121', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      try {
+            avPlayer.on('error', (error: BusinessError) => {
+            console.info('error happened,and error message is :' + error.message + error.code);
+            expect(error.code).assertEqual(401);
+          });
+            avPlayer.setLoudnessGain(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_122
+     * @tc.number avPlayerNullUndefinedTest_122
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_122', Level.LEVEL0,async (done: Function) => {
+      let avPlayer = await media.createAVPlayer();
+      let playbackInfo: media.PlaybackInfo;
+      try {
+            playbackInfo = await avPlayer.getPlaybackInfo();
+            console.info(`AVPlayer getPlaybackInfo = ${JSON.stringify(playbackInfo)}`);
+            expect(playbackInfo.SERVER_IP_ADDRESS).not().assertUndefined;
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect(err.code).assertEqual(5400102);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_123
+     * @tc.number avPlayerNullUndefinedTest_123
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_123', Level.LEVEL0,async (done: Function) => {
+      try {
+        let avPlayer = await media.createAVPlayer();
+        avPlayer.on('error', (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message + error.code);
+          expect(error.code).assertEqual(401);
+        });
+        avPlayer.setBitrate(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_124
+     * @tc.number avPlayerNullUndefinedTest_124
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_124', Level.LEVEL0,async (done: Function) => {
+      try {
+        let avPlayer = await media.createAVPlayer();
+        avPlayer.on('error', (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message + error.code);
+          expect(error.code).assertEqual(401);
+        });
+        avPlayer.setBitrate(undefined);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_125
+     * @tc.number avPlayerNullUndefinedTest_125
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_125', Level.LEVEL0,async (done: Function) => {
+      try {
+        let avPlayer = await media.createAVPlayer();
+        avPlayer.on('error', (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message + error.code);
+          expect(error.code).assertEqual(401);
+        });
+        avPlayer.setLoudnessGain(null);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   avPlayerNullUndefinedTest_126
+     * @tc.number avPlayerNullUndefinedTest_126
+     * @tc.desc   avPlayer Null Undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('avPlayerNullUndefinedTest_126', Level.LEVEL0,async (done: Function) => {
+      try {
+        let avPlayer = await media.createAVPlayer();
+        avPlayer.on('error', (error: BusinessError) => {
+          console.info('error happened,and error message is :' + error.message + error.code);
+          expect(error.code).assertEqual(401);
+        });
+        avPlayer.setLoudnessGain(undefined);
+      } catch (err) {
+        console.error('avPlayerNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
       done();
     });
   })

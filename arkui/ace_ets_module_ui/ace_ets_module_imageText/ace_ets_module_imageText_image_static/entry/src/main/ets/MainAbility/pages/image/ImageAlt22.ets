@@ -1,6 +1,6 @@
 'use static'
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ import {
   AnimationOptions,
   AnimatedDrawableDescriptor
 } from '@ohos.arkui.drawableDescriptor';
-class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.alt({
       placeholder: '/resources/rawfile/apple.jpg',
@@ -32,7 +32,7 @@ class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
     })
   }
 }
-class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.alt({
       placeholder: undefined,

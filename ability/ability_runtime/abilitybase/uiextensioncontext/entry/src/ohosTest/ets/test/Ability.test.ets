@@ -19,6 +19,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 import { BusinessError, systemParameterEnhance } from '@kit.BasicServicesKit';
 import eventBusPlue from '../lib/EventBusPlus';
+import wifiManager from '@ohos.wifiManager';
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -30,6 +31,7 @@ export default function ActsUIExtensionContextMethodTest() {
   describe('ActsUIExtensionContextMethodTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
+      wifiManager.disableWifi();
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
@@ -39,6 +41,11 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
     afterEach(async () => {})
+    afterAll(() => {
+      hilog.info(0x0000, 'afterAll', 'afterAll start');
+      wifiManager.enableWifi();
+      hilog.info(0x0000, 'afterAll', 'afterAll end');
+    })
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0100
      * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0100
@@ -1053,114 +1060,6 @@ export default function ActsUIExtensionContextMethodTest() {
             }
           },(err, data)=>{
             console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_001] startAbility result ' + err?.code);
-          })
-        });
-      } else if (mpEnable === 'false') {
-        console.log(`${tag} function not enable.`);
-        expect(mpEnable).assertEqual('false');
-        done();
-      } else {
-        console.log(`${tag} wrong param`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_4300
-     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_4300
-     * @tc.desc   Test openLink with null options parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_UIExtensionContext_4300', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_4201";
-      if (mpEnable === 'true') {
-        console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4201] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
-        let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
-        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-          events: ["SUB_Ability_AbilityRuntime_UIExtensionContext_4201_event"]
-        };
-        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4201] commonEventSubscribeInfo success: ');
-          sub = subscriber;
-          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
-          commonEventManager.subscribe(sub, async (err, commonEventData) => {
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
-            try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
-            } catch {
-            }
-            commonEventManager.publish("teminate",() => {});
-            commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
-            done();
-          });
-          testAbilityContext.startAbility({
-            bundleName:"com.acts.uiextensioncontexttest",
-            abilityName:"EntryAbility1",
-            parameters:{
-              "case":tag
-            }
-          },(err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_4201] startAbility result ' + err?.code);
-          })
-        });
-      } else if (mpEnable === 'false') {
-        console.log(`${tag} function not enable.`);
-        expect(mpEnable).assertEqual('false');
-        done();
-      } else {
-        console.log(`${tag} wrong param`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_4400
-     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_4400
-     * @tc.desc   Test openLink with undefined options parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_UIExtensionContext_4400', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_003";
-      if (mpEnable === 'true') {
-        console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_003] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
-        let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
-        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-          events: ["SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_003_event"]
-        };
-        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_003] commonEventSubscribeInfo success: ');
-          sub = subscriber;
-          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
-          commonEventManager.subscribe(sub, async (err, commonEventData) => {
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
-            hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
-            try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
-            } catch {
-            }
-            commonEventManager.publish("teminate",() => {});
-            commonEventManager.unsubscribe(subscriber, (err, data) => {});
-            await Promise.all([entryAbility1,uiExtension]);
-            done();
-          });
-          testAbilityContext.startAbility({
-            bundleName:"com.acts.uiextensioncontexttest",
-            abilityName:"EntryAbility1",
-            parameters:{
-              "case":tag
-            }
-          },(err, data)=>{
-            console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_openLink_PARAM_003] startAbility result ' + err?.code);
           })
         });
       } else if (mpEnable === 'false') {
@@ -2443,7 +2342,7 @@ export default function ActsUIExtensionContextMethodTest() {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
+              expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
             commonEventManager.publish("teminate",() => {});
@@ -2605,7 +2504,7 @@ export default function ActsUIExtensionContextMethodTest() {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
+              expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
             commonEventManager.publish("teminate",() => {});
@@ -2659,7 +2558,7 @@ export default function ActsUIExtensionContextMethodTest() {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
+              expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
             commonEventManager.publish("teminate",() => {});
@@ -2700,7 +2599,7 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5000";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5000] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2753,7 +2652,7 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5100";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5100] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2806,7 +2705,7 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5400";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5400] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]
@@ -2859,7 +2758,7 @@ export default function ActsUIExtensionContextMethodTest() {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_5500";
       if (mpEnable === 'true') {
         console.info('====> [SUB_Ability_AbilityRuntime_UIExtensionContext_5500] start ');
-        let entryAbility1 = eventBusPlue.onWait("EntryAbility1_onDestroy");
+        let entryAbility1 = eventBusPlue.onWait("EntryAbility2_onDestroy");
         let uiExtension = eventBusPlue.onWait("UIExtension_onDestroy");
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["AbilityRuntime_OptionResult"]

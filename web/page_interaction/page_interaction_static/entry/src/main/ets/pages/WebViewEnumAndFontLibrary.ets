@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent,TextMenuItem,TextRange,TextMenuItemId,EditMenuOptions} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 
@@ -31,6 +31,7 @@ import { Driver, ON } from '@ohos.UiTest';
 @Component
 struct WebViewEnumAndFontLibrary {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
+  controller2: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
   @State menuX: Number = 0
   @State menuY: Number = 0
@@ -44,12 +45,52 @@ struct WebViewEnumAndFontLibrary {
   @State SourceUrl: String | null = null
   @State SelectionText: String = ''
   @State onContextMenuShowState: Boolean = false
+  @State onContextMenuHideState: Boolean = false
+  @State OnContextMenuShowUndefined: boolean = false
+  @State OnContextMenuHideUndefined: boolean = false
+  @State EditMenuOptions: boolean = false
+  @State EditMenuOptionsUndefined: boolean = false
   @State result: WebContextMenuResult | null = null
   @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.NONE,ContextMenuSourceType.MOUSE,ContextMenuSourceType.LONG_PRESS]
   @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.NONE,ContextMenuMediaType.IMAGE]
   @State FieldTypeArr:ContextMenuInputFieldType[] =
   [ContextMenuInputFieldType.NONE,ContextMenuInputFieldType.PLAIN_TEXT,ContextMenuInputFieldType.PASSWORD,ContextMenuInputFieldType.NUMBER_DATA,ContextMenuInputFieldType.TELEPHONE,ContextMenuInputFieldType.OTHER	]
-
+  onCreateMenu(menuItems: Array<TextMenuItem>) {
+    menuItems!.forEach((value, index) => {
+      value.icon = "resource://rawfile/icon.png";
+      if (value.id.equals(TextMenuItemId.COPY)) {
+        value.content = '复制change'
+      }
+      if (value.id.equals(TextMenuItemId.SELECT_ALL)) {
+        value.content = '全选change'
+      }
+      if (value.id.equals(TextMenuItemId.CUT)) {
+        value.content = 'CUT'
+      }
+      if (value.id.equals(TextMenuItemId.PASTE)) {
+        value.content = 'PASTE'
+      }
+      if (value.id.equals(TextMenuItemId.COLLABORATION_SERVICE)) {
+        value.content = 'COLLABORATION_SERVICE'
+      }
+      if (value.id.equals(TextMenuItemId.CAMERA_INPUT)) {
+        value.content = 'CAMERA_INPUT'
+      }
+    })
+    let item1: TextMenuItem = {
+      content: 'custom1',
+      icon: "resource://rawfile/icon.png",
+      id: TextMenuItemId.of('custom1'),
+    }
+    let item2: TextMenuItem = {
+      content: 'custom2',
+      id: TextMenuItemId.of('custom2'),
+      icon: "resource://rawfile/icon.png",
+    }
+    menuItems.push(item1)
+    menuItems.unshift(item2)
+    return menuItems
+  }
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -163,6 +204,145 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
 
+            case 'emitWebContextMenuResultPaste': {
+              Utils.longClickComponent('webCenter')
+              console.log("start Paste test");
+              setTimeout(() => {
+                this.result?.paste()
+                Utils.emitEvent('paste', 12521);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultRedo': {
+              Utils.longClickComponent('webCenter')
+              console.log("start redo test");
+              setTimeout(() => {
+                this.result?.redo()
+                Utils.emitEvent('redo', 12522);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultUndo': {
+              Utils.longClickComponent('webCenter')
+              console.log("start undo test");
+              setTimeout(() => {
+                this.result?.undo()
+                Utils.emitEvent('undo', 12523);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultPasteAndMatchStyle': {
+              Utils.longClickComponent('webCenter')
+              console.log("start pasteAndMatchStyle test");
+              setTimeout(() => {
+                this.result?.pasteAndMatchStyle()
+                Utils.emitEvent('pasteAndMatchStyle', 12524);
+              }, 2500)
+              break;
+            }
+
+            case 'emitWebContextMenuResultRequestPasswordAutoFill': {
+              Utils.longClickComponent('webCenter')
+              console.log("start requestPasswordAutoFill test");
+              setTimeout(() => {
+                this.result?.requestPasswordAutoFill()
+                Utils.emitEvent('requestPasswordAutoFill', 12525);
+              }, 2500)
+            }
+
+            case 'emitOnContextMenuShowUndefined': {
+              try {
+                this.controller2.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter2')
+                setTimeout(() => {
+                  Utils.emitEvent(this.OnContextMenuShowUndefined, 1257)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1257)
+              }
+              break;
+            }
+
+            case 'emitOnContextMenuShow001': {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter')
+                setTimeout(() => {
+                  Utils.emitEvent(this.onContextMenuShowState, 1258)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1258)
+              }
+              break;
+            }
+
+            case 'emitOnContextMenuHide001': {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter')
+                setTimeout(() => {
+                  Utils.emitEvent(this.onContextMenuHideState, 1259)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1259)
+              }
+              break;
+            }
+
+            case 'emitOnContextMenuHideUndefined': {
+              try {
+                this.controller2.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter2')
+                setTimeout(() => {
+                  Utils.emitEvent(this.OnContextMenuHideUndefined, 1260)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1260)
+              }
+              break;
+            }
+
+            case 'emitEditMenuOptions001': {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter')
+                setTimeout(() => {
+                  Utils.emitEvent(this.EditMenuOptions, 1261)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1261)
+              }
+              break;
+            }
+
+            case 'emitEditMenuOptionsUndefined': {
+              try {
+                this.controller2.loadUrl('resource://rawfile/indexJru.html');
+                Utils.clickComponent('webCenter2')
+                setTimeout(() => {
+                  Utils.emitEvent(this.EditMenuOptionsUndefined, 1262)
+                }, 2000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 1262)
+              }
+              break;
+            }
+
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
@@ -177,6 +357,26 @@ struct WebViewEnumAndFontLibrary {
       }
 
       Web({ src: 'resource://rawfile/indexJru.html', controller: this.controller }).key('webCenter')
+        .editMenuOptions({
+          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end)
+              return true;
+            }
+            if (menuItem.id.equals(TextMenuItemId.COPY)) {
+              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end)
+              return true;
+            }
+            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end)
+              return false;
+            }
+            return false;
+          }
+        })
+        .onControllerAttached(() => {
+          this.EditMenuOptions = true;
+        })
         .onContextMenuShow((event: OnContextMenuShowEvent): boolean => {
           if (event) {
             console.info('onContextMenuShow x = ' + event.param.x())
@@ -206,6 +406,21 @@ struct WebViewEnumAndFontLibrary {
             this.SelectionText = event.param.getSelectionText()
           }
           return true
+        })
+
+        .onContextMenuHide(() => {
+            console.log("onContextMenuHide success");
+          this.onContextMenuHideState = true;
+        })
+
+      Web({ src: 'resource://rawfile/indexJru.html', controller: this.controller2 })
+        .onContextMenuShow(undefined)
+        .onContextMenuHide(undefined)
+        .editMenuOptions(undefined)
+        .onControllerAttached(() => {
+          this.OnContextMenuShowUndefined = true;
+          this.OnContextMenuHideUndefined = true;
+          this.EditMenuOptionsUndefined = true;
         })
     }
   }

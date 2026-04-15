@@ -724,5 +724,70 @@ describe('fileio_access', function () {
           done();
       }
       });
+      
+      /**
+      * @tc.name   fileio_test_access_callback_error_007
+      * @tc.number SUB_DF_FILEIO_ACCESS_CALLBACK_ERROR_007
+      * @tc.desc   Test access() interface with null mode. Callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('fileio_test_access_callback_error_007', Level.LEVEL2, async function (done) {
+        let fpath = await nextFileName('fileio_test_access_callback_error_007');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+        
+        try {
+          fileio.access(fpath, null, function (err) {
+            if (err) {
+              console.log('fileio_test_access_callback_error_007: ' + err.message + ', code: ' + err.code);
+              expect(err.message == 'Invalid mode').assertTrue();
+              fileio.unlinkSync(fpath);
+              done();
+            } else {
+              expect(false).assertTrue();
+              fileio.unlinkSync(fpath);
+              done();
+            }
+          });
+        } catch (err) {
+          console.log('fileio_test_access_callback_error_007 err: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid mode').assertTrue();
+          fileio.unlinkSync(fpath);
+          done();
+        }
+      });
+
+      /**
+      * @tc.name   fileio_test_access_callback_error_008
+      * @tc.number SUB_DF_FILEIO_ACCESS_CALLBACK_ERROR_008
+      * @tc.desc   Test access() interface with undefined mode. Callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('fileio_test_access_callback_error_008', Level.LEVEL2, async function (done) {
+        let fpath = await nextFileName('fileio_test_access_callback_error_008');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+        
+        try {
+          fileio.access(fpath, undefined, function (err) {
+            if (err) {
+              console.log('fileio_test_access_callback_error_008: ' + err.message + ', code: ' + err.code);
+              expect(false).assertTrue();
+              fileio.unlinkSync(fpath);
+              done();
+            } else {
+              fileio.unlinkSync(fpath);
+              done();
+            }
+          });
+        } catch (err) {
+          console.log('fileio_test_access_callback_error_008 err: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+          fileio.unlinkSync(fpath);
+          done();
+        }
+      });
 });
 }

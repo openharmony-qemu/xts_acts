@@ -93,7 +93,7 @@ export default function Stream2Test() {
         writableStream.write('', 'utf8');
         expect().assertFail();
       } catch (err) {
-        expect(err.code).assertEqual(undefined)
+        expect(err.code).assertEqual(401)
       }
     })
 
@@ -400,7 +400,7 @@ export default function Stream2Test() {
         });
         expect().assertFail();
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1225,7 +1225,7 @@ export default function Stream2Test() {
         duplexStream.write('', 'utf8', () => {
         });
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1495,7 +1495,7 @@ export default function Stream2Test() {
       try {
         transformStream.write('', 'utf8');
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     })
 

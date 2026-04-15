@@ -35,7 +35,7 @@ const UNKNOWN = 99;
 const STRING_VALID_CERTIFICATEALIAS = 'test_cert_0.cer';
 const STRING_INVALID_CERTIFICATEALIAS = 'test.txt';
 const STRING_EMPTY_CERTIFICATEALIAS = '';
-const INT_INVALID_ACCOUNTID_RE_SIGNATURE = 101;
+const INT_INVALID_ACCOUNTID_RE_SIGNATURE = 999;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const OVER_SIZE = MAX_FILE_SIZE + 1;
 
@@ -310,6 +310,9 @@ export default function securityManagerTest() {
     testSetPasswordPolicy();
     testGetPasswordPolicy();
 
+    testSetScreenLockDisabledForAccount();
+    testIsScreenLockDisabledForAccount();
+
     testInstallUserCertificate();
     testGetUserCertificates();
     testUninstallUserCertificate();
@@ -472,7 +475,7 @@ function testGetSecurityStatus() {
       securityManager.getSecurityStatus(INVALID_WANT, 'patch');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -555,7 +558,7 @@ function testSetPasswordPolicy() {
       securityManager.setPasswordPolicy(INVALID_WANT, PASSWORD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -576,7 +579,7 @@ function testSetPasswordPolicy() {
       securityManager.setPasswordPolicy(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -639,7 +642,7 @@ function testSetPasswordPolicy() {
     try {
       securityManager.setPasswordPolicy(SELFWANT, OUT_OF_RANGE_PASSWORD_POLICY);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -701,7 +704,7 @@ function testGetPasswordPolicy() {
       securityManager.getPasswordPolicy(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -788,7 +791,7 @@ function testInstallUserCertificate() {
       await securityManager.installUserCertificate(INVALID_WANT, CERTIFICATE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -874,7 +877,7 @@ function testInstallUserCertificate() {
       await securityManager.installUserCertificate(SELFWANT, CERTIFICATE_INVALID_ALIAS);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -916,7 +919,7 @@ function testInstallUserCertificate() {
       securityManager.installUserCertificate(INVALID_WANT, CERTIFICATE, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -980,7 +983,7 @@ function testInstallUserCertificate() {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_INVALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1025,7 +1028,7 @@ function testInstallUserCertificate() {
       securityManager.installUserCertificate(SELFWANT, CERTIFICATE_INVALID_ALIAS, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1087,7 +1090,7 @@ function testGetUserCertificates() {
       securityManager.getUserCertificates(INVALID_WANT, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1188,7 +1191,7 @@ function testUninstallUserCertificate() {
       await securityManager.uninstallUserCertificate(INVALID_WANT, 'test');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1209,7 +1212,7 @@ function testUninstallUserCertificate() {
       await securityManager.uninstallUserCertificate(SELFWANT, '');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1231,6 +1234,48 @@ function testUninstallUserCertificate() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9201001).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_uninstall_user_certificate_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0105
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid path
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_uninstall_user_certificate_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.uninstallUserCertificate(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_uninstall_user_certificate_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_USER_CERTIFICATE_JS_0106
+   * @tc.desc   test securityManager uninstallUserCertificate with invalid path
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_uninstall_user_certificate_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.uninstallUserCertificate(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1291,7 +1336,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(null, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1310,7 +1355,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1331,7 +1376,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1480,7 +1525,7 @@ function testGetClipboardPolicy() {
       securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1538,7 +1583,7 @@ function testGetClipboardPolicy() {
       securityManager.getAppClipboardPolicy(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1603,7 +1648,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1622,7 +1667,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1643,7 +1688,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1664,7 +1709,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1685,7 +1730,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1729,7 +1774,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, INVALID_BUNDLE_NAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1822,7 +1867,161 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, UNKNOWN);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1400
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1500
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(undefined, SELFHAPNAME, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1600
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1700
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, undefined, CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1800
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, '', CURRENT_USER_ID,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_1900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_1900
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_1900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, null,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_clipboard_policy_by_bundle_name_2000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_2000
+   * @tc.desc   test securityManager setAppClipboardPolicyByBundleName policy is CROSS_DEVICE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_clipboard_policy_by_bundle_name_2000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, undefined,
+        securityManager.ClipboardPolicy.CROSS_DEVICE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1888,7 +2087,7 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1906,7 +2105,7 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1924,9 +2123,365 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0600
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(undefined, SELFHAPNAME, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0700
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, undefined, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0800
+   * @tc.desc   test securityManager getAppClipboolicyByBundleName without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+}
+
+function testSetScreenLockDisabledForAccount() {
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0100
+   * @tc.desc   test setScreenLockDisabledForAccount method without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0100", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0200
+   * @tc.desc   test setScreenLockDisabledForAccount method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0200", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, false);
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0300
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0300", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0300  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(null, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0300 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0300  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0400
+   * @tc.desc   test setScreenLockDisabledForAccount method with admin undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0400", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0400  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(undefined, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0400 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0400  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0500
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0500", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0500  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, null);
+      console.info(' --- test_setScreenLockDisabledForAccount_0500 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0500 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0500  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0600
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0600", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0600  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, undefined);
+      console.info(' --- test_setScreenLockDisabledForAccount_0600 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0600 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0600  -------- END --------');
+  });
+}
+
+function testIsScreenLockDisabledForAccount() {
+ /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0100
+   * @tc.desc   test isScreenLockDisabledForAccount method without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0100", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0100  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      console.info(' --- test_isScreenLockDisabledForAccount_0100 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0100  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0200
+   * @tc.desc   test isScreenLockDisabledForAccount method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0200", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0200  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      console.info(' --- test_isScreenLockDisabledForAccount_0200 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0200  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0300
+   * @tc.desc   test isScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0300", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(null);
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0400
+   * @tc.desc   test isScreenLockDisabledForAccount method with admin undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0400", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0400  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(undefined);
+      console.info(' --- test_isScreenLockDisabledForAccount_0400 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0400  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0500
+   * @tc.desc   test isScreenLockDisabledForAccount method with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0500", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0500  -------- START --------');
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, true);
+      const result: boolean = securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      expect(result).assertTrue();
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, false);
+      const result2: boolean = securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      expect(result2).assertFalse();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0500 error is not expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0500  -------- END --------');
   });
 }
 
@@ -1990,7 +2545,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(INVALID_WANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2011,7 +2566,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, null, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2032,7 +2587,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2053,7 +2608,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2140,7 +2695,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(INVALID_WANT, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2161,7 +2716,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(SELFWANT, null, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2182,7 +2737,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2244,7 +2799,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(null, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2265,7 +2820,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(SELFWANT, null, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2286,7 +2841,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2402,6 +2957,53 @@ function testSetPermissionManagedState() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_permission_managed_state_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1100
+   * @tc.desc   test securityManager setPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_permission_managed_state_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      const instance: securityManager.ApplicationInstance = {
+          appIdentifier: '',
+          appIndex: 0,
+          accountId: 100
+        }
+      securityManager.setPermissionManagedState(SELFWANT, instance, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_permission_managed_state_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1200
+   * @tc.desc   test securityManager setPermissionManagedState without appInstance
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_permission_managed_state_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, [], TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetPermissionManagedState() {
@@ -2458,7 +3060,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(null, TEST_APP_INSTANCE, TEST_PERMISSION_1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2479,7 +3081,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(SELFWANT, null, TEST_PERMISSION_1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2500,7 +3102,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2544,7 +3146,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2564,7 +3170,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0200 error.code = ' + error.code);
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2586,7 +3196,7 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0300 error.code = ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2608,7 +3218,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
-      expect(error.code == 9200012 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2674,7 +3288,11 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0200 error.code = ' + error.code);
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2696,7 +3314,7 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0300 error.code = ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2830,7 +3448,7 @@ function testInstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       });
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3067,6 +3685,54 @@ function testInstallEnterpriseReSignatureCertificate() {
     }
     done();
   });
+
+  /**
+    * @tc.name   test_install_enterprise_re_signature_certificate_0111
+    * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0111
+    * @tc.desc   test securityManager installEnterpriseReSignatureCertificate with null certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_install_enterprise_re_signature_certificate_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withCertificateFile((fd: number) => {
+        securityManager.installEnterpriseReSignatureCertificate(
+          SELFWANT, null, fd, INT_VALID_ACCOUNTID);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_install_enterprise_re_signature_certificate_0112
+    * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0112
+    * @tc.desc   test securityManager installEnterpriseReSignatureCertificate with undefined certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_install_enterprise_re_signature_certificate_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withCertificateFile((fd: number) => {
+        securityManager.installEnterpriseReSignatureCertificate(
+          SELFWANT, undefined, fd, INT_VALID_ACCOUNTID);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUninstallEnterpriseReSignatureCertificate() {
@@ -3126,7 +3792,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         INVALID_WANT, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3240,12 +3906,2046 @@ function testUninstallEnterpriseReSignatureCertificate() {
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, fd, INT_VALID_ACCOUNTID);
         securityManager.uninstallEnterpriseReSignatureCertificate(
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
-      });
+      })
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);	 
+    }
+    done();
+  });
+
+  /**
+    * @tc.name   test_uninstall_enterprise_re_signature_certificate_0108
+    * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0108
+    * @tc.desc   test securityManager uninstallEnterpriseReSignatureCertificate with null certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_uninstall_enterprise_re_signature_certificate_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.uninstallEnterpriseReSignatureCertificate(
+        SELFWANT, null, INT_VALID_ACCOUNTID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
+
+  /**
+    * @tc.name   test_uninstall_enterprise_re_signature_certificate_0109
+    * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_ENTERPRISE_RE_SIGNATURE_CERTIFICATE_JS_0109
+    * @tc.desc   test securityManager uninstallEnterpriseReSignatureCertificate with undefined certificate alias
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it("test_uninstall_enterprise_re_signature_certificate_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.uninstallEnterpriseReSignatureCertificate(
+        SELFWANT, undefined, INT_VALID_ACCOUNTID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+    /**
+     * @tc.name   getSecurityStatus_test_001
+     * @tc.number getSecurityStatus_test_001
+     * @tc.desc   getSecurityStatus with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getSecurityStatus_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getSecurityStatus_test_001  -------- START --------');
+      try {
+        securityManager.getSecurityStatus(null, 'root');
+        console.info(' --- getSecurityStatus_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getSecurityStatus_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getSecurityStatus_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getSecurityStatus_test_002
+     * @tc.number getSecurityStatus_test_002
+     * @tc.desc   getSecurityStatus with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getSecurityStatus_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getSecurityStatus_test_002  -------- START --------');
+      try {
+        securityManager.getSecurityStatus(undefined, 'root');
+        console.info(' --- getSecurityStatus_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getSecurityStatus_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getSecurityStatus_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installUserCertificate_test_001
+     * @tc.number installUserCertificate_test_001
+     * @tc.desc   installUserCertificate with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_001  -------- START --------');
+      try {
+        securityManager.installUserCertificate(null, CERTIFICATE);
+        console.info(' --- installUserCertificate_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installUserCertificate_test_002
+     * @tc.number installUserCertificate_test_002
+     * @tc.desc   installUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_002  -------- START --------');
+      try {
+        securityManager.installUserCertificate(undefined, CERTIFICATE);
+        console.info(' --- installUserCertificate_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installUserCertificate_test_003
+     * @tc.number installUserCertificate_test_003
+     * @tc.desc   installUserCertificate with null parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_003  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, null);
+        console.info(' --- installUserCertificate_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installUserCertificate_test_004
+     * @tc.number installUserCertificate_test_004
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_004  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, undefined);
+        console.info(' --- installUserCertificate_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_005
+     * @tc.number installUserCertificate_test_005
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_005  -------- START --------');
+      try {
+        securityManager.installUserCertificate(null, CERTIFICATE, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_006
+     * @tc.number installUserCertificate_test_006
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_006  -------- START --------');
+      try {
+        securityManager.installUserCertificate(undefined, CERTIFICATE, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_007
+     * @tc.number installUserCertificate_test_007
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_007  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_008
+     * @tc.number installUserCertificate_test_008
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_008  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- installUserCertificate_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_008  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_009
+     * @tc.number installUserCertificate_test_009
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_009", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_009  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, CERTIFICATE, null);
+        console.info(' --- installUserCertificate_test_009 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_009 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_009  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installUserCertificate_test_010
+     * @tc.number installUserCertificate_test_010
+     * @tc.desc   installUserCertificate with undefined parameter certificate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installUserCertificate_test_010", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installUserCertificate_test_010  -------- START --------');
+      try {
+        securityManager.installUserCertificate(SELFWANT, CERTIFICATE, undefined);
+        console.info(' --- installUserCertificate_test_010 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installUserCertificate_test_010 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installUserCertificate_test_010  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_001
+     * @tc.number getUserCertificates_test_001
+     * @tc.desc   getUserCertificates with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_001  -------- START --------');
+      try {
+        securityManager.getUserCertificates(null, DEFAULT_USER_ID);
+        console.info(' --- getUserCertificates_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_002
+     * @tc.number getUserCertificates_test_002
+     * @tc.desc   getUserCertificates with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_002  -------- START --------');
+      try {
+        securityManager.getUserCertificates(undefined, DEFAULT_USER_ID);
+        console.info(' --- getUserCertificates_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_003
+     * @tc.number getUserCertificates_test_003
+     * @tc.desc   getUserCertificates with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_003  -------- START --------');
+      try {
+        securityManager.getUserCertificates(SELFWANT, null);
+        console.info(' --- getUserCertificates_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_004
+     * @tc.number getUserCertificates_test_004
+     * @tc.desc   getUserCertificates with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_004  -------- START --------');
+      try {
+        securityManager.getUserCertificates(SELFWANT, undefined);
+        console.info(' --- getUserCertificates_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPasswordPolicy_test_001
+     * @tc.number setPasswordPolicy_test_001
+     * @tc.desc   setPasswordPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPasswordPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPasswordPolicy_test_001  -------- START --------');
+      try {
+        securityManager.setPasswordPolicy(null, PASSWORD_POLICY);
+        console.info(' --- setPasswordPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPasswordPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPasswordPolicy_test_002
+     * @tc.number setPasswordPolicy_test_002
+     * @tc.desc   setPasswordPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPasswordPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPasswordPolicy_test_002  -------- START --------');
+      try {
+        securityManager.setPasswordPolicy(undefined, PASSWORD_POLICY);
+        console.info(' --- setPasswordPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPasswordPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPasswordPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPasswordPolicy_test_003
+     * @tc.number setPasswordPolicy_test_003
+     * @tc.desc   setPasswordPolicy with null parameter policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPasswordPolicy_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPasswordPolicy_test_003  -------- START --------');
+      try {
+        securityManager.setPasswordPolicy(SELFWANT, null);
+        console.info(' --- setPasswordPolicy_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPasswordPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPasswordPolicy_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPasswordPolicy_test_004
+     * @tc.number setPasswordPolicy_test_004
+     * @tc.desc   setPasswordPolicy with undefined parameter policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPasswordPolicy_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPasswordPolicy_test_004  -------- START --------');
+      try {
+        securityManager.setPasswordPolicy(SELFWANT, undefined);
+        console.info(' --- setPasswordPolicy_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPasswordPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPasswordPolicy_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPasswordPolicy_test_001
+     * @tc.number getPasswordPolicy_test_001
+     * @tc.desc   getPasswordPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPasswordPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPasswordPolicy_test_001  -------- START --------');
+      try {
+        securityManager.getPasswordPolicy(null);
+        console.info(' --- getPasswordPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPasswordPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPasswordPolicy_test_002
+     * @tc.number getPasswordPolicy_test_002
+     * @tc.desc   getPasswordPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPasswordPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPasswordPolicy_test_002  -------- START --------');
+      try {
+        securityManager.getPasswordPolicy(undefined);
+        console.info(' --- getPasswordPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPasswordPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPasswordPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAppClipboardPolicy_test_001
+     * @tc.number setAppClipboardPolicy_test_001
+     * @tc.desc   setAppClipboardPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAppClipboardPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAppClipboardPolicy_test_001  -------- START --------');
+      try {
+        securityManager.setAppClipboardPolicy(null, DEFAULT_USER_ID, securityManager.ClipboardPolicy.LOCAL_DEVICE);
+        console.info(' --- setAppClipboardPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAppClipboardPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAppClipboardPolicy_test_002
+     * @tc.number setAppClipboardPolicy_test_002
+     * @tc.desc   setAppClipboardPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAppClipboardPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAppClipboardPolicy_test_002  -------- START --------');
+      try {
+        securityManager.setAppClipboardPolicy(undefined, DEFAULT_USER_ID, securityManager.ClipboardPolicy.LOCAL_DEVICE);
+        console.info(' --- setAppClipboardPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAppClipboardPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAppClipboardPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAppClipboardPolicy_test_003
+     * @tc.number setAppClipboardPolicy_test_003
+     * @tc.desc   setAppClipboardPolicy with null parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAppClipboardPolicy_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAppClipboardPolicy_test_003  -------- START --------');
+      try {
+        securityManager.setAppClipboardPolicy(SELFWANT, null, securityManager.ClipboardPolicy.LOCAL_DEVICE);
+        console.info(' --- setAppClipboardPolicy_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAppClipboardPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAppClipboardPolicy_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAppClipboardPolicy_test_004
+     * @tc.number setAppClipboardPolicy_test_004
+     * @tc.desc   setAppClipboardPolicy with undefined parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAppClipboardPolicy_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAppClipboardPolicy_test_004  -------- START --------');
+      try {
+        securityManager.setAppClipboardPolicy(SELFWANT, undefined, securityManager.ClipboardPolicy.LOCAL_DEVICE);
+        console.info(' --- setAppClipboardPolicy_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAppClipboardPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAppClipboardPolicy_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_001
+     * @tc.number getAppClipboardPolicy_test_001
+     * @tc.desc   getAppClipboardPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_001  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(null);
+        console.info(' --- getAppClipboardPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_002
+     * @tc.number getAppClipboardPolicy_test_002
+     * @tc.desc   getAppClipboardPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_002  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(undefined);
+        console.info(' --- getAppClipboardPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_003
+     * @tc.number getAppClipboardPolicy_test_003
+     * @tc.desc   getAppClipboardPolicy with null parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_003  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(SELFWANT, null);
+        console.info(' --- getAppClipboardPolicy_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_004
+     * @tc.number getAppClipboardPolicy_test_004
+     * @tc.desc   getAppClipboardPolicy with undefined parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_004  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(SELFWANT, undefined);
+        console.info(' --- getAppClipboardPolicy_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setPermissionManagedState_test_001
+     * @tc.number setPermissionManagedState_test_001
+     * @tc.desc   setPermissionManagedState with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_001  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(null, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPermissionManagedState_test_002
+     * @tc.number setPermissionManagedState_test_002
+     * @tc.desc   setPermissionManagedState with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_002  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(undefined, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPermissionManagedState_test_003
+     * @tc.number setPermissionManagedState_test_003
+     * @tc.desc   setPermissionManagedState with null parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_003  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(SELFWANT, null, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPermissionManagedState_test_004
+     * @tc.number setPermissionManagedState_test_004
+     * @tc.desc   setPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_004  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(SELFWANT, undefined, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPermissionManagedState_test_005
+     * @tc.number setPermissionManagedState_test_005
+     * @tc.desc   setPermissionManagedState with null parameter permissions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_005  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, null, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setPermissionManagedState_test_006
+     * @tc.number setPermissionManagedState_test_006
+     * @tc.desc   setPermissionManagedState with undefined parameter permissions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setPermissionManagedState_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setPermissionManagedState_test_006  -------- START --------');
+      try {
+        securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, undefined, securityManager.PermissionManagedState.GRANTED);
+        console.info(' --- setPermissionManagedState_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setPermissionManagedState_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setPermissionManagedState_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPermissionManagedState_test_001
+     * @tc.number getPermissionManagedState_test_001
+     * @tc.desc   getPermissionManagedState with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_001  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(null, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPermissionManagedState_test_002
+     * @tc.number getPermissionManagedState_test_002
+     * @tc.desc   getPermissionManagedState with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_002  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(undefined, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPermissionManagedState_test_003
+     * @tc.number getPermissionManagedState_test_003
+     * @tc.desc   getPermissionManagedState with null parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_003  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, null, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getPermissionManagedState_test_004
+     * @tc.number getPermissionManagedState_test_004
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_004  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, undefined, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_005
+     * @tc.number getPermissionManagedState_test_005
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_005  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        const instance: securityManager.ApplicationInstance = {
+          appIdentifier: '',
+          appIndex: 0,
+          accountId: 100
+        }
+        securityManager.getPermissionManagedState(SELFWANT, instance, TEST_PERMISSION_1);
+        console.info(' --- getPermissionManagedState_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_006
+     * @tc.number getPermissionManagedState_test_006
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_006  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, null);
+        console.info(' --- getPermissionManagedState_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_007
+     * @tc.number getPermissionManagedState_test_007
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_007  -------- START --------');
+      try {
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, undefined);
+        console.info(' --- getPermissionManagedState_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getPermissionManagedState_test_008
+     * @tc.number getPermissionManagedState_test_008
+     * @tc.desc   getPermissionManagedState with undefined parameter applicationInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getPermissionManagedState_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getPermissionManagedState_test_008  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        securityManager.getPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, '');
+        console.info(' --- getPermissionManagedState_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getPermissionManagedState_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- getPermissionManagedState_test_008  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_001
+     * @tc.number setWatermarkImage_test_001
+     * @tc.desc   setWatermarkImage with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_001  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(null, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
+        console.info(' --- setWatermarkImage_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_002
+     * @tc.number setWatermarkImage_test_002
+     * @tc.desc   setWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_002  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(undefined, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
+        console.info(' --- setWatermarkImage_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_003
+     * @tc.number setWatermarkImage_test_003
+     * @tc.desc   setWatermarkImage with null parameter source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_003  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null, DEFAULT_USER_ID);
+        console.info(' --- setWatermarkImage_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_004
+     * @tc.number setWatermarkImage_test_004
+     * @tc.desc   setWatermarkImage with undefined parameter source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_004  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, undefined, DEFAULT_USER_ID);
+        console.info(' --- setWatermarkImage_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_005
+     * @tc.number setWatermarkImage_test_005
+     * @tc.desc   setWatermarkImage with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_005  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, null);
+        console.info(' --- setWatermarkImage_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setWatermarkImage_test_007
+     * @tc.number setWatermarkImage_test_007
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_007  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, null, PIXEL_MAP, 100);
+        console.info(' --- setWatermarkImage_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_008
+     * @tc.number setWatermarkImage_test_008
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_008  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, undefined, PIXEL_MAP, 100);
+        console.info(' --- setWatermarkImage_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_008  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_009
+     * @tc.number setWatermarkImage_test_009
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_009", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_009  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, '', 'testpath', 100);
+        console.info(' --- setWatermarkImage_test_009 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_009 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_009  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_010
+     * @tc.number setWatermarkImage_test_010
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_010", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_010  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, '', 100);
+        console.info(' --- setWatermarkImage_test_010 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_010 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_010  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setWatermarkImage_test_006
+     * @tc.number setWatermarkImage_test_006
+     * @tc.desc   setWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setWatermarkImage_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setWatermarkImage_test_006  -------- START --------');
+      try {
+        securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, undefined);
+        console.info(' --- setWatermarkImage_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setWatermarkImage_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setWatermarkImage_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_001
+     * @tc.number cancelWatermarkImage_test_001
+     * @tc.desc   cancelWatermarkImage with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_001  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(null, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_002
+     * @tc.number cancelWatermarkImage_test_002
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_002  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(undefined, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_003
+     * @tc.number cancelWatermarkImage_test_003
+     * @tc.desc   cancelWatermarkImage with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_003  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null);
+        console.info(' --- cancelWatermarkImage_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_004
+     * @tc.number cancelWatermarkImage_test_004
+     * @tc.desc   cancelWatermarkImage with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_004  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, undefined);
+        console.info(' --- cancelWatermarkImage_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_005
+     * @tc.number cancelWatermarkImage_test_005
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_005  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_006
+     * @tc.number cancelWatermarkImage_test_006
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_006  -------- START --------');
+      try {
+        securityManager.cancelWatermarkImage(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   cancelWatermarkImage_test_007
+     * @tc.number cancelWatermarkImage_test_007
+     * @tc.desc   cancelWatermarkImage with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("cancelWatermarkImage_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- cancelWatermarkImage_test_007  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        securityManager.cancelWatermarkImage(SELFWANT, '', DEFAULT_USER_ID);
+        console.info(' --- cancelWatermarkImage_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- cancelWatermarkImage_test_007 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- cancelWatermarkImage_test_007  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setExternalSourceExtensionsPolicy_test_001
+     * @tc.number setExternalSourceExtensionsPolicy_test_001
+     * @tc.desc   setExternalSourceExtensionsPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setExternalSourceExtensionsPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setExternalSourceExtensionsPolicy_test_001  -------- START --------');
+      try {
+        securityManager.setExternalSourceExtensionsPolicy(null, common.ManagedPolicy.FORCE_OPEN);
+        console.info(' --- setExternalSourceExtensionsPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setExternalSourceExtensionsPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setExternalSourceExtensionsPolicy_test_002
+     * @tc.number setExternalSourceExtensionsPolicy_test_002
+     * @tc.desc   setExternalSourceExtensionsPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setExternalSourceExtensionsPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setExternalSourceExtensionsPolicy_test_002  -------- START --------');
+      try {
+        securityManager.setExternalSourceExtensionsPolicy(undefined, common.ManagedPolicy.FORCE_OPEN);
+        console.info(' --- setExternalSourceExtensionsPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setExternalSourceExtensionsPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setExternalSourceExtensionsPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getExternalSourceExtensionsPolicy_test_001
+     * @tc.number getExternalSourceExtensionsPolicy_test_001
+     * @tc.desc   getExternalSourceExtensionsPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getExternalSourceExtensionsPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- START --------');
+      try {
+        securityManager.getExternalSourceExtensionsPolicy(null);
+        console.info(' --- getExternalSourceExtensionsPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getExternalSourceExtensionsPolicy_test_002
+     * @tc.number getExternalSourceExtensionsPolicy_test_002
+     * @tc.desc   getExternalSourceExtensionsPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getExternalSourceExtensionsPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getExternalSourceExtensionsPolicy_test_002  -------- START --------');
+      try {
+        securityManager.getExternalSourceExtensionsPolicy(undefined);
+        console.info(' --- getExternalSourceExtensionsPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getExternalSourceExtensionsPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getExternalSourceExtensionsPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_001
+     * @tc.number installEnterpriseReSignatureCertificate_test_001
+     * @tc.desc   installEnterpriseReSignatureCertificate with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_001  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(null, STRING_VALID_CERTIFICATEALIAS, 0, INT_VALID_ACCOUNTID);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_002
+     * @tc.number installEnterpriseReSignatureCertificate_test_002
+     * @tc.desc   installEnterpriseReSignatureCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_002  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(undefined, STRING_VALID_CERTIFICATEALIAS, 0, INT_VALID_ACCOUNTID);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_003
+     * @tc.number installEnterpriseReSignatureCertificate_test_003
+     * @tc.desc   installEnterpriseReSignatureCertificate with null parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_003  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, null, INT_VALID_ACCOUNTID);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_004
+     * @tc.number installEnterpriseReSignatureCertificate_test_004
+     * @tc.desc   installEnterpriseReSignatureCertificate with undefined parameter fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_004  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, undefined, INT_VALID_ACCOUNTID);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_005
+     * @tc.number installEnterpriseReSignatureCertificate_test_005
+     * @tc.desc   installEnterpriseReSignatureCertificate with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_005  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, 0, null);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installEnterpriseReSignatureCertificate_test_006
+     * @tc.number installEnterpriseReSignatureCertificate_test_006
+     * @tc.desc   installEnterpriseReSignatureCertificate with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installEnterpriseReSignatureCertificate_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installEnterpriseReSignatureCertificate_test_006  -------- START --------');
+      try {
+        securityManager.installEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, 0, undefined);
+        console.info(' --- installEnterpriseReSignatureCertificate_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installEnterpriseReSignatureCertificate_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- installEnterpriseReSignatureCertificate_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstallEnterpriseReSignatureCertificate_test_001
+     * @tc.number uninstallEnterpriseReSignatureCertificate_test_001
+     * @tc.desc   uninstallEnterpriseReSignatureCertificate with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallEnterpriseReSignatureCertificate_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001  -------- START --------');
+      try {
+        securityManager.uninstallEnterpriseReSignatureCertificate(null, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstallEnterpriseReSignatureCertificate_test_002
+     * @tc.number uninstallEnterpriseReSignatureCertificate_test_002
+     * @tc.desc   uninstallEnterpriseReSignatureCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallEnterpriseReSignatureCertificate_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002  -------- START --------');
+      try {
+        securityManager.uninstallEnterpriseReSignatureCertificate(undefined, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstallEnterpriseReSignatureCertificate_test_003
+     * @tc.number uninstallEnterpriseReSignatureCertificate_test_003
+     * @tc.desc   uninstallEnterpriseReSignatureCertificate with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallEnterpriseReSignatureCertificate_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003  -------- START --------');
+      try {
+        securityManager.uninstallEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, null);
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstallEnterpriseReSignatureCertificate_test_004
+     * @tc.number uninstallEnterpriseReSignatureCertificate_test_004
+     * @tc.desc   uninstallEnterpriseReSignatureCertificate with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallEnterpriseReSignatureCertificate_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004  -------- START --------');
+      try {
+        securityManager.uninstallEnterpriseReSignatureCertificate(SELFWANT, STRING_VALID_CERTIFICATEALIAS, undefined);
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstallUserCertificate_test_015
+     * @tc.number uninstallUserCertificate_test_015
+     * @tc.desc   uninstallUserCertificate with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_015  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(null, 'test');
+        console.info(' --- uninstallUserCertificate_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstallUserCertificate_test_016
+     * @tc.number uninstallUserCertificate_test_016
+     * @tc.desc   uninstallUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_016  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(undefined, 'test');
+        console.info(' --- uninstallUserCertificate_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstallUserCertificate_test_017
+     * @tc.number uninstallUserCertificate_test_017
+     * @tc.desc   uninstallUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_017", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_017  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(SELFWANT, null);
+        console.info(' --- uninstallUserCertificate_test_017 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_017 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_017  -------- END --------');
+    })
+
+    /**
+     * @tc.name   uninstallUserCertificate_test_018
+     * @tc.number uninstallUserCertificate_test_018
+     * @tc.desc   uninstallUserCertificate with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstallUserCertificate_test_018", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstallUserCertificate_test_018  -------- START --------');
+      try {
+        securityManager.uninstallUserCertificate(SELFWANT, undefined);
+        console.info(' --- uninstallUserCertificate_test_018 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstallUserCertificate_test_018 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstallUserCertificate_test_018  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getUserCertificates_test_029
+     * @tc.number getUserCertificates_test_029
+     * @tc.desc   getUserCertificates with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_029  -------- START --------');
+      try {
+        securityManager.getUserCertificates(null, DEFAULT_USER_ID);
+        console.info(' --- getUserCertificates_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_030
+     * @tc.number getUserCertificates_test_030
+     * @tc.desc   getUserCertificates with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_030  -------- START --------');
+      try {
+        securityManager.getUserCertificates(undefined, DEFAULT_USER_ID);
+        console.info(' --- getUserCertificates_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_031
+     * @tc.number getUserCertificates_test_031
+     * @tc.desc   getUserCertificates with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_031  -------- START --------');
+      try {
+        securityManager.getUserCertificates(SELFWANT, null);
+        console.info(' --- getUserCertificates_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserCertificates_test_032
+     * @tc.number getUserCertificates_test_032
+     * @tc.desc   getUserCertificates with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserCertificates_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserCertificates_test_032  -------- START --------');
+      try {
+        securityManager.getUserCertificates(SELFWANT, undefined);
+        console.info(' --- getUserCertificates_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserCertificates_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserCertificates_test_032  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_043
+     * @tc.number getAppClipboardPolicy_test_043
+     * @tc.desc   getAppClipboardPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_043", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_043  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(null);
+        console.info(' --- getAppClipboardPolicy_test_043 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_043 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_043  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_044
+     * @tc.number getAppClipboardPolicy_test_044
+     * @tc.desc   getAppClipboardPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_044", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_044  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(undefined);
+        console.info(' --- getAppClipboardPolicy_test_044 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_044 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_044  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_045
+     * @tc.number getAppClipboardPolicy_test_045
+     * @tc.desc   getAppClipboardPolicy with null parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_045", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_045  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(SELFWANT, null);
+        console.info(' --- getAppClipboardPolicy_test_045 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_045 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_045  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAppClipboardPolicy_test_046
+     * @tc.number getAppClipboardPolicy_test_046
+     * @tc.desc   getAppClipboardPolicy with undefined parameter tokenId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAppClipboardPolicy_test_046", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAppClipboardPolicy_test_046  -------- START --------');
+      try {
+        securityManager.getAppClipboardPolicy(SELFWANT, undefined);
+        console.info(' --- getAppClipboardPolicy_test_046 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAppClipboardPolicy_test_046 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAppClipboardPolicy_test_046  -------- END --------');
+    })
 }

@@ -182,6 +182,8 @@ import RepeatTest0020 from './RepeatTest/RepeatTest0020.test';
 import LazyForEachInterface from './LazyForEach/LazyForEachInterface.test';
 import RepeatTest0010 from './RepeatTest/RepeatTest0010.test';
 import RepeatTest0400 from './RepeatTest/RepeatTest0400.test';
+import UIUtilsMakeBindingTest from './UIUtilsTest/UIUtilsMakeBinding.test';
+import ConsumeDefaultValueStringTest from './ConsumeTest/ConsumeDefaultValueStringTest.test';
 
 export default function testsuite() {
   FreezeV2Child();
@@ -366,5 +368,7 @@ export default function testsuite() {
   lazyReloadJsunit();
   LazyForEachTest0120();
   LazyForEachChangeTest0020();
+  UIUtilsMakeBindingTest();
+  ConsumeDefaultValueStringTest();
 }
 

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,91 +43,91 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
-class SymbolGlyphModifier implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale(undefined)
       .minFontScale(undefined)
   }
 }
 
-class SymbolGlyphModifier2 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier2 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.string.maxFontScale'))
       .minFontScale($r('app.string.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier3 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier3 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale(2)
       .minFontScale(0.5)
   }
 }
 
-class SymbolGlyphModifier4 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier4 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale(0.5)
       .minFontScale(-1)
   }
 }
 
-class SymbolGlyphModifier5 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier5 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale(0.5)
       .minFontScale(2)
   }
 }
 
-class SymbolGlyphModifier6 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier6 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.boolean.maxFontScale'))
       .minFontScale($r('app.boolean.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier7 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier7 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.color.maxFontScale'))
       .minFontScale($r('app.color.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier8 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier8 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.float.maxFontScale'))
       .minFontScale($r('app.float.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier9 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier9 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.integer.maxFontScale'))
       .minFontScale($r('app.integer.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier10 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier10 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.intarray.maxFontScale'))
       .minFontScale($r('app.intarray.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier11 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier11 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.pattern.maxFontScale'))
       .minFontScale($r('app.pattern.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier12 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier12 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.plural.maxFontScale'))
       .minFontScale($r('app.plural.minFontScale'))
   }
 }
 
-class SymbolGlyphModifier13 implements AttributeModifier<SymbolGlyphAttribute> {
+export class SymbolGlyphModifier13 implements AttributeModifier<SymbolGlyphAttribute> {
   applyNormalAttribute(instance: SymbolGlyphAttribute): void {
     instance.maxFontScale($r('app.strarray.maxFontScale'))
       .minFontScale($r('app.strarray.minFontScale'))

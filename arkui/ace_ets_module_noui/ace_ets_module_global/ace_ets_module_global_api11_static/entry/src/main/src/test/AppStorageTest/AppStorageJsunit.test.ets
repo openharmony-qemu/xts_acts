@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -156,8 +156,8 @@ it('stateManagement_Environment_EnvProps_static_0100', Level.LEVEL0, (done: () =
         // }]);
         let enable: number | undefined = AppStorage.get<number>("colorMode");
         let enable1: number | undefined = AppStorage.get<number>("layoutDirection");
-        expect(enable == (resourceManager.ColorMode.LIGHT as number))
-          .assertTrue;
+        let ligthValue: number = resourceManager.ColorMode.LIGHT; 
+        expect(enable == ligthValue).assertTrue;
         // expect(enable1 == (LayoutDirection.RTL as number))
         //   .assertTrue;
         console.info('[stateManagement_Environment_EnvProps_0100] enable = ' + enable);

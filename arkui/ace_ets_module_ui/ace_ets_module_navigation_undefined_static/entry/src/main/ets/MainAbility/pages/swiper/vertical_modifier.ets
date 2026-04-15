@@ -5,7 +5,7 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Scroll, Margin
 } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 @Observed
-class MyVerticalModifier implements AttributeModifier<SwiperAttribute> {
+export class MyVerticalModifier implements AttributeModifier<SwiperAttribute> {
   public isVerticalModifier : Boolean = false
 
   applyNormalAttribute(instance: SwiperAttribute): void {

@@ -20,7 +20,6 @@ struct PopupOptionsFalseExample {
   build() {
     Flex({ direction: FlexDirection.Column }) {
       Button('PopupOptionsFalse')
-        .margin(100)
         .id("PopupOptionsFalse")
         .onClick(() => {
           this.handlePopup = !this.handlePopup

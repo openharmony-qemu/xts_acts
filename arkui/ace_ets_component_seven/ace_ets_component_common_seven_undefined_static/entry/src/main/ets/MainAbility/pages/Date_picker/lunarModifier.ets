@@ -8,7 +8,7 @@ import { DatePickerAttribute,ScrollSnapAlign,Axis,EdgeEffect,ChainEdgeEffect,Tex
 
 
 @Observed
-class MyEnableModifier implements AttributeModifier<DatePickerAttribute> {
+export class MyEnableModifier implements AttributeModifier<DatePickerAttribute> {
   public isLunar: boolean | undefined = true;
   public change: boolean | undefined = true;
 

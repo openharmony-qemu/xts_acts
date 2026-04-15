@@ -17,7 +17,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class VisibilityModifier implements AttributeModifier<CommonAttribute> {
+export class VisibilityModifier implements AttributeModifier<CommonAttribute> {
   public controlValue: Visibility | undefined = undefined
 
   applyNormalAttribute(instance: CommonAttribute): void {

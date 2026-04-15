@@ -18,6 +18,7 @@ import testNapi from 'libentry.so';
 import { display, window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@ohos.UiTest';
+import deviceInfo from '@ohos.deviceInfo';
 
 interface Capability{
   foldStatus:string;
@@ -39,7 +40,23 @@ export default function DisplayNdkTest() {
     let code:number;
     let displayFoldStatus:number;
     let DISPLAY_MANAGER_OK = 0;
+    let windowStage: window.WindowStage;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
+    let isSupportFreeWindowMode: boolean = false;
     beforeAll(async () => {
+      windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
+      let promise2 = mainWindowClass!.getWindowStateSnapshot();
+      promise2.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -518,7 +535,33 @@ export default function DisplayNdkTest() {
         done();
       }
     })
-
+    /**
+    * @tc.name   test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range_0100
+    * @tc.desc   OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener超出范围
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener_Outer_Range';
+      try{
+        let displayIsFoldable  = testNapi.checkIsFoldDevice();
+        let displayMode  = testNapi.unregisterFoldDisplayModeChangeListenerOutRange();
+        console.log(caseName + ' displayMode1:'+ displayMode );
+        if(displayIsFoldable == true){
+          expect(displayMode).assertEqual(401);
+          done();
+        }else{
+          expect(displayMode).assertEqual(801);
+          done();
+        }
+      } catch (err) {
+        console.log(caseName + ': fail:'+ err + ' '+err.code);
+        expect(false).assertTrue();
+        done();
+      }
+     })
     /**
      * @tc.name   test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener
      * @tc.number SUB_BASIC_DMS_NDK_1900
@@ -543,7 +586,7 @@ export default function DisplayNdkTest() {
     /**
      * @tc.name   test_OH_NativeDisplayManager_registerDisplayChangeListener
      * @tc.number SUB_BASIC_DMS_NDK_2000
-     * @tc.desc   test_OH_NativeDisplayManager_registerDisplayChangeListener
+     * @tc.desc   OH_NativeDisplayManager_registerDisplayChangeListener
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -563,7 +606,28 @@ export default function DisplayNdkTest() {
         done();
       }
     })
-
+    /**
+    * @tc.name   test_OH_NativeDisplayManager_registerDisplayChangeListener_Outer_Range
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayChangeListener_Outer_Range_0100
+    * @tc.desc   OH_NativeDisplayManager_registerDisplayChangeListener超出范围
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_OH_NativeDisplayManager_registerDisplayChangeListener_Outer_Range', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_registerDisplayChangeListener_Outer_Range';
+      try{
+        let result  = testNapi.unregisterDisplayChangeListenerOutRange();
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        expect(result).assertEqual(401);
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:'+ err + ' '+err.code);
+        expect(false).assertTrue();
+        done();
+      }
+     })
+ 
     /**
      * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea
      * @tc.number OH_NativeDisplayManager_CreateAvailableArea
@@ -580,10 +644,17 @@ export default function DisplayNdkTest() {
         expect(result.errcode).assertEqual(0);
         let availableArea = await displayClass.getAvailableArea();
         console.log(`${caseName} getAvailableArea availableArea: ${JSON.stringify(availableArea)}`);
-        expect(Math.abs(availableArea.left - result.left)).assertLessOrEqual(0);
-        expect(Math.abs(availableArea.top - result.top)).assertLessOrEqual(0);
-        expect(Math.abs(availableArea.width - result.width)).assertLessOrEqual(0);
-        expect(Math.abs(availableArea.height - result.height)).assertLessOrEqual(0);
+        if (deviceType === '2in1' || deviceType === 'tablet') {
+          expect(Math.abs(availableArea.left - result.left)).assertLessOrEqual(0);
+          expect(Math.abs(availableArea.top - result.top)).assertLessOrEqual(0);
+          expect(Math.abs(availableArea.width - result.width)).assertLessOrEqual(0);
+          expect(Math.abs(availableArea.height - result.height)).assertLessOrEqual(0);
+        } else {
+          expect(availableArea.left).assertLargerOrEqual(0);
+          expect(availableArea.top).assertLargerOrEqual(0);
+          expect(availableArea.width).assertLargerOrEqual(0);
+          expect(availableArea.height).assertLargerOrEqual(0);
+        }
         done();
       } catch (err) {
         console.log(caseName + ': fail:'+ err + ' '+err.code);
@@ -818,28 +889,6 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.name   test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
-     * @tc.number OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
-     * @tc.desc   OH_NativeDisplayManager_RegisterAvailableAreaChangeListener中注册可用区域变化监听
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let caseName = 'test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener';
-      try{
-        let result  = testNapi.registerAvailableAreaChangeListener();
-        console.log(`${caseName} result: ${JSON.stringify(result)}`);
-        expect(result).assertEqual(0);
-        done();
-      } catch (err) {
-        console.log(caseName + ': fail:'+ err + ' '+err.code);
-        expect(false).assertTrue();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
      * @tc.number OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
      * @tc.desc   OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener中取消可用区域变化监听
@@ -882,7 +931,27 @@ export default function DisplayNdkTest() {
         done();
       }
     })
-
+    /**
+    * @tc.name   test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range_0100
+    * @tc.desc   OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener超出范围
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_Outer_Range';
+      try{
+        let result  = testNapi.unregisterAvailableAreaChangeListenerOutRange();
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        expect(result).assertEqual(1400004);
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:'+ err + ' '+err.code);
+        expect(false).assertTrue();
+        done();
+      }
+     })
 
     /**
      * @tc.name   test_OH_NativeDisplayManager_RegisterDisplayAddListener
@@ -949,7 +1018,28 @@ export default function DisplayNdkTest() {
         done();
       }
     })
-
+    /**
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range
+     * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range_0100
+     * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener超出范围
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+        let caseName = 'test_OH_NativeDisplayManager_UnregisterDisplayAddListener_Outer_Range';
+        try{
+          let result  = testNapi.unregisterDisplayAddListenerOutRange();
+          console.log(`${caseName} result: ${JSON.stringify(result)}`);
+          expect(result).assertEqual(1400004);
+          done();
+        } catch (err) {
+          console.log(caseName + ': fail:'+ err + ' '+err.code);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+ 
     /**
      * @tc.name   test_OH_NativeDisplayManager_RegisterDisplayRemoveListener
      * @tc.number OH_NativeDisplayManager_RegisterDisplayRemoveListener
@@ -971,7 +1061,28 @@ export default function DisplayNdkTest() {
         done();
       }
     })
-
+    /**
+    * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange
+    * @tc.number SUB_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange_0100
+    * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener超出范围
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_UnregisterDisplayAddListener_OuterRange';
+      try{
+        let result  = testNapi.unregisterDisplayRemoveListenerOutRange();
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        expect(result).assertEqual(1400004);
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:'+ err + ' '+err.code);
+        expect(false).assertTrue();
+        done();
+      }
+     })
+ 
     /**
      * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayRemoveListener
      * @tc.number OH_NativeDisplayManager_UnregisterDisplayRemoveListener
@@ -1087,6 +1198,54 @@ export default function DisplayNdkTest() {
         done()
       }
     })
+
+    /**
+    * @tc.name   test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
+    * @tc.number OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
+    * @tc.desc   OH_NativeDisplayManager_RegisterAvailableAreaChangeListener中注册可用区域变化监听
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+      it('test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+        let caseName = 'test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener';
+        try{
+          let result  = testNapi.registerAvailableAreaChangeListener();
+          console.log(`${caseName} result: ${JSON.stringify(result)}`);
+          let count:number = 0;
+          let windowClass = windowStage.getMainWindowSync();
+          expect(result).assertEqual(0);
+          if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+            // 调用maximize接口，设置窗口进入全屏沉浸式。
+            windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+            // 调用setTitleAndDockHoverShown接口，隐藏标题栏和dock栏。
+            windowClass!.setTitleAndDockHoverShown(false, false);
+            await sleep(1000);
+            count = testNapi.getAreaLinsterCount();
+            console.info('Succeeded in get the count.' + count);
+            await sleep(1000);
+            expect(count).assertLarger(0);
+            windowClass!.recover();
+            done()
+          } else if (deviceType === 'tablet' && !isPCMode) {
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+            await sleep(1000);
+            count = testNapi.getAreaLinsterCount();
+            expect(count).assertLargerOrEqual(0);
+            await sleep(1000);
+            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+            done();
+          } else {
+            expect(count).assertEqual(0);
+            done()
+          }
+          done()
+        } catch (err) {
+          console.log(caseName + ': fail:'+ err + ' '+err.code);
+          expect(false).assertTrue();
+          done();
+        }
+      })
 
   })
 }
