@@ -494,14 +494,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: float = 56.2f;
       let y: byte = 4;
       let z = x - y;
-      expect(
-        z instanceof float).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        52.2f,
-        1e-6, 
-        "Incorrect result 56.2f - 4 = " + z
-      )
+      expect(z instanceof float).assertTrue();
+      expect(Math.abs(z - 52.2f)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -516,14 +510,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: byte = 12;
       let y: double = 3564.2;
       let z = x + y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        3576.2,
-        1e-6, 
-        "Incorrect result 12 + 3564.2 = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - 3576.2)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -538,14 +526,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: float = 36.3f;
       let y: short = 11;
       let z = x + y;
-      expect(
-        z instanceof float).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        47.3f,
-        1e-6, 
-        "Incorrect result 36.3f + 11 = " + z
-      )
+      expect(z instanceof float).assertTrue();
+      expect(Math.abs(z - 47.3f)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -560,14 +542,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: double = 32.8;
       let y: short = 1;
       let z = x - y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        31.8,
-        1e-6, 
-        "Incorrect result 32.8 - 1 = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - 31.8)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -582,14 +558,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: int = 14;
       let y: float = 10.0f;
       let z = x - y;
-      expect(
-        z instanceof float).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        4.0f,
-        1e-6, 
-        "Incorrect result 14 - 10.0f = " + z
-      )
+      expect(z instanceof float).assertTrue();
+      expect(Math.abs(z - 4.0f)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -604,14 +574,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: int = 28;
       let y: double = 1.9;
       let z = x + y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        29.9,
-        1e-6, 
-        "Incorrect result 28 + 1.9 = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - 29.9)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -626,14 +590,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: long = 1;
       let y: float = 103.6f;
       let z = x - y;
-      expect(
-        z instanceof float).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        -102.6f,
-        1e-6, 
-        "Incorrect result 1 - 103.6f = " + z
-      )
+      expect(z instanceof float).assertTrue();
+      expect(Math.abs(z - -102.6f)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -648,14 +606,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: long = 8589934593;
       let y: double = 1.0;
       let z = x + y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        8589934594.0,
-        1e-6, 
-        "Incorrect result 8589934593 + 1.0 = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - 8589934594.0)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -670,14 +622,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: float = 13.0f;
       let y: float = 10.6f;
       let z = x + y;
-      expect(
-        z instanceof float).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        23.6f,
-        1e-6, 
-        "Incorrect result 13.0f + 10.6f = " + z
-      )
+      expect(z instanceof float).assertTrue();
+      expect(Math.abs(z - 23.6f)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -692,14 +638,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: double = 1.3;
       let y: float = 10.6f;
       let z = x - y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        -9.3,
-        1e-6, 
-        "Incorrect result 1.3 - 10.6f = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - -9.3)).assertLessOrEqual(1e-6);
     })
 
     /**
@@ -714,14 +654,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
       let x: double = 1986.3;
       let y: double = 130.6;
       let z = x + y;
-      expect(
-        z instanceof double).assertTrue();
-      arktest.assertDoubleEQ(
-        z,
-        2116.9,
-        1e-6, 
-        "Incorrect result 1986.3 + 130.6 = " + z
-      )
+      expect(z instanceof double).assertTrue();
+      expect(Math.abs(z - 2116.9)).assertLessOrEqual(1e-6);
     })
 
     /**
