@@ -33,7 +33,7 @@ import SimpleAssignmentOperatorTest from "./expressions/assignment/simple_assign
 import BooleanLogicalOperatorsTest from "./expressions/bitwise_and_logical_expressions/boolean_logical_operators/BooleanLogicalOperators.test";
 import IntegerBitwiseOperatorsTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators.test";
 import IntegerBitwiseOperatorsOneTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators_1.test";
-// import IntegerBitwiseOperatorsTwoTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators_2.test";
+import IntegerBitwiseOperatorsTwoTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators_2.test";
 // import IntegerBitwiseOperatorsThreeTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators_3.test";
 // import ExpressionsCastTest from "./expressions/cast_expressions/ExpressionsCast.test";
 // import ExpressionsRuntimeTest from "./expressions/cast_expressions/runtime_checking_in_cast_expression/ExpressionsRuntime.test";
@@ -170,7 +170,7 @@ export default function testsuite() {
   BooleanLogicalOperatorsTest();
   IntegerBitwiseOperatorsTest();
   IntegerBitwiseOperatorsOneTest();
-  // IntegerBitwiseOperatorsTwoTest();
+  IntegerBitwiseOperatorsTwoTest();
   // IntegerBitwiseOperatorsThreeTest();
   // ExpressionsCastTest();
   // ExpressionsRuntimeTest();
