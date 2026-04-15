@@ -753,7 +753,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let y: byte = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -767,7 +767,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let y: byte = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -781,7 +781,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let y: byte = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -795,7 +795,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let y: byte = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -809,7 +809,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let y: byte = 1;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -823,7 +823,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 1;
       let y: byte = 0;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -837,7 +837,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 1;
       let y: byte = -1;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -851,7 +851,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 0;
       let y: short = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -865,7 +865,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 0;
       let y: short = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -879,7 +879,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 0;
       let y: short = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -893,7 +893,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 0;
       let y: short = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -907,7 +907,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 0;
       let y: short = 1;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -921,7 +921,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 1;
       let y: short = 0;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -935,7 +935,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 1;
       let y: short = -1;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -949,7 +949,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let y: int = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -963,7 +963,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let y: int = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -977,7 +977,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let y: int = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -991,7 +991,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let y: int = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1005,7 +1005,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let y: int = 1;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -1019,7 +1019,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let y: int = 0;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -1033,7 +1033,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let y: int = -1;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1047,7 +1047,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 0;
       let y: long = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1061,7 +1061,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 0;
       let y: long = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1075,7 +1075,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 0;
       let y: long = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1089,7 +1089,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 0;
       let y: long = 0;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
@@ -1103,7 +1103,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 0;
       let y: long = 1;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -1117,7 +1117,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 1;
       let y: long = 0;
-      expect( (x + y) == 1 ).assertTrue()
+      expect( (x + y) === 1 ).assertTrue()
     })
 
     /**
@@ -1131,7 +1131,7 @@ export default function ExpressionsAdditiveOperatorsTest() {
     it("testExpressionsAdditiveOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = 1;
       let y: long = -1;
-      expect( (x + y) == 0 ).assertTrue()
+      expect( (x + y) === 0 ).assertTrue()
     })
 
     /**
