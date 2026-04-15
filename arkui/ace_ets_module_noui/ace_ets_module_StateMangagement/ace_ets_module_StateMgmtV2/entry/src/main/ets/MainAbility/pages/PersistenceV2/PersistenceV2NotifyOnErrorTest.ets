@@ -24,7 +24,7 @@ PersistenceV2.notifyOnError((key: string, reason: string, msg: string, oldValue?
 
 @ObservedV2
 class SampleChildOldValue {
-  @Trace public  id: number | null = null;
+  @Trace public id: number | null = null;
   @Trace public count: number = 10;
 }
 

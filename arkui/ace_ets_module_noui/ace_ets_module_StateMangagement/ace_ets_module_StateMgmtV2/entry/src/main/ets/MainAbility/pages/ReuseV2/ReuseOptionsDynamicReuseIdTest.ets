@@ -84,19 +84,16 @@ struct ReuseOptionsDynamicReuseIdTest {
       if (this.condition1) {
         ReusableV2Component({ num: 1, componentName: 'Component1' })
           .reuse({ reuseId: () => this.getReuseId1() })
-          .id('component_1')
       }
 
       if (this.condition2) {
         ReusableV2Component({ num: 2, componentName: 'Component2' })
           .reuse({ reuseId: () => 'ReusableV2Component' })
-          .id('component_2')
       }
 
       if (this.condition2) {
         ReusableV2Component({ num: 3, componentName: 'Component3' })
           .reuse({ reuseId: () => this.getReuseId1() })
-          .id('component_2')
       }
     }
     .width('100%')
