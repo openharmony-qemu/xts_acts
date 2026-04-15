@@ -2435,7 +2435,7 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
-            let result = await bluetooth.getProfileConnectionState(undefined);
+            let result = bluetooth.getProfileConnectionState(undefined);
             console.info("getProfileConnectionState with null result:" + result);
             expect(true).assertEqual(result === 0 || result === 1 || result === 2 || result === 3);
         } catch (err) {
