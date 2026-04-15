@@ -14,7 +14,6 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import wifindktest from 'libwifindk.so';
-import wifiMg from '@ohos.wifiManager';
 
 function sleep(delay: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay));
