@@ -53,8 +53,7 @@
             "type": "ShellKit",
             "run-command": [
                 "mediatool send /data/tmp/case/01.jpg",
-				"mediatool send /data/tmp/case/01.mp4",
-				"mediatool send /data/tmp/case/test_mov_1.mp4"
+				"mediatool send /data/tmp/case/01.mp4"
             ]
         }
     ]
