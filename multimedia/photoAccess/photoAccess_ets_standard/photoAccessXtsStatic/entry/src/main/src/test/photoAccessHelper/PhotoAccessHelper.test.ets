@@ -66,6 +66,9 @@ export default function getAssetsTest(): void {
           if(error !== undefined){
             expect(error!.code == 13900020).assertTrue();
             done();
+          }else if (fetchResult !== undefined) {
+            fetchResult.close();
+            done();
           }else {
             expect().assertFail();
             done();
@@ -97,7 +100,7 @@ export default function getAssetsTest(): void {
         helper!.getAssets(fetchOptions, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           if(error !== undefined){
-            expect(error!.code === 13900020).assertTrue();
+            expect(error!.code == 13900020).assertTrue();
             done();
           }else {
             expect().assertFail();
@@ -1100,7 +1103,6 @@ export default function getAssetsTest(): void {
           await sleep(1000)
           helper!.unRegisterChange(photoAsset.uri, onCallback);
           expect(isCallbackTriggered).assertTrue();
-          done();
         } catch (error) {
           console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
           expect().assertFail();
@@ -1431,7 +1433,7 @@ export default function getAssetsTest(): void {
     /**
      * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
      * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
-     * @tc.desc     offSinglePhotoChange-normal-video
+     * @tc.desc     offSinglePhotoChange-normal
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
