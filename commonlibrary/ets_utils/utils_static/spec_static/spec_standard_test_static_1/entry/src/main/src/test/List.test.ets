@@ -26,10 +26,10 @@ import ExpressionsArrayLiteralTest from "./expressions/array_literal/Expressions
 import ExpressionsContestInferenceTest from "./expressions/array_literal/type_inference_from_context/ExpressionsContestInference.test";
 import ExpressionsContestInferenceOneTest from "./expressions/array_literal/type_inference_from_context/ExpressionsContestInference_1.test";
 import ExpressionsElementsInferenceTest from "./expressions/array_literal/type_inference_from_types_of_elements/ExpressionsElementsInference.test";
-// import AssignmentTest from "./expressions/assignment/Assignment.test";
-// import CompoundAssignmentOperatorsTest from "./expressions/assignment/compound_assignment_operators/CompoundAssignmentOperators.test";
-// import LeftHandSideExpressionsTest from "./expressions/assignment/left_hand_side_expressions/LeftHandSideExpressions.test";
-// import SimpleAssignmentOperatorTest from "./expressions/assignment/simple_assignment_operator/SimpleAssignmentOperator.test";
+import AssignmentTest from "./expressions/assignment/Assignment.test";
+import CompoundAssignmentOperatorsTest from "./expressions/assignment/compound_assignment_operators/CompoundAssignmentOperators.test";
+import LeftHandSideExpressionsTest from "./expressions/assignment/left_hand_side_expressions/LeftHandSideExpressions.test";
+import SimpleAssignmentOperatorTest from "./expressions/assignment/simple_assignment_operator/SimpleAssignmentOperator.test";
 // import BooleanLogicalOperatorsTest from "./expressions/bitwise_and_logical_expressions/boolean_logical_operators/BooleanLogicalOperators.test";
 // import IntegerBitwiseOperatorsTest from "./expressions/bitwise_and_logical_expressions/integer_bitwise_operators/IntegerBitwiseOperators.test";
 // import ExpressionsCastTest from "./expressions/cast_expressions/ExpressionsCast.test";
@@ -160,10 +160,10 @@ export default function testsuite() {
   ExpressionsContestInferenceTest();
   ExpressionsContestInferenceOneTest();
   ExpressionsElementsInferenceTest();
-  // AssignmentTest();
+  AssignmentTest();
   // CompoundAssignmentOperatorsTest();
   // LeftHandSideExpressionsTest();
-  // SimpleAssignmentOperatorTest();
+  SimpleAssignmentOperatorTest();
   // BooleanLogicalOperatorsTest();
   // IntegerBitwiseOperatorsTest();
   // ExpressionsCastTest();
