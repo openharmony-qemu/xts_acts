@@ -143,6 +143,9 @@ add_library(
     src/functionalext/supplement/termios/cfsetospeed.cpp
     src/functionalext/supplement/thread/cnd_init.cpp
     src/functionalext/supplement/thread/cnd_signal.cpp
+    src/functionalext/supplement/thread/cnd_broadcast.cpp
+    src/functionalext/supplement/thread/cnd_timedwait.cpp
+    src/functionalext/supplement/thread/cnd_wait.cpp
     src/functionalext/supplement/time/clock.cpp
     src/functionalext/supplement/time/clock_getcpuclockid.cpp
     src/functionalext/supplement/time/difftime_sup.cpp
@@ -512,7 +515,19 @@ add_library(
     src/functionalext/supplement/temp/mktemp.cpp
     src/functionalext/supplement/thread/mtx_init.cpp
     src/functionalext/supplement/thread/mtx_lock.cpp
+    src/functionalext/supplement/thread/mtx_timedlock.cpp
+    src/functionalext/supplement/thread/mtx_trylock.cpp
+    src/functionalext/supplement/thread/mtx_unlock.cpp
     src/functionalext/supplement/thread/pthread_atfork.cpp
+    src/functionalext/supplement/thread/call_once.cpp
+    src/functionalext/supplement/thread/pthread_detach.cpp
+    src/functionalext/supplement/thread/pthread_equal.cpp
+    src/functionalext/supplement/thread/pthread_join.cpp
+    src/functionalext/supplement/thread/pthread_self.cpp
+    src/functionalext/supplement/thread/pthread_setschedprio.cpp
+    src/functionalext/supplement/thread/pthread_spin_lock.cpp
+    src/functionalext/supplement/thread/pthread_spin_trylock.cpp
+    src/functionalext/supplement/thread/pthread_spin_unlock.cpp
     src/functionalext/supplement/thread/pthread_attr_destroy.cpp
     src/functionalext/supplement/thread/pthread_attr_get.cpp
     src/functionalext/supplement/thread/pthread_attr_getstack.cpp
@@ -526,11 +541,14 @@ add_library(
     src/functionalext/supplement/thread/pthread_attr_setstacksize.cpp
     src/functionalext/supplement/thread/pthread_barrier_destroy.cpp
     src/functionalext/supplement/thread/pthread_barrier_init.cpp
+    src/functionalext/supplement/thread/pthread_barrier_wait.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_init.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_setpshared.cpp
     src/functionalext/supplement/thread/pthread_cond_broadcast.cpp
     src/functionalext/supplement/thread/pthread_cond_destroy.cpp
+    src/functionalext/supplement/thread/pthread_cond_init.cpp
     src/functionalext/supplement/thread/pthread_cond_signal.cpp
+    src/functionalext/supplement/thread/pthread_cond_timedwait_sup.cpp
     src/functionalext/supplement/thread/pthread_cond_wait.cpp
     src/functionalext/supplement/thread/pthread_condattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_condattr_init.cpp
@@ -540,6 +558,7 @@ add_library(
     src/functionalext/supplement/thread/pthread_key_delete.cpp
     src/functionalext/supplement/thread/pthread_mutex_destroy.cpp
     src/functionalext/supplement/thread/pthread_mutex_init.cpp
+    src/functionalext/supplement/thread/pthread_mutex_timedlock.cpp
     src/functionalext/supplement/thread/pthread_mutex_trylock.cpp
     src/functionalext/supplement/thread/pthread_mutexattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_mutexattr_setprotocol.cpp
@@ -547,12 +566,20 @@ add_library(
     src/functionalext/supplement/thread/pthread_mutexattr_settype.cpp
     src/functionalext/supplement/thread/pthread_rwlock_destroy.cpp
     src/functionalext/supplement/thread/pthread_rwlock_rdlock_sup.cpp
+    src/functionalext/supplement/thread/pthread_rwlock_timedrdlock.cpp
+    src/functionalext/supplement/thread/pthread_rwlock_timedwrlock.cpp
     src/functionalext/supplement/thread/pthread_rwlock_tryrdlock.cpp
     src/functionalext/supplement/thread/pthread_rwlock_trywrlock.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_init.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_setpshared.cpp
     src/functionalext/supplement/thread/pthread_sigmask.cpp
+    src/functionalext/supplement/thread/thrd_create.cpp
+    src/functionalext/supplement/thread/thrd_current.cpp
+    src/functionalext/supplement/thread/thrd_detach.cpp
+    src/functionalext/supplement/thread/thrd_equal.cpp
+    src/functionalext/supplement/thread/thrd_join.cpp
+    src/functionalext/supplement/thread/thrd_sleep.cpp
     src/functionalext/supplement/thread/thrd_yield.cpp
     src/functionalext/supplement/thread/tss_set.cpp
     src/functionalext/supplement/time/mktime_sup.cpp
