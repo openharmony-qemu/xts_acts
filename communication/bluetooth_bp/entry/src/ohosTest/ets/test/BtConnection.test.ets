@@ -2435,7 +2435,7 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
-            let result = bluetooth.getProfileConnectionState(undefined);
+            let result = await bluetooth.getProfileConnectionState(undefined);
             console.info("getProfileConnectionState with null result:" + result);
             expect(true).assertEqual(result === 0 || result === 1 || result === 2 || result === 3);
         } catch (err) {
@@ -2848,9 +2848,8 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
-            await bluetooth.getRemoteDeviceBatteryInfo(undefined).then((data) => {
-                console.info('getRemoteDeviceBatteryInfo success, BatteryInfo:' + JSON.stringify(data));
-            });
+            let data = await bluetooth.getRemoteDeviceBatteryInfo(undefined);
+            console.info('getRemoteDeviceBatteryInfo success, BatteryInfo:' + JSON.stringify(data));
             expect().assertFail();
         } catch (err) {
             console.info("getRemoteDeviceBatteryInfo errCode:" + err.code + ",errMessage:" + err.message);
@@ -4337,7 +4336,7 @@ describe('btConnectionTest', () => {
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) =>  {
         let hashValue: string = "c10b57deb2e1aafd255596e0d4fd678";
         try {
-            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue);
             expect().assertFail();
         } catch (err) {
             console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
@@ -4436,7 +4435,7 @@ describe('btConnectionTest', () => {
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let hashValue: string = "";
         try {
-            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue);
             expect().assertFail();
         } catch (err) {
             console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
