@@ -283,8 +283,8 @@ class A21<in T> implements I21<T> {
   f1(p: T): string { return "v = " + p }
 }
 
-export default function TypeParameterVarianceTest() {
-  describe("TypeParameterVarianceTest", () => {
+export default function GenericInterfacesVarianceTest() {
+  describe("GenericInterfacesVarianceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

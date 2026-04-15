@@ -34,7 +34,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-// 全局类定义
 class X1<in T1, out T2, T3> {
     readonly t2_obj: T2
     t3_obj: T3
@@ -179,8 +178,8 @@ class A21<in T> {
   f1(p: T): string { return "v = " + p }
 }
 
-export default function TypeParameterVarianceTest() {
-  describe("TypeParameterVarianceTest", () => {
+export default function GenericClassesVarianceTest() {
+  describe("GenericClassesVarianceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
