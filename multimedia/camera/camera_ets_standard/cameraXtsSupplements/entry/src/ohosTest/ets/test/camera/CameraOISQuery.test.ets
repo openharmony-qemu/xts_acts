@@ -198,7 +198,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    isOISModeSupported cover OFF
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0100';
@@ -226,7 +226,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    isOISModeSupported cover AUTO
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0200';
@@ -254,7 +254,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    isOISModeSupported cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_isOISModeSupported_0300';
@@ -281,7 +281,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getSupportedOISBiasRange cover 返回值为空
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0100';
@@ -311,7 +311,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getSupportedOISBiasRange cover 返回值非空
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0200';
@@ -341,7 +341,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getSupportedOISBiasRange cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasRange_0300';
@@ -368,7 +368,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getSupportedOISBiasStep cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasStep_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasStep_0100';
@@ -395,7 +395,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getSupportedOISBiasStep cover 7400102
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasStep_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getSupportedOISBiasStep_0200';
@@ -421,7 +421,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0100';
@@ -448,7 +448,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover OFF
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0200';
@@ -478,7 +478,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover OFF
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0300';
@@ -508,7 +508,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover AUTO
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0400';
@@ -538,7 +538,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover AUTO
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentOISMode_0500';
@@ -568,7 +568,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentCustomOISBias_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentCustomOISBias_0100';
@@ -595,7 +595,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    getCurrentOISMode cover 7400102
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_getCurrentCustomOISBias_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_getCurrentCustomOISBias_0200';
@@ -621,7 +621,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover OFF
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISMode_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISMode_0100';
@@ -650,7 +650,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover OFF
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISMode_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISMode_0200';
@@ -679,7 +679,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover AUTO
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISMode_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISMode_0300';
@@ -708,7 +708,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover AUTO
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISMode_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISMode_0400';
@@ -737,7 +737,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISMode_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISMode_0500';
@@ -764,7 +764,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover null
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0100';
@@ -791,7 +791,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover undefined
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0200';
@@ -818,7 +818,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover null
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0300';
@@ -845,7 +845,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover undefined
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0400';
@@ -872,7 +872,7 @@ export default function CameraOISQueryTest() {
      * @tc.desc    setOISMode cover 7400103
      * @tc.size    MEDIUM
      * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_setOISModeCustom_0500';
