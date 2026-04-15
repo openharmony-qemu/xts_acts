@@ -7,5 +7,5 @@ export default function testsuite() {
   ImageExifMetadataStaticTest();
   metaDataStaticTest();
   ImageAuxiliaryPictureGetMetadataStaticTest();
-  ImagePackerStaticTest()
+  metaDataStaticTest();
 }
