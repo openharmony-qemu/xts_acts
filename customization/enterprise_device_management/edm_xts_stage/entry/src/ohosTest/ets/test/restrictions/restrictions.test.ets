@@ -8403,6 +8403,32 @@ function testSetDisallowedForAccountPolicy26() {
     }
     done();
   });
+
+  /**
+     * @tc.name   test_set_disallowed_policy_for_account_multiwindow_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_MULTIWINDOW_JS_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount multiwindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+  it("test_set_disallowed_policy_for_account_multiwindow_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number =  await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.MULTI_WINDOW, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.MULTI_WINDOW, localId);
+      expect(ret).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedForAccountPolicy26() {
