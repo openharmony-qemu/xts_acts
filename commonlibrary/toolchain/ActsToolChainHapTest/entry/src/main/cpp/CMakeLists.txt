@@ -38,9 +38,35 @@ add_library(
     src/functional/pthread_gettid_np.cpp
     src/functional/sched_cpualloc.cpp
     src/functional/sched_setscheduler.cpp
-    src/functional/search_insque.cpp
-    src/functional/search_lsearch.cpp
-    src/functional/setjmp.cpp
+     src/functional/search_insque.cpp
+     src/functional/search_lsearch.cpp
+     src/functional/search_tsearch.cpp
+     src/functional/setjmp.cpp
+     src/functional/clocale_mbfuncs.cpp
+     src/functional/dl_multithread_lock.cpp
+     src/functional/dl_multithread_test.cpp
+     src/functional/fdopen.cpp
+     src/functional/fcntl.cpp
+     src/functional/fopencookie_test.cpp
+     src/functional/inet_pton.cpp
+     src/functional/pthread_cond.cpp
+     src/functional/pthread_mutex.cpp
+     src/functional/pthread_mutex_pi.cpp
+     src/functional/pthread_tsd.cpp
+     src/functional/sem_init.cpp
+     src/functional/snprintf.cpp
+     src/functional/sscanf.cpp
+     src/functional/string.cpp
+     src/functional/string_memmem.cpp
+     src/functional/string_memset.cpp
+     src/functional/strtod.cpp
+     src/functional/strtof.cpp
+     src/functional/swprintf.cpp
+     src/functional/time.cpp
+     src/functional/tls_align.cpp
+     src/functional/tls_align_dlopen.cpp
+     src/functional/tls_init_dlopen.cpp
+     src/functional/tls_local_exec.cpp
     src/functional/sscanf_long.cpp
     src/functional/string_memcpy.cpp
     src/functional/string_strcspn.cpp
@@ -381,6 +407,7 @@ add_library(
     src/functionalext/supplement/prng/srand48.cpp
     src/functionalext/supplement/process/fexecve.cpp
     src/functionalext/supplement/process/fexecverely.cpp
+    src/functionalext/supplement/process/fork.cpp
     src/functionalext/supplement/process/posix_spawn.cpp
     src/functionalext/supplement/process/posix_spawnattr_getflags.cpp
     src/functionalext/supplement/process/posix_spawnattr_getpgroup.cpp
@@ -615,3 +642,19 @@ target_link_libraries(
     libace_napi.z.so
     libhilog_ndk.z.so
 )
+
+
+add_library(DlcloseRecursive SHARED lib/dlclose_recursive.cpp)
+set_target_properties(DlcloseRecursive PROPERTIES OUTPUT_NAME "dlclose_recursive")
+
+add_library(DlMultithreadDso SHARED lib/dl_multithread_test_dso.c lib/print.c)
+set_target_properties(DlMultithreadDso PROPERTIES OUTPUT_NAME "dl_multithread_test_dso")
+
+add_library(TlsInitDlopen SHARED lib/tls_init_dso.c)
+set_target_properties(TlsInitDlopen PROPERTIES OUTPUT_NAME "tls_init_dso")
+
+add_library(DlOpenDso SHARED lib/dlopen_dso.c)
+set_target_properties(DlOpenDso PROPERTIES OUTPUT_NAME "dlopen_dso")
+
+add_library(DlOpenInit SHARED lib/dlopen_init.c)
+set_target_properties(DlOpenInit PROPERTIES OUTPUT_NAME "dlopen_init")
