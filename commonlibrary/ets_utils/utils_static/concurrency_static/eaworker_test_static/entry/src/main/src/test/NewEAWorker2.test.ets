@@ -71,9 +71,9 @@ export default function NewEAWorkerTes2() {
         worker.start();
         try {
           expect(worker.isAlive()).assertTrue();
-          worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             doneFlag = true;
-          }).Await();
+          });
           worker.quit();
           await Utils.msSleep(1000);
           console.info(`${TAG} isAlive：${worker.isAlive()}`);
@@ -157,17 +157,18 @@ export default function NewEAWorkerTes2() {
         const worker = new EAWorker();
         worker.start();
         try {
-          const jobs: Array<Job<void>> = [];
+          const jobs: Array<Promise<void>> = [];
           for (let i = 0; i < 5; i++) {
             const job = worker.run<void>((): void => {
               count++;
             });
             jobs.push(job);
           }
-          jobs.forEach(j => j.Await());
+          for (const j of jobs) {
+            await j;
+          }
           expect(count).assertEqual(5);
-          let job2 = worker.join();
-          job2.Await();
+          await worker.join();
           expect(worker.isAlive()).assertFalse();
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
@@ -410,9 +411,9 @@ export default function NewEAWorkerTes2() {
         const eaw3 = new EAWorker();
         eaw3.start();
         try {
-          eaw3.run<void>(() => {
+          await eaw3.run<void>(() => {
             throw new Error('This is an uncaught exception!');
-          }).Await();
+          });
           expect(false).assertFail();
         } catch (error) {
           expect(error.message).assertContain('This is an uncaught exception!');
@@ -629,9 +630,9 @@ export default function NewEAWorkerTes2() {
     it("MainTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let flag: boolean = false;
       try {
-        EAWorker.main().run<void>(() => {
+        await EAWorker.main().run<void>(() => {
           flag = true;
-        }).Await();
+        });
         expect(flag).assertTrue()
       } catch (error) {
         expect(false).assertFail();
@@ -1027,9 +1028,9 @@ export default function NewEAWorkerTes2() {
           });
           worker.start();
           await Utils.msSleep(200);
-          current!.run<void>(() => {
+          await current!.run<void>(() => {
             current!.start()
-          }).Await()
+          })
           expect(false).assertFail();
           current!.join();
         } catch (error) {
@@ -1314,9 +1315,9 @@ export default function NewEAWorkerTes2() {
               worker.setUncaughtExceptionHandler((error: Error) => {
                 errMessage = error.message;
               })
-              worker.run<void>(() => {
+              await worker.run<void>(() => {
                 throw new Error('Worker function exception');
-              }).Await();
+              });
               await Utils.msSleep(1000);
               expect(errMessage).assertContain('Worker function exception')
               worker.join();
@@ -1350,9 +1351,9 @@ export default function NewEAWorkerTes2() {
           EAWorker.main().postTask(() => {
             (async () => {
               worker.start();
-              worker.run<void>(() => {
+              await worker.run<void>(() => {
                 flag = true;
-              }).Await();
+              });
               await Utils.msSleep(1000);
               expect(flag).assertTrue();
               worker.join();
@@ -1728,6 +1729,10 @@ export default function NewEAWorkerTes2() {
         let flag: boolean = false
         const worker = new EAWorker();
         try {
+          let resolver: ((val: Any)=>void) | undefined = undefined;
+          let waiter = new Promise<Any>((resolve)=>{
+            resolver = resolve;
+          })
           await new Promise<number>((resolve) => {
             worker.start();
             resolve(1)
@@ -1737,13 +1742,15 @@ export default function NewEAWorkerTes2() {
               });
               worker.run<void>(() => {
                 flag = true;
-                expect(flag).assertTrue();
-              }).Await();
+                resolver!(undefined);
+              });
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
             })
-          })
+          });
+          await waiter
+          expect(flag).assertTrue();
         } catch (error) {
           expect(false).assertFail()
         } finally {

@@ -111,9 +111,8 @@ class MyAbility extends UIAbility {
       abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs, testsuite: () => void) => {
       const worker = new EAWorker();
       worker.start();
-      const job = worker.run<void>(Hypium.hypiumTest, abilityDelegator, abilityDelegatorArguments, testsuite);
-      job.Await();
-      worker.join();
+      await worker.run<void>(Hypium.hypiumTest, abilityDelegator, abilityDelegatorArguments, testsuite);
+      await worker.join();
       };
       hypiumTestAsync(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(0x0000, 'testTag', '%{public}s', 'onCreate end');
