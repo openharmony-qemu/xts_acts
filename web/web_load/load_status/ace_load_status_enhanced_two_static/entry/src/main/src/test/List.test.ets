@@ -16,9 +16,13 @@
 import webOnHttpErrorReceiveTest from './WebOnHttpErrorReceive.test'
 import WebViewJavaScriptProxyAndOnPageVisible from "./WebViewJavaScriptProxyAndOnPageVisible.test";
 import WebConsoleMessageSource from "./WebConsoleMessageSource.test";
+import WebViewEnumAndSetWebController from "./WebViewEnumAndSetWebController.test";
+import NativeEmbedParamStatusDelete from "./NativeEmbedParamStatusDelete.test";
 
 export default function testsuite() {
     webOnHttpErrorReceiveTest();
     WebViewJavaScriptProxyAndOnPageVisible();
     WebConsoleMessageSource();
+    WebViewEnumAndSetWebController();
+    NativeEmbedParamStatusDelete();
 }

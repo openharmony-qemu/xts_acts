@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, Color,CommonMethod, AlignRuleOption } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, Color,CommonMethod, AlignRuleOption } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -182,14 +182,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   backdropBlur: number = 3
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.backdropBlur(this.backdropBlur)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  backdropBlur: number = 3
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.backdropBlur(this.backdropBlur)
   }
 }
@@ -764,11 +756,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string){
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string){
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: CanvasAttribute, componentKey: string){
   this.key(componentKey)
   return this
@@ -1109,7 +1096,6 @@ struct BackdropBlurPage {
   @State _backdropBlurEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _backdropBlurFlexModifier: FlexModifier = new FlexModifier()
   @State _backdropBlurFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _backdropBlurFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _backdropBlurGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _backdropBlurGridModifier: GridModifier = new GridModifier()
   @State _backdropBlurGridColModifier: GridColModifier = new GridColModifier()
@@ -1817,17 +1803,6 @@ struct BackdropBlurPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-					.commonStyle(this.componentKey)
-          .attributeModifier(this._backdropBlurFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

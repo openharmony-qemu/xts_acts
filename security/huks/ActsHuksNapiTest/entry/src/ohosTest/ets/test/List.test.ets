@@ -12,6 +12,7 @@ import HuksMiscTest from './HuksMiscTest.test';
 import HuksNullptrTest from './HuksNullptrTest.test';
 import HuksSignVerifyDsaTest from './HuksSignVerifyDsaTest.test';
 import HuksSignVerifyEccTest from './HuksSignVerifyEccTest.test';
+import HuksSignVerifyEd25519Test from './HuksSignVerifyEd25519Test.test';
 import HuksSignVerifyRsaTest from './HuksSignVerifyRsaTest.test';
 import HuksSignVerifySm2Test from './HuksSignVerifySm2Test.test';
 import HuksWrappedTest from './HuksWrappedTest.test';
@@ -31,6 +32,7 @@ export default function testsuite() {
   HuksNullptrTest();
   HuksSignVerifyDsaTest();
   HuksSignVerifyEccTest();
+  HuksSignVerifyEd25519Test();
   HuksSignVerifyRsaTest();
   HuksSignVerifySm2Test();
   HuksWrappedTest();

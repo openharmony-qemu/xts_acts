@@ -1502,6 +1502,60 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_PROMISE_STATIC_2100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_PROMISE_STATIC_2100
+         * @tc.desc   Testing call getLaunchAbility() - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_PROMISE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_PROMISE_STATIC_2100]";
+            let wantAgentInfo: WantAgentInfo = {
+                wants : [
+                    {
+                        bundleName : 'com.example.myapplication.static',
+                        abilityName: 'EntryAbility'
+                    }
+                ],
+                actionType: wantAgent.OperationType.START_ABILITIES,
+                requestCode: 0,
+                actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+            };
+            let agent: WantAgent | undefined;
+            await wantAgent.getWantAgent(wantAgentInfo).then((callback) => {
+                agent = callback;
+            });
+
+            session!.setLaunchAbility(agent!, (err) => {
+                if (err) {
+                    console.info(`${TAG}TestLog: Set launchAbility error: code: ${err?.code}, message: ${err?.message}`);
+                    expect(false).assertTrue();
+                } else {
+                    console.info(`${TAG}TestLog: Set launchAbility successfully`);
+                }
+            });
+            await Utils.msSleep(100);
+
+            let wantagent: WantAgent | undefined;
+            try{
+                wantagent = await controller!.getLaunchAbility();
+            }catch(err){
+                console.info(`${TAG}TestLog: getLaunchAbility error: code: ${err?.code}, message: ${err?.message}`);
+                expect(false).assertTrue();
+            }
+            await Utils.msSleep(500);
+
+            let agentBundleName: string = await wantAgent.getBundleName(agent!);
+            console.info(`${TAG}TestLog: agentBundleName: ${agentBundleName}`);
+            let wantagentBundleName: string = await wantAgent.getBundleName(wantagent!);
+            console.info(`${TAG}TestLog: wantagentBundleName: ${wantagentBundleName}`);
+            expect(agentBundleName).assertEqual(wantagentBundleName);
+
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100
          * @tc.desc   Testing destroy session(callback)

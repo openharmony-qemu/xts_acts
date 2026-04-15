@@ -131,5 +131,23 @@ export default function webViewOnSslErrorEvent() {
         await Utils.msSleep(10000);
         done()
       })
+
+    /*
+* @tc.number     : SUB_WEB_WEBHTTPBODYSTREAM_200
+* @tc.name       : emitOnSwitchNextPageStatic
+* @tc.desc       : change page
+* @tc.size       : MediumTest
+* @tc.type       : Function
+* @tc.level      : Level 3
+*/
+    it('emitOnSwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewOnSslErrorEvent', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
   })
 }

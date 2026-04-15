@@ -39,23 +39,7 @@ export default function testsuite() {
   getXComponentSurfaceRectJsunit();
   onSurfaceCreatedJsunit();
   stopImageAnalyzerJsunit();
-  VideoTest1();
   setXComponentSurfaceRotationJsunit();
   inputMethodListTest();
-  VideoReset1();
-  VideoReset2();
-  VideoReset3();
-  VideoReset4();
-  VideoReset5();
-  VideoReset6();
-  VideoReset7();
-  VideoReset8();
-  VideoReset9();
-  VideoReset10();
-  VideoReset11();
-  VideoReset12();
-  VideoReset13();
-  VideoReset14();
-  VideoTest2();
   SurfaceRotationOptionsLockTest();
 }

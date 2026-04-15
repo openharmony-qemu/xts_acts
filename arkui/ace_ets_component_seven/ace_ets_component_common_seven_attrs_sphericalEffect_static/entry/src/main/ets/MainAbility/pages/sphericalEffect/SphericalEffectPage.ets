@@ -66,9 +66,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -350,15 +347,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mSphericalEffect: number = 1
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-    instance.sphericalEffect(this.mSphericalEffect)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mSphericalEffect: number = 1
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
     instance.sphericalEffect(this.mSphericalEffect)
   }
@@ -939,12 +927,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1343,7 +1325,6 @@ struct sphericalEffectPage {
   @State _sphericalEffectFlexMod: FlexModifier = new FlexModifier()
   @State _sphericalEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _sphericalEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _sphericalEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _sphericalEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _sphericalEffectGridMod: GridModifier = new GridModifier()
   @State _sphericalEffectGridColMod: GridColModifier = new GridColModifier()

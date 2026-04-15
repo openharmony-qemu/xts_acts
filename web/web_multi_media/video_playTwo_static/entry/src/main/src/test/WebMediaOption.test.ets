@@ -54,7 +54,7 @@ export default function webMediaOption(){
 
     /**
      * @tc.name   testMediaOptionsStatic001
-     * @tc.number SUB_WEB_MEDIAOPTIONS_0100
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0001
      * @tc.desc   test mediaOptions single instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -65,6 +65,24 @@ export default function webMediaOption(){
       Utils.emitEvent('emitMediaOptions001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testMediaOptions001', true, 415, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done()
+    })
+    /**
+     * @tc.name   testOnAudioStateChangedEventStatic001
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0100
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnAudioStateChangedEventStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitOnAudioStateChangedEvent001', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testOnAudioStateChangedEventStatic001', true, 416, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewMediaOptionTestButton', 10, '');
       await Utils.msSleep(3000);

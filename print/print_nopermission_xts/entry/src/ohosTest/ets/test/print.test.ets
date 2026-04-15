@@ -781,5 +781,59 @@ export default function printTest() {
         done();
       })
     })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0100
+     * @tc.desc   check 201 of updatePrintJobState function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_print_print_fwk_updatePrintJobState_0100', Level.LEVEL2, async (done: Function) => {
+      let jobId : string = "SUB_print_print_fwk_updatePrintJobState_0100";
+      let state = print.PrintJobState.PRINT_JOB_PREPARE;
+      let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            console.log('SUB_print_print_fwk_updatePrintJobState_0100 expect success');
+            expect(err).assertEqual(201);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.number SUB_print_print_fwk_updatePrintJobState_0200
+     * @tc.desc   check 201 of updatePrintJobState function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_print_print_fwk_updatePrintJobState_0200', Level.LEVEL2, async (done: Function) => {
+      let jobId : string = "SUB_print_print_fwk_updatePrintJobState_0200";
+      let state = print.PrintJobState.PRINT_JOB_PREPARE;
+      let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      await print.updatePrintJobState(jobId, state, subState).then((data: void) => {
+        expect(data).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('SUB_print_print_fwk_updatePrintJobState_0200 expect success');
+        expect(err).assertEqual(201);
+        done();
+      })
+    })
   })
 }

@@ -75,7 +75,7 @@ struct webViewControllerPart2 {
               break;
             }
 
-            case 'emitonSwitchNextPage1': {
+            case 'emitSwitchNextPage2': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webViewRegisterNativeEmbedRule' })

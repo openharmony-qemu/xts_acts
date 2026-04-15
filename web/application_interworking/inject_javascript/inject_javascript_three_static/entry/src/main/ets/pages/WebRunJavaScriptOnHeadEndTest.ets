@@ -30,9 +30,14 @@ import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
+}
+
+function checkResult(result: Array<string>): Boolean{
+  return result.includes('push new js on head called');
 }
 
 @Entry
@@ -46,10 +51,10 @@ struct WebRunJavaScriptOnHeadEndTest {
   @State scripts: Array<ScriptItem> = new Array<ScriptItem>(
     { script: this.jsStr, scriptRules: ['*'] }
   );
-  @State message: Array<string> = new Array<string>();
-  @State isComplete: number = -1;
+  @State message: Array<string> = [] as Array<string>;
   private jsHead: string =
     'console.log("push new js on head called")';
+  @State isComplete: number = -1;
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -97,6 +102,20 @@ struct WebRunJavaScriptOnHeadEndTest {
               }, 2000)
             }
 
+            case "emitWebRunJavaScriptOnHeadEnd002": {
+              console.log("emitWebRunJavaScriptOnHeadEnd002 result = ", this.message)
+              Utils.emitEvent(checkResult(this.message), 20250221031)
+              break;
+            }
+
+            case 'SwitchNextPageStatic' : {
+              console.info('key==>test SwitchNextPageStatic')
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebRunJavaScriptOnDocumentStartUndefinedTest' })
+              console.log('push URL success')
+              break;
+            }
 
           }
         })
@@ -105,6 +124,10 @@ struct WebRunJavaScriptOnHeadEndTest {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .runJavaScriptOnHeadEnd(this.scripts)
+        .onControllerAttached(() => {
+          this.scripts.push({ script: this.jsHead, scriptRules: ['*'] });
+          console.log('runJavaScriptOnHeadEnd scripts==>' + JSON.stringify(this.scripts));
+        })
         .onPageEnd((event) => {
           if (event) {
             this.isComplete = 0;

@@ -32,6 +32,7 @@ group("window") {
     "ActsWindowOrientationTestStatic:ActsWindowOrientationStaticTest",
     "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
     "ActsWindowLifeCycleTestStatic:ActsWindowLifeCycleStaticTest",
-    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest"
+    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest",
+    "ActsWindowUiExtensionTestStatic:ActsWindowUiExtensionTestStaticTest"
   ]
 }

@@ -76,7 +76,7 @@ export default class MainAbilityB extends UIAbility {
     }
 
     globalThis.ApplicationContextB = this.context.getApplicationContext();
-    let callBackId:number = globalThis.ApplicationContextB.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+    let callBackId:number = globalThis.ApplicationContextB.on('abilityLifecycle', AbilityLifecycleCallback);
 
     globalThis.mainAbilityBListKey = listKey
     globalThis.mainAbilityBCallBackId = callBackId
@@ -86,7 +86,7 @@ export default class MainAbilityB extends UIAbility {
   onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
     globalThis.ApplicationContextB
-      .unregisterAbilityLifecycleCallback(globalThis.mainAbilityBCallBackId,
+      .off('abilityLifecycle', globalThis.mainAbilityBCallBackId,
         (error: base.BusinessError, data: ESObject) => {
           hilog.info(0x0000, TEST_TAG, 'unregisterAbilityLifecycleCallback err: %{public}s', JSON.stringify(error) ?? '');
         });

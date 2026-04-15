@@ -175,7 +175,6 @@ class MyAuthenticator extends account.Authenticator {
             return;
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>[Authenticator] removeAccount err: ' + JSON.stringify(err));
         }
       }

@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -158,13 +158,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-   instance.useEffect(this.mUseEffect)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mUseEffect: boolean = true
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
@@ -637,12 +630,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1042,7 +1029,6 @@ struct useEffectPage {
   @State _useEffectFlexMod: FlexModifier = new FlexModifier()
   @State _useEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _useEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _useEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _useEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _useEffectGridMod: GridModifier = new GridModifier()
   @State _useEffectGridColMod: GridColModifier = new GridColModifier()
@@ -1134,7 +1120,6 @@ struct useEffectPage {
       this._useEffectFlexMod.mUseEffect = value.useEffect
       this._useEffectFlowItemMod.mUseEffect = value.useEffect
       this._useEffectFormComponentMod.mUseEffect = value.useEffect
-      this._useEffectFormLinkMod.mUseEffect = value.useEffect
       this._useEffectGaugeMod.mUseEffect = value.useEffect
       this._useEffectGridMod.mUseEffect = value.useEffect
       this._useEffectGridColMod.mUseEffect = value.useEffect

@@ -75,7 +75,6 @@ import {
   RowAttribute,
   RowSplitAttribute,
   Color,
-  FormLink,
   Hyperlink,
   Span,
   LoadingProgress,
@@ -118,7 +117,6 @@ import {
   HorizontalAlign,
   ButtonAttribute,
   FlowItemAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   SideBarContainerType,
   ClickEvent,
@@ -312,14 +310,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mZIndex: int = 7
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.zIndex(this.mZIndex)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mZIndex: int = 7
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.zIndex(this.mZIndex)
   }
 }
@@ -818,7 +808,6 @@ struct ZIndexPage {
   @State _zIndexEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _zIndexFlexModifier: FlexModifier = new FlexModifier()
   @State _zIndexFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _zIndexFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _zIndexGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _zIndexGridModifier: GridModifier = new GridModifier()
   @State _zIndexGridColModifier: GridColModifier = new GridColModifier()
@@ -1577,17 +1566,6 @@ struct ZIndexPage {
           .backgroundColor('#FFFF00')
           .applyStyles(this.fancy)
           .attributeModifier(this._zIndexCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { 'message': 'testForRouter' } as Record<string, object>
-        }) {
-          Button("router event").width(120)
-        }
-        .applyStyles(this.fancy)
-        .attributeModifier(this._zIndexFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

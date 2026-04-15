@@ -92,6 +92,7 @@
         "MainAbility/pages/list/groupModifierNullUndefined",
         "MainAbility/pages/refresh/refreshModifierNullUndefined",
         "MainAbility/pages/scroll/scrollModifierNullUndefined",
-        "MainAbility/pages/waterFlow/waterFlowModifierNullUndefined"
+        "MainAbility/pages/waterFlow/waterFlowModifierNullUndefined",
+        "MainAbility/pages/AttributeModifier/IsInstanceOf"
     ]
 }

@@ -40,9 +40,7 @@ export default function actslocationTest() {
         beforeAll(async() => {
           let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
           if(!isWifiActive){
-            console.info("======> wifi_test/enable wifi:" );
-            wifiMg.enableWifi();
-            await Utils.msSleep(5000);
+            console.info("======> wifi_test/enable wifi: false" );
           }
 
           try {
@@ -756,8 +754,8 @@ export default function actslocationTest() {
               } catch (error) {
                 console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
+                done();
               }
-              done();
              }
             })
 

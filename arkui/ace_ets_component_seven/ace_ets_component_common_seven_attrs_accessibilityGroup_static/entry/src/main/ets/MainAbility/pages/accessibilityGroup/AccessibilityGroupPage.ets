@@ -71,7 +71,6 @@ import {
   FlexAttribute,
   FlowItemAttribute,
   FormComponentAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   GridAttribute,
   GridColAttribute,
@@ -345,14 +344,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mAccessibilityGroup: boolean = true
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    instance.accessibilityGroup(this.mAccessibilityGroup)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mAccessibilityGroup: boolean = true
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.accessibilityGroup(this.mAccessibilityGroup)
   }
 }
@@ -820,7 +811,6 @@ struct accessibilityGroupTestDropPage {
   @State _accessibilityGroupFlexMod: FlexModifier = new FlexModifier()
   @State _accessibilityGroupFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _accessibilityGroupFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _accessibilityGroupFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _accessibilityGroupGaugeMod: GaugeModifier = new GaugeModifier()
   @State _accessibilityGroupGridMod: GridModifier = new GridModifier()
   @State _accessibilityGroupGridColMod: GridColModifier = new GridColModifier()
@@ -923,7 +913,6 @@ struct accessibilityGroupTestDropPage {
       this._accessibilityGroupFlexMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupFlowItemMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupFormComponentMod.mAccessibilityGroup = value.accessibilityGroup
-      this._accessibilityGroupFormLinkMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupGaugeMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupGridMod.mAccessibilityGroup = value.accessibilityGroup
       this._accessibilityGroupGridColMod.mAccessibilityGroup = value.accessibilityGroup

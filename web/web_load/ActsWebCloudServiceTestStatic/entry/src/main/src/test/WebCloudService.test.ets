@@ -10,6 +10,7 @@ import webview from '@ohos.web.webview';
 import router from '@ohos.router';
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
+import wifiMg from '@ohos.wifiManager';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;
@@ -42,9 +43,40 @@ export default function webCloudServiceTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        afterAll(() => {
-            emitter.off(10);
-        })
+        beforeEach(async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      console.info('webOnFirstContFour beforeEach start');
+      if(!wifiMg.isWifiActive()){
+        let state:boolean = wifiMg.isWifiActive();
+        console.info("======> wifi_test/enable wifi: enabled " + state);
+        await Utils.msSleep(2000);
+      }
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+        done();
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+    })
 
         /**
          * @tc.name   testOnPageBegin_static

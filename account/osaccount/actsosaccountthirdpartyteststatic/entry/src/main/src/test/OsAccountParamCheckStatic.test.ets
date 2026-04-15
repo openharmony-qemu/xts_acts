@@ -44,7 +44,6 @@ export default function OsAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>osAccountParamCheckStatic_0100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>osAccountParamCheckStatic_0100 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
         }
@@ -72,7 +71,6 @@ export default function OsAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>OsAccountParamCheckStatic_0200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>OsAccountParamCheckStatic_0200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
         }
@@ -108,7 +106,6 @@ export default function OsAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>OsAccountParamCheckStatic_0300 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -191,7 +188,6 @@ export default function OsAccountParamCheckStatic() {
         hilog.info(0x0000, tag, "accountManager is: " + JSON.stringify(accountManager));
         expect(accountManager).not().assertUndefined();
       } catch (err) {
-          err = err as BusinessError;
         hilog.info(0x0000, tag, "catch err: " + err.code);
         expect().assertFail();
       }

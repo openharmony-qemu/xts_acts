@@ -2241,14 +2241,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0100Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2274,14 +2274,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0200Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2306,14 +2306,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0300Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2339,14 +2339,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0400Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0400Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2372,14 +2372,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0500Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0500Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2405,14 +2405,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0600Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0600Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2438,14 +2438,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0700Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0700Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2470,14 +2470,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0800Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0800Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2503,14 +2503,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0900Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0900Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2536,14 +2536,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1000Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2569,14 +2569,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1100Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2602,14 +2602,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
      * @tc.desc   setSpeed_no_start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1200Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2636,14 +2636,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
      * @tc.desc   setSpeed_invalid_number_parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1300Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,

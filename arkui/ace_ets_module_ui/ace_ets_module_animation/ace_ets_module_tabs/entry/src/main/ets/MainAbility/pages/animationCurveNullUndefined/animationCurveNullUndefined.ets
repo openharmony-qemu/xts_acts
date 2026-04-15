@@ -55,6 +55,15 @@ export const testData: TestAttributes[] = [
   },
   {
     curves: curves.interpolatingSpring(null, null, null, null)
+  },
+  {
+    curves: curves.springCurve(-1, -1, -1, -1)
+  },
+  {
+    curves: curves.springCurve(0, 0, 0, 0)
+  },
+  {
+    curves: curves.springCurve(1, 1, 1, 1)
   }
 ]
 

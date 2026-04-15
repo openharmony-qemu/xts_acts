@@ -749,10 +749,10 @@ export default function imagePixelMapErrorCodeTest() {
           console.info('Succeeded in setting pixelMap metadata.');
           expect().assertFail();
           done();
-        }).catch((error: BusinessError) => {
+        }).catch(async (error: BusinessError) => {
           console.error(`Failed to set the metadata.code ${error.code},message is ${error.message}`);
           expect(Number(error) == 501).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           done();
         })
       }

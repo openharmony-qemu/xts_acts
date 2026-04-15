@@ -27,6 +27,7 @@ add_library(huks SHARED
     HuksNullptrTest.cpp
     HuksSignVerifyDsaTest.cpp
     HuksSignVerifyEccTest.cpp
+    HuksSignVerifyEd25519Test.cpp
     HuksSignVerifyRsaTest.cpp
     HuksSignVerifySm2Test.cpp
     HuksWrappedTest.cpp

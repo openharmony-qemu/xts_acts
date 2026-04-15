@@ -39,14 +39,14 @@ export default function es2020Test() {
       expect(test2020_01_ans).assertEqual(1);
     })
     /**
-     * @tc.name   testImport.Meta
+     * @tc.name   testImportMetaAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2020NewFeatures_0002
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testImport.Meta', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testImportMetaAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // do not support import.meta
       expect(1).assertEqual(1);
     })
@@ -142,25 +142,25 @@ export default function es2020Test() {
       expect(BigInt.asUintN(64, 12345n * 67890n)).assertEqual(838102050n);
     })
     /**
-     * @tc.name   testString.prototype.matchAll
+     * @tc.name   testStringprototypematchAllAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2020NewFeatures_0007
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testString.prototype.matchAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testStringprototypematchAllAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2020_07_ans).assertEqual("foo,bar,baz");
     })
     /**
-     * @tc.name   testPromise.allSettled
+     * @tc.name   testPromiseallSettledAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2020NewFeatures_0008
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPromise.allSettled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testPromiseallSettledAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       Promise.allSettled([
         Promise.reject(1),
         Promise.resolve(0),
@@ -189,14 +189,14 @@ export default function es2020Test() {
       expect(test2020_09_ans).assertEqual("Hello world");
     })
     /**
-     * @tc.name   test for...in
+     * @tc.name   testforinAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2020NewFeatures_0010
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test for...in', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testforinAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2020_10_ans).assertDeepEquals(['1', '2', '3', 'x2', 'x1', '3XX'])
     })
   })

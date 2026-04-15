@@ -162,6 +162,24 @@ inline void AssertLeImpl(const T1& v1, const T2& v2, const char* expr1, const ch
 #define ASSERT_LE(v1, v2) /* NOLINT(G.PRE.02-CPP) */ \
     AssertLeImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
+#define ASSERT_TRUE(condition) /* NOLINT(G.PRE.02-CPP) */ \
+    do { \
+        if (!(condition)) { \
+            throw std::runtime_error(std::string("Assertion failed: ") + #condition + \
+                                     ", file: " + std::string(__FILE__) + \
+                                     ", line: " + std::to_string(__LINE__)); \
+        } \
+    } while (0)
+
+#define ASSERT_FALSE(condition) /* NOLINT(G.PRE.02-CPP) */ \
+    do { \
+        if (condition) { \
+            throw std::runtime_error(std::string("Assertion failed: !(" + std::string(#condition) + ")" + \
+                                     ", file: " + std::string(__FILE__) + \
+                                     ", line: " + std::to_string(__LINE__)); \
+        } \
+    } while (0)
+
 // EXPECT 宏与 ASSERT 宏行为相同（都抛出异常）
 #define EXPECT_EQ(v1, v2) ASSERT_EQ(v1, v2) /* NOLINT(G.PRE.02-CPP) */
 #define EXPECT_NE(v1, v2) ASSERT_NE(v1, v2) /* NOLINT(G.PRE.02-CPP) */

@@ -118,23 +118,6 @@ struct injectOfflineResourcesTest {
     return resourceMapArr;
   }
 
-  getErrorData(url?: Array<string>) {
-    const resourceMapArr: web_webview.OfflineResourceMap[] = [] as web_webview.OfflineResourceMap[];
-    for (let config of this.resourceConfigs) {
-      let buf: Uint8Array = new Uint8Array(0);
-      if (config.localPath) {
-        buf = this.readRawFile(config.localPath);
-      }
-      resourceMapArr.push({
-        urlList: url ? url : config.urlList,
-        resource: buf,
-        responseHeaders: config.responseHeaders,
-        type: config.type,
-      } as web_webview.OfflineResourceMap)
-    }
-    return resourceMapArr;
-  }
-
   aboutToAppear() {
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
@@ -186,33 +169,6 @@ struct injectOfflineResourcesTest {
               }
               break;
             }
-
-            case 'testInjectOfflineResources003': {
-              let msg = 'testInjectOfflineResources003'
-              try {
-                this.controller.injectOfflineResources(this.getErrorData(['xxxx']));
-                Utils.emitEvent(17100002, 200010)
-              } catch (err) {
-                err = err as BusinessError;
-                console.error(msg + 'error: ' + err.code + ' message ' + err.message);
-                Utils.emitEvent(err.code, 200010)
-              }
-              break;
-            }
-
-            case 'testInjectOfflineResources004': {
-              let msg = 'testInjectOfflineResources003'
-              try {
-                this.controller.injectOfflineResources(this.getErrorData());
-                Utils.emitEvent(17100001, 200011)
-              } catch (err) {
-                err = err as BusinessError;
-                console.error(msg + 'error: ' + err.code + ' message ' + err.message);
-                Utils.emitEvent(err.code, 200011)
-              }
-              break;
-            }
-
             case 'testOfflineResourceType001': {
               let msg = 'testOfflineResourceType001'
               Utils.emitEvent(Type.of(web_webview.OfflineResourceType.MODULE_JS) + ' ' +
@@ -228,7 +184,7 @@ struct injectOfflineResourcesTest {
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/WebBlanklessErrorCode' })
+              router.pushUrl({ url: 'pages/SetBlanklessLoadingWithParamsTest' })
             }
           }
         })

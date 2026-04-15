@@ -28,6 +28,10 @@ import {
   DownloadDescription,
   DownloadLayoutDirection
 } from '@ohos.arkui.advanced.DownloadFileButton';
+import {
+  FontStyle,
+  FontWeight
+} from '@ohos.arkui.component';
 
 let want: Want;
 const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
@@ -283,6 +287,36 @@ export default function DownloadFileButtonTest(): void {
       console.info('DownloadFileButtonTest: downloadLayoutDirectionVertical begin');
       expect(DownloadLayoutDirection.VERTICAL).assertEqual(1);
       console.info('DownloadFileButtonTest: downloadLayoutDirectionVertical end');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100
+     * @tc.name SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100
+     * @tc.desc Test FontStyle Normal enum value, verify Normal=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DOWNLOADFILEBUTTON_FONTSTYLENORMAL_0100', Level.LEVEL1, (done: () => void) => {
+      console.info('DownloadFileButtonTest: fontStyleNormal begin');
+      expect(FontStyle.Normal).assertEqual(0);
+      console.info('DownloadFileButtonTest: fontStyleNormal end');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200
+     * @tc.name SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200
+     * @tc.desc Test FontWeight Medium enum value, verify Medium=3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DOWNLOADFILEBUTTON_FONTWEIGHTNORMAL_0200', Level.LEVEL1, (done: () => void) => {
+      console.info('DownloadFileButtonTest: fontWeightMedium begin');
+      expect(FontWeight.Medium).assertEqual(3);
+      console.info('DownloadFileButtonTest: fontWeightMedium end');
       done();
     });
   });

@@ -743,7 +743,7 @@ export default function audioManagerApi9() {
         try {
             let audioVolumeManager = audioManager!.getVolumeManager();
             let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-            let data = groupManager.isMicrophoneMute();
+            let data: boolean = await groupManager.isMicrophoneMute();
             if (data == true) {
                 console.log(`Promise: isMicrophoneMute: TRUE: PASS:${data}`);
                 expect(data).assertTrue();

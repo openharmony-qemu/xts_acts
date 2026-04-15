@@ -2792,14 +2792,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0100Adapt001", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
@@ -2832,14 +2832,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0200
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0200", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0200Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
@@ -2871,14 +2871,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0300
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0300", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0300Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
@@ -2911,14 +2911,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0400
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0400Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0400
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0400", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0400Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
@@ -2951,14 +2951,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0500
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0500Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0500
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0500", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0500Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -2991,14 +2991,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0600
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0600Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0600
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0600", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0600Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
@@ -3031,14 +3031,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0700
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0700Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0700
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0700", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0700Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
@@ -3070,14 +3070,14 @@ export default function audioRendererTest() {
         done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0800
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0800Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0800
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0800", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0800Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
@@ -3110,14 +3110,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0900
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0900Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0900
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_0900", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_0900Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
@@ -3150,14 +3150,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1000
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1000Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1000
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1000", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1000Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -3190,14 +3190,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1100", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1100Adapt001", 2, async function (done) {
       try {
         let audioStreamInfo = {
           samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -3230,14 +3230,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1200
      * @tc.desc   setSpeed_no_start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1200", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1200Adapt001", 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -3264,14 +3264,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1300
      * @tc.desc   setSpeed_invalid_number_parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1300", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1300Adapt001", 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -3299,14 +3299,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1400
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1400Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1400
      * @tc.desc   setSpeed_invalid_string_parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1400", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1400Adapt001", 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -3335,14 +3335,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1500
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1500Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1500
      * @tc.desc   setSpeed_invalid_null_parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_1500", 2, async function (done) {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_1500Adapt001", 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,

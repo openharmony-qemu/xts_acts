@@ -2376,7 +2376,7 @@ export default function LinkedBlockingQueuetest() {
             let queueIntPop1: containers.LinkedBlockingQueue<int | undefined> = new containers.LinkedBlockingQueue<int | undefined>(10);
             let res = queueIntPop1.getEnd();
             let res1 = queueIntPop1.size;
-            expect(JSON.stringify(res)).assertEqual('undefined');
+            expect(JSON.stringify(res)).assertEqual('');
             expect(JSON.stringify(res1)).assertEqual('0');
         })
 

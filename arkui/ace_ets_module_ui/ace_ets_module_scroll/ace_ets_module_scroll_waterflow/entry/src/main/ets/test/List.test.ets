@@ -32,6 +32,7 @@ import waterFlowDefaultTest1 from './waterFlowDefault/waterFlowDefault1.test';
 import waterFlowDefaultTest2 from './waterFlowDefault/waterFlowDefault2.test';
 import waterFlowEventNullUndefined from './waterFlowDefault/waterFlowEventNullUndefined.test';
 import sectionsNullUndefined from './waterFlowDefault/sectionsNullUndefined.test';
+import waterFlowEmptyLazy from './WaterFlow/waterFlowEmptyLazy.test';
 
 export default function testsuite() {
   WaterflowDemo()
@@ -53,4 +54,5 @@ export default function testsuite() {
   waterFlowDefaultTest2();
   waterFlowEventNullUndefined();
   sectionsNullUndefined();
+  waterFlowEmptyLazy();
 }

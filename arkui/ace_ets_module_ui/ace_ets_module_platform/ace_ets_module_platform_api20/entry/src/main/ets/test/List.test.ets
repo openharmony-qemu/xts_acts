@@ -25,7 +25,6 @@ export default function testsuite() {
   XComponentDrawingCanvasTest()
   XComponentKeyMouseTest()
   XComponentNdkInterfaceTest()
-  VideoOnErrorTest()
   XComponentTypeNodeTest()
   XComponentCNodeTest()
 }

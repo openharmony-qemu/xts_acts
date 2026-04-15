@@ -53,7 +53,6 @@ export default function ActsDANoPermissionTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getOsAccountDistributedInfo catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -78,7 +77,6 @@ export default function ActsDANoPermissionTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>0200 getOsAccountDistributedInfo err: " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -115,7 +113,6 @@ export default function ActsDANoPermissionTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>setOsAccountDistributedInfo exception: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -142,7 +139,6 @@ export default function ActsDANoPermissionTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setOsAccountDistributedInfo err: " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();

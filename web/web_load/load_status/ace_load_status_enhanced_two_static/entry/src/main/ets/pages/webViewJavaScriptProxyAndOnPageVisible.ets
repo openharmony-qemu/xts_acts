@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, MixedMode, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
@@ -73,9 +73,10 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/WebConsoleMessageSource' })
+              router.pushUrl({ url: 'pages/webViewEnumAndSetWebController' })
               console.log('push URL success')
             }
+
           }
         })
       }
@@ -83,6 +84,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
       Web({ src: 'resource://rawfile/indexThree.html', controller: this.controller })
         .key('WebViewJavaScriptProxyAndOnPageVisibleWebView')
         .defaultFontSize(this.fontSize)
+        .mixedMode(MixedMode.NONE)
         .onShowFileSelector((event: OnShowFileSelectorEvent): Boolean => {
           console.log('onShowFileSelector =====>')
           if (event) {

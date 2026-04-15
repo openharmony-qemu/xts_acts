@@ -51,10 +51,10 @@ export default function ActsInputmethodTwoTest() {
      * @tc.desc   test OH_TextConfig_IsPreviewTextSupported Ok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>SUB_InputMethod_Imf_SDK_OH_TextConfig_IsPreviewTextSupported_7200 start====");

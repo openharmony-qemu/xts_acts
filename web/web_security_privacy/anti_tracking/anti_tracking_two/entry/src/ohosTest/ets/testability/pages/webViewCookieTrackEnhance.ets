@@ -109,7 +109,7 @@ struct webViewCookieTrack {
       this.controller.removeCache(true);
       this.isPageEnd = -1;
       this.controller.loadUrl(this.webUrl)
-      await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+      await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
       let retryTime = 0
       while(this.traceHosts.length == 0 && retryTime < 15) {
           retryTime += 1
@@ -123,8 +123,8 @@ struct webViewCookieTrack {
           Row() {
               Button('webViewCookieTrackTriggerFeiButton').key('webViewCookieTrackTriggerFeiButton')
               .onClick(async () => {
-                await waitForExist(()=>this.isReceive, this.emitKey, 0);
-                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                 console.info('key==>' + this.emitKey);
                 this.isReceive = -1;
                 this.traceHosts = []
@@ -135,7 +135,7 @@ struct webViewCookieTrack {
                         this.controller.enableIntelligentTrackingPrevention(true)
                         this.isPageEnd = -1;
                         this.controller.refresh()
-                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                         Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 160110)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -171,7 +171,7 @@ struct webViewCookieTrack {
                         this.controller.enableIntelligentTrackingPrevention(true)
                         this.isPageEnd = -1;
                         this.controller.refresh()
-                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                        await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                         Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 160130)
                     } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;

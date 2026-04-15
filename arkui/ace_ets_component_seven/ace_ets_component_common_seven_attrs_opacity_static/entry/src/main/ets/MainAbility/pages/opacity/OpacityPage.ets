@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Resource, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -158,13 +158,6 @@ import { SetValue, RouterParams } from '../../common/Utils';
   export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mOpacity: number | Resource = 0.6
     applyNormalAttribute(instance: FormComponentAttribute): void {
-      console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
-      instance.opacity(this.mOpacity)
-    }
-  }
-  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mOpacity: number | Resource = 0.6
-    applyNormalAttribute(instance: FormLinkAttribute): void {
       console.info(`opacity page show ${JSON.stringify(this.mOpacity)}`)
       instance.opacity(this.mOpacity)
     }
@@ -576,7 +569,6 @@ struct opacityPage {
   @State _opacityFlexMod: FlexModifier = new FlexModifier()
   @State _opacityFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _opacityFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _opacityFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _opacityGaugeMod: GaugeModifier = new GaugeModifier()
   @State _opacityGridMod: GridModifier = new GridModifier()
   @State _opacityGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct opacityPage {
       this._opacityFlexMod.mOpacity = value.opacity
       this._opacityFlowItemMod.mOpacity = value.opacity
       this._opacityFormComponentMod.mOpacity = value.opacity
-      this._opacityFormLinkMod.mOpacity = value.opacity
       this._opacityGaugeMod.mOpacity = value.opacity
       this._opacityGridMod.mOpacity = value.opacity
       this._opacityGridColMod.mOpacity = value.opacity

@@ -46,7 +46,7 @@ static void PushBackIntToData(std::vector<int32_t>& data, int32_t value)
 ArkUI_NodeHandle TextAreaOnTextSelectionChangeTest::CreateSubTextAreaNode(ArkUI_NativeNodeAPI_1* nodeApi)
 {
     float width = 200;
-    float height = 200;
+    float height = 30;
     auto textArea = nodeApi->createNode(ARKUI_NODE_TEXT_AREA);
 
     ArkUI_NumberValue widthValue[] = { { .f32 = width } };

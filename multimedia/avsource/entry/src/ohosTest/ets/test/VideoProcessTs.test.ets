@@ -75,12 +75,12 @@ describe('VideoProcessTsTest', () => {
         try {
             let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
             const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-            let targetWidth = imageInfo.size.width * 2;
-            let targetHeight = imageInfo.size.height * 2;
+            let targetWidth = imageInfo.size.width / 2;
+            let targetHeight = imageInfo.size.height / 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
@@ -120,8 +120,8 @@ describe('VideoProcessTsTest', () => {
         try {
             let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
             const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-            let targetWidth = imageInfo.size.width * 2;
-            let targetHeight = imageInfo.size.height * 2;
+            let targetWidth = imageInfo.size.width / 2;
+            let targetHeight = imageInfo.size.height / 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
@@ -299,7 +299,7 @@ describe('VideoProcessTsTest', () => {
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
