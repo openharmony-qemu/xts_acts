@@ -442,6 +442,45 @@ add_library(
     src/functionalext/supplement/signal/sigwaitinfo.cpp
     src/functionalext/supplement/stat/umask.cpp
     src/functionalext/supplement/stdio/fflush.cpp
+    src/functionalext/supplement/stdio/asprintf.cpp
+    src/functionalext/supplement/stdio/dprintf.cpp
+    src/functionalext/supplement/stdio/fgetln.cpp
+    src/functionalext/supplement/stdio/fgetpos.cpp
+    src/functionalext/supplement/stdio/fgets.cpp
+    src/functionalext/supplement/stdio/fgetws.cpp
+    src/functionalext/supplement/stdio/flockfile.cpp
+    src/functionalext/supplement/stdio/fprintf.cpp
+    src/functionalext/supplement/stdio/fputc.cpp
+    src/functionalext/supplement/stdio/fputs.cpp
+    src/functionalext/supplement/stdio/fputwc.cpp
+    src/functionalext/supplement/stdio/fputws.cpp
+    src/functionalext/supplement/stdio/freopen.cpp
+    src/functionalext/supplement/stdio/fseeko.cpp
+    src/functionalext/supplement/stdio/ftell.cpp
+    src/functionalext/supplement/stdio/ftrylockfile.cpp
+    src/functionalext/supplement/stdio/funlockfile.cpp
+    src/functionalext/supplement/stdio/fwide.cpp
+    src/functionalext/supplement/stdio/fwprintf.cpp
+    src/functionalext/supplement/stdio/fwrite.cpp
+    src/functionalext/supplement/stdio/getc.cpp
+    src/functionalext/supplement/stdio/getc_unlocked.cpp
+    src/functionalext/supplement/stdio/getchar.cpp
+    src/functionalext/supplement/stdio/getchar_unlocked.cpp
+    src/functionalext/supplement/stdio/getdelim.cpp
+    src/functionalext/supplement/stdio/getline.cpp
+    src/functionalext/supplement/stdio/putw.cpp
+    src/functionalext/supplement/stdio/remove.cpp
+    src/functionalext/supplement/stdio/rename.cpp
+    src/functionalext/supplement/stdio/setbuf.cpp
+    src/functionalext/supplement/stdio/setbuffer.cpp
+    src/functionalext/supplement/stdio/setlinebuf.cpp
+    src/functionalext/supplement/stdio/setvbuf.cpp
+    src/functionalext/supplement/stdio/ungetwc.cpp
+    src/functionalext/supplement/stdio/vdprintf.cpp
+    src/functionalext/supplement/stdio/vfprintf.cpp
+    src/functionalext/supplement/stdio/vfscanf.cpp
+    src/functionalext/supplement/stdio/vfwprintf.cpp
+    src/functionalext/supplement/stdio/vfwscanf.cpp
     src/functionalext/supplement/stdio/open_wmemstream.cpp
     src/functionalext/supplement/stdio/printf.cpp
     src/functionalext/supplement/stdio/putc_unlocked.cpp
