@@ -135,5 +135,49 @@ export default function rdbValueNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   OH_Values_IsNull_Abormal_0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValueIsNull_0600
+     * @tc.desc   OH_Values_IsNull_Abormal_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Values_IsNull_Abormal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_Values_IsNull_Abormal_0100();
+      console.info(TAG + "OH_Values_IsNull_Abormal_0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OH_Values_IsNull_Abormal_0200
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValueIsNull_0700
+     * @tc.desc   OH_Values_IsNull_Abormal_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Values_IsNull_Abormal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_Values_IsNull_Abormal_0200();
+      console.info(TAG + "OH_Values_IsNull_Abormal_0200 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OH_Values_IsNull_Abormal_0300
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValueIsNull_0800
+     * @tc.desc   OH_Values_IsNull_Abormal_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Values_IsNull_Abormal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_Values_IsNull_Abormal_0300();
+      console.info(TAG + "OH_Values_IsNull_Abormal_0300 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
   })
 }
