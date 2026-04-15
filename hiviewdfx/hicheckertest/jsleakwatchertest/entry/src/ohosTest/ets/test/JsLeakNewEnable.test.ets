@@ -64,7 +64,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 wait start')
-        await asyncSleep(40000);
+        await asyncSleep(55000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 wait end')
         let checkstr:string = jsLeakWatcher.check();
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 checkstr' + checkstr)

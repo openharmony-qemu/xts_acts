@@ -39,6 +39,8 @@ import certFrameworkX509CertGetItemTestUnit from './X509CertGetItem.test';
 import certFrameworkX509CertMatchTestUnit from './X509CertMatch.test';
 import certX509CertCheckNullOrUndefinedTestUnit from './X509CertFunctionParamIsNullOrUndefined.test';
 import certExtensionFuncTestUnit from './CertExtension.test';
+import certFrameworkX500NNameTestUnit from './CertX500DistinguishedNameUtf8.test';
+import certFrameworkMatchPrivateTestUnit from './CertPrivateMatch.test';
 
 
 export default function testsuite() {
@@ -69,4 +71,6 @@ export default function testsuite() {
   certFrameworkX509CertMatchTestUnit();
   certX509CertCheckNullOrUndefinedTestUnit();
   certExtensionFuncTestUnit();
+  certFrameworkX500NNameTestUnit();
+  certFrameworkMatchPrivateTestUnit();
 }

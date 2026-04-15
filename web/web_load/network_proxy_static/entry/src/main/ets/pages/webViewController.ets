@@ -173,6 +173,11 @@ struct webviewController {
       }
 
       Web({ src: 'www.example.com', controller: this.controller })
+        .webFixedFont(undefined)
+        .webFixedFont('fixed')
+        .webSansSerifFont(undefined)
+        .webSansSerifFont('serif')
+        .javaScriptProxy(undefined)
     }
   }
 }

@@ -80,7 +80,7 @@ export default function imagePackToData() {
       console.info("afterAll case");
     });
 
-    let packToDataPromise = (done: () => void, testNum: string, pixFormat: int, arg: image.PackingOption) => {
+    let packToDataPromise = async (done: () => void, testNum: string, pixFormat: int, arg: image.PackingOption) => {
       let opts: image.InitializationOptions
       const Color = new ArrayBuffer(96);
       if (pixFormat == 2) {
@@ -113,9 +113,9 @@ export default function imagePackToData() {
             globalPacker = imagePackerApi;
             try {
               let data: ArrayBuffer | undefined;
-              waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, arg);})
-              waitForCompletion(async () => {await pixelmap!.release();})
-              waitForCompletion(async () => {await imagePackerApi!.release();})
+              data = await imagePackerApi!.packToData(pixelmap, arg);
+              await pixelmap!.release();
+              await imagePackerApi!.release();
               let dataArr = new Uint8Array(data as ArrayBuffer);
               console.info(`${testNum} dataArr.length=` + dataArr.length);
               for (let i = 0; i < dataArr.length; i++) {
@@ -138,7 +138,7 @@ export default function imagePackToData() {
       };
     }
 
-    let packingPromiseFail = (done: () => void, testNum: string, pixFormat: int, packOpts: image.PackingOption) => {
+    let packingPromiseFail = async (done: () => void, testNum: string, pixFormat: int, packOpts: image.PackingOption) => {
       const Color = new ArrayBuffer(96);
       let opts: image.InitializationOptions
       if (pixFormat == 2) {
@@ -169,7 +169,7 @@ export default function imagePackToData() {
             globalPacker = imagePackerApi;
             try {
                 let data: ArrayBuffer | undefined;
-                waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, packOpts);})
+                data = await imagePackerApi!.packToData(pixelmap, packOpts);
                 expect(false).assertTrue();
                 done();
             } catch(error)  {
@@ -278,7 +278,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 99
       };
-      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100", 2, packOpts);
+      await packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0100", 2, packOpts);
     });
 
     /**
@@ -294,7 +294,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 123
       };
-      packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200", 2, packOpts);
+      await packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0200", 2, packOpts);
     });
 
     /**
@@ -310,7 +310,7 @@ export default function imagePackToData() {
         format: "image/txt",
         quality: 99
       };
-      packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500", 2, packOpts);
+      await packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0500", 2, packOpts);
     });
 
     /**
@@ -326,7 +326,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 50
       };
-      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600", 5, packOpts);
+      await packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0600", 5, packOpts);
     });
 
     /**
@@ -342,7 +342,7 @@ export default function imagePackToData() {
         format: "image/jpeg",
         quality: 123
       };
-      packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700", 5, packOpts);
+      await packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_0700", 5, packOpts);
     });
 
     /**
@@ -358,7 +358,7 @@ export default function imagePackToData() {
         format: "image/txt",
         quality: 99
       };
-      packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000", 5, packOpts);
+      await packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_PROMISE_STATIC_1000", 5, packOpts);
     });
 
     /**
@@ -375,7 +375,7 @@ export default function imagePackToData() {
         quality: 99,
         bufferSize: 10485760
       };
-      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100", 2, packOpts);
+      await packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0100", 2, packOpts);
     });
 
     /**
@@ -393,7 +393,7 @@ export default function imagePackToData() {
         bufferSize: 20480
       };
       console.info(`SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_STATIC_0200 buffersize: ${packOpts.bufferSize}`);
-      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200", 2, packOpts);
+      await packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0200", 2, packOpts);
     });
 
     /**
@@ -410,7 +410,7 @@ export default function imagePackToData() {
         quality: 99,
         bufferSize: 20000000
       };
-      packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300", 2, packOpts);
+      await packToDataPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKTODATA_PIXELMAP_ADDBUFFERSIZE_PROMISE_STATIC_0300", 2, packOpts);
     });
 
     /**

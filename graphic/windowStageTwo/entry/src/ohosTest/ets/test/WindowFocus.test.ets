@@ -900,14 +900,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.name   test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.desc    test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_Not_triggered", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_Not_triggered";
       console.log(msgStr + "begin");
       let flag = false;
@@ -940,14 +940,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.name   test_mainWindow_on_noInteractionDetected_0_5Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_0_5
      * @tc.desc    test_mainWindow_on_noInteractionDetected_0_5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_0_5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_0_5Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_0.5";
       console.log(msgStr + "begin");
       let flag = false;
@@ -979,14 +979,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected__1
+     * @tc.name   test_mainWindow_on_noInteractionDetected__1Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected__1
      * @tc.desc    test_mainWindow_on_noInteractionDetected__1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected__1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected__1Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_-1";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -157,7 +157,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>get localId by uid err: "+ JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0400 end====");
@@ -192,7 +191,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUidSync_0100 end====");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>get localId err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -217,7 +215,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>get localId err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUidSync_0200 end====");
@@ -339,7 +336,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           expect(accountType).assertEqual(osAccount.OsAccountType.ADMIN);
           hilog.info(0x0000, tag, "====>ActsOsAccountgetType_0200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>getOsAccountType err: ' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -907,7 +903,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           hilog.info(0x0000, tag, "====>ActsOsAccountGetActivedOsAccountIds_0200 end====");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>ActsOsAccountGetActivedOsAccountIds_0200 err " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -960,7 +955,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "ActsOsAccountQueryDomainTest_0400 err: "+ JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsOsAccountQueryDomainTest_0400 end====");
@@ -986,7 +980,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0100 end====");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled err: "+ JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1011,7 +1004,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountConstraintEnabled_0200 end====");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>isOsAccountConstraintEnabled err: "+ JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1034,7 +1026,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
           hilog.info(0x0000, tag, "====>GetOsAccountName_0100 osAccountName: "+ JSON.stringify(osAccountName));
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetOsAccountName_0100 err: "+ JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1077,5 +1068,203 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.number SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.desc   query all osAccount Ids getOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 start====");
+        try {
+          let dataArray: Array<int> = await accountManager.getOsAccountLocalIds();
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 data: " + dataArray);
+          if (dataArray.length > 0) {
+            expect(dataArray.length).assertEqual(1);
+            expect(dataArray[0]).assertEqual(100);
+          } else {
+            expect(dataArray.length).assertEqual(0);
+          }
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 end====");
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.name     SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.desc     Verify to obtain the local IDs of all os accounts created getOsAccountLocalIds promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0200 start====");
+        let isEnable: boolean = await accountManager.checkMultiOsAccountEnabled();
+        if (isEnable != true) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0200 not support multiple osaccouts====");
+          done();
+          return;
+        }
+        let options: osAccount.CreateOsAccountOptions = {
+          shortName: "Ids",
+          disallowedPreinstalledBundles: [],
+          allowedPreinstalledBundles: []
+        }
+        hilog.info(0x0000, tag, "====>start CreateAccount");
+        let osAccountFir = await CreateAccount("osAccountIds", osAccount.OsAccountType.NORMAL, options);
+        osAccountFir = osAccountFir as osAccount.OsAccountInfo;
+        hilog.info(0x0000, tag, "====>create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+        let localIdFir: int = osAccountFir.localId;
+        try {
+          let dataArray: Array<int> = await accountManager.getOsAccountLocalIds();
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0200 data: " + dataArray);
+          expect(dataArray.length >= 1).assertTrue();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0200 err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        await RemoveAccount(localIdFir);
+        hilog.info(0x0000, tag, "====>remove localId: " + localIdFir);
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0200 end====");
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0300
+     * @tc.number SUB_Account_OsAccount_GetNameById_0300
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0300 start====");
+        try {
+          await accountManager.getOsAccountNameByLocalId(-1);
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0300 run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0300 err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300003);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0400
+     * @tc.number SUB_Account_OsAccount_GetNameById_0400
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0400 start====");
+        try {
+          await accountManager.getOsAccountNameByLocalId(0);
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0400 run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0400 err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300008);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0500
+     * @tc.number SUB_Account_OsAccount_GetNameById_0500
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0500 start====");
+        try {
+          await accountManager.getOsAccountNameByLocalId(110);
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0500 run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0500 err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300003);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0600
+     * @tc.number SUB_Account_OsAccount_GetNameById_0600
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Account_OsAccount_GetNameById_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0600 start====");
+        try {
+          let data: string = await accountManager.getOsAccountNameByLocalId(100);
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0600 data: " + data);
+          expect(data).not().assertUndefined();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0600 err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetNameById_0700
+     * @tc.name     SUB_Account_OsAccount_GetNameById_0700
+     * @tc.desc     Gets the name of target OS account by its local ID.
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL2
+     */
+    it('SUB_Account_OsAccount_GetNameById_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0700 start====");
+        let isEnable: boolean = await accountManager.checkMultiOsAccountEnabled();
+        if (isEnable != true) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0700 not support multiple osaccouts====");
+          done();
+          return;
+        }
+        let options: osAccount.CreateOsAccountOptions = {
+          shortName: "0700sName",
+          disallowedPreinstalledBundles: [],
+          allowedPreinstalledBundles: []
+        }
+        hilog.info(0x0000, tag, "====>start CreateAccount");
+        let osAccountFir = await CreateAccount("accountName", osAccount.OsAccountType.NORMAL, options);
+        osAccountFir = osAccountFir as osAccount.OsAccountInfo;
+        hilog.info(0x0000, tag, "====>create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+        let localIdFir: int = osAccountFir.localId;
+        try {
+          let data: string = await accountManager.getOsAccountNameByLocalId(localIdFir);
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0700 data: " + data);
+          expect(data).assertEqual("accountName");
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0700 err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        await RemoveAccount(localIdFir);
+        hilog.info(0x0000, tag, "====>remove localId: " + localIdFir);
+        hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetNameById_0700 end====");
+        done();
+      });
   });
 }

@@ -260,9 +260,18 @@ struct WebComponent {
         })
         .bindSelectionMenu(this.elementType, this.MenuBuilder, this.webResponseType,
           {
-            onAppear: () => {},
+            onAppear: () => {
+              console.log('test TEXT RIGHT_CLICK onAppear');
+            },
             onDisappear: () => {
+              console.log('test TEXT RIGHT_CLICK closeContextMenu');
               this.result?.closeContextMenu();
+            },
+            onMenuShow: () => {
+              console.log('test TEXT RIGHT_CLICK onMenuShow');
+            },
+            onMenuHide: () => {
+              console.log('test TEXT RIGHT_CLICK onMenuHide');
             },
             preview:() => PreviewBuilderGlobal({
               previewImage: this.previewImage,

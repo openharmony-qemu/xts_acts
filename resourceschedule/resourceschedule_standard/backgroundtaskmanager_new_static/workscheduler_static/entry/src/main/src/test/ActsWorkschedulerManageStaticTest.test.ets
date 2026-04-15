@@ -702,7 +702,7 @@ export default function WorkSchedulerJsTest() {
         try{
             workScheduler.startWork(workInfo)
             hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024---startWork success---');
-            workScheduler.getWorkStatus(1, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
+            workScheduler.getWorkStatus(10, (err: BusinessError|null, res: workScheduler.WorkInfo|undefined) => {
               if (err) {
                 console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_024 getWorkStatus failed. code is ${err.code} message is ${err.message}`);
                 expect(false).assertEqual(true);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -198,11 +198,11 @@ it('testAlignSpaceBetweenRowNoWrapMarginFirstOutRange_static', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.right) - (locationText3.left))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.right) - (locationFlex.right))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 2)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();

@@ -70,7 +70,7 @@ export default function ChipOnClose() {
 it('ChipOnClose_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipOnClose_static_001 START');
-      let ChipActionCol = CommonFunc.getComponentRect('ChipOnCloseCol');
+      let ChipActionCol = await CommonFunc.getComponentRect('ChipOnCloseCol');
       await CommonFunc.sleep(200);
       let right: number = ChipActionCol.right - uiContext.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
       let top: number = ChipActionCol.top + uiContext.vp2px(60) + Number(AppStorage.get<number>("winTop") ?? 0);

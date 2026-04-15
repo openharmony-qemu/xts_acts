@@ -306,7 +306,7 @@ async function doCipher(algName: string, mode: string, padding: string, spec: cr
 }
 
 async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.SymKey,
-  spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: int,
+  spec: cryptoFramework.ParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: int,
   isEncrypt: cryptoFramework.CryptoMode): Promise<cryptoFramework.DataBlob> {
   let dataLen: number = data.data.byteLength;
   let cipherText = new Uint8Array();
@@ -334,7 +334,7 @@ async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFram
 }
 
 function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.SymKey,
-  spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: int,
+  spec: cryptoFramework.ParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: int,
   isEncrypt: cryptoFramework.CryptoMode): cryptoFramework.DataBlob {
   let dataLen: number = data.data.byteLength;
   let cipherText = new Uint8Array();
@@ -377,4 +377,5 @@ export {
   doCipher,
   doUpdatePromise,
   doUpdateSync,
+  createSymKey
 }

@@ -463,7 +463,7 @@ export default function formProviderTest() {
           bundleName: bundleName,
           abilityName: formAbilityName
         }
-        expect(Utils.startAbility(
+        expect(await Utils.startAbility(
           'EntryAbility',
           bundleName,
         )).assertTrue();
@@ -493,7 +493,7 @@ export default function formProviderTest() {
         let want: Want = {
           deviceId: ''
         }
-        expect(Utils.startAbility(
+        expect(await Utils.startAbility(
           'EntryAbility',
           bundleName,
         )).assertTrue();

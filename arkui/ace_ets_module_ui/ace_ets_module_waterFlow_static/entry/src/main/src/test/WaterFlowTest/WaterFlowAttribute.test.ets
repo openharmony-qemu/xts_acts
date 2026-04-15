@@ -64,11 +64,14 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_001
-     * @tc.name waterFlowColTemplateStr2fr
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_str2fr_0100
+     * @tc.name SUB_arkui_waterflow_attribute_water_flow_col_template_str2fr_0100
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with '1fr 1fr'
      */
-    it('waterFlowColTemplateStr2fr', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_attribute_water_flow_col_template_str2fr_0100',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('WaterFlowAttributeTest execute: waterFlowColTemplateStr2fr START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -87,11 +90,14 @@ export default function WaterFlowAttributeTest() {
     });
 
     /**
-     * @tc.number WaterFlowAttributeTest_002
-     * @tc.name waterFlowColTemplateStr3fr
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_str3fr_0200
+     * @tc.name SUB_arkui_waterflow_attribute_water_flow_col_template_str3fr_0200
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with '1fr 1fr 1fr'
      */
-    it('waterFlowColTemplateStr3fr', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_attribute_water_flow_col_template_str3fr_0200',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('WaterFlowAttributeTest execute: waterFlowColTemplateStr3fr START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -110,11 +116,14 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_003
-     * @tc.name waterFlowColTemplateItemFillPolicy
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_0300
+     * @tc.name SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_0300
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with ItemFillPolicy
      */
-    it('waterFlowColTemplateItemFillPolicy', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_0300',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicy START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -129,11 +138,14 @@ export default function WaterFlowAttributeTest() {
     });
 
     /**
-     * @tc.number WaterFlowAttributeTest_004
-     * @tc.name waterFlowColTemplateItemFillPolicyWithPage
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_with_page_0400
+     * @tc.name SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_with_page_0400
      * @tc.desc Test WaterFlow with ItemFillPolicy renders via inspector
      */
-    it('waterFlowColTemplateItemFillPolicyWithPage', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_attribute_water_flow_col_template_item_fill_policy_with_page_0400',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('WaterFlowAttributeTest execute: waterFlowColTemplateItemFillPolicyWithPage START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -154,11 +166,14 @@ export default function WaterFlowAttributeTest() {
     // ============================================================
 
     /**
-     * @tc.number WaterFlowAttributeTest_006
-     * @tc.name waterFlowColTemplateUndefined
+     * @tc.number SUB_arkui_waterflow_attribute_water_flow_col_template_undefined_0500
+     * @tc.name SUB_arkui_waterflow_attribute_water_flow_col_template_undefined_0500
      * @tc.desc Test WaterFlowAttribute.columnsTemplate with undefined
      */
-    it('waterFlowColTemplateUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it(
+      'SUB_arkui_waterflow_attribute_water_flow_col_template_undefined_0500',
+      Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('WaterFlowAttributeTest execute: waterFlowColTemplateUndefined START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);

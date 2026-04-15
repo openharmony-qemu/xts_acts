@@ -30,6 +30,33 @@ import FrameNodeConvertPositionToWindow from './FrameNode/FrameNodeConvertPositi
 import FrameNodeInvalidateAttributes from './FrameNode/FrameNodeInvalidateAttributes.test';
 import FrameNodeIsInRenderState from './FrameNode/FrameNodeIsInRenderState.test';
 import FrameNodeIsOnMainTree from './FrameNode/FrameNodeIsOnMainTree.test';
+import FrameNodeCreateButtonNode from './FrameNode/FrameNodeCreateButtonNode.test';
+import FrameNodeCreateCheckboxGroupNode from './FrameNode/FrameNodeCreateCheckboxGroupNode.test';
+import FrameNodeCreateCheckboxNode from './FrameNode/FrameNodeCreateCheckboxNode.test';
+import FrameNodeCreateColumnNode from './FrameNode/FrameNodeCreateColumnNode.test';
+import FrameNodeCreateFlexNode from './FrameNode/FrameNodeCreateFlexNode.test';
+import FrameNodeCreateGridItemNode from './FrameNode/FrameNodeCreateGridItemNode.test';
+import FrameNodeCreateGridNode from './FrameNode/FrameNodeCreateGridNode.test';
+import FrameNodeCreateImageNode from './FrameNode/FrameNodeCreateImageNode.test';
+import FrameNodeCreateListItemGroupNode from './FrameNode/FrameNodeCreateListItemGroupNode.test';
+import FrameNodeCreateListItemNode from './FrameNode/FrameNodeCreateListItemNode.test';
+import FrameNodeCreateListNode from './FrameNode/FrameNodeCreateListNode.test';
+import FrameNodeCreateLoadingProgressNode from './FrameNode/FrameNodeCreateLoadingProgressNode.test';
+import FrameNodeCreateProgressNode from './FrameNode/FrameNodeCreateProgressNode.test';
+import FrameNodeCreateRadioNode from './FrameNode/FrameNodeCreateRadioNode.test';
+import FrameNodeCreateRelativeContainerNode from './FrameNode/FrameNodeCreateRelativeContainerNode.test';
+import FrameNodeCreateRowNode from './FrameNode/FrameNodeCreateRowNode.test';
+import FrameNodeCreateScrollNode from './FrameNode/FrameNodeCreateScrollNode.test';
+import FrameNodeCreateSliderNode from './FrameNode/FrameNodeCreateSliderNode.test';
+import FrameNodecreateStackNode from './FrameNode/FrameNodecreateStackNode.test';
+import FrameNodeCreateSwiperNode from './FrameNode/FrameNodeCreateSwiperNode.test';
+import FrameNodeCreateTextAreaNode from './FrameNode/FrameNodeCreateTextAreaNode.test';
+import FrameNodeCreateTextInputNode from './FrameNode/FrameNodeCreateTextInputNode.test';
+import FrameNodeCreateTextNode from './FrameNode/FrameNodeCreateTextNode.test';
+import FrameNodeCreateToggleNode from './FrameNode/FrameNodeCreateToggleNode.test';
+import FrameNodeCreateWaterFlowNode from './FrameNode/FrameNodeCreateWaterFlowNode.test';
+import FrameNodeCreateFlowItemNode from './FrameNode/FrameNodeCreateFlowItemNode.test';
+import FrameNodeConstructor from './FrameNode/FrameNodeConstructor.test';
 
 
 export default function testsuite() {
@@ -49,5 +76,31 @@ export default function testsuite() {
     FrameNodeInvalidateAttributes();
     FrameNodeIsInRenderState();
     FrameNodeIsOnMainTree();
-
+    FrameNodeCreateButtonNode();
+    FrameNodeCreateCheckboxGroupNode();
+    FrameNodeCreateCheckboxNode();
+    FrameNodeCreateColumnNode();
+    FrameNodeCreateFlexNode();
+    FrameNodeCreateGridItemNode();
+    FrameNodeCreateGridNode();
+    FrameNodeCreateImageNode();
+    FrameNodeCreateListItemGroupNode();
+    FrameNodeCreateListItemNode();
+    FrameNodeCreateListNode();
+    FrameNodeCreateLoadingProgressNode();
+    FrameNodeCreateProgressNode();
+    FrameNodeCreateRadioNode();
+    FrameNodeCreateRelativeContainerNode();
+    FrameNodeCreateRowNode();
+    FrameNodeCreateScrollNode();
+    FrameNodeCreateSliderNode();
+    FrameNodecreateStackNode();
+    FrameNodeCreateSwiperNode();
+    FrameNodeCreateTextAreaNode();
+    FrameNodeCreateTextInputNode();
+    FrameNodeCreateTextNode();
+    FrameNodeCreateToggleNode();
+    FrameNodeCreateWaterFlowNode();
+    FrameNodeCreateFlowItemNode();
+    FrameNodeConstructor();
 }

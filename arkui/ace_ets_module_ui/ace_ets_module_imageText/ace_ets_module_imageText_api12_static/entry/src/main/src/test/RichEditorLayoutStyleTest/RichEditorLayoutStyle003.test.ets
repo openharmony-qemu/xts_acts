@@ -94,7 +94,7 @@ export default function RichEditorLayoutStyle003() {
       let imageStyleText = await imageStyle.getText();
       await CommonFunc.sleep(500);
       console.info("[RichEditorLayoutStyle003.test.ets] component obj attrs is: " + imageStyleText);
-      expect(imageStyleText).assertEqual("imageStyle:{\"margin\":{\"top\":\"0.00px\",\"left\":\"0.00px\",\"right\":\"0.00px\",\"bottom\":\"0.00px\"}}");
+      expect(imageStyleText).assertEqual("imageStyle:{\"margin\":{\"top\":\"0.00px\",\"right\":\"0.00px\",\"bottom\":\"0.00px\",\"left\":\"0.00px\"}}");
       done();
     });
 

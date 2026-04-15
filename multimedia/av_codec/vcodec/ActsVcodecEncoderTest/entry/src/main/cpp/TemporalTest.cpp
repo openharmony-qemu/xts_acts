@@ -225,6 +225,54 @@ int VideoTemporalEncodeFunction0020Test()
     return 0;
 }
 
+int VideoTemporalEncodeFunction0030Test()
+{
+    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_TEMPORAL_ENCODE_FUNCTION_0030.h265";
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->SURF_INPUT = true;
+        vEncSample->TEMPORAL_ENABLE = false;
+        vEncSample->TEMPORAL_CONFIG = true;
+        int32_t temporalGopSize = TEMPORAL_GOP_SIZE_2;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
+
+int VideoTemporalEncodeFunction0040Test()
+{
+    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->OUT_DIR = "/data/test/media/VIDEO_TEMPORAL_ENCODE_FUNCTION_0040.h265";
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->SURF_INPUT = true;
+        vEncSample->TEMPORAL_ENABLE = true;
+        vEncSample->TEMPORAL_DEFAULT = true;
+        vEncSample->TEMPORAL_JUMP_MODE = true;
+        int32_t temporalGopSize = 0;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
 
 int VideoTemporalEncodeFunction0440Test()
 {
@@ -1100,7 +1148,8 @@ int VideoUniformlyEncodeFunction0600Test()
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
     return 0;
-}
+    }
+    return 0;
 }
 
 int VideoUniformlyEncodeFunction0700Test()

@@ -45,7 +45,6 @@ export async function AcquireAuthorization(): Promise<Uint8Array | undefined> {
         await osAccount.DomainServerConfigManager.addServerConfig(configParams);
         hilog.info(0x0000, tag, "====>run err");
     } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
         if (err.code === 801) {
             hilog.info(0x0000, tag, "====>Current device not support API: addServerConfig");
@@ -91,7 +90,7 @@ export async function CreateAccount(name: string, type: osAccount.OsAccountType,
     }
 }
 
-export async function RemoveAccount(id: int): Promise<BusinessError | null> {
+export async function RemoveAccount(id: int): Promise<BusinessError | undefined> {
     hilog.info(0x0000, tag, "====>in RemoveAccount");
     try {
         let data = await AcquireAuthorization();

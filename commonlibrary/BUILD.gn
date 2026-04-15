@@ -21,6 +21,7 @@ group("commonlibrary") {
       "memory_utils:memory_utils",
       "thirdparty:thirdparty",
       "toolchain:toolchain",
+      "toolchain/ActsToolChainHapTest:ActsToolChainHapTest",
     ]
   }
 }

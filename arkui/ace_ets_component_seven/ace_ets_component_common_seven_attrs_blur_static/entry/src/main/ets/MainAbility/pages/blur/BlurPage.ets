@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, SystemAdaptiveOptions, AlignRuleOption } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -157,13 +157,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
-    instance.blur(this.mBlur)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBlur: number = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
     instance.blur(this.mBlur)
   }
@@ -652,12 +645,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string){
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string){
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string){
   this.height('100%')
   this.key(componentKey)
@@ -1054,7 +1041,6 @@ struct blurPage {
   @State _blurFlexMod: FlexModifier = new FlexModifier()
   @State _blurFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _blurFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _blurFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _blurGaugeMod: GaugeModifier = new GaugeModifier()
   @State _blurGridMod: GridModifier = new GridModifier()
   @State _blurGridColMod: GridColModifier = new GridColModifier()
@@ -1150,7 +1136,6 @@ struct blurPage {
       this._blurFlexMod.mBlur =  value.blur
       this._blurFlowItemMod.mBlur =  value.blur
       this._blurFormComponentMod.mBlur =  value.blur
-      this._blurFormLinkMod.mBlur =  value.blur
       this._blurGaugeMod.mBlur =  value.blur
       this._blurGridMod.mBlur =  value.blur
       this._blurGridColMod.mBlur =  value.blur

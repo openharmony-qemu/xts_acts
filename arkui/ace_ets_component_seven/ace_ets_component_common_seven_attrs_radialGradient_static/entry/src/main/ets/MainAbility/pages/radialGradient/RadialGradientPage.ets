@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -427,19 +424,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.radialGradient(this.mRadialGradient)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRadialGradient: RadialGradientOptions = {
-    center: [50, 50],
-    radius: 60,
-    repeating: true,
-    colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.radialGradient(this.mRadialGradient)
   }
 }
@@ -1283,11 +1267,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1625,7 +1604,6 @@ struct RadialGradientPage {
   @State _radialGradientEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _radialGradientFlexModifier: FlexModifier = new FlexModifier()
   @State _radialGradientFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _radialGradientFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _radialGradientGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _radialGradientGridModifier: GridModifier = new GridModifier()
   @State _radialGradientGridColModifier: GridColModifier = new GridColModifier()
@@ -2335,17 +2313,6 @@ struct RadialGradientPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._radialGradientCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._radialGradientFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

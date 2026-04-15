@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { StartOptions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -138,6 +139,8 @@ export default function windowLayoutTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
+    let displayWidth: number;
+    let displayHeight: number;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -168,6 +171,9 @@ export default function windowLayoutTest() {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
       driver = Driver.create();
+      displayWidth = display.getDefaultDisplaySync().width;
+      displayHeight = display.getDefaultDisplaySync().height;
+      console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
     });
     beforeEach(() => {
     });
@@ -812,8 +818,11 @@ export default function windowLayoutTest() {
       windowStage.createSubWindowWithOptions('testStartMoving_0200', options).then(async (data) => {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-        await windowClass.resize(1000, 1200);
-        await windowClass.moveWindowToAsync(200, 300);
+        await windowClass.resize(Number(displayWidth*0.2),Number(displayHeight*0.2));
+        let availableheight = display.getDefaultDisplaySync().availableHeight
+        let y = displayHeight - availableheight 
+        console.info(`${message} availableheight = ${JSON.stringify(availableheight)},y = ${JSON.stringify(y)}`)
+        await windowClass.moveWindowToAsync(0, y);
         await windowClass.showWindow();
         await sleep(1000)
         let windowPoint = windowClass.getWindowProperties().windowRect
@@ -825,6 +834,7 @@ export default function windowLayoutTest() {
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
         let textDragged = await text.getText()
+        console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
         if (textDragged == 'startMoving success') {
           let windowPointDragged = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
@@ -886,6 +896,7 @@ export default function windowLayoutTest() {
             let text = await driver.findComponent(ON.id('startMovingText'));
             await sleep(1000)
             let textDragged = await text.getText()
+            console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
             if (textDragged == 'startMoving success') {
               let windowPointDragged = windowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
@@ -6140,6 +6151,151 @@ export default function windowLayoutTest() {
       }
     });
 
+    /**
+     * @tc.number     SUB_WMS_START_MOVING_REPEAT_0100
+     * @tc.name       teststartMovingRepeated
+     * @tc.desc       teststartMovingRepeated
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('teststartMovingRepeated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'teststartMovingRepeated';
+      console.log(caseName + 'begin');
+      let windowClass = windowStage.getMainWindowSync()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('teststartMovingRepeated');
+        AppStorage.setOrCreate('windowClass1', subWindowClass);
+        let windowLimits = await subWindowClass.getWindowLimits();
+        console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
+        let width = windowLimits.minWidth;
+        let height = windowLimits.maxHeight;
+        await subWindowClass.resize(width!+100, height!+150);
+        await sleep(200);
+        await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving8");
+        await sleep(200);
+        await subWindowClass.showWindow();
+        await sleep(200);
+        await subWindowClass.moveWindowTo(100, 100);
+        await sleep(200);
+        let windowPoint = await subWindowClass.getWindowProperties().windowRect;
+        console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
+        let driver = await Driver.create();
+        await sleep(1000);
+        let blank = await driver.findComponent(ON.id('startMoving'))
+        await sleep(1000)
+        console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
+        let point = await blank.getBoundsCenter();
+        console.info(`${caseName} point = ${JSON.stringify(point)}`);
+        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await sleep(1000);
+        let text = await driver.findComponent(ON.id('startMovingText'));
+        await sleep(1000)
+        console.info(`${caseName} text = ${JSON.stringify(text)}`);
+        let textDragged = await text.getText();
+        await sleep(5000)
+        console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
+        if (textDragged == 'startMoving success') {
+          expect().assertFail();
+        } else if (textDragged == 'startMoving 801') {
+          console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
+        } else if (textDragged == 'startMoving 1300001') {
+          console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
+        } else {
+          console.error(`${caseName} Error.`);
+          expect(true).assertFalse()
+        }
+        await subWindowClass.destroyWindow();
+        done();
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (err.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_WMS_START_MOVING_WITH_OFFSETX_OFFSETY_REPEAT_0100
+     * @tc.name       teststartMovingwithOffsetXandOffsetYRepeated
+     * @tc.desc       teststartMovingwithOffsetXandOffsetYRepeated
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('teststartMovingwithOffsetXandOffsetYRepeated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'teststartMovingwithOffsetXandOffsetYRepeated';
+      console.log(caseName + 'begin');
+      let windowClass = windowStage.getMainWindowSync()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('teststartMovingwithOffsetXandOffsetYRepeated');
+        AppStorage.setOrCreate('windowClass2', subWindowClass);
+        let windowLimits = await subWindowClass.getWindowLimits();
+        console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
+        let width = windowLimits.minWidth;
+        let height = windowLimits.maxHeight;
+        await subWindowClass.resize(width!+100, height!+150);
+        await sleep(200);
+        await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving9");
+        await sleep(200);
+        await subWindowClass.showWindow();
+        await sleep(200);
+        await subWindowClass.moveWindowTo(100, 100);
+        await sleep(200);
+        let windowPoint = await subWindowClass.getWindowProperties().windowRect;
+        console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
+        let driver = await Driver.create();
+        await sleep(1000);
+        let blank = await driver.findComponent(ON.id('startMoving'))
+        await sleep(1000)
+        console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
+        let point = await blank.getBoundsCenter();
+        console.info(`${caseName} point = ${JSON.stringify(point)}`);
+        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await sleep(1000);
+        let text = await driver.findComponent(ON.id('startMovingText'));
+        await sleep(1000)
+        console.info(`${caseName} text = ${JSON.stringify(text)}`);
+        let textDragged = await text.getText();
+        await sleep(5000)
+        console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
+        if (textDragged == 'startMoving success') {
+          expect().assertFail();
+        } else if (textDragged == 'startMoving 801') {
+           console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
+        } else if (textDragged == 'startMoving 1300001') {
+           console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
+        } else {
+          console.error(`${caseName} Error.`);
+          expect(true).assertFalse()
+        }
+        await subWindowClass.destroyWindow();
+        done();
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
 
 
   })

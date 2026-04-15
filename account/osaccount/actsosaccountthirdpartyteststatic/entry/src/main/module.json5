@@ -32,6 +32,9 @@
       },
       {
         "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
+      },
+      {
+        "name": "ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS"
       }
     ],
     "abilities": [

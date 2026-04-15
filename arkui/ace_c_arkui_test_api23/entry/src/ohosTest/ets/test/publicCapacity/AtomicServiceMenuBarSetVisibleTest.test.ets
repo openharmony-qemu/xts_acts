@@ -38,5 +38,18 @@ export default function AtomicServiceMenuBarSetVisibleTest(){
       done();
     });
 
+    /**
+     * @tc.number      SUB_ArkUI_Ace_TestAccessibilityElementInfoSetComponentIdentifier_0100
+     * @tc.name        SUB_ArkUI_Ace_TestAccessibilityElementInfoSetComponentIdentifier_0100
+     * @tc.desc        testing AccessibilityElementInfoSetComponentIdentifier
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
+     */
+    it('SUB_ArkUI_Ace_TestAccessibilityElementInfoSetComponentIdentifier_0100', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestAccessibilityElementInfoSetComponentIdentifier001()).assertEqual(0)
+      done();
+    });
+
   })
 }

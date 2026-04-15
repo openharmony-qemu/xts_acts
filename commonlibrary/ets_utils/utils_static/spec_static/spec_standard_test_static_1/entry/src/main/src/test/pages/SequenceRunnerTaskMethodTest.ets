@@ -56,7 +56,7 @@ export function processPerson(person: Person): string {
 }
 
 export function oneCaseClause(cha: number): string {
-  switch (cha as int) {
+  switch (cha.toInt()) {
     case 1:
       return 'the number is 1';
     default:
@@ -65,7 +65,7 @@ export function oneCaseClause(cha: number): string {
 }
 
 // export function anySameCaseClause(cha: number): string {
-//   switch (cha as int) {
+//   switch (cha.toInt()) {
 //     case 1:
 //       return 'the number is 1';
 //     case 1:
@@ -76,7 +76,7 @@ export function oneCaseClause(cha: number): string {
 // }
 
 export function anyCaseClause(cha: number): string {
-  switch (cha as int) {
+  switch (cha.toInt()) {
     case 1:
       return 'the number is 1';
     case 2:
@@ -88,7 +88,7 @@ export function anyCaseClause(cha: number): string {
 
 export function breakCaseClause(value: number): string {
   let result = '';
-  switch (value as int) {
+  switch (value.toInt()) {
     case 0:
       result = 'The value is zero.';
       break;
@@ -137,7 +137,7 @@ export function breakCaseClause(value: number): string {
 
 export function breakAnyCaseDefaultClause(value: number): string {
   let result = '';
-  switch (value as int) {
+  switch (value.toInt()) {
     case 0:
       result = 'The value is zero.';
       break;
@@ -155,7 +155,7 @@ export function breakAnyCaseDefaultClause(value: number): string {
 
 export function breakNotCaseDefaultClause(value: number): string {
   let result = '';
-  switch (value as int) {
+  switch (value.toInt()) {
     case 0:
       result = 'The value is zero.';
     case 1:
@@ -170,10 +170,10 @@ export function breakNotCaseDefaultClause(value: number): string {
 
 export function describeDayAndHour(day: number, hour: number): string {
   let message: string;
-  switch (day as int) {
+  switch (day.toInt()) {
     case 0:
       message = 'Today is Sunday.';
-      switch (hour as int) {
+      switch (hour.toInt()) {
         case 8:
           message += ' It\'s 8 AM. Time for breakfast.';
           break;
@@ -189,7 +189,7 @@ export function describeDayAndHour(day: number, hour: number): string {
       break;
     case 1:
       message = 'Today is Monday.';
-      switch (hour as int) {
+      switch (hour.toInt()) {
         case 9:
           message += ' It\'s 9 AM. Time to start work.';
           break;
@@ -202,7 +202,7 @@ export function describeDayAndHour(day: number, hour: number): string {
       break;
     case 2:
       message = 'Today is Tuesday.';
-      switch (hour as int) {
+      switch (hour.toInt()) {
         case 10:
           message += ' It\'s 10 AM. Time for a meeting.';
           break;
@@ -221,10 +221,10 @@ export function describeDayAndHour(day: number, hour: number): string {
 
 export function handleUserAction(category: number, action: number): string {
   let result: string;
-  switch (category as int) {
+  switch (category.toInt()) {
     case 1:
       result = 'Category 1 selected.';
-      switch (action as int) {
+      switch (action.toInt()) {
         case 1:
           result += ' Action 1 in Category 1.';
           break;
@@ -237,7 +237,7 @@ export function handleUserAction(category: number, action: number): string {
       break;
     case 2:
       result = 'Category 2 selected.';
-      switch (action as int) {
+      switch (action.toInt()) {
         case 1:
           result += ' Action 1 in Category 2.';
           break;
@@ -256,10 +256,10 @@ export function handleUserAction(category: number, action: number): string {
 
 export function nestedSwitchExample(value1: number, value2: number): string {
   let result: string;
-  switch (value1 as int) {
+  switch (value1.toInt()) {
     case 1:
       result = 'Value1 is 1.';
-      switch (value2 as int) {
+      switch (value2.toInt()) {
         case 1:
           result += ' Value2 is 1.';
           break;
@@ -272,7 +272,7 @@ export function nestedSwitchExample(value1: number, value2: number): string {
       break;
     case 2:
       result = 'Value1 is 2.';
-      switch (value2 as int) {
+      switch (value2.toInt()) {
         case 1:
           result += ' Value2 is 1.';
           break;

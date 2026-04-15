@@ -85,7 +85,6 @@ import {
   Tabs,
   WaterFlow,
   CalendarPicker,
-  FormLink,
   Hyperlink,
   Progress,
   BarState,
@@ -127,7 +126,6 @@ import {
   EllipseAttribute,
   FlexAttribute,
   FlowItemAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   GridAttribute,
   GridColAttribute,
@@ -193,7 +191,6 @@ import {
   ColumnOptions,
   ImageFit,
   NavPathStack,
-  FormLinkOptions,
   EffectComponentAttribute,
   FormComponentAttribute,
   ImageSpanAttribute,
@@ -338,14 +335,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    instance.width(this.mWidth)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mWidth: number | string = 10
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.width(this.mWidth)
   }
 }
@@ -901,13 +890,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.width(50)
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.width(50)
   this.height('100%')
@@ -1386,8 +1368,6 @@ struct WidthPage {
   @State _widthFlowItemMod: FlowItemModifier = new FlowItemModifier()
   //FormComponent Component is not found on build
   @State _widthFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  //FormLink Component is not found on build
-  @State _widthFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _widthGaugeMod: GaugeModifier = new GaugeModifier()
   @State _widthGridMod: GridModifier = new GridModifier()
   @State _widthGridColMod: GridColModifier = new GridColModifier()

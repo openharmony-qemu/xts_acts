@@ -68,7 +68,7 @@ export default function webJsunitTwo() {
       Utils.registerEvent("testOnFullScreenEnter001", true, 442, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(3000);
       done();
     })
 
@@ -147,5 +147,22 @@ export default function webJsunitTwo() {
       await Utils.msSleep(5000);
       done();
     })
+
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number UB_WEB_ONFULLSCREENENTER_0442
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

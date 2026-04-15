@@ -36,7 +36,7 @@ import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -87,8 +87,7 @@ struct webSchemeHandlerRequest {
                   web_webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.webSchemeHander);
                   this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }

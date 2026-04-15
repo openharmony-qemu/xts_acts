@@ -1580,6 +1580,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 begin---');
 
+      await Utils.msSleep(1500);
+
       let callbackFlag = 0;
 
       try {
@@ -1887,6 +1889,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 begin---');
 
+      await Utils.msSleep(1500);
+
       try {
         wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
           let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -2171,6 +2175,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 begin---');
+
+      await Utils.msSleep(1500);
 
       try {
         wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
@@ -2532,6 +2538,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6000 begin---');
+
+        await Utils.msSleep(1500);
 
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
@@ -2940,6 +2948,18 @@ export default function ActsLongTimeTaskManagerStaticTest() {
               backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 startBackgroundRunning promise run success.');
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
+
+                expect(res.continuousTaskId).assertLarger(-1);
+                expect(res.slotType).assertEqual(4);
+                expect(res.contentType).assertEqual(4);
+                expect(res.notificationId).assertLarger(-1);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 stopBackgroundRunning promise run success.');
+                }).catch((error: Error) => {
+                  console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                  done();
+                });
+                done();
               }).catch((error: Error) => {
                 console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
                 expect(error.code === 9800005).assertTrue();

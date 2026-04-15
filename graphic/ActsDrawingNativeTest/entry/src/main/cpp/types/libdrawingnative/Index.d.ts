@@ -85,6 +85,9 @@ export const DrawingPathPart3Query: (caseName: number) => number;
 // Path Part4 InverseFillType related functions
 export const DrawingPathPart4InverseFillType: (caseName: number) => number;
 
+// Path Part4 GetData related functions
+export const DrawingPathPart4GetData: (caseName: number) => number;
+
 // Path Part3 Transform related functions
 export const DrawingPathPart3Transform: (caseName: number) => number;
 
@@ -371,7 +374,7 @@ export const DrawingFontSetThemeFontFollowed: (caseName: number) => number;
 export const DrawingFontIsThemeFontFollowed: (caseName: number) => number;
 
 // Font GetMetrics Part2 related functions
-export const DrawingFontGetMetricsPart2: (caseName: number) => number;
+export const DrawingFontGetMetrics: (caseName: number) => number;
 
 // Font MeasureTextWithBrushOrPen related functions
 export const DrawingFontMeasureTextWithBrushOrPen: (caseName: number) => number;
