@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file expect in compliance with the License.
+ * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -44,12 +44,12 @@ async function executeUsbRequest(
       await usbMgr.requestRight(device.name);
     }
 
-    const devicePipe = usbMgr.connectDevice(device);
+    devicePipe = usbMgr.connectDevice(device);
     if (!devicePipe) {
       throw new Error("Failed to connect device");
     }
 
-    const interfaces = device.configs?.[0]?.interfaces?[0];
+    const interfaces = device.configs?.[0]?.interfaces?.[0];
     const claimResult = usbMgr.claimInterface(devicePipe, interfaces, true);
     if (claimResult !== 0) {
       throw new Error(`Failed to claim interface: ${claimResult}`);
@@ -65,13 +65,13 @@ async function executeUsbRequest(
   } catch (err) {
     console.error(TAG, `executeUsbRequest failed: ${JSON.stringify(err)}`);
     expect().assertFail();
-    throw new Error(`err: ${err.code}`);
+    throw new Error(`err: ${err.code || 'Unknown'}`);
   } finally {
     if (devicePipe) {
       try {
         usbMgr.closePipe(devicePipe);
       } catch (closeErr) {
-        console.error(TAG, `failed to close pipe in finally block: ${(closeErr)}`);
+        console.warn(TAG, `failed to close pipe in finally block: ${closeErr}`);
       }
     }
   }
