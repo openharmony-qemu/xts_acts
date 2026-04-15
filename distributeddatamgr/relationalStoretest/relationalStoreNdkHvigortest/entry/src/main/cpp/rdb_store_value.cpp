@@ -510,14 +510,14 @@ static napi_value OH_Values_PutFloatVector_0100(napi_env env, napi_callback_info
 static napi_value OH_Values_IsNull_Abormal_0100(napi_env env, napi_callback_info info)
 {
     OH_Data_Values *values = OH_Values_Create();
-    NAPI_ASSERT(env, values != nullptr, "OH_Values_PutFloatVector_0100 is fail.");
+    NAPI_ASSERT(env, values != nullptr, "OH_Values_Create is fail.");
     double realVal = 1.1;
-    ret = OH_Values_PutReal(values, realVal);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Value_Put_0100 is fail.");
+    int ret = OH_Values_PutReal(values, realVal);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Values_PutReal is fail.");
     int index = 2;
     bool val;
-    int ret = OH_Values_IsNull(values, index, &val);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0100 is fail.");
+    ret = OH_Values_IsNull(values, index, &val);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull is fail.");
     int returncode = 0;
     napi_value result;
     napi_create_int32(env, returncode, &result);
@@ -530,13 +530,12 @@ napi_value OH_Values_IsNull_Abormal_0200(napi_env env, napi_callback_info info)
     OH_Data_Values *values = OH_Values_Create();
     NAPI_ASSERT(env, values != nullptr, "OH_Values_IsNull_Abormal_0200 is fail.");
     double realVal = 1.1;
-    ret = OH_Values_PutReal(values, realVal);
+    int ret = OH_Values_PutReal(values, realVal);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Values_IsNull_Abormal_0200 is fail.");
-    napi_value result;
     int index = -1;
     bool val;
-    int ret = OH_Values_IsNull(values, index, &val);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_PutFloatVector_0100 is fail.");
+    ret = OH_Values_IsNull(values, index, &val);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0200 is fail.");
     int returncode = 0;
     napi_value result;
     napi_create_int32(env, returncode, &result);
