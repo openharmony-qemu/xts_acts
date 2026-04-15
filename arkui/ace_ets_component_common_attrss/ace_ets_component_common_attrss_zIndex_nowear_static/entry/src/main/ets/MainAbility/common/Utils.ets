@@ -265,7 +265,7 @@ export default class Utils {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as Int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

@@ -207,5 +207,104 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0800
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0800
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let messageLen: number = 128;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdCallback(algName, message);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0900
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0900
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let messageLen: number = 128;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromise(algName, message);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_1000
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_1000
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdWithNoUpdatePromise(algName);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_1100
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_1100
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let messageLen: number = 128;
+        let blockSize: number = 20;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataResSpilt: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromiseSplit(algName, message, blockSize);
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromise(algName, message);
+          let ret: boolean = commonUtils.compareDataBlob(dataRes.dataRes, dataResSpilt.dataRes);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(ret).assertTrue();
+          expect(dataResSpilt.mdObj.getMdLength()).assertEqual(mdSize);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
   });
 }

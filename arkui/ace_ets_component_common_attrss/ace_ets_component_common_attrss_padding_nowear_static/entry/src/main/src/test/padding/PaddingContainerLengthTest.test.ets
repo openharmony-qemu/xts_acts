@@ -177,7 +177,7 @@ export default function paddingTestContainer2() {
       let targetRectAfter = Utils.getComponentRect(data.pageConfig.componentKey);
 
       //Confirm that the size attribute values have been successfully set.
-      let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj = await Utils.getComponentByKey(data.pageConfig.componentKey);
       expect(viewObj.getElement('$attrs').getString('padding')).assertEqual(data.testValue.expectValue.padding);
 
       //Verification method for special reference components.

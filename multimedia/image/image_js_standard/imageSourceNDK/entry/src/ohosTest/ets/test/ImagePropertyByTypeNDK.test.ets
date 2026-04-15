@@ -8,6 +8,10 @@ interface ModifyRule {
   expectValueDNG: number | string | Array<number> | Array<number | null> | null;
 }
 
+interface ReadOnlyMetaDataRule {
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
+
 interface ModifyRule2 {
   modifyValue: number | Array<number> | ArrayBuffer;
   expectValueJPG: number | Array<number> | Array<number | null> | null | ArrayBuffer;
@@ -27,6 +31,11 @@ interface PropertyTypeConfig2 {
   rules: Map<image.PropertyKey, ModifyRule2>;
 }
 
+interface WebPPropertyTypeConfig {
+  keys: Array<image.WebPPropertyKey>;
+  rules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>;
+}
+
 interface ImagePropertyConfigType {
   short: PropertyTypeConfig;
   shortReadOnly: PropertyTypeConfig;
@@ -36,6 +45,7 @@ interface ImagePropertyConfigType {
   doubleArray: PropertyTypeConfig;
   arrayBuffer: PropertyTypeConfig;
   string: PropertyTypeConfig;
+  webpMetadatas: WebPPropertyTypeConfig;
   arrayBufferOnly: PropertyTypeConfig;
   shortModify: PropertyTypeConfig2;
   longModify: PropertyTypeConfig2;
@@ -396,6 +406,22 @@ const ImagePropertyConfig: ImagePropertyConfigType = {
       [image.PropertyKey.LENS_MAKE,                  { expectValueJPG: "xxwx",                    expectValuePNG: "xxwx",                    expectValueHEIC: "xxwx",                    expectValueWEBP: "aaa",                      expectValueDNG: "Leica Camera AG"                  }],
       [image.PropertyKey.LENS_MODEL,                 { expectValueJPG: "txaw",                    expectValuePNG: "txaw",                    expectValueHEIC: "txaw",                    expectValueWEBP: "xxx",                      expectValueDNG: "Summilux-M 1:1.4/35 ASPH."        }],
       [image.PropertyKey.LENS_SERIAL_NUMBER,         { expectValueJPG: "qxhc",                    expectValuePNG: "qxhc",                    expectValueHEIC: "qxhc",                    expectValueWEBP: "111",                      expectValueDNG: "-------"                          }],
+    ])
+  },
+  webpMetadatas: {
+    keys: [
+      image.WebPPropertyKey.CANVAS_WIDTH,
+      image.WebPPropertyKey.CANVAS_HEIGHT,
+      image.WebPPropertyKey.DELAY_TIME,
+      image.WebPPropertyKey.UNCLAMPED_DELAY_TIME,
+      image.WebPPropertyKey.LOOP_COUNT,
+    ],
+    rules: new Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>([
+      [image.WebPPropertyKey.CANVAS_WIDTH,          { newExpectValue: 64  }],
+      [image.WebPPropertyKey.CANVAS_HEIGHT,         { newExpectValue: 63  }],
+      [image.WebPPropertyKey.DELAY_TIME,            { newExpectValue: 100 }],
+      [image.WebPPropertyKey.UNCLAMPED_DELAY_TIME,  { newExpectValue: 100 }],
+      [image.WebPPropertyKey.LOOP_COUNT,            { newExpectValue: 9   }],
     ])
   },
   shortModify: {

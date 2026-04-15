@@ -91,7 +91,7 @@ it('PinchRecognizer1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number;
       console.log('PinchRecognizer1_static_0100 windowOffsetX and windowOffsetY', windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchRecognizer');
+      let areaObj1 = await CommonFunc.getComponentRectOnScreen('PinchRecognizer');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PinchRecognizer1_static_0100 areaObj1 start', areaObj1.left, areaObj1.top, areaObj1.right,

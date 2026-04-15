@@ -58,60 +58,56 @@ export default function abilitystaticTest() {
         }
         let flag: string = "1";
         let startOptions: StartOptions = {};
-        let beginCurrentPid: number = 0;
-        let afterCurrentPid: number = 1;
+        let beginCurrentPid: number = 0.0;
+        let afterCurrentPid: number = 1.0;
         try {
           let abilityInfos: Array<abilityManager.AbilityRunningInfo> = await abilityManager.getAbilityRunningInfos();
           hilog.info(0x0000, 'testTag',
             `${TEST_CASE_NAME} getAbilityRunningInfos success, abilityInfos: ${JSON.stringify(abilityInfos)}`);
           for (let i = 0; i < abilityInfos.length; i++) {
             if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-              beginCurrentPid = abilityInfos[i].pid;
+              beginCurrentPid = abilityInfos[i].pid.toDouble();
               hilog.info(0x0000, 'testTag',
                 `${TEST_CASE_NAME} getAbilityRunningInfos success, data: ${JSON.stringify(abilityInfos[i])}`);
             }
             break;
           }
-          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
-            .then(() => {
-              waitForCompletion(async () => {
-                await Utils.msSleep(2000);
-                hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get<Any>('startFlag'));
-                hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
-                let abilityInfos: Array<abilityManager.AbilityRunningInfo> =
-                  await abilityManager.getAbilityRunningInfos();
-                for (let i = 0; i < abilityInfos.length; i++) {
-                  if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-                    afterCurrentPid = abilityInfos[i].pid;
-                  }
-                  break;
+          await testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+            .then(async () => {
+              await Utils.msSleep(2000);
+              hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get<Any>('startFlag'));
+              hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
+              let abilityInfos: Array<abilityManager.AbilityRunningInfo> =
+                await abilityManager.getAbilityRunningInfos();
+              for (let i = 0; i < abilityInfos.length; i++) {
+                if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
+                  afterCurrentPid = abilityInfos[i].pid.toDouble();
                 }
-                expect(beginCurrentPid).assertEqual(afterCurrentPid);
-                hilog.info(0x0000, 'testTag',
-                  `${TEST_CASE_NAME} getAbilityRunningInfos success, pid: ${beginCurrentPid}`);
-                hilog.info(0x0000, 'testTag',
-                  `${TEST_CASE_NAME} getAbilityRunningInfos success, currentPid: ${afterCurrentPid}`);
-                hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
-                done();
-                await Utils.msSleep(2000);
-              })
+                break;
+              }
+              expect(beginCurrentPid).assertEqual(afterCurrentPid);
+              hilog.info(0x0000, 'testTag',
+                `${TEST_CASE_NAME} getAbilityRunningInfos success, pid: ${beginCurrentPid}`);
+              hilog.info(0x0000, 'testTag',
+                `${TEST_CASE_NAME} getAbilityRunningInfos success, currentPid: ${afterCurrentPid}`);
+              hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
+              done();
+              await Utils.msSleep(2000);
             })
-            .catch((e: Error) => {
-              waitForCompletion(async () => {
-                let err = e as BusinessError;
-                let msg =
-                  `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
-                hilog.error(0x0000, 'testTag', msg);
-                if (err.code === 801) {
-                  expect(801).assertEqual(err.code);
-                  await Utils.msSleep(500);
-                  done();
-                } else {
-                  expect().assertFail();
-                  await Utils.msSleep(500);
-                  done();
-                }
-              })
+            .catch(async (e: Error) => {
+              let err = e as BusinessError;
+              let msg =
+                `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+              hilog.error(0x0000, 'testTag', msg);
+              if (err.code === 801) {
+                expect(801).assertEqual(err.code);
+                await Utils.msSleep(500);
+                done();
+              } else {
+                expect().assertFail();
+                await Utils.msSleep(500);
+                done();
+              }
             });
         } catch (err) {
           err = err as BusinessError;
@@ -350,38 +346,36 @@ export default function abilitystaticTest() {
         let startOptions: StartOptions = {};
         try {
           await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
-            .then(() => {
-              waitForCompletion(async () => {
-                hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}0StartSelfUIAbilityInCurrentProcess succeed`);
-                await Utils.msSleep(500);
-                await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
-                  .then(() => {
-                    hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}1StartSelfUIAbilityInCurrentProcess succeed`);
-                    expect().assertFail();
+            .then(async () => {
+              hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}0StartSelfUIAbilityInCurrentProcess succeed`);
+              await Utils.msSleep(500);
+              await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+                .then(() => {
+                  hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}1StartSelfUIAbilityInCurrentProcess succeed`);
+                  expect().assertFail();
+                  done();
+                })
+                .catch((e: Error) => {
+                  let err = e as BusinessError;
+                  let msg =
+                    `${TEST_CASE_NAME} 1startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+                  hilog.error(0x0000, 'testTag', msg);
+                  if (err.code === 801) {
+                    expect(801).assertEqual(err.code);
                     done();
-                  })
-                  .catch((e: Error) => {
-                    let err = e as BusinessError;
-                    let msg =
-                      `${TEST_CASE_NAME} 1startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
-                    hilog.error(0x0000, 'testTag', msg);
-                    if (err.code === 801) {
-                      expect(801).assertEqual(err.code);
-                      done();
-                    } else {
-                      expect(err.code).assertEqual(16000131)
-                      done();
-                    }
-                 })
-                  .catch((e: Error) => {
-                    let err = e as BusinessError;
-                    let msg =
-                      `${TEST_CASE_NAME} 1startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
-                    hilog.error(0x0000, 'testTag', msg);
-                    expect().assertFail();
+                  } else {
+                    expect(err.code).assertEqual(16000131)
                     done();
-                  })
-              })
+                  }
+               })
+                .catch((e: Error) => {
+                  let err = e as BusinessError;
+                  let msg =
+                    `${TEST_CASE_NAME} 1startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+                  hilog.error(0x0000, 'testTag', msg);
+                  expect().assertFail();
+                  done();
+                })
             })
         } catch (err) {
           err = err as BusinessError;
@@ -418,13 +412,13 @@ export default function abilitystaticTest() {
           abilityName: 'ThirdAbility'
         }
         let flag: string = "15";
-        let beginCurrentPid: number = 0;
-        let afterCurrentPid: number = 1;
+        let beginCurrentPid: number = 0.0;
+        let afterCurrentPid: number = 1.0;
         try {
           let abilityInfos: Array<abilityManager.AbilityRunningInfo> = await abilityManager.getAbilityRunningInfos();
           for (let i = 0; i < abilityInfos.length; i++) {
             if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-              beginCurrentPid = abilityInfos[i].pid;
+              beginCurrentPid = abilityInfos[i].pid.toDouble();
               hilog.info(0x0000, 'testTag',
                 `${TEST_CASE_NAME} getAbilityRunningInfos success, data: ${JSON.stringify(abilityInfos[i])}`);
             }
@@ -439,7 +433,7 @@ export default function abilitystaticTest() {
                 await abilityManager.getAbilityRunningInfos();
               for (let i = 0; i < abilityInfos.length; i++) {
                 if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-                  afterCurrentPid = abilityInfos[i].pid;
+                  afterCurrentPid = abilityInfos[i].pid.toDouble();
                 }
                 break;
               }

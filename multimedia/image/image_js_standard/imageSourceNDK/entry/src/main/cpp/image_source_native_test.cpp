@@ -214,6 +214,22 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_static, nullptr
         },
         {
+            "TestCreateImageRawDataSucc", nullptr, ImageSourceTest::TestCreateImageRawDataSucc,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetBufferFromRawDataSucc", nullptr, ImageSourceTest::TestGetBufferFromRawDataSucc,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestDestroyImageRawDataSucc", nullptr, ImageSourceTest::TestDestroyImageRawDataSucc,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestDestroyImageRawDataInvalidParam", nullptr, ImageSourceTest::TestDestroyImageRawDataInvalidParam,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
             "TestCreateImageRawDataNullptr", nullptr, ImageSourceTest::TestCreateImageRawDataNullptr,
             nullptr, nullptr, nullptr, napi_static, nullptr
         },
@@ -1457,6 +1473,160 @@ napi_value ImageSourceTest::TestCreateImageRawData(napi_env env, napi_callback_i
 
     result = BuildRawDataJsObject(env, data, length, bitsPerPixel);
     OH_LOG_INFO(LOG_APP, "TestCreateImageRawData: JS object built and returned");
+    return result;
+}
+
+napi_value ImageSourceTest::TestCreateImageRawDataSucc(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestCreateImageRawDataSucc IN!");
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        OH_LOG_ERROR(LOG_APP, "TestCreateImageRawDataSucc: Failed to get callback info or insufficient arguments");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode ret = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (ret != IMAGE_SUCCESS || imageSource == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageSource from fd: %{public}d", fd);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageRawData *rawData = nullptr;
+    ret = OH_ImageSourceNative_CreateImageRawData(imageSource, &rawData);
+    if (ret != IMAGE_SUCCESS || rawData == nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageRawData from imageSource, ret: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageSourceNative_DestroyImageRawData(rawData);
+    OH_ImageSourceNative_Release(imageSource);
+    napi_create_int32(env, IMAGE_SUCCESS, &result);
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetBufferFromRawDataSucc(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestGetBufferFromRawDataSucc IN!");
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        OH_LOG_ERROR(LOG_APP, "TestGetBufferFromRawDataSucc: Failed to get callback info or insufficient arguments");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode ret = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (ret != IMAGE_SUCCESS || imageSource == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageSource from fd: %{public}d", fd);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageRawData *rawData = nullptr;
+    ret = OH_ImageSourceNative_CreateImageRawData(imageSource, &rawData);
+    if (ret != IMAGE_SUCCESS || rawData == nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageRawData from imageSource, ret: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    uint8_t* temp = nullptr;
+    size_t length = 0;
+    ret = OH_ImageSourceNative_GetBufferFromRawData(rawData, &temp, &length);
+    if (ret != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_GetBufferFromRawData failed, error code: %{public}d", ret);
+        OH_ImageSourceNative_DestroyImageRawData(rawData);
+        OH_ImageSourceNative_Release(imageSource);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageSourceNative_DestroyImageRawData(rawData);
+    OH_ImageSourceNative_Release(imageSource);
+    napi_create_int32(env, IMAGE_SUCCESS, &result);
+    return result;
+}
+
+napi_value ImageSourceTest::TestDestroyImageRawDataSucc(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestDestroyImageRawDataSucc IN!");
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        OH_LOG_ERROR(LOG_APP, "TestDestroyImageRawDataSucc: Failed to get callback info or insufficient arguments");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode ret = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (ret != IMAGE_SUCCESS || imageSource == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageSource from fd: %{public}d", fd);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageRawData *rawData = nullptr;
+    ret = OH_ImageSourceNative_CreateImageRawData(imageSource, &rawData);
+    if (ret != IMAGE_SUCCESS || rawData == nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+        OH_LOG_ERROR(LOG_APP, "Failed to create imageRawData from imageSource, ret: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    ret = OH_ImageSourceNative_DestroyImageRawData(rawData);
+    if (ret != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "Failed to destroy imageRawData, ret: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    OH_ImageSourceNative_Release(imageSource);
+    napi_create_int32(env, IMAGE_SUCCESS, &result);
+    return result;
+}
+
+napi_value ImageSourceTest::TestDestroyImageRawDataInvalidParam(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "TestDestroyImageRawDataInvalidParam IN!");
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+    OH_ImageRawData *rawData = nullptr;
+    Image_ErrorCode ret = OH_ImageSourceNative_DestroyImageRawData(rawData);
+    if (ret != IMAGE_SOURCE_INVALID_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "Expected IMAGE_SOURCE_INVALID_PARAMETER, but got: %{public}d", ret);
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "Successfully triggered IMAGE_SOURCE_INVALID_PARAMETER");
+    napi_create_int32(env, IMAGE_SOURCE_INVALID_PARAMETER, &result);
     return result;
 }
 

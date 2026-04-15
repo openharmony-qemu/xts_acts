@@ -53,7 +53,7 @@ class TestFormAbility extends UIAbility {
     hilog.info(DOMAIN, TAG, 'onWindowStageCreate');
     this.xtsWindowStage = windowStage;
     try {
-      this.xtsWindowStage?.loadContent(this.wantUri || 'testform/pages/XtsFormLink',
+      this.xtsWindowStage?.loadContent(this.wantUri,
         (err: BusinessError<void> | null): void => {
         if (err?.code) {
           hilog.info(DOMAIN, TAG, 'loadContent error');

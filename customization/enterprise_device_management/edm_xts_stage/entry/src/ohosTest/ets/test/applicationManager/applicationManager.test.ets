@@ -22,6 +22,7 @@ import {
   APP_IDS_201,
   APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_APP_INDEX,
+  INVALID_APP_INDEX,
   DEFAULT_USER_ID,
   INVALID_USER_ID,
   AUTOSTARTAPP1,
@@ -37,6 +38,7 @@ import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
+import { connection, statistics } from '@kit.NetworkKit';
 
 const APP_IDS_1: Array<string> = [
   "test_appid_1",
@@ -9699,6 +9701,546 @@ export default function applicationManagerTest() {
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0100
+     * @tc.desc   test queryTrafficStats method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200001).assertTrue();
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0200
+     * @tc.desc   test queryTrafficStats method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0200", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableAdmin(SELFWANT);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0300
+     * @tc.desc   test queryTrafficStats method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        applicationManager.queryTrafficStats(null, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0400
+     * @tc.desc   test queryTrafficStats method with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        applicationManager.queryTrafficStats(undefined, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0500
+     * @tc.desc   test queryTrafficStats method with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, null, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0600
+     * @tc.desc   test queryTrafficStats method with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, undefined, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0700
+     * @tc.desc   test queryTrafficStats method with null appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, null, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0800
+     * @tc.desc   test queryTrafficStats method with undefined appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, undefined, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0900
+     * @tc.desc   test queryTrafficStats method with null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, null, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1000
+     * @tc.desc   test queryTrafficStats method with undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1000", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, undefined, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1100
+     * @tc.desc   test queryTrafficStats method with null networkInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1200
+     * @tc.desc   test queryTrafficStats method with undefined networkInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1300
+     * @tc.desc   test queryTrafficStats method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1300", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then((result)=>{
+        expect(result !== undefined).assertTrue();
+        expect(result.rxBytes === 0).assertTrue();
+        expect(result.txBytes === 0).assertTrue();
+        expect(result.rxPackets === 0).assertTrue();
+        expect(result.txPackets === 0).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(false).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1400
+     * @tc.desc   test queryTrafficStats method with error accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1400", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, INVALID_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1500
+     * @tc.desc   test queryTrafficStats method with lower limit accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1500", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let userIdZero: number = 0;
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, userIdZero, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1600
+     * @tc.desc   test queryTrafficStats method with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1600", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, "", DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1700
+     * @tc.desc   test queryTrafficStats method with invalid startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1700", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: -1,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1800
+     * @tc.desc   test queryTrafficStats method with invalid endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1800", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: -1,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1900
+     * @tc.desc   test queryTrafficStats method with startTime is greater than endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1900", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 201,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_2000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_2000
+     * @tc.desc   test queryTrafficStats method with invalid network type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_2000", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_BLUETOOTH,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_2100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_2100
+     * @tc.desc   test queryTrafficStats method with invalid appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_2100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, INVALID_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
       done();
     })
   })

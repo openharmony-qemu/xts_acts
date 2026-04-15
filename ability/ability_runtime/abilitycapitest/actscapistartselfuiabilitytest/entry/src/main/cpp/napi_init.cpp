@@ -1015,6 +1015,18 @@ static napi_value NdkStartAbilityWithOptions_2600(napi_env env, napi_callback_in
     return result;
 }
 
+static napi_value NdkStartAbilityWithOptions_4400(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300 begins");
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode errCode;
+    errCode = OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundColor(options, "");
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_4300 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 static napi_value NdkStartAbilityWithOptions_2700(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_2700 begins");
@@ -1356,6 +1368,44 @@ static napi_value NdkWantEx_0600(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkWantEx_2200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2200 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_SetWantUri(want, "");
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkWantEx_2300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2300 begins");
+    AbilityBase_Element element;
+    char uriBuffer[32] = {0};
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCode1 = OH_AbilityBase_SetWantUri(want, "");
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_GetWantUri(want, uriBuffer, sizeof(uriBuffer));
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2300 errCode=%{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2300 uri=%{public}s", uriBuffer);
+    if (errCode == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
+        napi_value result;
+        napi_create_string_utf8(env, uriBuffer, strlen(uriBuffer), &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 static napi_value NdkWantEx_0700(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_0700 begins");
@@ -1422,6 +1472,44 @@ static napi_value NdkWantEx_1100(napi_env env, napi_callback_info info)
     AbilityBase_ErrorCode errCodeSet = OH_AbilityBase_SetWantInt32Param(want, "keyInt", 32);
     AbilityBase_ErrorCode errCode = OH_AbilityBase_GetWantInt32Param(want, "keyInt", nullptr);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_1100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkWantEx_2400(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2400 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_SetWantInt32Param(want, "", 32);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2400 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkWantEx_2500(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2500 begins");
+    AbilityBase_Element element;
+    int32_t outElement = 0;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCodeSet = OH_AbilityBase_SetWantInt32Param(want, "", 32);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_GetWantInt32Param(want, "", &outElement);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2500 errCode=%{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2500 outElement=%{public}d", outElement);
+    if (errCode == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
+        napi_value result;
+        napi_create_int32(env, outElement, &result);
+        return result;
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -1501,6 +1589,44 @@ static napi_value NdkWantEx_1600(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkWantEx_2600(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2600 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_SetWantBoolParam(want, "", false);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2600 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkWantEx_2700(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2700 begins");
+    AbilityBase_Element element;
+    bool outElement = false;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityBase_ErrorCode errCodeSet = OH_AbilityBase_SetWantBoolParam(want, "", false);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_GetWantBoolParam(want, "", &outElement);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2700 errCode=%{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2700 outElement=%{public}d", outElement);
+    if (errCode == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
+        napi_value result;
+        napi_get_boolean(env, outElement, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 static napi_value NdkWantEx_1700(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_1700 begins");
@@ -1575,6 +1701,46 @@ static napi_value NdkWantEx_2100(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkWantEx_2800(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2800 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    double param = 1.0;
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_SetWantDoubleParam(want, "", param);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2800 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkWantEx_2900(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2900 begins");
+    AbilityBase_Element element;
+    double outElement = 0;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    double param = 1.0;
+    AbilityBase_ErrorCode errCodeSet = OH_AbilityBase_SetWantDoubleParam(want, "", param);
+    AbilityBase_ErrorCode errCode = OH_AbilityBase_GetWantDoubleParam(want, "", &outElement);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2900 errCode=%{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NdkWantEx_2900 outElement=%{public}f", outElement);
+    if (errCode == ABILITY_BASE_ERROR_CODE_NO_ERROR) {
+        napi_value result;
+        napi_create_double(env, outElement, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 static napi_value NdkSetIsolationUid_0100(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0100 begins");
@@ -1618,6 +1784,25 @@ static napi_value StartNativeChildProcess_0100(napi_env env, napi_callback_info 
     Ability_NativeChildProcess_ErrCode ret = OH_Ability_StartNativeChildProcess(
         "libentry.so:Main", args, options, &pid);
     OH_LOG_INFO(LOG_APP, "===================Ability_NativeChildProcess_ErrCode: %{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value StartNativeChildProcess_0800(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800 begins");
+    int32_t pid = -1;
+    NativeChildProcess_Args args;
+    args.entryParams = NULL;
+    args.fdList.head = NULL;
+    
+    NativeChildProcess_Options options = {
+        .isolationMode = NCP_ISOLATION_MODE_ISOLATED
+    };
+    Ability_NativeChildProcess_ErrCode ret = OH_Ability_StartNativeChildProcess(
+        "", args, options, &pid);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800 errCode=%{public}d", ret);
     napi_value result;
     napi_create_int32(env, ret, &result);
     return result;
@@ -1998,6 +2183,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkStartAbilityWithOptions_4000", nullptr, NdkStartAbilityWithOptions_4000, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartAbilityWithOptions_4100", nullptr, NdkStartAbilityWithOptions_4100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartAbilityWithOptions_4200", nullptr, NdkStartAbilityWithOptions_4200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkStartAbilityWithOptions_4400", nullptr, NdkStartAbilityWithOptions_4400, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkWantEx_0100", nullptr, NdkWantEx_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkWantEx_0200", nullptr, NdkWantEx_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkWantEx_0300", nullptr, NdkWantEx_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -2019,8 +2205,17 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkWantEx_1900", nullptr, NdkWantEx_1900, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkWantEx_2000", nullptr, NdkWantEx_2000, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkWantEx_2100", nullptr, NdkWantEx_2100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2200", nullptr, NdkWantEx_2200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2300", nullptr, NdkWantEx_2300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2400", nullptr, NdkWantEx_2400, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2500", nullptr, NdkWantEx_2500, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2600", nullptr, NdkWantEx_2600, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2700", nullptr, NdkWantEx_2700, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2800", nullptr, NdkWantEx_2800, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkWantEx_2900", nullptr, NdkWantEx_2900, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "startNativeChildProcess_0100", nullptr, StartNativeChildProcess_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "startNativeChildProcess_0700", nullptr, StartNativeChildProcess_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "startNativeChildProcess_0800", nullptr, StartNativeChildProcess_0800, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartVisibility_0100", nullptr, NdkStartVisibility_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartVisibility_0200", nullptr, NdkStartVisibility_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartSelfUIAbilityWithPidResult_0100", nullptr, NdkStartSelfUIAbilityWithPidResult_0100, nullptr, nullptr, nullptr, napi_default, nullptr },

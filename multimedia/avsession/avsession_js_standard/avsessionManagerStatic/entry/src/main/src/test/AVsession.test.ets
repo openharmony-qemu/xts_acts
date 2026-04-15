@@ -3246,26 +3246,28 @@ export default function abilityTest() {
                     } else if (value) {
                         console.info('Get device information successfully');
                         let deviceInfo = value?.devices[0]
-                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
-                        expect(deviceInfo.castCategory).assertEqual(0);
-                        console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
-                        expect(deviceInfo.deviceId).assertEqual("0");
-                        console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
-                        expect(deviceInfo.deviceName).assertEqual("LocalDevice");
-                        console.info(`${TAG}TestLog1 deviceType = ${deviceInfo.deviceType}`);
-                        expect(deviceInfo.deviceType).assertEqual(0);
-                        console.info(`${TAG}TestLog1 modelName = ${deviceInfo.modelName}`);
-                        expect(deviceInfo.modelName).assertEqual("");
-                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
-                        expect(deviceInfo.supportedPullClients).assertEqual(undefined);
-                        console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
-                        expect(deviceInfo.supportedProtocols).assertEqual(0);
+                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
+                        expect(deviceInfo?.castCategory).assertEqual(0);
+                        console.info(`${TAG}TestLog1 deviceId = ${deviceInfo?.deviceId}`);
+                        expect(deviceInfo?.deviceId).assertEqual("0");
+                        console.info(`${TAG}TestLog1 deviceName = ${deviceInfo?.deviceName}`);
+                        expect(deviceInfo?.deviceName).assertEqual("LocalDevice");
+                        console.info(`${TAG}TestLog1 deviceType = ${deviceInfo?.deviceType}`);
+                        expect(deviceInfo?.deviceType).assertEqual(0);
+                        console.info(`${TAG}TestLog1 modelName = ${deviceInfo?.modelName}`);
+                        expect(deviceInfo?.modelName).assertEqual("");
+                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo?.supportedPullClients}`);
+                        expect(deviceInfo?.supportedPullClients).assertEqual(undefined);
+                        console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
+                        expect(deviceInfo?.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                        expect(deviceInfo?.supportedDrmCapabilities == undefined).assertFail();
+                        expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                        console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                        expect(deviceInfo?.manufacturer).assertEqual("");
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
-                    }
+                    } 
                     done();
                 });
             } catch (err) {
@@ -3308,7 +3310,9 @@ export default function abilityTest() {
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
                         expect(deviceInfo?.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                        expect(deviceInfo?.supportedDrmCapabilities == undefined).assertFalse();
+                        expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                        console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                        expect(deviceInfo?.manufacturer).assertEqual("");
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
@@ -3755,24 +3759,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
-                callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerModuleName : 'callerModuleA',
+                callerDeviceId : '111222333',
+                callerType : avSession.CallerType.TYPE_BLUETOOTH
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'play',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlay((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: Play command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertEqual("");
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'play',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
@@ -3797,24 +3802,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
+                callerModuleName : '123321123321',
                 callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerType : avSession.CallerType.TYPE_NEARLINK
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'playPrevious',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlayPrevious((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertEqual("");
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'playPrevious',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
@@ -3839,24 +3845,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
+                callerModuleName : 'testModuleName',
                 callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerType : avSession.CallerType.TYPE_CAST
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'playNext',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlayNext((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertEqual("");
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'playNext',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);

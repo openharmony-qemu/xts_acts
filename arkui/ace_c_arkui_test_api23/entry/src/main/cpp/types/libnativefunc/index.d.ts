@@ -126,10 +126,13 @@ export const TextDirection_005: () => number;
 export const TextDirection_006: () => number;
 
 export const TestAtomicServiceMenuBarSetVisible01: () => number;
+export const TestAccessibilityElementInfoSetComponentIdentifier001: () => number;
 
 export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
+
+export const TestMoveToParam001: () => number;
 
 export const testPullUpToCancelRefresh01: () => number;
 export const testPullUpToCancelRefresh02: () => number;

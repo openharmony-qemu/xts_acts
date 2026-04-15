@@ -141,12 +141,14 @@ import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelect
 import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
 import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
+import TextInputOnNeedSoftkeyboardTest from './TextInputApi24Test/TextInputOnNeedSoftkeyboard.test';
 
 import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
 import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
 import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
 import TextAreaMethodsNullTest from './TextAreaTest/TextAreaMethodsNull.test';
 import TextAreaControllerMethodsNullTest from './TextAreaTest/TextAreaControllerMethodsNull.test';
+import TextAreaHorizontalScrollingTest from './TextAreaApi24Test/TextAreaHorizontalScrolling.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -210,6 +212,7 @@ export default function testsuite() {
   TextAreaSpecialAttrsTest()
   TextAreaTypeTest();
   TextAreaStyleTest();
+  TextAreaHorizontalScrollingTest()  // Api24
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
@@ -284,4 +287,5 @@ export default function testsuite() {
   TextInputSelectAllNullUndefinedTest();
   TextInputSelectionMenuHiddenNullUndefinedTest();
   TextInputContentTypeParamTest();
+  TextInputOnNeedSoftkeyboardTest();  // Api24
 }
