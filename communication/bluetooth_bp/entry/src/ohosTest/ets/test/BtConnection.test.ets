@@ -320,7 +320,7 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js] getPairedDevices ret2:' + JSON.stringify(ret));
             expect(Array.isArray(ret)).assertTrue();
             if (ret.length > 0) {
-                console.info('[NearLink_Test] getPairedDevices info: '+ ret[0]);
+                console.info('[bluetooth_js] getPairedDevices info: '+ ret[0]);
                 expect(ret[0] != null).assertTrue();
                 expect(typeof ret[0] === 'string').assertTrue();
             } else {
