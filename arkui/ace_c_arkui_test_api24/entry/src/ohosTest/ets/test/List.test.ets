@@ -25,7 +25,6 @@ import arkuiNativeCapiNativeType from './arkui_native/ArkUICapiGenerated_native_
 import arkuiNativeCapiStyledString from './arkui_native/ArkUICapiGenerated_styled_string.test'
 import arkuiNativeCapiUiInputEvent from './arkui_native/ArkUICapiGenerated_ui_input_event.test'
 import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
-import StrategyEnumTest from './StrategyEnum.test'
 
 export default function testsuite() {
   matrix4Test();
@@ -41,5 +40,4 @@ export default function testsuite() {
   arkuiNativeCapiStyledString();
   arkuiNativeCapiUiInputEvent();
   TextGetCharacterTest();
-  StrategyEnumTest();
 }

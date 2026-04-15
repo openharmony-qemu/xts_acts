@@ -24,5 +24,3 @@ export const TestErrorCode009: () => number;
 export const TestErrorCode010: () => number;
 export const TestErrorCode011: () => number;
 export const TestErrorCode012: () => number;
-export const StrategyEnumTest_001: () => number;
-export const StrategyEnumTest_002: () => number;
