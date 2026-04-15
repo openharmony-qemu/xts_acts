@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
-#include "../manager/plugin_manager.h"
+#include "manager/plugin_manager.h"
 #include <arkui/native_render.h>
 #include <arkui/native_node_napi.h>
 #include <arkui/native_node.h>
