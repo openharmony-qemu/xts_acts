@@ -1665,6 +1665,7 @@ export async function generateNameForAsset(
   cameraId: camera.CameraDevice,
   videoOrPhotoProfile: camera.Profile,
   previewProfile: camera.Profile,
+  zoomRatio?: number,
   frameRate?: number
 ) {
   // hdr信息
@@ -1689,8 +1690,10 @@ export async function generateNameForAsset(
   if (frameRate) {
     frameRateInfo = `${frameRate.toString().split(".")[0]}fps_`
   }
-
-  return `${hdrInfo}_${cameraInfo}_${timeInfo}_${frameRateInfo}${videoOrPhotoInfo}_${previewInfo}`
+  let AssetName = `${hdrInfo}_${cameraInfo}_${timeInfo}_${frameRateInfo}${videoOrPhotoInfo}_${previewInfo}_${zoomRatio}x`
+  AssetName = AssetName.replace(/\./g, '');
+  
+  return AssetName;
 }
 
 /**
@@ -1707,13 +1710,17 @@ function getDateStringWithTimeStamp(timestamp: number): string {
   return `${year}${month}${day}_${hour}${min}${sec}`;
 }
 
-
-
-
-
-
-
-
-
-
-
+/**
+ * @desc 重命名资产
+ * @param { photoAccessHelper.PhotoAsset } asset 媒体库资产对象
+ * @param { string } 新名称
+ */
+export function renameAsset(asset: photoAccessHelper.PhotoAsset, newTitle: string) {
+  let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset!);
+  assetChangeRequest.setTitle(newTitle)
+  photoHelper.applyChanges(assetChangeRequest).then(() => {
+    console.info('apply setTitle successfully');
+  }).catch((err: BusinessError) => {
+    console.error(`apply setTitle failed with error: ${err.code}, ${err.message}`);
+  });;
+}
