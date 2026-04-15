@@ -90,7 +90,7 @@ export async function CreateAccount(name: string, type: osAccount.OsAccountType,
     }
 }
 
-export async function RemoveAccount(id: int): Promise<BusinessError | null> {
+export async function RemoveAccount(id: int): Promise<BusinessError | undefined> {
     hilog.info(0x0000, tag, "====>in RemoveAccount");
     try {
         let data = await AcquireAuthorization();

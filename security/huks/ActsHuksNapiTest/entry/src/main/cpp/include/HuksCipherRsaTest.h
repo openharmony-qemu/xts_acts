@@ -18,6 +18,9 @@
 
 namespace Acts {
 namespace Huks {
+
+int SecurityHuksNapiCipherRsa0100();
+
 } // namespace Huks
 } // namespace Acts
 

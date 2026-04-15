@@ -267,6 +267,501 @@ export default function avRecorderTest() {
     }
     eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
 
+    let registerPrepareCallback1 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avMetadata: media.AVMetadata = {
+          album: '',
+          albumArtist: '',
+          artist: '',
+          author: '',
+          dateTime: '',
+          dateTimeFormat: '',
+          composer: '',
+          duration: '',
+          genre: '',
+          hasAudio: '',
+          hasVideo: '',
+          mimeType: '',
+          trackCount: '',
+          sampleRate: '',
+          title: '',
+          description: '',
+          videoHeight: '',
+          videoWidth: '',
+          videoOrientation: '',
+          hdrType: media.HdrType.AV_HDR_TYPE_NONE,
+          tracks: []
+        };
+        let avConfig: media.AVRecorderConfig = {
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_H263,
+            videoCodec: media.CodecMimeType.VIDEO_H263,
+            aacProfile: media.AacProfile.AAC_LC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
+            isHdr: true,
+            enableTemporalScale: true,
+            enableBFrame: true
+          },
+          url: 'fd://',
+          fileGenerationMode: media.FileGenerationMode.APP_CREATE,
+          metadata: avMetadata
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback2 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avMetadata: media.AVMetadata = {
+          hdrType: media.HdrType.AV_HDR_TYPE_VIVID,
+          tracks: [{ 'testTag': '000' }]
+        };
+        let avConfig: media.AVRecorderConfig = {
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_AVC,
+            videoCodec: media.CodecMimeType.VIDEO_MPEG2,
+            aacProfile: media.AacProfile.AAC_HE,
+            fileFormat: media.ContainerFormatType.CFT_MP3,
+            isHdr: false,
+            enableTemporalScale: false,
+            enableBFrame: false
+          },
+          url: 'fd://',
+          metadata: avMetadata
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback3 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_MPEG2,
+            videoCodec: media.CodecMimeType.VIDEO_MPEG4,
+            aacProfile: media.AacProfile.AAC_HE_V2,
+            fileFormat: media.ContainerFormatType.CFT_WAV
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback4 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_VOICE_MESSAGE,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_MPEG4,
+            videoCodec: media.CodecMimeType.VIDEO_VP8,
+            fileFormat: media.ContainerFormatType.CFT_AMR
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback5 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_CAMCORDER,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_VP8,
+            videoCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_AAC
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback6 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_VORBIS,
+            videoCodec: media.CodecMimeType.AUDIO_VORBIS,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback7 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_FLAC,
+            videoCodec: media.CodecMimeType.AUDIO_FLAC,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback8 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.VIDEO_HEVC,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback9 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_MP3,
+            videoCodec: media.CodecMimeType.AUDIO_MP3,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback10 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_G711MU,
+            videoCodec: media.CodecMimeType.AUDIO_G711MU,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback11 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_AMR_NB,
+            videoCodec: media.CodecMimeType.AUDIO_AMR_NB,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
+    let registerPrepareCallback12 = (eventData: eventEmitter.EventData) => {
+      console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
+      try {
+        let data = eventData.data as Record<String, RecordData>;
+        let steps: string[] = data?.get('steps') as string[];
+        steps.shift();
+        let avRecorder: media.AVRecorder = data?.get('avRecorder') as media.AVRecorder
+        let done: () => void = data?.get('done') as (() => void)
+        let avConfig: media.AVRecorderConfig = {
+          videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
+          profile: {
+            audioBitrate: 48000,
+            audioChannels: 2,
+            audioSampleRate: 48000,
+            audioCodec: media.CodecMimeType.AUDIO_AMR_WB,
+            videoCodec: media.CodecMimeType.AUDIO_AMR_WB,
+            fileFormat: FORMAT_M4A
+          },
+          url: 'fd://'
+        }
+        let recorderTime: number = data?.get('recorderTime') as number
+        avRecorder.prepare(avConfig, (err: BusinessError|null) => {
+          console.info('case prepare called');
+          if (err == null) {
+            console.error(`case prepare success, state is ${avRecorder.state}`);
+            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
+            console.info('prepare success');
+            toNextStep(avRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+          }
+        })
+      } catch (err) {
+        console.info(`PREPARE_EVENT fail, error:${err}`);
+      }
+    }
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
+
     eventEmitter.onEventData(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('STARTRECORDER_EVENT eventData = ', JSON.stringify(eventData))
       let data = eventData.data as Record<String, RecordData>;

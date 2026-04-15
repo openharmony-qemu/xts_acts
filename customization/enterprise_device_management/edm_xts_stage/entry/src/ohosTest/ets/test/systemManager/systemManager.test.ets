@@ -4361,7 +4361,11 @@ function testSetActivationLockDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let credential: string = "test";
-      systemManager.setActivationLockDisabled(SELFWANT, undefined, credential);
+      systemManager.setActivationLockDisabled(SELFWANT, undefined, credential).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 801).assertTrue();
+      });
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {

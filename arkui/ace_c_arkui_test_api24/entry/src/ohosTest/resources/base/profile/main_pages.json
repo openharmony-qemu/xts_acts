@@ -5,6 +5,7 @@
     "MainAbility/pages/matrix4/Matrix4Test",
     "MainAbility/pages/enableClickSoundEffect/EnableClickSoundEffectTest",
     "MainAbility/pages/ellipsisModeTest/ellipsisModeCenter",
-    "MainAbility/pages/ellipsisModeTest/ellipsisModeStart"
+    "MainAbility/pages/ellipsisModeTest/ellipsisModeStart",
+    "MainAbility/pages/TextGetCharacter/TextGetCharacterTest"
   ]
 }

@@ -16,7 +16,9 @@
                 "rm -rf /storage/media/100/local/files/Videos/*",
                 "power-shell wakeup",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.xts/haps/entry/files",
+                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.image.xts/haps/entry"
             ],
             "teardown-command": [
                 "power-shell setmode 600",
@@ -30,17 +32,7 @@
             "type": "PushKit",
             "pre-push": [],
             "push": [
-
-                "./resource/image/C027.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/food.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test6.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/bluesky.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v3.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v2.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files"
+                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files"
             ]
         },
         {

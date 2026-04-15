@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -27,6 +27,9 @@ let resProgressInfo: unifiedDataChannel.ProgressInfo | undefined;
 
 const KEY_TEST_ELEMENT = 'TestKey';
 const VALUE_TEST_ELEMENT = 'TestValue';
+let optionsValid: unifiedDataChannel.Options = {
+  intention: unifiedDataChannel.Intention.DATA_HUB
+};
 const TAG = '[ttt]'
 
 function func(inputStr: string): unifiedDataChannel.UnifiedData {
@@ -59,6 +62,27 @@ export default function UDMFApiTest() {
   describe("UDMFApiTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'UDMFApiTest start');
     let TAG = '';
+    beforeAll(() => {	 
+      console.info("beforeAll");	 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
+        let size = data.length;	 
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
+      }).catch((error) => {	 
+        let err: BusinessError = error as BusinessError;	 
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
+      });	 
+    })
+
+    afterAll(() => { 
+      console.info("afterAll"); 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
+        let size = data.length; 
+        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
+      }).catch((error) => { 
+        let err: BusinessError = error as BusinessError; 
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
+      }); 
+    })
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
      * @tc.number UnifiedDataTest01

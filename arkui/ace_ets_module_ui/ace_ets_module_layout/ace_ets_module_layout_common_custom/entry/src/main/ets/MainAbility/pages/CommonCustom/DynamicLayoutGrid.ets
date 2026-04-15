@@ -13,25 +13,24 @@
  * limitations under the License.
  */
 
- import {
+import {
   GridLayoutAlgorithm,
   DynamicLayout, DynamicLayoutAttribute} from '@kit.ArkUI';
 import { LengthMetrics } from '@ohos.arkui.node';
 
 @Entry
-@Component
+@ComponentV2
 struct DynamicLayoutGrid {
-  @State str:string|null|undefined|ItemFillPolicy = '1fr'
-  @State num:LengthMetrics|null|undefined = LengthMetrics.vp(0)
+  @Local algorithm: GridLayoutAlgorithm = new GridLayoutAlgorithm({
+    columnsTemplate:'1fr',
+    columnsGap:LengthMetrics.vp(0),
+    rowsGap:LengthMetrics.vp(0)
+  });
 
   build() {
     Column({space:2}) {
       Row({space: 2}) {
-        DynamicLayout(new GridLayoutAlgorithm({
-          columnsTemplate:this.str,
-          columnsGap:this.num,
-          rowsGap:this.num
-        })) {
+        DynamicLayout(this.algorithm) {
           Text()
             .backgroundColor(Color.Red)
             .width(50)
@@ -50,14 +49,16 @@ struct DynamicLayoutGrid {
       Row(){
         Button('vp(-1)')
           .onClick(()=>{
-            this.num = LengthMetrics.vp(-1)
+            this.algorithm.columnsGap = LengthMetrics.vp(-1)
+            this.algorithm.rowsGap = LengthMetrics.vp(-1)
           })
           .id('GridLayoutAlgorithmVp(-1)')
           .width(80)
           .height(20)
         Button('vp(1)')
           .onClick(()=>{
-            this.num = LengthMetrics.vp(1)
+            this.algorithm.columnsGap = LengthMetrics.vp(1)
+            this.algorithm.rowsGap = LengthMetrics.vp(1)
           })
           .id('GridLayoutAlgorithmVp(1)')
           .width(80)
@@ -67,7 +68,7 @@ struct DynamicLayoutGrid {
       Row(){
         Button('nullString')
           .onClick(()=>{
-            this.str = ''
+            this.algorithm.columnsTemplate = ''
           })
           .id('GridLayoutAlgorithmNullString')
           .width(80)
@@ -83,18 +84,11 @@ struct DynamicLayoutGrid {
           .height(20)
       }
       Row(){
-        Button('null')
-          .onClick(()=>{
-            this.str = null
-            this.num = null
-          })
-          .id('GridLayoutAlgorithmNull')
-          .width(80)
-          .height(20)
         Button('undefined')
           .onClick(()=>{
-            this.str = undefined
-            this.num = undefined
+            this.algorithm.columnsTemplate = undefined
+            this.algorithm.columnsTemplate = undefined
+            this.algorithm.rowsGap = undefined
           })
           .id('GridLayoutAlgorithmUndefined')
           .width(80)

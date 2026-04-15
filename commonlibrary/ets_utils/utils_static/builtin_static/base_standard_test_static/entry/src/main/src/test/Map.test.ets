@@ -619,13 +619,13 @@ export default function MapTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2500
-     * @tc.name testMapPrototype[Symbol.iterator]0001
+     * @tc.name testMapPrototypeSymboliterator0001Adapt001
      * @tc.desc Test the function of the interface MapPrototype[Symbol.iterator].
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testMapPrototype[Symbol.iterator]0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeSymboliterator0001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testMapPrototype[Symbol.iterator]0001";
       try {
         const map1: Map<string, string> = new Map<string, string>();

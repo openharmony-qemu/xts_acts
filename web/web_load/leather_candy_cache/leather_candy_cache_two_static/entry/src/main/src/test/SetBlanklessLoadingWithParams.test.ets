@@ -51,18 +51,94 @@ export default function SetBlanklessLoadingWithParams() {
     })
 
     /**
-     * @tc.name   testSetBlanklessLoadingWithParams001
+     * @tc.name   testSetBlanklessLoadingWithParamsStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMSTEST_0100
      * @tc.desc   test setBlanklessLoadingWithParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testSetBlanklessLoadingWithParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testSetBlanklessLoadingWithParamsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithParams001', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithParams001', -5, 148510, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams001', 0, 148510, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(8000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMSTEST_0200
+     * @tc.desc   test setBlanklessLoadingWithParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetBlanklessLoadingWithParamsStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParams002', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams002', -2, 148520, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMSTEST_0300
+     * @tc.desc   test setBlanklessLoadingWithParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetBlanklessLoadingWithParamsStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParams003', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams003', -3, 148530, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsStatic004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMSTEST_0400
+     * @tc.desc   test setBlanklessLoadingWithParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetBlanklessLoadingWithParamsStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParams004', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams004', -4, 148540, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsStatic005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMSTEST_0500
+     * @tc.desc   test setBlanklessLoadingWithParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetBlanklessLoadingWithParamsStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithParams005', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithParams005', -5, 148550, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
       await Utils.msSleep(6000);

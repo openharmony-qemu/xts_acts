@@ -46,6 +46,7 @@ group("ability_runtime") {
       "actsabilityerrcodequery:actsabilityerrcodequery",
       "actsabilityerrcodequerywithoutpertest:ActsAbilityErrCodeQueryWithoutPerTest",
       "actsabilityerrorcodeteststatic:ActsAbilityErrorCodeStaticTest",
+      "actsabilityhypersnapmanager:actsabilityhypersnapmanager",
       "actsabilitymanageretstest:ActsAbilityManagerEtsTest",
       "actsabilityrecoverytest:actsabilityrecoverytest",
       "actsabilitytooltest:actsabilitytooltest",
@@ -136,6 +137,7 @@ group("ability_runtime") {
       "appclone:appclonetest",
       "capiabilityruntime:ActsCapiAbilityRuntimeTest",
       "capichildprocess:ActsCapiChildProcessTest",
+      "capicontext:ActsCapiContextTest",
       "context:context",
       "contextprocessname:contextprocessname",
       "fa:fa",
@@ -157,6 +159,8 @@ group("ability_runtime") {
       "actsGetAllWindowStagesTest:ActsGetAllWindowStagesTest",
       "abilityactsabilityruntime:abilityactsabilityruntime",
       "actsGetAllWindowStagesTestStatic:ActsGetAllWindowStagesStaticTest",
+      "actgetispreload:ActsGetIsPreloadTest",
+      "actgetispreloadstatic:ActsGetIsPreloadStaticTest"
     ]
   }
 }
