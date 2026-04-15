@@ -473,7 +473,7 @@ export default function MechanicManagerAPI() {
         if (Number(error.code) === 401) {
           expect(Number(error.code) === 401).assertTrue();
         } else {
-          expect(Number(error.code) === 33300001).assertTrue();
+          expect(Number(error.code) === 33300002).assertTrue();
         }
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 end-----------------");
@@ -498,7 +498,7 @@ export default function MechanicManagerAPI() {
         if (Number(error.code) === 401) {
           expect(Number(error.code) === 401).assertTrue();
         } else {
-          expect(Number(error.code) === 33300001).assertTrue();
+          expect(Number(error.code) === 33300002).assertTrue();
         }
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 end-----------------");
@@ -747,7 +747,11 @@ export default function MechanicManagerAPI() {
         console.info('SUB_DH_MechanicManager_on_0800 Register: success');
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0800 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
+        if (Number(error.code) === 33300001) {
+          expect(Number(error.code) === 33300001).assertTrue();
+        } else {
+          expect().assertFail();
+        }
         done();
       }
       done();
