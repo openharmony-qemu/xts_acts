@@ -89,7 +89,7 @@ it('RotationRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number;
       console.log('RotationRecognizer_static_0100 windowOffsetX and windowOffsetY', windowOffsetX, windowOffsetY)
-      let areaObj = CommonFunc.getComponentRectOnScreen('RotationRecognizer1');
+      let areaObj = await CommonFunc.getComponentRectOnScreen('RotationRecognizer1');
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left
       console.log('RotationRecognizer_static_0100 areaObj start', areaObj.left, areaObj.top, areaObj.right,

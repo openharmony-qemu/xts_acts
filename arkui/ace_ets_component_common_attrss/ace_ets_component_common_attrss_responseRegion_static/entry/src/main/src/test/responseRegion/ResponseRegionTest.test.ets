@@ -58,7 +58,7 @@ async function resetStatus(data: BasePageConfig) {
 }
 
 async function eventResult(data: BasePageConfig, expectationValue: string) {
-  let referenceComponent: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+  let referenceComponent: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
   await Utils.sleep(1000);
   console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getElement('$attrs').getString('content'));
   console.log('data.pageConfig.referenceComponentKey',data.pageConfig.referenceComponentKey) //data.pageConfig.referenceComponentKey referenceComponentKey
@@ -73,7 +73,7 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 
 
 
-export default function responseRegionTest() {
+export default async function responseRegionTest() {
   console.log('+++++++++++responseRegionTest start')
   let supportView:Array<string> = new Array<string>(
     'AlphabetIndexer',
@@ -260,7 +260,7 @@ export default function responseRegionTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component
       console.info('[' + data.caseTag + '] get Component rect before position changed.');
-      let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
+      let rect: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey);
       let rectHeight = rect.bottom - rect.top;
       let rectWidth = rect.right - rect.left;
       console.info('[' + data.caseTag + '] setValue : ' + String(data.testValue.setValue));  // ] setValue : [{}] 值是空
@@ -270,7 +270,7 @@ export default function responseRegionTest() {
       AppStorage.setOrCreate<string>('eventCallBackStr', '')
       await Utils.sleep(2000);
       console.info('wj--'+JSON.stringify(data.pageConfig.componentKey))
-      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
       await Utils.sleep(2000);
       console.info('[wll]viewObj'+JSON.stringify(viewObj.toString()))
       console.info('+++++++describe'+data.testValue.describe)

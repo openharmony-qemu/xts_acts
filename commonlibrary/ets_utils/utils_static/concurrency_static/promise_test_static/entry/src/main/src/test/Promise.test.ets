@@ -368,14 +368,12 @@ export default function PromiseTest() {
         let result: Number = 20;
         try {
           const promise1 = new Promise<number>((resolve) => {
-            waitForCompletion(async () => {
-              const task = new taskpool.Task(() => {
-                setTimeout(() => {
-                  resolve(10);
-                }, 100);
-              });
-              await taskpool.execute(task)
-            })
+            const task = new taskpool.Task(() => {
+              setTimeout(() => {
+                resolve(10);
+              }, 100);
+            });
+            taskpool.execute(task)
           });
           result = await promise1;
           expect(result).assertEqual(10);

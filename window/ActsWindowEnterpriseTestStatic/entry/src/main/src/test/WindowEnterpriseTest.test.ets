@@ -31,7 +31,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
-    return new Promise<window.WindowStage>((resolve, reject) => {
+    
         let want: Want = {
             bundleName: "com.example.actswindowtest.static",
             abilityName: 'StartAbility'
@@ -49,10 +49,10 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        waitForCompletion(async () => {await Utils.msSleep(1000)})
+        await Utils.msSleep(1000)
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
-        resolve(windowStageStart);
-    })
+        return windowStageStart;
+    
 }
 async function terminateAbility(caseName: string) {
     let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
@@ -129,7 +129,7 @@ export default function WindowEnterpriseTest() {
                 let windowClass2:window.Window = windowStageStart.getMainWindowSync();
                 let res:window.WindowProperties = windowClass2.getWindowProperties()
                 hilog.info(domain, tag,caseName + 'res: ' + JSON.stringify(res));
-                window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
+                await window.getVisibleWindowInfo().then(async (infos: Array<window.WindowInfo>) => {
                     hilog.info(domain, tag,caseName + 'Succeeded in calling getVisibleWindowInfo.');
                     hilog.info(domain, tag,caseName + `infos.length: ${infos.length}`);
                     expect(infos.length).assertLargerOrEqual(1);
@@ -172,15 +172,15 @@ export default function WindowEnterpriseTest() {
                     }
                     if (!isExit) {
                         hilog.error(domain, tag,`${caseName} failed, there is no match windowId.`);
-                        waitForCompletion(async () => {await terminateAbility(caseName);})
+                        await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done()
                     }
-                    waitForCompletion(async () => {await terminateAbility(caseName);})
+                    await terminateAbility(caseName);
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error) => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
-                    waitForCompletion(async () => {await terminateAbility(caseName);})
+                    await terminateAbility(caseName);
                     expect(err.message!=null).assertTrue();
                     if (err.code === 801) {
                         hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);

@@ -225,7 +225,7 @@ export default function displayPriorityTest() {
             uiContext!.vp2px(compareTwoButtonWidth)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetPriority') {
             //Check whether the position of the reference component is correct
-            let compareOneButtonComponent = Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
+            let compareOneButtonComponent = await Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
             console.info('[' + data.caseTag + '] data.testValue.describe is:' + data.testValue.describe);
             console.info('[' + data.caseTag + '] displayPriority is:' +
             data.viewObj!.getElement('$attrs').getDouble('displayPriority'));
@@ -274,7 +274,7 @@ export default function displayPriorityTest() {
             uiContext!.vp2px(compareTwoButtonHeight)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetPriority') {
             //Check whether the position of the reference component is correct
-            let compareOneButtonComponent = Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
+            let compareOneButtonComponent = await Utils.getComponentByKey(data.pageConfig.compareOneButtonKey!);
             console.info('[' + data.caseTag + '] data.testValue.describe is:' + data.testValue.describe);
             console.info('[' + data.caseTag + '] compareOneButton displayPriority is:'
               + compareOneButtonComponent.getElement('$attrs').getDouble('displayPriority'));

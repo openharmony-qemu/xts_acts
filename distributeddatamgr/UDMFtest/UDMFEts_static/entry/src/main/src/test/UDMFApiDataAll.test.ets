@@ -451,7 +451,7 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) => {
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
@@ -485,9 +485,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        })
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -542,7 +540,7 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) => {
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
@@ -598,9 +596,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -697,12 +693,14 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      try {
+        let data: string = await unifiedDataChannel.insertData(options, unifiedData);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        try {
+          let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -749,7 +747,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
+                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo()
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -793,15 +791,15 @@ export default function UDMFApiDataAllTest() {
             }
           }
           done();
-        }).catch((err) => {
+        } catch (err) {
           expect().assertFail();
           done();
-        });
-        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
-      }).catch((err) => {
+        }
+        await unifiedDataChannel.deleteData(options1);
+      } catch (err) {
         expect().assertFail();
         done();
-      });
+      }
     });
 
     /**
@@ -898,12 +896,14 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      try {
+        let data: string = await unifiedDataChannel.insertData(options, unifiedData);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        try {
+          let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -950,7 +950,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
+                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo()
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -995,15 +995,15 @@ export default function UDMFApiDataAllTest() {
             }
           }
           done();
-        }).catch((err) => {
+        } catch (err) {
           expect().assertFail();
           done();
-        });
-        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
-      }).catch((err) => {
+        }
+        await unifiedDataChannel.deleteData(options1);
+      } catch (err) {
         expect().assertFail();
         done()
-      });
+      }
     });
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
@@ -1134,12 +1134,14 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      try {
+        let data: string = await unifiedDataChannel.insertData(options, unifiedData);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        try {
+          let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -1187,7 +1189,7 @@ export default function UDMFApiDataAllTest() {
                 let obj: uniformDataStruct.PixelMap =
                   entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo: image.ImageInfo = waitForCompletion(async () => {return await obj.pixelMap.getImageInfo();})
+                  let imageInfo: image.ImageInfo = await obj.pixelMap.getImageInfo()
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1239,15 +1241,15 @@ export default function UDMFApiDataAllTest() {
             }
           }
           done();
-        }).catch((err) => {
+        } catch (err) {
           expect().assertFail();
           done();
-        });
-        waitForCompletion(async () => {await unifiedDataChannel.deleteData(options1);})
-      }).catch((err) => {
+        }
+        await unifiedDataChannel.deleteData(options1);
+      } catch (err) {
         expect().assertFail();
         done();
-      });
+      }
     });
 
 /**
@@ -1359,12 +1361,14 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      try {
+        let data: string = await unifiedDataChannel.insertData(options, unifiedData);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        try {
+          let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -1412,7 +1416,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = waitForCompletion(async () => {return await obj.pixelMap.getImageInfo();})
+                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo()
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1457,15 +1461,15 @@ export default function UDMFApiDataAllTest() {
             }
           }
           done();
-        }).catch((err) => {
+        } catch (err) {
           expect().assertFail();
           done();
-        });
-        waitForCompletion(async () => {await unifiedDataChannel.deleteData(options1);})
-      }).catch((err) => {
+        }
+        await unifiedDataChannel.deleteData(options1);
+      } catch (err) {
         expect().assertFail();
         done();
-      });
+      }
     });
 
     /**
@@ -1623,12 +1627,14 @@ export default function UDMFApiDataAllTest() {
       let properties = new unifiedDataChannel.UnifiedDataProperties();
       properties.tag = "records_to_entries_data_format";
       unifiedData.properties = properties;
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      try {
+        let data: string = await unifiedDataChannel.insertData(options, unifiedData);
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        try {
+          let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -1676,7 +1682,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
+                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo()
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1728,15 +1734,15 @@ export default function UDMFApiDataAllTest() {
             }
           }
           done();
-        }).catch((err) => {
+        } catch (err) {
           expect().assertFail();
           done();
-        });
-        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1); })
-      }).catch((err) => {
+        }
+        await unifiedDataChannel.deleteData(options1);
+      } catch (err) {
         expect().assertFail();
         done();
-      });
+      }
     });
 
     /**
@@ -1871,7 +1877,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord('openharmony.app-item', appItem);
       unifiedData.addRecord(contentFormRecord);
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) => {
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
@@ -1900,9 +1906,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -1932,7 +1936,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord("general.content-form", contentForm);
       unifiedData.addRecord(contentFormRecord);
-      unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) => {
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
@@ -1964,9 +1968,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -1999,7 +2001,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord("general.content-form", contentForm);
       unifiedData.addRecord(contentFormRecord);
-      unifiedDataChannel.insertData(options, unifiedData).then((data)=>{
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string)=>{
         let options1: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key: data
@@ -2027,9 +2029,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2179,7 +2179,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord("general.file-uri", fileUri);
       unifiedData.addRecord(contentFormRecord)
-      unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) =>{
         let options1:unifiedDataChannel.Options ={
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key:data
@@ -2205,9 +2205,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2236,7 +2234,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord("general.file-uri", fileUri);
       unifiedData.addRecord(contentFormRecord)
-      unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) =>{
         let options1:unifiedDataChannel.Options ={
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key:data
@@ -2262,9 +2260,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -2293,7 +2289,7 @@ export default function UDMFApiDataAllTest() {
       let unifiedData = new unifiedDataChannel.UnifiedData();
       let contentFormRecord = new unifiedDataChannel.UnifiedRecord("general.file-uri", fileUri);
       unifiedData.addRecord(contentFormRecord)
-      unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
+      unifiedDataChannel.insertData(options, unifiedData).then(async (data: string) =>{
         let options1:unifiedDataChannel.Options ={
           intention: unifiedDataChannel.Intention.DATA_HUB,
           key:data
@@ -2319,9 +2315,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        waitForCompletion(async ()=>{
-          await unifiedDataChannel.deleteData(options1);
-        });
+        await unifiedDataChannel.deleteData(options1);
       }).catch((err) => {
         expect().assertFail();
         done();

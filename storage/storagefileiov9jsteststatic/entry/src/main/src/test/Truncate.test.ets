@@ -107,18 +107,16 @@ export default function fileIOTruncate() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_002 fpath: ' + fpath);
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         let truncateLen = 2;
-        fs.truncate(fpath, truncateLen).then(() => {
-          waitForCompletion(async () => {
-            let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
-            let res = await Utils.isIntNum(file.fd);
-            hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_002 res: ' + res);
-            expect(res).assertTrue();
-            let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
-            expect(readLen == truncateLen).assertTrue();
-            fs.closeSync(file);
-            fs.unlinkSync(fpath);
-            done();
-          })
+        await fs.truncate(fpath, truncateLen).then(async () => {
+          let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
+          let res = await Utils.isIntNum(file.fd);
+          hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_002 res: ' + res);
+          expect(res).assertTrue();
+          let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+          expect(readLen == truncateLen).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
         }).catch((err: Error): Promise<void> => {
           console.log('fileIO_truncate_async_static_002 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
@@ -260,19 +258,16 @@ export default function fileIOTruncate() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 fpath: ' + fpath);
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         let truncateLen = 0;
-        fs.truncate(fpath, truncateLen, (err: BusinessError<void> | null) => {
-        waitForCompletion(async () => {
-          let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
-          let res = await Utils.isIntNum(file.fd);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 res: ' + res);
-          expect(res).assertTrue();
-          let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
-          expect(readLen == truncateLen).assertTrue();
-          fs.closeSync(file);
-          fs.unlinkSync(fpath);
-          done();
-        })
-        });
+        await fs.truncate(fpath, truncateLen);
+        let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
+        let res = await Utils.isIntNum(file.fd);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 res: ' + res);
+        expect(res).assertTrue();
+        let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readLen == truncateLen).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+        done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
@@ -479,19 +474,16 @@ export default function fileIOTruncate() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 fpath: ' + fpath);
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         let truncateLen = 0;
-        fs.truncate(fpath, (err: BusinessError<void> | null) => {
-          waitForCompletion(async () => {
-          let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
-          let res = await Utils.isIntNum(file.fd);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 res: ' + res);
-          expect(res).assertTrue();
-          let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
-          expect(readLen == truncateLen).assertTrue();
-          fs.closeSync(file);
-          fs.unlinkSync(fpath);
-          done();
-          })
-        });
+        await fs.truncate(fpath);
+        let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
+        let res = await Utils.isIntNum(file.fd);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 res: ' + res);
+        expect(res).assertTrue();
+        let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readLen == truncateLen).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+        done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();

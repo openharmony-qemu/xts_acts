@@ -502,47 +502,25 @@ export default function abilityTest() {
                     phoneNumber: '65432111',
                     avatar: pixelMap
                 };
-                session!.setCallMetadata(callMetadata0, (err: BusinessError | null) => {
-                    if (err?.code) {
-                        console.info(`${TAG}: setCallMetadataCallback error: code: ${err?.code}, message: ${err?.message}`);
+                await session!.setCallMetadata(callMetadata0);
+                let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                if (data?.name === '12345678' && data?.phoneNumber === '65432111') {
+                    console.info(`${TAG}: getCallMetadata get name and phoneNumber Successfully`);
+                } else {
+                    console.info(`${TAG}: getCallMetadata failed, name is: ${data?.name}, phoneNumber is ${data?.phoneNumber}`);
+                    expect(false).assertTrue();
+                }
+                let pixMap: image.PixelMap = data?.avatar as image.PixelMap;
+                let pixelSize: number = pixMap!.getPixelBytesNumber();
+                let readBuffer = new ArrayBuffer(pixelSize);
+                await pixMap!.readPixelsToBuffer(readBuffer);
+                let bufferArr2 = new Uint8Array(readBuffer);
+                for (let i = 0; i < bufferArr2.length; i++) {
+                    if (bufferArr0[i] !== bufferArr2[i]) {
                         expect(false).assertTrue();
-                        done();
-                    } else {
-                        console.info(`${TAG}: setCallMetadataCallback set successfully`);
-                        let pixMap: image.PixelMap | undefined;
-                        controller!.getCallMetadata((err: BusinessError|null, data: avSession.CallMetadata|undefined) => {
-                            if (err?.code) {
-                                console.info(`${TAG}: getCallMetadataCallback error: code: ${err?.code}, message: ${err?.message}`);
-                                expect(false).assertTrue();
-                                done();
-                            } else {
-                                if (data?.name === '12345678' && data?.phoneNumber === '65432111') {
-                                    console.info(`${TAG}: getCallMetadataCallback get name and phoneNumber Successfully`);
-                                } else {
-                                    console.info(`${TAG}: getCallMetadataCallback failed, name is: ${data?.name}, phoneNumber is ${data?.phoneNumber}`);
-                                    expect(false).assertTrue();
-                                    done();
-                                }
-                                pixMap = data?.avatar as image.PixelMap;
-                                let pixelSize: number = pixMap!.getPixelBytesNumber();
-                                console.info(`${TAG}: pixelSize is: ${pixelSize}`);
-                                let readBuffer = new ArrayBuffer(pixelSize);
-                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
-                                let bufferArr2 = new Uint8Array(readBuffer);
-                                console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
-                                console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);
-                                for (let i = 0; i < bufferArr2.length; i++) {
-                                    if (bufferArr0[i] !== bufferArr2[i]) {
-                                        expect(false).assertTrue();
-                                    } else {
-                                        console.info(`${TAG}: readPixelsToBuffer Successfully`);
-                                    }
-                                }
-                                done();
-                            }
-                        })
                     }
-                });
+                }
+                done();
             } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
@@ -693,39 +671,19 @@ export default function abilityTest() {
                 let callMetadata8: avSession.CallMetadata = {
                     avatar: pixelMap
                 };
-                session!.setCallMetadata(callMetadata8, (err: BusinessError | null) => {
-                    if (err?.code) {
-                        console.info(`${TAG}: setCallMetadataCallback set avatar error: code: ${err?.code}, message: ${err?.message}`);
+                await session!.setCallMetadata(callMetadata8);
+                let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                let pixMap: image.PixelMap = data?.avatar as image.PixelMap;
+                let pixelSize: number = pixMap!.getPixelBytesNumber();
+                let readBuffer = new ArrayBuffer(pixelSize);
+                await pixMap!.readPixelsToBuffer(readBuffer);
+                let bufferArr2 = new Uint8Array(readBuffer);
+                for (let i = 0; i < bufferArr2.length; i++) {
+                    if (bufferArr0[i] !== bufferArr2[i]) {
                         expect(false).assertTrue();
-                    } else {
-                        console.info(`${TAG}: setCallMetadataCallback set avatar successfully`);
-                        let pixMap: image.PixelMap | undefined;
-                        controller!.getCallMetadata((err: BusinessError|null, data: avSession.CallMetadata|undefined) => {
-                            if (err?.code) {
-                                console.info(`${TAG}: getCallMetadataCallback error: code: ${err?.code}, message: ${err?.message}`);
-                                expect(false).assertTrue();
-                                done();
-                            } else {
-                                pixMap = data?.avatar as image.PixelMap;
-                                let pixelSize: number = pixMap!.getPixelBytesNumber();
-                                console.info(`${TAG}: pixelSize is: ${pixelSize}`);
-                                let readBuffer = new ArrayBuffer(pixelSize);
-                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
-                                let bufferArr2 = new Uint8Array(readBuffer);
-                                console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
-                                console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);
-                                for (let i = 0; i < bufferArr2.length; i++) {
-                                    if (bufferArr0[i] !== bufferArr2[i]) {
-                                        expect(false).assertTrue();
-                                    } else {
-                                        console.info(`${TAG}: readPixelsToBuffer  successfully`);
-                                    }
-                                }
-                                done();
-                            }
-                        })
                     }
-                });
+                }
+                done();
             } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
