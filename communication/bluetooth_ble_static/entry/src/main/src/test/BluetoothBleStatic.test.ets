@@ -1305,5 +1305,2130 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        		/**
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001
+         * @tc.desc Test setCharacteristicChangeIndication with enable true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                gattClientDevice!.setCharacteristicChangeIndication(characteristic, true, (err) => {
+                    if (err) {
+                        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                        expect(Number(err.code) === 401).assertTrue();
+                        done()
+                    } else {
+                        hilog.info(domain, tag, `${caseName} setCharacteristicChangeIndication success`);
+                    }
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.desc Test startScan(Promise) with SCAN_MODE_BALANCED
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_BALANCED,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, `${caseName} bleScanner stopScan success`)
+                });
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.desc Test startScan(Promise) with MATCH_MODE_STICKY
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 0,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_STICKY
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success')
+                });
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+		
+		
+		/**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.desc Test startBLEScan with SCAN_MODE_BALANCED
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_BALANCED,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500)
+                ble.stopBLEScan();
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code)  === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001
+         * @tc.desc Test startBLEScan with SCAN_MODE_LOW_LATENCY
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_LATENCY,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500)
+                ble.stopBLEScan();
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.desc Test startBLEScan with MATCH_MODE_STICKY
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_STICKY
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500)
+                ble.stopBLEScan();
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001
+         * @tc.desc Test startBLEScan with PHY_LE_1M
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500)
+                ble.stopBLEScan();
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001
+         * @tc.desc Test startBLEScan with BATCH
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.BATCH
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500);
+                ble.stopBLEScan()
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.desc Test startBLEScan with FENCE_SENSITIVITY_LOW
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.FENCE_SENSITIVITY_LOW
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500);
+                ble.stopBLEScan()
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.desc Test startBLEScan with FENCE_SENSITIVITY_HIGH
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.FENCE_SENSITIVITY_HIGH
+                };
+                ble.startBLEScan([scanFilter], scanOptions);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500);
+                ble.stopBLEScan()
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (Number(err.code) === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(Number(err.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_Filters_Null_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_Filters_Null_001
+         * @tc.desc Test startScan(Promise) with null filters
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_Filters_Null_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_Filters_Null_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
+                };
+                await bleScanner!.startScan(null, scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001
+         * @tc.desc Test getConnectedBLEDevices return empty array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let result: Array<string> = ble.getConnectedBLEDevices();
+                hilog.info(domain, tag, `${caseName} getConnectedBLEDevices success, result: ` + JSON.stringify(result));
+                expect(result.length).assertEqual(0);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001
+         * @tc.desc Test getConnectedBLEDevices return non-empty array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let result: Array<string> = ble.getConnectedBLEDevices();
+                hilog.info(domain, tag, `${caseName} getConnectedBLEDevices success, result: ` + JSON.stringify(result));
+                expect(result.length).assertEqual(0);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001
+         * @tc.desc Test setCharacteristicChangeIndication(promise) with enable false
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                await gattClientDevice!.setCharacteristicChangeIndication(characteristic, false).then(() => {
+                    hilog.info(domain, tag, `${caseName} setCharacteristicChangeIndication success`);
+                });
+
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001
+         * @tc.desc Test setCharacteristicChangeIndication(promise) with empty descriptors array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                await gattClientDevice!.setCharacteristicChangeIndication(characteristic, true).then(() => {
+                    hilog.info(domain, tag, `${caseName} setCharacteristicChangeIndication success`);
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001
+         * @tc.desc Test setCharacteristicChangeIndication(promise) with non-empty descriptors array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let descArrayBuffer = new ArrayBuffer(8);
+                let descriptor: ble.BLEDescriptor = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                    descriptorValue: descArrayBuffer
+                };
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: [descriptor]
+                };
+                await gattClientDevice!.setCharacteristicChangeIndication(characteristic, true).then(() => {
+                    hilog.info(domain, tag, `${caseName} setCharacteristicChangeIndication success`);
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartBLEScan_Filters_Null_001
+         * @tc.name SUB_Communication_BLE_StartBLEScan_Filters_Null_001
+         * @tc.desc Test startBLEScan with null filters
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartBLEScan_Filters_Null_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_Filters_Null_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                ble.startBLEScan(null);
+                hilog.info(domain, tag, `${caseName} startBLEScan success`);
+                await Utils.msSleep(500)
+                ble.stopBLEScan();
+                hilog.info(domain, tag, `${caseName} stopBLEScan success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_Connectable_False_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_Connectable_False_001
+         * @tc.desc Test startAdvertising with connectable false
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_Connectable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_Connectable_False_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: false
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty serviceUuids array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: [],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty manufactureData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [],
+                    serviceData: [serviceDataUnit]
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty serviceData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: []
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001
+         * @tc.desc Test startAdvertising with includeDeviceName true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureValueBuffer = new Uint8Array(2);
+                manufactureValueBuffer[0] = 1;
+                manufactureValueBuffer[1] = 2;
+                let serviceValueBuffer = new Uint8Array(2);
+                serviceValueBuffer[0] = 4;
+                serviceValueBuffer[1] = 6;
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeDeviceName: true
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001
+         * @tc.desc Test startAdvertising with includeTxPower true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeTxPower: true
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty advResponse.serviceUuids array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: [],
+                    manufactureData: [],
+                    serviceData: []
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty advResponse.manufactureData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [],
+                    serviceData: []
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001
+         * @tc.desc Test startAdvertising with empty advResponse.serviceData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: []
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+  
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001
+         * @tc.desc Test startAdvertising with advResponse.includeDeviceName true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeDeviceName: true
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001
+         * @tc.desc Test startAdvertising with advResponse.includeTxPower true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advResponse: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeTxPower: true
+                };
+                ble.startAdvertising(setting, advData, advResponse);
+                hilog.info(domain, tag, `${caseName} startAdvertising success`);
+                ble.stopAdvertising();
+                hilog.info(domain, tag, `${caseName} stopAdvertising success`);
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with connectable false
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: false
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` )
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.serviceUuids array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: [],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` )
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.manufactureData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [],
+                    serviceData: [serviceDataUnit]
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` )
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.serviceData array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: []
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` )
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.includeDeviceName true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureValueBuffer = new Uint8Array(2);
+                manufactureValueBuffer[0] = 1;
+                manufactureValueBuffer[1] = 2;
+                let serviceValueBuffer = new Uint8Array(2);
+                serviceValueBuffer[0] = 4;
+                serviceValueBuffer[1] = 6;
+
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeDeviceName: true
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` );
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.includeTxPower true
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit],
+                    includeTxPower: true
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advData,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` );
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001
+         * @tc.desc Test startAdvertising(AdvertisingParams) with empty
+ advertisingResponse.serviceUuids array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                let advertisingSettings: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let advertisingResponse: ble.AdvertiseData = {
+                    serviceUuids: [],
+                    manufactureData: [],
+                    serviceData: []
+                };
+                let advertisingParams: ble.AdvertisingParams = {
+                    advertisingSettings: advertisingSettings,
+                    advertisingData: advData,
+                    advertisingResponse: advertisingResponse,
+                    duration: 0
+                };
+                let advHandle = 0xFF;
+                await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
+                    advHandle = outAdvHandle
+                    hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
+                });
+                ble.stopAdvertising()
+                console.info(`${caseName}  stopAdvertising promise success:` );
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001
+         * @tc.desc Test readCharacteristicValue with empty descriptors array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                gattClientDevice!.readCharacteristicValue(characteristic);
+                hilog.info(domain, tag, `${caseName} readCharacteristicValue success`);
+                expect().assertFail();
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001
+         * @tc.desc Test readCharacteristicValue with non-empty descriptors array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let descArrayBuffer = new ArrayBuffer(8);
+                let descriptor: ble.BLEDescriptor = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                    descriptorValue: descArrayBuffer
+                };
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: [descriptor]
+                };
+                gattClientDevice!.readCharacteristicValue(characteristic);
+                hilog.info(domain, tag, `${caseName} readCharacteristicValue success`);
+                expect().assertFail();
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001
+         * @tc.desc Test readCharacteristicValue(Promise) with empty descriptors array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                await gattClientDevice!.readCharacteristicValue(characteristic).then((data) => {
+                    hilog.info(domain, tag, `${caseName} readCharacteristicValue success`);
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001
+         * @tc.desc Test startScan(Promise) with PHY_LE_1M
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 0,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(100);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(err.code === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001
+         * @tc.desc Test startScan(Promise) with BATCH
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.BATCH
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.desc Test startScan(Promise) with FENCE_SENSITIVITY_LOW
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.FENCE_SENSITIVITY_LOW
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.desc Test startScan(Promise) with FENCE_SENSITIVITY_HIGH
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                let scanOptions: ble.ScanOptions = {
+                    interval: 500,
+                    dutyMode: ble.ScanDuty.SCAN_MODE_LOW_POWER,
+                    matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    phyType: ble.PhyType.PHY_LE_1M,
+                    reportMode: ble.ScanReportMode.FENCE_SENSITIVITY_HIGH
+                };
+                await bleScanner!.startScan([scanFilter], scanOptions).then(() => {
+                    hilog.info(domain, tag, `${caseName} startScan success`);
+                });
+                await Utils.msSleep(500);
+                await bleScanner!.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_001
+         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_001
+         * @tc.desc Test readDescriptorValue with promise
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let descriptor: ble.BLEDescriptor = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                    descriptorValue: arrayBuffer
+                };
+                await gattClientDevice!.readDescriptorValue(descriptor).then((data) => {
+                    hilog.info(domain, tag, `${caseName} readDescriptorValue success`);
+                });
+            } catch (err) {
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+         //新增用例如下：
+
+        /**
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001
+         * @tc.desc Test getConnectedBLEDevices return empty array
+         * @tc.level Level 0
+         * *tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let devices: Array<string> = ble.getConnectedBLEDevices();
+                hilog.info(domain, tag, `${caseName} getConnectedBLEDevices success:` + JSON.stringify(devices));
+                expect(Array.isArray(devices)).assertTrue();
+                if (devices.length > 0) {
+                    expect(typeof devices[0] === 'string').assertTrue();
+                } else {
+                    expect(devices.length === 0).assertTrue();
+                }
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001
+         * @tc.desc Test getConnectedBLEDevices return not empty array
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let devices: Array<string> = ble.getConnectedBLEDevices();
+                hilog.info(domain, tag, `${caseName} getConnectedBLEDevices success:` + JSON.stringify(devices));
+                expect(Array.isArray(devices)).assertTrue();
+                if (devices.length > 0) {
+                    expect(typeof devices[0] === 'string').assertTrue();
+                } else {
+                    expect(devices.length === 0).assertTrue();
+                }
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001
+         * @tc.desc Test readCharacteristicValue promise return all properties
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let characteristic: ble.BLECharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBuffer,
+                    descriptors: []
+                };
+                let data: ble.BLECharacteristic = await gattClientDevice!.readCharacteristicValue(characteristic);
+                hilog.info(domain, tag, `${caseName} readCharacteristicValue success`);
+                hilog.info(domain, tag, `${caseName} serviceUuid: ` + data.serviceUuid);
+                hilog.info(domain, tag, `${caseName} characteristicUuid: ` + data.characteristicUuid);
+                hilog.info(domain, tag, `${caseName} characteristicValue: ` + JSON.stringify(data.characteristicValue));
+                hilog.info(domain, tag, `${caseName} descriptors: ` + JSON.stringify(data.descriptors));
+                expect(typeof data.serviceUuid === 'string').assertTrue();
+                expect(typeof data.characteristicUuid === 'string').assertTrue();
+                expect(data.characteristicValue instanceof ArrayBuffer).assertTrue();
+                expect(Array.isArray(data.descriptors)).assertTrue();
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001
+         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001
+         * @tc.desc Test readDescriptorValue promise return all properties
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001";
+            hilog.info(domain, tag, `${caseName} test start`);
+            try {
+                let arrayBuffer = new ArrayBuffer(8);
+                let descriptor: ble.BLEDescriptor = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB',
+                    descriptorValue: arrayBuffer
+                };
+                let data: ble.BLEDescriptor = await gattClientDevice!.readDescriptorValue(descriptor);
+                hilog.info(domain, tag, `${caseName} readDescriptorValue success`);
+                hilog.info(domain, tag, `${caseName} serviceUuid: ` + data.serviceUuid);
+                hilog.info(domain, tag, `${caseName} characteristicUuid: ` + data.characteristicUuid);
+                hilog.info(domain, tag, `${caseName} descriptorUuid: ` + data.descriptorUuid);
+                hilog.info(domain, tag, `${caseName} descriptorValue: ` + JSON.stringify(data.descriptorValue));
+                expect(typeof data.serviceUuid === 'string').assertTrue();
+                expect(typeof data.characteristicUuid === 'string').assertTrue();
+                expect(typeof data.descriptorUuid === 'string').assertTrue();
+                expect(data.descriptorValue instanceof ArrayBuffer).assertTrue();
+            } catch (err) {
+                
+                hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, `${caseName} api is not support`);
+                    expect(err.code === 801).assertTrue();
+                } else {
+                    expect(Number(err.code) === 401).assertTrue();
+                }
+            }
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+        })
     })
 }
