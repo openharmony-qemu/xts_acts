@@ -49,7 +49,7 @@ async function executeUsbRequest(
       throw new Error("Failed to connect device");
     }
 
-    const interfaces = device.configs?.[0]?.interfaces?[0]?;
+    const interfaces = device.configs?.[0]?.interfaces?[0];
     const claimResult = usbMgr.claimInterface(devicePipe, interfaces, true);
     if (claimResult !== 0) {
       throw new Error(`Failed to claim interface: ${claimResult}`);
