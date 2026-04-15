@@ -810,6 +810,63 @@ export default function actslocationTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_Location_nop_onCachedGnssLocationsChange_0100
+     * @tc.name  SUB_Location_nop_onCachedGnssLocationsChange_0100
+     * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
+     * @tc.level  Level 0
+     * @tc.type  Function
+     * @tc.size  MEDIUMTEST
+     */
+    it('SUB_Location_nop_onCachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let request: geoLocationManager.CachedGnssLocationsRequest = {
+          'reportingPeriodSec': 1000,
+          'wakeUpCacheQueueFull': true
+      };
+      
+      let callback = (result: Array<geoLocationManager.Location>): void => {
+          console.info('SUB_Location_nop_onCachedGnssLocationsChange_0100: locations=' + JSON.stringify(result));
+      };
+      
+      try {
+          geoLocationManager.onCachedGnssLocationsChange(request, callback);
+          expect().assertFail();
+      } catch (err) {
+          console.error("SUB_Location_nop_onCachedGnssLocationsChange_0100 errCode:" + err.code + ", message:" + err.message);
+          expect(err.code).assertEqual(201);
+      }
+      await Utils.msSleep(1000);
+      done();
+  })
+
+      /**
+     * @tc.name   SUB_Location_nop_offCachedGnssLocationsChange_0100
+     * @tc.number SUB_Location_nop_offCachedGnssLocationsChange_0100
+     * @tc.desc   Using the offCachedGnssLocationsChange method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_offCachedGnssLocationsChange_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
+        console.log('cachedGnssLocationsChange: locations: ' + JSON.stringify(locations));
+      }
+      let requestInfo: geoLocationManager.CachedGnssLocationsRequest = {
+        'reportingPeriodSec': 10, 'wakeUpCacheQueueFull': true
+      };
+      try {
+        geoLocationManager.onCachedGnssLocationsChange(requestInfo, cachedLocationsCb);
+        geoLocationManager.offCachedGnssLocationsChange();
+        expect(cachedLocationsCb != null).assertTrue();
+        done();
+      } catch (err) {
+        console.info('---SUB_Location_nop_offCachedGnssLocationsChange_0100  catch ---' + typeof err.code + ',err:' + err.code);
+        expect(err.code).assertEqual(201);
+      }
+      console.info('SUB_Location_nop_offCachedGnssLocationsChange_0100 end');
+      done();
+    })
+
 
 
 

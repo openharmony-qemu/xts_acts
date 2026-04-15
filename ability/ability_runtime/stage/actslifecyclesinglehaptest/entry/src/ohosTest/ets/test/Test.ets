@@ -79,9 +79,9 @@ export default function lifecycleTest(abilityContext) {
     it("Singlehap_LifeCycleTest_0700", Level.LEVEL0, async function (done) {
       console.log("------------Singlehap_LifeCycleTest_0700 START-------------");
       TAG = "Singlehap_LifeCycleTest_0700";
-      var code1;
-      var code2;
-      var code3;
+      var error1;
+      var error2;
+      var error3;
       var id1;
       var id2;
       var id3;
@@ -156,38 +156,38 @@ export default function lifecycleTest(abilityContext) {
         }
       }
       let applicationContext = globalThis.abilityContext.getApplicationContext();
-      id1 = applicationContext.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+      id1 = applicationContext.on('abilityLifecycle', AbilityLifecycleCallback);
       console.log(TAG + " registerAbilityLifecycleCallback1 number: " + JSON.stringify(id1));
       let unregisterDoneRely1 = eventBusPlus.onWait('unregister1_done');
-      applicationContext.unregisterAbilityLifecycleCallback(id1, (error, data) => {
+      applicationContext.off('abilityLifecycle', id1, (error, data) => {
         console.log(TAG + ": unregisterAbilityLifecycleCallback1 success, err: " + JSON.stringify(error) +
         ",data: " + JSON.stringify(data));
-        code1 = error.code;
+        error1 = error.code;
         eventBusPlus.emit('unregister1_done');
       })
       await unregisterDoneRely1;
-      id2 = applicationContext.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+      id2 = applicationContext.on('abilityLifecycle', AbilityLifecycleCallback);
       console.log(TAG + " registerAbilityLifecycleCallback2 number: " + JSON.stringify(id2));
       let unregisterDoneRely2 = eventBusPlus.onWait('unregister2_done');
-      applicationContext.unregisterAbilityLifecycleCallback(id2, (error, data) => {
+      applicationContext.off('abilityLifecycle', id2, (error, data) => {
         console.log(TAG + ": unregisterAbilityLifecycleCallback2 success, err: " + JSON.stringify(error) +
           ",data: " + JSON.stringify(data));
-        code2 = error.code;
+        error2 = error.code;
         eventBusPlus.emit('unregister2_done');
       })
       unregisterDoneRely2;
-      id3 = applicationContext.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+      id3 = applicationContext.on('abilityLifecycle', AbilityLifecycleCallback);
       console.log(TAG + " registerAbilityLifecycleCallback3 number: " + JSON.stringify(id3));
-      applicationContext.unregisterAbilityLifecycleCallback(id3, (error, data) => {
+      applicationContext.off('abilityLifecycle', id3, (error, data) => {
         console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
           ",data: " + JSON.stringify(data));
-        code3 = error.code;
+        error3 = error.code;
         expect(id1 > 0).assertTrue();
         expect(id2).assertEqual(id1 + 1);
         expect(id3).assertEqual(id2 + 1);
-        expect(code1).assertEqual(0);
-        expect(code2).assertEqual(0);
-        expect(code3).assertEqual(0);
+        expect(error1).assertNull();
+        expect(error2).assertNull();
+        expect(error3).assertNull();
         console.log("------------Singlehap_LifeCycleTest_0700 END-------------");
         done();
       })

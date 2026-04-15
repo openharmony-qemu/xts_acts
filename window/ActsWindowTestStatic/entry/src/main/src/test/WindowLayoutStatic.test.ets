@@ -77,7 +77,7 @@ export default function WindowLayoutStaticTest() {
                         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
                         await Utils.msSleep(1000)
                         let titlePoint = await title!.getBounds()
-                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 2000)
+                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 10000)
                         await Utils.msSleep(2000)
                         windowStatus = windowClass.getWindowStatus()
                         hilog.info(domain, tag, caseName + `windowStatus2: ${windowStatus}`);

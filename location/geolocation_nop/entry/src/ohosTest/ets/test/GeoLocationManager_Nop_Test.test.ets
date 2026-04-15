@@ -1499,8 +1499,8 @@ export default function geoLocationManager_nop_test() {
         expect().assertFalse();
         done();
       } catch (err) {
-        console.info('---geoLocationManager_getLastLocation_nop_test_011 catch ---' + ', type err: ' + typeof err?.code + ', err: ' + err?.code);
-        expect(Number(err?.code?? -1)).assertEqual(201);
+        console.info('---geoLocationManager_getLastLocation_nop_test_011 catch ---' + ', type err: ' + typeof err.code + ', err: ' + err.code);
+        expect(Number(err.code)).assertEqual(201);
         done();
       }
     })

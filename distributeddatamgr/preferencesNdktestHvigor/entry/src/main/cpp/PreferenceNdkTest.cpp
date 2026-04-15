@@ -222,12 +222,16 @@ static napi_value OH_Preferences_SetValue_0100(napi_env env, napi_callback_info 
     int errCode1 = 1;
     errCode1 = OH_Preferences_SetValue(nullptr, "key", value);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_SetValue is fail1.");
+    errCode1 = OH_Preferences_SetValue(nullptr, "", value);
+    NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_SetValue is fail1.");
     errCode1 = OH_Preferences_SetValue(pref, nullptr, value);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_SetValue is fail2.");
     errCode1 = OH_Preferences_SetValue(pref, "key", nullptr);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_SetValue is fail3.");
     OH_PreferencesValue* outValue = nullptr;
     errCode1 = OH_Preferences_GetValue(nullptr, "key", &outValue);
+    NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_GetValue is fail1.");
+    errCode1 = OH_Preferences_GetValue(nullptr, "", &outValue);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_GetValue is fail1.");
     errCode1 = OH_Preferences_GetValue(pref, nullptr, &outValue);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_ERROR_INVALID_PARAM, "OH_Preferences_GetValue is fail2.");
@@ -496,6 +500,8 @@ static napi_value OH_Preferences_HasKeyValue_0100(napi_env env, napi_callback_in
     (void)OH_PreferencesOption_Destroy(option);
     NAPI_ASSERT(env, errCode == PREFERENCES_OK, "OH_PreferencesOption_Destroy is fail.");
     result = OH_Preferences_HasKey(pref, nullptr);
+    NAPI_ASSERT(env, result == false, "OH_Preferences_HasKey is fail2.");
+    result = OH_Preferences_HasKey(nullptr, "");
     NAPI_ASSERT(env, result == false, "OH_Preferences_HasKey is fail2.");
     int errCode1 = OH_Preferences_Close(pref);
     NAPI_ASSERT(env, errCode1 == PREFERENCES_OK, "OH_Preferences_Close is fail.");

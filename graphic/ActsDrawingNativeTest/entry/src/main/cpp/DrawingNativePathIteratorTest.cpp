@@ -48,14 +48,6 @@ void DrawingNativePathIteratorTestTearDown()
     std::cout << "DrawingNativePathIteratorTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testPathIteratorCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATORITERATOR_0100
- * @tc.desc   test for testPathIteratorCreateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorCreateNormal()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -77,14 +69,6 @@ int TestPathIteratorCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0101
- * @tc.desc   test for testPathIteratorCreateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIteratorCreateNull()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -109,14 +93,6 @@ int TestPathIteratorCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0102
- * @tc.desc   test for testPathIteratorCreateMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIteratorCreateMultipleCalls()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -141,14 +117,6 @@ int TestPathIteratorCreateMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0200
- * @tc.desc   test for testPathIteratorDestroyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorDestroyNormal()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -169,14 +137,6 @@ int TestPathIteratorDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0201
- * @tc.desc   test for testPathIteratorDestroyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIteratorDestroyNull()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -186,14 +146,6 @@ int TestPathIteratorDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorHasNextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0300
- * @tc.desc   test for testPathIteratorHasNextNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorHasNextNormal()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -225,14 +177,6 @@ int TestPathIteratorHasNextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorHasNextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0301
- * @tc.desc   test for testPathIteratorHasNextNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIteratorHasNextNull()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -259,14 +203,6 @@ int TestPathIteratorHasNextNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorNextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0400
- * @tc.desc   test for testPathIteratorNextNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorNextNormal()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -297,14 +233,6 @@ int TestPathIteratorNextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorNextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0401
- * @tc.desc   test for testPathIteratorNextNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIteratorNextNull()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -344,14 +272,6 @@ int TestPathIteratorNextNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorPeekNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0500
- * @tc.desc   test for testPathIteratorPeekNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorPeekNormal()
 {
     DrawingNativePathIteratorTestSetUp();
@@ -382,14 +302,6 @@ int TestPathIteratorPeekNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIteratorPeekNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0501
- * @tc.desc   test for testPathIteratorPeekNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIteratorPeekNull()
 {
     DrawingNativePathIteratorTestSetUp();

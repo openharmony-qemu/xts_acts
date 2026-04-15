@@ -93,14 +93,6 @@ OH_Drawing_RecordCmd* threadFunctionTest6()
     return recordCmd;
 }
 
-/**
- * @tc.name   testCanvasDrawRecordCmdNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0100
- * @tc.desc   test for testCanvasDrawRecordCmdNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawRecordCmdNormal()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();
@@ -121,14 +113,6 @@ int TestCanvasDrawRecordCmdNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRecordCmdABNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0200
- * @tc.desc   test for testCanvasDrawRecordCmdABNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawRecordCmdABNormal()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();
@@ -169,14 +153,6 @@ OH_Drawing_RecordCmd* CreateRecordCmd(int32_t width, int32_t height)
     return recordCmd;
 }
 
-/**
- * @tc.name   testCanvasDrawRecordCmdNestingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0300
- * @tc.desc   test for testCanvasDrawRecordCmdNestingNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawRecordCmdNestingNormal()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();
@@ -223,14 +199,6 @@ int TestCanvasDrawRecordCmdNestingNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRecordCmdNestingAbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0400
- * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRecordCmdNestingAbNormal()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();
@@ -259,14 +227,6 @@ int TestCanvasDrawRecordCmdNestingAbNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCanvasDrawRecordCmdNestingAbNormal1
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0500
- * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal1.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawRecordCmdNestingAbNormal1()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();

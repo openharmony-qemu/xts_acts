@@ -85,6 +85,9 @@ export const DrawingPathPart3Query: (caseName: number) => number;
 // Path Part4 InverseFillType related functions
 export const DrawingPathPart4InverseFillType: (caseName: number) => number;
 
+// Path Part4 GetData related functions
+export const DrawingPathPart4GetData: (caseName: number) => number;
+
 // Path Part3 Transform related functions
 export const DrawingPathPart3Transform: (caseName: number) => number;
 

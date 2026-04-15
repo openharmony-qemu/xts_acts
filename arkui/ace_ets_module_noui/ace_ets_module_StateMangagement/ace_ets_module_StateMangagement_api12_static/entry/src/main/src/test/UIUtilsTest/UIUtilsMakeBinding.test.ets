@@ -60,12 +60,12 @@ export default function UIUtilsMakeBindingTest() {
     });
 
     /**
-     * @tc.number   UIUtilsMakeBindingTest_static_001
-     * @tc.name     UIUtilsMakeBindingTest_static_001
+     * @tc.number   SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100
+     * @tc.name     SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100
      * @tc.desc     UIUtilsMakeBindingTest_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('UIUtilsMakeBindingTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UIUtilsMakeBindingTest_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -94,6 +94,32 @@ export default function UIUtilsMakeBindingTest() {
 
 
       console.info('[UIUtilsMakeBindingTest_001] END');
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200
+     * @tc.name     SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200
+     * @tc.desc     UIUtilsMakeBindingTest_static_002
+     * @tc.level    Level.LEVEL0
+     */
+    it('SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[UIUtilsMakeBindingTest_002] START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(2000);
+
+      let btn_true = await driver.findComponent(ON.id('MutableVariableButton'));
+      await (btn_true?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+      let strJsonNew1 = inspector.getInspectorByKey('MutableVariableText');
+      console.info(' UIUtilsMakeBindingTest_static_002 MutableVariableText is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+        .getElement('$attrs')
+        .getString('content')));
+      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('Hello world!');
+
+
+      console.info('[UIUtilsMakeBindingTest_002] END');
       done();
     });
   })

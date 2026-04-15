@@ -95,14 +95,6 @@ void DrawingNativeGpuContextTestTearDown()
     g_eglDisplay = EGL_NO_DISPLAY;
 }
 
-/**
- * @tc.name   testGpuContextCreateFromGLDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0100
- * @tc.desc   Test for creating and destroying GPU context with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestGpuContextCreateFromGLDestroyNormal()
 {
     DrawingNativeGpuContextTestSetUp();
@@ -115,14 +107,6 @@ int TestGpuContextCreateFromGLDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0101
- * @tc.desc   Test for destroying GPU context with NULL parameter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestGpuContextDestroyNULL()
 {
     DrawingNativeGpuContextTestSetUp();
@@ -133,14 +117,6 @@ int TestGpuContextDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextCreateFromGLDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0102
- * @tc.desc   Test for repeatedly creating and destroying GPU context.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestGpuContextCreateFromGLDestroyMultipleCalls()
 {
     DrawingNativeGpuContextTestSetUp();
@@ -155,14 +131,6 @@ int TestGpuContextCreateFromGLDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_GPU_CONTEXT_0200
- * @tc.desc   Test for creating GPU context with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestGpuContextCreateNormal()
 {
     DrawingNativeGpuContextTestSetUp();

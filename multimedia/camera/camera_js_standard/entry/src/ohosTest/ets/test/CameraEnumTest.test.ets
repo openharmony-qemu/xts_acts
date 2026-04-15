@@ -495,6 +495,8 @@ export default function cameraEnumTest() {
       console.info(`${TAG} PhotoQualityPrioritization.HIGH_QUALITY:${camera.PhotoQualityPrioritization.HIGH_QUALITY}`);
       expect(camera.PhotoQualityPrioritization.SPEED == 1).assertTrue();
       console.info(`${TAG} PhotoQualityPrioritization.SPEED:${camera.PhotoQualityPrioritization.SPEED}`);
+      expect(camera.ControlCenterEffectType.AUTO_FRAMING == 2).assertTrue();
+      console.info(`${TAG} ControlCenterEffectType.AUTO_FRAMING:${camera.ControlCenterEffectType.AUTO_FRAMING}`);
       done();
     })
   })

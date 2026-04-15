@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { StartOptions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -138,6 +139,8 @@ export default function windowLayoutTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
+    let displayWidth: number;
+    let displayHeight: number;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -168,6 +171,9 @@ export default function windowLayoutTest() {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
       driver = Driver.create();
+      displayWidth = display.getDefaultDisplaySync().width;
+      displayHeight = display.getDefaultDisplaySync().height;
+      console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
     });
     beforeEach(() => {
     });
@@ -812,8 +818,11 @@ export default function windowLayoutTest() {
       windowStage.createSubWindowWithOptions('testStartMoving_0200', options).then(async (data) => {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-        await windowClass.resize(1000, 1200);
-        await windowClass.moveWindowToAsync(200, 300);
+        await windowClass.resize(Number(displayWidth*0.2),Number(displayHeight*0.2));
+        let availableheight = display.getDefaultDisplaySync().availableHeight
+        let y = displayHeight - availableheight 
+        console.info(`${message} availableheight = ${JSON.stringify(availableheight)},y = ${JSON.stringify(y)}`)
+        await windowClass.moveWindowToAsync(0, y);
         await windowClass.showWindow();
         await sleep(1000)
         let windowPoint = windowClass.getWindowProperties().windowRect
@@ -825,6 +834,7 @@ export default function windowLayoutTest() {
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
         let textDragged = await text.getText()
+        console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
         if (textDragged == 'startMoving success') {
           let windowPointDragged = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
@@ -886,6 +896,7 @@ export default function windowLayoutTest() {
             let text = await driver.findComponent(ON.id('startMovingText'));
             await sleep(1000)
             let textDragged = await text.getText()
+            console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
             if (textDragged == 'startMoving success') {
               let windowPointDragged = windowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)

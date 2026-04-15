@@ -41,14 +41,6 @@ void DrawingNativePathEffectTestTearDown()
     std::cout << "DrawingNativePathEffectTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testCreateDashPathEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0100
- * @tc.desc   test for testCreateDashPathEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreateDashPathEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -65,14 +57,6 @@ int TestCreateDashPathEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDashPathEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0101
- * @tc.desc   test for testCreateDashPathEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateDashPathEffectNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -98,14 +82,6 @@ int TestCreateDashPathEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDashPathEffectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0102
- * @tc.desc   test for testCreateDashPathEffectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateDashPathEffectAbnormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -135,14 +111,6 @@ int TestCreateDashPathEffectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDashPathEffectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0104
- * @tc.desc   test for testCreateDashPathEffectMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateDashPathEffectMultipleCalls()
 {
     DrawingNativePathEffectTestSetUp();
@@ -159,14 +127,6 @@ int TestCreateDashPathEffectMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathEffectDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0200
- * @tc.desc   test for testPathEffectDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathEffectDestroyNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -181,14 +141,6 @@ int TestPathEffectDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathEffectDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0201
- * @tc.desc   test for testPathEffectDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathEffectDestroyNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -200,14 +152,6 @@ int TestPathEffectDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateCornerPathEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0300
- * @tc.desc   test for testCreateCornerPathEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreateCornerPathEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -222,14 +166,6 @@ int TestCreateCornerPathEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateCornerPathEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0301
- * @tc.desc   test for testCreateCornerPathEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateCornerPathEffectNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -243,14 +179,6 @@ int TestCreateCornerPathEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateCornerPathEffectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0302
- * @tc.desc   test for testCreateCornerPathEffectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateCornerPathEffectAbnormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -279,14 +207,6 @@ int TestCreateCornerPathEffectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDiscreatePathEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0400
- * @tc.desc   test for testCreateDiscreatePathEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreateDiscreatePathEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -301,14 +221,6 @@ int TestCreateDiscreatePathEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDiscreatePathEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0401
- * @tc.desc   test for testCreateDiscreatePathEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateDiscreatePathEffectNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -327,14 +239,6 @@ int TestCreateDiscreatePathEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateDiscreatePathEffectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0402
- * @tc.desc   test for testCreateDiscreatePathEffectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateDiscreatePathEffectAbnormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -375,14 +279,6 @@ int TestCreateDiscreatePathEffectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateComposePathEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0500
- * @tc.desc   test for testCreateComposePathEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreateComposePathEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -410,14 +306,6 @@ int TestCreateComposePathEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateComposePathEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0501
- * @tc.desc   test for testCreateComposePathEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateComposePathEffectNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -448,14 +336,6 @@ int TestCreateComposePathEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreatePathDashEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0600
- * @tc.desc   test for testCreatePathDashEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreatePathDashEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -488,14 +368,6 @@ int TestCreatePathDashEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreatePathDashEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0601
- * @tc.desc   test for testCreatePathDashEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreatePathDashEffectNull()
 {
     DrawingNativePathEffectTestSetUp();
@@ -529,14 +401,6 @@ int TestCreatePathDashEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreatePathDashEffectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0602
- * @tc.desc   test for testCreatePathDashEffectAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreatePathDashEffectAbnormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -573,14 +437,6 @@ int TestCreatePathDashEffectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateSumPathEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0700
- * @tc.desc   test for testCreateSumPathEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCreateSumPathEffectNormal()
 {
     DrawingNativePathEffectTestSetUp();
@@ -601,14 +457,6 @@ int TestCreateSumPathEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testCreateSumPathEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_EFFECT_0701
- * @tc.desc   test for testCreateSumPathEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCreateSumPathEffectNull()
 {
     DrawingNativePathEffectTestSetUp();

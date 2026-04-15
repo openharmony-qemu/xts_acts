@@ -63,14 +63,6 @@ void DrawingNativeFontTestTearDown()
     std::cout << "DrawingNativeFontTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testFontCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   Test for creating and destroying a font object with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontCreateDestroyNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -84,14 +76,6 @@ int TestFontCreateDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCreateDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0101
- * @tc.desc   test for testFontCreateDestroyNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontCreateDestroyNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -103,14 +87,6 @@ int TestFontCreateDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCreateDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0102
- * @tc.desc   test for testFontCreateDestroyMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontCreateDestroyMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -135,14 +111,6 @@ int TestFontCreateDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetBaselineSnapNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0200
- * @tc.desc   test for testFontSetBaselineSnapNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetBaselineSnapNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -170,14 +138,6 @@ int TestFontSetBaselineSnapNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetBaselineSnapNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0201
- * @tc.desc   test for testFontSetBaselineSnapNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetBaselineSnapNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -194,14 +154,6 @@ int TestFontSetBaselineSnapNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetBaselineSnapMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0202
- * @tc.desc   test for testFontSetBaselineSnapMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetBaselineSnapMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -225,14 +177,6 @@ int TestFontSetBaselineSnapMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsBaselineSnapWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0203
- * @tc.desc   test for testFontIsBaselineSnapWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVELDRAWING_NUMBER_2
- */
 int TestFontIsBaselineSnapWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -247,14 +191,6 @@ int TestFontIsBaselineSnapWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetSubpixelNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0300
- * @tc.desc   test for testFontSetSubpixelNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetSubpixelNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -282,14 +218,6 @@ int TestFontSetSubpixelNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetSubpixelNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0301
- * @tc.desc   test for testFontSetSubpixelNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetSubpixelNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -306,14 +234,6 @@ int TestFontSetSubpixelNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetSubpixelMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0302
- * @tc.desc   test for testFontSetSubpixelMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetSubpixelMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -337,14 +257,6 @@ int TestFontSetSubpixelMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsSubpixelWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0303
- * @tc.desc   test for testFontIsSubpixelWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVELDRAWING_NUMBER_2
- */
 int TestFontIsSubpixelWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -361,14 +273,6 @@ int TestFontIsSubpixelWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetForceAutoHintingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0400
- * @tc.desc   test for testFontSetForceAutoHintingNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetForceAutoHintingNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -400,14 +304,6 @@ int TestFontSetForceAutoHintingNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetForceAutoHintingNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0401
- * @tc.desc   test for testFontSetForceAutoHintingNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetForceAutoHintingNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -424,14 +320,6 @@ int TestFontSetForceAutoHintingNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetForceAutoHintingMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0402
- * @tc.desc   test for testFontSetForceAutoHintingMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetForceAutoHintingMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -455,14 +343,6 @@ int TestFontSetForceAutoHintingMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsForceAutoHintingWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0403
- * @tc.desc   test for testFontIsForceAutoHintingWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontIsForceAutoHintingWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -479,14 +359,6 @@ int TestFontIsForceAutoHintingWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTypefaceNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0500
- * @tc.desc   test for testFontSetTypefaceNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetTypefaceNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -513,14 +385,6 @@ int TestFontSetTypefaceNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTypefaceNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0501
- * @tc.desc   test for testFontSetTypefaceNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTypefaceNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -552,14 +416,6 @@ int TestFontSetTypefaceNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTypefaceMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0502
- * @tc.desc   test for testFontSetTypefaceMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTypefaceMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -586,14 +442,6 @@ int TestFontSetTypefaceMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetTypefaceWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0503
- * @tc.desc   test for testFontGetTypefaceWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetTypefaceWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -610,14 +458,6 @@ int TestFontGetTypefaceWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSizeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0600
- * @tc.desc   test for testFontSetTextSizeNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetTextSizeNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -645,14 +485,6 @@ int TestFontSetTextSizeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSizeNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0601
- * @tc.desc   test for testFontSetTextSizeNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSizeNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -679,14 +511,6 @@ int TestFontSetTextSizeNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSizeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0602
- * @tc.desc   test for testFontSetTextSizeMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSizeMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -714,14 +538,6 @@ int TestFontSetTextSizeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetTextSizeWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0603
- * @tc.desc   test for testFontGetTextSizeWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetTextSizeWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -738,14 +554,6 @@ int TestFontGetTextSizeWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSizeAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0604
- * @tc.desc   test for testFontSetTextSizeAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSizeAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -764,14 +572,6 @@ int TestFontSetTextSizeAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCountTextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0700
- * @tc.desc   test for testFontCountTextNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontCountTextNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -810,14 +610,6 @@ int TestFontCountTextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCountTextNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0701
- * @tc.desc   test for testFontCountTextNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontCountTextNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -844,14 +636,6 @@ int TestFontCountTextNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCountTextMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0702
- * @tc.desc   test for testFontCountTextMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontCountTextMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -886,14 +670,6 @@ int TestFontCountTextMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontCountTextAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0703
- * @tc.desc   test for testFontCountTextAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontCountTextAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -911,14 +687,6 @@ int TestFontCountTextAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontTextToGlyphsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0800
- * @tc.desc   test for testFontTextToGlyphsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontTextToGlyphsNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -947,14 +715,6 @@ int TestFontTextToGlyphsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontTextToGlyphsNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0801
- * @tc.desc   test for testFontTextToGlyphsNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontTextToGlyphsNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -997,14 +757,6 @@ int TestFontTextToGlyphsNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontTextToGlyphsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0802
- * @tc.desc   test for testFontTextToGlyphsMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontTextToGlyphsMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1031,14 +783,6 @@ int TestFontTextToGlyphsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontTextToGlyphsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0803
- * @tc.desc   test for testFontTextToGlyphsAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontTextToGlyphsAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1061,14 +805,6 @@ int TestFontTextToGlyphsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontTextToGlyphsMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0804
- * @tc.desc   test for testFontTextToGlyphsMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontTextToGlyphsMaximum()
 {
     DrawingNativeFontTestSetUp();
@@ -1092,14 +828,6 @@ int TestFontTextToGlyphsMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetWidthsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0900
- * @tc.desc   test for testFontGetWidthsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontGetWidthsNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1123,14 +851,6 @@ int TestFontGetWidthsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetWidthsNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0901
- * @tc.desc   test for testFontGetWidthsNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetWidthsNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1168,14 +888,6 @@ int TestFontGetWidthsNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetWidthsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0902
- * @tc.desc   test for testFontGetWidthsMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetWidthsMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1205,14 +917,6 @@ int TestFontGetWidthsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetWidthsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0903
- * @tc.desc   test for testFontGetWidthsAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetWidthsAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1242,14 +946,6 @@ int TestFontGetWidthsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetWidthsMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_0904
- * @tc.desc   test for testFontGetWidthsMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetWidthsMaximum()
 {
     DrawingNativeFontTestSetUp();
@@ -1280,14 +976,6 @@ int TestFontGetWidthsMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetLinearTextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1000
- * @tc.desc   test for testFontSetLinearTextNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetLinearTextNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1315,14 +1003,6 @@ int TestFontSetLinearTextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetLinearTextNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1001
- * @tc.desc   test for testFontSetLinearTextNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetLinearTextNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1339,14 +1019,6 @@ int TestFontSetLinearTextNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetLinearTextMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1002
- * @tc.desc   test for testFontSetLinearTextMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetLinearTextMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1370,14 +1042,6 @@ int TestFontSetLinearTextMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsLinearTextWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1003
- * @tc.desc   test for testFontIsLinearTextWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontIsLinearTextWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -1394,14 +1058,6 @@ int TestFontIsLinearTextWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSkewXNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1100
- * @tc.desc   test for testFontSetTextSkewXNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetTextSkewXNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1429,14 +1085,6 @@ int TestFontSetTextSkewXNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSkewXNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1101
- * @tc.desc   test for testFontSetTextSkewXNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSkewXNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1461,14 +1109,6 @@ int TestFontSetTextSkewXNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSkewXMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1102
- * @tc.desc   test for testFontSetTextSkewXMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSkewXMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1496,14 +1136,6 @@ int TestFontSetTextSkewXMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetTextSkewXWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1103
- * @tc.desc   test for testFontGetTextSkewXWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetTextSkewXWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -1522,14 +1154,6 @@ int TestFontGetTextSkewXWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSkewXAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1104
- * @tc.desc   test for testFontSetTextSkewXAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSkewXAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1548,14 +1172,6 @@ int TestFontSetTextSkewXAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetTextSkewXMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1105
- * @tc.desc   test for testFontSetTextSkewXMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetTextSkewXMaximum()
 {
     DrawingNativeFontTestSetUp();
@@ -1571,14 +1187,6 @@ int TestFontSetTextSkewXMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetFakeBoldTextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1200
- * @tc.desc   test for testFontSetFakeBoldTextNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetFakeBoldTextNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1606,14 +1214,6 @@ int TestFontSetFakeBoldTextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetFakeBoldTextNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1201
- * @tc.desc   test for testFontSetFakeBoldTextNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetFakeBoldTextNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1630,14 +1230,6 @@ int TestFontSetFakeBoldTextNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetFakeBoldTextMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1202
- * @tc.desc   test for testFontSetFakeBoldTextMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetFakeBoldTextMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1661,14 +1253,6 @@ int TestFontSetFakeBoldTextMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsFakeBoldTextWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1203
- * @tc.desc   test for testFontIsFakeBoldTextWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontIsFakeBoldTextWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -1685,14 +1269,6 @@ int TestFontIsFakeBoldTextWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetScaleXNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1300
- * @tc.desc   test for testFontSetScaleXNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetScaleXNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1724,14 +1300,6 @@ int TestFontSetScaleXNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetScaleXNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1301
- * @tc.desc   test for testFontSetScaleXNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetScaleXNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1756,14 +1324,6 @@ int TestFontSetScaleXNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetScaleXMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1302
- * @tc.desc   test for testFontSetScaleXMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetScaleXMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1793,14 +1353,6 @@ int TestFontSetScaleXMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetScaleXWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1303
- * @tc.desc   test for testFontGetScaleXWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetScaleXWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -1817,14 +1369,6 @@ int TestFontGetScaleXWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetScaleXAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1304
- * @tc.desc   test for testFontSetScaleXAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetScaleXAbnormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1843,14 +1387,6 @@ int TestFontSetScaleXAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetScaleXMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1305
- * @tc.desc   test for testFontSetScaleXMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetScaleXMaximum()
 {
     DrawingNativeFontTestSetUp();
@@ -1867,14 +1403,6 @@ int TestFontSetScaleXMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetHintingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1400
- * @tc.desc   test for testFontSetHintingNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetHintingNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -1906,14 +1434,6 @@ int TestFontSetHintingNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetHintingNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1401
- * @tc.desc   test for testFontSetHintingNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetHintingNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -1930,14 +1450,6 @@ int TestFontSetHintingNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetHintingMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1402
- * @tc.desc   test for testFontSetHintingMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetHintingMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -1962,14 +1474,6 @@ int TestFontSetHintingMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetHintingWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1403
- * @tc.desc   test for testFontGetHintingWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetHintingWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -1986,14 +1490,6 @@ int TestFontGetHintingWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEmbeddedBitmapsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1500
- * @tc.desc   test for testFontSetEmbeddedBitmapsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetEmbeddedBitmapsNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -2025,14 +1521,6 @@ int TestFontSetEmbeddedBitmapsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEmbeddedBitmapsNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1501
- * @tc.desc   test for testFontSetEmbeddedBitmapsNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetEmbeddedBitmapsNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -2049,14 +1537,6 @@ int TestFontSetEmbeddedBitmapsNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEmbeddedBitmapsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1502
- * @tc.desc   test for testFontSetEmbeddedBitmapsMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetEmbeddedBitmapsMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -2082,14 +1562,6 @@ int TestFontSetEmbeddedBitmapsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontIsEmbeddedBitmapsWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1503
- * @tc.desc   test for testFontIsEmbeddedBitmapsWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontIsEmbeddedBitmapsWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -2106,14 +1578,6 @@ int TestFontIsEmbeddedBitmapsWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEdgingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1600
- * @tc.desc   test for testFontSetEdgingNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontSetEdgingNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -2142,14 +1606,6 @@ int TestFontSetEdgingNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEdgingNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1601
- * @tc.desc   test for testFontSetEdgingNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetEdgingNULL()
 {
     DrawingNativeFontTestSetUp();
@@ -2166,14 +1622,6 @@ int TestFontSetEdgingNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontSetEdgingMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1602
- * @tc.desc   test for testFontSetEdgingMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontSetEdgingMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -2201,14 +1649,6 @@ int TestFontSetEdgingMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetEdgingWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1603
- * @tc.desc   test for testFontGetEdgingWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetEdgingWhenNoSet()
 {
     DrawingNativeFontTestSetUp();
@@ -2227,14 +1667,6 @@ int TestFontGetEdgingWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetMetricsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1700
- * @tc.desc   test for testFontGetMetricsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontGetMetricsNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -2274,14 +1706,6 @@ int TestFontGetMetricsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontGetMetricsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1701
- * @tc.desc   test for testFontGetMetricsNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetMetricsNull()
 {
     DrawingNativeFontTestSetUp();
@@ -2309,14 +1733,6 @@ int TestFontGetMetricsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   TestFontGetMetricsMultiplies
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1702
- * @tc.desc   test for TestFontGetMetricsMultiplies.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontGetMetricsMultiplies()
 {
     DrawingNativeFontTestSetUp();
@@ -2341,14 +1757,6 @@ int TestFontGetMetricsMultiplies()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasureSingleCharacterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1800
- * @tc.desc   test for testFontMeasureSingleCharacterNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontMeasureSingleCharacterNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -2375,14 +1783,6 @@ int TestFontMeasureSingleCharacterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasureSingleCharacterNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1801
- * @tc.desc   test for testFontMeasureSingleCharacterNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontMeasureSingleCharacterNull()
 {
     DrawingNativeFontTestSetUp();
@@ -2404,14 +1804,6 @@ int TestFontMeasureSingleCharacterNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasureSingleCharacterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1802
- * @tc.desc   test for testFontMeasureSingleCharacterMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontMeasureSingleCharacterMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -2433,14 +1825,6 @@ int TestFontMeasureSingleCharacterMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasuretextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1900
- * @tc.desc   test for testFontMeasuretextNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestFontMeasuretextNormal()
 {
     DrawingNativeFontTestSetUp();
@@ -2480,14 +1864,6 @@ int TestFontMeasuretextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasuretextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1901
- * @tc.desc   test for testFontMeasuretextNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontMeasuretextNull()
 {
     DrawingNativeFontTestSetUp();
@@ -2528,14 +1904,6 @@ int TestFontMeasuretextNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasuretextMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1902
- * @tc.desc   test for testFontMeasuretextMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestFontMeasuretextMultipleCalls()
 {
     DrawingNativeFontTestSetUp();
@@ -2571,14 +1939,6 @@ int TestFontMeasuretextMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testFontMeasureSingleCharacter
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1803
- * @tc.desc   test for testFontMeasureSingleCharacter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVELDRAWING_NUMBER_1
- */
 int TestFontMeasureSingleCharacter()
 {
     DrawingNativeFontTestSetUp();

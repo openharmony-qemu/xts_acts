@@ -5,6 +5,8 @@
     "MainAbility/pages/getUIContext/GetUIContextTest",
     "MainAbility/pages/uiContext/SetResourceManagerCacheNullUndefinedTest",
     "MainAbility/pages/column/ColumnAllowForceDarkTest",
-    "MainAbility/pages/getUIContext/PostDelayedFrameCallbackParamTest"
+    "MainAbility/pages/getUIContext/PostDelayedFrameCallbackParamTest",
+    "MainAbility/pages/getUIContext/GetPageRootNodeErrorCodeTest",
+    "MainAbility/pages/getUIContext/GetPageRootNodeNullTest"
   ]
 }

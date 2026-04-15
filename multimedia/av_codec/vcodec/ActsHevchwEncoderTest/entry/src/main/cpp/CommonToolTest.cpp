@@ -14,8 +14,8 @@
  */
 
 #include "CommonToolTest.h"
-#include <hilog/log.h>
 #include <random>
+#include <hilog/log.h>
 
 namespace {
 constexpr size_t FORMAT_PUBLIC_RESERVED = 25;

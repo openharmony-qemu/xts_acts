@@ -1,4 +1,7 @@
-import abilityTest from "./Ability.test";
+import photoAccessHelperNoPermissionStaticTest from "./PhotoAccessHelperNoPermission.test";
+import photoAccessHelperReadPermissionStaticTest from "./PhotoAccessHelperReadPermission.test";
+
 export default function testsuite() {
-  abilityTest();
+  photoAccessHelperNoPermissionStaticTest();
+  photoAccessHelperReadPermissionStaticTest();
 }

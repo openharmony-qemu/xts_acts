@@ -131,12 +131,12 @@ export default function WindowImmersiveStaticTest() {
             done();
             let systemBarProperty = win!.getWindowSystemBarProperties();
             hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
-            expect(systemBarProperty.statusBarColor == '#ff00ff').assertTrue();
+            expect(systemBarProperty.statusBarColor == '#FFFF00FF').assertTrue();
             expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.statusBarContentColor =='#ffffff').assertTrue();
-            expect(systemBarProperty.navigationBarColor =='#00ff00').assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#FFFFFFFF').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#FF00FF00').assertTrue();
             expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.navigationBarContentColor =='#00ffff').assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#FF00FFFF').assertTrue();
             expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
             expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
           }).catch((err: Error): PromiseLike<void> | undefined => {

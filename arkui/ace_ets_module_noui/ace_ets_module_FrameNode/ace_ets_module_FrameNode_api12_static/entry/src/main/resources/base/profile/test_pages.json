@@ -1,8 +1,10 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-	"MainAbility/pages/frameNode/frameNode",
-	"MainAbility/pages/frameNode/nodeContainer",
-	"MainAbility/pages/frameNode/frameNodeTestGetInterface"
-	]
+        "MainAbility/pages/frameNode/frameNode",
+        "MainAbility/pages/frameNode/nodeContainer",
+        "MainAbility/pages/frameNode/frameNodeTestGetInterface",
+        "MainAbility/pages/frameNode/GetFrameNodeById",
+        "MainAbility/pages/frameNode/GetFrameNodeByUniqueId"
+    ]
 }

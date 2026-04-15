@@ -522,6 +522,28 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200
+     * @tc.number SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let fileFullName = BASE_PATH +'/dstFile.txt';
+      let dirPath = BASE_PATH+"/haps";
+      fs.mkdirSync(dirPath)
+      console.info(TAG + "fileFullName fileFullName = " + fileFullName);
+      let file = fs.openSync(fileFullName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      let writeLen = fs.writeSync(file.fd,"write strings to " + str_line +"\n");
+      fs.closeSync(file);
+      let data = testndk.OH_Pasteboard_GetDataWithProgress022();
+      fs.rmdirSync(dirPath);
+      console.info(TAG + "SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200 data = " + data );
+      expect(data).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   OH_Pasteboard_GetDataWithProgress011

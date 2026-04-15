@@ -40,14 +40,6 @@ void DrawingNativeCanvasTestPart6TestTearDown()
     std::cout << "DrawingNativeCanvasPart6Test errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawSingleChaWithFeaturesNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -90,14 +82,6 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestCanvasDrawSingleChaWithFeaturesAbNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -135,14 +119,6 @@ int TestCanvasDrawSingleChaWithFeaturesAbNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestCanvasDrawSingleChaWithFeaturesCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
