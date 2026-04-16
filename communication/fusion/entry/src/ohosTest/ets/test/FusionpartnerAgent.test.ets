@@ -78,6 +78,23 @@ let businessCapability3: partnerAgent.BusinessCapability = {
 
 let partnerAgentExtensionAbilityName: string = "testAbilityName";
 
+let btAddrRawPublic: common.BluetoothAddress = {
+    "address": "AA:BB:CC:DD:EE:FF",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+    "rawAddressType": common.BluetoothRawAddressType.PUBLIC,
+};
+let btAddrRawRandom: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:77",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+    "rawAddressType": common.BluetoothRawAddressType.RANDOM,
+};
+let deviceAddressRawPublic: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrRawPublic,
+};
+let deviceAddressRawRandom: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrRawRandom,
+};
+
 function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
@@ -755,6 +772,287 @@ export default function fusionAgentTest() {
                     expect(Number(err.code)).assertEqual(801);
                 } else {
                     expect(Number(err.code)).assertEqual(34900001);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1700
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1700
+         * @tc.desc   Test bindDevice rawAddressType PUBLIC 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddressRawPublic, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice rawAddressType PUBLIC: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1800
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1800
+         * @tc.desc   Test bindDevice rawAddressType RANDOM 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddressRawRandom, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice rawAddressType RANDOM: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1900
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1900
+         * @tc.desc   Test bindDevice 参数4 undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress, deviceCapability, businessCapability, undefined);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice parameter4 undefined: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2600
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2600
+         * @tc.desc   Test bindDevice 参数1 undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(undefined, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice parameter1 undefined: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2700
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2700
+         * @tc.desc   Test bindDevice 参数2 undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress, undefined, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice parameter2 undefined: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2800
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2800
+         * @tc.desc   Test bindDevice 参数3 undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress, deviceCapability, undefined, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice parameter3 undefined: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2000
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2000
+         * @tc.desc   Test unbindDevice rawAddressType PUBLIC 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddressRawPublic);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice rawAddressType PUBLIC: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900001);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2100
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2100
+         * @tc.desc   Test unbindDevice rawAddressType RANDOM 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddressRawRandom);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice rawAddressType RANDOM: errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900001);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2200
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2200
+         * @tc.desc   Test isDeviceBound rawAddressType PUBLIC 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddressRawPublic);
+                console.info("[fusion_js]isDeviceBound rawAddressType PUBLIC value is: " + JSON.stringify(is_boolean));
+                expect(typeof is_boolean === "boolean").assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound rawAddressType PUBLIC is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2300
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2300
+         * @tc.desc   Test isDeviceBound rawAddressType RANDOM 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddressRawRandom);
+                console.info("[fusion_js]isDeviceBound rawAddressType RANDOM value is: " + JSON.stringify(is_boolean));
+                expect(typeof is_boolean === "boolean").assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound rawAddressType RANDOM is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2400
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2400
+         * @tc.desc   Test isDeviceControlEnabled rawAddressType PUBLIC 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddressRawPublic);
+                console.info("[fusion_js]isDeviceControlEnabled rawAddressType PUBLIC value is: " + JSON.stringify(is_boolean));
+                expect(typeof is_boolean === "boolean").assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled rawAddressType PUBLIC is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2500
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2500
+         * @tc.desc   Test isDeviceControlEnabled rawAddressType RANDOM 枚举覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddressRawRandom);
+                console.info("[fusion_js]isDeviceControlEnabled rawAddressType RANDOM value is: " + JSON.stringify(is_boolean));
+                expect(typeof is_boolean === "boolean").assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled rawAddressType RANDOM is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
                 }
             }
             done();

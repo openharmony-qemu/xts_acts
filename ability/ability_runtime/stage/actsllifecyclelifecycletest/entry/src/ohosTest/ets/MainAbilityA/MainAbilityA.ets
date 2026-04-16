@@ -76,7 +76,7 @@ export default class MainAbilityA extends UIAbility {
     }
 
     globalThis.ApplicationContextA = this.context.getApplicationContext();
-    let callBackId:number = globalThis.ApplicationContextA.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+    let callBackId:number = globalThis.ApplicationContextA.on('abilityLifecycle', AbilityLifecycleCallback);
     globalThis.mainAbilityAListKey = listKey
     globalThis.mainAbilityACallBackId = callBackId
     hilog.info(0x0000, TEST_TAG, `callBackId :${callBackId}`);

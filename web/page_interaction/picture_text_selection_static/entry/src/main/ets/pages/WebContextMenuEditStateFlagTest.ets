@@ -119,7 +119,12 @@ struct webViewController {
                 }
                 break;
               }
-
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebEnableDataDetector' })
+                console.log('push URL success')
+              }
 
             }
           })

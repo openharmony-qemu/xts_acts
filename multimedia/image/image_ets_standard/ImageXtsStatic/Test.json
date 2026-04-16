@@ -11,13 +11,23 @@
     "kits": [
         {
             "type": "ShellKit",
+
+
             "run-command": [
                 "hilog -Q pidoff",
                 "rm -rf /storage/media/100/local/files/Videos/*",
                 "power-shell wakeup",
+                "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files/",
+                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files/",
+                "mkdir -p /data/tmp/case",
+                "chmod -R 777 /data/tmp/case "
             ],
+
+
+
             "teardown-command": [
                 "power-shell setmode 600",
                 "rm -rf /data/app/el2/100/database/ohos.acts.multimedia.image.xts.static/*",
@@ -30,17 +40,17 @@
             "type": "PushKit",
             "pre-push": [],
             "push": [
-
-                "./resource/image/C027.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/food.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test6.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/bluesky.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v3.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v2.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry_test/files"
+                "./resource/image/C025.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/C027.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/food.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test6.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/bluesky.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v3.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v2.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files"
             ]
         },
         {

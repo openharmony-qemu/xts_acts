@@ -59,12 +59,20 @@ struct WebViewControllerPart3 {
   @State console: string = ""
   @State time: number = 0
   @State onScrollCallBack: boolean = false;
-  @State onMessageEventCallBack: boolean = false
-
+  @State onMessageEventCallBack: boolean = false;
+  @State avoidHeight: int = 0;
+  @State SiteIsolationModeArr: webview.SiteIsolationMode[] = [webview.SiteIsolationMode.PARTIAL,webview.SiteIsolationMode.STRICT]
+  @State isEnableWholeWebPageDrawing: boolean = false;
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
+    }
+    try {
+      webview.WebviewController.enableWholeWebPageDrawing();
+      this.isEnableWholeWebPageDrawing = true;
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
@@ -224,6 +232,75 @@ struct WebViewControllerPart3 {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
+              break;
+            }
+
+            case 'emitWebSiteIsolationMode001': {
+              try {
+                webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.PARTIAL);
+                let mode = webview.WebviewController.getSiteIsolationMode();
+                Utils.emitEvent(mode, 20250920);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 20250920);
+              }
+              break;
+            }
+
+            case 'emitWebSiteIsolationMode002': {
+              try {
+                webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.STRICT);
+                let mode = webview.WebviewController.getSiteIsolationMode();
+                console.log("get mode STRICT = ", mode)
+                Utils.emitEvent(mode, 20250921);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(1, 20250921);
+              }
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottom001": {
+              this.avoidHeight += 50;
+              this.controller.avoidVisibleViewportBottom(this.avoidHeight);
+              setTimeout(() => {
+                console.log("get controller.getScrollOffset().y = ", this.controller.getScrollOffset().y);
+                Utils.emitEvent(this.controller.getScrollOffset().y, 153920)
+              }, 2000);
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottomErrCode001": {
+              try {
+                this.controllerNull.avoidVisibleViewportBottom(111);
+                Utils.emitEvent(true, 20250827)
+              } catch (error) {
+                console.error(`emitAvoidVisibleViewportBottomErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 20250827)
+              }
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottomErrCode002": {
+              let errorCode:int  = 0;
+              try {
+                this.controllerNull.avoidVisibleViewportBottom(111);;
+              } catch (error) {
+                console.error(`emitStopInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                errorCode = error.code;
+              }
+              if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M114) {
+                Utils.emitEvent(errorCode, 20250910)
+                console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M114')
+              } else {
+                Utils.emitEvent(801, 20250910)
+                console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M132')
+              }
+              break;
+            }
+
+            case "emitEnableWholeWebPageDrawing001": {
+              Utils.emitEvent(this.isEnableWholeWebPageDrawing, 20250830)
               break;
             }
 

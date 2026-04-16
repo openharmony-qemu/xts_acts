@@ -80,6 +80,7 @@ struct SheetTransitionExample {
     Column() {
       Button("Open Model Sheet")
         .id("SheetTransition")
+        .width('100%') 
         .onClick((e:ClickEvent) => {
           this.isShow = true
         })

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import  webViewController from './WebViewController.test'
+import EnableDefaultContextMenuStatic from './EnableDefaultContextMenuStatic.test'
 export default function testsuite() {
   webViewController();
+  EnableDefaultContextMenuStatic()
 }

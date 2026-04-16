@@ -28,6 +28,7 @@
     "MainAbility/pages/components/TextInputPage",
     "MainAbility/pages/components/TextPickerPage",
     "MainAbility/pages/components/TimePickerPage",
-    "MainAbility/pages/components/TogglePage"
+    "MainAbility/pages/components/TogglePage",
+    "MainAbility/pages/withThemeDebugLine/withThemeDebugLine"
   ]
 }

@@ -427,8 +427,8 @@ export default function webJsunitTwo() {
 
     /**
     * @tc.name        SwitchNextPageStatic
-    * @tc.number      SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
-    * @tc.desc        test javaScriptOnDocumentStart
+    * @tc.number      SwitchNextPageStatic444444
+    * @tc.desc        test SwitchNextPageStatic
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
@@ -438,7 +438,7 @@ export default function webJsunitTwo() {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)
         await Utils.msSleep(3000);
-        inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+        inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(6000);
         done();
       })

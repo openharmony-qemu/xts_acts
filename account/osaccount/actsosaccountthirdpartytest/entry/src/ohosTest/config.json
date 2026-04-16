@@ -43,6 +43,10 @@
       {
         "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION",
         "reason": "ceshi"
+      },
+      {
+        "name": "ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS",
+        "reason": "ceshi"
       }
     ],
     "abilities": [

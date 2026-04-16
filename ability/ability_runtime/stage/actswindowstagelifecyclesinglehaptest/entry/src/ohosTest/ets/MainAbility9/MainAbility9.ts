@@ -14,6 +14,7 @@
  */
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
+import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 export default class MainAbility9 extends Ability {
     onCreate(want, launchParam) {
@@ -44,7 +45,7 @@ export default class MainAbility9 extends Ability {
         // Ability has brought to foreground
         console.log("[Demo] MainAbility9 onForeground")
         var abilityName = "";
-        let AbilityLifecycleCallback = {
+        let AbilityLifecycleCallback:AbilityLifecycleCallback = {
             onAbilityCreate(ability) {
                 abilityName = ability.context.abilityInfo.name;
                 console.log(abilityName + " onAbilityCreate")
@@ -89,7 +90,7 @@ export default class MainAbility9 extends Ability {
         globalThis.applicationContext9 = this.context.getApplicationContext();
         if (globalThis.mainAbility9CallBackId == -1) {
             var callBackId = globalThis.applicationContext9
-                .registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+                .on('abilityLifecycle', AbilityLifecycleCallback);
             console.log("callBackId is aaa :" + callBackId);
             globalThis.mainAbility9CallBackId = callBackId;
         }

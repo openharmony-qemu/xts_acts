@@ -28,7 +28,7 @@ function sleep(ms: number): Promise<void> {
 }
 
 export default function OAIDTest(abilityContext: common.UIAbilityContext) {
-  describe('ActsOAIDTest', () => {
+  describe('ActsOAIDTestAdapt002', () => {
 
     /**
      * @tc.name   testGetOAIDByPromise

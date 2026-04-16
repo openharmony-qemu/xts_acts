@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { AbilityConstant, UIAbility, Want, common } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
@@ -24,6 +24,7 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag TestAbility', '%{public}s', 'TestAbility onCreate');
         hilog.info(0x0000, 'testTag TestAbility', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag TestAbility', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
+        AppStorage.setOrCreate<common.UIAbilityContext>('TestAbilityContext', this.context);
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
         abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;

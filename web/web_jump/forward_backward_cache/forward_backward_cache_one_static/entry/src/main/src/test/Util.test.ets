@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import { RecordData } from '@ohos.base';
+import webview from '@ohos.web.webview';
 
 export default class Utils{
   static async msSleep(count:int) : Promise<int> {
@@ -77,5 +78,20 @@ export default class Utils{
       console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
       expect(action).assertEqual(expected);
     });
+  }
+
+  static isPC(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info('userAgent' + userAgent);
+
+    try {
+      let isPc: boolean =
+        userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes('2in1')
+      console.log('device is pc:' + isPc)
+      return isPc
+    } catch (error) {
+      console.info('userAgent error:' + error);
+      return true
+    }
   }
 }

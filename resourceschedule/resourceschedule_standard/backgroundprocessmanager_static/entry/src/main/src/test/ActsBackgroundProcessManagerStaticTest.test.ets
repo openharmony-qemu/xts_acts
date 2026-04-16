@@ -400,7 +400,7 @@ export default function ActsBackgroundProcessManagerStaticTest() {
           console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 backgroundTaskManager pid: ' + pid);
           backgroundProcessManager.getPowerSaveMode(pid).then((res: backgroundProcessManager.PowerSaveMode) => {
             hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 getPowerSaveMode promise res: %{public}s', JSON.stringify(res));
-            expect(res === backgroundProcessManager.PowerSaveMode.DEFAULT_MODE).assertTrue();
+            expect(res === backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE).assertTrue();
             done();
           }).catch((error: Error) => {
             console.error("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_013 promise err code:" + error?.code + " message:" + error?.message);

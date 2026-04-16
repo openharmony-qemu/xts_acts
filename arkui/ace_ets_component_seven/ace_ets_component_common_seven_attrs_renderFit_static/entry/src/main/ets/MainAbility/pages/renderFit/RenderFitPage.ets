@@ -66,9 +66,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -351,15 +348,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mRenderFit: RenderFit = RenderFit.RIGHT
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
-    instance.renderFit(this.mRenderFit)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRenderFit: RenderFit = RenderFit.RIGHT
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`renderFit page show ${JSON.stringify(this.mRenderFit)}`)
     instance.renderFit(this.mRenderFit)
   }
@@ -939,12 +927,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1345,7 +1327,6 @@ struct renderFitPage {
   @State _renderFitFlexMod: FlexModifier = new FlexModifier()
   @State _renderFitFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _renderFitFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _renderFitFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _renderFitGaugeMod: GaugeModifier = new GaugeModifier()
   @State _renderFitGridMod: GridModifier = new GridModifier()
   @State _renderFitGridColMod: GridColModifier = new GridColModifier()

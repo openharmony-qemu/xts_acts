@@ -78,6 +78,28 @@ export default function webViewSrollableJsunit(){
     })
 
     /**
+     * @tc.name   testWebViewGetScrollOffsetStatic
+     * @tc.number SUB_SCTOLL_BY_TO_API_1_001
+     * @tc.desc   test GetScrollOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewGetScrollOffsetStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitWebViewGetScrollOffset', 10)
+        await Utils.msSleep(1000);
+        let driver:Driver = Driver.create();
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testWebViewGetScrollOffset',false,1601319,done);
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('scrollByToButton'));
+        button?.click();
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
      * @tc.name   emitonSwitchNextPage
      * @tc.number emitonSwitchNextPage
      * @tc.desc   emitonSwitchNextPage

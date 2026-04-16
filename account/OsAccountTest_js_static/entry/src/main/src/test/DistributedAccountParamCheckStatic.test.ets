@@ -47,7 +47,6 @@ export default function DistributedAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>DistributedAccountParamCheckStatic_0100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>DistributedAccountParamCheckStatic_0100 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
         }
@@ -105,7 +104,6 @@ export default function DistributedAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>DistributedAccountParamCheckStatic_0300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>DistributedAccountParamCheckStatic_0300 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
         }
@@ -157,7 +155,6 @@ export default function DistributedAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>distributedAccountAbility is: " + JSON.stringify(distributedAccountAbility));
           expect(distributedAccountAbility).not().assertUndefined();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>catch err: " + err.code);
           expect().assertFail();
         }

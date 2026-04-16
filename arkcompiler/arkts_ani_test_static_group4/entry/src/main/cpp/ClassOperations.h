@@ -9666,9 +9666,11 @@ ani_boolean test_Type_GetSuperClass([[maybe_unused]] ani_env *env, [[maybe_unuse
     auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Son", &cls);
     ASSERT_EQ(status, ANI_OK);
     ani_class result = nullptr;
+    ani_boolean isUndefined {};
     status = env->Type_GetSuperClass(cls, &result);
     ASSERT_EQ(status, ANI_OK);
-    ASSERT_NE(result, nullptr);
+    ASSERT_EQ(env->Reference_IsUndefined(result, &isUndefined), ANI_OK);
+    ASSERT_EQ(isUndefined, ANI_FALSE);
     return true;
 }
 

@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, EffectComponentAttribute,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -158,13 +158,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
-    instance.brightness(this.mBrightness)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBrightness: number = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
@@ -576,7 +569,6 @@ struct brightnessPage {
   @State _brightnessFlexMod: FlexModifier = new FlexModifier()
   @State _brightnessFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _brightnessFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _brightnessFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _brightnessGaugeMod: GaugeModifier = new GaugeModifier()
   @State _brightnessGridMod: GridModifier = new GridModifier()
   @State _brightnessGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct brightnessPage {
       this._brightnessFlexMod.mBrightness = value.brightness
       this._brightnessFlowItemMod.mBrightness = value.brightness
       this._brightnessFormComponentMod.mBrightness = value.brightness
-      this._brightnessFormLinkMod.mBrightness = value.brightness
       this._brightnessGaugeMod.mBrightness = value.brightness
       this._brightnessGridMod.mBrightness = value.brightness
       this._brightnessGridColMod.mBrightness = value.brightness

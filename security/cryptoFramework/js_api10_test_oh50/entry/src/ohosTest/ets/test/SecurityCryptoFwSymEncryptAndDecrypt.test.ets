@@ -1811,6 +1811,8 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
             let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
             let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+            let getKeyLen: number = symKey.getKeySize();
+            expect(getKeyLen).assertEqual(keyLen * 8);
             let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
             cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
             let cipherData: cryptoFramework.DataBlob = cipher1.doFinalSync(data);

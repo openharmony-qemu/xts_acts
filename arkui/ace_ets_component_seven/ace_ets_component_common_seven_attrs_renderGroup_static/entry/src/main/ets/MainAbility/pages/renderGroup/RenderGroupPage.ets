@@ -66,9 +66,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -350,15 +347,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-    instance.renderGroup(this.mRenderGroup)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRenderGroup: boolean = true
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
     instance.renderGroup(this.mRenderGroup)
   }
@@ -938,12 +926,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1342,7 +1324,6 @@ struct renderGroupPage {
   @State _renderGroupFlexMod: FlexModifier = new FlexModifier()
   @State _renderGroupFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _renderGroupFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _renderGroupFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _renderGroupGaugeMod: GaugeModifier = new GaugeModifier()
   @State _renderGroupGridMod: GridModifier = new GridModifier()
   @State _renderGroupGridColMod: GridColModifier = new GridColModifier()

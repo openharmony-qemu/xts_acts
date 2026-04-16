@@ -438,14 +438,14 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
     /**
-     * @tc.name   testLiveNotificationCapsuleIconForUndefined
+     * @tc.name   testLiveNotificationCapsuleIconForUndefinedAdapt001
      * @tc.number Sub_Notification_Ans_Live_Publish_4000
      * @tc.desc   test publish interface fail
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLiveNotificationCapsuleIconForUndefined', Level.LEVEL2, async  (done : Function) => {
+    it('testLiveNotificationCapsuleIconForUndefinedAdapt001', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
         id : 1,
@@ -1483,14 +1483,14 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
     /**
-     * @tc.name   testLiveNotificationPublishsuccess
+     * @tc.name   testLiveNotificationPublishsuccessAdapt001
      * @tc.number Sub_Notification_Ans_Live_Publish_7600
      * @tc.desc   test publish interface fail
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLiveNotificationPublishsuccess', Level.LEVEL2, async  (done : Function) => {
+    it('testLiveNotificationPublishsuccessAdapt001', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
@@ -1606,14 +1606,14 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
     /**
-     * @tc.name   testLiveNotificationPublishsuccess
+     * @tc.name   testLiveNotificationPublishsuccessAdapt002
      * @tc.number Sub_Notification_Ans_Live_Publish_7700
      * @tc.desc   test publish interface success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLiveNotificationPublishsuccess', Level.LEVEL2, async  (done : Function) => {
+    it('testLiveNotificationPublishsuccessAdapt002', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
       let opts : image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }

@@ -83,12 +83,14 @@ struct webViewOnMetaViewportFalse {
                 }
                 break;
               }
+
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
-                router.pushUrl({ url: 'pages/webViewControllerPart3' })
+                router.pushUrl({ url: 'pages/webJavaScriptOnDoucmentEndTest' })
                 console.log('push URL success')
               }
+
             }
           })
       }

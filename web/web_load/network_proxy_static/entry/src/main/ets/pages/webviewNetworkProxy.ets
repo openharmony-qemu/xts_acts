@@ -137,6 +137,25 @@ struct webviewNetworkProxy {
               break;
             }
 
+            case 'testInsertProxyRule2': {
+              try {
+                this.proxyConfig.insertProxyRule('');
+                let proxyRules = this.proxyConfig.getProxyRules();
+                for (let i = 0; i < proxyRules.length; i++) {
+                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
+                  console.log('Url: ' + proxyRules[i].getUrl());
+                  let schemeFilter = proxyRules[i].getSchemeFilter();
+                  let url = proxyRules[i].getUrl();
+                  if (schemeFilter === 0 && url === '') {
+                    Utils.emitEvent(true, 2025021841);
+                  }
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
             case 'testInsertDirectRule': {
               try {
                 this.proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
@@ -146,6 +165,40 @@ struct webviewNetworkProxy {
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 0) {
                     Utils.emitEvent(true, 202502185);
+                  }
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testInsertDirectRule2': {
+              try {
+                this.proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_HTTP);
+                let proxyRules = this.proxyConfig.getProxyRules();
+                for (let i = 0; i < proxyRules.length; i++) {
+                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
+                  let schemeFilter = proxyRules[i].getSchemeFilter();
+                  if (schemeFilter === 0) {
+                    Utils.emitEvent(true, 2025021851);
+                  }
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testInsertDirectRule3': {
+              try {
+                this.proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_HTTPS);
+                let proxyRules = this.proxyConfig.getProxyRules();
+                for (let i = 0; i < proxyRules.length; i++) {
+                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
+                  let schemeFilter = proxyRules[i].getSchemeFilter();
+                  if (schemeFilter === 0) {
+                    Utils.emitEvent(true, 2025021852);
                   }
                 }
               } catch (error) {
@@ -170,19 +223,36 @@ struct webviewNetworkProxy {
               break;
             }
 
+            case 'testInsertBypassRule2': {
+              try {
+                this.proxyConfig.insertBypassRule('');
+                  let bypassRules = this.proxyConfig.getBypassRules();
+                  for (let i = 0; i < bypassRules.length; i++) {
+                    console.log('bypassRules: ' + bypassRules[i]);
+                    if (bypassRules[i] === '') {
+                      Utils.emitEvent(true, 2025021861);
+                    }
+                  }
+
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
             case 'testBypassHostnamesWithoutPeriod': {
               try {
-                this.callbackFlag = false;
-                this.proxyConfig.insertProxyRule('http://testnone');
+                let callbackFlag1 = false;
                 this.proxyConfig.bypassHostnamesWithoutPeriod();
-                webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
-                  console.log('applyProxyOverride callback');
-                  this.callbackFlag = true;
+                this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
+                webview.ProxyController.removeProxyOverride(() => {
+                  console.log('removeProxyOverride callback');
+                  callbackFlag1 = true;
                 });
                 setTimeout(() => {
                   this.controller.loadUrl('www.baidu.com');
-                  console.log('callbackFlag:' + this.callbackFlag);
-                  Utils.emitEvent(this.callbackFlag, 202502187);
+                  console.log('callbackFlag:' + callbackFlag1);
+                  Utils.emitEvent(callbackFlag1, 202502187);
                 }, 3000)
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
@@ -192,17 +262,17 @@ struct webviewNetworkProxy {
 
             case 'testClearImplicitRules': {
               try {
-                this.callbackFlag = false;
-                this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
+                let callbackFlag2 = false;
                 this.proxyConfig.clearImplicitRules();
-                webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
-                  console.log('applyProxyOverride callback');
-                  this.callbackFlag = true;
+                this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
+                webview.ProxyController.removeProxyOverride(() => {
+                  console.log('removeProxyOverride callback');
+                  callbackFlag2 = true;
                 });
                 setTimeout(() => {
                   this.controller.loadUrl('http://localhost:8080');
-                  console.log('callbackFlag:' + this.callbackFlag);
-                  Utils.emitEvent(this.callbackFlag, 202502188);
+                  console.log('callbackFlag:' + callbackFlag2);
+                  Utils.emitEvent(callbackFlag2, 202502188);
                 }, 3000)
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);

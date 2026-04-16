@@ -121,6 +121,37 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'testSaveHttpAuthCredentialsEmpty001': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials("", "", "", "");
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 300401)
+              }
+              break;
+            }
+
+            case 'testGetHttpAuthCredentialsEmpty001': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
+                let arr: string[] = web_webview.WebDataBase.getHttpAuthCredentials("", "")
+                setTimeout(() => {
+                  if (arr) {
+                    this.username_password = arr[0]
+                    Utils.emitEvent(this.username_password, 300451)
+                  } else {
+                    Utils.emitEvent(false, 300451)
+                  }
+                }, 2000)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 300451)
+              }
+              break;
+            }
+
             case 'emitonSwitchNextPage1': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

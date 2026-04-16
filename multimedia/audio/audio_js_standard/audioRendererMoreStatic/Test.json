@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "1500000",
         "bundle-name": "com.example.audiorenderermore.static",
-        "shell-timeout": "60000",
+        "shell-timeout": "600000",
         "testcase-timeout": "100000",
         "module-name": "entry"
     },

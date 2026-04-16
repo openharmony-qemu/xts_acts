@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,13 +55,11 @@ export default function VideoReset12() {
         if (data.connState == wifiMg.ConnState.CONNECTED) {
           console.info("======> WLAN connection established ");
         } else {
-          expect().message("======> WLAN Network error").assertFail(); //方式一
-          //throw new Error("======> WLAN Network error");//方式二
+          expect().message("======> WLAN Network error").assertFail(); 
           done();
         }
         if (data.chload >= 900 || data.rssi <= -80) {
-          expect().message("======> WLAN Network error").assertFail();//方式一
-          //throw new Error("======> WLAN Network error");//方式二
+          expect().message("======> WLAN Network error").assertFail();
           done();
         } else if (data.chload >= 500) {
           console.info("======> The internet connection is poor. ");

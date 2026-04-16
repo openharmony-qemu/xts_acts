@@ -48,7 +48,7 @@ export default function calendarPickerOnChangeTest() {
       console.log('Utils.getComponentRect start')
       let Rect = Utils.getComponentRect('calendarPickerOnChangeTest')
       console.log('Utils.getComponentRect end')
-      Utils.clickLocation(Math.round((AppStorage.get<number>('winLeft')!).toDouble() + Rect.right - uiContext.vp2px(5)).toInt(),
+      await Utils.clickLocation(Math.round((AppStorage.get<number>('winLeft')!).toDouble() + Rect.right - uiContext.vp2px(5)).toInt(),
         Math.round((AppStorage.get<number>('winTop')!).toDouble() + Rect.bottom - uiContext.vp2px(5)).toInt())
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('calendarPickerOnChangeTest')

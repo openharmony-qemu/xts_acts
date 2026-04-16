@@ -77,6 +77,8 @@ struct getResult {
               promptAction.showToast({ duration: 100, message: 'Drag failed' });
             } else if (event.getResult() === DragResult.DRAG_CANCELED) {
               promptAction.showToast({ duration: 100, message: 'Drag DRAG_CANCELED' });
+            } else if (event.getResult() === DragResult.UNKNOWN) {
+              promptAction.showToast({ duration: 100, message: 'Drag UNKNOWN' });
             }
           })
         Text('DragResult.DRAG_SUCCESSFUL')

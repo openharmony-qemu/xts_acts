@@ -1830,14 +1830,14 @@ export default function BufferTest() {
       expect(str).assertEqual("87654321");
     });
     /**
-     * @tc.name   testSwap640220
+     * @tc.name   testSwap640220Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_11900
      * @tc.desc   Interprets buf as an array of unsigned 64-bit integers and swaps the byte order in-place.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testSwap640220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it("testSwap640220Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("12345678");
       buf1.swap64();
       let str = buf1.toString();
@@ -2054,14 +2054,14 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.name     testfrom0263
+     * @tc.name   testfrom0263Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_13000
      * @tc.desc   This creates a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("  testfrom0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it("testfrom0263Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Uint8Array(2);
       arr[0] = 97;
       arr[1] = 98;
