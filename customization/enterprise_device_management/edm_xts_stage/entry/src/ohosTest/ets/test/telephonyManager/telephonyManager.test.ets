@@ -3546,7 +3546,7 @@ function testActiveSim() {
     done();
   });
 
-    /**
+  /**
    * @tc.name   test_ActiveSim_policy_conflict_0111
    * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0111
    * @tc.desc   test ActiveSim failed
