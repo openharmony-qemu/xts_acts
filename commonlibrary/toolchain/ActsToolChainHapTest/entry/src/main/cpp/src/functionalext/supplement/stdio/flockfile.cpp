@@ -19,6 +19,8 @@
 #include <string.h>
 #include "test.h"
 
+#define THREAD_COUNT 100
+
 static FILE *fp;
 static const char *path = "/data/storage/el2/base/cache/test.txt";
 
@@ -64,7 +66,7 @@ void *do_child_two(void *p)
     ret = fwrite(buf, strlen(buf), 1, fp);
 
     funlockfile(fp);
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -76,15 +78,15 @@ void flockfile_0100(void)
 {
     pthread_t th;
 
-    if (pthread_create(&th, NULL, do_child_one, NULL) != 0) {
+    if (pthread_create(&th, nullptr, do_child_one, nullptr) != 0) {
         t_error("%s pthread_create failed\n", __func__);
     }
 
     void *result;
     if (pthread_join(th, &result) != 0) {
         t_error("%s pthread_join failed\n", __func__);
-    } else if (result != NULL) {
-        t_error("%s wrong return value: %p, expected %p\n", __func__, result, NULL);
+    } else if (result != nullptr) {
+        t_error("%s wrong return value: %p, expected %p\n", __func__, result, nullptr);
     }
 }
 
@@ -95,21 +97,21 @@ void flockfile_0100(void)
  */
 void flockfile_0200(void)
 {
-    pthread_t tid[100];
+    pthread_t tid[THREAD_COUNT];
 
     fp = fopen(path, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    for (int i = 0; i < 100; i++) {
-        if (pthread_create(tid + i, NULL, do_child_two, NULL) != 0) {
+    for (int i = 0; i < THREAD_COUNT; i++) {
+        if (pthread_create(tid + i, nullptr, do_child_two, nullptr) != 0) {
             t_error("%s pthread_create failed\n", __func__);
         }
     }
 
-    for (int j = 0; j < 100; j++) {
-        if (pthread_join(tid[j], NULL) != 0) {
+    for (int j = 0; j < THREAD_COUNT; j++) {
+        if (pthread_join(tid[j], nullptr) != 0) {
             t_error("%s pthread_join failed\n", __func__);
         }
     }
@@ -118,7 +120,8 @@ void flockfile_0200(void)
     remove(path);
 }
 
-static int FlockfileTest_impl(int argc, char *argv[]){
+static int FlockfileTestImpl(int argc, char *argv[])
+{
     flockfile_0100();
     flockfile_0200();
     return g_tStatus;
@@ -126,7 +129,7 @@ static int FlockfileTest_impl(int argc, char *argv[]){
 
 int FlockfileTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FlockfileTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FlockfileTestImpl(1, libcArgv);
 }

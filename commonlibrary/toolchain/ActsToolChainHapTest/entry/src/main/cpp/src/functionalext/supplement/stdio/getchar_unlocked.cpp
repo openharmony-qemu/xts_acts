@@ -52,14 +52,15 @@ void getchar_unlocked_0100(void)
     remove(patha);
 }
 
-static int GetcharUnlockedTest_impl(int argc, char *argv[]){
+static int GetcharUnlockedTestImpl(int argc, char *argv[])
+{
     getchar_unlocked_0100();
     return g_tStatus;
 }
 
 int GetcharUnlockedTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetcharUnlockedTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetcharUnlockedTestImpl(1, libcArgv);
 }

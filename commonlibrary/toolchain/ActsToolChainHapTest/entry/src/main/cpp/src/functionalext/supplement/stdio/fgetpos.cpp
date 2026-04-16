@@ -73,7 +73,8 @@ static TEST_FUN G_Fun_Array[] = {
     fgetpos_0200,
 };
 
-static int FgetposTest_impl(int argc, char *argv[]){
+static int FgetposTestImpl(int argc, char *argv[])
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
@@ -84,7 +85,7 @@ static int FgetposTest_impl(int argc, char *argv[]){
 
 int FgetposTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FgetposTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FgetposTestImpl(1, libcArgv);
 }

@@ -80,7 +80,7 @@ void cnd_broadcast_0100(void)
     mtx_unlock(&mutex);
 
     for (i = 0; i < N; ++i) {
-        if (thrd_join(ids[i], NULL) != thrd_success) {
+        if (thrd_join(ids[i], nullptr) != thrd_success) {
             t_error("%s thrd_join failed\n", __func__);
         }
     }
@@ -97,7 +97,7 @@ static int cnd_broadcastTest_with_args(int argc, char *argv[])
 
 int CndBroadcastTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return cnd_broadcastTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return cnd_broadcastTest_with_args(1, libcArgv);
 }

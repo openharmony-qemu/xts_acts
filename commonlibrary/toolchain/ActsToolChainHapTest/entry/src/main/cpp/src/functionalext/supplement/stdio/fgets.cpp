@@ -38,9 +38,9 @@ void fgets_0100(void)
     EXPECT_TRUE("fgets_0100", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
-    wrstring = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
+    wrstring = nullptr;
 }
 
 /**
@@ -65,8 +65,8 @@ void fgets_0200(void)
     EXPECT_TRUE("fgets_0200", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -91,8 +91,8 @@ void fgets_0300(void)
     EXPECT_TRUE("fgets_0300", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -117,8 +117,8 @@ void fgets_0400(void)
     EXPECT_TRUE("fgets_0400", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -143,8 +143,8 @@ void fgets_0500(void)
     EXPECT_TRUE("fgets_0500", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -169,11 +169,12 @@ void fgets_0600(void)
     EXPECT_TRUE("fgets_0600", successflag);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
-static int FgetsTest_impl(int argc, char *argv[]){
+static int FgetsTestImpl(int argc, char *argv[])
+{
     fgets_0100();
     fgets_0200();
     fgets_0300();
@@ -186,7 +187,7 @@ static int FgetsTest_impl(int argc, char *argv[]){
 
 int FgetsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FgetsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FgetsTestImpl(1, libcArgv);
 }

@@ -37,7 +37,7 @@ void fprintf_0100(void)
  * @tc.desc:      Verify fprintf and stderr process success.
  * @tc.level:     level 0.
  */
-void fprintf_0200(void)
+void Fprintf0200(void)
 {
     char str[] = "This is a test fprintf_0200";
     size_t len = fprintf(stderr, "%s", str);
@@ -54,7 +54,7 @@ void fprintf_0300(void)
     char str[] = "这是一个测试";
     int len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
         fclose(fptr);
     }
@@ -71,7 +71,7 @@ void fprintf_0400(void)
     char str[] = "这是一个测试";
     size_t len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "r");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
         fclose(fptr);
     }
@@ -91,7 +91,7 @@ void fprintf_0500(void)
     double d = 45.67;
     size_t len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "String: %s, Int: %d, Double: %.2f", str, num, d);
         fclose(fptr);
     }
@@ -113,7 +113,7 @@ void fprintf_0600(void)
     
     // Write first line
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         fprintf(fptr, "%s", str1);
         fclose(fptr);
     }
@@ -121,7 +121,7 @@ void fprintf_0600(void)
     // Append second line
     fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "a");
     size_t len = 0;
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str2);
         fclose(fptr);
     }
@@ -135,15 +135,15 @@ void fprintf_0600(void)
  * @tc.desc:      Verify fprintf with large string.
  * @tc.level:     level 0.
  */
-void fprintf_0700(void)
+void Fprintf0700(void)
 {
     char large_str[1024];
-    memset(large_str, 'A', sizeof(large_str)-1);
-    large_str[sizeof(large_str)-1] = '\0';
+    memset(large_str, 'A', sizeof(large_str) - 1);
+    large_str[sizeof(large_str) - 1] = '\0';
     
     size_t len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "%s", large_str);
         fclose(fptr);
     }
@@ -162,7 +162,7 @@ void fprintf_0800(void)
     char str[] = "Special chars: \t\n\r\\\"\'";
     size_t len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
-    if (fptr != NULL) {
+    if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
         fclose(fptr);
     }
@@ -171,19 +171,20 @@ void fprintf_0800(void)
     (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
-static int FprintfTest_impl(void){
+static int FprintfTestImpl(void)
+{
     fprintf_0100();
-    fprintf_0200();
+    Fprintf0200();
     fprintf_0300();
     fprintf_0400();
     fprintf_0500();
     fprintf_0600();
-    fprintf_0700();
+    Fprintf0700();
     fprintf_0800();
     return g_tStatus;
 }
 
 int FprintfTest(void)
 {
-    return FprintfTest_impl();
+    return FprintfTestImpl();
 }

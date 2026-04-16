@@ -66,8 +66,9 @@ static void sendsss(void)
     msg[1].msg_hdr.msg_iovlen = 1;
 
     retval = sendmmsg(sockfd, msg, 2, 0);
-    if (retval == -1)
+    if (retval == -1) {
         t_error("recvmmsg_time64_0100 sendmmsg error");
+    }
 }
 
 static void recvsss(void)
@@ -91,7 +92,7 @@ static void recvsss(void)
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     addr.sin_port = htons(1234);
-    if (bind(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
+    if (bind(sockfd, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) == -1) {
         t_error("recvmmsg_time64_0100 recv bind error");
         exit(EXIT_FAILURE);
     }
@@ -135,7 +136,7 @@ static int __recvmmsg_time64Test_with_args(int argc, char *argv[])
 
 int __recvmmsg_time64Test(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __recvmmsg_time64Test_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return __recvmmsg_time64Test_with_args(1, libcArgv);
 }

@@ -26,11 +26,11 @@ static const char *getdelim_path = "/data/storage/el2/base/cache/getdelim.txt";
 void getdelim_0100(void)
 {
     char *wrstring = "hello,world";
-    char *line = NULL;
+    char *line = nullptr;
     size_t len = 0;
 
     FILE *fp = fopen(getdelim_path, "w+");
-    EXPECT_PTRNE("getdelim_0100", fp, NULL);
+    EXPECT_PTRNE("getdelim_0100", fp, nullptr);
 
     fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
     fseek(fp, 0, SEEK_SET);
@@ -50,13 +50,13 @@ void getdelim_0100(void)
  */
 void getdelim_0200(void)
 {
-    char *line = NULL;
+    char *line = nullptr;
     char *wrstring = "helloworld";
 
     FILE *fp = fopen(getdelim_path, "w+");
     EXPECT_PTRNE("getdelim_0200", fp, NULL);
 
-    ssize_t result = getdelim(&line, NULL, 'l', fp);
+    ssize_t result = getdelim(&line, nullptr, 'l', fp);
     EXPECT_EQ("getdelim_0200", result, -1);
     remove(getdelim_path);
 }
@@ -74,12 +74,13 @@ void getdelim_0300(void)
     FILE *fp = fopen(getdelim_path, "w+");
     EXPECT_PTRNE("getdelim_0300", fp, NULL);
 
-    ssize_t result = getdelim(NULL, &a, 'l', fp);
+    ssize_t result = getdelim(nullptr, &a, 'l', fp);
     EXPECT_EQ("getdelim_0300", result, -1);
     remove(getdelim_path);
 }
 
-static int GetdelimTest_impl(int argc, char *argv[]){
+static int GetdelimTestImpl(int argc, char *argv[])
+{
     getdelim_0100();
     getdelim_0200();
     getdelim_0300();
@@ -89,7 +90,7 @@ static int GetdelimTest_impl(int argc, char *argv[]){
 
 int GetdelimTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetdelimTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetdelimTestImpl(1, libcArgv);
 }

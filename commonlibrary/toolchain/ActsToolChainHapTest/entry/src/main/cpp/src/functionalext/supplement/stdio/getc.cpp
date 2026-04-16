@@ -51,14 +51,15 @@ static void getc_0100(void)
     remove(path);
 }
 
-static int GetcTest_impl(int argc, char *argv[]){
+static int GetcTestImpl(int argc, char *argv[])
+{
     getc_0100();
     return g_tStatus;
 }
 
 int GetcTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetcTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetcTestImpl(1, libcArgv);
 }

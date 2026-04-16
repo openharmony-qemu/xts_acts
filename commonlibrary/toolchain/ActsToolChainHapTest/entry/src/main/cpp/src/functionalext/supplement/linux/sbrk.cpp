@@ -27,8 +27,8 @@ void sbrk_0100(void)
 {
     errno = 0;
     // 修复：添加 (int*) 强转
-    int *p = (int*)sbrk(0);
-    if (p == (void *)(-1)) {
+    int *p = static_cast<int *>(sbrk(0));
+    if (p == reinterpret_cast<void *>(-1)) {
         t_error("%s sbrk failed\n", __func__);
     }
     if (errno == ENOMEM) {
@@ -45,8 +45,8 @@ void sbrk_0200(void)
 {
     errno = 0;
     // 修复：添加 (int*) 强转
-    int *p = (int*)sbrk(1);
-    if (p != (void *)(-1)) {
+    int *p = static_cast<int *>(sbrk(1));
+    if (p != reinterpret_cast<void *>(-1)) {
         t_error("%s sbrk failed\n", __func__);
     }
     if (errno != ENOMEM) {
@@ -54,7 +54,8 @@ void sbrk_0200(void)
     }
 }
 
-static int SbrkTest_impl(int argc, char *argv[]){
+static int SbrkTestImpl(int argc, char *argv[])
+{
     sbrk_0100();
     sbrk_0200();
     return T_STATUS;
@@ -62,7 +63,7 @@ static int SbrkTest_impl(int argc, char *argv[]){
 
 int SbrkTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SbrkTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SbrkTestImpl(1, libcArgv);
 }

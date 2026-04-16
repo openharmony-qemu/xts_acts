@@ -198,7 +198,8 @@ void fseeko_0600(void)
     remove(path);
 }
 
-static int FseekoTest_impl(int argc, char *argv[]){
+static int FseekoTestImpl(int argc, char *argv[])
+{
     fseeko_0100();
     fseeko_0200();
     fseeko_0300();
@@ -211,7 +212,7 @@ static int FseekoTest_impl(int argc, char *argv[]){
 
 int FseekoTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FseekoTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FseekoTestImpl(1, libcArgv);
 }

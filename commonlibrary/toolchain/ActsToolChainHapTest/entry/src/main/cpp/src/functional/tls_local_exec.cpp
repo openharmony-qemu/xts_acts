@@ -20,43 +20,44 @@ static int tnum;
 
 static unsigned ptrmod(void *p, unsigned m)
 {
-	volatile unsigned n = (uintptr_t)p;
-	return n % m;
+    volatile unsigned n = static_cast<unsigned>(reinterpret_cast<uintptr_t>(p));
+    return n % m;
 }
 
 static void *check(void *arg)
 {
-	tnum++;
+    tnum++;
 
-	CHECK(d1 == 11, " want 11 got %d", d1);
-	CHECK(d64 == 22, " want 22 got %d", d64);
-	CHECK(d4096 == 33, " want 33 got %d", d4096);
+    CHECK(d1 == 11, " want 11 got %d", d1);
+    CHECK(d64 == 22, " want 22 got %d", d64);
+    CHECK(d4096 == 33, " want 33 got %d", d4096);
 
-	CHECK(ptrmod(&d64, 64) == 0, " address is %p, want 64 byte alignment", &d64);
-	CHECK(ptrmod(&d4096, 4096) == 0, " address is %p, want 4096 byte alignment", &d4096);
+    CHECK(ptrmod(&d64, 64) == 0, " address is %p, want 64 byte alignment", &d64);
+    CHECK(ptrmod(&d4096, 4096) == 0, " address is %p, want 4096 byte alignment", &d4096);
 
-	CHECK(z1 == 0, " want 0 got %d", z1);
-	CHECK(z64 == 0, " want 0 got %d", z64);
-	CHECK(z4096 == 0, " want 0 got %d", z4096);
+    CHECK(z1 == 0, " want 0 got %d", z1);
+    CHECK(z64 == 0, " want 0 got %d", z64);
+    CHECK(z4096 == 0, " want 0 got %d", z4096);
 
-	CHECK(ptrmod(&z64, 64) == 0, " address is %p, want 64 byte alignment", &z64);
-	CHECK(ptrmod(&z4096, 4096) == 0, " address is %p, want 4096 byte alignment", &z4096);
+    CHECK(ptrmod(&z64, 64) == 0, " address is %p, want 64 byte alignment", &z64);
+    CHECK(ptrmod(&z4096, 4096) == 0, " address is %p, want 4096 byte alignment", &z4096);
 
-	CHECK(!strcmp(s1, "s1"), " want s1 got %s", s1);
-	return 0;
+    CHECK(!strcmp(s1, "s1"), " want s1 got %s", s1);
+    return nullptr;
 }
 
-static int TlsLocalExecTest_impl(){
-	pthread_t td;
+static int TlsLocalExecTestImpl()
+{
+    pthread_t td;
 
-	check(0);
-	CHECK(pthread_create(&td, 0, check, 0) == 0, "", "");
-	CHECK(pthread_join(td, 0) == 0, "", "");
+    check(nullptr);
+    CHECK(pthread_create(&td, nullptr, check, nullptr) == 0, "", "");
+    CHECK(pthread_join(td, nullptr) == 0, "", "");
 
-	return g_tStatus;
+    return g_tStatus;
 }
 
 int TlsLocalExecTest(void)
 {
-    return TlsLocalExecTest_impl();
+    return TlsLocalExecTestImpl();
 }

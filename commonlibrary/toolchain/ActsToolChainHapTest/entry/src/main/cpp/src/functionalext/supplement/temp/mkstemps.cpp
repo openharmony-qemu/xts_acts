@@ -23,7 +23,7 @@
  * @tc.desc      : Provide the correct template, create a temporary file
  * @tc.level     : Level 0
  */
-void mkstemps_0100(void)
+void Mkstemps0100(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemps_0100_XXXXXX.dat";
     int fd = mkstemps(tmpfile, strlen(".dat"));
@@ -45,7 +45,7 @@ void mkstemps_0100(void)
  * @tc.desc      : Provide the correct template and no fixed suffix, create a temporary file
  * @tc.level     : Level 0
  */
-void mkstemps_0200(void)
+void Mkstemps0200(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemps_0200_XXXXXX";
     int fd = mkstemps(tmpfile, 0);
@@ -67,7 +67,7 @@ void mkstemps_0200(void)
  * @tc.desc      : Provide error template, create temp file
  * @tc.level     : Level 2
  */
-void mkstemps_0300(void)
+void Mkstemps0300(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemps_0300.dat";
     int fd = mkstemps(tmpfile, strlen(".dat"));
@@ -89,7 +89,7 @@ void mkstemps_0300(void)
  * @tc.desc      : Template with 'XXXXXX' not at the end
  * @tc.level     : Level 2
  */
-void mkstemps_0400(void)
+void Mkstemps0400(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemps_0400_XXXXXX_dir";
     int fd = mkstemps(tmpfile, 0);
@@ -105,7 +105,7 @@ void mkstemps_0400(void)
  * @tc.desc      : Verify with suffix length larger than actual suffix
  * @tc.level     : Level 2
  */
-void mkstemps_0500(void)
+void Mkstemps0500(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemps_0500_XXXXXX.dat";
     int fd = mkstemps(tmpfile, strlen(".dat") + SUFFIX_LEN); // Exceeding the actual suffix length
@@ -115,17 +115,18 @@ void mkstemps_0500(void)
     }
 }
 
-static int MkstempsTest_impl(void){
-    mkstemps_0100();
-    mkstemps_0200();
-    mkstemps_0300();
-    mkstemps_0400();
-    mkstemps_0500();
+static int MkstempsTestImpl(void)
+{
+    Mkstemps0100();
+    Mkstemps0200();
+    Mkstemps0300();
+    Mkstemps0400();
+    Mkstemps0500();
     return T_STATUS;
 }
 
 int MkstempsTest(void)
 {
-    return MkstempsTest_impl();
+    return MkstempsTestImpl();
 }
 

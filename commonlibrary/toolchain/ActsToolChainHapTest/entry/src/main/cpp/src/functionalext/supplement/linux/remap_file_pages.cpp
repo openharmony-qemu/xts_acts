@@ -20,6 +20,8 @@
 #include "test.h"
 
 #define LEN 8192
+#define PAGE_SIZE 4096
+#define STR_COPY_LEN 8
 static const char *path = "/data/storage/el2/base/cache/remap_file_pages.txt";
 static const char *text =
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -118,7 +120,7 @@ void remap_file_pages_0100(void)
         t_error("%s open failed\n", __func__);
     }
 
-    char *start =  (char *)mmap(NULL, LEN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    char *start =  (char *)mmap(nullptr, LEN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if (start == MAP_FAILED) {
         t_error("%s mmap failed\n", __func__);
     }
@@ -145,25 +147,25 @@ void remap_file_pages_0100(void)
         close(fd);
         t_error("%s remap_file_pages failed\n", __func__);
     }
-    // Remap the first page of the file to the position of start+4096
-    result = remap_file_pages(start + 4096, LEN >> 1, 0, 0, MAP_SHARED);
+    // Remap the first page of the file to the position of start+PAGE_SIZE
+    result = remap_file_pages(start + PAGE_SIZE, LEN >> 1, 0, 0, MAP_SHARED);
     if (result < 0) {
         munmap(start, LEN);
         close(fd);
         t_error("%s remap_file_pages failed\n", __func__);
     }
 
-    memcpy(str, start, 8);
+    memcpy(str, start, STR_COPY_LEN);
     if (strcmp(str, "bbbbbbbb")) {
         t_error("%s str should be equal\n", __func__);
     }
 
-    memcpy(str, start + 4096, 8);
+    memcpy(str, start + PAGE_SIZE, STR_COPY_LEN);
     if (strcmp(str, "aaaaaaaa")) {
         t_error("%s str should be equal\n", __func__);
     }
 
-    memcpy(str, start + 4096 - 4, 8);
+    memcpy(str, start + PAGE_SIZE - 4, STR_COPY_LEN);
     if (strcmp(str, "bbbbaaaa")) {
         t_error("%s str should be equal\n", __func__);
     }
@@ -172,14 +174,15 @@ void remap_file_pages_0100(void)
     close(fd);
 }
 
-static int RemapFilePagesTest_impl(int argc, char *argv[]){
+static int RemapFilePagesTestImpl(int argc, char *argv[])
+{
     // remap_file_pages_0100();
     return T_STATUS;
 }
 
 int RemapFilePagesTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RemapFilePagesTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return RemapFilePagesTestImpl(1, libcArgv);
 }

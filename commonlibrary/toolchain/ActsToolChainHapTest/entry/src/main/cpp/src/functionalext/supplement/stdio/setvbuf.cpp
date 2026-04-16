@@ -56,7 +56,8 @@ void setvbuf_0200(void)
     remove(path);
 }
 
-static int SetvbufTest_impl(int argc, char *argv[]){
+static int SetvbufTestImpl(int argc, char *argv[])
+{
     setvbuf_0100();
     setvbuf_0200();
     return g_tStatus;
@@ -64,7 +65,7 @@ static int SetvbufTest_impl(int argc, char *argv[]){
 
 int SetvbufTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SetvbufTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SetvbufTestImpl(1, libcArgv);
 }

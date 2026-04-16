@@ -25,9 +25,9 @@ char *getfileall(char *fname)
     char *str;
     char txt[1000];
     int filesize;
-    if ((fp = fopen(fname, "r")) == NULL) {
+    if ((fp = fopen(fname, "r")) == nullptr) {
         printf("打开文件%s错误\n", fname);
-        return NULL;
+        return nullptr;
     }
     fseek(fp, 0, SEEK_END);
     filesize = ftell(fp);
@@ -84,7 +84,8 @@ void vfprintf_n_test(char *file_name, char *format, char *func_name, char *want_
     remove(file_name);
 }
 
-static int VfprintfTest_impl(int argc, char *argv[]){
+static int VfprintfTestImpl(int argc, char *argv[])
+{
     /**
      * @tc.name      : vfprintf_0100
      * @tc.desc      : Format the output string through vfprintf, the formatted part is a number
@@ -115,7 +116,7 @@ static int VfprintfTest_impl(int argc, char *argv[]){
 
 int VfprintfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return VfprintfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return VfprintfTestImpl(1, libcArgv);
 }

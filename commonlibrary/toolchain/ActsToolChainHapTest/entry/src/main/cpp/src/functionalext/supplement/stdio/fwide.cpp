@@ -69,7 +69,8 @@ void fwide_0300(void)
     remove(path);
 }
 
-static int FwideTest_impl(int argc, char *argv[]){
+static int FwideTestImpl(int argc, char *argv[])
+{
 
     fwide_0100();
     fwide_0200();
@@ -79,7 +80,7 @@ static int FwideTest_impl(int argc, char *argv[]){
 
 int FwideTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FwideTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FwideTestImpl(1, libcArgv);
 }

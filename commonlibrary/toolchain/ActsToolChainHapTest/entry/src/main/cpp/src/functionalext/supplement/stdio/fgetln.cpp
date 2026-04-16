@@ -72,7 +72,8 @@ void fgetln_0200(void)
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
-static int FgetlnTest_impl(int argc, char *argv[]){
+static int FgetlnTestImpl(int argc, char *argv[])
+{
     fgetln_0100();
     fgetln_0200();
     return g_tStatus;
@@ -80,7 +81,7 @@ static int FgetlnTest_impl(int argc, char *argv[]){
 
 int FgetlnTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FgetlnTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FgetlnTestImpl(1, libcArgv);
 }

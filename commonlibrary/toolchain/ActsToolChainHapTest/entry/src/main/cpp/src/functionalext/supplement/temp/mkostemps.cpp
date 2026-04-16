@@ -141,7 +141,8 @@ void mkostemps_0600(void)
     }
 }
 
-static int MkostempsTest_impl(void){
+static int MkostempsTestImpl(void)
+{
     mkostemps_0100();
     mkostemps_0200();
     mkostemps_0300();
@@ -153,6 +154,6 @@ static int MkostempsTest_impl(void){
 
 int MkostempsTest(void)
 {
-    return MkostempsTest_impl();
+    return MkostempsTestImpl();
 }
 

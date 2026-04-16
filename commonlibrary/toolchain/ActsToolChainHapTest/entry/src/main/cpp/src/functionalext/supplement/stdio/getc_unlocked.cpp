@@ -27,7 +27,7 @@ void getc_unlocked_0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/getc_unlockedtest.txt";
     FILE *fptr = fopen(ptr, "wr+");
-    EXPECT_TRUE("getc_unlocked_0100", fptr != NULL);
+    EXPECT_TRUE("getc_unlocked_0100", fptr != nullptr);
     const char *wstr = "a";
     fwrite(wstr, sizeof(char), strlen(wstr), fptr);
     fseek(fptr, 0, SEEK_SET);
@@ -35,8 +35,8 @@ void getc_unlocked_0100(void)
     EXPECT_EQ("getc_unlocked_0100", ret, SIZE);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -56,11 +56,12 @@ void getc_unlocked_0200(void)
     EXPECT_EQ("getc_unlocked_0200", ret, EOF);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
-static int GetcUnlockedTest_impl(int argc, char *argv[]){
+static int GetcUnlockedTestImpl(int argc, char *argv[])
+{
     getc_unlocked_0100();
     getc_unlocked_0200();
     return g_tStatus;
@@ -68,7 +69,7 @@ static int GetcUnlockedTest_impl(int argc, char *argv[]){
 
 int GetcUnlockedTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetcUnlockedTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return GetcUnlockedTestImpl(1, libcArgv);
 }

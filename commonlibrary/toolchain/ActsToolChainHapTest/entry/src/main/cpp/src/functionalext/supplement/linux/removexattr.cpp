@@ -96,7 +96,7 @@ void removexattr_0100(void)
 void removexattr_0200(void)
 {
     errno = 0;
-    int result = removexattr(NULL, NULL);
+    int result = removexattr(nullptr, nullptr);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -106,7 +106,8 @@ void removexattr_0200(void)
     }
 }
 
-static int RemovexattrTest_impl(int argc, char *argv[]){
+static int RemovexattrTestImpl(int argc, char *argv[])
+{
     removexattr_0100();
     removexattr_0200();
 
@@ -115,7 +116,7 @@ static int RemovexattrTest_impl(int argc, char *argv[]){
 
 int RemovexattrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RemovexattrTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return RemovexattrTestImpl(1, libcArgv);
 }

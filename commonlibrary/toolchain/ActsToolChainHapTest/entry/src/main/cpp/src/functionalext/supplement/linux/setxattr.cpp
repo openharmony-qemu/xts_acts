@@ -80,7 +80,7 @@ void setxattr_0100(void)
 void setxattr_0200(void)
 {
     errno = 0;
-    int result = setxattr(NULL, NULL, NULL, -1, -1);
+    int result = setxattr(nullptr, nullptr, nullptr, -1, -1);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -89,7 +89,8 @@ void setxattr_0200(void)
     }
 }
 
-static int SetxattrTest_impl(int argc, char *argv[]){
+static int SetxattrTestImpl(int argc, char *argv[])
+{
     setxattr_0100();
     setxattr_0200();
 
@@ -98,7 +99,7 @@ static int SetxattrTest_impl(int argc, char *argv[]){
 
 int SetxattrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SetxattrTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SetxattrTestImpl(1, libcArgv);
 }

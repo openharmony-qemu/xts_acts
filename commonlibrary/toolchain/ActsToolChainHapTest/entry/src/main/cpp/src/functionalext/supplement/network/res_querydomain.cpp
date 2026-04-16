@@ -52,14 +52,15 @@ void res_querydomain_0200(void)
     }
 }
 
-static int ResQuerydomainTest_impl(int argc, char *argv[]){
+static int ResQuerydomainTestImpl(int argc, char *argv[])
+{
     res_querydomain_0200();
     return T_STATUS;
 }
 
 int ResQuerydomainTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ResQuerydomainTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return ResQuerydomainTestImpl(1, libcArgv);
 }

@@ -20,7 +20,7 @@
 
 static int handler_count = 0;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     handler_count++;
 }
@@ -35,7 +35,7 @@ void sigpause_0100(void)
     handler_count = 0;
 
     int sig = SIGALRM;
-    struct sigaction act = {.sa_flags = 0, .sa_handler = handler};
+    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
     struct sigaction old_act = {0};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
@@ -80,7 +80,8 @@ void sigpause_0100(void)
     }
 }
 
-static int SigpauseTest_impl(int argc, char *argv[]){
+static int SigpauseTestImpl(int argc, char *argv[])
+{
     sigpause_0100();
 
     return T_STATUS;
@@ -88,7 +89,7 @@ static int SigpauseTest_impl(int argc, char *argv[]){
 
 int SigpauseTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SigpauseTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SigpauseTestImpl(1, libcArgv);
 }

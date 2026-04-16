@@ -113,7 +113,8 @@ void ftell_0300(void)
     remove(path);
 }
 
-static int FtellTest_impl(int argc, char *argv[]){
+static int FtellTestImpl(int argc, char *argv[])
+{
     ftell_0100();
     ftell_0200();
     ftell_0300();
@@ -123,7 +124,7 @@ static int FtellTest_impl(int argc, char *argv[]){
 
 int FtellTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FtellTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FtellTestImpl(1, libcArgv);
 }

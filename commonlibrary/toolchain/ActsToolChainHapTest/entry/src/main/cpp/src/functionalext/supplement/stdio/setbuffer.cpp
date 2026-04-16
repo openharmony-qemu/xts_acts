@@ -66,7 +66,7 @@ void setbuffer_0200(void)
     FILE *f = fopen(path, "w+");
 
     errno = 0;
-    setbuffer(f, NULL, BUFSIZ);
+    setbuffer(f, nullptr, BUFSIZ);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -75,7 +75,8 @@ void setbuffer_0200(void)
     remove(path);
 }
 
-static int SetbufferTest_impl(int argc, char *argv[]){
+static int SetbufferTestImpl(int argc, char *argv[])
+{
     setbuffer_0100();
     setbuffer_0200();
     return g_tStatus;
@@ -83,7 +84,7 @@ static int SetbufferTest_impl(int argc, char *argv[]){
 
 int SetbufferTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SetbufferTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SetbufferTestImpl(1, libcArgv);
 }

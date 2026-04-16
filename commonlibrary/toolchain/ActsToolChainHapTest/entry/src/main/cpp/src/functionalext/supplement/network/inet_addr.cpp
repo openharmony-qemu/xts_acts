@@ -62,7 +62,8 @@ static TEST_FUN G_Fun_Array[] = {
     inet_addr_0300,
 };
 
-static int InetAddrTest_impl(int argc, char *argv[]){
+static int InetAddrTestImpl(int argc, char *argv[])
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
@@ -73,7 +74,7 @@ static int InetAddrTest_impl(int argc, char *argv[]){
 
 int InetAddrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return InetAddrTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return InetAddrTestImpl(1, libcArgv);
 }

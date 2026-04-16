@@ -23,7 +23,7 @@ const int op = QUERY;
 const int dns_class = C_IN;
 const int type = T_TXT;
 const char dname[] = "www.example.com";
-const unsigned char *data = (const unsigned char *)"";
+const unsigned char *data = reinterpret_cast<const unsigned char *>("");
 const char qbuf[] = "\0\1\0\0\0\0\0\0";
 const char qname[] = "\3www\7example\3com";
 
@@ -36,7 +36,7 @@ void res_mkquery_0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
 
-    int result = res_mkquery(op, dname, dns_class, type, data, 0, NULL, buf, sizeof(buf));
+    int result = res_mkquery(op, dname, dns_class, type, data, 0, nullptr, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -59,13 +59,14 @@ void res_mkquery_0100(void)
  */
 void res_mkquery_0200(void)
 {
-    int result = res_mkquery(op, dname, dns_class, T_ANY + 1, data, 0, NULL, NULL, 0);
+    int result = res_mkquery(op, dname, dns_class, T_ANY + 1, data, 0, nullptr, nullptr, 0);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
 
-static int ResMkqueryTest_impl(int argc, char *argv[]){
+static int ResMkqueryTestImpl(int argc, char *argv[])
+{
     res_mkquery_0100();
     res_mkquery_0200();
 
@@ -74,8 +75,8 @@ static int ResMkqueryTest_impl(int argc, char *argv[]){
 
 int ResMkqueryTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ResMkqueryTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ResMkqueryTestImpl(1, libcArgv);
 }
 

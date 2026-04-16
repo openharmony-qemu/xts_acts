@@ -46,7 +46,7 @@ void timerfd_settime_0100(void)
         return;
     }
 
-    result = timerfd_settime(fd, 0, &its, NULL);
+    result = timerfd_settime(fd, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s timerfd_settime failed\n", __func__);
         return;
@@ -77,7 +77,7 @@ void timerfd_settime_0200(void)
 {
     signal(SIGSEGV, exception_handler);
 
-    timerfd_settime(-1, 0, NULL, NULL);
+    timerfd_settime(-1, 0, nullptr, nullptr);
 }
 
 /**
@@ -119,7 +119,8 @@ void timerfd_settime64_0100(void)
     }
 }
 
-static int TimerfdSettimeTest_impl(int argc, char *argv[]){
+static int TimerfdSettimeTestImpl(int argc, char *argv[])
+{
     timerfd_settime_0100();
     timerfd_settime_0200();
     timerfd_settime64_0100();
@@ -128,7 +129,7 @@ static int TimerfdSettimeTest_impl(int argc, char *argv[]){
 
 int TimerfdSettimeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimerfdSettimeTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimerfdSettimeTestImpl(1, libcArgv);
 }

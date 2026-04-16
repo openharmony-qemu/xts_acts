@@ -65,7 +65,8 @@ void fputs_0300(void)
     remove(path);
 }
 
-static int FputsTest_impl(int argc, char *argv[]){
+static int FputsTestImpl(int argc, char *argv[])
+{
     fputs_0100();
     fputs_0200();
     fputs_0300();
@@ -74,7 +75,7 @@ static int FputsTest_impl(int argc, char *argv[]){
 
 int FputsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FputsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FputsTestImpl(1, libcArgv);
 }

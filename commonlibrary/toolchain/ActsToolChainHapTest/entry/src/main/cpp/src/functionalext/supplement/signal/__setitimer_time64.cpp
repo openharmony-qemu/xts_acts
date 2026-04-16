@@ -30,7 +30,7 @@ static void expireTimer(int signo)
         getitimer(signo, &val);
         val.it_value.tv_sec = 0;
         val.it_value.tv_usec = 0;
-        __setitimer_time64(signo, &val, NULL);
+        __setitimer_time64(signo, &val, nullptr);
         count = 0;
     }
 }
@@ -70,7 +70,7 @@ void setitimer_time64_0100(void)
     it.it_interval.tv_sec = 0;
     it.it_interval.tv_usec = 100000;
 
-    if (__setitimer_time64(ITIMER_REAL, &it, NULL)) {
+    if (__setitimer_time64(ITIMER_REAL, &it, nullptr)) {
         t_error("%s set timer failed", __func__);
     }
 }
@@ -83,7 +83,7 @@ static int __setitimer_time64Test_with_args(int argc, char *argv[])
 
 int __setitimer_time64Test(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __setitimer_time64Test_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return __setitimer_time64Test_with_args(1, libcArgv);
 }

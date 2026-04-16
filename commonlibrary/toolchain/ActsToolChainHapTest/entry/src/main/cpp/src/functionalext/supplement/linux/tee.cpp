@@ -98,7 +98,8 @@ void tee_0200(void)
     close(pipefd2[1]);
 }
 
-static int TeeTest_impl(int argc, char *argv[]){
+static int TeeTestImpl(int argc, char *argv[])
+{
     tee_0100();
     tee_0200();
     return T_STATUS;
@@ -106,7 +107,7 @@ static int TeeTest_impl(int argc, char *argv[]){
 
 int TeeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TeeTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return TeeTestImpl(1, libcArgv);
 }

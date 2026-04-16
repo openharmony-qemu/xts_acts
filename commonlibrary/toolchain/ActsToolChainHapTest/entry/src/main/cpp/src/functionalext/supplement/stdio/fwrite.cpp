@@ -106,7 +106,8 @@ void fwrite_0400(void)
     }
 }
 
-static int FwriteTest_impl(int argc, char *argv[]){
+static int FwriteTestImpl(int argc, char *argv[])
+{
     fwrite_0100();
     fwrite_0200();
     fwrite_0300();
@@ -115,7 +116,7 @@ static int FwriteTest_impl(int argc, char *argv[]){
 
 int FwriteTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FwriteTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FwriteTestImpl(1, libcArgv);
 }

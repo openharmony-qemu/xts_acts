@@ -28,11 +28,11 @@ typedef void (*TEST_FUN)();
 void asprintf_0100(void)
 {
     char *buf = "d";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0100", n > 0);
 }
 
@@ -44,11 +44,11 @@ void asprintf_0100(void)
 void asprintf_0200(void)
 {
     char *buf = "o";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0200", n > 0);
 }
 
@@ -60,11 +60,11 @@ void asprintf_0200(void)
 void asprintf_0300(void)
 {
     char *buf = "x,X";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0300", n > 0);
 }
 
@@ -76,11 +76,11 @@ void asprintf_0300(void)
 void asprintf_0400(void)
 {
     char *buf = "u";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0400", n > 0);
 }
 
@@ -92,11 +92,11 @@ void asprintf_0400(void)
 void asprintf_0500(void)
 {
     char *buf = "f";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0500", n > 0);
 }
 
@@ -108,11 +108,11 @@ void asprintf_0500(void)
 void asprintf_0600(void)
 {
     char *buf = "e,E";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0600", n > 0);
 }
 
@@ -124,11 +124,11 @@ void asprintf_0600(void)
 void asprintf_0700(void)
 {
     char *buf = "g,G";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0700", n > 0);
 }
 
@@ -140,11 +140,11 @@ void asprintf_0700(void)
 void asprintf_0800(void)
 {
     char *buf = "c";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0800", n > 0);
 }
 
@@ -156,11 +156,11 @@ void asprintf_0800(void)
 void asprintf_0900(void)
 {
     char *buf = "s";
-    char *testStr = NULL;
+    char *testStr = nullptr;
     int n;
     n = asprintf(&testStr, "%s", buf);
     free(testStr);
-    testStr = NULL;
+    testStr = nullptr;
     EXPECT_TRUE("asprintf_0900", n > 0);
 }
 
@@ -188,7 +188,7 @@ static int asprintfTest_with_args(int argc, char *argv[])
 
 int AsprintfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return asprintfTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return asprintfTest_with_args(1, libcArgv);
 }

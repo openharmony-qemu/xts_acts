@@ -48,14 +48,15 @@ void swapon_0100(void)
     }
 }
 
-static int SwaponTest_impl(int argc, char *argv[]){
+static int SwaponTestImpl(int argc, char *argv[])
+{
     // swapon_0100();
     return T_STATUS;
 }
 
 int SwaponTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SwaponTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SwaponTestImpl(1, libcArgv);
 }

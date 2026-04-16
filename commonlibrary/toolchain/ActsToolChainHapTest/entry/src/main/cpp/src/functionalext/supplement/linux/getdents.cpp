@@ -65,7 +65,8 @@ void getdents_0300(void)
     EXPECT_EQ("getdents_0300", result, FAILED);
 }
 
-static int GetdentsTest_impl(int argc, char *argv[]){
+static int GetdentsTestImpl(int argc, char *argv[])
+{
     getdents_0100();
     getdents_0200();
     getdents_0300();
@@ -74,7 +75,7 @@ static int GetdentsTest_impl(int argc, char *argv[]){
 
 int GetdentsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetdentsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return GetdentsTestImpl(1, libcArgv);
 }

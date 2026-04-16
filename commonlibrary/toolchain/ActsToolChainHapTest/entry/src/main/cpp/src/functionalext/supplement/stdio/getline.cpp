@@ -27,7 +27,7 @@ static const char *file_txt_path = "/data/storage/el2/base/cache/file.txt";
 void getline_0100(void)
 {
     char *wrstring = "helloworld";
-    char *line = NULL;
+    char *line = nullptr;
     size_t len = 0;
 
     FILE *fp = fopen(test_txt_path, "w+");
@@ -69,7 +69,7 @@ void getline_0200(void)
  */
 void getline_0300(void)
 {
-    char *line = NULL;
+    char *line = nullptr;
 
     FILE *fp = fopen(file_txt_path, "w+");
     EXPECT_PTRNE("getline_0100", fp, NULL);
@@ -80,7 +80,8 @@ void getline_0300(void)
     remove(file_txt_path);
 }
 
-static int GetlineTest_impl(int argc, char *argv[]){
+static int GetlineTestImpl(int argc, char *argv[])
+{
     getline_0100();
     getline_0200();
     getline_0300();
@@ -89,7 +90,7 @@ static int GetlineTest_impl(int argc, char *argv[]){
 
 int GetlineTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetlineTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetlineTestImpl(1, libcArgv);
 }

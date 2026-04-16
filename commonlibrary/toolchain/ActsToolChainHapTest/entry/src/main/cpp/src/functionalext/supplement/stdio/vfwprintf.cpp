@@ -66,10 +66,11 @@ void vfwprintf_0200(void)
 {
     wchar_t *value = L"hello %ls";
     signal(SIGSEGV, deal_aberrant);
-    int resule = readFile(NULL, value, L"world");
+    int resule = readFile(nullptr, value, L"world");
 }
 
-static int VfwprintfTest_impl(int argc, char *argv[]){
+static int VfwprintfTestImpl(int argc, char *argv[])
+{
     vfwprintf_0100();
     vfwprintf_0200();
     return g_tStatus;
@@ -77,7 +78,7 @@ static int VfwprintfTest_impl(int argc, char *argv[]){
 
 int VfwprintfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return VfwprintfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return VfwprintfTestImpl(1, libcArgv);
 }

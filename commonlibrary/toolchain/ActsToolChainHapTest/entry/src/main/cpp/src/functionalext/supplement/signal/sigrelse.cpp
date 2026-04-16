@@ -20,7 +20,7 @@
 
 static int handler_count = 0;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     handler_count++;
 }
@@ -35,7 +35,7 @@ void sigrelse_0100(void)
     handler_count = 0;
 
     int sig = SIGALRM;
-    struct sigaction act = {.sa_flags = 0, .sa_handler = handler};
+    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
     struct sigaction old_act = {0};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
@@ -124,7 +124,8 @@ void sigrelse_0200(void)
     }
 }
 
-static int SigrelseTest_impl(int argc, char *argv[]){
+static int SigrelseTestImpl(int argc, char *argv[])
+{
     sigrelse_0100();
     sigrelse_0200();
 
@@ -133,7 +134,7 @@ static int SigrelseTest_impl(int argc, char *argv[]){
 
 int SigrelseTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SigrelseTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SigrelseTestImpl(1, libcArgv);
 }

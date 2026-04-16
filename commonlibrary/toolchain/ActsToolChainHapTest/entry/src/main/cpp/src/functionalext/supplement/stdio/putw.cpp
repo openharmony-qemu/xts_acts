@@ -42,7 +42,7 @@ void putw_0100(void)
     FILE *fp;
     char *file = "/data/storage/el2/base/cache/putw_test.txt";
     fp = fopen(file, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
         return;
     }
@@ -65,7 +65,7 @@ void putw_0200(void)
     if (pid == -1) {
         t_error("putw_0200: Error forking process");
     } else if (pid == 0) {
-        FILE *fp = NULL;
+        FILE *fp = nullptr;
         putw(10, fp);
     } else {
         int status;
@@ -77,7 +77,8 @@ void putw_0200(void)
     }
 }
 
-static int PutwTest_impl(int argc, char *argv[]){
+static int PutwTestImpl(int argc, char *argv[])
+{
     putw_0100();
     putw_0200();
     return g_tStatus;
@@ -85,7 +86,7 @@ static int PutwTest_impl(int argc, char *argv[]){
 
 int PutwTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PutwTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return PutwTestImpl(1, libcArgv);
 }

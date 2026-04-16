@@ -73,7 +73,8 @@ void vdprintf_0200(void)
     }
 }
 
-static int VdprintfTest_impl(int argc, char *argv[]){
+static int VdprintfTestImpl(int argc, char *argv[])
+{
     vdprintf_0100();
     vdprintf_0200();
     return g_tStatus;
@@ -81,7 +82,7 @@ static int VdprintfTest_impl(int argc, char *argv[]){
 
 int VdprintfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return VdprintfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return VdprintfTestImpl(1, libcArgv);
 }

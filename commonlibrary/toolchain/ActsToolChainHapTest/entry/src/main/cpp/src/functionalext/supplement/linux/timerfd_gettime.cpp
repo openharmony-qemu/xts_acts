@@ -42,7 +42,7 @@ void timerfd_gettime_0100(void)
         return;
     }
 
-    result = timerfd_settime(fd, 0, &its, NULL);
+    result = timerfd_settime(fd, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s timerfd_settime failed", __func__);
         return;
@@ -71,7 +71,7 @@ void timerfd_gettime_0100(void)
  */
 void timerfd_gettime_0200(void)
 {
-    int result = timerfd_gettime(-1, NULL);
+    int result = timerfd_gettime(-1, nullptr);
     if (result != -1) {
         t_error("%s failed, result is %d", __func__, result);
     }
@@ -94,7 +94,7 @@ void timerfd_gettime64_0100(void)
         return;
     }
 
-    result = timerfd_settime(fd, 0, &its, NULL);
+    result = timerfd_settime(fd, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s timerfd_settime failed", __func__);
         return;
@@ -116,7 +116,8 @@ void timerfd_gettime64_0100(void)
     }
 }
 
-static int TimerfdGettimeTest_impl(int argc, char *argv[]){
+static int TimerfdGettimeTestImpl(int argc, char *argv[])
+{
     timerfd_gettime_0100();
     timerfd_gettime_0200();
     timerfd_gettime64_0100();
@@ -125,7 +126,7 @@ static int TimerfdGettimeTest_impl(int argc, char *argv[]){
 
 int TimerfdGettimeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimerfdGettimeTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimerfdGettimeTestImpl(1, libcArgv);
 }

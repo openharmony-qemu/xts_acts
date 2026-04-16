@@ -53,14 +53,15 @@ void swapoff_0100(void)
     }
 }
 
-static int SwapoffTest_impl(int argc, char *argv[]){
+static int SwapoffTestImpl(int argc, char *argv[])
+{
     // swapoff_0100();
     return T_STATUS;
 }
 
 int SwapoffTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SwapoffTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SwapoffTestImpl(1, libcArgv);
 }

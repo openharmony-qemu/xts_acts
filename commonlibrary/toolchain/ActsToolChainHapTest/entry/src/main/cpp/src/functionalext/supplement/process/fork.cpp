@@ -52,7 +52,7 @@ void fork_0100()
         }
         fwrite(sign_r, sizeof(char), strlen(sign_r), fp);
         fclose(fp);
-        waitpid(fpid, NULL, options);
+        waitpid(fpid, nullptr, options);
 	
         FILE *fp1 = fopen("/data/storage/el2/base/cache/test1.txt", "r");
         if (!fp1) {
@@ -74,14 +74,15 @@ void fork_0100()
     }
 }
 
-static int ForkTest_impl(int argc, char *argv[]){
+static int ForkTestImpl(int argc, char *argv[])
+{
     fork_0100();
     return g_tStatus;
 }
 
 int ForkTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ForkTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ForkTestImpl(1, libcArgv);
 }

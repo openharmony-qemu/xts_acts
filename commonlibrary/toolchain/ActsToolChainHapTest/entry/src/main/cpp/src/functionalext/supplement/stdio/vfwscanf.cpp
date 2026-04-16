@@ -53,8 +53,9 @@ void vfwscanf_0100(void)
     wchar_t names[5][5] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
     FILE *fp = fopen("/data/storage/el2/base/cache/example.txt", "w+");
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) {
         fwprintf(fp, L"%lc %ls ", symbol[i], names[i]);
+    }
     rewind(fp);
 
     wchar_t ch, str[5];
@@ -79,10 +80,11 @@ void vfwscanf_0200(void)
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
     wchar_t names[5][5] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
     signal(SIGSEGV, deal_aberrant);
-    read_from_file(NULL, symbol, names);
+    read_from_file(nullptr, symbol, names);
 }
 
-static int VfwscanfTest_impl(int argc, char *argv[]){
+static int VfwscanfTestImpl(int argc, char *argv[])
+{
     vfwscanf_0100();
     vfwscanf_0200();
     return g_tStatus;
@@ -90,7 +92,7 @@ static int VfwscanfTest_impl(int argc, char *argv[]){
 
 int VfwscanfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return VfwscanfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return VfwscanfTestImpl(1, libcArgv);
 }

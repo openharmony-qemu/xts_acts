@@ -51,14 +51,15 @@ void res_query_0200(void)
     }
 }
 
-static int ResQueryTest_impl(int argc, char *argv[]){
+static int ResQueryTestImpl(int argc, char *argv[])
+{
     res_query_0200();
     return T_STATUS;
 }
 
 int ResQueryTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ResQueryTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ResQueryTestImpl(1, libcArgv);
 }

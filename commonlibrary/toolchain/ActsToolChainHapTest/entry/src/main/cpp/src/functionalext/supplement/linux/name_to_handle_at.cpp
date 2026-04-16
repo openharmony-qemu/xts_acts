@@ -34,7 +34,7 @@ void name_to_handle_at_0100(void)
 
     fhsize = sizeof(*fhp);
     fhp = (struct file_handle *)malloc(fhsize);
-    if (fhp == NULL) {
+    if (fhp == nullptr) {
         t_error("%s malloc failed\n", __func__);
     }
 
@@ -48,7 +48,7 @@ void name_to_handle_at_0100(void)
 
     fhsize = sizeof(*fhp) + fhp->handle_bytes;
     fhp = (struct file_handle *)realloc(fhp, fhsize);
-    if (fhp == NULL) {
+    if (fhp == nullptr) {
         t_error("%s realloc failed\n", __func__);
     }
 
@@ -68,14 +68,15 @@ void name_to_handle_at_0100(void)
     }
 }
 
-static int NameToHandleAtTest_impl(int argc, char *argv[]){
+static int NameToHandleAtTestImpl(int argc, char *argv[])
+{
     // name_to_handle_at_0100();
     return T_STATUS;
 }
 
 int NameToHandleAtTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return NameToHandleAtTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return NameToHandleAtTestImpl(1, libcArgv);
 }

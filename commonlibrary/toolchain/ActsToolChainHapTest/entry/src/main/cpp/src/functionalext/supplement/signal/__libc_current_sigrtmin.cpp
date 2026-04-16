@@ -35,7 +35,7 @@ static int __libc_current_sigrtminTest_with_args(int argc, char *argv[])
 
 int __libc_current_sigrtminTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __libc_current_sigrtminTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return __libc_current_sigrtminTest_with_args(1, libcArgv);
 }

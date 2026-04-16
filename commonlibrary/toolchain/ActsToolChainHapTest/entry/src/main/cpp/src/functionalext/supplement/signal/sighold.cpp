@@ -20,7 +20,7 @@
 
 static int handler_count = 0;
 
-void handler(int sig)
+void Handler(int sig)
 {
     handler_count++;
 }
@@ -35,7 +35,7 @@ void sighold_0100(void)
     handler_count = 0;
 
     int sig = SIGALRM;
-    struct sigaction act = {.sa_flags = 0, .sa_handler = handler};
+    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
     struct sigaction old_act = {0};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
@@ -50,7 +50,7 @@ void sighold_0100(void)
     }
 
     sigset_t set = {0};
-    result = sigprocmask(SIG_SETMASK, NULL, &set);
+    result = sigprocmask(SIG_SETMASK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         return;
@@ -91,7 +91,8 @@ void sighold_0200(void)
     }
 }
 
-static int SigholdTest_impl(int argc, char *argv[]){
+static int SigholdTestImpl(int argc, char *argv[])
+{
     sighold_0100();
     sighold_0200();
 
@@ -100,7 +101,7 @@ static int SigholdTest_impl(int argc, char *argv[]){
 
 int SigholdTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SigholdTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SigholdTestImpl(1, libcArgv);
 }

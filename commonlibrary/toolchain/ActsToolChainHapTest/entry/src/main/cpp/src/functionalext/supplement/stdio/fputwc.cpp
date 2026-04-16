@@ -91,7 +91,8 @@ void fputwc_0200()
     remove("/data/storage/el2/base/cache/file.txt");
 }
 
-static int FputwcTest_impl(int argc, char *argv[]){
+static int FputwcTestImpl(int argc, char *argv[])
+{
     fputwc_0100();
     fputwc_0200();
     return g_tStatus;
@@ -99,7 +100,7 @@ static int FputwcTest_impl(int argc, char *argv[]){
 
 int FputwcTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FputwcTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FputwcTestImpl(1, libcArgv);
 }

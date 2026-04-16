@@ -43,14 +43,15 @@ void fsetxattr_0100(void)
     remove(path);
 }
 
-static int FsetxattrTest_impl(int argc, char *argv[]){
+static int FsetxattrTestImpl(int argc, char *argv[])
+{
     fsetxattr_0100();
     return T_STATUS;
 }
 
 int FsetxattrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FsetxattrTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FsetxattrTestImpl(1, libcArgv);
 }

@@ -47,14 +47,14 @@ void call_once_0100(void)
 int CallOnceTest(void)
 {
     thrd_t t1, t2, t3, t4;
-    thrd_create(&t1, (thrd_start_t)func, NULL);
-    thrd_create(&t2, (thrd_start_t)func, NULL);
-    thrd_create(&t3, (thrd_start_t)func, NULL);
-    thrd_create(&t4, (thrd_start_t)func, NULL);
-    thrd_join(t1, NULL);
-    thrd_join(t2, NULL);
-    thrd_join(t3, NULL);
-    thrd_join(t4, NULL);
+    thrd_create(&t1, reinterpret_cast<thrd_start_t>(func), nullptr);
+    thrd_create(&t2, reinterpret_cast<thrd_start_t>(func), nullptr);
+    thrd_create(&t3, reinterpret_cast<thrd_start_t>(func), nullptr);
+    thrd_create(&t4, reinterpret_cast<thrd_start_t>(func), nullptr);
+    thrd_join(t1, nullptr);
+    thrd_join(t2, nullptr);
+    thrd_join(t3, nullptr);
+    thrd_join(t4, nullptr);
     call_once_0100();
     remove("/data/storage/el2/base/cache/call_once.txt");
     memset(list, 0x00, sizeof(list));

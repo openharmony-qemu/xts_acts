@@ -26,7 +26,7 @@ void *child_func(void *p)
     char buf[64];
 
     FILE *filep = fopen(path, "r+");
-    if (filep == NULL) {
+    if (filep == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
 
@@ -49,7 +49,7 @@ void *child_func(void *p)
     funlockfile(filep);
 
     fclose(filep);
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -63,21 +63,22 @@ void funlockfile_0100(void)
     pthread_t tid[100];
 
     for (int i = 0; i < 100; i++) {
-        if (pthread_create(tid + i, NULL, child_func, NULL) != 0) {
+        if (pthread_create(tid + i, nullptr, child_func, nullptr) != 0) {
             t_error("%s pthread_create failed\n", __func__);
         }
     }
 
     for (int j = 0; j < 100; j++) {
-        if (pthread_join(tid[j], NULL) != 0) {
+        if (pthread_join(tid[j], nullptr) != 0) {
             t_error("%s pthread_join failed\n", __func__);
         }
     }
 }
 
-static int FunlockfileTest_impl(int argc, char *argv[]){
+static int FunlockfileTestImpl(int argc, char *argv[])
+{
     FILE *fp = fopen(path, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
     fclose(fp);
@@ -90,7 +91,7 @@ static int FunlockfileTest_impl(int argc, char *argv[]){
 
 int FunlockfileTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FunlockfileTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FunlockfileTestImpl(1, libcArgv);
 }

@@ -47,7 +47,8 @@ void fputc_0200(void)
     remove(path);
 }
 
-static int FputcTest_impl(void){
+static int FputcTestImpl(void)
+{
     fputc_0100();
     fputc_0200();
     return g_tStatus;
@@ -55,5 +56,5 @@ static int FputcTest_impl(void){
 
 int FputcTest(void)
 {
-    return FputcTest_impl();
+    return FputcTestImpl();
 }

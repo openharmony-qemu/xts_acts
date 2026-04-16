@@ -34,7 +34,7 @@ int readFile(FILE *stream, char *fmt, ...)
  */
 void vfscanf_0100(void)
 {
-    FILE *fp = NULL;
+    FILE *fp = nullptr;
     int val = 0;
     char buffer[BUFSIZ];
     char file[PATH_MAX] = {0};
@@ -71,7 +71,7 @@ void vfscanf_0100(void)
  */
 void vfscanf_0200(void)
 {
-    FILE *fp = NULL;
+    FILE *fp = nullptr;
     char val[BUFSIZ];
     char buffer[BUFSIZ];
     char file[PATH_MAX] = {0};
@@ -108,7 +108,7 @@ void vfscanf_0200(void)
  */
 void vfscanf_0300(void)
 {
-    FILE *fp = NULL;
+    FILE *fp = nullptr;
     int val1 = 0;
     int val2 = 0;
     char file[PATH_MAX] = {0};
@@ -138,7 +138,8 @@ void vfscanf_0300(void)
     remove(file);
 }
 
-static int VfscanfTest_impl(int argc, char *argv[]){
+static int VfscanfTestImpl(int argc, char *argv[])
+{
     vfscanf_0100();
     vfscanf_0200();
     vfscanf_0300();
@@ -147,7 +148,7 @@ static int VfscanfTest_impl(int argc, char *argv[]){
 
 int VfscanfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return VfscanfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return VfscanfTestImpl(1, libcArgv);
 }

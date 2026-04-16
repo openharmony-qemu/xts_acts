@@ -25,7 +25,7 @@
  *                 temporary file
  * @tc.level     : Level 0
  */
-void mkstemp_0100(void)
+void Mkstemp0100(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemp_0100_XXXXXX";
     int fd = mkstemp(tmpfile);
@@ -47,7 +47,7 @@ void mkstemp_0100(void)
  * @tc.desc      : Verify mkstemp process fail. Provide error template, create temp file fail
  * @tc.level     : Level 2
  */
-void mkstemp_0200(void)
+void Mkstemp0200(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemp_0200.dat";
     int fd = mkstemp(tmpfile);
@@ -69,7 +69,7 @@ void mkstemp_0200(void)
  * @tc.desc      : Template with 'XXXXXX' not at the end
  * @tc.level     : Level 2
  */
-void mkstemp_0300(void)
+void Mkstemp0300(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemp_0300_XXXXXX_dir";
     int fd = mkstemp(tmpfile);
@@ -85,7 +85,7 @@ void mkstemp_0300(void)
  * @tc.desc      : Verify file permissions (0600)
  * @tc.level     : Level 1
  */
-void mkstemp_0400(void)
+void Mkstemp0400(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkstemp_0400_XXXXXX";
     int fd = mkstemp(tmpfile);
@@ -104,7 +104,7 @@ void mkstemp_0400(void)
  * @tc.desc      : Verify concurrent mkstemp calls
  * @tc.level     : Level 1
  */
-void mkstemp_0500(void)
+void Mkstemp0500(void)
 {
     char tmpfile1[] = "/data/storage/el2/base/cache/mkstemp_0500_XXXXXX";
     char tmpfile2[] = "/data/storage/el2/base/cache/mkstemp_0500_XXXXXX";
@@ -125,17 +125,18 @@ void mkstemp_0500(void)
     }
 }
 
-static int MkstempTest_impl(void){
-    mkstemp_0100();
-    mkstemp_0200();
-    mkstemp_0300();
-    mkstemp_0400();
-    mkstemp_0500();
+static int MkstempTestImpl(void)
+{
+    Mkstemp0100();
+    Mkstemp0200();
+    Mkstemp0300();
+    Mkstemp0400();
+    Mkstemp0500();
     return T_STATUS;
 }
 
 int MkstempTest(void)
 {
-    return MkstempTest_impl();
+    return MkstempTestImpl();
 }
 

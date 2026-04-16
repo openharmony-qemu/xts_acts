@@ -83,7 +83,8 @@ void fwprintf_0400(void)
     remove(path);
 }
 
-static int FwprintfTest_impl(int argc, char *argv[]){
+static int FwprintfTestImpl(int argc, char *argv[])
+{
     fwprintf_0100();
     fwprintf_0200();
     fwprintf_0300();
@@ -93,7 +94,7 @@ static int FwprintfTest_impl(int argc, char *argv[]){
 
 int FwprintfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FwprintfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FwprintfTestImpl(1, libcArgv);
 }

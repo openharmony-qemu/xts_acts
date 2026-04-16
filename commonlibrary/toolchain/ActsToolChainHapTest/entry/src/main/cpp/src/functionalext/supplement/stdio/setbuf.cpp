@@ -62,7 +62,7 @@ void setbuf_0200(void)
     FILE *f = fopen(path, "w+");
 
     errno = 0;
-    setbuf(f, NULL);
+    setbuf(f, nullptr);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -72,7 +72,8 @@ void setbuf_0200(void)
     remove(path);
 }
 
-static int SetbufTest_impl(int argc, char *argv[]){
+static int SetbufTestImpl(int argc, char *argv[])
+{
     setbuf_0100();
     setbuf_0200();
 
@@ -81,7 +82,7 @@ static int SetbufTest_impl(int argc, char *argv[]){
 
 int SetbufTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SetbufTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SetbufTestImpl(1, libcArgv);
 }

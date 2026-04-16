@@ -28,8 +28,8 @@ void remove_0100(void)
     fclose(fptr);
     int ret = remove(ptr);
     EXPECT_EQ("remove_0100", ret, 0);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -42,10 +42,11 @@ void remove_0200(void)
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
     int ret = remove(ptr);
     EXPECT_EQ("remove_0200", ret, -1);
-    ptr = NULL;
+    ptr = nullptr;
 }
 
-static int RemoveTest_impl(int argc, char *argv[]){
+static int RemoveTestImpl(int argc, char *argv[])
+{
     remove_0100();
     remove_0200();
     return g_tStatus;
@@ -53,7 +54,7 @@ static int RemoveTest_impl(int argc, char *argv[]){
 
 int RemoveTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RemoveTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return RemoveTestImpl(1, libcArgv);
 }

@@ -20,7 +20,7 @@
 
 static int handler_count = 0;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     handler_count++;
 }
@@ -40,7 +40,7 @@ void sigsuspend_0100(void)
     sigprocmask(SIG_BLOCK, &set, NULL);
 
     int flags = 0;
-    struct sigaction act = {.sa_flags = flags, .sa_handler = handler};
+    struct sigaction act = {.sa_flags = flags, .sa_handler = Handler};
     struct sigaction old_act = {0};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
@@ -90,7 +90,8 @@ void sigsuspend_0100(void)
     }
 }
 
-static int SigsuspendTest_impl(int argc, char *argv[]){
+static int SigsuspendTestImpl(int argc, char *argv[])
+{
     sigsuspend_0100();
 
     return T_STATUS;
@@ -98,7 +99,7 @@ static int SigsuspendTest_impl(int argc, char *argv[]){
 
 int SigsuspendTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SigsuspendTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SigsuspendTestImpl(1, libcArgv);
 }

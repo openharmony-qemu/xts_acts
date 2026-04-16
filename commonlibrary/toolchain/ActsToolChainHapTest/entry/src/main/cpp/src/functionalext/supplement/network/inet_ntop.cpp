@@ -118,7 +118,8 @@ static TEST_FUN G_Fun_Array[] = {
     inet_ntop_0600,
 };
 
-static int InetNtopTest_impl(int argc, char *argv[]){
+static int InetNtopTestImpl(int argc, char *argv[])
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
@@ -129,7 +130,7 @@ static int InetNtopTest_impl(int argc, char *argv[]){
 
 int InetNtopTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return InetNtopTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return InetNtopTestImpl(1, libcArgv);
 }

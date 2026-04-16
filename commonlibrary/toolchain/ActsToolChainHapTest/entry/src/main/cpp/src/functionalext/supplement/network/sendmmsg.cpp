@@ -43,7 +43,7 @@ void sendmmsg_0100(void)
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     addr.sin_port = htons(1234);
-    if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
+    if (connect(sockfd, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) == -1) {
         t_error("sendmmsg_0100 connect error");
         exit(EXIT_FAILURE);
     }
@@ -70,18 +70,20 @@ void sendmmsg_0100(void)
     msg[1].msg_hdr.msg_iovlen = 1;
 
     retval = sendmmsg(sockfd, msg, 2, 0);
-    if (retval == -1)
+    if (retval == -1) {
         t_error("sendmmsg_0100 sendmmsg error");
+    }
 }
 
-static int SendmmsgTest_impl(int argc, char *argv[]){
+static int SendmmsgTestImpl(int argc, char *argv[])
+{
     sendmmsg_0100();
     return T_STATUS;
 }
 
 int SendmmsgTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SendmmsgTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SendmmsgTestImpl(1, libcArgv);
 }

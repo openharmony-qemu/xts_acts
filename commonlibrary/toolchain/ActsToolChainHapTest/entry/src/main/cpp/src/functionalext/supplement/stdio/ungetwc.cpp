@@ -20,7 +20,7 @@
 
 #include "filepath_util.h"
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -65,13 +65,14 @@ void ungetwc_0100(void)
  */
 void ungetwc_0200(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     wint_t wc = L'a';
-    ungetwc(wc, NULL);
+    ungetwc(wc, nullptr);
 }
 
-static int UngetwcTest_impl(int argc, char *argv[]){
+static int UngetwcTestImpl(int argc, char *argv[])
+{
     ungetwc_0100();
     ungetwc_0200();
 
@@ -80,7 +81,7 @@ static int UngetwcTest_impl(int argc, char *argv[]){
 
 int UngetwcTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return UngetwcTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return UngetwcTestImpl(1, libcArgv);
 }

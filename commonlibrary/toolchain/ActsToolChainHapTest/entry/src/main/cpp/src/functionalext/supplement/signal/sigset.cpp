@@ -21,7 +21,7 @@
 static int handler_count = 0;
 const int sig = SIGALRM;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     handler_count++;
 }
@@ -30,7 +30,7 @@ int prepare(sigset_t *set)
 {
     handler_count = 0;
 
-    struct sigaction act = {.sa_flags = 0, .sa_handler = handler};
+    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
     struct sigaction old_act = {0};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
@@ -87,7 +87,7 @@ void sigset_0100(void)
     }
 
     errno = 0;
-    sigset(sig, handler);
+    sigset(sig, Handler);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -224,7 +224,8 @@ void sigset_0500(void)
     }
 }
 
-static int SigsetTest_impl(int argc, char *argv[]){
+static int SigsetTestImpl(int argc, char *argv[])
+{
     sigset_0100();
     sigset_0200();
     sigset_0300();
@@ -236,7 +237,7 @@ static int SigsetTest_impl(int argc, char *argv[]){
 
 int SigsetTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SigsetTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SigsetTestImpl(1, libcArgv);
 }

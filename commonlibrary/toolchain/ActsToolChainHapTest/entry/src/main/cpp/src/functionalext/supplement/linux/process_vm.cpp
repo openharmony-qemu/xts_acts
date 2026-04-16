@@ -75,7 +75,7 @@ void process_vm_writev_0300(void)
 {
     char src[__VALUE_BUFFER_SIZE__] = "This is process_vm_writev_0300.";
     struct iovec local = {
-        .iov_base = NULL,
+        .iov_base = nullptr,
         .iov_len = 0,
     };
     struct iovec remote = {.iov_base = src, .iov_len = sizeof(src)};
@@ -114,7 +114,7 @@ void process_vm_readv_0200(void)
 {
     char dst[__VALUE_BUFFER_SIZE__] = "";
     struct iovec remote, local;
-    remote.iov_base = NULL;
+    remote.iov_base = nullptr;
     remote.iov_len = __VALUE_BUFFER_SIZE__;
 
     local.iov_base = dst;
@@ -137,7 +137,7 @@ void process_vm_readv_0300(void)
     remote.iov_base = src;
     remote.iov_len = __VALUE_BUFFER_SIZE__;
 
-    local.iov_base = NULL;
+    local.iov_base = nullptr;
     local.iov_len = __VALUE_BUFFER_SIZE__;
 
     int ret = process_vm_readv(getpid(), &local, 1, &remote, 1, 0);
@@ -145,7 +145,8 @@ void process_vm_readv_0300(void)
     EXPECT_EQ("process_vm_readv_0300", errno, EFAULT);
 }
 
-static int ProcessVmTest_impl(void){
+static int ProcessVmTestImpl(void)
+{
     process_vm_writev_0100();
     process_vm_writev_0200();
     process_vm_writev_0300();
@@ -157,5 +158,5 @@ static int ProcessVmTest_impl(void){
 
 int ProcessVmTest(void)
 {
-    return ProcessVmTest_impl();
+    return ProcessVmTestImpl();
 }

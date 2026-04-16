@@ -29,7 +29,7 @@ void fputws_0100(void)
     char str[100] = {0};
     const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
     FILE *fptr = fopen(ptr, "w+");
-    EXPECT_TRUE("fputws_0100", fptr != NULL);
+    EXPECT_TRUE("fputws_0100", fptr != nullptr);
     setlocale(LC_ALL, "en_US.utf8");
     int ret = fputws(L"this is the test", fptr);
     EXPECT_TRUE("fputws_0100", ret >= 0);
@@ -38,8 +38,8 @@ void fputws_0100(void)
     EXPECT_EQ("fputws_0100", rsize, ret);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -59,11 +59,12 @@ void fputws_0200(void)
     EXPECT_EQ("fputws_0200", ret, FAILED);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
-static int FputwsTest_impl(int argc, char *argv[]){
+static int FputwsTestImpl(int argc, char *argv[])
+{
     fputws_0100();
     fputws_0200();
     return g_tStatus;
@@ -71,7 +72,7 @@ static int FputwsTest_impl(int argc, char *argv[]){
 
 int FputwsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FputwsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FputwsTestImpl(1, libcArgv);
 }

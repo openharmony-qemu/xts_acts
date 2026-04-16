@@ -67,7 +67,8 @@ void fgetws_0200()
     remove(ptr);
 }
 
-static int FgetwsTest_impl(int argc, char *argv[]){
+static int FgetwsTestImpl(int argc, char *argv[])
+{
     fgetws_0100();
     fgetws_0200();
     return g_tStatus;
@@ -75,7 +76,7 @@ static int FgetwsTest_impl(int argc, char *argv[]){
 
 int FgetwsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FgetwsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FgetwsTestImpl(1, libcArgv);
 }

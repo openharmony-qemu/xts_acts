@@ -92,7 +92,8 @@ void rename_0300(void)
     remove(newname);
 }
 
-static int RenameTest_impl(int argc, char *argv[]){
+static int RenameTestImpl(int argc, char *argv[])
+{
     rename_0100();
     rename_0200();
     rename_0300();
@@ -101,7 +102,7 @@ static int RenameTest_impl(int argc, char *argv[]){
 
 int RenameTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RenameTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return RenameTestImpl(1, libcArgv);
 }
