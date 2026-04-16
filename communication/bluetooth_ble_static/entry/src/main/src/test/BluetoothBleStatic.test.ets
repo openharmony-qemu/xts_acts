@@ -1557,16 +1557,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100
-         * @tc.name SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100
+         * @tc.number SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_0100
          * @tc.desc Test startBLEScan with PHY_LE_1M
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -3061,15 +3061,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_0100
          * @tc.desc Test startScan(Promise) with PHY_LE_1M
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100";
+        it("SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
