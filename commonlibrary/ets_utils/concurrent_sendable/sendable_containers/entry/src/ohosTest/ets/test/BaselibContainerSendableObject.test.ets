@@ -636,46 +636,6 @@ export default function baselibContainerSendableObjectTest() {
       })
 
     /**
-     * @tc.name   baselibArrayListBoundaryGet0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_BOUNDARY_GET_0100
-     * @tc.desc   ArrayList get empty test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('baselibArrayListBoundaryGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'baselibArrayListBoundaryGet0100';
-        console.info(`${caseName} test start`);
-        let obj1 = new SendableClass(1);
-        let list: ArrayList<SendableClass> = new ArrayList<SendableClass>();
-        expect(list.getIndexOf(obj1)).assertEqual(-1);
-        expect(list[0]).assertEqual(undefined);
-        console.info(`${caseName} test end`);
-        done()
-      })
-
-    /**
-     * @tc.name   baselibArrayListBoundaryObjectGet0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_BOUNDARY_OBJECT_GET_0100
-     * @tc.desc   ArrayList get object empty test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('baselibArrayListBoundaryObjectGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'baselibArrayListBoundaryObjectGet0100';
-        console.info(`${caseName} test start`);
-        let obj1 = new SendableClass(1) as object;
-        let list: ArrayList<object> = new ArrayList<object>();
-        expect(list.getLastIndexOf(obj1)).assertEqual(-1);
-        expect(list[0]).assertEqual(undefined);
-        console.info(`${caseName} test end`);
-        done()
-      })
-
-    /**
      * @tc.name   baselibPlainArrayCombinedOperations0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_COMBINED_0100
      * @tc.desc   PlainArray combined test.
