@@ -70,9 +70,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -440,20 +437,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   }
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
-    instance.pixelStretchEffect(this.mPixelStretchEffect)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mPixelStretchEffect: PixelStretchEffectOptions = {
-    top: 10,
-    left: 10,
-    right: 10,
-    bottom: 10
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`pixelStretchEffect page show ${JSON.stringify(this.mPixelStretchEffect)}`)
     instance.pixelStretchEffect(this.mPixelStretchEffect)
   }
@@ -1299,12 +1282,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1708,7 +1685,6 @@ struct pixelStretchEffectPage {
   @State _pixelStretchEffectFlexMod: FlexModifier = new FlexModifier()
   @State _pixelStretchEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _pixelStretchEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _pixelStretchEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _pixelStretchEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _pixelStretchEffectGridMod: GridModifier = new GridModifier()
   @State _pixelStretchEffectGridColMod: GridColModifier = new GridColModifier()

@@ -79,8 +79,6 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
       done()
     })
 
-
-
     /*
      * @tc.number     : SUB_WEB_GETRESPONSEISREADY_RETURN_TRUE_0005
      * @tc.name       : testGetResponseIsReadyReturnTrue
@@ -98,5 +96,24 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+     * @tc.name       SwitchNextPageStatic
+     * @tc.number     SUB_ACE_WEB_GETRESPONSEDATAEX_API
+     * @tc.desc       test GetResponseDataEx
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      LEVEL0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebResourceResponseButton', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
   })
 }

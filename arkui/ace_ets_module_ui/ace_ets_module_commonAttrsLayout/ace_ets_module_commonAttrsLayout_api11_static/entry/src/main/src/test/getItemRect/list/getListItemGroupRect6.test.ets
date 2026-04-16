@@ -87,7 +87,7 @@ it('getListItemGroupRect6_static_0100', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_3: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect6_listItemGroup_3') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect6_listItemGroup_3') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);

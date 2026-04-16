@@ -60,34 +60,16 @@ export default function webViewControllerPart3Test() {
      */
     it('testRestoreWebStateStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
-      await Utils.msSleep(2000);
-      Utils.emitEvent("testRestoreWebState001", 10);
-      await Utils.msSleep(2000);
-      Utils.registerEvent("testRestoreWebState001", "index", 100083, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
-
-    /**
-     * @tc.name   testRestoreWebStateStatic002
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0200
-     * @tc.desc   test restoreWebState
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testRestoreWebStateStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> =>   {
         await Utils.msSleep(2000);
-        Utils.emitEvent("testRestoreWebState002", 10);
+        Utils.emitEvent("testRestoreWebState001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testRestoreWebState002", "17100001", 1000831, done);
-        await Utils.msSleep(4000);
+        Utils.registerEvent("testRestoreWebState001", "index", 100083, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
         done();
       })
-      
+
     /**
      * @tc.name   testSerializeWebStateErrorCodeStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SERIALIZEWEBSTATE_0100
@@ -269,9 +251,148 @@ export default function webViewControllerPart3Test() {
       })
 
     /**
+     * @tc.name   emitWebSiteIsolationModeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SITEISOLATIONMODE_0100
+     * @tc.desc   test SiteIsolationMode PARTIAL
+     * @tc.type   ENUMVALUE
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitWebSiteIsolationModeStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitWebSiteIsolationMode001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitWebSiteIsolationMode001",webview.SiteIsolationMode.PARTIAL, 20250920, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   emitWebSiteIsolationModeStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SITEISOLATIONMODE_0200
+     * @tc.desc   test SiteIsolationMode STRICT
+     * @tc.type   ENUMVALUE
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitWebSiteIsolationModeStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitWebSiteIsolationMode002", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitWebSiteIsolationMode002",webview.SiteIsolationMode.STRICT, 20250921, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottomStatic001
+     * @tc.number SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_API_0001
+     * @tc.desc   test avoidVisibleViewportBottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitAvoidVisibleViewportBottomStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitAvoidVisibleViewportBottom001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitAvoidVisibleViewportBottom001", 50, 153920, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottomErrCodeStatic001
+     * @tc.number SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_ERRORCODE_0001
+     * @tc.desc   test avoidVisibleViewportBottom errorCode 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitAvoidVisibleViewportBottomErrCodeStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitAvoidVisibleViewportBottomErrCode001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitAvoidVisibleViewportBottomErrCode001", 17100001, 20250827, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottomErrCodeStatic002
+     * @tc.number SUB_ACE_EMITAVOIDVISIBLEVIEWPORTBOTTOM_ERRORCODE_0002
+     * @tc.desc   test avoidVisibleViewportBottom errorCode 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitAvoidVisibleViewportBottomErrCodeStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitAvoidVisibleViewportBottomErrCode002", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitAvoidVisibleViewportBottomErrCode002", 801, 20250910, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testRestoreWebStateStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ENABLEWHOLEWEBPAGEDRAWUING_01001
+     * @tc.desc   test enableWholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRestoreWebStateStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testRestoreWebState002", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testRestoreWebState002", "17100001", 1000831, done);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   emitEnableWholeWebPageDrawingStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETRENDERPROCESSMODE_20250830
+     * @tc.desc   test getRenderProcessMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitEnableWholeWebPageDrawingStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitEnableWholeWebPageDrawing001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("emitEnableWholeWebPageDrawing001", true, 20250830, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
      * @tc.name   emitonSwitchNextStaticPage
-     * @tc.number emitonSwitchNextStaticPage01
-     * @tc.desc   test emitonSwitchNextStaticPage
+     * @tc.number emitonSwitchNextPage21
+     * @tc.desc   emitonSwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

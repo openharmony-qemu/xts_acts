@@ -202,9 +202,9 @@ export default function inputMethodEngineStatic() {
         * @tc.desc   Function test 
         * @tc.type   FUNCTION 
         * @tc.size   MEDIUMTEST 
-        * @tc.level  LEVEL3 
+        * @tc.level  LEVEL0 
         */ 
-        it('Sub_InputMethod_IMF_sendMessagePromise_static_0301', Level.LEVEL3, async (done: () => void) => { 
+        it('Sub_InputMethod_IMF_sendMessagePromise_static_0301', Level.LEVEL0, async (done: () => void) => { 
             const testName = 'Sub_InputMethod_IMF_sendMessagePromise_static_0301'; 
             const ATTRIBUTE: inputMethod.TextConfig = { 
                 inputAttribute: { 

@@ -56,14 +56,14 @@ export default function webViewMetaViewportFalse() {
     })
 
     /**
-     * @tc.name   SwitchNextPageStatic
-     * @tc.number SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0300
-     * @tc.desc   test interface of metaViewport with runjavascript
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name        SwitchNextPageStatic
+     * @tc.number      SwitchNextPageStatic22222222
+     * @tc.desc        test SwitchNextPageStatic
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

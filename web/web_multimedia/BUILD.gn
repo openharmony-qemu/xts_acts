@@ -29,6 +29,7 @@ group("ActsWebMultiMediaTest") {
       "internet_video_playback_one:ActsAceWebInternetVideoPlaybackOneTest",
       "internet_video_playback_two:ActsAceWebInternetVideoPlaybackTwoTest",
       "internet_video_playback_three:ActsAceWebInternetVideoPlaybackThreeTest",
+      "internet_video_playback_three_static:ActsAceWebInternetVideoPlaybackThreeStaticTest",
     ]
   }
 }

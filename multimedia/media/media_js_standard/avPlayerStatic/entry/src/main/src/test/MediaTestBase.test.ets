@@ -242,4 +242,14 @@ export default class MediaTestBase {
       resolve(fileDescriptor)
     });
   }
+
+  checkPlaybackStatisticMetrics(actualStatisticMetrics: media.PlaybackMetrics, statisticMetricsKey: Array<media.PlaybackMetricsKey>) {
+    console.info(`case checkPlaybackStatisticMetrics called: ${JSON.stringify(actualStatisticMetrics)}`);
+    for (let i = 0; i < statisticMetricsKey.length; i++) {
+      let property: Object | undefined = actualStatisticMetrics[statisticMetricsKey[i]];
+      console.info('case key is  ' + statisticMetricsKey[i]);
+      console.info('case actual value is  ' + property);
+      expect(property).assertLargerOrEqual(0);
+    }
+  }
 }

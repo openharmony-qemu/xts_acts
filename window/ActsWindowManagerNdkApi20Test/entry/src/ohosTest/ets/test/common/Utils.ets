@@ -260,14 +260,12 @@ export default class Utils {
       return;
     }
     // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
-    globalThis.subWindow.destroyWindow((err: BusinessError) => {
-      let errCode: number = err.code;
-      if (errCode) {
-        console.error('Failed to destroy the window. Cause: ' + JSON.stringify(err));
-        return;
-      }
+    try {
+      await globalThis.subWindow.destroyWindow();
       console.info('Succeeded in destroying the window.');
-    });
+    } catch (err) {
+      console.error(`destroyWindow catch err: ${JSON.stringify(err)}`);
+    }
   }
 
   static async simulateByShell(cmd: string) {

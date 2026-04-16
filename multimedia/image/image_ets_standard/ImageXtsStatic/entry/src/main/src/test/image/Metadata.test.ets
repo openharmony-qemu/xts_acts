@@ -18,7 +18,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
 import { BusinessError } from '@ohos.base';
-const TAG = 'imagePackerStaticTest';
+const TAG = 'xtsStatic_imagePackerStaticTest';
 let metaData: image.Metadata;
 let filesDir: string | undefined | null;
 let filePath: string = '';
@@ -41,13 +41,17 @@ const compareValues = (
   return actual === expected;
 }
 
+
 const getFd = (fileName: string): int => {
-  filePath = filesDir + "/" + fileName;
-  console.info("image filePath:" + filePath);
+  let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+  filePath =  testContext.filesDir + "/" + fileName;
+  console.info(TAG,"image filePath:" + filePath);
   const file = fs.openSync(filePath!);
   fdNumber = file.fd as int;
   return fdNumber;
 };
+
+
 const getMetadataObject = (
   typeMetadata: string,
   imageMetadata: image.ImageMetadata
@@ -72,21 +76,21 @@ const testExifMetadataGetAndSetBlob = async (
     const exifValue = await imageSourceApi!.readImageMetadata(camelCaseMetadataKeys, 0);
     const sourceMetadata = getMetadataObject(typeMetadata, exifValue);
     const sourceMetadataKeys = await sourceMetadata?.getProperties(camelCaseMetadataKeys);
-    console.info(`${testNum} getMetadataObject successfully for sourceMetadata : ${JSON.stringify(sourceMetadataKeys)}` );
+    console.info(TAG,`${testNum} getMetadataObject successfully for sourceMetadata : ${JSON.stringify(sourceMetadataKeys)}` );
 
     if (!sourceMetadata) {
-      console.info(`${testNum} Source metadata not found.`);
+      console.info(TAG,`${testNum} Source metadata not found.`);
       return false;
     }
     const actualBlob: ArrayBuffer = await sourceMetadata.getBlob();
-    console.info(`${testNum} getBlob successfully for exifArrayBuffer: ${actualBlob != undefined}`);
+    console.info(TAG,`${testNum} getBlob successfully for exifArrayBuffer: ${actualBlob != undefined}`);
     let targetfd: int = getFd(targetFileName);
     const imageSourceApiModify : image.ImageSource | undefined = image.createImageSource(targetfd);
     try {
       const exifValueGet = await imageSourceApiModify!.readImageMetadata(camelCaseMetadataKeys, 0);
       let targetMetadata = getMetadataObject(typeMetadata, exifValueGet);
       if (!targetMetadata) {
-        console.info(`${testNum} Target metadata not found.`);
+        console.info(TAG,`${testNum} Target metadata not found.`);
         return false;
       }
       await targetMetadata.setBlob(actualBlob);
@@ -96,7 +100,7 @@ const testExifMetadataGetAndSetBlob = async (
         const actualValue: string | number | number[] | undefined | null | ArrayBuffer = sourceMetadataKeys![key];
         const verifyValue: string | number | number[] | undefined | null | ArrayBuffer = getMetadata![key];
         if (!compareValues(actualValue, verifyValue)) {
-          console.info(`${testNum} Verification failed for key: ${key}, verifyValue: ${JSON.stringify(verifyValue)}, actualValue: ${JSON.stringify(actualValue)}`);
+          console.info(TAG,`${testNum} Verification failed for key: ${key}, verifyValue: ${JSON.stringify(verifyValue)}, actualValue: ${JSON.stringify(actualValue)}`);
           result = false;
         }
       });
@@ -146,9 +150,9 @@ function createPixelMapSUPP(context : common.UIAbilityContext ):image.PixelMap {
 
 export default function metaDataStaticTest(): void {
   describe('metaDataStaticTest', (): void => {
-    let filesDir: string | undefined | null;
-    let filePath: string = '';
-    let fdNumber: int;
+    // let filesDir: string | undefined | null;
+    // let filePath: string = '';
+    // let fdNumber: int;
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
@@ -168,8 +172,8 @@ export default function metaDataStaticTest(): void {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_01
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_01
+     * @tc.number      SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0100
+     * @tc.name        SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0100
      * @tc.desc        Verify EXIF metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read EXIF metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -179,21 +183,21 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_01", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_01";
+    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0100";
       let sourceFileName = "food.jpg";
-      let targetFileName = "test_blob_v1.jpg";
+      let targetFileName = "AllAuxiliaryPictures.jpg";
       let camelCaseMetadataKeys: Array<string> = ["ImageLength", "ImageWidth", "BitsPerSample", "Make"];
       let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "exifMetadata",
         camelCaseMetadataKeys);
-      console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+      console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_02
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_02
+     * @tc.number      SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200
+     * @tc.name        SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200
      * @tc.desc        Verify EXIF metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read EXIF metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -203,21 +207,21 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_02", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_02";
+    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200";
       let sourceFileName = "food.jpg";
-      let targetFileName = "test_blob_v1.jpg";
+      let targetFileName = "AllAuxiliaryPictures.jpg";
       let camelCaseMetadataKeys: Array<string> = ["HwMnoteCaptureMode"];
       let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd",
         "makerNoteHuaweiMetadata", camelCaseMetadataKeys);
-      console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+      console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_03
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_03
+     * @tc.number      SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300
+     * @tc.name        SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300
      * @tc.desc        Verify HEIFS metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read HEIFS metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -227,18 +231,18 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_03", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_03";
+    it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300";
       let sourceFileName = "C027.heic";
-      let targetFileName = "test_blob_v1.heic";
+      let targetFileName = "C025.heic";
       let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
-        console.info(testTag + "device is not support heif encode");
+        console.info(TAG,testTag, "device is not support heif encode");
         done();
       } else {
         let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "heifsMetadata",
           camelCaseMetadataKeys);
-        console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+        console.info(TAG,testTag,` testExifMetadataGetAndSetBlob result is: ${result}`);
         expect(result).assertTrue();
         done();
       }
@@ -247,8 +251,8 @@ export default function metaDataStaticTest(): void {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_04
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_04
+     * @tc.number      SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0400
+     * @tc.name        SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0400
      * @tc.desc        Verify EXIF metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read EXIF metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -258,21 +262,21 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_04", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_04";
+    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0400";
       let sourceFileName = "food.jpg";
-      let targetFileName = "test_blob_v1.jpg";
+      let targetFileName = "AllAuxiliaryPictures.jpg";
       let camelCaseMetadataKeys: Array<string> = ["ImageLength", "ImageWidth", "BitsPerSample", "Make"];
       let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "exifMetadata",
         camelCaseMetadataKeys);
-      console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+      console.info(TAG,testTag,`$testExifMetadataGetAndSetBlob result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_05
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_05
+     * @tc.number      SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0500
+     * @tc.name        SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0500
      * @tc.desc        Verify EXIF metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read EXIF metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -282,21 +286,21 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_05", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_05";
+    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0500", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0500";
       let sourceFileName = "food.jpg";
-      let targetFileName = "test_blob_v1.jpg";
+      let targetFileName = "AllAuxiliaryPictures.jpg";
       let camelCaseMetadataKeys: Array<string> = ["HwMnoteCaptureMode"];
       let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd",
         "makerNoteHuaweiMetadata", camelCaseMetadataKeys);
-      console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+      console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_06
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_06
+     * @tc.number      SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600
+     * @tc.name        SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600
      * @tc.desc        Verify HEIFS metadata persistence after getBlob/setBlob and packToFile for HEIC
      *                 1.Read HEIFS metadata from source as ArrayBuffer using getBlob
      *                 2.Write ArrayBuffer to target HEIC using setBlob
@@ -306,18 +310,18 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_06", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_06";
+    it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600";
       let sourceFileName = "C027.heic";
       let targetFileName = "test_blob_v1.heic";
       let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
-        console.info(testTag + "device is not support heif encode");
+        console.info(TAG,testTag + "device is not support heif encode");
         done();
       } else {
         let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "heifsMetadata",
           camelCaseMetadataKeys);
-        console.info(`${testTag} testExifMetadataGetAndSetBlob result is: ${result}`);
+        console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
         expect(result).assertTrue();
         done();
       }
@@ -329,21 +333,21 @@ export default function metaDataStaticTest(): void {
 
 
     /**
-     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_001
-     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_001
+     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
+     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100
      * @tc.desc      clone isEditable
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_PIXEL_MAP_CLONE_001', Level.LEVEL1, async (done:() => void) => {
-      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_001";
+    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100', Level.LEVEL1, async (done:() => void) => {
+      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0100";
       let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
       console.info(TAG, `start：${testName}`);
       let PixelMap = await createPixelMapTest(context);
       try {
         let newPixelMap = await PixelMap.clone();
-        console.info('Succeeded clone pixelmap.');
+        console.info(TAG,testName,'Succeeded clone pixelmap.');
         expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
       } catch (error) {
         console.error(TAG, testName, error, error.code);
@@ -352,21 +356,21 @@ export default function metaDataStaticTest(): void {
       done();
     });
     /**
-     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_002
-     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_002
+     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200
+     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200
      * @tc.desc      clone isStrideAlignment
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_PIXEL_MAP_CLONE_002', Level.LEVEL1, async (done:() => void) => {
-      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_002";
+    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200', Level.LEVEL1, async (done:() => void) => {
+      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_static_0200";
       let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
       console.info(TAG, `start：${testName}`);
       let PixelMap = await createPixelMapTest(context);
       try {
         let newPixelMap = await PixelMap.clone();
-        console.info('Succeeded clone pixelmap.');
+        console.info(TAG,testName,'Succeeded clone pixelmap.');
         expect(newPixelMap.isStrideAlignment).assertEqual(PixelMap.isStrideAlignment);
       } catch (error) {
         console.error(TAG, testName, error, error.code);
@@ -375,21 +379,21 @@ export default function metaDataStaticTest(): void {
       done();
     });
     /**
-     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001
-     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001
+     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0100
+     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0100
      * @tc.desc      clone isEditable
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001', Level.LEVEL1, async (done:() => void) => {
-      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001";
+    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0100', Level.LEVEL1, async (done:() => void) => {
+      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0100";
       let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
       console.info(TAG, `start：${testName}`);
       let PixelMap = createPixelMapSUPP(context);
       try {
         let newPixelMap = PixelMap.cloneSync();
-        console.info('Succeeded clone pixelmap.');
+        console.info(TAG, testName,'Succeeded clone pixelmap.');
         expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
       } catch (error) {
         console.error(TAG, testName, error, error.code);
@@ -398,21 +402,21 @@ export default function metaDataStaticTest(): void {
       done();
     });
     /**
-     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002
-     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002
+     * @tc.number    SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0200
+     * @tc.name      SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0200
      * @tc.desc      clone isStrideAlignment
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002', Level.LEVEL1, async (done:() => void) => {
-      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002";
+    it('SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0200', Level.LEVEL1, async (done:() => void) => {
+      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_CLONE_SYNC_static_0200";
       let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
       console.info(TAG, `start：${testName}`);
       let PixelMap = createPixelMapSUPP(context);
       try {
         let newPixelMap = PixelMap.cloneSync();
-        console.info('Succeeded clone pixelmap.');
+        console.info(TAG, testName,'Succeeded clone pixelmap.');
         expect(newPixelMap.isStrideAlignment).assertEqual(PixelMap.isStrideAlignment);
       } catch (error) {
         console.error(TAG, testName, error, error.code);

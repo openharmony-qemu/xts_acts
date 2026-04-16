@@ -18,6 +18,7 @@ group("pageInteraction") {
       "JS_dialog_box:ActsWebJSDialogBoxTest",
       "JS_dialog_box_static:ActsWebJSDialogBoxStaticTest",
       "base_rendering:ActsWebPageBaseRenderingTest",
+      "base_rendering_static:ActsWebPageBaseRenderingStaticTest",
       "focus_processing:ActsWebFocusProcessingTest",
       "focus_processing_static:ActsWebFocusProcessingStaticTest",
       "gesture_operation:ActsWebGestureOperationTest",

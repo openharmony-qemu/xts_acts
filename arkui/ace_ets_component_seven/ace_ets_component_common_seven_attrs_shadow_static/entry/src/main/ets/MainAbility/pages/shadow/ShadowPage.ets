@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -464,21 +461,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.shadow(this.mShadow)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mShadow: ShadowOptions = {
-    radius: 35,
-    type: ShadowType.COLOR,
-    color: '#FF0011FF',
-    offsetX: 37,
-    offsetY: 41,
-    fill: false
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.shadow(this.mShadow)
   }
 }
@@ -1440,11 +1422,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1782,7 +1759,6 @@ struct ShadowPage {
   @State _shadowEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _shadowFlexModifier: FlexModifier = new FlexModifier()
   @State _shadowFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _shadowFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _shadowGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _shadowGridModifier: GridModifier = new GridModifier()
   @State _shadowGridColModifier: GridColModifier = new GridColModifier()
@@ -2493,17 +2469,6 @@ struct ShadowPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._shadowCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._shadowFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

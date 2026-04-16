@@ -16,9 +16,11 @@
 import AudioEnumTest from './AudioEnumTest.test';
 import AudioTest from './AudioTest.test'
 import AudioTest1 from './AudioTest1.test'
+import AudioMidiTest from './AudioMidiTest.test'
 
 export default function testsuite() {
   AudioTest();
   AudioTest1();
   AudioEnumTest();
+  AudioMidiTest();
 }

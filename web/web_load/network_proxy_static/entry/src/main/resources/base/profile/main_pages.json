@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/webviewNetworkProxy",
-    "pages/webCookieManager"
+    "pages/webCookieManager",
+    "pages/webViewController"
   ]
 }

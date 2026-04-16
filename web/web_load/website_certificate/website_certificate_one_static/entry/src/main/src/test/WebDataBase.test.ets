@@ -141,5 +141,44 @@ export default function WebDataBaseTest() {
         await Utils.msSleep(1000);
         done();
       })
+
+    /**
+     * @tc.name   testSaveHttpAuthCredentialsEmptyStatic001
+     * @tc.number SUB_WEB_SAVEHTTPAUTHCREDENTIALS_STATIC_0101
+     * @tc.desc   test saveHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSaveHttpAuthCredentialsEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testSaveHttpAuthCredentialsEmpty001', 10)
+        await Utils.msSleep(5000);
+        Utils.registerEvent('testSaveHttpAuthCredentialsEmpty001', 401, 300401, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebDataBaseButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetHttpAuthCredentialsEmptyStatic001
+     * @tc.number SUB_WEB_GETHTTPAUTHCREDENTIALS_STATIC_0102
+     * @tc.desc   test getHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHttpAuthCredentialsEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testGetHttpAuthCredentialsEmpty001', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetHttpAuthCredentialsEmpty001', 401, 300451, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebDataBaseButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
   })
 }

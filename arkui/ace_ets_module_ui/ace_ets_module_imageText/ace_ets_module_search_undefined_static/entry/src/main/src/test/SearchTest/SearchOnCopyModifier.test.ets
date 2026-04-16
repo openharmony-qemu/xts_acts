@@ -37,15 +37,13 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-function doCopy(driver: Driver, componentId: string){
-  waitForCompletion(async ()=>{
-    let text = await driver.findComponent(ON.id(componentId)) as Component;
-    await text.longClick();
-    await CommonFunc.sleep(500);
-    let selectionMenu = await driver.findComponent(ON.text('复制')) as Component;
-    await selectionMenu.click();
-    await CommonFunc.sleep(500);
-  })
+async function doCopy(driver: Driver, componentId: string){
+  let text = await driver.findComponent(ON.id(componentId)) as Component;
+  await text.longClick();
+  await CommonFunc.sleep(500);
+  let selectionMenu = await driver.findComponent(ON.text('复制')) as Component;
+  await selectionMenu.click();
+  await CommonFunc.sleep(500);
 }
 
 
@@ -89,13 +87,13 @@ export default function SearchOnCopyModifierTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      doCopy(driver, 'Search_OnCopy_Modifier_Undefined0')
+      await doCopy(driver, 'Search_OnCopy_Modifier_Undefined0')
       let copyValue1 = await driver.findComponent(ON.id('Search_OnCopy_Modifier_Value0')) as Component;
       let text = await copyValue1.getText();
       console.info('[SearchOnCopyModifierTest_static_0010] SearchOnCopyModifierUndefined: ' + text);
       expect(text).assertEqual('copyValue: ');
 
-      doCopy(driver, 'Search_OnCopy_Modifier_Dynamic0')
+      await doCopy(driver, 'Search_OnCopy_Modifier_Dynamic0')
       let copyValue2 = await driver.findComponent(ON.id('Search_OnCopy_Modifier_Value0')) as Component;
       text = await copyValue2.getText();
       console.info('[SearchOnCopyModifierTest_static_0010] SearchOnCopyModifierDynamic: ' + text);
@@ -105,7 +103,7 @@ export default function SearchOnCopyModifierTest() {
       await button.click();
       await CommonFunc.sleep(500);
 
-      doCopy(driver, 'Search_OnCopy_Modifier_Dynamic0')
+      await doCopy(driver, 'Search_OnCopy_Modifier_Dynamic0')
       let copyValue3 = await driver.findComponent(ON.id('Search_OnCopy_Modifier_Value0')) as Component;
       text = await copyValue3.getText();
       console.info('[SearchOnCopyModifierTest_static_0010] SearchOnCopyModifierDynamic: ' + text);

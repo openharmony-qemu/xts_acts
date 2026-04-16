@@ -15,6 +15,7 @@
 
 #include "napi/native_api.h"
 #include "hiappevent/hiappevent.h"
+#include <hilog/log.h>
 #include <cstring>
 #include <vector>
 #include <string>
@@ -1023,6 +1024,958 @@ static napi_value OHHiAppEventConfigureReturnFalse(napi_env env, napi_callback_i
     }
 }
 
+napi_value OhHiappEventSetEventConfig1(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig2(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "false");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig3(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "111111");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig4(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "true");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig5(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "false");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig6(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "1111");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+napi_value OhHiappEventSetEventConfig7(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "true");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig8(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "false");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig9(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahaaa");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig10(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "0");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig11(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig12(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "-1");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig13(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "1aa1111");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig14(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig15(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "sajd;lsjad\\ks!!@@#$%%^%^&&*");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+napi_value OhHiappEventSetEventConfig16(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "sajd;lsjad\\ks!!@@#$%%^%^&&*");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig17(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "sajd;lsjad\\ks!!@@#$%%^%^&&*");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig18(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "sajd;lsjad\\ks!!@@#$%%^%^&&*");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig19(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "true");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig20(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "hahahha");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "true");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig21(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880000000");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "true");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig22(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "hahahahhha");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "true");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig23(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig24(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "hahahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+napi_value OhHiappEventSetEventConfig25(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "hahahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "hahahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig26(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "hahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "hahahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "hahahahhah");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig27(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "");
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully1.");
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+napi_value OhHiappEventSetEventConfig28(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242881");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig29(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+napi_value OhHiappEventSetEventConfig30(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, "hsajdsjkanfs", "true");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig31(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    int returnValue = OH_HiAppEvent_SetConfigItem(config, "hsajdsjkanfs", "5242880");
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig32(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "hkadskfk");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig33(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig34(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig35(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, "hahahahhah");
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig36(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, NULL);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig37(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, NULL);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig38(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, NULL);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig39(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, NULL);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig40(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, nullptr);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig41(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, nullptr);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig42(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, nullptr);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value OhHiappEventSetEventConfig43(napi_env env, napi_callback_info info)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_MERGE_CPPCRASH_APP_LOG, nullptr);
+    int returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+
+    int ret = -1;
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    }else{
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value Add(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -1148,6 +2101,49 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OHHiAppEventCreateWatcherReturn", nullptr, OHHiAppEventCreateWatcherReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OHHiAppEventConfigureReturnTrue", nullptr, OHHiAppEventConfigureReturnTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OHHiAppEventConfigureReturnFalse", nullptr, OHHiAppEventConfigureReturnFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "OhHiappEventSetEventConfig1", nullptr, OhHiappEventSetEventConfig1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig2", nullptr, OhHiappEventSetEventConfig2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig3", nullptr, OhHiappEventSetEventConfig3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig4", nullptr, OhHiappEventSetEventConfig4, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig5", nullptr, OhHiappEventSetEventConfig5, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig6", nullptr, OhHiappEventSetEventConfig6, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig7", nullptr, OhHiappEventSetEventConfig7, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig8", nullptr, OhHiappEventSetEventConfig8, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig9", nullptr, OhHiappEventSetEventConfig9, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig10", nullptr, OhHiappEventSetEventConfig10, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig11", nullptr, OhHiappEventSetEventConfig11, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig12", nullptr, OhHiappEventSetEventConfig12, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig13", nullptr, OhHiappEventSetEventConfig13, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig14", nullptr, OhHiappEventSetEventConfig14, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig15", nullptr, OhHiappEventSetEventConfig15, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig16", nullptr, OhHiappEventSetEventConfig16, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig17", nullptr, OhHiappEventSetEventConfig17, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig18", nullptr, OhHiappEventSetEventConfig18, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig19", nullptr, OhHiappEventSetEventConfig19, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig20", nullptr, OhHiappEventSetEventConfig20, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig21", nullptr, OhHiappEventSetEventConfig21, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig22", nullptr, OhHiappEventSetEventConfig22, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig23", nullptr, OhHiappEventSetEventConfig23, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig24", nullptr, OhHiappEventSetEventConfig24, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig25", nullptr, OhHiappEventSetEventConfig25, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig26", nullptr, OhHiappEventSetEventConfig26, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig27", nullptr, OhHiappEventSetEventConfig27, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig28", nullptr, OhHiappEventSetEventConfig28, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig29", nullptr, OhHiappEventSetEventConfig29, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig30", nullptr, OhHiappEventSetEventConfig30, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig31", nullptr, OhHiappEventSetEventConfig31, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig32", nullptr, OhHiappEventSetEventConfig32, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig33", nullptr, OhHiappEventSetEventConfig33, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig34", nullptr, OhHiappEventSetEventConfig34, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig35", nullptr, OhHiappEventSetEventConfig35, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig36", nullptr, OhHiappEventSetEventConfig36, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig37", nullptr, OhHiappEventSetEventConfig37, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig38", nullptr, OhHiappEventSetEventConfig38, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig39", nullptr, OhHiappEventSetEventConfig39, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig40", nullptr, OhHiappEventSetEventConfig40, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig41", nullptr, OhHiappEventSetEventConfig41, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig42", nullptr, OhHiappEventSetEventConfig42, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfig43", nullptr, OhHiappEventSetEventConfig43, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -22,7 +22,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
 const VIDEO_SOURCE = 'H264_AAC.mp4';
+const AUDIO_SOURCE = 'mjpeg_mp3.mp3';
 let fileDescriptor: media.AVFileDescriptor | undefined;
+let fileDescriptor1: media.AVFileDescriptor | undefined;
 
 async function getFdRead(pathName: string, done: () => void) {
     let fdReturn: number = 0;
@@ -71,6 +73,9 @@ export default function AVImageGeneratorTest() {
             console.info('beforeAll case');
             await getFileDescriptorFromFileDir(VIDEO_SOURCE, openFileFailed).then((res: media.AVFileDescriptor) => {
               fileDescriptor = res;
+            });
+            await getFileDescriptorFromFileDir(AUDIO_SOURCE, openFileFailed).then((res: media.AVFileDescriptor) => {
+              fileDescriptor1 = res;
             });
         })
 
@@ -552,6 +557,169 @@ export default function AVImageGeneratorTest() {
                     expect().assertFail()
                 }
             });
+        })
+        /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0200
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0200
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          *               : 001.testAvImageGenerator fetchScaledFrameByTime RGB_888
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            media.createAVImageGenerator((err: BusinessError | null,
+                generator: undefined | media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    let param: media.OutputSize = {
+                        width : 300,
+                        height : 300,
+                    }
+                    avImageGenerator.fdSrc = fileDescriptor!;
+                    avImageGenerator.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
+                        .then((pixelMap: image.PixelMap | undefined) => {
+                            let pixel_map = pixelMap;
+                            console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                            expect(pixel_map).not().assertNull();
+                            done();
+                        }).catch((error: Error) => {
+                            console.error(`fetchScaledFrameByTime catchCallback, error message:${error.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
+                    expect().assertFail()
+                }
+            });
+        })
+        /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0300
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0300
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          *               : 001.testAvImageGenerator fetchScaledFrameByTime RGB_888
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            media.createAVImageGenerator((err: BusinessError | null,
+                generator: undefined | media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    let param: media.OutputSize = {
+                        width : 300,
+                        height : 300,
+                    }
+                    avImageGenerator.fdSrc = fileDescriptor!;
+                    avImageGenerator.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC, param)
+                        .then((pixelMap: image.PixelMap | undefined) => {
+                            let pixel_map = pixelMap;
+                            console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                            expect(pixel_map).not().assertNull();
+                            done();
+                        }).catch((error: Error) => {
+                            console.error(`fetchScaledFrameByTime catchCallback, error message:${error.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
+                    expect().assertFail()
+                }
+            });
+        })
+        /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0400
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0400
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          *               : 001.testAvImageGenerator fetchScaledFrameByTime RGB_888
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            media.createAVImageGenerator((err: BusinessError | null,
+                generator: undefined | media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    let param: media.OutputSize = {
+                        width : 300,
+                        height : 300,
+                    }
+                    avImageGenerator.fdSrc = fileDescriptor!;
+                    avImageGenerator.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC, param)
+                        .then((pixelMap: image.PixelMap | undefined) => {
+                            let pixel_map = pixelMap;
+                            console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                            expect(pixel_map).not().assertNull();
+                            done();
+                        }).catch((error: Error) => {
+                            console.error(`fetchScaledFrameByTime catchCallback, error message:${error.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
+                    expect().assertFail()
+                }
+            });
+        })
+        /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0100
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0100
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let avImageGenerator: media.AVImageGenerator | undefined = await media.createAVImageGenerator();
+            let param: media.OutputSize = {
+                width : 300,
+                height : 300,
+            }
+            avImageGenerator!!.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
+                .then((pixelMap: image.PixelMap | undefined) => {
+                    let pixel_map = pixelMap;
+                    console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                    expect(pixel_map).not().assertNull();
+                    done();
+                }).catch((error: Error) => {
+                    console.error(`fetchScaledFrameByTime catchCallback, error code: ${error.code}, error message:${error.message}`);
+                    expect(error.code).assertEqual(5400102);
+                    done();
+                });
+            done();
+        })
+        /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0200
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0200
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_ERRCODE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let avImageGenerator: media.AVImageGenerator | undefined = await media.createAVImageGenerator();
+            let param: media.OutputSize = {
+                width : 300,
+                height : 300,
+            }
+            avImageGenerator!!.fdSrc = fileDescriptor1;
+            avImageGenerator!!.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
+                .then((pixelMap: image.PixelMap | undefined) => {
+                    let pixel_map = pixelMap;
+                    console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                    expect(pixel_map).not().assertNull();
+                    done();
+                }).catch((error: Error) => {
+                    console.error(`fetchScaledFrameByTime catchCallback, error code: ${error.code}, error message:${error.message}`);
+                    expect(error.code).assertEqual(5400106);
+                    done();
+                });
+            done();
         })
     });
 }

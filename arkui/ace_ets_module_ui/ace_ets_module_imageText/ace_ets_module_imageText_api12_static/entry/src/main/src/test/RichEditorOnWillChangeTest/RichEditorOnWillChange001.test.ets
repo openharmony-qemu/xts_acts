@@ -113,7 +113,7 @@ export default function RichEditorOnWillChange001() {
 
       expect(onDidBeforeText.indexOf('"start":0') > 0).assertEqual(true);
       expect(onDidBeforeText.indexOf('"end":0') > 0).assertEqual(true);
-      expect(length).assertEqual('rangeAfter_emoji:{"end":2,"start":0}');
+      expect(length).assertEqual('rangeAfter_emoji:{"start":0,"end":2}');
 
       let pointCenter = await rich.getBoundsCenter();
       await driver.click(pointCenter.x, pointCenter.y);

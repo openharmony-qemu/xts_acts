@@ -15806,7 +15806,8 @@ export default function ActsRpcClientEtsTest() {
           }).catch((err: Error) => {
            console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0300 err in catch is: ' + err);
             expect(err != null).assertTrue();
-          }).finally(() => {
+          }).finally(async() => {
+            await sleep(2000);
             data.reclaim();
             reply.reclaim();
             console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0300 reclaim done');

@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -142,12 +142,6 @@ import { SetValue, RouterParams } from '../../common/Utils';
   export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mClip: boolean = false
     applyNormalAttribute(instance: FormComponentAttribute): void {
-      instance.clip(this.mClip)
-    }
-  }
-  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mClip: boolean = false
-    applyNormalAttribute(instance: FormLinkAttribute): void {
       instance.clip(this.mClip)
     }
   }
@@ -503,7 +497,6 @@ struct clipPage {
   @State _clipFlexMod: FlexModifier = new FlexModifier()
   @State _clipFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _clipFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _clipFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _clipGaugeMod: GaugeModifier = new GaugeModifier()
   @State _clipGridMod: GridModifier = new GridModifier()
   @State _clipGridColMod: GridColModifier = new GridColModifier()
@@ -595,7 +588,6 @@ struct clipPage {
       this._clipFlexMod.mClip = value.clip
       this._clipFlowItemMod.mClip = value.clip
       this._clipFormComponentMod.mClip = value.clip
-      this._clipFormLinkMod.mClip = value.clip
       this._clipGaugeMod.mClip = value.clip
       this._clipGridMod.mClip = value.clip
       this._clipGridColMod.mClip = value.clip

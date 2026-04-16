@@ -61,7 +61,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLinkAttribute,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -339,15 +338,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mSaturate: number = 10
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
-    instance.saturate(this.mSaturate)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mSaturate: number = 10
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
     instance.saturate(this.mSaturate)
   }
@@ -928,12 +918,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1335,7 +1319,6 @@ struct saturatePage {
   @State _saturateFlexMod: FlexModifier = new FlexModifier()
   @State _saturateFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _saturateFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _saturateFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _saturateGaugeMod: GaugeModifier = new GaugeModifier()
   @State _saturateGridMod: GridModifier = new GridModifier()
   @State _saturateGridColMod: GridColModifier = new GridColModifier()

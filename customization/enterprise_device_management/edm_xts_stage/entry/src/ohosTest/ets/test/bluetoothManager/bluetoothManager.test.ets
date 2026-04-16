@@ -1267,7 +1267,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch(error) {
         console.info(' --- test_add_disallowed_bluetooth_protocols_0500 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

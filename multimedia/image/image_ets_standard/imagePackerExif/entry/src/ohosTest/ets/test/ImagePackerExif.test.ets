@@ -319,30 +319,37 @@ export default function imagePackerExifTest() {
         const pixelMap = result.pixelMap
         oldImageSource = result.imageSource
         if (packType === "packing") {
-          imagePackerApi.packing(pixelMap, packOpts, async (err: BusinessError, imageData: ArrayBuffer) => {
-            cResult = await checkPack(err, tag, imageData, name, fileName, oldImageSource, 0, "data", needsPackProperties)
+          cResult = await new Promise((resolve) => {
+            imagePackerApi.packing(pixelMap, packOpts, async (err: BusinessError, imageData: ArrayBuffer) => {
+              resolve(await checkPack(err, tag, imageData, name, fileName, oldImageSource, 0, "data", needsPackProperties))
+            })
           })
         } else {
           const fdNum = await getFdCacheDir(tag, fileNameEnd)
-          imagePackerApi.packToFile(pixelMap, fdNum, packOpts, async (err: BusinessError) => {
-            cResult = await checkPack(err, tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties)
+          cResult = await new Promise((resolve) => {
+            imagePackerApi.packToFile(pixelMap, fdNum, packOpts, async (err: BusinessError) => {
+              resolve(await checkPack(err, tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties))
+            })
           })
         }
       } else {
         const imageSourceApi = await getImageSource(fileName, type)
         oldImageSource = imageSourceApi
         if (packType === "packing") {
-          imagePackerApi.packing(imageSourceApi, packOpts, async (err: BusinessError, imageData: ArrayBuffer) => {
-            cResult = await checkPack(err, tag, imageData, name, fileName, oldImageSource, 0, "data", needsPackProperties)
+          cResult = await new Promise((resolve) => {
+            imagePackerApi.packing(imageSourceApi, packOpts, async (err: BusinessError, imageData: ArrayBuffer) => {
+              resolve(await checkPack(err, tag, imageData, name, fileName, oldImageSource, 0, "data", needsPackProperties))
+            })
           })
         } else {
           const fdNum = await getFdCacheDir(tag, fileNameEnd)
-          imagePackerApi.packToFile(imageSourceApi, fdNum, packOpts, async (err: BusinessError) => {
-            cResult = await checkPack(err, tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties)
+          cResult = await new Promise((resolve) => {
+            imagePackerApi.packToFile(imageSourceApi, fdNum, packOpts, async (err: BusinessError) => {
+              resolve(await checkPack(err, tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties))
+            })
           })
         }
       }
-      await sleep(3000)
       return cResult
     }
 

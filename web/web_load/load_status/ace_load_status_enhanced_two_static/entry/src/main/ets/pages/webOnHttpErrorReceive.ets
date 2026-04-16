@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, Header, OnInterceptRequestEvent, OnHttpErrorReceiveEvent, OnTitleReceiveEvent} from '@ohos.arkui.component';
+import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, MixedMode, Header, OnInterceptRequestEvent, OnHttpErrorReceiveEvent, OnTitleReceiveEvent} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -124,6 +124,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
          .javaScriptAccess(true)
          .geolocationAccess(true)
          .databaseAccess(true)
+         .mixedMode(MixedMode.COMPATIBLE)
 
          .onTitleReceive((event:OnTitleReceiveEvent):void => {
            if (event) {

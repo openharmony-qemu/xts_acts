@@ -19,7 +19,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import {Entry, Component, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
+import {Entry, Component, WebDarkMode, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image,OnClientAuthenticationEvent, OnSearchResultReceiveEvent,AudioSessionType,OnRefreshAccessedHistoryEvent,WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback } from '@ohos.base'
@@ -59,9 +59,15 @@ struct WebComponent {
   @State previewWidthResult: int = -1;
   @State previewHeightResult: int = -1;
   @State resultY: int = -1;
+  @State elementType: WebElementType = WebElementType.IMAGE;
   @State str: string = '';
   @State userAgentPC:StringFields = new StringFields ();
-
+  @State webResponseType: WebResponseType = WebResponseType.LONG_PRESS;
+  @State audioSessionTypeArr:AudioSessionType[] = [AudioSessionType.AMBIENT]
+  @State onRefreshAccessedHistoryUrl: string = "";
+  @State onRefreshAccessedHistoryTag: boolean = false;
+  @State onSearchResultReceiveNum: number = -1;
+  @State onClientAuthenticationRequestPort: number = -1;
   @Builder
   MenuBuilder() {
     Menu() {
@@ -148,6 +154,78 @@ struct WebComponent {
               break;
             }
 
+            case "webResponseTypeStatic01": {
+              this.webResponseType = WebResponseType.RIGHT_CLICK
+              this.controller.refresh()
+              setTimeout(() => {
+                Utils.emitEvent(WebResponseType.RIGHT_CLICK, 83023233)
+              }, 2000)
+              break;
+            }
+
+            case "audioSessionTypeStatic01": {
+              this.controller.refresh()
+              setTimeout(() => {
+                if(this.audioSessionTypeArr[0] == AudioSessionType.AMBIENT){
+                  Utils.emitEvent(this.audioSessionTypeArr[0], 83023234)
+                }
+              }, 2000)
+              break;
+            }
+
+            case "onRefreshAccessedHistoryStatic01": {
+              this.controller.refresh()
+              setTimeout(() => {
+                if(this.onRefreshAccessedHistoryUrl!=""){
+                  console.log("onRefreshAccessedHistoryUrl is :",this.onRefreshAccessedHistoryUrl)
+                  Utils.emitEvent(true, 83023235)
+                }
+              }, 2000)
+              break;
+            }
+
+            case "onSearchResultReceiveStatic01": {
+              this.controller.loadUrl("www.baidu.com")
+              this.controller.searchAllAsync('百度');
+              setTimeout(() => {
+                this.controller.searchAllAsync('百度');
+                if(this.onSearchResultReceiveNum != -1){
+                  Utils.emitEvent(true, 83023236)
+                }
+              }, 2000)
+              break;
+            }
+
+            case "onClientAuthenticationRequestStatic01": {
+              this.controller.clearClientAuthenticationCache();
+              this.controller.loadUrl("https://client.badssl.com")
+              setTimeout(() => {
+                console.log("onClientAuthenticationRequestPort:",this.onClientAuthenticationRequestPort)
+                if(this.onClientAuthenticationRequestPort != -1){
+                  Utils.emitEvent(true, 83023237)
+                }
+              }, 2000)
+              break;
+            }
+
+            case "webElementTypeStatic01": {
+              this.elementType = WebElementType.LINK
+              this.controller.refresh()
+              setTimeout(() => {
+                Utils.emitEvent(WebElementType.LINK, 83023231)
+              }, 2000)
+              break;
+            }
+
+            case "webElementTypeStatic02": {
+              this.elementType = WebElementType.TEXT
+              this.controller.refresh()
+              setTimeout(() => {
+                Utils.emitEvent(WebElementType.TEXT, 83023232)
+              }, 2000)
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -160,11 +238,40 @@ struct WebComponent {
 
       Web({ src: "resource://rawfile/bindSelectionMenu.html", controller: this.controller }).key('bindSelectionMenuType')
         .height(150).width(150).border({ width: 2, color: Color.Red })
-        .bindSelectionMenu(WebElementType.IMAGE, this.MenuBuilder, WebResponseType.LONG_PRESS,
+        .darkMode(WebDarkMode.OFF)
+        .onRefreshAccessedHistory((event:OnRefreshAccessedHistoryEvent): void => {
+          if (event) {
+            console.log('onRefreshAccessedHistory event success');
+            this.onRefreshAccessedHistoryUrl = event.url
+            this.onRefreshAccessedHistoryTag = event.isRefreshed
+          }
+        })
+        .onSearchResultReceive((event:OnSearchResultReceiveEvent): void => {
+          if (event) {
+            console.log('onSearchResultReceive event success');
+            this.onSearchResultReceiveNum = event.numberOfMatches
+          }
+        })
+        .onClientAuthenticationRequest((event:OnClientAuthenticationEvent): void => {
+          if (event) {
+            console.log('OnClientAuthenticationEvent event success');
+            this.onClientAuthenticationRequestPort = event.port
+          }
+        })
+        .bindSelectionMenu(this.elementType, this.MenuBuilder, this.webResponseType,
           {
-            onAppear: () => {},
+            onAppear: () => {
+              console.log('test TEXT RIGHT_CLICK onAppear');
+            },
             onDisappear: () => {
+              console.log('test TEXT RIGHT_CLICK closeContextMenu');
               this.result?.closeContextMenu();
+            },
+            onMenuShow: () => {
+              console.log('test TEXT RIGHT_CLICK onMenuShow');
+            },
+            onMenuHide: () => {
+              console.log('test TEXT RIGHT_CLICK onMenuHide');
             },
             preview:() => PreviewBuilderGlobal({
               previewImage: this.previewImage,

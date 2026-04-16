@@ -49,8 +49,8 @@ export default function webViewControllerPart2() {
 
     /**
      * @tc.name   emitonSwitchNextStaticPage
-     * @tc.number emitonSwitchNextStaticPage00
-     * @tc.desc   test emitonSwitchNextStaticPage
+     * @tc.number emitonSwitchNextPage222
+     * @tc.desc   emitonSwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

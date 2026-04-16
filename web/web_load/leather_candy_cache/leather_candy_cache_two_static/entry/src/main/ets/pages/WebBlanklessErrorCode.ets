@@ -150,12 +150,51 @@ struct WebComponent {
                 } catch (error) {
                   error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(error, 2026033)
+                  Utils.emitEvent(error, 2026023)
                 }
+              break;
+            }
+              case "testBlanklessFrameInterpolationState00": {
+                try {
+                  console.info(`testBlanklessFrameInterpolationState00: ${web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_SUCCEEDED}`);
+                  Utils.emitEvent(web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_SUCCEEDED, 20260324)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error, 20260324)
+                }
+                break;
+              }
+              case "testBlanklessFrameInterpolationState01": {
+                try {
+                  console.info(`testBlanklessFrameInterpolationState01: ${web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_FAILED}`);
+                  Utils.emitEvent(web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_FAILED, 20260325)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error, 20260325)
+                }
+                break;
+              }
+              case "testBlanklessFrameInterpolationState02": {
+                try {
+                  console.info(`testBlanklessFrameInterpolationState02: ${web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_REMOVED}`);
+                  Utils.emitEvent(web_webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_REMOVED, 20260326)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error, 20260326)
+                }
+                break;
+              }
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/ClearPrefetchedResourceTest' })
               }
             }
           })
-      }
+        }
       Web({ src: 'https://www.example.com', controller: this.controller })
         .javaScriptAccess(true)
     }

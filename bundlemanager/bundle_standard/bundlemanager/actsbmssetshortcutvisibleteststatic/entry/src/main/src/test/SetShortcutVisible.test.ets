@@ -66,6 +66,27 @@ export default function setShortcutVisible() {
     })
 
     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100
+     * @tc.number SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100
+     * @tc.desc   isShortcutSupported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = 'SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100';
+      hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
+      let data = shortcutManager.isShortcutSupported();
+      hilog.info(DOMAIN, 'isShortcutSupported Data:', JSON.stringify(data));
+      if (data === true) {
+        expect(data).assertTrue();
+      } else {
+        expect(data).assertFalse();
+      }
+      done();
+    })
+
+    /**
      * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
      * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
      * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is nonexistent.

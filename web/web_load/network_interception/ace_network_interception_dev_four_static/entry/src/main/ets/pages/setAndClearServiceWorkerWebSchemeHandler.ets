@@ -33,8 +33,10 @@ import { Callback, RecordData } from '@ohos.base'
 import buffer from '@ohos.buffer'
 import common from '@ohos.app.ability.common'
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { WebNetErrorList } from '@ohos.web.netErrorList'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -48,6 +50,23 @@ struct webResourceResponsePage {
   htmlData: string = "<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>";
   postDataStream: web_webview.WebHttpBodyStream = new web_webview.WebHttpBodyStream()
   resourceHandler: web_webview.WebResourceHandler = new web_webview.WebResourceHandler()
+  scheme1: web_webview.WebCustomScheme = {
+    schemeName: "name1",
+    isSupportCORS: true,
+    isSupportFetch: true,
+    isStandard: false,
+    isLocal: false,
+    isDisplayIsolated: false,
+    isSecure: false,
+    isCspBypassing: false,
+    isCodeCacheSupported: false,
+  }
+  schemeList: web_webview.WebCustomScheme[] = [
+    { schemeName: 'jump1', isSupportCORS: true, isSupportFetch: true },
+    { schemeName: 'jump2', isSupportCORS: true, isSupportFetch: false },
+    { schemeName: 'jump3', isSupportCORS: false, isSupportFetch: true },
+    { schemeName: 'jump4', isSupportCORS: false, isSupportFetch: false }
+  ]
   @State getRequestUrlResult: string = "lock";
   @State getRequestMethodResult: string = "lock";
   @State getReferrerResult: string = "lock";
@@ -89,8 +108,7 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
@@ -111,10 +129,125 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
+            }
+
+            case "testCustomizeSchemes001": {
+              let msg = "testCustomizeSchemes001"
+              try {
+                web_webview.WebviewController.customizeSchemes([this.scheme1])
+              } catch (error) {
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(17100020, 148351);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
+              }
+              break;
+            }
+
+            case "testCustomizeSchemes002": {
+              let msg = "testCustomizeSchemes002"
+              try {
+                web_webview.WebviewController.customizeSchemes([])
+                Utils.emitEvent(true, 148351)
+              } catch (error) {
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(true, 148351);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
+              }
+              break;
+            }
+
+            case "emitCustomizeSchemesLazyInitWebEngineTrue": {
+              let msg = "emitCustomizeSchemesLazyInitWebEngineTrue"
+              try {
+                web_webview.WebviewController.customizeSchemes(this.schemeList,true)
+              } catch (error) {
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(this.schemeList, 2603261011);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
+              }
+              break;
+            }
+
+            case "emitCustomizeSchemesLazyInitWebEngineFalse": {
+              let msg = "emitCustomizeSchemesLazyInitWebEngineFalse"
+              try {
+                web_webview.WebviewController.customizeSchemes(this.schemeList,false)
+              } catch (error) {
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(17100020, 148354);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 148354);
+                }
+              }
+              break;
+            }
+
+            case "setWebSchemeHandlerEmpty": {
+              try {
+                this.webviewcontroller.setWebSchemeHandler('', this.webSchemeHander);
+                this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
+                setTimeout(() => {
+                  Utils.emitEvent(true, 148352)
+                }, 2000)
+
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 148352)
+              }
+              break;
+            }
+
+            case "setServiceWorkerWebSchemeHandlerEmpty": {
+              try {
+                this.webviewcontroller.setWebSchemeHandler('', this.webSchemeHander);
+                web_webview.WebviewController.setServiceWorkerWebSchemeHandler('', this.webSchemeHander);
+                this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
+                setTimeout(() => {
+                  Utils.emitEvent(true, 1483521)
+                }, 2000)
+
+              } catch (error) {
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  Utils.emitEvent(true, 1483521);
+                } else {
+                  console.error(`Unexpected error: ${errMsg}`);
+                  Utils.emitEvent('error', 1483521);
+                }
+              }
+              break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webSchemeHandlerRequest' })
+              console.log('push URL success')
             }
           }
         })
@@ -139,8 +272,8 @@ struct webResourceResponsePage {
                 this.isMainFrameResult = request.isMainFrame()
                 console.log("[schemeHandler] onRequestStart hasGesture:" + request.hasGesture())
                 this.hasGestureResult = request.hasGesture()
+                console.log("[schemeHandler] onRequestStart resource type:" + request.getRequestResourceType())
                 console.log("[schemeHandler] onRequestStart header size:" + request.getHeader().length)
-
                 let header = request.getHeader();
                 let requestHeaderMap = new Map<string, string>();
                 for (let i = 0; i < header.length; i++) {
@@ -170,6 +303,7 @@ struct webResourceResponsePage {
                 this.resourceHandler.didReceiveResponse(response);
                 this.resourceHandler.didReceiveResponseBody(arrayBuffer);
                 this.resourceHandler.didFinish();
+
 
                 return true;
               }

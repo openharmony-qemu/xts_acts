@@ -118,7 +118,13 @@
         "srcEntry": "./est/myuiability/MyUIAbility2.ets",
         "type": "embeddedUI",
         "exported": true
-      }
+      },
+      {
+        "name": "AgentExtAbility",
+        "srcEntry": "./ets/AgentExtAbility/AgentExtAbility.ets",
+       "type": "agent",
+       "exported": true
+     }
     ]
   }
 }

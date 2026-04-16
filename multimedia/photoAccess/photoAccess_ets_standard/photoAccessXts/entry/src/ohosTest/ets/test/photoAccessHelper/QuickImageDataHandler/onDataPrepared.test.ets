@@ -54,7 +54,7 @@ async function onDataPreparedPromiseTest(done: Function, testName: string, fetch
 }
 
 export default function MediaAssetDataHandlerOnDataPreparedTest() {
-  describe('MediaAssetDataHandlerOnDataPreparedTest', () => {
+  describe('MediaAssetDataHandlerOnDataPreparedTestAdapt001', () => {
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');

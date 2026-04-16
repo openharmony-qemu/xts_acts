@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -48,16 +48,15 @@ export default function WebSchemeHandlerResponse() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getUrlStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getUrlStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-
-    it('WebSchemeHandlerResponse_getUrlStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getUrlStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getUrl", 10)
@@ -68,15 +67,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getStatusStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getStatusStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getStatusStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getStatusStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getStatus", 10)
@@ -87,15 +86,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getStatusTextStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getStatusTextStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getStatusTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getStatusTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getStatusText", 10)
@@ -106,15 +105,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getMimeTypeStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getMimeTypeStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getMimeTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getMimeTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getMimeType", 10)
@@ -125,15 +124,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getEncodingStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getEncodingStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getEncodingStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getEncodingStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getEncoding", 10)
@@ -144,15 +143,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getHeaderByNameStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getHeaderByNameStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getHeaderByNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getHeaderByNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getHeaderByName", 10)
@@ -163,15 +162,15 @@ export default function WebSchemeHandlerResponse() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
-    * @tc.name       : testWebSchemeHandlerResponse_getNetErrorCodeStatic
-    * @tc.desc       : test WebSchemeHandlerResponse
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getNetErrorCodeStatic
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('WebSchemeHandlerResponse_getNetErrorCodeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('WebSchemeHandlerResponse_getNetErrorCodeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000)
         Utils.emitEvent("WebSchemeHandlerResponse_getNetErrorCode", 10)
@@ -183,20 +182,121 @@ export default function WebSchemeHandlerResponse() {
         done();
       })
 
-    /*
-* @tc.number     : SUB_WEB_EMITONSWITCHNEXTPAGE_0100
-* @tc.name       : testemitonSwitchNextPage
-* @tc.desc       : test emitonSwitchNextPage
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
-    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getUrl2Static
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponse_getUrl2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("WebSchemeHandlerResponse_getUrl2", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("WebSchemeHandlerResponse_getUrl2", "", 9806, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getStatusText2Static
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponse_getStatusText2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("WebSchemeHandlerResponse_getStatusText2", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("WebSchemeHandlerResponse_getStatusText2", "", 9810, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getMimeType2Static
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponse_getMimeType2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("WebSchemeHandlerResponse_getMimeType2", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("WebSchemeHandlerResponse_getMimeType2", "", 9812, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getEncoding2Static
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponse_getEncoding2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("WebSchemeHandlerResponse_getEncoding2", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("WebSchemeHandlerResponse_getEncoding2", "", 9814, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testWebSchemeHandlerResponse_getHeaderByName2Static
+    * @tc.number      SUB_WEB_WEBSCHEMEHANDLERRESPONSE_0100
+    * @tc.desc        test WebSchemeHandlerResponse
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testWebSchemeHandlerResponse_getHeaderByName2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("WebSchemeHandlerResponse_getHeaderByName2", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("WebSchemeHandlerResponse_getHeaderByName2", "", 9816, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+    * @tc.name        testemitOnSwitchNextPageStatic
+    * @tc.number      testemitOnSwitchNextPageStatic6666
+    * @tc.desc        test emitonSwitchNextPage
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('testemitOnSwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
         await Utils.msSleep(2000);
         done();
       })

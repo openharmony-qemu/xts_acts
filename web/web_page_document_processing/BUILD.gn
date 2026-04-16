@@ -17,6 +17,7 @@ group("webPageDocumentProcessing") {
     deps = [ 
       "preview_print_PDF:ActsWebPreviewPrintPDFTest",
       "preview_print_PDF_static:ActsWebPreviewPrintPDFStaticTest",
+      "preview_print_PDF_two_static:ActsWebPreviewPrintPDFTwoStaticTest",
      ]
   }
 }

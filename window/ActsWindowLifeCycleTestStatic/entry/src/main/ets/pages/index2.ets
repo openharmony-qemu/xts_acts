@@ -25,7 +25,7 @@ struct Index2 {
  @State message: string = '这是子窗'
    build() {
            Column() {
-             Text(this.message)
+             Text(this.message).id('text_Main_Index2')
              Button('next page') {
                Text('next page')
              }

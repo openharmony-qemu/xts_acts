@@ -17,6 +17,8 @@ group("actsabilitymanagertest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsabilityruntimeabilitymanagerstatictest:ActsAbilityRuntimeAbilityManagerStaticTest",
+      "actsabilityruntimeabilitymanagertest:ActsAbilityRuntimeAbilityManagerTest",
       "actsamscallbackfifthscene:ActsAmsCallBackFifthSceneTest",
       "actsamscallbackfirstscene:ActsAmsCallBackFirstSceneTest",
       "actsamscallbackfourthscene:ActsAmsCallBackFourthSceneTest",

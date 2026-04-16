@@ -186,5 +186,57 @@ static OH_Huks_Result HksDsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
     return ret;
 }
 
+/**
+ * @tc.name   SecurityHuksNapiSignVerifyDsa0100
+ * @tc.number Security_HUKS_NAPI_SignVerify_DSA_0100
+ * @tc.desc   alg-DSA pur-Sign-verify dig-SHA1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SecurityHuksNapiSignVerifyDsa0100()
+{
+    const char* keyAliasString = "HksDSASignVerifyKeyAliasTest001";
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t*)keyAliasString };
+
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
+    OH_Huks_Result ret =
+        InitParamSet(&genParamSet, g_genParamsTest001, sizeof(g_genParamsTest001) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    struct OH_Huks_ParamSet* signParamSet = nullptr;
+    ret = InitParamSet(&signParamSet, g_signParamsTest001, sizeof(g_signParamsTest001) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&genParamSet);
+        return -1;
+    }
+
+    struct OH_Huks_ParamSet* verifyParamSet = nullptr;
+    ret = InitParamSet(&verifyParamSet, g_verifyParamsTest001, sizeof(g_verifyParamsTest001) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&genParamSet);
+        OH_Huks_FreeParamSet(&signParamSet);
+        return -1;
+    }
+
+    if ((genParamSet != nullptr) || (signParamSet != nullptr) || (verifyParamSet != nullptr)) {
+        ret = HksDsaSignVerifyTestNormalCase(keyAlias, genParamSet, signParamSet, verifyParamSet);
+    }
+
+    ret = OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
+
+    OH_Huks_FreeParamSet(&genParamSet);
+    OH_Huks_FreeParamSet(&signParamSet);
+    OH_Huks_FreeParamSet(&verifyParamSet);
+
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
+}
+
 } // namespace Huks
 } // namespace Acts

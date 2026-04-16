@@ -101,6 +101,30 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_1
+         * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0002
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('webgl2_test_copyBufferSubData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async function (done) {
+            let source = new Float32Array([
+                -1.0, -1.0, 1.0, 0.0, 0.0,
+                -1.0, 1.0, 0.0, 1.0, 0.0,
+                1.0, 1.0, 0.0, 0.0, 1.0,
+                1.0, -1.0, 0.0, 0.0, 0.0,
+            ]);
+            let FSIZE = source.BYTES_PER_ELEMENT;
+            copyBufferSubData(() => {
+                gl.copyBufferSubData(gl.COPY_WRITE_BUFFER, gl.ARRAY_BUFFER, 0 * FSIZE, 0 * FSIZE, 20 * FSIZE);
+            }, () => {
+                expect(checkError(gl)).assertEqual(gl.INVALID_OPERATION);
+            });
+            done();
+        });
+        /**
          * @tc.name   webgl2_test_copyBufferSubData
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0001
          * @tc.desc   Test copyBufferSubData.
@@ -165,30 +189,6 @@ export default function webgl2_buffer() {
             gl.deleteShader(p.fragmentShader);
             gl.deleteProgram(p.program);
             gl.flush();
-            done();
-        });
-        /**
-         * @tc.name   webgl2_test_copyBufferSubData_1
-         * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0002
-         * @tc.desc   Test copyBufferSubData.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('webgl2_test_copyBufferSubData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async function (done) {
-            let source = new Float32Array([
-                -1.0, -1.0, 1.0, 0.0, 0.0,
-                -1.0, 1.0, 0.0, 1.0, 0.0,
-                1.0, 1.0, 0.0, 0.0, 1.0,
-                1.0, -1.0, 0.0, 0.0, 0.0,
-            ]);
-            let FSIZE = source.BYTES_PER_ELEMENT;
-            copyBufferSubData(() => {
-                gl.copyBufferSubData(gl.COPY_WRITE_BUFFER, gl.ARRAY_BUFFER, 0 * FSIZE, 0 * FSIZE, 20 * FSIZE);
-            }, () => {
-                expect(checkError(gl)).assertEqual(gl.INVALID_OPERATION);
-            });
             done();
         });
         /**

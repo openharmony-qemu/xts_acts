@@ -81,6 +81,25 @@ struct ListItemExample43 {
 
   build() {
     Column() {
+      Text(this.swipeActionState).margin({ top: 2 } as Margin).key('swipe43State')
+      Text('value is ' + this.closeCount).key('swipe43Finish')
+
+      Row(){
+        Button('collapseAll').key('bt43').onClick((e: ClickEvent) => {
+          this.listScroller.closeAllSwipeActions({
+            onFinish: () => {
+              console.info('[listTest43]onFinish start!');
+              this.closeCount = this.closeCount + 1;
+            }
+          })
+        })
+        Button('Delete').key('btreset43').onClick((e: ClickEvent) => {
+          this.swipeActionState = '-1';
+          this.arr = [0, 1, 2, 3, 4];
+          this.closeCount = 0;
+        })
+      }.height('8%')
+      
       List({ space: 2, scroller: this.listScroller }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
@@ -127,23 +146,6 @@ struct ListItemExample43 {
         }, (item: number) => item.toString())
       }
       .width('80%')
-
-      Text(this.swipeActionState).fontSize(20).margin({ top: 20 } as Margin).key('swipe43State')
-      Text("value is " + this.closeCount).fontSize(20).margin({ top: 20 } as Margin).key('swipe43Finish')
-
-      Button("collapseAll").margin("4vp").key('bt43').onClick((e: ClickEvent) => {
-        this.listScroller.closeAllSwipeActions({
-          onFinish: () => {
-            console.info("[listTest43]onFinish start!");
-            this.closeCount = this.closeCount + 1;
-          }
-        })
-      })
-      Button("Delete").margin("4vp").key('btreset43').onClick((e: ClickEvent) => {
-        this.swipeActionState = "-1";
-        this.arr = [0, 1, 2, 3, 4];
-        this.closeCount = 0;
-      })
 
     }
     .padding(10)

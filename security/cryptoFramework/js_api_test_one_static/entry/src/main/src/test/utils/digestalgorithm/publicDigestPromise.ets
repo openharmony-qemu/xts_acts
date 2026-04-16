@@ -62,17 +62,17 @@ async function testHMACDigestPromise(HMACAlgoName: string, keyAlgoName: string):
     console.log("symKeyGenerator algName:" + globalSymKeyGenerator.algName);
     globalSymKeyGenerator
       .generateSymKey()
-      .then((key: cryptoFramework.SymKey) => {
+      .then(async (key: cryptoFramework.SymKey) => {
         console.log("key algName:" + key.algName);
         console.log("key format:" + key.format);
         let encodedKey = key.getEncoded();
         console.log(
           "key getEncoded hex: " + uInt8ArrayToShowStr(encodedKey.data)
         );
-        waitForCompletion(async () => {await globalHMAC.init(key);})
+        await globalHMAC.init(key);
       })
-      .then(() => {
-        waitForCompletion(async () => {await globalHMAC.update(inBlob);})
+      .then(async () => {
+        await globalHMAC.update(inBlob);
       })
       .then<cryptoFramework.DataBlob>(() => {
         return waitForCompletion(async () => {return await globalHMAC.doFinal();}) as cryptoFramework.DataBlob
