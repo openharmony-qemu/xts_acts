@@ -358,5 +358,96 @@ export default function network_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   __recvmmsg_time64
+     * @tc.number SUB_THIRDPARTY_MUSL_RECVMMSG_TIME64_0100
+     * @tc.desc   libc-test __recvmmsg_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("__recvmmsg_time64", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__recvmmsg_time64");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   inet_addr
+     * @tc.number SUB_THIRDPARTY_MUSL_INET_ADDR_0100
+     * @tc.desc   libc-test inet_addr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("inet_addr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("inet_addr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   inet_ntop
+     * @tc.number SUB_THIRDPARTY_MUSL_INET_NTOP_0100
+     * @tc.desc   libc-test inet_ntop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("inet_ntop", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("inet_ntop");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   res_mkquery
+     * @tc.number SUB_THIRDPARTY_MUSL_RES_MKQUERY_0100
+     * @tc.desc   libc-test res_mkquery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("res_mkquery", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("res_mkquery");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   res_query
+     * @tc.number SUB_THIRDPARTY_MUSL_RES_QUERY_0100
+     * @tc.desc   libc-test res_query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("res_query", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("res_query");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   res_querydomain
+     * @tc.number SUB_THIRDPARTY_MUSL_RES_QUERYDOMAIN_0100
+     * @tc.desc   libc-test res_querydomain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("res_querydomain", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("res_querydomain");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sendmmsg
+     * @tc.number SUB_THIRDPARTY_MUSL_SENDMMSG_0100
+     * @tc.desc   libc-test sendmmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sendmmsg", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sendmmsg");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

@@ -255,5 +255,44 @@ export default function unistd_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   access
+     * @tc.number SUB_THIRDPARTY_MUSL_ACCESS_0100
+     * @tc.desc   libc-test access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("access", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("access");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   fchdir
+     * @tc.number SUB_THIRDPARTY_MUSL_FCHDIR_0100
+     * @tc.desc   libc-test fchdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fchdir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fchdir");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   nice
+     * @tc.number SUB_THIRDPARTY_MUSL_NICE_0100
+     * @tc.desc   libc-test nice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("nice", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("nice");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

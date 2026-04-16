@@ -60,6 +60,32 @@ export default function signal_group_test() {
       done();
     });
     /**
+     * @tc.name   __getitimer_time64
+     * @tc.number SUB_THIRDPARTY_MUSL_GETITIMER_TIME64_0100
+     * @tc.desc   libc-test __getitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("__getitimer_time64", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__getitimer_time64");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   __setitimer_time64
+     * @tc.number SUB_THIRDPARTY_MUSL_SETITIMER_TIME64_0100
+     * @tc.desc   libc-test __setitimer_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("__setitimer_time64", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__setitimer_time64");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
      * @tc.name   kill
      * @tc.number SUB_THIRDPARTY_MUSL_KILL_0100
      * @tc.desc   libc-test kill
@@ -173,6 +199,71 @@ export default function signal_group_test() {
      */
     it("sigwaitinfo", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("sigwaitinfo");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sighold
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGHOLD_0100
+     * @tc.desc   libc-test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sighold", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sighold");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sigpause
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGPAUSE_0100
+     * @tc.desc   libc-test sigpause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sigpause", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sigpause");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sigrelse
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGRELSE_0100
+     * @tc.desc   libc-test sigrelse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sigrelse", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sigrelse");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sigset
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGSET_0100
+     * @tc.desc   libc-test sigset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sigset", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sigset");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sigsuspend
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGSUSPEND_0100
+     * @tc.desc   libc-test sigsuspend
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sigsuspend", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sigsuspend");
       expect(result).assertEqual(0);
       done();
     });
