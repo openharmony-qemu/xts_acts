@@ -48,6 +48,7 @@ import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
 import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
+import ManagerCreatePhotoOutputSupp from './camera/CameraManagerSupplementTest.test';
 import ApertureTest from './camera/Aperture.test';
 import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQueryGetSupportedPhysicalApertures.test';
 import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
@@ -105,6 +106,7 @@ export default function testsuite() {
   CameraTest()
   CameraPickerPickTest();
   CameraManagerGetSupportedOutputCapabilityTest();
+  ManagerCreatePhotoOutputSupp();
   ApertureTest();
   ApertureQueryGetSupportedPhysicalAperturesTest();
   PhotoSessIsoInfoChangeTest();
