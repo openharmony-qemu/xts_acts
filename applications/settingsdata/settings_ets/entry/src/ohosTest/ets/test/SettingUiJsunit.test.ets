@@ -3640,23 +3640,23 @@ export default function settingUiJsunit() {
       });
 
     /**
-     * @tc.name   openAppDetailSettings_invalid_bundleName_undefined
-     * @tc.number openAppDetailSettings_invalid_bundleName_undefined
+     * @tc.name   SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100
+     * @tc.number SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openAppDetailSettings_invalid_bundleName_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
         let code = 0;
         try {
-          settings.openAppDetailSettings(mContext, 'bundleName', 0);
+          settings.openAppDetailSettings(mContext, undefined, 0);
         } catch (err) {
           console.error("[openAppDetailSettings_invalid_bundleName_undefined] error = " + err);
           code = err?.code;
         }
-        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        expect(code).assertEqual(16900010);
         done();
       });
 
