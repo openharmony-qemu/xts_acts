@@ -25,15 +25,14 @@ interface PropertyTypeConfig {
   keys: Array<image.PropertyKey>;
   rules: Map<image.PropertyKey, ModifyRule>;
 }
+interface WebPPropertyTypeConfig {
+  keys: Array<image.WebPPropertyKey>;
+  rules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>;
+}
 
 interface PropertyTypeConfig2 {
   keys: Array<image.PropertyKey>;
   rules: Map<image.PropertyKey, ModifyRule2>;
-}
-
-interface WebPPropertyTypeConfig {
-  keys: Array<image.WebPPropertyKey>;
-  rules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>;
 }
 
 interface ImagePropertyConfigType {
