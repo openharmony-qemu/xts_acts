@@ -955,6 +955,14 @@ export default function JsLeakNewConfigEnable() {
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3500 end");
     })
 
+    /**
+     * @tc.name   testNewJsLeakWatcher36
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_3600
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNewJsLeakWatcher36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
@@ -986,6 +994,14 @@ export default function JsLeakNewConfigEnable() {
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3600 end");
     })
 
+    /**
+     * @tc.name   testNewJsLeakWatcher37
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_3700
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNewJsLeakWatcher37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
@@ -1021,8 +1037,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3700 end");
     })
-
-    it('testNewJsLeakWatcher38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher38
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_3800
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         objectUniqueIDs: Array<number>;
@@ -1059,8 +1082,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3800 end");
     })
-
-    it('testNewJsLeakWatcher39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+     /**
+     * @tc.name   testNewJsLeakWatcher39
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_3900
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         objectUniqueIDs: Array<number>;
@@ -1099,8 +1129,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_3900 end");
     })
-
-    it('testNewJsLeakWatcher40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher40
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4000
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold、maxStoredHeapDumps类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         objectUniqueIDs: Array<number>;
@@ -1143,8 +1180,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4000 end");
     })
-
-    it('testNewJsLeakWatcher41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher41
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4100
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold、maxStoredHeapDumps类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         objectUniqueIDs: Array<number>;
@@ -1187,8 +1231,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4100 end");
     })
-
-    it('testNewJsLeakWatcher42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher42
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4200
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold、maxStoredHeapDumps类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         objectUniqueIDs: Array<number>;
@@ -1233,8 +1284,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4200 end");
     })
-
-    it('testNewJsLeakWatcher43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher43
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4300
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold、maxStoredHeapDumps类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         checkInterval: number;
@@ -1277,8 +1335,15 @@ export default function JsLeakNewConfigEnable() {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4300 end");
     })
-
-    it('testNewJsLeakWatcher44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    /**
+     * @tc.name   testNewJsLeakWatcher44
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4400
+     * @tc.desc   验证enableLeakWatcher接口config参数传入支持objectUniqueIDs、MonitorObjectType、checkInterval、fgLeakCountThreshold、bgLeakCountThreshold、maxStoredHeapDumps类型
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       interface LeakWatcherConfig {
         monitorObjectTypes: MonitorObjectType;
         fgLeakCountThreshold: number;
