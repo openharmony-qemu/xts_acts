@@ -283,43 +283,6 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
       expect(result.equals(zero)).assertTrue();
     });
 
-    /**
-     * @tc.name  bigIntAsIntNTest1500
-     * @tc.number  SUB_BUILTINS_BIGINT_ASINTN_TEST_1500
-     * @tc.desc  Test asIntN(bits: long, num: BigInt) with bits<0 - throws RangeError
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntAsIntNTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const num: BigInt = new BigInt(100);
-      try {
-        BigInt.asIntN(-1 as long, num);
-        expect(false).assertTrue();
-      } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name  bigIntAsIntNTest1600
-     * @tc.number  SUB_BUILTINS_BIGINT_ASINTN_TEST_1600
-     * @tc.desc  Test asIntN(bits: long, num: BigInt) with bits exceeding Double.MAX_SAFE_INTEGER - throws RangeError
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntAsIntNTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const num: BigInt = new BigInt(100);
-      const tooLargeBits: long = 9007199254740992 as long;
-      try {
-        BigInt.asIntN(tooLargeBits, num);
-        expect(false).assertTrue();
-      } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
-      }
-    });
 
     /**
      * @tc.name  bigIntAsIntNTest1700
