@@ -518,11 +518,9 @@ static napi_value OH_Values_IsNull_Abormal_0100(napi_env env, napi_callback_info
     bool val;
     ret = OH_Values_IsNull(values, index, &val);
     NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull is fail.");
-    int returncode = 0;
     napi_value result;
-    napi_create_int32(env, returncode, &result);
-    return returncode;
-
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
 }
 
 napi_value OH_Values_IsNull_Abormal_0200(napi_env env, napi_callback_info info)
@@ -536,10 +534,9 @@ napi_value OH_Values_IsNull_Abormal_0200(napi_env env, napi_callback_info info)
     bool val;
     ret = OH_Values_IsNull(values, index, &val);
     NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0200 is fail.");
-    int returncode = 0;
     napi_value result;
-    napi_create_int32(env, returncode, &result);
-    return returncode;
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
 }
 
 napi_value OH_Values_IsNull_Abormal_0300(napi_env env, napi_callback_info info)
@@ -549,10 +546,9 @@ napi_value OH_Values_IsNull_Abormal_0300(napi_env env, napi_callback_info info)
     bool val;
     int ret = OH_Values_IsNull(values, index, &val);
     NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0300 is fail.");
-    int returncode = 0;
     napi_value result;
-    napi_create_int32(env, returncode, &result);
-    return returncode;
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
 }
 
 EXTERN_C_START
