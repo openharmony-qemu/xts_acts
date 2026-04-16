@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -227,7 +227,7 @@ export default function usbDdkTest() {
       } else {
         let data = usbDdk.usbGetConfigDescriptorFour(dev);
         console.info("Test USB data Result = " + data);
-        expect(data).assertEqual(USB_DDK_INVALID_PARAMETER);
+        expect(data).assertEqual(USB_DDK_INVALID_OPERATION);
         done()
       }
     });
@@ -332,7 +332,7 @@ export default function usbDdkTest() {
       } else {
         let data = usbDdk.usbClaimInterfaceFour(dev);
         console.info("Test USB data Result = " + data);
-        expect(data).assertEqual(USB_DDK_INVALID_PARAMETER);
+        expect(data).assertEqual(USB_DDK_INVALID_OPERATION);
         done()
       }
     });
