@@ -223,7 +223,7 @@ export default function formInfoTest() {
 
        /**
         * @tc.name   FormInfoStaticTest004
-        * @tc.number TC_FormInfoStaticTest004
+        * @tc.number SUB_ABILITY_FWK_FORMINFOSTATICTEST_0004
         * @tc.desc   check formInfo
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
