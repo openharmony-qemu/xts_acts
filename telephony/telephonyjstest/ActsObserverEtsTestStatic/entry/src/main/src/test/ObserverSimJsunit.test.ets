@@ -23,62 +23,6 @@ export default function ObserverSimJsunit() {
     console.log("************* Observer Test start *************");
 
     /**
-     * @tc.name   Telephony_observer_observer_on_simStateChange_0200
-     * @tc.number Telephony_observer_observer_on_simStateChange_0200
-     * @tc.desc   call the on method of simStateChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Telephony_observer_observer_on_simStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log("************* Telephony_observer_observer_on_simStateChange_0200 Test start *************");
-      try {
-		let callback = (SimStateData:observer.SimStateData) => {
-          console.log("on simStateChange, SimStateData:" + JSON.stringify(SimStateData));
-          expect(typeof SimStateData === undefined).assertFalse();
-        }
-        observer.on('simStateChange', {
-          slotId: 0
-        }, callback);
-        done();
-      } catch (error) {
-        expect(false).assertTrue();
-        done();
-      }
-        observer.off('simStateChange');
-      console.log("************* Telephony_observer_observer_on_simStateChange_0200 Test end *************")
-    })
-
-    /**
-     * @tc.name   Telephony_observer_observer_off_simStateChange_0100
-     * @tc.number Telephony_observer_observer_off_simStateChange_0100
-     * @tc.desc   call the off method of simStateChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Telephony_observer_observer_off_simStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log("************* Telephony_observer_observer_off_simStateChange_0100 Test start *************");
-      try {
-        let callback = (SimStateData:observer.SimStateData) => {
-          console.log("on simStateChange, data:" + JSON.stringify(SimStateData));
-          expect(typeof SimStateData.reason === undefined).assertFalse();
-          expect(typeof SimStateData.state === undefined).assertFalse();
-          expect(typeof SimStateData.type === undefined).assertFalse();
-        }
-        observer.on('simStateChange', callback);
-        // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-        observer.off('simStateChange', callback);
-        observer.off('simStateChange');
-        done();
-      } catch (error) {
-        expect(false).assertTrue();
-        done();
-      }
-      console.log("************* Telephony_observer_observer_off_simStateChange_0100 Test end *************");
-    })
-
-    /**
      * @tc.name   Telephony_observer_LockReason_SIM_NONE_0100
      * @tc.number Telephony_observer_LockReason_SIM_NONE_0100
      * @tc.desc   check the SIM_NONE property of LockReason

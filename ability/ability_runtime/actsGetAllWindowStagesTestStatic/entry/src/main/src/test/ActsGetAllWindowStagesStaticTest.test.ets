@@ -66,8 +66,8 @@ export default function ActsGetAllWindowStagesStaticTest() {
         let appContext = application.getApplicationContextInstance().getApplicationContext();
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          appContext?.getAllWindowStages()
-            .then((data: Array<window.WindowStage>) => {
+          await appContext?.getAllWindowStages()
+            .then(async (data: Array<window.WindowStage>) => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
@@ -82,10 +82,10 @@ export default function ActsGetAllWindowStagesStaticTest() {
               try {
                 let EntryAbility1_UIAbilityContext: common.UIAbilityContext =
                   AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
-                waitForCompletion(async () => {await EntryAbility1_UIAbilityContext!.terminateSelf();})
+                await EntryAbility1_UIAbilityContext!.terminateSelf();
                 hilog.info(0x0000, 'testTag', `EntryAbility1_UIAbilityContext terminateSelf successed`);
-              } catch (e) {
-                let err = e as BusinessError;
+              } catch (innerErr) {
+                let err = innerErr as BusinessError;
                 hilog.error(0x0000, 'testTag',
                   `EntryAbility1_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
               }

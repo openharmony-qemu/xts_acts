@@ -55,14 +55,6 @@ void DrawingNativeBrushTestTearDown()
     std::cout << "DrawingNativeBrushTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testBrushCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_STARTPT_X_100
- * @tc.desc   test for testBrushCreateNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushCreateNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -76,14 +68,6 @@ int TestBrushCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_ENDPT_X_200
- * @tc.desc   test for testBrushCopyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushCopyNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -114,14 +98,6 @@ int TestBrushCopyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_NUM_201
- * @tc.desc   test for testBrushCopyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushCopyNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -140,14 +116,6 @@ int TestBrushCopyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushCopyInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0202
- * @tc.desc   test for testBrushCopyInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushCopyInputDestroyed()
 {
     DrawingNativeBrushTestSetUp();
@@ -174,14 +142,6 @@ int TestBrushCopyInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushCopyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0203
- * @tc.desc   test for testBrushCopyMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushCopyMultipleCalls()
 {
     DrawingNativeBrushTestSetUp();
@@ -202,14 +162,6 @@ int TestBrushCopyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0300
- * @tc.desc   test for testBrushDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushDestroyNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -223,14 +175,6 @@ int TestBrushDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0301
- * @tc.desc   test for testBrushDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushDestroyNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -246,14 +190,6 @@ int TestBrushDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushIsAntiAliasNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_STARTPT_Y_400
- * @tc.desc   test for testBrushIsAntiAliasNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushIsAntiAliasNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -276,14 +212,6 @@ int TestBrushIsAntiAliasNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushIsAntiAliasNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0401
- * @tc.desc   test for testBrushIsAntiAliasNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushIsAntiAliasNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -302,14 +230,6 @@ int TestBrushIsAntiAliasNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAntiAliasNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_ENDPT_Y_500
- * @tc.desc   test for testBrushSetAntiAliasNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetAntiAliasNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -330,14 +250,6 @@ int TestBrushSetAntiAliasNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAntiAliasNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0501
- * @tc.desc   test for testBrushSetAntiAliasNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetAntiAliasNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -355,14 +267,6 @@ int TestBrushSetAntiAliasNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetColorNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0600
- * @tc.desc   Test for testBrushGetColorNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushGetColorNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -383,14 +287,6 @@ int TestBrushGetColorNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetColorNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0601
- * @tc.desc   Test for testBrushGetColorNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetColorNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -408,14 +304,6 @@ int TestBrushGetColorNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColorNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0700
- * @tc.desc   Test for testBrushSetColorNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetColorNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -436,14 +324,6 @@ int TestBrushSetColorNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColorNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0701
- * @tc.desc   Test for testBrushSetColorNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetColorNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -466,14 +346,6 @@ int TestBrushSetColorNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColorAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0702
- * @tc.desc   Test for testBrushSetColorAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetColorAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -493,14 +365,6 @@ int TestBrushSetColorAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColorMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0703
- * @tc.desc   Test for testBrushSetColorMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetColorMaximum()
 {
     DrawingNativeBrushTestSetUp();
@@ -520,14 +384,6 @@ int TestBrushSetColorMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetAlphaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0800
- * @tc.desc   Test for testBrushGetAlphaNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushGetAlphaNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -546,14 +402,6 @@ int TestBrushGetAlphaNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetAlphaNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0801
- * @tc.desc   Test for testBrushGetAlphaNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetAlphaNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -571,14 +419,6 @@ int TestBrushGetAlphaNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAlphaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0900
- * @tc.desc   Test for testBrushSetAlphaNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetAlphaNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -597,14 +437,6 @@ int TestBrushSetAlphaNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAlphaNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0901
- * @tc.desc   Test for testBrushSetAlphaNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetAlphaNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -624,14 +456,6 @@ int TestBrushSetAlphaNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAlphaAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0902
- * @tc.desc   Test for testBrushSetAlphaAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetAlphaAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -650,14 +474,6 @@ int TestBrushSetAlphaAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetAlphaMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_0903
- * @tc.desc   Test for testBrushSetAlphaMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetAlphaMaximum()
 {
     DrawingNativeBrushTestSetUp();
@@ -677,14 +493,6 @@ int TestBrushSetAlphaMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetShaderEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1000
- * @tc.desc   Test for testBrushSetShaderEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetShaderEffectNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -714,14 +522,6 @@ int TestBrushSetShaderEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetShaderEffectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1001
- * @tc.desc   Test for testBrushSetShaderEffectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetShaderEffectNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -752,14 +552,6 @@ int TestBrushSetShaderEffectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetShadowLayerNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1100
- * @tc.desc   Test for testBrushSetShadowLayerNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetShadowLayerNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -784,14 +576,6 @@ int TestBrushSetShadowLayerNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetShadowLayerNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1101
- * @tc.desc   Test for testBrushSetShadowLayerNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetShadowLayerNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -815,14 +599,6 @@ int TestBrushSetShadowLayerNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1200
- * @tc.desc   Test for testBrushSetFilterNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetFilterNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -845,14 +621,6 @@ int TestBrushSetFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetFilterNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1201
- * @tc.desc   Test for testBrushSetFilterNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetFilterNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -876,14 +644,6 @@ int TestBrushSetFilterNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1300
- * @tc.desc   Test for testBrushGetFilterNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushGetFilterNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -914,14 +674,6 @@ int TestBrushGetFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetFilterNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1301
- * @tc.desc   Test for testBrushGetFilterNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetFilterNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -948,14 +700,6 @@ int TestBrushGetFilterNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetBlendModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1400
- * @tc.desc   Test for testBrushSetBlendModeNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushSetBlendModeNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -986,14 +730,6 @@ int TestBrushSetBlendModeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetBlendModeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1401
- * @tc.desc   Test for testBrushSetBlendModeNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetBlendModeNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -1011,14 +747,6 @@ int TestBrushSetBlendModeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushResetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1500
- * @tc.desc   Test for testBrushResetNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushResetNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1045,14 +773,6 @@ int TestBrushResetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushResetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1501
- * @tc.desc   Test for testBrushResetNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushResetNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -1070,14 +790,6 @@ int TestBrushResetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetAlphaFloatNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1600
- * @tc.desc   Test for testBrushGetAlphaFloatNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestBrushGetAlphaFloatNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1091,14 +803,6 @@ int TestBrushGetAlphaFloatNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetAlphaFloatAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1601
- * @tc.desc   Test for testBrushGetAlphaFloatAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetAlphaFloatAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1114,35 +818,19 @@ int TestBrushGetAlphaFloatAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetRedFloatNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1700
- * @tc.desc   Test for testBrushGetRedFloatNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBrushGetRedFloatNormal()
 {
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float r = 0;
-    OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, 1.0f, 0.2f, nullptr);
+    OH_Drawing_BrushSetColor4f(brush, 1.0f, 1.0f, 1.0f, 0.2f, nullptr);
     EXPECT_EQ(OH_Drawing_BrushGetRedFloat(brush, &r), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(r, 0.4f);
+    EXPECT_EQ(r, 1.0f);
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetRedFloatAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1701
- * @tc.desc   Test for testBrushGetRedFloatAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetRedFloatAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1158,14 +846,6 @@ int TestBrushGetRedFloatAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetGreenFloatNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1800
- * @tc.desc   Test for testBrushGetGreenFloatNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestBrushGetGreenFloatNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1179,14 +859,6 @@ int TestBrushGetGreenFloatNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetGreenFloatAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1801
- * @tc.desc   Test for testBrushGetGreenFloatAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetGreenFloatAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1202,14 +874,6 @@ int TestBrushGetGreenFloatAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetBlueFloatNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1900
- * @tc.desc   Test for testBrushGetBlueFloatNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestBrushGetBlueFloatNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1223,14 +887,6 @@ int TestBrushGetBlueFloatNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushGetBlueFloatAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_1901
- * @tc.desc   Test for testBrushGetBlueFloatAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushGetBlueFloatAbnormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1246,14 +902,6 @@ int TestBrushGetBlueFloatAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColor4fNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2000
- * @tc.desc   Test for testBrushSetColor4fNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestBrushSetColor4fNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -1279,14 +927,6 @@ int TestBrushSetColor4fNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColor4fNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2001
- * @tc.desc   Test for testBrushSetColor4fNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetColor4fNull()
 {
     DrawingNativeBrushTestSetUp();
@@ -1318,14 +958,6 @@ int TestBrushSetColor4fNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBrushSetColor4fAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BRUSH_2002
- * @tc.desc   Test for testBrushSetColor4fAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBrushSetColor4fAbnormal()
 {
     DrawingNativeBrushTestSetUp();

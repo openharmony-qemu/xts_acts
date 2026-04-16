@@ -24,6 +24,7 @@ import SourceTypeTest from './SourceTypeTest/SourceType.test';
 import AxisEventTest from './AxisEventTest/AxisEvent.test';
 import DragEventTest from './DragEventTest/DragEvent.test';
 import DismissReasonTest from './DismissReasonTest/DismissReason.test';
+import CommonTest from './CommonTest/Common.test';
 import CommonMethodTest from './CommonMethodTest/CommonMethod.test';
 import TextContentControllerBaseTest from './TextContentControllerBaseTest/TextContentControllerBase.test';
 import ScrollableCommonMethodTest from './ScrollableCommonMethodTest/ScrollableCommonMethod.test';
@@ -43,6 +44,7 @@ export default function testsuite() {
   DragEventTest();
   DismissReasonTest();
   TextContentControllerBaseTest();
+  CommonTest();
   CommonMethodTest();
   ScrollableCommonMethodTest();
   ScrollResultTest();

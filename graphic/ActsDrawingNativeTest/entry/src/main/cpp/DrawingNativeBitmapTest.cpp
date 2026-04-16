@@ -57,14 +57,6 @@ void DrawingNativeBitmapTestTearDown()
     std::cout << "DrawingNativeBitmapTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testBitmapDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_WIDTH_100
- * @tc.desc   test for testBitmapDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapDestroyNormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -77,14 +69,6 @@ int TestBitmapDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0101
- * @tc.desc   test for testBitmapDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapDestroyNull()
 {
     DrawingNativeBitmapTestSetUp();
@@ -107,14 +91,6 @@ OH_Drawing_AlphaFormat alphaFormats[] = {
     ALPHA_FORMAT_UNPREMUL,
 };
 
-/**
- * @tc.name   testBitmapCreateFromPixelsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0200
- * @tc.desc   test for testBitmapCreateFromPixelsNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapCreateFromPixelsNormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -161,14 +137,6 @@ int TestBitmapCreateFromPixelsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapCreateFromPixelsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0201
- * @tc.desc   test for testBitmapCreateFromPixelsNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapCreateFromPixelsNull()
 {
     DrawingNativeBitmapTestSetUp();
@@ -206,14 +174,6 @@ int TestBitmapCreateFromPixelsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapCreateFromPixelsMismatch
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0202
- * @tc.desc   test for testBitmapCreateFromPixelsMismatch.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapCreateFromPixelsMismatch()
 {
     DrawingNativeBitmapTestSetUp();
@@ -256,14 +216,6 @@ int TestBitmapCreateFromPixelsMismatch()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapCreateFromPixelsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0203
- * @tc.desc   test for testBitmapCreateFromPixelsAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapCreateFromPixelsAbnormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -284,14 +236,6 @@ int TestBitmapCreateFromPixelsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapCreateFromPixelsVeryBig
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0204
- * @tc.desc   test for testBitmapCreateFromPixelsVeryBig.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapCreateFromPixelsVeryBig()
 {
     DrawingNativeBitmapTestSetUp();
@@ -349,14 +293,6 @@ int TestBitmapCreateFromPixelsVeryBig()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapCreateFromPixelsBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0205
- * @tc.desc   test for testBitmapCreateFromPixelsBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapCreateFromPixelsBoundary()
 {
     DrawingNativeBitmapTestSetUp();
@@ -404,14 +340,6 @@ int TestBitmapCreateFromPixelsBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapBuildNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0300
- * @tc.desc   test for testBitmapBuildNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapBuildNormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -452,14 +380,6 @@ int TestBitmapBuildNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapBuildNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0301
- * @tc.desc   test for testBitmapBuildNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapBuildNull()
 {
     DrawingNativeBitmapTestSetUp();
@@ -497,14 +417,6 @@ int TestBitmapBuildNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapBuildMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0302
- * @tc.desc   test for testBitmapBuildMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapBuildMultipleCalls()
 {
     DrawingNativeBitmapTestSetUp();
@@ -564,14 +476,6 @@ int TestBitmapBuildMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapBuildBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0303
- * @tc.desc   test for testBitmapBuildBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapBuildBoundary()
 {
     DrawingNativeBitmapTestSetUp();
@@ -613,14 +517,6 @@ int TestBitmapBuildBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapGetXXNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_ROWBYTES_400
- * @tc.desc   test for testBitmapGetXXNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapGetXXNormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -670,14 +566,6 @@ int TestBitmapGetXXNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapGetXXNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0401
- * @tc.desc   test for testBitmapGetXXNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapGetXXNull()
 {
     DrawingNativeBitmapTestSetUp();
@@ -723,14 +611,6 @@ int TestBitmapGetXXNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapGetXXInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0402
- * @tc.desc   test for testBitmapGetXXInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapGetXXInputDestroyed()
 {
     DrawingNativeBitmapTestSetUp();
@@ -739,14 +619,6 @@ int TestBitmapGetXXInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapGetXXBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0403
- * @tc.desc   test for testBitmapGetXXBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapGetXXBoundary()
 {
     DrawingNativeBitmapTestSetUp();
@@ -798,14 +670,6 @@ int TestBitmapGetXXBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapReadPixelsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_WIDTH_500
- * @tc.desc   test for OH_Drawing_BitmapBuild.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapReadPixelsNormal()
 {
     DrawingNativeBitmapTestSetUp();
@@ -834,14 +698,6 @@ int TestBitmapReadPixelsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapReadPixelsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0501
- * @tc.desc   test for testBitmapReadPixelsNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapReadPixelsNull()
 {
     DrawingNativeBitmapTestSetUp();
@@ -889,14 +745,6 @@ int TestBitmapReadPixelsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapReadPixelsInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0502
- * @tc.desc   test for testBitmapReadPixelsInputDestroyed.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapReadPixelsInputDestroyed()
 {
     DrawingNativeBitmapTestSetUp();
@@ -905,14 +753,6 @@ int TestBitmapReadPixelsInputDestroyed()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapReadPixelsMismatch
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0503
- * @tc.desc   test for testBitmapReadPixelsMismatch.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestBitmapReadPixelsMismatch()
 {
     DrawingNativeBitmapTestSetUp();
@@ -964,14 +804,6 @@ int TestBitmapReadPixelsMismatch()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapReadPixelsBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0504
- * @tc.desc   test for OH_Drawing_BitmapBuild.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapReadPixelsBoundary()
 {
     DrawingNativeBitmapTestSetUp();
@@ -1002,14 +834,6 @@ int TestBitmapReadPixelsBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testBitmapBuildMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0600
- * @tc.desc   test for testBitmapBuildMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestBitmapBuildMaximum()
 {
     DrawingNativeBitmapTestSetUp();

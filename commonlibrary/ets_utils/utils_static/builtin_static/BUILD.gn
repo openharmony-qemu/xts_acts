@@ -42,6 +42,7 @@ group("builtin_static") {
       "builtinsarraytest_standard_test_static:ActsBuiltinsArrayTestStaticTest",
       "map_standard_test_static:ActsMapStaticTest",
       "set_standard_test_static:ActsSetStaticTest",
+      "sparsearray_standard_test_static:ActsSparseArrayStaticTest",
     ]
   }
 }

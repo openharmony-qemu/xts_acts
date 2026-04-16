@@ -85,9 +85,10 @@
  constexpr size_t PATH_PART2_TRANSFORM_HANDLER_COUNT = 11;
  constexpr size_t PATH_PART2_GET_SET_HANDLER_COUNT = 17;
  constexpr size_t PATH_PART3_QUERY_HANDLER_COUNT = 12;
- constexpr size_t PATH_PART4_INVERSE_FILL_TYPE_HANDLER_COUNT = 8;
  constexpr size_t PATH_PART3_TRANSFORM_HANDLER_COUNT = 16;
  constexpr size_t PATH_PART3_ADVANCED_HANDLER_COUNT = 14;
+ constexpr size_t PATH_PART4_INVERSE_FILL_TYPE_HANDLER_COUNT = 8;
+ constexpr size_t PATH_PART4_GET_DATA_HANDLER_COUNT = 17;
  constexpr size_t CANVAS_DESTROY_HANDLER_COUNT = 2;
  constexpr size_t CANVAS_BIND_HANDLER_COUNT = 5;
  constexpr size_t CANVAS_SAVE_HANDLER_COUNT = 5;
@@ -142,6 +143,7 @@
  constexpr size_t CANVAS_PART5_CREATE_WITH_PIXEL_MAP_HANDLER_COUNT = 3;
  constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_RECT_CONSTRAINT_HANDLER_COUNT = 4;
  constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_MESH_HANDLER_COUNT = 11;
+ constexpr size_t CANVAS_PART6_RESET_CLIP_HANDLER_COUNT = 3;
  constexpr size_t BITMAP_HANDLER_COUNT = 22;
  constexpr size_t COLOR_FILTER_CREATE_BLEND_MODE_HANDLER_COUNT = 5;
  constexpr size_t COLOR_FILTER_CREATE_COMPOSE_HANDLER_COUNT = 3;
@@ -353,6 +355,7 @@ napi_value DrawingPathPart2Transform(napi_env env, napi_callback_info info);
 napi_value DrawingPathPart2GetSet(napi_env env, napi_callback_info info);
 napi_value DrawingPathPart3Query(napi_env env, napi_callback_info info);
 napi_value DrawingPathPart4InverseFillType(napi_env env, napi_callback_info info);
+napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info);
 napi_value DrawingPathPart3Transform(napi_env env, napi_callback_info info);
 napi_value DrawingPathPart3Advanced(napi_env env, napi_callback_info info);
 napi_value DrawingCanvasDestroy(napi_env env, napi_callback_info info);

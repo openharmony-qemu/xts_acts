@@ -54,19 +54,19 @@ export default function ActsCommonEventSystemAPITest() {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    beforeAll(():void => {
+    beforeAll(async () => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
       if(!isWifiActive){
         console.info(TAG+"======> wifi_test/enable wifi:" );
         wifiMg.enableWifi();
-        waitForCompletion(async ()=>{await Utils.msSleep(5000);})
+        await Utils.msSleep(5000);
       }
 
       try {
         let data: wifiMg.WifiLinkedInfo|undefined;
-        waitForCompletion(async ()=>{data = await wifiMg.getLinkedInfo();})
+        data = await wifiMg.getLinkedInfo();
         console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
         console.info(TAG+"======> Internet speed : " + JSON.stringify(data!.linkSpeed));
         console.info(TAG+"======> Internet chload : " + JSON.stringify(data!.chload));
@@ -89,9 +89,9 @@ export default function ActsCommonEventSystemAPITest() {
       }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
+      await Utils.msSleep(2000);
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
-      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
+      await Utils.msSleep(2000);
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })

@@ -1281,7 +1281,7 @@ export default function Font2Test() {
 
     /**
      * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0500
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0500
      * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with zero height constraints
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1297,7 +1297,7 @@ export default function Font2Test() {
 
     /**
      * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0600
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0600
      * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with Chinese text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1313,7 +1313,7 @@ export default function Font2Test() {
 
     /**
      * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0700
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0700
      * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with empty text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1329,7 +1329,7 @@ export default function Font2Test() {
 
     /**
      * @tc.name   testOHDrawingTypographyLayoutWithConstraintsWithBuffer0800
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyLayoutWithConstraintsWithBuffer_0800
      * @tc.desc   test OH_Drawing_TypographyLayoutWithConstraintsWithBuffer with multiline text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1341,6 +1341,118 @@ export default function Font2Test() {
             expect(result).assertEqual(0);
             done();
         }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0100
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with system font full names array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHDrawingReleaseArrayBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0100();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0200
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with text lines array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHDrawingReleaseArrayBuffer0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0200();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0300
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with string indices array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHDrawingReleaseArrayBuffer0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0300();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0400
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with rect array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingReleaseArrayBuffer0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0400();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0500
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with font descriptors from stream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHDrawingReleaseArrayBuffer0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0500();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0600
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with valid array pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingReleaseArrayBuffer0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0600();
+        expect(result).assertEqual(0);
+        done();
+      }
+    );
+
+    /**
+     * @tc.name   testOHDrawingReleaseArrayBuffer0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingReleaseArrayBuffer_0700
+     * @tc.desc   test OH_Drawing_ReleaseArrayBuffer with nullptr parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHDrawingReleaseArrayBuffer0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeFontNdk.ohDrawingReleaseArrayBuffer0700();
+        expect(result).assertEqual(0);
+        done();
+      }
     );
 
   })

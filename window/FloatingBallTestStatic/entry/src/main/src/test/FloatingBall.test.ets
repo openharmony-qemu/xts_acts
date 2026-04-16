@@ -378,14 +378,12 @@ export default function FloatingBallTest() {
             console.info(CaseName+' floatingBallController2 Succeeded in starting floating ball.');
             expect(false).assertTrue();
             done();
-          }).catch((err: Error):void => {
-            waitForCompletion(async () => {
+          }).catch(async (err: Error) => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300021);
             expect(err.message!=null).assertTrue();
             done();
-            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -433,14 +431,12 @@ export default function FloatingBallTest() {
             console.info(CaseName+' floatingBallController Succeeded 2 in starting floating ball.');
             expect(false).assertTrue();
             done();
-          }).catch((err: Error):void => {
-            waitForCompletion(async () => {
+          }).catch(async (err: Error) => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300022);
             expect(err.message!=null).assertTrue();
             done();
-            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -2034,28 +2030,26 @@ export default function FloatingBallTest() {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
-          floatingBallController.stopFloatingBall().then(() => {
-            waitForCompletion(async () => {
-              console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
-              await Utils.msSleep(800);
-              floatingBallController.startFloatingBall(startParams).then(() => {
-                console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
-                floatingBallController.stopFloatingBall().then(() => {
-                  console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-                  done()
-                }).catch((err: Error):void => {
-                  console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
-                  expect(err.message!=null).assertTrue();
-                  expect(false).assertTrue();
-                  done()
-                });
+          floatingBallController.stopFloatingBall().then(async () => {
+            console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
+            await Utils.msSleep(800);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+                done()
               }).catch((err: Error):void => {
-                console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
                 expect(err.message!=null).assertTrue();
                 expect(false).assertTrue();
-                done();
+                done()
               });
-            })
+            }).catch((err: Error):void => {
+              console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
@@ -2792,7 +2786,7 @@ export default function FloatingBallTest() {
       };
       let State:floatingBall.FloatingBallState | undefined;
       try {
-        floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+        floatingBall.create(config).then(async (data: floatingBall.FloatingBallController) => {
           floatingBallController = data;
           console.info(caseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
           let onStateChange = (state: floatingBall.FloatingBallState) => {
@@ -2801,7 +2795,7 @@ export default function FloatingBallTest() {
           };
           floatingBallController.onStateChange(onStateChange);
           floatingBallController.startFloatingBall(startParams);
-          waitForCompletion(async ()=>{await Utils.msSleep(1000);});
+          await Utils.msSleep(1000);
           if(State == floatingBall.FloatingBallState.STARTED){
             floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
               console.info(caseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
@@ -2830,7 +2824,7 @@ export default function FloatingBallTest() {
               done();
             });
           }else{
-            waitForCompletion(async ()=>{await Utils.msSleep(300);});
+            await Utils.msSleep(300);
           }
         }).catch((err: Error):void => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);

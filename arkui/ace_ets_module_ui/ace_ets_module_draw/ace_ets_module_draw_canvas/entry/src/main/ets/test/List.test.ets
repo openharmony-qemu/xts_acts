@@ -90,6 +90,7 @@ import canvasOnReadyNullUndefinedTest from './CanvasNullUndefined/canvasOnReadyN
 import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMatrixRotateNullUndefinedTest.test';
 import CanvasRendererAntialiasTest from './migratedActs/CanvasRendererAntialias.test';
 import AntialiasTest from './CanvasRenderingContext2D/Antialias.test';
+import CanvasImageBitmapSupportResourceTest from './Canvas/CanvasImageBitmapSupportResourceTest.test';
 
 export default function testsuite() {
 
@@ -171,4 +172,5 @@ export default function testsuite() {
   canvasMatrixRotateNullUndefinedTest();
   CanvasRendererAntialiasTest();
   AntialiasTest();
+  CanvasImageBitmapSupportResourceTest();
 }

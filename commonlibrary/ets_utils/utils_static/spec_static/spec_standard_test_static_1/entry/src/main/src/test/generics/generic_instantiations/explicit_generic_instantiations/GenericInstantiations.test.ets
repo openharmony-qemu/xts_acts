@@ -184,8 +184,8 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function GenericFunctionsConstraintTest() {
-  describe("GenericFunctionsConstraintTest", () => {
+export default function GenericInstantiationsTest() {
+  describe("GenericInstantiationsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

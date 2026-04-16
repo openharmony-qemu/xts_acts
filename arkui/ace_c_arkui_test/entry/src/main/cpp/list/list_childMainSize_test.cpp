@@ -265,6 +265,11 @@ static napi_value TestAccessibility011(napi_env env, napi_callback_info info)
     OH_ArkUI_AccessibilityValue_SetText(ret, content);
     auto value = OH_ArkUI_AccessibilityValue_GetText(ret);
     ASSERT_STREQ(content, value);
+    auto ret1 = OH_ArkUI_AccessibilityValue_Create();
+    const char *content1 = "";
+    OH_ArkUI_AccessibilityValue_SetText(ret1, content1);
+    auto value1 = OH_ArkUI_AccessibilityValue_GetText(ret1);
+    ASSERT_STREQ(content1, value1);
     napi_value result = nullptr;  
     napi_create_int32(env, 1, &result);                                                                                 
     return result;

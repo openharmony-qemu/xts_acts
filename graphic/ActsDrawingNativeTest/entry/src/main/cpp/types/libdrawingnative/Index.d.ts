@@ -85,6 +85,9 @@ export const DrawingPathPart3Query: (caseName: number) => number;
 // Path Part4 InverseFillType related functions
 export const DrawingPathPart4InverseFillType: (caseName: number) => number;
 
+// Path Part4 GetData related functions
+export const DrawingPathPart4GetData: (caseName: number) => number;
+
 // Path Part3 Transform related functions
 export const DrawingPathPart3Transform: (caseName: number) => number;
 
@@ -252,6 +255,9 @@ export const DrawingCanvasDrawPixelMapRectConstraint: (caseName: number) => numb
 
 // Canvas Part5 DrawPixelMapMesh related functions
 export const DrawingCanvasDrawPixelMapMesh: (caseName: number) => number;
+
+// Canvas Part6 DrawingCanvasResetClip related functions
+export const DrawingCanvasResetClip: (caseName: number) => number;
 
 // ColorFilter CreateBlendMode related functions
 export const DrawingColorFilterCreateBlendMode: (caseName: number) => number;

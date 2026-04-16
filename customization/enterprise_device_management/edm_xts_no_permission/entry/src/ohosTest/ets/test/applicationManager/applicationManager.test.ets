@@ -32,6 +32,7 @@ import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
+import { connection, statistics } from '@kit.NetworkKit';
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -959,6 +960,32 @@ export default function applicationManagerTest() {
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0100
+     * @tc.desc   test queryTrafficStats method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 201).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableAdmin(SELFWANT);
+      });
       done();
     })
   })

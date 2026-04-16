@@ -19,6 +19,12 @@ import User2 from "../Interface/InterfaceExport2";
 import { User3, User4, User5, User6Name } from "../Interface/InterfaceExport3";
 import { newUser7 } from "../Interface/InterfaceExport5";
 import * as newUser8 from "../Interface/InterfaceExport4";
+import { InterfaceWithGetterSetter, InterfaceWithGetterSetterImpl } from "../Interface/InterfaceWithGetterSetter";
+import InterfaceWithGetterOnly from "../Interface/InterfaceWithGetterOnly";
+import InterfaceWithSetterOnly from "../Interface/InterfaceWithSetterOnly";
+import { BaseInterface } from "../Interface/BaseInterface";
+import  ExtendedInterface  from "../Interface/ExtendedInterface";
+import CombinedInterface  from "../Interface/CombinedInterface";
 import { sleep } from "../utils/Utils";
 
 
@@ -210,6 +216,130 @@ export default function ExportInterfaceTest() {
       expect(newUser8.newUser7.name).assertContain('John Doe');
       expect(newUser8.newUser7.age).assertEqual(30);
       expect(newUser8.newUser7.email).assertContain('johndoe@example.com');
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1000
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1000
+     * @tc.desc   Testing interface with getter/setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExportInterfaceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
+      try {
+        let impl: InterfaceWithGetterSetter = new InterfaceWithGetterSetterImpl('TestImpl', 'test_value');
+        expect(impl.name).assertEqual('TestImpl');
+        expect(impl.value).assertEqual('test_value');
+        impl.value = 'new_value';
+        expect(impl.value).assertEqual('new_value');
+      } catch (err) {
+        expect().assertFail();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1100
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1100
+     * @tc.desc   Testing interface with getter only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExportInterfaceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
+      try {
+        expect(InterfaceWithGetterOnly.name).assertEqual('GetterOnlyImpl');
+        expect(InterfaceWithGetterOnly.readonlyValue).assertEqual('readonly_value');
+      } catch (err) {
+        expect().assertFail();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1200
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1200
+     * @tc.desc   Testing interface with setter only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExportInterfaceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
+      try {
+        expect(InterfaceWithSetterOnly.name).assertEqual('SetterOnlyImpl');
+        expect(InterfaceWithSetterOnly.getInternalValue()).assertEqual('writeonly_value');
+      } catch (err) {
+        expect().assertFail();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1300
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1300
+     * @tc.desc   Testing base interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExportInterfaceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
+      try {
+        let base: BaseInterface = {
+          id: 'test_001',
+          name: 'TestBase',
+          getInfo: () => 'TestBase info'
+        };
+        expect(base.id).assertEqual('test_001');
+        expect(base.name).assertEqual('TestBase');
+        expect(base.getInfo()).assertEqual('TestBase info');
+      } catch (err) {
+        expect().assertFail();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1400
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1400
+     * @tc.desc   Testing extended interface (inheritance)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExportInterfaceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
+      try {
+        expect(ExtendedInterface.id).assertEqual('extended_001');
+        expect(ExtendedInterface.name).assertEqual('ExtendedInterfaceDefault');
+        expect(ExtendedInterface.extendedProp).assertEqual('extended_value');
+        expect(ExtendedInterface.getInfo()).assertEqual('ExtendedInterface base info');
+        expect(ExtendedInterface.getExtendedInfo()).assertEqual('ExtendedInterface extended info');
+      } catch (err) {
+        expect().assertFail();
+      }
+      Done();
+    });
+
+    /**
+     * @tc.name   ExportInterfaceTest1500
+     * @tc.number SUB_EXPORT_INTERFACE_TEST_1500
+     * @tc.desc   Testing combined interface (multiple inheritance)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExportInterfaceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      try {
+        expect(CombinedInterface.firstProp).assertEqual('first_value');
+        expect(CombinedInterface.secondProp).assertEqual('second_value');
+        expect(CombinedInterface.combinedProp).assertEqual('combined_value');
+        expect(CombinedInterface.getFirstMethod()).assertEqual('FirstInterface method');
+        expect(CombinedInterface.getSecondMethod()).assertEqual('SecondInterface method');
+        expect(CombinedInterface.getCombinedInfo()).assertEqual('CombinedInterface info');
+      } catch (err) {
+        expect().assertFail();
+      }
       Done();
     });
 

@@ -53,14 +53,6 @@ void DrawingNativeLatticeTestTearDown()
     std::cout << "DrawingNativeLatticeTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testLatticeCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0100
- * @tc.desc   Test for testLatticeCreateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestLatticeCreateNormal()
 {
     DrawingNativeLatticeTestSetUp();
@@ -81,14 +73,6 @@ int TestLatticeCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0101
- * @tc.desc   Test for testLatticeCreateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestLatticeCreateNull()
 {
     DrawingNativeLatticeTestSetUp();
@@ -136,14 +120,6 @@ int TestLatticeCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0102
- * @tc.desc   Test for testLatticeCreateAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestLatticeCreateAbnormal()
 {
     DrawingNativeLatticeTestSetUp();
@@ -184,14 +160,6 @@ int TestLatticeCreateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeCreateEnumTraversal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0103
- * @tc.desc   Test for testLatticeCreateEnumTraversal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestLatticeCreateEnumTraversal()
 {
     DrawingNativeLatticeTestSetUp();
@@ -218,14 +186,6 @@ int TestLatticeCreateEnumTraversal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0104
- * @tc.desc   Test for testLatticeCreateMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestLatticeCreateMultipleCalls()
 {
     DrawingNativeLatticeTestSetUp();
@@ -248,14 +208,6 @@ int TestLatticeCreateMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0200
- * @tc.desc   Test for testLatticeDestroyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestLatticeDestroyNormal()
 {
     DrawingNativeLatticeTestSetUp();
@@ -275,14 +227,6 @@ int TestLatticeDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testLatticeDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0201
- * @tc.desc   Test for testLatticeDestroyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestLatticeDestroyNull()
 {
     DrawingNativeLatticeTestSetUp();

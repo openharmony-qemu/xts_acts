@@ -32,7 +32,20 @@ struct Index {
     },
     {
       value: 'ddd',
+    },
+    {
+      value: '123',
+    },
+    {
+      value: '456',
+    },
+    {
+      value: '789',
+    },
+    {
+      value: 'bbr',
     }
+
   ];
   @State private selectOptions1: SelectOption[] = [
     {
@@ -53,6 +66,7 @@ struct Index {
     {
       value: 'ddd',
     }
+
   ];
 
   build() {

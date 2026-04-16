@@ -40,14 +40,6 @@ void DrawingNativeCanvasTestPart6TestTearDown()
     std::cout << "DrawingNativeCanvasPart6Test errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawSingleChaWithFeaturesNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -90,14 +82,7 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
+
 int TestCanvasDrawSingleChaWithFeaturesAbNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -135,14 +120,7 @@ int TestCanvasDrawSingleChaWithFeaturesAbNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
+
 int TestCanvasDrawSingleChaWithFeaturesCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -165,6 +143,67 @@ int TestCanvasDrawSingleChaWithFeaturesCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestCanvasResetClipNormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipNull()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipMultipleCalls()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

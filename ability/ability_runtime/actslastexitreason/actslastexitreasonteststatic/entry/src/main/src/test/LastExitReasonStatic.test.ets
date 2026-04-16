@@ -107,6 +107,7 @@ export default function lastExitReasonStaticTest() {
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
         expect(lastExitDetailInfo?.uid).assertEqual(-1);
+        expect(lastExitDetailInfo?.killReason).assertEqual(undefined);
         let launchUTCTime = launchParam?.launchUTCTime;
         if(launchUTCTime !== undefined && launchUTCTime !== null) {
           expect(launchUTCTime > 0).assertTrue();

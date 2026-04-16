@@ -344,21 +344,17 @@ export default function ActsCommonEventManagerTest() {
       }
 
       try {
-        commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
-          if (err) {
-            hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-          } else {
-            hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success1`)
-            if(commonEventSubscriber !== undefined  && commonEventSubscriber !== null){
+        try {
+          let commonEventSubscriber = await commonEventManager.createSubscriber(subscribeInfo);
+          hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 success1`)
+          if(commonEventSubscriber !== undefined  && commonEventSubscriber !== null){
               subscriber = commonEventSubscriber
             }else{
               expect(false).assertTrue()
               done()
             }
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
-            try {
+          await Utils.msSleep(2000);
+          try {
               commonEventManager.subscribe(subscriber!, (err: BusinessError | null,data:commonEventManager.CommonEventData|undefined) => {
                 if (err) {
                   hilog.info(domain, TAG,`Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 subscribe err, code is ${err.code}, message is ${err.message}`)
@@ -375,9 +371,8 @@ export default function ActsCommonEventManagerTest() {
               let err: BusinessError = error as BusinessError;
               hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 subscribe failed, code is ${err.code}, message is ${err.message}`)
             }
-
-            count = 0;
-            try {
+          count = 0;
+          try {
               commonEventManager.unsubscribe(subscriber!, (err: BusinessError | null) => {
                 if (err) {
                   hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 unsubscribe err, code is ${err.code}, message is ${err.message}`)
@@ -396,8 +391,11 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             }
-          }
-        })
+        } catch (err) {
+          hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 err, error code: ${err.code}, message: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        }
       } catch (error) {
         let err: BusinessError = error as BusinessError;
         hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200 createSubscriber failed, code is ${err.code}, message is ${err.message}`)
