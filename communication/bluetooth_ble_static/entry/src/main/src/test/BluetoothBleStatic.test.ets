@@ -1307,15 +1307,15 @@ export default function bluetoothBleTest() {
         })
 
         		/**
-         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001
-         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_0100
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_0100
          * @tc.desc Test setCharacteristicChangeIndication with enable true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_001";
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Enable_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -1349,15 +1349,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_0100
          * @tc.desc Test startScan(Promise) with SCAN_MODE_BALANCED
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_001";
+        it("SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_DutyMode_SCAN_MODE_BALANCED_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1391,15 +1391,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_0100
          * @tc.desc Test startScan(Promise) with MATCH_MODE_STICKY
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_001";
+        it("SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_MatchMode_MATCH_MODE_STICKY_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1434,15 +1434,15 @@ export default function bluetoothBleTest() {
 		
 		
 		/**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_0100
          * @tc.desc Test startBLEScan with SCAN_MODE_BALANCED
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_001";
+        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_BALANCED_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1474,16 +1474,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_0100
          * @tc.desc Test startBLEScan with SCAN_MODE_LOW_LATENCY
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_DutyMode_SCAN_MODE_LOW_LATENCY_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1515,16 +1515,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_0100
          * @tc.desc Test startBLEScan with MATCH_MODE_STICKY
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_MatchMode_MATCH_MODE_STICKY_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1557,16 +1557,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100
          * @tc.desc Test startBLEScan with PHY_LE_1M
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_PhyType_PHY_LE_1M_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1599,16 +1599,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_0100
          * @tc.desc Test startBLEScan with BATCH
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_BATCH_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1643,16 +1643,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_0100
          * @tc.desc Test startBLEScan with FENCE_SENSITIVITY_LOW
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_LOW_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1687,16 +1687,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_0100
          * @tc.desc Test startBLEScan with FENCE_SENSITIVITY_HIGH
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_001";
+            let caseName = "SUB_Communication_BLE_StartBLEScan_ReportMode_FENCE_SENSITIVITY_HIGH_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -1731,16 +1731,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_Filters_Null_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_Filters_Null_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_Filters_Null_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_Filters_Null_0100
          * @tc.desc Test startScan(Promise) with null filters
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_Filters_Null_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_StartScan_Promise_Filters_Null_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_Filters_Null_001";
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_Filters_Null_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanOptions: ble.ScanOptions = {
@@ -1770,16 +1770,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001
-         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Empty_0100
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Empty_0100
          * @tc.desc Test getConnectedBLEDevices return empty array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Empty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Empty_001";
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Empty_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let result: Array<string> = ble.getConnectedBLEDevices();
@@ -1800,16 +1800,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001
-         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_0100
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_0100
          * @tc.desc Test getConnectedBLEDevices return non-empty array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_001";
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_NonEmpty_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let result: Array<string> = ble.getConnectedBLEDevices();
@@ -1831,16 +1831,16 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001
-         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_0100
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_0100
          * @tc.desc Test setCharacteristicChangeIndication(promise) with enable false
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_001";
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Enable_False_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -1869,16 +1869,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_0100
          * @tc.desc Test setCharacteristicChangeIndication(promise) with empty descriptors array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_001";
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -1906,16 +1906,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001
-         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001
+         * @tc.number SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_0100
+         * @tc.name SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_0100
          * @tc.desc Test setCharacteristicChangeIndication(promise) with non-empty descriptors array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+        it("SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_001";
+            let caseName = "SUB_Communication_BLE_SetCharacteristicChangeIndication_Promise_Descriptors_NonEmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -1950,15 +1950,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartBLEScan_Filters_Null_001
-         * @tc.name SUB_Communication_BLE_StartBLEScan_Filters_Null_001
+         * @tc.number SUB_Communication_BLE_StartBLEScan_Filters_Null_0100
+         * @tc.name SUB_Communication_BLE_StartBLEScan_Filters_Null_0100
          * @tc.desc Test startBLEScan with null filters
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartBLEScan_Filters_Null_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartBLEScan_Filters_Null_001";
+        it("SUB_Communication_BLE_StartBLEScan_Filters_Null_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartBLEScan_Filters_Null_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 ble.startBLEScan(null);
@@ -1981,15 +1981,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_Connectable_False_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_Connectable_False_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_Connectable_False_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_Connectable_False_0100
          * @tc.desc Test startAdvertising with connectable false
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_Connectable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_Connectable_False_001";
+        it("SUB_Communication_BLE_StartAdvertising_Connectable_False_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_Connectable_False_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2030,15 +2030,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty serviceUuids array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceUuids_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2078,15 +2078,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty manufactureData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ManufactureData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2122,15 +2122,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty serviceData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_ServiceData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2167,15 +2167,15 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_0100
          * @tc.desc Test startAdvertising with includeDeviceName true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeDeviceName_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureValueBuffer = new Uint8Array(2);
@@ -2222,15 +2222,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_0100
          * @tc.desc Test startAdvertising with includeTxPower true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_IncludeTxPower_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2272,15 +2272,15 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty advResponse.serviceUuids array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceUuids_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2325,15 +2325,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty advResponse.manufactureData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ManufactureData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2378,15 +2378,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_0100
          * @tc.desc Test startAdvertising with empty advResponse.serviceData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_ServiceData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2433,15 +2433,15 @@ export default function bluetoothBleTest() {
 
   
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_0100
          * @tc.desc Test startAdvertising with advResponse.includeDeviceName true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeDeviceName_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2486,15 +2486,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_0100
          * @tc.desc Test startAdvertising with advResponse.includeTxPower true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvResponse_IncludeTxPower_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let setting: ble.AdvertiseSetting = {
@@ -2541,15 +2541,15 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with connectable false
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_Connectable_False_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureDataUnit: ble.ManufactureData = {
@@ -2597,15 +2597,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.serviceUuids array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceUuids_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureDataUnit: ble.ManufactureData = {
@@ -2654,15 +2654,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.manufactureData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ManufactureData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let serviceDataUnit: ble.ServiceData = {
@@ -2707,15 +2707,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingData.serviceData array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_ServiceData_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureDataUnit: ble.ManufactureData = {
@@ -2760,15 +2760,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.includeDeviceName true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureValueBuffer = new Uint8Array(2);
@@ -2825,15 +2825,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.includeTxPower true
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeTxPower_True_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureDataUnit: ble.ManufactureData = {
@@ -2883,16 +2883,16 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_0100
          * @tc.desc Test startAdvertising(AdvertisingParams) with empty
  advertisingResponse.serviceUuids array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_001";
+        it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let manufactureDataUnit: ble.ManufactureData = {
@@ -2946,15 +2946,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_0100
          * @tc.desc Test readCharacteristicValue with empty descriptors array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_001";
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -2982,15 +2982,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001
-         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_0100
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_0100
          * @tc.desc Test readCharacteristicValue with non-empty descriptors array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_001";
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Descriptors_NonEmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -3025,15 +3025,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001
-         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_0100
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_0100
          * @tc.desc Test readCharacteristicValue(Promise) with empty descriptors array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_001";
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Descriptors_EmptyArray_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -3061,15 +3061,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100
          * @tc.desc Test startScan(Promise) with PHY_LE_1M
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_001";
+        it("SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_PhyType_PHY_LE_1M_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -3105,15 +3105,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_0100
          * @tc.desc Test startScan(Promise) with BATCH
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_001";
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_BATCH_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -3150,15 +3150,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_0100
          * @tc.desc Test startScan(Promise) with FENCE_SENSITIVITY_LOW
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_001";
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_LOW_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -3195,15 +3195,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001
-         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001
+         * @tc.number SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_0100
+         * @tc.name SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_0100
          * @tc.desc Test startScan(Promise) with FENCE_SENSITIVITY_HIGH
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_001";
+        it("SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_StartScan_Promise_ReportMode_FENCE_SENSITIVITY_HIGH_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let scanFilter: ble.ScanFilter = {
@@ -3240,15 +3240,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_001
-         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_001
+         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_0100
+         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_0100
          * @tc.desc Test readDescriptorValue with promise
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_001";
+        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -3276,15 +3276,15 @@ export default function bluetoothBleTest() {
          //新增用例如下：
 
         /**
-         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001
-         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100
          * @tc.desc Test getConnectedBLEDevices return empty array
          * @tc.level Level 0
          * *tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_001";
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let devices: Array<string> = ble.getConnectedBLEDevices();
@@ -3310,15 +3310,15 @@ export default function bluetoothBleTest() {
         })
 
         /**
-         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001
-         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001
+         * @tc.number SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_0100
+         * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_0100
          * @tc.desc Test getConnectedBLEDevices return not empty array
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_001";
+        it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_GetConnectedBLEDevices_Return_NotEmpty_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let devices: Array<string> = ble.getConnectedBLEDevices();
@@ -3345,15 +3345,15 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001
-         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001
+         * @tc.number SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_0100
+         * @tc.name SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_0100
          * @tc.desc Test readCharacteristicValue promise return all properties
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_001";
+        it("SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadCharacteristicValue_Promise_Return_AllProperties_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
@@ -3389,15 +3389,15 @@ export default function bluetoothBleTest() {
 
 
         /**
-         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001
-         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001
+         * @tc.number SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_0100
+         * @tc.name SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_0100
          * @tc.desc Test readDescriptorValue promise return all properties
          * @tc.level Level 0
          * @tc.type Function
          * @tc.size MEDIUMTEST
          */
-        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_001";
+        it("SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName = "SUB_Communication_BLE_ReadDescriptorValue_Promise_Return_AllProperties_0100";
             hilog.info(domain, tag, `${caseName} test start`);
             try {
                 let arrayBuffer = new ArrayBuffer(8);
