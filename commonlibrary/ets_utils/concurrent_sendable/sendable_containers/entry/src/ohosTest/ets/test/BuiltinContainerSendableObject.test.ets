@@ -57,7 +57,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArraySendableClassTyped0100
-     * @tc.number SUB_BUILTIN_ARRAY_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_SENDABLE_TYPED_0100
      * @tc.desc   Array sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArraySendableClassObject0100
-     * @tc.number SUB_BUILTIN_ARRAY_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_SENDABLE_OBJECT_0100
      * @tc.desc   Array sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArraySendableFunctionTyped0100
-     * @tc.number SUB_BUILTIN_ARRAY_SENDABLE_FUNCTION_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_SENDABLE_FUNCTION_TYPED_0100
      * @tc.desc   Array sendableFunction typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArraySendableEnumTyped0100
-     * @tc.number SUB_BUILTIN_ARRAY_SENDABLE_ENUM_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_SENDABLE_ENUM_TYPED_0100
      * @tc.desc   Array sendableEnum typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapSendableClassTyped0100
-     * @tc.number SUB_BUILTIN_MAP_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_SENDABLE_TYPED_0100
      * @tc.desc   Map sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapSendableClassObject0100
-     * @tc.number SUB_BUILTIN_MAP_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_SENDABLE_OBJECT_0100
      * @tc.desc   Map sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapSendableKeyTyped0100
-     * @tc.number SUB_BUILTIN_MAP_SENDABLE_KEY_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_SENDABLE_KEY_TYPED_0100
      * @tc.desc   Map sendableKey typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetSendableClassTyped0100
-     * @tc.number SUB_BUILTIN_SET_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_SENDABLE_TYPED_0100
      * @tc.desc   Set sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -264,7 +264,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetSendableClassObject0100
-     * @tc.number SUB_BUILTIN_SET_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_SENDABLE_OBJECT_0100
      * @tc.desc   Set sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayBoundaryGet0100
-     * @tc.number SUB_BUILTIN_ARRAY_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_BOUNDARY_GET_0100
      * @tc.desc   Array get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayBoundaryObjectGet0100
-     * @tc.number SUB_BUILTIN_ARRAY_BOUNDARY_OBJECT_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_BOUNDARY_OBJECT_GET_0100
      * @tc.desc   Array get object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayBoundaryPop0100
-     * @tc.number SUB_BUILTIN_ARRAY_BOUNDARY_POP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_BOUNDARY_POP_0100
      * @tc.desc   Array pop empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayBoundaryObjectPop0100
-     * @tc.number SUB_BUILTIN_ARRAY_BOUNDARY_OBJECT_POP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_BOUNDARY_OBJECT_POP_0100
      * @tc.desc   Array pop object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryGet0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_GET_0100
      * @tc.desc   Map get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryDelete0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_DELETE_0100
      * @tc.desc   Map delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryObjectGet0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_OBJECT_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_OBJECT_GET_0100
      * @tc.desc   Map get object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -428,7 +428,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryObjectDelete0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_OBJECT_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_OBJECT_DELETE_0100
      * @tc.desc   Map delete object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -448,7 +448,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryObjectKeyGet0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_GET_0100
      * @tc.desc   Map objectKey get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -468,7 +468,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryObjectKeyDelete0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_DELETE_0100
      * @tc.desc   Map objectKey delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -489,7 +489,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapBoundaryObjectKeyValue0100
-     * @tc.number SUB_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_VALUE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_BOUNDARY_OBJECT_KEY_VALUE_0100
      * @tc.desc   Map objectKeyValue empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -511,7 +511,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetBoundaryHas0100
-     * @tc.number SUB_BUILTIN_SET_BOUNDARY_HAS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_BOUNDARY_HAS_0100
      * @tc.desc   Set has empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -531,7 +531,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetBoundaryDelete0100
-     * @tc.number SUB_BUILTIN_SET_BOUNDARY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_BOUNDARY_DELETE_0100
      * @tc.desc   Set delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -552,7 +552,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetBoundaryObjectHas0100
-     * @tc.number SUB_BUILTIN_SET_BOUNDARY_OBJECT_HAS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_BOUNDARY_OBJECT_HAS_0100
      * @tc.desc   Set has object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -572,7 +572,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetBoundaryObjectDelete0100
-     * @tc.number SUB_BUILTIN_SET_BOUNDARY_OBJECT_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_BOUNDARY_OBJECT_DELETE_0100
      * @tc.desc   Set delete object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -593,7 +593,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayCombinedOperations0100
-     * @tc.number SUB_BUILTIN_ARRAY_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_COMBINED_0100
      * @tc.desc   Array combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -630,7 +630,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapCombinedOperations0100
-     * @tc.number SUB_BUILTIN_MAP_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_COMBINED_0100
      * @tc.desc   Map combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetCombinedOperations0100
-     * @tc.number SUB_BUILTIN_SET_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_COMBINED_0100
      * @tc.desc   Set combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -703,7 +703,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayStress0100
-     * @tc.number SUB_BUILTIN_ARRAY_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_STRESS_0100
      * @tc.desc   Array stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -735,7 +735,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapStress0100
-     * @tc.number SUB_BUILTIN_MAP_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_STRESS_0100
      * @tc.desc   Map stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -767,7 +767,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetStress0100
-     * @tc.number SUB_BUILTIN_SET_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_STRESS_0100
      * @tc.desc   Set stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -802,7 +802,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayWithCollectionsArray0100
-     * @tc.number SUB_BUILTIN_ARRAY_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   Array storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayWithCollectionsMap0100
-     * @tc.number SUB_BUILTIN_ARRAY_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   Array storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -851,7 +851,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayWithCollectionsSet0100
-     * @tc.number SUB_BUILTIN_ARRAY_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_WITH_COLLECTIONS_SET_0100
      * @tc.desc   Array storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -876,7 +876,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapWithCollectionsArray0100
-     * @tc.number SUB_BUILTIN_MAP_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   Map storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -901,7 +901,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapWithCollectionsMap0100
-     * @tc.number SUB_BUILTIN_MAP_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   Map storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -925,7 +925,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapWithCollectionsSet0100
-     * @tc.number SUB_BUILTIN_MAP_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_WITH_COLLECTIONS_SET_0100
      * @tc.desc   Map storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -950,7 +950,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetWithCollectionsArray0100
-     * @tc.number SUB_BUILTIN_SET_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   Set storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +974,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetWithCollectionsMap0100
-     * @tc.number SUB_BUILTIN_SET_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   Set storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -997,7 +997,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetWithCollectionsSet0100
-     * @tc.number SUB_BUILTIN_SET_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_WITH_COLLECTIONS_SET_0100
      * @tc.desc   Set storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1021,7 +1021,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapObjectKeyFullOperations0100
-     * @tc.number SUB_BUILTIN_MAP_OBJECT_KEY_FULL_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_OBJECT_KEY_FULL_0100
      * @tc.desc   Map objectKey full operations test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1053,7 +1053,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetObjectFullOperations0100
-     * @tc.number SUB_BUILTIN_SET_OBJECT_FULL_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_OBJECT_FULL_0100
      * @tc.desc   Set object full operations test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1084,7 +1084,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayNegativeIndex0100
-     * @tc.number SUB_BUILTIN_ARRAY_NEGATIVE_INDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_NEGATIVE_INDEX_0100
      * @tc.desc   Array negative index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1107,7 +1107,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayOutOfBoundsIndex0100
-     * @tc.number SUB_BUILTIN_ARRAY_OUT_OF_BOUNDS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_OUT_OF_BOUNDS_0100
      * @tc.desc   Array out of bounds index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1129,7 +1129,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapClear0100
-     * @tc.number SUB_BUILTIN_MAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_CLEAR_0100
      * @tc.desc   Map clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1154,7 +1154,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetClear0100
-     * @tc.number SUB_BUILTIN_SET_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_CLEAR_0100
      * @tc.desc   Set clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1177,7 +1177,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayStress1000_0100
-     * @tc.number SUB_BUILTIN_ARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_STRESS_1000_0100
      * @tc.desc   Array stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1205,7 +1205,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapStress1000_0100
-     * @tc.number SUB_BUILTIN_MAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_STRESS_1000_0100
      * @tc.desc   Map stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1233,7 +1233,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetStress1000_0100
-     * @tc.number SUB_BUILTIN_SET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_STRESS_1000_0100
      * @tc.desc   Set stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1264,7 +1264,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinNestedContainerModify0100
-     * @tc.number SUB_BUILTIN_NESTED_MODIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_NESTED_MODIFY_0100
      * @tc.desc   Array nested collections modify test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -57,7 +57,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArraySendableClassTyped0100
-     * @tc.number SUB_PLAINARRAY_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_SENDABLE_TYPED_0100
      * @tc.desc   PlainArray sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArraySendableClassObject0100
-     * @tc.number SUB_PLAINARRAY_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_SENDABLE_OBJECT_0100
      * @tc.desc   PlainArray sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListSendableClassTyped0100
-     * @tc.number SUB_LINKEDLIST_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_SENDABLE_TYPED_0100
      * @tc.desc   LinkedList sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListSendableClassObject0100
-     * @tc.number SUB_LINKEDLIST_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_SENDABLE_OBJECT_0100
      * @tc.desc   LinkedList sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueSendableClassTyped0100
-     * @tc.number SUB_QUEUE_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_SENDABLE_TYPED_0100
      * @tc.desc   Queue sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +189,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueSendableClassObject0100
-     * @tc.number SUB_QUEUE_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_SENDABLE_OBJECT_0100
      * @tc.desc   Queue sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackSendableClassTyped0100
-     * @tc.number SUB_STACK_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_SENDABLE_TYPED_0100
      * @tc.desc   Stack sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,7 +240,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackSendableClassObject0100
-     * @tc.number SUB_STACK_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_SENDABLE_OBJECT_0100
      * @tc.desc   Stack sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapSendableClassTyped0100
-     * @tc.number SUB_TREEMAP_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_SENDABLE_TYPED_0100
      * @tc.desc   TreeMap sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapSendableClassObject0100
-     * @tc.number SUB_TREEMAP_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_SENDABLE_OBJECT_0100
      * @tc.desc   TreeMap sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetSendableClassTyped0100
-     * @tc.number SUB_TREESET_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_SENDABLE_TYPED_0100
      * @tc.desc   TreeSet sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -343,7 +343,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetSendableClassObject0100
-     * @tc.number SUB_TREESET_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_SENDABLE_OBJECT_0100
      * @tc.desc   TreeSet sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapSendableClassTyped0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_SENDABLE_TYPED_0100
      * @tc.desc   LightWeightMap sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapSendableClassObject0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_SENDABLE_OBJECT_0100
      * @tc.desc   LightWeightMap sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -419,7 +419,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightSetSendableClassTyped0100
-     * @tc.number SUB_LIGHTWEIGHTSET_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_SENDABLE_TYPED_0100
      * @tc.desc   LightWeightSet sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightSetSendableClassObject0100
-     * @tc.number SUB_LIGHTWEIGHTSET_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_SENDABLE_OBJECT_0100
      * @tc.desc   LightWeightSet sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -466,7 +466,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListSendableClassTyped0100
-     * @tc.number SUB_ARRAYLIST_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_SENDABLE_TYPED_0100
      * @tc.desc   ArrayList sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -494,7 +494,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListSendableClassObject0100
-     * @tc.number SUB_ARRAYLIST_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_SENDABLE_OBJECT_0100
      * @tc.desc   ArrayList sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -521,7 +521,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayBoundaryGet0100
-     * @tc.number SUB_PLAINARRAY_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_BOUNDARY_GET_0100
      * @tc.desc   PlainArray get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -540,7 +540,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayBoundaryObjectGet0100
-     * @tc.number SUB_PLAINARRAY_BOUNDARY_OBJECT_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_BOUNDARY_OBJECT_GET_0100
      * @tc.desc   PlainArray get object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -559,7 +559,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueBoundaryPop0100
-     * @tc.number SUB_QUEUE_BOUNDARY_POP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_BOUNDARY_POP_0100
      * @tc.desc   Queue pop empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -579,7 +579,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackBoundaryPop0100
-     * @tc.number SUB_STACK_BOUNDARY_POP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_BOUNDARY_POP_0100
      * @tc.desc   Stack pop empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -599,7 +599,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapBoundaryGet0100
-     * @tc.number SUB_TREEMAP_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_BOUNDARY_GET_0100
      * @tc.desc   TreeMap get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -618,7 +618,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapBoundaryObjectGet0100
-     * @tc.number SUB_TREEMAP_BOUNDARY_OBJECT_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_BOUNDARY_OBJECT_GET_0100
      * @tc.desc   TreeMap get object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -637,7 +637,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListBoundaryGet0100
-     * @tc.number SUB_ARRAYLIST_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_BOUNDARY_GET_0100
      * @tc.desc   ArrayList get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -657,7 +657,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListBoundaryObjectGet0100
-     * @tc.number SUB_ARRAYLIST_BOUNDARY_OBJECT_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_BOUNDARY_OBJECT_GET_0100
      * @tc.desc   ArrayList get object empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -677,7 +677,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayCombinedOperations0100
-     * @tc.number SUB_PLAINARRAY_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_COMBINED_0100
      * @tc.desc   PlainArray combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListCombinedOperations0100
-     * @tc.number SUB_LINKEDLIST_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_COMBINED_0100
      * @tc.desc   LinkedList combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -745,7 +745,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueCombinedOperations0100
-     * @tc.number SUB_QUEUE_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_COMBINED_0100
      * @tc.desc   Queue combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -777,7 +777,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackCombinedOperations0100
-     * @tc.number SUB_STACK_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_COMBINED_0100
      * @tc.desc   Stack combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -810,7 +810,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapCombinedOperations0100
-     * @tc.number SUB_TREEMAP_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_COMBINED_0100
      * @tc.desc   TreeMap combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -846,7 +846,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetCombinedOperations0100
-     * @tc.number SUB_TREESET_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_COMBINED_0100
      * @tc.desc   TreeSet combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -883,7 +883,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapCombinedOperations0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_COMBINED_0100
      * @tc.desc   LightWeightMap combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -919,7 +919,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightSetCombinedOperations0100
-     * @tc.number SUB_LIGHTWEIGHTSET_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_COMBINED_0100
      * @tc.desc   LightWeightSet combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -956,7 +956,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListCombinedOperations0100
-     * @tc.number SUB_ARRAYLIST_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_COMBINED_0100
      * @tc.desc   ArrayList combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -990,7 +990,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayStress0100
-     * @tc.number SUB_PLAINARRAY_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_STRESS_0100
      * @tc.desc   PlainArray stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1022,7 +1022,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListStress0100
-     * @tc.number SUB_LINKEDLIST_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_STRESS_0100
      * @tc.desc   LinkedList stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1054,7 +1054,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueStress0100
-     * @tc.number SUB_QUEUE_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_STRESS_0100
      * @tc.desc   Queue stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1083,7 +1083,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackStress0100
-     * @tc.number SUB_STACK_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_STRESS_0100
      * @tc.desc   Stack stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1112,7 +1112,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapStress0100
-     * @tc.number SUB_TREEMAP_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_STRESS_0100
      * @tc.desc   TreeMap stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1144,7 +1144,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetStress0100
-     * @tc.number SUB_TREESET_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_STRESS_0100
      * @tc.desc   TreeSet stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1179,7 +1179,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapStress0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_STRESS_0100
      * @tc.desc   LightWeightMap stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1211,7 +1211,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightSetStress0100
-     * @tc.number SUB_LIGHTWEIGHTSET_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_STRESS_0100
      * @tc.desc   LightWeightSet stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1246,7 +1246,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListStress0100
-     * @tc.number SUB_ARRAYLIST_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_STRESS_0100
      * @tc.desc   ArrayList stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1279,7 +1279,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayWithCollectionsArray0100
-     * @tc.number SUB_PLAINARRAY_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   PlainArray storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1304,7 +1304,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListWithCollectionsArray0100
-     * @tc.number SUB_LINKEDLIST_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   LinkedList storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1329,7 +1329,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueWithCollectionsArray0100
-     * @tc.number SUB_QUEUE_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   Queue storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1354,7 +1354,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackWithCollectionsArray0100
-     * @tc.number SUB_STACK_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   Stack storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1379,7 +1379,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapWithCollectionsArray0100
-     * @tc.number SUB_TREEMAP_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   TreeMap storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1404,7 +1404,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapWithCollectionsArray0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   LightWeightMap storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListWithCollectionsArray0100
-     * @tc.number SUB_ARRAYLIST_WITH_COLLECTIONS_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_WITH_COLLECTIONS_ARRAY_0100
      * @tc.desc   ArrayList storing collectionsArray test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1454,7 +1454,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayWithCollectionsMap0100
-     * @tc.number SUB_PLAINARRAY_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   PlainArray storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1478,7 +1478,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayWithCollectionsSet0100
-     * @tc.number SUB_PLAINARRAY_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_WITH_COLLECTIONS_SET_0100
      * @tc.desc   PlainArray storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1503,7 +1503,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListWithCollectionsMap0100
-     * @tc.number SUB_LINKEDLIST_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   LinkedList storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1527,7 +1527,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListWithCollectionsSet0100
-     * @tc.number SUB_LINKEDLIST_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_WITH_COLLECTIONS_SET_0100
      * @tc.desc   LinkedList storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1552,7 +1552,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueWithCollectionsMap0100
-     * @tc.number SUB_QUEUE_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   Queue storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1576,7 +1576,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibQueueWithCollectionsSet0100
-     * @tc.number SUB_QUEUE_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_QUEUE_WITH_COLLECTIONS_SET_0100
      * @tc.desc   Queue storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1601,7 +1601,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackWithCollectionsMap0100
-     * @tc.number SUB_STACK_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   Stack storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1625,7 +1625,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibStackWithCollectionsSet0100
-     * @tc.number SUB_STACK_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STACK_WITH_COLLECTIONS_SET_0100
      * @tc.desc   Stack storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1650,7 +1650,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapWithCollectionsMap0100
-     * @tc.number SUB_TREEMAP_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   TreeMap storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1674,7 +1674,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapWithCollectionsSet0100
-     * @tc.number SUB_TREEMAP_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_WITH_COLLECTIONS_SET_0100
      * @tc.desc   TreeMap storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1699,7 +1699,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapWithCollectionsMap0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   LightWeightMap storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1723,7 +1723,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapWithCollectionsSet0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_WITH_COLLECTIONS_SET_0100
      * @tc.desc   LightWeightMap storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1748,7 +1748,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListWithCollectionsMap0100
-     * @tc.number SUB_ARRAYLIST_WITH_COLLECTIONS_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_WITH_COLLECTIONS_MAP_0100
      * @tc.desc   ArrayList storing collectionsMap test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1772,7 +1772,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListWithCollectionsSet0100
-     * @tc.number SUB_ARRAYLIST_WITH_COLLECTIONS_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_WITH_COLLECTIONS_SET_0100
      * @tc.desc   ArrayList storing collectionsSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1797,7 +1797,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayNegativeIndex0100
-     * @tc.number SUB_PLAINARRAY_NEGATIVE_INDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_NEGATIVE_INDEX_0100
      * @tc.desc   PlainArray negative index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1819,7 +1819,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListNegativeIndex0100
-     * @tc.number SUB_LINKEDLIST_NEGATIVE_INDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_NEGATIVE_INDEX_0100
      * @tc.desc   LinkedList negative index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1841,7 +1841,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListNegativeIndex0100
-     * @tc.number SUB_ARRAYLIST_NEGATIVE_INDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_NEGATIVE_INDEX_0100
      * @tc.desc   ArrayList negative index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1861,7 +1861,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapClear0100
-     * @tc.number SUB_TREEMAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_CLEAR_0100
      * @tc.desc   TreeMap clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1886,7 +1886,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapClear0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_CLEAR_0100
      * @tc.desc   LightWeightMap clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1911,7 +1911,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetClear0100
-     * @tc.number SUB_TREESET_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_CLEAR_0100
      * @tc.desc   TreeSet clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1934,7 +1934,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightSetClear0100
-     * @tc.number SUB_LIGHTWEIGHTSET_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTSET_CLEAR_0100
      * @tc.desc   LightWeightSet clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1957,7 +1957,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayStress1000_0100
-     * @tc.number SUB_PLAINARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_STRESS_1000_0100
      * @tc.desc   PlainArray stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1985,7 +1985,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListStress1000_0100
-     * @tc.number SUB_LINKEDLIST_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_STRESS_1000_0100
      * @tc.desc   LinkedList stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2013,7 +2013,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapStress1000_0100
-     * @tc.number SUB_TREEMAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_STRESS_1000_0100
      * @tc.desc   TreeMap stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2041,7 +2041,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetStress1000_0100
-     * @tc.number SUB_TREESET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_STRESS_1000_0100
      * @tc.desc   TreeSet stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2072,7 +2072,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListStress1000_0100
-     * @tc.number SUB_ARRAYLIST_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_STRESS_1000_0100
      * @tc.desc   ArrayList stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2101,7 +2101,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibNestedContainerModify0100
-     * @tc.number SUB_NESTED_MODIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_NESTED_MODIFY_0100
      * @tc.desc   ArrayList nested modify test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2128,7 +2128,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapObjectKeyFullOperations0100
-     * @tc.number SUB_TREEMAP_OBJECT_KEY_FULL_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_OBJECT_KEY_FULL_0100
      * @tc.desc   TreeMap objectKey full operations test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2162,7 +2162,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLightWeightMapObjectKeyFullOperations0100
-     * @tc.number SUB_LIGHTWEIGHTMAP_OBJECT_KEY_FULL_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LIGHTWEIGHTMAP_OBJECT_KEY_FULL_0100
      * @tc.desc   LightWeightMap objectKey full operations test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2194,7 +2194,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetObjectComparator0100
-     * @tc.number SUB_TREESET_OBJECT_COMPARATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_OBJECT_COMPARATOR_0100
      * @tc.desc   TreeSet object comparator test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

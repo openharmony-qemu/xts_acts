@@ -52,7 +52,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArraySendableClassTyped0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_SENDABLE_TYPED_0100
      * @tc.desc   collectionsArray sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArraySendableClassObject0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_SENDABLE_OBJECT_0100
      * @tc.desc   collectionsArray sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArraySendableClassTyped0200
-     * @tc.number SUB_COLLECTIONS_ARRAY_SENDABLE_TYPED_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_SENDABLE_TYPED_0200
      * @tc.desc   collectionsArray sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArraySendableEnumTyped0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_SENDABLE_ENUM_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_SENDABLE_ENUM_TYPED_0100
      * @tc.desc   collectionsArray sendableEnum typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,7 +151,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapSendableClassTyped0100
-     * @tc.number SUB_COLLECTIONS_MAP_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_SENDABLE_TYPED_0100
      * @tc.desc   collectionsMap sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapSendableClassObject0100
-     * @tc.number SUB_COLLECTIONS_MAP_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_SENDABLE_OBJECT_0100
      * @tc.desc   collectionsMap sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -205,7 +205,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapSendableKeyTyped0100
-     * @tc.number SUB_COLLECTIONS_MAP_SENDABLE_KEY_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_SENDABLE_KEY_TYPED_0100
      * @tc.desc   collectionsMap sendableKey typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetSendableClassTyped0100
-     * @tc.number SUB_COLLECTIONS_SET_SENDABLE_TYPED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_SENDABLE_TYPED_0100
      * @tc.desc   collectionsSet sendableClass typed test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetSendableClassObject0100
-     * @tc.number SUB_COLLECTIONS_SET_SENDABLE_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_SENDABLE_OBJECT_0100
      * @tc.desc   collectionsSet sendableClass object test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayWithNestedCollections0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_NESTED_COLLECTIONS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_NESTED_COLLECTIONS_0100
      * @tc.desc   collectionsArray nested test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayBoundaryGet0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_BOUNDARY_GET_0100
      * @tc.desc   collectionsArray get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayBoundaryPop0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_BOUNDARY_POP_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_BOUNDARY_POP_0100
      * @tc.desc   collectionsArray pop empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapBoundaryGet0100
-     * @tc.number SUB_COLLECTIONS_MAP_BOUNDARY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_BOUNDARY_GET_0100
      * @tc.desc   collectionsMap get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -369,7 +369,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapBoundaryDelete0100
-     * @tc.number SUB_COLLECTIONS_MAP_BOUNDARY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_BOUNDARY_DELETE_0100
      * @tc.desc   collectionsMap delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapBoundarySendableKeyGet0100
-     * @tc.number SUB_COLLECTIONS_MAP_BOUNDARY_SENDABLE_KEY_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_BOUNDARY_SENDABLE_KEY_GET_0100
      * @tc.desc   collectionsMap sendableKey get empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapBoundarySendableKeyDelete0100
-     * @tc.number SUB_COLLECTIONS_MAP_BOUNDARY_SENDABLE_KEY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_BOUNDARY_SENDABLE_KEY_DELETE_0100
      * @tc.desc   collectionsMap sendableKey delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -430,7 +430,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetBoundaryHas0100
-     * @tc.number SUB_COLLECTIONS_SET_BOUNDARY_HAS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_BOUNDARY_HAS_0100
      * @tc.desc   collectionsSet has empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetBoundaryDelete0100
-     * @tc.number SUB_COLLECTIONS_SET_BOUNDARY_DELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_BOUNDARY_DELETE_0100
      * @tc.desc   collectionsSet delete empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayCombinedOperations0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_COMBINED_0100
      * @tc.desc   collectionsArray combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapCombinedOperations0100
-     * @tc.number SUB_COLLECTIONS_MAP_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_COMBINED_0100
      * @tc.desc   collectionsMap combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -544,7 +544,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetCombinedOperations0100
-     * @tc.number SUB_COLLECTIONS_SET_COMBINED_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_COMBINED_0100
      * @tc.desc   collectionsSet combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -581,7 +581,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayStress0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_STRESS_0100
      * @tc.desc   collectionsArray stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -613,7 +613,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapStress0100
-     * @tc.number SUB_COLLECTIONS_MAP_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_STRESS_0100
      * @tc.desc   collectionsMap stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -645,7 +645,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetStress0100
-     * @tc.number SUB_COLLECTIONS_SET_STRESS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_STRESS_0100
      * @tc.desc   collectionsSet stress test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -680,7 +680,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayNegativeIndex0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_NEGATIVE_INDEX_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_NEGATIVE_INDEX_0100
      * @tc.desc   collectionsArray negative index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -703,7 +703,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayOutOfBoundsIndex0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_OUT_OF_BOUNDS_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_OUT_OF_BOUNDS_0100
      * @tc.desc   collectionsArray out of bounds index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -725,7 +725,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapClear0100
-     * @tc.number SUB_COLLECTIONS_MAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_CLEAR_0100
      * @tc.desc   collectionsMap clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -750,7 +750,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetClear0100
-     * @tc.number SUB_COLLECTIONS_SET_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_CLEAR_0100
      * @tc.desc   collectionsSet clear test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -773,7 +773,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayStress1000_0100
-     * @tc.number SUB_COLLECTIONS_ARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_STRESS_1000_0100
      * @tc.desc   collectionsArray stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -801,7 +801,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapStress1000_0100
-     * @tc.number SUB_COLLECTIONS_MAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_STRESS_1000_0100
      * @tc.desc   collectionsMap stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -829,7 +829,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetStress1000_0100
-     * @tc.number SUB_COLLECTIONS_SET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_STRESS_1000_0100
      * @tc.desc   collectionsSet stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -860,7 +860,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsNestedContainerModify0100
-     * @tc.number SUB_COLLECTIONS_NESTED_MODIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_NESTED_MODIFY_0100
      * @tc.desc   collectionsArray nested modify test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -887,7 +887,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsNestedMapModify0100
-     * @tc.number SUB_COLLECTIONS_NESTED_MAP_MODIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_NESTED_MAP_MODIFY_0100
      * @tc.desc   collectionsMap nested modify test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
