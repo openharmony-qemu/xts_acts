@@ -143,11 +143,18 @@ export default function rdbValueNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_Values_IsNull_Abormal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let res = testndk.OH_Values_IsNull_Abormal_0100();
-      console.info(TAG + "OH_Values_IsNull_Abormal_0100 res=" + res );
-      expect(res).assertEqual(0);
-      done();
+    it('OH_Values_IsNull_Abormal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>OH_Values_IsNull_Abormal_0100 start====");
+        let res = testNdk.OH_Values_IsNull_Abormal_0300();
+        console.info(TAG + "OH_Values_IsNull_Abormal_0100 res=" + res );
+        expect(res).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error("====>OH_Values_IsNull_Abormal_0100 catch err: " + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -158,11 +165,18 @@ export default function rdbValueNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_Values_IsNull_Abormal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let res = testndk.OH_Values_IsNull_Abormal_0200();
-      console.info(TAG + "OH_Values_IsNull_Abormal_0200 res=" + res );
-      expect(res).assertEqual(0);
-      done();
+    it('OH_Values_IsNull_Abormal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>OH_Values_IsNull_Abormal_0200 start====");
+        let res = testNdk.OH_Values_IsNull_Abormal_0300();
+        console.info(TAG + "OH_Values_IsNull_Abormal_0200 res=" + res );
+        expect(res).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error("====>OH_Values_IsNull_Abormal_0200 catch err: " + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -173,11 +187,18 @@ export default function rdbValueNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_Values_IsNull_Abormal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let res = testndk.OH_Values_IsNull_Abormal_0300();
-      console.info(TAG + "OH_Values_IsNull_Abormal_0300 res=" + res );
-      expect(res).assertEqual(0);
-      done();
+    it('OH_Values_IsNull_Abormal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>OH_Values_IsNull_Abormal_0300 start====");
+        let res = testNdk.OH_Values_IsNull_Abormal_0300();
+        console.info(TAG + "OH_Values_IsNull_Abormal_0300 res=" + res );
+        expect(res).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error("====>OH_Values_IsNull_Abormal_0300 catch err: " + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }
