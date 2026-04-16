@@ -45,7 +45,7 @@ struct GetCurrentLocalPosition_MouseEvent {
                 if (event) {
                   let localPos: Coordinate2D | undefined = event?.getCurrentLocalPosition?.();
                   this.positionText =
-                    `getCurrentLocalPosition获取的坐标:x:${localPos?.x},y:${localPos?.y}`;
+                    `getCurrentLocalPosition获取的坐标:x:${Math.round(localPos?.x??0)},y:${Math.round(localPos?.y??0)}`;
                 }
 
               })
