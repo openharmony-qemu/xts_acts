@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -246,11 +246,124 @@ export default function BuiltinsBigIntPowTest(): void {
     it('builtinsBigIntPowTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const base = new BigInt(3);
       const exponent = new BigInt(4);
-      
+
       const result = base.pow(exponent);
       const expected = new BigInt(81);
 
       expect(result.positive()).assertTrue();
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1300
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1300
+     * @tc.desc    Verify pow with negative base and odd exponent returns negative result
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-2);
+      const exponent = new BigInt(3);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(-8);
+
+      expect(result.negative()).assertTrue();
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1400
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1400
+     * @tc.desc    Verify pow with negative base and even exponent returns positive result
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-2);
+      const exponent = new BigInt(4);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(16);
+
+      expect(result.positive()).assertTrue();
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1500
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1500
+     * @tc.desc    Verify pow with negative base and exponent 0 returns 1
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-5);
+      const exponent = new BigInt(0);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(1);
+
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1600
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1600
+     * @tc.desc    Verify pow with negative base and exponent 1 returns same negative value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-7);
+      const exponent = new BigInt(1);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(-7);
+
+      expect(result.negative()).assertTrue();
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1700
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1700
+     * @tc.desc    Verify pow with large negative base and small even exponent
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-100);
+      const exponent = new BigInt(2);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(10000);
+
+      expect(result.positive()).assertTrue();
+      expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntPowTest1800
+     * @tc.number  SUB_BUILTINS_BIGINT_POW_TEST_1800
+     * @tc.desc    Verify pow with large negative base and small odd exponent
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntPowTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const base = new BigInt(-10);
+      const exponent = new BigInt(3);
+
+      const result = base.pow(exponent);
+      const expected = new BigInt(-1000);
+
+      expect(result.negative()).assertTrue();
       expect(result.equals(expected)).assertTrue();
     });
   });

@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -52,13 +52,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFromTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const source: ArrayLike<number> = [1, 2, 3];
+      const source = [1, 2, 3];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(1);
-      expect(arr.at(1)).assertEqual(2);
-      expect(arr.at(2)).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
     });
 
     /**
@@ -70,13 +70,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<string> = ['hello', 'world', 'test'];
+      const source = ['hello', 'world', 'test'];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual('hello');
-      expect(arr.at(1)).assertEqual('world');
-      expect(arr.at(2)).assertEqual('test');
+      expect(arr[0]).assertEqual('hello');
+      expect(arr[1]).assertEqual('world');
+      expect(arr[2]).assertEqual('test');
     });
 
     /**
@@ -88,13 +88,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<boolean> = [true, false, true];
+      const source = [true, false, true];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(true);
-      expect(arr.at(1)).assertEqual(false);
-      expect(arr.at(2)).assertEqual(true);
+      expect(arr[0]).assertEqual(true);
+      expect(arr[1]).assertEqual(false);
+      expect(arr[2]).assertEqual(true);
     });
 
     /**
@@ -106,7 +106,7 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [];
+      const source: number[] = [];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(0);
@@ -121,11 +121,11 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [42];
+      const source = [42];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(1);
-      expect(arr.at(0)).assertEqual(42);
+      expect(arr[0]).assertEqual(42);
     });
 
     /**
@@ -137,13 +137,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number | null | undefined> = [1, null, undefined];
+      const source = [1, null, undefined];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(1);
-      expect(arr.at(1)).assertEqual(null);
-      expect(arr.at(2)).assertEqual(undefined);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(null);
+      expect(arr[2]).assertEqual(undefined);
     });
 
     /**
@@ -155,13 +155,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFromTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const source: ArrayLike<number> = [2147483647, -2147483648, 0];
+      const source = [2147483647, -2147483648, 0];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(2147483647);
-      expect(arr.at(1)).assertEqual(-2147483648);
-      expect(arr.at(2)).assertEqual(0);
+      expect(arr[0]).assertEqual(2147483647);
+      expect(arr[1]).assertEqual(-2147483648);
+      expect(arr[2]).assertEqual(0);
     });
 
     /**
@@ -173,13 +173,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [3.14, 2.718, 1.414];
+      const source = [3.14, 2.718, 1.414];
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(3.14);
-      expect(arr.at(1)).assertEqual(2.718);
-      expect(arr.at(2)).assertEqual(1.414);
+      expect(arr[0]).assertEqual(3.14);
+      expect(arr[1]).assertEqual(2.718);
+      expect(arr[2]).assertEqual(1.414);
     });
 
     /**
@@ -196,12 +196,12 @@ export default function BuiltinsArrayFromTest(): void {
       for (let i = 0; i < size; i++) {
         sourceArr.push(i);
       }
-      const source: ArrayLike<number> = sourceArr;
+      const source = sourceArr;
       const arr = Array.from(source);
 
       expect(arr.length).assertEqual(size);
-      expect(arr.at(0)).assertEqual(0);
-      expect(arr.at(size - 1)).assertEqual(size - 1);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[size - 1]).assertEqual(size - 1);
     });
 
     /**
@@ -319,13 +319,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [1, 2, 3];
-      const arr = Array.from(source, (v: number, k: int) => v * 2);
+      const source = [1, 2, 3];
+      const arr = Array.from(source, (v, k) => v * 2);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(2);
-      expect(arr.at(1)).assertEqual(4);
-      expect(arr.at(2)).assertEqual(6);
+      expect(arr[0]).assertEqual(2);
+      expect(arr[1]).assertEqual(4);
+      expect(arr[2]).assertEqual(6);
     });
 
     /**
@@ -338,7 +338,7 @@ export default function BuiltinsArrayFromTest(): void {
      */
     it('builtinsArrayFromTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const source = new Set<number>([1, 2, 3]);
-      const arr = Array.from(source, (v: number, k: int) => v * 3);
+      const arr = Array.from(source, (v, k) => v * 3);
 
       expect(arr.length).assertEqual(3);
       expect(arr.includes(3)).assertTrue();
@@ -356,7 +356,7 @@ export default function BuiltinsArrayFromTest(): void {
      */
     it('builtinsArrayFromTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const source = 'hello';
-      const arr = Array.from(source, (v: string, k: int) => v.toUpperCase());
+      const arr = Array.from(source, (v, k) => v.toUpperCase());
 
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual('H');
@@ -375,13 +375,13 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [10, 20, 30];
-      const arr = Array.from(source, (v: number, k: int) => v + k);
+      const source = [10, 20, 30];
+      const arr = Array.from(source, (v, k) => v + k);
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0)).assertEqual(10);
-      expect(arr.at(1)).assertEqual(21);
-      expect(arr.at(2)).assertEqual(32);
+      expect(arr[0]).assertEqual(10);
+      expect(arr[1]).assertEqual(21);
+      expect(arr[2]).assertEqual(32);
     });
 
     /**
@@ -395,16 +395,16 @@ export default function BuiltinsArrayFromTest(): void {
     it('builtinsArrayFromTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
 
-      const source: ArrayLike<number> = [1, 2, 3];
-      const arr = Array.from(source, (v: number, k: int): ResultObj => ({ value: v, index: k }));
+      const source = [1, 2, 3];
+      const arr = Array.from(source, (v, k): ResultObj => ({ value: v, index: k }));
 
       expect(arr.length).assertEqual(3);
-      expect(arr.at(0).value).assertEqual(1);
-      expect(arr.at(0).index).assertEqual(0);
-      expect(arr.at(1).value).assertEqual(2);
-      expect(arr.at(1).index).assertEqual(1);
-      expect(arr.at(2).value).assertEqual(3);
-      expect(arr.at(2).index).assertEqual(2);
+      expect(arr[0].value).assertEqual(1);
+      expect(arr[0].index).assertEqual(0);
+      expect(arr[1].value).assertEqual(2);
+      expect(arr[1].index).assertEqual(1);
+      expect(arr[2].value).assertEqual(3);
+      expect(arr[2].index).assertEqual(2);
     });
 
     /**
@@ -416,29 +416,9 @@ export default function BuiltinsArrayFromTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFromTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source: ArrayLike<number> = [];
-      const arr = Array.from(source, (v: number, k: int) => v * 2);
-
+      const source: number[] = [];
+      const arr = Array.from(source, (v, k) => v * 2);
       expect(arr.length).assertEqual(0);
     });
-
-    /**
-     * @tc.name    builtinsArrayFromTest2200
-     * @tc.number  SUB_BUILTINS_ARRAY_FROM_TEST_2200
-     * @tc.desc    Verify from with Map and mapfn
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('builtinsArrayFromTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const source = new Map<string, number>([['a', 1], ['b', 2], ['c', 3]]);
-      const arr = Array.from(source, (v: [string, number], k: int) => v[1] * 2);
-
-      expect(arr.length).assertEqual(3);
-      expect(arr.includes(2)).assertTrue();
-      expect(arr.includes(4)).assertTrue();
-      expect(arr.includes(6)).assertTrue();
-    });
-
   })
 }

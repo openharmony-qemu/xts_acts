@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2026 RKH Corp.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -1757,6 +1757,123 @@ export default function BuiltinsBigIntConstructorTest(): void {
       expect(bigIntValue.equals(new BigInt("-4294967295"))).assertTrue();
       expect(bigIntValue.negative()).assertTrue();
       expect(bigIntValue.toString(16).toLowerCase()).assertEqual("-ffffffff");
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9300
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9300
+     * @tc.desc  Test constructor from double beyond MAX_SAFE_INTEGER loses precision (9007199254740993 becomes 9007199254740992)
+     * @tc.type  FUNCTION
+     * @tc.size  SMALLTEST
+     * @tc.level LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const beyondSafe: double = 9007199254740993.0 as double;
+      const bigIntValue: BigInt = new BigInt(beyondSafe);
+
+      expect(bigIntValue.toString()).assertEqual("9007199254740992");
+      expect(bigIntValue.equals(new BigInt("9007199254740992"))).assertTrue();
+      expect(bigIntValue.equals(new BigInt("9007199254740993"))).assertFalse();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9400
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9400
+     * @tc.desc  Test constructor from very large double loses precision (1e20 has limited precision)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const largeDouble: double = 1e20 as double;
+      const bigIntValue: BigInt = new BigInt(largeDouble);
+
+      expect(bigIntValue.toString()).assertEqual("100000000000000000000");
+      expect(bigIntValue.equals(new BigInt("100000000000000000000"))).assertTrue();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9500
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9500
+     * @tc.desc  Test constructor from double at precision boundary (2^53 = 9007199254740992) preserves value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const atPrecisionBoundary: double = 9007199254740992.0 as double;
+      const bigIntValue: BigInt = new BigInt(atPrecisionBoundary);
+
+      expect(bigIntValue.toString()).assertEqual("9007199254740992");
+      expect(bigIntValue.equals(new BigInt("9007199254740992"))).assertTrue();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9600
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9600
+     * @tc.desc  Test constructor from double 2^53 + 2 is representable but 2^53 + 1 is not
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const two53Plus2: double = 9007199254740994.0 as double;
+      const bigIntValue: BigInt = new BigInt(two53Plus2);
+
+      expect(bigIntValue.toString()).assertEqual("9007199254740994");
+      expect(bigIntValue.equals(new BigInt("9007199254740994"))).assertTrue();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9700
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9700
+     * @tc.desc  Test constructor from negative double beyond MIN_SAFE_INTEGER loses precision
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const negBeyondSafe: double = -9007199254740993.0 as double;
+      const bigIntValue: BigInt = new BigInt(negBeyondSafe);
+
+      expect(bigIntValue.toString()).assertEqual("-9007199254740992");
+      expect(bigIntValue.equals(new BigInt("-9007199254740992"))).assertTrue();
+      expect(bigIntValue.equals(new BigInt("-9007199254740993"))).assertFalse();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9800
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9800
+     * @tc.desc  Test constructor from Number.MAX_VALUE results in approximate value due to precision loss
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const maxVal: double = 1.7976931348623157e+308 as double;
+      const bigIntValue: BigInt = new BigInt(maxVal);
+
+      expect(bigIntValue.positive()).assertTrue();
+      expect(bigIntValue.operatorGreaterThan(new BigInt("100000000000000000000000000000000000000"))).assertTrue();
+    });
+
+    /**
+     * @tc.name  bigIntConstructorPrecisionLossTest9900
+     * @tc.number  SUB_BUILTINS_BIGINT_CONSTRUCTOR_PRECISION_LOSS_TEST_9900
+     * @tc.desc  Test string constructor preserves full precision for numbers beyond double range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('bigIntConstructorPrecisionLossTest9900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const preciseStr: string = "1234567890123456789012345678901234567890";
+      const fromString: BigInt = new BigInt(preciseStr);
+
+      expect(fromString.toString()).assertEqual(preciseStr);
+
+      const beyondDoubleRange: string = "99999999999999999999999999999999999999999999999999";
+      const hugeBigInt: BigInt = new BigInt(beyondDoubleRange);
+      expect(hugeBigInt.toString()).assertEqual(beyondDoubleRange);
     });
 
   });

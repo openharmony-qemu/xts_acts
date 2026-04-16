@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -40,11 +40,11 @@ export default function BuiltinsArrayEntriesTest(): void {
       const iterator = arr.entries();
 
       const expected = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]];
-      let result: [int, number][] = [];
+      let result: [number, number][] = [];
 
       let next = iterator.next();
       while (!next.done) {
-        result.push(next.value as [int, number]);
+        result.push(next.value as [number, number]);
         next = iterator.next();
       }
 
@@ -86,8 +86,8 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      expect((first.value as [int, number])[0]).assertEqual(0);
-      expect((first.value as [int, number])[1]).assertEqual(42);
+      expect((first.value as [number, number])[0]).assertEqual(0);
+      expect((first.value as [number, number])[1]).assertEqual(42);
 
       const second = iterator.next();
       expect(second.done).assertEqual(true);
@@ -106,7 +106,7 @@ export default function BuiltinsArrayEntriesTest(): void {
       const iterator = arr.entries();
 
       const expected = [[0, "apple"], [1, "banana"], [2, "cherry"]];
-      let result: [int, string][] = [];
+      let result: [number, string][] = [];
 
       for (let entry of iterator) {
         result.push(entry);
@@ -132,11 +132,11 @@ export default function BuiltinsArrayEntriesTest(): void {
       const iterator = arr.entries();
 
       const expected = [[0, true], [1, false], [2, true]];
-      let result: [int, boolean][] = [];
+      let result: [number, boolean][] = [];
 
       let next = iterator.next();
       while (!next.done) {
-        result.push(next.value as [int, boolean]);
+        result.push(next.value as [number, boolean]);
         next = iterator.next();
       }
 
@@ -164,8 +164,8 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = selfIterator.next();
       expect(first.done).assertEqual(false);
-      expect((first.value as [int, number])[0]).assertEqual(0);
-      expect((first.value as [int, number])[1]).assertEqual(1);
+      expect((first.value as [number, number])[0]).assertEqual(0);
+      expect((first.value as [number, number])[1]).assertEqual(1);
     });
 
     /**
@@ -183,14 +183,14 @@ export default function BuiltinsArrayEntriesTest(): void {
       // First element
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      expect((first.value as [int, number])[0]).assertEqual(0);
-      expect((first.value as [int, number])[1]).assertEqual(1);
+      expect((first.value as [number, number])[0]).assertEqual(0);
+      expect((first.value as [number, number])[1]).assertEqual(1);
 
       // Second element
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      expect((second.value as [int, number])[0]).assertEqual(1);
-      expect((second.value as [int, number])[1]).assertEqual(2);
+      expect((second.value as [number, number])[0]).assertEqual(1);
+      expect((second.value as [number, number])[1]).assertEqual(2);
 
       // Beyond array length
       const third = iterator.next();

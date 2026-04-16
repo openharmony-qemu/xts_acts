@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -51,7 +51,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(arr.at(0)).assertEqual(1);
       expect(arr.at(1)).assertEqual(2);
       expect(arr.at(2)).assertEqual(3);
@@ -70,7 +70,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(arr.at(-1)).assertEqual(3);
       expect(arr.at(-2)).assertEqual(2);
       expect(arr.at(-3)).assertEqual(1);
@@ -89,7 +89,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(() => {
         arr.at(3);
       }).assertThrow('Invalid index');
@@ -108,7 +108,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(() => {
         arr.at(-4);
       }).assertThrow('Invalid index');
@@ -127,7 +127,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(() => {
         arr.at(-2147483648);
       }).assertThrow('Invalid index');
@@ -146,7 +146,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
-      
+
       expect(() => {
         arr.at(2147483647);
       }).assertThrow('Invalid index');
@@ -165,7 +165,7 @@ export default function BuiltinsArrayAtTest(): void {
       arr[0] = 'a';
       arr[1] = 'b';
       arr[2] = 'c';
-      
+
       expect(arr.at(0)).assertEqual('a');
       expect(arr.at(-1)).assertEqual('c');
     });
@@ -181,14 +181,14 @@ export default function BuiltinsArrayAtTest(): void {
     it('builtinsArrayAtTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<number>(1);
       arr[0] = 42;
-      
+
       expect(arr.at(0)).assertEqual(42);
       expect(arr.at(-1)).assertEqual(42);
-      
+
       expect(() => {
         arr.at(1);
       }).assertThrow('Invalid index');
-      
+
       expect(() => {
         arr.at(-2);
       }).assertThrow('Invalid index');

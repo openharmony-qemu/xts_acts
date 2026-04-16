@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -157,14 +157,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest0800
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_0800
+     * @tc.name    builtinsDataViewConstructorTest0700
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_0700
      * @tc.desc    Verify constructor with integer extreme values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsDataViewConstructorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, () => {
+    it('builtinsDataViewConstructorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, () => {
       const buffer = new ArrayBuffer(8);
       const intMin = -2147483648;
       const intMax = 2147483647;
@@ -207,14 +207,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1200
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1200
+     * @tc.name    builtinsDataViewConstructorTest0800
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_0800
      * @tc.desc    Verify constructor with byteOffset equal to buffer size
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsDataViewConstructorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsDataViewConstructorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
       const dataView = new DataView(buffer, 8, 0);
       expect(dataView.buffer).assertEqual(buffer);
@@ -223,14 +223,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1300
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1300
+     * @tc.name    builtinsDataViewConstructorTest0900
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_0900
      * @tc.desc    Verify constructor with zero byteLength
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsDataViewConstructorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsDataViewConstructorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
       const dataView = new DataView(buffer, 2, 0);
       expect(dataView.buffer).assertEqual(buffer);
@@ -239,14 +239,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1400
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1400
+     * @tc.name    builtinsDataViewConstructorTest1000
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1000
      * @tc.desc    Verify constructor with empty buffer
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsDataViewConstructorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsDataViewConstructorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(0);
       const dataView = new DataView(buffer);
       expect(dataView.buffer).assertEqual(buffer);
@@ -255,14 +255,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1500
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1500
+     * @tc.name    builtinsDataViewConstructorTest1100
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1100
      * @tc.desc    Verify constructor with empty buffer and zero offset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsDataViewConstructorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsDataViewConstructorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(0);
       const dataView = new DataView(buffer, 0, 0);
       expect(dataView.buffer).assertEqual(buffer);
@@ -271,14 +271,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1600
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1600
+     * @tc.name    builtinsDataViewConstructorTest1200
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1200
      * @tc.desc    Verify constructor with large valid byteOffset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsDataViewConstructorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsDataViewConstructorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const largeSize = 1024 * 1024;
       const buffer = new ArrayBuffer(largeSize);
       const offset = largeSize / 2;
@@ -290,14 +290,14 @@ export default function BuiltinsDataViewConstructorTest() {
     });
 
     /**
-     * @tc.name    builtinsDataViewConstructorTest1700
-     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1700
+     * @tc.name    builtinsDataViewConstructorTest1300
+     * @tc.number  SUB_BUILTINS_DATAVIEW_CONSTRUCTOR_TEST_1300
      * @tc.desc    Verify constructor with boundary and edge case values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsDataViewConstructorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, () => {
+    it('builtinsDataViewConstructorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, () => {
       const buffer = new ArrayBuffer(10);
 
       const intOffsets = [0, 1, 9, 10, 11];

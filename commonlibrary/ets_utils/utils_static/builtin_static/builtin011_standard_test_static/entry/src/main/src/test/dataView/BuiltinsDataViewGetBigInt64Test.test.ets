@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -229,7 +229,7 @@ export default function BuiltinsDataViewGetBigInt64Test() {
     it('builtinsDataViewGetBigInt64Test0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(56);
       const dataView = new DataView(buffer);
-      const testValues = [BigInt(0), BigInt(1), BigInt(-1), BigInt('0x7FFFFFFFFFFFFFFF'), -BigInt('0x8000000000000000'), BigInt('0x123456789ABCDEF'), -BigInt('0x123456789ABCDEF')];
+      const testValues = [0n, 1n, -1n, BigInt('0x7FFFFFFFFFFFFFFF'), -BigInt('0x8000000000000000'), BigInt('0x123456789ABCDEF'), -BigInt('0x123456789ABCDEF')];
       for (let i = 0; i < testValues.length; i++) {
         const value = testValues[i];
         dataView.setBigInt64(i * 8, value);

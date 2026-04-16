@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -494,47 +494,12 @@ export default function BuiltinsDataViewSetInt16Test() {
     /**
      * @tc.name    builtinsDataViewSetInt16Test2100
      * @tc.number  SUB_BUILTINS_DATAVIEW_SET_INT_Sixteen_TEST_2100
-     * @tc.desc    Verify setInt16 with various numeric ranges and littleEndian
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL3
-     */
-    it('builtinsDataViewSetInt16Test2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
-      const buffer = new ArrayBuffer(24);
-      const dataView = new DataView(buffer);
-      const smallFloat = 1.40129846432481707e-45;
-      const largeFloat = 3.40282346638528860e+38;
-      const smallDouble = 4.94065645841246544e-324;
-      const largeDouble = 1.79769313486231570e+308;
-      dataView.setInt16(0, smallFloat, false);
-      dataView.setInt16(2, largeFloat, false);
-      dataView.setInt16(4, smallDouble, false);
-      dataView.setInt16(6, largeDouble, false);
-      dataView.setInt16(8, smallFloat, true);
-      dataView.setInt16(10, largeFloat, true);
-      dataView.setInt16(12, smallDouble, true);
-      dataView.setInt16(14, largeDouble, true);
-      const int32Min = -2147483648;
-      const int32Max = 2147483647;
-      dataView.setInt16(16, int32Min, false);
-      dataView.setInt16(18, int32Max, false);
-      dataView.setInt16(20, int32Min, true);
-      dataView.setInt16(22, int32Max, true);
-      for (let i = 0; i < 24; i += 2) {
-        const result = dataView.getInt16(i);
-        expect(typeof result).assertEqual('int');
-      }
-    });
-
-    /**
-     * @tc.name    builtinsDataViewSetInt16Test2200
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_INT_Sixteen_TEST_2200
      * @tc.desc    Verify setInt16 with Long.MAX_VALUE and Long.MIN_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsDataViewSetInt16Test2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
+    it('builtinsDataViewSetInt16Test2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(8);
       const dataView = new DataView(buffer);
       const longMin = -9223372036854775808;

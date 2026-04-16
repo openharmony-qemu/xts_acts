@@ -127,7 +127,7 @@ import BuiltinsStackTraceTest from "./stackTrace/BuiltinsStackTraceTest.test";
 // Unsafe tests
 import BuiltinsMemoryWriteTest from "./unsafe/BuiltinsMemoryWriteTest.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   // BigInt tests
   BuiltinsBigIntDoubleValueTest();
   BuiltinsBigIntGetLongTest();

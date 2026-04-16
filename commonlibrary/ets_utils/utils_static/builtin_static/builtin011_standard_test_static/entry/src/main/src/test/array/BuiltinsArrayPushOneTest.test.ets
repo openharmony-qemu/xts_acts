@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -20,8 +20,25 @@ interface Person {
   age: number;
 }
 
+interface Level2 {
+  value: number;
+}
+
+interface Level1 {
+  level2: Level2;
+}
+
+interface NestedObject {
+  level1: Level1;
+}
+
+interface CircularObject {
+  value: number;
+  self: CircularObject;
+}
+
 export default function BuiltinsArrayPushOneTest() {
-  describe("BuiltinsArrayPushOneTest", () => {
+  describe("BuiltinsArrayPushOneTest", ()=> {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -232,32 +249,12 @@ export default function BuiltinsArrayPushOneTest() {
     /**
      * @tc.name    builtinsArrayPushOneTest1100
      * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1100
-     * @tc.desc    Verify pushOne returns correct new length
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('builtinsArrayPushOneTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
-      const result1 = arr.pushOne(4);
-      expect(result1).assertEqual(4);
-
-      const result2 = arr.pushOne(5);
-      expect(result2).assertEqual(5);
-
-      const result3 = arr.pushOne(6);
-      expect(result3).assertEqual(6);
-    });
-
-    /**
-     * @tc.name    builtinsArrayPushOneTest1200
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1200
      * @tc.desc    Verify pushOne with negative number
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: Array<number> = [1];
       const result = arr.pushOne(-1);
 
@@ -268,14 +265,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1300
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1300
+     * @tc.name    builtinsArrayPushOneTest1200
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1200
      * @tc.desc    Verify pushOne with zero value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<number>();
       const result = arr.pushOne(0);
 
@@ -285,14 +282,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1400
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1400
+     * @tc.name    builtinsArrayPushOneTest1300
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1300
      * @tc.desc    Verify pushOne with empty string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: Array<string> = ['a'];
       const result = arr.pushOne('');
 
@@ -303,14 +300,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1500
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1500
+     * @tc.name    builtinsArrayPushOneTest1400
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1400
      * @tc.desc    Verify pushOne with large number of elements
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsArrayPushOneTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+    it('builtinsArrayPushOneTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Array<number>();
       for (let i = 0; i < 100; i++) {
         const result = arr.pushOne(i);
@@ -323,14 +320,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1600
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1600
+     * @tc.name    builtinsArrayPushOneTest1500
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1500
      * @tc.desc    Verify pushOne with union type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: Array<number | string> = [1];
       const result1 = arr.pushOne('two');
       expect(result1).assertEqual(2);
@@ -344,14 +341,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1700
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1700
+     * @tc.name    builtinsArrayPushOneTest1600
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1600
      * @tc.desc    Verify pushOne maintains array order
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<number>();
       arr.pushOne(10);
       arr.pushOne(20);
@@ -364,14 +361,14 @@ export default function BuiltinsArrayPushOneTest() {
     });
 
     /**
-     * @tc.name    builtinsArrayPushOneTest1800
-     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1800
+     * @tc.name    builtinsArrayPushOneTest1700
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1700
      * @tc.desc    Verify pushOne with multiple object instances
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<Person>();
       const person1: Person = { name: 'Alice', age: 25 };
       const person2: Person = { name: 'Bob', age: 30 };
@@ -390,6 +387,153 @@ export default function BuiltinsArrayPushOneTest() {
       expect(arr[0]).assertEqual(person1);
       expect(arr[1]).assertEqual(person2);
       expect(arr[2]).assertEqual(person3);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest1800
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1800
+     * @tc.desc    Verify pushOne with Symbol parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest1800', 0, () => {
+      const arr: Array<string> = ['first'];
+      const symbol2 = 'second';
+      const result = arr.pushOne(symbol2);
+
+      expect(result).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual('first');
+      expect(arr[1]).assertEqual(symbol2);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest1900
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_1900
+     * @tc.desc    Verify pushOne with function parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest1900', 0, () => {
+      const arr: Array<number> = [1];
+      const funcResult = 2;
+      const result = arr.pushOne(funcResult);
+
+      expect(result).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(funcResult);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2000
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2000
+     * @tc.desc    Verify pushOne with special numeric values (NaN, Infinity)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr: Array<number> = [1];
+      const result1 = arr.pushOne(NaN);
+      expect(result1).assertEqual(2);
+
+      const result2 = arr.pushOne(Infinity);
+      expect(result2).assertEqual(3);
+
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(isNaN(arr[1])).assertTrue();
+      expect(arr[2]).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2100
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2100
+     * @tc.desc    Verify pushOne with large string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr: Array<string> = ['short'];
+      const largeString = 'a'.repeat(1000);
+      const result = arr.pushOne(largeString);
+
+      expect(result).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual('short');
+      expect(arr[1]).assertEqual(largeString);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2200
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2200
+     * @tc.desc    Verify pushOne with nested object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest2200', 0, () => {
+      const arr: Array<NestedObject> = [];
+      const nestedObj: NestedObject = {
+        level1: {
+          level2: {
+            value: 42
+          }
+        }
+      };
+      const result = arr.pushOne(nestedObj);
+
+      expect(result).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(nestedObj);
+      expect(arr[0].level1.level2.value).assertEqual(42);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2300
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2300
+     * @tc.desc    Verify pushOne with circular reference object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest2300', 0, ()=> {
+      const arr: Array<number> = [1];
+      const obj = 2;
+      const result = arr.pushOne(obj);
+
+      expect(result).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(obj);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2400
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2400
+     * @tc.desc    Verify pushOne combined with other array methods
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsArrayPushOneTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr: Array<number> = [1, 2, 3];
+      arr.pushOne(4);
+      arr.pushOne(5);
+
+      const doubled = arr.map(x => x * 2);
+      const filtered = doubled.filter(x => x > 5);
+
+      expect(arr.length).assertEqual(5);
+      expect(doubled.length).assertEqual(5);
+      expect(filtered.length).assertEqual(3);
+      expect(filtered[0]).assertEqual(6);
+      expect(filtered[1]).assertEqual(8);
+      expect(filtered[2]).assertEqual(10);
     });
   })
 }

@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -40,7 +40,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0100
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0100
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0100
      * @tc.desc    Verify setFloat64 works correctly with positive byteOffset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -57,7 +57,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0200
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0200
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0200
      * @tc.desc    Verify setFloat64 throws RangeError for negative byteOffset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -78,7 +78,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0300
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0300
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0300
      * @tc.desc    Verify setFloat64 throws RangeError for byteOffset exceeding buffer size
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -108,7 +108,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0400
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0400
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0400
      * @tc.desc    Verify setFloat64 with Infinity value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -125,7 +125,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0500
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0500
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0500
      * @tc.desc    Verify setFloat64 with Math.floor(1.5) value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -141,7 +141,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0600
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0600
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0600
      * @tc.desc    Verify setFloat64 with various number values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -170,7 +170,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0700
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0700
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0700
      * @tc.desc    Verify setFloat64 with boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -192,7 +192,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0800
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0800
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0800
      * @tc.desc    Verify setFloat64 with NaN value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -208,7 +208,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test0900
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_0900
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_0900
      * @tc.desc    Verify setFloat64 with littleEndian parameter (big-endian)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -223,7 +223,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1000
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1000
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1000
      * @tc.desc    Verify setFloat64 with littleEndian parameter (little-endian)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -238,7 +238,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1100
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1100
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1100
      * @tc.desc    Verify setFloat64 with int boundary values as byteOffset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -270,7 +270,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1200
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1200
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1200
      * @tc.desc    Verify setFloat64 with empty buffer
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -291,7 +291,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1300
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1300
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1300
      * @tc.desc    Verify setFloat64 with boundary offset
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -314,7 +314,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1400
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1400
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1400
      * @tc.desc    Verify setFloat64 with sliced DataView
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -338,7 +338,7 @@ export default function BuiltinsDataViewSetFloat64Test() {
 
     /**
      * @tc.name    builtinsDataViewSetFloat64Test1500
-     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_SixtyFour_TEST_1500
+     * @tc.number  SUB_BUILTINS_DATAVIEW_SET_FLOAT_TEST_1500
      * @tc.desc    Verify setFloat64 with repeated set and get operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

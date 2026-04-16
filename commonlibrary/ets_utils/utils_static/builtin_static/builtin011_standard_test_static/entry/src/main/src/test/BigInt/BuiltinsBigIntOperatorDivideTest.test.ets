@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (c) 2026 RKH Corp.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -226,11 +226,74 @@ export default function BuiltinsBigIntOperatorDivideTest(): void {
     it('builtinsBigIntOperatorDivideTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bigInt1 = new BigInt(100);
       const bigInt2 = new BigInt(30);
-      
+
       const result = bigInt1.operatorDivide(bigInt2);
       const expected = new BigInt(3);
 
       expect(result.equals(expected)).assertTrue();
+    });
+
+    /**
+     * @tc.name    builtinsBigIntOperatorDivideTest1200
+     * @tc.number  SUB_BUILTINS_BIGINT_OPERATOR_DIVIDE_TEST_1200
+     * @tc.desc    Verify operatorDivide by zero throws RangeError
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntOperatorDivideTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const bigInt1 = new BigInt(100);
+      const bigInt2 = new BigInt(0);
+
+      let threwException = "";
+      try {
+        bigInt1.operatorDivide(bigInt2);
+      } catch (e) {
+        threwException = e.name;
+      }
+      expect(threwException).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.name    builtinsBigIntOperatorDivideTest1300
+     * @tc.number  SUB_BUILTINS_BIGINT_OPERATOR_DIVIDE_TEST_1300
+     * @tc.desc    Verify operatorDivide zero by zero throws RangeError
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntOperatorDivideTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const bigInt1 = new BigInt(0);
+      const bigInt2 = new BigInt(0);
+
+      let threwException = "";
+      try {
+        bigInt1.operatorDivide(bigInt2);
+      } catch (e) {
+        threwException = e.name;
+      }
+      expect(threwException).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.name    builtinsBigIntOperatorDivideTest1400
+     * @tc.number  SUB_BUILTINS_BIGINT_OPERATOR_DIVIDE_TEST_1400
+     * @tc.desc    Verify operatorDivide negative number by zero throws RangeError
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('builtinsBigIntOperatorDivideTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const bigInt1 = new BigInt(-100);
+      const bigInt2 = new BigInt(0);
+
+      let threwException = "";
+      try {
+        bigInt1.operatorDivide(bigInt2);
+      } catch (e) {
+        threwException = e.name;
+      }
+      expect(threwException).assertEqual("RangeError");
     });
 
   });
