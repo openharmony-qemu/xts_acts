@@ -698,7 +698,7 @@ export default function GraphicTextAPI26() {
           done();
         }
       })
-      
+
     /**
      * @tc.name   testGetProcessStateInitStatic
      * @tc.number SUB_GRAPHIC_Paragraph_getProcessStateInitStatic_0100
@@ -1376,7 +1376,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testGetParagraphStyleAPI26PropertiesStatic
-     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleAPI26PropertiesStatic_0800
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStylePropertiesStatic_0800
      * @tc.desc   Test Paragraph getParagraphStyle returns API 26 properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -1370,7 +1370,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testGetParagraphStyleAPI26Properties
-     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleAPI26Properties_0800
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleProperties_0800
      * @tc.desc   Test Paragraph getParagraphStyle returns API 26 properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
