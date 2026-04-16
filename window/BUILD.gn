@@ -33,6 +33,7 @@ group("window") {
     "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
     "ActsWindowLifeCycleTestStatic:ActsWindowLifeCycleStaticTest",
     "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest",
-    "ActsWindowUiExtensionTestStatic:ActsWindowUiExtensionTestStaticTest"
+    "ActsWindowUiExtensionTestStatic:ActsWindowUiExtensionTestStaticTest",
+    "ActsWindowFloatViewTest:ActsWindowFloatViewTest"
   ]
 }
