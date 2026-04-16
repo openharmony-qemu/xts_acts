@@ -3554,7 +3554,7 @@ function testActiveSim() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it("test_ActiveSim_success_0111", Level.LEVEL0, async (done: Function) => {
+  it("test_ActiveSim_policy_conflict_0111", Level.LEVEL0, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       telephonyManager.setSimDisabled(SELFWANT, 0);
