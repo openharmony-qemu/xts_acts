@@ -55,7 +55,7 @@ export default function getCurrentLocalPositionTest_MouseEvent() {
       let button = await driver.findComponent(ON.id('Button01'));
       let point = await button.getBoundsCenter();
       await driver.mouseClick({x: point.x, y: point.y}, MouseButton.MOUSE_BUTTON_LEFT);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(1500);
 
       let strJson = getInspectorByKey('text01');
       let obj: ESObject = JSON.parse(strJson);
