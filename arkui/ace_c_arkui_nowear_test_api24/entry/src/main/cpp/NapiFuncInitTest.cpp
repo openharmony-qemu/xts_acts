@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
+#include "StrategyEnum.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
