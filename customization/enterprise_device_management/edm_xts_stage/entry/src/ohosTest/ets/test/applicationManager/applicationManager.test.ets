@@ -39,12 +39,14 @@ import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import { connection, statistics } from '@kit.NetworkKit';
+import restrictions from '@ohos.enterprise.restrictions';
 
 const APP_IDS_1: Array<string> = [
   "test_appid_1",
   "test_appid_2",
   "test_appid_3",
 ];
+const LABEL_NOTIFICATION = "notification";
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -9350,6 +9352,28 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAllowedNotificationBundles_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_1200
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_1200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_NOTIFICATION, true);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200010).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeAllowedNotificationBundles_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0100
      * @tc.desc   test removeAllowedNotificationBundles method with unActive admin
@@ -9698,6 +9722,27 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0800
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, -1);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
