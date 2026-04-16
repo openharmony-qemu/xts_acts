@@ -74,7 +74,7 @@ export default function HasMatchedCallLogTest() {
         let withinTime = 400;
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
         console.info(`${caseName} result: ${result}`);
-        expect(typeof result === 'boolean').assertTrue();
+        expect(result).assertFalae();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
@@ -100,9 +100,9 @@ export default function HasMatchedCallLogTest() {
         let phoneNumber = "13800000000";
         let minDuration = 10;
 
-        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, 86400);
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration);
         console.info(`${caseName} result: ${result}`);
-        expect(typeof result === 'boolean').assertTrue();
+        expect(result).assertFalse();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
@@ -128,6 +128,87 @@ export default function HasMatchedCallLogTest() {
         let minDuration = 10;
 
         let result = await contact.hasMatchedCallLog(context, null, minDuration);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog0700
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_0700
+     * @tc.desc   Test hasMatchedCallLog with empty phoneNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog0700';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, undefined, minDuration);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1400
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1400
+     * @tc.desc   Test hasMatchedCallLog with empty phoneNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1400';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, undefined, minDuration, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1600
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1600
+     * @tc.desc   Test hasMatchedCallLog with empty phoneNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1400';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, null, minDuration, 400);
         console.info(`${caseName} should throw error but not`);
         expect().assertFail();
         done();
@@ -166,6 +247,87 @@ export default function HasMatchedCallLogTest() {
     });
 
     /**
+     * @tc.name   testHasMatchedCallLog0800
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_0800
+     * @tc.desc   Test hasMatchedCallLog with invalid minDuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog0800';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, undefined);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1500
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1500
+     * @tc.desc   Test hasMatchedCallLog with invalid minDuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1500';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, undefined, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1700
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1700
+     * @tc.desc   Test hasMatchedCallLog with invalid minDuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1700';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, null, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testHasMatchedCallLog0500
      * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_0500
      * @tc.desc   Test hasMatchedCallLog with invalid withinTime
@@ -189,6 +351,146 @@ export default function HasMatchedCallLogTest() {
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
         expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog0900
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_0900
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog0900';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, undefined);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1000
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1000
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1000';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1100
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1100
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1100';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(undefined, phoneNumber, minDuration);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1200
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1200
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1200';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(null, phoneNumber, minDuration, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1300
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1300
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1300';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(undefined, phoneNumber, minDuration, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
         done();
       }
     });
