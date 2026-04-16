@@ -14,6 +14,8 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import text from "@ohos.graphics.text";
+import drawing from '@ohos.graphics.drawing';
+import image from '@ohos.multimedia.image';
 
 export default function GraphicTextAPI26() {
 
