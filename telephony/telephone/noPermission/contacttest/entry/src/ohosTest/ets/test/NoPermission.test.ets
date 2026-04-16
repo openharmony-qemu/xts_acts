@@ -1344,13 +1344,13 @@ export default function NoPermissionTest() {
     /**
      * @tc.name   testHasMatchedCallLog2100
      * @tc.number SUB_Telephony_Contact_testHasMatchedCallLog_2100
-     * @tc.desc   queryContactsCount and use Promise method as an asynchronous method
+     * @tc.desc   Test hasMatchedCallLog without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHasMatchedCallLog2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = "testHasMatchedCallLog2100";
+    it("testHasMatchedCallLog2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog2100';
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
@@ -1358,6 +1358,7 @@ export default function NoPermissionTest() {
         let minDuration = 10;
         let withinTime = 400;
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
+        console.info(`${caseName} result: ${result}`);
         expect().assertFail();
         done();
       } catch (error) {
@@ -1369,21 +1370,21 @@ export default function NoPermissionTest() {
 
     /**
      * @tc.name   testHasMatchedCallLog2200
-     * @tc.number SUB_Telephony_Contact_queryContactsCount_2200
-     * @tc.desc   queryContactsCount and use Promise method as an asynchronous method
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_2200
+     * @tc.desc   Test hasMatchedCallLog without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHasMatchedCallLog2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = "testHasMatchedCallLog2200";
+    it("testHasMatchedCallLog2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog2200';
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumber = "13800000000";
         let minDuration = 10;
-        let withinTime = 400;
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
+        console.info(`${caseName} result: ${result}`);
         expect().assertFail();
         done();
       } catch (error) {
