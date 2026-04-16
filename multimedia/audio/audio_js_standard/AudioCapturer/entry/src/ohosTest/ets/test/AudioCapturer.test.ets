@@ -6225,5 +6225,257 @@ export default function audioCapturer() {
       await audioCapturer.release();
       done();
     })
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000 
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000 
+ 	   * @tc.desc   SetMuteHint
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000';
+ 	     let audioStreamInfo: audio.AudioStreamInfo = {
+ 	       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	       channels: audio.AudioChannel.CHANNEL_2,
+ 	       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+ 	       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+ 	     }
+ 	     let audioCapturerInfo: audio.AudioCapturerInfo = {
+ 	       source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	       capturerFlags: 0
+ 	     }
+ 	     let audioCapturerOptions: audio.AudioCapturerOptions = {
+ 	       streamInfo: audioStreamInfo,
+ 	       capturerInfo: audioCapturerInfo
+ 	     }
+ 	     let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+ 	     expect(audioCapturer != undefined).assertTrue()
+ 	     try {
+ 	       await audioCapturer.start();
+         await audioCapturer.setMuteHint(true);
+         console.log(`${Tag}: SetMuteHint success!`);
+ 	 	      await audioCapturer.stop();
+ 	 	      await audioCapturer.release();
+ 	 	      console.log(`${Tag}: Capturer run Succee`);
+ 	 	    } catch (error) {
+ 	 	      console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
+ 	 	      expect(false).assertTrue();
+ 	 	    }
+ 	 	    done();
+ 	 	  })
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1100 
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1100 
+ 	   * @tc.desc   SetMuteHint
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1100';
+ 	     let audioStreamInfo: audio.AudioStreamInfo = {
+ 	       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	       channels: audio.AudioChannel.CHANNEL_2,
+ 	       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+ 	       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+ 	     }
+ 	     let audioCapturerInfo: audio.AudioCapturerInfo = {
+ 	       source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	       capturerFlags: 0
+ 	     }
+ 	     let audioCapturerOptions: audio.AudioCapturerOptions = {
+ 	       streamInfo: audioStreamInfo,
+ 	       capturerInfo: audioCapturerInfo
+ 	     }
+ 	     let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+ 	     expect(audioCapturer != undefined).assertTrue();
+ 	     try {
+ 	       await audioCapturer.start();
+ 	       await audioCapturer.setMuteHint(false);
+         console.log(`${Tag}: SetMuteHint success!`);
+ 	       await audioCapturer.stop();
+ 	       await audioCapturer.release();
+ 	       console.log(`${Tag}: Capturer run Succee`);
+ 	 	   } catch (error) {
+ 	 	      console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
+ 	        expect(false).assertTrue();
+ 	     }
+ 	     done();
+ 	   })
+     /**
+      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1200 
+      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1200 
+      * @tc.desc   SetMuteHint
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+      it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1200';
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+          capturerFlags: 0
+        }
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: audioStreamInfo,
+          capturerInfo: audioCapturerInfo
+        }
+        let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(audioCapturer != undefined).assertTrue()
+        console.log(`${Tag}: AudioCapturer created successfully`);
+        try {
+          await audioCapturer.setMuteHint(true);
+          console.log(`${Tag}: SetMuteHint success`);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.log(`${Tag}: Error occurred, message: ${(error as BusinessError).message}, code: ${(error as BusinessError).code}`);
+          expect((error as BusinessError).code).assertEqual(6800301);
+        } finally {
+          try {
+            await audioCapturer.release();
+            console.log(`${Tag}: Capturer released successfully`);
+          } catch (releaseError) {
+            console.log(`${Tag}: Release capturer failed: ${(releaseError as BusinessError).message}`);
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1000 
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1000 
+ 	   * @tc.desc   SetCapturerMuteHint
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+       let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1000';
+ 	     let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	     let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+ 	     let audioStreamInfo: audio.AudioStreamInfo = {
+ 	       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	       channels: audio.AudioChannel.CHANNEL_2,
+ 	       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+ 	       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+ 	     }
+ 	     let audioCapturerInfo: audio.AudioCapturerInfo = {
+ 	       source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	       capturerFlags: 0
+ 	     }
+ 	     let audioCapturerOptions: audio.AudioCapturerOptions = {
+ 	       streamInfo: audioStreamInfo,
+ 	       capturerInfo: audioCapturerInfo
+ 	     }
+ 	     let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+ 	     expect(audioCapturer != undefined).assertTrue()
+ 	     try {
+ 	       await audioCapturer.start()
+ 	       await audioSessionManager.setCapturerMuteHint(true);
+         console.log(`${Tag}: SetCapturerMuteHint success!`);
+ 	       await audioCapturer.stop();
+ 	       await audioCapturer.release();
+ 	       console.log(`${Tag}: Capturer run Succee`);
+ 	     } catch (error) {
+ 	       console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
+ 	       expect(false).assertTrue();
+ 	     }
+ 	     done();
+ 	   })
+ 	  /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1100 
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1100 
+ 	   * @tc.desc   SetCapturerMuteHint
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+       let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1100';
+ 	     let audioManager: audio.AudioManager = audio.getAudioManager();
+ 	     let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+ 	     let audioStreamInfo: audio.AudioStreamInfo = {
+ 	       samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	       channels: audio.AudioChannel.CHANNEL_2,
+ 	       sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+ 	       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+ 	     }
+ 	     let audioCapturerInfo: audio.AudioCapturerInfo = {
+ 	       source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	       capturerFlags: 0
+ 	     }
+ 	     let audioCapturerOptions: audio.AudioCapturerOptions = {
+ 	       streamInfo: audioStreamInfo,
+ 	       capturerInfo: audioCapturerInfo
+ 	     }
+ 	     let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+ 	     expect(audioCapturer != undefined).assertTrue()
+ 	     try {
+ 	       await audioCapturer.start()
+ 	       await audioSessionManager.setCapturerMuteHint(false);
+         console.log(`${Tag}: SetCapturerMuteHint success!`);
+ 	       await audioCapturer.stop();
+ 	       await audioCapturer.release();
+ 	       console.log(`${Tag}: Capturer run Succee`);
+ 	     } catch (error) {
+ 	       console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
+ 	       expect(false).assertTrue();
+ 	     }
+ 	     done();
+ 	   })
+ 	  /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1200 
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1200 
+     * @tc.desc   SetCapturerMuteHint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_SETCAPTURERMUTEHINT_1200';
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+        capturerFlags: 0
+      }
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+ 	    expect(audioCapturer != undefined).assertTrue()
+      console.log(`${Tag}: AudioCapturer created successfully`);
+      try {                
+        await audioSessionManager.setCapturerMuteHint(true);
+        console.log(`${Tag}: SetCapturerMuteHint success`);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.log(`${Tag}: Error occurred, message: ${(error as BusinessError).message}, code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(6800301);
+      } finally {
+        try {
+          await audioCapturer.release();
+          console.log(`${Tag}: Capturer released successfully`);
+        } catch (releaseError) {
+          console.log(`${Tag}: Release capturer failed: ${(releaseError as BusinessError).message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      }
+    })
   })
 }
