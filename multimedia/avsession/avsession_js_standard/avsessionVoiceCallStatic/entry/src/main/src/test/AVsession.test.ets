@@ -2272,9 +2272,7 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            session!.offCustomDataChange((data: Record<string, Object>) => {
-                console.info(`session off_customDataChange Successfully ${data}`);
-            });
+            session!.offCustomDataChange();
             console.info('session off_customDataChange end')
             await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
@@ -2315,11 +2313,9 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
             })
-            controller!.offCustomDataChange((data: Record<string, Object>) => {
-                console.info('controller off_customDataChange Successfully')
-            });
+            controller!.offCustomDataChange();
             console.info('controller off_customDataChange end')
-            await session!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata); 
             await Utils.msSleep(300);
             done();
         })

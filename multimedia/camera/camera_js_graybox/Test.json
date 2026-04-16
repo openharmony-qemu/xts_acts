@@ -1,9 +1,9 @@
 {
-    "description": "Configuration for photoAccess Tests",
+    "description": "Configuration for camera Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "99999999",
-        "bundle-name": "ohos.actsGrayBox.test",
+        "bundle-name": "ohos.actsGrayBoxCamera.test",
         "module-name": "entry_test",
         "shell-timeout": "99999999",
         "testcase-timeout": "99999999"
@@ -19,7 +19,7 @@
         },
         {
             "test-file-name": [
-                "ActsGrayBoxTest.hap"
+                "ActsCameraGrayBoxATest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
@@ -32,7 +32,7 @@
                 "power-shell wakeup",
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
-                "chmod 777 -R /data/app/el2/100/base/ohos.actsGrayBox.test/haps/entry_test"
+                "chmod 777 -R /data/app/el2/100/base/ohos.actsGrayBoxCamera.test/haps/entry_test"
             ]
         },
         {
@@ -57,4 +57,3 @@
         }
     ]
   }
-  

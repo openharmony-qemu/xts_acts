@@ -6,6 +6,7 @@
     "MainAbility/pages/enableClickSoundEffect/EnableClickSoundEffectTest",
     "MainAbility/pages/ellipsisModeTest/ellipsisModeCenter",
     "MainAbility/pages/ellipsisModeTest/ellipsisModeStart",
-    "MainAbility/pages/TextGetCharacter/TextGetCharacterTest"
+    "MainAbility/pages/TextGetCharacter/TextGetCharacterTest",
+    "MainAbility/pages/pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest"
   ]
 }

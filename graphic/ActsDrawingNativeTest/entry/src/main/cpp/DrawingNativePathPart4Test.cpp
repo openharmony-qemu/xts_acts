@@ -68,7 +68,7 @@ int TestPathGetPointDataNormal()
     EXPECT_EQ(points[1].y, 100.0f);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -93,7 +93,7 @@ int TestPathGetPointDataNull()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -114,7 +114,7 @@ int TestPathGetPointDatAbnormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -138,7 +138,7 @@ int TestPathGetPointDataMultipleCalls()
     }
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -172,7 +172,7 @@ int TestPathGetVerbDataNormal()
     EXPECT_EQ(verbs[DRAWING_NUMBER_5], CLOSE);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -203,7 +203,7 @@ int TestPathGetVerbDataNull()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -230,7 +230,7 @@ int TestPathGetVerbDataAbnormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -259,7 +259,7 @@ int TestPathGetVerbDataMultipleCalls()
     }
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -284,7 +284,7 @@ int TestPathGetConicWeightNormal()
     EXPECT_EQ(conicWeights[0], 0.5f);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -311,7 +311,7 @@ int TestPathGetConicWeightNull()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -336,7 +336,7 @@ int TestPathGetConicWeightAbnormal()
     EXPECT_EQ(conicWeights[0], 0.5f);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -363,7 +363,7 @@ int TestPathGetConicWeightMultipleCalls()
     }
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -386,7 +386,7 @@ int TestPathConvertToSvgStringNormal1()
     EXPECT_EQ(strcmp(str, "M0 0L100 100L0 0Z"), 0);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -419,7 +419,7 @@ int TestPathConvertToSvgStringNormal2()
     EXPECT_EQ(strcmp(str, "M0 0L100 100L0 0Z"), 0);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -444,7 +444,7 @@ int TestPathConvertToSvgStringNull()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -465,7 +465,7 @@ int TestPathConvertToSvgStringAbnormal()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -488,7 +488,7 @@ int TestPathConvertToSvgStringMultipleCalls()
     }
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing

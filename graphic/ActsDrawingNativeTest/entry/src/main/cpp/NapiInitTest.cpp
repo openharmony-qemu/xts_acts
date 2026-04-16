@@ -211,6 +211,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
     DECL_NAPI_DESC(DrawingPathPart4GetData),
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
+    DECL_NAPI_DESC(DrawingCanvasResetClip),
     DECL_NAPI_DESC(DrawingLattice),
     DECL_NAPI_DESC(DrawingRectPart2OtherOperations),
     DECL_NAPI_DESC(DrawingTypefaceIsBoldItalic),

@@ -82,6 +82,7 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestCanvasDrawSingleChaWithFeaturesAbNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -119,6 +120,7 @@ int TestCanvasDrawSingleChaWithFeaturesAbNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
 int TestCanvasDrawSingleChaWithFeaturesCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -141,6 +143,67 @@ int TestCanvasDrawSingleChaWithFeaturesCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestCanvasResetClipNormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipNull()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipMultipleCalls()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

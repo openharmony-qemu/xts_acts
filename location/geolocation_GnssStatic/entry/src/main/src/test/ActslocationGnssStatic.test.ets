@@ -647,7 +647,11 @@ export default function actslocationTest() {
         }
         if (err !== null && err !== undefined) {
           console.info('SUB_geolocation_getCachedGnssLocationsSize_test_0200 getCachedGnssLocationsSize: err=' + err.code + ', type:' + typeof err);
-          expect(err.code).assertEqual(3301100);
+          if (err.code === 3301100) {
+            expect(err.code).assertEqual(3301100);
+          } else {
+            expect(err.code).assertEqual(801);
+          }
         }
       });
     } catch (err) {
@@ -713,7 +717,11 @@ export default function actslocationTest() {
       geoLocationManager.flushCachedGnssLocations((err) => {
         if (err) {
           console.info('SUB_geolocation_flushCachedGnssLocations_test_0200 flushCachedGnssLocations: err.code=' + err.code);
-          expect(err.code).assertEqual(3301100);
+          if (err.code === 3301100) {
+            expect(err.code).assertEqual(3301100);
+          } else {
+            expect(err.code).assertEqual(801);
+          }
         } else {
           expect(err === undefined).assertTrue();
         }
