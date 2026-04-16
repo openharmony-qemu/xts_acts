@@ -13,34 +13,30 @@
  * limitations under the License.
  */
 
-#include <csignal>
+#include <signal.h>
 #include "functionalext.h"
 
-namespace {
-constexpr int K_EXPECTED_SIG_RT_MAX = 64;
-} // namespace
-
 /*
- * @tc.name      : LibcCurrentSigrtmax0100
+ * @tc.name      : libc_current_sigrtmax_0100
  * @tc.desc      : Verify that the number of available signals can be obtained
  * @tc.level     : Level 0
  */
-void LibcCurrentSigrtmax0100(void)
+void libc_current_sigrtmax_0100(void)
 {
     int result = __libc_current_sigrtmax();
-    EXPECT_EQ("LibcCurrentSigrtmax0100", result, K_EXPECTED_SIG_RT_MAX);
+    EXPECT_EQ("libc_current_sigrtmax_0100", result, 64);
 }
 
-static int LibcCurrentSigrtmaxTestWithArgs(int argc, char* argv[])
+static int __libc_current_sigrtmaxTest_with_args(int argc, char *argv[])
 {
-    LibcCurrentSigrtmax0100();
+    libc_current_sigrtmax_0100();
 
     return T_STATUS;
 }
 
-int LibcCurrentSigrtmaxTest(void)
+int __libc_current_sigrtmaxTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return LibcCurrentSigrtmaxTestWithArgs(1, libcArgvStub);
+    static char __libc_prog[] = "libc_test";
+    char *__libc_argv[] = { __libc_prog, NULL };
+    return __libc_current_sigrtmaxTest_with_args(1, __libc_argv);
 }

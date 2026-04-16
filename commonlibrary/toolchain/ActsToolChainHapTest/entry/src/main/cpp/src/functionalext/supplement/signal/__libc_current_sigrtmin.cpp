@@ -13,33 +13,29 @@
  * limitations under the License.
  */
 
-#include <csignal>
+#include <signal.h>
 #include "functionalext.h"
 
-namespace {
-constexpr int K_EXPECTED_SIG_RT_MIN = 35;
-} // namespace
-
 /*
- * @tc.name      : LibcCurrentSigrtmin0100
+ * @tc.name      : libc_current_sigrtmin_0100
  * @tc.desc      : Verify that the number of real-time signals can be obtained
  * @tc.level     : Level 0
  */
-void LibcCurrentSigrtmin0100(void)
+void libc_current_sigrtmin_0100(void)
 {
     int result = __libc_current_sigrtmin();
-    EXPECT_EQ("LibcCurrentSigrtmin0100", result, K_EXPECTED_SIG_RT_MIN);
+    EXPECT_EQ("libc_current_sigrtmin_0100", result, 35);
 }
 
-static int LibcCurrentSigrtminTestWithArgs(int argc, char* argv[])
+static int __libc_current_sigrtminTest_with_args(int argc, char *argv[])
 {
-    LibcCurrentSigrtmin0100();
+    libc_current_sigrtmin_0100();
     return T_STATUS;
 }
 
-int LibcCurrentSigrtminTest(void)
+int __libc_current_sigrtminTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return LibcCurrentSigrtminTestWithArgs(1, libcArgvStub);
+    static char __libc_prog[] = "libc_test";
+    char *__libc_argv[] = { __libc_prog, NULL };
+    return __libc_current_sigrtminTest_with_args(1, __libc_argv);
 }
