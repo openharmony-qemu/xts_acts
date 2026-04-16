@@ -5,96 +5,105 @@
 #include <arpa/inet.h>
 #include "test.h"
 
-static int digit(int c)
+static int Digit(int c)
 {
-	c-='0';
-	if (c>9) c-='a'-'0'-10;
-	return c;
+    c -= '0';
+    if (c > 9) {
+        c -= 'a' - '0' - 10;
+    }
+    return c;
 }
 
-static void tobin(void *d, char *s)
+static void Tobin(void *d, char *s)
 {
-	int i;
-	unsigned char *p = static_cast<unsigned char*>(d);
-	for (i=0; s[2*i]; i++) p[i] = digit(s[2*i])*16+digit(s[2*i+1]);
+    int i;
+    unsigned char *p = static_cast<unsigned char*>(d);
+    for (i = 0; s[2*i]; i++) {
+        p[i] = Digit(s[2*i]) * 16 + Digit(s[2*i+1]);
+    }
 }
 
-static void tohex(char *d, void *s, int n)
+static void Tohex(char *d, void *s, int n)
 {
-	int i;
-	unsigned char *p = static_cast<unsigned char*>(s);
-	for (i=0; i<n; i++) sprintf(d+2*i, "%02x", p[i]);
+    int i;
+    unsigned char *p = static_cast<unsigned char*>(s);
+    for (i = 0; i < n; i++) {
+        sprintf(d + 2 * i, "%02x", p[i]);
+    }
 }
 
 #define V6(src,ret,hex) do{\
-	int r; \
-	char binaddr[16]={0}; \
-	char hexaddr[40]={0}; \
-	char txtaddr[60]={0}; \
-	\
-	r=inet_pton(AF_INET6,src,binaddr); \
-	if (r!=ret) \
-		t_error("inet_pton(AF_INET6, "#src", addr) returned %d, want %d\n", r, ret); \
-	if (ret!=1) break; \
-	tohex(hexaddr,binaddr,16); \
-	if (strcmp(hexaddr,hex)) \
-		t_error("inet_pton(AF_INET6, "#src", addr) got addr %s, want %s\n", hexaddr, hex); \
-	\
-	tobin(binaddr,hex); \
-	if (inet_ntop(AF_INET6,binaddr,txtaddr,sizeof txtaddr)!=txtaddr) \
-		t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) did not return buf\n"); \
-	if (inet_pton(AF_INET6,txtaddr,binaddr)!=1) \
-		t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s, it is rejected by inet_pton\n", txtaddr); \
-	tohex(hexaddr,binaddr,16); \
-	if (strcmp(hexaddr,hex)) \
-		t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s that is %s, want %s\n", txtaddr, hexaddr, hex); \
-	if (strncmp(hex,"00000000000000000000ffff",24)==0 && !strchr(txtaddr,'.')) \
-		t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s, should be ipv4 mapped\n", txtaddr); \
+    int r; \
+    char binaddr[16]={0}; \
+    char hexaddr[40]={0}; \
+    char txtaddr[60]={0}; \
+    \
+    r = inet_pton(AF_INET6, src, binaddr); \
+    if (r != ret) \
+        t_error("inet_pton(AF_INET6, "#src", addr) returned %d, want %d\n", r, ret); \
+    if (ret != 1) break; \
+    Tohex(hexaddr, binaddr, 16); \
+    if (strcmp(hexaddr, hex)) \
+        t_error("inet_pton(AF_INET6, "#src", addr) got addr %s, want %s\n", hexaddr, hex); \
+    \
+    Tobin(binaddr, hex); \
+    if (inet_ntop(AF_INET6, binaddr, txtaddr, sizeof txtaddr) != txtaddr) \
+        t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) did not return buf\n"); \
+    if (inet_pton(AF_INET6, txtaddr, binaddr) != 1) \
+        t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s, it is rejected by inet_pton\n", txtaddr); \
+    Tohex(hexaddr, binaddr, 16); \
+    if (strcmp(hexaddr, hex)) \
+        t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s that is %s, want %s\n", txtaddr, hexaddr, hex); \
+    if (strncmp(hex, "00000000000000000000ffff", 24) == 0 && !strchr(txtaddr, '.')) \
+        t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s, should be ipv4 mapped\n", txtaddr); \
 }while(0);
 
 // ret and hex are the results of inet_pton and inet_addr respectively
 #define V4(src,ret,hex) do{\
-	int r; \
-	uint32_t a; \
-	struct in_addr in; \
-	char buf[20]={0}; \
-	char *p; \
-	\
-	a=inet_addr(src); \
-	tohex(buf,&a,4); \
-	if (strcmp(buf,hex)) \
-		t_error("inet_addr("#src") returned %s, want %s\n", buf, hex); \
-	\
-	r=inet_pton(AF_INET,src,&a); \
-	if (r!=ret) \
-		t_error("inet_pton(AF_INET, "#src", addr) returned %d, want %d\n", r, ret); \
-	\
-	if (ret!=1) break; \
-	\
-	tohex(buf,&a,4); \
-	if (strcmp(buf,hex)) \
-		t_error("inet_pton(AF_INET, "#src", addr) got addr %s, want %s\n", buf, hex); \
-	\
-	tobin(&a,hex); \
-	if (inet_ntop(AF_INET,&a,buf,sizeof buf)!=buf) \
-		t_error("inet_ntop(AF_INET, <"#hex">, buf, size) did not return buf\n"); \
-	if (strcmp(buf,src)) \
-		t_error("inet_ntop(AF_INET, <"#hex">, buf, size) got %s, want %s\n", buf, src); \
-	\
-	in.s_addr = a; \
-	p=inet_ntoa(in); \
-	if (strcmp(p,src)) \
-		t_error("inet_ntoa(<"#hex">) returned %s, want %s\n", p, src); \
+    int r; \
+    uint32_t a; \
+    struct in_addr in; \
+    char buf[20]={0}; \
+    char *p; \
+    \
+    a = inet_addr(src); \
+    Tohex(buf, &a, 4); \
+    if (strcmp(buf, hex)) \
+        t_error("inet_addr("#src") returned %s, want %s\n", buf, hex); \
+    \
+    r = inet_pton(AF_INET, src, &a); \
+    if (r != ret) \
+        t_error("inet_pton(AF_INET, "#src", addr) returned %d, want %d\n", r, ret); \
+    \
+    if (ret != 1) break; \
+\
+    Tohex(buf, &a, 4); \
+    if (strcmp(buf, hex)) \
+        t_error("inet_pton(AF_INET, "#src", addr) got addr %s, want %s\n", buf, hex); \
+\
+    Tobin(&a, hex); \
+    if (inet_ntop(AF_INET, &a, buf, sizeof buf) != buf) \
+        t_error("inet_ntop(AF_INET, <"#hex">, buf, size) did not return buf\n"); \
+    if (strcmp(buf,src)) \
+        t_error("inet_ntop(AF_INET, <"#hex">, buf, size) got %s, want %s\n", buf, src); \
+    \
+    in.s_addr = a; \
+    p = inet_ntoa(in); \
+    if (strcmp(p, src)) \
+        t_error("inet_ntoa(<"#hex">) returned %s, want %s\n", p, src); \
 }while(0);
 
-static int InetPtonTest_impl(void){
+static int InetPtonTestImpl(void)
+{
 
 // errors
-if (inet_pton(12345, "", 0) != -1 || errno != EAFNOSUPPORT)
-	t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
+if (inet_pton(12345, "", 0) != -1 || errno != EAFNOSUPPORT) {
+    t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
+}
 errno=0;
-if (inet_ntop(AF_INET,"xxxx","",0) != 0 || errno != ENOSPC)
-	t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
+if (inet_ntop(AF_INET,"xxxx","",0) != 0 || errno != ENOSPC) {
+    t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
+}
 errno=0;
 
 // dotted-decimal notation
@@ -160,5 +169,5 @@ return g_tStatus;
 
 int InetPtonTest(void)
 {
-    return InetPtonTest_impl();
+    return InetPtonTestImpl();
 }

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *	http://www.apache.org/licenses/LICENSE-2.0
+ *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,35 +22,35 @@ static bool stop = false;
 
 static void* dl_test(void *arg)
 {
-	while (!stop) {
-		void* handle = dlopen(g_libPath, RTLD_GLOBAL);
-		if (!handle) {
-			t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_GLOBAL, dlerror());
-		}
-		dlclose(handle);
-	}
+    while (!stop) {
+        void* handle = dlopen(g_libPath, RTLD_GLOBAL);
+        if (!handle) {
+            t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_GLOBAL, dlerror());
+        }
+        dlclose(handle);
+    }
     return 0;
 }
 
 int DlMultithreadTestTest()
 {
-	pthread_t thd1;
-	pthread_t thd2;
-	pthread_t thd3;
-	pthread_t thd4;
-	pthread_t thd5;
-	void *res;
-	pthread_create(&thd1, NULL, dl_test, NULL);
-	pthread_create(&thd2, NULL, dl_test, NULL);
-	pthread_create(&thd3, NULL, dl_test, NULL);
-	pthread_create(&thd4, NULL, dl_test, NULL);
-	pthread_create(&thd5, NULL, dl_test, NULL);
-	sleep(3);
-	stop = true;
-	pthread_join(thd1, &res);
-	pthread_join(thd2, &res);
-	pthread_join(thd3, &res);
-	pthread_join(thd4, &res);
-	pthread_join(thd5, &res);
-	return g_tStatus;
+    pthread_t thd1;
+    pthread_t thd2;
+    pthread_t thd3;
+    pthread_t thd4;
+    pthread_t thd5;
+    void *res;
+    pthread_create(&thd1, NULL, dl_test, NULL);
+    pthread_create(&thd2, NULL, dl_test, NULL);
+    pthread_create(&thd3, NULL, dl_test, NULL);
+    pthread_create(&thd4, NULL, dl_test, NULL);
+    pthread_create(&thd5, NULL, dl_test, NULL);
+    sleep(3);
+    stop = true;
+    pthread_join(thd1, &res);
+    pthread_join(thd2, &res);
+    pthread_join(thd3, &res);
+    pthread_join(thd4, &res);
+    pthread_join(thd5, &res);
+    return g_tStatus;
 }

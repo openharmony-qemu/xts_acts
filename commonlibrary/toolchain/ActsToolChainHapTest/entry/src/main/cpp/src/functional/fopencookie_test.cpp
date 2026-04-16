@@ -22,8 +22,7 @@
 #define INIT_BUF_SIZE 4
 #define EXPANSION_COEFFICIENT 2
 
-struct cookie
-{
+struct cookie {
     size_t pos;
     size_t len;
     size_t size;
@@ -53,7 +52,7 @@ ssize_t mwrite(void *f, const char *buf, size_t len)
             c->size *= EXPANSION_COEFFICIENT;
         }
         newBuf = (char *)malloc(c->size);
-        if (newBuf == NULL) {
+        if (newBuf == nullptr) {
             return -1;
         } else {
             memcpy(newBuf, c->buf, c->len);
@@ -98,11 +97,12 @@ int mclose(void *f)
 {
     struct cookie *c = (struct cookie *)f;
     free(c->buf);
-    c->buf = NULL;
+    c->buf = nullptr;
     return 0;
 }
 
-static int FopencookieTestTest_impl(int argc, char *argv[]){
+static int FopencookieTestTestImpl(int argc, char *argv[])
+{
     cookie_io_functions_t ioFunc = {.read = mread, .write = mwrite, .seek = mseek, .close = mclose};
     FILE *file;
     struct cookie myc;
@@ -111,7 +111,7 @@ static int FopencookieTestTest_impl(int argc, char *argv[]){
     size_t memberNumbers = 2;
     char buf[50];
     myc.buf = (char *)malloc(INIT_BUF_SIZE);
-    if (myc.buf == NULL) {
+    if (myc.buf == nullptr) {
         t_error("fopencookie malloc failed\n");
         return 1;
     }
@@ -120,7 +120,7 @@ static int FopencookieTestTest_impl(int argc, char *argv[]){
     myc.size = INIT_BUF_SIZE;
 
     file = fopencookie(&myc, "w+", ioFunc);
-    if (file == NULL) {
+    if (file == nullptr) {
         t_error("create fopencookie failed\n");
         return 1;
     }
@@ -145,7 +145,7 @@ static int FopencookieTestTest_impl(int argc, char *argv[]){
 
 int FopencookieTestTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FopencookieTestTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FopencookieTestTestImpl(1, libcArgv);
 }

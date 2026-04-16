@@ -40,18 +40,20 @@ void fdopen_1(int& status)
         TEST(ftello(f) == 6);
         TEST(fseeko(f, 0, SEEK_SET) == 0);
         TEST(fgets(foo, sizeof foo, f));
-        if (strcmp(foo, "hello") != 0)
+        if (strcmp(foo, "hello") != 0) {
             LibcTestError(&status, "fgets read back: \"%s\"; wanted: \"hello\"\n", foo);
+        }
         fclose(f);
     }
-    if (fd > 2)
+    if (fd > 2) {
         TEST(unlink(tmp) != -1);
+    }
 }
 
 void fdopen_2(int& status)
 {
     FILE* f = fdopen(-1, "w");
-    TEST(f == NULL);
+    TEST(f == nullptr);
     printf("f == %p\n", f);
 }
 

@@ -33,14 +33,15 @@ void ftrylockfile_0100(void)
     remove("ftrylockfile.txt");
 }
 
-static int FtrylockfileTest_impl(int argc, char *argv[]){
+static int FtrylockfileTestImpl(int argc, char *argv[])
+{
     ftrylockfile_0100();
     return g_tStatus;
 }
 
 int FtrylockfileTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FtrylockfileTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FtrylockfileTestImpl(1, libcArgv);
 }

@@ -6,7 +6,7 @@
 #include <string.h>
 #include "test.h"
 
-#define T(f) if ((r=(f))) t_error(#f " failed: %s\n", strerror(r))
+#define T(f) if ((r = (f))) t_error(#f " failed: %s\n", strerror(r))
 #define E(f) if (f) t_error(#f " failed: %s\n", strerror(errno))
 
 static void *relock(void *arg)
@@ -23,8 +23,9 @@ static void *relock(void *arg)
     E(sem_post(s));
 
     T(pthread_mutex_unlock(m));
-    if (*ret == 0)
+    if (*ret == 0) {
         T(pthread_mutex_unlock(m));
+    }
     return 0;
 }
 
@@ -56,8 +57,9 @@ static int test_relock(int mtype)
     }
     r = sem_timedwait((sem_t *)a[1], &ts);
     if (r == -1) {
-        if (errno != ETIMEDOUT)
+        if (errno != ETIMEDOUT) {
             t_error("sem_timedwait failed with unexpected error: %s\n", strerror(errno));
+        }
         return -1;
     }
     T(pthread_join(t, &p));
@@ -70,7 +72,7 @@ static void *unlock(void *arg)
 {
     void **a = (void **)arg;
     *(int *)a[1] = pthread_mutex_unlock((pthread_mutex_t *)a[0]);
-    return 0;
+    return nullptr;
 }
 
 static int test_unlock(int mtype)
@@ -126,48 +128,58 @@ static void test_mutexattr()
 
     T(pthread_mutexattr_init(&a));
     T(pthread_mutexattr_gettype(&a, &i));
-    if (i != PTHREAD_MUTEX_DEFAULT)
+    if (i != PTHREAD_MUTEX_DEFAULT) {
         t_error("default mutex type is %d, wanted PTHREAD_MUTEX_DEFAULT (%d)\n", i, PTHREAD_MUTEX_DEFAULT);
+    }
     T(pthread_mutexattr_settype(&a, PTHREAD_MUTEX_ERRORCHECK));
     T(pthread_mutexattr_gettype(&a, &i));
-    if (i != PTHREAD_MUTEX_ERRORCHECK)
+    if (i != PTHREAD_MUTEX_ERRORCHECK) {
         t_error("setting error check mutex type failed failed: got %d, wanted %d\n", i, PTHREAD_MUTEX_ERRORCHECK);
+    }
     T(pthread_mutexattr_destroy(&a));
 }
 
-static int PthreadMutexPiTest_impl(void){
+static int PthreadMutexPiTestImpl(void)
+{
     int i;
 
     test_mutexattr();
 
     i = test_relock(PTHREAD_MUTEX_NORMAL);
-    if (i != -1)
+    if (i != -1) {
         t_error("PTHREAD_MUTEX_NORMAL relock did not deadlock, got %s\n", strerror(i));
+    }
     i = test_relock(PTHREAD_MUTEX_ERRORCHECK);
-    if (i != EDEADLK)
-        t_error("PTHREAD_MUTEX_ERRORCHECK relock did not return EDEADLK, got %s\n", i==-1?"deadlock":strerror(i));
+    if (i != EDEADLK) {
+        t_error("PTHREAD_MUTEX_ERRORCHECK relock did not return EDEADLK, got %s\n", i == -1 ? "deadlock" : strerror(i));
+    }
     i = test_relock(PTHREAD_MUTEX_RECURSIVE);
-    if (i != 0)
-        t_error("PTHREAD_MUTEX_RECURSIVE relock did not succed, got %s\n", i==-1?"deadlock":strerror(i));
+    if (i != 0) {
+        t_error("PTHREAD_MUTEX_RECURSIVE relock did not succed, got %s\n", i == -1 ? "deadlock" : strerror(i));
+    }
 
     i = test_unlock(PTHREAD_MUTEX_ERRORCHECK);
-    if (i != EPERM)
+    if (i != EPERM) {
         t_error("PTHREAD_MUTEX_ERRORCHECK unlock did not return EPERM, got %s\n", strerror(i));
+    }
     i = test_unlock(PTHREAD_MUTEX_RECURSIVE);
-    if (i != EPERM)
+    if (i != EPERM) {
         t_error("PTHREAD_MUTEX_RECURSIVE unlock did not return EPERM, got %s\n", strerror(i));
+    }
 
     i = test_unlock_other(PTHREAD_MUTEX_ERRORCHECK);
-    if (i != EPERM)
+    if (i != EPERM) {
         t_error("PTHREAD_MUTEX_ERRORCHECK unlock did not return EPERM, got %s\n", strerror(i));
+    }
     i = test_unlock_other(PTHREAD_MUTEX_RECURSIVE);
-    if (i != EPERM)
+    if (i != EPERM) {
         t_error("PTHREAD_MUTEX_RECURSIVE unlock did not return EPERM, got %s\n", strerror(i));
+    }
 
     return g_tStatus;
 }
 
 int PthreadMutexPiTest(void)
 {
-    return PthreadMutexPiTest_impl();
+    return PthreadMutexPiTestImpl();
 }

@@ -4,7 +4,7 @@
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
 *
-*	http://www.apache.org/licenses/LICENSE-2.0
+*    http://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing, software
 * distributed under the License is distributed on an "AS IS" BASIS,
@@ -60,8 +60,9 @@ void fcntl_0100(void)
         _exit(fcntl(fd, F_SETLK, &fl) == 0 ||
               (errno != EAGAIN && errno != EACCES));
     }
-    while (waitpid(pid, &status, 0) < 0 && errno == EINTR)
+    while (waitpid(pid, &status, 0) < 0 && errno == EINTR) {
         ;
+    }
     TEST(status == 0, "lock failed to work\n");
 
     pid = fork();
@@ -69,8 +70,9 @@ void fcntl_0100(void)
         fl.l_type = F_WRLCK;
         _exit(fcntl(fd, F_GETLK, &fl) || fl.l_pid != getppid());
     }
-    while (waitpid(pid, &status, 0) < 0 && errno == EINTR)
+    while (waitpid(pid, &status, 0) < 0 && errno == EINTR) {
         ;
+    }
     TEST(status == 0, "child failed to detect lock held by parent\n");
 
     fclose(f);
@@ -84,13 +86,13 @@ void fcntl_0100(void)
  */
 void fcntl64_0100(void)
 {
-	int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
     EXPECT_GTE("fcntl64_0100", fd, 0);
 
-	// minimum descriptor
+    // minimum descriptor
     int new_fd = fcntl64(fd, F_DUPFD, 10);
     EXPECT_GTE("fcntl64_0100", 10, new_fd);
-	//  Verify that the replicated descriptor can be used normally
+    //  Verify that the replicated descriptor can be used normally
     const char *test_data = "test data";
     ssize_t written = write(new_fd, test_data, strlen(test_data));
     EXPECT_EQ("fcntl64_0100", written, (ssize_t)strlen(test_data));
@@ -107,7 +109,7 @@ void fcntl64_0100(void)
     new_flags = verify_flags & ~O_NONBLOCK;
     ret = fcntl64(new_fd, F_SETFL, new_flags);
     EXPECT_EQ("fcntl64_0100", ret, 0);
-	close(new_fd);
+    close(new_fd);
     close(fd);
     unlink(TEST_FILE);
 }
@@ -147,7 +149,7 @@ void fcntl64_0200(void)
  */
 void fcntl64_0300(void)
 {
-	int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
     EXPECT_GTE("fcntl64_0300", fd, 0);
 
     int fd_flags = fcntl64(fd, F_GETFD);
@@ -170,7 +172,7 @@ void fcntl64_0300(void)
  */
 void fcntl64_0400(void)
 {
-	int fd1 = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd1 = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
     EXPECT_GTE("fcntl64_0400", fd1, 0);
 
     int fd2 = fcntl64(fd1, F_DUPFD, 10);
@@ -202,7 +204,7 @@ void fcntl64_0400(void)
  */
 void fcntl64_0500(void)
 {
-	int fd = -1;
+    int fd = -1;
     struct flock64 lock = {0};
     // open test file
     fd = open64(TEST_FILE, O_RDWR | O_CREAT, 0644);
@@ -246,7 +248,7 @@ void fcntl64_0500(void)
 void fcntl64_0600(void)
 {
     // Invalid file descriptor (fd=-1) calls fcntl64
-	struct flock64 lock = {0};
+    struct flock64 lock = {0};
     int ret = fcntl64(-1, F_GETFL);
     EXPECT_EQ("fcntl64_0600", ret, -1);
     // Illegal command (custom invalid cmd=999)
@@ -285,7 +287,8 @@ struct thread_arg {
     int *result;
 };
 
-static void *thread_func(void *arg) {
+static void *thread_func(void *arg)
+{
     struct thread_arg *targ = (struct thread_arg *)arg;
     int fd = targ->fd;
     int success_count = 0;
@@ -359,21 +362,22 @@ void fcntl64_0700(void)
 }
 #endif
 
-static int FcntlTest_impl(void){
-	fcntl_0100();
+static int FcntlTestImpl(void)
+{
+    fcntl_0100();
 #ifdef MUSL_EXTERNAL_FUNCTION
-	fcntl64_0100();
-	fcntl64_0200();
-	fcntl64_0300();
-	fcntl64_0400();
+    fcntl64_0100();
+    fcntl64_0200();
+    fcntl64_0300();
+    fcntl64_0400();
     fcntl64_0500();
     fcntl64_0600();
     fcntl64_0700();
 #endif
-	return g_tStatus;
+    return g_tStatus;
 }
 
 int FcntlTest(void)
 {
-    return FcntlTest_impl();
+    return FcntlTestImpl();
 }
