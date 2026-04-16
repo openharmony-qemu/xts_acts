@@ -14,6 +14,8 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import text from "@ohos.graphics.text";
+import drawing from '@ohos.graphics.drawing';
+import image from '@ohos.multimedia.image';
 
 export default function GraphicTextAPI26() {
 
@@ -691,6 +693,891 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetProcessStateInitStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getProcessStateInitStatic_0100
+     * @tc.desc   Test Paragraph getProcessState returns INIT after build.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProcessStateInitStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetProcessStateInitStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本处理状态');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+
+          let processState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' processState after build: ' + processState);
+          expect(processState).assertEqual(text.TextProcessState.INIT);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetProcessStateFormattedStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getProcessStateFormattedStatic_0200
+     * @tc.desc   Test Paragraph getProcessState returns FORMATTED after layout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProcessStateFormattedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetProcessStateFormattedStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本处理状态');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let processState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' processState after layout: ' + processState);
+          expect(processState).assertEqual(text.TextProcessState.FORMATTED);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetProcessStatePaintStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getProcessStatePaintStatic_0300
+     * @tc.desc   Test Paragraph getProcessState returns PAINT after paint.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProcessStatePaintStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetProcessStatePaintStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本处理状态');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          const color: ArrayBuffer = new ArrayBuffer(160000);
+          let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888,
+            size: { height: 200, width: 200 } }
+          let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+          let canvas: drawing.Canvas = new drawing.Canvas(pixelMap);
+          paragraph.paint(canvas, 10, 10);
+
+          let processState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' processState after paint: ' + processState);
+          expect(processState).assertEqual(text.TextProcessState.PAINT);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetProcessStateUpdateAttributeStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getProcessStateUpdateAttributeStatic_0400
+     * @tc.desc   Test Paragraph getProcessState returns UPDATE_ATTRIBUTE after updateAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProcessStateUpdateAttributeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetProcessStateUpdateAttributeStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本处理状态');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+          paragraph.updateColor({ alpha: 155, red: 100, green: 100, blue: 100 });
+
+          let processState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' processState after updateAttribute: ' + processState);
+          expect(processState).assertEqual(text.TextProcessState.UPDATE_ATTRIBUTE);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetProcessStateTransitionStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getProcessStateStateTransitionStatic_0500
+     * @tc.desc   Test Paragraph getProcessState state transition from INIT to FORMATTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProcessStateTransitionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetProcessStateTransitionStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试状态流转');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+
+          let initState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' initState: ' + initState);
+          expect(initState).assertEqual(text.TextProcessState.INIT);
+
+          await paragraph.layout(300);
+
+          let formattedState: text.TextProcessState = paragraph.getProcessState();
+          console.info(msgStr + ' formattedState: ' + formattedState);
+          expect(formattedState).assertEqual(text.TextProcessState.FORMATTED);
+
+          console.info(msgStr + ' state transition from INIT to FORMATTED verified');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+      
+    /**
+     * @tc.name   testGetTextDisplayStateUnknownStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getTextDisplayStateUnknownStatic_0100
+     * @tc.desc   Test Paragraph getTextDisplayState returns UNKNOWN after build.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetTextDisplayStateUnknownStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetTextDisplayStateUnknownStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本显示状态 UNKNOWN');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+
+          let displayState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' displayState after build: ' + displayState);
+          expect(displayState).assertEqual(text.TextDisplayState.UNKNOWN);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetTextDisplayStateAllStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getTextDisplayStateAllStatic_0200
+     * @tc.desc   Test Paragraph getTextDisplayState returns ALL when text fits.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetTextDisplayStateAllStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetTextDisplayStateAllStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本显示状态 ALL');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let displayState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' displayState after layout: ' + displayState);
+          expect(displayState).assertEqual(text.TextDisplayState.ALL);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetTextDisplayStateClipStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getTextDisplayStateClipStatic_0300
+     * @tc.desc   Test Paragraph getTextDisplayState returns CLIP when text overflows.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetTextDisplayStateClipStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetTextDisplayStateClipStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('这是一个很长的测试文本，用于验证文本裁剪显示状态的效果 CLIP');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let displayState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' displayState after layout: ' + displayState);
+          expect(displayState).assertEqual(text.TextDisplayState.CLIP);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetTextDisplayStateOmittedStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getTextDisplayStateOmittedStatic_0400
+     * @tc.desc   Test Paragraph getTextDisplayState returns OMITTED with ellipsis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetTextDisplayStateOmittedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetTextDisplayStateOmittedStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "..."
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('这是一个很长的测试文本，用于验证文本省略显示状态的效果 OMITTED');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let displayState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' displayState after layout: ' + displayState);
+          expect(displayState).assertEqual(text.TextDisplayState.OMITTED);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetTextDisplayStateTransitionStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getTextDisplayStateStateTransitionStatic_0500
+     * @tc.desc   Test Paragraph getTextDisplayState state transition from UNKNOWN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetTextDisplayStateTransitionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetTextDisplayStateTransitionStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试状态流转');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+
+          let unknownState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' unknownState: ' + unknownState);
+          expect(unknownState).assertEqual(text.TextDisplayState.UNKNOWN);
+
+          await paragraph.layout(100);
+
+          let clipState: text.TextDisplayState = paragraph.getTextDisplayState();
+          console.info(msgStr + ' clipState: ' + clipState);
+          expect(clipState).assertEqual(text.TextDisplayState.ALL);
+
+          console.info(msgStr + ' state transition from UNKNOWN to ALL verified');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+      
+    /**
+     * @tc.name   testGetParagraphStyleTextStyleStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleTextStyleStatic_0100
+     * @tc.desc   Test Paragraph getParagraphStyle returns textStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleTextStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleTextStyleStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 33.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本样式');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle textStyle fontSize: ' + returnedStyle.textStyle?.fontSize);
+          expect(returnedStyle.textStyle?.fontSize).assertEqual(33.0);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleTextDirectionStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleTextDirectionStatic_0200
+     * @tc.desc   Test Paragraph getParagraphStyle returns textDirection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleTextDirectionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleTextDirectionStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            textDirection: text.TextDirection.RTL
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本方向');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle textDirection: ' + returnedStyle.textDirection);
+          expect(returnedStyle.textDirection).assertEqual(text.TextDirection.RTL);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleAlignStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleAlignStatic_0300
+     * @tc.desc   Test Paragraph getParagraphStyle returns align.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleAlignStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleAlignStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            align: text.TextAlign.CENTER
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试文本对齐');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle align: ' + returnedStyle.align);
+          expect(returnedStyle.align).assertEqual(text.TextAlign.CENTER);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleWordBreakStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleWordBreakStatic_0400
+     * @tc.desc   Test Paragraph getParagraphStyle returns wordBreak.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleWordBreakStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleWordBreakStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_ALL
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试断词类型');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle wordBreak: ' + returnedStyle.wordBreak);
+          expect(returnedStyle.wordBreak).assertEqual(text.WordBreak.BREAK_ALL);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleMaxLinesStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleMaxLinesStatic_0500
+     * @tc.desc   Test Paragraph getParagraphStyle returns maxLines.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleMaxLinesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleMaxLinesStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            maxLines: 5
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试最大行数');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle maxLines: ' + returnedStyle.maxLines);
+          expect(returnedStyle.maxLines).assertEqual(5);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleBreakStrategyStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleBreakStrategyStatic_0600
+     * @tc.desc   Test Paragraph getParagraphStyle returns breakStrategy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleBreakStrategyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleBreakStrategyStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            breakStrategy: text.BreakStrategy.BALANCED
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试断行策略');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle breakStrategy: ' + returnedStyle.breakStrategy);
+          expect(returnedStyle.breakStrategy).assertEqual(text.BreakStrategy.BALANCED);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleLineSpacingStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleLineSpacingStatic_0700
+     * @tc.desc   Test Paragraph getParagraphStyle returns lineSpacing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleLineSpacingStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleLineSpacingStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            lineSpacing: 10.0
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试行间距');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle lineSpacing: ' + returnedStyle.lineSpacing);
+          expect(returnedStyle.lineSpacing).assertEqual(10.0);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleAPI26PropertiesStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStylePropertiesStatic_0800
+     * @tc.desc   Test Paragraph getParagraphStyle returns API 26 properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleAPI26PropertiesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleAPI26PropertiesStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            firstLineHeadIndent: 20.0,
+            tailIndents: [10.0, 20.0],
+            headIndents: [5.0, 10.0],
+            orphanCharOptimization: true
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试API26新增属性');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle firstLineHeadIndent: ' + JSON.stringify(returnedStyle));
+          expect(returnedStyle.orphanCharOptimization).assertTrue();
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleMultiplePropertiesStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleMultiplePropertiesStatic_0900
+     * @tc.desc   Test Paragraph getParagraphStyle returns multiple properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleMultiplePropertiesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleMultiplePropertiesStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 20.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            align: text.TextAlign.END,
+            maxLines: 3,
+            lineSpacing: 5.0
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试多属性组合');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle align: ' + returnedStyle.align);
+          console.info(msgStr + ' returnedStyle maxLines: ' + returnedStyle.maxLines);
+          console.info(msgStr + ' returnedStyle lineSpacing: ' + returnedStyle.lineSpacing);
+          expect(returnedStyle.align).assertEqual(text.TextAlign.END);
+          expect(returnedStyle.maxLines).assertEqual(3);
+          expect(returnedStyle.lineSpacing).assertEqual(5.0);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleDefaultValuesStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleDefaultValuesStatic_1000
+     * @tc.desc   Test Paragraph getParagraphStyle returns default values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleDefaultValuesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleDefaultValuesStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试默认值');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle textDirection: ' + returnedStyle.textDirection);
+          console.info(msgStr + ' returnedStyle align: ' + returnedStyle.align);
+          console.info(msgStr + ' returnedStyle wordBreak: ' + returnedStyle.wordBreak);
+          console.info(msgStr + ' returnedStyle maxLines: ' + returnedStyle.maxLines);
+          expect(returnedStyle.textDirection).assertEqual(text.TextDirection.LTR);
+          expect(returnedStyle.align).assertEqual(text.TextAlign.START);
+          expect(returnedStyle.wordBreak).assertEqual(text.WordBreak.BREAK_WORD);
+          expect(returnedStyle.maxLines).assertEqual(1000000000);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+
+    /**
+     * @tc.name   testGetParagraphStyleEmptyTailIndentsStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleEmptyTailIndentsStatic_1100
+     * @tc.desc   Test Paragraph getParagraphStyle returns empty tailIndents array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleEmptyTailIndentsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleEmptyTailIndentsStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            tailIndents: []
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试空tailIndents数组');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle tailIndents length: ' + returnedStyle.tailIndents?.length);
+          expect(returnedStyle.tailIndents?.length).assertUndefined();
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetParagraphStyleEmptyHeadIndentsStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_getParagraphStyleEmptyHeadIndentsStatic_1200
+     * @tc.desc   Test Paragraph getParagraphStyle returns empty headIndents array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetParagraphStyleEmptyHeadIndentsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetParagraphStyleEmptyHeadIndentsStatic===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            headIndents: []
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试空headIndents数组');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' returnedStyle headIndents length: ' + returnedStyle.headIndents?.length);
+          expect(returnedStyle.headIndents?.length).assertUndefined();
+          console.info(msgStr + ' end');
           done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
