@@ -211,7 +211,7 @@ export default function abilityTest() {
           }).catch((err: BusinessError) => {
             console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
             expect(err.message != null).assertTrue();
-            if (err.code == 801 && !isDeviceSupportFloatView) {
+            if (err.code === 801 && !isDeviceSupportFloatView) {
               done();
             } else {
               expect(false).assertTrue();
@@ -281,9 +281,9 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code == 801 && !isDeviceSupportFloatView) {
+          if (err.code === 801 && !isDeviceSupportFloatView) {
             done();
-          } else if (err.code == 1300016) {
+          } else if (err.code === 1300016) {
             done();
           } else {
             expect(false).assertTrue();
@@ -293,9 +293,9 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code == 1300016) {
+        } else if (e.code === 1300016) {
           done();
         } else {
           expect(false).assertTrue();
@@ -327,7 +327,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -356,13 +356,13 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating float view controller.');
         floatViewController.setUIContext("testability/pages/First/index").then(() => {
           console.info(CaseName + ' Succeeded in setting UI context.');
-          expect(true).assertTrue();
+          
           console.log(CaseName + ' end.');
           done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to set UI context. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code == 801 && !isDeviceSupportFloatView) {
+          if (err.code === 801 && !isDeviceSupportFloatView) {
             done();
           } else {
             expect(false).assertTrue();
@@ -372,7 +372,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -412,7 +412,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -446,13 +446,13 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating float view controller.');
         floatViewController.setWindowSize(size).then(() => {
           console.info(CaseName + ' Succeeded in setting window size.');
-          expect(true).assertTrue();
+          
           console.log(CaseName + ' end.');
           done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to set window size. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code == 801 && !isDeviceSupportFloatView) {
+          if (err.code === 801 && !isDeviceSupportFloatView) {
             done();
           } else {
             expect(false).assertTrue();
@@ -462,7 +462,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -506,7 +506,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -548,9 +548,9 @@ export default function abilityTest() {
           }).catch((err: BusinessError) => {
             console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
             expect(err.message != null).assertTrue();
-            if (err.code == 801 && !isDeviceSupportFloatView) {
+            if (err.code === 801 && !isDeviceSupportFloatView) {
               done();
-            } else if (err.code == 201) {
+            } else if (err.code === 201) {
               done();
             } else {
               expect(false).assertTrue();
@@ -560,7 +560,7 @@ export default function abilityTest() {
         } catch (e) {
           console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
           expect(e.message != null).assertTrue();
-          if (e.code == 801 && !isDeviceSupportFloatView) {
+          if (e.code === 801 && !isDeviceSupportFloatView) {
             done();
           } else {
             expect(false).assertTrue();
@@ -610,7 +610,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -643,7 +643,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in starting float view.');
         floatViewController.stop().then(() => {
           console.info(CaseName + ' Succeeded in stopping float view.');
-          expect(true).assertTrue();
+          
           console.log(CaseName + ' end.');
           done();
         }).catch((err: BusinessError) => {
@@ -655,7 +655,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -695,7 +695,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -743,7 +743,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -779,7 +779,7 @@ export default function abilityTest() {
           console.info(CaseName + ' Succeeded in setting visibility true.');
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
-          expect(true).assertTrue();
+          
           console.log(CaseName + ' end.');
           done();
         }).catch(async (err: BusinessError) => {
@@ -792,7 +792,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -826,9 +826,9 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code == 1300031) {
+        } else if (e.code === 1300031) {
           expect(e.code).assertEqual(1300031);
           done();
         } else {
@@ -888,7 +888,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -939,7 +939,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -977,9 +977,9 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code == 1300030) {
+        } else if (e.code === 1300030) {
           expect(e.code).assertEqual(1300030);
           done();
         } else {
@@ -1043,7 +1043,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1108,7 +1108,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1165,7 +1165,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1203,9 +1203,9 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code == 1300030) {
+        } else if (e.code === 1300030) {
           expect(e.code).assertEqual(1300030);
           done();
         } else {
@@ -1254,7 +1254,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1292,9 +1292,9 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code == 1300030) {
+        } else if (e.code === 1300030) {
           expect(e.code).assertEqual(1300030);
           done();
         } else {
@@ -1335,7 +1335,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1383,7 +1383,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1427,7 +1427,7 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to start 2 float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code == 801 && !isDeviceSupportFloatView) {
+          if (err.code === 801 && !isDeviceSupportFloatView) {
             done();
           } else {
             expect(false).assertTrue();
@@ -1437,7 +1437,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1475,7 +1475,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
@@ -1528,7 +1528,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code == 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
