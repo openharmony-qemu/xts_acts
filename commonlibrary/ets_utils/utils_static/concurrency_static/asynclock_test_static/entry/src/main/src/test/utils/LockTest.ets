@@ -113,7 +113,7 @@ export async function exclusiveMultiWorkerTest() {
     let worker = new EAWorker()
     worker.start()
     let job1 = worker.run<string>((): string => {
-      return waitForCompletion(async () => {
+      return (async () => {
         let flag = ""
         let result: Promise<void> | null = null;
         result = exclusiveMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
@@ -123,7 +123,7 @@ export async function exclusiveMultiWorkerTest() {
           flag = 'FAILED: ' + e.message
         });
         return flag
-      })
+      })().awaitSync()
     })
     let workerresult = job1.Await()
     worker.join()
@@ -203,7 +203,7 @@ export async function sharedMultiWorkerTest() {
     let worker = new EAWorker()
     worker.start()
     let job1 = worker.run<string>((): string => {
-      return waitForCompletion(async () => {
+      return (async () => {
         let flag = ""
         let result: Promise<void> | null = null;
         result = sharedMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
@@ -213,7 +213,7 @@ export async function sharedMultiWorkerTest() {
           flag = 'FAILED: ' + e.message
         });
         return flag
-      })
+      })().awaitSync()
     })
     let workerresult = job1.Await()
     worker.join()
@@ -629,7 +629,7 @@ export async function sequentialLockWorkerTest() {
       let worker = new EAWorker()
       worker.start()
       let job1 = worker.run<string>((): string => {
-        return waitForCompletion(async () => {
+        return (async () => {
           let flag = ""
           let result: Promise<void> | null = null;
           result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
@@ -639,7 +639,7 @@ export async function sequentialLockWorkerTest() {
             flag = 'FAILED: ' + e.message
           });
           return flag
-        })
+        })().awaitSync()
       })
       job1.Await()
       worker.join()
@@ -1058,7 +1058,7 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
     let data: lockType = { test: lockName, lockName: lockName, timeout: 3000 }
     worker.start()
     let job = worker.run<string>((): string => {
-      return waitForCompletion(async () => {
+      return (async () => {
         let flag = ""
         let result: Promise<void> | null = null;
         result = workersetDelayRequestAndCloseWorkerInstantlyTest(data.lockName, data.timeout);
@@ -1070,7 +1070,7 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
           flag = 'FAILED: ' + e.message
         });
         return flag
-      })
+      })().awaitSync()
     })
     let workerresult: string = job.Await()
     if (workerresult === 'PASSED') {

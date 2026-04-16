@@ -58,7 +58,7 @@ export default function abilityTest() {
                     hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 globalscribe success`)
                     commonEventManager.subscribe(globalscribe!, (err:BusinessError | null,
                         CommonEventData:commonEventManager.CommonEventData|undefined) => {
-                            waitForCompletion(async () => {
+                            (async () => {
                                 hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 subscribe success`)
                                 if (err) {
                                     hilog.info(DOMAIN_NUMBER, TAG, `subscribe failed! Err.Info ===> + ${err?.code}`)
@@ -88,7 +88,7 @@ export default function abilityTest() {
                                         });
                                     }
                                 }
-                            })
+                            })().awaitSync()
                     })
 
                 }else{

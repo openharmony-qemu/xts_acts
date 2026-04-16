@@ -296,12 +296,12 @@ export default function perfTestErrorTest() {
                 let perfTestStrategy: PerfTestStrategy = {
                     metrics: metrics,
                     actionCode: (finish: Callback<boolean>) => {
-                        waitForCompletion(async () => {
+                        (async () => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode start`);
                         await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode end`);
                         finish(true)
-                        })
+                        })().awaitSync()
                     },
                     iterations: 1,
                     resetCode: (finish: Callback<boolean>) => {
@@ -341,12 +341,12 @@ export default function perfTestErrorTest() {
                     },
                     iterations: 1,
                     resetCode: (finish: Callback<boolean>) => {
-                        waitForCompletion(async () => {
+                        (async () => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode start `);
                         await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode end`);
                         finish(true)
-                        })
+                        })().awaitSync()
                     },
                     timeout: 2000,
                 }

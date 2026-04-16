@@ -587,7 +587,7 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set name successfully`);
                         try{
-                            let data: avSession.CallMetadata = waitForCompletion(async () => { return await controller!.getCallMetadata();})
+                            let data: avSession.CallMetadata = (async () => { return await controller!.getCallMetadata();})().awaitSync()
                             if (data.name === '12345678') {
                                 console.info(`${TAG}: getCallMetadata get name Successfully`);
                             } else {
@@ -631,7 +631,7 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set phoneNumber successfully`);
                         try{
-                            let data: avSession.CallMetadata = waitForCompletion(async () => {return await controller!.getCallMetadata();})
+                            let data: avSession.CallMetadata = (async () => {return await controller!.getCallMetadata();})().awaitSync()
                             if (data.phoneNumber === '65432111') {
                                 console.info(`${TAG}: getCallMetadata get phoneNumber Successfully`);
                             } else {
