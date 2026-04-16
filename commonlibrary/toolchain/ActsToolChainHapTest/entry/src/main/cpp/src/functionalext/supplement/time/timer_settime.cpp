@@ -25,7 +25,7 @@
 #define SIGNUM 40
 static int count = 0;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     count++;
 
@@ -51,7 +51,7 @@ void timer_settime_0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, handler);
+    signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {
@@ -64,7 +64,7 @@ void timer_settime_0100(void)
     its.it_interval.tv_sec = 0;
     its.it_interval.tv_nsec = 0;
 
-    result = timer_settime(timerid, 0, &its, NULL);
+    result = timer_settime(timerid, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -88,7 +88,7 @@ void timer_settime_0200(void)
 {
     signal(SIGSEGV, exception_handler);
 
-    timer_settime(NULL, 0, NULL, NULL);
+    timer_settime(nullptr, 0, nullptr, nullptr);
 }
 
 /**
@@ -105,7 +105,7 @@ void timer_settime64_0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, handler);
+    signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {
@@ -133,7 +133,8 @@ void timer_settime64_0100(void)
     }
 }
 
-static int TimerSettimeTest_impl(int argc, char *argv[]){
+static int TimerSettimeTestImpl(int argc, char *argv[])
+{
     timer_settime_0100();
     timer_settime_0200();
     timer_settime64_0100();
@@ -143,7 +144,7 @@ static int TimerSettimeTest_impl(int argc, char *argv[]){
 
 int TimerSettimeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimerSettimeTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimerSettimeTestImpl(1, libcArgv);
 }

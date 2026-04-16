@@ -86,7 +86,7 @@ void thrd_detach_0200(void)
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(id, NULL);
+    result = thrd_join(id, nullptr);
     if (result == thrd_success) {
         t_error("%s thrd_join should fail", __func__);
     }
@@ -97,7 +97,8 @@ void thrd_detach_0200(void)
     count = 0;
 }
 
-static int ThrdDetachTest_impl(int argc, char *argv[]){
+static int ThrdDetachTestImpl(int argc, char *argv[])
+{
     thrd_detach_0100();
     thrd_detach_0200();
     return g_tStatus;
@@ -105,7 +106,7 @@ static int ThrdDetachTest_impl(int argc, char *argv[]){
 
 int ThrdDetachTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdDetachTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ThrdDetachTestImpl(1, libcArgv);
 }

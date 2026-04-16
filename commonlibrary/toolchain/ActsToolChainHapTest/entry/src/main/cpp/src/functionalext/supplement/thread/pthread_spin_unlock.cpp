@@ -17,18 +17,18 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-static pthread_spinlock_t lock = 0;
+static pthread_spinlock_t g_lock = 0;
 static int count = 0;
 
 static void *thread1(void *arg)
 {
-    int ret = pthread_spin_lock(&lock);
+    int ret = pthread_spin_lock(&g_lock);
     EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
     ++count;
-    ret = pthread_spin_unlock(&lock);
+    ret = pthread_spin_unlock(&g_lock);
     EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
     EXPECT_EQ("pthread_spin_unlock_0100", count, 1);
-    return (void *)"success";
+    return const_cast<char *>("success");
 }
 
 /**
@@ -41,13 +41,13 @@ void pthread_spin_unlock_0100(void)
     pthread_t thread;
     void *rev;
 
-    int ret = pthread_spin_init(&lock, PTHREAD_PROCESS_PRIVATE);
+    int ret = pthread_spin_init(&g_lock, PTHREAD_PROCESS_PRIVATE);
 
     EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
-    ret = pthread_create(&thread, NULL, thread1, NULL);
+    ret = pthread_create(&thread, nullptr, thread1, nullptr);
     if (ret != 0) {
         EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
-        pthread_spin_destroy(&lock);
+        pthread_spin_destroy(&g_lock);
         return;
     }
 
@@ -55,17 +55,18 @@ void pthread_spin_unlock_0100(void)
     EXPECT_STREQ("pthread_spin_unlock_0100", (char *)rev, "success");
     EXPECT_EQ("pthread_spin_unlock_0100", count, 1);
 
-    pthread_spin_destroy(&lock);
+    pthread_spin_destroy(&g_lock);
 }
 
-static int PthreadSpinUnlockTest_impl(void){
+static int PthreadSpinUnlockTestImpl(void)
+{
     pthread_spin_unlock_0100();
     return g_tStatus;
 }
 
 int PthreadSpinUnlockTest(void)
 {
-    return PthreadSpinUnlockTest_impl();
+    return PthreadSpinUnlockTestImpl();
 }
 
 

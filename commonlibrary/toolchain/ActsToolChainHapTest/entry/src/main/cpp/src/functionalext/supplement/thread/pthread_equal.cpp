@@ -95,7 +95,8 @@ void pthread_equal_0200(void)
     }
 }
 
-static int PthreadEqualTest_impl(int argc, char *argv[]){
+static int PthreadEqualTestImpl(int argc, char *argv[])
+{
     pthread_equal_0100();
     pthread_equal_0200();
     return g_tStatus;
@@ -103,8 +104,8 @@ static int PthreadEqualTest_impl(int argc, char *argv[]){
 
 int PthreadEqualTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PthreadEqualTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return PthreadEqualTestImpl(1, libcArgv);
 }
 

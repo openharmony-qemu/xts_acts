@@ -69,7 +69,8 @@ void link_0300(void)
     }
 }
 
-static int LinkTest_impl(void){
+static int LinkTestImpl(void)
+{
     // link_0100();
     // link_0200();
     // link_0300();
@@ -79,5 +80,5 @@ static int LinkTest_impl(void){
 
 int LinkTest(void)
 {
-    return LinkTest_impl();
+    return LinkTestImpl();
 }

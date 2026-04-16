@@ -43,18 +43,18 @@ void thrd_join_0100(void)
 {
     thrd_t id;
     int result;
-    result = thrd_create(&id, threadfunc, NULL);
+    result = thrd_create(&id, threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_nsec = 1000000};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(id, NULL);
+    result = thrd_join(id, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -75,13 +75,13 @@ void thrd_join_0200(void)
     thrd_t id;
     int ret = 1;
     int result;
-    result = thrd_create(&id, threadfunc, NULL);
+    result = thrd_create(&id, threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_nsec = 1000000};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
@@ -112,7 +112,7 @@ void thrd_join_0300(void)
     if (pid == -1) {
         t_error("thrd_join_0300: Error forking process");
     } else if (pid == 0) {
-        thrd_join(NULL, NULL);
+        thrd_join(0, nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -123,7 +123,8 @@ void thrd_join_0300(void)
     }
 }
 
-static int ThrdJoinTest_impl(int argc, char *argv[]){
+static int ThrdJoinTestImpl(int argc, char *argv[])
+{
     thrd_join_0100();
     thrd_join_0200();
     thrd_join_0300();
@@ -132,7 +133,7 @@ static int ThrdJoinTest_impl(int argc, char *argv[]){
 
 int ThrdJoinTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdJoinTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ThrdJoinTestImpl(1, libcArgv);
 }

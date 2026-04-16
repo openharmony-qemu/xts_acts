@@ -62,7 +62,7 @@ void timer_gettime_0100(void)
     its.it_interval.tv_sec = 1;
     its.it_interval.tv_nsec = 0;
 
-    if (timer_settime(timerid, 0, &its, NULL) == -1) {
+    if (timer_settime(timerid, 0, &its, nullptr) == -1) {
         t_error("%s timer set time failed", __func__);
         return;
     }
@@ -91,7 +91,7 @@ void timer_gettime_0100(void)
  */
 void timer_gettime_0200(void)
 {
-    int result = timer_gettime(NULL, NULL);
+    int result = timer_gettime(nullptr, nullptr);
     if (result != -1 && errno != EINVAL) {
         t_error("%s failed result = %d", __func__, result);
     }
@@ -104,13 +104,14 @@ void timer_gettime_0200(void)
  */
 void timer_gettime64_0200(void)
 {
-    int result = __timer_gettime64(NULL, NULL);
+    int result = __timer_gettime64(nullptr, nullptr);
     if (result != -1 && errno != EINVAL) {
         t_error("%s failed result = %d", __func__, result);
     }
 }
 
-static int TimerGettimeTest_impl(int argc, char *argv[]){
+static int TimerGettimeTestImpl(int argc, char *argv[])
+{
     timer_gettime_0100();
     timer_gettime_0200();
     timer_gettime64_0200();
@@ -119,7 +120,7 @@ static int TimerGettimeTest_impl(int argc, char *argv[]){
 
 int TimerGettimeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimerGettimeTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimerGettimeTestImpl(1, libcArgv);
 }

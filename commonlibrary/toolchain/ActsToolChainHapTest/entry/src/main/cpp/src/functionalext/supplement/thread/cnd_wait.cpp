@@ -39,7 +39,7 @@ void cnd_wait_0100(void)
     int ret;
     cnd_init(&cnd);
     mtx_init(&mtx, 0);
-    ret = thrd_create(&id1, (thrd_start_t)cnd_waitfirst, (void *)1);
+    ret = thrd_create(&id1, reinterpret_cast<thrd_start_t>(cnd_waitfirst), reinterpret_cast<void *>(1));
     EXPECT_EQ("cnd_wait_0100", ret, 0);
     sleep(2);
     mtx_lock(&mtx);
@@ -58,7 +58,7 @@ static int cnd_waitTest_with_args(int argc, char *argv[])
 
 int CndWaitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return cnd_waitTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return cnd_waitTest_with_args(1, libcArgv);
 }

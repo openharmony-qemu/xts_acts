@@ -27,7 +27,7 @@ void nanosleep_0100(void)
     struct timespec n_sleep;
     n_sleep.tv_sec = 0;
     n_sleep.tv_nsec = 5e8L;
-    int data = nanosleep(&n_sleep, NULL);
+    int data = nanosleep(&n_sleep, nullptr);
     EXPECT_EQ("nanosleep_0100", data, 0);
 }
 
@@ -41,11 +41,12 @@ void nanosleep_time64_0100(void)
     struct timespec n_sleep;
     n_sleep.tv_sec = 0;
     n_sleep.tv_nsec = 5e8L;
-    int data = __nanosleep_time64(&n_sleep, NULL);
+    int data = __nanosleep_time64(&n_sleep, nullptr);
     EXPECT_EQ("nanosleep_time64_0100", data, 0);
 }
 
-static int NanosleepTest_impl(int argc, char *argv[]){
+static int NanosleepTestImpl(int argc, char *argv[])
+{
     nanosleep_0100();
     nanosleep_time64_0100();
     return T_STATUS;
@@ -53,7 +54,7 @@ static int NanosleepTest_impl(int argc, char *argv[]){
 
 int NanosleepTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return NanosleepTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return NanosleepTestImpl(1, libcArgv);
 }

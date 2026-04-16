@@ -55,12 +55,12 @@ void mtx_trylock_0100(void)
         return;
     }
     thrd_t tid1;
-    result = thrd_create(&tid1, threadfuncA, NULL);
+    result = thrd_create(&tid1, threadfuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
     }
-    result = thrd_join(tid1, NULL);
+    result = thrd_join(tid1, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
         return;
@@ -92,7 +92,8 @@ void mtx_trylock_0200(void)
     }
 }
 
-static int MtxTrylockTest_impl(int argc, char *argv[]){
+static int MtxTrylockTestImpl(int argc, char *argv[])
+{
     mtx_trylock_0100();
     mtx_trylock_0200();
     return g_tStatus;
@@ -100,8 +101,8 @@ static int MtxTrylockTest_impl(int argc, char *argv[]){
 
 int MtxTrylockTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return MtxTrylockTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return MtxTrylockTestImpl(1, libcArgv);
 }
 

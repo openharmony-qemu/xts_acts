@@ -27,7 +27,7 @@ void pthread_rwlock_timedrdlock_0100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
-    pthread_rwlock_init(&rwlock, NULL);
+    pthread_rwlock_init(&rwlock, nullptr);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
     int rev = -1;
@@ -51,8 +51,8 @@ void pthread_rwlock_timedrdlock_0200(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
-    pthread_rwlock_init(&rwlock, NULL);
-    int rev = pthread_rwlock_timedrdlock(&rwlock, NULL);
+    pthread_rwlock_init(&rwlock, nullptr);
+    int rev = pthread_rwlock_timedrdlock(&rwlock, nullptr);
     EXPECT_EQ("pthread_rwlock_timedrdlock_0200", rev, 0);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
@@ -75,8 +75,8 @@ void pthread_rwlock_timedrdlock_0300(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
-    pthread_rwlock_init(&rwlock, NULL);
-    int rev = pthread_rwlock_timedwrlock(&rwlock, NULL);
+    pthread_rwlock_init(&rwlock, nullptr);
+    int rev = pthread_rwlock_timedwrlock(&rwlock, nullptr);
     EXPECT_EQ("pthread_rwlock_timedrdlock_0300", rev, 0);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
@@ -99,7 +99,7 @@ void pthread_rwlock_timedrdlock_time64_0100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
-    pthread_rwlock_init(&rwlock, NULL);
+    pthread_rwlock_init(&rwlock, nullptr);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
     int rev = -1;
@@ -114,7 +114,8 @@ void pthread_rwlock_timedrdlock_time64_0100(void)
     pthread_rwlock_destroy(&rwlock);
 }
 
-static int PthreadRwlockTimedrdlockTest_impl(void){
+static int PthreadRwlockTimedrdlockTestImpl(void)
+{
     pthread_rwlock_timedrdlock_0100();
     pthread_rwlock_timedrdlock_0200();
     pthread_rwlock_timedrdlock_0300();
@@ -124,6 +125,6 @@ static int PthreadRwlockTimedrdlockTest_impl(void){
 
 int PthreadRwlockTimedrdlockTest(void)
 {
-    return PthreadRwlockTimedrdlockTest_impl();
+    return PthreadRwlockTimedrdlockTestImpl();
 }
 

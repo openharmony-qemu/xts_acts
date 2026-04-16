@@ -25,7 +25,7 @@ static void *threadfunc(void *arg)
 {
     sleep(2);
     flag++;
-    return 0;
+    return nullptr;
 }
 
 /**
@@ -37,8 +37,8 @@ static void *threadfunc(void *arg)
 static void pthread_join_0100(void)
 {
     flag = 0;
-    pthread_create(&pid, NULL, threadfunc, NULL);
-    int result = pthread_join(pid, NULL);
+    pthread_create(&pid, nullptr, threadfunc, nullptr);
+    int result = pthread_join(pid, nullptr);
     if (result != 0) {
         t_error("%s pthread_join error get result is %d are not want 0\n", __func__, result);
     }
@@ -54,14 +54,15 @@ static void pthread_join_0100(void)
  */
 void pthread_join_0200(void)
 {
-    pthread_t t = NULL;
-    int result = pthread_join(t, NULL);
+    pthread_t t = 0;
+    int result = pthread_join(t, nullptr);
     if (result != ESRCH) {
         t_error("%s pthread_join error get result is %d are not want ESRCH\n", __func__, result);
     }
 }
 
-static int PthreadJoinTest_impl(int argc, char *argv[]){
+static int PthreadJoinTestImpl(int argc, char *argv[])
+{
     pthread_join_0100();
     pthread_join_0200();
     return g_tStatus;
@@ -69,8 +70,8 @@ static int PthreadJoinTest_impl(int argc, char *argv[]){
 
 int PthreadJoinTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PthreadJoinTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return PthreadJoinTestImpl(1, libcArgv);
 }
 

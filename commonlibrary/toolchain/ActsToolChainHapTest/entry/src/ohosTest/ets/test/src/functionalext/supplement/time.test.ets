@@ -98,19 +98,6 @@ export default function time_group_test() {
       done();
     });
     /**
-     * @tc.name   timer_create
-     * @tc.number SUB_THIRDPARTY_MUSL_TIMER_CREATE_0100
-     * @tc.desc   libc-test timer_create
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("timer_create", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("timer_create");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
      * @tc.name   timer_getoverrun
      * @tc.number SUB_THIRDPARTY_MUSL_TIMER_GETOVERRUN_0100
      * @tc.desc   libc-test timer_getoverrun

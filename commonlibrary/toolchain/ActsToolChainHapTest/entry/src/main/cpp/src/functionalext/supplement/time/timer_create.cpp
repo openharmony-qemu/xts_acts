@@ -26,7 +26,7 @@
 #define SLEEPTIME 5
 static int count = 0;
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     count++;
 
@@ -47,7 +47,7 @@ void timer_create_0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, handler);
+    signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {
@@ -60,7 +60,7 @@ void timer_create_0100(void)
     its.it_interval.tv_sec = its.it_value.tv_sec;
     its.it_interval.tv_nsec = its.it_value.tv_nsec;
 
-    result = timer_settime(timerid, 0, &its, NULL);
+    result = timer_settime(timerid, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -83,7 +83,7 @@ void timer_create_0100(void)
 void timer_create_0200(void)
 {
     errno = 0;
-    int result = timer_create(-1, NULL, NULL);
+    int result = timer_create(-1, nullptr, nullptr);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -114,14 +114,14 @@ void timer_create_0300(void)
     int ret;
 
     void* handle = dlopen("/data/storage/el1/bundle/libs/arm/libtls_timer.so", RTLD_LAZY);
-    if (handle == NULL) {
+    if (handle == nullptr) {
         t_error("%s dlopen error \n", __func__);
         return;
     }
 
     sev.sigev_notify = SIGEV_THREAD;
     sev.sigev_notify_function = timer_handler;
-    sev.sigev_notify_attributes = NULL;
+    sev.sigev_notify_attributes = nullptr;
     sev.sigev_value.sival_ptr = handle;
 
     ret = timer_create(CLOCK_REALTIME, &sev, &timerid);
@@ -129,7 +129,7 @@ void timer_create_0300(void)
         t_error("%s timer_create failed \n", __func__);
         return;
     }
-    printf("timer_create succeed: %lu \n", (unsigned long)timerid);
+    printf("timer_create succeed: %lu \n", reinterpret_cast<unsigned long>(timerid));
 
     its.it_value.tv_sec = 1;
     its.it_value.tv_nsec = 0;
@@ -154,7 +154,8 @@ void timer_create_0300(void)
     }
 }
 
-static int TimerCreateTest_impl(int argc, char *argv[]){
+static int TimerCreateTestImpl(int argc, char *argv[])
+{
     timer_create_0100();
     timer_create_0200();
     timer_create_0300();
@@ -164,7 +165,7 @@ static int TimerCreateTest_impl(int argc, char *argv[]){
 
 int TimerCreateTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimerCreateTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimerCreateTestImpl(1, libcArgv);
 }

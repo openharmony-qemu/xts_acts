@@ -31,7 +31,7 @@
 #define NSEC_TO_MS (1000000)
 #define TRYLOCK_FAIL (-2)
 
-static thrd_t thr;
+static thrd_t g_thr;
 static int count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -64,7 +64,7 @@ static int threadfuncA(void *arg)
 {
     count++;
     thrd_t id = thrd_current();
-    if (!(thrd_equal(id, thr))) {
+    if (!(thrd_equal(id, g_thr))) {
         t_error("%s thrd_current failed", __func__);
     }
 
@@ -95,7 +95,7 @@ void thrd_current_0100(void)
 {
     int result;
 
-    result = thrd_create(&thr, threadfuncA, NULL);
+    result = thrd_create(&g_thr, threadfuncA, NULL);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -106,7 +106,7 @@ void thrd_current_0100(void)
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(thr, NULL);
+    result = thrd_join(g_thr, NULL);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -171,7 +171,8 @@ void thrd_current_0200(void)
     count = 0;
 }
 
-static int ThrdCurrentTest_impl(int argc, char *argv[]){
+static int ThrdCurrentTestImpl(int argc, char *argv[])
+{
     thrd_current_0100();
     thrd_current_0200();
     return g_tStatus;
@@ -179,7 +180,7 @@ static int ThrdCurrentTest_impl(int argc, char *argv[]){
 
 int ThrdCurrentTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdCurrentTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return ThrdCurrentTestImpl(1, libcArgv);
 }

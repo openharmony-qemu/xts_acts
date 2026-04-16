@@ -74,8 +74,8 @@ void utime_0200(void)
 
     t_mold = buf1.st_mtime;
     t_aold = buf1.st_atime;
-    t_now = time(NULL);
-    if (utime(path, NULL) != 0) {
+    t_now = time(nullptr);
+    if (utime(path, nullptr) != 0) {
         stat(path, &buf2);
         t_mnew = buf2.st_mtime;
         t_anew = buf2.st_atime;
@@ -117,7 +117,8 @@ void utime64_0100(void)
     remove(file);
 }
 
-static int UtimeSupTest_impl(int argc, char *argv[]){
+static int UtimeSupTestImpl(int argc, char *argv[])
+{
     utime_0100();
     utime_0200();
     utime64_0100();
@@ -126,7 +127,7 @@ static int UtimeSupTest_impl(int argc, char *argv[]){
 
 int UtimeSupTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return UtimeSupTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return UtimeSupTestImpl(1, libcArgv);
 }

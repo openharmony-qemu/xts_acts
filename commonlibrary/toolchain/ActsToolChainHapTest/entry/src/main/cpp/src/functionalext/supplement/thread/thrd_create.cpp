@@ -43,18 +43,18 @@ void thrd_create_0100(void)
 {
     thrd_t id;
     int result;
-    result = thrd_create(&id, threadfunc, NULL);
+    result = thrd_create(&id, threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(id, NULL);
+    result = thrd_join(id, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -81,12 +81,12 @@ void thrd_create_0200(void)
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(id, NULL);
+    result = thrd_join(id, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -104,10 +104,11 @@ void thrd_create_0200(void)
  */
 void thrd_create_0300(void)
 {
-    thrd_create(NULL, threadfunc, NULL);
+    thrd_create(nullptr, threadfunc, nullptr);
 }
 
-static int ThrdCreateTest_impl(int argc, char *argv[]){
+static int ThrdCreateTestImpl(int argc, char *argv[])
+{
     thrd_create_0100();
     thrd_create_0200();
     thrd_create_0300();
@@ -116,7 +117,7 @@ static int ThrdCreateTest_impl(int argc, char *argv[]){
 
 int ThrdCreateTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdCreateTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ThrdCreateTestImpl(1, libcArgv);
 }

@@ -19,6 +19,8 @@
 #include "test.h"
 #include "time64_functions.h"
 
+#define THRD_SLEEP_INVALID_PARAM -2
+
 static int count = 0;
 
 static void exception_handler(int sig)
@@ -31,7 +33,7 @@ static int threadfunc(void *arg)
     count++;
 
     struct timespec const *tl = (struct timespec const *)arg;
-    if (thrd_sleep(tl, NULL) != 0) {
+    if (thrd_sleep(tl, nullptr) != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
@@ -49,12 +51,12 @@ void thrd_sleep_0100(void)
     thrd_t id;
     struct timespec ts = {.tv_sec = 1};
 
-    result = thrd_create(&id, threadfunc, (void *)(&ts));
+    result = thrd_create(&id, threadfunc, static_cast<void *>(&ts));
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
-    result = thrd_join(id, NULL);
+    result = thrd_join(id, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -75,8 +77,8 @@ void thrd_sleep_0200(void)
     struct timespec ts;
     ts.tv_sec = -1;
     ts.tv_nsec = 0; // 必须初始化
-    int result = thrd_sleep(&ts, NULL);
-    if (result != -2) {
+    int result = thrd_sleep(&ts, nullptr);
+    if (result != THRD_SLEEP_INVALID_PARAM) {
         t_error("%s negative value", __func__);
     }
 }
@@ -90,7 +92,7 @@ void thrd_sleep_0300(void)
 {
     signal(SIGSEGV, exception_handler);
 
-    thrd_sleep(NULL, NULL);
+    thrd_sleep(nullptr, nullptr);
 }
 
 /**
@@ -104,12 +106,13 @@ void thrd_sleep_time64_0200(void)
     ts.tv_sec = -1;
     ts.tv_nsec = 0; // 必须初始化
     int result = __thrd_sleep_time64(&ts, NULL);
-    if (result != -2) {
+    if (result != THRD_SLEEP_INVALID_PARAM) {
         t_error("%s negative value", __func__);
     }
 }
 
-static int ThrdSleepTest_impl(int argc, char *argv[]){
+static int ThrdSleepTestImpl(int argc, char *argv[])
+{
     thrd_sleep_0100();
     thrd_sleep_0200();
     thrd_sleep_0300();
@@ -119,7 +122,7 @@ static int ThrdSleepTest_impl(int argc, char *argv[]){
 
 int ThrdSleepTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdSleepTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ThrdSleepTestImpl(1, libcArgv);
 }

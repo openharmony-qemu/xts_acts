@@ -35,18 +35,19 @@ void *threadfunc(void *arg)
  */
 void pthread_self_0100(void)
 {
-    pthread_create(&tid1, NULL, threadfunc, NULL);
-    pthread_join(tid1, NULL);
+    pthread_create(&tid1, nullptr, threadfunc, nullptr);
+    pthread_join(tid1, nullptr);
 }
 
-static int PthreadSelfTest_impl(int argc, char *argv[]){
+static int PthreadSelfTestImpl(int argc, char *argv[])
+{
     pthread_self_0100();
     return g_tStatus;
 }
 
 int PthreadSelfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PthreadSelfTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return PthreadSelfTestImpl(1, libcArgv);
 }

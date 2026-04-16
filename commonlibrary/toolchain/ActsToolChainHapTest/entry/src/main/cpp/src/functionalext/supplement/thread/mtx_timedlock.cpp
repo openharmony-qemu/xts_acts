@@ -107,7 +107,8 @@ void mtx_timedlock_time64_0100(void)
     mtx_destroy(&mutex);
 }
 
-static int MtxTimedlockTest_impl(void){
+static int MtxTimedlockTestImpl(void)
+{
     mtx_timedlock_0100();
     mtx_timedlock_0200();
     mtx_timedlock_time64_0100();
@@ -116,5 +117,5 @@ static int MtxTimedlockTest_impl(void){
 
 int MtxTimedlockTest(void)
 {
-    return MtxTimedlockTest_impl();
+    return MtxTimedlockTestImpl();
 }

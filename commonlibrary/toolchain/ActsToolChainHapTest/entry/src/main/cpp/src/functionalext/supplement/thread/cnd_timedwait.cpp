@@ -61,7 +61,7 @@ void cnd_timedwait_0100(void)
 
     w_time.tv_sec += 3600;
 
-    if (thrd_create(&id, signal_parent, NULL) != thrd_success) {
+    if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);
     }
 
@@ -69,7 +69,7 @@ void cnd_timedwait_0100(void)
         t_error("%s cnd_timedwait failed\n", __func__);
     }
 
-    if (thrd_join(id, NULL) != thrd_success) {
+    if (thrd_join(id, nullptr) != thrd_success) {
         t_error("%s thrd_join failed\n", __func__);
     }
 
@@ -105,7 +105,7 @@ void cnd_timedwait_time64_0100(void)
 
     w_time.tv_sec += 3600;
 
-    if (thrd_create(&id, signal_parent, NULL) != thrd_success) {
+    if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);
     }
 
@@ -113,7 +113,7 @@ void cnd_timedwait_time64_0100(void)
         t_error("%s cnd_timedwait failed\n", __func__);
     }
 
-    if (thrd_join(id, NULL) != thrd_success) {
+    if (thrd_join(id, nullptr) != thrd_success) {
         t_error("%s thrd_join failed\n", __func__);
     }
 
@@ -133,7 +133,7 @@ static int cnd_timedwaitTest_with_args(int argc, char *argv[])
 
 int CndTimedwaitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return cnd_timedwaitTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return cnd_timedwaitTest_with_args(1, libcArgv);
 }

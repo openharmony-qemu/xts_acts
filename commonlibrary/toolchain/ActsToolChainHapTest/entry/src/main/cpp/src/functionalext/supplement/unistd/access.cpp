@@ -34,13 +34,13 @@ void access_0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
-    EXPECT_PTRNE("access_0100", fptr, NULL);
+    EXPECT_PTRNE("access_0100", fptr, nullptr);
     int isExist = access(ptr, F_OK);
     EXPECT_EQ("access_0100", isExist, SUCCESS);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -60,8 +60,8 @@ void access_0200(void)
     EXPECT_EQ("access_0200", isExist, SUCCESS);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -107,8 +107,8 @@ void access_0500(void)
     EXPECT_EQ("access_0500", isRead, SUCCESS);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -126,8 +126,8 @@ void access_0600(void)
     EXPECT_EQ("access_0600", isWrite, SUCCESS);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -146,8 +146,8 @@ void access_0700(void)
     EXPECT_EQ("access_0700", isExecute, SUCCESS);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -165,8 +165,8 @@ void access_0800(void)
     EXPECT_EQ("access_0800", isExecute, FAILED);
     fclose(fptr);
     remove(ptr);
-    fptr = NULL;
-    ptr = NULL;
+    fptr = nullptr;
+    ptr = nullptr;
 }
 
 TEST_FUN G_Fun_Array[] = {
@@ -191,7 +191,7 @@ static int accessTest_with_args(int argc, char *argv[])
 
 int AccessTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return accessTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return accessTest_with_args(1, libcArgv);
 }

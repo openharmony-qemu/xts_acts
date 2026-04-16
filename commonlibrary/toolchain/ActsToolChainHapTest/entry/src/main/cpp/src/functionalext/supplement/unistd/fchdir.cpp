@@ -52,14 +52,15 @@ void fchdir_0100(void)
     close(fd);
 }
 
-static int FchdirTest_impl(int argc, char *argv[]){
+static int FchdirTestImpl(int argc, char *argv[])
+{
     fchdir_0100();
     return g_tStatus;
 }
 
 int FchdirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FchdirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return FchdirTestImpl(1, libcArgv);
 }

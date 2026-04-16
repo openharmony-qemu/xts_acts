@@ -25,13 +25,13 @@
  * @tc.desc      : Modified scheduling priority
  * @tc.level     : Level 0
  */
-void nice_0100(void)
+void Nice0100(void)
 {
     int rev = -1;
     rev = nice(NZERO);
     EXPECT_TRUE("nice_0100", rev > 0);
 
-    rev = nice((TEST_NICE_RAT)*NZERO);
+    rev = nice((TEST_NICE_RAT) * NZERO);
     EXPECT_EQ("nice_0100", rev, -NZERO);
 }
 
@@ -40,19 +40,20 @@ void nice_0100(void)
  * @tc.desc      : Exception parameters, modify scheduling priority
  * @tc.level     : Level 2
  */
-void nice_0200(void)
+void Nice0200(void)
 {
     int rev = nice(NZERO - 1);
     EXPECT_EQ("nice_0200", rev, -1);
 }
 
-static int NiceTest_impl(void){
-    nice_0100();
-    nice_0200();
+static int NiceTestImpl(void)
+{
+    Nice0100();
+    Nice0200();
     return g_tStatus;
 }
 
 int NiceTest(void)
 {
-    return NiceTest_impl();
+    return NiceTestImpl();
 }

@@ -22,7 +22,7 @@ static mtx_t g_mtx;
 
 static int threadfuncA(void *arg)
 {
-    int ret= mtx_lock(&g_mtx);
+    int ret = mtx_lock(&g_mtx);
     EXPECT_EQ("mtx_unlock_0100", ret, 0);
     ret = mtx_unlock(&g_mtx);
     EXPECT_EQ("mtx_unlock_0100", ret, 0);
@@ -42,25 +42,26 @@ void mtx_unlock_0100(void)
         return;
     }
     thrd_t tid1;
-    result = thrd_create(&tid1, threadfuncA, NULL);
+    result = thrd_create(&tid1, threadfuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
     }
-    result = thrd_join(tid1, NULL);
+    result = thrd_join(tid1, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
         return;
     }
 }
 
-static int MtxUnlockTest_impl(void){
+static int MtxUnlockTestImpl(void)
+{
     mtx_unlock_0100();
     return g_tStatus;
 }
 
 int MtxUnlockTest(void)
 {
-    return MtxUnlockTest_impl();
+    return MtxUnlockTestImpl();
 }
 

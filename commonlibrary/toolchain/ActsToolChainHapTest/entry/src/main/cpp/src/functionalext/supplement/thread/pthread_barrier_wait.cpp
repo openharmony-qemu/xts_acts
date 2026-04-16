@@ -42,11 +42,11 @@ void pthread_barrier_wait_0100(void)
     int i = 0;
     pthread_t ids[THREADNUM];
 
-    int ret = pthread_barrier_init(&mybarrier, NULL, THREADNUM + 1);
+    int ret = pthread_barrier_init(&mybarrier, nullptr, THREADNUM + 1);
     EXPECT_EQ("pthread_barrier_wait_0100", ret, CMPFLAG);
 
     for (i = 0; i < THREADNUM; i++) {
-        if (pthread_create(&ids[i], NULL, threadfunc, NULL) != 0) {
+        if (pthread_create(&ids[i], nullptr, threadfunc, nullptr) != 0) {
             t_error("create thread failed\n");
             return;
         }
@@ -55,7 +55,7 @@ void pthread_barrier_wait_0100(void)
     ret = pthread_barrier_wait(&mybarrier);
 
     for (i = 0; i < THREADNUM; i++) {
-        ret = pthread_join(ids[i], NULL);
+        ret = pthread_join(ids[i], nullptr);
         if (ret != 0) {
             t_error("thread wait failed\n");
             return;
@@ -75,7 +75,7 @@ void pthread_barrier_wait_0200(void)
 {
     int threadnum = 1;
 
-    int ret = pthread_barrier_init(&mybarrier, NULL, threadnum);
+    int ret = pthread_barrier_init(&mybarrier, nullptr, threadnum);
     EXPECT_EQ("pthread_barrier_wait_0200", ret, CMPFLAG);
 
     ret = pthread_barrier_wait(&mybarrier);
@@ -85,7 +85,8 @@ void pthread_barrier_wait_0200(void)
     EXPECT_EQ("pthread_barrier_wait_0200", ret, CMPFLAG);
 }
 
-static int PthreadBarrierWaitTest_impl(void){
+static int PthreadBarrierWaitTestImpl(void)
+{
     pthread_barrier_wait_0100();
     pthread_barrier_wait_0200();
 
@@ -94,5 +95,5 @@ static int PthreadBarrierWaitTest_impl(void){
 
 int PthreadBarrierWaitTest(void)
 {
-    return PthreadBarrierWaitTest_impl();
+    return PthreadBarrierWaitTestImpl();
 }

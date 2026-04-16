@@ -474,7 +474,7 @@ static int16_t gBufferSize = 500;
  */
 static void gmtime_r_0100(void)
 {
-    for (int32_t i = 0; i < (int32_t)(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
@@ -517,7 +517,7 @@ static void gmtime_r_0100(void)
  */
 void gmtime64_r_0100(void)
 {
-    for (int32_t i = 0; i < (int32_t)(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
@@ -553,7 +553,8 @@ void gmtime64_r_0100(void)
     }
 }
 
-static int GmtimeRSupTest_impl(void){
+static int GmtimeRSupTestImpl(void)
+{
     gmtime_r_0100();
     gmtime64_r_0100();
     return T_STATUS;
@@ -561,5 +562,5 @@ static int GmtimeRSupTest_impl(void){
 
 int GmtimeRSupTest(void)
 {
-    return GmtimeRSupTest_impl();
+    return GmtimeRSupTestImpl();
 }

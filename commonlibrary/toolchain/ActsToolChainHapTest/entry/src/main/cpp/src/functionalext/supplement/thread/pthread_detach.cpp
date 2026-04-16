@@ -43,13 +43,14 @@ void pthread_detach_0100(void)
     sleep(SLEEPTIME);
 }
 
-static int PthreadDetachTest_impl(void){
+static int PthreadDetachTestImpl(void)
+{
     pthread_detach_0100();
     return g_tStatus;
 }
 
 int PthreadDetachTest(void)
 {
-    return PthreadDetachTest_impl();
+    return PthreadDetachTestImpl();
 }
 

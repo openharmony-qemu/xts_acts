@@ -472,9 +472,9 @@ static int16_t gBufferSize = 500;
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-static void gmtime_0100(void)
+static void Gmtime0100(void)
 {
-    for (int32_t i = 0; i < (int32_t)(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
@@ -517,7 +517,7 @@ static void gmtime_0100(void)
  */
 static void gmtime64_0100(void)
 {
-    for (int32_t i = 0; i < (int32_t)(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
@@ -553,13 +553,14 @@ static void gmtime64_0100(void)
     }
 }
 
-static int GmtimeSupTest_impl(void){
-    gmtime_0100();
+static int GmtimeSupTestImpl(void)
+{
+    Gmtime0100();
     gmtime64_0100();
     return T_STATUS;
 }
 
 int GmtimeSupTest(void)
 {
-    return GmtimeSupTest_impl();
+    return GmtimeSupTestImpl();
 }

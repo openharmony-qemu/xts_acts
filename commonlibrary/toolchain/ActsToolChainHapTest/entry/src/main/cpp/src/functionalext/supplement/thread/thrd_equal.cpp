@@ -31,7 +31,7 @@
 #define NSEC_TO_MS (1000000)
 #define TRYLOCK_FAIL (-2)
 
-static thrd_t thr;
+static thrd_t g_thr;
 static int count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -51,7 +51,7 @@ static int TrylockWithTimeout(pthread_mutex_t *mutex)
         }
 
         struct timespec req = { .tv_sec = 0, .tv_nsec = NSEC_TO_MS * 10 }; // 等待10毫秒
-        nanosleep(&req, NULL);
+        nanosleep(&req, nullptr);
         
         sleepCount++;
         if (sleepCount >= LOCK_WAIT_MAX_TIME_COUNT) {
@@ -66,7 +66,7 @@ static int threadfuncA(void *arg)
     pthread_mutex_lock(mtx);
     count++;
     thrd_t id = thrd_current();
-    if (!(thrd_equal(id, thr))) {
+    if (!(thrd_equal(id, g_thr))) {
         t_error("%s thrd_current failed", __func__);
     }
     pthread_mutex_unlock(mtx);
@@ -98,7 +98,7 @@ void thrd_equal_0100(void)
     int result;
     pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&mtx);
-    result = thrd_create(&thr, threadfuncA, (void *)&mtx);
+    result = thrd_create(&g_thr, threadfuncA, static_cast<void *>(&mtx));
     pthread_mutex_unlock(&mtx);
     pthread_mutex_destroy(&mtx);
     if (result != thrd_success) {
@@ -106,12 +106,12 @@ void thrd_equal_0100(void)
     }
 
     struct timespec sleepTime = { .tv_sec = 1, .tv_nsec = 0 };
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(thr, NULL);
+    result = thrd_join(g_thr, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
@@ -132,7 +132,7 @@ void thrd_equal_0200(void)
     thrd_t thr1, thr2;
     int result;
 
-    result = thrd_create(&thr1, threadfuncB, NULL);
+    result = thrd_create(&thr1, threadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -143,7 +143,7 @@ void thrd_equal_0200(void)
     }
 
     struct timespec sleepTime = { .tv_sec = 1, .tv_nsec = 0 };
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
@@ -176,7 +176,8 @@ void thrd_equal_0200(void)
     count = 0;
 }
 
-static int ThrdEqualTest_impl(int argc, char *argv[]){
+static int ThrdEqualTestImpl(int argc, char *argv[])
+{
     thrd_equal_0100();
     thrd_equal_0200();
     return g_tStatus;
@@ -184,7 +185,7 @@ static int ThrdEqualTest_impl(int argc, char *argv[]){
 
 int ThrdEqualTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ThrdEqualTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return ThrdEqualTestImpl(1, libcArgv);
 }

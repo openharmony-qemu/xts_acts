@@ -62,13 +62,13 @@ void pthread_setschedprio_0100(void)
     struct sched_param param;
 
     setthreadproperty(&attr, &param);
-    int ret = pthread_create(&thread, &attr, Thread1, NULL);
+    int ret = pthread_create(&thread, &attr, Thread1, nullptr);
     if (ret != 0) {
         EXPECT_EQ("pthread_setschedprio_0100", ret, CMPFLAG);
         return;
     }
 
-    pthread_join(thread, NULL);
+    pthread_join(thread, nullptr);
     pthread_attr_destroy(&attr);
 }
 
@@ -90,11 +90,12 @@ void pthread_setschedprio_0200(void)
         return;
     }
 
-    pthread_join(thread, NULL);
+    pthread_join(thread, nullptr);
     pthread_attr_destroy(&attr);
 }
 
-static int PthreadSetschedprioTest_impl(void){
+static int PthreadSetschedprioTestImpl(void)
+{
     pthread_setschedprio_0100();
     pthread_setschedprio_0200();
 
@@ -103,5 +104,5 @@ static int PthreadSetschedprioTest_impl(void){
 
 int PthreadSetschedprioTest(void)
 {
-    return PthreadSetschedprioTest_impl();
+    return PthreadSetschedprioTestImpl();
 }

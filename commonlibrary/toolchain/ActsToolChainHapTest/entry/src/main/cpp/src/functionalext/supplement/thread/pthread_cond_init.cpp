@@ -47,7 +47,8 @@ void pthread_cond_init_0200()
     EXPECT_EQ("pthread_cond_init_0200", back, SUCCESS);
 }
 
-static int PthreadCondInitTest_impl(int argc, char *argv[]){
+static int PthreadCondInitTestImpl(int argc, char *argv[])
+{
     pthread_cond_init_0100();
     pthread_cond_init_0200();
     return g_tStatus;
@@ -55,7 +56,7 @@ static int PthreadCondInitTest_impl(int argc, char *argv[]){
 
 int PthreadCondInitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PthreadCondInitTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return PthreadCondInitTestImpl(1, libcArgv);
 }

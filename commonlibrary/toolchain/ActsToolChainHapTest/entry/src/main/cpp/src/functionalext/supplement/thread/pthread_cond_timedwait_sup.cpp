@@ -29,7 +29,7 @@ static void *threadfuncA(void *arg)
     struct timespec outtime;
     gtm.tv_nsec = 1;
     pthread_mutex_lock(&gmutex);
-    gettimeofday(&now, NULL);
+    gettimeofday(&now, nullptr);
     outtime.tv_sec = now.tv_sec + 5;
     outtime.tv_nsec = now.tv_usec * 1000;
     pthread_cond_timedwait(&gcond, &gmutex, &outtime);
@@ -54,22 +54,23 @@ static void *threadfuncB(void *arg)
 void pthread_cond_timedwait_0100(void)
 {
     pthread_t pid1, pid2;
-    pthread_create(&pid1, NULL, threadfuncA, NULL);
-    pthread_create(&pid2, NULL, threadfuncB, NULL);
-    pthread_join(pid1, NULL);
-    pthread_join(pid2, NULL);
+    pthread_create(&pid1, nullptr, threadfuncA, nullptr);
+    pthread_create(&pid2, nullptr, threadfuncB, nullptr);
+    pthread_join(pid1, nullptr);
+    pthread_join(pid2, nullptr);
     EXPECT_EQ("pthread_cond_timedwait_0200", flag, 1);
     pthread_mutex_destroy(&gmutex);
     pthread_cond_destroy(&gcond);
 }
 
-static int PthreadCondTimedwaitSupTest_impl(void){
+static int PthreadCondTimedwaitSupTestImpl(void)
+{
     pthread_cond_timedwait_0100();
     return g_tStatus;
 }
 
 int PthreadCondTimedwaitSupTest(void)
 {
-    return PthreadCondTimedwaitSupTest_impl();
+    return PthreadCondTimedwaitSupTestImpl();
 }
 

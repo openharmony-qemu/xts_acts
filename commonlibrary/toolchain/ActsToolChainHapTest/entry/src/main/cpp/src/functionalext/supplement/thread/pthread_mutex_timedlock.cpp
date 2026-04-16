@@ -109,7 +109,8 @@ void pthread_mutex_timedlock_time64_0100(void)
     pthread_mutexattr_destroy(&mutex_attr);
 }
 
-static int PthreadMutexTimedlockTest_impl(void){
+static int PthreadMutexTimedlockTestImpl(void)
+{
     pthread_mutex_timedlock_0100();
     pthread_mutex_timedlock_0200();
     pthread_mutex_timedlock_0300();
@@ -119,6 +120,6 @@ static int PthreadMutexTimedlockTest_impl(void){
 
 int PthreadMutexTimedlockTest(void)
 {
-    return PthreadMutexTimedlockTest_impl();
+    return PthreadMutexTimedlockTestImpl();
 }
 

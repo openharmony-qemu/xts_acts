@@ -68,7 +68,8 @@ void timespec_get_time64_0200(void)
     }
 }
 
-static int TimespecGetTest_impl(int argc, char *argv[]){
+static int TimespecGetTestImpl(int argc, char *argv[])
+{
     timespec_get_0100();
     timespec_get_0200();
     timespec_get_time64_0200();
@@ -77,7 +78,7 @@ static int TimespecGetTest_impl(int argc, char *argv[]){
 
 int TimespecGetTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TimespecGetTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return TimespecGetTestImpl(1, libcArgv);
 }
