@@ -1343,7 +1343,7 @@ export default function NoPermissionTest() {
 
     /**
      * @tc.name   testHasMatchedCallLog2100
-     * @tc.number SUB_Telephony_Contact_testHasMatchedCallLog_2100
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_2100
      * @tc.desc   Test hasMatchedCallLog without permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1353,6 +1353,7 @@ export default function NoPermissionTest() {
       let caseName: string = 'testHasMatchedCallLog2100';
       console.info(`${caseName} test start `);
       try {
+
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumber = "13800000000";
         let minDuration = 10;
@@ -1379,10 +1380,12 @@ export default function NoPermissionTest() {
     it("testHasMatchedCallLog2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testHasMatchedCallLog2200';
       console.info(`${caseName} test start `);
+
       try {
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumber = "13800000000";
         let minDuration = 10;
+
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration);
         console.info(`${caseName} result: ${result}`);
         expect().assertFail();
@@ -1393,7 +1396,6 @@ export default function NoPermissionTest() {
         done();
       }
     });
-
 
   })
 }
