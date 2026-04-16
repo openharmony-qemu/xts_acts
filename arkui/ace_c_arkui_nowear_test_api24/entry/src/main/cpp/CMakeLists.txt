@@ -14,6 +14,7 @@ add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
     draganddrop/NativeDragDropTest.cpp
+    StrategyEnum.cpp
 )
 
 add_library(nativefunc SHARED
