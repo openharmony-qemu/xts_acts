@@ -3640,14 +3640,14 @@ export default function settingUiJsunit() {
       });
 
     /**
-     * @tc.name   SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100
-     * @tc.number SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100
+     * @tc.name   SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_0100
+     * @tc.number SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_0100
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Applications_Settings_openAppDetailSettings_invalid_bundleName_undefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function) => {
         let code = 0;
         try {
