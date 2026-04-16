@@ -60,7 +60,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = (3.40282346638528860e+38);
+      const v: float = (3.40282346638528860e+38).toFloat();
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
