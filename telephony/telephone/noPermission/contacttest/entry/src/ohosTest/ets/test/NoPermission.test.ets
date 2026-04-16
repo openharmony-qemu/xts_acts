@@ -1383,7 +1383,7 @@ export default function NoPermissionTest() {
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumber = "13800000000";
         let minDuration = 10;
-        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration);
         console.info(`${caseName} result: ${result}`);
         expect().assertFail();
         done();
