@@ -46,11 +46,12 @@ export default function GraphicTextAPI26() {
           };
           expect(paragraphStyle.orphanCharOptimization).assertTrue();
           console.info(msgStr + ' orphanCharOptimization is true');
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -77,11 +78,12 @@ export default function GraphicTextAPI26() {
           };
           expect(paragraphStyle.orphanCharOptimization).assertFalse();
           console.info(msgStr + ' orphanCharOptimization is false');
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -107,11 +109,12 @@ export default function GraphicTextAPI26() {
           };
           expect(paragraphStyle.orphanCharOptimization).assertEqual(undefined);
           console.info(msgStr + ' orphanCharOptimization is undefined');
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -151,11 +154,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -195,11 +199,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -239,11 +244,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -283,11 +289,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -316,26 +323,23 @@ export default function GraphicTextAPI26() {
           let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
           paragraphBuilder.addText('孤字优化通过更高效地处理孤立字符来改善文本布局。使能后，它会调整换行点以尽可能避免孤立字符');
           let paragraph: text.Paragraph = paragraphBuilder.build();
-          await paragraph.layout(200).then(() => {
-            console.info(msgStr + ' layout success');
-            let maxWidth: number = paragraph.getMaxWidth();
-            let height: number = paragraph.getHeight();
-            let longestLine: number = paragraph.getLongestLine();
-            console.info(msgStr + ' maxWidth: ' + maxWidth);
-            console.info(msgStr + ' height: ' + height);
-            console.info(msgStr + ' longestLine: ' + longestLine);
-            expect(maxWidth).assertLarger(0);
-            expect(height).assertLarger(0);
-            expect(longestLine).assertLarger(0);
-          }).catch((error: Error) => {
-            console.error(msgStr + ' layout error: ' + error.message);
-            expect().assertFail();
-          });
+          await paragraph.layout(200);
+          console.info(msgStr + ' layout success');
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -376,11 +380,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -420,11 +425,12 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLessOrEqual(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -464,11 +470,234 @@ export default function GraphicTextAPI26() {
           expect(maxWidth).assertLarger(0);
           expect(height).assertLarger(0);
           expect(longestLine).assertLarger(0);
+          done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
+    /**
+     * @tc.name   testSetParagraphCachesEnabledTrueStatic
+     * @tc.number SUB_GRAPHIC_FontCollection_setParagraphCachesEnabledTrueStatic_0100
+     * @tc.desc   Test FontCollection setParagraphCachesEnabled property set to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledTrueStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.setParagraphCachesEnabled(true);
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试启用段落缓存');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' layout success with cache enabled');
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetParagraphCachesEnabledFalseStatic
+     * @tc.number SUB_GRAPHIC_FontCollection_setParagraphCachesEnabledFalseStatic_0200
+     * @tc.desc   Test FontCollection setParagraphCachesEnabled property set to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledFalseStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.setParagraphCachesEnabled(false);
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试禁用段落缓存');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' layout success with cache disabled');
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetParagraphCachesEnabledToggleStatic
+     * @tc.number SUB_GRAPHIC_FontCollection_setParagraphCachesEnabledToggleStatic_0300
+     * @tc.desc   Test FontCollection setParagraphCachesEnabled toggle state multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledToggleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledToggleStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.setParagraphCachesEnabled(true);
+          fontCollection.setParagraphCachesEnabled(false);
+          fontCollection.setParagraphCachesEnabled(true);
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试缓存状态切换');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' layout success after toggle');
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetParagraphCachesEnabledWithLayoutStatic
+     * @tc.number SUB_GRAPHIC_FontCollection_setParagraphCachesEnabledLayoutStatic_0400
+     * @tc.desc   Test setParagraphCachesEnabled enabled with paragraph layout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledWithLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledWithLayoutStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.setParagraphCachesEnabled(true);
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试启用缓存后的多行文本排版效果');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(200);
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' layout success with cache enabled');
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetParagraphCachesEnabledDisabledWithLayoutStatic
+     * @tc.number SUB_GRAPHIC_FontCollection_setParagraphCachesEnabledDisabledLayoutStatic_0500
+     * @tc.desc   Test setParagraphCachesEnabled disabled with paragraph layout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledDisabledWithLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledDisabledWithLayoutStatic===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.setParagraphCachesEnabled(false);
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试禁用缓存后的多行文本排版效果');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(200);
+          let maxWidth: number = paragraph.getMaxWidth();
+          let height: number = paragraph.getHeight();
+          let longestLine: number = paragraph.getLongestLine();
+          console.info(msgStr + ' layout success with cache disabled');
+          console.info(msgStr + ' maxWidth: ' + maxWidth);
+          console.info(msgStr + ' height: ' + height);
+          console.info(msgStr + ' longestLine: ' + longestLine);
+          expect(maxWidth).assertLarger(0);
+          expect(height).assertLarger(0);
+          expect(longestLine).assertLarger(0);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
