@@ -187,7 +187,7 @@ export default function BuiltinsBigIntGetLongTest(): void {
       const result = bigInt.getLong();
       const expected = 922337203685477580;
       expect(result).assertEqual(expected);
-      });
+    });
 
     /**
      * @tc.name    builtinsBigIntGetLongTest1000
