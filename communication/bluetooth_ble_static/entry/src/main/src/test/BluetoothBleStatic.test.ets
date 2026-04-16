@@ -3280,7 +3280,7 @@ export default function bluetoothBleTest() {
          * @tc.name SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100
          * @tc.desc Test getConnectedBLEDevices return empty array
          * @tc.level Level 0
-         * *tc.type Function
+         * @tc.type Function
          * @tc.size MEDIUMTEST
          */
         it("SUB_Communication_BLE_GetConnectedBLEDevices_Return_Empty_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
