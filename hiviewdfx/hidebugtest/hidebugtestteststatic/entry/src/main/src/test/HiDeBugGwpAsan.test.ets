@@ -275,7 +275,98 @@ export default function HidebuggwpasanTest() {
             }
             console.info("testHidebuggwpasan_1000 end");
         })
-        //
+
+        /**
+        * @tc.name   testHidebuggwpasan_1100
+        * @tc.number SUB_DFX_DFR_Third_Asan_Interface_1100
+        * @tc.desc   测试可恢复接口,isRecover: true,传入天数为3
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('testHidebuggwpasan_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info("testHidebuggwpasan_1100 start");
+            let options11: hidebug.GwpAsanOptions = {
+                alwaysEnabled: true,
+                isRecover: true
+            };
+            try {
+                console.info("testHidebuggwpasan_1100 start 01");
+                hidebug.enableGwpAsanGrayscale(options11, 3);
+                console.info("testHidebuggwpasan_1100 start 02");
+                let state = hidebug.getGwpAsanGrayscaleState();
+                console.log('testHidebuggwpasan_1100: ' + state);
+                expect(state == 3).assertTrue();
+                console.info("testHidebuggwpasan_1100 start 03");
+                hidebug.disableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_1100 start 04");
+                done();
+            } catch (err) {
+                console.info(`testHidebuggwpasan_1100 > error code: ${err.code}, error msg: ${err.message}`);
+                expect().assertFail();
+                done();
+            }
+            console.info("testHidebuggwpasan_1100 end");
+        })
+
+        /**
+        * @tc.name   testHidebuggwpasan_1200
+        * @tc.number SUB_DFX_DFR_Third_Asan_Interface_1200
+        * @tc.desc   测试可恢复接口,isRecover: false,传入天数为3
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('testHidebuggwpasan_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info("testHidebuggwpasan_1200 start");
+            let options12: hidebug.GwpAsanOptions = {
+                alwaysEnabled: true,
+                isRecover: true
+            };
+            try {
+                console.info("testHidebuggwpasan_1200 start 01");
+                hidebug.enableGwpAsanGrayscale(options12, 3);
+                console.info("testHidebuggwpasan_1200 start 02");
+                let state = hidebug.getGwpAsanGrayscaleState();
+                console.log('testHidebuggwpasan_1200: ' + state);
+                expect(state == 3).assertTrue();
+                console.info("testHidebuggwpasan_1200 start 03");
+                hidebug.disableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_1200 start 04");
+                done();
+            } catch (err) {
+                console.info(`testHidebuggwpasan_1200 > error code: ${err.code}, error msg: ${err.message}`);
+                expect().assertFail();
+                done();
+            }
+            console.info("testHidebuggwpasan_1200 end");
+        })
+
+        /**
+        * @tc.name   testHidebuggwpasan_1300
+        * @tc.number SUB_DFX_DFR_Third_Asan_Interface_1300
+        * @tc.desc   测试可恢复接口传入undefined,isRecover: undefined
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('testHidebuggwpasan_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info("testHidebuggwpasan_1300 start");
+            let options13: hidebug.GwpAsanOptions = {
+                alwaysEnabled: true,
+                isRecover: undefined
+            };
+            try {
+                console.info("testHidebuggwpasan_1300 start 01");
+                hidebug.enableGwpAsanGrayscale(options13, 3);
+                done();
+            } catch (err) {
+                console.info(`testHidebuggwpasan_1300 > error code: ${err.code}, error msg: ${err.message}`);
+                expect(err.code == 401).assertTrue();
+                done();
+            }
+            console.info("testHidebuggwpasan_1300 end");
+        })
 
 
     })
