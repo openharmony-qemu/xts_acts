@@ -1177,7 +1177,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinArrayStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_ARRAY_STRESS_TEST_0100
      * @tc.desc   Array stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1205,7 +1205,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinMapStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_MAP_STRESS_TEST_0100
      * @tc.desc   Map stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1233,7 +1233,7 @@ export default function builtinContainerSendableObjectTest() {
 
     /**
      * @tc.name   builtinSetStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUILTIN_SET_STRESS_TEST_0100
      * @tc.desc   Set stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

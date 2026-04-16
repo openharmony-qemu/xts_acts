@@ -773,7 +773,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsArrayStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_ARRAY_STRESS_TEST_0100
      * @tc.desc   collectionsArray stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -801,7 +801,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsMapStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_MAP_STRESS_TEST_0100
      * @tc.desc   collectionsMap stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -829,7 +829,7 @@ export default function collectionsContainerSendableObjectTest() {
 
     /**
      * @tc.name   collectionsSetStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_STRESS_TEST_0100
      * @tc.desc   collectionsSet stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

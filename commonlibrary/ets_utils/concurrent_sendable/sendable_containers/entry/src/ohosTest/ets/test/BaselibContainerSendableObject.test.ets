@@ -1957,7 +1957,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibPlainArrayStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_PLAINARRAY_STRESS_TEST_0100
      * @tc.desc   PlainArray stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1985,7 +1985,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibLinkedListStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_LINKEDLIST_STRESS_TEST_0100
      * @tc.desc   LinkedList stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2013,7 +2013,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeMapStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREEMAP_STRESS_TEST_0100
      * @tc.desc   TreeMap stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2041,7 +2041,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibTreeSetStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TREESET_STRESS_TEST_0100
      * @tc.desc   TreeSet stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2072,7 +2072,7 @@ export default function baselibContainerSendableObjectTest() {
 
     /**
      * @tc.name   baselibArrayListStress1000_0100
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_STRESS_1000_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAYLIST_STRESS_TEST_0100
      * @tc.desc   ArrayList stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
