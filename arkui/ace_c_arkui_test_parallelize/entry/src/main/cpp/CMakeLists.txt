@@ -26,6 +26,10 @@ add_library(nativerender SHARED
     radio/RadioTest.cpp
     slider/SliderTest.cpp
     toggle/ToggleTest.cpp
+    grid/GridAttributeTest.cpp
+    grid/NodeXtsGridTest.cpp
+    list/ListAttributeTest.cpp
+    list/NodeXtsListTest.cpp
 )
 
 add_library(nativefunc SHARED

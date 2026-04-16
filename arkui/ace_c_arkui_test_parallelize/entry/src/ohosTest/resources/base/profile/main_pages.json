@@ -10,6 +10,8 @@
     "MainAbility/pages/checkBoxGroup/checkBoxGroupTest",
     "MainAbility/pages/radio/radioTest",
     "MainAbility/pages/slider/sliderTest",
-    "MainAbility/pages/toggle/toggleTest"
+    "MainAbility/pages/toggle/toggleTest",
+    "MainAbility/pages/grid/GridAttributeTest",
+    "MainAbility/pages/list/ListAttributeTest"
   ]
 }
