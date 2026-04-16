@@ -181,7 +181,7 @@ it('searchTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual('true');
       console.info('searchTest_static_008 END');
       done();
     });
