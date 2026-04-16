@@ -213,7 +213,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetConfigDescriptor004
-     * @tc.number SUB_Driver_Ext_DDKETS_0710
+     * @tc.number SUB_Driver_Ext_DDKETS_4000
      * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing with configIndex 255 boundary value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbClaimInterface004
-     * @tc.number SUB_Driver_Ext_DDKETS_1110
+     * @tc.number SUB_Driver_Ext_DDKETS_4100
      * @tc.desc   OH_Usb_ClaimInterface Interface testing with interfaceIndex 255 boundary value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -339,7 +339,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbClaimInterface005
-     * @tc.number SUB_Driver_Ext_DDKETS_1120
+     * @tc.number SUB_Driver_Ext_DDKETS_4200
      * @tc.desc   OH_Usb_ClaimInterface Interface testing with interfaceIndex 0 boundary value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
