@@ -16,9 +16,14 @@
 #ifndef SRC_FUNCTIONALEXT_SUPPLEMENT_SIGNAL_H_H
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_SIGNAL_H_H
 
-int GetitimerTime64Test();
-int LibcCurrentSigrtmaxTest();
-int LibcCurrentSigrtminTest();
-int SetitimerTime64Test();
+int __getitimer_time64Test();
+int __libc_current_sigrtmaxTest();
+int __libc_current_sigrtminTest();
+int __setitimer_time64Test();
+int SigholdTest();
+int SigpauseTest();
+int SigrelseTest();
+int SigsetTest();
+int SigsuspendTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_SIGNAL_H_H

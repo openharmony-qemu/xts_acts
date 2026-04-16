@@ -211,4 +211,9 @@ int VfscanfTest(void);
 int VfwprintfTest(void);
 int VfwscanfTest(void);
 
+// Unistd test functions
+int AccessTest(void);
+int FchdirTest(void);
+int NiceTest(void);
+
 #endif

@@ -33,5 +33,20 @@ int EpollWaitTest();
 int EventfdTest();
 int EventfdReadTest();
 int EventfdWriteTest();
+int FlistxattrTest();
+int FremovexattrTest();
+int FsetxattrTest();
+int GetdentsTest();
+int NameToHandleAtTest();
+int ProcessVmTest();
+int RemapFilePagesTest();
+int RemovexattrTest();
+int SbrkTest();
+int SetxattrTest();
+int SwapoffTest();
+int SwaponTest();
+int TeeTest();
+int TimerfdGettimeTest();
+int TimerfdSettimeTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LINUX_H_H

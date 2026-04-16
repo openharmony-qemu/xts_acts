@@ -103,6 +103,12 @@ add_library(
     src/functionalext/supplement/linux/eventfd.cpp
     src/functionalext/supplement/linux/eventfd_read.cpp
     src/functionalext/supplement/linux/eventfd_write.cpp
+    src/functionalext/supplement/linux/flistxattr.cpp
+    src/functionalext/supplement/linux/fremovexattr.cpp
+    src/functionalext/supplement/linux/fsetxattr.cpp
+    src/functionalext/supplement/linux/getdents.cpp
+    src/functionalext/supplement/linux/name_to_handle_at.cpp
+    src/functionalext/supplement/linux/process_vm.cpp
     src/functionalext/supplement/linux/readahead.cpp
     src/functionalext/supplement/locale/duplocale_sup.cpp
     src/functionalext/supplement/malloc/aligned_alloc.cpp
@@ -115,6 +121,7 @@ add_library(
     src/functionalext/supplement/multibyte/c16rtomb.cpp
     src/functionalext/supplement/multibyte/c32rtomb.cpp
     src/functionalext/supplement/network/__h_errno_location.cpp
+    src/functionalext/supplement/network/__recvmmsg_time64.cpp
     src/functionalext/supplement/network/dn_comp.cpp
     src/functionalext/supplement/network/dn_skipname.cpp
     src/functionalext/supplement/prng/drand48.cpp
@@ -126,6 +133,8 @@ add_library(
     src/functionalext/supplement/setjmp/_setjmp.cpp
      src/functionalext/supplement/signal/__libc_current_sigrtmax.cpp
      src/functionalext/supplement/signal/__libc_current_sigrtmin.cpp
+    src/functionalext/supplement/signal/__getitimer_time64.cpp
+    src/functionalext/supplement/signal/__setitimer_time64.cpp
     src/functionalext/supplement/signal/sigpending.cpp
      src/functionalext/supplement/stdio/__fbufsize.cpp
      src/functionalext/supplement/stdio/__flbf.cpp
@@ -148,7 +157,17 @@ add_library(
     src/functionalext/supplement/thread/cnd_wait.cpp
     src/functionalext/supplement/time/clock.cpp
     src/functionalext/supplement/time/clock_getcpuclockid.cpp
+    src/functionalext/supplement/time/clock_getres.cpp
     src/functionalext/supplement/time/difftime_sup.cpp
+    src/functionalext/supplement/time/gmtime_r_sup.cpp
+    src/functionalext/supplement/time/gmtime_sup.cpp
+    src/functionalext/supplement/time/nanosleep.cpp
+    src/functionalext/supplement/time/timer_create.cpp
+    src/functionalext/supplement/time/timer_getoverrun.cpp
+    src/functionalext/supplement/time/timer_gettime.cpp
+    src/functionalext/supplement/time/timer_settime.cpp
+    src/functionalext/supplement/time/timespec_get.cpp
+    src/functionalext/supplement/time/utime_sup.cpp
     src/functionalext/supplement/time/wcsftime.cpp
      src/functionalext/supplement/unistd/alarm.cpp
     src/functionalext/supplement/unistd/chdir.cpp
@@ -313,9 +332,18 @@ add_library(
     src/functionalext/supplement/linux/quotactl.cpp
     src/functionalext/supplement/linux/setfsgid.cpp
     src/functionalext/supplement/linux/setfsuid.cpp
+    src/functionalext/supplement/linux/remap_file_pages.cpp
+    src/functionalext/supplement/linux/removexattr.cpp
+    src/functionalext/supplement/linux/sbrk.cpp
+    src/functionalext/supplement/linux/setxattr.cpp
+    src/functionalext/supplement/linux/swapoff.cpp
+    src/functionalext/supplement/linux/swapon.cpp
+    src/functionalext/supplement/linux/tee.cpp
     src/functionalext/supplement/linux/signalfd.cpp
     src/functionalext/supplement/linux/sysinfo.cpp
     src/functionalext/supplement/linux/timerfd_create.cpp
+    src/functionalext/supplement/linux/timerfd_gettime.cpp
+    src/functionalext/supplement/linux/timerfd_settime.cpp
     src/functionalext/supplement/linux/vmsplice.cpp
     src/functionalext/supplement/locale/langinfo_sup.cpp
     src/functionalext/supplement/locale/wcscoll.cpp
@@ -382,14 +410,20 @@ add_library(
     src/functionalext/supplement/network/htons.cpp
     src/functionalext/supplement/network/if_indextoname.cpp
     src/functionalext/supplement/network/if_nameindex.cpp
+    src/functionalext/supplement/network/inet_addr.cpp
     src/functionalext/supplement/network/inet_aton.cpp
     src/functionalext/supplement/network/inet_lnaof.cpp
+    src/functionalext/supplement/network/inet_ntop.cpp
     src/functionalext/supplement/network/inet_makeaddr.cpp
     src/functionalext/supplement/network/inet_netof.cpp
     src/functionalext/supplement/network/inet_network.cpp
     src/functionalext/supplement/network/inet_ntoa.cpp
     src/functionalext/supplement/network/proto.cpp
+    src/functionalext/supplement/network/res_mkquery.cpp
+    src/functionalext/supplement/network/res_query.cpp
+    src/functionalext/supplement/network/res_querydomain.cpp
     src/functionalext/supplement/network/sendmsg.cpp
+    src/functionalext/supplement/network/sendmmsg.cpp
     src/functionalext/supplement/network/setprotoent.cpp
     src/functionalext/supplement/network/socketpair.cpp
     src/functionalext/supplement/passwd/getgrent.cpp
@@ -438,6 +472,11 @@ add_library(
     src/functionalext/supplement/signal/sigaction.cpp
     src/functionalext/supplement/signal/sigignore.cpp
     src/functionalext/supplement/signal/sigqueue.cpp
+    src/functionalext/supplement/signal/sighold.cpp
+    src/functionalext/supplement/signal/sigpause.cpp
+    src/functionalext/supplement/signal/sigrelse.cpp
+    src/functionalext/supplement/signal/sigset.cpp
+    src/functionalext/supplement/signal/sigsuspend.cpp
     src/functionalext/supplement/signal/sigwait.cpp
     src/functionalext/supplement/signal/sigwaitinfo.cpp
     src/functionalext/supplement/stat/umask.cpp
@@ -552,6 +591,10 @@ add_library(
     src/functionalext/supplement/string/wmemmove.cpp
     src/functionalext/supplement/string/wmemset.cpp
     src/functionalext/supplement/temp/mktemp.cpp
+    src/functionalext/supplement/temp/mkostemp.cpp
+    src/functionalext/supplement/temp/mkostemps.cpp
+    src/functionalext/supplement/temp/mkstemp.cpp
+    src/functionalext/supplement/temp/mkstemps.cpp
     src/functionalext/supplement/thread/mtx_init.cpp
     src/functionalext/supplement/thread/mtx_lock.cpp
     src/functionalext/supplement/thread/mtx_timedlock.cpp
@@ -640,6 +683,9 @@ add_library(
     src/functionalext/supplement/unistd/sleep.cpp
     src/functionalext/supplement/unistd/usleep.cpp
     src/functionalext/supplement/unistd/writev.cpp
+    src/functionalext/supplement/unistd/access.cpp
+    src/functionalext/supplement/unistd/fchdir.cpp
+    src/functionalext/supplement/unistd/nice.cpp
     src/functionalext/supplement/wctype/iswctype_l.cpp
     src/functionalext/supplement/wctype/iswgraph.cpp
     src/functionalext/unittest/unit_test_assert_fail.cpp
