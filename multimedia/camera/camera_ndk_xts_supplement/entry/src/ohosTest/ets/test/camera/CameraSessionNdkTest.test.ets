@@ -753,6 +753,20 @@ export default function CameraFunctionTest() {
     });
 
     /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr("");
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
      * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
      * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
      * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_OK
@@ -776,20 +790,6 @@ export default function CameraFunctionTest() {
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200', Level.LEVEL0, async () => {
       let result = cameraObj.TestAddDeferredSurfaceErr(indexSurfaceId);
-      console.info(TAG, result);
-      expect(result).assertEqual(7400101);
-    });
-
-    /**
-     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
-     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
-     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300', Level.LEVEL0, async () => {
-      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr("");
       console.info(TAG, result);
       expect(result).assertEqual(7400101);
     });
