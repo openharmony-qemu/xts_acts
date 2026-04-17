@@ -496,15 +496,15 @@ export default function HasMatchedCallLogTest() {
     });
 
     /**
-     * @tc.name   testHasMatchedCallLog1400
-     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1400
+     * @tc.name   testHasMatchedCallLog1800
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1800
      * @tc.desc   Test hasMatchedCallLog with null context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testHasMatchedCallLog1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testHasMatchedCallLog1400';
+    it("testHasMatchedCallLog1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1800';
       console.info(`${caseName} test start`);
 
       try {
@@ -524,15 +524,15 @@ export default function HasMatchedCallLogTest() {
     });
 
     /**
-     * @tc.name   testHasMatchedCallLog1500
-     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1500
+     * @tc.name   testHasMatchedCallLog1900
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1900
      * @tc.desc   Test hasMatchedCallLog with null context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testHasMatchedCallLog1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testHasMatchedCallLog1500';
+    it("testHasMatchedCallLog1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1900';
       console.info(`${caseName} test start`);
 
       try {
