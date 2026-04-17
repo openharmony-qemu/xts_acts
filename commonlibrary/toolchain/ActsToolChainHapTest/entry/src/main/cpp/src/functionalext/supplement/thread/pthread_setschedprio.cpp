@@ -16,21 +16,27 @@
 #include <pthread.h>
 #include "functionalext.h"
 
+#define SLEEP_SECONDS 1
+#define PRIO_NORMAL 10
+#define PRIO_INVALID 1000
+#define PRIO_HIGH 51
+#define SUCCESS_CODE 0
+
 static void *Thread1(void *arg)
 {
     (void)arg;
-    sleep(1);
-    int ret = pthread_setschedprio(pthread_self(), 10);
-    EXPECT_EQ("pthread_setschedprio_0100", ret, 0);
+    sleep(SLEEP_SECONDS);
+    int ret = pthread_setschedprio(pthread_self(), PRIO_NORMAL);
+    EXPECT_EQ("pthread_setschedprio_0100", ret, SUCCESS_CODE);
     return nullptr;
 }
 
 static void *Thread2(void *arg)
 {
     (void)arg;
-    sleep(1);
+    sleep(SLEEP_SECONDS);
 
-    int ret = pthread_setschedprio(pthread_self(), 1000);
+    int ret = pthread_setschedprio(pthread_self(), PRIO_INVALID);
     EXPECT_EQ("pthread_setschedprio_0100", ret, EINVAL);
     return nullptr;
 }
@@ -40,7 +46,7 @@ static void setthreadproperty(pthread_attr_t *attr, struct sched_param *param)
     int ret = pthread_attr_init(attr);
     EXPECT_EQ("pthread_setschedprio_0100", ret, CMPFLAG);
 
-    param->sched_priority = 51;
+    param->sched_priority = PRIO_HIGH;
     ret = pthread_attr_setschedpolicy(attr, SCHED_RR);
     EXPECT_EQ("pthread_setschedprio_0100", ret, CMPFLAG);
     ret = pthread_attr_setschedparam(attr, param);
@@ -84,7 +90,7 @@ void pthread_setschedprio_0200(void)
     struct sched_param param;
 
     setthreadproperty(&attr, &param);
-    int ret = pthread_create(&thread, &attr, Thread2, NULL);
+    int ret = pthread_create(&thread, &attr, Thread2, nullptr);
     if (ret != 0) {
         EXPECT_EQ("pthread_setschedprio_0200", ret, CMPFLAG);
         return;

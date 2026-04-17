@@ -18,41 +18,44 @@
 #include "test.h"
 #include "functionalext.h"
 
-pthread_t pid;
-static int flag = 0;
+#define SLEEP_SECONDS (2)
+#define EXPECTED_FLAG (1)
 
-static void *threadfunc(void *arg)
+pthread_t g_pid;
+static int g_flag = 0;
+
+static void *Threadfunc(void *arg)
 {
-    sleep(2);
-    flag++;
+    sleep(SLEEP_SECONDS);
+    g_flag++;
     return nullptr;
 }
 
 /**
- * @tc.name      : pthread_join_0100
+ * @tc.name      : PthreadJoin0100
  * @tc.desc      : The parameters are valid, verify that the main thread does not wait for other threads to end the
  * scene
  * @tc.level     : Level 0
  */
-static void pthread_join_0100(void)
+static void PthreadJoin0100(void)
 {
-    flag = 0;
-    pthread_create(&pid, nullptr, threadfunc, nullptr);
-    int result = pthread_join(pid, nullptr);
+    g_flag = 0;
+    pthread_create(&g_pid, nullptr, Threadfunc, nullptr);
+    int result = pthread_join(g_pid, nullptr);
     if (result != 0) {
         t_error("%s pthread_join error get result is %d are not want 0\n", __func__, result);
     }
-    if (flag != 1) {
-        t_error("%s pthread_join error get flag is %d are not want 1\n", __func__, flag);
+    if (g_flag != EXPECTED_FLAG) {
+        t_error("%s pthread_join error get g_flag is %d are not want 1\n", __func__, g_flag);
     }
 }
 
 /**
- * @tc.name      : pthread_join_0200
+ * @tc.name      : PthreadJoin0200
  * @tc.desc      : The input parameter pthread_t is NULL, pthread_join() returns errno code ESRCH
  * @tc.level     : Level 0
  */
-void pthread_join_0200(void)
+void PthreadJoin0200(void)
 {
     pthread_t t = 0;
     int result = pthread_join(t, nullptr);
@@ -63,8 +66,8 @@ void pthread_join_0200(void)
 
 static int PthreadJoinTestImpl(int argc, char *argv[])
 {
-    pthread_join_0100();
-    pthread_join_0200();
+    PthreadJoin0100();
+    PthreadJoin0200();
     return g_tStatus;
 }
 

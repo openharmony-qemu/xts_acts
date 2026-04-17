@@ -23,7 +23,7 @@
  * @tc.desc      : Provide correct parameters, test timeout and rwlock
  * @tc.level     : Level 0
  */
-void pthread_rwlock_timedrdlock_0100(void)
+void PthreadRwlockTimedrdlock0100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -35,7 +35,7 @@ void pthread_rwlock_timedrdlock_0100(void)
         ts.tv_sec += 1;
         rev = pthread_rwlock_timedrdlock(&rwlock, &ts);
     }
-    EXPECT_EQ("pthread_rwlock_timedrdlock_0100", rev, 0);
+    EXPECT_EQ("PthreadRwlockTimedrdlock0100", rev, 0);
     if (rev == 0) {
         pthread_rwlock_unlock(&rwlock);
     }
@@ -43,17 +43,17 @@ void pthread_rwlock_timedrdlock_0100(void)
 }
 
 /**
- * @tc.name      : pthread_rwlock_timedrdlock_0200
+ * @tc.name      : PthreadRwlockTimedrdlock0200
  * @tc.desc      : In the locked (read lock) state, the test times out and rwlock
  * @tc.level     : Level 0
  */
-void pthread_rwlock_timedrdlock_0200(void)
+void PthreadRwlockTimedrdlock0200(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
     pthread_rwlock_init(&rwlock, nullptr);
     int rev = pthread_rwlock_timedrdlock(&rwlock, nullptr);
-    EXPECT_EQ("pthread_rwlock_timedrdlock_0200", rev, 0);
+    EXPECT_EQ("PthreadRwlockTimedrdlock0200", rev, 0);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
     rev = -1;
@@ -61,7 +61,7 @@ void pthread_rwlock_timedrdlock_0200(void)
         ts.tv_sec += 1;
         rev = pthread_rwlock_timedrdlock(&rwlock, &ts);
     }
-    EXPECT_EQ("pthread_rwlock_timedrdlock_0200", rev, 0);
+    EXPECT_EQ("PthreadRwlockTimedrdlock0200", rev, 0);
     pthread_rwlock_unlock(&rwlock);
     pthread_rwlock_destroy(&rwlock);
 }
@@ -71,13 +71,13 @@ void pthread_rwlock_timedrdlock_0200(void)
  * @tc.desc      : In the locked (write lock) state, the test times out and rwlock
  * @tc.level     : Level 2
  */
-void pthread_rwlock_timedrdlock_0300(void)
+void PthreadRwlockTimedrdlock0300(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
     pthread_rwlock_init(&rwlock, nullptr);
     int rev = pthread_rwlock_timedwrlock(&rwlock, nullptr);
-    EXPECT_EQ("pthread_rwlock_timedrdlock_0300", rev, 0);
+    EXPECT_EQ("PthreadRwlockTimedrdlock0300", rev, 0);
     clock_gettime(CLOCK_REALTIME, &ts);
     struct tm *tmp = localtime(&ts.tv_sec);
     rev = -1;
@@ -85,7 +85,7 @@ void pthread_rwlock_timedrdlock_0300(void)
         ts.tv_sec += 1;
         rev = pthread_rwlock_timedrdlock(&rwlock, &ts);
     }
-    EXPECT_EQ("pthread_rwlock_timedrdlock_0300", rev, ETIMEDOUT);
+    EXPECT_EQ("PthreadRwlockTimedrdlock0300", rev, ETIMEDOUT);
     pthread_rwlock_unlock(&rwlock);
     pthread_rwlock_destroy(&rwlock);
 }
@@ -95,7 +95,7 @@ void pthread_rwlock_timedrdlock_0300(void)
  * @tc.desc      : Provide correct parameters, test timeout and rwlock
  * @tc.level     : Level 0
  */
-void pthread_rwlock_timedrdlock_time64_0100(void)
+void PthreadRwlockTimedrdlockTime640100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -107,7 +107,7 @@ void pthread_rwlock_timedrdlock_time64_0100(void)
         ts.tv_sec += 1;
         rev = __pthread_rwlock_timedrdlock_time64(&rwlock, &ts);
     }
-    EXPECT_EQ("pthread_rwlock_timedrdlock_time64_0100", rev, 0);
+    EXPECT_EQ("PthreadRwlockTimedrdlockTime640100", rev, 0);
     if (rev == 0) {
         pthread_rwlock_unlock(&rwlock);
     }
@@ -116,10 +116,10 @@ void pthread_rwlock_timedrdlock_time64_0100(void)
 
 static int PthreadRwlockTimedrdlockTestImpl(void)
 {
-    pthread_rwlock_timedrdlock_0100();
-    pthread_rwlock_timedrdlock_0200();
-    pthread_rwlock_timedrdlock_0300();
-    pthread_rwlock_timedrdlock_time64_0100();
+    PthreadRwlockTimedrdlock0100();
+    PthreadRwlockTimedrdlock0200();
+    PthreadRwlockTimedrdlock0300();
+    PthreadRwlockTimedrdlockTime640100();
     return g_tStatus;
 }
 

@@ -21,11 +21,11 @@
 #define TEST_MUTEX_ATTR 15
 
 /**
- * @tc.name      : pthread_mutex_timedlock_0100
+ * @tc.name      : PthreadMutexTimedlock0100
  * @tc.desc      : Provide correct parameters, test timeout and lock
  * @tc.level     : Level 0
  */
-void pthread_mutex_timedlock_0100(void)
+void PthreadMutexTimedlock0100(void)
 {
     struct timespec ts = {0}; ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
@@ -35,7 +35,7 @@ void pthread_mutex_timedlock_0100(void)
     pthread_mutex_init(&mutex, &mutex_attr);
 
     int rev = pthread_mutex_timedlock(&mutex, &ts);
-    EXPECT_EQ("pthread_mutex_timedlock_0100", rev, 0);
+    EXPECT_EQ("PthreadMutexTimedlock0100", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
@@ -43,11 +43,11 @@ void pthread_mutex_timedlock_0100(void)
 }
 
 /**
- * @tc.name      : pthread_mutex_timedlock_0200
+ * @tc.name      : PthreadMutexTimedlock0200
  * @tc.desc      : The lock attribute is PTHREAD_MUTEX_ERRORCHECK, and the test timeout is locked
  * @tc.level     : Level 0
  */
-void pthread_mutex_timedlock_0200(void)
+void PthreadMutexTimedlock0200(void)
 {
     struct timespec ts = {0}; ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
@@ -57,7 +57,7 @@ void pthread_mutex_timedlock_0200(void)
     pthread_mutexattr_settype(&mutex_attr, PTHREAD_MUTEX_ERRORCHECK);
     pthread_mutex_init(&mutex, &mutex_attr);
     int rev = pthread_mutex_timedlock(&mutex, &ts);
-    EXPECT_EQ("pthread_mutex_timedlock_0200", rev, 0);
+    EXPECT_EQ("PthreadMutexTimedlock0200", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
@@ -65,11 +65,11 @@ void pthread_mutex_timedlock_0200(void)
 }
 
 /**
- * @tc.name      : pthread_mutex_timedlock_0300
+ * @tc.name      : PthreadMutexTimedlock0300
  * @tc.desc      : In the locked state, the test times out and locks
  * @tc.level     : Level 2
  */
-void pthread_mutex_timedlock_0300(void)
+void PthreadMutexTimedlock0300(void)
 {
     struct timespec ts = {0}; ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
@@ -78,9 +78,9 @@ void pthread_mutex_timedlock_0300(void)
     pthread_mutexattr_settype(&mutex_attr, TEST_MUTEX_ATTR);
     pthread_mutex_init(&mutex, &mutex_attr);
     int rev = pthread_mutex_lock(&mutex);
-    EXPECT_EQ("pthread_mutex_timedlock_0300", rev, 0);
+    EXPECT_EQ("PthreadMutexTimedlock0300", rev, 0);
     rev = pthread_mutex_timedlock(&mutex, &ts);
-    EXPECT_EQ("pthread_mutex_timedlock_0300", rev, ETIMEDOUT);
+    EXPECT_EQ("PthreadMutexTimedlock0300", rev, ETIMEDOUT);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
@@ -88,11 +88,11 @@ void pthread_mutex_timedlock_0300(void)
 }
 
 /**
- * @tc.name      : pthread_mutex_timedlock_time64_0100
+ * @tc.name      : PthreadMutexTimedlockTime640100
  * @tc.desc      : Provide correct parameters, test timeout and lock
  * @tc.level     : Level 0
  */
-void pthread_mutex_timedlock_time64_0100(void)
+void PthreadMutexTimedlockTime640100(void)
 {
     struct timespec ts = {0}; ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
@@ -102,7 +102,7 @@ void pthread_mutex_timedlock_time64_0100(void)
     pthread_mutex_init(&mutex, &mutex_attr);
 
     int rev = __pthread_mutex_timedlock_time64(&mutex, &ts);
-    EXPECT_EQ("pthread_mutex_timedlock_time64_0100", rev, 0);
+    EXPECT_EQ("PthreadMutexTimedlockTime640100", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
@@ -111,10 +111,10 @@ void pthread_mutex_timedlock_time64_0100(void)
 
 static int PthreadMutexTimedlockTestImpl(void)
 {
-    pthread_mutex_timedlock_0100();
-    pthread_mutex_timedlock_0200();
-    pthread_mutex_timedlock_0300();
-    pthread_mutex_timedlock_time64_0100();
+    PthreadMutexTimedlock0100();
+    PthreadMutexTimedlock0200();
+    PthreadMutexTimedlock0300();
+    PthreadMutexTimedlockTime640100();
     return g_tStatus;
 }
 
