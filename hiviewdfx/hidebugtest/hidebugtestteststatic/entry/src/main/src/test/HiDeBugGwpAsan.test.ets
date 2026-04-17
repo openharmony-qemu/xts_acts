@@ -321,7 +321,7 @@ export default function HidebuggwpasanTest() {
             console.info("testHidebuggwpasan_1200 start");
             let options12: hidebug.GwpAsanOptions = {
                 alwaysEnabled: true,
-                isRecover: true
+                isRecover: false
             };
             try {
                 console.info("testHidebuggwpasan_1200 start 01");
@@ -362,7 +362,7 @@ export default function HidebuggwpasanTest() {
                 done();
             } catch (err) {
                 console.info(`testHidebuggwpasan_1300 > error code: ${err.code}, error msg: ${err.message}`);
-                expect(err.code == 401).assertTrue();
+                expect(err.code === 401).assertTrue();
                 done();
             }
             console.info("testHidebuggwpasan_1300 end");
