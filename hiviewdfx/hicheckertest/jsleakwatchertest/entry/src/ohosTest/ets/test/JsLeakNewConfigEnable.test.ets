@@ -122,7 +122,7 @@ export default function JsLeakNewConfigEnable() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_0800 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 10801001).assertTrue();
+        expect(err.code === 10801001).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_0800 end");
@@ -149,7 +149,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('testNewJsLeakWatcher heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_0900 isEnabled false')
         done();
       } catch (err) {
@@ -183,7 +183,7 @@ export default function JsLeakNewConfigEnable() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_1000 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 10801002).assertTrue();
+        expect(err.code === 10801002).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1000 end");
@@ -210,7 +210,7 @@ export default function JsLeakNewConfigEnable() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_1100 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 10801003).assertTrue();
+        expect(err.code === 10801003).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_1100 end");
@@ -978,7 +978,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3600 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3600 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1022,7 +1022,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3700 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3700 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1067,7 +1067,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3800 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3800 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1114,7 +1114,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3900 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_3900 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1165,7 +1165,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4000 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4000 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1216,7 +1216,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4100 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4100 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1269,7 +1269,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4200 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4200 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1320,7 +1320,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4300 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4300 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
@@ -1369,7 +1369,7 @@ export default function JsLeakNewConfigEnable() {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4400 heapDumpFileName: ' + filepath[1]);
           leakFilePath = filepath;
         });
-        expect(leakFilePath.length == 0).assertTrue();
+        expect(leakFilePath.length === 0).assertTrue();
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4400 test_' + obj.toString());
         let checkstr:string = jsLeakWatcher.check();
