@@ -1787,5 +1787,1530 @@ export default function PhotoOutputStaticTest(): void {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0100
+     * @tc.desc   hasFlash api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.hasFlash();
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0200
+     * @tc.desc   hasFlash api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let result = mPhotoSession!.hasFlash();
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0100
+     * @tc.desc   isFlashModeSupported api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          const formats = [
+            camera.FlashMode.FLASH_MODE_CLOSE,
+            camera.FlashMode.FLASH_MODE_OPEN,
+            camera.FlashMode.FLASH_MODE_AUTO,
+            camera.FlashMode.FLASH_MODE_ALWAYS_OPEN,
+          ];
+
+          for (const format of formats) {
+            try {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+              let result = mPhotoSession!.isFlashModeSupported(format);
+              console.info(TAG, testName, "Entering start PASSED", result);
+              expect(isEmptyBoolean(result)).assertFalse();
+            } catch (err) {
+              console.error(TAG, testName, " FAILED", err.code);
+              expect().assertFail();
+            }
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0200
+     * @tc.desc   isFlashModeSupported api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORTED_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let result = mPhotoSession!.isFlashModeSupported(camera.FlashMode.FLASH_MODE_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0100
+     * @tc.desc   getFlashMode api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          const formats = [
+            camera.FlashMode.FLASH_MODE_CLOSE,
+            camera.FlashMode.FLASH_MODE_OPEN,
+            camera.FlashMode.FLASH_MODE_AUTO,
+            camera.FlashMode.FLASH_MODE_ALWAYS_OPEN,
+          ];
+
+          for (const format of formats) {
+            try {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+              if (mPhotoSession!.hasFlash()) {
+                if (mPhotoSession!.isFlashModeSupported(format)) {
+                  mPhotoSession!.setFlashMode(format);
+                  let mode = mPhotoSession!.getFlashMode();
+                  console.info(TAG, testName, ' photo set flash mode, status: ', format, mode);
+                  expect(mode).assertEqual(format);
+                } else {
+                  console.error(TAG, testName, "Flash mode not supported on this device");
+                }
+              }
+              console.info(TAG, testName, "Entering start PASSED");
+            } catch (err) {
+              console.error(TAG, testName, " FAILED", err.code);
+              expect().assertFail();
+            }
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0200
+     * @tc.desc   getFlashMode api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FLASH_MODE_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let result = mPhotoSession!.getFlashMode();
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_FLASH_MODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_FLASH_MODE_STATIC_0200
+     * @tc.desc   setFlashMode api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_FLASH_MODE_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_FLASH_MODE_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.setFlashMode(camera.FlashMode.FLASH_MODE_CLOSE);
+            console.info(TAG, testName, "Entering start PASSED");
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100
+     * @tc.desc   isFocusModeSupported api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          const formats = [
+            camera.FocusMode.FOCUS_MODE_MANUAL,
+            camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO,
+            camera.FocusMode.FOCUS_MODE_AUTO,
+            camera.FocusMode.FOCUS_MODE_LOCKED,
+          ];
+
+          for (const format of formats) {
+            try {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+              let result = mPhotoSession!.isFocusModeSupported(format);
+              console.info(TAG, testName, "Entering start PASSED", result);
+              expect(isEmptyBoolean(result)).assertFalse();
+            } catch (err) {
+              console.error(TAG, testName, " FAILED", err.code);
+              expect().assertFail();
+            }
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200
+     * @tc.desc   isFocusModeSupported api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let result = mPhotoSession!.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0100
+     * @tc.desc   getFocusMode api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          const formats = [
+            camera.FocusMode.FOCUS_MODE_MANUAL,
+            camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO,
+            camera.FocusMode.FOCUS_MODE_AUTO,
+            camera.FocusMode.FOCUS_MODE_LOCKED,
+          ];
+
+          for (const format of formats) {
+            try {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+              if (mPhotoSession!.isFocusModeSupported(format)) {
+                mPhotoSession!.setFocusMode(format);
+                let mode = mPhotoSession!.getFocusMode();
+                console.info(TAG, testName, ' photo set flash mode, status: ', format, mode);
+                expect(mode).assertEqual(format);
+              } else {
+                console.error(TAG, testName, "Flash mode not supported on this device");
+              }
+              console.info(TAG, testName, "Entering start PASSED");
+            } catch (err) {
+              console.error(TAG, testName, " FAILED", err.code);
+              expect().assertFail();
+            }
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0200
+     * @tc.desc   getFocusMode api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_MODE_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let mode = mPhotoSession!.getFocusMode();
+            console.info(TAG, testName, ' photo set flash mode, status: ', mode);
+            expect().assertFail();
+            console.info(TAG, testName, "Entering start PASSED");
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_MODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_MODE_STATIC_0200
+     * @tc.desc   setFocusMode api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_MODE_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_MODE_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.setFocusMode(camera.FocusMode.FOCUS_MODE_AUTO);
+            console.info(TAG, testName, ' photo set flash mode, status: ');
+            expect().assertFail();
+            console.info(TAG, testName, "Entering start PASSED");
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0100
+     * @tc.desc   setFocusPoint api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            mPhotoSession!.setFocusPoint({ x: 1, y: 1 });
+            let mode = mPhotoSession!.getFocusPoint();
+            expect(mode.x).assertEqual(1);
+            expect(mode.y).assertEqual(1);
+            console.info(TAG, testName, "Entering start PASSED");
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0200
+     * @tc.desc   setFocusPoint api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_FOCUS_POINT_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.setFocusPoint({ x: 1, y: 1 });
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_POINT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_POINT_STATIC_0200
+     * @tc.desc   getFocusPoint api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_POINT_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCUS_POINT_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.getFocusMode();
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_STATIC_0200
+     * @tc.desc   getFocusPoint api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.getFocalLength();
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_PHYSICAL_CAMERA_ORIENTATION_VARIABLE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_IS_PHYSICAL_CAMERA_ORIENTATION_VARIABLE_STATIC_0100
+     * @tc.desc   isPhysicalCameraOrientationVariable SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_IS_PHYSICAL_CAMERA_ORIENTATION_VARIABLE_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_IS_PHYSICAL_CAMERA_ORIENTATION_VARIABLE_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let res = mCameraInput!.isPhysicalCameraOrientationVariable();
+            expect(isEmptyBoolean(res)).assertFalse();
+            console.info(TAG, testName, "Entering start PASSED", res);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100
+     * @tc.desc   getPhysicalCameraOrientation SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_GET_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let res = mCameraInput!.getPhysicalCameraOrientation();
+            expect(isEmptyNumber(res)).assertFalse();
+            console.info(TAG, testName, "Entering start PASSED", JSON.stringify(res));
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_OFF_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_OFF_ERROR_STATIC_0100
+     * @tc.desc   PhotoSession offError SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_OFF_ERROR_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_OFF_ERROR_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let count = 0;
+            mPhotoSession!.onError((err: BusinessError) => {
+              console.error(`Camera input error code: ${err.code}`);
+              count = 1;
+            })
+            console.info(TAG, testName, "Entering start");
+            if (mPhotoSession!.isAutoDeviceSwitchSupported()) {
+              mPhotoSession!.enableAutoDeviceSwitch(true);
+              await Utils.msSleep(500);
+              expect(count).assertEqual(0);
+              mPhotoSession!.offError();
+              console.info(TAG, testName, "Entering start PASSED");
+            } else {
+              console.info(TAG, testName, "当前设备不支持此功能");
+              mPhotoSession!.offError();
+            }
+
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100
+     * @tc.desc   usePhysicalCameraOrientation SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let count = 0;
+            mCameraInput!.onError(mCameraDeviceArray![0], (err: BusinessError) => {
+              console.error(`Camera input error code: ${err.code}`);
+              count = 1;
+            })
+            console.info(TAG, testName, "Entering start");
+            if (mCameraInput!.isPhysicalCameraOrientationVariable()) {
+              mCameraInput!.usePhysicalCameraOrientation(true);
+              await Utils.msSleep(500);
+              expect(count).assertEqual(0);
+              mCameraInput!.offError(mCameraDeviceArray![0]);
+              console.info(TAG, testName, "Entering start PASSED");
+            } else {
+              console.info(TAG, testName, "当前设备相机物理镜头角度不可变。");
+              mCameraInput!.offError(mCameraDeviceArray![0]);
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0200
+     * @tc.desc   usePhysicalCameraOrientation SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let count = 0;
+            mCameraInput!.onError(mCameraDeviceArray![0], (err: BusinessError) => {
+              console.error(`Camera input error code: ${err.code}`);
+              count = 1;
+            })
+            console.info(TAG, testName, "Entering start");
+            if (mCameraInput!.isPhysicalCameraOrientationVariable()) {
+              mCameraInput!.usePhysicalCameraOrientation(false);
+              await Utils.msSleep(500);
+              expect(count).assertEqual(0);
+              console.info(TAG, testName, "Entering start PASSED");
+              mCameraInput!.offError(mCameraDeviceArray![0]);
+            } else {
+              console.info(TAG, testName, "当前设备相机物理镜头角度不可变。");
+              mCameraInput!.offError(mCameraDeviceArray![0]);
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0300
+     * @tc.desc   usePhysicalCameraOrientation not config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0300';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+
+            await Utils.msSleep(1000);
+
+            mPhotoSession!.beginConfig();
+
+            if (mCameraInput != undefined) {
+              console.info(TAG + "Start to addInput");
+              mPhotoSession!.addInput(mCameraInput!);
+            }
+
+            if (mPreviewOutput != undefined) {
+              console.info(TAG + "Start to addOutput mPreviewOutput");
+              mPhotoSession!.addOutput(mPreviewOutput!);
+            }
+
+            if (mPhotoOutput != undefined) {
+              console.info(TAG + "Start to addOutput mPhotoOutput");
+              mPhotoSession!.addOutput(mPhotoOutput!);
+            }
+            console.info(TAG, testName, "Entering start");
+            mCameraInput!.usePhysicalCameraOrientation(false);
+            expect().assertFail();
+            console.info(TAG, testName, "Entering start PASSED");
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400102);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0400
+     * @tc.desc   usePhysicalCameraOrientation not config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0400';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await Utils.msSleep(1000);
+            mPhotoSession!.beginConfig();
+            if (mCameraInput != undefined) {
+              console.info(TAG + "Start to addInput");
+              mPhotoSession!.addInput(mCameraInput!);
+            }
+            if (mPreviewOutput != undefined) {
+              console.info(TAG + "Start to addOutput mPreviewOutput");
+              mPhotoSession!.addOutput(mPreviewOutput!);
+            }
+
+            if (mPhotoOutput != undefined) {
+              console.info(TAG + "Start to addOutput mPhotoOutput");
+              mPhotoSession!.addOutput(mPhotoOutput!);
+            }
+            console.info(TAG, testName, "Entering start");
+            mCameraInput!.usePhysicalCameraOrientation(true);
+            expect().assertFail();
+            console.info(TAG, testName, "Entering start PASSED");
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400102);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0500
+     * @tc.desc   usePhysicalCameraOrientation 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0500';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            console.info(TAG, testName, "Entering start");
+            if (!mCameraInput!.isPhysicalCameraOrientationVariable()) {
+              mCameraInput!.usePhysicalCameraOrientation(true);
+              expect().assertFail();
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400102);
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0600
+     * @tc.desc   usePhysicalCameraOrientation 7400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_USE_PHYSICAL_CAMERA_ORIENTATION_STATIC_0600';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            console.info(TAG, testName, "Entering start");
+            if (!mCameraInput!.isPhysicalCameraOrientationVariable()) {
+              mCameraInput!.usePhysicalCameraOrientation(false);
+              expect().assertFail();
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400102);
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_OPEN_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_OPEN_STATIC_0100
+     * @tc.desc   OPEN the first parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_OPEN_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_OPEN_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            console.info('Enter createInput');
+            if (mCameraDeviceArray == undefined) {
+              console.info(TAG + "Entering createInputs FAILED with NoCamera");
+              return;
+            }
+            mCameraInput = mCameraManager!.createCameraInput(mCameraDeviceArray![0]);
+            if (mCameraInput == undefined) {
+              console.info(TAG + "createCameraInput FAILED");
+              return;
+            }
+            let count = 0;
+            mCameraInput!.onError(mCameraDeviceArray![0], (err: BusinessError) => {
+              console.error(`Camera input error code: ${err.code}`);
+              count = 1;
+            })
+            console.info(TAG, testName, "Entering  start", JSON.stringify(mCameraInput));
+            await mCameraInput!.open(false);
+            console.info(TAG, testName, "Entering  success");
+            expect(count).assertEqual(0);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          mCameraInput!.offError(mCameraDeviceArray![0]);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0100
+     * @tc.desc   isExposureModeSupported api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0200
+     * @tc.desc   isExposureModeSupported api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORTED_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            let result = mPhotoSession!.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0100
+     * @tc.desc   getExposureBiasRange api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          const formats = [
+            camera.ExposureMode.EXPOSURE_MODE_LOCKED,
+            camera.ExposureMode.EXPOSURE_MODE_AUTO,
+            camera.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO,
+            camera.ExposureMode.EXPOSURE_MODE_MANUAL,
+          ];
+
+          for (const format of formats) {
+            try {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+              if (mPhotoSession!.isExposureModeSupported(format)) {
+                let mode: Array<number> = mPhotoSession!.getExposureBiasRange();
+                console.info(TAG, testName, ' getExposureBiasRange, status: ', format, mode);
+                expect(isEmptyArrayNumber(mode)).assertFalse();
+              } else {
+                console.error(TAG, testName, "getExposureBiasRange not supported on this device");
+              }
+              console.info(TAG, testName, "Entering start PASSED");
+            } catch (err) {
+              console.error(TAG, testName, " FAILED", err.code);
+              expect().assertFail();
+            }
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0200
+     * @tc.desc   getExposureBiasRange api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_GET_EXPOSURE_BIAS_RANGE_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
+            mPhotoSession!.getExposureBiasRange();
+            expect().assertFail();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(7400103);
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0100
+     * @tc.desc   EMU api BEAUTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            let res = camera.ControlCenterEffectType.BEAUTY;
+            console.info(TAG, testName, ' emu is : ', res);
+            expect(res).assertEqual(0);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0200
+     * @tc.desc   EMU api PORTRAIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_EMU_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            let res = camera.ControlCenterEffectType.PORTRAIT;
+            console.info(TAG, testName, ' emu is : ', res);
+            expect(res).assertEqual(1);
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0100
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0100';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.AUTO;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.AUTO);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.AUTO);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0200
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode CLOUDY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0200';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.CLOUDY;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.CLOUDY);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.CLOUDY);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0300
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode INCANDESCENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0300';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.INCANDESCENT;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.INCANDESCENT);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.INCANDESCENT);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0400
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode FLUORESCENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0400';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.FLUORESCENT;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.FLUORESCENT);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.FLUORESCENT);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0500
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0500';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.MANUAL;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.MANUAL);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.MANUAL);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0600
+     * @tc.desc   setWhiteBalanceMode camera WhiteBalanceMode LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_STATIC_0600';
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          let PMode: camera.WhiteBalanceMode = camera.WhiteBalanceMode.LOCKED;
+          let status = mPhotoSession!.isWhiteBalanceModeSupported(PMode);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported :", status);
+          if (status) {
+            mPhotoSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.LOCKED);
+            let mode = mPhotoSession!.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.LOCKED);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.desc   isAutoDeviceSwitchSupported api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isAutoDeviceSwitchSupported();
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.desc   enableAutoDeviceSwitch api the first parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            if (mPhotoSession!.isAutoDeviceSwitchSupported()) {
+              mPhotoSession!.enableAutoDeviceSwitch(false);
+              console.info(TAG, testName, "Entering start PASSED");
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_MIRROR_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_IS_MIRROR_SUPPORTED_STATIC_0100
+     * @tc.desc   isMirrorSupported api success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_IS_MIRROR_SUPPORTED_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_IS_MIRROR_SUPPORTED_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          console.info(TAG + testName + "Entering start for camera");
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          try {
+            let res = mPhotoOutput!.isMirrorSupported();
+            console.info(TAG, testName, "Entering start PASSED", 'is', res);
+            expect(isEmptyBoolean(res)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0100
+     * @tc.desc   enableMirror api the first parameter is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0100';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          console.info(TAG + testName + "Entering start for camera");
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          try {
+            if (mPhotoOutput!.isMirrorSupported() && mPhotoOutput!.isMovingPhotoSupported()) {
+              mPhotoOutput!.enableMirror(false);
+              console.info(TAG, testName, "Entering start PASSED", 'is');
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0200
+     * @tc.desc   enableMirror api the first parameter is false 不支持调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          console.info(TAG + testName + "Entering start for camera");
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          try {
+            if (!mPhotoOutput!.isMirrorSupported()) {
+              mPhotoOutput!.enableMirror(false);
+              console.info(TAG, testName, "Entering start PASSED", 'is');
+              expect().assertFail();
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(11);
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0300
+     * @tc.desc   enableMirror api the first parameter is true 不支持调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_ENABLE_MIRROR_STATIC_0300';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          console.info(TAG + testName + "Entering start for camera");
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          try {
+            if (!mPhotoOutput!.isMirrorSupported()) {
+              mPhotoOutput!.enableMirror(true);
+              console.info(TAG, testName, "Entering start PASSED", 'is');
+              expect().assertFail();
+            }
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect(Number(err.code)).assertEqual(11);
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
   })
 }
