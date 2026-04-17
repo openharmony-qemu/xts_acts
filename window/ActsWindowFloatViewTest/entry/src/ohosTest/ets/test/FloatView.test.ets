@@ -114,14 +114,14 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   test_FloatViewTemplateType_Enum
+     * @tc.name   test_FloatViewTemplateType_Enum_0100
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_0100
      * @tc.desc   test FloatViewTemplateType enum values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FloatViewTemplateType_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('test_FloatViewTemplateType_Enum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let CaseName: string = 'test_FloatViewTemplateType_Enum';
       console.log(CaseName + ' begin.');
       console.log(CaseName + ' floatView.FloatViewTemplateType.ROUNDED_RECTANGLE: ' + floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
@@ -1176,7 +1176,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onRectChange_two_callback
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2550
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2600
      * @tc.desc   test register two rectChange callbacks and verify both triggered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1240,7 +1240,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onRectChange_off_one_callback
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2560
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2700
      * @tc.desc   test register two rectChange callbacks and unregister one callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1316,7 +1316,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onRectChange_off_all_callback
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2570
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2800
      * @tc.desc   test register two rectChange callbacks and unregister all without parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1390,7 +1390,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onRectChange_1300030
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2600
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2900
      * @tc.desc   test repeated onRectChange callback registration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1431,7 +1431,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onLimitsChange_one_0100
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2700
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3000
      * @tc.desc   test onLimitsChange callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1479,7 +1479,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onLimitsChange_1300030
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2800
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3100
      * @tc.desc   test repeated onLimitsChange callback registration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1520,7 +1520,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_onLimitsChange_two_callback
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2850
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3200
      * @tc.desc   test register two limitsChange callbacks and offLimitsChange without callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1569,7 +1569,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_restoreMainWindow_1300031
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2900
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3300
      * @tc.desc   test restoreMainWindow without start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1609,7 +1609,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_restoreMainWindow_1300032
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3000
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3400
      * @tc.desc   test restoreMainWindow without click
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1657,7 +1657,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_start_after_stop
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3700
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3500
      * @tc.desc   test start floatView after stop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1711,7 +1711,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_create_multiple_floatViewController
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3800
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3600
      * @tc.desc   test create multiple floatViewController
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
