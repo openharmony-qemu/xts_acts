@@ -3545,6 +3545,32 @@ function testActiveSim() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_ActiveSim_policy_conflict_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_ACTIVESIM_JS_0111
+   * @tc.desc   test ActiveSim failed
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_ActiveSim_policy_conflict_0111", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(SELFWANT, 0);
+      telephonyManager.activeSim(SELFWANT, 0);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
+    } finally {
+      telephonyManager.setSimEnabled(SELFWANT, 0);
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testDeactiveSim() {
@@ -3783,6 +3809,32 @@ function testDeactiveSim() {
         expect(Number(error.code) === 9201017).assertTrue();
       }
     } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_DeactiveSim_success_0211
+   * @tc.number SUB_CUSTOMIZATION_EDM_TELEPHONYMANAGER_DEACTIVESIM_JS_0211
+   * @tc.desc   test DeactiveSim success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_DeactiveSim_success_0211", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.setSimDisabled(SELFWANT, 0);
+      telephonyManager.deactiveSim(SELFWANT, 0);
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 203).assertTrue();
+      }
+    } finally {
+      telephonyManager.setSimEnabled(SELFWANT, 0);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
