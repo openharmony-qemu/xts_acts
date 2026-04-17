@@ -1579,6 +1579,352 @@ export default function GraphicTextAPI26() {
           done();
         }
       })
+      
+    /**
+     * @tc.name   testGetVisibleTextRangesNoTruncation
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesNoTruncation_0100
+     * @tc.desc   Test Paragraph getVisibleTextRanges returns full range when text is not truncated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesNoTruncation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesNoTruncation===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = 'Hello';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(1);
+          expect(visibleRanges[0].start).assertEqual(0);
+          expect(visibleRanges[0].end).assertEqual(testText.length);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesMaxLines
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesMaxLines_0200
+     * @tc.desc   Test Paragraph getVisibleTextRanges with maxLines truncation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesMaxLines===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证maxLines截断的效果';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(1);
+          expect(visibleRanges[0].end).assertLess(testText.length);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesEndEllipsis
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesEndEllipsis_0300
+     * @tc.desc   Test Paragraph getVisibleTextRanges with END ellipsis mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesEndEllipsis', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesEndEllipsis===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "...",
+          ellipsisMode: text.EllipsisMode.END
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证尾部省略的效果';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(1);
+          expect(visibleRanges[0].start).assertEqual(0);
+          expect(visibleRanges[0].end).assertLess(testText.length);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesStartEllipsis
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesStartEllipsis_0400
+     * @tc.desc   Test Paragraph getVisibleTextRanges with START ellipsis mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesStartEllipsis', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesStartEllipsis===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "...",
+          ellipsisMode: text.EllipsisMode.START
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证头部省略的效果';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(1);
+          expect(visibleRanges[0].start).assertLargerOrEqual(0);
+          expect(visibleRanges[0].end).assertEqual(testText.length);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesMiddleEllipsis
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesMiddleEllipsis_0500
+     * @tc.desc   Test Paragraph getVisibleTextRanges with MIDDLE ellipsis mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesMiddleEllipsis', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesMiddleEllipsis===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "...",
+          ellipsisMode: text.EllipsisMode.MIDDLE
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 1
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证中部省略的效果';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(100);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(2);
+          expect(visibleRanges[0].start).assertEqual(0);
+          expect(visibleRanges[1].end).assertEqual(testText.length);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesMultilineStart
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesMultilineStart_0600
+     * @tc.desc   Test Paragraph getVisibleTextRanges with MULTILINE_START ellipsis mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesMultilineStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesMultilineStart===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "...",
+          ellipsisMode: text.EllipsisMode.MULTILINE_START
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 3
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证多行头部省略的效果。文本需要足够长以触发多行省略逻辑，确保测试用例能够正确验证API的行为';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(150);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(2);
+          expect(visibleRanges[0].start).assertEqual(0);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesMultilineMiddle
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesMultilineMiddle_0700
+     * @tc.desc   Test Paragraph getVisibleTextRanges with MULTILINE_MIDDLE ellipsis mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesMultilineMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesMultilineMiddle===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0,
+          ellipsis: "...",
+          ellipsisMode: text.EllipsisMode.MULTILINE_MIDDLE
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            maxLines: 3
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          let testText: string = '这是一个很长的测试文本，用于验证多行中部省略的效果。文本需要足够长以触发多行省略逻辑，确保测试用例能够正确验证API的行为';
+          paragraphBuilder.addText(testText);
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(150);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(2);
+          expect(visibleRanges[0].start).assertEqual(0);
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testGetVisibleTextRangesEmptyText
+     * @tc.number SUB_GRAPHIC_Paragraph_getVisibleTextRangesEmptyText_0800
+     * @tc.desc   Test Paragraph getVisibleTextRanges with empty text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetVisibleTextRangesEmptyText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testGetVisibleTextRangesEmptyText===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let visibleRanges: Array<text.Range> = paragraph.getVisibleTextRanges();
+          console.info(msgStr + ' visibleRanges length: ' + visibleRanges.length);
+          expect(visibleRanges.length).assertEqual(1); // 加载字体为空字符串
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
 
   })
 }
