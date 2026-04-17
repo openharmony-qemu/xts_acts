@@ -118,4 +118,4 @@ export const OH_AVSCREEN_CAPTURE_ErrCode0200: () => number;
 export const OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100: () => number;
 export const OH_AVScreenCapture_GetMultiDisplayIdsSelected0100: () => number;
 export const OH_AVScreenCapture_GetMultiDisplayIdsSelected0101: () => number;
-export const OH_AVScreenCaptureStateCode_Enum: () => number;
+export const OH_ScreenCapture_StateCodeEnum_0300: () => number;
