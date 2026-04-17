@@ -103,7 +103,7 @@ struct Index {
   @State setWebDestroyModeArr: String[] = ['webview.WebDestroyMode.FAST_MODE', 'webview.WebDestroyMode.NORMAL_MODE']
   @State isPageEnd: number = -1;
   @State str: string = '';
-  @State newState : int = 3;
+  @State newState : int = 0;
   @State navigationPolicy:number = 5;
   @State errorCode: int = 0;
   @State flag: Boolean = true

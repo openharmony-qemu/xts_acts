@@ -30,30 +30,6 @@ export default function geolocationPermissions() {
 
     beforeAll(async (): Promise<void> => {
       console.log('App start')
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          console.log('onAbilityCreate end')
-        },
-      }, (err : BusinessError|null) : void => {
-        if (err != null ) {
-
-          console.log('-----' + err.code)
-        }
-
-        console.log('BusinessError  end')
-      })
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actswebuseragentonetest.static')
-        .then(result => {
-          console.info('Command executed successfully:', result);
-        })
-        .catch(err => {
-          console.error('Error executing command:', err);
-        });
       await Utils.msSleep(2000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -65,7 +41,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testPrepareForPageLoadStatic001
-     * @tc.number SUB_WEB_PREPAREFORPAGELOAD_0100
+     * @tc.number SUB_ACE_WEB_PREPARE_FORPAGELOAD_0100
      * @tc.desc   test prepareForPageLoad
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +60,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testPrepareForPageLoadStatic002
-     * @tc.number SUB_WEB_PREPAREFORPAGELOAD_0200
+     * @tc.number SUB_WEB_PREPARE_FORPAGELOAD_0200
      * @tc.desc   test prepareForPageLoad
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +79,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testPrepareForPageLoadStatic003
-     * @tc.number SUB_WEB_PREPAREFORPAGELOAD_0300
+     * @tc.number SUB_ACE_WEB_PREPARE_FORPAGELOAD_0300
      * @tc.desc   test prepareForPageLoad
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +98,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testPrepareForPageLoadStatic004
-     * @tc.number SUB_WEB_PREPAREFORPAGELOAD_0400
+     * @tc.number SUB_ACE_WEB_PREPARE_FORPAGELOAD_0400
      * @tc.desc   test prepareForPageLoad
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +117,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testPrepareForPageLoadStatic005
-     * @tc.number SUB_WEB_PREPAREFORPAGELOAD_0500
+     * @tc.number SUB_ACE_WEB_PREPARE_FORPAGELOAD_0500
      * @tc.desc   test prepareForPageLoad
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +136,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testSetUrlTrustListStatic001
-     * @tc.number SUB_WEB_SETURLTRUSTLIST_0100
+     * @tc.number SUB_WEB_SET_URLTRUSTLIST_0100
      * @tc.desc   test setUrlTrustList
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -179,7 +155,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testSetUrlTrustListStatic002
-     * @tc.number SUB_WEB_SETURLTRUSTLIST_0200
+     * @tc.number SUB_ACE_WEB_SET_URLTRUSTLIST_0200
      * @tc.desc   test setUrlTrustList
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -198,7 +174,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testSetUrlTrustListStatic003
-     * @tc.number SUB_WEB_SETURLTRUSTLIST_0300
+     * @tc.number SUB_ACE_WEB_SET_URLTRUSTLIST_0300
      * @tc.desc   test setUrlTrustList
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

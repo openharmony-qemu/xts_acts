@@ -48,6 +48,46 @@ export default function webviewNetworkProxy() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
+
+
+    /**
+     * @tc.name   testGetProxyRulesStatic002
+     * @tc.number SUB_WEB_NETWORKPROXY_1500
+     * @tc.desc   test getProxyRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProxyRulesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testGetProxyRules2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetProxyRules2', true, 2025021912, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetBypassRulesStatic002
+     * @tc.number SUB_WEB_NETWORKPROXY_1400
+     * @tc.desc   test getBypassRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetBypassRulesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testGetBypassRules2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetBypassRules2', true, 2025021902, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
     /**
      * @tc.name   testNetworkProxySchemeFilterMatchAllSchemesStatic
      * @tc.number SUB_WEB_NETWORKPROXY_0100
@@ -306,14 +346,14 @@ export default function webviewNetworkProxy() {
      */
     it('testGetBypassRulesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
-      Utils.emitEvent('testGetBypassRules', 10);
-      await Utils.msSleep(2000);
-      Utils.registerEvent('testGetBypassRules', true, 202502190, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('networkProxyButton', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
+        Utils.emitEvent('testGetBypassRules', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetBypassRules', true, 202502190, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
 
     /**
      * @tc.name   testGetProxyRulesStatic

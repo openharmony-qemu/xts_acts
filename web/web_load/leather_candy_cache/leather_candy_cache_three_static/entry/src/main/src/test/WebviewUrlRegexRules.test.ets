@@ -38,7 +38,7 @@ export default function ActsAceWebviewSetBackForwardCacheOptions() {
 
     /**
      * @tc.name   testUrlRegexRulesSecondLevelDomainStatic
-     * @tc.number SUB_ACE_WEBVIEW_SECONDLEVELDOMAIN_API_260326151
+     * @tc.number SUB_ACE_WEBVIEW_SECONDLEVELDOMAIN_API_0001
      * @tc.desc   test UrlRegexRulesSecondLevelDomain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function ActsAceWebviewSetBackForwardCacheOptions() {
 
     /**
      * @tc.name   testUrlRegexRulesRuleStatic
-     * @tc.number SUB_ACE_WEBVIEW_SECONDLEVELDOMAIN_API_260326152
+     * @tc.number SUB_ACE_WEBVIEW_SECONDLEVELDOMAIN_API_0002
      * @tc.desc   test UrlRegexRulesUrl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
