@@ -3232,7 +3232,7 @@ export default function PhotoOutputStaticTest(): void {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
           try {
-            if (mPhotoOutput!.isMirrorSupported()) {
+            if (mPhotoOutput!.isMirrorSupported() && mPhotoOutput!.isMovingPhotoSupported()) {
               mPhotoOutput!.enableMirror(false);
               console.info(TAG, testName, "Entering start PASSED", 'is');
             }
