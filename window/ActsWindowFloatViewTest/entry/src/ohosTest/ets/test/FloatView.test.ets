@@ -160,7 +160,7 @@ export default function abilityTest() {
     /**
      * @tc.name   test_isFloatViewEnabled
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_0300
-     * @tc.desc   test isFloatViewEnabled function
+     * @tc.desc   test isFloatViewEnabled function return true when device support and false when not support
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -168,10 +168,12 @@ export default function abilityTest() {
     it('test_isFloatViewEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let CaseName: string = 'test_isFloatViewEnabled';
       console.log(CaseName + ' begin.');
+      console.log(CaseName + ' isDeviceSupportFloatView: ' + isDeviceSupportFloatView);
       try {
         let result = floatView.isFloatViewEnabled();
         console.info(CaseName + ' isFloatViewEnabled result: ' + result);
         expect(typeof result === 'boolean').assertTrue();
+        expect(result).assertEqual(isDeviceSupportFloatView);
         console.log(CaseName + ' end.');
         done();
       } catch (e) {
@@ -197,33 +199,26 @@ export default function abilityTest() {
         templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
       };
 
-      let isSupportFloatView = floatView.isFloatViewEnabled();
-      console.log(CaseName + ' isSupportFloatView: ' + isSupportFloatView);
-      if (isSupportFloatView) {
-        try {
-          floatView.create(config).then((data: floatView.FloatViewController) => {
-            let floatViewController: floatView.FloatViewController = data;
-            console.info(CaseName + ' Succeeded in creating float view controller. Data: ' + data);
-            expect(isSupportFloatView).assertEqual(true);
-            expect(floatViewController != null).assertTrue();
-            console.log(CaseName + ' end.');
-            done();
-          }).catch((err: BusinessError) => {
-            console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
-            expect(err.message != null).assertTrue();
-            if (err.code === 801 && !isDeviceSupportFloatView) {
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-          });
-        } catch (e) {
-          console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-          expect(false).assertTrue();
+      try {
+        floatView.create(config).then((data: floatView.FloatViewController) => {
+          let floatViewController: floatView.FloatViewController = data;
+          console.info(CaseName + ' Succeeded in creating float view controller. Data: ' + data);
+          expect(floatViewController != null).assertTrue();
+          console.log(CaseName + ' end.');
           done();
-        }
-      } else {
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.message != null).assertTrue();
+          if (err.code === 801 && !isDeviceSupportFloatView) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(false).assertTrue();
         done();
       }
     })
@@ -530,45 +525,39 @@ export default function abilityTest() {
         context: context,
         templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
       };
-      let isSupportFloatView = floatView.isFloatViewEnabled();
-      console.log(CaseName + ' isSupportFloatView: ' + isSupportFloatView);
-      if (isSupportFloatView) {
-        try {
-          let floatViewController = await floatView.create(config);
-          console.info(CaseName + ' Succeeded in creating float view controller.');
-          await floatViewController.setUIContext('testability/pages/Index');
-          console.info(CaseName + ' Succeeded in setting UI context.');
-          floatViewController.start().then(async () => {
-            console.info(CaseName + ' Succeeded in starting float view.');
-            expect(isSupportFloatView).assertEqual(true);
-            await floatViewController.stop();
-            console.info(CaseName + ' Succeeded in stopping float view.');
-            console.log(CaseName + ' end.');
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext('testability/pages/Index');
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.start().then(async () => {
+          console.info(CaseName + ' Succeeded in starting float view.');
+          expect(true).assertTrue();
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+          console.log(CaseName + ' end.');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.message != null).assertTrue();
+          if (err.code === 801 && !isDeviceSupportFloatView) {
             done();
-          }).catch((err: BusinessError) => {
-            console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
-            expect(err.message != null).assertTrue();
-            if (err.code === 801 && !isDeviceSupportFloatView) {
-              done();
-            } else if (err.code === 201) {
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-          });
-        } catch (e) {
-          console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-          expect(e.message != null).assertTrue();
-          if (e.code === 801 && !isDeviceSupportFloatView) {
+          } else if (err.code === 201) {
             done();
           } else {
             expect(false).assertTrue();
             done();
           }
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
         }
-      } else {
-        done();
       }
     })
 
