@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import testNapi from 'libentry.so';
 
 const CE_ERR_OK: number = 0;
+const CE_PERMISSION_DENIED : number = 201;
 const CE_ERR_PARAM_INVALID: number = 401;
 const CE_ERR_DEVICE_NOT_SUPPORTED: number = 801;
 const CE_ERR_NULL_POINTER: number = 35300001;
@@ -163,8 +164,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_EmptyLocal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED ||
-        result === CE_ERR_SYSTEM_ABNORMAL || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -181,7 +181,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_LocaleInvalid();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -198,7 +198,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -470,7 +470,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -487,7 +487,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -504,7 +504,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
@@ -1235,7 +1235,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyStartWork_ConnectFailed();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_PERMISSION_DENIED;
       expect(expectResult).assertTrue();
     })
 
