@@ -8122,8 +8122,8 @@ function testSetDisallowedForAccountPolicy26() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (Number(error.code) === 9200012) {
+        expect(Number(error.code) === 9200012).assertTrue();
       } else {
         expect(Number(error.code) === 9200010).assertTrue();
       }

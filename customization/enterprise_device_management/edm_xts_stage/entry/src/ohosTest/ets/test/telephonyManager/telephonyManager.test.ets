@@ -3563,10 +3563,10 @@ function testActiveSim() {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
+        telephonyManager.setSimEnabled(SELFWANT, 0);
         expect(Number(error.code) === 203).assertTrue();
       }
     } finally {
-      telephonyManager.setSimEnabled(SELFWANT, 0);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
@@ -3831,10 +3831,10 @@ function testDeactiveSim() {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
+        telephonyManager.setSimEnabled(SELFWANT, 0);
         expect(Number(error.code) === 203).assertTrue();
       }
     } finally {
-      telephonyManager.setSimEnabled(SELFWANT, 0);
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
