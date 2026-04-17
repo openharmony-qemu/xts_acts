@@ -2472,7 +2472,7 @@ export default function AVScreenCaptureNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0300',
+    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
