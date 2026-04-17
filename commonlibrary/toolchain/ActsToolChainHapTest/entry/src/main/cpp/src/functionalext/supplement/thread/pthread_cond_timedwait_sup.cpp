@@ -24,54 +24,54 @@
 #define USEC_TO_NSEC 1000
 #define EXPECTED_FLAG 1
 
-static int flag = 0;
-static pthread_cond_t gcond;
-static pthread_mutex_t gmutex;
-struct timespec gtm;
+static int g_flag = 0;
+static pthread_cond_t g_gcond;
+static pthread_mutex_t g_gmutex;
+struct timespec g_gtm;
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     struct timeval now;
     struct timespec outtime;
-    gtm.tv_nsec = NSEC_VALUE;
-    pthread_mutex_lock(&gmutex);
+    g_gtm.tv_nsec = NSEC_VALUE;
+    pthread_mutex_lock(&g_gmutex);
     gettimeofday(&now, nullptr);
     outtime.tv_sec = now.tv_sec + TIMEOUT_SEC;
     outtime.tv_nsec = now.tv_usec * USEC_TO_NSEC;
-    pthread_cond_timedwait(&gcond, &gmutex, &outtime);
-    flag++;
-    pthread_mutex_unlock(&gmutex);
+    pthread_cond_timedwait(&g_gcond, &g_gmutex, &outtime);
+    g_flag++;
+    pthread_mutex_unlock(&g_gmutex);
     return arg;
 }
 
-static void *threadfuncB(void *arg)
+static void *ThreadfuncB(void *arg)
 {
-    pthread_mutex_lock(&gmutex);
-    pthread_cond_signal(&gcond);
-    pthread_mutex_unlock(&gmutex);
+    pthread_mutex_lock(&g_gmutex);
+    pthread_cond_signal(&g_gcond);
+    pthread_mutex_unlock(&g_gmutex);
     return arg;
 }
 
 /**
- * @tc.name:      pthread_cond_timedwait_0100
+ * @tc.name:      PthreadCondTimedwait0100
  * @tc.desc:      Verify pthread create process success
  * @tc.level:     level 0.
  */
-void pthread_cond_timedwait_0100(void)
+void PthreadCondTimedwait0100(void)
 {
     pthread_t pid1, pid2;
-    pthread_create(&pid1, nullptr, threadfuncA, nullptr);
-    pthread_create(&pid2, nullptr, threadfuncB, nullptr);
+    pthread_create(&pid1, nullptr, ThreadfuncA, nullptr);
+    pthread_create(&pid2, nullptr, ThreadfuncB, nullptr);
     pthread_join(pid1, nullptr);
     pthread_join(pid2, nullptr);
-    EXPECT_EQ("pthread_cond_timedwait_0200", flag, EXPECTED_FLAG);
-    pthread_mutex_destroy(&gmutex);
-    pthread_cond_destroy(&gcond);
+    EXPECT_EQ("pthread_cond_timedwait_0200", g_flag, EXPECTED_FLAG);
+    pthread_mutex_destroy(&g_gmutex);
+    pthread_cond_destroy(&g_gcond);
 }
 
 static int PthreadCondTimedwaitSupTestImpl(void)
 {
-    pthread_cond_timedwait_0100();
+    PthreadCondTimedwait0100();
     return g_tStatus;
 }
 

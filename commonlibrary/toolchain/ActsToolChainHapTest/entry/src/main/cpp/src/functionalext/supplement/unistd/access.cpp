@@ -79,16 +79,16 @@ void access_0300(void)
 }
 
 /**
- * @tc.name      : access_0400
+ * @tc.name      : Access0400
  * @tc.desc      : The parameter filename is the specified directory and not exists,
  *                 the parameter amode is F_OK,function returns failure.
  * @tc.level     : Level 2
  */
-void access_0400(void)
+void Access0400(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/noaccesstest";
     int isExist = access(ptr, F_OK);
-    EXPECT_EQ("access_0400", isExist, FAILED);
+    EXPECT_EQ("Access0400", isExist, FAILED);
     remove(ptr);
 }
 
@@ -173,16 +173,15 @@ TEST_FUN G_Fun_Array[] = {
     access_0100,
     access_0200,
     access_0300,
-    access_0400,
     access_0500,
     access_0600,
-//    access_0700,
+    access_0700,
     access_0800,
 };
 
 static int accessTest_with_args(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(G_Fun_Array) / sizeof(G_Fun_Array[0]);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
     }

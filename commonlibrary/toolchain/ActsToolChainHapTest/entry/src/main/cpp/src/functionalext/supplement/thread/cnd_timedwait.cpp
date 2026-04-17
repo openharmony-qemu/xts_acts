@@ -111,7 +111,7 @@ void cnd_timedwait_time64_0100(void)
         t_error("%s thrd_create failed\n", __func__);
     }
 
-    if (__cnd_timedwait_time64(&cond, &mutex, &w_time) != thrd_success) {
+    if (CndTimedwaitTime64(&cond, &mutex, &w_time) != thrd_success) {
         t_error("%s cnd_timedwait failed\n", __func__);
     }
 

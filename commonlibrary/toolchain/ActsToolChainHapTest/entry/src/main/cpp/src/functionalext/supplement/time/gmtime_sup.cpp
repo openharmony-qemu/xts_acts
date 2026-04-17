@@ -23,7 +23,7 @@ struct gmtime_struct {
     const char *result;
 };
 
-static const struct gmtime_struct gResultData[] = {
+static const struct gmtime_struct G_RESULT_DATA[] = {
     {"Pacific/Rarotonga", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Wake", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Tarawa", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
@@ -463,7 +463,7 @@ static const struct gmtime_struct gResultData[] = {
     {"EST5EDT", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
 };
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 static int16_t gYearBase = 1900;
 static int16_t gBufferSize = 500;
 
@@ -474,8 +474,8 @@ static int16_t gBufferSize = 500;
  */
 static void Gmtime0100(void)
 {
-    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
-        const char *tz = gResultData[i].tz;
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
+        const char *tz = G_RESULT_DATA[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
         char *str = strrchr(tz, TIME_ZONE_SUB_TAG);
@@ -490,7 +490,7 @@ static void Gmtime0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm *gmtm;
-        gmtm = gmtime(&gTime);
+        gmtm = gmtime(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
@@ -506,7 +506,7 @@ static void Gmtime0100(void)
             gmtm->tm_gmtoff,
             gmtm->tm_zone);
         EXPECT_TRUE("gmtime_0100", cnt > 0);
-        EXPECT_STREQ("gmtime_0100", gResultData[i].result, buff);
+        EXPECT_STREQ("gmtime_0100", G_RESULT_DATA[i].result, buff);
     }
 }
 
@@ -517,8 +517,8 @@ static void Gmtime0100(void)
  */
 static void gmtime64_0100(void)
 {
-    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
-        const char *tz = gResultData[i].tz;
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
+        const char *tz = G_RESULT_DATA[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
         char *str = strrchr(tz, TIME_ZONE_SUB_TAG);
@@ -533,7 +533,7 @@ static void gmtime64_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm *gmtm;
-        gmtm = __gmtime64(&gTime);
+        gmtm = Gmtime64(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
@@ -549,7 +549,7 @@ static void gmtime64_0100(void)
             gmtm->tm_gmtoff,
             gmtm->tm_zone);
         EXPECT_TRUE("gmtime64_0100", cnt > 0);
-        EXPECT_STREQ("gmtime64_0100", gResultData[i].result, buff);
+        EXPECT_STREQ("gmtime64_0100", G_RESULT_DATA[i].result, buff);
     }
 }
 

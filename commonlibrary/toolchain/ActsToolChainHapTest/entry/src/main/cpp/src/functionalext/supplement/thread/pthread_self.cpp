@@ -17,31 +17,31 @@
 #include <pthread.h>
 #include "test.h"
 
-static pthread_t tid1;
+static pthread_t g_tid1;
 
-void *threadfunc(void *arg)
+void *ThreadFunc(void *arg)
 {
     pthread_t result = pthread_self();
-    if (tid1 != result) {
-        t_error("pthread_self_0100 pthread_self get result is %ld are not want %ld", result, tid1);
+    if (g_tid1 != result) {
+        t_error("pthread_self_0100 pthread_self get result is %ld are not want %ld", result, g_tid1);
     }
     return 0;
 }
 
 /**
- * @tc.name      : pthread_self_0100
+ * @tc.name      : PthreadSelf0100
  * @tc.desc      : Verify that the number of threads in the thread library is obtained successfully
  * @tc.level     : Level 0
  */
-void pthread_self_0100(void)
+void PthreadSelf0100(void)
 {
-    pthread_create(&tid1, nullptr, threadfunc, nullptr);
-    pthread_join(tid1, nullptr);
+    pthread_create(&g_tid1, nullptr, ThreadFunc, nullptr);
+    pthread_join(g_tid1, nullptr);
 }
 
 static int PthreadSelfTestImpl(int argc, char *argv[])
 {
-    pthread_self_0100();
+    PthreadSelf0100();
     return g_tStatus;
 }
 

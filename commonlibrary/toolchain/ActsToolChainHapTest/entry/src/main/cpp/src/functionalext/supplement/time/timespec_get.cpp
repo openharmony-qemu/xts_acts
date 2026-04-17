@@ -59,7 +59,7 @@ void timespec_get_0200(void)
 void timespec_get_time64_0200(void)
 {
     struct timespec ts;
-    int result = __timespec_get_time64(&ts, TIME_UTC);
+    int result = TimespecGetTime64(&ts, TIME_UTC);
     if (result != TIME_UTC) {
         t_error("%s __timespec_get_time64 failed, result is %d", __func__, result);
     }

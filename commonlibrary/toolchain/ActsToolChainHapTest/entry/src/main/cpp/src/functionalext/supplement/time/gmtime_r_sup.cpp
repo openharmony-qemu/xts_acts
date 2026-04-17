@@ -533,7 +533,7 @@ void gmtime64_r_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm res = {0};
-        struct tm *gmtm = __gmtime64_r(&gTime, &res);
+        struct tm *gmtm = Gmtime64R(&gTime, &res);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",

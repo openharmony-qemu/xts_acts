@@ -24,10 +24,10 @@
  */
 void nanosleep_0100(void)
 {
-    struct timespec n_sleep;
-    n_sleep.tv_sec = 0;
-    n_sleep.tv_nsec = 5e8L;
-    int data = nanosleep(&n_sleep, nullptr);
+    struct timespec nSleep;
+    nSleep.tv_sec = 0;
+    nSleep.tv_nsec = 5e8L;
+    int data = nanosleep(&nSleep, nullptr);
     EXPECT_EQ("nanosleep_0100", data, 0);
 }
 
@@ -38,10 +38,10 @@ void nanosleep_0100(void)
  */
 void nanosleep_time64_0100(void)
 {
-    struct timespec n_sleep;
-    n_sleep.tv_sec = 0;
-    n_sleep.tv_nsec = 5e8L;
-    int data = __nanosleep_time64(&n_sleep, nullptr);
+    struct timespec nSleep;
+    nSleep.tv_sec = 0;
+    nSleep.tv_nsec = 5e8L;
+    int data = NanosleepTime64(&nSleep, nullptr);
     EXPECT_EQ("nanosleep_time64_0100", data, 0);
 }
 

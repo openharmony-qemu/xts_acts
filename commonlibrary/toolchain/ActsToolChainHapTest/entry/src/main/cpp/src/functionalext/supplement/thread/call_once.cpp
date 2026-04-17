@@ -35,13 +35,13 @@ static void func(void *data)
 }
 
 /**
- * @tc.name      : call_once_0100
+ * @tc.name      : CallOnce0100
  * @tc.desc      : Each parameter is valid, and the function func is called only once.
  * @tc.level     : Level 0
  */
-void call_once_0100(void)
+void CallOnce0100(void)
 {
-    EXPECT_EQ("call_once_0100", strcmp(list, buf), 0);
+    EXPECT_EQ("CallOnce0100", strcmp(list, buf), 0);
 }
 
 int CallOnceTest(void)
@@ -55,7 +55,7 @@ int CallOnceTest(void)
     thrd_join(t2, nullptr);
     thrd_join(t3, nullptr);
     thrd_join(t4, nullptr);
-    call_once_0100();
+    CallOnce0100();
     remove("/data/storage/el2/base/cache/call_once.txt");
     memset(list, 0x00, sizeof(list));
     return g_tStatus;

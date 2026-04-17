@@ -23,7 +23,7 @@ static unsigned int waiting_threads;
 
 #define N 3
 
-static int child_wait(void *data)
+static int ChildWait(void *data)
 {
     mtx_lock(&mutex);
     ++waiting_threads;
@@ -34,11 +34,11 @@ static int child_wait(void *data)
 }
 
 /**
- * @tc.name      : cnd_broadcast_0100
+ * @tc.name      : CndBroadcast0100
  * @tc.desc      :
  * @tc.level     : Level 0
  */
-void cnd_broadcast_0100(void)
+void CndBroadcast0100(void)
 {
     thrd_t ids[N];
     unsigned char i;
@@ -52,7 +52,7 @@ void cnd_broadcast_0100(void)
     }
 
     for (i = 0; i < N; ++i) {
-        if (thrd_create(&ids[i], child_wait, nullptr) != thrd_success) {
+        if (thrd_create(&ids[i], ChildWait, nullptr) != thrd_success) {
             t_error("%s thrd_create failed\n", __func__);
         }
     }
@@ -89,9 +89,9 @@ void cnd_broadcast_0100(void)
     cnd_destroy(&cond);
 }
 
-static int cnd_broadcastTest_with_args(int argc, char *argv[])
+static int CndBroadcastTestWithArgs(int argc, char *argv[])
 {
-    cnd_broadcast_0100();
+    CndBroadcast0100();
     return g_tStatus;
 }
 
@@ -99,5 +99,5 @@ int CndBroadcastTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return cnd_broadcastTest_with_args(1, libcArgv);
+    return CndBroadcastTestWithArgs(1, libcArgv);
 }

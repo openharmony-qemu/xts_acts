@@ -104,7 +104,7 @@ void TimerGettime0200(void)
  */
 void TimerGettime640200(void)
 {
-    int result = __timer_gettime64(nullptr, nullptr);
+    int result = TimerGettime64(nullptr, nullptr);
     if (result != -1 && errno != EINVAL) {
         t_error("%s failed result = %d", __func__, result);
     }

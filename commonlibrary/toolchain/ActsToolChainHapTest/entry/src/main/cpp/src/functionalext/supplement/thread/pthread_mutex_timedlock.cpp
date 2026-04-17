@@ -101,7 +101,7 @@ void PthreadMutexTimedlockTime640100(void)
     pthread_mutexattr_settype(&mutex_attr, TEST_MUTEX_ATTR);
     pthread_mutex_init(&mutex, &mutex_attr);
 
-    int rev = __pthread_mutex_timedlock_time64(&mutex, &ts);
+    int rev = PthreadMutexTimedlockTime64(&mutex, &ts);
     EXPECT_EQ("PthreadMutexTimedlockTime640100", rev, 0);
 
     pthread_mutex_unlock(&mutex);

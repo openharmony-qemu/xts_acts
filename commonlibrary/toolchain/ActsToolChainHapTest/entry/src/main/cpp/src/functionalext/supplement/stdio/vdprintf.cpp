@@ -20,7 +20,7 @@
 #include "functionalext.h"
 #include "test.h"
 
-int readFile(int stream, char *fmt, ...)
+int ReadFile(int stream, char *fmt, ...)
 {
     va_list ap;
     va_start(ap, fmt);
@@ -43,7 +43,7 @@ void vdprintf_0100(void)
         t_error("%s open failed", __func__);
         return;
     }
-    int result = readFile(fp, "%s", value);
+    int result = ReadFile(fp, "%s", value);
     if (result < 0) {
         t_error("%s vdprintf get result is %d are less 0\n", __func__, result);
     }
@@ -67,7 +67,7 @@ void vdprintf_0200(void)
     char *value = "asdf";
     int want = -1;
     int fp = -1;
-    int result = readFile(fp, "%s", value);
+    int result = ReadFile(fp, "%s", value);
     if (result != want) {
         t_error("%s vdprintf get result is %d are want -1\n", __func__, result);
     }

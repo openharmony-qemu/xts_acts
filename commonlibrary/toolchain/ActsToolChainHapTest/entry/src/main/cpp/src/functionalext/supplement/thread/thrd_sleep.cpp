@@ -105,7 +105,7 @@ void ThrdSleepTime640200(void)
     struct timespec ts;
     ts.tv_sec = -1;
     ts.tv_nsec = 0; // 必须初始化
-    int result = __thrd_sleep_time64(&ts, NULL);
+    int result = ThrdSleepTime64(&ts, NULL);
     if (result != THRD_SLEEP_INVALID_PARAM) {
         t_error("%s negative value", __func__);
     }

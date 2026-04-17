@@ -105,7 +105,7 @@ void pthread_rwlock_timedwrlock_time64_0100(void)
     int rev = -1;
     if (tmp) {
         ts.tv_sec += 1;
-        rev = __pthread_rwlock_timedwrlock_time64(&rwlock, &ts);
+        rev = PthreadRwlockTimedwrlockTime64(&rwlock, &ts);
     }
     EXPECT_EQ("pthread_rwlock_timedwrlock_time64_0100", rev, 0);
     if (rev == 0) {

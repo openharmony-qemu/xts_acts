@@ -22,11 +22,11 @@
 const int TWO = 2;
 
 /**
- * @tc.name      : mtx_timedlock_0100
+ * @tc.name      : MtxTimedlock0100
  * @tc.desc      : Provide correct parameters, test timeout and lock
  * @tc.level     : Level 0
  */
-void mtx_timedlock_0100(void)
+void MtxTimedlock0100(void)
 {
     struct timespec timeout;
     timeout.tv_sec = TWO;
@@ -39,7 +39,7 @@ void mtx_timedlock_0100(void)
         return;
     }
     ret = mtx_timedlock(&mutex, &timeout);
-    EXPECT_EQ("mtx_timedlock_0100", ret, thrd_success);
+    EXPECT_EQ("MtxTimedlock0100", ret, thrd_success);
     ret = mtx_unlock(&mutex);
     if (ret != thrd_success) {
         t_error("%s mtx_unlock failed", __func__);
@@ -49,11 +49,11 @@ void mtx_timedlock_0100(void)
 }
 
 /**
- * @tc.name      : mtx_timedlock_0200
+ * @tc.name      : MtxTimedlock0200
  * @tc.desc      : In the locked state, the test times out and locks
  * @tc.level     : Level 2
  */
-void mtx_timedlock_0200(void)
+void MtxTimedlock0200(void)
 {
     mtx_t mutex;
     struct timespec timeout;
@@ -71,7 +71,7 @@ void mtx_timedlock_0200(void)
     }
     ret = mtx_lock(&mutex);
     ret = mtx_timedlock(&mutex, &timeout);
-    EXPECT_EQ("mtx_timedlock_0200", ret, thrd_timedout);
+    EXPECT_EQ("MtxTimedlock0200", ret, thrd_timedout);
     ret = mtx_unlock(&mutex);
     if (ret != thrd_success) {
         t_error("%s mtx_unlock failed", __func__);
@@ -81,11 +81,11 @@ void mtx_timedlock_0200(void)
 }
 
 /**
- * @tc.name      : mtx_timedlock_time64_0100
+ * @tc.name      : MtxTimedlockTime640100
  * @tc.desc      : Provide correct parameters, test timeout and lock
  * @tc.level     : Level 0
  */
-void mtx_timedlock_time64_0100(void)
+void MtxTimedlockTime640100(void)
 {
     struct timespec timeout;
     timeout.tv_sec = TWO;
@@ -97,8 +97,8 @@ void mtx_timedlock_time64_0100(void)
         t_error("%s mtx_init failed", __func__);
         return;
     }
-    ret = __mtx_timedlock_time64(&mutex, &timeout);
-    EXPECT_EQ("mtx_timedlock_time64_0100", ret, thrd_success);
+    ret = MtxTimedlockTime64(&mutex, &timeout);
+    EXPECT_EQ("MtxTimedlockTime640100", ret, thrd_success);
     ret = mtx_unlock(&mutex);
     if (ret != thrd_success) {
         t_error("%s mtx_unlock failed", __func__);
@@ -109,9 +109,9 @@ void mtx_timedlock_time64_0100(void)
 
 static int MtxTimedlockTestImpl(void)
 {
-    mtx_timedlock_0100();
-    mtx_timedlock_0200();
-    mtx_timedlock_time64_0100();
+    MtxTimedlock0100();
+    MtxTimedlock0200();
+    MtxTimedlockTime640100();
     return g_tStatus;
 }
 

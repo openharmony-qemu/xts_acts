@@ -18,7 +18,7 @@
 #include <string.h>
 #include "filepath_util.h"
 
-int readFile(FILE *stream, char *fmt, ...)
+int ReadFile(FILE *stream, char *fmt, ...)
 {
     va_list ap;
     va_start(ap, fmt);
@@ -28,11 +28,11 @@ int readFile(FILE *stream, char *fmt, ...)
 }
 
 /**
- * @tc.name      : vfscanf_0100
+ * @tc.name      : Vfscanf0100
  * @tc.desc      : Reads data from the stream and stores them according to the parameter format.
  * @tc.level     : Level 0
  */
-void vfscanf_0100(void)
+void Vfscanf0100(void)
 {
     FILE *fp = nullptr;
     int val = 0;
@@ -50,7 +50,7 @@ void vfscanf_0100(void)
     }
     rewind(fp);
 
-    int result = readFile(fp, "%s %d", buffer, &val);
+    int result = ReadFile(fp, "%s %d", buffer, &val);
     if (result < 0) {
         t_error("%s vfscanf get result is %d are less 0\n", __func__, result);
     }
@@ -65,11 +65,11 @@ void vfscanf_0100(void)
 }
 
 /**
- * @tc.name      : vfscanf_0200
+ * @tc.name      : Vfscanf0200
  * @tc.desc      : Test conversion of different formats
  * @tc.level     : Level 1
  */
-void vfscanf_0200(void)
+void Vfscanf0200(void)
 {
     FILE *fp = nullptr;
     char val[BUFSIZ];
@@ -87,7 +87,7 @@ void vfscanf_0200(void)
     }
     rewind(fp);
 
-    int result = readFile(fp, "%s %s", buffer, val);
+    int result = ReadFile(fp, "%s %s", buffer, val);
     if (result < 0) {
         t_error("%s vfscanf get result is %d are less 0\n", __func__, result);
     }
@@ -102,11 +102,11 @@ void vfscanf_0200(void)
 }
 
 /**
- * @tc.name      : vfscanf_0300
+ * @tc.name      : Vfscanf0300
  * @tc.desc      : The test corresponding position does not match the format
  * @tc.level     : Level 2
  */
-void vfscanf_0300(void)
+void Vfscanf0300(void)
 {
     FILE *fp = nullptr;
     int val1 = 0;
@@ -124,7 +124,7 @@ void vfscanf_0300(void)
     }
     rewind(fp);
 
-    int result = readFile(fp, "%d %d", val1, val2);
+    int result = ReadFile(fp, "%d %d", val1, val2);
     if (result > 0) {
         t_error("%s vfscanf get result is %d are more than the 0\n", __func__, result);
     }
@@ -140,9 +140,9 @@ void vfscanf_0300(void)
 
 static int VfscanfTestImpl(int argc, char *argv[])
 {
-    vfscanf_0100();
-    vfscanf_0200();
-    vfscanf_0300();
+    Vfscanf0100();
+    Vfscanf0200();
+    Vfscanf0300();
     return g_tStatus;
 }
 

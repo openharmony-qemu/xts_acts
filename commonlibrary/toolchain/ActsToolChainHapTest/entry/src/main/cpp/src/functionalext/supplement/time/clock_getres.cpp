@@ -85,7 +85,7 @@ void clock_getres_0500(void)
 void clock_getres_time64_0100(void)
 {
     struct timespec ts;
-    int result = __clock_getres_time64(CLOCK_REALTIME, &ts);
+    int result = ClockGetresTime64(CLOCK_REALTIME, &ts);
     EXPECT_EQ("clock_getres_time64_0100", result, 0);
 }
 

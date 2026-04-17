@@ -72,7 +72,7 @@ static int threadfuncA(void *arg)
     thrd_exit(thrd_success);
 }
 
-static int threadfuncB(void *arg)
+static int ThreadfuncB(void *arg)
 {
     int result = TrylockWithTimeout(&g_mutex);
     if (result == LOCK_SUCCESS) {
@@ -128,12 +128,12 @@ void thrd_current_0200(void)
     thrd_t thr1, thr2;
     int result;
 
-    result = thrd_create(&thr1, threadfuncB, nullptr);
+    result = thrd_create(&thr1, ThreadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
-    result = thrd_create(&thr2, threadfuncB, nullptr);
+    result = thrd_create(&thr2, ThreadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }

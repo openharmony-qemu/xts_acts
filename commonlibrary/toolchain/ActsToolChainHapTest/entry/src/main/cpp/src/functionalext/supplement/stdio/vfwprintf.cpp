@@ -22,15 +22,15 @@
 #include <wchar.h>
 #include "test.h"
 
-static void deal_aberrant(int code)
+static void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
-        t_error("vfwprintf_0200 code is %d are not SIGSEGV", __func__, code);
+        t_error("Vfwprintf0200 code is %d are not SIGSEGV", __func__, code);
     }
     exit(g_tStatus);
 }
 
-int readFile(FILE *stream, wchar_t *fmt, ...)
+int ReadFile(FILE *stream, wchar_t *fmt, ...)
 {
     va_list ap;
     va_start(ap, fmt);
@@ -40,16 +40,16 @@ int readFile(FILE *stream, wchar_t *fmt, ...)
 }
 
 /**
- * @tc.name      : vfwprintf_0100
+ * @tc.name      : Vfwprintf0100
  * @tc.desc      : Test vfwprintf method to write wide string to file
  * @tc.level     : Level 0
  */
-void vfwprintf_0100(void)
+void Vfwprintf0100(void)
 {
     wchar_t *value = L"hello %ls";
     char *file_name = "/data/storage/el2/base/cache/temp_vfwprintf.txt";
     FILE *file = fopen(file_name, "w");
-    int resule = readFile(file, value, L"world");
+    int resule = ReadFile(file, value, L"world");
     if (resule < 0) {
         t_error("%s vfwprintf error get result is %d are not less 0\n", __func__, resule);
     }
@@ -58,21 +58,21 @@ void vfwprintf_0100(void)
 }
 
 /**
- * @tc.name      : vfwprintf_0200
+ * @tc.name      : Vfwprintf0200
  * @tc.desc      : Test the result of the vfwprintf function when the incoming file is empty
  * @tc.level     : Level 2
  */
-void vfwprintf_0200(void)
+void Vfwprintf0200(void)
 {
     wchar_t *value = L"hello %ls";
-    signal(SIGSEGV, deal_aberrant);
-    int resule = readFile(nullptr, value, L"world");
+    signal(SIGSEGV, DealAberrant);
+    int resule = ReadFile(nullptr, value, L"world");
 }
 
 static int VfwprintfTestImpl(int argc, char *argv[])
 {
-    vfwprintf_0100();
-    vfwprintf_0200();
+    Vfwprintf0100();
+    Vfwprintf0200();
     return g_tStatus;
 }
 

@@ -118,7 +118,7 @@ void TimerSettime640100(void)
     its.it_interval.tv_sec = 0;
     its.it_interval.tv_nsec = 0;
 
-    result = __timer_settime64(timerid, 0, &its, NULL);
+    result = TimerSettime64(timerid, 0, &its, NULL);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
