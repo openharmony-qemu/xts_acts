@@ -89,15 +89,15 @@ void OnAttachTreeScroll(void *asyncUITaskData) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OnAttachTreeScroll end");
 }
 
-MyAsyncData *scroll_asyncData = nullptr;
+MyAsyncData *g_scrollAsyncData = nullptr;
 napi_value NodeXTSScrollTest::CreateCNodeTreeScroll(napi_env env, napi_callback_info info,
                            void (RunOnUIThreadScroll)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                std::vector<ArkUI_NodeHandle> &nodeList),
                            void (RunOnSubThreadScroll)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                 std::vector<ArkUI_NodeHandle> &nodeList)) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "CreateCNodeTreeScroll begin");
-    if (scroll_asyncData) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "scroll_asyncData not nullptr");
+    if (g_scrollAsyncData) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "g_scrollAsyncData not nullptr");
         return nullptr;
     }
     size_t argc = 2;
@@ -125,12 +125,12 @@ napi_value NodeXTSScrollTest::CreateCNodeTreeScroll(napi_env env, napi_callback_
         return nullptr;
     }
 
-    scroll_asyncData = new MyAsyncData();
-    scroll_asyncData->root = root;
-    scroll_asyncData->RunOnUIThreadScroll = RunOnUIThreadScroll;
-    scroll_asyncData->RunOnSubThreadScroll = RunOnSubThreadScroll;
+    g_scrollAsyncData = new MyAsyncData();
+    g_scrollAsyncData->root = root;
+    g_scrollAsyncData->RunOnUIThreadScroll = RunOnUIThreadScroll;
+    g_scrollAsyncData->RunOnSubThreadScroll = RunOnSubThreadScroll;
 
-    if (OH_ArkUI_PostAsyncUITask(contextHandle, scroll_asyncData, (void (*)(void *))OnCreateNodeScroll, (void (*)(void *))OnAttachTreeScroll) != 0) {
+    if (OH_ArkUI_PostAsyncUITask(contextHandle, g_scrollAsyncData, (void (*)(void *))OnCreateNodeScroll, (void (*)(void *))OnAttachTreeScroll) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OH_ArkUI_PostAsyncUITask failed");
     }
     delete contextHandle;
@@ -147,14 +147,14 @@ napi_value NodeXTSScrollTest::DisposeCNodeTreeScroll(napi_env env, napi_callback
     // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-    if (!scroll_asyncData) {
+    if (!g_scrollAsyncData) {
         return nullptr;
     }
-    auto root = scroll_asyncData->root;
-    auto nodeList = scroll_asyncData->nodeList;
+    auto root = g_scrollAsyncData->root;
+    auto nodeList = g_scrollAsyncData->nodeList;
     if (!root) {
-        delete scroll_asyncData;
-        scroll_asyncData = nullptr;
+        delete g_scrollAsyncData;
+        g_scrollAsyncData = nullptr;
         return nullptr;
     }
     OH_ArkUI_NodeContent_RemoveNode(contentHandle, root);
@@ -164,8 +164,8 @@ napi_value NodeXTSScrollTest::DisposeCNodeTreeScroll(napi_env env, napi_callback
     if (!nodeAPI) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk",
                      "get ArkUI_AsyncNativeNodeAPI_1 failed");
-        delete scroll_asyncData;
-        scroll_asyncData = nullptr;
+        delete g_scrollAsyncData;
+        g_scrollAsyncData = nullptr;
         return nullptr;
     }
     for (auto node : nodeList) {
@@ -178,8 +178,8 @@ napi_value NodeXTSScrollTest::DisposeCNodeTreeScroll(napi_env env, napi_callback
         nodeAPI->disposeNode(node);
     }
     nodeAPI->disposeNode(root);
-    delete scroll_asyncData;
-    scroll_asyncData = nullptr;
+    delete g_scrollAsyncData;
+    g_scrollAsyncData = nullptr;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "DisposeCNodeTreeScroll end");
     return nullptr;
 }

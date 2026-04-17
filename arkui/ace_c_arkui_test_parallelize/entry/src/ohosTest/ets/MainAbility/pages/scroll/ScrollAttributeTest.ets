@@ -14,7 +14,7 @@
  */
 
 import render from 'libnativerender.so'
-import { NodeContent, router } from "@kit.ArkUI";
+import { NodeContent, router } from '@kit.ArkUI';
 import { CommonView } from '../../componet/CommonView';
 
 @Entry

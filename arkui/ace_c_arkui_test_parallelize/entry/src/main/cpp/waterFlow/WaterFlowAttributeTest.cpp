@@ -54,20 +54,12 @@ void TestNodeWaterFlowColumnsTemplate001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_N
     nodeAPI->setAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE, &columnItem);
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_COLUMN_TEMPLATE001 %{public}s", result->string);
-//    if(result->string != "1fr" ) {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_COLUMN_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowColumnsTemplate002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_COLUMN_TEMPLATE002 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_COLUMN_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowRowsTemplate001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
@@ -76,10 +68,6 @@ void TestNodeWaterFlowRowsTemplate001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Node
     nodeAPI->setAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE, &rowItem);
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ROW_TEMPLATE001 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ROW_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 
@@ -87,10 +75,6 @@ void TestNodeWaterFlowRowsTemplate002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Node
 {
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ROW_TEMPLATE002 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ROW_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowColumnsGap001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
@@ -419,20 +403,12 @@ void TestNodeWaterFlowColumnsTemplate011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_N
     nodeAPI->resetAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE);
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_COLUMN_TEMPLATE011 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_COLUMN_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowColumnsTemplate012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_COLUMN_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_COLUMN_TEMPLATE012 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_COLUMN_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowRowsTemplate011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
@@ -442,10 +418,6 @@ void TestNodeWaterFlowRowsTemplate011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Node
     nodeAPI->resetAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE);
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ROW_TEMPLATE011 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ROW_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 
@@ -453,10 +425,6 @@ void TestNodeWaterFlowRowsTemplate012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Node
 {
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ROW_TEMPLATE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ROW_TEMPLATE012 %{public}s", result->string);
-//    if(result->string != "1fr") {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ROW_TEMPLATE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeWaterFlowColumnsGap011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
@@ -538,21 +506,15 @@ void TestNodeWaterFlowItemConstraintSize011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkU
     nodeAPI->setAttribute(waterFlow, NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE, &itemConstraintSizeItem);
     nodeAPI->resetAttribute(waterFlow, NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE);
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE011 %{public}f  %{public}f  %{public}f  %{public}f", result->value[0].f32, result->value[1].f32, result->value[2].f32, result->value[3].f32);
-//    if(result->value[0].f32 != 20 || result->value[1].f32 != 20 || result->value[2].f32 != 20 || result->value[3].f32 != 20) {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE011 %{public}f  %{public}f  %{public}f  %{public}f",
+      result->value[0].f32, result->value[1].f32, result->value[2].f32, result->value[3].f32);
 }
 
 void TestNodeWaterFlowItemConstraintSize012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(waterFlow, NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE012 %{public}f  %{public}f  %{public}f  %{public}f", result->value[0].f32, result->value[1].f32, result->value[2].f32, result->value[3].f32);
-//    if(result->value[0].f32 != 20 || result->value[1].f32 != 20 || result->value[2].f32 != 20 || result->value[3].f32 != 20) {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE012 %{public}f  %{public}f  %{public}f  %{public}f",
+      result->value[0].f32, result->value[1].f32, result->value[2].f32, result->value[3].f32);
 }
 
 void TestNodeWaterFlowLayoutMode011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &waterFlow, ArkUI_NodeHandle &button)

@@ -89,15 +89,15 @@ void OnAttachTreeList(void *asyncUITaskData) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OnAttachTreeList end");
 }
 
-MyAsyncData *list_asyncData = nullptr;
+MyAsyncData *g_listAsyncData = nullptr;
 napi_value NodeXTSListTest::CreateCNodeTreeList(napi_env env, napi_callback_info info,
                            void (RunOnUIThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                std::vector<ArkUI_NodeHandle> &nodeList),
                            void (RunOnSubThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                 std::vector<ArkUI_NodeHandle> &nodeList)) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "CreateCNodeTreeList begin");
-    if (list_asyncData) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "list_asyncData not nullptr");
+    if (g_listAsyncData) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "g_listAsyncData not nullptr");
         return nullptr;
     }
     size_t argc = 2;
@@ -125,12 +125,12 @@ napi_value NodeXTSListTest::CreateCNodeTreeList(napi_env env, napi_callback_info
         return nullptr;
     }
 
-    list_asyncData = new MyAsyncData();
-    list_asyncData->root = root;
-    list_asyncData->RunOnUIThreadList = RunOnUIThreadList;
-    list_asyncData->RunOnSubThreadList = RunOnSubThreadList;
+    g_listAsyncData = new MyAsyncData();
+    g_listAsyncData->root = root;
+    g_listAsyncData->RunOnUIThreadList = RunOnUIThreadList;
+    g_listAsyncData->RunOnSubThreadList = RunOnSubThreadList;
 
-    if (OH_ArkUI_PostAsyncUITask(contextHandle, list_asyncData, (void (*)(void *))OnCreateNodeList, (void (*)(void *))OnAttachTreeList) != 0) {
+    if (OH_ArkUI_PostAsyncUITask(contextHandle, g_listAsyncData, (void (*)(void *))OnCreateNodeList, (void (*)(void *))OnAttachTreeList) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OH_ArkUI_PostAsyncUITask failed");
     }
     delete contextHandle;
@@ -147,14 +147,14 @@ napi_value NodeXTSListTest::DisposeCNodeTreeList(napi_env env, napi_callback_inf
     // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-    if (!list_asyncData) {
+    if (!g_listAsyncData) {
         return nullptr;
     }
-    auto root = list_asyncData->root;
-    auto nodeList = list_asyncData->nodeList;
+    auto root = g_listAsyncData->root;
+    auto nodeList = g_listAsyncData->nodeList;
     if (!root) {
-        delete list_asyncData;
-        list_asyncData = nullptr;
+        delete g_listAsyncData;
+        g_listAsyncData = nullptr;
         return nullptr;
     }
     OH_ArkUI_NodeContent_RemoveNode(contentHandle, root);
@@ -164,8 +164,8 @@ napi_value NodeXTSListTest::DisposeCNodeTreeList(napi_env env, napi_callback_inf
     if (!nodeAPI) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk",
                      "get ArkUI_AsyncNativeNodeAPI_1 failed");
-        delete list_asyncData;
-        list_asyncData = nullptr;
+        delete g_listAsyncData;
+        g_listAsyncData = nullptr;
         return nullptr;
     }
     for (auto node : nodeList) {
@@ -178,8 +178,8 @@ napi_value NodeXTSListTest::DisposeCNodeTreeList(napi_env env, napi_callback_inf
         nodeAPI->disposeNode(node);
     }
     nodeAPI->disposeNode(root);
-    delete list_asyncData;
-    list_asyncData = nullptr;
+    delete g_listAsyncData;
+    g_listAsyncData = nullptr;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "DisposeCNodeTreeList end");
     return nullptr;
 }

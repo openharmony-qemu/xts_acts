@@ -368,20 +368,12 @@ void TestNodeRefreshMaxPullDownDistance011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI
     nodeAPI->resetAttribute(refresh, NODE_REFRESH_MAX_PULL_DOWN_DISTANCE);
     auto result = nodeAPI->getAttribute(refresh, NODE_REFRESH_MAX_PULL_DOWN_DISTANCE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_REFRESH_MAX_PULL_DOWN_DISTANCE011 %{public}f ", result->value->f32);
-//    if(result->value->f32 != 0) {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_REFRESH_MAX_PULL_DOWN_DISTANCE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeRefreshMaxPullDownDistance012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &refresh, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(refresh, NODE_REFRESH_MAX_PULL_DOWN_DISTANCE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_REFRESH_MAX_PULL_DOWN_DISTANCE012 %{public}f ", result->value->f32);
-//    if(result->value->f32 != 0) {
-//        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_REFRESH_MAX_PULL_DOWN_DISTANCE is error"};
-//        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-//    }
 }
 
 void TestNodeInitRefreshAttribute011(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)

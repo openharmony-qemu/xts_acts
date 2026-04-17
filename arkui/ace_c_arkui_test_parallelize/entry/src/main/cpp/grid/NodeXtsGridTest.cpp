@@ -87,15 +87,15 @@ void OnAttachTreeGrid(void *asyncUITaskData) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OnAttachTreeGrid end");
 }
 
-MyAsyncData *grid_asyncData = nullptr;
+MyAsyncData *g_gridAsyncData = nullptr;
 napi_value NodeXTSGridTest::CreateCNodeTreeGrid(napi_env env, napi_callback_info info,
                            void (RunOnUIThreadGrid)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                std::vector<ArkUI_NodeHandle> &nodeList),
                            void (RunOnSubThreadGrid)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                 std::vector<ArkUI_NodeHandle> &nodeList)) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "CreateCNodeTreeGrid begin");
-    if (grid_asyncData) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "grid_asyncData not nullptr");
+    if (g_gridAsyncData) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "g_gridAsyncData not nullptr");
         return nullptr;
     }
     size_t argc = 2;
@@ -123,12 +123,12 @@ napi_value NodeXTSGridTest::CreateCNodeTreeGrid(napi_env env, napi_callback_info
         return nullptr;
     }
 
-    grid_asyncData = new MyAsyncData();
-    grid_asyncData->root = root;
-    grid_asyncData->RunOnUIThreadGrid = RunOnUIThreadGrid;
-    grid_asyncData->RunOnSubThreadGrid = RunOnSubThreadGrid;
+    g_gridAsyncData = new MyAsyncData();
+    g_gridAsyncData->root = root;
+    g_gridAsyncData->RunOnUIThreadGrid = RunOnUIThreadGrid;
+    g_gridAsyncData->RunOnSubThreadGrid = RunOnSubThreadGrid;
 
-    if (OH_ArkUI_PostAsyncUITask(contextHandle, grid_asyncData, (void (*)(void *))OnCreateNodeGrid, (void (*)(void *))OnAttachTreeGrid) != 0) {
+    if (OH_ArkUI_PostAsyncUITask(contextHandle, g_gridAsyncData, (void (*)(void *))OnCreateNodeGrid, (void (*)(void *))OnAttachTreeGrid) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OH_ArkUI_PostAsyncUITask failed");
     }
     delete contextHandle;
@@ -145,14 +145,14 @@ napi_value NodeXTSGridTest::DisposeCNodeTreeGrid(napi_env env, napi_callback_inf
     // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-    if (!grid_asyncData) {
+    if (!g_gridAsyncData) {
         return nullptr;
     }
-    auto root = grid_asyncData->root;
-    auto nodeList = grid_asyncData->nodeList;
+    auto root = g_gridAsyncData->root;
+    auto nodeList = g_gridAsyncData->nodeList;
     if (!root) {
-        delete grid_asyncData;
-        grid_asyncData = nullptr;
+        delete g_gridAsyncData;
+        g_gridAsyncData = nullptr;
         return nullptr;
     }
     OH_ArkUI_NodeContent_RemoveNode(contentHandle, root);
@@ -162,8 +162,8 @@ napi_value NodeXTSGridTest::DisposeCNodeTreeGrid(napi_env env, napi_callback_inf
     if (!nodeAPI) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk",
                      "get ArkUI_AsyncNativeNodeAPI_1 failed");
-        delete grid_asyncData;
-        grid_asyncData = nullptr;
+        delete g_gridAsyncData;
+        g_gridAsyncData = nullptr;
         return nullptr;
     }
     for (auto node : nodeList) {
@@ -176,8 +176,8 @@ napi_value NodeXTSGridTest::DisposeCNodeTreeGrid(napi_env env, napi_callback_inf
         nodeAPI->disposeNode(node);
     }
     nodeAPI->disposeNode(root);
-    delete grid_asyncData;
-    grid_asyncData = nullptr;
+    delete g_gridAsyncData;
+    g_gridAsyncData = nullptr;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "DisposeCNodeTreeGrid end");
     return nullptr;
 }
