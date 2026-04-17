@@ -262,6 +262,7 @@ add_library(
     src/regression/wcsstr-false-negative.cpp
     strverscmp_impl.cpp
     print.cpp
+    time64_functions.cpp
     src/functional/iconv_open.cpp
     src/functional/iconv_test.cpp
     src/functional/mbc.cpp

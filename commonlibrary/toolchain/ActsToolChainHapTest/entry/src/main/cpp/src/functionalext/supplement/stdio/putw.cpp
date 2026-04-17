@@ -35,11 +35,11 @@ static void deal_aberrant(int code)
 }
 
 /**
- * @tc.name      : putw_0100
+ * @tc.name      : Putw0100
  * @tc.desc      : Test the putw method to write integers to the file
  * @tc.level     : Level 0
  */
-void putw_0100(void)
+void Putw0100(void)
 {
     FILE *fp;
     char *file = "/data/storage/el2/base/cache/putw_test.txt";
@@ -57,11 +57,11 @@ void putw_0100(void)
 }
 
 /**
- * @tc.name      : putw_0200
+ * @tc.name      : Putw0200
  * @tc.desc      : Test the result of putw when the incoming file pointer is empty
  * @tc.level     : Level 2
  */
-void putw_0200(void)
+void Putw0200(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -81,8 +81,8 @@ void putw_0200(void)
 
 static int PutwTestImpl(int argc, char *argv[])
 {
-    putw_0100();
-    putw_0200();
+    Putw0100();
+    Putw0200();
     return g_tStatus;
 }
 

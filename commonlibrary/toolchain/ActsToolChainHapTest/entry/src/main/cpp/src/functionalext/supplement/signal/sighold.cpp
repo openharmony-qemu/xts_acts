@@ -18,21 +18,21 @@
 
 #include "test.h"
 
-static int handler_count = 0;
+static int g_handlerCount = 0;
 
 void Handler(int sig)
 {
-    handler_count++;
+    g_handlerCount++;
 }
 
 /**
- * @tc.name      : sighold_0100
+ * @tc.name      : Sighold0100
  * @tc.desc      : add sig to the signal mask of the calling process
  * @tc.level     : Level 0
  */
-void sighold_0100(void)
+void Sighold0100(void)
 {
-    handler_count = 0;
+    g_handlerCount = 0;
 
     int sig = SIGALRM;
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
@@ -67,17 +67,17 @@ void sighold_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    if (handler_count != 0) {
-        t_error("%s failed: handler_count = %d\n", __func__, handler_count);
+    if (g_handlerCount != 0) {
+        t_error("%s failed: handler_count = %d\n", __func__, g_handlerCount);
     }
 }
 
 /**
- * @tc.name      : sighold_0200
+ * @tc.name      : Sighold0200
  * @tc.desc      : add an invalid sig to the signal mask of the calling process
  * @tc.level     : Level 2
  */
-void sighold_0200(void)
+void Sighold0200(void)
 {
     errno = 0;
     int sig = 99999;
@@ -93,8 +93,8 @@ void sighold_0200(void)
 
 static int SigholdTestImpl(int argc, char *argv[])
 {
-    sighold_0100();
-    sighold_0200();
+    Sighold0100();
+    Sighold0200();
 
     return T_STATUS;
 }

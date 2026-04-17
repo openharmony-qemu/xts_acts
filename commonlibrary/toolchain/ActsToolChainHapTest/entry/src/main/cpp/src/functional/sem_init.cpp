@@ -53,7 +53,7 @@ static void many_waiters()
     T(sem_destroy(s + 1));
 }
 
-static void single_thread()
+static void SingleThread()
 {
     struct timespec ts;
     sem_t s;
@@ -78,7 +78,7 @@ static void single_thread()
 
 static int SemInitTestImpl(void)
 {
-    single_thread();
+    SingleThread();
     many_waiters();
     return g_tStatus;
 }

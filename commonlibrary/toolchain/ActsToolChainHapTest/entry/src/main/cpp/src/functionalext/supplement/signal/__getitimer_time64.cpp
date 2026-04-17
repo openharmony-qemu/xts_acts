@@ -24,7 +24,7 @@ static void ExpireTimer(int signo)
     struct itimerval val;
     g_count++;
     if (g_count > 1) {
-        __getitimer_time64(signo, &val);
+        GetitimerTime64(signo, &val);
         val.it_value.tv_sec = 0;
         val.it_value.tv_usec = 0;
         setitimer(signo, &val, NULL);
@@ -60,7 +60,7 @@ void GetitimerTime640100(void)
 {
     signal(SIGALRM, SignalHandler);
     struct itimerval old;
-    int result = __getitimer_time64(ITIMER_REAL, &old);
+    int result = GetitimerTime64(ITIMER_REAL, &old);
     EXPECT_EQ("GetitimerTime640100", result, 0);
 }
 

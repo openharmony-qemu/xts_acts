@@ -18,14 +18,14 @@
 #include <string.h>
 #include "filepath_util.h"
 
-static const char *str = "Hello";
+static const char *STR = "Hello";
 
 /**
- * @tc.name      : setbuffer_0100
+ * @tc.name      : Setbuffer0100
  * @tc.desc      : The buffer type is _IOFBF
  * @tc.level     : Level 0
  */
-void setbuffer_0100(void)
+void Setbuffer0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -37,7 +37,7 @@ void setbuffer_0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fputs(str, fp);
+    fputs(STR, fp);
     fflush(fp);
     fclose(fp);
 
@@ -46,7 +46,7 @@ void setbuffer_0100(void)
     memset(buf, 0, sizeof(buf));
     fread(buf, sizeof(buf), 1, fp);
 
-    if (strcmp(buf, str)) {
+    if (strcmp(buf, STR)) {
         t_error("%s failed: setbuf. buf = %s\n", __func__, buf);
     }
 
@@ -55,11 +55,11 @@ void setbuffer_0100(void)
 }
 
 /**
- * @tc.name      : setbuffer_0200
+ * @tc.name      : Setbuffer0200
  * @tc.desc      : Stream buffering operations with NULL
  * @tc.level     : Level 1
  */
-void setbuffer_0200(void)
+void Setbuffer0200(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -77,8 +77,8 @@ void setbuffer_0200(void)
 
 static int SetbufferTestImpl(int argc, char *argv[])
 {
-    setbuffer_0100();
-    setbuffer_0200();
+    Setbuffer0100();
+    Setbuffer0200();
     return g_tStatus;
 }
 

@@ -22,11 +22,11 @@
 static const char *str = "Hello";
 
 /**
- * @tc.name      : setbuf_0100
+ * @tc.name      : Setbuf0100
  * @tc.desc      : stream buffering operations
  * @tc.level     : Level 0
  */
-void setbuf_0100(void)
+void Setbuf0100(void)
 {
     char buf[BUFSIZ] = {0};
     char path[PATH_MAX] = {0};
@@ -51,11 +51,11 @@ void setbuf_0100(void)
 }
 
 /**
- * @tc.name      : setbuf_0200
+ * @tc.name      : Setbuf0200
  * @tc.desc      : stream buffering operations with NULL
  * @tc.level     : Level 2
  */
-void setbuf_0200(void)
+void Setbuf0200(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -74,8 +74,8 @@ void setbuf_0200(void)
 
 static int SetbufTestImpl(int argc, char *argv[])
 {
-    setbuf_0100();
-    setbuf_0200();
+    Setbuf0100();
+    Setbuf0200();
 
     return g_tStatus;
 }

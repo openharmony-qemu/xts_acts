@@ -16,65 +16,65 @@
 #include <wchar.h>
 #include "functionalext.h"
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : fwide_0100
+ * @tc.name      : Fwide0100
  * @tc.desc      : Verify that the set byte stream is a wide character stream (valid, mode > 0)
  * @tc.level     : Level 0
  */
-void fwide_0100(void)
+void Fwide0100(void)
 {
-    FILE *fp = fopen(path, "w+");
-    EXPECT_PTRNE("fwide_0100", fp, NULL);
+    FILE *fp = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwide0100", fp, NULL);
 
     int result = fwide(fp, 5);
-    EXPECT_TRUE("fwide_0100", result > 0);
+    EXPECT_TRUE("Fwide0100", result > 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fwide_0200
+ * @tc.name      : Fwide0200
  * @tc.desc      : Verify that the set byte stream remains as it is (all parameters are valid, mode equals 0)
  * @tc.level     : Level 0
  */
-void fwide_0200(void)
+void Fwide0200(void)
 {
-    FILE *fp = fopen(path, "w+");
-    EXPECT_PTRNE("fwide_0100", fp, NULL);
+    FILE *fp = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwide0100", fp, NULL);
 
     int result = fwide(fp, 0);
-    EXPECT_EQ("fwide_0200", result, 0);
+    EXPECT_EQ("Fwide0200", result, 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fwide_0300
+ * @tc.name      : Fwide0300
  * @tc.desc      : Verify that the set byte stream is a multi-byte character stream (valid with mode less than 0)
  * @tc.level     : Level 0
  */
-void fwide_0300(void)
+void Fwide0300(void)
 {
-    FILE *fp = fopen(path, "w+");
-    EXPECT_PTRNE("fwide_0100", fp, NULL);
+    FILE *fp = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwide0100", fp, NULL);
 
     int result = fwide(fp, -5);
-    EXPECT_TRUE("fwide_0300", result < 0);
+    EXPECT_TRUE("Fwide0300", result < 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 static int FwideTestImpl(int argc, char *argv[])
 {
 
-    fwide_0100();
-    fwide_0200();
-    fwide_0300();
+    Fwide0100();
+    Fwide0200();
+    Fwide0300();
     return g_tStatus;
 }
 

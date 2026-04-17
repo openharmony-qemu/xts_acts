@@ -22,54 +22,54 @@
 const int FAILED = -1;
 
 /**
- * @tc.name      : getdents_0100
+ * @tc.name      : Getdents0100
  * @tc.desc      : Each parameter is valid, the len parameter is less than or equal to INT_MAX, and the directory
  *                 information can be read into the specified buffer.
  * @tc.level     : Level 0
  */
-void getdents_0100(void)
+void Getdents0100(void)
 {
     struct dirent buf;
-    static const char *path = "/data/storage/el2/base/cache/";
-    int fd = open(path, O_RDONLY);
-    EXPECT_NE("getdents_0100", fd, -1);
+    static const char *PATH = "/data/storage/el2/base/cache/";
+    int fd = open(PATH, O_RDONLY);
+    EXPECT_NE("Getdents0100", fd, -1);
     int result = getdents(fd, &buf, INT_MAX);
-    EXPECT_TRUE("getdents_0100", result > 0);
+    EXPECT_TRUE("Getdents0100", result > 0);
 }
 
 /**
- * @tc.name      : getdents_0200
+ * @tc.name      : Getdents0200
  * @tc.desc      : The fd parameter is invalid, the directory information cannot be read into the specified buffer.
  * @tc.level     : Level 2
  */
-void getdents_0200(void)
+void Getdents0200(void)
 {
     struct dirent buf;
     int fd = open("/data/storage/el2/base/cache/getdents", O_RDONLY);
     int result = getdents(fd, &buf, INT_MAX);
-    EXPECT_EQ("getdents_0200", result, FAILED);
+    EXPECT_EQ("Getdents0200", result, FAILED);
 }
 
 /**
- * @tc.name      : getdents_0300
+ * @tc.name      : Getdents0300
  * @tc.desc      : The buf parameter is invalid, the directory information cannot be read into the specified buffer.
  * @tc.level     : Level 2
  */
-void getdents_0300(void)
+void Getdents0300(void)
 {
     struct dirent buf;
-    static const char *path = "/data/storage/el2/base/cache/";
-    int fd = open(path, O_RDONLY);
-    EXPECT_NE("getdents_0300", fd, -1);
+    static const char *PATH = "/data/storage/el2/base/cache/";
+    int fd = open(PATH, O_RDONLY);
+    EXPECT_NE("Getdents0300", fd, -1);
     int result = getdents(fd, NULL, INT_MAX);
-    EXPECT_EQ("getdents_0300", result, FAILED);
+    EXPECT_EQ("Getdents0300", result, FAILED);
 }
 
 static int GetdentsTestImpl(int argc, char *argv[])
 {
-    getdents_0100();
-    getdents_0200();
-    getdents_0300();
+    Getdents0100();
+    Getdents0200();
+    Getdents0300();
     return T_STATUS;
 }
 

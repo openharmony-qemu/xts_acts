@@ -23,47 +23,47 @@
 #define DNS_QBUF_OFFSET 4
 #define DATA_LENGTH 0
 
-const int op = QUERY;
-const int dns_class = C_IN;
-const int type = T_TXT;
-const char dname[] = "www.example.com";
+const int OP = QUERY;
+const int DNS_CLASS = C_IN;
+const int TYPE = T_TXT;
+const char DNAME[] = "www.example.com";
 const unsigned char *data = reinterpret_cast<const unsigned char *>("");
-const char qbuf[] = "\0\1\0\0\0\0\0\0";
-const char qname[] = "\3www\7example\3com";
+const char QBUF[] = "\0\1\0\0\0\0\0\0";
+const char QNAME[] = "\3www\7example\3com";
 
 /**
- * @tc.name      : res_mkquery_0100
+ * @tc.name      : ResMkquery0100
  * @tc.desc      : construct a query message
  * @tc.level     : Level 0
  */
-void res_mkquery_0100(void)
+void ResMkquery0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
 
-    int result = res_mkquery(op, dname, dns_class, type, data, DATA_LENGTH, nullptr, buf, sizeof(buf));
+    int result = res_mkquery(OP, DNAME, DNS_CLASS, TYPE, data, DATA_LENGTH, nullptr, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + DNS_HEADER_OFFSET, qname, sizeof(qname) - 1);
+    result = memcmp(buf + DNS_HEADER_OFFSET, QNAME, sizeof(QNAME) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + DNS_QBUF_OFFSET, qbuf, sizeof(qbuf) - 1);
+    result = memcmp(buf + DNS_QBUF_OFFSET, QBUF, sizeof(QBUF) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
 
 /**
- * @tc.name      : res_mkquery_0200
+ * @tc.name      : ResMkquery0200
  * @tc.desc      : construct a query message with an invalid type
  * @tc.level     : Level 2
  */
-void res_mkquery_0200(void)
+void ResMkquery0200(void)
 {
-    int result = res_mkquery(op, dname, dns_class, T_ANY + 1, data, DATA_LENGTH, nullptr, nullptr, DATA_LENGTH);
+    int result = res_mkquery(OP, DNAME, DNS_CLASS, T_ANY + 1, data, DATA_LENGTH, nullptr, nullptr, DATA_LENGTH);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -71,8 +71,8 @@ void res_mkquery_0200(void)
 
 static int ResMkqueryTestImpl(int argc, char *argv[])
 {
-    res_mkquery_0100();
-    res_mkquery_0200();
+    ResMkquery0100();
+    ResMkquery0200();
 
     return T_STATUS;
 }

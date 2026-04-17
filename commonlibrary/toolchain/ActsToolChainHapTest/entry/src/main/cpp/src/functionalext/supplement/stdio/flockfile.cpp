@@ -21,10 +21,10 @@
 
 #define THREAD_COUNT 100
 
-static FILE *fp;
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static FILE *g_fp;
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
-void *do_child_one(void *a)
+void *DoChildOne(void *a)
 {
     puts("start do_child_one");
 
@@ -46,39 +46,39 @@ void *do_child_one(void *a)
     return a;
 }
 
-void *do_child_two(void *p)
+void *DoChildTwo(void *p)
 {
     char buf[64];
 
-    flockfile(fp);
+    flockfile(g_fp);
 
-    if (fseek(fp, 0L, SEEK_SET) == -1) {
+    if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    int ret = fread(buf, 64, 1, fp);
+    int ret = fread(buf, 64, 1, g_fp);
 
     int count = atoi(buf);
     ++count;
     sprintf(buf, "%d", count);
-    if (fseek(fp, 0L, SEEK_SET) == -1) {
+    if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    ret = fwrite(buf, strlen(buf), 1, fp);
+    ret = fwrite(buf, strlen(buf), 1, g_fp);
 
-    funlockfile(fp);
+    funlockfile(g_fp);
     return nullptr;
 }
 
 /**
- * @tc.name      : flockfile_0100
+ * @tc.name      : Flockfile0100
  * @tc.desc      : Acquire for a thread ownership of a (FILE *) object (stdout)
  * @tc.level     : Level 0
  */
-void flockfile_0100(void)
+void Flockfile0100(void)
 {
     pthread_t th;
 
-    if (pthread_create(&th, nullptr, do_child_one, nullptr) != 0) {
+    if (pthread_create(&th, nullptr, DoChildOne, nullptr) != 0) {
         t_error("%s pthread_create failed\n", __func__);
     }
 
@@ -91,21 +91,21 @@ void flockfile_0100(void)
 }
 
 /**
- * @tc.name      : flockfile_0200
+ * @tc.name      : Flockfile0200
  * @tc.desc      : Shared FILE* to implements mutual exclusion
  * @tc.level     : Level 1
  */
-void flockfile_0200(void)
+void Flockfile0200(void)
 {
     pthread_t tid[THREAD_COUNT];
 
-    fp = fopen(path, "w+");
-    if (fp == nullptr) {
+    g_fp = fopen(PATH, "w+");
+    if (g_fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
 
     for (int i = 0; i < THREAD_COUNT; i++) {
-        if (pthread_create(tid + i, nullptr, do_child_two, nullptr) != 0) {
+        if (pthread_create(tid + i, nullptr, DoChildTwo, nullptr) != 0) {
             t_error("%s pthread_create failed\n", __func__);
         }
     }
@@ -116,14 +116,14 @@ void flockfile_0200(void)
         }
     }
 
-    fclose(fp);
-    remove(path);
+    fclose(g_fp);
+    remove(PATH);
 }
 
 static int FlockfileTestImpl(int argc, char *argv[])
 {
-    flockfile_0100();
-    flockfile_0200();
+    Flockfile0100();
+    Flockfile0200();
     return g_tStatus;
 }
 

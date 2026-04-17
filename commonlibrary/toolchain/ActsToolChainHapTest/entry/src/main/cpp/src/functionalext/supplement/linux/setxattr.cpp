@@ -22,15 +22,15 @@
 #include "filepath_util.h"
 #include "functionalext.h"
 
-const char *name = "user.foo";
-const char *value = "bar";
+const char *NAME = "user.foo";
+const char *VALUE = "bar";
 
 /**
  * @tc.name      : setxattr_0100
  * @tc.desc      : set an extended attribute value
  * @tc.level     : Level 0
  */
-void setxattr_0100(void)
+void Setxattr0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -44,7 +44,7 @@ void setxattr_0100(void)
     close(fd);
 
     errno = 0;
-    int result = setxattr(path, name, value, strlen(value), XATTR_CREATE);
+    int result = setxattr(path, NAME, VALUE, strlen(VALUE), XATTR_CREATE);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -56,7 +56,7 @@ void setxattr_0100(void)
     char buf[BUFSIZ] = {0};
 
     errno = 0;
-    result = getxattr(path, name, buf, sizeof(buf));
+    result = getxattr(path, NAME, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -77,7 +77,7 @@ void setxattr_0100(void)
  * @tc.desc      : set an extended attribute value with invalid parameters
  * @tc.level     : Level 2
  */
-void setxattr_0200(void)
+void Setxattr0200(void)
 {
     errno = 0;
     int result = setxattr(nullptr, nullptr, nullptr, -1, -1);
@@ -91,8 +91,8 @@ void setxattr_0200(void)
 
 static int SetxattrTestImpl(int argc, char *argv[])
 {
-    setxattr_0100();
-    setxattr_0200();
+    Setxattr0100();
+    Setxattr0200();
 
     return T_STATUS;
 }

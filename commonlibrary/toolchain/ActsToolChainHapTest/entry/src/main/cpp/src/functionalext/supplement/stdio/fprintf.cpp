@@ -21,19 +21,19 @@
 const size_t ERRORLEN = -1;
 
 /**
- * @tc.name:      fprintf_0100
+ * @tc.name:      Fprintf0100
  * @tc.desc:      Verify fprintf and stdout process success.
  * @tc.level:     level 0.
  */
-void fprintf_0100(void)
+void Fprintf0100(void)
 {
     char str[] = "This is a fprintf_0100";
     size_t len = fprintf(stdout, "%s", str);
-    EXPECT_EQ("fprintf_0100", len, strlen(str));
+    EXPECT_EQ("Fprintf0100", len, strlen(str));
 }
 
 /**
- * @tc.name:      fprintf_0200
+ * @tc.name:      Fprintf0200
  * @tc.desc:      Verify fprintf and stderr process success.
  * @tc.level:     level 0.
  */
@@ -41,15 +41,15 @@ void Fprintf0200(void)
 {
     char str[] = "This is a test fprintf_0200";
     size_t len = fprintf(stderr, "%s", str);
-    EXPECT_EQ("fprintf_0200", len, strlen(str));
+    EXPECT_EQ("Fprintf0200", len, strlen(str));
 }
 
 /**
- * @tc.name:      fprintf_0300
+ * @tc.name:      Fprintf0300
  * @tc.desc:      Verify fprintf and fopen("w") process success.
  * @tc.level:     level 0.
  */
-void fprintf_0300(void)
+void Fprintf0300(void)
 {
     char str[] = "这是一个测试";
     int len = 0;
@@ -58,15 +58,15 @@ void fprintf_0300(void)
         len = fprintf(fptr, "%s", str);
         fclose(fptr);
     }
-    EXPECT_EQ("fprintf_0300", len, strlen(str));
+    EXPECT_EQ("Fprintf0300", len, strlen(str));
 }
 
 /**
- * @tc.name:      fprintf_0400
+ * @tc.name:      Fprintf0400
  * @tc.desc:      Verify fflush and fopen("r") and fclose and return -1.
  * @tc.level:     level 2.
  */
-void fprintf_0400(void)
+void Fprintf0400(void)
 {
     char str[] = "这是一个测试";
     size_t len = 0;
@@ -75,16 +75,16 @@ void fprintf_0400(void)
         len = fprintf(fptr, "%s", str);
         fclose(fptr);
     }
-    EXPECT_EQ("fprintf_0400", len, ERRORLEN);
+    EXPECT_EQ("Fprintf0400", len, ERRORLEN);
     remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 /**
- * @tc.name:      fprintf_0500
+ * @tc.name:      Fprintf0500
  * @tc.desc:      Verify fprintf with multiple format specifiers.
  * @tc.level:     level 0.
  */
-void fprintf_0500(void)
+void Fprintf0500(void)
 {
     char str[] = "Test";
     int num = 123;
@@ -95,18 +95,18 @@ void fprintf_0500(void)
         len = fprintf(fptr, "String: %s, Int: %d, Double: %.2f", str, num, d);
         fclose(fptr);
     }
-    int expected_len = strlen("String: Test, Int: 123, Double: 45.67");
-    EXPECT_EQ("fprintf_0500", len, expected_len);
+    int expectedLen = strlen("String: Test, Int: 123, Double: 45.67");
+    EXPECT_EQ("Fprintf0500", len, expectedLen);
     (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 
 /**
- * @tc.name:      fprintf_0600
+ * @tc.name:      Fprintf0600
  * @tc.desc:      Verify fprintf with append mode.
  * @tc.level:     level 0.
  */
-void fprintf_0600(void)
+void Fprintf0600(void)
 {
     char str1[] = "First line\n";
     char str2[] = "Second line\n";
@@ -126,38 +126,38 @@ void fprintf_0600(void)
         fclose(fptr);
     }
     
-    EXPECT_EQ("fprintf_0600", len, strlen(str2));
+    EXPECT_EQ("Fprintf0600", len, strlen(str2));
     (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 /**
- * @tc.name:      fprintf_0700
+ * @tc.name:      Fprintf0700
  * @tc.desc:      Verify fprintf with large string.
  * @tc.level:     level 0.
  */
 void Fprintf0700(void)
 {
-    char large_str[1024];
-    memset(large_str, 'A', sizeof(large_str) - 1);
-    large_str[sizeof(large_str) - 1] = '\0';
+    char largeStr[1024];
+    memset(largeStr, 'A', sizeof(largeStr) - 1);
+    largeStr[sizeof(largeStr) - 1] = '\0';
     
     size_t len = 0;
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
-        len = fprintf(fptr, "%s", large_str);
+        len = fprintf(fptr, "%s", largeStr);
         fclose(fptr);
     }
     
-    EXPECT_EQ("fprintf_0700", len, strlen(large_str));
+    EXPECT_EQ("Fprintf0700", len, strlen(largeStr));
     (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 /**
- * @tc.name:      fprintf_0800
+ * @tc.name:      Fprintf0800
  * @tc.desc:      Verify fprintf with special characters.
  * @tc.level:     level 0.
  */
-void fprintf_0800(void)
+void Fprintf0800(void)
 {
     char str[] = "Special chars: \t\n\r\\\"\'";
     size_t len = 0;
@@ -167,20 +167,20 @@ void fprintf_0800(void)
         fclose(fptr);
     }
     
-    EXPECT_EQ("fprintf_0800", len, strlen(str));
+    EXPECT_EQ("Fprintf0800", len, strlen(str));
     (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 static int FprintfTestImpl(void)
 {
-    fprintf_0100();
+    Fprintf0100();
     Fprintf0200();
-    fprintf_0300();
-    fprintf_0400();
-    fprintf_0500();
-    fprintf_0600();
+    Fprintf0300();
+    Fprintf0400();
+    Fprintf0500();
+    Fprintf0600();
     Fprintf0700();
-    fprintf_0800();
+    Fprintf0800();
     return g_tStatus;
 }
 

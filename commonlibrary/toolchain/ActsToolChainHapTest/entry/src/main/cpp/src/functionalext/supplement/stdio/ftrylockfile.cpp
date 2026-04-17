@@ -17,17 +17,17 @@
 #include "functionalext.h"
 
 /**
- * @tc.name      : ftrylockfile_0100
+ * @tc.name      : Ftrylockfile0100
  * @tc.desc      : The parameter is valid, the ftrylockfile function can lock the file.
  * @tc.level     : Level 0
  */
-void ftrylockfile_0100(void)
+void Ftrylockfile0100(void)
 {
     int ret = -1;
     FILE *fptr = fopen("/data/storage/el2/base/cache/ftrylockfile.txt", "w+");
-    EXPECT_PTRNE("ftrylockfile_0100", fptr, NULL);
+    EXPECT_PTRNE("Ftrylockfile0100", fptr, NULL);
     ret = ftrylockfile(fptr);
-    EXPECT_EQ("ftrylockfile_0100", ret, 0);
+    EXPECT_EQ("Ftrylockfile0100", ret, 0);
     funlockfile(fptr);
     fclose(fptr);
     remove("ftrylockfile.txt");
@@ -35,7 +35,7 @@ void ftrylockfile_0100(void)
 
 static int FtrylockfileTestImpl(int argc, char *argv[])
 {
-    ftrylockfile_0100();
+    Ftrylockfile0100();
     return g_tStatus;
 }
 

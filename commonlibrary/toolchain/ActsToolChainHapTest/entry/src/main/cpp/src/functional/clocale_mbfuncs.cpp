@@ -23,7 +23,7 @@ int ClocaleMbfuncsTest(void)
     char s[MB_LEN_MAX * CHAR_RANGE];
     size_t rv;
     int c;
-    int ni_errors = 0;
+    int niErrors = 0;
 
     setlocale(LC_CTYPE, "C");
 
@@ -59,14 +59,14 @@ int ClocaleMbfuncsTest(void)
         if (wcschr(map + 1, i)) {
             continue;
         }
-        if ((c = wctob(i)) != WEOF && ni_errors++ < MAX_ERRORS)
+        if ((c = wctob(i)) != WEOF && niErrors++ < MAX_ERRORS)
             t_error("wctob accepted non-image wchar_t %.4x as byte %.2x\n", i, c);
         st = (mbstate_t){0};
-        if (wcrtomb(s, i, &st) != -1 && ni_errors++ < MAX_ERRORS)
+        if (wcrtomb(s, i, &st) != -1 && niErrors++ < MAX_ERRORS)
             t_error("wcrtomb accepted non-image wchar_t %.4x\n", i);
     }
-    if (ni_errors > MAX_ERRORS) {
-        t_error("additional %d non-image errors (not printed)\n", ni_errors);
+    if (niErrors > MAX_ERRORS) {
+        t_error("additional %d non-image errors (not printed)\n", niErrors);
     }
 
     map[CHAR_RANGE] = 0;

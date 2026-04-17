@@ -21,11 +21,11 @@
 typedef void (*TEST_FUN)();
 
 /**
- * @tc.name      : asprintf_0100
+ * @tc.name      : Asprintf0100
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0100(void)
+void Asprintf0100(void)
 {
     char *buf = "d";
     char *testStr = nullptr;
@@ -149,11 +149,11 @@ void asprintf_0800(void)
 }
 
 /**
- * @tc.name      : asprintf_0900
+ * @tc.name      : Asprintf0900
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0900(void)
+void Asprintf0900(void)
 {
     char *buf = "s";
     char *testStr = nullptr;
@@ -164,8 +164,8 @@ void asprintf_0900(void)
     EXPECT_TRUE("asprintf_0900", n > 0);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    asprintf_0100,
+static TEST_FUN g_gFunArray[] = {
+    Asprintf0100,
     asprintf_0200,
     asprintf_0300,
     asprintf_0400,
@@ -173,14 +173,14 @@ static TEST_FUN G_Fun_Array[] = {
     asprintf_0600,
     asprintf_0700,
     asprintf_0800,
-    asprintf_0900,
+    Asprintf0900,
 };
 
 static int asprintfTest_with_args(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return g_tStatus;

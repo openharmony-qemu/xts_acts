@@ -20,53 +20,53 @@
 const int FAILED = -1;
 
 /**
- * @tc.name      : fputws_0100
+ * @tc.name      : Fputws0100
  * @tc.desc      : Each parameter is valid and can output a wide character string to a file stream.
  * @tc.level     : Level 0
  */
-void fputws_0100(void)
+void Fputws0100(void)
 {
     char str[100] = {0};
-    const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
-    FILE *fptr = fopen(ptr, "w+");
-    EXPECT_TRUE("fputws_0100", fptr != nullptr);
+    const char *PTR = "/data/storage/el2/base/cache/fputwstest.txt";
+    FILE *fptr = fopen(PTR, "w+");
+    EXPECT_TRUE("Fputws0100", fptr != nullptr);
     setlocale(LC_ALL, "en_US.utf8");
     int ret = fputws(L"this is the test", fptr);
-    EXPECT_TRUE("fputws_0100", ret >= 0);
+    EXPECT_TRUE("Fputws0100", ret >= 0);
     fseek(fptr, 0, SEEK_SET);
     int rsize = fread(str, sizeof(char), 100, fptr);
-    EXPECT_EQ("fputws_0100", rsize, ret);
+    EXPECT_EQ("Fputws0100", rsize, ret);
     fclose(fptr);
-    remove(ptr);
+    remove(PTR);
     fptr = nullptr;
-    ptr = nullptr;
+    PTR = nullptr;
 }
 
 /**
- * @tc.name      : fputws_0200
+ * @tc.name      : Fputws0200
  * @tc.desc      : The f parameter is invalid, a wide string cannot be output to a file stream.
  * @tc.level     : Level 2
  */
-void fputws_0200(void)
+void Fputws0200(void)
 {
-    const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
-    FILE *fptr = fopen(ptr, "w+");
-    EXPECT_TRUE("fputws_0200", fptr != nullptr);
+    const char *PTR = "/data/storage/el2/base/cache/fputwstest.txt";
+    FILE *fptr = fopen(PTR, "w+");
+    EXPECT_TRUE("Fputws0200", fptr != nullptr);
     fclose(fptr);
-    fptr = fopen(ptr, "r");
-    EXPECT_TRUE("fputws_0200", fptr != nullptr);
+    fptr = fopen(PTR, "r");
+    EXPECT_TRUE("Fputws0200", fptr != nullptr);
     int ret = fputws(L"this is the test", fptr);
-    EXPECT_EQ("fputws_0200", ret, FAILED);
+    EXPECT_EQ("Fputws0200", ret, FAILED);
     fclose(fptr);
-    remove(ptr);
+    remove(PTR);
     fptr = nullptr;
-    ptr = nullptr;
+    PTR = nullptr;
 }
 
 static int FputwsTestImpl(int argc, char *argv[])
 {
-    fputws_0100();
-    fputws_0200();
+    Fputws0100();
+    Fputws0200();
     return g_tStatus;
 }
 

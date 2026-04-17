@@ -21,11 +21,11 @@
 #include "filepath_util.h"
 
 /**
- * @tc.name      : swapoff_0100
+ * @tc.name      : Swapoff0100
  * @tc.desc      : Stop swapping to file/device
  * @tc.level     : Level 0
  */
-void swapoff_0100(void)
+void Swapoff0100(void)
 {
     char dir_path[PATH_MAX] = {0};
     FILE_ABSOLUTE_DIR(dir_path);

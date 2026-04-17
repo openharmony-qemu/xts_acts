@@ -22,15 +22,15 @@
 #include "filepath_util.h"
 #include "functionalext.h"
 
-static const char *name = "user.foo";
-static const char *value = "bar";
+static const char *NAME = "user.foo";
+static const char *VALUE = "bar";
 
 /**
- * @tc.name      : removexattr_0100
+ * @tc.name      : Removexattr0100
  * @tc.desc      : remove an extended attribute
  * @tc.level     : Level 0
  */
-void removexattr_0100(void)
+void Removexattr0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -44,7 +44,7 @@ void removexattr_0100(void)
     close(fd);
 
     errno = 0;
-    int result = setxattr(path, name, value, strlen(value), XATTR_CREATE);
+    int result = setxattr(path, NAME, VALUE, strlen(VALUE), XATTR_CREATE);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -56,7 +56,7 @@ void removexattr_0100(void)
     char buf[BUFSIZ] = {0};
 
     errno = 0;
-    result = getxattr(path, name, buf, sizeof(buf));
+    result = getxattr(path, NAME, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -70,13 +70,13 @@ void removexattr_0100(void)
     }
 
     errno = 0;
-    result = removexattr(path, name);
+    result = removexattr(path, NAME);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     errno = 0;
-    result = getxattr(path, name, buf, sizeof(buf));
+    result = getxattr(path, NAME, buf, sizeof(buf));
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -89,11 +89,11 @@ void removexattr_0100(void)
 }
 
 /**
- * @tc.name      : removexattr_0200
+ * @tc.name      : Removexattr0200
  * @tc.desc      : remove an extended attribute with invalid parameters
  * @tc.level     : Level 2
  */
-void removexattr_0200(void)
+void Removexattr0200(void)
 {
     errno = 0;
     int result = removexattr(nullptr, nullptr);
@@ -108,8 +108,8 @@ void removexattr_0200(void)
 
 static int RemovexattrTestImpl(int argc, char *argv[])
 {
-    removexattr_0100();
-    removexattr_0200();
+    Removexattr0100();
+    Removexattr0200();
 
     return T_STATUS;
 }

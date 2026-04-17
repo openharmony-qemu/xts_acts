@@ -23,41 +23,41 @@
 #define DATA_LENGTH 4
 #define SUCCESS_CODE 0
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : fremovexattr_0100
+ * @tc.name      : Fremovexattr0100
  * @tc.desc      : Verify that the extended properties of the specified file can be deleted.
  * @tc.level     : Level 0
  */
-void fremovexattr_0100(void)
+void Fremovexattr0100(void)
 {
     char buf[BUFFER_SIZE];
 
-    int fd = open(path, O_CREAT | O_WRONLY, FILE_PERMISSIONS);
-    EXPECT_NE("fremovexattr_0100", fd, FAILURE_CODE);
+    int fd = open(PATH, O_CREAT | O_WRONLY, FILE_PERMISSIONS);
+    EXPECT_NE("Fremovexattr0100", fd, FAILURE_CODE);
 
     int result = fsetxattr(fd, "user.foo", "bar", DATA_LENGTH, SUCCESS_CODE);
-    EXPECT_EQ("fremovexattr_0100", result, SUCCESS_CODE);
+    EXPECT_EQ("Fremovexattr0100", result, SUCCESS_CODE);
 
     result = fgetxattr(fd, "user.foo", buf, sizeof(buf));
-    EXPECT_EQ("fremovexattr_0100", result, DATA_LENGTH);
-    EXPECT_STREQ("fremovexattr_0100", buf, "bar");
+    EXPECT_EQ("Fremovexattr0100", result, DATA_LENGTH);
+    EXPECT_STREQ("Fremovexattr0100", buf, "bar");
 
     result = fremovexattr(fd, "user.foo");
-    EXPECT_EQ("fremovexattr_0100", result, SUCCESS_CODE);
+    EXPECT_EQ("Fremovexattr0100", result, SUCCESS_CODE);
 
     memset(buf, 0, sizeof(buf));
     result = fgetxattr(fd, "user.foo", buf, sizeof(buf));
-    EXPECT_EQ("fremovexattr_0100", result, FAILURE_CODE);
+    EXPECT_EQ("Fremovexattr0100", result, FAILURE_CODE);
 
     close(fd);
-    remove(path);
+    remove(PATH);
 }
 
 static int FremovexattrTestImpl(int argc, char *argv[])
 {
-    fremovexattr_0100();
+    Fremovexattr0100();
     return T_STATUS;
 }
 

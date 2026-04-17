@@ -6,19 +6,19 @@ struct TlsAlignItem {
     unsigned align;
     unsigned long addr;
 };
-extern TlsAlignItem t[4];
+extern TlsAlignItem g_t[4];
 
 static int TlsAlignTestImpl()
 {
     int i;
 
-    for (i = 0; i < sizeof t / sizeof *t; i++) {
+    for (i = 0; i < sizeof g_t / sizeof *g_t; i++) {
         // Compatibility mode: keep traversing TLS metadata but don't fail
         // on device/runtime specific layout differences.
-        (void)t[i].name;
-        (void)t[i].size;
-        (void)t[i].align;
-        (void)t[i].addr;
+        (void)g_t[i].name;
+        (void)g_t[i].size;
+        (void)g_t[i].align;
+        (void)g_t[i].addr;
     }
     return 0;
 }

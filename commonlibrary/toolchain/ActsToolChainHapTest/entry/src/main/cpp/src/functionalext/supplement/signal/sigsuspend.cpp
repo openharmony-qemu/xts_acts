@@ -18,19 +18,19 @@
 
 #include "test.h"
 
-static int handler_count = 0;
+static int g_handlerCount = 0;
 
 static void Handler(int sig)
 {
-    handler_count++;
+    g_handlerCount++;
 }
 
 /**
- * @tc.name      : sigsuspend_0100
+ * @tc.name      : Sigsuspend0100
  * @tc.desc      : wait for a signal
  * @tc.level     : Level 0
  */
-void sigsuspend_0100(void)
+void Sigsuspend0100(void)
 {
     sigset_t set;
     sigemptyset(&set);
@@ -59,8 +59,8 @@ void sigsuspend_0100(void)
     }
 
     raise(sig);
-    if (handler_count != 0) {
-        t_error("%s failed: handler_count = %d\n", __func__, handler_count);
+    if (g_handlerCount != 0) {
+        t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
 
     sigemptyset(&pending_set);
@@ -85,14 +85,14 @@ void sigsuspend_0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    if (handler_count != 1) {
-        t_error("%s failed: handler_count = %d\n", __func__, handler_count);
+    if (g_handlerCount != 1) {
+        t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
 }
 
 static int SigsuspendTestImpl(int argc, char *argv[])
 {
-    sigsuspend_0100();
+    Sigsuspend0100();
 
     return T_STATUS;
 }

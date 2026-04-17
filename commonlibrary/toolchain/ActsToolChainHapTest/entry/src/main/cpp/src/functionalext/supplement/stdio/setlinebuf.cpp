@@ -18,14 +18,14 @@
 #include <string.h>
 #include "filepath_util.h"
 
-static const char *str = "Hello";
+static const char *STR = "Hello";
 
 /**
- * @tc.name      : setlinebuf_0100
+ * @tc.name      : Setlinebuf0100
  * @tc.desc      : Set file stream to linear buffer
  * @tc.level     : Level 0
  */
-void setlinebuf_0100(void)
+void Setlinebuf0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -37,14 +37,14 @@ void setlinebuf_0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fputs(str, f);
+    fputs(STR, f);
     fclose(f);
     f = fopen(path, "r");
 
     memset(buffer, 0, sizeof(buffer));
     fread(buffer, sizeof(buffer), 1, f);
 
-    if (strcmp(buffer, str)) {
+    if (strcmp(buffer, STR)) {
         t_error("%s failed: setlinebuf. buf = %s\n", __func__, buffer);
     }
     fclose(f);
@@ -52,11 +52,11 @@ void setlinebuf_0100(void)
 }
 
 /**
- * @tc.name      : setlinebuf_0200
+ * @tc.name      : Setlinebuf0200
  * @tc.desc      : Output to console
  * @tc.level     : Level 2
  */
-void setlinebuf_0200(void)
+void Setlinebuf0200(void)
 {
     errno = 0;
     setlinebuf(stdout);
@@ -70,8 +70,8 @@ void setlinebuf_0200(void)
 
 static int SetlinebufTestImpl(int argc, char *argv[])
 {
-    setlinebuf_0100();
-    setlinebuf_0200();
+    Setlinebuf0100();
+    Setlinebuf0200();
     return g_tStatus;
 }
 

@@ -115,7 +115,7 @@ TEST_FUN G_Fun_Array[] = {
 
 int DlnsDlsymTestTest(void)
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(G_Fun_Array) / sizeof(G_Fun_Array[0]);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
     }

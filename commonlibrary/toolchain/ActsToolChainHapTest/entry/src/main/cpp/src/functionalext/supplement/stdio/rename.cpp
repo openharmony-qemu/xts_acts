@@ -61,19 +61,19 @@ void rename_0300(void)
 {
     const char *oldname = "/data/storage/el2/base/cache/oldfile.txt";
     const char *newname = "/data/storage/el2/base/cache/newfile.txt";
-    int fd_old = open(oldname, O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("rename_0300", fd_old != -1);
+    int fdOld = open(oldname, O_RDWR | O_CREAT, TEST_MODE);
+    EXPECT_TRUE("rename_0300", fdOld != -1);
 
-    char str_old[] = "old";
-    int ret_old = write(fd_old, str_old, sizeof(str_old));
-    EXPECT_TRUE("rename_0300", ret_old > 0);
-    close(fd_old);
+    char strOld[] = "old";
+    int retOld = write(fdOld, strOld, sizeof(strOld));
+    EXPECT_TRUE("rename_0300", retOld > 0);
+    close(fdOld);
 
     int fd_new = open(newname, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_TRUE("rename_0100", fd_new != -1);
 
     char str_new[] = "new";
-    int ret_new = write(fd_old, str_new, sizeof(str_new));
+    int ret_new = write(fdOld, str_new, sizeof(str_new));
     EXPECT_TRUE("rename_0300", ret_new > 0);
     close(fd_new);
 

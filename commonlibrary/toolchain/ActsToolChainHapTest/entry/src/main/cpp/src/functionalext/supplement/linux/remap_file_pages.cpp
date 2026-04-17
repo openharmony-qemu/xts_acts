@@ -102,11 +102,11 @@ static const char *text =
     "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
 
 /**
- * @tc.name      : remap_file_pages_0100
+ * @tc.name      : RemapFilePages0100
  * @tc.desc      : Verify that a nonlinear mapping file can be created (parameters are valid)
  * @tc.level     : Level 0
  */
-void remap_file_pages_0100(void)
+void RemapFilePages0100(void)
 {
     char str[LEN] = {0};
 

@@ -15,61 +15,61 @@
 
 #include "functionalext.h"
 
-static const char *path = "/data/storage/el2/base/cache/fputs.txt";
+static const char *PATH = "/data/storage/el2/base/cache/fputs.txt";
 
 /**
- * @tc.name       : fputs_0100
+ * @tc.name       : Fputs0100
  * @tc.desc       : Writes the string s to stream
  * @tc.level      : level 0.
  */
-void fputs_0100(void)
+void Fputs0100(void)
 {
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fputs_0100", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fputs0100", fptr, NULL);
 
     int len = fputs("this is a test string", fptr);
-    EXPECT_TRUE("fputs_0100", len >= 0);
+    EXPECT_TRUE("Fputs0100", len >= 0);
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name       : fputs_0200
+ * @tc.name       : Fputs0200
  * @tc.desc       : An empty string is written in the specified file.
  * @tc.level      : level 0.
  */
-void fputs_0200(void)
+void Fputs0200(void)
 {
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fputs_0200", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fputs0200", fptr, NULL);
 
     int len = fputs("", fptr);
-    EXPECT_TRUE("fputs_0200", len >= 0);
+    EXPECT_TRUE("Fputs0200", len >= 0);
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name       : fputs_0300
+ * @tc.name       : Fputs0300
  * @tc.desc       : Verify that an empty string cannot be written to the specified file.
  * @tc.level      : level 2.
  */
-void fputs_0300(void)
+void Fputs0300(void)
 {
-    FILE *p = fopen(path, "w");
+    FILE *p = fopen(PATH, "w");
     fclose(p);
-    p = fopen(path, "r");
+    p = fopen(PATH, "r");
     int len = fputs("this is a test string", p);
-    EXPECT_EQ("fputs_0300", len, EOF);
+    EXPECT_EQ("Fputs0300", len, EOF);
     fclose(p);
-    remove(path);
+    remove(PATH);
 }
 
 static int FputsTestImpl(int argc, char *argv[])
 {
-    fputs_0100();
-    fputs_0200();
-    fputs_0300();
+    Fputs0100();
+    Fputs0200();
+    Fputs0300();
     return g_tStatus;
 }
 

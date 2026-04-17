@@ -1,4 +1,4 @@
-#define _XOPEN_SOURCE 700
+#define XOPEN_SOURCE 700
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -16,7 +16,7 @@
 /* We use this instead of memcmp because some broken C libraries
  * add additional nonstandard fields to struct tm... */
 
-int tm_cmp(struct tm tm1, struct tm tm2)
+int TmCmp(struct tm tm1, struct tm tm2)
 {
     return  tm1.tm_sec  != tm2.tm_sec  ||
         tm1.tm_min  != tm2.tm_min  ||
@@ -29,7 +29,7 @@ int tm_cmp(struct tm tm1, struct tm tm2)
         tm1.tm_isdst != tm2.tm_isdst;
 }
 
-char *tm_str(struct tm tm)
+char *TmStr(struct tm tm)
 {
     static int i;
     static char b[TM_BUFFER_COUNT][TM_BUFFER_SIZE];
@@ -47,11 +47,11 @@ char *tm_str(struct tm tm)
     .tm_mday = md, .tm_mon = mo, .tm_year = yr, \
     .tm_wday = wd, .tm_yday = yd, .tm_isdst = dst }
 
-struct tm tm_epoch = {0,0,0,1,0,70,4,0,0};
-struct tm tm_y2038_1s = {7,14,3,19,0,138,2,18,0};
-struct tm tm_y2038 = {8,14,3,19,0,138,2,18,0};
+struct tm g_tmEpoch = {0,0,0,1,0,70,4,0,0};
+struct tm g_tmY20381s = {7,14,3,19,0,138,2,18,0};
+struct tm g_tmY2038 = {8,14,3,19,0,138,2,18,0};
 
-static void sec2tm(time_t t, char *m)
+static void Sec2tm(time_t t, char *m)
 {
     struct tm *tm;
     time_t r;
@@ -66,11 +66,11 @@ static void sec2tm(time_t t, char *m)
     r = mktime(tm);
     if (errno != 0) {
         t_error("%s: mktime(%s) should not set errno, got %s\n",
-            m, tm_str(*tm), strerror(errno));
+            m, TmStr(*tm), strerror(errno));
     }
     if (t != r) {
         t_error("%s: mktime(gmtime(%lld)) roundtrip failed: got %lld (gmtime is %s)\n",
-            m, static_cast<long long>(t), static_cast<long long>(r), tm_str(*tm));
+            m, static_cast<long long>(t), static_cast<long long>(r), TmStr(*tm));
     }
 }
 
@@ -84,24 +84,24 @@ static void tm2sec(struct tm *tm, int big, char *m)
     t = mktime(tm);
     if (overflow && t != MKTIME_FAILURE) {
         t_error("%s: mktime(%s) expected -1, got (time_t)%ld\n",
-            m, tm_str(*tm), static_cast<long>(t));
+            m, TmStr(*tm), static_cast<long>(t));
     }
     if (overflow && errno != EOVERFLOW) {
         t_error("%s: mktime(%s) expected EOVERFLOW (%s), got (%s)\n",
-            m, tm_str(*tm), strerror(EOVERFLOW), strerror(errno));
+            m, TmStr(*tm), strerror(EOVERFLOW), strerror(errno));
     }
     if (!overflow && t == MKTIME_FAILURE) {
         t_error("%s: mktime(%s) expected success, got (time_t)-1\n",
-            m, tm_str(*tm));
+            m, TmStr(*tm));
     }
     if (!overflow && errno) {
         t_error("%s: mktime(%s) expected no error, got (%s)\n",
-            m, tm_str(*tm), strerror(errno));
+            m, TmStr(*tm), strerror(errno));
     }
     r = gmtime(&t);
-    if (!overflow && tm_cmp(*r, *tm)) {
+    if (!overflow && TmCmp(*r, *tm)) {
         t_error("%s: gmtime(mktime(%s)) roundtrip failed: got %s\n",
-            m, tm_str(*tm), tm_str(*r));
+            m, TmStr(*tm), TmStr(*r));
     }
 }
 
@@ -111,13 +111,13 @@ static int TimeTestImpl(void)
 
     putenv("TZ=GMT");
     tzset();
-    tm2sec(&tm_epoch, 0, "gmtime(0)");
-    tm2sec(&tm_y2038_1s, 0, "2038-1s");
-    tm2sec(&tm_y2038, 1, "2038");
+    tm2sec(&g_tmEpoch, 0, "gmtime(0)");
+    tm2sec(&g_tmY20381s, 0, "2038-1s");
+    tm2sec(&g_tmY2038, 1, "2038");
 
-    sec2tm(0, "EPOCH");
+    Sec2tm(0, "EPOCH");
     for (t = 1; t < TIME_TEST_LIMIT; t++) {
-        sec2tm(t * TIME_OFFSET, "EPOCH+eps");
+        Sec2tm(t * TIME_OFFSET, "EPOCH+eps");
     }
 
     /* FIXME: set a TZ var and check DST boundary conditions */

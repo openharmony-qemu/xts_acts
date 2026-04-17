@@ -17,75 +17,75 @@
 #include "functionalext.h"
 
 #define STR_LEN 10
-static const char *test_txt_path = "/data/storage/el2/base/cache/test.txt";
-static const char *file_txt_path = "/data/storage/el2/base/cache/file.txt";
+static const char *TEST_TXT_PATH = "/data/storage/el2/base/cache/test.txt";
+static const char *FILE_TXT_PATH = "/data/storage/el2/base/cache/file.txt";
 
 /**
- * @tc.name      : getline_0100
+ * @tc.name      : Getline0100
  * @tc.desc      : Verify that a row of data can be read (parameters are valid).
  * @tc.level     : Level 0
  */
-void getline_0100(void)
+void Getline0100(void)
 {
-    char *wrstring = "helloworld";
+    char *wrString = "helloworld";
     char *line = nullptr;
     size_t len = 0;
 
-    FILE *fp = fopen(test_txt_path, "w+");
-    EXPECT_PTRNE("getline_0100", fp, NULL);
-    fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    FILE *fp = fopen(TEST_TXT_PATH, "w+");
+    EXPECT_PTRNE("Getline0100", fp, NULL);
+    fwrite(wrString, sizeof(char), strlen(wrString), fp);
     fseek(fp, 0, SEEK_SET);
 
     ssize_t read = getline(&line, &len, fp);
-    EXPECT_EQ("getline_0100", read, STR_LEN);
-    EXPECT_STREQ("getline_0100", line, "helloworld");
+    EXPECT_EQ("Getline0100", read, STR_LEN);
+    EXPECT_STREQ("Getline0100", line, "helloworld");
 
     fclose(fp);
-    remove(test_txt_path);
+    remove(TEST_TXT_PATH);
 }
 
 /**
- * @tc.name      : getline_0200
+ * @tc.name      : Getline0200
  * @tc.desc      : Validation cannot read a row of data (parameter is NULL).
  * @tc.level     : Level 2
  */
-void getline_0200(void)
+void Getline0200(void)
 {
     size_t len = 0;
 
-    FILE *fp = fopen(file_txt_path, "w+");
-    EXPECT_PTRNE("getline_0100", fp, NULL);
+    FILE *fp = fopen(FILE_TXT_PATH, "w+");
+    EXPECT_PTRNE("Getline0100", fp, NULL);
 
     ssize_t read = getline(NULL, &len, fp);
-    EXPECT_EQ("getline_0200", read, -1);
+    EXPECT_EQ("Getline0200", read, -1);
 
     fclose(fp);
-    remove(file_txt_path);
+    remove(FILE_TXT_PATH);
 }
 
 /**
- * @tc.name      : getline_0300
+ * @tc.name      : Getline0300
  * @tc.desc      : TValidation cannot read a row of data (parameter is 0).
  * @tc.level     : Level 2
  */
-void getline_0300(void)
+void Getline0300(void)
 {
     char *line = nullptr;
 
-    FILE *fp = fopen(file_txt_path, "w+");
-    EXPECT_PTRNE("getline_0100", fp, NULL);
+    FILE *fp = fopen(FILE_TXT_PATH, "w+");
+    EXPECT_PTRNE("Getline0100", fp, NULL);
 
     ssize_t read = getline(&line, 0, fp);
-    EXPECT_EQ("getline_0300", read, -1);
+    EXPECT_EQ("Getline0300", read, -1);
     fclose(fp);
-    remove(file_txt_path);
+    remove(FILE_TXT_PATH);
 }
 
 static int GetlineTestImpl(int argc, char *argv[])
 {
-    getline_0100();
-    getline_0200();
-    getline_0300();
+    Getline0100();
+    Getline0200();
+    Getline0300();
     return g_tStatus;
 }
 

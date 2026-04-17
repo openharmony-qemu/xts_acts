@@ -33,22 +33,22 @@ void remove_0100(void)
 }
 
 /**
- * @tc.name      : remove_0200
+ * @tc.name      : Remove0200
  * @tc.desc      : The parameter is invalid and the file cannot be deleted.
  * @tc.level     : Level 2
  */
-void remove_0200(void)
+void Remove0200(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
     int ret = remove(ptr);
-    EXPECT_EQ("remove_0200", ret, -1);
+    EXPECT_EQ("Remove0200", ret, -1);
     ptr = nullptr;
 }
 
 static int RemoveTestImpl(int argc, char *argv[])
 {
     remove_0100();
-    remove_0200();
+    Remove0200();
     return g_tStatus;
 }
 

@@ -18,31 +18,31 @@
 #include "functionalext.h"
 
 /**
- * @tc.name      : flistxattr_0100
+ * @tc.name      : Flistxattr0100
  * @tc.desc      : Verify that extended attribute names can be listed (each parameter is valid)
  * @tc.level     : Level 0
  */
-void flistxattr_0100(void)
+void Flistxattr0100(void)
 {
-    const char *path = "/data/storage/el2/base/cache/test.txt";
-    char name[] = "user.x";
-    char value[] = "the past is not dead.";
+    const char *PATH = "/data/storage/el2/base/cache/test.txt";
+    char NAME[] = "user.x";
+    char VALUE[] = "the past is not dead.";
 
-    int fd = open(path, O_CREAT | O_WRONLY, 0667);
-    EXPECT_NE("flistxattr_0100", fd, -1);
+    int fd = open(PATH, O_CREAT | O_WRONLY, 0667);
+    EXPECT_NE("Flistxattr0100", fd, -1);
 
-    fsetxattr(fd, name, value, strlen(value), 0);
+    fsetxattr(fd, NAME, VALUE, strlen(VALUE), 0);
 
-    ssize_t result = flistxattr(fd, name, 0);
-    EXPECT_NE("flistxattr_0100", result, -1);
+    ssize_t result = flistxattr(fd, NAME, 0);
+    EXPECT_NE("Flistxattr0100", result, -1);
 
     close(fd);
-    remove(path);
+    remove(PATH);
 }
 
 static int FlistxattrTestImpl(int argc, char *argv[])
 {
-    flistxattr_0100();
+    Flistxattr0100();
     return T_STATUS;
 }
 

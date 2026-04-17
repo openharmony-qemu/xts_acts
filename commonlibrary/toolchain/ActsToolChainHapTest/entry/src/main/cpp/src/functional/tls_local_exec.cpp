@@ -7,7 +7,7 @@ static __thread char d1 = 11;
 static __thread char d64 __attribute__ ((aligned(64))) = 22;
 static __thread char d4096 __attribute__ ((aligned(4096))) = 33;
 static __thread char z1 = 0;
-static __thread char z64 __attribute__ ((aligned(64))) = 0;
+static __thread char g_z64 __attribute__ ((aligned(64))) = 0;
 static __thread char z4096 __attribute__ ((aligned(4096))) = 0;
 static __thread const char *s1 = "s1";
 
@@ -36,10 +36,10 @@ static void *check(void *arg)
     CHECK(ptrmod(&d4096, 4096) == 0, " address is %p, want 4096 byte alignment", &d4096);
 
     CHECK(z1 == 0, " want 0 got %d", z1);
-    CHECK(z64 == 0, " want 0 got %d", z64);
+    CHECK(g_z64 == 0, " want 0 got %d", g_z64);
     CHECK(z4096 == 0, " want 0 got %d", z4096);
 
-    CHECK(ptrmod(&z64, 64) == 0, " address is %p, want 64 byte alignment", &z64);
+    CHECK(ptrmod(&g_z64, 64) == 0, " address is %p, want 64 byte alignment", &g_z64);
     CHECK(ptrmod(&z4096, 4096) == 0, " address is %p, want 4096 byte alignment", &z4096);
 
     CHECK(!strcmp(s1, "s1"), " want s1 got %s", s1);

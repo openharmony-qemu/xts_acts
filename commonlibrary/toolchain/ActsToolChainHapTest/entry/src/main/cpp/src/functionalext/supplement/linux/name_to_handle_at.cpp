@@ -19,14 +19,14 @@
 #include <stdio.h>
 #include "test.h"
 
-const char *pathname = "/proc/self/mountinfo";
+const char *PATHNAME = "/proc/self/mountinfo";
 
 /**
- * @tc.name      : name_to_handle_at_0100
+ * @tc.name      : NameToHandleAt0100
  * @tc.desc      : Verify that the name_TO_HANDLE_AT function was successfully called (all parameters are valid)
  * @tc.level     : Level 0
  */
-void name_to_handle_at_0100(void)
+void NameToHandleAt0100(void)
 {
     struct file_handle *fhp;
     char buf[1000];
@@ -42,7 +42,7 @@ void name_to_handle_at_0100(void)
     flags = 0;
     fhp->handle_bytes = 0;
 
-    if (name_to_handle_at(dirfd, pathname, fhp, &mount_id, flags) != -1 || errno != EOVERFLOW) {
+    if (name_to_handle_at(dirfd, PATHNAME, fhp, &mount_id, flags) != -1 || errno != EOVERFLOW) {
         t_error("%s Unexpected name_to_handle_at\n", __func__);
     }
 
@@ -52,7 +52,7 @@ void name_to_handle_at_0100(void)
         t_error("%s realloc failed\n", __func__);
     }
 
-    int result = name_to_handle_at(dirfd, pathname, fhp, &mount_id, flags);
+    int result = name_to_handle_at(dirfd, PATHNAME, fhp, &mount_id, flags);
     if (result == -1) {
         t_error("%s name_to_handle_at failed\n");
     }

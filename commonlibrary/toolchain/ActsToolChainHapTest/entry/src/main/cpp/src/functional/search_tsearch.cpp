@@ -14,11 +14,11 @@ struct e {
 };
 
 static int count;
-static void *root;
-static struct e tab[TABLE_SIZE];
-static struct e *cur = tab;
+static void *g_root;
+static struct e g_tab[TABLE_SIZE];
+static struct e *cur = g_tab;
 
-static int cmp(const void *a, const void *b)
+static int Cmp(const void *a, const void *b)
 {
     return strcmp(static_cast<const struct e*>(a)->k, static_cast<const struct e*>(b)->k);
 }
@@ -52,16 +52,16 @@ static void act(const void *node, VISIT v, int d)
         wantc++;
 }
 
-static const void *parent;
-static char *searchkey;
-static void Getparent(const void *node, VISIT v, int d)
+static const void *g_parent;
+static char *g_searchkey;
+static void GetParent(const void *node, VISIT v, int d)
 {
     static const void *p;
     struct e *e = *(struct e**)node;
 
     if (v == preorder || v == leaf) {
-        if (strcmp(searchkey, e->k) == 0) {
-            parent = p;
+        if (strcmp(g_searchkey, e->k) == 0) {
+            g_parent = p;
         }
     }
     if (v == preorder || v == postorder)
@@ -71,7 +71,7 @@ static void Getparent(const void *node, VISIT v, int d)
 struct e *Get(char *k)
 {
     struct e key = {.k = k};
-    void **p = static_cast<void**>(tfind(&key, &root, cmp));
+    void **p = static_cast<void**>(tfind(&key, &g_root, Cmp));
     if (!p) {
         return nullptr;
     }
@@ -86,7 +86,7 @@ struct e *Set(char *k, int v)
     if (!Get(k)) {
         count++;
     }
-    p = static_cast<void**>(tsearch(cur++, &root, cmp));
+    p = static_cast<void**>(tsearch(cur++, &g_root, Cmp));
     if (!p || strcmp(((struct e*)*p)->k, k) != 0) {
         t_error("tsearch %s %d failed\n", k, v);
     }
@@ -97,10 +97,10 @@ struct e *Set(char *k, int v)
     return static_cast<struct e*>(*p);
 }
 
-void *del(char *k)
+void *Del(char *k)
 {
     struct e key = {.k = k};
-    void *p = tdelete(&key, &root, cmp);
+    void *p = tdelete(&key, &g_root, Cmp);
     if (p) {
         count--;
     }
@@ -140,37 +140,37 @@ static int SearchTsearchTestImpl()
     if (e && e->v != 9) {
         t_error("tsearch i 9 returned data %d, wanted 9\n", e->v);
     }
-    if (del("foobar")) {
+    if (Del("foobar")) {
         t_error("tdelete foobar should fail\n");
     }
 
-    twalk(root, act);
+    twalk(g_root, act);
     if (wantc != 'j') {
         t_error("twalk did not visit all nodes (wanted 'j' got '%c')\n", wantc);
     }
-    searchkey = "h";
-    twalk(root, Getparent);
-    if (parent == nullptr) {
-        t_error("twalk search for key \"%s\" failed\n", searchkey);
+    g_searchkey = "h";
+    twalk(g_root, GetParent);
+    if (g_parent == nullptr) {
+        t_error("twalk search for key \"%s\" failed\n", g_searchkey);
     }
-    p = del("h");
-    if (p != parent) {
-        t_error("tdelete h failed to return parent (got %p wanted %p)\n", p, parent);
+    p = Del("h");
+    if (p != g_parent) {
+        t_error("tdelete h failed to return parent (got %p wanted %p)\n", p, g_parent);
     }
 
-    e = *(struct e**)root;
-    if (!del(e->k)) {
+    e = *(struct e**)g_root;
+    if (!Del(e->k)) {
         t_error("tdelete root \"%s\" failed (returned 0)\n", e->k);
     }
 
     for (; count; count--) {
-        e = *(struct e**)root;
-        if (!tdelete(e, &root, cmp)) {
+        e = *(struct e**)g_root;
+        if (!tdelete(e, &g_root, Cmp)) {
             t_error("tdelete k=%s failed during destruction\n", e->k);
         }
     }
-    if (root) {
-        t_error("tree destruction failed: root is nonzero %p\n", root);
+    if (g_root) {
+        t_error("tree destruction failed: root is nonzero %p\n", g_root);
     }
 
     return g_tStatus;

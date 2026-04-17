@@ -18,11 +18,11 @@
 
 #include "test.h"
 
-static int handler_count = 0;
+static int g_handlerCount = 0;
 
 static void Handler(int sig)
 {
-    handler_count++;
+    g_handlerCount++;
 }
 
 /**
@@ -32,7 +32,7 @@ static void Handler(int sig)
  */
 void sigrelse_0100(void)
 {
-    handler_count = 0;
+    g_handlerCount = 0;
 
     int sig = SIGALRM;
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
@@ -63,9 +63,9 @@ void sigrelse_0100(void)
     }
 
     result = raise(sig);
-    if (result != 0 || handler_count != 0) {
+    if (result != 0 || g_handlerCount != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
-        t_error("%s failed: handler_count = %d\n", __func__, handler_count);
+        t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
 
     errno = 0;
@@ -75,8 +75,8 @@ void sigrelse_0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    if (handler_count != 1) {
-        t_error("%s failed: handler_count = %d\n", __func__, handler_count);
+    if (g_handlerCount != 1) {
+        t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
 
     result = sigprocmask(SIG_SETMASK, NULL, &set);

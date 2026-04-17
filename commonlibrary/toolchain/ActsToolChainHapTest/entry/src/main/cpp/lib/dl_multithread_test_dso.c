@@ -16,18 +16,18 @@
 
 #include "test.h"
 
-const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdlclose_recursive.so";
+const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlclose_recursive.so";
 static void* handle = NULL;
 
-__attribute__((constructor)) void ctor_dlopen()
+__attribute__((constructor)) void CtorDlopen()
 {
-    handle = dlopen(g_libPath, RTLD_GLOBAL);
+    handle = dlopen(LIB_PATH, RTLD_GLOBAL);
     if (!handle) {
-        t_error("dlopen %s failed: %s\n", g_libPath, dlerror());
+        t_error("dlopen %s failed: %s\n", LIB_PATH, dlerror());
     }
 }
 
-__attribute__((destructor)) void dtor_dlclose()
+__attribute__((destructor)) void DtorDlclose()
 {
     if (handle) {
         dlclose(handle);

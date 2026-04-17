@@ -47,7 +47,7 @@
  * @tc.desc      : Test basic functionality of fcntl
  * @tc.level     : Level 0
  */
-void fcntl_0100(void)
+void Fcntl0100(void)
 {
     struct flock fl = {0};
     FILE *f;
@@ -376,7 +376,7 @@ void fcntl64_0700(void)
 
 static int FcntlTestImpl(void)
 {
-    fcntl_0100();
+    Fcntl0100();
 #ifdef MUSL_EXTERNAL_FUNCTION
     fcntl64_0100();
     fcntl64_0200();

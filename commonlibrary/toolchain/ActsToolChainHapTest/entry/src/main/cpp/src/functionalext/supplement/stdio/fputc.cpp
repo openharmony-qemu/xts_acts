@@ -19,40 +19,40 @@
 #define CHAR_A_ASCII 97
 
 /**
- * @tc.name       : fputc_0100
+ * @tc.name       : Fputc0100
  * @tc.desc       : Verify that a character can be written to the file
  * @tc.level      : level 0.
  */
-void fputc_0100(void)
+void Fputc0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FPUTC_TXT, path);
     FILE *fptr = fopen(path, "w");
-    int Exit = fputc('a', fptr);
-    EXPECT_EQ("fputc_0100", Exit, CHAR_A_ASCII);
+    int exit = fputc('a', fptr);
+    EXPECT_EQ("Fputc0100", exit, CHAR_A_ASCII);
     fclose(fptr);
 }
 
 /**
- * @tc.name       : fputc_0200
+ * @tc.name       : Fputc0200
  * @tc.desc       : Verify that a character cannot be written to the file
  * @tc.level      : level 2.
  */
-void fputc_0200(void)
+void Fputc0200(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FPUTC_TXT, path);
     FILE *fptr = fopen(path, "r");
-    int Exit = fputc('a', fptr);
-    EXPECT_EQ("fputc_0200", Exit, EOF);
+    int exit = fputc('a', fptr);
+    EXPECT_EQ("Fputc0200", exit, EOF);
     fclose(fptr);
     remove(path);
 }
 
 static int FputcTestImpl(void)
 {
-    fputc_0100();
-    fputc_0200();
+    Fputc0100();
+    Fputc0200();
     return g_tStatus;
 }
 

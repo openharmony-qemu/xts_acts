@@ -116,7 +116,7 @@ static void recvsss(void)
     timeout.tv_sec = TIMEOUT;
     timeout.tv_nsec = 0;
 
-    retval = __recvmmsg_time64(sockfd, msgs, VLEN, 0, &timeout);
+    retval = RecvmmsgTime64(sockfd, msgs, VLEN, 0, &timeout);
     if (retval == FAILURE_CODE) {
         t_error("recvmmsg_time64_0100 recv recvmmsg error");
         exit(EXIT_FAILURE);

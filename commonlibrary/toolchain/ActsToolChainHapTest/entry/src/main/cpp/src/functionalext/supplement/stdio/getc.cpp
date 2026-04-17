@@ -18,22 +18,22 @@
 #include <string.h>
 #include "test.h"
 
-static const char *wrstring = "This is a test sample!";
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *WRSTRING = "This is a test sample!";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : getc_0100
+ * @tc.name      : Getc0100
  * @tc.desc      : Verify that the characters in the file can be get
  * @tc.level     : Level 0
  */
-static void getc_0100(void)
+static void Getc0100(void)
 {
-    FILE *fptr = fopen(path, "w+");
+    FILE *fptr = fopen(PATH, "w+");
     if (!fptr) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fptr);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fptr);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -48,12 +48,12 @@ static void getc_0100(void)
     }
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 static int GetcTestImpl(int argc, char *argv[])
 {
-    getc_0100();
+    Getc0100();
     return g_tStatus;
 }
 

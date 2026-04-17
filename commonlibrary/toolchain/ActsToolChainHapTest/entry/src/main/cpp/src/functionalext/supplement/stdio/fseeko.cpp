@@ -17,22 +17,22 @@
 #include <string.h>
 #include "test.h"
 
-static const char *wrstring = "This is a test sample!";
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *WRSTRING = "This is a test sample!";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : fseeko_0100
+ * @tc.name      : Fseeko0100
  * @tc.desc      : Verify that the file pointer is moved to the beginning of the file
  * @tc.level     : Level 0
  */
-void fseeko_0100(void)
+void Fseeko0100(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -47,22 +47,22 @@ void fseeko_0100(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fseeko_0200
+ * @tc.name      : Fseeko0200
  * @tc.desc      : Verify that the file pointer is moved to any position in the file
  * @tc.level     : Level 0
  */
-void fseeko_0200(void)
+void Fseeko0200(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -77,22 +77,22 @@ void fseeko_0200(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fseeko_0300
+ * @tc.name      : Fseeko0300
  * @tc.desc      : Verify that the file pointer is moved to the current position of the file
  * @tc.level     : Level 0
  */
-void fseeko_0300(void)
+void Fseeko0300(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -113,22 +113,22 @@ void fseeko_0300(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fseeko_0400
+ * @tc.name      : Fseeko0400
  * @tc.desc      : Verify that the file pointer is moved to the end of the file
  * @tc.level     : Level 0
  */
-void fseeko_0400(void)
+void Fseeko0400(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -143,22 +143,22 @@ void fseeko_0400(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fseeko_0500
+ * @tc.name      : Fseeko0500
  * @tc.desc      : Verify that the moved file pointer position exceeds the starting position pointer movement failed
  * @tc.level     : Level 2
  */
-void fseeko_0500(void)
+void Fseeko0500(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -169,22 +169,22 @@ void fseeko_0500(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fseeko_0600
+ * @tc.name      : Fseeko0600
  * @tc.desc      : Verify that the moved file pointer position exceeds the end position pointer movement failed
  * @tc.level     : Level 1
  */
-void fseeko_0600(void)
+void Fseeko0600(void)
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (!fp) {
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fp);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -195,17 +195,17 @@ void fseeko_0600(void)
     }
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 static int FseekoTestImpl(int argc, char *argv[])
 {
-    fseeko_0100();
-    fseeko_0200();
-    fseeko_0300();
-    fseeko_0400();
-    fseeko_0500();
-    fseeko_0600();
+    Fseeko0100();
+    Fseeko0200();
+    Fseeko0300();
+    Fseeko0400();
+    Fseeko0500();
+    Fseeko0600();
 
     return g_tStatus;
 }

@@ -30,7 +30,7 @@ void fork_0100()
     int count = 0;
     int options = 0;
     const char *sign_r = "1";
-    const char *sign_f = "0";
+    const char *signF = "0";
     char list1[2];
     char list2[2];
 

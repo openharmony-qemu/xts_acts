@@ -34,7 +34,7 @@ static void ExpireTimer(int signo)
         getitimer(signo, &val);
         val.it_value.tv_sec = TIMER_SEC;
         val.it_value.tv_usec = TIMER_SEC;
-        __setitimer_time64(signo, &val, nullptr);
+        SetitimerTime64(signo, &val, nullptr);
         g_count = 0;
     }
 }
@@ -74,7 +74,7 @@ void SetitimerTime640100(void)
     it.it_interval.tv_sec = TIMER_SEC;
     it.it_interval.tv_usec = TIMER_USEC;
 
-    if (__setitimer_time64(ITIMER_REAL, &it, nullptr)) {
+    if (SetitimerTime64(ITIMER_REAL, &it, nullptr)) {
         t_error("%s set timer failed", __func__);
     }
 }

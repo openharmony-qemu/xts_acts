@@ -18,20 +18,20 @@
 #include <stdlib.h>
 #include "test.h"
 
-const char name[] = "www";
-const char domain[] = "baidu.com";
-const int qclass = C_IN;
-const int qtype = T_TXT;
+const char NAME[] = "www";
+const char DOMAIN[] = "baidu.com";
+const int QCLASS = C_IN;
+const int QTYPE = T_TXT;
 
 /**
- * @tc.name      : res_querydomain_0100
+ * @tc.name      : ResQuerydomain0100
  * @tc.desc      : query the name server, device need to access internet.
  * @tc.level     : Level 0
  */
-void res_querydomain_0100(void)
+void ResQuerydomain0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
-    int result = res_querydomain(name, domain, qclass, qtype, buf, sizeof(buf));
+    int result = res_querydomain(NAME, DOMAIN, QCLASS, QTYPE, buf, sizeof(buf));
     // Because XTS test can not access internet, it is expected to return (-1).
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
@@ -39,14 +39,14 @@ void res_querydomain_0100(void)
 }
 
 /**
- * @tc.name      : res_querydomain_0200
+ * @tc.name      : ResQuerydomain0200
  * @tc.desc      : query the name server with an invalid type
  * @tc.level     : Level 2
  */
-void res_querydomain_0200(void)
+void ResQuerydomain0200(void)
 {
     unsigned char buf[BUFSIZ] = {0};
-    int result = res_querydomain(name, domain, qclass, T_ANY + 1, buf, sizeof(buf));
+    int result = res_querydomain(NAME, DOMAIN, QCLASS, T_ANY + 1, buf, sizeof(buf));
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -54,7 +54,7 @@ void res_querydomain_0200(void)
 
 static int ResQuerydomainTestImpl(int argc, char *argv[])
 {
-    res_querydomain_0200();
+    ResQuerydomain0200();
     return T_STATUS;
 }
 

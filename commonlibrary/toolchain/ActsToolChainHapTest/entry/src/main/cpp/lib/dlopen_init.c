@@ -22,7 +22,7 @@ __attribute__((constructor)) static void Init(void)
     test_val++;
 }
 
-int getVal(void)
+int GetVal(void)
 {
     return test_val;
 }

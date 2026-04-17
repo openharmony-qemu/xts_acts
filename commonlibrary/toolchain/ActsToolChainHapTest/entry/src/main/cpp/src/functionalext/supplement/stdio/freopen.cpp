@@ -18,18 +18,18 @@
 #include "filepath_util.h"
 
 /**
- * @tc.name      : freopen_0100
+ * @tc.name      : Freopen0100
  * @tc.desc      : Each parameter is valid, f is stdin, which can realize input redirection.
  * @tc.level     : Level 0
  */
-void freopen_0100(void)
+void Freopen0100(void)
 {
     char ptr[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH("/data/storage/el2/base/cache/freopen.txt", ptr);
 
     FILE *fp;
     fp = freopen(ptr, "w+", stdin);
-    EXPECT_PTRNE("freopen_0100", fp, NULL);
+    EXPECT_PTRNE("Freopen0100", fp, NULL);
 
     fclose(stdin);
     fclose(fp);
@@ -38,7 +38,7 @@ void freopen_0100(void)
 
 static int FreopenTestImpl(int argc, char *argv[])
 {
-    freopen_0100();
+    Freopen0100();
     return g_tStatus;
 }
 

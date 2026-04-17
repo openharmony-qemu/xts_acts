@@ -25,11 +25,11 @@
 #define FAILURE_CODE -1
 
 /**
- * @tc.name      : tee_0100
+ * @tc.name      : Tee0100
  * @tc.desc      : Copy data between two pipe file descriptors
  * @tc.level     : Level 0
  */
-void tee_0100(void)
+void Tee0100(void)
 {
     char buf[BUFF_SIZE];
     char *text = "Hello";
@@ -69,11 +69,11 @@ void tee_0100(void)
 }
 
 /**
- * @tc.name      : tee_0200
+ * @tc.name      : Tee0200
  * @tc.desc      : Input argument is not a pipe descriptor
  * @tc.level     : Level 2
  */
-void tee_0200(void)
+void Tee0200(void)
 {
     char buf[BUFF_SIZE];
     char *text = "Hello";
@@ -103,8 +103,8 @@ void tee_0200(void)
 
 static int TeeTestImpl(int argc, char *argv[])
 {
-    tee_0100();
-    tee_0200();
+    Tee0100();
+    Tee0200();
     return T_STATUS;
 }
 

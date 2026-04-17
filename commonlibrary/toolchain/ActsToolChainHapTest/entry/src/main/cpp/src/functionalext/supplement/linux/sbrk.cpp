@@ -19,11 +19,11 @@
 #include "test.h"
 
 /**
- * @tc.name      : sbrk_0100
+ * @tc.name      : Sbrk0100
  * @tc.desc      : Find the current location of the program break
  * @tc.level     : Level 0
  */
-void sbrk_0100(void)
+void Sbrk0100(void)
 {
     errno = 0;
     // 修复：添加 (int*) 强转
@@ -37,11 +37,11 @@ void sbrk_0100(void)
 }
 
 /**
- * @tc.name      : sbrk_0200
+ * @tc.name      : Sbrk0200
  * @tc.desc      : Exception return value test when parameter is 1
  * @tc.level     : Level 2
  */
-void sbrk_0200(void)
+void Sbrk0200(void)
 {
     errno = 0;
     // 修复：添加 (int*) 强转
@@ -56,8 +56,8 @@ void sbrk_0200(void)
 
 static int SbrkTestImpl(int argc, char *argv[])
 {
-    sbrk_0100();
-    sbrk_0200();
+    Sbrk0100();
+    Sbrk0200();
     return T_STATUS;
 }
 

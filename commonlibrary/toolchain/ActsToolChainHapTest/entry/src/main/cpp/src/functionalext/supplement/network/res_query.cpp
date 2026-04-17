@@ -18,19 +18,19 @@
 #include <stdlib.h>
 #include "test.h"
 
-const char dname[] = "www.baidu.com";
-const int qclass = C_IN;
-const int qtype = T_TXT;
+const char DNAME[] = "www.baidu.com";
+const int QCLASS = C_IN;
+const int QTYPE = T_TXT;
 
 /**
- * @tc.name      : res_query_0100
+ * @tc.name      : ResQuery0100
  * @tc.desc      : query the name server.
  * @tc.level     : Level 0
  */
-void res_query_0100(void)
+void ResQuery0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
-    int result = res_query(dname, qclass, qtype, buf, sizeof(buf));
+    int result = res_query(DNAME, QCLASS, QTYPE, buf, sizeof(buf));
     // Because XTS test can not access internet, it is expected to return (-1).
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
@@ -38,14 +38,14 @@ void res_query_0100(void)
 }
 
 /**
- * @tc.name      : res_query_0200
+ * @tc.name      : ResQuery0200
  * @tc.desc      : query the name server with an invalid type
  * @tc.level     : Level 2
  */
-void res_query_0200(void)
+void ResQuery0200(void)
 {
     unsigned char buf[BUFSIZ] = {0};
-    int result = res_query(dname, qclass, T_ANY + 1, buf, sizeof(buf));
+    int result = res_query(DNAME, QCLASS, T_ANY + 1, buf, sizeof(buf));
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -53,7 +53,7 @@ void res_query_0200(void)
 
 static int ResQueryTestImpl(int argc, char *argv[])
 {
-    res_query_0200();
+    ResQuery0200();
     return T_STATUS;
 }
 

@@ -109,7 +109,7 @@ void InetNtop0600(void)
     EXPECT_PTREQ("InetNtop0600", ptr, NULL);
 }
 
-static TEST_FUN G_Fun_Array[] = {
+static TEST_FUN g_gFunArray[] = {
     InetNtop0100,
     InetNtop0200,
     InetNtop0300,
@@ -120,9 +120,9 @@ static TEST_FUN G_Fun_Array[] = {
 
 static int InetNtopTestImpl(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return T_STATUS;

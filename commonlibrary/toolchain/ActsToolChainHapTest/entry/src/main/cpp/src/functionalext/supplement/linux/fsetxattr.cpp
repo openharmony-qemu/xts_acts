@@ -23,35 +23,35 @@
 #define DATA_LENGTH 4
 #define SUCCESS_CODE 0
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : fsetxattr_0100
+ * @tc.name      : Fsetxattr0100
  * @tc.desc      : Sets the value of the extended attribute identified by name and associated with the given path in the
  *                 filesystem
  * @tc.level     : Level 0
  */
-void fsetxattr_0100(void)
+void Fsetxattr0100(void)
 {
     char buf[BUFFER_SIZE];
 
-    int fd = open(path, O_CREAT | O_WRONLY, FILE_PERMISSIONS);
-    EXPECT_NE("fsetxattr_0100", fd, FAILURE_CODE);
+    int fd = open(PATH, O_CREAT | O_WRONLY, FILE_PERMISSIONS);
+    EXPECT_NE("Fsetxattr0100", fd, FAILURE_CODE);
 
     int result = fsetxattr(fd, "user.foo", "bar", DATA_LENGTH, SUCCESS_CODE);
-    EXPECT_EQ("fsetxattr_0100", result, SUCCESS_CODE);
+    EXPECT_EQ("Fsetxattr0100", result, SUCCESS_CODE);
 
     result = fgetxattr(fd, "user.foo", buf, sizeof(buf));
-    EXPECT_EQ("fsetxattr_0100", result, DATA_LENGTH);
-    EXPECT_STREQ("fsetxattr_0100", buf, "bar");
+    EXPECT_EQ("Fsetxattr0100", result, DATA_LENGTH);
+    EXPECT_STREQ("Fsetxattr0100", buf, "bar");
 
     close(fd);
-    remove(path);
+    remove(PATH);
 }
 
 static int FsetxattrTestImpl(int argc, char *argv[])
 {
-    fsetxattr_0100();
+    Fsetxattr0100();
     return T_STATUS;
 }
 

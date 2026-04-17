@@ -19,11 +19,11 @@
 #include "test.h"
 
 /**
- * @tc.name       : fgetln_0100
+ * @tc.name       : Fgetln0100
  * @tc.desc       : Returns a pointer to the next line from the stream referenced by stream
  * @tc.level      : level 0
  */
-void fgetln_0100(void)
+void Fgetln0100(void)
 {
     size_t plen;
 
@@ -50,11 +50,11 @@ void fgetln_0100(void)
 }
 
 /**
- * @tc.name       : fgetln_0200
+ * @tc.name       : Fgetln0200
  * @tc.desc       :
  * @tc.level      : level 2
  */
-void fgetln_0200(void)
+void Fgetln0200(void)
 {
     size_t plen;
 
@@ -74,8 +74,8 @@ void fgetln_0200(void)
 
 static int FgetlnTestImpl(int argc, char *argv[])
 {
-    fgetln_0100();
-    fgetln_0200();
+    Fgetln0100();
+    Fgetln0200();
     return g_tStatus;
 }
 

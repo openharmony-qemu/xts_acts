@@ -17,21 +17,21 @@
 #include <stdio.h>
 #include "test.h"
 
-static const char *path = "/data/storage/el2/base/cache/readtest.txt";
+static const char *PATH = "/data/storage/el2/base/cache/readtest.txt";
 
 #ifndef TEST_MODE
 #define TEST_MODE 0666
 #endif
 
 /**
- * @tc.name      : getchar_0100
+ * @tc.name      : Getchar0100
  * @tc.desc      : Verify that the characters in the file can be get
  * @tc.level     : Level 0
  */
-void getchar_0100(void)
+void Getchar0100(void)
 {
     char str[] = "t";
-    int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }
@@ -40,7 +40,7 @@ void getchar_0100(void)
         t_error("%s write failed\n", __func__);
     }
 
-    FILE *fp = freopen(path, "r", stdin);
+    FILE *fp = freopen(PATH, "r", stdin);
     if (!fp) {
         t_error("%s freopen failed\n", __func__);
     }
@@ -51,12 +51,12 @@ void getchar_0100(void)
     }
 
     close(fd);
-    remove(path);
+    remove(PATH);
 }
 
 static int GetcharTestImpl(int argc, char *argv[])
 {
-    getchar_0100();
+    Getchar0100();
     return g_tStatus;
 }
 

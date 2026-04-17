@@ -22,60 +22,60 @@ typedef void (*TEST_FUN)();
 const int32_t NUN_ELEVEN = 11;
 
 /**
- * @tc.name      : fgetpos_0100
+ * @tc.name      : Fgetpos0100
  * @tc.desc      : File pointer at the end of a file, the position to which the current file pointer points
  * @tc.level     : Level 0
  */
-void fgetpos_0100()
+void Fgetpos0100()
 {
     fpos_t pos;
     char buff[] = "hello world";
-    const char *path = "/data/storage/el2/base/cache/test.txt";
+    const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fp = fopen(path, "w+");
-    EXPECT_PTRNE("fgetpos_0100", fp, NULL);
+    FILE *fp = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fgetpos0100", fp, NULL);
 
     fputs(buff, fp);
     fseek(fp, 0, SEEK_END);
 
     int result = fgetpos(fp, &pos);
-    EXPECT_EQ("fgetpos_0100", result, 0);
+    EXPECT_EQ("Fgetpos0100", result, 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fgetpos_0200
+ * @tc.name      : Fgetpos0200
  * @tc.desc      : File pointer at the beginning of a file, the location to which the current file pointer points
  * @tc.level     : Level 0
  */
-void fgetpos_0200()
+void Fgetpos0200()
 {
     fpos_t pos;
     char buff[] = "hello world";
-    const char *path = "/data/storage/el2/base/cache/test.txt";
+    const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fgetpos_0100", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fgetpos0100", fptr, NULL);
 
     fputs(buff, fptr);
     fseek(fptr, 0, SEEK_SET);
     int result = fgetpos(fptr, &pos);
-    EXPECT_EQ("fgetpos_0200", result, 0);
+    EXPECT_EQ("Fgetpos0200", result, 0);
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 static TEST_FUN G_Fun_Array[] = {
-    fgetpos_0100,
-    fgetpos_0200,
+    Fgetpos0100,
+    Fgetpos0200,
 };
 
 static int FgetposTestImpl(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(G_Fun_Array) / sizeof(G_Fun_Array[0]);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
     }

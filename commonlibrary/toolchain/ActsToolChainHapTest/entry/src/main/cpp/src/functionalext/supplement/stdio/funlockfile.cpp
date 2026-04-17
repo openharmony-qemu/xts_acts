@@ -24,13 +24,13 @@
 #define READ_COUNT 1
 #define WRITE_COUNT 1
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
-void *child_func(void *p)
+void *ChildFunc(void *p)
 {
     char buf[BUFFER_SIZE];
 
-    FILE *filep = fopen(path, "r+");
+    FILE *filep = fopen(PATH, "r+");
     if (filep == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
@@ -58,17 +58,17 @@ void *child_func(void *p)
 }
 
 /**
- * @tc.name      : funlockfile_0100
+ * @tc.name      : Funlockfile0100
  * @tc.desc      : Mutual exclusion has been tested in the test case of flockfile, so this test case tests that threads
  *                 cannot be mutually exclusive for the case where each thread fopens a descriptor
  * @tc.level     : Level 0
  */
-void funlockfile_0100(void)
+void Funlockfile0100(void)
 {
     pthread_t tid[THREAD_COUNT];
 
     for (int i = 0; i < THREAD_COUNT; i++) {
-        if (pthread_create(tid + i, nullptr, child_func, nullptr) != 0) {
+        if (pthread_create(tid + i, nullptr, ChildFunc, nullptr) != 0) {
             t_error("%s pthread_create failed\n", __func__);
         }
     }
@@ -82,15 +82,15 @@ void funlockfile_0100(void)
 
 static int FunlockfileTestImpl(int argc, char *argv[])
 {
-    FILE *fp = fopen(path, "w+");
+    FILE *fp = fopen(PATH, "w+");
     if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
     fclose(fp);
 
-    funlockfile_0100();
+    Funlockfile0100();
 
-    remove(path);
+    remove(PATH);
     return g_tStatus;
 }
 

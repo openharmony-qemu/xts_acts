@@ -18,63 +18,63 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
- * @tc.name      : fwrite_0100
+ * @tc.name      : Fwrite0100
  * @tc.desc      : File pointer at the end of a file, the position to which the current file pointer points
  * @tc.level     : Level 0
  */
-static void fwrite_0100(void)
+static void Fwrite0100(void)
 {
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fwrite_0100", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwrite0100", fptr, NULL);
 
     char buf[] = "this is test";
     int result = fwrite(buf, sizeof(char), strlen(buf), fptr);
-    EXPECT_TRUE("fwrite_0100", result == strlen(buf));
+    EXPECT_TRUE("Fwrite0100", result == strlen(buf));
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fwrite_0200
+ * @tc.name      : Fwrite0200
  * @tc.desc      : File pointer at the beginning of a file, the location to which the current file pointer points
  * @tc.level     : Level 0
  */
-void fwrite_0200(void)
+void Fwrite0200(void)
 {
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fwrite_0200", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwrite0200", fptr, NULL);
 
     char buf[] = "this is test";
     int result = fwrite(buf, 0, strlen(buf), fptr);
-    EXPECT_EQ("fwrite_0200", result, 0);
+    EXPECT_EQ("Fwrite0200", result, 0);
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
- * @tc.name      : fwrite_0300
+ * @tc.name      : Fwrite0300
  * @tc.desc      : Invalid argument. Cannot get the location of the current file pointer
  * @tc.level     : Level 2
  */
-void fwrite_0300(void)
+void Fwrite0300(void)
 {
-    FILE *fptr = fopen(path, "w+");
-    EXPECT_PTRNE("fwrite_0300", fptr, NULL);
+    FILE *fptr = fopen(PATH, "w+");
+    EXPECT_PTRNE("Fwrite0300", fptr, NULL);
 
     char buf[] = "this is test";
     int result = fwrite(buf, sizeof(char), 0, fptr);
-    EXPECT_EQ("fwrite_0300", result, 0);
+    EXPECT_EQ("Fwrite0300", result, 0);
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
-void fwrite_0400(void)
+void Fwrite0400(void)
 {
     pid_t childPid = 0;
     int fds[2] = {0};
@@ -85,7 +85,7 @@ void fwrite_0400(void)
     char buf[1024] = {0};
 
     childPid = fork();
-    EXPECT_NE("fwrite_0400", childPid, -1);
+    EXPECT_NE("Fwrite0400", childPid, -1);
     if (childPid == 0) {
         // childr
         dup2(fds[pipeWrite], STDOUT_FILENO);
@@ -102,15 +102,15 @@ void fwrite_0400(void)
         close(fds[pipeWrite]);
         fcntl(fds[pipeRead], F_SETFD, F_DUPFD_CLOEXEC);
         int cn = read(fds[pipeRead], buf, sizeof(buf));
-        EXPECT_MT("fwrite_0400", cn, 0);
+        EXPECT_MT("Fwrite0400", cn, 0);
     }
 }
 
 static int FwriteTestImpl(int argc, char *argv[])
 {
-    fwrite_0100();
-    fwrite_0200();
-    fwrite_0300();
+    Fwrite0100();
+    Fwrite0200();
+    Fwrite0300();
     return g_tStatus;
 }
 

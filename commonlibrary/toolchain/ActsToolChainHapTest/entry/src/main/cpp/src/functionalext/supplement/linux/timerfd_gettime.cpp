@@ -106,7 +106,7 @@ void timerfd_gettime64_0100(void)
         return;
     }
 
-    result = __timerfd_gettime64(fd, &val);
+    result = TimerfdGettime64(fd, &val);
     if (result != 0) {
         t_error("%s __timerfd_gettime64 failed", __func__);
         return;
