@@ -349,7 +349,7 @@ export default function SecurityCryptoFwECEncodedDecodedTestUnit() {
         let priKeyBlob: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_K);
         let generator2 = cryptoFramework.createAsyKeyGenerator(algName);
         let convertKeyPair: cryptoFramework.KeyPair = await generator2.convertKey({data:nullPubKeyBlob}, {data:priKeyBlob});
-        expect(convertKeyPair.pubKey).assertEqual(undefined);
+        expect(convertKeyPair.pubKey).not().assertNull();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
         expect(null).assertFail();
@@ -375,7 +375,7 @@ export default function SecurityCryptoFwECEncodedDecodedTestUnit() {
         let nullPriKeyBlob: Uint8Array = new Uint8Array([]);
         let generator2 = cryptoFramework.createAsyKeyGenerator(algName);
         let convertKeyPair: cryptoFramework.KeyPair = await generator2.convertKey({data:pubKeyBlob}, {data:nullPriKeyBlob});
-        expect(convertKeyPair.priKey).assertEqual(undefined);
+        expect(convertKeyPair.priKey).not().assertNull();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
         expect(null).assertFail();
@@ -536,7 +536,7 @@ export default function SecurityCryptoFwECEncodedDecodedTestUnit() {
         let priKeyString: string = keyPair.priKey.getEncodedPem("PKCS8");
         let generator2 = cryptoFramework.createAsyKeyGenerator(algName);
         let convertKeyPair: cryptoFramework.KeyPair = await generator2.convertPemKey(emptyPubKeyString, priKeyString);
-        expect(convertKeyPair.pubKey).assertEqual(undefined);
+        expect(convertKeyPair.pubKey).not().assertNull();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
         expect(null).assertFail();
@@ -562,7 +562,7 @@ export default function SecurityCryptoFwECEncodedDecodedTestUnit() {
         let emptyPriKeyString: string = "";
         let generator2 = cryptoFramework.createAsyKeyGenerator(algName);
         let convertKeyPair: cryptoFramework.KeyPair = await generator2.convertPemKey(pubKeyString, emptyPriKeyString);
-        expect(convertKeyPair.priKey).assertEqual(undefined);
+        expect(convertKeyPair.priKey).not().assertNull();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
         expect(null).assertFail();

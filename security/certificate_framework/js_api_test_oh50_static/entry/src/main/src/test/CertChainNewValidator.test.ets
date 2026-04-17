@@ -30,6 +30,7 @@ import {
   CHAIN_SM2_DEFAULT_3_2_CRL_PEM,
   CHAIN_SM2_DEFAULT_3_2_PEM,
   CHAIN_SM2_DEFAULT_3_3_PEM,
+  CHAIN_SM2_DEFAULT_UNKNOWN_CRITICAL_EXTENSION_3_1_PEM,
   CHAIN_SM2_INTER_CA_PEM,
   CHAIN_SM2_LEAF_CA_PEM,
   CHAIN_SM2_NOT_EXIST_ROOT_3_1_PEM,
@@ -62,6 +63,8 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     let interDefaultX509CertGm: cert.X509Cert | undefined;
     let rootDefaultX509CertGm: cert.X509Cert | undefined;
 
+    let leafUnkownCriticalExtensionX509CertGm: cert.X509Cert | undefined;
+
     let leafSystemCaX509CertGm: cert.X509Cert | undefined;
     let inter1SystemCaX509CertGm: cert.X509Cert | undefined;
 
@@ -87,6 +90,10 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     let rootExpiredX509Cert: cert.X509Cert | undefined;
     beforeAll(async () => {
       try {
+        let leafUnkownCriticalExtensionDefaultEncodingBlobGm: cert.EncodingBlob = {
+          data: stringToUint8Array(CHAIN_SM2_DEFAULT_UNKNOWN_CRITICAL_EXTENSION_3_1_PEM),
+          encodingFormat: cert.EncodingFormat.FORMAT_PEM
+        };
         let leafDefaultEncodingBlobGm: cert.EncodingBlob = {
           data: stringToUint8Array(CHAIN_SM2_DEFAULT_3_1_PEM),
           encodingFormat: cert.EncodingFormat.FORMAT_PEM
@@ -234,6 +241,8 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         rootCaCertGm = await cert.createX509Cert(rootCaEncodingBlobGm);
         interCaCertGm = await cert.createX509Cert(interCaEncodingBlobGm);
         leafCaCertGm = await cert.createX509Cert(leafCaEncodingBlobGm);
+
+        leafUnkownCriticalExtensionX509CertGm = await cert.createX509Cert(leafUnkownCriticalExtensionDefaultEncodingBlobGm);
       } catch (error) {
         console.error(`beforeAll "${error}", error code: ${error.code}`);
         expect(null).assertFail();
@@ -249,7 +258,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -279,7 +288,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -310,7 +319,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,   async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,   async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -340,7 +349,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -371,7 +380,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -402,7 +411,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -432,7 +441,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_0700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -461,7 +470,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -491,7 +500,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -521,7 +530,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -551,7 +560,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -583,7 +592,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -614,7 +623,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -645,7 +654,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -676,7 +685,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -707,7 +716,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -738,7 +747,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_1900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -769,7 +778,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -800,7 +809,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -831,7 +840,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -856,7 +865,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -882,7 +891,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -908,7 +917,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -935,7 +944,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -966,7 +975,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1000,7 +1009,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_2900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1031,7 +1040,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1062,7 +1071,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1096,37 +1105,6 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_3300
-     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_3300
-     * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，设置keyUsage为无效值0x8000的功能测试
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("SUB_Security_Cert_Framework_New_Chain_Func_3300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        try {
-          let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
-            trustedCerts: [rootX509CertGm!],
-            untrustedCerts: [interX509CertGm!],
-            userId: new Uint8Array([
-              0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
-              0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
-            ]),
-            keyUsage: [0x8000]
-          };
-          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
-          expect(null).assertFail();
-        } catch (error) {
-          console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED)
-        }
-        done();
-      });
-
-    /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_3400
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_3400
      * @tc.desc   完整校验，设置过期待校验实体证书，设置忽略过期错误的功能测试
@@ -1135,7 +1113,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1166,7 +1144,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1197,7 +1175,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1229,7 +1207,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1264,7 +1242,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1295,7 +1273,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_3900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1326,7 +1304,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let trustedCertsArray: cert.X509Cert[] = [];
@@ -1359,7 +1337,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let untrustedCertsArray: cert.X509Cert[] = [];
@@ -1393,7 +1371,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let hostnamesArray: string[] = [];
@@ -1428,7 +1406,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let longHostname: string = "a".repeat(129) + ".com";
@@ -1460,7 +1438,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let longEmail: string = "a".repeat(120) + "@example.com";
@@ -1492,7 +1470,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1523,7 +1501,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1554,7 +1532,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let validatorParams: cert.X509CertValidatorParams = {
@@ -1585,7 +1563,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
         let ignoreErrsArray: cert.CertResult[] = [];
@@ -1620,7 +1598,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_4900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1654,7 +1632,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1680,7 +1658,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1710,7 +1688,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1736,7 +1714,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1767,7 +1745,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1794,7 +1772,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1824,7 +1802,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1859,7 +1837,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1886,7 +1864,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1913,7 +1891,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_5900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1940,7 +1918,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1967,7 +1945,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -1993,7 +1971,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2024,7 +2002,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2054,7 +2032,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2084,7 +2062,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2117,7 +2095,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2148,7 +2126,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2178,7 +2156,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_6900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2208,7 +2186,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2241,7 +2219,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2272,7 +2250,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2299,7 +2277,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2330,7 +2308,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2366,7 +2344,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_7800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2391,36 +2369,6 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_7900
-     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_7900
-     * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，设置revocationFlags为无效值的功能测试
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("SUB_Security_Cert_Framework_New_Chain_Func_7900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        try {
-          let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
-            trustedCerts: [rootDefaultX509CertGm!],
-            untrustedCerts: [interDefaultX509CertGm!],
-            revokedParams: {
-              revocationFlags: [100],
-              crls: []
-            }
-          };
-          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
-          expect(null).assertFail();
-        } catch (error) {
-          console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
-        }
-        done();
-      });
-
-    /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_8000
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_8000
      * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，设置crls超过100个的功能测试
@@ -2429,7 +2377,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8000",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let crlsArray: cert.X509CRL[] = [];
@@ -2463,7 +2411,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let ocspResponsesArray: Uint8Array[] = [];
@@ -2497,7 +2445,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2532,7 +2480,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2562,7 +2510,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2588,7 +2536,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8500",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2613,7 +2561,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2639,7 +2587,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2666,7 +2614,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2697,7 +2645,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_New_Chain_Func_8900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
           let validatorParams: cert.X509CertValidatorParams = {
@@ -2715,6 +2663,60 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_9000
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_9000
+     * @tc.desc   不完整校验，设置待校验实体证书，不信任中间证书、根证书，信任其他根证书功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_9000",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        try {
+          let algName: string = "PKIX";
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootCaCertGm!],
+            untrustedCerts: [interDefaultX509CertGm!, rootDefaultX509CertGm!],
+            validateDate: false
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_UNTRUSTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_9100
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_9100
+     * @tc.desc   不完整校验，设置待校验实体证书（不认识的关键扩展），不信任中间证书，信任根证书功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_9100",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        try {
+          let algName: string = "PKIX";
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootDefaultX509CertGm!],
+            untrustedCerts: [interDefaultX509CertGm!],
+            validateDate: false
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION);
         }
         done();
       });

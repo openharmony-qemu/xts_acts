@@ -30,6 +30,7 @@ import {
   CHAIN_SM2_DEFAULT_3_2_CRL_PEM,
   CHAIN_SM2_DEFAULT_3_2_PEM,
   CHAIN_SM2_DEFAULT_3_3_PEM,
+  CHAIN_SM2_DEFAULT_UNKNOWN_CRITICAL_EXTENSION_3_1_PEM,
   CHAIN_SM2_INTER_CA_PEM,
   CHAIN_SM2_LEAF_CA_PEM,
   CHAIN_SM2_NOT_EXIST_ROOT_3_1_PEM,
@@ -62,6 +63,8 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     let interDefaultX509CertGm: cert.X509Cert = {} as cert.X509Cert;
     let rootDefaultX509CertGm: cert.X509Cert = {} as cert.X509Cert;
 
+    let leafUnkownCriticalExtensionX509CertGm: cert.X509Cert = {} as cert.X509Cert;
+
     let leafSystemCaX509CertGm: cert.X509Cert = {} as cert.X509Cert;
     let inter1SystemCaX509CertGm: cert.X509Cert = {} as cert.X509Cert;
 
@@ -87,6 +90,10 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     let rootExpiredX509Cert: cert.X509Cert = {} as cert.X509Cert;
     beforeAll(async () => {
       try {
+        let leafUnkownCriticalExtensionDefaultEncodingBlobGm: cert.EncodingBlob = {
+          data: stringToUint8Array(CHAIN_SM2_DEFAULT_UNKNOWN_CRITICAL_EXTENSION_3_1_PEM),
+          encodingFormat: cert.EncodingFormat.FORMAT_PEM
+        };
         let leafDefaultEncodingBlobGm: cert.EncodingBlob = {
           data: stringToUint8Array(CHAIN_SM2_DEFAULT_3_1_PEM),
           encodingFormat: cert.EncodingFormat.FORMAT_PEM
@@ -234,6 +241,8 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         rootCaCertGm = await cert.createX509Cert(rootCaEncodingBlobGm);
         interCaCertGm = await cert.createX509Cert(interCaEncodingBlobGm);
         leafCaCertGm = await cert.createX509Cert(leafCaEncodingBlobGm);
+
+        leafUnkownCriticalExtensionX509CertGm = await cert.createX509Cert(leafUnkownCriticalExtensionDefaultEncodingBlobGm);
       } catch (error) {
         console.error(`beforeAll "${error}", error code: ${error.code}`);
         expect(null).assertFail();
@@ -2826,6 +2835,60 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_9000
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_9000
+     * @tc.desc   不完整校验，设置待校验实体证书，不信任中间证书、根证书，信任其他根证书功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_9000",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootCaCertGm],
+            untrustedCerts: [interDefaultX509CertGm, rootDefaultX509CertGm],
+            validateDate: false
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_UNTRUSTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_9100
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_9100
+     * @tc.desc   不完整校验，设置待校验实体证书（不认识的关键扩展），不信任中间证书，信任根证书功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_9100",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootDefaultX509CertGm],
+            untrustedCerts: [interDefaultX509CertGm],
+            validateDate: false
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(leafUnkownCriticalExtensionX509CertGm, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION);
         }
         done();
       });
