@@ -16,6 +16,8 @@
 #include <signal.h>
 #include "functionalext.h"
 
+#define SIGRTMIN_VALUE 35
+
 /*
  * @tc.name      : libc_current_sigrtmin_0100
  * @tc.desc      : Verify that the number of real-time signals can be obtained
@@ -24,7 +26,7 @@
 void libc_current_sigrtmin_0100(void)
 {
     int result = __libc_current_sigrtmin();
-    EXPECT_EQ("libc_current_sigrtmin_0100", result, 35);
+    EXPECT_EQ("libc_current_sigrtmin_0100", result, SIGRTMIN_VALUE);
 }
 
 static int __libc_current_sigrtminTest_with_args(int argc, char *argv[])

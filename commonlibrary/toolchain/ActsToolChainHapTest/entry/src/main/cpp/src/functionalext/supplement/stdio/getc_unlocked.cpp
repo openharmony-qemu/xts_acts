@@ -48,10 +48,10 @@ void getc_unlocked_0200(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/getc_unlockedtest.txt";
     FILE *fptr = fopen(ptr, "wr+");
-    EXPECT_TRUE("getc_unlocked_0200", fptr != NULL);
+    EXPECT_TRUE("getc_unlocked_0200", fptr != nullptr);
     fclose(fptr);
     fptr = fopen(ptr, "r");
-    EXPECT_TRUE("getc_unlocked_0200", fptr != NULL);
+    EXPECT_TRUE("getc_unlocked_0200", fptr != nullptr);
     int ret = getc_unlocked(fptr);
     EXPECT_EQ("getc_unlocked_0200", ret, EOF);
     fclose(fptr);

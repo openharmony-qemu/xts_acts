@@ -19,23 +19,26 @@
 #include <stdlib.h>
 #include "test.h"
 
+#define BUFFER_SIZE 1000
+#define FSEEK_OFFSET 0
+
 char *getfileall(char *fname)
 {
     FILE *fp;
     char *str;
-    char txt[1000];
+    char txt[BUFFER_SIZE];
     int filesize;
     if ((fp = fopen(fname, "r")) == nullptr) {
         printf("打开文件%s错误\n", fname);
         return nullptr;
     }
-    fseek(fp, 0, SEEK_END);
+    fseek(fp, FSEEK_OFFSET, SEEK_END);
     filesize = ftell(fp);
     str = (char *)malloc(filesize);
     str[0] = 0;
     rewind(fp);
 
-    while ((fgets(txt, 1000, fp)) != NULL) {
+    while ((fgets(txt, BUFFER_SIZE, fp)) != NULL) {
         strcat(str, txt);
     }
     fclose(fp);
@@ -117,6 +120,6 @@ static int VfprintfTestImpl(int argc, char *argv[])
 int VfprintfTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return VfprintfTestImpl(1, libcArgv);
 }

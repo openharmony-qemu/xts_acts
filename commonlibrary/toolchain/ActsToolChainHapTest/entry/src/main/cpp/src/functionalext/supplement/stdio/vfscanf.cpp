@@ -40,7 +40,7 @@ void vfscanf_0100(void)
     char file[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
     fp = fopen(file, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
         return;
     }
@@ -77,7 +77,7 @@ void vfscanf_0200(void)
     char file[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
     fp = fopen(file, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
         return;
     }
@@ -114,7 +114,7 @@ void vfscanf_0300(void)
     char file[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
     fp = fopen(file, "w+");
-    if (fp == NULL) {
+    if (fp == nullptr) {
         t_error("%s fopen failed", __func__);
         return;
     }
@@ -149,6 +149,6 @@ static int VfscanfTestImpl(int argc, char *argv[])
 int VfscanfTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return VfscanfTestImpl(1, libcArgv);
 }

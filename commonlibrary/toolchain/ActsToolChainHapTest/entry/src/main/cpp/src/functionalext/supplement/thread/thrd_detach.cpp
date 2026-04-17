@@ -18,16 +18,16 @@
 #include <threads.h>
 #include "test.h"
 
-static int count = 0;
+static int g_count = 0;
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
-static int threadfunc(void *arg)
+static int Threadfunc(void *arg)
 {
-    count++;
+    g_count++;
     int ret = thrd_detach(thrd_current());
     if (ret != thrd_success) {
         t_error("%s thrd_detach failed", __func__);
@@ -41,26 +41,26 @@ static int threadfunc(void *arg)
  * @tc.desc      : Detaches the thread identified by thr from the current environment
  * @tc.level     : Level 0
  */
-void thrd_detach_0100(void)
+void ThrdDetach0100(void)
 {
     thrd_t id;
     int result;
 
-    result = thrd_create(&id, threadfunc, NULL);
+    result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
@@ -68,20 +68,20 @@ void thrd_detach_0100(void)
  * @tc.desc      : Use thrd_join after thrd_detach
  * @tc.level     : Level 2
  */
-void thrd_detach_0200(void)
+void ThrdDetach0200(void)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
     thrd_t id;
     int result;
 
-    result = thrd_create(&id, threadfunc, NULL);
+    result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
@@ -91,16 +91,16 @@ void thrd_detach_0200(void)
         t_error("%s thrd_join should fail", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 static int ThrdDetachTestImpl(int argc, char *argv[])
 {
-    thrd_detach_0100();
-    thrd_detach_0200();
+    ThrdDetach0100();
+    ThrdDetach0200();
     return g_tStatus;
 }
 

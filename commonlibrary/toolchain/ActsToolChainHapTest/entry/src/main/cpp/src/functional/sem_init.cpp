@@ -6,8 +6,8 @@
 #include <errno.h>
 #include "test.h"
 
-#define T(f) if(f) t_error(#f" failed: %s\n", strerror(errno))
-#define T2(r,f) if((r=(f))) t_error(#f" failed: %s\n", strerror(r))
+#define T(f) if (f) t_error(#f" failed: %s\n", strerror(errno))
+#define T2(r,f) if ((r=(f))) t_error(#f" failed: %s\n", strerror(r))
 
 static void *start(void *arg)
 {
@@ -29,9 +29,9 @@ static void many_waiters()
 
     T(sem_init(s, 0, 0));
     T(sem_init(s + 1, 0, 0));
-    T2(r,pthread_create(t, 0, start, s));
-    T2(r,pthread_create(t + 1, 0, start, s));
-    T2(r,pthread_create(t + 2, 0, start, s));
+    T2(r, pthread_create(t, nullptr, start, s));
+    T2(r, pthread_create(t + 1, nullptr, start, s));
+    T2(r, pthread_create(t + 2, nullptr, start, s));
     T(sem_wait(s));
     T(sem_wait(s));
     T(sem_wait(s));
@@ -42,9 +42,9 @@ static void many_waiters()
     T(sem_post(s + 1));
     T(sem_post(s + 1));
     T(sem_post(s + 1));
-    T2(r,pthread_join(t[0], &p));
-    T2(r,pthread_join(t[1], &p));
-    T2(r,pthread_join(t[2], &p));
+    T2(r, pthread_join(t[0], &p));
+    T2(r, pthread_join(t[1], &p));
+    T2(r, pthread_join(t[2], &p));
     T(sem_getvalue(s + 1, &r));
     if (r) {
         t_error("sem value should be 0, got %d\n", r);

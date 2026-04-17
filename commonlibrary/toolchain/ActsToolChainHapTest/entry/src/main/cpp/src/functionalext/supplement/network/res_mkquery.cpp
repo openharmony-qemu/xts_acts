@@ -19,6 +19,10 @@
 
 #include "test.h"
 
+#define DNS_HEADER_OFFSET 12
+#define DNS_QBUF_OFFSET 4
+#define DATA_LENGTH 0
+
 const int op = QUERY;
 const int dns_class = C_IN;
 const int type = T_TXT;
@@ -36,17 +40,17 @@ void res_mkquery_0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
 
-    int result = res_mkquery(op, dname, dns_class, type, data, 0, nullptr, buf, sizeof(buf));
+    int result = res_mkquery(op, dname, dns_class, type, data, DATA_LENGTH, nullptr, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + 12, qname, sizeof(qname) - 1);
+    result = memcmp(buf + DNS_HEADER_OFFSET, qname, sizeof(qname) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + 4, qbuf, sizeof(qbuf) - 1);
+    result = memcmp(buf + DNS_QBUF_OFFSET, qbuf, sizeof(qbuf) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -59,7 +63,7 @@ void res_mkquery_0100(void)
  */
 void res_mkquery_0200(void)
 {
-    int result = res_mkquery(op, dname, dns_class, T_ANY + 1, data, 0, nullptr, nullptr, 0);
+    int result = res_mkquery(op, dname, dns_class, T_ANY + 1, data, DATA_LENGTH, nullptr, nullptr, DATA_LENGTH);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

@@ -21,14 +21,19 @@
 
 #include "test.h"
 #define SIGNUM 40
-static int count = 0;
-static timer_t timerid;
+#define USEC_DELAY 1000000
+#define NSEC_DELAY 1000000
+#define TIMER_FLAG 0
+#define SLEEP_SECONDS 1
+#define FAILURE_CODE -1
+static int g_count = 0;
+static timer_t g_timerid;
 
 static void Handler(int sig)
 {
-    count++;
-    usleep(1000000);
-    int ret = timer_getoverrun(timerid);
+    g_count++;
+    usleep(USEC_DELAY);
+    int ret = timer_getoverrun(g_timerid);
     if (ret < 0) {
         t_error("%s timer_getoverrun failed, ret is %d\n", __func__, ret);
     }
@@ -36,7 +41,7 @@ static void Handler(int sig)
 }
 
 /**
- * @tc.name      : timer_getoverrun_0100
+ * @tc.name      : TimerGetoverrun0100
  * @tc.desc      : Get overrun count for a per-process timer
  * @tc.level     : Level 0
  */
@@ -46,44 +51,44 @@ void TimerGetoverrun0100(void)
 
     sev.sigev_notify = SIGEV_SIGNAL;
     sev.sigev_signo = SIGNUM;
-    sev.sigev_value.sival_ptr = &timerid;
+    sev.sigev_value.sival_ptr = &g_timerid;
 
     signal(SIGNUM, Handler);
 
-    int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
+    int result = timer_create(CLOCK_REALTIME, &sev, &g_timerid);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     struct itimerspec its;
-    its.it_value.tv_sec = 0;
-    its.it_value.tv_nsec = 1000000;
-    its.it_interval.tv_sec = 0;
-    its.it_interval.tv_nsec = 0;
+    its.it_value.tv_sec = TIMER_FLAG;
+    its.it_value.tv_nsec = NSEC_DELAY;
+    its.it_interval.tv_sec = TIMER_FLAG;
+    its.it_interval.tv_nsec = TIMER_FLAG;
 
-    result = timer_settime(timerid, 0, &its, nullptr);
+    result = timer_settime(g_timerid, TIMER_FLAG, &its, nullptr);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    while (count <= 0) {
-        sleep(1);
+    while (g_count <= TIMER_FLAG) {
+        sleep(SLEEP_SECONDS);
     }
-    result = timer_delete(timerid);
+    result = timer_delete(g_timerid);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
 
 /**
- * @tc.name      : timer_getoverrun_0200
+ * @tc.name      : TimerGetoverrun0200
  * @tc.desc      : Invalid timerid
  * @tc.level     : Level 2
  */
-void timer_getoverrun_0200(void)
+void TimerGetoverrun0200(void)
 {
-    int result = timer_getoverrun(NULL);
-    if (result != -1) {
+    int result = timer_getoverrun(nullptr);
+    if (result != FAILURE_CODE) {
         t_error("%s timer_getoverrun failed, ret is %d\n", __func__, result);
     }
 }
@@ -91,7 +96,7 @@ void timer_getoverrun_0200(void)
 static int TimerGetoverrunTestImpl(int argc, char *argv[])
 {
     TimerGetoverrun0100();
-    timer_getoverrun_0200();
+    TimerGetoverrun0200();
 
     return T_STATUS;
 }

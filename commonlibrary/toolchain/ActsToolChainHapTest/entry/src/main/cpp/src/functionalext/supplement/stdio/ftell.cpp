@@ -18,17 +18,19 @@
 #include <string.h>
 #include "test.h"
 
+#define STR_LEN 22
+#define MID_OFFSET 8
 static const char *wrstring = "This is a test sample!";
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
  * @tc.name      : ftell_0100
  * @tc.desc      : Verify that the file pointer is at the beginning (call the ftell function to see the return value)
  * @tc.level     : Level 0
  */
-static void ftell_0100(void)
+static void Ftell0100(void)
 {
-    FILE *fptr = fopen(path, "w+");
+    FILE *fptr = fopen(PATH, "w+");
     if (!fptr) {
         t_error("%s fopen failed\n", __func__);
     }
@@ -49,7 +51,7 @@ static void ftell_0100(void)
     }
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -57,9 +59,9 @@ static void ftell_0100(void)
  * @tc.desc      : Verify that the file pointer is in the middle (call the ftell function to see the return value)
  * @tc.level     : Level 0
  */
-void ftell_0200(void)
+void Ftell0200(void)
 {
-    FILE *fptr = fopen(path, "w+");
+    FILE *fptr = fopen(PATH, "w+");
     if (!fptr) {
         t_error("%s fopen failed\n", __func__);
     }
@@ -69,18 +71,18 @@ void ftell_0200(void)
         t_error("%s fwrite failed\n", __func__);
     }
 
-    int fret = fseek(fptr, 8L, SEEK_SET);
+    int fret = fseek(fptr, MID_OFFSET, SEEK_SET);
     if (fret != 0) {
         t_error("%s fseek failed\n", __func__);
     }
 
     long result = ftell(fptr);
-    if (result != 8) {
+    if (result != MID_OFFSET) {
         t_error("%s ftell failed\n", __func__);
     }
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -88,9 +90,9 @@ void ftell_0200(void)
  * @tc.desc      : Verify that the file pointer is at the end (call the ftell function to see the return value)
  * @tc.level     : Level 0
  */
-void ftell_0300(void)
+void Ftell0300(void)
 {
-    FILE *fptr = fopen(path, "w+");
+    FILE *fptr = fopen(PATH, "w+");
     if (!fptr) {
         t_error("%s fopen failed\n", __func__);
     }
@@ -105,19 +107,19 @@ void ftell_0300(void)
         t_error("%s fseek failed\n", __func__);
     }
     long result = ftell(fptr);
-    if (result != 22) {
+    if (result != STR_LEN) {
         t_error("%s ftell failed\n", __func__);
     }
 
     fclose(fptr);
-    remove(path);
+    remove(PATH);
 }
 
 static int FtellTestImpl(int argc, char *argv[])
 {
-    ftell_0100();
-    ftell_0200();
-    ftell_0300();
+    Ftell0100();
+    Ftell0200();
+    Ftell0300();
 
     return g_tStatus;
 }
@@ -125,6 +127,6 @@ static int FtellTestImpl(int argc, char *argv[])
 int FtellTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FtellTestImpl(1, libcArgv);
 }

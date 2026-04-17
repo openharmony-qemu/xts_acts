@@ -56,7 +56,7 @@ void link_0200(void)
  */
 void link_0300(void)
 {
-    int result = link(NULL, NULL);
+    int result = link(nullptr, nullptr);
     EXPECT_EQ("link_0300", result, ERREXPECT);
     EXPECT_EQ("link_0300", errno, EFAULT);
 

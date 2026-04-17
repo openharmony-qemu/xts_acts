@@ -24,6 +24,8 @@
 #include <sys/wait.h>
 #include "functionalext.h"
 
+#define TEST_VALUE 10
+
 static void deal_aberrant(int code)
 {
     if (code != SIGSEGV) {
@@ -46,7 +48,7 @@ void putw_0100(void)
         t_error("%s fopen failed\n", __func__);
         return;
     }
-    int result = putw(10, fp);
+    int result = putw(TEST_VALUE, fp);
     if (result != 0) {
         t_error("%s putw error get result is %d are not want 0\n", __func__, result);
     }
@@ -66,7 +68,7 @@ void putw_0200(void)
         t_error("putw_0200: Error forking process");
     } else if (pid == 0) {
         FILE *fp = nullptr;
-        putw(10, fp);
+        putw(TEST_VALUE, fp);
     } else {
         int status;
         waitpid(pid, &status, 0);

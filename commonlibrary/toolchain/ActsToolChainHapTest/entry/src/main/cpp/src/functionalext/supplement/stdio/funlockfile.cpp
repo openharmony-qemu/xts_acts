@@ -19,11 +19,16 @@
 #include <string.h>
 #include "test.h"
 
+#define BUFFER_SIZE 64
+#define THREAD_COUNT 100
+#define READ_COUNT 1
+#define WRITE_COUNT 1
+
 static const char *path = "/data/storage/el2/base/cache/test.txt";
 
 void *child_func(void *p)
 {
-    char buf[64];
+    char buf[BUFFER_SIZE];
 
     FILE *filep = fopen(path, "r+");
     if (filep == nullptr) {
@@ -35,7 +40,7 @@ void *child_func(void *p)
     if (fseek(filep, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    int ret = fread(buf, 64, 1, filep);
+    int ret = fread(buf, BUFFER_SIZE, READ_COUNT, filep);
 
     int count = atoi(buf);
     ++count;
@@ -44,7 +49,7 @@ void *child_func(void *p)
     if (fseek(filep, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    ret = fwrite(buf, strlen(buf), 1, filep);
+    ret = fwrite(buf, strlen(buf), WRITE_COUNT, filep);
 
     funlockfile(filep);
 
@@ -60,15 +65,15 @@ void *child_func(void *p)
  */
 void funlockfile_0100(void)
 {
-    pthread_t tid[100];
+    pthread_t tid[THREAD_COUNT];
 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < THREAD_COUNT; i++) {
         if (pthread_create(tid + i, nullptr, child_func, nullptr) != 0) {
             t_error("%s pthread_create failed\n", __func__);
         }
     }
 
-    for (int j = 0; j < 100; j++) {
+    for (int j = 0; j < THREAD_COUNT; j++) {
         if (pthread_join(tid[j], nullptr) != 0) {
             t_error("%s pthread_join failed\n", __func__);
         }

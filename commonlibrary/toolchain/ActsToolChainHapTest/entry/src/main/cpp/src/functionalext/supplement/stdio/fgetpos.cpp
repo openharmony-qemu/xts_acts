@@ -86,6 +86,6 @@ static int FgetposTestImpl(int argc, char *argv[])
 int FgetposTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FgetposTestImpl(1, libcArgv);
 }

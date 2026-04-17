@@ -16,6 +16,8 @@
 #include "functionalext.h"
 #include "filepath_util.h"
 
+#define CHAR_A_ASCII 97
+
 /**
  * @tc.name       : fputc_0100
  * @tc.desc       : Verify that a character can be written to the file
@@ -27,7 +29,7 @@ void fputc_0100(void)
     FILE_ABSOLUTE_PATH(STR_FPUTC_TXT, path);
     FILE *fptr = fopen(path, "w");
     int Exit = fputc('a', fptr);
-    EXPECT_EQ("fputc_0100", Exit, 97);
+    EXPECT_EQ("fputc_0100", Exit, CHAR_A_ASCII);
     fclose(fptr);
 }
 

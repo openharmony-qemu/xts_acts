@@ -8,12 +8,19 @@
 #include <limits.h>
 #include "test.h"
 
+#define MAP_SIZE 257
+#define CHAR_RANGE 256
+#define MAX_ERRORS 50
+#define UNICODE_MAX 0x110000
+#define EXPECTED_SIZE 255
+#define HIGH_BYTE_START 128
+
 int ClocaleMbfuncsTest(void)
 {
     int i, j;
     mbstate_t st, st2;
-    wchar_t wc, map[257], wtmp[257];
-    char s[MB_LEN_MAX * 256];
+    wchar_t wc, map[MAP_SIZE], wtmp[MAP_SIZE];
+    char s[MB_LEN_MAX * CHAR_RANGE];
     size_t rv;
     int c;
     int ni_errors = 0;
@@ -24,7 +31,7 @@ int ClocaleMbfuncsTest(void)
         t_error("MB_CUR_MAX = %d, expected 1\n", static_cast<int>(MB_CUR_MAX));
     }
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < CHAR_RANGE; i++) {
         st = (mbstate_t){0};
         char ch = static_cast<char>(i);
         if (mbrtowc(&wc, &ch, 1, &st) != !!i)
@@ -39,7 +46,7 @@ int ClocaleMbfuncsTest(void)
         }
     }
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < CHAR_RANGE; i++) {
         if (map[i] == WEOF) {
             continue;
         }
@@ -48,32 +55,32 @@ int ClocaleMbfuncsTest(void)
     }
 
     /* covering whole 32-bit range would be too slow... maybe add random high tests? */
-    for (i = 0; i < 0x110000; i++) {
+    for (i = 0; i < UNICODE_MAX; i++) {
         if (wcschr(map + 1, i)) {
             continue;
         }
-        if ((c = wctob(i)) != WEOF && ni_errors++ < 50)
+        if ((c = wctob(i)) != WEOF && ni_errors++ < MAX_ERRORS)
             t_error("wctob accepted non-image wchar_t %.4x as byte %.2x\n", i, c);
         st = (mbstate_t){0};
-        if (wcrtomb(s, i, &st) != -1 && ni_errors++ < 50)
+        if (wcrtomb(s, i, &st) != -1 && ni_errors++ < MAX_ERRORS)
             t_error("wcrtomb accepted non-image wchar_t %.4x\n", i);
     }
-    if (ni_errors > 50) {
+    if (ni_errors > MAX_ERRORS) {
         t_error("additional %d non-image errors (not printed)\n", ni_errors);
     }
 
-    map[256] = 0;
+    map[CHAR_RANGE] = 0;
     st = (mbstate_t){0};
     const wchar_t* srcWc = map + 1;
-    if ((rv = wcsrtombs(s, &srcWc, sizeof s, &st)) != 255)
+    if ((rv = wcsrtombs(s, &srcWc, sizeof s, &st)) != EXPECTED_SIZE)
         t_error("wcsrtombs returned %zd, expected 255\n", rv);
     const char* srcMb = s;
-    if ((rv = mbsrtowcs(wtmp, &srcMb, 256, &st)) != 255)
+    if ((rv = mbsrtowcs(wtmp, &srcMb, CHAR_RANGE, &st)) != EXPECTED_SIZE)
         t_error("mbsrtowcs returned %zd, expected 255\n", rv);
-    if (memcmp(map + 1, wtmp, 256 * sizeof(*map)))
+    if (memcmp(map + 1, wtmp, CHAR_RANGE * sizeof(*map)))
         t_error("wcsrtombs/mbsrtowcs round trip failed\n");
 
-    for (i = 128; i < 256; i++) {
+    for (i = HIGH_BYTE_START; i < CHAR_RANGE; i++) {
         if (iswalnum(map[i])) {
             t_error("iswalnum returned true for %.4x (%.2x)\n", map[i], i);
         }

@@ -16,6 +16,8 @@
 #include <signal.h>
 #include "functionalext.h"
 
+#define SIGRTMAX_VALUE 64
+
 /*
  * @tc.name      : libc_current_sigrtmax_0100
  * @tc.desc      : Verify that the number of available signals can be obtained
@@ -24,7 +26,7 @@
 void libc_current_sigrtmax_0100(void)
 {
     int result = __libc_current_sigrtmax();
-    EXPECT_EQ("libc_current_sigrtmax_0100", result, 64);
+    EXPECT_EQ("libc_current_sigrtmax_0100", result, SIGRTMAX_VALUE);
 }
 
 static int __libc_current_sigrtmaxTest_with_args(int argc, char *argv[])

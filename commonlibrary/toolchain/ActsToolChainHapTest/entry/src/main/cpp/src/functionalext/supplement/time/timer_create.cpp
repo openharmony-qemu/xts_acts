@@ -24,21 +24,21 @@
 #include "test.h"
 #define SIGNUM 40
 #define SLEEPTIME 5
-static int count = 0;
+static int g_count = 0;
 
 static void Handler(int sig)
 {
-    count++;
+    g_count++;
 
     return;
 }
 
 /**
- * @tc.name      : timer_create_0100
+ * @tc.name      : TimerCreate0100
  * @tc.desc      : create a per-process timer
  * @tc.level     : Level 0
  */
-void timer_create_0100(void)
+void TimerCreate0100(void)
 {
     struct sigevent sev;
     timer_t timerid;
@@ -65,7 +65,7 @@ void timer_create_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    while (count <= 0) {
+    while (g_count <= 0) {
         sleep(1);
     }
 
@@ -76,11 +76,11 @@ void timer_create_0100(void)
 }
 
 /**
- * @tc.name      : timer_create_0200
+ * @tc.name      : TimerCreate0200
  * @tc.desc      : create a per-process timer with invalid parameters
  * @tc.level     : Level 2
  */
-void timer_create_0200(void)
+void TimerCreate0200(void)
 {
     errno = 0;
     int result = timer_create(-1, nullptr, nullptr);
@@ -93,7 +93,7 @@ void timer_create_0200(void)
     }
 }
 
-void timer_handler(union sigval sv)
+void TimerHandler(union sigval sv)
 {
     void *data = sv.sival_ptr;
     printf("timer_handler handler: %p \n", data);
@@ -102,11 +102,11 @@ void timer_handler(union sigval sv)
 }
 
 /**
- * @tc.name      : timer_create_0300
+ * @tc.name      : TimerCreate0300
  * @tc.desc      : create a per-process timer with SIGEV_THREAD mode
  * @tc.level     : Level 2
  */
-void timer_create_0300(void)
+void TimerCreate0300(void)
 {
     timer_t timerid;
     struct sigevent sev;
@@ -120,7 +120,7 @@ void timer_create_0300(void)
     }
 
     sev.sigev_notify = SIGEV_THREAD;
-    sev.sigev_notify_function = timer_handler;
+    sev.sigev_notify_function = TimerHandler;
     sev.sigev_notify_attributes = nullptr;
     sev.sigev_value.sival_ptr = handle;
 
@@ -136,7 +136,7 @@ void timer_create_0300(void)
     its.it_interval.tv_sec = 0;
     its.it_interval.tv_nsec = 0;
 
-    ret = timer_settime(timerid, 0, &its, NULL);
+    ret = timer_settime(timerid, 0, &its, nullptr);
     if (ret == -1) {
         t_error("%s timer_settime failed \n", __func__);
         return;
@@ -156,9 +156,9 @@ void timer_create_0300(void)
 
 static int TimerCreateTestImpl(int argc, char *argv[])
 {
-    timer_create_0100();
-    timer_create_0200();
-    timer_create_0300();
+    TimerCreate0100();
+    TimerCreate0200();
+    TimerCreate0300();
 
     return T_STATUS;
 }

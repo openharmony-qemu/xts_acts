@@ -22,12 +22,24 @@
 
 #include "functionalext.h"
 
-#define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__),0))
+#define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__), 0))
 #define TESTE(c) (errno=0, TEST(c, "errno = %s\n", strerror(errno)))
 #ifdef MUSL_EXTERNAL_FUNCTION
 #define TEST_FILE "/data/storage/el2/base/cache/test_fcntl64.tmp"
 #define LARGE_OFFSET_FILE "/data/storage/el2/base/cache/large_file.tmp"
 #define LARGE_FILE_SIZE (2LL * 1024 * 1024 * 1024)
+#define FILE_PERMISSIONS 0644
+#define MIN_FD 10
+#define LOCK_LENGTH 100
+#define INVALID_CMD 999
+#define INVALID_FD -1
+#define LARGE_LOCK_OFFSET 0x7FFFFFFFFFFFFFFFLL
+#define LOCK_SIZE 1024
+#define READ_BUF_SIZE 128
+#define DUPFD_CLOEXEC_FD 20
+#define NUM_THREADS 4
+#define ITERATIONS_PER_THREAD 100
+#define SLEEP_US 10
 #endif
 
 /**
@@ -86,12 +98,12 @@ void fcntl_0100(void)
  */
 void fcntl64_0100(void)
 {
-    int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0100", fd, 0);
 
     // minimum descriptor
-    int new_fd = fcntl64(fd, F_DUPFD, 10);
-    EXPECT_GTE("fcntl64_0100", 10, new_fd);
+    int new_fd = fcntl64(fd, F_DUPFD, MIN_FD);
+    EXPECT_GTE("fcntl64_0100", MIN_FD, new_fd);
     //  Verify that the replicated descriptor can be used normally
     const char *test_data = "test data";
     ssize_t written = write(new_fd, test_data, strlen(test_data));
@@ -121,8 +133,8 @@ void fcntl64_0100(void)
  */
 void fcntl64_0200(void)
 {
-    int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
-    EXPECT_GTE("fcntl64_0200", fd,0);
+    int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
+    EXPECT_GTE("fcntl64_0200", fd, 0);
 
     int flags = fcntl64(fd, F_GETFL);
     EXPECT_GTE("fcntl64_0200", flags, 0);
@@ -130,13 +142,13 @@ void fcntl64_0200(void)
     TEST(flags & O_RDWR);
 
     int ret = fcntl64(fd, F_SETFL, flags | O_NONBLOCK);
-    EXPECT_EQ("fcntl64_0200", 0,ret);
+    EXPECT_EQ("fcntl64_0200", 0, ret);
 
     flags = fcntl64(fd, F_GETFL);
     TEST(flags & O_NONBLOCK);
 
     ret = fcntl64(fd, F_SETFL, flags & ~O_NONBLOCK);
-    EXPECT_EQ("fcntl64_0200", 0,ret);
+    EXPECT_EQ("fcntl64_0200", 0, ret);
 
     close(fd);
     unlink(TEST_FILE);
@@ -149,7 +161,7 @@ void fcntl64_0200(void)
  */
 void fcntl64_0300(void)
 {
-    int fd = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0300", fd, 0);
 
     int fd_flags = fcntl64(fd, F_GETFD);
@@ -172,10 +184,10 @@ void fcntl64_0300(void)
  */
 void fcntl64_0400(void)
 {
-    int fd1 = open(TEST_FILE, O_CREAT | O_RDWR, 0644);
+    int fd1 = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0400", fd1, 0);
 
-    int fd2 = fcntl64(fd1, F_DUPFD, 10);
+    int fd2 = fcntl64(fd1, F_DUPFD, MIN_FD);
     EXPECT_GTE("fcntl64_0400", fd2, 0);
 
     const char *write_data = "fcntl64 dup test data";
@@ -183,13 +195,13 @@ void fcntl64_0400(void)
     EXPECT_EQ("fcntl64_0400", ret, (ssize_t)strlen(write_data));
 
     lseek64(fd2, 0, SEEK_SET);
-    char read_buf[128] = {0};
+    char read_buf[READ_BUF_SIZE] = {0};
     ret = read(fd2, read_buf, sizeof(read_buf) - 1);
     EXPECT_EQ("fcntl64_0400", ret, (ssize_t)strlen(write_data));
     EXPECT_STREQ("fcntl64_0400", read_buf, write_data);
 
-    int fd3 = fcntl64(fd1, F_DUPFD_CLOEXEC, 20);
-    EXPECT_GTE("fcntl64_0400", fd3, 20);
+    int fd3 = fcntl64(fd1, F_DUPFD_CLOEXEC, DUPFD_CLOEXEC_FD);
+    EXPECT_GTE("fcntl64_0400", fd3, DUPFD_CLOEXEC_FD);
 
     close(fd1);
     close(fd2);
@@ -207,14 +219,14 @@ void fcntl64_0500(void)
     int fd = -1;
     struct flock64 lock = {0};
     // open test file
-    fd = open64(TEST_FILE, O_RDWR | O_CREAT, 0644);
+    fd = open64(TEST_FILE, O_RDWR | O_CREAT, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0500", fd, 0);
 
     // Set exclusive lock (F_WRLCK): Lock the first 100 bytes of the file
     lock.l_type = F_WRLCK;
     lock.l_whence = SEEK_SET;
     lock.l_start = 0;
-    lock.l_len = 100;
+    lock.l_len = LOCK_LENGTH;
     lock.l_pid = getpid();
     int ret = fcntl64(fd, F_SETLK, &lock);
     EXPECT_EQ("fcntl64_0500", ret, 0);
@@ -223,7 +235,7 @@ void fcntl64_0500(void)
     get_lock.l_type = F_WRLCK;
     get_lock.l_whence = SEEK_SET;
     get_lock.l_start = 0;
-    get_lock.l_len = 100;
+    get_lock.l_len = LOCK_LENGTH;
     ret = fcntl64(fd, F_GETLK, &get_lock);
     EXPECT_EQ("fcntl64_0500", ret, 0);
     EXPECT_EQ("fcntl64_0500", get_lock.l_type, F_UNLCK);
@@ -249,24 +261,24 @@ void fcntl64_0600(void)
 {
     // Invalid file descriptor (fd=-1) calls fcntl64
     struct flock64 lock = {0};
-    int ret = fcntl64(-1, F_GETFL);
+    int ret = fcntl64(INVALID_FD, F_GETFL);
     EXPECT_EQ("fcntl64_0600", ret, -1);
     // Illegal command (custom invalid cmd=999)
-    int valid_fd = open64(TEST_FILE, O_RDWR | O_CREAT, 0644);
+    int valid_fd = open64(TEST_FILE, O_RDWR | O_CREAT, FILE_PERMISSIONS);
     if (valid_fd >= 0) {
-        ret = fcntl64(valid_fd, 999, NULL);
+        ret = fcntl64(valid_fd, INVALID_CMD, NULL);
         EXPECT_EQ("fcntl64_0600", ret, -1);
         close(valid_fd);
         unlink(TEST_FILE);
     }
 
     // Large offset file lock (64 bit large offset, verify 64 bit support of fcntl64)
-    valid_fd = open64(LARGE_OFFSET_FILE, O_RDWR | O_CREAT, 0644);
+    valid_fd = open64(LARGE_OFFSET_FILE, O_RDWR | O_CREAT, FILE_PERMISSIONS);
     if (valid_fd >= 0) {
         lock.l_type = F_RDLCK;
         lock.l_whence = SEEK_SET;
-        lock.l_start = 0x7FFFFFFFFFFFFFFFLL;
-        lock.l_len = 1024;
+        lock.l_start = LARGE_LOCK_OFFSET;
+        lock.l_len = LOCK_SIZE;
         lock.l_pid = getpid();
 
         ret = fcntl64(valid_fd, F_SETLK, &lock);
@@ -309,7 +321,7 @@ static void *thread_func(void *arg)
             success_count++;
         }
 
-        usleep(10);
+        usleep(SLEEP_US);
     }
 
     *(targ->result) = success_count;

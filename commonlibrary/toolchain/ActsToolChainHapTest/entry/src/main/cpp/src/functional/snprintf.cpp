@@ -9,10 +9,20 @@
 #include "test.h"
 
 #define DISABLE_SLOW_TESTS
+#define BUFFER_SIZE 2000
+#define SMALL_BUFFER 4
+#define STR_LEN_6 6
+#define STR_LEN_4 4
+#define EXP_1022 1022
+#define EXP_1021 1021
+#define EXP_1023 1023
+#define EXP_1024 1024
+#define TEST_VALUE 123456
+#define INT_MAX_VALUE 2147483647
 
 #define TEST(r, f, x, m) ( \
     ((r) = (f)) == (x) || \
-    (t_error("%s failed (" m ")\n", #f, r, x), 0) )
+    (t_error("%s failed (" m ")\n", #f, r, x), 0))
 
 #define TEST_S(s, x, m) ( \
     !strcmp((s),(x)) || \
@@ -74,7 +84,7 @@ static const struct {
     { "%04.0o", 1, "   1" },
     { "%04.1o", 1, "   1" },
 
-    { NULL, 0, NULL }
+    { nullptr, 0, nullptr }
 };
 
 static const struct {
@@ -137,28 +147,28 @@ static const struct {
     { "%.0f", 340282366920938463463374607431768211456.0,
              "340282366920938463463374607431768211456" },
 
-    { NULL, 0.0, NULL }
+    { nullptr, 0.0, nullptr }
 };
 
 static int SnprintfTestImpl(void)
 {
     int i, j, k;
-    char b[2000];
+    char b[BUFFER_SIZE];
 
-    TEST(i, snprintf(0, 0, "%d", 123456), 6, "length returned %d != %d");
-    TEST(i, snprintf(0, 0, "%.4s", "hello"), 4, "length returned %d != %d");
+    TEST(i, snprintf(nullptr, 0, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
+    TEST(i, snprintf(nullptr, 0, "%.4s", "hello"), STR_LEN_4, "length returned %d != %d");
     TEST(i, snprintf(b, 0, "%.0s", "goodbye"), 0, "length returned %d != %d");
 
     strcpy(b, "xxxxxxxx");
-    TEST(i, snprintf(b, 4, "%d", 123456), 6, "length returned %d != %d");
+    TEST(i, snprintf(b, SMALL_BUFFER, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
     TEST_S(b, "123", "incorrect output");
     TEST(i, b[5], 'x', "buffer overrun");
 
     /* Perform ascii arithmetic to test printing tiny doubles */
-    TEST(i, snprintf(b, sizeof b, "%.1022f", 0x1p-1021), 1024, "%d != %d");
+    TEST(i, snprintf(b, sizeof b, "%.1022f", 0x1p-1021), EXP_1024, "%d != %d");
     b[1] = '0';
-    for (i = 0; i < 1021; i++) {
-        for (k = 0, j = 1023; j > 0; j--) {
+    for (i = 0; i < EXP_1021; i++) {
+        for (k = 0, j = EXP_1023; j > 0; j--) {
             if (b[j] < '5') {
                 b[j] += b[j] - '0' + k, k = 0;
             } else {
@@ -169,13 +179,13 @@ static int SnprintfTestImpl(void)
     TEST(i, b[1], '1', "'%c' != '%c'");
     for (j = 2; b[j] == '0'; j++) {
     }
-    TEST(i, j, 1024, "%d != %d");
+    TEST(i, j, EXP_1024, "%d != %d");
 
 
 #ifndef DISABLE_SLOW_TESTS
     errno = 0;
-    TEST(i, snprintf(NULL, 0, "%.*u", 2147483647, 0), 2147483647, "cannot print max length %d");
-    TEST(i, snprintf(NULL, 0, "%.*u ", 2147483647, 0), -1, "integer overflow %d");
+    TEST(i, snprintf(NULL, 0, "%.*u", INT_MAX_VALUE, 0), INT_MAX_VALUE, "cannot print max length %d");
+    TEST(i, snprintf(NULL, 0, "%.*u ", INT_MAX_VALUE, 0), -1, "integer overflow %d");
     TEST(i, errno, EOVERFLOW, "after overflow: %d != %d");
 #endif
     for (j = 0; int_tests[j].fmt; j++) {

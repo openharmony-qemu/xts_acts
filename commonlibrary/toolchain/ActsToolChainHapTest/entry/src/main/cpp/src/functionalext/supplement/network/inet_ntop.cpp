@@ -19,103 +19,103 @@
 typedef void (*TEST_FUN)();
 
 /*
- * @tc.name      : inet_ntop_0100
+ * @tc.name      : InetNtop0100
  * @tc.desc      : Verify that the data format is converted to IP address format (the address cluster is AF_INET).
  * @tc.level     : Level 0
  */
-void inet_ntop_0100(void)
+void InetNtop0100(void)
 {
     char ip4test[] = "10.10.0.1";
     struct in_addr sin_addr;
     inet_pton(AF_INET, ip4test, &sin_addr);
     const char *ptr = inet_ntop(AF_INET, &sin_addr, ip4test, sizeof(ip4test));
-    EXPECT_PTRNE("inet_ntop_0100", ptr, NULL);
-    EXPECT_STREQ("inet_ntop_0100", ptr, ip4test);
+    EXPECT_PTRNE("InetNtop0100", ptr, NULL);
+    EXPECT_STREQ("InetNtop0100", ptr, ip4test);
 }
 
 /*
- * @tc.name      : inet_ntop_0200
+ * @tc.name      : InetNtop0200
  * @tc.desc      : Verify that the data format is converted to the IP address format
  *                 (the address cluster is AF_INET6, and the metadata is colon and hexadecimal notation)
  * @tc.level     : Level 0
  */
-void inet_ntop_0200(void)
+void InetNtop0200(void)
 {
     char ip6test[] = "A157:CD01:3579:1526:DBAC:EF21:4356:7879";
     struct in_addr sin_addr;
     inet_pton(AF_INET6, ip6test, &sin_addr);
     const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
-    EXPECT_PTRNE("inet_ntop_0200", ptr, NULL);
-    EXPECT_STREQ("inet_ntop_0200", ptr, ip6test);
+    EXPECT_PTRNE("InetNtop0200", ptr, NULL);
+    EXPECT_STREQ("InetNtop0200", ptr, ip6test);
 }
 
 /*
- * @tc.name      : inet_ntop_0300
+ * @tc.name      : InetNtop0300
  * @tc.desc      : Verify data format is converted to IP address format
  *                 (address cluster is AF_INET6, metadata is 0-bit compressed notation)
  * @tc.level     : Level 0
  */
-void inet_ntop_0300(void)
+void InetNtop0300(void)
 {
     char ip6test[] = "fe80::bed5:4695:6cac:bef8";
     struct in_addr sin_addr;
     inet_pton(AF_INET6, ip6test, &sin_addr);
     const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
-    EXPECT_PTRNE("inet_ntop_0300", ptr, NULL);
-    EXPECT_STREQ("inet_ntop_0300", ptr, ip6test);
+    EXPECT_PTRNE("InetNtop0300", ptr, NULL);
+    EXPECT_STREQ("InetNtop0300", ptr, ip6test);
 }
 
 /*
- * @tc.name      : inet_ntop_0400
+ * @tc.name      : InetNtop0400
  * @tc.desc      : Verify that the data format is converted to IP address format
  *                 (the address cluster is AF_INET6, and the metadata is the embedded Ipv address notation)
  * @tc.level     : Level 0
  */
-void inet_ntop_0400(void)
+void InetNtop0400(void)
 {
     char ip6test[] = "::10.10.0.1";
     struct in_addr sin_addr;
     inet_pton(AF_INET6, ip6test, &sin_addr);
     const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
-    EXPECT_PTRNE("inet_ntop_0400", ptr, NULL);
-    EXPECT_EQ("inet_ntop_0400", ptr, ip6test);
+    EXPECT_PTRNE("InetNtop0400", ptr, NULL);
+    EXPECT_EQ("InetNtop0400", ptr, ip6test);
 }
 
 /*
- * @tc.name      : inet_ntop_0500
+ * @tc.name      : InetNtop0500
  * @tc.desc      : Verify that the data format is converted to IP address format (the address cluster is AF_UNIX)
  * @tc.level     : Level 2
  */
-void inet_ntop_0500(void)
+void InetNtop0500(void)
 {
     char ip4test[] = "10.10.0.1";
     struct in_addr sin_addr;
     inet_pton(AF_UNIX, ip4test, &sin_addr);
     const char *ptr = inet_ntop(AF_UNIX, &sin_addr, ip4test, sizeof(ip4test));
-    EXPECT_PTREQ("inet_ntop_0500", ptr, NULL);
+    EXPECT_PTREQ("InetNtop0500", ptr, NULL);
 }
 
 /*
- * @tc.name      : inet_ntop_0600
+ * @tc.name      : InetNtop0600
  * @tc.desc      : Verify that the data format is converted to IP address format (the address cluster is AF_INET6)
  * @tc.level     : Level 2
  */
-void inet_ntop_0600(void)
+void InetNtop0600(void)
 {
     char ip6test[] = "10.10.0.1";
     struct in_addr sin_addr;
     inet_pton(AF_INET6, ip6test, &sin_addr);
     const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
-    EXPECT_PTREQ("inet_ntop_0600", ptr, NULL);
+    EXPECT_PTREQ("InetNtop0600", ptr, NULL);
 }
 
 static TEST_FUN G_Fun_Array[] = {
-    inet_ntop_0100,
-    inet_ntop_0200,
-    inet_ntop_0300,
-    inet_ntop_0400,
-    inet_ntop_0500,
-    inet_ntop_0600,
+    InetNtop0100,
+    InetNtop0200,
+    InetNtop0300,
+    InetNtop0400,
+    InetNtop0500,
+    InetNtop0600,
 };
 
 static int InetNtopTestImpl(int argc, char *argv[])

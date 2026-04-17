@@ -23,26 +23,26 @@
 #include "time64_functions.h"
 
 #define SIGNUM 40
-static int count = 0;
+static int g_count = 0;
 
 static void Handler(int sig)
 {
-    count++;
+    g_count++;
 
     return;
 }
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
 /**
- * @tc.name      : timer_settime_0100
+ * @tc.name      : TimerSettime0100
  * @tc.desc      : arms the timer
  * @tc.level     : Level 0
  */
-void timer_settime_0100(void)
+void TimerSettime0100(void)
 {
     struct sigevent sev;
     timer_t timerid;
@@ -69,7 +69,7 @@ void timer_settime_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    while (count <= 0) {
+    while (g_count <= 0) {
         sleep(1);
     }
 
@@ -80,23 +80,23 @@ void timer_settime_0100(void)
 }
 
 /**
- * @tc.name      : timer_settime_0200
+ * @tc.name      : TimerSettime0200
  * @tc.desc      : arms the timer with invalid parameters
  * @tc.level     : Level 2
  */
-void timer_settime_0200(void)
+void TimerSettime0200(void)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
     timer_settime(nullptr, 0, nullptr, nullptr);
 }
 
 /**
- * @tc.name      : timer_settime64_0100
+ * @tc.name      : TimerSettime640100
  * @tc.desc      : arms the timer
  * @tc.level     : Level 0
  */
-void timer_settime64_0100(void)
+void TimerSettime640100(void)
 {
     struct sigevent sev;
     timer_t timerid;
@@ -123,7 +123,7 @@ void timer_settime64_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    while (count <= 0) {
+    while (g_count <= 0) {
         sleep(1);
     }
 
@@ -135,9 +135,9 @@ void timer_settime64_0100(void)
 
 static int TimerSettimeTestImpl(int argc, char *argv[])
 {
-    timer_settime_0100();
-    timer_settime_0200();
-    timer_settime64_0100();
+    TimerSettime0100();
+    TimerSettime0200();
+    TimerSettime640100();
 
     return T_STATUS;
 }

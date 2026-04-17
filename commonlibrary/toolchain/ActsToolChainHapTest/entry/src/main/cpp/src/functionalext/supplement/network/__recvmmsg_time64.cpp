@@ -24,49 +24,57 @@
 #include "test.h"
 #include "time64_functions.h"
 
-const int SLEEP_TIME = 2;
+#define SLEEP_TIME 2
+#define MSG_COUNT 2
+#define IOV_COUNT 2
+#define SOCKET_PORT 1234
+#define PAYLOAD_LEN 3
+#define PAYLOAD_LEN2 5
+#define IOVLEN_2 2
+#define IOVLEN_1 1
+#define FAILURE_CODE -1
 
 static void sendsss(void)
 {
     int sockfd;
     struct sockaddr_in addr;
-    struct mmsghdr msg[2];
-    struct iovec msg1[2], msg2;
+    struct mmsghdr msg[MSG_COUNT];
+    struct iovec msg1[IOV_COUNT], msg2;
     int retval;
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-    if (sockfd == -1) {
+    if (sockfd == FAILURE_CODE) {
         t_error("recvmmsg_0100 socket error");
         exit(EXIT_FAILURE);
     }
 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-    addr.sin_port = htons(1234);
-    if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
+    addr.sin_port = htons(SOCKET_PORT);
+    if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == FAILURE_CODE) {
         t_error("recvmmsg_0100 connect error");
         exit(EXIT_FAILURE);
     }
 
     memset(msg1, 0, sizeof(msg1));
     msg1[0].iov_base = const_cast<char*>("one");
-    msg1[0].iov_len = 3;
+    msg1[0].iov_len = PAYLOAD_LEN;
     msg1[1].iov_base = const_cast<char*>("two");
-    msg1[1].iov_len = 3;
+    msg1[1].iov_len = PAYLOAD_LEN;
 
     memset(&msg2, 0, sizeof(msg2));
     msg2.iov_base = const_cast<char*>("three");
-    msg2.iov_len = 5;
+    msg2.iov_len = PAYLOAD_LEN2;
 
     memset(msg, 0, sizeof(msg));
     msg[0].msg_hdr.msg_iov = msg1;
-    msg[0].msg_hdr.msg_iovlen = 2;
+    msg[0].msg_hdr.msg_iovlen = IOVLEN_2;
 
     msg[1].msg_hdr.msg_iov = &msg2;
-    msg[1].msg_hdr.msg_iovlen = 1;
+    msg[1].msg_hdr.msg_iovlen = IOVLEN_1;
 
-    retval = sendmmsg(sockfd, msg, 2, 0);
-    if (retval == -1) {
+    retval = sendmmsg(sockfd, msg, MSG_COUNT, 0);
+    if (retval == FAILURE_CODE) {
         t_error("recvmmsg_time64_0100 sendmmsg error");
     }
 }
@@ -84,15 +92,15 @@ static void recvsss(void)
     struct timespec timeout;
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-    if (sockfd == -1) {
+    if (sockfd == FAILURE_CODE) {
         t_error("recvmmsg_time64_0100 recv socket error");
         exit(EXIT_FAILURE);
     }
 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-    addr.sin_port = htons(1234);
-    if (bind(sockfd, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) == -1) {
+    addr.sin_port = htons(SOCKET_PORT);
+    if (bind(sockfd, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) == FAILURE_CODE) {
         t_error("recvmmsg_time64_0100 recv bind error");
         exit(EXIT_FAILURE);
     }
@@ -109,7 +117,7 @@ static void recvsss(void)
     timeout.tv_nsec = 0;
 
     retval = __recvmmsg_time64(sockfd, msgs, VLEN, 0, &timeout);
-    if (retval == -1) {
+    if (retval == FAILURE_CODE) {
         t_error("recvmmsg_time64_0100 recv recvmmsg error");
         exit(EXIT_FAILURE);
     }
@@ -137,6 +145,6 @@ static int __recvmmsg_time64Test_with_args(int argc, char *argv[])
 int __recvmmsg_time64Test(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return __recvmmsg_time64Test_with_args(1, libcArgv);
 }

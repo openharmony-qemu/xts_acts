@@ -18,6 +18,8 @@
 #include "functionalext.h"
 #include "time64_functions.h"
 
+#define TIMEOUT_SEC 3600
+
 static cnd_t cond;
 static mtx_t mutex;
 
@@ -59,7 +61,7 @@ void cnd_timedwait_0100(void)
         t_error("%s clock_gettime failed\n", __func__);
     }
 
-    w_time.tv_sec += 3600;
+    w_time.tv_sec += TIMEOUT_SEC;
 
     if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);
@@ -103,7 +105,7 @@ void cnd_timedwait_time64_0100(void)
         t_error("%s clock_gettime failed\n", __func__);
     }
 
-    w_time.tv_sec += 3600;
+    w_time.tv_sec += TIMEOUT_SEC;
 
     if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);

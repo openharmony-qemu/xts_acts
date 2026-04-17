@@ -22,25 +22,25 @@
 #include "time64_functions.h"
 
 #define Nanoseconds (1000000000)
-static int count = 0;
+static int g_count = 0;
 
 static void timerHandler(int sig)
 {
-    count++;
+    g_count++;
     return;
 }
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
 /**
- * @tc.name      : timer_gettime_0100
+ * @tc.name      : TimerGettime0100
  * @tc.desc      : Get the remaining time of the timer
  * @tc.level     : Level 0
  */
-void timer_gettime_0100(void)
+void TimerGettime0100(void)
 {
     timer_t timerid;
     struct sigevent sev;
@@ -75,7 +75,7 @@ void timer_gettime_0100(void)
         t_error("%s get time failed", __func__);
     }
 
-    while (count <= 0) {
+    while (g_count <= 0) {
         sleep(1);
     }
 
@@ -85,11 +85,11 @@ void timer_gettime_0100(void)
 }
 
 /**
- * @tc.name      : timer_gettime_0200
+ * @tc.name      : TimerGettime0200
  * @tc.desc      : The return value of the function when the parameter is abnormal
  * @tc.level     : Level 2
  */
-void timer_gettime_0200(void)
+void TimerGettime0200(void)
 {
     int result = timer_gettime(nullptr, nullptr);
     if (result != -1 && errno != EINVAL) {
@@ -98,11 +98,11 @@ void timer_gettime_0200(void)
 }
 
 /**
- * @tc.name      : timer_gettime64_0200
+ * @tc.name      : TimerGettime640200
  * @tc.desc      : The return value of the function when the parameter is abnormal
  * @tc.level     : Level 2
  */
-void timer_gettime64_0200(void)
+void TimerGettime640200(void)
 {
     int result = __timer_gettime64(nullptr, nullptr);
     if (result != -1 && errno != EINVAL) {
@@ -112,9 +112,9 @@ void timer_gettime64_0200(void)
 
 static int TimerGettimeTestImpl(int argc, char *argv[])
 {
-    timer_gettime_0100();
-    timer_gettime_0200();
-    timer_gettime64_0200();
+    TimerGettime0100();
+    TimerGettime0200();
+    TimerGettime640200();
     return T_STATUS;
 }
 

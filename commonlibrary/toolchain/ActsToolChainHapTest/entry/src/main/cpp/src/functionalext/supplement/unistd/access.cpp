@@ -27,7 +27,7 @@ const int FAILED = -1;
  * @tc.desc      : The parameter filename is the specified file and exists,
  *                 the parameter amode is F_OK,function returns successfully.
  * @tc.level     : Level 0
- * 
+ *
  * /data/storage/el2/base/cache/
  */
 void access_0100(void)
@@ -192,6 +192,6 @@ static int accessTest_with_args(int argc, char *argv[])
 int AccessTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return accessTest_with_args(1, libcArgv);
 }

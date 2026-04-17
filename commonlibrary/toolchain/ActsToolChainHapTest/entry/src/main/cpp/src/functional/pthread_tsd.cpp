@@ -2,7 +2,7 @@
 #include <string.h>
 #include "test.h"
 
-#define TESTC(c, m) ( (c) || (t_error("%s failed (" m ")\n", #c), 0) )
+#define TESTC(c, m) ((c) || (t_error("%s failed (" m ")\n", #c), 0))
 #define TESTR(r, f, m) ( \
     ((r) = (f)) == 0 || (t_error("%s failed: %s (" m ")\n", #f, strerror(r)), 0) )
 
@@ -35,7 +35,7 @@ static int PthreadTsdTestImpl(void)
     foo[0] = foo[1] = 0;
     TESTR(r, pthread_setspecific(k1, bar), "failed to set tsd");
     TESTR(r, pthread_setspecific(k2, bar + 1), "failed to set tsd");
-    TESTR(r, pthread_create(&td, 0, start, foo), "failed to create thread");
+    TESTR(r, pthread_create(&td, nullptr, start, foo), "failed to create thread");
     TESTR(r, pthread_join(td, &res), "failed to join");
     TESTC(res == 0, "pthread_setspecific failed in thread");
     TESTC(foo[0] == 1, "dtor failed to run");

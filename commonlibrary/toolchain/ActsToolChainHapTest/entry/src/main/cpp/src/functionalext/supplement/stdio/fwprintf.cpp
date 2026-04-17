@@ -21,12 +21,12 @@
  * @tc.desc      : Verify the number of wide characters returned by the function (if the file parameter is stdout)
  * @tc.level     : Level 0
  */
-void fwprintf_0100(void)
+void Fwprintf0100(void)
 {
     int result = fwprintf(stdout, L"This is a test!!QAZ@WSX12");
     printf("\n");
     int ret = strlen("This is a test!!QAZ@WSX12");
-    EXPECT_EQ("fwprintf_0100", result, ret);
+    EXPECT_EQ("Fwprintf0100", result, ret);
 }
 
 /**
@@ -34,12 +34,12 @@ void fwprintf_0100(void)
  * @tc.desc      : Verify the number of wide characters returned by the function (if the file parameter is stderr)
  * @tc.level     : Level 0
  */
-void fwprintf_0200(void)
+void Fwprintf0200(void)
 {
     int result = fwprintf(stderr, L"This is a test!");
     printf("\n");
     int ret = strlen("This is a test!");
-    EXPECT_EQ("fwprintf_0200", result, ret);
+    EXPECT_EQ("Fwprintf0200", result, ret);
 }
 
 /**
@@ -48,14 +48,14 @@ void fwprintf_0200(void)
                    (if the file is successfully opened in W mode and its return value is used as the file parameter)
  * @tc.level     : Level 0
  */
-void fwprintf_0300(void)
+void Fwprintf0300(void)
 {
     FILE *fptr = fopen("/data/storage/el2/base/cache/test.txt", "w");
-    EXPECT_PTRNE("fwprintf_0300", fptr, NULL);
+    EXPECT_PTRNE("Fwprintf0300", fptr, NULL);
 
     int result = fwprintf(fptr, L"This is a test!");
     int ret = strlen("This is a test!");
-    EXPECT_EQ("fwprintf_0300", result, ret);
+    EXPECT_EQ("Fwprintf0300", result, ret);
 
     fclose(fptr);
     remove("/data/storage/el2/base/cache/test.txt");
@@ -67,34 +67,34 @@ void fwprintf_0300(void)
                   (if the file is successfully opened in R mode and its return value is used as a file parameter)
  * @tc.level     : Level 2
  */
-void fwprintf_0400(void)
+void Fwprintf0400(void)
 {
-    const char *path = "/data/storage/el2/base/cache/test.txt";
+    const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fptr1 = fopen(path, "w");
-    EXPECT_PTRNE("fwprintf_0400", fptr1, NULL);
+    FILE *fptr1 = fopen(PATH, "w");
+    EXPECT_PTRNE("Fwprintf0400", fptr1, NULL);
     fclose(fptr1);
 
-    FILE *fptr2 = fopen(path, "r");
+    FILE *fptr2 = fopen(PATH, "r");
     int result = fwprintf(fptr2, L"This is a test!");
-    EXPECT_EQ("fwprintf_0400", result, -1);
+    EXPECT_EQ("Fwprintf0400", result, -1);
 
     fclose(fptr2);
-    remove(path);
+    remove(PATH);
 }
 
 static int FwprintfTestImpl(int argc, char *argv[])
 {
-    fwprintf_0100();
-    fwprintf_0200();
-    fwprintf_0300();
-    fwprintf_0400();
+    Fwprintf0100();
+    Fwprintf0200();
+    Fwprintf0300();
+    Fwprintf0400();
     return g_tStatus;
 }
 
 int FwprintfTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FwprintfTestImpl(1, libcArgv);
 }

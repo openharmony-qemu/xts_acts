@@ -27,7 +27,7 @@ const int SUCCESS = 0;
 void pthread_cond_init_0100()
 {
     static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-    int back = pthread_cond_init(&cond, NULL);
+    int back = pthread_cond_init(&cond, nullptr);
     EXPECT_EQ("pthread_cond_init_0100", back, SUCCESS);
 }
 
@@ -57,6 +57,6 @@ static int PthreadCondInitTestImpl(int argc, char *argv[])
 int PthreadCondInitTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return PthreadCondInitTestImpl(1, libcArgv);
 }

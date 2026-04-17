@@ -18,26 +18,26 @@
 #include "functionalext.h"
 #include "time64_functions.h"
 
-static int count = 0;
-static void expireTimer(int signo)
+static int g_count = 0;
+static void ExpireTimer(int signo)
 {
     struct itimerval val;
-    count++;
-    if (count > 1) {
+    g_count++;
+    if (g_count > 1) {
         __getitimer_time64(signo, &val);
         val.it_value.tv_sec = 0;
         val.it_value.tv_usec = 0;
         setitimer(signo, &val, NULL);
-        count = 0;
+        g_count = 0;
     }
 }
 
-static void signalHandler(int signo)
+static void SignalHandler(int signo)
 {
     switch (signo) {
         case SIGALRM:
             printf("catch a SIGALRM signal\n");
-            expireTimer(signo);
+            ExpireTimer(signo);
             break;
         case SIGVTALRM:
             printf("catch a SIGVTALRM signal\n");
@@ -56,16 +56,16 @@ static void signalHandler(int signo)
  * @tc.desc      : Verify the value of the interval timer (parameter is ITIMER_REAL)
  * @tc.level     : Level 0
  */
-void getitimer_time64_0100(void)
+void GetitimerTime640100(void)
 {
-    signal(SIGALRM, signalHandler);
+    signal(SIGALRM, SignalHandler);
     struct itimerval old;
     int result = __getitimer_time64(ITIMER_REAL, &old);
-    EXPECT_EQ("getitimer_time64_0100", result, 0);
+    EXPECT_EQ("GetitimerTime640100", result, 0);
 }
 
 int __getitimer_time64Test(void)
 {
-    getitimer_time64_0100();
+    GetitimerTime640100();
     return T_STATUS;
 }

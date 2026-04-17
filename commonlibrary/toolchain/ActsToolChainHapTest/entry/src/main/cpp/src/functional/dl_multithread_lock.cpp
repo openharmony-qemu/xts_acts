@@ -29,13 +29,13 @@
 #define CALLBACK_TEST_VAL 2
 
 // const char* g_libPath = "/data/local/tmp/libc-test-lib/libdlopen_dso.so";
-// const char* g_initlibPath = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
+// const char* INITLIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
 const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdlopen_dso.so";
-const char* g_initlibPath = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
-void* g_init_handler = nullptr;
-static int test_value = 0;
+const char* INITLIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
+void* g_initHandler = nullptr;
+static int g_testValue = 0;
 
-int check_loaded(char* so)
+int CheckLoaded(char* so)
 {
     int pid = getpid();
     char path[MAX_BUF] = { 0 };
@@ -60,34 +60,34 @@ int check_loaded(char* so)
 
 static int CallBack001(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initlibPath) != 0) {
+    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, INITLIB_PATH) != 0) {
         return 0;
     }
-    test_value++;
-    if (test_value != 1) {
-        t_error("test_value should be 1, but: %d\n", test_value);
+    g_testValue++;
+    if (g_testValue != 1) {
+        t_error("g_testValue should be 1, but: %d\n", g_testValue);
     }
-    test_value--;
+    g_testValue--;
 
-    if (test_value != 0) {
-        t_error("test_value should be 0, but: %d\n", test_value);
+    if (g_testValue != 0) {
+        t_error("g_testValue should be 0, but: %d\n", g_testValue);
     }
     return 0;
 }
 
 static int CallBack002(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initlibPath) != 0) {
+    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, INITLIB_PATH) != 0) {
         return 0;
     }
-    test_value = test_value + CALLBACK_TEST_VAL;
-    if (test_value != CALLBACK_TEST_VAL) {
-        t_error("test_value should be 2, but: %d\n", test_value);
+    g_testValue = g_testValue + CALLBACK_TEST_VAL;
+    if (g_testValue != CALLBACK_TEST_VAL) {
+        t_error("g_testValue should be 2, but: %d\n", g_testValue);
     }
 
-    test_value = test_value - CALLBACK_TEST_VAL;
-    if (test_value != 0) {
-        t_error("test_value should be 0, but: %d\n", test_value);
+    g_testValue = g_testValue - CALLBACK_TEST_VAL;
+    if (g_testValue != 0) {
+        t_error("g_testValue should be 0, but: %d\n", g_testValue);
     }
     return 0;
 }
@@ -98,9 +98,9 @@ static void* CallBack003(void* arg)
     if (pid > 0) {
         int status = 0;
         int options = 0;
-        pid_t waitpid_for_pind = waitpid(pid, &status, options);
-        if (waitpid_for_pind != pid) {
-            t_error("%s waitpid get pid is %d are not want %d\n", __func__, waitpid_for_pind, pid);
+        pid_t waitpidForPind = waitpid(pid, &status, options);
+        if (waitpidForPind != pid) {
+            t_error("%s waitpid get pid is %d are not want %d\n", __func__, waitpidForPind, pid);
         }
         if (status != 0) {
             t_error("%s waitpid get status is %d are not 0\n", __func__, status);
@@ -133,17 +133,17 @@ static void* dlopen_dlclose_test001(void* arg)
 
 static void* dlopen_dlclose_test002(void* arg)
 {
-    void* handle = dlopen(g_initlibPath, RTLD_NOW);
+    void* handle = dlopen(INITLIB_PATH, RTLD_NOW);
     if (!handle) {
-      t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initlibPath, RTLD_NOW, dlerror());
+      t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
     }
-    g_init_handler = handle;
+    g_initHandler = handle;
     return arg;
 }
 
 static void* dlopen_dlclose_test003(void* arg)
 {
-    dlclose(g_init_handler);
+    dlclose(g_initHandler);
     return arg;
 }
 
@@ -161,7 +161,7 @@ static void* dlopen_dlclose_test0042(void* arg)
 
 static void* dlopen_dlclose_test005(void* arg)
 {
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_init_handler, "getVal"));
+    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
@@ -177,16 +177,16 @@ static void* dlopen_dlclose_test006(void* arg)
     return arg;
 }
 
-static void do_test_concurrently(void *(*test) (void *arg), size_t num_threads)
+static void do_test_concurrently(void *(*test) (void *arg), size_t numThreads)
 {
-    pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * num_threads));
+    pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * numThreads));
     if (threads == nullptr) {
         t_error("Failed to allocate memory: %s\n", strerror(errno));
         return;
     }
 
     size_t last = 0;
-    while (last < num_threads) {
+    while (last < numThreads) {
         if (pthread_create(&(threads[last]), nullptr, test, nullptr)) {
             t_error("Failed to create thread: %s\n", strerror(errno));
             break;
@@ -205,16 +205,16 @@ static void do_test_concurrently(void *(*test) (void *arg), size_t num_threads)
 }
 
 static void do_test_double_concurrently(void *(*test1) (void *arg), void *(*test2) (void *arg),
-    size_t num_threads1, size_t num_threads2)
+    size_t numThreads1, size_t numThreads2)
 {
-    pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * (num_threads1 + num_threads2)));
+    pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * (numThreads1 + numThreads2)));
     if (threads == nullptr) {
         t_error("Failed to allocate memory: %s\n", strerror(errno));
         return;
     }
 
     size_t last = 0;
-    while (last < num_threads1) {
+    while (last < numThreads1) {
         if (pthread_create(&(threads[last]), nullptr, test1, nullptr)) {
             t_error("Failed to create thread: %s\n", strerror(errno));
             break;
@@ -222,7 +222,7 @@ static void do_test_double_concurrently(void *(*test1) (void *arg), void *(*test
         last++;
     }
 
-    while (last < num_threads1 + num_threads2) {
+    while (last < numThreads1 + numThreads2) {
         if (pthread_create(&(threads[last]), nullptr, test2, nullptr)) {
             t_error("Failed to create thread: %s\n", strerror(errno));
             break;
@@ -245,11 +245,11 @@ static void do_test_double_concurrently(void *(*test1) (void *arg), void *(*test
  * @tc.desc      : multithreaded dlopen/dlclose, at the end the expected so file should not be in memory.
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0100(void)
+void DlMultithreadLock0100(void)
 {
-    size_t num_threads = 1000;
-    do_test_concurrently(dlopen_dlclose_test001, num_threads);
-    if (check_loaded(const_cast<char *>(g_libPath))) {
+    size_t numThreads = 1000;
+    do_test_concurrently(dlopen_dlclose_test001, numThreads);
+    if (CheckLoaded(const_cast<char *>(g_libPath))) {
         t_error("This so file should not exist, %s\n", const_cast<char *>(g_libPath));
     }
 }
@@ -259,14 +259,14 @@ void dl_multithread_lock_0100(void)
  * @tc.desc      : multithreaded dlopen, the init constructor should be called only once.
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0200(void)
+void DlMultithreadLock0200(void)
 {
-    size_t num_threads = 20;
-    do_test_concurrently(dlopen_dlclose_test002, num_threads);
-    if (!check_loaded(const_cast<char *>(g_initlibPath))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(g_initlibPath));
+    size_t numThreads = 20;
+    do_test_concurrently(dlopen_dlclose_test002, numThreads);
+    if (!CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(INITLIB_PATH));
     }
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_init_handler, "getVal"));
+    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
@@ -280,49 +280,49 @@ void dl_multithread_lock_0200(void)
  * @tc.desc      : multithreaded dlopen, the deconstructor should be called only at the last dlclose.
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0300(void)
+void DlMultithreadLock0300(void)
 {
-    size_t num_threads = 19;
-    do_test_concurrently(dlopen_dlclose_test003, num_threads);
-    if (!check_loaded(const_cast<char *>(g_initlibPath))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(g_initlibPath));
+    size_t numThreads = 19;
+    do_test_concurrently(dlopen_dlclose_test003, numThreads);
+    if (!CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(INITLIB_PATH));
     }
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_init_handler, "getVal"));
+    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
     if (get_val != nullptr && get_val() != 1) {
         t_error("This val after init should be 1, but %d\n", get_val());
     }
-    dlclose(g_init_handler);
-    if (check_loaded(const_cast<char *>(g_initlibPath))) {
-        t_error("This so file should not exist, %s\n", const_cast<char *>(g_initlibPath));
+    dlclose(g_initHandler);
+    if (CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
+        t_error("This so file should not exist, %s\n", const_cast<char *>(INITLIB_PATH));
     }
 }
 
 /**
  * @tc.name      : dl_multithread_lock_0400
- * @tc.desc      : multithreaded iterate Callback in dl_iterate_phdr, the static test_value should be thread safe.
+ * @tc.desc      : multithreaded iterate Callback in dl_iterate_phdr, the static g_testValue should be thread safe.
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0400(void)
+void DlMultithreadLock0400(void)
 {
     void* handle1 = dlopen(g_libPath, RTLD_NOW);
     if (!handle1) {
         t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
     }
 
-    void* handle2 = dlopen(g_initlibPath, RTLD_NOW);
+    void* handle2 = dlopen(INITLIB_PATH, RTLD_NOW);
     if (!handle2) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initlibPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
     }
 
-    size_t num_threads = 5;
-    do_test_double_concurrently(dlopen_dlclose_test0041, dlopen_dlclose_test0042, num_threads, num_threads);
+    size_t numThreads = 5;
+    do_test_double_concurrently(dlopen_dlclose_test0041, dlopen_dlclose_test0042, numThreads, numThreads);
 
     dlclose(handle1);
     dlclose(handle2);
-    if (check_loaded(const_cast<char *>(g_initlibPath)) || check_loaded(const_cast<char *>(g_libPath))) {
+    if (CheckLoaded(const_cast<char *>(INITLIB_PATH)) || CheckLoaded(const_cast<char *>(g_libPath))) {
         t_error("These so files should not exist\n");
     }
 }
@@ -332,17 +332,17 @@ void dl_multithread_lock_0400(void)
  * @tc.desc      : multithreaded dlsym, dlsym should not be blocked by dlsym in other threads.
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0500(void)
+void DlMultithreadLock0500(void)
 {
-    void* handle = dlopen(g_initlibPath, RTLD_NOW);
+    void* handle = dlopen(INITLIB_PATH, RTLD_NOW);
     if (!handle) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initlibPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
     }
 
-    g_init_handler = handle;
-    size_t num_threads = 500;
-    do_test_concurrently(dlopen_dlclose_test005, num_threads);
-    g_init_handler = nullptr;
+    g_initHandler = handle;
+    size_t numThreads = 500;
+    do_test_concurrently(dlopen_dlclose_test005, numThreads);
+    g_initHandler = nullptr;
     dlclose(handle);
 }
 
@@ -352,20 +352,20 @@ void dl_multithread_lock_0500(void)
  *                (ld lock and jemalloc lock).
  * @tc.level     : Level 0
  */
-void dl_multithread_lock_0600(void)
+void DlMultithreadLock0600(void)
 {
-    size_t num_threads = 50;
-    do_test_double_concurrently(dlopen_dlclose_test006, CallBack003, num_threads, num_threads);
+    size_t numThreads = 50;
+    do_test_double_concurrently(dlopen_dlclose_test006, CallBack003, numThreads, numThreads);
 }
 
-static int dl_multithread_lockTest_with_args(int argc, char* argv[])
+static int DlMultithreadLockTestWithArgs(int argc, char* argv[])
 {
-    dl_multithread_lock_0100();
-    dl_multithread_lock_0200();
-    dl_multithread_lock_0300();
-    dl_multithread_lock_0400();
-    dl_multithread_lock_0500();
-    dl_multithread_lock_0600();
+    DlMultithreadLock0100();
+    DlMultithreadLock0200();
+    DlMultithreadLock0300();
+    DlMultithreadLock0400();
+    DlMultithreadLock0500();
+    DlMultithreadLock0600();
     return g_tStatus;
 }
 
@@ -373,5 +373,5 @@ int DlMultithreadLockTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return dl_multithread_lockTest_with_args(1, libcArgv);
+    return DlMultithreadLockTestWithArgs(1, libcArgv);
 }

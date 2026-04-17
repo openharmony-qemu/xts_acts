@@ -21,38 +21,38 @@
 
 #define THREADNUM 4
 
-pthread_barrier_t mybarrier;
+pthread_barrier_t g_mybarrier;
 
-static void *threadfunc(void *arg)
+static void *Threadfunc(void *arg)
 {
     (void)arg;
     sleep(1);
-    int ret = pthread_barrier_wait(&mybarrier);
-    EXPECT_NE("pthread_barrier_wait_0100", ret, ERREXPECT);
+    int ret = pthread_barrier_wait(&g_mybarrier);
+    EXPECT_NE("PthreadBarrierWait0100", ret, ERREXPECT);
     return nullptr;
 }
 
 /**
- * @tc.name      : pthread_barrier_wait_0100
+ * @tc.name      : PthreadBarrierWait0100
  * @tc.desc      : Blocking and waiting for 4 sub-threads, the return value of the calling function is successful
  * @tc.level     : Level 1
  */
-void pthread_barrier_wait_0100(void)
+void PthreadBarrierWait0100(void)
 {
     int i = 0;
     pthread_t ids[THREADNUM];
 
-    int ret = pthread_barrier_init(&mybarrier, nullptr, THREADNUM + 1);
-    EXPECT_EQ("pthread_barrier_wait_0100", ret, CMPFLAG);
+    int ret = pthread_barrier_init(&g_mybarrier, nullptr, THREADNUM + 1);
+    EXPECT_EQ("PthreadBarrierWait0100", ret, CMPFLAG);
 
     for (i = 0; i < THREADNUM; i++) {
-        if (pthread_create(&ids[i], nullptr, threadfunc, nullptr) != 0) {
+        if (pthread_create(&ids[i], nullptr, Threadfunc, nullptr) != 0) {
             t_error("create thread failed\n");
             return;
         }
     }
 
-    ret = pthread_barrier_wait(&mybarrier);
+    ret = pthread_barrier_wait(&g_mybarrier);
 
     for (i = 0; i < THREADNUM; i++) {
         ret = pthread_join(ids[i], nullptr);
@@ -62,33 +62,33 @@ void pthread_barrier_wait_0100(void)
         }
     }
 
-    ret = pthread_barrier_destroy(&mybarrier);
-    EXPECT_EQ("pthread_barrier_wait_0100", ret, CMPFLAG);
+    ret = pthread_barrier_destroy(&g_mybarrier);
+    EXPECT_EQ("PthreadBarrierWait0100", ret, CMPFLAG);
 }
 
 /**
- * @tc.name      : pthread_barrier_wait_0200
+ * @tc.name      : PthreadBarrierWait0200
  * @tc.desc      : The number of blocked threads is 1, and the calling function returns ERREXPECT
  * @tc.level     : Level 2
  */
-void pthread_barrier_wait_0200(void)
+void PthreadBarrierWait0200(void)
 {
     int threadnum = 1;
 
-    int ret = pthread_barrier_init(&mybarrier, nullptr, threadnum);
-    EXPECT_EQ("pthread_barrier_wait_0200", ret, CMPFLAG);
+    int ret = pthread_barrier_init(&g_mybarrier, nullptr, threadnum);
+    EXPECT_EQ("PthreadBarrierWait0200", ret, CMPFLAG);
 
-    ret = pthread_barrier_wait(&mybarrier);
-    EXPECT_EQ("pthread_barrier_wait_0200", ret, ERREXPECT);
+    ret = pthread_barrier_wait(&g_mybarrier);
+    EXPECT_EQ("PthreadBarrierWait0200", ret, ERREXPECT);
 
-    ret = pthread_barrier_destroy(&mybarrier);
-    EXPECT_EQ("pthread_barrier_wait_0200", ret, CMPFLAG);
+    ret = pthread_barrier_destroy(&g_mybarrier);
+    EXPECT_EQ("PthreadBarrierWait0200", ret, CMPFLAG);
 }
 
 static int PthreadBarrierWaitTestImpl(void)
 {
-    pthread_barrier_wait_0100();
-    pthread_barrier_wait_0200();
+    PthreadBarrierWait0100();
+    PthreadBarrierWait0200();
 
     return g_tStatus;
 }

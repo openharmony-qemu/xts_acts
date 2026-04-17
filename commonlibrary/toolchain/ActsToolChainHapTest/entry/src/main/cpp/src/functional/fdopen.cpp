@@ -19,6 +19,8 @@
 #include <string.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
+
+#define STD_FD_MAX 2
 #define TEST(c)                                                            \
     do {                                                                   \
         errno = 0;                                                         \
@@ -33,7 +35,7 @@ void fdopen_1(int& status)
     int fd;
     FILE* f;
 
-    TEST((fd = mkstemp(tmp)) > 2);
+    TEST((fd = mkstemp(tmp)) > STD_FD_MAX);
     TEST(write(fd, "hello", 6) == 6);
     TEST(f = fdopen(fd, "rb"));
     if (f) {
@@ -45,7 +47,7 @@ void fdopen_1(int& status)
         }
         fclose(f);
     }
-    if (fd > 2) {
+    if (fd > STD_FD_MAX) {
         TEST(unlink(tmp) != -1);
     }
 }

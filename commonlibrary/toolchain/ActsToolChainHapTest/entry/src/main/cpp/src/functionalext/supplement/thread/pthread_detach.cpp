@@ -37,7 +37,7 @@ void pthread_detach_0100(void)
 {
     pthread_t pid;
     flag = 0;
-    pthread_create(&pid, NULL, threadfunc, NULL);
+    pthread_create(&pid, nullptr, threadfunc, nullptr);
     pthread_detach(pid);
     EXPECT_EQ("pthread_detach_0100", flag, 0);
     sleep(SLEEPTIME);

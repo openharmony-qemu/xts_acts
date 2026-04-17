@@ -80,12 +80,12 @@ void mtx_trylock_0200(void)
         return;
     }
     thrd_t tid2;
-    result = thrd_create(&tid2, threadfuncB, NULL);
+    result = thrd_create(&tid2, threadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
     }
-    result = thrd_join(tid2, NULL);
+    result = thrd_join(tid2, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
         return;

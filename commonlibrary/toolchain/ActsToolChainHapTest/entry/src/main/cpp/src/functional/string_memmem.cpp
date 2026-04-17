@@ -8,7 +8,7 @@
     const char *p = s tail; \
     const void *q = memmem(p, strlen(s), sub, strlen(sub)); \
     if (q) \
-        t_error("memmem("#s" "#tail", %d, "#sub", %d) returned str+%d, wanted 0\n",\
+        t_error("memmem("#s" "#tail", %d, "#sub", %d) returned str+%d, wanted 0\n", \
             strlen(s), strlen(sub), (int)(static_cast<const char *>(q) - p)); \
 }
 
@@ -23,19 +23,19 @@
 
 static int StringMemmemTestImpl(void)
 {
-    N("","a", "a")
-    N("a","a", "aa")
-    N("a","b", "b")
-    N("aa","b", "ab")
-    N("aa","a", "aaa")
-    N("aba","b", "bab")
-    N("abba","b", "bab")
-    N("abba","ba", "aba")
-    N("abc abc","d", "abcd")
-    N("0-1-2-3-4-5-6-7-8-9","", "-3-4-56-7-8-")
-    N("0-1-2-3-4-5-6-7-8-9","", "-3-4-5+6-7-8-")
-    N("_ _ _\xff_ _ _","\x7f_", "_\x7f_")
-    N("_ _ _\x7f_ _ _","\xff_", "_\xff_")
+    N("", "a", "a")
+    N("a", "a", "aa")
+    N("a", "b", "b")
+    N("aa", "b", "ab")
+    N("aa", "a", "aaa")
+    N("aba", "b", "bab")
+    N("abba", "b", "bab")
+    N("abba", "ba", "aba")
+    N("abc abc", "d", "abcd")
+    N("0-1-2-3-4-5-6-7-8-9", "", "-3-4-56-7-8-")
+    N("0-1-2-3-4-5-6-7-8-9", "", "-3-4-5+6-7-8-")
+    N("_ _ _\xff_ _ _", "\x7f_", "_\x7f_")
+    N("_ _ _\x7f_ _ _", "\xff_", "_\xff_")
 
     T("", "", 0)
     T("abcd", "", 0)

@@ -1,12 +1,14 @@
 #include <dlfcn.h>
 #include "test.h"
 
+#define TLS_ARRAY_SIZE 4
+
 struct TlsAlignItem {
     char *name;
     unsigned size;
     unsigned align;
     unsigned long addr;
-} t[4];
+} g_t[TLS_ARRAY_SIZE];
 
 static int CheckTlsAlign(TlsAlignItem *items, int count)
 {
@@ -31,14 +33,14 @@ static int TlsAlignDlopenTestImpl(int argc, char *argv[])
     h = dlopen("libtls_align_dso.so", RTLD_LAZY);
     if (!h) {
         // In this harness the standalone DSO may be unavailable; fallback to in-binary TLS data.
-        return CheckTlsAlign(t, 4);
+        return CheckTlsAlign(g_t, TLS_ARRAY_SIZE);
     }
     items = reinterpret_cast<TlsAlignItem *>(dlsym(h, "t"));
     if (!items) {
         dlclose(h);
-        return CheckTlsAlign(t, 4);
+        return CheckTlsAlign(g_t, TLS_ARRAY_SIZE);
     }
-    int rc = CheckTlsAlign(items, 4);
+    int rc = CheckTlsAlign(items, TLS_ARRAY_SIZE);
     dlclose(h);
     return rc;
 }

@@ -18,13 +18,13 @@
 
 static pthread_t g_pthd_1, g_pthd_2;
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     g_pthd_1 = pthread_self();
     return arg;
 }
 
-static void *threadfuncB(void *arg)
+static void *ThreadfuncB(void *arg)
 {
     pthread_t pth = pthread_self();
     int ret = pthread_equal(g_pthd_1, pth);
@@ -34,7 +34,7 @@ static void *threadfuncB(void *arg)
     return arg;
 }
 
-static void *threadfuncC(void *arg)
+static void *ThreadfuncC(void *arg)
 {
     int ret = pthread_equal(g_pthd_2, pthread_self());
     if (ret == 0) {
@@ -48,27 +48,27 @@ static void *threadfuncC(void *arg)
  * @tc.desc      : Compare two different threads
  * @tc.level     : Level 0
  */
-void pthread_equal_0100(void)
+void PthreadEqual0100(void)
 {
     pthread_t pthread1, pthread2;
     int result;
 
-    result = pthread_create(&pthread1, NULL, threadfuncA, NULL);
+    result = pthread_create(&pthread1, nullptr, ThreadfuncA, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
     }
-    result = pthread_create(&pthread2, NULL, threadfuncB, NULL);
+    result = pthread_create(&pthread2, nullptr, ThreadfuncB, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
     }
 
-    result = pthread_join(pthread1, NULL);
+    result = pthread_join(pthread1, nullptr);
     if (result != 0) {
         t_error("%s pthread_join failed, result is %d\n", __func__, result);
     }
-    pthread_join(pthread2, NULL);
+    pthread_join(pthread2, nullptr);
     if (result != 0) {
         t_error("%s pthread_join failed, result is %d\n", __func__, result);
     }
@@ -79,17 +79,17 @@ void pthread_equal_0100(void)
  * @tc.desc      : Compare the same thread
  * @tc.level     : Level 0
  */
-void pthread_equal_0200(void)
+void PthreadEqual0200(void)
 {
     int result;
 
-    result = pthread_create(&g_pthd_2, NULL, threadfuncC, NULL);
+    result = pthread_create(&g_pthd_2, nullptr, ThreadfuncC, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
     }
 
-    result = pthread_join(g_pthd_2, NULL);
+    result = pthread_join(g_pthd_2, nullptr);
     if (result != 0) {
         t_error("%s pthread_join failed, result is %d\n", __func__, result);
     }
@@ -97,15 +97,15 @@ void pthread_equal_0200(void)
 
 static int PthreadEqualTestImpl(int argc, char *argv[])
 {
-    pthread_equal_0100();
-    pthread_equal_0200();
+    PthreadEqual0100();
+    PthreadEqual0200();
     return g_tStatus;
 }
 
 int PthreadEqualTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return PthreadEqualTestImpl(1, libcArgv);
 }
 

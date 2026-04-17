@@ -21,29 +21,29 @@
 #include <pthread.h>
 #include "functionalext.h"
 
-static int count = 0;
+static int g_count = 0;
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
-static int threadfunc(void *arg)
+static int Threadfunc(void *arg)
 {
-    count++;
+    g_count++;
     return 0;
 }
 
 /**
- * @tc.name      : thrd_join_0100
+ * @tc.name      : ThrdJoin0100
  * @tc.desc      : Blocks current thread until it identified by thr finishes execution with no return value
  * @tc.level     : Level 0
  */
-void thrd_join_0100(void)
+void ThrdJoin0100(void)
 {
     thrd_t id;
     int result;
-    result = thrd_create(&id, threadfunc, nullptr);
+    result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -59,23 +59,23 @@ void thrd_join_0100(void)
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
- * @tc.name      : thrd_join_0200
+ * @tc.name      : ThrdJoin0200
  * @tc.desc      : Blocks current thread until it identified by thr finishes execution with return value
  * @tc.level     : Level 1
  */
-void thrd_join_0200(void)
+void ThrdJoin0200(void)
 {
     thrd_t id;
     int ret = 1;
     int result;
-    result = thrd_create(&id, threadfunc, nullptr);
+    result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -95,22 +95,22 @@ void thrd_join_0200(void)
         t_error("%s return value failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
- * @tc.name      : thrd_join_0300
+ * @tc.name      : ThrdJoin0300
  * @tc.desc      : Invalid parameter test
  * @tc.level     : Level 2
  */
-void thrd_join_0300(void)
+void ThrdJoin0300(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
-        t_error("thrd_join_0300: Error forking process");
+        t_error("ThrdJoin0300: Error forking process");
     } else if (pid == 0) {
         thrd_join(0, nullptr);
     } else {
@@ -118,16 +118,16 @@ void thrd_join_0300(void)
         waitpid(pid, &status, 0);
         if (WIFSIGNALED(status)) {
             int sig = WTERMSIG(status);
-            EXPECT_EQ("thrd_join_0300", SIGABRT, sig);
+            EXPECT_EQ("ThrdJoin0300", SIGABRT, sig);
         }
     }
 }
 
 static int ThrdJoinTestImpl(int argc, char *argv[])
 {
-    thrd_join_0100();
-    thrd_join_0200();
-    thrd_join_0300();
+    ThrdJoin0100();
+    ThrdJoin0200();
+    ThrdJoin0300();
     return g_tStatus;
 }
 

@@ -30,9 +30,11 @@
 #define LOCK_WAIT_MAX_TIME_COUNT (50)
 #define NSEC_TO_MS (1000000)
 #define TRYLOCK_FAIL (-2)
+#define SLEEP_MS_MULTIPLIER (10)
+#define THREAD_COUNT (2)
 
 static thrd_t g_thr;
-static int count = 0;
+static int g_count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static int TrylockWithTimeout(pthread_mutex_t *mutex)
@@ -50,7 +52,7 @@ static int TrylockWithTimeout(pthread_mutex_t *mutex)
             return TRYLOCK_FAIL;
         }
 
-        struct timespec req = { .tv_sec = 0, .tv_nsec = NSEC_TO_MS * 10 }; // 等待10毫秒
+        struct timespec req = { .tv_sec = 0, .tv_nsec = NSEC_TO_MS * SLEEP_MS_MULTIPLIER }; // 等待10毫秒
         nanosleep(&req, nullptr);
         
         sleepCount++;
@@ -60,11 +62,11 @@ static int TrylockWithTimeout(pthread_mutex_t *mutex)
     } while (1);
 }
 
-static int threadfuncA(void *arg)
+static int ThreadfuncA(void *arg)
 {
     pthread_mutex_t *mtx = (pthread_mutex_t *)arg;
     pthread_mutex_lock(mtx);
-    count++;
+    g_count++;
     thrd_t id = thrd_current();
     if (!(thrd_equal(id, g_thr))) {
         t_error("%s thrd_current failed", __func__);
@@ -73,11 +75,11 @@ static int threadfuncA(void *arg)
     thrd_exit(thrd_success);
 }
 
-static int threadfuncB(void *arg)
+static int ThreadfuncB(void *arg)
 {
     int result = TrylockWithTimeout(&g_mutex);
     if (result == LOCK_SUCCESS) {
-        count++;
+        g_count++;
         pthread_mutex_unlock(&g_mutex);
     } else if (result == LOCK_TIMEOUT) {
         t_error("Lock acquisition timed out.\n");
@@ -89,16 +91,16 @@ static int threadfuncB(void *arg)
 }
 
 /**
- * @tc.name      : thrd_equal_0100
+ * @tc.name      : ThrdEqual0100
  * @tc.desc      : Test that two threads have the same ID
  * @tc.level     : Level 0
  */
-void thrd_equal_0100(void)
+void ThrdEqual0100(void)
 {
     int result;
     pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&mtx);
-    result = thrd_create(&g_thr, threadfuncA, static_cast<void *>(&mtx));
+    result = thrd_create(&g_thr, ThreadfuncA, static_cast<void *>(&mtx));
     pthread_mutex_unlock(&mtx);
     pthread_mutex_destroy(&mtx);
     if (result != thrd_success) {
@@ -116,28 +118,28 @@ void thrd_equal_0100(void)
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
- * @tc.name      : thrd_equal_0200
+ * @tc.name      : ThrdEqual0200
  * @tc.desc      : Test that two threads have different ID
  * @tc.level     : Level 1
  */
-void thrd_equal_0200(void)
+void ThrdEqual0200(void)
 {
     thrd_t thr1, thr2;
     int result;
 
-    result = thrd_create(&thr1, threadfuncB, nullptr);
+    result = thrd_create(&thr1, ThreadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
-    result = thrd_create(&thr2, threadfuncB, NULL);
+    result = thrd_create(&thr2, ThreadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -160,26 +162,26 @@ void thrd_equal_0200(void)
         t_error("%s failed, thr2 and current thread equal", __func__);
     }
 
-    result = thrd_join(thr1, NULL);
+    result = thrd_join(thr1, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
 
-    result = thrd_join(thr2, NULL);
+    result = thrd_join(thr2, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 2) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != THREAD_COUNT) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 static int ThrdEqualTestImpl(int argc, char *argv[])
 {
-    thrd_equal_0100();
-    thrd_equal_0200();
+    ThrdEqual0100();
+    ThrdEqual0200();
     return g_tStatus;
 }
 

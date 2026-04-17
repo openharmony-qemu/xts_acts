@@ -21,16 +21,16 @@
 
 #define THRD_SLEEP_INVALID_PARAM -2
 
-static int count = 0;
+static int g_count = 0;
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
-static int threadfunc(void *arg)
+static int Threadfunc(void *arg)
 {
-    count++;
+    g_count++;
 
     struct timespec const *tl = (struct timespec const *)arg;
     if (thrd_sleep(tl, nullptr) != 0) {
@@ -45,13 +45,13 @@ static int threadfunc(void *arg)
  * @tc.desc      : Thread waits for 1s
  * @tc.level     : Level 0
  */
-void thrd_sleep_0100(void)
+void ThrdSleep0100(void)
 {
     int result;
     thrd_t id;
     struct timespec ts = {.tv_sec = 1};
 
-    result = thrd_create(&id, threadfunc, static_cast<void *>(&ts));
+    result = thrd_create(&id, Threadfunc, static_cast<void *>(&ts));
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -61,10 +61,10 @@ void thrd_sleep_0100(void)
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
@@ -72,7 +72,7 @@ void thrd_sleep_0100(void)
  * @tc.desc      : Negative value
  * @tc.level     : Level 1
  */
-void thrd_sleep_0200(void)
+void ThrdSleep0200(void)
 {
     struct timespec ts;
     ts.tv_sec = -1;
@@ -88,9 +88,9 @@ void thrd_sleep_0200(void)
  * @tc.desc      : Invalid parameter test
  * @tc.level     : Level 2
  */
-void thrd_sleep_0300(void)
+void ThrdSleep0300(void)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
     thrd_sleep(nullptr, nullptr);
 }
@@ -100,7 +100,7 @@ void thrd_sleep_0300(void)
  * @tc.desc      : Negative value
  * @tc.level     : Level 1
  */
-void thrd_sleep_time64_0200(void)
+void ThrdSleepTime640200(void)
 {
     struct timespec ts;
     ts.tv_sec = -1;
@@ -113,10 +113,10 @@ void thrd_sleep_time64_0200(void)
 
 static int ThrdSleepTestImpl(int argc, char *argv[])
 {
-    thrd_sleep_0100();
-    thrd_sleep_0200();
-    thrd_sleep_0300();
-    thrd_sleep_time64_0200();
+    ThrdSleep0100();
+    ThrdSleep0200();
+    ThrdSleep0300();
+    ThrdSleepTime640200();
     return g_tStatus;
 }
 

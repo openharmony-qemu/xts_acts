@@ -17,6 +17,9 @@
 
 #include "test.h"
 
+#define THREAD_COUNT 5
+#define SLEEP_SECONDS 3
+
 static const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdl_multithread_test_dso.so";
 static bool stop = false;
 
@@ -40,12 +43,12 @@ int DlMultithreadTestTest()
     pthread_t thd4;
     pthread_t thd5;
     void *res;
-    pthread_create(&thd1, NULL, dl_test, NULL);
-    pthread_create(&thd2, NULL, dl_test, NULL);
-    pthread_create(&thd3, NULL, dl_test, NULL);
-    pthread_create(&thd4, NULL, dl_test, NULL);
-    pthread_create(&thd5, NULL, dl_test, NULL);
-    sleep(3);
+    pthread_create(&thd1, nullptr, dl_test, nullptr);
+    pthread_create(&thd2, nullptr, dl_test, nullptr);
+    pthread_create(&thd3, nullptr, dl_test, nullptr);
+    pthread_create(&thd4, nullptr, dl_test, nullptr);
+    pthread_create(&thd5, nullptr, dl_test, nullptr);
+    sleep(SLEEP_SECONDS);
     stop = true;
     pthread_join(thd1, &res);
     pthread_join(thd2, &res);

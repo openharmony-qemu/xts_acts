@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include "functionalext.h"
 
+#define STR_LEN 10
 static const char *test_txt_path = "/data/storage/el2/base/cache/test.txt";
 static const char *file_txt_path = "/data/storage/el2/base/cache/file.txt";
 
@@ -36,7 +37,7 @@ void getline_0100(void)
     fseek(fp, 0, SEEK_SET);
 
     ssize_t read = getline(&line, &len, fp);
-    EXPECT_EQ("getline_0100", read, 10);
+    EXPECT_EQ("getline_0100", read, STR_LEN);
     EXPECT_STREQ("getline_0100", line, "helloworld");
 
     fclose(fp);

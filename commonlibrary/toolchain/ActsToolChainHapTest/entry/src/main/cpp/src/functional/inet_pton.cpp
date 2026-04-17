@@ -5,10 +5,15 @@
 #include <arpa/inet.h>
 #include "test.h"
 
+#define INVALID_AF 12345
+#define HEX_DIGIT_PAIR 2
+#define MAX_DIGIT 9
+#define HEX_WIDTH 10
+
 static int Digit(int c)
 {
     c -= '0';
-    if (c > 9) {
+    if (c > MAX_DIGIT) {
         c -= 'a' - '0' - 10;
     }
     return c;
@@ -18,8 +23,8 @@ static void Tobin(void *d, char *s)
 {
     int i;
     unsigned char *p = static_cast<unsigned char*>(d);
-    for (i = 0; s[2*i]; i++) {
-        p[i] = Digit(s[2*i]) * 16 + Digit(s[2*i+1]);
+    for (i = 0; s[HEX_DIGIT_PAIR*i]; i++) {
+        p[i] = Digit(s[HEX_DIGIT_PAIR*i]) * 16 + Digit(s[HEX_DIGIT_PAIR*i+1]);
     }
 }
 
@@ -28,11 +33,11 @@ static void Tohex(char *d, void *s, int n)
     int i;
     unsigned char *p = static_cast<unsigned char*>(s);
     for (i = 0; i < n; i++) {
-        sprintf(d + 2 * i, "%02x", p[i]);
+        sprintf(d + HEX_DIGIT_PAIR * i, "%02x", p[i]);
     }
 }
 
-#define V6(src,ret,hex) do{\
+#define V6(src,ret,hex) do { \
     int r; \
     char binaddr[16]={0}; \
     char hexaddr[40]={0}; \
@@ -56,10 +61,10 @@ static void Tohex(char *d, void *s, int n)
         t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s that is %s, want %s\n", txtaddr, hexaddr, hex); \
     if (strncmp(hex, "00000000000000000000ffff", 24) == 0 && !strchr(txtaddr, '.')) \
         t_error("inet_ntop(AF_INET6, <"#hex">, buf, size) got %s, should be ipv4 mapped\n", txtaddr); \
-}while(0);
+} while (0);
 
 // ret and hex are the results of inet_pton and inet_addr respectively
-#define V4(src,ret,hex) do{\
+#define V4(src,ret,hex) do { \
     int r; \
     uint32_t a; \
     struct in_addr in; \
@@ -84,24 +89,24 @@ static void Tohex(char *d, void *s, int n)
     Tobin(&a, hex); \
     if (inet_ntop(AF_INET, &a, buf, sizeof buf) != buf) \
         t_error("inet_ntop(AF_INET, <"#hex">, buf, size) did not return buf\n"); \
-    if (strcmp(buf,src)) \
+    if (strcmp(buf, src)) \
         t_error("inet_ntop(AF_INET, <"#hex">, buf, size) got %s, want %s\n", buf, src); \
     \
     in.s_addr = a; \
     p = inet_ntoa(in); \
     if (strcmp(p, src)) \
         t_error("inet_ntoa(<"#hex">) returned %s, want %s\n", p, src); \
-}while(0);
+} while (0);
 
 static int InetPtonTestImpl(void)
 {
 
 // errors
-if (inet_pton(12345, "", 0) != -1 || errno != EAFNOSUPPORT) {
+if (inet_pton(INVALID_AF, "", nullptr) != -1 || errno != EAFNOSUPPORT) {
     t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
 }
 errno=0;
-if (inet_ntop(AF_INET,"xxxx","",0) != 0 || errno != ENOSPC) {
+if (inet_ntop(AF_INET, "xxxx", "", 0) != 0 || errno != ENOSPC) {
     t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
 }
 errno=0;

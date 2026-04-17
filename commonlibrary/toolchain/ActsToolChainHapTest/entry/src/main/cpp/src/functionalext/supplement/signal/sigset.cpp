@@ -18,35 +18,39 @@
 
 #include "test.h"
 
-static int handler_count = 0;
-const int sig = SIGALRM;
+#define SUCCESS_CODE 0
+#define EXPECTED_HANDLER_COUNT 1
+#define INVALID_SIGNAL 99999
+
+static int g_handlerCount = 0;
+const int SIGNAL = SIGALRM;
 
 static void Handler(int sig)
 {
-    handler_count++;
+    g_handlerCount++;
 }
 
-int prepare(sigset_t *set)
+int Prepare(sigset_t *set)
 {
-    handler_count = 0;
+    g_handlerCount = 0;
 
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction old_act = {0};
-    int result = sigaction(sig, &act, &old_act);
+    struct sigaction oldAct = {0};
+    int result = sigaction(SIGNAL, &act, &oldAct);
     if (result != 0) {
         return result;
     }
 
-    if (handler_count != 0) {
+    if (g_handlerCount != SUCCESS_CODE) {
         return -1;
     }
 
-    result = raise(sig);
+    result = raise(SIGNAL);
     if (result != 0) {
         return result;
     }
 
-    if (handler_count != 1) {
+    if (g_handlerCount != EXPECTED_HANDLER_COUNT) {
         return -1;
     }
 
@@ -55,7 +59,7 @@ int prepare(sigset_t *set)
         return result;
     }
 
-    result = sigaddset(set, sig);
+    result = sigaddset(set, SIGNAL);
     if (result != 0) {
         return result;
     }
@@ -65,7 +69,7 @@ int prepare(sigset_t *set)
         return result;
     }
 
-    return 0;
+    return SUCCESS_CODE;
 }
 
 /**
@@ -73,10 +77,10 @@ int prepare(sigset_t *set)
  * @tc.desc      : modifies the disposition of the signal sig with a handler
  * @tc.level     : Level 0
  */
-void sigset_0100(void)
+void Sigset0100(void)
 {
     sigset_t set;
-    int result = prepare(&set);
+    int result = Prepare(&set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -87,7 +91,7 @@ void sigset_0100(void)
     }
 
     errno = 0;
-    sigset(sig, Handler);
+    sigset(SIGNAL, Handler);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -97,7 +101,7 @@ void sigset_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = sigismember(&set, sig);
+    result = sigismember(&set, SIGNAL);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -108,10 +112,10 @@ void sigset_0100(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_IGN
  * @tc.level     : Level 1
  */
-void sigset_0200(void)
+void Sigset0200(void)
 {
     sigset_t set;
-    int result = prepare(&set);
+    int result = Prepare(&set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -122,7 +126,7 @@ void sigset_0200(void)
     }
 
     errno = 0;
-    sigset(sig, SIG_IGN);
+    sigset(SIGNAL, SIG_IGN);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -132,7 +136,7 @@ void sigset_0200(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = sigismember(&set, sig);
+    result = sigismember(&set, SIGNAL);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -143,10 +147,10 @@ void sigset_0200(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_DFL
  * @tc.level     : Level 1
  */
-void sigset_0300(void)
+void Sigset0300(void)
 {
     sigset_t set;
-    int result = prepare(&set);
+    int result = Prepare(&set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -157,7 +161,7 @@ void sigset_0300(void)
     }
 
     errno = 0;
-    sigset(sig, SIG_DFL);
+    sigset(SIGNAL, SIG_DFL);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -167,7 +171,7 @@ void sigset_0300(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = sigismember(&set, sig);
+    result = sigismember(&set, SIGNAL);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -178,10 +182,10 @@ void sigset_0300(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_HOLD
  * @tc.level     : Level 1
  */
-void sigset_0400(void)
+void Sigset0400(void)
 {
     sigset_t set;
-    int result = prepare(&set);
+    int result = Prepare(&set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -192,7 +196,7 @@ void sigset_0400(void)
     }
 
     errno = 0;
-    sigset(sig, SIG_HOLD);
+    sigset(SIGNAL, SIG_HOLD);
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -202,7 +206,7 @@ void sigset_0400(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = sigismember(&set, sig);
+    result = sigismember(&set, SIGNAL);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -213,12 +217,12 @@ void sigset_0400(void)
  * @tc.desc      : modifies the disposition of the invalid signal sig
  * @tc.level     : Level 2
  */
-void sigset_0500(void)
+void Sigset0500(void)
 {
     errno = 0;
-    int sig = 99999;
+    int sig = INVALID_SIGNAL;
 
-    sigset(sig, SIG_DFL);
+    sigset(SIGNAL, SIG_DFL);
     if (errno == 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
@@ -226,11 +230,11 @@ void sigset_0500(void)
 
 static int SigsetTestImpl(int argc, char *argv[])
 {
-    sigset_0100();
-    sigset_0200();
-    sigset_0300();
-    sigset_0400();
-    sigset_0500();
+    Sigset0100();
+    Sigset0200();
+    Sigset0300();
+    Sigset0400();
+    Sigset0500();
 
     return T_STATUS;
 }

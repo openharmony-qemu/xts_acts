@@ -78,6 +78,6 @@ static int SetlinebufTestImpl(int argc, char *argv[])
 int SetlinebufTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SetlinebufTestImpl(1, libcArgv);
 }

@@ -17,48 +17,51 @@
 #include <threads.h>
 #include "functionalext.h"
 
-mtx_t mtx;
-cnd_t cnd;
-void cnd_waitfirst(void *arg)
+#define SUCCESS_CODE (0)
+#define SLEEP_SECONDS (2)
+
+static mtx_t g_mtx;
+static cnd_t cnd;
+void CndWaitfirst(void *arg)
 {
     int res = -1;
-    mtx_lock(&mtx);
-    res = cnd_wait(&cnd, &mtx);
-    EXPECT_EQ("cnd_wait_0100", res, thrd_success);
-    mtx_unlock(&mtx);
+    mtx_lock(&g_mtx);
+    res = cnd_wait(&cnd, &g_mtx);
+    EXPECT_EQ("CndWait0100", res, thrd_success);
+    mtx_unlock(&g_mtx);
 }
 
 /**
- * @tc.name      : cnd_wait_0100
+ * @tc.name      : CndWait0100
  * @tc.desc      : The parameter is valid and can block the calling thread and release the specified mutex
  * @tc.level     : Level 0
  */
-void cnd_wait_0100(void)
+void CndWait0100(void)
 {
     thrd_t id1;
     int ret;
     cnd_init(&cnd);
-    mtx_init(&mtx, 0);
-    ret = thrd_create(&id1, reinterpret_cast<thrd_start_t>(cnd_waitfirst), reinterpret_cast<void *>(1));
-    EXPECT_EQ("cnd_wait_0100", ret, 0);
-    sleep(2);
-    mtx_lock(&mtx);
+    mtx_init(&g_mtx, 0);
+    ret = thrd_create(&id1, reinterpret_cast<thrd_start_t>(CndWaitfirst), reinterpret_cast<void *>(1));
+    EXPECT_EQ("CndWait0100", ret, SUCCESS_CODE);
+    sleep(SLEEP_SECONDS);
+    mtx_lock(&g_mtx);
     cnd_signal(&cnd);
-    mtx_unlock(&mtx);
-    thrd_join(id1, NULL);
+    mtx_unlock(&g_mtx);
+    thrd_join(id1, nullptr);
     cnd_destroy(&cnd);
-    mtx_destroy(&mtx);
+    mtx_destroy(&g_mtx);
 }
 
-static int cnd_waitTest_with_args(int argc, char *argv[])
+static int CndWaitTestWithArgs(int argc, char *argv[])
 {
-    cnd_wait_0100();
+    CndWait0100();
     return g_tStatus;
 }
 
 int CndWaitTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
-    return cnd_waitTest_with_args(1, libcArgv);
+    char *libcArgv[] = { libcProg, nullptr };
+    return CndWaitTestWithArgs(1, libcArgv);
 }

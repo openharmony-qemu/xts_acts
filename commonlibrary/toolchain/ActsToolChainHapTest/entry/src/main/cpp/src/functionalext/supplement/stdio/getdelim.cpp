@@ -91,6 +91,6 @@ static int GetdelimTestImpl(int argc, char *argv[])
 int GetdelimTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return GetdelimTestImpl(1, libcArgv);
 }

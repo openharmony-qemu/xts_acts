@@ -18,49 +18,49 @@
 #include "functionalext.h"
 
 static pthread_spinlock_t g_lock = 0;
-static int count = 0;
+static int g_count = 0;
 
-static void *thread1(void *arg)
+static void *Thread1(void *arg)
 {
     int ret = pthread_spin_lock(&g_lock);
-    EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
-    ++count;
+    EXPECT_EQ("PthreadSpinUnlock0100", ret, CMPFLAG);
+    ++g_count;
     ret = pthread_spin_unlock(&g_lock);
-    EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
-    EXPECT_EQ("pthread_spin_unlock_0100", count, 1);
+    EXPECT_EQ("PthreadSpinUnlock0100", ret, CMPFLAG);
+    EXPECT_EQ("PthreadSpinUnlock0100", g_count, 1);
     return const_cast<char *>("success");
 }
 
 /**
- * @tc.name      : pthread_spin_unlock_0100
+ * @tc.name      : PthreadSpinUnlock0100
  * @tc.desc      : Verify that the spin lock releases the lock successfully under multi-threading
  * @tc.level     : Level 0
  */
-void pthread_spin_unlock_0100(void)
+void PthreadSpinUnlock0100(void)
 {
     pthread_t thread;
     void *rev;
 
     int ret = pthread_spin_init(&g_lock, PTHREAD_PROCESS_PRIVATE);
 
-    EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
-    ret = pthread_create(&thread, nullptr, thread1, nullptr);
+    EXPECT_EQ("PthreadSpinUnlock0100", ret, CMPFLAG);
+    ret = pthread_create(&thread, nullptr, Thread1, nullptr);
     if (ret != 0) {
-        EXPECT_EQ("pthread_spin_unlock_0100", ret, CMPFLAG);
+        EXPECT_EQ("PthreadSpinUnlock0100", ret, CMPFLAG);
         pthread_spin_destroy(&g_lock);
         return;
     }
 
     pthread_join(thread, &rev);
-    EXPECT_STREQ("pthread_spin_unlock_0100", (char *)rev, "success");
-    EXPECT_EQ("pthread_spin_unlock_0100", count, 1);
+    EXPECT_STREQ("PthreadSpinUnlock0100", (char *)rev, "success");
+    EXPECT_EQ("PthreadSpinUnlock0100", g_count, 1);
 
     pthread_spin_destroy(&g_lock);
 }
 
 static int PthreadSpinUnlockTestImpl(void)
 {
-    pthread_spin_unlock_0100();
+    PthreadSpinUnlock0100();
     return g_tStatus;
 }
 

@@ -60,6 +60,6 @@ static int GetcTestImpl(int argc, char *argv[])
 int GetcTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return GetcTestImpl(1, libcArgv);
 }

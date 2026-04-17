@@ -2,8 +2,9 @@
 #include <string.h>
 #include "test.h"
 
+#define SLEEP_NSEC 1000000
 #define TEST(r, f, m) ( \
-    ((r) = (f)) == 0 || (t_error("%s failed: %s (" m ")\n", #f, strerror(r)), 0) )
+    ((r) = (f)) == 0 || (t_error("%s failed: %s (" m ")\n", #f, strerror(r)), 0))
 
 
 static void *start_signal(void *arg)
@@ -41,10 +42,10 @@ static int PthreadCondTestImpl(void)
     int foo[1];
 
     /* Condition variables */
-    TEST(r, pthread_mutex_init(&mtx, 0), "");
-    TEST(r, pthread_cond_init(&cond, 0), "");
+    TEST(r, pthread_mutex_init(&mtx, nullptr), "");
+    TEST(r, pthread_cond_init(&cond, nullptr), "");
     TEST(r, pthread_mutex_lock(&mtx), "");
-    TEST(r, pthread_create(&td, 0, start_signal, (void *[]){ &cond, &mtx }), "");
+    TEST(r, pthread_create(&td, nullptr, start_signal, (void *[]){ &cond, &mtx }), "");
     TEST(r, pthread_cond_wait(&cond, &mtx), "");
     TEST(r, pthread_join(td, &res), "");
     TEST(r, pthread_mutex_unlock(&mtx), "");
@@ -60,7 +61,7 @@ static int PthreadCondTestImpl(void)
     TEST(r, pthread_create(&td2, nullptr, start_wait, (void *[]){ &cond, &mtx, foo }), "");
     TEST(r, pthread_create(&td3, nullptr, start_wait, (void *[]){ &cond, &mtx, foo }), "");
     TEST(r, pthread_mutex_unlock(&mtx), "");
-    struct timespec ts1 = {0}; ts1.tv_nsec = 1000000; nanosleep(&ts1, nullptr);
+    struct timespec ts1 = {0}; ts1.tv_nsec = SLEEP_NSEC; nanosleep(&ts1, nullptr);
     foo[0] = 0;
     TEST(r, pthread_mutex_lock(&mtx), "");
     TEST(r, pthread_cond_signal(&cond), "");
@@ -86,7 +87,7 @@ static int PthreadCondTestImpl(void)
     TEST(r, pthread_create(&td2, nullptr, start_wait, (void *[]){ &cond, &mtx, foo }), "");
     TEST(r, pthread_create(&td3, nullptr, start_wait, (void *[]){ &cond, &mtx, foo }), "");
     TEST(r, pthread_mutex_unlock(&mtx), "");
-    struct timespec ts2 = {0}; ts2.tv_nsec = 1000000; nanosleep(&ts2, nullptr);
+    struct timespec ts2 = {0}; ts2.tv_nsec = SLEEP_NSEC; nanosleep(&ts2, nullptr);
     TEST(r, pthread_mutex_lock(&mtx), "");
     foo[0] = 0;
     TEST(r, pthread_mutex_unlock(&mtx), "");

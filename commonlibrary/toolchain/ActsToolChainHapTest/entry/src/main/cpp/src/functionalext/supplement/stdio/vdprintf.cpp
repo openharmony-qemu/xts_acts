@@ -83,6 +83,6 @@ static int VdprintfTestImpl(int argc, char *argv[])
 int VdprintfTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return VdprintfTestImpl(1, libcArgv);
 }

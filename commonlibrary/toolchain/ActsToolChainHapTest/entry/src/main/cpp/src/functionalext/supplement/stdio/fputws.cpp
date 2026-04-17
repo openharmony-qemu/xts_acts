@@ -51,10 +51,10 @@ void fputws_0200(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
     FILE *fptr = fopen(ptr, "w+");
-    EXPECT_TRUE("fputws_0200", fptr != NULL);
+    EXPECT_TRUE("fputws_0200", fptr != nullptr);
     fclose(fptr);
     fptr = fopen(ptr, "r");
-    EXPECT_TRUE("fputws_0200", fptr != NULL);
+    EXPECT_TRUE("fputws_0200", fptr != nullptr);
     int ret = fputws(L"this is the test", fptr);
     EXPECT_EQ("fputws_0200", ret, FAILED);
     fclose(fptr);

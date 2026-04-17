@@ -22,6 +22,10 @@
 #define LEN 8192
 #define PAGE_SIZE 4096
 #define STR_COPY_LEN 8
+#define MEMCPY_LEN 8
+#define MEMCPY_OFFSET_4 4
+#define REMAP_PAGE_INDEX 0
+#define REMAP_PAGE_INDEX_1 1
 static const char *path = "/data/storage/el2/base/cache/remap_file_pages.txt";
 static const char *text =
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -125,30 +129,30 @@ void remap_file_pages_0100(void)
         t_error("%s mmap failed\n", __func__);
     }
 
-    memcpy(str, start, 8);
+    memcpy(str, start, MEMCPY_LEN);
     if (strcmp(str, "aaaaaaaa")) {
         t_error("%s str should be equal\n", __func__);
     }
 
-    memcpy(str, start + 4096, 8);
+    memcpy(str, start + PAGE_SIZE, MEMCPY_LEN);
     if (strcmp(str, "bbbbbbbb")) {
         t_error("%s str should be equal\n", __func__);
     }
 
-    memcpy(str, start + 4096 - 4, 8);
+    memcpy(str, start + PAGE_SIZE - MEMCPY_OFFSET_4, MEMCPY_LEN);
     if (strcmp(str, "aaaabbbb")) {
         t_error("%s str should be equal\n", __func__);
     }
 
     // Remap the second page of the file to the start position
-    int result = remap_file_pages(start, LEN >> 1, 0, 1, MAP_SHARED);
+    int result = remap_file_pages(start, LEN >> 1, 0, REMAP_PAGE_INDEX_1, MAP_SHARED);
     if (result < 0) {
         munmap(start, LEN);
         close(fd);
         t_error("%s remap_file_pages failed\n", __func__);
     }
     // Remap the first page of the file to the position of start+PAGE_SIZE
-    result = remap_file_pages(start + PAGE_SIZE, LEN >> 1, 0, 0, MAP_SHARED);
+    result = remap_file_pages(start + PAGE_SIZE, LEN >> 1, 0, REMAP_PAGE_INDEX, MAP_SHARED);
     if (result < 0) {
         munmap(start, LEN);
         close(fd);

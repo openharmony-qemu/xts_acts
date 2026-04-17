@@ -30,9 +30,10 @@
 #define LOCK_WAIT_MAX_TIME_COUNT (50)
 #define NSEC_TO_MS (1000000)
 #define TRYLOCK_FAIL (-2)
+#define THREAD_COUNT (2)
 
 static thrd_t g_thr;
-static int count = 0;
+static int g_count = 0;
 static pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 int TrylockWithTimeout(pthread_mutex_t *mutex)
@@ -51,7 +52,7 @@ int TrylockWithTimeout(pthread_mutex_t *mutex)
         }
 
         struct timespec req = { .tv_sec = 0, .tv_nsec = NSEC_TO_MS * 10 }; // 等待10毫秒
-        nanosleep(&req, NULL);
+        nanosleep(&req, nullptr);
         
         sleepCount++;
         if (sleepCount >= LOCK_WAIT_MAX_TIME_COUNT) {
@@ -62,7 +63,7 @@ int TrylockWithTimeout(pthread_mutex_t *mutex)
 
 static int threadfuncA(void *arg)
 {
-    count++;
+    g_count++;
     thrd_t id = thrd_current();
     if (!(thrd_equal(id, g_thr))) {
         t_error("%s thrd_current failed", __func__);
@@ -75,7 +76,7 @@ static int threadfuncB(void *arg)
 {
     int result = TrylockWithTimeout(&g_mutex);
     if (result == LOCK_SUCCESS) {
-        count++;
+        g_count++;
         pthread_mutex_unlock(&g_mutex);
     } else if (result == LOCK_TIMEOUT) {
         t_error("Lock acquisition timed out.\n");
@@ -95,26 +96,26 @@ void thrd_current_0100(void)
 {
     int result;
 
-    result = thrd_create(&g_thr, threadfuncA, NULL);
+    result = thrd_create(&g_thr, threadfuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
 
-    result = thrd_join(g_thr, NULL);
+    result = thrd_join(g_thr, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
@@ -127,18 +128,18 @@ void thrd_current_0200(void)
     thrd_t thr1, thr2;
     int result;
 
-    result = thrd_create(&thr1, threadfuncB, NULL);
+    result = thrd_create(&thr1, threadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
-    result = thrd_create(&thr2, threadfuncB, NULL);
+    result = thrd_create(&thr2, threadfuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
     struct timespec sleepTime = {.tv_sec = 1};
-    result = thrd_sleep(&sleepTime, NULL);
+    result = thrd_sleep(&sleepTime, nullptr);
     if (result != 0) {
         t_error("%s thrd_sleep failed", __func__);
     }
@@ -155,20 +156,20 @@ void thrd_current_0200(void)
         t_error("%s equal", __func__);
     }
 
-    result = thrd_join(thr1, NULL);
+    result = thrd_join(thr1, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
 
-    result = thrd_join(thr2, NULL);
+    result = thrd_join(thr2, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 2) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != THREAD_COUNT) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 static int ThrdCurrentTestImpl(int argc, char *argv[])
@@ -181,6 +182,6 @@ static int ThrdCurrentTestImpl(int argc, char *argv[])
 int ThrdCurrentTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return ThrdCurrentTestImpl(1, libcArgv);
 }

@@ -61,6 +61,6 @@ static int GetcharUnlockedTestImpl(int argc, char *argv[])
 int GetcharUnlockedTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return GetcharUnlockedTestImpl(1, libcArgv);
 }

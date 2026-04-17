@@ -3,15 +3,22 @@
 #include <unistd.h>
 #include "test.h"
 
+#define BUFFER_SIZE 512
+#define STATUS_ACTIVE 1
+#define OFFSET_1 1
+#define OFFSET_2 2
+#define OFFSET_3 3
+#define OFFSET_4 4
+
 volatile int t_status = 0;
 
 int t_printf(const char *s, ...)
 {
     va_list ap;
-    char buf[512];
+    char buf[BUFFER_SIZE];
     int n;
 
-    t_status = 1;
+    t_status = STATUS_ACTIVE;
     va_start(ap, s);
     n = vsnprintf(buf, sizeof buf, s, ap);
     va_end(ap);
@@ -20,10 +27,10 @@ int t_printf(const char *s, ...)
     }
     else if (n >= sizeof buf) {
         n = sizeof buf;
-        buf[n - 1] = '\n';
-        buf[n - 2] = '.';
-        buf[n - 3] = '.';
-        buf[n - 4] = '.';
+        buf[n - OFFSET_1] = '\n';
+        buf[n - OFFSET_2] = '.';
+        buf[n - OFFSET_3] = '.';
+        buf[n - OFFSET_4] = '.';
     }
     return write(1, buf, n);
 }

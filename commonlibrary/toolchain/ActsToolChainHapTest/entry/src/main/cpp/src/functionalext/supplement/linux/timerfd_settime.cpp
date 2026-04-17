@@ -24,17 +24,17 @@
 #define MICROSECONDS (1000000)
 #define DATA_TWO (2)
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
 /**
- * @tc.name      : timerfd_settime_0100
+ * @tc.name      : TimerfdSettime0100
  * @tc.desc      : Start the timer specified by fd
  * @tc.level     : Level 0
  */
-void timerfd_settime_0100(void)
+void TimerfdSettime0100(void)
 {
     struct itimerspec its = {{0, 0}, {DATA_TWO, 0}};
     struct itimerspec val;
@@ -69,23 +69,23 @@ void timerfd_settime_0100(void)
 }
 
 /**
- * @tc.name      : timerfd_settime_0200
+ * @tc.name      : TimerfdSettime0200
  * @tc.desc      : arms the timer with invalid parameters
  * @tc.level     : Level 2
  */
-void timerfd_settime_0200(void)
+void TimerfdSettime0200(void)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
     timerfd_settime(-1, 0, nullptr, nullptr);
 }
 
 /**
- * @tc.name      : timerfd_settime64_0100
+ * @tc.name      : TimerfdSettime640100
  * @tc.desc      : Start the timer specified by fd
  * @tc.level     : Level 0
  */
-void timerfd_settime64_0100(void)
+void TimerfdSettime640100(void)
 {
     struct itimerspec its = {{0, 0}, {DATA_TWO, 0}};
     struct itimerspec val;
@@ -121,9 +121,9 @@ void timerfd_settime64_0100(void)
 
 static int TimerfdSettimeTestImpl(int argc, char *argv[])
 {
-    timerfd_settime_0100();
-    timerfd_settime_0200();
-    timerfd_settime64_0100();
+    TimerfdSettime0100();
+    TimerfdSettime0200();
+    TimerfdSettime640100();
     return T_STATUS;
 }
 

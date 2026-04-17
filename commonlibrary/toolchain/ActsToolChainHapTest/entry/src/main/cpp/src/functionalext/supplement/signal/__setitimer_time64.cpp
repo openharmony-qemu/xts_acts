@@ -20,27 +20,31 @@
 #include "test.h"
 #include "time64_functions.h"
 
-static int count = 0;
+#define COUNT_THRESHOLD 1
+#define TIMER_SEC 0
+#define TIMER_USEC 100000
 
-static void expireTimer(int signo)
+static int g_count = 0;
+
+static void ExpireTimer(int signo)
 {
     struct itimerval val;
-    count++;
-    if (count > 1) {
+    g_count++;
+    if (g_count > COUNT_THRESHOLD) {
         getitimer(signo, &val);
-        val.it_value.tv_sec = 0;
-        val.it_value.tv_usec = 0;
+        val.it_value.tv_sec = TIMER_SEC;
+        val.it_value.tv_usec = TIMER_SEC;
         __setitimer_time64(signo, &val, nullptr);
-        count = 0;
+        g_count = 0;
     }
 }
 
-static void signalHandler(int signo)
+static void SignalHandler(int signo)
 {
     switch (signo) {
         case SIGALRM:
             printf("catch a SIGALRM signal\n");
-            expireTimer(signo);
+            ExpireTimer(signo);
             break;
         case SIGVTALRM:
             printf("catch a SIGVTALRM signal\n");
@@ -55,29 +59,29 @@ static void signalHandler(int signo)
 }
 
 /**
- * @tc.name      : setitimer_time64_0100
+ * @tc.name      : SetitimerTime640100
  * @tc.desc      : Set value of an interval timer
  * @tc.level     : Level 0
  */
-void setitimer_time64_0100(void)
+void SetitimerTime640100(void)
 {
-    signal(SIGALRM, signalHandler);
+    signal(SIGALRM, SignalHandler);
     struct itimerval it;
     memset(&it, 0, sizeof(it));
 
-    it.it_value.tv_sec = 0;
-    it.it_value.tv_usec = 100000;
-    it.it_interval.tv_sec = 0;
-    it.it_interval.tv_usec = 100000;
+    it.it_value.tv_sec = TIMER_SEC;
+    it.it_value.tv_usec = TIMER_USEC;
+    it.it_interval.tv_sec = TIMER_SEC;
+    it.it_interval.tv_usec = TIMER_USEC;
 
     if (__setitimer_time64(ITIMER_REAL, &it, nullptr)) {
         t_error("%s set timer failed", __func__);
     }
 }
 
-static int __setitimer_time64Test_with_args(int argc, char *argv[])
+static int __setitimerTime64TestWithArgs(int argc, char *argv[])
 {
-    setitimer_time64_0100();
+    SetitimerTime640100();
     return T_STATUS;
 }
 
@@ -85,5 +89,5 @@ int __setitimer_time64Test(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return __setitimer_time64Test_with_args(1, libcArgv);
+    return __setitimerTime64TestWithArgs(1, libcArgv);
 }

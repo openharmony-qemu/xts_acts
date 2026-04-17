@@ -117,6 +117,6 @@ static int FwriteTestImpl(int argc, char *argv[])
 int FwriteTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FwriteTestImpl(1, libcArgv);
 }

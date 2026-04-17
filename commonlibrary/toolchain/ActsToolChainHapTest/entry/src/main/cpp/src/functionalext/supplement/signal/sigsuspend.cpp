@@ -37,7 +37,7 @@ void sigsuspend_0100(void)
 
     int sig = SIGALRM;
     sigaddset(&set, sig);
-    sigprocmask(SIG_BLOCK, &set, NULL);
+    sigprocmask(SIG_BLOCK, &set, nullptr);
 
     int flags = 0;
     struct sigaction act = {.sa_flags = flags, .sa_handler = Handler};

@@ -52,7 +52,7 @@ void cnd_broadcast_0100(void)
     }
 
     for (i = 0; i < N; ++i) {
-        if (thrd_create(&ids[i], child_wait, NULL) != thrd_success) {
+        if (thrd_create(&ids[i], child_wait, nullptr) != thrd_success) {
             t_error("%s thrd_create failed\n", __func__);
         }
     }
@@ -69,7 +69,7 @@ void cnd_broadcast_0100(void)
         }
         {
             struct timespec sleepTime = {.tv_nsec = 100 * 1000 * 1000};
-            thrd_sleep(&sleepTime, NULL);
+            thrd_sleep(&sleepTime, nullptr);
         }
     }
 

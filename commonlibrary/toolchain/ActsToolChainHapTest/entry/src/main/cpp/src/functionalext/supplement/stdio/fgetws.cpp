@@ -77,6 +77,6 @@ static int FgetwsTestImpl(int argc, char *argv[])
 int FgetwsTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FgetwsTestImpl(1, libcArgv);
 }

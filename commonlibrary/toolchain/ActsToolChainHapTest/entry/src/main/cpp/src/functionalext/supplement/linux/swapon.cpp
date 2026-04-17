@@ -57,6 +57,6 @@ static int SwaponTestImpl(int argc, char *argv[])
 int SwaponTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SwaponTestImpl(1, libcArgv);
 }

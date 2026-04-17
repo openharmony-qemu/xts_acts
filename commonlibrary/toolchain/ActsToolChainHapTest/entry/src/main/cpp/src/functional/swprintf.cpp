@@ -13,11 +13,11 @@
 
 #define TEST(r, f, x, m) ( \
     ((r) = (f)) == (x) || \
-    (t_error("%s failed (" m ")\n", #f, r, x), 0) )
+    (t_error("%s failed (" m ")\n", #f, r, x), 0))
 
 #define TEST_S(s, x, m) ( \
-    !wcscmp((s),(x)) || \
-    (t_error("[%ls] != [%ls] (%s)\n", s, x, m), 0) )
+    !wcscmp((s), (x)) || \
+    (t_error("[%ls] != [%ls] (%s)\n", s, x, m), 0))
 
 static const struct {
     const wchar_t *fmt;
@@ -53,7 +53,7 @@ static const struct {
     { L"%o", 15, L"17" },
     { L"%#o", 15, L"017" },
 
-    { NULL, 0, NULL }
+    { nullptr, 0, nullptr }
 };
 
 static const struct {
@@ -93,7 +93,7 @@ static const struct {
     { L"%.0f", 340282366920938463463374607431768211456.0,
              L"340282366920938463463374607431768211456" },
 
-    { NULL, 0.0, NULL }
+    { nullptr, 0.0, nullptr }
 };
 
 static int SwprintfTestImpl(void)
@@ -112,7 +112,7 @@ static int SwprintfTestImpl(void)
 
     TEST(i, strcmp(nl_langinfo(CODESET), "UTF-8"), 0, "no UTF-8 locale; tests might fail");
 
-    TEST(i, swprintf(0, 0, L"%d", 123456) < 0, 1, "%d != %d");
+    TEST(i, swprintf(nullptr, 0, L"%d", 123456) < 0, 1, "%d != %d");
 
     TEST(i, swprintf(b, 2, L"%lc", 0xc0), 1, "%d != %d");
     TEST(i, b[0], 0xc0, "wrong character %x != %x");

@@ -101,6 +101,6 @@ static int FputwcTestImpl(int argc, char *argv[])
 int FputwcTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FputwcTestImpl(1, libcArgv);
 }

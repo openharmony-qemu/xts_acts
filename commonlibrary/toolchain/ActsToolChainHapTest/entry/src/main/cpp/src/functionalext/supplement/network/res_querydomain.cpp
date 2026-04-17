@@ -61,6 +61,6 @@ static int ResQuerydomainTestImpl(int argc, char *argv[])
 int ResQuerydomainTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return ResQuerydomainTestImpl(1, libcArgv);
 }

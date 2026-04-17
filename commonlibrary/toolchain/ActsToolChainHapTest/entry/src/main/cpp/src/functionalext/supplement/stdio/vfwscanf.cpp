@@ -23,6 +23,9 @@
 #include <wchar.h>
 #include "test.h"
 
+#define ARRAY_SIZE 5
+#define STR_LEN 5
+
 static void deal_aberrant(int code)
 {
     if (code != SIGSEGV) {
@@ -50,16 +53,16 @@ void vfwscanf_0100(void)
     setlocale(LC_ALL, "en_US.UTF-8");
 
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
-    wchar_t names[5][5] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
+    wchar_t names[ARRAY_SIZE][STR_LEN] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
     FILE *fp = fopen("/data/storage/el2/base/cache/example.txt", "w+");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
         fwprintf(fp, L"%lc %ls ", symbol[i], names[i]);
     }
     rewind(fp);
 
-    wchar_t ch, str[5];
-    for (int i = 0; i < 5; i++) {
+    wchar_t ch, str[STR_LEN];
+    for (int i = 0; i < ARRAY_SIZE; i++) {
         read_from_file(fp, L"%lc %ls ", &ch, str);
         if (wcscmp(str, names[i]) != 0) {
             t_error("%s vfwscanf in %d get result is %ls are not want %ls\n", __func__, i, str, names[i]);
@@ -78,7 +81,7 @@ void vfwscanf_0100(void)
 void vfwscanf_0200(void)
 {
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
-    wchar_t names[5][5] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
+    wchar_t names[ARRAY_SIZE][STR_LEN] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
     signal(SIGSEGV, deal_aberrant);
     read_from_file(nullptr, symbol, names);
 }

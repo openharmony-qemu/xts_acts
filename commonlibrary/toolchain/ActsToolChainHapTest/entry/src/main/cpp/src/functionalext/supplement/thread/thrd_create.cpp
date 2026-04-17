@@ -18,32 +18,32 @@
 #include <threads.h>
 #include "test.h"
 
-static int count = 0;
-const char *src = "Hello";
+static int g_count = 0;
+const char *g_src = "Hello";
 
-static void exception_handler(int sig)
+static void ExceptionHandler(int sig)
 {
     exit(g_tStatus);
 }
 
-static int threadfunc(void *arg)
+static int Threadfunc(void *arg)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
-    count++;
+    g_count++;
     thrd_exit(thrd_success);
 }
 
 /**
- * @tc.name      : thrd_create_0100
+ * @tc.name      : ThrdCreate0100
  * @tc.desc      : Creates a new thread executing the function func
  * @tc.level     : Level 0
  */
-void thrd_create_0100(void)
+void ThrdCreate0100(void)
 {
     thrd_t id;
     int result;
-    result = thrd_create(&id, threadfunc, nullptr);
+    result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -59,23 +59,23 @@ void thrd_create_0100(void)
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
 
-    count = 0;
+    g_count = 0;
 }
 
 /**
- * @tc.name      : thrd_create_0200
+ * @tc.name      : ThrdCreate0200
  * @tc.desc      : Creates a new thread executing the function func(arg)
  * @tc.level     : Level 1
  */
-void thrd_create_0200(void)
+void ThrdCreate0200(void)
 {
     thrd_t id;
     int result;
-    result = thrd_create(&id, threadfunc, (char *)src);
+    result = thrd_create(&id, Threadfunc, (char *)g_src);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -91,27 +91,27 @@ void thrd_create_0200(void)
         t_error("%s thrd_join failed", __func__);
     }
 
-    if (count != 1) {
-        t_error("%s failed, count is %d", __func__, count);
+    if (g_count != 1) {
+        t_error("%s failed, g_count is %d", __func__, g_count);
     }
-    count = 0;
+    g_count = 0;
 }
 
 /**
- * @tc.name      : thrd_create_0300
+ * @tc.name      : ThrdCreate0300
  * @tc.desc      : exception test
  * @tc.level     : Level 2
  */
-void thrd_create_0300(void)
+void ThrdCreate0300(void)
 {
-    thrd_create(nullptr, threadfunc, nullptr);
+    thrd_create(nullptr, Threadfunc, nullptr);
 }
 
 static int ThrdCreateTestImpl(int argc, char *argv[])
 {
-    thrd_create_0100();
-    thrd_create_0200();
-    thrd_create_0300();
+    ThrdCreate0100();
+    ThrdCreate0200();
+    ThrdCreate0300();
     return g_tStatus;
 }
 

@@ -6,6 +6,8 @@
 #include <search.h>
 #include "test.h"
 
+#define TABLE_SIZE 100
+
 struct e {
     char *k;
     int v;
@@ -13,7 +15,7 @@ struct e {
 
 static int count;
 static void *root;
-static struct e tab[100];
+static struct e tab[TABLE_SIZE];
 static struct e *cur = tab;
 
 static int cmp(const void *a, const void *b)

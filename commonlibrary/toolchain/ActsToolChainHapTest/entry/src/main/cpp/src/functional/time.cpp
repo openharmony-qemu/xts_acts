@@ -7,6 +7,12 @@
 #include <limits.h>
 #include "test.h"
 
+#define TM_BUFFER_COUNT 4
+#define TM_BUFFER_SIZE 64
+#define TIME_OFFSET 100003
+#define TIME_TEST_LIMIT 1000
+#define MKTIME_FAILURE -1
+
 /* We use this instead of memcmp because some broken C libraries
  * add additional nonstandard fields to struct tm... */
 
@@ -26,8 +32,8 @@ int tm_cmp(struct tm tm1, struct tm tm2)
 char *tm_str(struct tm tm)
 {
     static int i;
-    static char b[4][64];
-    i = (i + 1) % 4;
+    static char b[TM_BUFFER_COUNT][TM_BUFFER_SIZE];
+    i = (i + 1) % TM_BUFFER_COUNT;
     snprintf(b[i], sizeof b[i],
         "s=%02d m=%02d h=%02d mday=%02d mon=%02d year=%04d wday=%d yday=%d isdst=%d",
         tm.tm_sec, tm.tm_min, tm.tm_hour,
@@ -37,8 +43,8 @@ char *tm_str(struct tm tm)
 }
 
 #define TM(ss,mm,hh,md,mo,yr,wd,yd,dst) (struct tm){ \
-    .tm_sec = ss, .tm_min = mm, .tm_hour = hh,    \
-    .tm_mday = md, .tm_mon = mo, .tm_year = yr,    \
+    .tm_sec = ss, .tm_min = mm, .tm_hour = hh, \
+    .tm_mday = md, .tm_mon = mo, .tm_year = yr, \
     .tm_wday = wd, .tm_yday = yd, .tm_isdst = dst }
 
 struct tm tm_epoch = {0,0,0,1,0,70,4,0,0};
@@ -76,7 +82,7 @@ static void tm2sec(struct tm *tm, int big, char *m)
 
     errno = 0;
     t = mktime(tm);
-    if (overflow && t != -1) {
+    if (overflow && t != MKTIME_FAILURE) {
         t_error("%s: mktime(%s) expected -1, got (time_t)%ld\n",
             m, tm_str(*tm), static_cast<long>(t));
     }
@@ -84,7 +90,7 @@ static void tm2sec(struct tm *tm, int big, char *m)
         t_error("%s: mktime(%s) expected EOVERFLOW (%s), got (%s)\n",
             m, tm_str(*tm), strerror(EOVERFLOW), strerror(errno));
     }
-    if (!overflow && t == -1) {
+    if (!overflow && t == MKTIME_FAILURE) {
         t_error("%s: mktime(%s) expected success, got (time_t)-1\n",
             m, tm_str(*tm));
     }
@@ -110,8 +116,8 @@ static int TimeTestImpl(void)
     tm2sec(&tm_y2038, 1, "2038");
 
     sec2tm(0, "EPOCH");
-    for (t = 1; t < 1000; t++) {
-        sec2tm(t * 100003, "EPOCH+eps");
+    for (t = 1; t < TIME_TEST_LIMIT; t++) {
+        sec2tm(t * TIME_OFFSET, "EPOCH+eps");
     }
 
     /* FIXME: set a TZ var and check DST boundary conditions */

@@ -20,6 +20,9 @@
 #include "filepath_util.h"
 
 #define BUFF_SIZE (20)
+#define TEE_BUFFER_SIZE 32768
+#define FILE_PERMISSIONS 0666
+#define FAILURE_CODE -1
 
 /**
  * @tc.name      : tee_0100
@@ -35,24 +38,24 @@ void tee_0100(void)
 
     int pipefd1[2];
     result = pipe(pipefd1);
-    if (result == -1) {
+    if (result == FAILURE_CODE) {
         t_error("%s pipe stdout failed\n", __func__);
     }
-    if (write(pipefd1[1], text, strlen(text)) == -1) {
+    if (write(pipefd1[1], text, strlen(text)) == FAILURE_CODE) {
         t_error("%s write failed\n", __func__);
     }
 
     int pipefd2[2];
     result = pipe(pipefd2);
-    if (result == -1) {
+    if (result == FAILURE_CODE) {
         t_error("%s pipe file failed\n", __func__);
     }
 
-    result = tee(pipefd1[0], pipefd2[1], 32768, SPLICE_F_NONBLOCK);
-    if (result == -1) {
+    result = tee(pipefd1[0], pipefd2[1], TEE_BUFFER_SIZE, SPLICE_F_NONBLOCK);
+    if (result == FAILURE_CODE) {
         t_error("%s tee failed\n", __func__);
     }
-    if (read(pipefd2[0], buf, sizeof(buf)) == -1) {
+    if (read(pipefd2[0], buf, sizeof(buf)) == FAILURE_CODE) {
         t_error("%s read failed\n", __func__);
     }
 
@@ -78,19 +81,19 @@ void tee_0200(void)
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
 
-    int fd = open(path, O_CREAT | O_WRONLY | O_TRUNC, 0666);
+    int fd = open(path, O_CREAT | O_WRONLY | O_TRUNC, FILE_PERMISSIONS);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }
 
     int pipefd2[2];
     result = pipe(pipefd2);
-    if (result == -1) {
+    if (result == FAILURE_CODE) {
         t_error("%s pipe file failed\n", __func__);
     }
 
-    result = tee(fd, pipefd2[1], 32768, SPLICE_F_NONBLOCK);
-    if (result != -1) {
+    result = tee(fd, pipefd2[1], TEE_BUFFER_SIZE, SPLICE_F_NONBLOCK);
+    if (result != FAILURE_CODE) {
         t_error("%s test failed\n", __func__);
     }
     close(fd);
@@ -108,6 +111,6 @@ static int TeeTestImpl(int argc, char *argv[])
 int TeeTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return TeeTestImpl(1, libcArgv);
 }
