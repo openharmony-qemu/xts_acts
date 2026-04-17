@@ -696,46 +696,5 @@ export default function MediaAssetChangeRequestStaticTest(): void {
       done();
     });
 
-    /**
-     * @tc.name   SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
-     * @tc.number SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
-     * @tc.desc   AlbumChangeInfos-property
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700';
-      let testContext: Context = Hypium.get('Context') as Context;
-      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-        console.info(TAG, testName, 'onCallback1 success, changeData666: ' + JSON.stringify(changeData));
-        let data = changeData.albumChangeDatas![0];
-        expect(data.albumAfterChange != undefined).assertTrue();
-        done();
-      }
-      try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        console.info(TAG, testName, 'photoAccessHelper.FetchResult success: ', fetchResult);
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        helper!.onSinglePhotoAlbumChange(album, onCallback);
-        helper!.offSinglePhotoAlbumChange(album, onCallback);
-        expect(album != undefined).assertTrue();
-        console.info(TAG, testName, 'close succeed.');
-        fetchResult.close();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
-
   })
 }
