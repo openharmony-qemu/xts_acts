@@ -416,7 +416,7 @@ export default function CompoundAssignmentOperatorsTest() {
     /**
      * @tc.number    SUB_COMPOUND_ASSIGNMENT_OPERATORS_2600
      * @tc.name      testCompoundAssignmentOperators0026
-     * @tc.desc      Compound assignment /= for int type boundary values
+     * @tc.desc      Verify integer overflow behavior of compound assignment /= for int boundary values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -430,7 +430,7 @@ export default function CompoundAssignmentOperatorsTest() {
     /**
      * @tc.number    SUB_COMPOUND_ASSIGNMENT_OPERATORS_2700
      * @tc.name      testCompoundAssignmentOperators0027
-     * @tc.desc      Compound assignment /= for long type boundary values
+     * @tc.desc      Verify integer overflow behavior of compound assignment /= for long boundary values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

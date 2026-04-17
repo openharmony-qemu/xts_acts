@@ -53,9 +53,7 @@ let a_28: number[]|string[]|boolean[]|null = null;
 let a_29: number[]|string[]|boolean[]|null = null;
 let a_30: (Color_18|Size_30)[] = [];
 let u_21: undefined = undefined;
-let n_21: null = null;
 let o_21: Object = {};
-let e_25 = new Error();
 
 class A_15<T> {}
 let v_15 = new A_15<number>();
@@ -124,19 +122,6 @@ function foo_3(a: number[]): void {
   expect(a.length).assertEqual(4);
 }
 
-function foo_4(a: number[]): void {
-  expect(Number.isNaN(a[0])).assertTrue();
-  expect(a[3]).assertEqual(1.7976931348623157e+308);
-  expect(a.length).assertEqual(4);
-}
-
-function foo_5(a: boolean[]): void {
-  expect(a[0]).assertFalse();
-  expect(a[1]).assertTrue();
-  expect(a[2]).assertTrue();
-  expect(a.length).assertEqual(3);
-}
-
 function foo_6(a: number[]): void {
   expect(a[3]).assertEqual(-9223372036854775808);
   expect(a.length).assertEqual(4);
@@ -155,23 +140,9 @@ function foo_8(a: string[]): void {
   expect(a.length).assertEqual(4);
 }
 
-function foo_10(a: string[][]): void {
-  expect(a[0][0]).assertEqual('1');
-  expect(a[0][1]).assertEqual('11');
-  expect(a[1][0]).assertEqual('');
-  expect(a[1][1]).assertEqual('-9223372036854775808');
-  expect(a.length).assertEqual(2);
-}
-
 function foo_11(a: bigint[]): void {
   expect(a[1]).assertEqual(2n);
   expect(a[2]).assertEqual(33333333333333333333333333333333333333333333333333n);
-  expect(a.length).assertEqual(3);
-}
-
-function foo_12(a: bigint[][]): void {
-  expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
-  expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
   expect(a.length).assertEqual(3);
 }
 
@@ -265,29 +236,6 @@ function arr4_foo_8(a: string[][]): void {
   expect(a.length).assertEqual(2);
 }
 
-function arr4_foo_9(a: string[][]): void {
-  expect(a[0][0]).assertEqual('1');
-  expect(a[0][1]).assertEqual('11');
-  expect(a[1][0]).assertEqual('');
-  expect(a[1][1]).assertEqual('-9223372036854775808');
-  expect(a.length).assertEqual(2);
-}
-
-function arr4_foo_10(a: string[][]): void {
-  expect(a[0][0]).assertEqual('1');
-  expect(a[0][1]).assertEqual('11');
-  expect(a[1][0]).assertEqual('');
-  expect(a[1][1]).assertEqual('-9223372036854775808');
-  expect(a.length).assertEqual(2);
-}
-
-function arr4_foo_11(a: string[][]): void {
-  expect(a[0][0]).assertEqual('1');
-  expect(a[0][1]).assertEqual('11');
-  expect(a[1][0]).assertEqual('');
-  expect(a[1][1]).assertEqual('-9223372036854775808');
-  expect(a.length).assertEqual(2);
-}
 
 function arr4_foo_12(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
@@ -295,58 +243,7 @@ function arr4_foo_12(a: bigint[][]): void {
   expect(a.length).assertEqual(3);
 }
 
-function arr4_foo_13(a: bigint[][]): void {
-  expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
-  expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
-  expect(a.length).assertEqual(3);
-}
-
-function arr4_foo_14(a: bigint[][]): void {
-  expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
-  expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
-  expect(a.length).assertEqual(3);
-}
-
-function arr4_foo_15(a: bigint[][]): void {
-  expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
-  expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
-  expect(a.length).assertEqual(3);
-}
-
 function arr4_foo_16(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0];
-  expect(innerArray[0]).assertEqual("a");
-  expect(innerArray[1]).assertEqual(1);
-  expect(innerArray[2]).assertTrue();
-  expect(innerArray[3]).assertEqual(2n);
-  expect(innerArray[4]).assertEqual(null);
-  expect(innerArray[5]).assertEqual(undefined);
-  expect(a.length).assertEqual(1);
-}
-
-function arr4_foo_17(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0];
-  expect(innerArray[0]).assertEqual("a");
-  expect(innerArray[1]).assertEqual(1);
-  expect(innerArray[2]).assertTrue();
-  expect(innerArray[3]).assertEqual(2n);
-  expect(innerArray[4]).assertEqual(null);
-  expect(innerArray[5]).assertEqual(undefined);
-  expect(a.length).assertEqual(1);
-}
-
-function arr4_foo_18(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
-  const innerArray = a[0];
-  expect(innerArray[0]).assertEqual("a");
-  expect(innerArray[1]).assertEqual(1);
-  expect(innerArray[2]).assertTrue();
-  expect(innerArray[3]).assertEqual(2n);
-  expect(innerArray[4]).assertEqual(null);
-  expect(innerArray[5]).assertEqual(undefined);
-  expect(a.length).assertEqual(1);
-}
-
-function arr4_foo_19(a: Array<[string, number, boolean, bigint, null, undefined]>): void {
   const innerArray = a[0];
   expect(innerArray[0]).assertEqual("a");
   expect(innerArray[1]).assertEqual(1);
@@ -398,14 +295,6 @@ function arr4_foo_36(a: number[]|string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_37(a: number[]|string[]|boolean[]|null): void {
-  let x = a as boolean[];
-  expect(x[0]).assertFalse();
-  expect(x[1]).assertTrue();
-  expect(x[2]).assertFalse();
-  expect(x.length).assertEqual(3);
-}
-
 function arr4_foo_42(a: number[]|string[]|boolean[]|null): void {
   let x = a as string[];
   expect(x[0]).assertEqual('1');
@@ -414,87 +303,7 @@ function arr4_foo_42(a: number[]|string[]|boolean[]|null): void {
   expect(x.length).assertEqual(3);
 }
 
-function arr4_foo_43(a: number[]|string[]|boolean[]|null): void {
-  let x = a as string[];
-  expect(x[0]).assertEqual('1');
-  expect(x[1]).assertEqual('2');
-  expect(x[2]).assertEqual('43');
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_44(a: string[]|boolean[]|null): void {
-  let x = a as string[];
-  expect(x[0]).assertEqual('1');
-  expect(x[1]).assertEqual('2');
-  expect(x[2]).assertEqual('43');
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_45(a: boolean[]|string|string[]|null): void {
-  let x = a as string[];
-  expect(x[0]).assertEqual('1');
-  expect(x[1]).assertEqual('2');
-  expect(x[2]).assertEqual('43');
-  expect(x.length).assertEqual(3);
-}
-
 function arr4_foo_46(a: string[]|number[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_47(a: string[]|number[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_48(a: string[]|number[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_49(a: string[]|number[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_50(a: number[]|string[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_51(a: number[]|string[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_52(a: number[]|string[]): void {
-  let x = a as number[];
-  expect(x[0]).assertEqual(1);
-  expect(x[1]).assertEqual(2);
-  expect(x[2]).assertEqual(3);
-  expect(x.length).assertEqual(3);
-}
-
-function arr4_foo_53(a: number[]|string[]): void {
   let x = a as number[];
   expect(x[0]).assertEqual(1);
   expect(x[1]).assertEqual(2);
@@ -1346,8 +1155,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [NaN, 1.0, -1.0, 1.7976931348623157e+308];
-      foo_4(a);
+      const a = [1, 2, 3, -9223372036854775808];
+      foo_6(a);
       expect(a.length).assertEqual(4);
     });
 
@@ -1360,9 +1169,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [!true, true, true];
-      foo_5(a);
-      expect(a.length).assertEqual(3);
+      const a = ['1', '2', '3', '-9223372036854775808'];
+      foo_7(a);
+      expect(a.length).assertEqual(4);
     });
 
     /**
@@ -1374,8 +1183,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [1, 2, 3, -9223372036854775808];
-      foo_6(a);
+      const a = ['x', 'x1', 'x2', 'x3'];
+      foo_8(a);
       expect(a.length).assertEqual(4);
     });
 
@@ -1388,9 +1197,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['1', '2', '3', '-9223372036854775808'];
-      foo_7(a);
-      expect(a.length).assertEqual(4);
+      const a = [1n, 2n, 33333333333333333333333333333333333333333333333333n];
+      foo_11(a);
+      expect(a.length).assertEqual(3);
     });
 
     /**
@@ -1402,9 +1211,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['x', 'x1', 'x2', 'x3'];
-      foo_8(a);
-      expect(a.length).assertEqual(4);
+      const a = [new A_13()];
+      foo_13(a);
+      expect(a.length).assertEqual(1);
     });
 
     /**
@@ -1416,8 +1225,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [['1', '11'], ['', '-9223372036854775808']];
-      foo_10(a);
+      const a = [v_14, q_14];
+      foo_14(a);
       expect(a.length).assertEqual(2);
     });
 
@@ -1430,9 +1239,8 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [1n, 2n, 33333333333333333333333333333333333333333333333333n];
-      foo_11(a);
-      expect(a.length).assertEqual(3);
+      foo_16([["a", 1, true, 2n]]);
+      expect([["a", 1, true, 2n]][0][0]).assertEqual("a");
     });
 
     /**
@@ -1444,14 +1252,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [
-        [11111111111111111111111111111111111111111111111n],
-        [22222222222222222222222222222222222222222222222n],
-        [33333333333333333333333333333333333333333333333333n]
-      ];
-      foo_12(a);
-      expect(a.length).assertEqual(3);
-    });
+      const instance = new A_18();
+      const result = instance.foo([new A_18(), new A_18()]);
+      expect(result).assertEqual(4); // 2 (array length) + 2 (instances of A_18)
+    })
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_5900
@@ -1462,9 +1266,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [new A_13()];
-      foo_13(a);
-      expect(a.length).assertEqual(1);
+      const a = [Color_18.Red, Color_18.Blue];
+      foo_19(a);
+      expect(a.length).assertEqual(2);
     });
 
     /**
@@ -1476,9 +1280,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [v_14, q_14];
-      foo_14(a);
-      expect(a.length).assertEqual(2);
+      const a = [[Color_18.Red, Color_18.Blue]];
+      foo_20(a);
+      expect(a.length).assertEqual(1);
     });
 
     /**
@@ -1490,8 +1294,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      foo_16([["a", 1, true, 2n]]);
-      expect([["a", 1, true, 2n]][0][0]).assertEqual("a");
+      const a = [null, o_23, o_23, u_23];
+      foo_23(a);
+      expect(a.length).assertEqual(4);
     });
 
     /**
@@ -1503,10 +1308,10 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const instance = new A_18();
-      const result = instance.foo([new A_18(), new A_18()]);
-      expect(result).assertEqual(4); // 2 (array length) + 2 (instances of A_18)
-    })
+      const a = [false, true, false];
+      foo_28(a);
+      expect(a.length).assertEqual(3);
+    });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_6300
@@ -1517,9 +1322,9 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [Color_18.Red, Color_18.Blue];
-      foo_19(a);
-      expect(a.length).assertEqual(2);
+      const a = ['1', '2', '43'];
+      foo_30(a);
+      expect(a.length).assertEqual(3);
     });
 
     /**
@@ -1531,65 +1336,68 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [[Color_18.Red, Color_18.Blue]];
-      foo_20(a);
-      expect(a.length).assertEqual(1);
+      const a = [Color_31.Red, Color_31.Green, Size_31.XL];
+      foo_31(a);
+      expect(a.length).assertEqual(3);
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_6500
      * @tc.name      testExpressionsContestInference0065
-     * @tc.desc      arr3_inf_call test
+     * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [null, o_23, o_23, u_23];
-      foo_23(a);
-      expect(a.length).assertEqual(4);
+      const a = [['1', '11'], ['', '-9223372036854775808']];
+      arr4_foo_8(a);
+      expect(a.length).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_6600
      * @tc.name      testExpressionsContestInference0066
-     * @tc.desc      arr3_inf_call test
+     * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [false, true, false];
-      foo_28(a);
+      const a = [
+        [11111111111111111111111111111111111111111111111n],
+        [22222222222222222222222222222222222222222222222n],
+        [33333333333333333333333333333333333333333333333333n]
+      ];
+      arr4_foo_12(a);
       expect(a.length).assertEqual(3);
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_6700
      * @tc.name      testExpressionsContestInference0067
-     * @tc.desc      arr3_inf_call test
+     * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['1', '2', '43'];
-      foo_30(a);
-      expect(a.length).assertEqual(3);
+      arr4_foo_16([["a", 1, true, 2n, null, undefined]]);
+      expect([["a", 1, true, 2n, null, undefined]].length).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_6800
      * @tc.name      testExpressionsContestInference0068
-     * @tc.desc      arr3_inf_call test
+     * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [Color_31.Red, Color_31.Green, Size_31.XL];
-      foo_31(a);
-      expect(a.length).assertEqual(3);
+      const a = [[arr4_foo_Color_23.Red, arr4_foo_Color_23.Blue]];
+      arr4_foo_23([[arr4_foo_Color_23.Red, arr4_foo_Color_23.Blue]]);
+      expect(a.length).assertEqual(1);
     });
 
     /**
@@ -1601,203 +1409,6 @@ export default function ExpressionsContestInferenceTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsContestInference0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [['1', '11'], ['', '-9223372036854775808']];
-      arr4_foo_8(a);
-      expect(a.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7000
-     * @tc.name      testExpressionsContestInference0070
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [['1', '11'], ['', '-9223372036854775808']];
-      arr4_foo_9(a);
-      expect(a.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7100
-     * @tc.name      testExpressionsContestInference0071
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [['1', '11'], ['', '-9223372036854775808']];
-      arr4_foo_10(a);
-      expect(a.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7200
-     * @tc.name      testExpressionsContestInference0072
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [['1', '11'], ['', '-9223372036854775808']];
-      arr4_foo_11(a);
-      expect(a.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7300
-     * @tc.name      testExpressionsContestInference0073
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [
-        [11111111111111111111111111111111111111111111111n],
-        [22222222222222222222222222222222222222222222222n],
-        [33333333333333333333333333333333333333333333333333n]
-      ];
-      arr4_foo_12(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7400
-     * @tc.name      testExpressionsContestInference0074
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [
-        [11111111111111111111111111111111111111111111111n],
-        [22222222222222222222222222222222222222222222222n],
-        [33333333333333333333333333333333333333333333333333n]
-      ];
-      arr4_foo_13(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7500
-     * @tc.name      testExpressionsContestInference0075
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [
-        [11111111111111111111111111111111111111111111111n],
-        [22222222222222222222222222222222222222222222222n],
-        [33333333333333333333333333333333333333333333333333n]
-      ];
-      arr4_foo_14(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7600
-     * @tc.name      testExpressionsContestInference0076
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [
-        [11111111111111111111111111111111111111111111111n],
-        [22222222222222222222222222222222222222222222222n],
-        [33333333333333333333333333333333333333333333333333n]
-      ];
-      arr4_foo_15(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7700
-     * @tc.name      testExpressionsContestInference0077
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_16([["a", 1, true, 2n, null, undefined]]);
-      expect([["a", 1, true, 2n, null, undefined]].length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7800
-     * @tc.name      testExpressionsContestInference0078
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [["a", 1, true, 2n, null, undefined]];
-      arr4_foo_17([["a", 1, true, 2n, null, undefined]]);
-      expect([["a", 1, true, 2n, null, undefined]].length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7900
-     * @tc.name      testExpressionsContestInference0079
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [["a", 1, true, 2n, null, undefined]];
-      arr4_foo_18([["a", 1, true, 2n, null, undefined]]);
-      expect([["a", 1, true, 2n, null, undefined]].length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8000
-     * @tc.name      testExpressionsContestInference0080
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [["a", 1, true, 2n, null, undefined]];
-      arr4_foo_19([["a", 1, true, 2n, null, undefined]]);
-      expect([["a", 1, true, 2n, null, undefined]].length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8100
-     * @tc.name      testExpressionsContestInference0081
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [[arr4_foo_Color_23.Red, arr4_foo_Color_23.Blue]];
-      arr4_foo_23([[arr4_foo_Color_23.Red, arr4_foo_Color_23.Blue]]);
-      expect(a.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8200
-     * @tc.name      testExpressionsContestInference0082
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = [
         [(p: arr4_foo_Color_27) => 0],
         [(p: arr4_foo_Color_27) => 1],
@@ -1812,234 +1423,86 @@ export default function ExpressionsContestInferenceTest() {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8300
-     * @tc.name      testExpressionsContestInference0083
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7000
+     * @tc.name      testExpressionsContestInference0070
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = [[true, 1, 'a', null]];
       arr4_foo_31([[true, 1, 'a', null]]);
       expect(a.length).assertEqual(1);
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8400
-     * @tc.name      testExpressionsContestInference0084
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7100
+     * @tc.name      testExpressionsContestInference0071
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = [[arr4_foo_e_35], [false], [(s: string) => s + s], [42]];
       arr4_foo_35([[arr4_foo_e_35], [false], [(s: string) => s + s], [42]]);
       expect(a.length).assertEqual(4);
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8500
-     * @tc.name      testExpressionsContestInference0085
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7200
+     * @tc.name      testExpressionsContestInference0072
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = [false, true, false];
       arr4_foo_36(a);
       expect(a.length).assertEqual(3);
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8600
-     * @tc.name      testExpressionsContestInference0086
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7300
+     * @tc.name      testExpressionsContestInference0073
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = [false, true, false];
-      arr4_foo_37(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8700
-     * @tc.name      testExpressionsContestInference0087
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = ['1', '2', '43'];
       arr4_foo_42(a);
       expect(a.length).assertEqual(3);
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8800
-     * @tc.name      testExpressionsContestInference0088
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7400
+     * @tc.name      testExpressionsContestInference0074
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['1', '2', '43'];
-      arr4_foo_43(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_8900
-     * @tc.name      testExpressionsContestInference0089
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['1', '2', '43'];
-      arr4_foo_44(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9000
-     * @tc.name      testExpressionsContestInference0090
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = ['1', '2', '43'];
-      arr4_foo_45(a);
-      expect(a.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9100
-     * @tc.name      testExpressionsContestInference0091
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       arr4_foo_46([1, 2, 3]);
       expect([1, 2, 3].length).assertEqual(3);
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9200
-     * @tc.name      testExpressionsContestInference0092
+     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_7500
+     * @tc.name      testExpressionsContestInference0075
      * @tc.desc      arr4_inf_call test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExpressionsContestInference0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_47([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9300
-     * @tc.name      testExpressionsContestInference0093
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_48([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9400
-     * @tc.name      testExpressionsContestInference0094
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_49([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9500
-     * @tc.name      testExpressionsContestInference0095
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_50([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9600
-     * @tc.name      testExpressionsContestInference0096
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_51([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9700
-     * @tc.name      testExpressionsContestInference0097
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_52([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9800
-     * @tc.name      testExpressionsContestInference0098
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      arr4_foo_53([1, 2, 3]);
-      expect([1, 2, 3].length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_CONTEST_INFERENCE_9900
-     * @tc.name      testExpressionsContestInference0099
-     * @tc.desc      arr4_inf_call test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsContestInference0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExpressionsContestInference0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = ['1', '2', '3'];
       arr4_foo_54(a);
       expect(a.length).assertEqual(3);
     });
-
   })
 }

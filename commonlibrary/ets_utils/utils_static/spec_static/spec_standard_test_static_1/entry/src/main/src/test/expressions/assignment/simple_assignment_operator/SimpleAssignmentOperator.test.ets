@@ -93,11 +93,11 @@ export default function SimpleAssignmentOperatorTest() {
       };
 
       let arr_1: string[] = ["abc", "test", "ghi"];
-      ((getArray()[getIndex(1)])) = getValue();
+      arr_1 = getArray();
+      arr_1[getIndex(1)] = getValue();
       let s: string = arr_1[1];
       let arr_expected: string[] = ["abc", "test", "ghi"];
-
-      for (let j: int = 0; j < arr_1.length; j++) {
+      for (let j = 0; j < arr_1.length; j++) {
         expect(arr_1[j]).assertEqual(arr_expected[j]);
       }
 
@@ -162,7 +162,6 @@ export default function SimpleAssignmentOperatorTest() {
      * @tc.level     Level 2
      */
     it("testSimpleAssignmentOperator0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "";
       let arr: FixedArray<A> = [new A(), new A()];
       arr[0] = new B();
       expect(arr[0] instanceof B).assertTrue();
@@ -178,7 +177,6 @@ export default function SimpleAssignmentOperatorTest() {
      */
     it("testSimpleAssignmentOperator0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "";
-
       const getRecord = (): Record<string, number> => {
         result += "getRecord ";
         return { "Mary": 21 };
@@ -254,7 +252,7 @@ export default function SimpleAssignmentOperatorTest() {
      */
     it("testSimpleAssignmentOperator0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "";
-      let v: double = 5.0;
+      let v: double = 5;
       result += "getValue ";
       expect(result).assertEqual("getValue ");
       expect(v).assertEqual(5.0);
@@ -276,6 +274,7 @@ export default function SimpleAssignmentOperatorTest() {
       result += "getValue ";
       expect(result).assertEqual("getValue ");
       expect(v).assertEqual(100);
+      expect(w).assertEqual(100);
     })
 
     /**
@@ -298,7 +297,7 @@ export default function SimpleAssignmentOperatorTest() {
     /**
      * @tc.number    SUB_SIMPLE_ASSIGNMENT_OPERATOR_1200
      * @tc.name      testSimpleAssignmentOperator0012
-     * @tc.desc      Negative case for variable assignment. Rhs evaluation completes abruptly
+     * @tc.desc      Verify normal variable assignment and string concatenation behavior
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

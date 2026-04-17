@@ -765,8 +765,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 0;
-      let y: byte = 1;
+      let x: short = 0;
+      let y: short = 1;
       expect( (x + y) === 1 ).assertTrue()
     })
 
@@ -779,8 +779,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 1;
-      let y: byte = 0;
+      let x: int = 1;
+      let y: int = 0;
       expect( (x + y) === 1 ).assertTrue()
     })
 
@@ -793,8 +793,8 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 1;
-      let y: byte = -1;
+      let x: long = 1;
+      let y: long = -1;
       expect( (x + y) === 0 ).assertTrue()
     })
 
@@ -807,9 +807,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = 0;
-      let y: short = 0;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: byte = 5;
+      let y: byte = 3;
+      let z = x + y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(8)
     })
 
     /**
@@ -821,9 +823,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = 0;
+      let x: byte = 6;
       let y: short = 1;
-      expect( (x + y) === 1 ).assertTrue()
+      let z = x - y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(5)
     })
 
     /**
@@ -835,9 +839,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = 1;
-      let y: short = 0;
-      expect( (x + y) === 1 ).assertTrue()
+      let x: int = 5;
+      let y: byte = -3;
+      let z = x + y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(2)
     })
 
     /**
@@ -849,9 +855,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = 1;
-      let y: short = -1;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: byte = 11;
+      let y: long = 122;
+      let z = x + y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(133)
     })
 
     /**
@@ -863,9 +871,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 0;
-      let y: int = 0;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: short = 44;
+      let y: short = 73;
+      let z = x - y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(-29)
     })
 
     /**
@@ -877,9 +887,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 0;
-      let y: int = 1;
-      expect( (x + y) === 1 ).assertTrue()
+      let x: short = -34;
+      let y: int = 4;
+      let z = x - y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(-38)
     })
 
     /**
@@ -891,9 +903,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 1;
-      let y: int = 0;
-      expect( (x + y) === 1 ).assertTrue()
+      let x: long = 41;
+      let y: short = 42;
+      let z = x + y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(83)
     })
 
     /**
@@ -905,9 +919,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 1;
-      let y: int = -1;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: int = 44932;
+      let y: int = 7345;
+      let z = x - y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(37587)
     })
 
     /**
@@ -919,9 +935,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 0;
-      let y: long = 0;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: int = 492;
+      let y: long = 75;
+      let z = x + y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(567)
     })
 
     /**
@@ -933,9 +951,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 0;
-      let y: long = 1;
-      expect( (x + y) === 1 ).assertTrue()
+      let x: long = 9209732;
+      let y: long = 759376;
+      let z = x - y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(8450356)
     })
 
     /**
@@ -947,9 +967,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 1;
-      let y: long = 0;
-      expect( (x + y) === 1 ).assertTrue()
+      let x: int = 2147483646;
+      let y: int = 1;
+      let z = x + y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(2147483647)
     })
 
     /**
@@ -961,9 +983,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 1;
-      let y: long = -1;
-      expect( (x + y) === 0 ).assertTrue()
+      let x: int = 2147483647;
+      let y: int = 0;
+      let z = x + y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(2147483647)
     })
 
     /**
@@ -975,11 +999,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 5;
-      let y: byte = 3;
+      let x: int = 2147483647;
+      let y: int = 1;
       let z = x + y;
       expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(8)
+      expect(z).assertEqual(-2147483648)
     })
 
     /**
@@ -991,11 +1015,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 6;
-      let y: short = 1;
-      let z = x - y;
+      let x: int = -2147483647;
+      let y: int = -1;
+      let z = x + y;
       expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(5)
+      expect(z).assertEqual(-2147483648)
     })
 
     /**
@@ -1007,11 +1031,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 5;
-      let y: byte = -3;
-      let z = x + y;
+      let x: int = -2147483648;
+      let y: int = 0;
+      let z = x - y;
       expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(2)
+      expect(z).assertEqual(-2147483648)
     })
 
     /**
@@ -1023,11 +1047,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: byte = 11;
-      let y: long = 122;
-      let z = x + y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(133)
+      let x: int = -2147483648;
+      let y: int = 1;
+      let z = x - y;
+      expect(z instanceof int).assertTrue();
+      expect(z).assertEqual(2147483647)
     })
 
     /**
@@ -1039,11 +1063,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = 44;
-      let y: short = 73;
-      let z = x - y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(-29)
+      let x: long = 9223372036854775806;
+      let y: long = 1;
+      let z = x + y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(9223372036854775807)
     })
 
     /**
@@ -1055,11 +1079,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: short = -34;
-      let y: int = 4;
-      let z = x - y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(-38)
+      let x: long = 9223372036854775807;
+      let y: long = 0;
+      let z = x + y;
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(9223372036854775807)
     })
 
     /**
@@ -1071,11 +1095,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 41;
-      let y: short = 42;
+      let x: long = 9223372036854775807;
+      let y: long = 1;
       let z = x + y;
       expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(83)
+      expect(z).assertEqual(-9223372036854775808)
     })
 
     /**
@@ -1087,11 +1111,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 44932;
-      let y: int = 7345;
+      let x: long = -9223372036854775807;
+      let y: long = 1;
       let z = x - y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(37587)
+      expect(z instanceof long).assertTrue();
+      expect(z).assertEqual(-9223372036854775808)
     })
 
     /**
@@ -1103,11 +1127,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 492;
-      let y: long = 75;
-      let z = x + y;
+      let x: long = -9223372036854775808;
+      let y: long = 0;
+      let z = x - y;
       expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(567)
+      expect(z).assertEqual(-9223372036854775808)
     })
 
     /**
@@ -1119,11 +1143,11 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 9209732;
-      let y: long = 759376;
+      let x: long = -9223372036854775808;
+      let y: long = 1;
       let z = x - y;
       expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(8450356)
+      expect(z).assertEqual(9223372036854775807)
     })
 
     /**
@@ -1135,11 +1159,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 2147483646;
-      let y: int = 1;
-      let z = x + y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(2147483647)
+      let x: double = Double.NaN;
+      let y: double = Double.NaN;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1151,11 +1173,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 2147483647;
-      let y: int = 0;
-      let z = x + y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(2147483647)
+      let x: double = 1.0;
+      let y: double = Double.NaN;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1167,11 +1187,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = 2147483647;
-      let y: int = 1;
-      let z = x + y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(-2147483648)
+      let x: double = Double.NaN;
+      let y: double = 1.0;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1183,11 +1201,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = -2147483647;
-      let y: int = -1;
-      let z = x + y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(-2147483648)
+      let x: double = Double.NEGATIVE_INFINITY;
+      let y: double = Double.POSITIVE_INFINITY;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1199,11 +1215,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = -2147483648;
-      let y: int = 0;
-      let z = x - y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(-2147483648)
+      let x: double = Double.POSITIVE_INFINITY;
+      let y: double = Double.NEGATIVE_INFINITY;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1215,11 +1229,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: int = -2147483648;
-      let y: int = 1;
-      let z = x - y;
-      expect(z instanceof int).assertTrue();
-      expect(z).assertEqual(2147483647)
+      let x: double = Double.NaN;
+      let y: double = Double.NEGATIVE_INFINITY;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1231,11 +1243,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 9223372036854775806;
-      let y: long = 1;
-      let z = x + y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(9223372036854775807)
+      let x: double = Double.NEGATIVE_INFINITY;
+      let y: double = Double.NaN;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1247,11 +1257,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 9223372036854775807;
-      let y: long = 0;
-      let z = x + y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(9223372036854775807)
+      let x: double = Double.NaN;
+      let y: double = Double.POSITIVE_INFINITY;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1263,11 +1271,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = 9223372036854775807;
-      let y: long = 1;
-      let z = x + y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(-9223372036854775808)
+      let x: double = Double.POSITIVE_INFINITY;
+      let y: double = Double.NaN;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1279,11 +1285,9 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = -9223372036854775807;
-      let y: long = 1;
-      let z = x - y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(-9223372036854775808)
+      let x: double = Double.NEGATIVE_INFINITY;
+      let y: double = Double.POSITIVE_INFINITY;
+      expect(Double.isNaN(x + y)).assertTrue()
     })
 
     /**
@@ -1295,178 +1299,6 @@ export default function ExpressionsAdditiveOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsAdditiveOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = -9223372036854775808;
-      let y: long = 0;
-      let z = x - y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(-9223372036854775808)
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_8500
-     * @tc.name      testExpressionsAdditiveOperators0085
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = -9223372036854775808;
-      let y: long = 1;
-      let z = x - y;
-      expect(z instanceof long).assertTrue();
-      expect(z).assertEqual(9223372036854775807)
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_8600
-     * @tc.name      testExpressionsAdditiveOperators0086
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NaN;
-      let y: double = Double.NaN;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_8700
-     * @tc.name      testExpressionsAdditiveOperators0087
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = 1.0;
-      let y: double = Double.NaN;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_8800
-     * @tc.name      testExpressionsAdditiveOperators0088
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NaN;
-      let y: double = 1.0;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_8900
-     * @tc.name      testExpressionsAdditiveOperators0089
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NEGATIVE_INFINITY;
-      let y: double = Double.POSITIVE_INFINITY;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9000
-     * @tc.name      testExpressionsAdditiveOperators0090
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.POSITIVE_INFINITY;
-      let y: double = Double.NEGATIVE_INFINITY;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9100
-     * @tc.name      testExpressionsAdditiveOperators0091
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NaN;
-      let y: double = Double.NEGATIVE_INFINITY;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9200
-     * @tc.name      testExpressionsAdditiveOperators0092
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NEGATIVE_INFINITY;
-      let y: double = Double.NaN;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9300
-     * @tc.name      testExpressionsAdditiveOperators0093
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NaN;
-      let y: double = Double.POSITIVE_INFINITY;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9400
-     * @tc.name      testExpressionsAdditiveOperators0094
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.POSITIVE_INFINITY;
-      let y: double = Double.NaN;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9500
-     * @tc.name      testExpressionsAdditiveOperators0095
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: double = Double.NEGATIVE_INFINITY;
-      let y: double = Double.POSITIVE_INFINITY;
-      expect(Double.isNaN(x + y)).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_ADDITIVE_OPERATORS_9600
-     * @tc.name      testExpressionsAdditiveOperators0096
-     * @tc.desc      Additive operators for numeric types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsAdditiveOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Double.POSITIVE_INFINITY;
       let y: double = Double.NEGATIVE_INFINITY;
       expect(Double.isNaN(x + y)).assertTrue()

@@ -75,12 +75,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new A1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -95,12 +91,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new A1();
+      let errorCaught = false;
       try {
         let x: B1 = v as B1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -115,12 +113,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new A1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -135,12 +129,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new A1();
+      let errorCaught = false;
       try {
         let x: J1 = v as J1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -155,12 +151,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new A1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -175,12 +173,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Object = new A1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -195,12 +189,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Object = new A1();
+      let errorCaught = false;
       try {
         let x: B1 = v as B1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -215,12 +211,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Object = new A1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -235,12 +227,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Object = new A1();
+      let errorCaught = false;
       try {
         let x: J1 = v as J1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -255,12 +249,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Object = new A1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -275,12 +271,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new A1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -295,12 +287,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new A1();
+      let errorCaught = false;
       try {
         let x: B1 = v as B1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -315,12 +309,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new A1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -335,12 +325,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new A1();
+      let errorCaught = false;
       try {
         let x: J1 = v as J1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -355,12 +347,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new A1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -375,12 +369,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: B1 = new B1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -395,12 +385,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: B1 = new B1();
-      try {
-        let x: B1 = v as B1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: B1 = v as B1;
+      expect(x instanceof B1).assertTrue();
     });
 
     /**
@@ -415,12 +401,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: B1 = new B1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -435,12 +417,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: B1 = new B1();
-      try {
-        let x: J1 = v as J1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: J1 = v as J1;
+      expect(x instanceof J1).assertTrue();
     });
 
     /**
@@ -455,12 +433,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: B1 = new B1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -475,12 +455,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new B1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -495,12 +471,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new B1();
-      try {
-        let x: B1 = v as B1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: B1 = v as B1;
+      expect(x instanceof B1).assertTrue();
     });
 
     /**
@@ -515,12 +487,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new B1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -535,12 +503,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new B1();
-      try {
-        let x: J1 = v as J1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: J1 = v as J1;
+      expect(x instanceof J1).assertTrue();
     });
 
     /**
@@ -555,12 +519,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: A1 = new B1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -575,12 +541,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new B1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -595,12 +557,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new B1();
-      try {
-        let x: B1 = v as B1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: B1 = v as B1;
+      expect(x instanceof B1).assertTrue();
     });
 
     /**
@@ -615,12 +573,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new B1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -635,12 +589,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new B1();
-      try {
-        let x: J1 = v as J1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: J1 = v as J1;
+      expect(x instanceof J1).assertTrue();
     });
 
     /**
@@ -655,12 +605,14 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: I1 = new B1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -675,12 +627,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: J1 = new B1();
-      try {
-        let x: A1 = v as A1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: A1 = v as A1;
+      expect(x instanceof A1).assertTrue();
     });
 
     /**
@@ -695,12 +643,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: J1 = new B1();
-      try {
-        let x: B1 = v as B1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: B1 = v as B1;
+      expect(x instanceof B1).assertTrue();
     });
 
     /**
@@ -715,12 +659,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: J1 = new B1();
-      try {
-        let x: I1 = v as I1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: I1 = v as I1;
+      expect(x instanceof I1).assertTrue();
     });
 
     /**
@@ -735,12 +675,8 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: J1 = new B1();
-      try {
-        let x: J1 = v as J1;
-        expect(!!x).assertTrue()
-      } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
-      }
+      let x: J1 = v as J1;
+      expect(x instanceof J1).assertTrue();
     });
 
     /**
@@ -755,12 +691,15 @@ export default function ExpressionsRuntimeTest() {
      */
     it("testExpressionsRuntime0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: J1 = new B1();
+      let errorCaught = false;
       try {
         let x: K1 = v as K1;
-        expect(!!x).assertTrue()
       } catch (e) {
-        expect(e instanceof ClassCastError).assertTrue()
+        errorCaught = true;
+        expect(e instanceof ClassCastError).assertTrue();
       }
+      expect(errorCaught).assertTrue();
     });
+
   });
 }

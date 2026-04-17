@@ -37,14 +37,16 @@ async function sleep(time: int): Promise<int> {
 class A5 {}
 
 let cnt: number = 0
+let cnt1: number = 0
+let cnt2: number = 0
 function foo_8(): number {
   return cnt++
 }
 function bar_8(): number {
-  return ++cnt
+  return ++cnt1
 }
 function baz_8(): number {
-  return cnt--
+  return cnt2--
 }
 
 class B_21 extends A5 {}
@@ -76,11 +78,8 @@ const a_const: byte = 1
 const c_const: int = 3
 const e_const: float = 5
 const a2_const: Byte = 1
-const b2_const: Short = 2
 const c2_const: Int = 3
-const d2_const: Long = 4
 const e2_const: Float = 5
-const f2_const: Double = 6
 const g_const: bigint = 7n
 const g2_const: BigInt = new BigInt(7)
 type my_type_number = number
@@ -573,8 +572,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2200
      * @tc.name      testExpressionsElementsInference0022
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when elements are integer literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -587,8 +585,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2300
      * @tc.name      testExpressionsElementsInference0023
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when elements are floating-point literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -604,8 +601,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2400
      * @tc.name      testExpressionsElementsInference0024
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed integer and floating-point literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -618,8 +614,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2500
      * @tc.name      testExpressionsElementsInference0025
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is float literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -632,8 +627,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2600
      * @tc.name      testExpressionsElementsInference0026
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed float and integer literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -649,8 +643,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2700
      * @tc.name      testExpressionsElementsInference0027
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed float and double literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -666,8 +659,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2800
      * @tc.name      testExpressionsElementsInference0028
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when elements are byte type values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -683,8 +675,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_2900
      * @tc.name      testExpressionsElementsInference0029
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is short type value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -700,8 +691,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3000
      * @tc.name      testExpressionsElementsInference0030
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when elements are int type values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -717,8 +707,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3100
      * @tc.name      testExpressionsElementsInference0031
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is long type value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -734,8 +723,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3200
      * @tc.name      testExpressionsElementsInference0032
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when elements are float type values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -751,8 +739,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3300
      * @tc.name      testExpressionsElementsInference0033
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is double type value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -768,8 +755,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3400
      * @tc.name      testExpressionsElementsInference0034
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is bigint literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -785,8 +771,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3500
      * @tc.name      testExpressionsElementsInference0035
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Byte instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -802,8 +787,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3600
      * @tc.name      testExpressionsElementsInference0036
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Short instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -819,8 +803,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3700
      * @tc.name      testExpressionsElementsInference0037
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Int instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -836,8 +819,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3800
      * @tc.name      testExpressionsElementsInference0038
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Long instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -853,8 +835,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_3900
      * @tc.name      testExpressionsElementsInference0039
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Float instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -870,8 +851,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4000
      * @tc.name      testExpressionsElementsInference0040
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is Double instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -887,8 +867,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4100
      * @tc.name      testExpressionsElementsInference0041
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference when element is BigInt instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -904,8 +883,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4200
      * @tc.name      testExpressionsElementsInference0042
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -921,8 +899,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4300
      * @tc.name      testExpressionsElementsInference0043
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric wrapper instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -938,8 +915,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4400
      * @tc.name      testExpressionsElementsInference0044
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric types and BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -955,8 +931,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4500
      * @tc.name      testExpressionsElementsInference0045
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed zero value numeric types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -972,8 +947,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4600
      * @tc.name      testExpressionsElementsInference0046
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric instances and BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -989,8 +963,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4700
      * @tc.name      testExpressionsElementsInference0047
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1006,8 +979,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4800
      * @tc.name      testExpressionsElementsInference0048
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1023,8 +995,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_4900
      * @tc.name      testExpressionsElementsInference0049
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1040,8 +1011,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5000
      * @tc.name      testExpressionsElementsInference0050
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed numeric and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1057,8 +1027,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5100
      * @tc.name      testExpressionsElementsInference0051
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed literals and numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1074,8 +1043,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5200
      * @tc.name      testExpressionsElementsInference0052
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed literals and numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1091,8 +1059,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5300
      * @tc.name      testExpressionsElementsInference0053
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed literals, variables and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1108,8 +1075,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5400
      * @tc.name      testExpressionsElementsInference0054
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify array literal type inference with mixed literals, variables and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1125,8 +1091,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5500
      * @tc.name      testExpressionsElementsInference0055
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with integer elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1143,8 +1108,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5600
      * @tc.name      testExpressionsElementsInference0056
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with double elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1164,8 +1128,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5700
      * @tc.name      testExpressionsElementsInference0057
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed integer and double elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1182,8 +1145,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5800
      * @tc.name      testExpressionsElementsInference0058
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with float elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1203,8 +1165,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_5900
      * @tc.name      testExpressionsElementsInference0059
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed float and integer elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1224,8 +1185,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6000
      * @tc.name      testExpressionsElementsInference0060
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed float and double elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1245,8 +1205,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6100
      * @tc.name      testExpressionsElementsInference0061
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with byte elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1266,8 +1225,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6200
      * @tc.name      testExpressionsElementsInference0062
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with short elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1287,8 +1245,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6300
      * @tc.name      testExpressionsElementsInference0063
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with int elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1308,8 +1265,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6400
      * @tc.name      testExpressionsElementsInference0064
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with long elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1329,8 +1285,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6500
      * @tc.name      testExpressionsElementsInference0065
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with float elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1350,8 +1305,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6600
      * @tc.name      testExpressionsElementsInference0066
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with double elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1371,8 +1325,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6700
      * @tc.name      testExpressionsElementsInference0067
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with bigint elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1392,8 +1345,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6800
      * @tc.name      testExpressionsElementsInference0068
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Byte instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1413,8 +1365,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_6900
      * @tc.name      testExpressionsElementsInference0069
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Short instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1435,8 +1386,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7000
      * @tc.name      testExpressionsElementsInference0070
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Int instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1456,8 +1406,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7100
      * @tc.name      testExpressionsElementsInference0071
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Long instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1477,8 +1426,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7200
      * @tc.name      testExpressionsElementsInference0072
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Float instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1498,8 +1446,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7300
      * @tc.name      testExpressionsElementsInference0073
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with Double instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1519,8 +1466,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7400
      * @tc.name      testExpressionsElementsInference0074
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with BigInt instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1540,8 +1486,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7500
      * @tc.name      testExpressionsElementsInference0075
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1561,8 +1506,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7600
      * @tc.name      testExpressionsElementsInference0076
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric wrapper instances
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1582,8 +1526,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7700
      * @tc.name      testExpressionsElementsInference0077
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric types and BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1603,8 +1546,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7800
      * @tc.name      testExpressionsElementsInference0078
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed zero value numeric types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1624,8 +1566,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_7900
      * @tc.name      testExpressionsElementsInference0079
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric instances and BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1645,8 +1586,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8000
      * @tc.name      testExpressionsElementsInference0080
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1666,8 +1606,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8100
      * @tc.name      testExpressionsElementsInference0081
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with numeric variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1687,8 +1626,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8200
      * @tc.name      testExpressionsElementsInference0082
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1708,8 +1646,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8300
      * @tc.name      testExpressionsElementsInference0083
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric and object types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1729,8 +1666,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8400
      * @tc.name      testExpressionsElementsInference0084
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with explicitly typed numeric arrays
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1750,8 +1686,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8500
      * @tc.name      testExpressionsElementsInference0085
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric constants and variables
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1777,8 +1712,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8600
      * @tc.name      testExpressionsElementsInference0086
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric types and Object type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1805,8 +1739,7 @@ export default function ExpressionsElementsInferenceTest() {
     /**
      * @tc.number    SUB_EXPRESSIONS_ELEMENTS_INFERENCE_8700
      * @tc.name      testExpressionsElementsInference0087
-     * @tc.desc      If each initialization expression is of a numeric type (see Numeric Types),
-     *               then the type of the array literal is number[]
+     * @tc.desc      Verify 2D array literal type inference with mixed numeric types, literals and BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
