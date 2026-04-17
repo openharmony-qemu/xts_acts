@@ -1753,15 +1753,15 @@ static napi_value OH_AVScreenCaptureContentChangedEvent_Enum(napi_env env, napi_
 static napi_value OH_AVScreenCaptureStateCode_Enum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    int32_t paused_by_user = 11;
-    int32_t resumed_by_user = 12;
-    int32_t paused_by_app = 13;
-    int32_t resumed_by_app = 14;
+    int32_t PausedByUser = 11;
+    int32_t ResumedByUser = 12;
+    int32_t PausedByApp = 13;
+    int32_t ResumedByApp = 14;
     int32_t res = 1;
-    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_APP &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_APP ) {
+    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER == PausedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER == ResumedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_APP == PausedByApp &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_APP == ResumedByApp) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
