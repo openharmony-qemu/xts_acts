@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -340,6 +340,28 @@ static napi_value UsbGetConfigDescriptorThree(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value UsbGetConfigDescriptorFour(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int64_t deviceId64;
+    napi_get_value_int64(env, args[PARAM_0], &deviceId64);
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    uint8_t configIndex255 = UINT8_MAX;
+    int32_t returnValue = OH_Usb_GetConfigDescriptor(deviceId, configIndex255, &config);
+    if (returnValue == PARAM_0) {
+        OH_Usb_FreeConfigDescriptor(config);
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
 static napi_value UsbFreeConfigDescriptor(napi_env env, napi_callback_info info)
 {
     size_t argc = PARAM_1;
@@ -406,6 +428,48 @@ static napi_value UsbClaimInterfaceThree(napi_env env, napi_callback_info info)
     NAPI_ASSERT(env, result1 == true, "ParseConfiguration failed");
     uint8_t interface = std::get<1>(source);
     int32_t returnValue = OH_Usb_ClaimInterface(deviceId, interface, nullptr);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+static napi_value UsbClaimInterfaceFour(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int64_t deviceId64;
+    napi_get_value_int64(env, args[PARAM_0], &deviceId64);
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    uint8_t interfaceIndex255 = UINT8_MAX;
+    int32_t returnValue = OH_Usb_ClaimInterface(deviceId, interfaceIndex255, &interfaceHandle);
+    if (returnValue == PARAM_0) {
+        OH_Usb_ReleaseInterface(interfaceHandle);
+    }
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+static napi_value UsbClaimInterfaceFive(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int64_t deviceId64;
+    napi_get_value_int64(env, args[PARAM_0], &deviceId64);
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    uint8_t interfaceIndex0 = PARAM_0;
+    int32_t returnValue = OH_Usb_ClaimInterface(deviceId, interfaceIndex0, &interfaceHandle);
+    if (returnValue == PARAM_0) {
+        OH_Usb_ReleaseInterface(interfaceHandle);
+    }
     OH_Usb_Release();
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
@@ -4643,11 +4707,15 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr},
         {"usbGetConfigDescriptorThree", nullptr, UsbGetConfigDescriptorThree, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"usbGetConfigDescriptorFour", nullptr, UsbGetConfigDescriptorFour, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
         {"usbFreeConfigDescriptor", nullptr, UsbFreeConfigDescriptor, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"usbClaimInterfaceOne", nullptr, UsbClaimInterfaceOne, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbClaimInterfaceTwo", nullptr, UsbClaimInterfaceTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbClaimInterfaceThree", nullptr, UsbClaimInterfaceThree, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbClaimInterfaceFour", nullptr, UsbClaimInterfaceFour, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbClaimInterfaceFive", nullptr, UsbClaimInterfaceFive, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbReleaseInterface", nullptr, UsbReleaseInterface, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbSelectInterfaceSettingOne", nullptr, UsbSelectInterfaceSettingOne, nullptr, nullptr, nullptr,
             napi_default, nullptr},
