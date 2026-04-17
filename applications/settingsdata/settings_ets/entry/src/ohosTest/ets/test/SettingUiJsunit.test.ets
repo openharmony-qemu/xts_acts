@@ -3458,7 +3458,7 @@ export default function settingUiJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Applications_Settings_openAppDetailSettingsPage_failed_100',
+    it('SUB_Applications_Settings_openAppDetailSettingsPage_failed_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let code = 0;
