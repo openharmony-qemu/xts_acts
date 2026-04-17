@@ -397,7 +397,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1800', 0, () => {
+    it('builtinsArrayPushOneTest1800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<string> = ['first'];
       const symbol2 = 'second';
       const result = arr.pushOne(symbol2);
@@ -416,7 +416,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest1900', 0, () => {
+    it('builtinsArrayPushOneTest1900' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<number> = [1];
       const funcResult = 2;
       const result = arr.pushOne(funcResult);
@@ -476,7 +476,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest2200', 0, () => {
+    it('builtinsArrayPushOneTest2200' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<NestedObject> = [];
       const nestedObj: NestedObject = {
         level1: {
@@ -501,7 +501,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest2300', 0, ()=> {
+    it('builtinsArrayPushOneTest2300' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<number> = [1];
       const obj = 2;
       const result = arr.pushOne(obj);
@@ -515,12 +515,30 @@ export default function BuiltinsArrayPushOneTest() {
     /**
      * @tc.name    builtinsArrayPushOneTest2400
      * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2400
+     * @tc.desc    Verify pushOne with very large object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
+     */
+    it('builtinsArrayPushOneTest2400' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const arr: Array<number> = [];
+      const largeObj = 999;
+      const result = arr.pushOne(largeObj);
+
+      expect(result).assertEqual(1);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(largeObj);
+    });
+
+    /**
+     * @tc.name    builtinsArrayPushOneTest2500
+     * @tc.number  SUB_BUILTINS_ARRAY_PUSHONE_TEST_2500
      * @tc.desc    Verify pushOne combined with other array methods
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayPushOneTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayPushOneTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: Array<number> = [1, 2, 3];
       arr.pushOne(4);
       arr.pushOne(5);

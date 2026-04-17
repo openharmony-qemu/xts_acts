@@ -61,7 +61,7 @@ export default function BuiltinsArrayJoinTest() {
     /**
      * @tc.name    builtinsArrayJoinTest0100
      * @tc.number  SUB_BUILTINS_ARRAY_JOIN_TEST_0100
-     * @tc.desc    Verify join with undefined parameter
+     * @tc.desc    Verify join with string 'undefined' as parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
@@ -77,7 +77,7 @@ export default function BuiltinsArrayJoinTest() {
     /**
      * @tc.name    builtinsArrayJoinTest0200
      * @tc.number  SUB_BUILTINS_ARRAY_JOIN_TEST_0200
-     * @tc.desc    Verify join with null parameter
+     * @tc.desc    Verify join with string 'null' as parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
@@ -207,7 +207,7 @@ export default function BuiltinsArrayJoinTest() {
     it('builtinsArrayJoinTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Array<number>(1, 2, 3);
 
-      const separator = '\ud83d\udc04\udff4';
+      const separator = '\udc04\ud83d\udff4';
 
       const result = arr.join(separator);
 
@@ -235,7 +235,7 @@ export default function BuiltinsArrayJoinTest() {
     /**
      * @tc.name    builtinsArrayJoinTest1100
      * @tc.number  SUB_BUILTINS_ARRAY_JOIN_TEST_1100
-     * @tc.desc    Verify join with treeString type
+     * @tc.desc    Verify join with large string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
@@ -265,7 +265,7 @@ export default function BuiltinsArrayJoinTest() {
     /**
      * @tc.name    builtinsArrayJoinTest1200
      * @tc.number  SUB_BUILTINS_ARRAY_JOIN_TEST_1200
-     * @tc.desc    Verify join with sliceString type
+     * @tc.desc    Verify join with sliced string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2

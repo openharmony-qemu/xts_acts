@@ -365,7 +365,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsArraySetTest1800', 0, () => {
+    it('builtinsArraySetTest1800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(1, 2, 3);
       const idx = 0;
       const val = 999;
@@ -401,7 +401,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2000', 0, () => {
+    it('builtinsArraySetTest2000' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30, 40, 50);
       const idx = 4;
       const val = 999;
@@ -419,7 +419,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2100', 0, () => {
+    it('builtinsArraySetTest2100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 1;
       const val = 999;
@@ -437,7 +437,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2200', 0, () => {
+    it('builtinsArraySetTest2200' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 0;
       const val = 999;
@@ -455,7 +455,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2300', 0, () => {
+    it('builtinsArraySetTest2300' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 0;
       const val = 999;
@@ -473,7 +473,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2400', 0, ()=> {
+    it('builtinsArraySetTest2400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(1);
       const idx = 0;
       const val = 100;
@@ -492,7 +492,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2500', 0, ()=> {
+    it('builtinsArraySetTest2500' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 0;
       const val = 500;
@@ -511,7 +511,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2600', 0, () => {
+    it('builtinsArraySetTest2600' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 0;
       const val = 999;
@@ -529,7 +529,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2700', 0, () => {
+    it('builtinsArraySetTest2700' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 1;
       const val = 999;
@@ -547,7 +547,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2800', 0, () => {
+    it('builtinsArraySetTest2800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30, 40, 50);
       const idx = 2;
       const val = 999;
@@ -565,7 +565,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest2900', 0, () => {
+    it('builtinsArraySetTest2900' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 2;
       const val = 999;
@@ -583,7 +583,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest3000', 0, () => {
+    it('builtinsArraySetTest3000' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 0;
       const val = 999;
@@ -601,7 +601,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest3100', 0, () => {
+    it('builtinsArraySetTest3100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 1;
       const val = 999;
@@ -619,7 +619,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArraySetTest3200', 0, () => {
+    it('builtinsArraySetTest3200' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(10, 20, 30);
       const idx = 2;
       const val = 999;

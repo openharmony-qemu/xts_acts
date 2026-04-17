@@ -419,7 +419,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayReverseTest2100', 0, ()=> {
+    it('builtinsArrayReverseTest2100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<number> = [1, 2, 3];
 
       const result = arr.reverse();
@@ -478,7 +478,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayReverseTest2400', 0, ()=> {
+    it('builtinsArrayReverseTest2400' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = new Array<number>(1, 0, 3);
 
       const result = arr.reverse();
@@ -563,7 +563,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayReverseTest2800', 0, ()=> {
+    it('builtinsArrayReverseTest2800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr: Array<number> = [1, 2, 3];
 
       const result = arr.toReversed();
