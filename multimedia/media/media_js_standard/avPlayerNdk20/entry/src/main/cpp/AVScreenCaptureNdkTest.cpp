@@ -1753,10 +1753,10 @@ static napi_value OH_AVScreenCaptureContentChangedEvent_Enum(napi_env env, napi_
 static napi_value OH_AVScreenCaptureStateCode_Enum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    int32_t PausedByUser = 11;
-    int32_t ResumedByUser = 12;
-    int32_t PausedByApp = 13;
-    int32_t ResumedByApp = 14;
+    int32_t pausedByUser = 11;
+    int32_t resumedByUser = 12;
+    int32_t pausedByApp = 13;
+    int32_t resumedByApp = 14;
     int32_t res = 1;
     if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER == PausedByUser &&
         OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER == ResumedByUser &&
