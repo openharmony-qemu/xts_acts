@@ -618,7 +618,7 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
       console.info(`${caseName} test start`);
-      if (sim.getMaxSimCount > 1) {
+      if (sim.getMaxSimCount() > 1) {
         try {
           let slotId: number = 1;
           await sim.activateSim(slotId);
@@ -738,7 +738,7 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
       console.info(`${caseName} test start`);
-      if (sim.getMaxSimCount > 1) {
+      if (sim.getMaxSimCount() > 1) {
         try {
           let slotId: number = 1;
           await sim.activateSim(slotId);
