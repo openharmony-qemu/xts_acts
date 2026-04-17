@@ -495,6 +495,62 @@ export default function HasMatchedCallLogTest() {
       }
     });
 
+    /**
+     * @tc.name   testHasMatchedCallLog1400
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1400
+     * @tc.desc   Test hasMatchedCallLog with null context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1400';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, "", minDuration, 400);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog1500
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_1500
+     * @tc.desc   Test hasMatchedCallLog with null context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog1500';
+      console.info(`${caseName} test start`);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, "", minDuration);
+        console.info(`${caseName} should throw error but not`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 16700002).assertTrue();
+        done();
+      }
+    });
+
   })
 }
 
