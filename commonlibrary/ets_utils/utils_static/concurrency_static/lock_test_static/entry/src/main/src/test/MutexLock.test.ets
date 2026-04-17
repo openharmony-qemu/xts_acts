@@ -34,7 +34,11 @@ async function noParamNoReturnTask(): Promise<void> {
   })
 }
 
-export default function MutexLockTest() {
+function assertIllegalLockStateError(e: Error): void {
+  expect(e.name).assertEqual('IllegalLockStateError')
+}
+
+export default function MutexLockTest(): void {
   describe('MutexLockTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
@@ -52,36 +56,35 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest001';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
-        lock.lock()
+        let lock = new concurrency.stackless.AsyncMutex()
+        await lock.lock()
         count++
         lock.unlock()
         let func = async () => {
-          lock.lock()
+          await lock.lock()
           count++
           lock.unlock()
         }
         await func()
         console.info(`${TAG} test start1`);
+        await lock.lock()
+        count++
         await new Promise<void>((resolve) => {
-          lock.lock()
-          count++
           resolve(undefined)
-        }).then(() => {
-          lock.unlock()
         })
+        lock.unlock()
         console.info(`${TAG} test start2`);
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
-          lock.lock()
+        await eaw.run<Promise<void>>(async (): Promise<void> => {
+          await lock.lock()
           count++
           lock.unlock()
-        }).Await()
+        })
         eaw.join()
         console.info(`${TAG} test start3`);
-        setTimeout(() => {
-          lock.lock()
+        setTimeout(async () => {
+          await lock.lock()
           count++
           lock.unlock()
         }, 10)
@@ -106,30 +109,29 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest002';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
-        lock.lock()
+        let lock = new concurrency.stackless.AsyncMutex()
+        await lock.lock()
         count++
         let func = async () => {
           count++
           lock.unlock()
         }
         await func()
+        await lock.lock()
+        count++
         await new Promise<void>((resolve) => {
-          lock.lock()
-          count++
           resolve(undefined)
-        }).then(() => {
         })
-        await taskpool.execute(() => {
+        await taskpool.execute(async () => {
           count++
           lock.unlock()
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
-          lock.lock()
+        await eaw.run<Promise<void>>(async (): Promise<void> => {
+          await lock.lock()
           count++
-        }).Await()
+        })
         eaw.join()
         setTimeout(() => {
           count++
@@ -156,30 +158,36 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest003';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
-        let lock2 = new Mutex()
-        let lock3 = new Mutex()
-        let lock4 = new Mutex()
-        lock.lock()
+        let lock = new concurrency.stackless.AsyncMutex()
+        let lock2 = new concurrency.stackless.AsyncMutex()
+        let lock3 = new concurrency.stackless.AsyncMutex()
+        let lock4 = new concurrency.stackless.AsyncMutex()
+        let workerStage = new AtomicInt(0)
+        await lock.lock()
         count++
         let func = async () => {
-          lock2.lock()
+          await lock2.lock()
           count++
         }
-        func()
-        await taskpool.execute(() => {
+        await func()
+        await taskpool.execute(async () => {
           count++
           lock.unlock()
-          lock3.lock()
+          await lock3.lock()
         })
+        await lock4.lock()
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        let workerJob = eaw.run<Promise<void>>(async (): Promise<void> => {
           count++
           lock2.unlock()
-          lock4.lock()
-        }).Await()
-        eaw.join()
+          workerStage.fetchAdd(1)
+          await lock4.lock()
+          lock4.unlock()
+        })
+        while (workerStage.load() < 1) {
+          await Utils.msSleep(10)
+        }
         await new Promise<void>((resolve) => {
           count++
           lock3.unlock()
@@ -188,6 +196,8 @@ export default function MutexLockTest() {
           count++
           lock4.unlock()
         })
+        await workerJob.Await()
+        eaw.join()
         while (count < 6) {
           await Utils.msSleep(200)
         }
@@ -209,14 +219,14 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest004';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
+        let lock = new concurrency.stackless.AsyncMutex()
         for (let i = 0; i < 1000; i++) {
-          lock.lock()
+          await lock.lock()
           count++
           lock.unlock()
         }
         let func = async () => {
-          lock.lock()
+          await lock.lock()
           count++
           lock.unlock()
         }
@@ -240,14 +250,14 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest005';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
-        lock.lock()
+        let lock = new concurrency.stackless.AsyncMutex()
+        await lock.lock()
         lock.unlock()
         try {
           lock.unlock()
         } catch (e) {
           count++
-          expect(e.message).assertContain('state is already unlocked')
+          assertIllegalLockStateError(e as Error)
         }
         console.info(`${TAG} test result: ${count}`);
         expect(count).assertEqual(1)
@@ -267,10 +277,10 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest006';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
+        let lock = new concurrency.stackless.AsyncMutex()
         for (let i = 0; i < 100; i++) {
-          taskpool.execute(()=>{
-            lock.lock()
+          taskpool.execute(async ()=>{
+            await lock.lock()
             count++
             lock.unlock()
           })
@@ -278,14 +288,14 @@ export default function MutexLockTest() {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.run<void>(()=>{
-            lock.lock()
+          await eaw.run<Promise<void>>(async (): Promise<void> => {
+            await lock.lock()
             count++
             lock.unlock()
           })
           eaw.join()
         }
-        lock.lock()
+        await lock.lock()
         count++
         let func = async () => {
           lock.unlock()
@@ -312,10 +322,10 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest007';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
+        let lock = new concurrency.stackless.AsyncMutex()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(()=>{
-            lock.lock()
+          taskpool.execute(async ()=>{
+            await lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
@@ -325,8 +335,8 @@ export default function MutexLockTest() {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.run<void>(()=>{
-            lock.lock()
+          await eaw.run<Promise<void>>(async (): Promise<void> => {
+            await lock.lock()
             for (let j = 0; j < 1000; j++) {
               count++
             }
@@ -334,7 +344,7 @@ export default function MutexLockTest() {
           })
           eaw.join()
         }
-        lock.lock()
+        await lock.lock()
         count++
         let func = async () => {
           lock.unlock()
@@ -362,10 +372,10 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest008';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
+        let lock = new concurrency.stackless.AsyncMutex()
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(()=>{
-            lock.lock()
+          taskpool.execute(async ()=>{
+            await lock.lock()
             count++
             throw new Error("error")
           }).finally(()=>{
@@ -375,17 +385,21 @@ export default function MutexLockTest() {
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
           eaw.start()
-          eaw.setUncaughtExceptionHandler(()=>{
-            lock.unlock()
-          })
-          eaw.run<void>(()=>{
-            lock.lock()
-            count++
-            throw new Error("error")
-          })
+          try {
+            await eaw.run<Promise<void>>(async (): Promise<void> => {
+              await lock.lock()
+              try {
+                count++
+                throw new Error("error")
+              } finally {
+                lock.unlock()
+              }
+            }).Await()
+          } catch (e) {
+          }
           eaw.join()
         }
-        lock.lock()
+        await lock.lock()
         count++
         let func = async () => {
           lock.unlock()
@@ -413,23 +427,23 @@ export default function MutexLockTest() {
         const TAG: string = 'MutexTest009';
         console.info(`${TAG} test start`);
         let count = 0
-        let lock = new Mutex()
-        let lock2 = new Mutex()
-        let lock3 = new Mutex()
-        lock.lock()
+        let lock = new concurrency.stackless.AsyncMutex()
+        let lock2 = new concurrency.stackless.AsyncMutex()
+        let lock3 = new concurrency.stackless.AsyncMutex()
+        await lock.lock()
         count++
-        lock2.lock()
+        await lock2.lock()
         count++
-        lock3.lock()
+        await lock3.lock()
         count++
         lock.unlock()
         lock2.unlock()
         lock3.unlock()
-        lock.lock()
+        await lock.lock()
         count++
-        lock2.lock()
+        await lock2.lock()
         count++
-        lock3.lock()
+        await lock3.lock()
         count++
         lock3.unlock()
         lock2.unlock()

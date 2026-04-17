@@ -46,7 +46,7 @@ export function printArgs(args: number): number {
 }
 
 
-export function idCancel(task: taskpool.Task) {
+export function idCancel(task: taskpool.Task): void {
   try {
     taskpool.cancel(task);
   } catch (e) {
@@ -640,4 +640,3 @@ export function printArgs1014(args: number): number {
   asyncMethod(2);
   return args;
 }
-
