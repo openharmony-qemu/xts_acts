@@ -54,6 +54,7 @@ import ApertureQueryGetSupportedPhysicalAperturesTest from './camera/ApertureQue
 import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
 import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 import CameraOISQueryTest from './camera/CameraOISQuery.test';
+import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
 
 
 export default function testsuite() {
@@ -111,5 +112,6 @@ export default function testsuite() {
   ApertureQueryGetSupportedPhysicalAperturesTest();
   PhotoSessIsoInfoChangeTest();
   ManualFocusQueryTest();
-  CameraOISQueryTest(); 
+  CameraOISQueryTest();
+  CameraManualExposureTest();
 }
