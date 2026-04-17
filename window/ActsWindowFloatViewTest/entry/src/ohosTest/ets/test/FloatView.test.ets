@@ -1175,6 +1175,220 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_onRectChange_two_callback
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2550
+     * @tc.desc   test register two rectChange callbacks and verify both triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onRectChange_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_onRectChange_two_callback';
+      console.log(CaseName + ' begin.');
+      let rectChangeCount: number = 0;
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.onRectChange(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatViewController.onRectChange(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        let limits = floatView.getFloatViewLimits();
+        let size: window.Size = {
+          width: limits.minSize.width + 50,
+          height: limits.minSize.height + 50
+        };
+        await floatViewController.setWindowSize(size);
+        console.info(CaseName + ' Succeeded in setting window size.');
+        await sleep(300);
+        console.info(CaseName + ' rectChangeCount: ' + rectChangeCount);
+        expect(rectChangeCount).assertEqual(2);
+        floatViewController.offRectChange();
+        console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+        console.log(CaseName + ' end.');
+        done();
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onRectChange_off_one_callback
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2560
+     * @tc.desc   test register two rectChange callbacks and unregister one callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onRectChange_off_one_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_onRectChange_off_one_callback';
+      console.log(CaseName + ' begin.');
+      let rectChangeCount: number = 0;
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.onRectChange(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatViewController.onRectChange(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        let limits = floatView.getFloatViewLimits();
+        let size: window.Size = {
+          width: limits.minSize.width + 50,
+          height: limits.minSize.height + 50
+        };
+        await floatViewController.setWindowSize(size);
+        console.info(CaseName + ' Succeeded in setting window size 1.');
+        await sleep(300);
+        console.info(CaseName + ' rectChangeCount1: ' + rectChangeCount);
+        expect(rectChangeCount).assertEqual(2);
+        floatViewController.offRectChange(callback1);
+        console.info(CaseName + ' Succeeded in unregistering callback1.');
+        rectChangeCount = 0;
+        let size2: window.Size = {
+          width: limits.minSize.width + 100,
+          height: limits.minSize.height + 100
+        };
+        await floatViewController.setWindowSize(size2);
+        console.info(CaseName + ' Succeeded in setting window size 2.');
+        await sleep(300);
+        console.info(CaseName + ' rectChangeCount2: ' + rectChangeCount);
+        expect(rectChangeCount).assertEqual(1);
+        floatViewController.offRectChange(callback2);
+        console.info(CaseName + ' Succeeded in unregistering callback2.');
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+        console.log(CaseName + ' end.');
+        done();
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onRectChange_off_all_callback
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2570
+     * @tc.desc   test register two rectChange callbacks and unregister all without parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onRectChange_off_all_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_onRectChange_off_all_callback';
+      console.log(CaseName + ' begin.');
+      let rectChangeCount: number = 0;
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
+        rectChangeCount++;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.onRectChange(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatViewController.onRectChange(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        let limits = floatView.getFloatViewLimits();
+        let size: window.Size = {
+          width: limits.minSize.width + 50,
+          height: limits.minSize.height + 50
+        };
+        await floatViewController.setWindowSize(size);
+        console.info(CaseName + ' Succeeded in setting window size 1.');
+        await sleep(300);
+        console.info(CaseName + ' rectChangeCount1: ' + rectChangeCount);
+        expect(rectChangeCount).assertEqual(2);
+        floatViewController.offRectChange();
+        console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        rectChangeCount = 0;
+        let size2: window.Size = {
+          width: limits.minSize.width + 100,
+          height: limits.minSize.height + 100
+        };
+        await floatViewController.setWindowSize(size2);
+        console.info(CaseName + ' Succeeded in setting window size 2.');
+        await sleep(300);
+        console.info(CaseName + ' rectChangeCount2: ' + rectChangeCount);
+        expect(rectChangeCount).assertEqual(0);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+        console.log(CaseName + ' end.');
+        done();
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
      * @tc.name   test_onRectChange_1300030
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2600
      * @tc.desc   test repeated onRectChange callback registration
@@ -1216,15 +1430,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   test_onLimitsChange_0100
+     * @tc.name   test_onLimitsChange_one_0100
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2700
      * @tc.desc   test onLimitsChange callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('test_onLimitsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let CaseName: string = 'test_onLimitsChange_0100';
+    it('test_onLimitsChange_one_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_onLimitsChange_one_0100';
       console.log(CaseName + ' begin.');
       let config: floatView.FloatViewConfiguration = {
         context: context,
@@ -1296,6 +1510,55 @@ export default function abilityTest() {
           done();
         } else if (e.code === 1300030) {
           expect(e.code).assertEqual(1300030);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onLimitsChange_two_callback
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_2850
+     * @tc.desc   test register two limitsChange callbacks and offLimitsChange without callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onLimitsChange_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_onLimitsChange_two_callback';
+      console.log(CaseName + ' begin.');
+      let limitsChangedCount: number = 0;
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let callback1 = (limits: floatView.FloatViewLimits) => {
+        console.info(CaseName + ' callback1 Float view limitsChange: ' + JSON.stringify(limits));
+        limitsChangedCount++;
+      };
+      let callback2 = (limits: floatView.FloatViewLimits) => {
+        console.info(CaseName + ' callback2 Float view limitsChange: ' + JSON.stringify(limits));
+        limitsChangedCount++;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatViewController.onLimitsChange(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatViewController.onLimitsChange(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        floatViewController.offLimitsChange();
+        console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        console.info(CaseName + ' limitsChangedCount: ' + limitsChangedCount);
+        expect(limitsChangedCount).assertEqual(0);
+        console.log(CaseName + ' end.');
+        done();
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
           expect(false).assertTrue();
