@@ -4803,7 +4803,7 @@ export default function settingUiJsunit() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0007',
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0700',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       let code = 0;
