@@ -322,7 +322,7 @@ export default function usbControlTransferTest() {
         console.info("Test USB deviceId = " + dev);
         const ret = usbDdk.usbControlTransferInvalidDeviceId();
         console.info("Test Result testUsbControlTransferInvalidDeviceId001 : " + ret);
-        expect(ret).assertEqual(USB_DDK_INVALID_OPERATION);
+        expect(ret).assertEqual(USB_DDK_INVALID_PARAMETER);
         done();
       } catch (err) {
         console.error(TAG, `testUsbControlTransferInvalidDeviceId001 failed, message is ${err.message}`);
