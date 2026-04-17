@@ -141,7 +141,7 @@ struct webResourceResponseSet {
             case "testSetResponseMimeType001": {
               try {
                 this.onHttpErrorReceive = true
-                this.controller.loadUrl('http://1.1.1.123/index.html');
+                this.controller.loadUrl('https://www.example.com');
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseMimeTypeValue, 36012);
                 }, 3000)
