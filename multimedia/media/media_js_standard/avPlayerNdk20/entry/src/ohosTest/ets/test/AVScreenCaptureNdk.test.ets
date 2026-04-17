@@ -2464,5 +2464,28 @@ export default function AVScreenCaptureNdkTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0200
+     * @tc.number SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0200
+     * @tc.desc   test OH_AVScreenCaptureStateCode_Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0200 start====");
+          let result: number = avscreencapture.OH_AVScreenCaptureStateCode_Enum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_SCREEN_CAPTURE_STATE_CODEENUM0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
   })
 }

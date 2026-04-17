@@ -1750,6 +1750,24 @@ static napi_value OH_AVScreenCaptureContentChangedEvent_Enum(napi_env env, napi_
     return result;
 }
 
+static napi_value OH_AVScreenCaptureStateCode_Enum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t paused_by_user = 11;
+    int32_t resumed_by_user = 12;
+    int32_t paused_by_app = 13;
+    int32_t resumed_by_app = 14;
+    int32_t res = 1;
+    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_APP &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_APP ) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
 static napi_value OH_AVScreenCaptureErrCode(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1951,6 +1969,8 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"OH_AVScreenCaptureContentChangedEventEnum", nullptr, OH_AVScreenCaptureContentChangedEvent_Enum, nullptr,
      nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCaptureStateCode_Enum", nullptr, OH_AVScreenCaptureStateCode_Enum, nullptr,
+     nullptr, nullptr, napi_default, nullptr}, 
     {"OH_AVScreenCaptureErrCode", nullptr, OH_AVScreenCaptureErrCode, nullptr,
      nullptr, nullptr, napi_default, nullptr},
     {"OH_AVSCREEN_CAPTURE_ErrCode0200", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0200, nullptr, nullptr,
