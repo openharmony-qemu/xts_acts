@@ -21,7 +21,6 @@ export default function GridAttributeTest() {
   describe('GridAttributeTest', () => {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`grid/GridAttributeTest`, done);
-      await Utils.sleep(1000);
     });
     beforeEach(async (done: Function) => {
       await Utils.sleep(100);
@@ -30,24 +29,24 @@ export default function GridAttributeTest() {
 
 
     /**
-     * @tc.number  Test_OH_ArkUI_TGridAttributeTest01
-     * @tc.name    GridAttributeTest001
-     * @tc.desc    testing GridAttributeTest001 CAPI creat & dispose
+     * @tc.number  SUB_ARKUI_GRID_PARALLELIZE_TEST_0100
+     * @tc.name    GridAttributeTest_0100
+     * @tc.desc    testing GridAttributeTest_0100 CAPI creat & dispose
      * @tc.size    AttributeTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('GridAttributeTest001', Level.LEVEL1, async (done: Function) => {
-      console.info('[GridAttributeTest001] START');
+    it('GridAttributeTest_0100', Level.LEVEL1, async (done: Function) => {
+      console.info('[GridAttributeTest_0100] START');
       await Utils.sleep(1000);
       let nodeID = getInspectorByKey('buttonGridID');
       let obj1: ESObject = JSON.parse(nodeID);
-      console.info('GridAttributeTest001 label: ' + JSON.stringify(JSON.parse(nodeID).$attrs.label));
+      console.info('GridAttributeTest_0100 label: ' + JSON.stringify(JSON.parse(nodeID).$attrs.label));
       expect(obj1.$attrs.label).assertEqual('Grid capi is successful');
 
       let nodeID3 = getInspectorByKey('buttonGridID3');
       let obj3: ESObject = JSON.parse(nodeID3);
-      console.info('GridAttributeTest001 label3: ' + JSON.stringify(JSON.parse(nodeID3).$attrs.label));
+      console.info('GridAttributeTest_0100 label3: ' + JSON.stringify(JSON.parse(nodeID3).$attrs.label));
       expect(obj3.$attrs.label).assertEqual('Grid3 capi is successful');
       done()
     })

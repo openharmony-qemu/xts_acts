@@ -25,6 +25,9 @@
 #include "toggle/ToggleTest.h"
 #include "grid/GridAttributeTest.h"
 #include "list/ListAttributeTest.h"
+#include "scroll/ScrollAttributeTest.h"
+#include "refresh/RefreshAttributeTest.h"
+#include "waterFlow/WaterFlowAttributeTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -69,6 +72,21 @@ static napi_value Init(napi_env env, napi_value exports)
         {"CreateNativeListNode", nullptr, ListAttributeTest::CreateNativeListNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"DisposeNativeListNode", nullptr, ListAttributeTest::DisposeNativeListNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // scroll
+        {"CreateNativeScrollNode", nullptr, ScrollAttributeTest::CreateNativeScrollNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeScrollNode", nullptr, ScrollAttributeTest::DisposeNativeScrollNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // refresh
+        {"CreateNativeRefreshNode", nullptr, RefreshAttributeTest::CreateNativeRefreshNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeRefreshNode", nullptr, RefreshAttributeTest::DisposeNativeRefreshNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // waterFlow
+        {"CreateNativeWaterFlowNode", nullptr, WaterFlowAttributeTest::CreateNativeWaterFlowNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeWaterFlowNode", nullptr, WaterFlowAttributeTest::DisposeNativeWaterFlowNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

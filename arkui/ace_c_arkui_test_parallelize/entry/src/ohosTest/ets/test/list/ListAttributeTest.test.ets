@@ -21,7 +21,6 @@ export default function ListAttributeTest() {
   describe('ListAttributeTest', () => {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`list/ListAttributeTest`, done);
-      await Utils.sleep(1000);
     });
     beforeEach(async (done: Function) => {
       await Utils.sleep(100);
@@ -29,26 +28,25 @@ export default function ListAttributeTest() {
     });
 
     /**
-     * @tc.number  ListAttributeTest001
-     * @tc.name    ListAttributeTest001
-     * @tc.desc    testing ListAttributeTest001 CAPI creat & dispose
+     * @tc.number  SUB_ARKUI_LIST_PARALLELIZE_TEST_0100
+     * @tc.name    ListAttributeTest_0100
+     * @tc.desc    testing ListAttributeTest_0100 CAPI creat & dispose
      * @tc.size    AttributeTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('ListAttributeTest001', Level.LEVEL1, async (done: Function) => {
-      console.info('[ListAttributeTest001] START');
+    it('ListAttributeTest_0100', Level.LEVEL1, async (done: Function) => {
+      console.info('[ListAttributeTest_0100] START');
       await Utils.sleep(1000);
       let nodeID = getInspectorByKey('buttonListID1');
       let obj1: ESObject = JSON.parse(nodeID);
-      console.info('ListAttributeTest001 label: ' + JSON.stringify(JSON.parse(nodeID).$attrs.label));
-      expect(obj1.$attrs.label).assertEqual('Button1 is successful');
+      console.info('ListAttributeTest_0100 label: ' + JSON.stringify(JSON.parse(nodeID).$attrs.label));
+      expect(obj1.$attrs.label).assertEqual('List1 capi is successful');
 
       let nodeID3 = getInspectorByKey('buttonListID3');
       let obj3: ESObject = JSON.parse(nodeID3);
-      console.info('ListAttributeTest001 label3: ' + JSON.stringify(JSON.parse(nodeID3).$attrs.label));
-      expect(obj3.$attrs.label).assertEqual('Button3 is successful');
-
+      console.info('ListAttributeTest_0100 label3: ' + JSON.stringify(JSON.parse(nodeID3).$attrs.label));
+      expect(obj3.$attrs.label).assertEqual('List3 capi is successful');
       done()
     })
   })

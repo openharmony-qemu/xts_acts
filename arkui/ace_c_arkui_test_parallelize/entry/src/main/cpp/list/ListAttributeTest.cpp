@@ -22,7 +22,7 @@
 #include "list/ListAttributeTest.h"
 
 namespace ArkUICapiTest {
-const char* MY_LOG_TAG = "nativeListTest";
+const char* MY_LIST_LOG = "nativeListTest";
 static auto tester = new NodeXTSListTest();
 
 void TestNodeListDirection001(ArkUI_NativeNodeAPI_1 *nodeAPI,ArkUI_NodeHandle &list, ArkUI_NodeHandle &button)
@@ -565,7 +565,7 @@ void TestNodeListEvent002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == NODE_LIST_ON_SCROLL_INDEX) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "RegisterEvent NODE_LIST_ON_SCROLL_INDEX");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "RegisterEvent NODE_LIST_ON_SCROLL_INDEX");
         }
     });
 }
@@ -580,7 +580,7 @@ void TestNodeListEvent102(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) != NODE_LIST_ON_SCROLL_INDEX) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "UnRegisterEvent NODE_LIST_ON_SCROLL_INDEX");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "UnRegisterEvent NODE_LIST_ON_SCROLL_INDEX");
         }
     });
 }
@@ -594,7 +594,7 @@ void TestNodeListEvent004(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == NODE_LIST_ON_WILL_SCROLL) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "RegisterEvent NODE_LIST_ON_WILL_SCROLL");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "RegisterEvent NODE_LIST_ON_WILL_SCROLL");
         }
     });
 }
@@ -610,7 +610,7 @@ void TestNodeListEvent104(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) != NODE_LIST_ON_WILL_SCROLL) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "UnRegisterEvent NODE_LIST_ON_WILL_SCROLL");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "UnRegisterEvent NODE_LIST_ON_WILL_SCROLL");
         }
     });
 }
@@ -624,7 +624,7 @@ void TestNodeListEvent006(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == NODE_LIST_ON_DID_SCROLL) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "RegisterEvent NODE_LIST_ON_DID_SCROLL");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "RegisterEvent NODE_LIST_ON_DID_SCROLL");
         }
     });
 }
@@ -639,7 +639,7 @@ void TestNodeListEvent106(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) != NODE_LIST_ON_DID_SCROLL) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "UnRegisterEvent NODE_LIST_ON_WILL_SCROLL");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "UnRegisterEvent NODE_LIST_ON_WILL_SCROLL");
         }
     });
 }
@@ -653,7 +653,7 @@ void TestNodeListEvent008(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "RegisterEvent NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "RegisterEvent NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE");
         }
     });
 }
@@ -668,15 +668,15 @@ void TestNodeListEvent108(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle list)
 {
     nodeAPI->addNodeEventReceiver(list, [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) != NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LOG_TAG, "UnRegisterEvent NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, MY_LIST_LOG, "UnRegisterEvent NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE");
         }
     });
 }
 
-void TestNodeInitAttribute001(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitListAttribute001(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
-    ArkUI_AttributeItem buttonLabel = {.string = "Button1 is successful"};
+    ArkUI_AttributeItem buttonLabel = {.string = "List1 capi is successful"};
     nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     ArkUI_AttributeItem idItem = {.string = "buttonListID1"};
     nodeAPI->setAttribute(button, NODE_ID, &idItem);
@@ -701,7 +701,7 @@ void TestNodeInitAttribute001(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     TestNodeListEvent007(nodeAPI, list);
 }
 
-void TestNodeInitAttribute101(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitListAttribute101(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto list = nodeList[0];
     auto button = nodeList[1];
@@ -726,11 +726,11 @@ void TestNodeInitAttribute101(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     }
 }
 
-void TestNodeInitAttribute011(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitListAttribute011(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
     
-    ArkUI_AttributeItem buttonLabel = {.string = "Button3 is successful"};
+    ArkUI_AttributeItem buttonLabel = {.string = "List3 capi is successful"};
     nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     ArkUI_AttributeItem idItem = {.string = "buttonListID3"};
     nodeAPI->setAttribute(button, NODE_ID, &idItem);
@@ -755,7 +755,7 @@ void TestNodeInitAttribute011(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     TestNodeListEvent107(nodeAPI, list);
 }
 
-void TestNodeInitAttribute111(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitListAttribute111(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto list = nodeList[2];
     auto button = nodeList[3];
@@ -781,15 +781,15 @@ void TestNodeInitAttribute111(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
 
 void RunOnSubThreadList(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
-    TestNodeInitAttribute001(nodeAPI, nodeList);
-    TestNodeInitAttribute011(nodeAPI, nodeList);
+    TestNodeInitListAttribute001(nodeAPI, nodeList);
+    TestNodeInitListAttribute011(nodeAPI, nodeList);
 }
 
 void RunOnUIThreadList(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     // 获取在RunOnSubThreadList中保存到nodeList中的组件
-    TestNodeInitAttribute101(nodeAPI, nodeList);
-    TestNodeInitAttribute111(nodeAPI, nodeList);
+    TestNodeInitListAttribute101(nodeAPI, nodeList);
+    TestNodeInitListAttribute111(nodeAPI, nodeList);
 
 }
 

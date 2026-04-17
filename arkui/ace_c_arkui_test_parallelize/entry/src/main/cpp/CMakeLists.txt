@@ -30,6 +30,12 @@ add_library(nativerender SHARED
     grid/NodeXtsGridTest.cpp
     list/ListAttributeTest.cpp
     list/NodeXtsListTest.cpp
+    scroll/ScrollAttributeTest.cpp
+    scroll/NodeXtsScrollTest.cpp
+    refresh/RefreshAttributeTest.cpp
+    refresh/NodeXtsRefreshTest.cpp
+    waterFlow/WaterFlowAttributeTest.cpp
+    waterFlow/NodeXtsWaterFlowTest.cpp
 )
 
 add_library(nativefunc SHARED

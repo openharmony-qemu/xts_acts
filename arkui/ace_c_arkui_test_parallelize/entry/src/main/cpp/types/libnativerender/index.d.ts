@@ -41,3 +41,12 @@ export const DisposeNativeGridNode: (content: NodeContent) => void;
 //list
 export const CreateNativeListNode: (content: NodeContent, uicontext: UIContext) => void;
 export const DisposeNativeListNode: (content: NodeContent) => void;
+//scroll
+export const CreateNativeScrollNode: (content: NodeContent, uicontext: UIContext) => void;
+export const DisposeNativeScrollNode: (content: NodeContent) => void;
+//refresh
+export const CreateNativeRefreshNode: (content: NodeContent, uicontext: UIContext) => void;
+export const DisposeNativeRefreshNode: (content: NodeContent) => void;
+//waterFlow
+export const CreateNativeWaterFlowNode: (content: NodeContent, uicontext: UIContext) => void;
+export const DisposeNativeWaterFlowNode: (content: NodeContent) => void;

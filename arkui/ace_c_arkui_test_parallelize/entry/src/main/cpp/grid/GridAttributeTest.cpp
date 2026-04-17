@@ -353,7 +353,7 @@ void TestNodeGridEvent108(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle grid)
     });
 }
 
-void TestNodeInitAttribute003(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitGridAttribute003(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
     ArkUI_AttributeItem buttonLabel = {.string = "Grid capi is successful"};
@@ -379,7 +379,7 @@ void TestNodeInitAttribute003(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     TestNodeGridEvent007(nodeAPI, grid);
 }
 
-void TestNodeInitAttribute103(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitGridAttribute103(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto grid = nodeList[0];
     auto button = nodeList[1];
@@ -616,7 +616,7 @@ void TestNodeGridItemStyle012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &
     }
 }
 
-void TestNodeInitAttribute013(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitGridAttribute013(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
     ArkUI_AttributeItem buttonLabel = {.string = "Grid3 capi is successful"};
@@ -642,7 +642,7 @@ void TestNodeInitAttribute013(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     TestNodeGridEvent107(nodeAPI, grid);
 }
 
-void TestNodeInitAttribute113(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitGridAttribute113(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto grid = nodeList[2];
     auto button = nodeList[3];
@@ -665,7 +665,7 @@ void TestNodeInitAttribute113(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
     }
 }
 
-void TestNodeInitAttribute114(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
+void TestNodeInitGridAttribute114(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     auto grid = nodeList[6];
     auto button = nodeList[7];
@@ -678,14 +678,14 @@ void TestNodeInitAttribute114(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
 
 void RunOnSubThreadGrid(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
-    TestNodeInitAttribute003(nodeAPI, nodeList);
-    TestNodeInitAttribute013(nodeAPI, nodeList);
+    TestNodeInitGridAttribute003(nodeAPI, nodeList);
+    TestNodeInitGridAttribute013(nodeAPI, nodeList);
 }
 
 void RunOnUIThreadGrid(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     // 获取在RunOnSubThreadGrid中保存到nodeList中的组件
-    TestNodeInitAttribute113(nodeAPI, nodeList);
+    TestNodeInitGridAttribute113(nodeAPI, nodeList);
 }
 
 
