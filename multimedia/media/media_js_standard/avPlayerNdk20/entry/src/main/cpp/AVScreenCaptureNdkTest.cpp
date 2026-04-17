@@ -1970,7 +1970,7 @@ napi_property_descriptor desc[] = {
     {"OH_AVScreenCaptureContentChangedEventEnum", nullptr, OH_AVScreenCaptureContentChangedEvent_Enum, nullptr,
      nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCaptureStateCode_Enum", nullptr, OH_AVScreenCaptureStateCode_Enum, nullptr,
-     nullptr, nullptr, napi_default, nullptr}, 
+     nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCaptureErrCode", nullptr, OH_AVScreenCaptureErrCode, nullptr,
      nullptr, nullptr, napi_default, nullptr},
     {"OH_AVSCREEN_CAPTURE_ErrCode0200", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0200, nullptr, nullptr,
