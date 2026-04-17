@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -140,11 +140,11 @@ export default class Utils {
   }
 
   static getRectHorizontalCenterX(rect: RectInfo): int {
-    return Number.parseInt(Number((rect.right - rect.left) / 2 + rect.left).toFixed(0)) as Int;
+    return Number.parseInt(Number((rect.right - rect.left) / 2 + rect.left).toFixed(0)).toInt();
   }
 
   static getRectVerticalCenterY(rect: RectInfo): int {
-    return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0)) as Int;
+    return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0)).toInt();
   }
 
   static getComponentRectByObj(obj: ComponentInfo): RectInfo {
