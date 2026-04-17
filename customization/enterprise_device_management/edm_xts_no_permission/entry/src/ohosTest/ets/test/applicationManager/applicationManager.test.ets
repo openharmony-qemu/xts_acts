@@ -988,5 +988,28 @@ export default function applicationManagerTest() {
       });
       done();
     })
+
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0100
+     * @tc.desc   test queryBundleStatsInfos method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
   })
 }
