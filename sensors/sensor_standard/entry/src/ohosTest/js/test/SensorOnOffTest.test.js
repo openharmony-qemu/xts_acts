@@ -22,31 +22,31 @@ describe('SystemParameterTest', function () {
     let isAvailable = async (data) => {
         if (sensorList != undefined) {
             const targetSensor = sensorList?.filter((sensors) => sensors.sensorId === data);
-            hilog.info(0x0000, 'testTag', `isAvailable : ${targetSensor},length : ${targetSensor?.length}`);
+            console.info(`====> isAvailable : ${targetSensor},length : ${targetSensor?.length}`);
             if (targetSensor?.length != 0) {
                 Available = true;
-                hilog.info(0x0000, 'testTag', `Available : ${Available}`);
+                console.info(`====> Available : ${Available}`);
             } else {
                 Available = false;
-                hilog.info(0x0000, 'testTag', `Available : ${Available}`);
+                console.info(`====> Available : ${Available}`);
             }
         } else {
-            hilog.info(0x0000, 'testTag', `sensorList : ${sensorList}`);
+            console.info(`====> sensorList : ${sensorList}`);
         }
     }
     beforeAll(function (done) {
         try {
             sensor.getSensorList((err, data) => {
-                hilog.info(0x0000, 'testTag',  `beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
+                console.info(`====> beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
                 sensorList = data;
-                hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
+                console.info(`====> beforeAll success ${sensorList}`);
                 done();
             });  
         } catch (error) {
-            hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
+            console.info(`====> beforeAll failed err.code ${error.code} ,err.message${error.message}`);
             done();
         }
-        hilog.info(0x0000, 'testTag', `beforeAll end`);
+        console.info(`====> beforeAll end`);
     })
 
     afterAll(function () {
