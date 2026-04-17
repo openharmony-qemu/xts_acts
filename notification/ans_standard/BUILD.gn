@@ -85,9 +85,7 @@ group("ans_standard") {
       "actsNotificationAnsopenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
       "actsNotificationAnsopenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
       "actsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
-      "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest",
-      "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
-      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest"
     ]
   }
 }
