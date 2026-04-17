@@ -741,6 +741,7 @@ export default function observerManagerSimStateTest1() {
       if (sim.getMaxSimCount > 1) {
         try {
           let slotId: number = 1;
+          await sim.activateSim(slotId);
           observer.onGetSimActiveState(slotId, (data: boolean) => {
             console.info(`${caseName} data: ${data}`);
             ExpectTrue(data);
