@@ -671,7 +671,7 @@ export default function SecurityCryptoFwAeadTestUnit() {
               0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
               0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
             ])
-            },
+            }
           };
           let symKey: cryptoFramework.SymKey = createSymKey("AES128");
           let cipher = cryptoFramework.createCipher(algName);
@@ -715,6 +715,39 @@ export default function SecurityCryptoFwAeadTestUnit() {
         } catch (error) {
           console.error(`Aead_Func_2000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name SUB_Security_CryptoFramework_Aead_Func_2100
+     * @tc.number SUB_Security_CryptoFramework_Aead_Func_2100
+     * @tc.desc CCM tagLen反转异常测试
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_Aead_Func_2100",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let msgLen: number = 20;
+          let algName: string = "AES256";
+          let iv: number[] = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06,0x07];
+          let aad: number[] = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06,0x07];
+          let aeadParamsSpec: cryptoFramework.AeadParamsSpec = {
+            nonce: new Uint8Array(iv),
+            authenticatedData: new Uint8Array(aad),
+            tagLen: -4294967284,
+            algName: "AeadParamsSpec"
+          };
+          let message: cryptoFramework.DataBlob = await createFullData(msgLen);
+          let symKey: cryptoFramework.SymKey = createSymKey(algName);
+          algName = algName + "|CCM";
+          await aeadCipherPromise(algName, true, symKey, message, aeadParamsSpec);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`Aead_Func_0800 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });

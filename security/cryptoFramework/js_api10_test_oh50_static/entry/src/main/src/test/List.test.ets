@@ -42,6 +42,7 @@ import SecurityCryptoFwChaCha20Poly1305TestUnit from './SecurityCryptoFwChaCha20
 import SecurityCryptoFwAeadTestUnit from './SecurityCryptoFwAeadCipher.test'
 import SecurityCryptoFwKeyLenTestUnit from './SecurityCryptoFwGetKeyLen.test'
 import SecurityCryptoFwRsaPkcs1TestUnit from './SecurityCryptoFwRsaKeyPairToPkcs1.test'
+import SecurityCryptoFwECEncodedDecodedTestUnit from './SecurityCryptoFwECEncodedDecoded.test'
 
 export default function testsuite() {
   SecurityCryptoFwSignRecoverRSARecoverTestUnit();
@@ -74,4 +75,5 @@ export default function testsuite() {
   SecurityCryptoFwAeadTestUnit();
   SecurityCryptoFwKeyLenTestUnit();
   SecurityCryptoFwRsaPkcs1TestUnit();
+  SecurityCryptoFwECEncodedDecodedTestUnit();
 }

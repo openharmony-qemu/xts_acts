@@ -63,6 +63,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     beforeEach(async (): void => {
       if(!wifiMg.isWifiActive()) {
         console.info("=========>>>>>>> wifi_test/enable wifi");
+        console.error("=========>>>>>>> WLAN Network Error");
         await sleep(5000);
       }
       let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
