@@ -15,8 +15,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayEntriesTest(): void {
-  describe("BuiltinsArrayEntriesTest", () => {
+export default function BuiltinsArrayEntriesTest() {
+  describe('BuiltinsArrayEntriesTest', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
@@ -96,7 +96,7 @@ export default function BuiltinsArrayEntriesTest(): void {
     /**
      * @tc.name    builtinsArrayEntriesTest0400
      * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0400
-     * @tc.desc    Verify entries() - using for...of loop
+     * @tc.desc    Verify entries() - traverse iterator via while loop and next()
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
@@ -108,8 +108,10 @@ export default function BuiltinsArrayEntriesTest(): void {
       const expected = [[0, "apple"], [1, "banana"], [2, "cherry"]];
       let result: [number, string][] = [];
 
-      for (let entry of iterator) {
-        result.push(entry);
+      let next = iterator.next();
+      while (!next.done) {
+        result.push(next.value as [number, string]);
+        next = iterator.next();
       }
 
       expect(result.length).assertEqual(expected.length);
