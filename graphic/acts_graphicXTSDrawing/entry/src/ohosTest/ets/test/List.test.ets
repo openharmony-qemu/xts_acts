@@ -56,6 +56,7 @@ import FontPart4 from './FontPart4.test';
 import PathEffect2 from './PathEffect2.test';
 import PathIterator from './PathIterator.test';
 import PenPart3 from './PenPart3.test';
+import PointUtils from './PointUtils.test';
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -102,4 +103,5 @@ export default function testsuite() {
   PathEffect2();
   PathIterator();
   PenPart3();
+  PointUtils();
 }
