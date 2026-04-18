@@ -2233,8 +2233,7 @@ export default function deviceInfoTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_COMMONLIBRARY_DATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    async (Done: Function) => {
+    it('SUB_COMMONLIBRARY_DATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
       const caseName = 'PromiseTest0100';
       console.info(`${caseName} test start`);
       let taskPromises: Promise<void>[] = [];
@@ -2274,8 +2273,7 @@ export default function deviceInfoTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('SUB_COMMONLIBRARY_CATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    async (Done: Function) => {
+  it('SUB_COMMONLIBRARY_CATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
       const caseName = 'PromiseTest0200';
       console.info(`${caseName} test start`);
       let taskPromises: Promise<string>[] = [];
@@ -2316,8 +2314,7 @@ export default function deviceInfoTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('SUB_COMMONLIBRARY_CATA_SETERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    async (Done: Function) => {
+  it('SUB_COMMONLIBRARY_CATA_SETERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
       const caseName = 'PromiseTest0300';
       console.info(`${caseName} test start`);
       let taskPromises: Promise<number>[] = [];
@@ -2358,8 +2355,7 @@ export default function deviceInfoTest() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('SUB_COMMONLIBRARY_CATA_SEAERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    async (Done: Function) => {
+  it('SUB_COMMONLIBRARY_CATA_SEAERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
       const caseName = 'PromiseTest0400';
       console.info(`${caseName} test start`);
       let taskPromises: Promise<boolean>[] = [];
