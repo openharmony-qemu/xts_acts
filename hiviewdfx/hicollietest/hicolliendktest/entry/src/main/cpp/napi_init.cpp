@@ -187,7 +187,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
 
 void CallBack(void*)
 {
-     // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
+    // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
 }
 
 static napi_value TestHiCollieTimerNdkErr03(napi_env env, napi_callback_info info)
