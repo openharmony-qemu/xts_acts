@@ -34,7 +34,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_PSS_MEMORY_0100
-     * @test.number SUB_DFX_DFR_ResourceType_PSS_MEMORY_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_PSS_MEMORY_0100
      * @tc.desc   验证ResourceType.PSS_MEMORY枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_ION_MEMORY_0100
-     * @test.number SUB_DFX_DFR_ResourceType_ION_MEMORY_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_ION_MEMORY_0100
      * @tc.desc   验证ResourceType.ION_MEMORY枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_ASHMEM_MEMORY_0100
-     * @test.number SUB_DFX_DFR_ResourceType_ASHMEM_MEMORY_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_ASHMEM_MEMORY_0100
      * @tc.desc   验证ResourceType.ASHMEM_MEMORY枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_FD_0100
-     * @test.number SUB_DFX_DFR_ResourceType_FD_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_FD_0100
      * @tc.desc   验证ResourceType.FD枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_THREAD_0100
-     * @test.number SUB_DFX_DFR_ResourceType_THREAD_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_THREAD_0100
      * @tc.desc   验证ResourceType.THREAD枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function ResourceTypeTest() {
 
     /**
      * @tc.name   testResourceType_GPU_MEMORY_0100
-     * @test.number SUB_DFX_DFR_ResourceType_GPU_MEMORY_0100
+     * @tc.number SUB_DFX_DFR_ResourceType_GPU_MEMORY_0100
      * @tc.desc   验证ResourceType.GPU_MEMORY枚举值
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
