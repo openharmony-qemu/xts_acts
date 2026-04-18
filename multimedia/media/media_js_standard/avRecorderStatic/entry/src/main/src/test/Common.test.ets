@@ -235,6 +235,22 @@ export default class Commmon {
     }
   }
 
+  setMetadata(avRecorder: media.AVRecorder) {
+    if (typeof (avRecorder) == 'undefined') {
+    } else {
+      console.info('setMetadata in current state' + avRecorder.state);
+      let meta: Record<string, string> = {
+        'com.openharmony.userdefine': '10',
+        'com.openharmony.userdefine2': '20'
+      };
+      try {
+        avRecorder.setMetadata(meta);
+      } catch (err) {
+        console.error('Failed to set metadata and catch error is ' + err.message);
+      }
+    }
+  }
+
   async getInputSurfacePromise(avRecorder: media.AVRecorder) {
     let surfaceID: string | undefined = undefined;
     if (typeof (avRecorder) == 'undefined') {
@@ -2710,6 +2726,23 @@ export default class Commmon {
     let avg = totalTime / 10;
     console.info("releaseTimeTestPromise avg time  is :" + avg)
     done();
+  }
+
+  async avRecorderSetMetadataTest(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
+    done: () => void) {
+    avRecorder = await this.idle(avRecorder);
+    console.info('case avConfig.url is ' + avConfig.url);
+    await this.preparePromise(avRecorder, avConfig);
+    this.setMetadata(avRecorder);
+    await this.startPromise(avRecorder, recorderTime);
+    await this.stopPromise(avRecorder);
+    await avRecorder.reset().then(() => {
+      console.info('reset avRecorderSetMetadataTest success');
+      expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.IDLE);
+    }).catch((err: Error) => {
+      console.info('reset avRecorderSetMetadataTest failed and catch error is ' + err.message);
+    });
+    await this.releaseDone(avRecorder, done)
   }
 
   AV_RECORDER_AUDIO_STATE: AudioRecorderState = {
