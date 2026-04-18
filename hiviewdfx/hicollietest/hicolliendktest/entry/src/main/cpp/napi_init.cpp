@@ -36,7 +36,6 @@ int g_initResult = -1;
 int result = 0;
 // 自定义休眠时间，模拟卡死场景
 const int64_t BLOCK_TIME = 5; 
-const int64_t SLEEP_TIME = 3; 
 // 设置应用线程执行任务情况标志位, true-正常， false-卡死
 std::shared_ptr<std::atomic<bool>> appThreadIsAlive_ = std::make_shared<std::atomic<bool>>(true);
 // 设置上报应用线程卡死事件标志位
@@ -188,7 +187,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
 
 void CallBack(void*)
 {
-    OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
+   // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
 }
 
 static napi_value TestHiCollieTimerNdkErr03(napi_env env, napi_callback_info info)
@@ -237,7 +236,7 @@ static napi_value TestHiCollieTimerNdkSetSuc(napi_env env, napi_callback_info in
     int id;
     HiCollie_SetTimerParam param = {"testSetTimer", 1, CallBack, nullptr, HiCollie_Flag::HICOLLIE_FLAG_NOOP};
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);
-    OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimer taskId: %{public}d", errorCode);
+    // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimer taskId: %{public}d", errorCode);
     napi_create_int32(env, errorCode, &sum);
     return sum;
 }
@@ -249,7 +248,7 @@ static napi_value TestHiCollieTimerNdkCanSuc(napi_env env, napi_callback_info in
     HiCollie_SetTimerParam param = {"testSetTimer", 1, CallBack, nullptr, HiCollie_Flag::HICOLLIE_FLAG_NOOP};
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);
     if (errorCode == HICOLLIE_SUCCESS) {
-        sleep(SLEEP_TIME);
+        sleep(2);
         OH_HiCollie_CancelTimer(id);
         napi_create_int32(env, 0, &sum);
     }
@@ -353,10 +352,6 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_HiCollie_ReportInputBlock_Main", nullptr, OH_HiCollie_ReportInputBlock_Main, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "OH_HiCollie_ReportInputBlock_Remote", nullptr, OH_HiCollie_ReportInputBlock_Remote, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "TestHiCollieSetFreezeCallback", nullptr, TestHiCollieSetFreezeCallback, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
-        { "TestHiCollieAssociateProcessReport", nullptr, TestHiCollieAssociateProcessReport, nullptr, nullptr,
             nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
