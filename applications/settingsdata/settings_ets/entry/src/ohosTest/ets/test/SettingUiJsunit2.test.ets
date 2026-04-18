@@ -73,6 +73,14 @@ function isDeviceSupportBiometrics(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
+function isDeviceSupportAboutDevice(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function isDeviceSupportAppDetail(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
 export default function settingUiJsunit() {
   beforeAll(() => {
     console.info("beforeAll start");
@@ -4586,6 +4594,10 @@ export default function settingUiJsunit() {
     it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(null);
@@ -4608,6 +4620,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_undefined_0200',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(undefined);
@@ -4630,6 +4646,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_applicationContext_0300',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(mContext?.getApplicationContext());
@@ -4652,6 +4672,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(mContext);
@@ -4674,6 +4698,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(null, 'com.example', 0);
@@ -4696,6 +4724,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_undefined_0200',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(undefined, 'com.example', 0);
@@ -4718,6 +4750,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_applicationContext_0300',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext?.getApplicationContext(), 'com.example', 0);
@@ -4740,6 +4776,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_0400',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, null, 0);
@@ -4762,6 +4802,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0500',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, '', 0);
@@ -4784,6 +4828,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_undefined_0600',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, undefined, 0);
@@ -4806,6 +4854,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0700',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', null);
@@ -4828,6 +4880,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_undefined_0800',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', undefined);
@@ -4850,10 +4906,39 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0900',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, 'com.example');
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', 0);
-        settings.openAppDetailSettingsPage(mContext, 'com.example');
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
         code = err?.code;
