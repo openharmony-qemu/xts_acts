@@ -187,7 +187,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
 
 void CallBack(void*)
 {
-   // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
+     // OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimerNdk callBackParam:");
 }
 
 static napi_value TestHiCollieTimerNdkErr03(napi_env env, napi_callback_info info)
@@ -352,7 +352,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_HiCollie_ReportInputBlock_Main", nullptr, OH_HiCollie_ReportInputBlock_Main, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "OH_HiCollie_ReportInputBlock_Remote", nullptr, OH_HiCollie_ReportInputBlock_Remote, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
+            nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
