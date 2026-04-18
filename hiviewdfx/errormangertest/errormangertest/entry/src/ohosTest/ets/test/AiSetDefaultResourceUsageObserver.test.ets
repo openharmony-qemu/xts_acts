@@ -36,7 +36,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0100
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0100
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0100
      * @tc.desc   验证setDefaultResourceUsageObserver正常调用，设置PSS_MEMORY资源观察器
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -64,7 +64,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0200
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0200
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0200
      * @tc.desc   验证setDefaultResourceUsageObserver链式调用，设置多个观察器
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0300
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0300
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0300
      * @tc.desc   验证setDefaultResourceUsageObserver传入null参数
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0400
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0400
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0400
      * @tc.desc   验证setDefaultResourceUsageObserver传入undefined参数
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0500
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0500
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0500
      * @tc.desc   验证ResourceUsageObserver回调接收PSS_MEMORY类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0600
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0600
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0600
      * @tc.desc   验证ResourceUsageObserver回调接收ION_MEMORY类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0700
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0700
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0700
      * @tc.desc   验证ResourceUsageObserver回调接收ASHMEM_MEMORY类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0800
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0800
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0800
      * @tc.desc   验证ResourceUsageObserver回调接收FD类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_0900
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0900
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_0900
      * @tc.desc   验证ResourceUsageObserver回调接收THREAD类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_1000
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1000
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1000
      * @tc.desc   验证ResourceUsageObserver回调接收detailInfo参数
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function SetDefaultResourceUsageObserverTest() {
 
     /**
      * @tc.name   testSetDefaultResourceUsageObserver_1100
-     * @test.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1100
+     * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1100
      * @tc.desc   验证setDefaultResourceUsageObserver在非主线程调用抛出错误码16000205
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
