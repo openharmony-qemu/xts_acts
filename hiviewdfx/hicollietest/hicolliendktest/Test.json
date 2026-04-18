@@ -19,8 +19,7 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
-                "power-shell setmode 602",
-                "param set hiviewdfx.appfreeze.filter_bundle_name com.hicollie.test"
+                "power-shell setmode 602"
             ]
         }
     ]
