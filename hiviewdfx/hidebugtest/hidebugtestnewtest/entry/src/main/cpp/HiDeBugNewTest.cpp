@@ -926,13 +926,13 @@ static napi_value TestRequestTraceReserved1(napi_env env, napi_callback_info inf
     int ret = OH_HiDebug_RequestTrace(&config, callback);
     OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
     if(ret == HIDEBUG_SUCCESS){
-        ret = 0;
+        ret = HIDEBUG_SUCCESS;
     } else if (ret == OH_HIDEBUG_TRACE_STORAGE_LIMIT) {
-        ret = 11400120;
+        ret = OH_HIDEBUG_TRACE_STORAGE_LIMIT;
     } else if (ret == HIDEBUG_RESOURCE_UNAVAILABLE) {
-        ret = 11400302;
+        ret = HIDEBUG_RESOURCE_UNAVAILABLE;
     } else if (ret == HIDEBUG_TRACE_ABNORMAL) {
-        ret = 11400104;
+        ret = HIDEBUG_TRACE_ABNORMAL;
     }
     napi_value result;
     napi_create_int32(env, ret, &result);
