@@ -2226,14 +2226,14 @@ export default function deviceInfoTest() {
       });
 
           /**
-     * @tc.name   PromiseTest0100
-     * @tc.number SUB_PROMISE_TEST_0100
+     * @tc.name   SUB_COMMONLIBRARY_DATA_SETTERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DATA_SETTERS_0100
      * @tc.desc   test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('PromiseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_COMMONLIBRARY_DATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     async (Done: Function) => {
       const caseName = 'PromiseTest0100';
       console.info(`${caseName} test start`);
@@ -2267,14 +2267,14 @@ export default function deviceInfoTest() {
 
 
   /**
-   * @tc.name   PromiseTest0200
-   * @tc.number SUB_PROMISE_TEST_0200
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SETTERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SETTERS_0100
    * @tc.desc   test
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('PromiseTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+  it('SUB_COMMONLIBRARY_CATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     async (Done: Function) => {
       const caseName = 'PromiseTest0200';
       console.info(`${caseName} test start`);
@@ -2309,14 +2309,14 @@ export default function deviceInfoTest() {
 
 
   /**
-   * @tc.name   PromiseTest0300
-   * @tc.number SUB_PROMISE_TEST_0300
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SETERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SETERS_0100
    * @tc.desc   test
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('PromiseTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+  it('SUB_COMMONLIBRARY_CATA_SETERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     async (Done: Function) => {
       const caseName = 'PromiseTest0300';
       console.info(`${caseName} test start`);
@@ -2351,14 +2351,14 @@ export default function deviceInfoTest() {
 
 
   /**
-   * @tc.name   PromiseTest0400
-   * @tc.number SUB_PROMISE_TEST_0400
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SEAERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SEAERS_0100
    * @tc.desc   test
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it('PromiseTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+  it('SUB_COMMONLIBRARY_CATA_SEAERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     async (Done: Function) => {
       const caseName = 'PromiseTest0400';
       console.info(`${caseName} test start`);
