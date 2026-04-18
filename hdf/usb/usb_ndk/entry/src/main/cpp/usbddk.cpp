@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1343,6 +1343,7 @@ static napi_value UsbControlTransferSetFeature(napi_env env, napi_callback_info 
     int32_t usbInitReturnValue = OH_Usb_Init();
     NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
     struct UsbDdkConfigDescriptor *config = nullptr;
+    uint8_t configIndex = 0;
     int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
     if (ret != PARAM_0 || config == nullptr) {
         OH_Usb_Release();
