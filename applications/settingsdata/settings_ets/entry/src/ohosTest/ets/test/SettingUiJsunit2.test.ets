@@ -69,15 +69,15 @@ function isDeviceSupportNfc(): boolean {
     !getBoolSystemParam('const.nfc.not_support', false);
 }
 
-function isDeviceSupportBiometrics(): boolean {
-  return isDevicePhone() || isDeviceTablet() || isDevicePC();
-}
-
 function isDeviceSupportAboutDevice(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
 function isDeviceSupportAppDetail(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function isDeviceSupportBiometrics(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
@@ -4679,11 +4679,12 @@ export default function settingUiJsunit() {
       let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(mContext);
+        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
         code = err?.code;
+        expect(code).assertEqual(16900020);
       }
-      expect(code).assertEqual(0);
       done();
     });
 
@@ -4913,11 +4914,12 @@ export default function settingUiJsunit() {
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example');
+        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
         code = err?.code;
+        expect(code).assertEqual(16900020);
       }
-      expect(code).assertEqual(0);
       done();
     });
 
@@ -4939,11 +4941,12 @@ export default function settingUiJsunit() {
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', 0);
+        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
         code = err?.code;
+        expect(code).assertEqual(16900020);
       }
-      expect(code).assertEqual(0);
       done();
     });
   })
