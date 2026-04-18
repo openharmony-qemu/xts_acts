@@ -2752,7 +2752,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
-                        await msSleep(1000)
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -2846,7 +2846,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
-                        await msSleep(1000)
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -3021,7 +3021,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
-                        await msSleep(1000)
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
