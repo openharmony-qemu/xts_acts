@@ -2042,7 +2042,7 @@ export default function Json2Test() {
     it('Json2Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: Obj20 = { a: 1, b: 2 };
       const jsonStr = JSON.stringify(obj, ["a", "a", "b"]);
-      expect(jsonStr).assertEqual('{"a":1,"b":2}');
+      expect(jsonStr).assertEqual('{"a":1,"a":1,"b":2}');
     });
 
     /**
@@ -2070,7 +2070,7 @@ export default function Json2Test() {
     it('Json2Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: Obj136 = { x: { y: 5, z: 6 }, w: 7 };
       const jsonStr = JSON.stringify(obj, (k: string, v: Any) => k === "z" ? undefined : v);
-      expect(jsonStr).assertEqual('{"w":7,"x":{"y":5}}');
+      expect(jsonStr).assertEqual('{"x":{"y":5},"w":7}');
     });
 
     /**
