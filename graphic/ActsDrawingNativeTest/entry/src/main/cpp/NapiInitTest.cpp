@@ -41,6 +41,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingPointCreate),
     DECL_NAPI_DESC(DrawingPointDestroy),
     DECL_NAPI_DESC(DrawingPointGetSet),
+    DECL_NAPI_DESC(DrawingPointNegateOffset),
     DECL_NAPI_DESC(DrawingRegionBasicOperations),
     DECL_NAPI_DESC(DrawingRegionQueryOperations),
     DECL_NAPI_DESC(DrawingPathEffect),

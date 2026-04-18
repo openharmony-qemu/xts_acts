@@ -259,7 +259,7 @@ int TestPathInterpolateMultiCalls();
 int TestPathIsInterpolateNormal();
 int TestPathIsInterpolateNull();
 int TestPathIsInterpolateMultiCalls();
-// Path Part44
+// Path Part4
 int TestPathGetPointDataNormal();
 int TestPathGetPointDataNull();
 int TestPathGetPointDatAbnormal();
@@ -277,6 +277,12 @@ int TestPathConvertToSvgStringNormal2();
 int TestPathConvertToSvgStringNull();
 int TestPathConvertToSvgStringAbnormal();
 int TestPathConvertToSvgStringMultipleCalls();
+int TestPathGetLastPointNormal();
+int TestPathGetLastPointNull();
+int TestPathGetLastPointMultipleCalls();
+int TestPathIsEqualNormal();
+int TestPathIsEqualNull();
+int TestPathIsEqualMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

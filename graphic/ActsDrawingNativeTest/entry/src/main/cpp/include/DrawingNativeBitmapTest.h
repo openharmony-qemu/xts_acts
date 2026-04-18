@@ -46,6 +46,10 @@ int TestBitmapReadPixelsInputDestroyed();
 int TestBitmapReadPixelsMismatch();
 int TestBitmapReadPixelsBoundary();
 int TestBitmapBuildMaximum();
+int TestBitmapGetRowBytesNormal();
+int TestBitmapGetRowBytesNull();
+int TestBitmapGetRowBytesAbnormal();
+int TestBitmapGetRowBytesMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
