@@ -2734,11 +2734,12 @@ export default function WindowLayoutTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
             (win as window.Window).maximize().then(()=>{
+                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
                 (win as window.Window).moveWindowToGlobal(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                    err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -2751,6 +2752,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -2823,6 +2825,7 @@ export default function WindowLayoutTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
             (win as window.Window).maximize().then(()=>{
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
                 let moveConfiguration:window.MoveConfiguration = {
                     displayId:0
                 };
@@ -2830,7 +2833,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -2843,6 +2846,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -3004,7 +3008,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -3017,6 +3021,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
