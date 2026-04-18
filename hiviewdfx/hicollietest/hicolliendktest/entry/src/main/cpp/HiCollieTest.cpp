@@ -23,7 +23,6 @@
 
 #undef LOG_TAG
 #define LOG_TAG "StruckTest"
-const int64_t BLOCK_TIME = 3; 
 
 // 设置上报应用线程卡死事件标志位
 std::shared_ptr<std::atomic<bool>> isSixSecondEvent1_ = std::make_shared<std::atomic<bool>>(false);
@@ -84,52 +83,4 @@ napi_value OH_HiCollie_ReportInputBlock_Remote(napi_env env, napi_callback_info 
     napi_value val = nullptr;
     napi_get_boolean(env, result, &val);
     return val;
-}
-
-size_t UserCall(OH_HiCollie_Freeze_Type type, void* buffer, size_t size)
-{
-   std::string source = "Freeze is happened";
-   if (type == OH_THREAD_BLOCK_3S) {
-       source += ":block 3s";
-   } else if (type == OH_THREAD_BLOCK_6S) {
-       source += ":block 6s";
-   } else if (type == OH_BUSINESS_INPUT_BLOCK) {
-       source += ":input block";
-   }else if (type == OH_BUSINESS_THREAD_BLOCK_3S) {
-       source += ":THREAD_BLOCK_3";
-   }else if (type == OH_BUSINESS_THREAD_BLOCK_6S) {
-       source += ":THREAD_BLOCK_6S";
-   }else if (type == OH_LIFECYCLE_HALF_TIMEOUT) {
-       source += ":HALF_TIMEOUT";
-   }else if (type == OH_LIFECYCLE_TIMEOUT) {
-       source += ":timeout";
-   }else if (type == OH_APP_INPUT_BLOCK) {
-       source += ":input block";
-   }else {
-       source += ":other block";
-   }
-   char* buffer1 = (char*)buffer;
-   int needed = snprintf(buffer1, size, "UserCallback%s", source.c_str());
-   return needed; 
-}
-
-napi_value TestHiCollieSetFreezeCallback(napi_env env, napi_callback_info info)
-{
-   // 设置用户回调
-    OH_HiCollie_SetFreezeCallback(UserCall);
-    napi_value result;
-    napi_create_int32(env, 0, &result);
-    return result;
-}
-
-napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info info)
-{
-    // 上报3秒事件
-    OH_HiCollie_AssociateProcessReport(false);
-    sleep(BLOCK_TIME);
-    // 上报6秒事件
-    OH_HiCollie_AssociateProcessReport(true);
-    napi_value result;
-    napi_create_int32(env, 0, &result);
-    return result;
 }
