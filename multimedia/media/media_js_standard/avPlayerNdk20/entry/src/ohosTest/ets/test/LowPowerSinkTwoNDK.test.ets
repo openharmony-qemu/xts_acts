@@ -748,6 +748,60 @@ export default function LowPowerSinkNdk2Test() {
           done()
         }
       })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0200
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0200
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0200 start====");
+            let result: number = lowpoweraudiosinkndk.OH_LowPowerVideoSink_SetPlaybackSpeed0200();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0200 catch err: " + err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0300
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0300
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0300 start====");
+            let result: number = lowpoweraudiosinkndk.OH_LowPowerVideoSink_SetPlaybackSpeed0300();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed_0300 catch err: " + err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
 
     /**
      * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0101
