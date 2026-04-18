@@ -39,7 +39,7 @@ export default function HiDebugGetRss() {
     })
 
     /**
-     * @tc.number SUB_DFX_DFR_HIDEBUG_GETRSSINFO_001
+     * @tc.number SUB_DFX_DFR_HIDEBUG_GETRSSINFO_0100
      * @tc.name testHidebugGetRssinfo01
      * @tc.desc hidebug.getRssInfo动态接口测试
      * @tc.size MediumTest
@@ -63,7 +63,7 @@ export default function HiDebugGetRss() {
 
 
     /**
-     * @tc.number SUB_DFX_DFR_HIDEBUG_GETRSSINFO_002
+     * @tc.number SUB_DFX_DFR_HIDEBUG_GETRSSINFO_0200
      * @tc.name testHidebugGetRssinfo02
      * @tc.desc hidebug.getRssInfo动态接口稳定性测试
      * @tc.size MediumTest
