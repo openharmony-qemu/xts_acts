@@ -250,7 +250,7 @@ export default function usbControlTransferTest() {
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - setupPacket is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('testUsbControlTransferSetupNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('----------------------testUsbControlTransferSetupNull001---------------------------');
@@ -279,7 +279,7 @@ export default function usbControlTransferTest() {
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - data is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('testUsbControlTransferDataNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('----------------------testUsbControlTransferDataNull001---------------------------');
@@ -308,7 +308,7 @@ export default function usbControlTransferTest() {
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - invalid deviceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('testUsbControlTransferInvalidDeviceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('----------------------testUsbControlTransferInvalidDeviceId001---------------------------');
@@ -337,7 +337,7 @@ export default function usbControlTransferTest() {
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - DDK not initialized
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('testUsbControlTransferNoInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('----------------------testUsbControlTransferNoInit001---------------------------');
