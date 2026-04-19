@@ -1758,10 +1758,10 @@ static napi_value OH_AVScreenCaptureStateCode_Enum(napi_env env, napi_callback_i
     int32_t pausedByApp = 13;
     int32_t resumedByApp = 14;
     int32_t res = 1;
-    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER == PausedByUser &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER == ResumedByUser &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_APP == PausedByApp &&
-        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_APP == ResumedByApp) {
+    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_USER == pausedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_USER == resumedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_PAUSED_BY_APP == pausedByApp &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_RESUMED_BY_APP == resumedByApp) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
