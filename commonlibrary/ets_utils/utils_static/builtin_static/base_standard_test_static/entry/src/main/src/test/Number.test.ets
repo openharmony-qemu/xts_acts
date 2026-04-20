@@ -797,7 +797,7 @@ export default function numberTest() {
     it('testNumberToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testNumberToString0001';
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
@@ -821,7 +821,7 @@ export default function numberTest() {
     it('testNumberToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNumberToString0002";
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
@@ -846,7 +846,7 @@ export default function numberTest() {
     it('testNumberToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNumberToString0003";
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
@@ -871,7 +871,7 @@ export default function numberTest() {
     it('testNumberToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNumberToString0004";
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
@@ -896,7 +896,7 @@ export default function numberTest() {
     it('testNumberToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNumberToString0005";
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
@@ -921,7 +921,7 @@ export default function numberTest() {
     it('testNumberToString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNumberToString0006";
       try {
-        const hexColour = (c: Number, radix: Number): string | Number => {
+        const hexColour = (c: Number, radix: int): string | Number => {
           if (c < 256) {
             return Math.abs(c).toString(radix);
           }
