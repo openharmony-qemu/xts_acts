@@ -1004,8 +1004,6 @@ static napi_value waitForCondition(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "waitForCondition callBackId: %{public}d, userNum: %{public}d.", callBackId, userNum);
     try {
         MyData *userData = GetMyData(g_myDataIndex);
-        const int waitMyDataSeconds = 1;
-        std::this_thread::sleep_for(std::chrono::seconds(waitMyDataSeconds));
         OH_LOG_INFO(LOG_APP, "waitForCondition myDataIndex: %{public}d.", g_myDataIndex);
         OH_LOG_INFO(LOG_APP, "waitForCondition sleep start!");
         std::unique_lock<std::mutex> lock(g_mtx);
