@@ -91,7 +91,7 @@ struct webViewONHttpErrorReceiveExample {
         })
       }
 
-      Web({ src: URL, controller: this.controller })
+      Web({ src: 'http://1.1.1.123/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
