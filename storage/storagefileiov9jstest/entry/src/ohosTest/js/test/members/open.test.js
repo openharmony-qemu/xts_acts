@@ -1841,7 +1841,7 @@ it('fileIO_test_open_async_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
   /**
    * @tc.name   fileIO_test_open_sync_039
-   * @tc.number fileIO_test_open_sync_3900
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3900
    * @tc.desc   Test openSync() interfaces. mode=0o10000000000.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
