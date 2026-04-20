@@ -192,9 +192,9 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.desc   Call getPublicCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL
+     * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_PubCertJsApi_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_PubCertJsApi_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0700: started.");
       let uri = "oh:t=ak;o=object;u=100;a=20010045";
       let uriObject = generateString(256-27);
@@ -427,7 +427,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
 
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
-        console.log("installPrivateCertificate success")
+        console.log("installPrivateCertificate success");
+        expect(null).assertFail();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0100 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
@@ -813,13 +814,14 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try{
         await certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
           expect(err.code).assertEqual(401);
+          done();
         });
       }catch(err){
         console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300 e.code = " + err.code);
         expect(err.code).assertEqual(401);
+        done();
       }
       console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
-      done();
     });
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
