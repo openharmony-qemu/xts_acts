@@ -46,7 +46,8 @@ import ExpressionsEnsureNotNullishTest from "./expressions/ensure_not_nullish_ex
 import BooleanEqualityOperatorsTest from "./expressions/equality_expressions/boolean_equality_operators/BooleanEqualityOperators.test";
 import EnumerationEqualityOperatorsTest from "./expressions/equality_expressions/enumeration_equality_operators/EnumerationEqualityOperators.test";
 import FunctionTypeEqualityOperatorsTest from "./expressions/equality_expressions/function_type_equality_operators/FunctionTypeEqualityOperators.test";
-// import NumericalEqualityOperatorsTest from "./expressions/equality_expressions/numerical_equality_operators/NumericalEqualityOperators.test";
+import NumericalEqualityOperatorsTest from "./expressions/equality_expressions/numerical_equality_operators/NumericalEqualityOperators.test";
+import NumericalEqualityOperatorsOneTest from "./expressions/equality_expressions/numerical_equality_operators/NumericalEqualityOperators_1.test";
 import ExpressionsReferenceEqualityTest from "./expressions/equality_expressions/reference_equality/ExpressionsReferenceEquality.test";
 // import TypeParameterOperatorsTest from "./expressions/equality_expressions/reference_equality_based_on_actual_type/type_parameter_equality_operators/TypeParameterOperators.test";
 // import UnionEqualityOperatorsTest from "./expressions/equality_expressions/reference_equality_based_on_actual_type/union_equality_operators/UnionEqualityOperators.test";
@@ -182,7 +183,8 @@ export default function testsuite() {
   BooleanEqualityOperatorsTest();
   EnumerationEqualityOperatorsTest();
   FunctionTypeEqualityOperatorsTest();
-  // NumericalEqualityOperatorsTest();
+  NumericalEqualityOperatorsTest();
+  NumericalEqualityOperatorsOneTest();
   ExpressionsReferenceEqualityTest();
   // TypeParameterOperatorsTest();
   // UnionEqualityOperatorsTest();

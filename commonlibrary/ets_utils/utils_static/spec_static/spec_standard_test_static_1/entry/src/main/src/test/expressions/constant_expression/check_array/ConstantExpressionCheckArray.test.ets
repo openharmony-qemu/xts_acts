@@ -94,9 +94,9 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const testValue: int = -30
-      const data: int[] = new Array<int>(~testValue)
-      expect(data.length).assertEqual(29)
+      const testValue: int = -50
+      const data: int[] = new Array<int>(~testValue.toInt())
+      expect(data.length).assertEqual(49)
     })
 
     /**
@@ -108,9 +108,9 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const testValue: int = -50
+      const testValue: float = -12.2
       const data: int[] = new Array<int>(~testValue.toInt())
-      expect(data.length).assertEqual(49)
+      expect(data.length).assertEqual(11)
     })
 
     /**
@@ -122,23 +122,24 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const testValue: float = -12.2
+      const testValue: float = -55.9
       const data: int[] = new Array<int>(~testValue.toInt())
-      expect(data.length).assertEqual(11)
+      expect(data.length).assertEqual(54)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_0600
      * @tc.name      testConstantExpressionCheckArray0006
-     * @tc.desc      Constant expression with bitwise complement as array size.
+     * @tc.desc      Constant bitwise expression as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const testValue: float = -55.9
-      const data: int[] = new Array<int>(~testValue.toInt())
-      expect(data.length).assertEqual(54)
+      const value1: int = 10
+      const size: int = (value1 & 7).toInt()
+      const data: int[] = new Array<int>(size)
+      expect(data.length).assertEqual(2)
     })
 
     /**
@@ -151,9 +152,9 @@ export default function ConstantExpressionCheckArrayTest() {
      */
     it("testConstantExpressionCheckArray0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: int = 10
-      const size: int = (value1 & 7).toInt()
+      const size: int = (value1 | 7).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(15)
     })
 
     /**
@@ -166,9 +167,9 @@ export default function ConstantExpressionCheckArrayTest() {
      */
     it("testConstantExpressionCheckArray0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: int = 10
-      const size: int = (value1 | 7).toInt()
+      const size: int = (value1 ^ 7).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
+      expect(data.length).assertEqual(13)
     })
 
     /**
@@ -180,10 +181,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 | 7).toInt()
+      const value1: float = 10.5
+      const size: int = (value1 & 7.0).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
+      expect(data.length).assertEqual(2)
     })
 
     /**
@@ -195,10 +196,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 ^ 7).toInt()
+      const value1: float = 10.5
+      const size: int = (value1 | 7.0).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(13)
+      expect(data.length).assertEqual(15)
     })
 
     /**
@@ -211,9 +212,9 @@ export default function ConstantExpressionCheckArrayTest() {
      */
     it("testConstantExpressionCheckArray0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: float = 10.5
-      const size: int = (value1 & 7.0).toInt()
+      const size: int = (value1 ^ 7.0).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(13)
     })
 
     /**
@@ -225,10 +226,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 10.5
-      const size: int = (value1 | 7.0).toInt()
+      const value1: float = 10.9
+      const size: int = (value1 & 7.1).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
+      expect(data.length).assertEqual(2)
     })
 
     /**
@@ -240,10 +241,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 10.5
-      const size: int = (value1 ^ 7.0).toInt()
+      const value1: float = 10.9
+      const size: int = (value1 | 7.1).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(13)
+      expect(data.length).assertEqual(15)
     })
 
     /**
@@ -256,159 +257,169 @@ export default function ConstantExpressionCheckArrayTest() {
      */
     it("testConstantExpressionCheckArray0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: float = 10.9
-      const size: int = (value1 & 7.1).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1500
-     * @tc.name      testConstantExpressionCheckArray0015
-     * @tc.desc      Constant bitwise expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 10.9
-      const size: int = (value1 | 7.1).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1600
-     * @tc.name      testConstantExpressionCheckArray0016
-     * @tc.desc      Constant bitwise expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 10.9
       const size: int = (value1 ^ 7.1).toInt()
       const data: int[] = new Array<int>(size)
       expect(data.length).assertEqual(13)
     })
 
     /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1500
+     * @tc.name      testConstantExpressionCheckArray0015
+     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 26
+      const value2: int = 10
+      const size: int = (value1 * value2)
+      const data: int[] = new Array<int>(size)
+      expect(data.length).assertEqual(260)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1600
+     * @tc.name      testConstantExpressionCheckArray0016
+     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 26
+      const value2: int = 10
+      const size: int = (value1 / value2)
+      const data: int[] = new Array<int>(size)
+      expect(data.length).assertEqual(2)
+    })
+
+    /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1700
      * @tc.name      testConstantExpressionCheckArray0017
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 ^ 7).toInt()
+      const value1: int = 38
+      const value2: int = 10
+      const size: int = (value1 * value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(13)
+      expect(data.length).assertEqual(380)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1800
      * @tc.name      testConstantExpressionCheckArray0018
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 & 7).toInt()
+      const value1: int = 308
+      const value2: int = 10
+      const size: int = (value1 / value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(30)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_1900
      * @tc.name      testConstantExpressionCheckArray0019
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 | 7).toInt()
+      const value1: int = 308
+      const value2: int = 10
+      const size: int = (value1 % value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
+      expect(data.length).assertEqual(8)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_2000
      * @tc.name      testConstantExpressionCheckArray0020
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 ^ 7).toInt()
+      const value1: int = 308
+      const value2: int = 10
+      const size: int = (value1 + value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(13)
+      expect(data.length).assertEqual(318)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_2100
      * @tc.name      testConstantExpressionCheckArray0021
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 & 7).toInt()
+      const value1: int = 308
+      const value2: int = 10
+      const size: int = (value1 - value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(298)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_2200
      * @tc.name      testConstantExpressionCheckArray0022
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 | 7).toInt()
+      const value1: int = 56
+      const value2: int = 10
+      const size: int = (value1 * value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(15)
+      expect(data.length).assertEqual(560)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_2300
      * @tc.name      testConstantExpressionCheckArray0023
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 ^ 7).toInt()
+      const value1: int = 506
+      const value2: int = 10
+      const size: int = (value1 / value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(13)
+      expect(data.length).assertEqual(50)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_2400
      * @tc.name      testConstantExpressionCheckArray0024
-     * @tc.desc      Constant bitwise expression as array size.
+     * @tc.desc      Constant expression with mathematical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size: int = (value1 & 7).toInt()
+      const value1: int = 506
+      const value2: int = 10
+      const size: int = (value1 % value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(6)
     })
 
     /**
@@ -420,11 +431,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
+      const value1: int = 506
       const value2: int = 10
-      const size: int = (value1 * value2)
+      const size: int = (value1 + value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(260)
+      expect(data.length).assertEqual(516)
     })
 
     /**
@@ -436,11 +447,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
+      const value1: int = 506
       const value2: int = 10
-      const size: int = (value1 / value2)
+      const size: int = (value1 - value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(2)
+      expect(data.length).assertEqual(496)
     })
 
     /**
@@ -452,11 +463,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 38
+      const value1: int = 26
       const value2: int = 10
-      const size: int = (value1 * value2)
+      const size: int = (value1 % value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(380)
+      expect(data.length).assertEqual(6)
     })
 
     /**
@@ -468,11 +479,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 308
+      const value1: float = 123.2
       const value2: int = 10
-      const size: int = (value1 / value2)
+      const size: int = (value1 * value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(30)
+      expect(data.length).assertEqual(1232)
     })
 
     /**
@@ -484,11 +495,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 308
+      const value1: float = 123.2
       const value2: int = 10
-      const size: int = (value1 % value2)
+      const size: int = (value1 / value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(8)
+      expect(data.length).assertEqual(12)
     })
 
     /**
@@ -500,11 +511,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 308
+      const value1: float = 123.2
       const value2: int = 10
-      const size: int = (value1 + value2)
+      const size: int = (value1 % value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(318)
+      expect(data.length).assertEqual(3)
     })
 
     /**
@@ -516,11 +527,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 308
+      const value1: float = 123.2
       const value2: int = 10
-      const size: int = (value1 - value2)
+      const size: int = (value1 + value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(298)
+      expect(data.length).assertEqual(133)
     })
 
     /**
@@ -532,11 +543,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 56
+      const value1: float = 123.2
       const value2: int = 10
-      const size: int = (value1 * value2).toInt()
+      const size: int = (value1 - value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(560)
+      expect(data.length).assertEqual(113)
     })
 
     /**
@@ -548,11 +559,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 506
+      const value1: float = 551.9
       const value2: int = 10
-      const size: int = (value1 / value2).toInt()
+      const size: int = (value1 * value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(50)
+      expect(data.length).assertEqual(5519)
     })
 
     /**
@@ -564,11 +575,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 506
+      const value1: float = 551.9
       const value2: int = 10
-      const size: int = (value1 % value2).toInt()
+      const size: int = (value1 / value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(6)
+      expect(data.length).assertEqual(55)
     })
 
     /**
@@ -580,11 +591,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 506
+      const value1: float = 551.9
       const value2: int = 10
-      const size: int = (value1 + value2).toInt()
+      const size: int = (value1 % value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(516)
+      expect(data.length).assertEqual(1)
     })
 
     /**
@@ -596,11 +607,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 506
+      const value1: float = 551.9
       const value2: int = 10
-      const size: int = (value1 - value2).toInt()
+      const size: int = (value1 + value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(496)
+      expect(data.length).assertEqual(561)
     })
 
     /**
@@ -612,11 +623,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
+      const value1: float = 551.9
       const value2: int = 10
-      const size: int = (value1 % value2)
+      const size: int = (value1 - value2).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(6)
+      expect(data.length).assertEqual(541)
     })
 
     /**
@@ -628,11 +639,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 123.2
+      const value1: int = 26
       const value2: int = 10
-      const size: int = (value1 * value2).toInt()
+      const size: int = (value1 + value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(1232)
+      expect(data.length).assertEqual(36)
     })
 
     /**
@@ -644,11 +655,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 123.2
+      const value1: int = 26
       const value2: int = 10
-      const size: int = (value1 / value2).toInt()
+      const size: int = (value1 - value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(12)
+      expect(data.length).assertEqual(16)
     })
 
     /**
@@ -660,11 +671,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 123.2
+      const value1: int = 260
       const value2: int = 10
-      const size: int = (value1 % value2).toInt()
+      const size: int = (value1 / value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(3)
+      expect(data.length).assertEqual(26)
     })
 
     /**
@@ -676,11 +687,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 123.2
+      const value1: int = 260
       const value2: int = 10
-      const size: int = (value1 + value2).toInt()
+      const size: int = (value1 % value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(133)
+      expect(data.length).assertEqual(0)
     })
 
     /**
@@ -692,11 +703,11 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 123.2
+      const value1: int = 260
       const value2: int = 10
-      const size: int = (value1 - value2).toInt()
+      const size: int = (value1 + value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(113)
+      expect(data.length).assertEqual(270)
     })
 
     /**
@@ -708,187 +719,187 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 551.9
+      const value1: int = 260
       const value2: int = 10
-      const size: int = (value1 * value2).toInt()
+      const size: int = (value1 - value2)
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(5519)
+      expect(data.length).assertEqual(250)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4400
      * @tc.name      testConstantExpressionCheckArray0044
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 551.9
-      const value2: int = 10
-      const size: int = (value1 / value2).toInt()
+      const value1: int = 10
+      const decision: boolean = value1 < 12
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(55)
+      expect(data.length).assertEqual(10)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4500
      * @tc.name      testConstantExpressionCheckArray0045
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 551.9
-      const value2: int = 10
-      const size: int = (value1 % value2).toInt()
+      const value1: int = 10
+      const decision: boolean = value1 < 12.0
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(1)
+      expect(data.length).assertEqual(10)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4600
      * @tc.name      testConstantExpressionCheckArray0046
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 551.9
-      const value2: int = 10
-      const size: int = (value1 + value2).toInt()
+      const value1: float = 21.7
+      const decision: boolean = value1 == 21.7
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(561)
+      expect(data.length).assertEqual(46)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4700
      * @tc.name      testConstantExpressionCheckArray0047
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 551.9
-      const value2: int = 10
-      const size: int = (value1 - value2).toInt()
+      const value1: float = 22.3
+      const decision: boolean = value1 == 22.3
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(541)
+      expect(data.length).assertEqual(47)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4800
      * @tc.name      testConstantExpressionCheckArray0048
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
-      const value2: int = 10
-      const size: int = (value1 + value2)
+      const value1: int = 10
+      const decision: boolean = value1 < 12
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(36)
+      expect(data.length).assertEqual(10)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4900
      * @tc.name      testConstantExpressionCheckArray0049
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
-      const value2: int = 10
-      const size: int = (value1 - value2)
+      const value1: int = 10
+      const decision: boolean = value1 < 12.0
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(16)
+      expect(data.length).assertEqual(10)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5000
      * @tc.name      testConstantExpressionCheckArray0050
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 26
-      const value2: int = 10
-      const size: int = (value1 * value2)
+      const value1: int = 260
+      const decision: boolean = value1 <= 25
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(260)
+      expect(data.length).assertEqual(285)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5100
      * @tc.name      testConstantExpressionCheckArray0051
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 260
-      const value2: int = 10
-      const size: int = (value1 / value2)
+      const value1: int = 30
+      const decision: boolean = value1 >= -30
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(26)
+      expect(data.length).assertEqual(30)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5200
      * @tc.name      testConstantExpressionCheckArray0052
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: int = 260
-      const value2: int = 10
-      const size: int = (value1 % value2)
+      const decision: boolean = value1 == 259
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(0)
+      expect(data.length).assertEqual(285)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5300
      * @tc.name      testConstantExpressionCheckArray0053
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 260
-      const value2: int = 10
-      const size: int = (value1 + value2)
+      const value1: float = 26.0
+      const decision: boolean = value1 == 26.0
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(270)
+      expect(data.length).assertEqual(26)
     })
 
     /**
      * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5400
      * @tc.name      testConstantExpressionCheckArray0054
-     * @tc.desc      Constant expression with mathematical calculations as array size.
+     * @tc.desc      Constant expression with logical calculations as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 260
-      const value2: int = 10
-      const size: int = (value1 - value2)
+      const value1: float = 27.0
+      const decision: boolean = value1 == 27
+      const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(250)
+      expect(data.length).assertEqual(27)
     })
 
     /**
@@ -900,182 +911,6 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(10)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5600
-     * @tc.name      testConstantExpressionCheckArray0056
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12.0
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(10)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5700
-     * @tc.name      testConstantExpressionCheckArray0057
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 21.7
-      const decision: boolean = value1 == 21.7
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(46)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5800
-     * @tc.name      testConstantExpressionCheckArray0058
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 22.3
-      const decision: boolean = value1 == 22.3
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(47)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5900
-     * @tc.name      testConstantExpressionCheckArray0059
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(10)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6000
-     * @tc.name      testConstantExpressionCheckArray0060
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12.0
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(10)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6100
-     * @tc.name      testConstantExpressionCheckArray0061
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 260
-      const decision: boolean = value1 <= 25
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(285)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6200
-     * @tc.name      testConstantExpressionCheckArray0062
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 30
-      const decision: boolean = value1 >= -30
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(30)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6300
-     * @tc.name      testConstantExpressionCheckArray0063
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 260
-      const decision: boolean = value1 == 259
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(285)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6400
-     * @tc.name      testConstantExpressionCheckArray0064
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 26.0
-      const decision: boolean = value1 == 26.0
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(26)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6500
-     * @tc.name      testConstantExpressionCheckArray0065
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 27.0
-      const decision: boolean = value1 == 27
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = new Array<int>(size)
-      expect(data.length).assertEqual(27)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6600
-     * @tc.name      testConstantExpressionCheckArray0066
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: float = 28.3
       const decision: boolean = value1 == 28.3
       const size: int = (decision ? value1 : value1 + 25).toInt()
@@ -1084,101 +919,266 @@ export default function ConstantExpressionCheckArrayTest() {
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6700
-     * @tc.name      testConstantExpressionCheckArray0067
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5600
+     * @tc.name      testConstantExpressionCheckArray0056
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 16
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(16)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6800
-     * @tc.name      testConstantExpressionCheckArray0068
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5700
+     * @tc.name      testConstantExpressionCheckArray0057
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 30
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(30)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6900
-     * @tc.name      testConstantExpressionCheckArray0069
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5800
+     * @tc.name      testConstantExpressionCheckArray0058
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 'p'.charCodeAt(0)
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(112)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7000
-     * @tc.name      testConstantExpressionCheckArray0070
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_5900
+     * @tc.name      testConstantExpressionCheckArray0059
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 300
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(300)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7100
-     * @tc.name      testConstantExpressionCheckArray0071
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6000
+     * @tc.name      testConstantExpressionCheckArray0060
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 500
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(500)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7200
-     * @tc.name      testConstantExpressionCheckArray0072
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6100
+     * @tc.name      testConstantExpressionCheckArray0061
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: float = 120.2
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(120)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7300
-     * @tc.name      testConstantExpressionCheckArray0073
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6200
+     * @tc.name      testConstantExpressionCheckArray0062
      * @tc.desc      Constant expression with number conversion as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: float = 550.9
       const data: int[] = new Array<int>(size.toInt())
       expect(data.length).assertEqual(550)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6300
+     * @tc.name      testConstantExpressionCheckArray0063
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 10
+      const size = value1 << 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(80)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6400
+     * @tc.name      testConstantExpressionCheckArray0064
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 10
+      const size = value1 >> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6500
+     * @tc.name      testConstantExpressionCheckArray0065
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 46
+      const size = value1 >> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6600
+     * @tc.name      testConstantExpressionCheckArray0066
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 46
+      const size = value1 >>> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6700
+     * @tc.name      testConstantExpressionCheckArray0067
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 53.2
+      const size = value1 << 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(424)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6800
+     * @tc.name      testConstantExpressionCheckArray0068
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 53.2
+      const size = value1 >> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(6)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_6900
+     * @tc.name      testConstantExpressionCheckArray0069
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 53.2
+      const size = value1 >>> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(6)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7000
+     * @tc.name      testConstantExpressionCheckArray0070
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 61.9
+      const size = value1 << 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(488)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7100
+     * @tc.name      testConstantExpressionCheckArray0071
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 61.9
+      const size = value1 >> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7200
+     * @tc.name      testConstantExpressionCheckArray0072
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: float = 61.9
+      const size = value1 >>> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_7300
+     * @tc.name      testConstantExpressionCheckArray0073
+     * @tc.desc      Constant shift expression as array size.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckArray0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: int = 10
+      const size = value1 >>> 3
+      const data: int[] = new Array<int>(size.toInt())
+      expect(data.length).assertEqual(1)
     })
 
     /**
@@ -1190,10 +1190,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
+      const value1: int = 20
       const size = value1 << 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(80)
+      expect(data.length).assertEqual(160)
     })
 
     /**
@@ -1205,10 +1205,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
+      const value1: int = 20
       const size = value1 >> 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(1)
+      expect(data.length).assertEqual(2)
     })
 
     /**
@@ -1220,10 +1220,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 46
-      const size = value1 >> 3
+      const value1: int = 20
+      const size = value1 >>> 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(5)
+      expect(data.length).assertEqual(2)
     })
 
     /**
@@ -1235,10 +1235,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 46
-      const size = value1 >>> 3
+      const value1: int = 38
+      const size = value1 << 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(5)
+      expect(data.length).assertEqual(304)
     })
 
     /**
@@ -1250,10 +1250,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 53.2
-      const size = value1 << 3
+      const value1: int = 38
+      const size = value1 >> 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(424)
+      expect(data.length).assertEqual(4)
     })
 
     /**
@@ -1265,10 +1265,10 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 53.2
-      const size = value1 >> 3
+      const value1: int = 38
+      const size = value1 >>> 3
       const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(6)
+      expect(data.length).assertEqual(4)
     })
 
     /**
@@ -1280,171 +1280,6 @@ export default function ConstantExpressionCheckArrayTest() {
      * @tc.level     Level 2
      */
     it("testConstantExpressionCheckArray0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 53.2
-      const size = value1 >>> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(6)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8100
-     * @tc.name      testConstantExpressionCheckArray0081
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 61.9
-      const size = value1 << 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(488)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8200
-     * @tc.name      testConstantExpressionCheckArray0082
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 61.9
-      const size = value1 >> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8300
-     * @tc.name      testConstantExpressionCheckArray0083
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: float = 61.9
-      const size = value1 >>> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8400
-     * @tc.name      testConstantExpressionCheckArray0084
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const size = value1 >>> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(1)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8500
-     * @tc.name      testConstantExpressionCheckArray0085
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 20
-      const size = value1 << 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(160)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8600
-     * @tc.name      testConstantExpressionCheckArray0086
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 20
-      const size = value1 >> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(2)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8700
-     * @tc.name      testConstantExpressionCheckArray0087
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 20
-      const size = value1 >>> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(2)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8800
-     * @tc.name      testConstantExpressionCheckArray0088
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 38
-      const size = value1 << 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(304)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8900
-     * @tc.name      testConstantExpressionCheckArray0089
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 38
-      const size = value1 >> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(4)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9000
-     * @tc.name      testConstantExpressionCheckArray0090
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 38
-      const size = value1 >>> 3
-      const data: int[] = new Array<int>(size.toInt())
-      expect(data.length).assertEqual(4)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9100
-     * @tc.name      testConstantExpressionCheckArray0091
-     * @tc.desc      Constant shift expression as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: int = 46
       const size = value1 << 3
       const data: int[] = new Array<int>(size.toInt())
@@ -1452,112 +1287,112 @@ export default function ConstantExpressionCheckArrayTest() {
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9200
-     * @tc.name      testConstantExpressionCheckArray0092
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8100
+     * @tc.name      testConstantExpressionCheckArray0081
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = -16
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(16)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9300
-     * @tc.name      testConstantExpressionCheckArray0093
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8200
+     * @tc.name      testConstantExpressionCheckArray0082
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = -30
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(30)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9400
-     * @tc.name      testConstantExpressionCheckArray0094
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8300
+     * @tc.name      testConstantExpressionCheckArray0083
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = -31
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(31)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9500
-     * @tc.name      testConstantExpressionCheckArray0095
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8400
+     * @tc.name      testConstantExpressionCheckArray0084
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = -510
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(510)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9600
-     * @tc.name      testConstantExpressionCheckArray0096
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8500
+     * @tc.name      testConstantExpressionCheckArray0085
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: float = -12.2
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(12)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9700
-     * @tc.name      testConstantExpressionCheckArray0097
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8600
+     * @tc.name      testConstantExpressionCheckArray0086
      * @tc.desc      Constant expression with unary minus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: float = -50.9
       const data: int[] = new Array<int>(-size.toInt())
       expect(data.length).assertEqual(50)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9800
-     * @tc.name      testConstantExpressionCheckArray0098
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8700
+     * @tc.name      testConstantExpressionCheckArray0087
      * @tc.desc      Constant expression with unary plus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size: int = 16
       const data: int[] = new Array<int>(+size.toInt())
       expect(data.length).assertEqual(16)
     })
 
     /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_9900
-     * @tc.name      testConstantExpressionCheckArray0099
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_8800
+     * @tc.name      testConstantExpressionCheckArray0088
      * @tc.desc      Constant expression with unary plus as array size.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConstantExpressionCheckArray0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testConstantExpressionCheckArray0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size1: int = 30
       const data1: int[] = new Array<int>(+size1.toInt())
       expect(data1.length).assertEqual(30)
