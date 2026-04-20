@@ -926,7 +926,7 @@ static napi_value TestRequestTraceReserved1(napi_env env, napi_callback_info inf
     int ret = OH_HiDebug_RequestTrace(&config, callback);
     OH_LOG_INFO(LOG_APP, "testTag errorCode %{public}d", ret);
     if (ret == HIDEBUG_SUCCESS) {
-        ret HIDEBUG_SUCCESS;
+        ret = HIDEBUG_SUCCESS;
     } else if (ret == OH_HIDEBUG_TRACE_STORAGE_LIMIT) {
         ret = OH_HIDEBUG_TRACE_STORAGE_LIMIT;
     } else if (ret == HIDEBUG_RESOURCE_UNAVAILABLE) {
