@@ -48,8 +48,8 @@ export default function BuiltinsArrayCreateTest(): void {
      */
     it('builtinsArrayCreateTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const initialValue = 0;
-      const result = Array.create<number>(0, initialValue);
-      
+      const result = Array.create<number>(0 as int, initialValue);
+
       expect(result.length).assertEqual(0);
     });
 
@@ -62,12 +62,12 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = 5;
+      const arrayLength: int = 5;
       const initialValue = 10;
       const result = Array.create<number>(arrayLength, initialValue);
-      
+
       expect(result.length).assertEqual(arrayLength);
-      for (let i = 0; i < arrayLength; i++) {
+      for (let i: int = 0; i < arrayLength; i++) {
         expect(result[i]).assertEqual(initialValue);
       }
     });
@@ -81,9 +81,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = -5;
+      const arrayLength: int = -5;
       const initialValue = 10;
-      
+
       expect(() => {
         Array.create<number>(arrayLength, initialValue);
       }).assertThrowError('', 'size = -5');
@@ -98,9 +98,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength = 2147483647;
+      const arrayLength: int = 2147483647;
       const initialValue = 1;
-      
+
       expect(() => {
         const result = Array.create<number>(arrayLength, initialValue);
         expect(result.length).assertEqual(arrayLength);
@@ -116,9 +116,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength = -2147483648;
+      const arrayLength: int = -2147483648;
       const initialValue = 1;
-      
+
       expect(() => {
         Array.create<number>(arrayLength, initialValue);
       }).assertThrowError('', 'size = -2147483648');
@@ -133,10 +133,10 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = 1;
+      const arrayLength: int = 1;
       const initialValue = 'test';
       const result = Array.create<string>(arrayLength, initialValue);
-      
+
       expect(result.length).assertEqual(arrayLength);
       expect(result[0]).assertEqual(initialValue);
     });
@@ -150,10 +150,10 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = 1;
+      const arrayLength: int = 1;
       const initialValue = 0;
       const result = Array.create<number>(arrayLength, initialValue);
-      
+
       expect(result.length).assertEqual(arrayLength);
       expect(result[0]).assertEqual(initialValue);
     });
@@ -167,7 +167,7 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength = 1000000;
+      const arrayLength: int = 1000000;
       const initialValue = true;
       const result = Array.create<boolean>(arrayLength, initialValue);
       expect(result.length).assertEqual(arrayLength);
@@ -182,12 +182,12 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = 3;
+      const arrayLength: int = 3;
       const initialValue: Record<string, string> = { "name": 'test' };
       const result = Array.create<Record<string, string>>(arrayLength, initialValue);
-      
+
       expect(result.length).assertEqual(arrayLength);
-      for (let i = 0; i < arrayLength; i++) {
+      for (let i: int = 0; i < arrayLength; i++) {
         expect(result[i]).assertDeepEquals(initialValue);
       }
     });
@@ -201,12 +201,12 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength = 2;
+      const arrayLength: int = 2;
       const initialValue = undefined;
       const result = Array.create<undefined>(arrayLength, initialValue);
-      
+
       expect(result.length).assertEqual(arrayLength);
-      for (let i = 0; i < arrayLength; i++) {
+      for (let i: int = 0; i < arrayLength; i++) {
         expect(result[i]).assertEqual(initialValue);
       }
     });
