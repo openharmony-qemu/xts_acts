@@ -1,16 +1,16 @@
-#include <stdio.h>
-#include <string.h>
-#include <limits.h>
+#include <cstdio>
+#include <cstring>
+#include <climits>
 #include "test.h"
 
-#define BUFFER_SIZE 100
-#define FIELD_COUNT_2 2
-#define FIELD_COUNT_3 3
-#define FIELD_COUNT_5 5
-#define FIELD_COUNT_1 1
-#define FIELD_COUNT_0 0
-#define FIELD_COUNT_NEG1 -1
-#define CHAR_WIDTH_8 8
+#define BUFFER_SIZE (100)
+#define FIELD_COUNT_2 (2)
+#define FIELD_COUNT_3 (3)
+#define FIELD_COUNT_5 (5)
+#define FIELD_COUNT_1 (1)
+#define FIELD_COUNT_0 (0)
+#define FIELD_COUNT_NEG1 (-1)
+#define CHAR_WIDTH_8 (8)
 
 #define TEST(r, f, x, m) ( \
     ((r) = (f)) == (x) || \
@@ -22,14 +22,20 @@
 
 #define TEST_F(x) ( \
     TEST(i, sscanf(# x, "%lf", &d), 1, "got %d fields, expected %d"), \
-    TEST(t, d, (double)x, "%g != %g") )
+    TEST(t, d, (double)(x), "%g != %g"))
 
 static int SscanfTestImpl(void)
 {
     int i;
-    char a[BUFFER_SIZE], b[BUFFER_SIZE];
-    int x, y, z, u, v;
-    double d, t;
+    char a[BUFFER_SIZE];
+    char b[BUFFER_SIZE];
+    int x;
+    int y;
+    int z;
+    int u;
+    int v;
+    double d;
+    double t;
 
     TEST(i, sscanf("hello, world\n", "%s %s", a, b), FIELD_COUNT_2, "only %d fields, expected %d");
     TEST_S(a, "hello,", "");
@@ -48,12 +54,14 @@ static int SscanfTestImpl(void)
     TEST(i, sscanf("hello, world\n", "%8c%8c", a, b), FIELD_COUNT_1, "%d fields, expected %d");
     TEST_S(a, "hello, wX", "");
 
-    TEST(i, sscanf("56789 0123 56a72", "%2d%d%*d %[0123456789]\n", &x, &y, a), FIELD_COUNT_3, "only %d fields, expected %d");
+    TEST(i, sscanf("56789 0123 56a72", "%2d%d%*d %[0123456789]\n", &x, &y, a), FIELD_COUNT_3,
+         "only %d fields, expected %d");
     TEST(i, x, 56, "%d != %d");
     TEST(i, y, 789, "%d != %d");
     TEST_S(a, "56", "");
 
-    TEST(i, sscanf("011 0x100 11 0x100 100", "%i %i %o %x %x\n", &x, &y, &z, &u, &v), FIELD_COUNT_5, "only %d fields, expected %d");
+    TEST(i, sscanf("011 0x100 11 0x100 100", "%i %i %o %x %x\n", &x, &y, &z, &u, &v), FIELD_COUNT_5,
+         "only %d fields, expected %d");
     TEST(i, x, 9, "%d != %d");
     TEST(i, y, 256, "%d != %d");
     TEST(i, z, 9, "%d != %d");

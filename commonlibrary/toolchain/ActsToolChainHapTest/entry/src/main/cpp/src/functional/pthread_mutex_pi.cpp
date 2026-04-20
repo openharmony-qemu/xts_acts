@@ -1,19 +1,34 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /* testing pthread mutex behaviour with various attributes */
 #include <pthread.h>
 #include <semaphore.h>
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
+#include <cstdio>
+#include <cerrno>
+#include <cstring>
 #include "test.h"
 
-#define NSEC_100MS 100
-#define NSEC_1SEC 1000
-#define FAILURE_CODE -1
+#define NSEC_100MS (100)
+#define NSEC_1SEC (1000)
+#define FAILURE_CODE (-1)
 
 #define T(f) if ((r = (f))) t_error(#f " failed: %s\n", strerror(r))
 #define E(f) if (f) t_error(#f " failed: %s\n", strerror(errno))
 
-static void *Relock(void *arg)
+static void *RelockFunc(void *arg)
 {
     void **a = (void **)arg;
     int r;
@@ -30,7 +45,7 @@ static void *Relock(void *arg)
     if (*ret == 0) {
         T(pthread_mutex_unlock(m));
     }
-    return 0;
+    return nullptr;
 }
 
 static int TestRelock(int mtype)
@@ -51,12 +66,12 @@ static int TestRelock(int mtype)
     T(pthread_mutex_init((pthread_mutex_t *)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
     E(sem_init((sem_t *)a[1], 0, 0));
-    T(pthread_create(&t, nullptr, Relock, a));
+    T(pthread_create(&t, nullptr, RelockFunc, a));
     E(sem_wait((sem_t *)a[1]));
     E(clock_gettime(CLOCK_REALTIME, &ts));
-    ts.tv_nsec += NSEC_100MS * 1000 * 1000;
-    if (ts.tv_nsec >= NSEC_1SEC * 1000 * 1000) {
-        ts.tv_nsec -= NSEC_1SEC * 1000 * 1000;
+    ts.tv_nsec += NSEC_100MS;
+    if (ts.tv_nsec >= NSEC_1SEC) {
+        ts.tv_nsec -= NSEC_1SEC;
         ts.tv_sec += 1;
     }
     r = sem_timedwait((sem_t *)a[1], &ts);
@@ -72,7 +87,7 @@ static int TestRelock(int mtype)
     return i;
 }
 
-static void *Unlock(void *arg)
+static void *UnlockFunc(void *arg)
 {
     void **a = (void **)arg;
     *(int *)a[1] = pthread_mutex_unlock((pthread_mutex_t *)a[0]);
@@ -94,7 +109,7 @@ static int TestUnlock(int mtype)
     T(pthread_mutexattr_setprotocol(&ma, PTHREAD_PRIO_INHERIT));
     T(pthread_mutex_init((pthread_mutex_t *)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, nullptr, Unlock, a));
+    T(pthread_create(&t, nullptr, UnlockFunc, a));
     T(pthread_join(t, &p));
     T(pthread_mutex_destroy((pthread_mutex_t *)a[0]));
     return i;
@@ -116,7 +131,7 @@ static int TestUnlockOther(int mtype)
     T(pthread_mutex_init((pthread_mutex_t *)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
     T(pthread_mutex_lock((pthread_mutex_t *)a[0]));
-    T(pthread_create(&t, nullptr, Unlock, a));
+    T(pthread_create(&t, nullptr, UnlockFunc, a));
     T(pthread_join(t, &p));
     T(pthread_mutex_unlock((pthread_mutex_t *)a[0]));
     T(pthread_mutex_destroy((pthread_mutex_t *)a[0]));

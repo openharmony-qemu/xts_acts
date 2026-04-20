@@ -14,10 +14,10 @@
  */
 #include <dlfcn.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <errno.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <cerrno>
 #include <link.h>
 #include <sys/wait.h>
 
@@ -29,9 +29,9 @@
 #define CALLBACK_TEST_VAL 2
 
 // const char* g_libPath = "/data/local/tmp/libc-test-lib/libdlopen_dso.so";
-// const char* INITLIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
+// const char* g_initLibPath = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
 const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdlopen_dso.so";
-const char* INITLIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
+const char* g_initLibPath = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
 void* g_initHandler = nullptr;
 static int g_testValue = 0;
 
@@ -58,9 +58,9 @@ int CheckLoaded(char* so)
     return 0;
 }
 
-static int CallBack001(struct dl_phdr_info* info, size_t size, void* data)
+static int Callback001(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, INITLIB_PATH) != 0) {
+    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initLibPath) != 0) {
         return 0;
     }
     g_testValue++;
@@ -75,9 +75,9 @@ static int CallBack001(struct dl_phdr_info* info, size_t size, void* data)
     return 0;
 }
 
-static int CallBack002(struct dl_phdr_info* info, size_t size, void* data)
+static int Callback002(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, INITLIB_PATH) != 0) {
+    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initLibPath) != 0) {
         return 0;
     }
     g_testValue = g_testValue + CALLBACK_TEST_VAL;
@@ -92,7 +92,7 @@ static int CallBack002(struct dl_phdr_info* info, size_t size, void* data)
     return 0;
 }
 
-static void* CallBack003(void* arg)
+static void* Callback003(void* arg)
 {
     pid_t pid = fork();
     if (pid > 0) {
@@ -114,52 +114,52 @@ static void* CallBack003(void* arg)
     return arg;
 }
 
-static int CallBack004(struct dl_phdr_info* info, size_t size, void* data)
+static int Callback004(struct dl_phdr_info* info, size_t size, void* data)
 {
     char *memory = static_cast<char *>(malloc(TEST_SIZE));
     free(memory);
     return 0;
 }
 
-static void* dlopen_dlclose_test001(void* arg)
+static void* DlopenDlcloseTest001(void* arg)
 {
     void* handle = dlopen(g_libPath, RTLD_NOW);
     if (!handle) {
-      t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
     }
     dlclose(handle);
     return arg;
 }
 
-static void* dlopen_dlclose_test002(void* arg)
+static void* DlopenDlcloseTest002(void* arg)
 {
-    void* handle = dlopen(INITLIB_PATH, RTLD_NOW);
+    void* handle = dlopen(g_initLibPath, RTLD_NOW);
     if (!handle) {
-      t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
+      t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
     }
     g_initHandler = handle;
     return arg;
 }
 
-static void* dlopen_dlclose_test003(void* arg)
+static void* DlopenDlcloseTest003(void* arg)
 {
     dlclose(g_initHandler);
     return arg;
 }
 
-static void* dlopen_dlclose_test0041(void* arg)
+static void* DlopenDlcloseTest0041(void* arg)
 {
-    dl_iterate_phdr(CallBack001, nullptr);
+    dl_iterate_phdr(Callback001, nullptr);
     return arg;
 }
 
-static void* dlopen_dlclose_test0042(void* arg)
+static void* DlopenDlcloseTest0042(void* arg)
 {
-    dl_iterate_phdr(CallBack002, nullptr);
+    dl_iterate_phdr(Callback002, nullptr);
     return arg;
 }
 
-static void* dlopen_dlclose_test005(void* arg)
+static void* DlopenDlcloseTest005(void* arg)
 {
     int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
@@ -171,13 +171,13 @@ static void* dlopen_dlclose_test005(void* arg)
     return arg;
 }
 
-static void* dlopen_dlclose_test006(void* arg)
+static void* DlopenDlcloseTest006(void* arg)
 {
-    dl_iterate_phdr(CallBack004, nullptr);
+    dl_iterate_phdr(Callback004, nullptr);
     return arg;
 }
 
-static void do_test_concurrently(void *(*test) (void *arg), size_t numThreads)
+static void DoTestConcurrently(void *(*test) (void *arg), size_t numThreads)
 {
     pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * numThreads));
     if (threads == nullptr) {
@@ -204,7 +204,7 @@ static void do_test_concurrently(void *(*test) (void *arg), size_t numThreads)
     return;
 }
 
-static void do_test_double_concurrently(void *(*test1) (void *arg), void *(*test2) (void *arg),
+static void DoTestDoubleConcurrently(void *(*test1) (void *arg), void *(*test2) (void *arg),
     size_t numThreads1, size_t numThreads2)
 {
     pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * (numThreads1 + numThreads2)));
@@ -248,7 +248,7 @@ static void do_test_double_concurrently(void *(*test1) (void *arg), void *(*test
 void DlMultithreadLock0100(void)
 {
     size_t numThreads = 1000;
-    do_test_concurrently(dlopen_dlclose_test001, numThreads);
+    DoTestConcurrently(DlopenDlcloseTest001, numThreads);
     if (CheckLoaded(const_cast<char *>(g_libPath))) {
         t_error("This so file should not exist, %s\n", const_cast<char *>(g_libPath));
     }
@@ -262,9 +262,9 @@ void DlMultithreadLock0100(void)
 void DlMultithreadLock0200(void)
 {
     size_t numThreads = 20;
-    do_test_concurrently(dlopen_dlclose_test002, numThreads);
-    if (!CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(INITLIB_PATH));
+    DoTestConcurrently(DlopenDlcloseTest002, numThreads);
+    if (!CheckLoaded(const_cast<char *>(g_initLibPath))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(g_initLibPath));
     }
     int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
@@ -283,9 +283,9 @@ void DlMultithreadLock0200(void)
 void DlMultithreadLock0300(void)
 {
     size_t numThreads = 19;
-    do_test_concurrently(dlopen_dlclose_test003, numThreads);
-    if (!CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(INITLIB_PATH));
+    DoTestConcurrently(DlopenDlcloseTest003, numThreads);
+    if (!CheckLoaded(const_cast<char *>(g_initLibPath))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(g_initLibPath));
     }
     int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
@@ -295,8 +295,8 @@ void DlMultithreadLock0300(void)
         t_error("This val after init should be 1, but %d\n", get_val());
     }
     dlclose(g_initHandler);
-    if (CheckLoaded(const_cast<char *>(INITLIB_PATH))) {
-        t_error("This so file should not exist, %s\n", const_cast<char *>(INITLIB_PATH));
+    if (CheckLoaded(const_cast<char *>(g_initLibPath))) {
+        t_error("This so file should not exist, %s\n", const_cast<char *>(g_initLibPath));
     }
 }
 
@@ -312,17 +312,17 @@ void DlMultithreadLock0400(void)
         t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
     }
 
-    void* handle2 = dlopen(INITLIB_PATH, RTLD_NOW);
+    void* handle2 = dlopen(g_initLibPath, RTLD_NOW);
     if (!handle2) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
     }
 
     size_t numThreads = 5;
-    do_test_double_concurrently(dlopen_dlclose_test0041, dlopen_dlclose_test0042, numThreads, numThreads);
+    DoTestDoubleConcurrently(DlopenDlcloseTest0041, DlopenDlcloseTest0042, numThreads, numThreads);
 
     dlclose(handle1);
     dlclose(handle2);
-    if (CheckLoaded(const_cast<char *>(INITLIB_PATH)) || CheckLoaded(const_cast<char *>(g_libPath))) {
+    if (CheckLoaded(const_cast<char *>(g_initLibPath)) || CheckLoaded(const_cast<char *>(g_libPath))) {
         t_error("These so files should not exist\n");
     }
 }
@@ -334,14 +334,14 @@ void DlMultithreadLock0400(void)
  */
 void DlMultithreadLock0500(void)
 {
-    void* handle = dlopen(INITLIB_PATH, RTLD_NOW);
+    void* handle = dlopen(g_initLibPath, RTLD_NOW);
     if (!handle) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INITLIB_PATH, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
     }
 
     g_initHandler = handle;
     size_t numThreads = 500;
-    do_test_concurrently(dlopen_dlclose_test005, numThreads);
+    DoTestConcurrently(DlopenDlcloseTest005, numThreads);
     g_initHandler = nullptr;
     dlclose(handle);
 }
@@ -355,7 +355,7 @@ void DlMultithreadLock0500(void)
 void DlMultithreadLock0600(void)
 {
     size_t numThreads = 50;
-    do_test_double_concurrently(dlopen_dlclose_test006, CallBack003, numThreads, numThreads);
+    DoTestDoubleConcurrently(DlopenDlcloseTest006, Callback003, numThreads, numThreads);
 }
 
 static int DlMultithreadLockTestWithArgs(int argc, char* argv[])

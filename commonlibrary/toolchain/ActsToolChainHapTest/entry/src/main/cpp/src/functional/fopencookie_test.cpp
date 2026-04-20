@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <sys/types.h>
 #include <unistd.h>
 #include "test.h"
@@ -22,16 +22,16 @@
 #define INIT_BUF_SIZE 4
 #define EXPANSION_COEFFICIENT 2
 
-struct cookie {
+struct Cookie {
     size_t pos;
     size_t len;
     size_t size;
     char *buf;
 };
 
-ssize_t mread(void *f, char *buf, size_t len)
+ssize_t Mread(void *f, char *buf, size_t len)
 {
-    struct cookie *c = (struct cookie *)f;
+    struct Cookie *c = (struct Cookie *)f;
     if (c->pos > c->len) {
         return 0;
     } else if (c->pos + len > c->len) {
@@ -43,9 +43,9 @@ ssize_t mread(void *f, char *buf, size_t len)
     return len;
 }
 
-ssize_t mwrite(void *f, const char *buf, size_t len)
+ssize_t Mwrite(void *f, const char *buf, size_t len)
 {
-    struct cookie *c = (struct cookie *)f;
+    struct Cookie *c = (struct Cookie *)f;
     char *newBuf;
     if (c->pos + len > c->size) {
         while (c->pos + len > c->size) {
@@ -70,9 +70,9 @@ ssize_t mwrite(void *f, const char *buf, size_t len)
     return len;
 }
 
-int mseek(void *f, off_t *off, int whence)
+int Mseek(void *f, off_t *off, int whence)
 {
-    struct cookie *c = (struct cookie *)f;
+    struct Cookie *c = (struct Cookie *)f;
     off_t newPos;
     if (whence == SEEK_SET) {
         newPos = *off;
@@ -93,19 +93,19 @@ int mseek(void *f, off_t *off, int whence)
     return 0;
 }
 
-int mclose(void *f)
+int Mclose(void *f)
 {
-    struct cookie *c = (struct cookie *)f;
+    struct Cookie *c = (struct Cookie *)f;
     free(c->buf);
     c->buf = nullptr;
     return 0;
 }
 
-static int FopencookieTestTestImpl(int argc, char *argv[])
+static int FopencookieTestImpl(int argc, char *argv[])
 {
-    cookie_io_functions_t ioFunc = {.read = mread, .write = mwrite, .seek = mseek, .close = mclose};
+    cookie_io_functions_t ioFunc = {.read = Mread, .write = Mwrite, .seek = Mseek, .close = Mclose};
     FILE *file;
-    struct cookie myc;
+    struct Cookie myc;
     size_t nread;
     size_t memberSize = 1;
     size_t memberNumbers = 2;
@@ -143,9 +143,9 @@ static int FopencookieTestTestImpl(int argc, char *argv[])
     return 0;
 }
 
-int FopencookieTestTest(void)
+int FopencookieTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return FopencookieTestTestImpl(1, libcArgv);
+    return FopencookieTestImpl(1, libcArgv);
 }

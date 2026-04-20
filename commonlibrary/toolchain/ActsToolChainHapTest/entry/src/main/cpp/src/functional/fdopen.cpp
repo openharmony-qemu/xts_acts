@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
 #include "libc_test_shim.h"
 
@@ -28,7 +28,7 @@
             LibcTestError(&status, "%s failed (errno = %d)\n", #c, errno); \
     } while (0)
 
-void fdopen_1(int& status)
+void Fdopen1(int& status)
 {
     char tmp[] = "/data/storage/el2/base/cache/testsuite-XXXXXX";
     char foo[6];
@@ -52,7 +52,7 @@ void fdopen_1(int& status)
     }
 }
 
-void fdopen_2(int& status)
+void Fdopen2(int& status)
 {
     FILE* f = fdopen(-1, "w");
     TEST(f == nullptr);
@@ -63,7 +63,7 @@ int FdopenTest()
 {
     int status = SUCCESS_CODE;
 
-    fdopen_1(status);
-    fdopen_2(status);
+    Fdopen1(status);
+    Fdopen2(status);
     return status;
 }

@@ -12,24 +12,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 #include <dlfcn.h>
 
 #include "test.h"
 
-const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlclose_recursive.so";
-static void* handle = NULL;
+const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdlclose_recursive.so";
+static void* g_handle = NULL;
 
 __attribute__((constructor)) void CtorDlopen()
 {
-    handle = dlopen(LIB_PATH, RTLD_GLOBAL);
-    if (!handle) {
-        t_error("dlopen %s failed: %s\n", LIB_PATH, dlerror());
+    g_handle = dlopen(g_libPath, RTLD_GLOBAL);
+    if (!g_handle) {
+        t_error("dlopen %s failed: %s\n", g_libPath, dlerror());
     }
 }
 
 __attribute__((destructor)) void DtorDlclose()
 {
-    if (handle) {
-        dlclose(handle);
+    if (g_handle) {
+        dlclose(g_handle);
     }
 }

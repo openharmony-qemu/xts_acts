@@ -1,22 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
 #include "test.h"
 
 #define length(x) (sizeof(x) / sizeof *(x))
 
-static struct {
+static struct g_testData {
     char *s;
     float f;
-} t[] = {
-    // 2^-149 * 0.5 - eps
+} g_testData[] = {
     {".7006492321624085354618647916449580656401309709382578858785341419448955413429303e-45", 0},
-    // // 2^-149 * 0.5 + eps
-    // {".7006492321624085354618647916449580656401309709382578858785341419448955413429304e-45", 0x1p-149},
-    // // 2^-149 * 0.5 - eps
-    // {".2101947696487225606385594374934874196920392912814773657635602425834686624028790e-44", 0x1p-149},
-    // // 2^-149 * 0.5 + eps
-    // {".2101947696487225606385594374934874196920392912814773657635602425834686624028791e-44", 0x1p-148},
     // 2^-126 + 2^-150 - eps
     {".1175494420887210724209590083408724842314472120785184615334540294131831453944281e-37", 0x1p-126},
     // 2^-126 + 2^-150 + eps
@@ -36,10 +44,10 @@ static int StrtofTestImpl(void)
     float x;
     char *p;
 
-    for (i = 0; i < length(t); i++) {
-        x = strtof(t[i].s, &p);
-        if (x != t[i].f) {
-            t_error("strtof(\"%s\") want %a got %a\n", t[i].s, t[i].f, x);
+    for (i = 0; i < length(g_testData); i++) {
+        x = strtof(g_testData[i].s, &p);
+        if (x != g_testData[i].f) {
+            t_error("strtof(\"%s\") want %a got %a\n", g_testData[i].s, g_testData[i].f, x);
         }
     }
     return g_tStatus;

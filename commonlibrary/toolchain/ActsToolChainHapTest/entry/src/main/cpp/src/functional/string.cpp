@@ -1,7 +1,22 @@
-#define _DEFAULT_SOURCE 1
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+#define DEFAULT_SOURCE 1
 #define BSD_SOURCE 1
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 #define BUFFER_SIZE 32
@@ -42,7 +57,10 @@ static int StringTestImpl(void)
     char *s;
     int i;
 
-    b[STR_OFFSET_16] = 'a'; b[STR_OFFSET_17] = 'b'; b[STR_OFFSET_18] = 'c'; b[STR_OFFSET_19] = 0;
+    b[STR_OFFSET_16] = 'a';
+    b[STR_OFFSET_17] = 'b';
+    b[STR_OFFSET_18] = 'c';
+    b[STR_OFFSET_19] = 0;
     TEST(s, strcpy(b, b + STR_OFFSET_16), b, "wrong return %p != %p");
     TEST_S(s, "abc", "strcpy gave incorrect string");
     TEST(s, strcpy(b + STR_OFFSET_1, b + STR_OFFSET_16), b + STR_OFFSET_1, "wrong return %p != %p");
@@ -64,7 +82,8 @@ static int StringTestImpl(void)
     TEST(i, memcmp(b, "abc\0\0\0\0", COMPARE_SIZE), 0, "strncpy fails to zero-pad dest");
     TEST(i, b[sizeof b - 1], 'x', "strncpy overruns buffer when n > strlen(src)");
 
-    b[STR_OFFSET_3] = 'x'; b[STR_OFFSET_4] = 0;
+    b[STR_OFFSET_3] = 'x';
+    b[STR_OFFSET_4] = 0;
     strncpy(b, "abc", STR_LEN_3);
     TEST(i, b[STR_OFFSET_2], 'c', "strncpy fails to copy last byte: %hhu != %hhu");
     TEST(i, b[STR_OFFSET_3], 'x', "strncpy overruns buffer to null-terminate: %hhu != %hhu");

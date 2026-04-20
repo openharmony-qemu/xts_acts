@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
 #include <sys/swap.h>
 
 #include "filepath_util.h"

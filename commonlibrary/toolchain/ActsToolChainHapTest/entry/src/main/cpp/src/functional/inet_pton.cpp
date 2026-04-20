@@ -1,20 +1,37 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 // inet_addr, inet_ntoa, inet_pton and inet_ntop tests with roundtrip check
-#include <errno.h>
-#include <string.h>
-#include <stdio.h>
+#include <cerrno>
+#include <cstring>
+#include <cstdio>
 #include <arpa/inet.h>
 #include "test.h"
 
-#define INVALID_AF 12345
-#define HEX_DIGIT_PAIR 2
-#define MAX_DIGIT 9
-#define HEX_WIDTH 10
+#define INVALID_AF (12345)
+#define HEX_DIGIT_PAIR (2)
+#define MAX_DIGIT (9)
+#define HEX_WIDTH (10)
+#define HEX_BASE (16)
+#define DECIMAL_BASE (10)
 
 static int Digit(int c)
 {
     c -= '0';
     if (c > MAX_DIGIT) {
-        c -= 'a' - '0' - 10;
+        c -= 'a' - '0' - DECIMAL_BASE;
     }
     return c;
 }
@@ -24,7 +41,7 @@ static void Tobin(void *d, char *s)
     int i;
     unsigned char *p = static_cast<unsigned char*>(d);
     for (i = 0; s[HEX_DIGIT_PAIR*i]; i++) {
-        p[i] = Digit(s[HEX_DIGIT_PAIR*i]) * 16 + Digit(s[HEX_DIGIT_PAIR*i+1]);
+        p[i] = Digit(s[HEX_DIGIT_PAIR*i]) * HEX_BASE + Digit(s[HEX_DIGIT_PAIR*i+1]);
     }
 }
 
@@ -37,16 +54,16 @@ static void Tohex(char *d, void *s, int n)
     }
 }
 
-#define V6(src,ret,hex) do { \
+#define V6(src, ret, hex) do { \
     int r; \
     char binaddr[16]={0}; \
     char hexaddr[40]={0}; \
     char txtaddr[60]={0}; \
     \
     r = inet_pton(AF_INET6, src, binaddr); \
-    if (r != ret) \
+    if (r != (ret)) \
         t_error("inet_pton(AF_INET6, "#src", addr) returned %d, want %d\n", r, ret); \
-    if (ret != 1) break; \
+    if ((ret) != 1) break; \
     Tohex(hexaddr, binaddr, 16); \
     if (strcmp(hexaddr, hex)) \
         t_error("inet_pton(AF_INET6, "#src", addr) got addr %s, want %s\n", hexaddr, hex); \
@@ -64,7 +81,7 @@ static void Tohex(char *d, void *s, int n)
 } while (0);
 
 // ret and hex are the results of inet_pton and inet_addr respectively
-#define V4(src,ret,hex) do { \
+#define V4(src, ret, hex) do { \
     int r; \
     uint32_t a; \
     struct in_addr in; \
@@ -77,10 +94,10 @@ static void Tohex(char *d, void *s, int n)
         t_error("inet_addr("#src") returned %s, want %s\n", buf, hex); \
     \
     r = inet_pton(AF_INET, src, &a); \
-    if (r != ret) \
+    if (r != (ret)) \
         t_error("inet_pton(AF_INET, "#src", addr) returned %d, want %d\n", r, ret); \
     \
-    if (ret != 1) break; \
+    if ((ret) != 1) break;\
 \
     Tohex(buf, &a, 4); \
     if (strcmp(buf, hex)) \
@@ -100,15 +117,21 @@ static void Tohex(char *d, void *s, int n)
 
 static int InetPtonTestImpl(void)
 {
+    // errors
+    if (inet_pton(INVALID_AF, "", nullptr) != -1 || errno != EAFNOSUPPORT) {
+        t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
+    }
+    errno=0;
+    if (inet_ntop(AF_INET, "xxxx", "", 0) != nullptr || errno != ENOSPC) {
+        t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
+    }
+    errno=0;
 
-// errors
-if (inet_pton(INVALID_AF, "", nullptr) != -1 || errno != EAFNOSUPPORT) {
-    t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
-}
-errno=0;
-if (inet_ntop(AF_INET, "xxxx", "", 0) != 0 || errno != ENOSPC) {
-    t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
-}
+    // dotted-decimal notation
+    V4("0.0.0.0", 1, "00000000")
+    V4("127.0.0.1", 1, "7f000001")
+    V4("10.0.128.31", 1, "0a00801f")
+    V4("255.255.255.255", 1, "ffffffff")
 errno=0;
 
 // dotted-decimal notation

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <signal.h>
+#include <csignal>
 #include <sys/time.h>
 #include "functionalext.h"
 #include "time64_functions.h"
@@ -64,7 +64,7 @@ void GetitimerTime640100(void)
     EXPECT_EQ("GetitimerTime640100", result, 0);
 }
 
-int __getitimer_time64Test(void)
+int GetitimerTime64Test(void)
 {
     GetitimerTime640100();
     return T_STATUS;

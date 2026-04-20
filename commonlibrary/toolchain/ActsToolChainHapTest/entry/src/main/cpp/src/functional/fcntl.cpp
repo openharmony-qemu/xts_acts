@@ -12,11 +12,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <sys/wait.h>
 #include <unistd.h>
 
@@ -96,7 +96,7 @@ void Fcntl0100(void)
  * @tc.desc      : Test basic functionality  of fcntl64
  * @tc.level     : Level 0
  */
-void fcntl64_0100(void)
+void Fcntl640100(void)
 {
     int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0100", fd, 0);
@@ -131,7 +131,7 @@ void fcntl64_0100(void)
  * @tc.desc      : Get/Set File Status Flag (F_GETFL/F.SETFL)
  * @tc.level     : Level 0
  */
-void fcntl64_0200(void)
+void Fcntl640200(void)
 {
     int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0200", fd, 0);
@@ -159,7 +159,7 @@ void fcntl64_0200(void)
  * @tc.desc      : Retrieve/set file descriptor flags (F_GETFD/F.SETFD)
  * @tc.level     : Level 0
  */
-void fcntl64_0300(void)
+void Fcntl640300(void)
 {
     int fd = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0300", fd, 0);
@@ -182,7 +182,7 @@ void fcntl64_0300(void)
  * @tc.desc      : File descriptor copy test: F_DUPFD/F_DUPFD_COOEXEC
  * @tc.level     : Level 0
  */
-void fcntl64_0400(void)
+void Fcntl640400(void)
 {
     int fd1 = open(TEST_FILE, O_CREAT | O_RDWR, FILE_PERMISSIONS);
     EXPECT_GTE("fcntl64_0400", fd1, 0);
@@ -214,7 +214,7 @@ void fcntl64_0400(void)
  * @tc.desc      : File lock test: F_SETLK/F_GETLK (suggestive lock)
  * @tc.level     : Level 0
  */
-void fcntl64_0500(void)
+void Fcntl640500(void)
 {
     int fd = -1;
     struct flock64 lock = {0};
@@ -257,7 +257,7 @@ void fcntl64_0500(void)
  * @tc.desc      : Boundary scenario testing: invalid file descriptors, illegal commands, large offset locks
  * @tc.level     : Level 0
  */
-void fcntl64_0600(void)
+void Fcntl640600(void)
 {
     // Invalid file descriptor (fd=-1) calls fcntl64
     struct flock64 lock = {0};
@@ -299,7 +299,7 @@ struct thread_arg {
     int *result;
 };
 
-static void *thread_func(void *arg)
+static void *ThreadFunc(void *arg)
 {
     struct thread_arg *targ = (struct thread_arg *)arg;
     int fd = targ->fd;
@@ -333,7 +333,7 @@ static void *thread_func(void *arg)
  * @tc.desc      : Multi-thread concurrent fcntl64 operations test (thread safety)
  * @tc.level     : Level 1
  */
-void fcntl64_0700(void)
+void Fcntl640700(void)
 {
     int fd = open64(TEST_FILE, O_CREAT | O_RDWR, 0644);
     EXPECT_GTE("fcntl64_0700", fd, 0);
@@ -347,7 +347,7 @@ void fcntl64_0700(void)
         args[i].thread_id = i;
         args[i].result = &thread_results[i];
 
-        if (pthread_create(&threads[i], NULL, thread_func, &args[i]) != 0) {
+        if (pthread_create(&threads[i], NULL, ThreadFunc, &args[i]) != 0) {
             t_error("fcntl64_0700: Failed to create thread %d\n", i);
             thread_results[i] = -1;
         }
@@ -378,13 +378,13 @@ static int FcntlTestImpl(void)
 {
     Fcntl0100();
 #ifdef MUSL_EXTERNAL_FUNCTION
-    fcntl64_0100();
-    fcntl64_0200();
-    fcntl64_0300();
-    fcntl64_0400();
-    fcntl64_0500();
-    fcntl64_0600();
-    fcntl64_0700();
+    Fcntl640100();
+    Fcntl640200();
+    Fcntl640300();
+    Fcntl640400();
+    Fcntl640500();
+    Fcntl640600();
+    Fcntl640700();
 #endif
     return g_tStatus;
 }

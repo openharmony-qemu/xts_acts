@@ -20,7 +20,7 @@
  * @tc.desc      : The parameter is valid and the file can be deleted.
  * @tc.level     : Level 0
  */
-void remove_0100(void)
+void Remove0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -47,7 +47,7 @@ void Remove0200(void)
 
 static int RemoveTestImpl(int argc, char *argv[])
 {
-    remove_0100();
+    Remove0100();
     Remove0200();
     return g_tStatus;
 }

@@ -14,8 +14,8 @@
  */
 
 #include <dlfcn.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstring>
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();
@@ -29,8 +29,7 @@ void Asprintf0100(void)
 {
     char *buf = "d";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0100", n > 0);
@@ -41,12 +40,11 @@ void Asprintf0100(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0200(void)
+void Asprintf0200(void)
 {
     char *buf = "o";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0200", n > 0);
@@ -57,12 +55,11 @@ void asprintf_0200(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0300(void)
+void Asprintf0300(void)
 {
     char *buf = "x,X";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0300", n > 0);
@@ -73,12 +70,11 @@ void asprintf_0300(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0400(void)
+void Asprintf0400(void)
 {
     char *buf = "u";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0400", n > 0);
@@ -89,12 +85,11 @@ void asprintf_0400(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0500(void)
+void Asprintf0500(void)
 {
     char *buf = "f";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0500", n > 0);
@@ -105,12 +100,11 @@ void asprintf_0500(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0600(void)
+void Asprintf0600(void)
 {
     char *buf = "e,E";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0600", n > 0);
@@ -121,12 +115,11 @@ void asprintf_0600(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0700(void)
+void Asprintf0700(void)
 {
     char *buf = "g,G";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0700", n > 0);
@@ -137,12 +130,11 @@ void asprintf_0700(void)
  * @tc.desc      : The parameters are valid and the data can be output according to the format
  * @tc.level     : Level 0
  */
-void asprintf_0800(void)
+void Asprintf0800(void)
 {
     char *buf = "c";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0800", n > 0);
@@ -157,30 +149,29 @@ void Asprintf0900(void)
 {
     char *buf = "s";
     char *testStr = nullptr;
-    int n;
-    n = asprintf(&testStr, "%s", buf);
+    int n = asprintf(&testStr, "%s", buf);
     free(testStr);
     testStr = nullptr;
     EXPECT_TRUE("asprintf_0900", n > 0);
 }
 
-static TEST_FUN g_gFunArray[] = {
+static TEST_FUN g_funArray[] = {
     Asprintf0100,
-    asprintf_0200,
-    asprintf_0300,
-    asprintf_0400,
-    asprintf_0500,
-    asprintf_0600,
-    asprintf_0700,
-    asprintf_0800,
+    Asprintf0200,
+    Asprintf0300,
+    Asprintf0400,
+    Asprintf0500,
+    Asprintf0600,
+    Asprintf0700,
+    Asprintf0800,
     Asprintf0900,
 };
 
-static int asprintfTest_with_args(int argc, char *argv[])
+static int AsprintfTestWithArgs(int argc, char *argv[])
 {
-    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
+    int num = sizeof(g_funArray) / sizeof(g_funArray[0]);
     for (int pos = 0; pos < num; ++pos) {
-        g_gFunArray[pos]();
+        g_funArray[pos]();
     }
 
     return g_tStatus;
@@ -190,5 +181,5 @@ int AsprintfTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return asprintfTest_with_args(1, libcArgv);
+    return AsprintfTestWithArgs(1, libcArgv);
 }

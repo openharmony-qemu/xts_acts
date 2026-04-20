@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
+#include <cerrno>
+#include <csignal>
 
 #include "test.h"
 
@@ -41,7 +41,7 @@ void Sigsuspend0100(void)
 
     int flags = 0;
     struct sigaction act = {.sa_flags = flags, .sa_handler = Handler};
-    struct sigaction old_act = {0};
+    struct sigaction old_act = {};
     int result = sigaction(sig, &act, &old_act);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);

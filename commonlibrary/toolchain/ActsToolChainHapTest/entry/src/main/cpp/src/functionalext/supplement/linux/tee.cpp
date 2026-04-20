@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <fcntl.h>
-#include <string.h>
+#include <cstring>
 #include <unistd.h>
 #include "filepath_util.h"
 
 #define BUFF_SIZE (20)
-#define TEE_BUFFER_SIZE 32768
-#define FILE_PERMISSIONS 0666
-#define FAILURE_CODE -1
+#define TEE_BUFFER_SIZE (32768)
+#define FILE_PERMISSIONS (0666)
+#define FAILURE_CODE (-1)
 
 /**
  * @tc.name      : Tee0100

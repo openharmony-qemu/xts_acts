@@ -14,7 +14,7 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
+#include <cstdio>
 #include "test.h"
 
 static const char *PATH = "/data/storage/el2/base/cache/readtest.txt";

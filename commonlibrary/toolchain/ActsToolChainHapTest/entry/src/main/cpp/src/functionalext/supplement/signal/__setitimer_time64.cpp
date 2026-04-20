@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
+#include <csignal>
+#include <cstdio>
+#include <cstring>
 #include <sys/time.h>
 #include "test.h"
 #include "time64_functions.h"
@@ -79,15 +79,15 @@ void SetitimerTime640100(void)
     }
 }
 
-static int __setitimerTime64TestWithArgs(int argc, char *argv[])
+static int SetitimerTime64TestWithArgs(int argc, char *argv[])
 {
     SetitimerTime640100();
     return T_STATUS;
 }
 
-int __setitimer_time64Test(void)
+int SetitimerTime64Test(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return __setitimerTime64TestWithArgs(1, libcArgv);
+    return SetitimerTime64TestWithArgs(1, libcArgv);
 }

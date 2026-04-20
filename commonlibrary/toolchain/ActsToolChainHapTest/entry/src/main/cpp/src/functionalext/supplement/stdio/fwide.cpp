@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-#include <wchar.h>
+#include <cstdio>
+#include <cwchar>
 #include "functionalext.h"
 
 static const char *PATH = "/data/storage/el2/base/cache/test.txt";
@@ -71,7 +72,6 @@ void Fwide0300(void)
 
 static int FwideTestImpl(int argc, char *argv[])
 {
-
     Fwide0100();
     Fwide0200();
     Fwide0300();

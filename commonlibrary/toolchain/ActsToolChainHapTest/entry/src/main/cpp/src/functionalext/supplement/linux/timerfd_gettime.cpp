@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <errno.h>
-#include <signal.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
 #include <sys/timerfd.h>
-#include <time.h>
+#include <ctime>
 #include "test.h"
 #include "time64_functions.h"
 
@@ -30,11 +30,12 @@
  * @tc.desc      : Get the time left by the timer until the next supermarket
  * @tc.level     : Level 0
  */
-void timerfd_gettime_0100(void)
+void TimerfdGettime0100(void)
 {
     struct itimerspec its = {{0, 0}, {2, 0}};
     struct itimerspec val;
-    int fd, result;
+    int fd;
+    int result;
 
     fd = timerfd_create(CLOCK_REALTIME, 0);
     if (fd < 0) {
@@ -69,7 +70,7 @@ void timerfd_gettime_0100(void)
  * @tc.desc      : arms the timerfd with invalid parameters
  * @tc.level     : Level 2
  */
-void timerfd_gettime_0200(void)
+void TimerfdGettime0200(void)
 {
     int result = timerfd_gettime(-1, nullptr);
     if (result != -1) {
@@ -82,11 +83,12 @@ void timerfd_gettime_0200(void)
  * @tc.desc      : Get the time left by the timer until the next supermarket
  * @tc.level     : Level 0
  */
-void timerfd_gettime64_0100(void)
+void TimerfdGettime640100(void)
 {
     struct itimerspec its = {{0, 0}, {2, 0}};
     struct itimerspec val;
-    int fd, result;
+    int fd;
+    int result;
 
     fd = timerfd_create(CLOCK_REALTIME, 0);
     if (fd < 0) {
@@ -118,9 +120,9 @@ void timerfd_gettime64_0100(void)
 
 static int TimerfdGettimeTestImpl(int argc, char *argv[])
 {
-    timerfd_gettime_0100();
-    timerfd_gettime_0200();
-    timerfd_gettime64_0100();
+    TimerfdGettime0100();
+    TimerfdGettime0200();
+    TimerfdGettime640100();
     return T_STATUS;
 }
 

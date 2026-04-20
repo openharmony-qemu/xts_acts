@@ -1,42 +1,60 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdint.h>
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+#include <cstring>
+#include <cstdlib>
+#include <cstdint>
 #include "test.h"
 
 #define N 500
 #define ALIGN_MASK 63
 #define ALIGN_SIZE 64
-#define TEST_LEN 10
-#define LOOP_LIMIT 256
+#define TEST_LEN 1000
+#define LOOP_LIMIT 4
 #define PRINT_LEN 128
-static char buf[N];
-static char buf2[N];
+#define TEST_NEGATIVE_FIVE -5
+static char g_buf[N];
+static char g_buf2[N];
 
-static void *(*volatile pmemset)(void *, int, size_t);
+static void *(*volatile g_pmemset)(void *, int, size_t);
 
-static char *aligned(void *p)
+static char *AlignedFunc(void *p)
 {
     return reinterpret_cast<char *>(reinterpret_cast<uintptr_t>(p) + ALIGN_MASK & -ALIGN_SIZE);
 }
 
-static void test_align(int align, int len)
+static void TestAlign(int align, int len)
 {
-    char *s = aligned(buf + ALIGN_SIZE) + align;
-    char *want = aligned(buf2 + ALIGN_SIZE) + align;
+    char *s = AlignedFunc(g_buf + ALIGN_SIZE) + align;
+    char *want = AlignedFunc(g_buf2 + ALIGN_SIZE) + align;
     char *p;
     int i;
 
-    if (len + ALIGN_SIZE > buf + N - s || len + ALIGN_SIZE > buf2 + N - want)
+    if (len + ALIGN_SIZE > g_buf + N - s || len + ALIGN_SIZE > g_buf2 + N - want) {
         abort();
+    }
     for (i = 0; i < N; i++) {
-        buf[i] = buf2[i] = ' ';
+        g_buf[i] = g_buf2[i] = ' ';
     }
     for (i = 0; i < len; i++) {
         want[i] = '#';
     }
-    p = (char *)pmemset(s, '#', len);
-    if (p != s)
+    p = (char *)g_pmemset(s, '#', len);
+    if (p != s) {
         t_error("memset(%p,...) returned %p\n", s, p);
+    }
     for (i = -ALIGN_SIZE; i < len + ALIGN_SIZE; i++) {
         if (s[i] != want[i]) {
             t_error("memset(align %d, '#', %d) failed at pos %d\n", align, len, i);
@@ -47,14 +65,14 @@ static void test_align(int align, int len)
     }
 }
 
-static void test_value(int c)
+static void TestValue(int c)
 {
     int i;
 
-    pmemset(buf, c, TEST_LEN);
+    g_pmemset(g_buf, c, TEST_LEN);
     for (i = 0; i < TEST_LEN; i++) {
-        if ((unsigned char)buf[i] != (unsigned char)c) {
-            t_error("memset(%d) failed: got %d\n", c, buf[i]);
+        if ((unsigned char)g_buf[i] != (unsigned char)c) {
+            t_error("memset(%d) failed: got %d\n", c, g_buf[i]);
             break;
         }
     }
@@ -62,21 +80,23 @@ static void test_value(int c)
 
 static int StringMemsetTestImpl(void)
 {
-    int i,j,k;
+    int i;
+    int j;
+    int k;
 
-    pmemset = memset;
+    g_pmemset = memset;
 
     for (i = 0; i < ALIGN_SIZE; i++) {
         for (j = 0; j < N - LOOP_LIMIT; j++) {
-            test_align(i,j);
+            TestAlign(i, j);
         }
     }
 
-    test_value('c');
-    test_value(0);
-    test_value(-1);
-    test_value(-5);
-    test_value(0xab);
+    TestValue('c');
+    TestValue(0);
+    TestValue(-1);
+    TestValue(TEST_NEGATIVE_FIVE);
+    TestValue(0xab);
     return g_tStatus;
 }
 

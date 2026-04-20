@@ -14,31 +14,32 @@
  */
 
 #include <netinet/ip.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include <cstring>
 #include <sys/socket.h>
 #include "test.h"
 
-#define MSG_COUNT 2
-#define IOV_COUNT 2
-#define SOCKET_PORT 1234
-#define PAYLOAD_LEN 3
-#define PAYLOAD_LEN2 5
-#define FAILURE_CODE -1
+#define MSG_COUNT (2)
+#define IOV_COUNT (2)
+#define SOCKET_PORT (1234)
+#define PAYLOAD_LEN (3)
+#define PAYLOAD_LEN2 (5)
+#define FAILURE_CODE (-1)
 
 /**
  * @tc.name      : sendmmsg_0100
  * @tc.desc      : Test sendmmsg to send messages through socket
  * @tc.level     : Level 0
  */
-void sendmmsg_0100(void)
+void Sendmmsg0100(void)
 {
     int sockfd;
     struct sockaddr_in addr;
     struct mmsghdr msg[MSG_COUNT];
-    struct iovec msg1[IOV_COUNT], msg2;
+    struct iovec msg1[IOV_COUNT];
+    struct iovec msg2;
     int retval;
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -84,7 +85,7 @@ void sendmmsg_0100(void)
 
 static int SendmmsgTestImpl(int argc, char *argv[])
 {
-    sendmmsg_0100();
+    Sendmmsg0100();
     return T_STATUS;
 }
 

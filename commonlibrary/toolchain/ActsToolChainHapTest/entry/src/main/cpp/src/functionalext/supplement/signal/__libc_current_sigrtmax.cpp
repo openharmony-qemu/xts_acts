@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <signal.h>
+#include <csignal>
 #include "functionalext.h"
 
 #define SIGRTMAX_VALUE 64
@@ -23,22 +23,22 @@
  * @tc.desc      : Verify that the number of available signals can be obtained
  * @tc.level     : Level 0
  */
-void libc_current_sigrtmax_0100(void)
+void LibcCurrentSigrtmax0100(void)
 {
     int result = __libc_current_sigrtmax();
     EXPECT_EQ("libc_current_sigrtmax_0100", result, SIGRTMAX_VALUE);
 }
 
-static int __libc_current_sigrtmaxTest_with_args(int argc, char *argv[])
+static int LibcCurrentSigrtmaxTestWithArgs(int argc, char *argv[])
 {
-    libc_current_sigrtmax_0100();
+    LibcCurrentSigrtmax0100();
 
     return T_STATUS;
 }
 
-int __libc_current_sigrtmaxTest(void)
+int LibcCurrentSigrtmaxTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return __libc_current_sigrtmaxTest_with_args(1, libcArgv);
+    return LibcCurrentSigrtmaxTestWithArgs(1, libcArgv);
 }

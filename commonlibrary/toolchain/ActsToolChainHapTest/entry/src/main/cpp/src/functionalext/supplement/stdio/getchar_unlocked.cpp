@@ -14,21 +14,21 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
+#include <cstdio>
 #include "test.h"
 #include "functionalext.h"
 
-static const char *patha = "/data/storage/el2/base/cache/readtest.txt";
+static const char *g_patha = "/data/storage/el2/base/cache/readtest.txt";
 
 /**
  * @tc.name      : getchar_unlocked_0100
  * @tc.desc      : Verify that a character can be read from standard input.
  * @tc.level     : Level 0
  */
-void getchar_unlocked_0100(void)
+void GetcharUnlocked0100(void)
 {
     char str[] = "r";
-    int fd = open(patha, O_RDWR | O_CREAT, TEST_MODE);
+    int fd = open(g_patha, O_RDWR | O_CREAT, TEST_MODE);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }
@@ -37,7 +37,7 @@ void getchar_unlocked_0100(void)
     if (ret < 0) {
         t_error("%s write failed\n", __func__);
     }
-    FILE *fp = freopen(patha, "r", stdin);
+    FILE *fp = freopen(g_patha, "r", stdin);
     if (!fp) {
         t_error("%s freopen failed\n", __func__);
     }
@@ -49,12 +49,12 @@ void getchar_unlocked_0100(void)
 
     fclose(fp);
     close(fd);
-    remove(patha);
+    remove(g_patha);
 }
 
 static int GetcharUnlockedTestImpl(int argc, char *argv[])
 {
-    getchar_unlocked_0100();
+    GetcharUnlocked0100();
     return g_tStatus;
 }
 

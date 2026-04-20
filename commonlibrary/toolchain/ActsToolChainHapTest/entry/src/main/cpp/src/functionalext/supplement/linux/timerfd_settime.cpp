@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <sys/timerfd.h>
-#include <time.h>
+#include <ctime>
 #include "test.h"
 #include "time64_functions.h"
 
@@ -89,7 +89,8 @@ void TimerfdSettime640100(void)
 {
     struct itimerspec its = {{0, 0}, {DATA_TWO, 0}};
     struct itimerspec val;
-    int fd, result;
+    int fd;
+    int result;
 
     fd = timerfd_create(CLOCK_REALTIME, 0);
     if (fd < 0) {

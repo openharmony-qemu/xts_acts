@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
+#include <cerrno>
+#include <csignal>
 
 #include "test.h"
 
@@ -30,14 +30,14 @@ static void Handler(int sig)
  * @tc.desc      : removes sig from the calling process's signal mask
  * @tc.level     : Level 0
  */
-void sigrelse_0100(void)
+void Sigrelse0100(void)
 {
     g_handlerCount = 0;
 
     int sig = SIGALRM;
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction old_act = {0};
-    int result = sigaction(sig, &act, &old_act);
+    struct sigaction oldAct = {};
+    int result = sigaction(sig, &act, &oldAct);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         return;
@@ -110,7 +110,7 @@ void sigrelse_0100(void)
  * @tc.desc      : removes an invalid sig from the calling process's signal mask
  * @tc.level     : Level 2
  */
-void sigrelse_0200(void)
+void Sigrelse0200(void)
 {
     errno = 0;
     int sig = 99999;
@@ -126,8 +126,8 @@ void sigrelse_0200(void)
 
 static int SigrelseTestImpl(int argc, char *argv[])
 {
-    sigrelse_0100();
-    sigrelse_0200();
+    Sigrelse0100();
+    Sigrelse0200();
 
     return T_STATUS;
 }

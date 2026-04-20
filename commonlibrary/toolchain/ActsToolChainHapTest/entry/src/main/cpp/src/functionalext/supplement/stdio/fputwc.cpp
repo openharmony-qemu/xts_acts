@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <ctype.h>
-#include <stdlib.h>
+#include <cctype>
+#include <cstdlib>
 #include <unistd.h>
-#include <wchar.h>
+#include <cwchar>
 #include "functionalext.h"
 
 const int SUCCESS = 0;

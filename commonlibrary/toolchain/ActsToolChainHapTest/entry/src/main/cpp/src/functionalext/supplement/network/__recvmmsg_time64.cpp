@@ -14,32 +14,32 @@
  */
 
 #include <netinet/ip.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
 #include <sys/socket.h>
 #include <bits/alltypes.h>
 #include <unistd.h>
 #include "test.h"
 #include "time64_functions.h"
 
-#define SLEEP_TIME 2
-#define MSG_COUNT 2
-#define IOV_COUNT 2
-#define SOCKET_PORT 1234
-#define PAYLOAD_LEN 3
-#define PAYLOAD_LEN2 5
-#define IOVLEN_2 2
-#define IOVLEN_1 1
-#define FAILURE_CODE -1
+#define SLEEP_TIME (2)
+#define MSG_COUNT (2)
+#define IOV_COUNT (2)
+#define SOCKET_PORT (1234)
+#define PAYLOAD_LEN (3)
+#define PAYLOAD_LEN2 (5)
+#define IOVLEN_2 (2)
+#define IOVLEN_1 (1)
+#define FAILURE_CODE (-1)
 
-static void sendsss(void)
+static void SendSss(void)
 {
     int sockfd;
     struct sockaddr_in addr;
     struct mmsghdr msg[MSG_COUNT];
-    struct iovec msg1[IOV_COUNT], msg2;
+    struct iovec msg1[IOV_COUNT];
+    struct iovec msg2;
     int retval;
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -79,12 +79,13 @@ static void sendsss(void)
     }
 }
 
-static void recvsss(void)
+static void RecvSss(void)
 {
 #define VLEN 10
 #define BUFSIZE 200
 #define TIMEOUT 1
-    int sockfd, retval;
+    int sockfd;
+    int retval;
     struct sockaddr_in addr;
     struct mmsghdr msgs[VLEN];
     struct iovec iovecs[VLEN];
@@ -128,23 +129,23 @@ static void recvsss(void)
  * @tc.desc      : Test recvmmsg to recv messages through socket
  * @tc.level     : Level 0
  */
-static int __recvmmsg_time64Test_with_args(int argc, char *argv[])
+static int RecvmmsgTime64TestWithArgs(int argc, char *argv[])
 {
     pid_t pid = fork();
     if (pid > 0) {
-        recvsss();
+        RecvSss();
     } else if (pid == 0) {
         sleep(SLEEP_TIME);
-        sendsss();
+        SendSss();
     } else {
         t_error("recvmmsg_time64_0100 fork error");
     }
     return T_STATUS;
 }
 
-int __recvmmsg_time64Test(void)
+int RecvmmsgTime64Test(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return __recvmmsg_time64Test_with_args(1, libcArgv);
+    return RecvmmsgTime64TestWithArgs(1, libcArgv);
 }

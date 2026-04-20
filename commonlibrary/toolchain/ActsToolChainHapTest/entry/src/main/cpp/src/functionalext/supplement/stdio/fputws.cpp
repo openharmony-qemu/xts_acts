@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <wchar.h>
-#include <locale.h>
+#include <cwchar>
+#include <clocale>
 #include "functionalext.h"
 
 const int FAILED = -1;
@@ -27,8 +27,8 @@ const int FAILED = -1;
 void Fputws0100(void)
 {
     char str[100] = {0};
-    const char *PTR = "/data/storage/el2/base/cache/fputwstest.txt";
-    FILE *fptr = fopen(PTR, "w+");
+    const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
+    FILE *fptr = fopen(ptr, "w+");
     EXPECT_TRUE("Fputws0100", fptr != nullptr);
     setlocale(LC_ALL, "en_US.utf8");
     int ret = fputws(L"this is the test", fptr);
@@ -37,9 +37,9 @@ void Fputws0100(void)
     int rsize = fread(str, sizeof(char), 100, fptr);
     EXPECT_EQ("Fputws0100", rsize, ret);
     fclose(fptr);
-    remove(PTR);
+    remove(ptr);
     fptr = nullptr;
-    PTR = nullptr;
+    ptr = nullptr;
 }
 
 /**
@@ -49,18 +49,18 @@ void Fputws0100(void)
  */
 void Fputws0200(void)
 {
-    const char *PTR = "/data/storage/el2/base/cache/fputwstest.txt";
-    FILE *fptr = fopen(PTR, "w+");
+    const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
+    FILE *fptr = fopen(ptr, "w+");
     EXPECT_TRUE("Fputws0200", fptr != nullptr);
     fclose(fptr);
-    fptr = fopen(PTR, "r");
+    fptr = fopen(ptr, "r");
     EXPECT_TRUE("Fputws0200", fptr != nullptr);
     int ret = fputws(L"this is the test", fptr);
     EXPECT_EQ("Fputws0200", ret, FAILED);
     fclose(fptr);
-    remove(PTR);
+    remove(ptr);
     fptr = nullptr;
-    PTR = nullptr;
+    ptr = nullptr;
 }
 
 static int FputwsTestImpl(int argc, char *argv[])

@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
+#include <cstdlib>
+#include <cstdio>
+#include <climits>
+#include <cstring>
+#include <unistd.h>
 #include <dirent.h>
 #include <fcntl.h>
-#include <limits.h>
-#include <unistd.h>
 #include "functionalext.h"
 
-const int FAILED = -1;
+const int g_failed = -1;
 
 /**
  * @tc.name      : Getdents0100
@@ -30,8 +33,8 @@ const int FAILED = -1;
 void Getdents0100(void)
 {
     struct dirent buf;
-    static const char *PATH = "/data/storage/el2/base/cache/";
-    int fd = open(PATH, O_RDONLY);
+    static const char *g_path = "/data/storage/el2/base/cache/";
+    int fd = open(g_path, O_RDONLY);
     EXPECT_NE("Getdents0100", fd, -1);
     int result = getdents(fd, &buf, INT_MAX);
     EXPECT_TRUE("Getdents0100", result > 0);
@@ -47,7 +50,7 @@ void Getdents0200(void)
     struct dirent buf;
     int fd = open("/data/storage/el2/base/cache/getdents", O_RDONLY);
     int result = getdents(fd, &buf, INT_MAX);
-    EXPECT_EQ("Getdents0200", result, FAILED);
+    EXPECT_EQ("Getdents0200", result, g_failed);
 }
 
 /**
@@ -58,11 +61,11 @@ void Getdents0200(void)
 void Getdents0300(void)
 {
     struct dirent buf;
-    static const char *PATH = "/data/storage/el2/base/cache/";
-    int fd = open(PATH, O_RDONLY);
+    static const char *g_path = "/data/storage/el2/base/cache/";
+    int fd = open(g_path, O_RDONLY);
     EXPECT_NE("Getdents0300", fd, -1);
     int result = getdents(fd, NULL, INT_MAX);
-    EXPECT_EQ("Getdents0300", result, FAILED);
+    EXPECT_EQ("Getdents0300", result, g_failed);
 }
 
 static int GetdentsTestImpl(int argc, char *argv[])

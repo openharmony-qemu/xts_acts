@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <stdint.h>
+#include <cstdlib>
+#include <cstdint>
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();
@@ -30,9 +30,9 @@ void Fgetpos0100()
 {
     fpos_t pos;
     char buff[] = "hello world";
-    const char *PATH = "/data/storage/el2/base/cache/test.txt";
+    const char *path = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fp = fopen(PATH, "w+");
+    FILE *fp = fopen(path, "w+");
     EXPECT_PTRNE("Fgetpos0100", fp, NULL);
 
     fputs(buff, fp);
@@ -42,7 +42,7 @@ void Fgetpos0100()
     EXPECT_EQ("Fgetpos0100", result, 0);
 
     fclose(fp);
-    remove(PATH);
+    remove(path);
 }
 
 /**
@@ -54,9 +54,9 @@ void Fgetpos0200()
 {
     fpos_t pos;
     char buff[] = "hello world";
-    const char *PATH = "/data/storage/el2/base/cache/test.txt";
+    const char *path = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fptr = fopen(PATH, "w+");
+    FILE *fptr = fopen(path, "w+");
     EXPECT_PTRNE("Fgetpos0100", fptr, NULL);
 
     fputs(buff, fptr);
@@ -65,19 +65,19 @@ void Fgetpos0200()
     EXPECT_EQ("Fgetpos0200", result, 0);
 
     fclose(fptr);
-    remove(PATH);
+    remove(path);
 }
 
-static TEST_FUN G_Fun_Array[] = {
+static TEST_FUN g_funArray[] = {
     Fgetpos0100,
     Fgetpos0200,
 };
 
 static int FgetposTestImpl(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(G_Fun_Array[0]);
+    int num = sizeof(g_funArray) / sizeof(g_funArray[0]);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_funArray[pos]();
     }
 
     return g_tStatus;

@@ -15,7 +15,7 @@
 
 #include "time64_functions.h"
 #include <sys/time.h>
-#include <time.h>
+#include <cstring>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/stat.h>

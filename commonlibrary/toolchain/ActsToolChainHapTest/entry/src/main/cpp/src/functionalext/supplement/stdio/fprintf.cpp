@@ -14,8 +14,8 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "functionalext.h"
 
 const size_t ERRORLEN = -1;

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <cstdlib>
 #include <sys/uio.h>
 #include "functionalext.h"
 
@@ -93,7 +93,8 @@ void ProcessVmReadv0100(void)
 {
     char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmReadv0100.";
     char dst[__VALUE_BUFFER_SIZE__] = "";
-    struct iovec remote, local;
+    struct iovec remote;
+    struct iovec local;
     remote.iov_base = src;
     remote.iov_len = __VALUE_BUFFER_SIZE__;
 
@@ -113,7 +114,8 @@ void ProcessVmReadv0100(void)
 void ProcessVmReadv0200(void)
 {
     char dst[__VALUE_BUFFER_SIZE__] = "";
-    struct iovec remote, local;
+    struct iovec remote;
+    struct iovec local;
     remote.iov_base = nullptr;
     remote.iov_len = __VALUE_BUFFER_SIZE__;
 
@@ -133,7 +135,8 @@ void ProcessVmReadv0200(void)
 void ProcessVmReadv0300(void)
 {
     char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmReadv0300.";
-    struct iovec remote, local;
+    struct iovec remote;
+    struct iovec local;
     remote.iov_base = src;
     remote.iov_len = __VALUE_BUFFER_SIZE__;
 

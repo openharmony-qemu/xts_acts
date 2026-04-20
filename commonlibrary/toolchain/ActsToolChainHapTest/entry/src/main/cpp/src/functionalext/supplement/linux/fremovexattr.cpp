@@ -17,11 +17,11 @@
 #include <sys/xattr.h>
 #include "functionalext.h"
 
-#define BUFFER_SIZE 10
-#define FILE_PERMISSIONS 0667
-#define FAILURE_CODE -1
-#define DATA_LENGTH 4
-#define SUCCESS_CODE 0
+#define BUFFER_SIZE (10)
+#define FILE_PERMISSIONS (0667)
+#define FAILURE_CODE (-1)
+#define DATA_LENGTH (4)
+#define SUCCESS_CODE (0)
 
 static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 

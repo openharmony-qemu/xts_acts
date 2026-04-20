@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
+#include <cerrno>
+#include <csignal>
 
 #include "test.h"
 
@@ -35,7 +35,7 @@ int Prepare(sigset_t *set)
     g_handlerCount = 0;
 
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction oldAct = {0};
+    struct sigaction oldAct = {};
     int result = sigaction(SIGNAL, &act, &oldAct);
     if (result != 0) {
         return result;

@@ -82,7 +82,7 @@ void Dprintf0400(void)
     remove(path);
 }
 
-static int dprintfTest_with_args(int argc, char *argv[])
+static int DprintfTestWithArgs(int argc, char *argv[])
 {
     Dprintf0100();
     Dprintf0200();
@@ -95,5 +95,5 @@ int DprintfTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return dprintfTest_with_args(1, libcArgv);
+    return DprintfTestWithArgs(1, libcArgv);
 }

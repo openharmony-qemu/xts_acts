@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include "functionalext.h"
 
 const int SIZE = 97;
@@ -23,7 +23,7 @@ const int SIZE = 97;
  * @tc.desc      : The parameter is valid, and the specified character can be obtained.
  * @tc.level     : Level 0
  */
-void getc_unlocked_0100(void)
+void GetcUnlocked0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/getc_unlockedtest.txt";
     FILE *fptr = fopen(ptr, "wr+");
@@ -44,7 +44,7 @@ void getc_unlocked_0100(void)
  * @tc.desc      : The parameter f is invalid, and the specified character cannot be obtained.
  * @tc.level     : Level 2
  */
-void getc_unlocked_0200(void)
+void GetcUnlocked0200(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/getc_unlockedtest.txt";
     FILE *fptr = fopen(ptr, "wr+");
@@ -62,8 +62,8 @@ void getc_unlocked_0200(void)
 
 static int GetcUnlockedTestImpl(int argc, char *argv[])
 {
-    getc_unlocked_0100();
-    getc_unlocked_0200();
+    GetcUnlocked0100();
+    GetcUnlocked0200();
     return g_tStatus;
 }
 

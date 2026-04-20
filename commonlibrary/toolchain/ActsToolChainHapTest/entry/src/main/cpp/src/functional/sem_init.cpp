@@ -1,15 +1,15 @@
 /* unnamed semaphore sanity check */
 #include <pthread.h>
 #include <semaphore.h>
-#include <time.h>
-#include <string.h>
-#include <errno.h>
+#include <ctime>
+#include <cstring>
+#include <cerrno>
 #include "test.h"
 
 #define T(f) if (f) t_error(#f" failed: %s\n", strerror(errno))
-#define T2(r,f) if ((r=(f))) t_error(#f" failed: %s\n", strerror(r))
+#define T2(r, f) if (((r)=(f))) t_error(#f" failed: %s\n", strerror(r))
 
-static void *start(void *arg)
+static void *StartFunc(void *arg)
 {
     struct timespec ts;
     sem_t *s = static_cast<sem_t*>(arg);
@@ -20,7 +20,7 @@ static void *start(void *arg)
     return nullptr;
 }
 
-static void many_waiters()
+static void ManyWaiters()
 {
     pthread_t t[3];
     sem_t s[2];
@@ -29,9 +29,9 @@ static void many_waiters()
 
     T(sem_init(s, 0, 0));
     T(sem_init(s + 1, 0, 0));
-    T2(r, pthread_create(t, nullptr, start, s));
-    T2(r, pthread_create(t + 1, nullptr, start, s));
-    T2(r, pthread_create(t + 2, nullptr, start, s));
+    T2(r, pthread_create(t, nullptr, StartFunc, s));
+    T2(r, pthread_create(t + 1, nullptr, StartFunc, s));
+    T2(r, pthread_create(t + 2, nullptr, StartFunc, s));
     T(sem_wait(s));
     T(sem_wait(s));
     T(sem_wait(s));
@@ -79,7 +79,7 @@ static void SingleThread()
 static int SemInitTestImpl(void)
 {
     SingleThread();
-    many_waiters();
+    ManyWaiters();
     return g_tStatus;
 }
 

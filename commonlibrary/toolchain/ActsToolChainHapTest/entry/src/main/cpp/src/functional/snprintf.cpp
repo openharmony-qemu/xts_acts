@@ -1,11 +1,25 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #ifndef XOPEN_SOURCE
 #define XOPEN_SOURCE 700
 #endif
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <limits.h>
-#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <cerrno>
+#include <climits>
+#include <cmath>
 #include "test.h"
 
 #define DISABLE_SLOW_TESTS
@@ -18,6 +32,8 @@
 #define EXP_1023 1023
 #define EXP_1024 1024
 #define TEST_VALUE 123456
+#define DECIMAL_BASE 10
+#define SKIP_FIRST_CHAR 2
 #define INT_MAX_VALUE 2147483647
 
 #define TEST(r, f, x, m) ( \
@@ -25,14 +41,14 @@
     (t_error("%s failed (" m ")\n", #f, r, x), 0))
 
 #define TEST_S(s, x, m) ( \
-    !strcmp((s),(x)) || \
-    (t_error("[%s] != [%s] (%s)\n", s, x, m), 0) )
+    !strcmp((s), (x)) || \
+    (t_error("[%s] != [%s] (%s)\n", s, x, m), 0))
 
 static const struct {
     const char *fmt;
     int i;
     const char *expect;
-} int_tests[] = {
+} intTests[] = {
     /* width, precision, alignment */
     { "%04d", 12, "0012" },
     { "%.3d", 12, "012" },
@@ -91,7 +107,7 @@ static const struct {
     const char *fmt;
     double f;
     const char *expect;
-} fp_tests[] = {
+} fpTests[] = {
     /* basic form, handling of exponent/precision for 0 */
     { "%a", 0.0, "0x0p+0" },
     { "%e", 0.0, "0.000000e+00" },
@@ -145,14 +161,16 @@ static const struct {
 
     /* exact conversion of large integers */
     { "%.0f", 340282366920938463463374607431768211456.0,
-             "340282366920938463463374607431768211456" },
+        "340282366920938463463374607431768211456" },
 
     { nullptr, 0.0, nullptr }
 };
 
 static int SnprintfTestImpl(void)
 {
-    int i, j, k;
+    int i;
+    int j;
+    int k;
     char b[BUFFER_SIZE];
 
     TEST(i, snprintf(nullptr, 0, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
@@ -172,7 +190,7 @@ static int SnprintfTestImpl(void)
             if (b[j] < '5') {
                 b[j] += b[j] - '0' + k, k = 0;
             } else {
-                b[j] += b[j] - '0' - 10 + k, k = 1;
+                b[j] += b[j] - '0' - DECIMAL_BASE + k, k = 1;
             }
         }
     }
@@ -181,32 +199,31 @@ static int SnprintfTestImpl(void)
     }
     TEST(i, j, EXP_1024, "%d != %d");
 
-
 #ifndef DISABLE_SLOW_TESTS
     errno = 0;
     TEST(i, snprintf(NULL, 0, "%.*u", INT_MAX_VALUE, 0), INT_MAX_VALUE, "cannot print max length %d");
     TEST(i, snprintf(NULL, 0, "%.*u ", INT_MAX_VALUE, 0), -1, "integer overflow %d");
     TEST(i, errno, EOVERFLOW, "after overflow: %d != %d");
 #endif
-    for (j = 0; int_tests[j].fmt; j++) {
-        i = snprintf(b, sizeof b, int_tests[j].fmt, int_tests[j].i);
-        if (i != strlen(int_tests[j].expect)) {
+    for (j = 0; intTests[j].fmt; j++) {
+        i = snprintf(b, sizeof b, intTests[j].fmt, intTests[j].i);
+        if (i != strlen(intTests[j].expect)) {
             t_error("snprintf(b, sizeof b, \"%s\", %d) returned %d wanted %d\n",
-                int_tests[j].fmt, int_tests[j].i, i, strlen(int_tests[j].expect));
+                intTests[j].fmt, intTests[j].i, i, strlen(intTests[j].expect));
         }
-        if (strcmp(b, int_tests[j].expect) != 0) {
-            t_error("bad integer conversion: got \"%s\", want \"%s\"\n", b, int_tests[j].expect);
+        if (strcmp(b, intTests[j].expect) != 0) {
+            t_error("bad integer conversion: got \"%s\", want \"%s\"\n", b, intTests[j].expect);
         }
     }
 
-    for (j = 0; fp_tests[j].fmt; j++) {
-        i = snprintf(b, sizeof b, fp_tests[j].fmt, fp_tests[j].f);
-        if (i != strlen(fp_tests[j].expect)) {
+    for (j = 0; fpTests[j].fmt; j++) {
+        i = snprintf(b, sizeof b, fpTests[j].fmt, fpTests[j].f);
+        if (i != strlen(fpTests[j].expect)) {
             t_error("snprintf(b, sizeof b, \"%s\", %f) returned %d wanted %d\n",
-                fp_tests[j].fmt, fp_tests[j].f, i, strlen(fp_tests[j].expect));
+                fpTests[j].fmt, fpTests[j].f, i, strlen(fpTests[j].expect));
         }
-        if (strcmp(b, fp_tests[j].expect) != 0) {
-            t_error("bad floating-point conversion: got \"%s\", want \"%s\"\n", b, fp_tests[j].expect);
+        if (strcmp(b, fpTests[j].expect) != 0) {
+            t_error("bad floating-point conversion: got \"%s\", want \"%s\"\n", b, fpTests[j].expect);
         }
     }
 

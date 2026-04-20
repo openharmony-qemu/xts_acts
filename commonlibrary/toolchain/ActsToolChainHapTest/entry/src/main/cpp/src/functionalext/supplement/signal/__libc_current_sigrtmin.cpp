@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <signal.h>
+#include <csignal>
 #include "functionalext.h"
 
 #define SIGRTMIN_VALUE 35
@@ -23,21 +23,21 @@
  * @tc.desc      : Verify that the number of real-time signals can be obtained
  * @tc.level     : Level 0
  */
-void libc_current_sigrtmin_0100(void)
+void LibcCurrentSigrtmin0100(void)
 {
     int result = __libc_current_sigrtmin();
     EXPECT_EQ("libc_current_sigrtmin_0100", result, SIGRTMIN_VALUE);
 }
 
-static int __libc_current_sigrtminTest_with_args(int argc, char *argv[])
+static int LibcCurrentSigrtminTestWithArgs(int argc, char *argv[])
 {
-    libc_current_sigrtmin_0100();
+    LibcCurrentSigrtmin0100();
     return T_STATUS;
 }
 
-int __libc_current_sigrtminTest(void)
+int LibcCurrentSigrtminTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return __libc_current_sigrtminTest_with_args(1, libcArgv);
+    return LibcCurrentSigrtminTestWithArgs(1, libcArgv);
 }

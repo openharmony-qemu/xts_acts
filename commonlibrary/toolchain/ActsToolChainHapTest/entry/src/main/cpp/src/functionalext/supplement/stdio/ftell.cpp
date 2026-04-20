@@ -14,8 +14,8 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 #define STR_LEN 22

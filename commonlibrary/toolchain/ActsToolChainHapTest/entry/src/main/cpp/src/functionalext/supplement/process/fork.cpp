@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <cstdlib>
 #include <unistd.h>
 #include <sys/wait.h>
 #include "functionalext.h"
@@ -24,7 +24,7 @@
  * @tc.desc      : The function call is successful and the process can be created
  * @tc.level     : Level 0
  */
-void fork_0100()
+void Fork0100()
 {
     pid_t fpid;
     int count = 0;
@@ -76,7 +76,7 @@ void fork_0100()
 
 static int ForkTestImpl(int argc, char *argv[])
 {
-    fork_0100();
+    Fork0100();
     return g_tStatus;
 }
 

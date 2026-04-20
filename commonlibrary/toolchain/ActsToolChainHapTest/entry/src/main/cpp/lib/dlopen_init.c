@@ -12,23 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 #include <unistd.h>
 
-static int test_val;
+static int g_testVal;
 
 __attribute__((constructor)) static void Init(void)
 {
     sleep(1);
-    test_val++;
+    g_testVal++;
 }
 
-int GetVal(void)
+int getVal(void)
 {
-    return test_val;
+    return g_testVal;
 }
 
 __attribute__((destructor)) static void DeInit(void)
 {
     sleep(1);
-    test_val--;
+    g_testVal--;
 }

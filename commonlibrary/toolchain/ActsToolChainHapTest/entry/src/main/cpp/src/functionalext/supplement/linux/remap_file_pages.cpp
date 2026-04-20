@@ -14,8 +14,8 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <sys/mman.h>
 #include "test.h"
 
@@ -27,7 +27,7 @@
 #define REMAP_PAGE_INDEX 0
 #define REMAP_PAGE_INDEX_1 1
 static const char *path = "/data/storage/el2/base/cache/remap_file_pages.txt";
-static const char *text =
+static const char *TEXT =
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -114,7 +114,7 @@ void RemapFilePages0100(void)
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }
-    int ret = write(fd, text, strlen(text));
+    int ret = write(fd, TEXT, strlen(TEXT));
     if (ret != LEN) {
         t_error("%s write failed\n", __func__);
     }
@@ -169,7 +169,7 @@ void RemapFilePages0100(void)
         t_error("%s str should be equal\n", __func__);
     }
 
-    memcpy(str, start + PAGE_SIZE - 4, STR_COPY_LEN);
+    memcpy(str, start + PAGE_SIZE - MEMCPY_OFFSET_4, STR_COPY_LEN);
     if (strcmp(str, "bbbbaaaa")) {
         t_error("%s str should be equal\n", __func__);
     }

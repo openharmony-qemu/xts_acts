@@ -21,21 +21,21 @@
 #define SLEEP_SECONDS 3
 
 static const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdl_multithread_test_dso.so";
-static bool stop = false;
+static bool g_stop = false;
 
-static void* dl_test(void *arg)
+static void* DlTest(void *arg)
 {
-    while (!stop) {
+    while (!g_stop) {
         void* handle = dlopen(g_libPath, RTLD_GLOBAL);
         if (!handle) {
             t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_GLOBAL, dlerror());
         }
         dlclose(handle);
     }
-    return 0;
+    return nullptr;
 }
 
-int DlMultithreadTestTest()
+int DlMultithreadTest()
 {
     pthread_t thd1;
     pthread_t thd2;
@@ -43,13 +43,13 @@ int DlMultithreadTestTest()
     pthread_t thd4;
     pthread_t thd5;
     void *res;
-    pthread_create(&thd1, nullptr, dl_test, nullptr);
-    pthread_create(&thd2, nullptr, dl_test, nullptr);
-    pthread_create(&thd3, nullptr, dl_test, nullptr);
-    pthread_create(&thd4, nullptr, dl_test, nullptr);
-    pthread_create(&thd5, nullptr, dl_test, nullptr);
+    pthread_create(&thd1, nullptr, DlTest, nullptr);
+    pthread_create(&thd2, nullptr, DlTest, nullptr);
+    pthread_create(&thd3, nullptr, DlTest, nullptr);
+    pthread_create(&thd4, nullptr, DlTest, nullptr);
+    pthread_create(&thd5, nullptr, DlTest, nullptr);
     sleep(SLEEP_SECONDS);
-    stop = true;
+    g_stop = true;
     pthread_join(thd1, &res);
     pthread_join(thd2, &res);
     pthread_join(thd3, &res);

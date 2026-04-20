@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 // #define _GNU_SOURCE
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <malloc.h>
-#include <stdio.h>
+#include <cstdio>
 #include "test.h"
 
-const char *PATHNAME = "/proc/self/mountinfo";
+const char *g_pathName = "/proc/self/mountinfo";
 
 /**
  * @tc.name      : NameToHandleAt0100
@@ -30,7 +30,10 @@ void NameToHandleAt0100(void)
 {
     struct file_handle *fhp;
     char buf[1000];
-    int mount_id, fhsize, flags, dirfd;
+    int mount_id;
+    int fhsize;
+    int flags;
+    int dirfd;
 
     fhsize = sizeof(*fhp);
     fhp = (struct file_handle *)malloc(fhsize);
@@ -42,7 +45,7 @@ void NameToHandleAt0100(void)
     flags = 0;
     fhp->handle_bytes = 0;
 
-    if (name_to_handle_at(dirfd, PATHNAME, fhp, &mount_id, flags) != -1 || errno != EOVERFLOW) {
+    if (name_to_handle_at(dirfd, g_pathName, fhp, &mount_id, flags) != -1 || errno != EOVERFLOW) {
         t_error("%s Unexpected name_to_handle_at\n", __func__);
     }
 
@@ -52,7 +55,7 @@ void NameToHandleAt0100(void)
         t_error("%s realloc failed\n", __func__);
     }
 
-    int result = name_to_handle_at(dirfd, PATHNAME, fhp, &mount_id, flags);
+    int result = name_to_handle_at(dirfd, g_pathName, fhp, &mount_id, flags);
     if (result == -1) {
         t_error("%s name_to_handle_at failed\n");
     }
@@ -70,7 +73,7 @@ void NameToHandleAt0100(void)
 
 static int NameToHandleAtTestImpl(int argc, char *argv[])
 {
-    // name_to_handle_at_0100();
+    // NameToHandleAt0100();
     return T_STATUS;
 }
 

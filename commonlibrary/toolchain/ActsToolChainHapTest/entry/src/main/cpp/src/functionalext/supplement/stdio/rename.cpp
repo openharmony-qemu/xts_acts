@@ -21,7 +21,7 @@
  * @tc.desc      : Each parameter is valid, and the file name can be changed.
  * @tc.level     : Level 0
  */
-void rename_0100(void)
+void Rename0100(void)
 {
     const char *oldname = "/data/storage/el2/base/cache/oldfile.txt";
     const char *newname = "/data/storage/el2/base/cache/newfile.txt";
@@ -44,7 +44,7 @@ void rename_0100(void)
  * @tc.desc      : Parameter 1 is invalid, the file name cannot be changed.
  * @tc.level     : Level 2
  */
-void rename_0200(void)
+void Rename0200(void)
 {
     const char *oldname = "/data/storage/el2/base/cache/oldfile.txt";
     const char *newname = "/data/storage/el2/base/cache/newfile.txt";
@@ -57,7 +57,7 @@ void rename_0200(void)
  * @tc.desc      : Newpath already exists, the file name can be changed.
  * @tc.level     : Level 1
  */
-void rename_0300(void)
+void Rename0300(void)
 {
     const char *oldname = "/data/storage/el2/base/cache/oldfile.txt";
     const char *newname = "/data/storage/el2/base/cache/newfile.txt";
@@ -94,9 +94,9 @@ void rename_0300(void)
 
 static int RenameTestImpl(int argc, char *argv[])
 {
-    rename_0100();
-    rename_0200();
-    rename_0300();
+    Rename0100();
+    Rename0200();
+    Rename0300();
     return g_tStatus;
 }
 

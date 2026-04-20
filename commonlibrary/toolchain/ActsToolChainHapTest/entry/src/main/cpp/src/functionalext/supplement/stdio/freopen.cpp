@@ -27,8 +27,7 @@ void Freopen0100(void)
     char ptr[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH("/data/storage/el2/base/cache/freopen.txt", ptr);
 
-    FILE *fp;
-    fp = freopen(ptr, "w+", stdin);
+    FILE *fp = freopen(ptr, "w+", stdin);
     EXPECT_PTRNE("Freopen0100", fp, NULL);
 
     fclose(stdin);

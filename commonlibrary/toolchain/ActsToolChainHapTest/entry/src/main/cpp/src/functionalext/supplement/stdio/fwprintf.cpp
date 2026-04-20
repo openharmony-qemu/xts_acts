@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <wchar.h>
+#include <cwchar>
 #include "functionalext.h"
 
 /**

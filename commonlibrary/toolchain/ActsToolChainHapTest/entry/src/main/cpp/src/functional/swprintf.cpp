@@ -1,13 +1,27 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #ifndef _XOPEN_SOURCE
 #define _XOPEN_SOURCE 700
 #endif
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <limits.h>
-#include <math.h>
-#include <wchar.h>
-#include <locale.h>
+#include <cstdio>
+#include <cstring>
+#include <cerrno>
+#include <climits>
+#include <cmath>
+#include <cwchar>
+#include <clocale>
 #include <langinfo.h>
 #include "test.h"
 
@@ -23,7 +37,7 @@ static const struct {
     const wchar_t *fmt;
     int i;
     const wchar_t *expect;
-} int_tests[] = {
+} INT_TESTS[] = {
     /* width, precision, alignment */
     { L"%04d", 12, L"0012" },
     { L"%.3d", 12, L"012" },
@@ -60,7 +74,7 @@ static const struct {
     const wchar_t *fmt;
     double f;
     const wchar_t *expect;
-} fp_tests[] = {
+} FP_TESTS[] = {
     /* basic form, handling of exponent/precision for 0 */
     { L"%e", 0.0, L"0.000000e+00" },
     { L"%f", 0.0, L"0.000000" },
@@ -91,24 +105,25 @@ static const struct {
 
     /* exact conversion of large integers */
     { L"%.0f", 340282366920938463463374607431768211456.0,
-             L"340282366920938463463374607431768211456" },
+        L"340282366920938463463374607431768211456" },
 
     { nullptr, 0.0, nullptr }
 };
 
 static int SwprintfTestImpl(void)
 {
-    int i, j;
+    int i;
+    int j;
     wchar_t b[500];
 
     (void)(
-    setlocale(LC_CTYPE, "en_US.UTF-8") ||
-    setlocale(LC_CTYPE, "en_GB.UTF-8") ||
-    setlocale(LC_CTYPE, "en.UTF-8") ||
-    setlocale(LC_CTYPE, "POSIX.UTF-8") ||
-    setlocale(LC_CTYPE, "C.UTF-8") ||
-    setlocale(LC_CTYPE, "UTF-8") ||
-    setlocale(LC_CTYPE, "") );
+        setlocale(LC_CTYPE, "en_US.UTF-8") ||
+        setlocale(LC_CTYPE, "en_GB.UTF-8") ||
+        setlocale(LC_CTYPE, "en.UTF-8") ||
+        setlocale(LC_CTYPE, "POSIX.UTF-8") ||
+        setlocale(LC_CTYPE, "C.UTF-8") ||
+        setlocale(LC_CTYPE, "UTF-8") ||
+        setlocale(LC_CTYPE, ""));
 
     TEST(i, strcmp(nl_langinfo(CODESET), "UTF-8"), 0, "no UTF-8 locale; tests might fail");
 
@@ -128,25 +143,25 @@ static int SwprintfTestImpl(void)
     TEST_S(b, L"123", "incorrect output");
     TEST(i, b[5], 'x', "buffer overrun");
 
-    for (j = 0; int_tests[j].fmt; j++) {
-        i = swprintf(b, sizeof b, int_tests[j].fmt, int_tests[j].i);
-        if (i != wcslen(int_tests[j].expect)) {
+    for (j = 0; INT_TESTS[j].fmt; j++) {
+        i = swprintf(b, sizeof b, INT_TESTS[j].fmt, INT_TESTS[j].i);
+        if (i != wcslen(INT_TESTS[j].expect)) {
             t_error("swprintf(b, sizeof b, \"%ls\", %d) returned %d wanted %d\n",
-                int_tests[j].fmt, int_tests[j].i, i, wcslen(int_tests[j].expect));
+                INT_TESTS[j].fmt, INT_TESTS[j].i, i, wcslen(INT_TESTS[j].expect));
         }
-        if (wcscmp(b, int_tests[j].expect) != 0) {
-            t_error("bad integer conversion: got \"%ls\", want \"%ls\"\n", b, int_tests[j].expect);
+        if (wcscmp(b, INT_TESTS[j].expect) != 0) {
+            t_error("bad integer conversion: got \"%ls\", want \"%ls\"\n", b, INT_TESTS[j].expect);
         }
     }
 
-    for (j = 0; fp_tests[j].fmt; j++) {
-        i = swprintf(b, sizeof b, fp_tests[j].fmt, fp_tests[j].f);
-        if (i != wcslen(fp_tests[j].expect)) {
+    for (j = 0; FP_TESTS[j].fmt; j++) {
+        i = swprintf(b, sizeof b, FP_TESTS[j].fmt, FP_TESTS[j].f);
+        if (i != wcslen(FP_TESTS[j].expect)) {
             t_error("swprintf(b, sizeof b, \"%ls\", %f) returned %d wanted %d\n",
-                fp_tests[j].fmt, fp_tests[j].f, i, wcslen(fp_tests[j].expect));
+                FP_TESTS[j].fmt, FP_TESTS[j].f, i, wcslen(FP_TESTS[j].expect));
         }
-        if (wcscmp(b, fp_tests[j].expect) != 0) {
-            t_error("bad floating-point conversion: got \"%ls\", want \"%ls\"\n", b, fp_tests[j].expect);
+        if (wcscmp(b, FP_TESTS[j].expect) != 0) {
+            t_error("bad floating-point conversion: got \"%ls\", want \"%ls\"\n", b, FP_TESTS[j].expect);
         }
     }
     return g_tStatus;

@@ -16,7 +16,7 @@
 #include "functionalext.h"
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdlib.h>
+#include <cstdlib>
 
 static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 

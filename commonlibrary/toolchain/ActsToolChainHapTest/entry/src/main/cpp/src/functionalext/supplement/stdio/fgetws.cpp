@@ -14,7 +14,7 @@
  */
 
 #include <fcntl.h>
-#include <wchar.h>
+#include <cwchar>
 #include "functionalext.h"
 
 /**
@@ -22,7 +22,7 @@
  * @tc.desc      : Verify that a string of wide characters can be read from the specified file
  * @tc.level     : Level 0
  */
-void fgetws_0100()
+void Fgetws0100()
 {
     wchar_t mystring[100];
     char str[] = "test";
@@ -48,7 +48,7 @@ void fgetws_0100()
  * @tc.desc      : Verify that a string of wide characters cannot be read from the specified file
  * @tc.level     : Level 2
  */
-void fgetws_0200()
+void Fgetws0200()
 {
     wchar_t wrstring[100];
     wchar_t line[] = L"hello";
@@ -69,8 +69,8 @@ void fgetws_0200()
 
 static int FgetwsTestImpl(int argc, char *argv[])
 {
-    fgetws_0100();
-    fgetws_0200();
+    Fgetws0100();
+    Fgetws0200();
     return g_tStatus;
 }
 
