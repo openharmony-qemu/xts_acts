@@ -1325,7 +1325,7 @@ static napi_value UsbControlTransferGetStatus(napi_env env, napi_callback_info i
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0002;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1368,7 +1368,7 @@ static napi_value UsbControlTransferSetFeature(napi_env env, napi_callback_info 
     setup.wValue = 0x0000;
     setup.wIndex = endpoint;
     setup.wLength = 0x0000;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1392,7 +1392,7 @@ static napi_value UsbControlTransferClearFeature(napi_env env, napi_callback_inf
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0000;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1415,8 +1415,8 @@ static napi_value UsbControlTransferGetDescriptor(napi_env env, napi_callback_in
     setup.bRequest = 0x06;
     setup.wValue = 0x0100;
     setup.wIndex = 0x0000;
-    setup.wLength = 18;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    setup.wLength = 0x0012;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1440,7 +1440,7 @@ static napi_value UsbControlTransferGetConfiguration(napi_env env, napi_callback
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0001;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1464,7 +1464,7 @@ static napi_value UsbControlTransferGetInterface(napi_env env, napi_callback_inf
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0001;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1488,7 +1488,7 @@ static napi_value UsbControlTransferSetConfiguration(napi_env env, napi_callback
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0000;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1506,7 +1506,7 @@ static napi_value UsbControlTransferSetupNull(napi_env env, napi_callback_info i
     int32_t usbInitReturnValue = OH_Usb_Init();
     NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
     uint8_t data[1] = {0};
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, nullptr, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, nullptr, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1528,8 +1528,8 @@ static napi_value UsbControlTransferDataNull(napi_env env, napi_callback_info in
     setup.bRequest = 0x06;
     setup.wValue = 0x0100;
     setup.wIndex = 0x0000;
-    setup.wLength = 18;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, nullptr, UINT32_MAX);
+    setup.wLength = 0x0012;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, nullptr, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1548,7 +1548,7 @@ static napi_value UsbControlTransferInvalidDeviceId(napi_env env, napi_callback_
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0002;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -1570,7 +1570,7 @@ static napi_value UsbControlTransferNoInit(napi_env env, napi_callback_info info
     setup.wValue = 0x0000;
     setup.wIndex = 0x0000;
     setup.wLength = 0x0002;
-    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
