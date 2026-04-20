@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import ActsWorkerTest from './WorkerTest.test'
+import WorkerAtFront from './WorkerAtFront.test';
 
 export default function testsuite() {
   ActsWorkerTest();
+  WorkerAtFront();
 }
