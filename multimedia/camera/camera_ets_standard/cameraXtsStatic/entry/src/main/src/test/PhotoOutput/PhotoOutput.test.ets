@@ -698,7 +698,7 @@ export default function PhotoOutputToStaticTest():void {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
           let isSupported: boolean = mPhotoOutput!.isMirrorSupported();
-          if (mPhotoOutput!.isMirrorSupported()&&mPhotoOutput.is) {
+          if (mPhotoOutput!.isMirrorSupported()&&mPhotoOutput!.isMovingPhotoSupported()) {
             let captureLocation: camera.Location = {
               latitude: 0,
               longitude: 0,
@@ -873,7 +873,7 @@ export default function PhotoOutputToStaticTest():void {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect(Number(error.code)).assertEqual(7400104);
       } finally {
-        releasePhotoSession();
+        await releasePhotoSession();
         done();
       }
     })
