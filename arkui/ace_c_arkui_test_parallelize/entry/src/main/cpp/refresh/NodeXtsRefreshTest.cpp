@@ -29,9 +29,9 @@ struct MyAsyncData {
     ArkUI_NodeHandle root =
         nullptr; // 框架创建的已上树的节点，所有开发者创建的根组件（无父组件的组件）都会作为root的子节点来绘制
     std::vector<ArkUI_NodeHandle> nodeList; // 保存开发者创建的组件
-    void (*RunOnUIThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
+    void (*RunOnUIThreadRefresh)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                           std::vector<ArkUI_NodeHandle> &nodeList); // 在UI线程执行的开发者回调
-    void (*RunOnSubThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
+    void (*RunOnSubThreadRefresh)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                            std::vector<ArkUI_NodeHandle> &nodeList); // 在子线程执行的开发者回调
 };
 
@@ -50,10 +50,10 @@ void OnCreateNodeRefresh(void *asyncUITaskData) {
         return ;
     }
     std::vector<ArkUI_NodeHandle> nodeList;
-    if (data->RunOnSubThreadList) {
-        data->RunOnSubThreadList(nodeAPI, nodeList);
+    if (data->RunOnSubThreadRefresh) {
+        data->RunOnSubThreadRefresh(nodeAPI, nodeList);
     } else {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "invalid RunOnSubThreadList Func");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "invalid RunOnSubThreadRefresh Func");
     }
     data->nodeList = nodeList;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OnCreateNodeRefresh end");
@@ -81,19 +81,19 @@ void OnAttachTreeRefresh(void *asyncUITaskData) {
             nodeAPI->addChild(root, node);
         }
     }
-    if (data->RunOnUIThreadList) {
-        data->RunOnUIThreadList(nodeAPI, nodeList);
+    if (data->RunOnUIThreadRefresh) {
+        data->RunOnUIThreadRefresh(nodeAPI, nodeList);
     } else {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "invalid RunOnUIThreadList Func");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "invalid RunOnUIThreadRefresh Func");
     }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OnAttachTreeRefresh end");
 }
 
 MyAsyncData *g_refreshAsyncData = nullptr;
 napi_value NodeXTSRefreshTest::CreateCNodeTreeRefresh(napi_env env, napi_callback_info info,
-                           void (RunOnUIThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
+                           void (RunOnUIThreadRefresh)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                std::vector<ArkUI_NodeHandle> &nodeList),
-                           void (RunOnSubThreadList)(ArkUI_NativeNodeAPI_1 *nodeAPI,
+                           void (RunOnSubThreadRefresh)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                 std::vector<ArkUI_NodeHandle> &nodeList)) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "CreateCNodeTreeRefresh begin");
     if (g_refreshAsyncData) {
@@ -127,8 +127,8 @@ napi_value NodeXTSRefreshTest::CreateCNodeTreeRefresh(napi_env env, napi_callbac
 
     g_refreshAsyncData = new MyAsyncData();
     g_refreshAsyncData->root = root;
-    g_refreshAsyncData->RunOnUIThreadList = RunOnUIThreadList;
-    g_refreshAsyncData->RunOnSubThreadList = RunOnSubThreadList;
+    g_refreshAsyncData->RunOnUIThreadRefresh = RunOnUIThreadRefresh;
+    g_refreshAsyncData->RunOnSubThreadRefresh = RunOnSubThreadRefresh;
 
     if (OH_ArkUI_PostAsyncUITask(contextHandle, g_refreshAsyncData, (void (*)(void *))OnCreateNodeRefresh, (void (*)(void *))OnAttachTreeRefresh) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OH_ArkUI_PostAsyncUITask failed");
