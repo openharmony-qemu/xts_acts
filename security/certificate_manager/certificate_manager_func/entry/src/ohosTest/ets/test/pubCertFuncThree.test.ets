@@ -584,9 +584,9 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       certManager.getPrivateCertificate(uri.replace("object", uriObject), (err, cmResult)=>{
         expect(err.code).assertEqual(17500002);
         console.error(`SUB_Security_CertManager_getPrivateCertificate_Func_0400 Failed to get private certificate. Code: ${err.code}, message: ${err.message}`);
+        done();
       });
-      console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0400: end ");
-      done();
+
     });
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0100
@@ -662,9 +662,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       certManager.init(uri.replace("object", uriObject),req, (err, CMHandle)=>{
         expect(err.code).assertEqual(17500001);
         console.error(`SUB_Security_CertManager_InitJsApi_Func_0300 failed. Code: ${err.code}, message: ${err.message}`);
+        done();
       });
-      console.log("SUB_Security_CertManager_InitJsApi_Func_0300: end ");
-      done();
     });
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0400
@@ -686,9 +685,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       certManager.init(uri.replace("object", uriObject),req, (err, CMHandle)=>{
         expect(err.code).assertEqual(17500001);
         console.error(`SUB_Security_CertManager_InitJsApi_Func_0400 failed. Code: ${err.code}, message: ${err.message}`);
+        done();
       });
-      console.log("SUB_Security_CertManager_InitJsApi_Func_0400: end ");
-      done();
     });
   })
 }
