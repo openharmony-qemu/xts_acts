@@ -666,7 +666,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_start_after_floatingBall
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_1310
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_AFTER_FLOATINGBALL_0100
      * @tc.desc   test start float view after floatingBall started should fail with error 1300034
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function abilityTest() {
         let properties = floatViewController.getWindowProperties();
         console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
         expect(properties.windowId).assertLarger(0);
-        expect(properties.displayId != null).assertTrue();
+        expect(properties.displayId).assertLarger(0);
         expect(properties.windowRect != null).assertTrue();
         expect(properties.windowRect.width > 0).assertTrue();
         expect(properties.windowRect.height > 0).assertTrue();
