@@ -2224,5 +2224,167 @@ export default function deviceInfoTest() {
       expect(newFilteredArr[0]).assertEqual(30n);
       
       });
+
+          /**
+     * @tc.name   SUB_COMMONLIBRARY_DATA_SETTERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DATA_SETTERS_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMONLIBRARY_DATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
+      const caseName = 'PromiseTest0100';
+      console.info(`${caseName} test start`);
+      let taskPromises: Promise<void>[] = [];
+      let arr: number[] = [];
+      let voidResult: void;
+      const promiseVoid: Promise<void> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          arr.push(3);
+          console.log('Promise Done');
+          resolve();
+        }, 200);
+      });
+      arr.push(1);
+      promiseVoid.then((res) => {
+        arr.push(2);
+        voidResult = res;
+        console.log('resolve:' + res);
+      }).catch((error: void) => {
+        voidResult = error
+        console.log('promise error:', error);
+      });
+      arr.push(4);
+      taskPromises.push(promiseVoid);
+      await Promise.all(taskPromises);
+      await sleep(200);
+      expect(JSON.stringify(arr)).assertEqual('[1,4,3,2]');
+      console.info(`${caseName} test end`)
+      Done();
+    });
+
+
+  /**
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SETTERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SETTERS_0100
+   * @tc.desc   test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('SUB_COMMONLIBRARY_CATA_SETTERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
+      const caseName = 'PromiseTest0200';
+      console.info(`${caseName} test start`);
+      let taskPromises: Promise<string>[] = [];
+      let arr: number[] = [];
+      let stringResult: string = '';
+      const promiseString: Promise<string> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          arr.push(3);
+          console.log('Promise Done');
+          resolve('haha');
+        }, 200);
+      });
+      arr.push(1);
+      promiseString.then((res) => {
+        arr.push(2);
+        stringResult = res;
+        console.log('resolve:' + res);
+      }).catch((error: string) => {
+        stringResult = 'failed'
+        console.log('promise error:', error);
+      });
+      arr.push(4);
+      taskPromises.push(promiseString);
+      await Promise.all(taskPromises);
+      await sleep(200);
+      expect(JSON.stringify(arr)).assertEqual('[1,4,3,2]');
+      expect(stringResult).assertEqual('haha');
+      console.info(`${caseName} test end`);
+      Done();
+    });
+
+
+  /**
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SETERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SETERS_0100
+   * @tc.desc   test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('SUB_COMMONLIBRARY_CATA_SETERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
+      const caseName = 'PromiseTest0300';
+      console.info(`${caseName} test start`);
+      let taskPromises: Promise<number>[] = [];
+      let arr: number[] = [];
+      let numberResult: number = 0;
+      const promiseNumber: Promise<number> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          arr.push(3);
+          console.log('Promise Done');
+          resolve(10);
+        }, 200);
+      });
+      arr.push(1);
+      promiseNumber.then((res) => {
+        arr.push(2);
+        numberResult = res;
+        console.log('resolve:' + res);
+      }).catch((error: number) => {
+        numberResult = 5
+        console.log('promise error:', error);
+      });
+      arr.push(4);
+      taskPromises.push(promiseNumber);
+      await Promise.all(taskPromises);
+      await sleep(200);
+      expect(JSON.stringify(arr)).assertEqual('[1,4,3,2]');
+      expect(numberResult).assertEqual(10);
+      console.info(`${caseName} test end`);
+      Done();
+    });
+
+
+  /**
+   * @tc.name   SUB_COMMONLIBRARY_CATA_SEAERS_0100
+   * @tc.number SUB_COMMONLIBRARY_CATA_SEAERS_0100
+   * @tc.desc   test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('SUB_COMMONLIBRARY_CATA_SEAERS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,function () {
+      const caseName = 'PromiseTest0400';
+      console.info(`${caseName} test start`);
+      let taskPromises: Promise<boolean>[] = [];
+      let arr: number[] = [];
+      let booleanResult: boolean = false;
+      const promiseBoolean: Promise<boolean> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          arr.push(3);
+          console.log('Promise Done');
+          resolve(true);
+        }, 200);
+      });
+      arr.push(1);
+      promiseBoolean.then((res) => {
+        arr.push(2);
+        booleanResult = res;
+        console.log('resolve:' + res);
+      }).catch((error: boolean) => {
+        booleanResult = false
+        console.log('promise error:', error);
+      });
+      arr.push(4);
+      taskPromises.push(promiseBoolean);
+      await Promise.all(taskPromises);
+      await sleep(200);
+      expect(JSON.stringify(arr)).assertEqual('[1,4,3,2]');
+      expect(booleanResult).assertTrue();
+      console.info(`${caseName} test end`);
+      Done();
+    });
     })
 }
