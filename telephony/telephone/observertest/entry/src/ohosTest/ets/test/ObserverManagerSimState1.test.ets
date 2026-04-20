@@ -749,14 +749,14 @@ export default function observerManagerSimStateTest1() {
               observer.offGetSimActiveState((res: boolean) => {
                 console.info(`${caseName} res: ${res}}`);
                 ExpectTrue(res);
+                done();
               });
             } else {
               console.info(`${caseName} in else, data: ${data}`);
               ExpectFail();
               done();
             }
-          });
-          done();
+          });         
         } catch (error) {
           console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
           ExpectFail();
