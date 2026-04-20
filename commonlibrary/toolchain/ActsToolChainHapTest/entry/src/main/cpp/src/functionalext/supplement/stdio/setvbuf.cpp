@@ -25,7 +25,9 @@ void Setvbuf0100(void)
 {
     char buff[1024] = {0};
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *fptr = fopen(path, "w+");
     EXPECT_PTRNE("setvbuf_0100", fptr, NULL);
 
@@ -45,7 +47,9 @@ void Setvbuf0200(void)
 {
     char buff[1024] = {0};
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *fptr = fopen(path, "w+");
     EXPECT_PTRNE("setvbuf_0100", fptr, NULL);
 

@@ -55,7 +55,7 @@ void *DoChildTwo(void *p)
     if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    int ret = fread(buf, 64, 1, g_fp);
+    (void)fread(buf, 64, 1, g_fp);
 
     int count = atoi(buf);
     ++count;
@@ -63,7 +63,7 @@ void *DoChildTwo(void *p)
     if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    ret = fwrite(buf, strlen(buf), 1, g_fp);
+    (void)fwrite(buf, strlen(buf), 1, g_fp);
 
     funlockfile(g_fp);
     return nullptr;

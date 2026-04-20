@@ -26,7 +26,9 @@
 void Fputc0100(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FPUTC_TXT, path);
+    if (!FileAbsolutePath(STR_FPUTC_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *fptr = fopen(path, "w");
     int exit = fputc('a', fptr);
     EXPECT_EQ("Fputc0100", exit, CHAR_A_ASCII);
@@ -41,7 +43,9 @@ void Fputc0100(void)
 void Fputc0200(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FPUTC_TXT, path);
+    if (!FileAbsolutePath(STR_FPUTC_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *fptr = fopen(path, "r");
     int exit = fputc('a', fptr);
     EXPECT_EQ("Fputc0200", exit, EOF);

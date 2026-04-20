@@ -70,7 +70,7 @@ void ThrdDetach0100(void)
  */
 void ThrdDetach0200(void)
 {
-    signal(SIGSEGV, ExceptionHandler);
+    (void)signal(SIGSEGV, ExceptionHandler);
 
     thrd_t id;
     int result;

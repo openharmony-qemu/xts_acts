@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include <cstdio>
 #include <cstring>
 #include <climits>
@@ -24,23 +39,17 @@
     TEST(i, sscanf(# x, "%lf", &d), 1, "got %d fields, expected %d"), \
     TEST(t, d, (double)(x), "%g != %g"))
 
-static int SscanfTestImpl(void)
+static void TestBasicStringScanf(void)
 {
     int i;
     char a[BUFFER_SIZE];
     char b[BUFFER_SIZE];
-    int x;
-    int y;
-    int z;
-    int u;
-    int v;
-    double d;
-    double t;
 
     TEST(i, sscanf("hello, world\n", "%s %s", a, b), FIELD_COUNT_2, "only %d fields, expected %d");
     TEST_S(a, "hello,", "");
     TEST_S(b, "world", "");
 
+    /* %[...] format specifier is correct for reading character sets into char arrays */
     TEST(i, sscanf("hello, world\n", "%[hel]%s", a, b), FIELD_COUNT_2, "only %d fields, expected %d");
     TEST_S(a, "hell", "");
     TEST_S(b, "o,", "");
@@ -51,11 +60,24 @@ static int SscanfTestImpl(void)
 
     a[CHAR_WIDTH_8] = 'X';
     a[CHAR_WIDTH_8 + 1] = 0;
+    /* %8c format specifier reads exactly 8 characters without null-termination, this is correct */
     TEST(i, sscanf("hello, world\n", "%8c%8c", a, b), FIELD_COUNT_1, "%d fields, expected %d");
     TEST_S(a, "hello, wX", "");
+}
 
+static void TestIntegerScanf(void)
+{
+    int i;
+    int x;
+    int y;
+    int z;
+    int u;
+    int v;
+    char a[BUFFER_SIZE];
+
+    /* %[0123456789] format specifier is correct for reading digit characters */
     TEST(i, sscanf("56789 0123 56a72", "%2d%d%*d %[0123456789]\n", &x, &y, a), FIELD_COUNT_3,
-         "only %d fields, expected %d");
+        "only %d fields, expected %d");
     TEST(i, x, 56, "%d != %d");
     TEST(i, y, 789, "%d != %d");
     TEST_S(a, "56", "");
@@ -82,6 +104,13 @@ static int SscanfTestImpl(void)
 
     TEST(i, sscanf(" 0x12 0x34", "%5i%2i", &x, &y), FIELD_COUNT_1, "got %d fields, expected %d");
     TEST(i, x, 0x12, "%d != %d");
+}
+
+static void TestFloatScanf(void)
+{
+    int i;
+    double d;
+    double t;
 
     TEST_F(123);
     TEST_F(123.0);
@@ -99,6 +128,13 @@ static int SscanfTestImpl(void)
 
     TEST(i, sscanf("10e", "%lf", &d), FIELD_COUNT_1, "got %d fields, expected no match (%d)");
     TEST(i, sscanf("", "%lf\n", &d), FIELD_COUNT_NEG1, "got %d fields, expected input failure (%d");
+}
+
+static int SscanfTestImpl(void)
+{
+    TestBasicStringScanf();
+    TestIntegerScanf();
+    TestFloatScanf();
     return g_tStatus;
 }
 

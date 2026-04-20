@@ -36,19 +36,34 @@
 #define SKIP_FIRST_CHAR 2
 #define INT_MAX_VALUE 2147483647
 
-#define TEST(r, f, x, m) ( \
-    ((r) = (f)) == (x) || \
-    (t_error("%s failed (" m ")\n", #f, r, x), 0))
+template<typename T>
+static inline bool TestEqual(T &result, T value, T expected, const char *expr, const char *msg)
+{
+    result = value;
+    if (result == expected) {
+        return true;
+    }
+    t_error("%s failed (%s)\n", expr, msg);
+    return false;
+}
 
-#define TEST_S(s, x, m) ( \
-    !strcmp((s), (x)) || \
-    (t_error("[%s] != [%s] (%s)\n", s, x, m), 0))
+static inline bool TestStringEqual(const char *s, const char *x, const char *msg)
+{
+    if (!strcmp(s, x)) {
+        return true;
+    }
+    t_error("[%s] != [%s] (%s)\n", s, x, msg);
+    return false;
+}
+
+#define TEST(r, f, x, m) TestEqual(r, f, x, #f, m)
+#define TEST_S(s, x, m) TestStringEqual(s, x, m)
 
 static const struct {
     const char *fmt;
     int i;
     const char *expect;
-} intTests[] = {
+} INT_TESTS[] = {
     /* width, precision, alignment */
     { "%04d", 12, "0012" },
     { "%.3d", 12, "012" },
@@ -107,7 +122,7 @@ static const struct {
     const char *fmt;
     double f;
     const char *expect;
-} fpTests[] = {
+} FP_TESTS[] = {
     /* basic form, handling of exponent/precision for 0 */
     { "%a", 0.0, "0x0p+0" },
     { "%e", 0.0, "0.000000e+00" },
@@ -166,12 +181,9 @@ static const struct {
     { nullptr, 0.0, nullptr }
 };
 
-static int SnprintfTestImpl(void)
+static void TestBasicSnprintf(char *b)
 {
     int i;
-    int j;
-    int k;
-    char b[BUFFER_SIZE];
 
     TEST(i, snprintf(nullptr, 0, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
     TEST(i, snprintf(nullptr, 0, "%.4s", "hello"), STR_LEN_4, "length returned %d != %d");
@@ -180,10 +192,19 @@ static int SnprintfTestImpl(void)
     strcpy(b, "xxxxxxxx");
     TEST(i, snprintf(b, SMALL_BUFFER, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
     TEST_S(b, "123", "incorrect output");
-    TEST(i, b[5], 'x', "buffer overrun");
+    if (b[5] != 'x') {
+        t_error("b[5] failed (buffer overrun)\n");
+    }
+}
+
+static void TestTinyDoubles(char *b)
+{
+    int i;
+    int j;
+    int k;
 
     /* Perform ascii arithmetic to test printing tiny doubles */
-    TEST(i, snprintf(b, sizeof b, "%.1022f", 0x1p-1021), EXP_1024, "%d != %d");
+    TEST(i, snprintf(b, BUFFER_SIZE, "%.1022f", 0x1p-1021), EXP_1024, "%d != %d");
     b[1] = '0';
     for (i = 0; i < EXP_1021; i++) {
         for (k = 0, j = EXP_1023; j > 0; j--) {
@@ -194,7 +215,9 @@ static int SnprintfTestImpl(void)
             }
         }
     }
-    TEST(i, b[1], '1', "'%c' != '%c'");
+    if (b[1] != '1') {
+        t_error("b[1] failed ('%c' != '%c')\n", b[1], '1');
+    }
     for (j = 2; b[j] == '0'; j++) {
     }
     TEST(i, j, EXP_1024, "%d != %d");
@@ -205,29 +228,52 @@ static int SnprintfTestImpl(void)
     TEST(i, snprintf(NULL, 0, "%.*u ", INT_MAX_VALUE, 0), -1, "integer overflow %d");
     TEST(i, errno, EOVERFLOW, "after overflow: %d != %d");
 #endif
-    for (j = 0; intTests[j].fmt; j++) {
-        i = snprintf(b, sizeof b, intTests[j].fmt, intTests[j].i);
-        if (i != strlen(intTests[j].expect)) {
+}
+
+static void TestIntegerFormats(char *b)
+{
+    int i;
+    int j;
+
+    for (j = 0; INT_TESTS[j].fmt; j++) {
+        i = snprintf(b, BUFFER_SIZE, INT_TESTS[j].fmt, INT_TESTS[j].i);
+        if (i != strlen(INT_TESTS[j].expect)) {
             t_error("snprintf(b, sizeof b, \"%s\", %d) returned %d wanted %d\n",
-                intTests[j].fmt, intTests[j].i, i, strlen(intTests[j].expect));
+                INT_TESTS[j].fmt, INT_TESTS[j].i, i, strlen(INT_TESTS[j].expect));
         }
-        if (strcmp(b, intTests[j].expect) != 0) {
-            t_error("bad integer conversion: got \"%s\", want \"%s\"\n", b, intTests[j].expect);
+        if (strcmp(b, INT_TESTS[j].expect) != 0) {
+            t_error("bad integer conversion: got \"%s\", want \"%s\"\n", b, INT_TESTS[j].expect);
         }
     }
+}
 
-    for (j = 0; fpTests[j].fmt; j++) {
-        i = snprintf(b, sizeof b, fpTests[j].fmt, fpTests[j].f);
-        if (i != strlen(fpTests[j].expect)) {
+static void TestFloatFormats(char *b)
+{
+    int i;
+    int j;
+
+    for (j = 0; FP_TESTS[j].fmt; j++) {
+        i = snprintf(b, BUFFER_SIZE, FP_TESTS[j].fmt, FP_TESTS[j].f);
+        if (i != strlen(FP_TESTS[j].expect)) {
             t_error("snprintf(b, sizeof b, \"%s\", %f) returned %d wanted %d\n",
-                fpTests[j].fmt, fpTests[j].f, i, strlen(fpTests[j].expect));
+                FP_TESTS[j].fmt, FP_TESTS[j].f, i, strlen(FP_TESTS[j].expect));
         }
-        if (strcmp(b, fpTests[j].expect) != 0) {
-            t_error("bad floating-point conversion: got \"%s\", want \"%s\"\n", b, fpTests[j].expect);
+        if (strcmp(b, FP_TESTS[j].expect) != 0) {
+            t_error("bad floating-point conversion: got \"%s\", want \"%s\"\n", b, FP_TESTS[j].expect);
         }
     }
 
     TEST(i, snprintf(nullptr, 0, "%.4a", 1.0), 11, "%d != %d");
+}
+
+static int SnprintfTestImpl(void)
+{
+    char b[BUFFER_SIZE];
+
+    TestBasicSnprintf(b);
+    TestTinyDoubles(b);
+    TestIntegerFormats(b);
+    TestFloatFormats(b);
     return g_tStatus;
 }
 

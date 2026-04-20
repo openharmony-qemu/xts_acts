@@ -30,25 +30,12 @@
 #define EXPECTED_SIZE 255
 #define HIGH_BYTE_START 128
 
-int ClocaleMbfuncsTest(void)
+static void TestMbrtowcAndBtowc(wchar_t *map)
 {
     int i;
     int j;
     mbstate_t st;
-    mbstate_t st2;
     wchar_t wc;
-    wchar_t map[MAP_SIZE];
-    wchar_t wtmp[MAP_SIZE];
-    char s[MB_LEN_MAX * CHAR_RANGE];
-    size_t rv;
-    int c;
-    int niErrors = 0;
-
-    (void)setlocale(LC_CTYPE, "C");
-
-    if (MB_CUR_MAX != 1) {
-        t_error("MB_CUR_MAX = %d, expected 1\n", static_cast<int>(MB_CUR_MAX));
-    }
 
     for (i = 0; i < CHAR_RANGE; i++) {
         st = (mbstate_t){0};
@@ -66,6 +53,11 @@ int ClocaleMbfuncsTest(void)
             }
         }
     }
+}
+
+static void TestWctob(wchar_t *map)
+{
+    int i;
 
     for (i = 0; i < CHAR_RANGE; i++) {
         if (map[i] == WEOF) {
@@ -75,8 +67,15 @@ int ClocaleMbfuncsTest(void)
             t_error("wctob failed to convert wchar_t %.4x back to byte %.2x\n", static_cast<unsigned>(map[i]), i);
         }
     }
+}
 
-    /* covering whole 32-bit range would be too slow... maybe add random high tests? */
+static void TestNonImageWchars(wchar_t *map, char *s)
+{
+    int i;
+    int c;
+    int niErrors = 0;
+    mbstate_t st;
+
     for (i = 0; i < UNICODE_MAX; i++) {
         if (wcschr(map + 1, i)) {
             continue;
@@ -92,11 +91,17 @@ int ClocaleMbfuncsTest(void)
     if (niErrors > MAX_ERRORS) {
         t_error("additional %d non-image errors (not printed)\n", niErrors);
     }
+}
+
+static void TestWcsrtombsRoundTrip(wchar_t *map, wchar_t *wtmp, char *s)
+{
+    mbstate_t st;
+    size_t rv;
 
     map[CHAR_RANGE] = 0;
     st = (mbstate_t){0};
     const wchar_t* srcWc = map + 1;
-    if ((rv = wcsrtombs(s, &srcWc, sizeof s, &st)) != EXPECTED_SIZE) {
+    if ((rv = wcsrtombs(s, &srcWc, MB_LEN_MAX * CHAR_RANGE, &st)) != EXPECTED_SIZE) {
         t_error("wcsrtombs returned %zd, expected 255\n", rv);
     }
     const char* srcMb = s;
@@ -106,6 +111,11 @@ int ClocaleMbfuncsTest(void)
     if (memcmp(map + 1, wtmp, CHAR_RANGE * sizeof(*map))) {
         t_error("wcsrtombs/mbsrtowcs round trip failed\n");
     }
+}
+
+static void TestWideCharClassification(wchar_t *map)
+{
+    int i;
 
     for (i = HIGH_BYTE_START; i < CHAR_RANGE; i++) {
         if (iswalnum(map[i])) {
@@ -145,6 +155,25 @@ int ClocaleMbfuncsTest(void)
             t_error("iswxdigit returned true for %.4x (%.2x)\n", map[i], i);
         }
     }
+}
+
+int ClocaleMbfuncsTest(void)
+{
+    wchar_t map[MAP_SIZE];
+    wchar_t wtmp[MAP_SIZE];
+    char s[MB_LEN_MAX * CHAR_RANGE];
+
+    (void)setlocale(LC_CTYPE, "C");
+
+    if (MB_CUR_MAX != 1) {
+        t_error("MB_CUR_MAX = %d, expected 1\n", static_cast<int>(MB_CUR_MAX));
+    }
+
+    TestMbrtowcAndBtowc(map);
+    TestWctob(map);
+    TestNonImageWchars(map, s);
+    TestWcsrtombsRoundTrip(map, wtmp, s);
+    TestWideCharClassification(map);
 
     return g_tStatus;
 }

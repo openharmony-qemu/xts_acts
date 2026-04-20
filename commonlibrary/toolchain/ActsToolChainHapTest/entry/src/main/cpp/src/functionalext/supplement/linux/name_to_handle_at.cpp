@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// #define _GNU_SOURCE
+
 #include <cerrno>
 #include <fcntl.h>
 #include <malloc.h>
@@ -73,7 +73,6 @@ void NameToHandleAt0100(void)
 
 static int NameToHandleAtTestImpl(int argc, char *argv[])
 {
-    // NameToHandleAt0100();
     return T_STATUS;
 }
 

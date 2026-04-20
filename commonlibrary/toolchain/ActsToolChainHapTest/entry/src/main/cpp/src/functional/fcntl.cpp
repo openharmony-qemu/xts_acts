@@ -16,14 +16,35 @@
 #include <fcntl.h>
 #include <pthread.h>
 #include <cstdio>
+#include <cstdarg>
 #include <cstring>
 #include <sys/wait.h>
 #include <unistd.h>
 
 #include "functionalext.h"
 
-#define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__), 0))
-#define TESTE(c) (errno = 0, TEST(c, "errno = %s\n", strerror(errno)))
+static inline int TestConditionFcntl(bool condition, const char *expr, const char *fmt, ...)
+{
+    if (condition) {
+        return 1;
+    }
+    va_list args;
+    va_start(args, fmt);
+    char msg[256];
+    vsnprintf(msg, sizeof(msg), fmt, args);
+    va_end(args);
+    t_error("%s failed: %s", expr, msg);
+    return 0;
+}
+
+static inline int TestConditionWithErrno(bool condition, const char *expr)
+{
+    errno = 0;
+    return TestConditionFcntl(condition, expr, "errno = %s\n", strerror(errno));
+}
+
+#define TEST(c, ...) TestConditionFcntl((c), #c, __VA_ARGS__)
+#define TESTE(c) TestConditionWithErrno((c), #c)
 #ifdef MUSL_EXTERNAL_FUNCTION
 #define TEST_FILE "/data/storage/el2/base/cache/test_fcntl64.tmp"
 #define LARGE_OFFSET_FILE "/data/storage/el2/base/cache/large_file.tmp"

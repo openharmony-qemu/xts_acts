@@ -21,8 +21,23 @@
 #include <cstring>
 #include "test.h"
 
-#define T(f) if ((r = (f))) t_error(#f " failed: %s\n", strerror(r))
-#define E(f) if (f) t_error(#f " failed: %s\n", strerror(errno))
+static inline void TestPthreadResult(int result, int *rPtr, const char *expr)
+{
+    *rPtr = result;
+    if (*rPtr) {
+        t_error("%s failed: %s\n", expr, strerror(*rPtr));
+    }
+}
+
+static inline void TestErrnoCondition(bool condition, const char *expr)
+{
+    if (condition) {
+        t_error("%s failed: %s\n", expr, strerror(errno));
+    }
+}
+
+#define T(f) TestPthreadResult((f), &r, #f)
+#define E(f) TestErrnoCondition((f), #f)
 #define NSEC_PER_MS 1000000
 #define NSEC_PER_SEC 1000000000
 

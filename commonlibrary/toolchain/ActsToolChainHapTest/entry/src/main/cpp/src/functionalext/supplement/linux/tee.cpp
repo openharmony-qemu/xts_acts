@@ -79,7 +79,9 @@ void Tee0200(void)
     char *text = "Hello";
     int result;
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
 
     int fd = open(path, O_CREAT | O_WRONLY | O_TRUNC, FILE_PERMISSIONS);
     if (fd < 0) {

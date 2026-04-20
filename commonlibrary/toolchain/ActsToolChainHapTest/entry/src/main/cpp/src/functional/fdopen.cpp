@@ -21,12 +21,16 @@
 #include "libc_test_shim.h"
 
 #define STD_FD_MAX 2
-#define TEST(c)                                                            \
-    do {                                                                   \
-        errno = 0;                                                         \
-        if (!(c))                                                          \
-            LibcTestError(&status, "%s failed (errno = %d)\n", #c, errno); \
-    } while (0)
+
+static inline void TestCondition(bool condition, int *statusPtr, const char *expr)
+{
+    errno = 0;
+    if (!condition) {
+        LibcTestError(statusPtr, "%s failed (errno = %d)\n", expr, errno);
+    }
+}
+
+#define TEST(c) TestCondition((c), &status, #c)
 
 void Fdopen1(int& status)
 {

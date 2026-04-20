@@ -33,8 +33,8 @@ const int FAILED = -1;
 void Getdents0100(void)
 {
     struct dirent buf;
-    static const char *g_ppath = "/data/storage/el2/base/cache/";
-    int fd = open(g_ppath, O_RDONLY);
+    static const char *G_PPATH = "/data/storage/el2/base/cache/";
+    int fd = open(G_PPATH, O_RDONLY);
     EXPECT_NE("Getdents0100", fd, -1);
     int result = getdents(fd, &buf, INT_MAX);
     EXPECT_TRUE("Getdents0100", result > 0);

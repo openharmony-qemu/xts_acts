@@ -65,7 +65,7 @@ void Vfwprintf0100(void)
 void Vfwprintf0200(void)
 {
     wchar_t *value = L"hello %ls";
-    signal(SIGSEGV, DealAberrant);
+    (void)signal(SIGSEGV, DealAberrant);
     int resule = ReadFile(nullptr, value, L"world");
 }
 

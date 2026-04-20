@@ -18,9 +18,13 @@
 #include <cmath>
 #include "test.h"
 
-#define length(x) (sizeof(x) / sizeof *(x))
+template<typename T, size_t N>
+static inline constexpr size_t ArrayLength(const T (&)[N])
+{
+    return N;
+}
 
-static struct g_testData {
+static struct GTestData {
     char *s;
     float f;
 } g_testData[] = {
@@ -44,7 +48,7 @@ static int StrtofTestImpl(void)
     float x;
     char *p;
 
-    for (i = 0; i < length(g_testData); i++) {
+    for (i = 0; i < ArrayLength(g_testData); i++) {
         x = strtof(g_testData[i].s, &p);
         if (x != g_testData[i].f) {
             t_error("strtof(\"%s\") want %a got %a\n", g_testData[i].s, g_testData[i].f, x);

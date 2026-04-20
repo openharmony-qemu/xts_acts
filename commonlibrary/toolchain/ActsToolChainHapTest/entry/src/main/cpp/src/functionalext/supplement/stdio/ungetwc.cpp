@@ -33,7 +33,9 @@ static void Handler(int sig)
 void Ungetwc0100(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *file = fopen(path, "a+");
     if (!file) {
         t_error("%s failed: fopen\n", __func__);
@@ -65,10 +67,10 @@ void Ungetwc0100(void)
  */
 void Ungetwc0200(void)
 {
-    signal(SIGSEGV, Handler);
+    (void)signal(SIGSEGV, Handler);
 
     wint_t wc = L'a';
-    ungetwc(wc, nullptr);
+    (void)ungetwc(wc, nullptr);
 }
 
 static int UngetwcTestImpl(int argc, char *argv[])

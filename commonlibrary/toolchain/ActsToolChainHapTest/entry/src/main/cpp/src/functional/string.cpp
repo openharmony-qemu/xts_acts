@@ -37,12 +37,6 @@
 #define STR_LEN_6 6
 #define STR_LEN_8 8
 
-/* r = place to store result
- * f = function call to test (or any expression)
- * x = expected result
- * m = message to print on failure (with formats for r & x)
-**/
-
 #define TEST(r, f, x, m) ( \
     ((r) = (f)) == (x) || \
     (t_error("%s failed (" m ")\n", #f, r, x), 0))
@@ -51,11 +45,9 @@
     !strcmp((s), (x)) || \
     (t_error("[%s] != [%s] (%s)\n", s, x, m), 0))
 
-static int StringTestImpl(void)
+static void TestStrcpyOperations(char *b)
 {
-    char b[BUFFER_SIZE];
     char *s;
-    int i;
 
     b[STR_OFFSET_16] = 'a';
     b[STR_OFFSET_17] = 'b';
@@ -76,11 +68,17 @@ static int StringTestImpl(void)
     TEST_S(s, "c", "strcpy gave incorrect string");
     TEST(s, strcpy(b + STR_OFFSET_3, b + STR_OFFSET_19), b + STR_OFFSET_3, "wrong return %p != %p");
     TEST_S(s, "", "strcpy gave incorrect string");
+}
 
-    TEST(s, static_cast<char*>(memset(b, 'x', sizeof b)), b, "wrong return %p != %p");
-    TEST(s, strncpy(b, "abc", sizeof b - 1), b, "wrong return %p != %p");
+static void TestStrncpyOperations(char *b)
+{
+    char *s;
+    int i;
+
+    TEST(s, static_cast<char*>(memset(b, 'x', BUFFER_SIZE)), b, "wrong return %p != %p");
+    TEST(s, strncpy(b, "abc", BUFFER_SIZE - 1), b, "wrong return %p != %p");
     TEST(i, memcmp(b, "abc\0\0\0\0", COMPARE_SIZE), 0, "strncpy fails to zero-pad dest");
-    TEST(i, b[sizeof b - 1], 'x', "strncpy overruns buffer when n > strlen(src)");
+    TEST(i, b[BUFFER_SIZE - 1], 'x', "strncpy overruns buffer when n > strlen(src)");
 
     b[STR_OFFSET_3] = 'x';
     b[STR_OFFSET_4] = 0;
@@ -95,6 +93,12 @@ static int StringTestImpl(void)
     TEST(s, strncat(b, "123456", STR_LEN_3), b, "%p != %p");
     TEST(i, b[STR_OFFSET_6], 0, "strncat failed to null-terminate (%d)");
     TEST_S(s, "abc123", "strncat gave incorrect string");
+}
+
+static void TestStringSearchOperations(char *b)
+{
+    char *s;
+    int i;
 
     strcpy(b, "aaababccdd0001122223");
     TEST(s, strchr(b, 'b'), b + STR_OFFSET_3, "%p != %p");
@@ -115,25 +119,30 @@ static int StringTestImpl(void)
 
     TEST(s, strtok(nullptr, " ;"), b + STR_OFFSET_16, "%p != %p");
     TEST_S(s, "foo", "strtok result");
+}
 
-    memset(b, 'x', sizeof b);
-    TEST(i, strlcpy(b, "abc", sizeof b - 1), STR_LEN_3, "length %d != %d");
+static void TestStrlcpyStrlcatOperations(char *b)
+{
+    int i;
+
+    memset(b, 'x', BUFFER_SIZE);
+    TEST(i, strlcpy(b, "abc", BUFFER_SIZE - 1), STR_LEN_3, "length %d != %d");
     TEST(i, b[STR_OFFSET_3], 0, "strlcpy did not null-terminate short string (%d)");
     TEST(i, b[STR_OFFSET_4], 'x', "strlcpy wrote extra bytes (%d)");
 
-    memset(b, 'x', sizeof b);
+    memset(b, 'x', BUFFER_SIZE);
     TEST(i, strlcpy(b, "abc", STR_OFFSET_2), STR_LEN_3, "length %d != %d");
     TEST(i, b[0], 'a', "strlcpy did not copy character %d");
     TEST(i, b[STR_OFFSET_1], 0, "strlcpy did not null-terminate long string (%d)");
 
-    memset(b, 'x', sizeof b);
+    memset(b, 'x', BUFFER_SIZE);
     TEST(i, strlcpy(b, "abc", STR_LEN_3), STR_LEN_3, "length %d != %d");
     TEST(i, b[STR_OFFSET_2], 0, "strlcpy did not null-terminate l-length string (%d)");
 
     TEST(i, strlcpy(NULL, "abc", 0), STR_LEN_3, "length %d != %d");
 
     memcpy(b, "abc\0\0\0x\0", STR_LEN_8);
-    TEST(i, strlcat(b, "123", sizeof b), STR_LEN_6, "length %d != %d");
+    TEST(i, strlcat(b, "123", BUFFER_SIZE), STR_LEN_6, "length %d != %d");
     TEST_S(b, "abc123", "strlcat result");
 
     memcpy(b, "abc\0\0\0x\0", STR_LEN_8);
@@ -148,7 +157,16 @@ static int StringTestImpl(void)
     memcpy(b, "abc\0\0\0x\0", STR_LEN_8);
     TEST(i, strlcat(b, "123", STR_LEN_3), STR_LEN_6, "length %d != %d");
     TEST_S(b, "abc", "strlcat result");
+}
 
+static int StringTestImpl(void)
+{
+    char b[BUFFER_SIZE];
+
+    TestStrcpyOperations(b);
+    TestStrncpyOperations(b);
+    TestStringSearchOperations(b);
+    TestStrlcpyStrlcatOperations(b);
     return g_tStatus;
 }
 

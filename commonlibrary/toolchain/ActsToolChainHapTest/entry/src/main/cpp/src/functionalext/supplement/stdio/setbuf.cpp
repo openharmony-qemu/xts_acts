@@ -30,7 +30,9 @@ void Setbuf0100(void)
 {
     char buf[BUFSIZ] = {0};
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *f = fopen(path, "w+");
     errno = 0;
     setbuf(f, buf);
@@ -60,7 +62,9 @@ void Setbuf0100(void)
 void Setbuf0200(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *f = fopen(path, "w+");
 
     errno = 0;

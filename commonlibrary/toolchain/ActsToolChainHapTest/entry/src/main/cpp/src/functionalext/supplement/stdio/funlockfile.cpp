@@ -40,7 +40,7 @@ void *ChildFunc(void *p)
     if (fseek(filep, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    int ret = fread(buf, BUFFER_SIZE, READ_COUNT, filep);
+    (void)fread(buf, BUFFER_SIZE, READ_COUNT, filep);
 
     int count = atoi(buf);
     ++count;
@@ -49,7 +49,7 @@ void *ChildFunc(void *p)
     if (fseek(filep, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    ret = fwrite(buf, strlen(buf), WRITE_COUNT, filep);
+    (void)fwrite(buf, strlen(buf), WRITE_COUNT, filep);
 
     funlockfile(filep);
 

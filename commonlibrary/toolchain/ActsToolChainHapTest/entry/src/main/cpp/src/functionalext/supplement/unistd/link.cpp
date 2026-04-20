@@ -71,10 +71,6 @@ void Link0300(void)
 
 static int LinkTestImpl(void)
 {
-    // Link0100();
-    // Link0200();
-    // Link0300();
-
     return g_tStatus;
 }
 

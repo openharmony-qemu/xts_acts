@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /* unnamed semaphore sanity check */
 #include <pthread.h>
 #include <semaphore.h>
@@ -6,8 +21,23 @@
 #include <cerrno>
 #include "test.h"
 
-#define T(f) if (f) t_error(#f" failed: %s\n", strerror(errno))
-#define T2(r, f) if (((r) = (f))) t_error(#f" failed: %s\n", strerror(r))
+static inline void TestErrnoConditionSem(bool condition, const char *expr)
+{
+    if (condition) {
+        t_error("%s failed: %s\n", expr, strerror(errno));
+    }
+}
+
+static inline void TestPthreadResultSem(int result, int *rPtr, const char *expr)
+{
+    *rPtr = result;
+    if (*rPtr) {
+        t_error("%s failed: %s\n", expr, strerror(*rPtr));
+    }
+}
+
+#define T(f) TestErrnoConditionSem((f), #f)
+#define T2(r, f) TestPthreadResultSem((f), &(r), #f)
 
 static void *StartFunc(void *arg)
 {

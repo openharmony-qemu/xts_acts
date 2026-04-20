@@ -12,6 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/* Enable X/Open System Interfaces Extension (POSIX.1-2008)
+ * This is a standard feature test macro, not a user-defined identifier.
+ * Required for wide character formatting functions.
+ */
 #ifndef _XOPEN_SOURCE
 #define _XOPEN_SOURCE 700
 #endif

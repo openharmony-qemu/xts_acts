@@ -28,14 +28,18 @@
 void Swapon0100(void)
 {
     char dir_path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_DIR(dir_path);
+    if (!FileAbsoluteDir(dir_path, sizeof(dir_path))) {
+        return;
+    }
     errno = 0;
     char cmd[PATH_MAX] = {0};
     (void)snprintf(cmd, sizeof(cmd), "cd %s; dd if=/dev/zero of=swapfile count=1 bs=1k; mkswap swapfile", dir_path);
     system(cmd);
 
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_SWAP, path);
+    if (!FileAbsolutePath(STR_FILE_SWAP, path, sizeof(path))) {
+        return;
+    }
     int result = swapon(path, SWAP_FLAG_PREFER);
     if (result == -1) {
         t_error("%s swapon failed\n", __func__);
@@ -50,7 +54,6 @@ void Swapon0100(void)
 
 static int SwaponTestImpl(int argc, char *argv[])
 {
-    // swapon_0100();
     return T_STATUS;
 }
 

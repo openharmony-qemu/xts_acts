@@ -18,12 +18,16 @@
 #include <cmath>
 #include "test.h"
 
-#define length(x) (sizeof(x) / sizeof *(x))
+template<typename T, size_t N>
+static inline constexpr size_t ArrayLength(const T (&)[N])
+{
+    return N;
+}
 
 static struct {
     char *s;
     double f;
-} t[] = {
+} g_t[] = {
     {"0", 0.0},
     {"00.00", 0.0},
     {"-.00000", -0.0},
@@ -80,10 +84,10 @@ static int StrtodTestImpl(void)
     double x;
     char *p;
 
-    for (i = 0; i < length(t); i++) {
-        x = strtod(t[i].s, &p);
-        if (x != t[i].f) {
-            t_error("strtod(\"%s\") want %a got %a\n", t[i].s, t[i].f, x);
+    for (i = 0; i < ArrayLength(g_t); i++) {
+        x = strtod(g_t[i].s, &p);
+        if (x != g_t[i].f) {
+            t_error("strtod(\"%s\") want %a got %a\n", g_t[i].s, g_t[i].f, x);
         }
     }
     return g_tStatus;

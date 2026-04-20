@@ -15,7 +15,7 @@
  
 #include <iostream>
 
-void print_hello()
+void PrintHello()
 {
     std::cout << "hello" << std::endl;
 }

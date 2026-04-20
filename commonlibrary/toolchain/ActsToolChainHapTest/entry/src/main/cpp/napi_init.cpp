@@ -152,7 +152,6 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "atexit", &AtexitTest },
     { "verr", &VerrTest },
     { "__h_errno_location", &HErrnoLocationTest },
-    // { "__recvmmsg_time64", &__recvmmsg_time64Test },
     { "readahead", &ReadaheadTest },
     { "verrx", &VerrxTest },
     { "getdtablesize", &GetdtablesizeTest },

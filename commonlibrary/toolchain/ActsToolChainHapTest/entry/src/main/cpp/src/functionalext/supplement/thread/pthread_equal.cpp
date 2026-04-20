@@ -16,18 +16,18 @@
 #include <pthread.h>
 #include "test.h"
 
-static pthread_t g_pthd_1, g_pthd_2;
+static pthread_t g_pthd1, g_pthd2;
 
 static void *ThreadFuncA(void *arg)
 {
-    g_pthd_1 = pthread_self();
+    g_pthd1 = pthread_self();
     return arg;
 }
 
 static void *ThreadFuncB(void *arg)
 {
     pthread_t pth = pthread_self();
-    int ret = pthread_equal(g_pthd_1, pth);
+    int ret = pthread_equal(g_pthd1, pth);
     if (ret != 0) {
         t_error("%s two should not equal, ret is %d\n", __func__, ret);
     }
@@ -36,7 +36,7 @@ static void *ThreadFuncB(void *arg)
 
 static void *ThreadFuncC(void *arg)
 {
-    int ret = pthread_equal(g_pthd_2, pthread_self());
+    int ret = pthread_equal(g_pthd2, pthread_self());
     if (ret == 0) {
         t_error("%s the same thread, the result should be greater than zero, ret = %d\n", __func__, ret);
     }
@@ -84,13 +84,13 @@ void PthreadEqual0200(void)
 {
     int result;
 
-    result = pthread_create(&g_pthd_2, nullptr, ThreadFuncC, nullptr);
+    result = pthread_create(&g_pthd2, nullptr, ThreadFuncC, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
     }
 
-    result = pthread_join(g_pthd_2, nullptr);
+    result = pthread_join(g_pthd2, nullptr);
     if (result != 0) {
         t_error("%s pthread_join failed, result is %d\n", __func__, result);
     }

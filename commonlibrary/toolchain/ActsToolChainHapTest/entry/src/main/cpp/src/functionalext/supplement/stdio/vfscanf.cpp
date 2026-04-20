@@ -40,7 +40,9 @@ void Vfscanf0100(void)
     int val = 0;
     char buffer[BUFSIZ];
     char file[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
+    if (!FileAbsolutePath(STR_VFSCANF_TXT, file, sizeof(file))) {
+        return;
+    }
     fp = fopen(file, "w+");
     if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
@@ -77,7 +79,9 @@ void Vfscanf0200(void)
     char val[BUFSIZ];
     char buffer[BUFSIZ];
     char file[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
+    if (!FileAbsolutePath(STR_VFSCANF_TXT, file, sizeof(file))) {
+        return;
+    }
     fp = fopen(file, "w+");
     if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
@@ -114,7 +118,9 @@ void Vfscanf0300(void)
     int val1 = 0;
     int val2 = 0;
     char file[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_VFSCANF_TXT, file);
+    if (!FileAbsolutePath(STR_VFSCANF_TXT, file, sizeof(file))) {
+        return;
+    }
     fp = fopen(file, "w+");
     if (fp == nullptr) {
         t_error("%s fopen failed", __func__);

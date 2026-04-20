@@ -26,7 +26,7 @@
 
 #define TEST_VALUE 10
 
-static void deal_aberrant(int code)
+static void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
         t_error("putw_0200 code is %d are not SIGSEGV", __func__, code);

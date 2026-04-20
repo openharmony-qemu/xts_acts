@@ -40,20 +40,24 @@
 #define STR_FCHOWNAT_TEST_TXT "fchownattest.txt"
 #define STR_WRITE_TEST_TXT "test_write.txt"
 
-#define FILE_ABSOLUTE_PATH(file_name, path) do { \
-    if (!getcwd(path, sizeof(path))) { \
-        t_error("%s getcwd for path failed\n", __func__); \
-        return; \
-    } \
-    strncat(path, STR_SLASH, 1); \
-    strncat(path, file_name, strlen(file_name)); \
-} while (0)
+static inline bool FileAbsolutePath(const char *fileName, char *path, size_t pathSize)
+{
+    if (!getcwd(path, pathSize)) {
+        t_error("FileAbsolutePath getcwd for path failed\n");
+        return false;
+    }
+    strncat(path, STR_SLASH, 1);
+    strncat(path, fileName, strlen(fileName));
+    return true;
+}
 
-#define FILE_ABSOLUTE_DIR(path) do { \
-    if (!getcwd(path, sizeof(path))) { \
-        t_error("%s getcwd for dir failed\n", __func__); \
-        return; \
-    } \
-} while (0)
+static inline bool FileAbsoluteDir(char *path, size_t pathSize)
+{
+    if (!getcwd(path, pathSize)) {
+        t_error("FileAbsoluteDir getcwd for dir failed\n");
+        return false;
+    }
+    return true;
+}
 
 #endif

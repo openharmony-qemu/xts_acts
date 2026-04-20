@@ -30,7 +30,7 @@ void Fputws0100(void)
     const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
     FILE *fptr = fopen(ptr, "w+");
     EXPECT_TRUE("Fputws0100", fptr != nullptr);
-    setlocale(LC_ALL, "en_US.utf8");
+    (void)setlocale(LC_ALL, "en_US.utf8");
     int ret = fputws(L"this is the test", fptr);
     EXPECT_TRUE("Fputws0100", ret >= 0);
     if (fseek(fptr, 0, SEEK_SET) != 0) {

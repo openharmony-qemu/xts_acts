@@ -25,8 +25,23 @@
 #define NSEC_1SEC (1000)
 #define FAILURE_CODE (-1)
 
-#define T(f) if ((r = (f))) t_error(#f " failed: %s\n", strerror(r))
-#define E(f) if (f) t_error(#f " failed: %s\n", strerror(errno))
+static inline void TestPthreadResultPi(int result, int *rPtr, const char *expr)
+{
+    *rPtr = result;
+    if (*rPtr) {
+        t_error("%s failed: %s\n", expr, strerror(*rPtr));
+    }
+}
+
+static inline void TestErrnoConditionPi(bool condition, const char *expr)
+{
+    if (condition) {
+        t_error("%s failed: %s\n", expr, strerror(errno));
+    }
+}
+
+#define T(f) TestPthreadResultPi((f), &r, #f)
+#define E(f) TestErrnoConditionPi((f), #f)
 
 static void *RelockFunc(void *arg)
 {

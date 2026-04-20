@@ -90,9 +90,9 @@ void ThrdSleep0200(void)
  */
 void ThrdSleep0300(void)
 {
-    signal(SIGSEGV, ExceptionHandler);
+    (void)signal(SIGSEGV, ExceptionHandler);
 
-    thrd_sleep(nullptr, nullptr);
+    (void)thrd_sleep(nullptr, nullptr);
 }
 
 /**

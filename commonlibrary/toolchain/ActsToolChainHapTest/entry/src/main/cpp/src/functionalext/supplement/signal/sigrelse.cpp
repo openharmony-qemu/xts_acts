@@ -25,44 +25,43 @@ static void Handler(int sig)
     g_handlerCount++;
 }
 
-/**
- * @tc.name      : sigrelse_0100
- * @tc.desc      : removes sig from the calling process's signal mask
- * @tc.level     : Level 0
- */
-void Sigrelse0100(void)
+static int SetupSignalHandler(int sig)
 {
-    g_handlerCount = 0;
-
-    int sig = SIGALRM;
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
     struct sigaction oldAct = {};
     int result = sigaction(sig, &act, &oldAct);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
-        return;
     }
+    return result;
+}
 
-    result = sighold(sig);
+static int TestSignalHold(int sig)
+{
+    int result = sighold(sig);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
-        return;
+        return result;
     }
 
     sigset_t set = {0};
     result = sigprocmask(SIG_SETMASK, NULL, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
-        return;
+        return result;
     }
 
     result = sigismember(&set, sig);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
-        return;
+        return -1;
     }
+    return 0;
+}
 
-    result = raise(sig);
+static void TestSignalPause(int sig)
+{
+    int result = raise(sig);
     if (result != 0 || g_handlerCount != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
@@ -78,8 +77,12 @@ void Sigrelse0100(void)
     if (g_handlerCount != 1) {
         t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
+}
 
-    result = sigprocmask(SIG_SETMASK, NULL, &set);
+static void TestSignalRelease(int sig)
+{
+    sigset_t set = {0};
+    int result = sigprocmask(SIG_SETMASK, NULL, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -103,6 +106,28 @@ void Sigrelse0100(void)
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
+}
+
+/**
+ * @tc.name      : sigrelse_0100
+ * @tc.desc      : removes sig from the calling process's signal mask
+ * @tc.level     : Level 0
+ */
+void Sigrelse0100(void)
+{
+    g_handlerCount = 0;
+    int sig = SIGALRM;
+
+    if (SetupSignalHandler(sig) != 0) {
+        return;
+    }
+
+    if (TestSignalHold(sig) != 0) {
+        return;
+    }
+
+    TestSignalPause(sig);
+    TestSignalRelease(sig);
 }
 
 /**

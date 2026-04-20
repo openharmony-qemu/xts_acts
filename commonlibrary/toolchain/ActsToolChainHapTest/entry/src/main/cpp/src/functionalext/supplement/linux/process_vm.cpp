@@ -61,7 +61,7 @@ void ProcessVmWritev0200(void)
     ssize_t rev = process_vm_readv(getpid(), local, 2, remote, 2, 0);
     EXPECT_EQ("ProcessVmWritev0200", rev, sizeof(dst1) + sizeof(dst2));
     int i;
-     for (i = 0; i < VALUE_DATA_SIZE; i++) {
+    for (i = 0; i < VALUE_DATA_SIZE; i++) {
         EXPECT_STREQ("ProcessVmWritev0200", (char*)local[i].iov_base, (char*)remote[i].iov_base);
     }
 }

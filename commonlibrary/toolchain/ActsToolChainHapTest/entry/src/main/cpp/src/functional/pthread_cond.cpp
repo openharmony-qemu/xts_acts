@@ -18,8 +18,18 @@
 #include "test.h"
 
 #define SLEEP_NSEC 1000000
-#define TEST(r, f, m) ( \
-    ((r) = (f)) == 0 || (t_error("%s failed: %s (" m ")\n", #f, strerror(r)), 0))
+
+static inline bool TestPthreadCondResult(int &result, int value, const char *expr, const char *msg)
+{
+    result = value;
+    if (result == 0) {
+        return true;
+    }
+    t_error("%s failed: %s (%s)\n", expr, strerror(result), msg);
+    return false;
+}
+
+#define TEST(r, f, m) TestPthreadCondResult(r, (f), #f, m)
 
 
 static void *StartSignalFunc(void *arg)
@@ -47,19 +57,14 @@ static void *StartWaitFunc(void *arg)
     return nullptr;
 }
 
-static int PthreadCondTestImpl(void)
+static void TestBasicCondVar(void)
 {
     pthread_t td;
-    pthread_t td1;
-    pthread_t td2;
-    pthread_t td3;
     int r;
     void *res;
     pthread_mutex_t mtx;
     pthread_cond_t cond;
-    int foo[1];
 
-    /* Condition variables */
     TEST(r, pthread_mutex_init(&mtx, nullptr), "");
     TEST(r, pthread_cond_init(&cond, nullptr), "");
     TEST(r, pthread_mutex_lock(&mtx), "");
@@ -69,8 +74,18 @@ static int PthreadCondTestImpl(void)
     TEST(r, pthread_mutex_unlock(&mtx), "");
     TEST(r, pthread_mutex_destroy(&mtx), "");
     TEST(r, pthread_cond_destroy(&cond), "");
+}
 
-    /* Condition variables with multiple waiters */
+static void TestMultipleWaiters(void)
+{
+    pthread_t td1;
+    pthread_t td2;
+    pthread_t td3;
+    int r;
+    pthread_mutex_t mtx;
+    pthread_cond_t cond;
+    int foo[1];
+
     TEST(r, pthread_mutex_init(&mtx, nullptr), "");
     TEST(r, pthread_cond_init(&cond, nullptr), "");
     TEST(r, pthread_mutex_lock(&mtx), "");
@@ -97,8 +112,18 @@ static int PthreadCondTestImpl(void)
     TEST(r, pthread_join(td3, nullptr), "");
     TEST(r, pthread_mutex_destroy(&mtx), "");
     TEST(r, pthread_cond_destroy(&cond), "");
+}
 
-    /* Condition variables with broadcast signals */
+static void TestBroadcastSignal(void)
+{
+    pthread_t td1;
+    pthread_t td2;
+    pthread_t td3;
+    int r;
+    pthread_mutex_t mtx;
+    pthread_cond_t cond;
+    int foo[1];
+
     TEST(r, pthread_mutex_init(&mtx, nullptr), "");
     TEST(r, pthread_cond_init(&cond, nullptr), "");
     TEST(r, pthread_mutex_lock(&mtx), "");
@@ -119,7 +144,13 @@ static int PthreadCondTestImpl(void)
     TEST(r, pthread_join(td3, nullptr), "");
     TEST(r, pthread_mutex_destroy(&mtx), "");
     TEST(r, pthread_cond_destroy(&cond), "");
+}
 
+static int PthreadCondTestImpl(void)
+{
+    TestBasicCondVar();
+    TestMultipleWaiters();
+    TestBroadcastSignal();
     return g_tStatus;
 }
 

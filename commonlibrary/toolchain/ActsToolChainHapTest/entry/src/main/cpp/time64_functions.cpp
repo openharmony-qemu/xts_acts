@@ -31,19 +31,19 @@ int RecvmmsgTime64(int sockfd, struct mmsghdr *msgvec, unsigned int vlen, unsign
     return recvmmsg(sockfd, msgvec, vlen, flags, timeout);
 }
 
-int GetitimerTime64(int which, struct itimerval *curr_value)
+int GetitimerTime64(int which, struct itimerval *currValue)
 {
-    return getitimer(which, curr_value);
+    return getitimer(which, currValue);
 }
 
-int SetitimerTime64(int which, const struct itimerval *new_value, struct itimerval *old_value)
+int SetitimerTime64(int which, const struct itimerval *newValue, struct itimerval *oldValue)
 {
-    return setitimer(which, new_value, old_value);
+    return setitimer(which, newValue, oldValue);
 }
 
-int CndTimedwaitTime64(cnd_t *cond, mtx_t *mutex, const struct timespec *time_point)
+int CndTimedwaitTime64(cnd_t *cond, mtx_t *mutex, const struct timespec *timePoint)
 {
-    return cnd_timedwait(cond, mutex, time_point);
+    return cnd_timedwait(cond, mutex, timePoint);
 }
 
 int ClockGetresTime64(clockid_t clock_id, struct timespec *res)
@@ -71,14 +71,14 @@ int SettimeofdayTime64(const struct timeval *tv, const struct timezone *tz)
     return settimeofday(tv, tz);
 }
 
-int TimerfdGettime64(int fd, struct itimerspec *curr_value)
+int TimerfdGettime64(int fd, struct itimerspec *currValue)
 {
-    return timerfd_gettime(fd, curr_value);
+    return timerfd_gettime(fd, currValue);
 }
 
-int TimerfdSettime64(int fd, int flags, const struct itimerspec *new_value, struct itimerspec *old_value)
+int TimerfdSettime64(int fd, int flags, const struct itimerspec *newValue, struct itimerspec *oldValue)
 {
-    return timerfd_settime(fd, flags, new_value, old_value);
+    return timerfd_settime(fd, flags, newValue, oldValue);
 }
 
 int UtimesTime64(const char *filename, const struct timeval times[2])
@@ -136,9 +136,9 @@ int PthreadRwlockTimedwrlockTime64(pthread_rwlock_t *rwlock, const struct timesp
     return pthread_rwlock_timedwrlock(rwlock, abstime);
 }
 
-int ThrdSleepTime64(const struct timespec *time_point, struct timespec *remaining)
+int ThrdSleepTime64(const struct timespec *timePoint, struct timespec *remaining)
 {
-    return thrd_sleep(time_point, remaining);
+    return thrd_sleep(timePoint, remaining);
 }
 
 int GettimeofdayTime64(struct timeval *tv, void *tz)
@@ -211,14 +211,14 @@ time_t Mktime64(struct tm *tm)
     return mktime(tm);
 }
 
-int TimerGettime64(timer_t timerid, struct itimerspec *curr_value)
+int TimerGettime64(timer_t timerid, struct itimerspec *currValue)
 {
-    return timer_gettime(timerid, curr_value);
+    return timer_gettime(timerid, currValue);
 }
 
-int TimerSettime64(timer_t timerid, int flags, const struct itimerspec *new_value, struct itimerspec *old_value)
+int TimerSettime64(timer_t timerid, int flags, const struct itimerspec *newValue, struct itimerspec *oldValue)
 {
-    return timer_settime(timerid, flags, new_value, old_value);
+    return timer_settime(timerid, flags, newValue, oldValue);
 }
 
 #ifdef __cplusplus

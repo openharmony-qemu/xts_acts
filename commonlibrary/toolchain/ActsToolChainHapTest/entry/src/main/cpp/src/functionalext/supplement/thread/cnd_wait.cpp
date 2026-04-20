@@ -41,12 +41,12 @@ void CndWait0100(void)
     thrd_t id1;
     int ret;
     (void)cnd_init(&g_cnd);
-    mtx_init(&g_mtx, 0);
+    (void)mtx_init(&g_mtx, 0);
     ret = thrd_create(&id1, reinterpret_cast<thrd_start_t>(CndWaitFirst), reinterpret_cast<void *>(1));
     EXPECT_EQ("CndWait0100", ret, SUCCESS_CODE);
     sleep(SLEEP_SECONDS);
     (void)mtx_lock(&g_mtx);
-    cnd_signal(&g_cnd);
+    (void)cnd_signal(&g_cnd);
     (void)mtx_unlock(&g_mtx);
     (void)thrd_join(id1, nullptr);
     cnd_destroy(&g_cnd);

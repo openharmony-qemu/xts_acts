@@ -50,14 +50,14 @@ int ReadFromFile(FILE *fp, const wchar_t *format, ...)
  */
 void Vfwscanf0100(void)
 {
-    setlocale(LC_ALL, "en_US.UTF-8");
+    (void)setlocale(LC_ALL, "en_US.UTF-8");
 
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
     wchar_t names[ARRAY_SIZE][STR_LEN] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
     FILE *fp = fopen("/data/storage/el2/base/cache/example.txt", "w+");
 
     for (int i = 0; i < ARRAY_SIZE; i++) {
-        fwprintf(fp, L"%lc %ls ", symbol[i], names[i]);
+        (void)fwprintf(fp, L"%lc %ls ", symbol[i], names[i]);
     }
     rewind(fp);
 
@@ -83,7 +83,7 @@ void Vfwscanf0200(void)
 {
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
     wchar_t names[ARRAY_SIZE][STR_LEN] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
-    signal(SIGSEGV, DealAberrant);
+    (void)signal(SIGSEGV, DealAberrant);
     ReadFromFile(nullptr, symbol, names);
 }
 

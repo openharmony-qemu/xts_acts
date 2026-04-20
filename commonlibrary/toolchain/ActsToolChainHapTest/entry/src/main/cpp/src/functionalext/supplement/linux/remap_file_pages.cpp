@@ -106,29 +106,31 @@ static const char *TEXT =
  * @tc.desc      : Verify that a nonlinear mapping file can be created (parameters are valid)
  * @tc.level     : Level 0
  */
-void RemapFilePages0100(void)
+static int SetupTestFile(void)
 {
-    char str[LEN] = {0};
-
     int fd = open(PATH, O_RDWR | O_CREAT, 0644);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
+        return -1;
     }
     int ret = write(fd, TEXT, strlen(TEXT));
     if (ret != LEN) {
         t_error("%s write failed\n", __func__);
+        close(fd);
+        return -1;
     }
     close(fd);
+    
     fd = open(PATH, O_RDWR);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
+        return -1;
     }
+    return fd;
+}
 
-    char *start =  (char *)mmap(nullptr, LEN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
-    if (start == MAP_FAILED) {
-        t_error("%s mmap failed\n", __func__);
-    }
-
+static void VerifyInitialMapping(char *start, char *str)
+{
     memcpy(str, start, MEMCPY_LEN);
     if (strcmp(str, "aaaaaaaa")) {
         t_error("%s str should be equal\n", __func__);
@@ -143,22 +145,30 @@ void RemapFilePages0100(void)
     if (strcmp(str, "aaaabbbb")) {
         t_error("%s str should be equal\n", __func__);
     }
+}
 
-    // Remap the second page of the file to the start position
+static int PerformRemap(char *start, int fd)
+{
     int result = remap_file_pages(start, LEN >> 1, 0, REMAP_PAGE_INDEX_1, MAP_SHARED);
     if (result < 0) {
         munmap(start, LEN);
         close(fd);
         t_error("%s remap_file_pages failed\n", __func__);
+        return -1;
     }
-    // Remap the first page of the file to the position of start+PAGE_SIZE
+    
     result = remap_file_pages(start + PAGE_SIZE, LEN >> 1, 0, REMAP_PAGE_INDEX, MAP_SHARED);
     if (result < 0) {
         munmap(start, LEN);
         close(fd);
         t_error("%s remap_file_pages failed\n", __func__);
+        return -1;
     }
+    return 0;
+}
 
+static void VerifyRemappedPages(char *start, char *str)
+{
     memcpy(str, start, STR_COPY_LEN);
     if (strcmp(str, "bbbbbbbb")) {
         t_error("%s str should be equal\n", __func__);
@@ -173,14 +183,37 @@ void RemapFilePages0100(void)
     if (strcmp(str, "bbbbaaaa")) {
         t_error("%s str should be equal\n", __func__);
     }
+}
 
+void RemapFilePages0100(void)
+{
+    char str[LEN] = {0};
+    int fd = SetupTestFile();
+    if (fd < 0) {
+        return;
+    }
+
+    char *start = (char *)mmap(nullptr, LEN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if (start == MAP_FAILED) {
+        t_error("%s mmap failed\n", __func__);
+        close(fd);
+        return;
+    }
+
+    VerifyInitialMapping(start, str);
+    
+    if (PerformRemap(start, fd) < 0) {
+        return;
+    }
+
+    VerifyRemappedPages(start, str);
+    
     munmap(start, LEN);
     close(fd);
 }
 
 static int RemapFilePagesTestImpl(int argc, char *argv[])
 {
-    // remap_file_pages_0100();
     return T_STATUS;
 }
 

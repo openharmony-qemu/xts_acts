@@ -463,9 +463,9 @@ static const struct GmtimeRStruct gResultData[] = {
     {"EST5EDT", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
 };
 
-static time_t gTime = 1659177614;
-static int16_t gYearBase = 1900;
-static int16_t gBufferSize = 500;
+static time_t g_time = 1659177614;
+static int16_t g_yearBase = 1900;
+static int16_t g_bufferSize = 500;
 
 /**
  * @tc.name      : gmtime_r_0100
@@ -490,11 +490,11 @@ static void GmtimeR0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm res = {0};
-        struct tm *gmtm = gmtime_r(&gTime, &res);
-        char buff[gBufferSize];
+        struct tm *gmtm = gmtime_r(&g_time, &res);
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-            (gmtm->tm_year + gYearBase),
+            (gmtm->tm_year + g_yearBase),
             gmtm->tm_mon,
             gmtm->tm_mday,
             gmtm->tm_hour,
@@ -533,11 +533,11 @@ void Gmtime64R0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm res = {0};
-        struct tm *gmtm = Gmtime64R(&gTime, &res);
-        char buff[gBufferSize];
+        struct tm *gmtm = Gmtime64R(&g_time, &res);
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-            (gmtm->tm_year + gYearBase),
+            (gmtm->tm_year + g_yearBase),
             gmtm->tm_mon,
             gmtm->tm_mday,
             gmtm->tm_hour,

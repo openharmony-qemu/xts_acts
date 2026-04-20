@@ -27,7 +27,7 @@ static int ChildWait(void *data)
 {
     (void)mtx_lock(&g_mutex);
     ++g_waitingThreads;
-    cnd_wait(&g_cond, &g_mutex);
+    (void)cnd_wait(&g_cond, &g_mutex);
     (void)mtx_unlock(&g_mutex);
 
     thrd_exit(thrd_success);
@@ -69,7 +69,7 @@ void CndBroadcast0100(void)
         }
         {
             struct timespec sleepTime = {.tv_nsec = 100 * 1000 * 1000};
-            thrd_sleep(&sleepTime, nullptr);
+            (void)thrd_sleep(&sleepTime, nullptr);
         }
     }
 

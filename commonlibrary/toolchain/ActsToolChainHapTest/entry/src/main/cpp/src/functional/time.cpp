@@ -57,10 +57,20 @@ char *TmStrFunc(struct tm tm)
     return b[i];
 }
 
-#define TM(ss, mm, hh, md, mo, yr, wd, yd, dst) (struct tm){ \
-    .tm_sec = (ss), .tm_min = (mm), .tm_hour = (hh), \
-    .tm_mday = (md), .tm_mon = (mo), .tm_year = (yr), \
-    .tm_wday = (wd), .tm_yday = (yd), .tm_isdst = (dst) }
+static inline struct tm CreateTm(int ss, int mm, int hh, int md, int mo, int yr, int wd, int yd, int dst)
+{
+    struct tm result = {0};
+    result.tm_sec = ss;
+    result.tm_min = mm;
+    result.tm_hour = hh;
+    result.tm_mday = md;
+    result.tm_mon = mo;
+    result.tm_year = yr;
+    result.tm_wday = wd;
+    result.tm_yday = yd;
+    result.tm_isdst = dst;
+    return result;
+}
 
 struct tm g_tmEpoch = {0, 0, 0, 1, 0, 70, 4, 0, 0};
 struct tm g_tmY20381s = {7, 14, 3, 19, 0, 138, 2, 18, 0};

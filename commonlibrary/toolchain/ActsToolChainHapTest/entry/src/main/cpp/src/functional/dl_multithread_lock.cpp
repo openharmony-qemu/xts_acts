@@ -28,10 +28,10 @@
 #define TEST_SIZE 4096
 #define CALLBACK_TEST_VAL 2
 
-// const char* g_libPath = "/data/local/tmp/libc-test-lib/libdlopen_dso.so";
-// const char* g_initLibPath = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
-const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdlopen_dso.so";
-const char* g_initLibPath = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
+// const char* LIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_dso.so";
+// const char* INIT_LIB_PATH = "/data/local/tmp/libc-test-lib/libdlopen_init.so";
+const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_dso.so";
+const char* INIT_LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdlopen_init.so";
 void* g_initHandler = nullptr;
 static int g_testValue = 0;
 
@@ -60,7 +60,7 @@ int CheckLoaded(char* so)
 
 static int Callback001(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initLibPath) != 0) {
+    if (strcmp(info->dlpi_name, LIB_PATH) != 0 || strcmp(info->dlpi_name, INIT_LIB_PATH) != 0) {
         return 0;
     }
     g_testValue++;
@@ -77,7 +77,7 @@ static int Callback001(struct dl_phdr_info* info, size_t size, void* data)
 
 static int Callback002(struct dl_phdr_info* info, size_t size, void* data)
 {
-    if (strcmp(info->dlpi_name, g_libPath) != 0 || strcmp(info->dlpi_name, g_initLibPath) != 0) {
+    if (strcmp(info->dlpi_name, LIB_PATH) != 0 || strcmp(info->dlpi_name, INIT_LIB_PATH) != 0) {
         return 0;
     }
     g_testValue = g_testValue + CALLBACK_TEST_VAL;
@@ -123,9 +123,9 @@ static int Callback004(struct dl_phdr_info* info, size_t size, void* data)
 
 static void* DlopenDlcloseTest001(void* arg)
 {
-    void* handle = dlopen(g_libPath, RTLD_NOW);
+    void* handle = dlopen(LIB_PATH, RTLD_NOW);
     if (!handle) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", LIB_PATH, RTLD_NOW, dlerror());
     }
     dlclose(handle);
     return arg;
@@ -133,9 +133,9 @@ static void* DlopenDlcloseTest001(void* arg)
 
 static void* DlopenDlcloseTest002(void* arg)
 {
-    void* handle = dlopen(g_initLibPath, RTLD_NOW);
+    void* handle = dlopen(INIT_LIB_PATH, RTLD_NOW);
     if (!handle) {
-      t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
+      t_error("dlopen(name=%s, mode=%d) failed: %s\n", INIT_LIB_PATH, RTLD_NOW, dlerror());
     }
     g_initHandler = handle;
     return arg;
@@ -249,8 +249,8 @@ void DlMultithreadLock0100(void)
 {
     size_t numThreads = 1000;
     DoTestConcurrently(DlopenDlcloseTest001, numThreads);
-    if (CheckLoaded(const_cast<char *>(g_libPath))) {
-        t_error("This so file should not exist, %s\n", const_cast<char *>(g_libPath));
+    if (CheckLoaded(const_cast<char *>(LIB_PATH))) {
+        t_error("This so file should not exist, %s\n", const_cast<char *>(LIB_PATH));
     }
 }
 
@@ -263,8 +263,8 @@ void DlMultithreadLock0200(void)
 {
     size_t numThreads = 20;
     DoTestConcurrently(DlopenDlcloseTest002, numThreads);
-    if (!CheckLoaded(const_cast<char *>(g_initLibPath))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(g_initLibPath));
+    if (!CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(INIT_LIB_PATH));
     }
     int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
@@ -284,8 +284,8 @@ void DlMultithreadLock0300(void)
 {
     size_t numThreads = 19;
     DoTestConcurrently(DlopenDlcloseTest003, numThreads);
-    if (!CheckLoaded(const_cast<char *>(g_initLibPath))) {
-        t_error("This so file should exist, %s\n", const_cast<char *>(g_initLibPath));
+    if (!CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {
+        t_error("This so file should exist, %s\n", const_cast<char *>(INIT_LIB_PATH));
     }
     int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
     if (get_val == nullptr) {
@@ -295,8 +295,8 @@ void DlMultithreadLock0300(void)
         t_error("This val after init should be 1, but %d\n", get_val());
     }
     dlclose(g_initHandler);
-    if (CheckLoaded(const_cast<char *>(g_initLibPath))) {
-        t_error("This so file should not exist, %s\n", const_cast<char *>(g_initLibPath));
+    if (CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {
+        t_error("This so file should not exist, %s\n", const_cast<char *>(INIT_LIB_PATH));
     }
 }
 
@@ -307,14 +307,14 @@ void DlMultithreadLock0300(void)
  */
 void DlMultithreadLock0400(void)
 {
-    void* handle1 = dlopen(g_libPath, RTLD_NOW);
+    void* handle1 = dlopen(LIB_PATH, RTLD_NOW);
     if (!handle1) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", LIB_PATH, RTLD_NOW, dlerror());
     }
 
-    void* handle2 = dlopen(g_initLibPath, RTLD_NOW);
+    void* handle2 = dlopen(INIT_LIB_PATH, RTLD_NOW);
     if (!handle2) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INIT_LIB_PATH, RTLD_NOW, dlerror());
     }
 
     size_t numThreads = 5;
@@ -322,7 +322,7 @@ void DlMultithreadLock0400(void)
 
     dlclose(handle1);
     dlclose(handle2);
-    if (CheckLoaded(const_cast<char *>(g_initLibPath)) || CheckLoaded(const_cast<char *>(g_libPath))) {
+    if (CheckLoaded(const_cast<char *>(INIT_LIB_PATH)) || CheckLoaded(const_cast<char *>(LIB_PATH))) {
         t_error("These so files should not exist\n");
     }
 }
@@ -334,9 +334,9 @@ void DlMultithreadLock0400(void)
  */
 void DlMultithreadLock0500(void)
 {
-    void* handle = dlopen(g_initLibPath, RTLD_NOW);
+    void* handle = dlopen(INIT_LIB_PATH, RTLD_NOW);
     if (!handle) {
-        t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_initLibPath, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INIT_LIB_PATH, RTLD_NOW, dlerror());
     }
 
     g_initHandler = handle;

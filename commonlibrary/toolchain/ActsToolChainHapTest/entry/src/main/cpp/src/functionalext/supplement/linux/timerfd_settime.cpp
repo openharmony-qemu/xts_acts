@@ -75,7 +75,7 @@ void TimerfdSettime0100(void)
  */
 void TimerfdSettime0200(void)
 {
-    signal(SIGSEGV, ExceptionHandler);
+    (void)signal(SIGSEGV, ExceptionHandler);
 
     timerfd_settime(-1, 0, nullptr, nullptr);
 }

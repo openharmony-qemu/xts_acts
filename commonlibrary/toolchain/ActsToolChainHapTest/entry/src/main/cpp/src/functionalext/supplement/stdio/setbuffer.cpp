@@ -28,7 +28,9 @@ static const char *STR = "Hello";
 void Setbuffer0100(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *fp = fopen(path, "w+");
     char buf[BUFSIZ] = {0};
     errno = 0;
@@ -64,7 +66,9 @@ void Setbuffer0100(void)
 void Setbuffer0200(void)
 {
     char path[PATH_MAX] = {0};
-    FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
+    if (!FileAbsolutePath(STR_FILE_TXT, path, sizeof(path))) {
+        return;
+    }
     FILE *f = fopen(path, "w+");
 
     errno = 0;

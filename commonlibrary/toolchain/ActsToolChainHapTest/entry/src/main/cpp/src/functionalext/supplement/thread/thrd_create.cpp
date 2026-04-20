@@ -19,7 +19,7 @@
 #include "test.h"
 
 static int g_count = 0;
-const char *g_src = "Hello";
+const char *SRC = "Hello";
 
 static void ExceptionHandler(int sig)
 {
@@ -28,7 +28,7 @@ static void ExceptionHandler(int sig)
 
 static int Threadfunc(void *arg)
 {
-    signal(SIGSEGV, ExceptionHandler);
+    (void)signal(SIGSEGV, ExceptionHandler);
 
     g_count++;
     thrd_exit(thrd_success);
@@ -73,7 +73,7 @@ void ThrdCreate0100(void)
 void ThrdCreate0200(void)
 {
     thrd_t id;
-    int result = thrd_create(&id, Threadfunc, (char *)g_src);
+    int result = thrd_create(&id, Threadfunc, (char *)SRC);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
