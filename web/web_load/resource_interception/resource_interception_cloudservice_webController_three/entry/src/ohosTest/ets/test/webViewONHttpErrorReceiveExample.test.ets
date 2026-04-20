@@ -64,7 +64,7 @@ export default function webViewONHttpErrorReceiveExample() {
     it('testOnHttpErrorReceiveByExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorReceiveByExample", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
-      Utils.registerEvent("testOnHttpErrorReceiveByExample", "intercept test", 202240, () => { isReturn = 1 });
+      Utils.registerEvent("testOnHttpErrorReceiveByExample", true, 202240, () => { isReturn = 1 });
       await Utils.waitAndClickComponent(driver, "webViewONHttpErrorReceiveExample");
       if (await Utils.waitForExist(() => isReturn, 'testOnHttpErrorReceiveByExample' + '_returnCheck', 1, 1000)) {
         done();
