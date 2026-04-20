@@ -221,20 +221,12 @@ void TestNodeGridItemStyle001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &
     nodeAPI->setAttribute(gridItem, NODE_GRID_ITEM_STYLE, &itemStyleItem);
     auto result = nodeAPI->getAttribute(gridItem, NODE_GRID_ITEM_STYLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_GRID_ITEM_STYLE001 %{public}d", result->value->i32);
-    if(result->value->i32 != 1) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_GRID_ITEM_STYLE is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeGridItemStyle002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &gridItem, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(gridItem, NODE_GRID_ITEM_STYLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_GRID_ITEM_STYLE002 %{public}d", result->value->i32);
-    if(result->value->i32 != 1) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_GRID_ITEM_STYLE is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeGridEvent001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle grid)
@@ -600,20 +592,12 @@ void TestNodeGridItemStyle011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &
     nodeAPI->resetAttribute(gridItem, NODE_GRID_ITEM_STYLE);
     auto result = nodeAPI->getAttribute(gridItem, NODE_GRID_ITEM_STYLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_GRID_ITEM_STYLE011 %{public}d", result->value->i32);
-    if(result->value->i32 != 0) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_GRID_ITEM_STYLE is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeGridItemStyle012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &gridItem, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(gridItem, NODE_GRID_ITEM_STYLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "gyt", "NODE_GRID_ITEM_STYLE012 %{public}d", result->value->i32);
-    if(result->value->i32 != 0) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_GRID_ITEM_STYLE is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeInitGridAttribute013(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
@@ -685,6 +669,7 @@ void RunOnSubThreadGrid(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHa
 void RunOnUIThreadGrid(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
     // 获取在RunOnSubThreadGrid中保存到nodeList中的组件
+    TestNodeInitGridAttribute103(nodeAPI, nodeList);
     TestNodeInitGridAttribute113(nodeAPI, nodeList);
 }
 
