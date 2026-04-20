@@ -955,33 +955,28 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
-        let onStateChange = async (info: floatView.FloatViewStateChangeInfo) => {
-          console.info(CaseName + ' Float view stateChange: ' + info.state);
-          if (info.state == floatView.FloatViewState.STARTED) {
-            try {
-              let properties = floatViewController.getWindowProperties();
-              console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
-              expect(properties.windowId).assertLarger(0);
-              expect(properties.displayId != null).assertTrue();
-              expect(properties.windowRect != null).assertTrue();
-              floatViewController.offStateChange(onStateChange);
-              await floatViewController.stop();
-              console.info(CaseName + ' Succeeded in stopping float view.');
-              console.log(CaseName + ' end.');
-              done();
-            } catch (e) {
-              console.error(CaseName + ' Failed to get properties. Cause: ' + e.code + ', message: ' + e.message);
-              await floatViewController.stop();
-              expect(false).assertTrue();
-              done();
-            }
-          }
-        };
-        floatViewController.onStateChange(onStateChange);
-        console.info(CaseName + ' Succeeded in registering stateChange callback.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(1000);
+        await sleep(300);
+        let properties = floatViewController.getWindowProperties();
+        console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
+        expect(properties.windowId).assertLarger(0);
+        expect(properties.displayId != null).assertTrue();
+        expect(properties.windowRect != null).assertTrue();
+        expect(properties.windowRect.width > 0).assertTrue();
+        expect(properties.windowRect.height > 0).assertTrue();
+        expect(properties.windowRect.left >= 0).assertTrue();
+        expect(properties.windowRect.top >= 0).assertTrue();
+        expect(properties.titleBarRect.width > 0).assertTrue();
+        expect(properties.titleBarRect.height > 0).assertTrue();
+        expect(properties.titleBarRect.left >= 0).assertTrue();
+        expect(properties.titleBarRect.top >= 0).assertTrue();
+        expect(properties.windowScale).assertLarger(0);
+        expect(properties.inSidebar).assertLarger(false);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+        console.log(CaseName + ' end.');
+        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
