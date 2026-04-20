@@ -16,6 +16,7 @@ import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hy
 import text from "@ohos.graphics.text";
 import drawing from '@ohos.graphics.drawing';
 import image from '@ohos.multimedia.image';
+import common2D from '@ohos.graphics.common2D';
 
 export default function GraphicTextAPI26() {
 
