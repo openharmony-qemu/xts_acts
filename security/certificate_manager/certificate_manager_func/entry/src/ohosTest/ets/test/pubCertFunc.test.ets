@@ -166,10 +166,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0600
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0600
-     * @tc.desc   use promise type
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: started.");
@@ -189,10 +189,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0700
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0700
-     * @tc.desc   use promise type
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0700: started.");
@@ -263,10 +263,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_2000
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_2000
-     * @tc.desc   use promise type
+     * @tc.desc   Call isAuthorizedApp interface with length of keyUri is 255 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_2000 started.");
@@ -284,10 +284,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_3000
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_3000
-     * @tc.desc   use promise type
+     * @tc.desc   Call isAuthorizedApp interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_3000 started.");
@@ -413,7 +413,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0100
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0100
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20480 return 17500003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -437,14 +437,14 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0200
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0200
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20481 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200: started ");
-      let keystore: Uint8Array = createUnit8Array(20480);
+      let keystore: Uint8Array = createUnit8Array(20481);
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
@@ -462,10 +462,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0300
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0300
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 32 return 17500003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300: started ");
@@ -486,10 +486,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0400
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0400
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 33 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400: started ");
@@ -510,15 +510,15 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0500
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0500
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with type of certAlias is special character return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
-      let keystorePwd: string = '111111111111111111111111111111111';
+      let keystorePwd: string = '123456';
       let certAlias: string = '@';
       let keyUri: string | undefined;
       try{
@@ -534,10 +534,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0600
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0600
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 32 available for calling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600: started ");
@@ -559,10 +559,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0700
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0700
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 33 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700: started ");
@@ -585,10 +585,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1100
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1100
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20480 return 17500003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100: started ");
@@ -596,7 +596,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("installPrivateCertificate success")
@@ -609,18 +609,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1200
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1200
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20481 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
      it('SUB_Security_CertManager_installPrivateCertificate_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200: started ");
-      let keystore: Uint8Array = createUnit8Array(20480);
+      let keystore: Uint8Array = createUnit8Array(20481);
       let keystorePwd: string = '123456';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200: installPrivateCertificate success");
@@ -634,18 +634,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1300
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1300
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 32 return 17500003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '11111111111111111111111111111111';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300: installPrivateCertificate success");
@@ -659,18 +659,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1400
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1400
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 33 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '111111111111111111111111111111111';
       let certAlias: string = 'appCertAliasDemoRsa';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400: installPrivateCertificate success");
@@ -684,18 +684,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1500
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1500
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with type of certAlias is special character return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
-      let keystorePwd: string = '111111111111111111111111111111111';
+      let keystorePwd: string = '123456';
       let certAlias: string = '@';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500: installPrivateCertificate success");
@@ -709,18 +709,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1600
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1600
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate with length of certAlias is 32 is available for calling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '123456';
       let certAlias: string = '11111111111111111111111111111111';
       let keyUri: string | undefined;
-	  let level = certManager.AuthStorageLevel.EL1;
+	    let level = certManager.AuthStorageLevel.EL1;
       try{
         let result: certManager.CMResult = await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600: installPrivateCertificate success");
@@ -735,7 +735,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1700
      * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1700
-     * @tc.desc   normal test
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 33 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -760,7 +760,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100
      * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -781,7 +781,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200
      * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 257 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -802,7 +802,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300
      * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -824,7 +824,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
      * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 257 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
