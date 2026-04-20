@@ -914,6 +914,45 @@ static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0101(napi_env env
     return retValue;
 }
 
+static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0200(napi_env env, napi_callback_info info)
+{
+    OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_StrategyForPrivacyMaskMode(CaptureStrategy, -1);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0300(napi_env env, napi_callback_info info)
+{
+    OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_StrategyForPrivacyMaskMode(CaptureStrategy, 1);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0400(napi_env env, napi_callback_info info)
+{
+    OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_StrategyForPrivacyMaskMode(CaptureStrategy, 2);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AVScreenCapture_StrategyForCanvasFollowRotation0100(napi_env env, napi_callback_info info)
 {
     OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
@@ -1866,6 +1905,12 @@ napi_property_descriptor desc[] = {
     {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0100", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0100,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0101", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0101,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0200", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0200,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0300", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0300,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0400", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0400,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForCanvasFollowRotation0100", nullptr,
      OH_AVScreenCapture_StrategyForCanvasFollowRotation0100, nullptr, nullptr, nullptr, napi_default, nullptr},
