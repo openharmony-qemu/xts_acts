@@ -665,6 +665,65 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_start_after_floatingBall
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_1310
+     * @tc.desc   test start float view after floatingBall started should fail with error 1300034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_start_after_floatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_start_after_floatingBall';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatingBallController.startFloatingBall(floatingBallParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await sleep(200);
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.start().then(async () => {
+          console.info(CaseName + ' Succeeded in starting float view.');
+          await floatingBallController.stopFloatingBall();
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
+          await floatingBallController.stopFloatingBall();
+          console.info(CaseName + ' Succeeded in stopping floating ball.');
+          expect(err.code).assertEqual(1300034);
+          expect(err.message != null).assertTrue();
+          console.log(CaseName + ' end.');
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
      * @tc.name   test_start_two_controller
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_TWOCONTROLLER_0100
      * @tc.desc   test start two floatViewController, second start should fail
@@ -972,7 +1031,7 @@ export default function abilityTest() {
         expect(properties.titleBarRect.left >= 0).assertTrue();
         expect(properties.titleBarRect.top >= 0).assertTrue();
         expect(properties.windowScale).assertLarger(0);
-        expect(properties.inSidebar).assertLarger(false);
+        expect(properties.inSidebar).assertEqual(false);
         await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view.');
         console.log(CaseName + ' end.');
