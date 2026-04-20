@@ -25,7 +25,7 @@ export default function URI02Test() {
 
     // =============== path ======================
     /**
-     * @tc.number SUB_URI_TEST02_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0100
      * @tc.name testURI02Chapter0001
      * @tc.desc Test path property with URI containing percent-encoded characters
      * @tc.size MediumTest
@@ -39,7 +39,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0200
      * @tc.name testURI02Chapter0002
      * @tc.desc Test path property with URI containing plus sign in path (encoded as %2B, not decoded to space)
      * @tc.size MediumTest
@@ -53,7 +53,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0300
      * @tc.name testURI02Chapter0003
      * @tc.desc Test path property with URI containing Unicode characters
      * @tc.size MediumTest
@@ -67,7 +67,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0400
      * @tc.name testURI02Chapter0004
      * @tc.desc Test path property with URI containing emoji
      * @tc.size MediumTest
@@ -81,9 +81,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0500
      * @tc.name testURI02Chapter0005
-     * @tc.desc Test path property with URI containing all ASCII printable characters - HarmonyOS encodedPath returns decoded
+     * @tc.desc Test path property with URI containing all ASCII printable characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -97,9 +97,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0600
      * @tc.name testURI02Chapter0006
-     * @tc.desc Test path property with URI containing special characters that require encoding - HarmonyOS encodedPath returns decoded
+     * @tc.desc Test path property with URI containing special characters that require encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -114,7 +114,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0700
      * @tc.name testURI02Chapter0007
      * @tc.desc Test path property with URI containing null character (escaped)
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0800
      * @tc.name testURI02Chapter0008
      * @tc.desc Test path property with URI containing invalid percent encoding (should throw or return original?)
      * @tc.size MediumTest
@@ -145,7 +145,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_0900
      * @tc.name testURI02Chapter0009
      * @tc.desc Test path property with URI containing incomplete percent encoding at end
      * @tc.size MediumTest
@@ -162,7 +162,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1000
      * @tc.name testURI02Chapter0010
      * @tc.desc Test path property with URI containing path with no scheme (relative) – path should be null according to example
      * @tc.size MediumTest
@@ -176,7 +176,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1100
      * @tc.name testURI02Chapter0011
      * @tc.desc Test path property with URI that has authority but empty path
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1200
      * @tc.name testURI02Chapter0012
      * @tc.desc Test path property with URI that has empty path after slash
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1300
      * @tc.name testURI02Chapter0013
      * @tc.desc Test path property with URI containing numbers as path segments
      * @tc.size MediumTest
@@ -218,7 +218,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1400
      * @tc.name testURI02Chapter0014
      * @tc.desc Test path property with URI containing boolean-like strings
      * @tc.size MediumTest
@@ -232,7 +232,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1500
      * @tc.name testURI02Chapter0015
      * @tc.desc Test path property with URI containing the string "null" and "undefined"
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1600
      * @tc.name testURI02Chapter0016
      * @tc.desc Test path property with URI containing very long path (stress test)
      * @tc.size MediumTest
@@ -261,9 +261,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1700
      * @tc.name testURI02Chapter0017
-     * @tc.desc Test path property with URI containing backslash characters - HarmonyOS does not throw
+     * @tc.desc Test path property with URI containing backslash characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,9 +297,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1800
      * @tc.name testURI02Chapter0018
-     * @tc.desc Test path property with URI containing backslash characters - HarmonyOS does not throw
+     * @tc.desc Test path property with URI containing backslash characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_1900
      * @tc.name testURI02Chapter0019
      * @tc.desc Test path property with URI containing the keyword "NaN" and "0"
      * @tc.size MediumTest
@@ -347,7 +347,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2000
      * @tc.name testURI02Chapter0020
      * @tc.desc Test path property with URI containing a very long path constructed by JSON array (treeString simulation)
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2100
      * @tc.name testURI02Chapter0021
      * @tc.desc Test path property with URI containing a path that has repeated percent-encoded characters
      * @tc.size MediumTest
@@ -380,9 +380,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2200
      * @tc.name testURI02Chapter0022
-     * @tc.desc Test path property with URI containing mixed encoded and unencoded special characters - HarmonyOS encodedPath returns decoded
+     * @tc.desc Test path property with URI containing mixed encoded and unencoded special characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -396,7 +396,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2300
      * @tc.name testURI02Chapter0023
      * @tc.desc Test path property with URI containing illegal Unicode surrogate pair (invalid)
      * @tc.size MediumTest
@@ -413,7 +413,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2400
      * @tc.name testURI02Chapter0024
      * @tc.desc Test path property with URI containing empty string path (no path at all)
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2500
      * @tc.name testURI02Chapter0025
      * @tc.desc Test path property with URI containing path with multiple slashes
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2600
      * @tc.name testURI02Chapter0026
      * @tc.desc Test path property with URI containing path with dot segments
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2700
      * @tc.name testURI02Chapter0027
      * @tc.desc Test path property with URI containing IPv6 host and path
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2800
      * @tc.name testURI02Chapter0028
      * @tc.desc Test path property with URI containing username/password and path
      * @tc.size MediumTest
@@ -483,7 +483,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_2900
      * @tc.name testURI02Chapter0029
      * @tc.desc Test path property with URI containing fragment and query – path unaffected
      * @tc.size MediumTest
@@ -497,7 +497,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3000
      * @tc.name testURI02Chapter0030
      * @tc.desc Test path property with URI that has scheme but no authority (opaque URI)
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3100
      * @tc.name testURI02Chapter0031
      * @tc.desc Test path property with URI that has fragment and path containing percent encoded slash
      * @tc.size MediumTest
@@ -525,7 +525,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3200
      * @tc.name testURI02Chapter0032
      * @tc.desc Test path property with URI that has no path but trailing slash after authority
      * @tc.size MediumTest
@@ -539,7 +539,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3300
      * @tc.name testURI02Chapter0033
      * @tc.desc Test path property with URI that is just a scheme and colon (opaque with empty ssp)
      * @tc.size MediumTest
@@ -553,7 +553,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3400
      * @tc.name testURI02Chapter0034
      * @tc.desc Test path property with URI that has path containing a colon
      * @tc.size MediumTest
@@ -567,7 +567,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3500
      * @tc.name testURI02Chapter0035
      * @tc.desc Test path property with URI containing non-ASCII characters in path (Chinese)
      * @tc.size MediumTest
@@ -581,7 +581,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3600
      * @tc.name testURI02Chapter0036
      * @tc.desc Test path property with URI that has multiple percent-encoded sequences
      * @tc.size MediumTest
@@ -595,7 +595,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3700
      * @tc.name testURI02Chapter0037
      * @tc.desc Test path property with URI that has percent-encoded reserved characters
      * @tc.size MediumTest
@@ -609,7 +609,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3800
      * @tc.name testURI02Chapter0038
      * @tc.desc Test path property with URI that has a path consisting only of a slash
      * @tc.size MediumTest
@@ -623,7 +623,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_3900
      * @tc.name testURI02Chapter0039
      * @tc.desc Test path property with URI that has a path containing a tilde
      * @tc.size MediumTest
@@ -637,7 +637,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4000
      * @tc.name testURI02Chapter0040
      * @tc.desc Test path property with URI that has a path with double percent sign
      * @tc.size MediumTest
@@ -654,7 +654,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4100
      * @tc.name testURI02Chapter0041
      * @tc.desc Test path property with URI that has a path with % followed by non-hex
      * @tc.size MediumTest
@@ -671,7 +671,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4200
      * @tc.name testURI02Chapter0042
      * @tc.desc Test path property with URI that has a path with Unicode surrogate pair correctly encoded
      * @tc.size MediumTest
@@ -687,7 +687,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4300
      * @tc.name testURI02Chapter0043
      * @tc.desc Test path property with URI that has a path with null byte (not allowed, should throw)
      * @tc.size MediumTest
@@ -704,7 +704,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4400
      * @tc.name testURI02Chapter0044
      * @tc.desc Test path property with URI that has a path with a very long segment and check memory (not assert, just run)
      * @tc.size MediumTest
@@ -720,7 +720,7 @@ export default function URI02Test() {
     // =============== query ======================
 
     /**
-     * @tc.number SUB_URI_TEST02_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4500
      * @tc.name testURI02Chapter0045
      * @tc.desc Test query property when URI has no query part (should return null)
      * @tc.size MediumTest
@@ -734,7 +734,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4600
      * @tc.name testURI02Chapter0046
      * @tc.desc Test query property when URI has empty query (e.g., '?') should return empty string
      * @tc.size MediumTest
@@ -748,7 +748,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4700
      * @tc.name testURI02Chapter0047
      * @tc.desc Test query property with simple key-value pairs (foo=1&bar=2)
      * @tc.size MediumTest
@@ -762,7 +762,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4800
      * @tc.name testURI02Chapter0048
      * @tc.desc Test query property with encoded space (%20) and plus sign (%2B) should be decoded correctly
      * @tc.size MediumTest
@@ -776,7 +776,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_4900
      * @tc.name testURI02Chapter0049
      * @tc.desc Test query property with reserved characters that are percent-encoded: &, =, #, ?, etc.
      * @tc.size MediumTest
@@ -790,7 +790,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5000
      * @tc.name testURI02Chapter0050
      * @tc.desc Test query property with all printable ASCII characters (32-126) as value, properly encoded
      * @tc.size MediumTest
@@ -809,7 +809,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5100
      * @tc.name testURI02Chapter0051
      * @tc.desc Test query property with control characters (tab, newline, carriage return, form feed, vertical tab) encoded
      * @tc.size MediumTest
@@ -825,7 +825,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5200
      * @tc.name testURI02Chapter0052
      * @tc.desc Test query property with Unicode characters (including emojis) encoded and decoded
      * @tc.size MediumTest
@@ -841,7 +841,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5300
      * @tc.name testURI02Chapter0053
      * @tc.desc Test query property with special string keywords like "undefined", "null", "NaN"
      * @tc.size MediumTest
@@ -855,7 +855,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5400
      * @tc.name testURI02Chapter0054
      * @tc.desc Test query property with very long query string (stress test, no exception)
      * @tc.size MediumTest
@@ -874,7 +874,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5500
      * @tc.name testURI02Chapter0055
      * @tc.desc Test query property when fragment contains '#' and query part includes encoded '#', should not interfere
      * @tc.size MediumTest
@@ -889,9 +889,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5600
      * @tc.name testURI02Chapter0056
-     * @tc.desc Test query property with invalid percent encoding (e.g., %2) - HarmonyOS URI does not throw, returns valid URI
+     * @tc.desc Test query property with invalid percent encoding (e.g., %2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -909,9 +909,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5700
      * @tc.name testURI02Chapter0057
-     * @tc.desc Test query property with invalid UTF-8 sequences after percent decoding (e.g., %C3%28) - HarmonyOS URI does not throw
+     * @tc.desc Test query property with invalid UTF-8 sequences after percent decoding (e.g., %C3%28)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -929,7 +929,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5800
      * @tc.name testURI02Chapter0058
      * @tc.desc Test query property with unencoded '#' inside query (should split query and fragment)
      * @tc.size MediumTest
@@ -966,7 +966,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_5900
      * @tc.name testURI02Chapter0059
      * @tc.desc Test query property with unencoded '?' inside query (should be treated as part of query)
      * @tc.size MediumTest
@@ -980,7 +980,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6000
      * @tc.name testURI02Chapter0060
      * @tc.desc Test query property with plus sign as space (application/x-www-form-urlencoded style) – should remain '+'
      * @tc.size MediumTest
@@ -994,7 +994,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6100
      * @tc.name testURI02Chapter0061
      * @tc.desc Test query property with encoded plus sign %2B should decode to '+'
      * @tc.size MediumTest
@@ -1008,7 +1008,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6200
      * @tc.name testURI02Chapter0062
      * @tc.desc Test query property with multiple parameters and non-ASCII characters in keys and values
      * @tc.size MediumTest
@@ -1035,7 +1035,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6300
      * @tc.name testURI02Chapter0063
      * @tc.desc Test encodedQuery property alongside query to verify encoding round-trip
      * @tc.size MediumTest
@@ -1050,7 +1050,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6400
      * @tc.name testURI02Chapter0064
      * @tc.desc Test query property when URI has no scheme and no authority, but has query (e.g., "path?query")
      * @tc.size MediumTest
@@ -1064,7 +1064,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6500
      * @tc.name testURI02Chapter0065
      * @tc.desc Test query property with only query part and no path (e.g., "?query")
      * @tc.size MediumTest
@@ -1078,7 +1078,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6600
      * @tc.name testURI02Chapter0066
      * @tc.desc Test query property with extremely long key and value (edge)
      * @tc.size MediumTest
@@ -1094,7 +1094,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6700
      * @tc.name testURI02Chapter0067
      * @tc.desc Test query property with percent-encoded null bytes (%00) and other control chars
      * @tc.size MediumTest
@@ -1108,9 +1108,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6800
      * @tc.name testURI02Chapter0068
-     * @tc.desc Test query property with unpaired surrogate halves (invalid UTF-16) - HarmonyOS URI does not throw
+     * @tc.desc Test query property with unpaired surrogate halves (invalid UTF-16)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1128,7 +1128,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_6900
      * @tc.name testURI02Chapter0069
      * @tc.desc Test query property with a long JSON-like string (treeString pattern) as value
      * @tc.size MediumTest
@@ -1148,7 +1148,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7000
      * @tc.name testURI02Chapter0070
      * @tc.desc Test query property with serialized array and object (JSON) as values
      * @tc.size MediumTest
@@ -1170,7 +1170,7 @@ export default function URI02Test() {
 
     // =============== fragment ======================
     /**
-     * @tc.number SUB_URI_TEST02_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7100
      * @tc.name testURI02Chapter0071
      * @tc.desc Verify fragment is null when URI has no fragment part.
      * @tc.size MediumTest
@@ -1183,7 +1183,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7200
      * @tc.name testURI02Chapter0072
      * @tc.desc Verify fragment is empty string when URI ends with '#'.
      * @tc.size MediumTest
@@ -1196,7 +1196,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7300
      * @tc.name testURI02Chapter0073
      * @tc.desc Verify fragment with simple alphanumeric string.
      * @tc.size MediumTest
@@ -1209,7 +1209,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7400
      * @tc.name testURI02Chapter0074
      * @tc.desc Verify fragment with numeric characters only.
      * @tc.size MediumTest
@@ -1222,7 +1222,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7500
      * @tc.name testURI02Chapter0075
      * @tc.desc Verify fragment with space (URL encoded as %20) is decoded correctly.
      * @tc.size MediumTest
@@ -1235,7 +1235,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7600
      * @tc.name testURI02Chapter0076
      * @tc.desc Verify fragment with various special ASCII characters.
      * @tc.size MediumTest
@@ -1250,7 +1250,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7700
      * @tc.name testURI02Chapter0077
      * @tc.desc Verify fragment with Chinese characters.
      * @tc.size MediumTest
@@ -1265,7 +1265,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7800
      * @tc.name testURI02Chapter0078
      * @tc.desc Verify fragment with emoji characters.
      * @tc.size MediumTest
@@ -1280,7 +1280,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_7900
      * @tc.name testURI02Chapter0079
      * @tc.desc Verify fragment with Unicode surrogate pair (e.g., 𝄞).
      * @tc.size MediumTest
@@ -1295,7 +1295,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8000
      * @tc.name testURI02Chapter0080
      * @tc.desc Verify fragment with backslash and escape sequences as literal characters.
      * @tc.size MediumTest
@@ -1310,7 +1310,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8100
      * @tc.name testURI02Chapter0081
      * @tc.desc Verify fragment with null character (U+0000) encoded as %00.
      * @tc.size MediumTest
@@ -1325,7 +1325,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8200
      * @tc.name testURI02Chapter0082
      * @tc.desc Verify fragment with very long string (5000 characters).
      * @tc.size MediumTest
@@ -1340,7 +1340,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8300
      * @tc.name testURI02Chapter0083
      * @tc.desc Verify fragment that contains a percent-encoded '#' (%23) inside path, ensuring fragment is still extracted correctly.
      * @tc.size MediumTest
@@ -1353,7 +1353,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8400
      * @tc.name testURI02Chapter0084
      * @tc.desc Verify fragment with multiple percent-encoded sequences (e.g., %C3%A9 for é).
      * @tc.size MediumTest
@@ -1368,7 +1368,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8500
      * @tc.name testURI02Chapter0085
      * @tc.desc Verify fragment with mixed ASCII, Unicode, and encoded characters.
      * @tc.size MediumTest
@@ -1383,9 +1383,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8600
      * @tc.name testURI02Chapter0086
-     * @tc.desc Test fragment with invalid percent encoding (%2) - HarmonyOS URI does not throw, returns valid fragment
+     * @tc.desc Test fragment with invalid percent encoding (%2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1403,9 +1403,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8700
      * @tc.name testURI02Chapter0087
-     * @tc.desc Test fragment with incomplete surrogate pair - HarmonyOS URI does not throw
+     * @tc.desc Test fragment with incomplete surrogate pair
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1430,7 +1430,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8800
      * @tc.name testURI02Chapter0088
      * @tc.desc Reverse test: fragment containing a control character (U+0001) encoded as %01 should be allowed? Possibly not, but check if it throws.
      * @tc.size MediumTest
@@ -1450,7 +1450,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_8900
      * @tc.name testURI02Chapter0089
      * @tc.desc Reverse test: constructing URI with empty string should throw error.
      * @tc.size MediumTest
@@ -1467,9 +1467,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9000
      * @tc.name testURI02Chapter0090
-     * @tc.desc Test constructing URI with malformed scheme (e.g., missing colon) - HarmonyOS URI does not throw
+     * @tc.desc Test constructing URI with malformed scheme (e.g., missing colon)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1483,9 +1483,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9100
      * @tc.name testURI02Chapter0091
-     * @tc.desc Test fragment with '%' at the end (incomplete encoding) - HarmonyOS URI does not throw
+     * @tc.desc Test fragment with '%' at the end (incomplete encoding)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1504,7 +1504,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9200
      * @tc.name testURI02Chapter0092
      * @tc.desc Verify fragment with null (no fragment) after constructing URI with query but no fragment.
      * @tc.size MediumTest
@@ -1517,7 +1517,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9300
      * @tc.name testURI02Chapter0093
      * @tc.desc Verify fragment with encoded plus sign (+) in fragment (should be decoded to '+').
      * @tc.size MediumTest
@@ -1530,7 +1530,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9400
      * @tc.name testURI02Chapter0094
      * @tc.desc Verify fragment with ampersand (&) and equals (=) which are not special in fragment.
      * @tc.size MediumTest
@@ -1545,7 +1545,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9500
      * @tc.name testURI02Chapter0095
      * @tc.desc Verify fragment with a single percent character '%' if not followed by hex digits (should be decoded to '%').
      * @tc.size MediumTest
@@ -1558,9 +1558,9 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9600
      * @tc.name testURI02Chapter0096
-     * @tc.desc Test constructing URI with malformed scheme (e.g., missing colon) - HarmonyOS URI does not throw
+     * @tc.desc Test constructing URI with malformed scheme (e.g., missing colon)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1575,7 +1575,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9700
      * @tc.name testURI02Chapter0097
      * @tc.desc Verify fragment with empty string after encoded query and fragment.
      * @tc.size MediumTest
@@ -1588,7 +1588,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9800
      * @tc.name testURI02Chapter0098
      * @tc.desc Verify fragment with multiple # characters (only last is fragment delimiter, others must be encoded).
      * @tc.size MediumTest
@@ -1624,7 +1624,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_9900
      * @tc.name testURI02Chapter0099
      * @tc.desc Verify fragment when URI contains userInfo, port, query, and fragment.
      * @tc.size MediumTest
@@ -1637,7 +1637,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10000
      * @tc.name testURI02Chapter0100
      * @tc.desc Verify fragment with Unicode characters that require 3-byte UTF-8 encoding.
      * @tc.size MediumTest
@@ -1654,7 +1654,7 @@ export default function URI02Test() {
     // =============== authority ======================
 
     /**
-     * @tc.number SUB_URI_TEST02_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10100
      * @tc.name testURI02Chapter0101
      * @tc.desc Test authority with normal URI containing userinfo, host, port.
      * @tc.size MediumTest
@@ -1671,7 +1671,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10200
      * @tc.name testURI02Chapter0102
      * @tc.desc Test authority with host and port only.
      * @tc.size MediumTest
@@ -1688,7 +1688,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10300
      * @tc.name testURI02Chapter0103
      * @tc.desc Test authority with host only.
      * @tc.size MediumTest
@@ -1705,7 +1705,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10400
      * @tc.name testURI02Chapter0104
      * @tc.desc Test URI without authority (scheme:///path).
      * @tc.size MediumTest
@@ -1721,7 +1721,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10500
      * @tc.name testURI02Chapter0105
      * @tc.desc Test authority with userinfo without password.
      * @tc.size MediumTest
@@ -1738,7 +1738,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10600
      * @tc.name testURI02Chapter0106
      * @tc.desc Test port value 0.
      * @tc.size MediumTest
@@ -1752,7 +1752,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10700
      * @tc.name testURI02Chapter0107
      * @tc.desc Test port maximum value 65535.
      * @tc.size MediumTest
@@ -1766,7 +1766,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10800
      * @tc.name testURI02Chapter0108
      * @tc.desc Test default port (no port specified).
      * @tc.size MediumTest
@@ -1780,7 +1780,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_URI_TEST02_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest02_10900
      * @tc.name testURI02Chapter0109
      * @tc.desc Test IPv4 host address.
      * @tc.size MediumTest
