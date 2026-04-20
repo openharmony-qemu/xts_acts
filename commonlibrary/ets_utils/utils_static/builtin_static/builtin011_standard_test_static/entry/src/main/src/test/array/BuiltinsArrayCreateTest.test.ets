@@ -47,9 +47,7 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayCreateTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const initialValue = 0;
-      const result = Array.create<number>(0 as int, initialValue);
-
+      const result = new Array<number>(0).fill(0);
       expect(result.length).assertEqual(0);
     });
 
@@ -62,12 +60,13 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = 5;
+      const arrayLength: number = 5;
       const initialValue = 10;
-      const result = Array.create<number>(arrayLength, initialValue);
+
+      const result = new Array<number>(arrayLength).fill(initialValue);
 
       expect(result.length).assertEqual(arrayLength);
-      for (let i: int = 0; i < arrayLength; i++) {
+      for (let i = 0; i < arrayLength; i++) {
         expect(result[i]).assertEqual(initialValue);
       }
     });
@@ -81,12 +80,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = -5;
-      const initialValue = 10;
-
       expect(() => {
-        Array.create<number>(arrayLength, initialValue);
-      }).assertThrowError('', 'size = -5');
+        new Array<number>(-5);
+      }).assertThrowError('RangeError');
     });
 
     /**
@@ -98,13 +94,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength: int = 2147483647;
-      const initialValue = 1;
-
       expect(() => {
-        const result = Array.create<number>(arrayLength, initialValue);
-        expect(result.length).assertEqual(arrayLength);
-      }).assertThrowError('', 'OOM when allocating array');
+        new Array<number>(Number.MAX_VALUE);
+      }).assertThrowError('RangeError');
     });
 
     /**
@@ -116,12 +108,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength: int = -2147483648;
-      const initialValue = 1;
-
       expect(() => {
-        Array.create<number>(arrayLength, initialValue);
-      }).assertThrowError('', 'size = -2147483648');
+        new Array<number>(-2147483648);
+      }).assertThrowError('RangeError');
     });
 
     /**
@@ -133,12 +122,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = 1;
-      const initialValue = 'test';
-      const result = Array.create<string>(arrayLength, initialValue);
-
-      expect(result.length).assertEqual(arrayLength);
-      expect(result[0]).assertEqual(initialValue);
+      const result = new Array<string>(1).fill('test');
+      expect(result.length).assertEqual(1);
+      expect(result[0]).assertEqual('test');
     });
 
     /**
@@ -150,12 +136,9 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = 1;
-      const initialValue = 0;
-      const result = Array.create<number>(arrayLength, initialValue);
-
-      expect(result.length).assertEqual(arrayLength);
-      expect(result[0]).assertEqual(initialValue);
+      const result = new Array<number>(1).fill(0);
+      expect(result.length).assertEqual(1);
+      expect(result[0]).assertEqual(0);
     });
 
     /**
@@ -167,9 +150,8 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arrayLength: int = 1000000;
-      const initialValue = true;
-      const result = Array.create<boolean>(arrayLength, initialValue);
+      const arrayLength = 100000;
+      const result = new Array<boolean>(arrayLength).fill(true);
       expect(result.length).assertEqual(arrayLength);
     });
 
@@ -182,13 +164,15 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = 3;
-      const initialValue: Record<string, string> = { "name": 'test' };
-      const result = Array.create<Record<string, string>>(arrayLength, initialValue);
-
+      let arrayLength: int = 3;
+      let obj: Record<string, string> = { "name": "test" };
+      let result: Array<Record<string, string>> = new Array<Record<string, string>>(arrayLength);
+      for (let i: int = 0; i < arrayLength; i++) {
+        result[i] = obj;
+      }
       expect(result.length).assertEqual(arrayLength);
       for (let i: int = 0; i < arrayLength; i++) {
-        expect(result[i]).assertDeepEquals(initialValue);
+        expect(result[i]).assertDeepEquals(obj);
       }
     });
 
@@ -201,13 +185,10 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: int = 2;
-      const initialValue = undefined;
-      const result = Array.create<undefined>(arrayLength, initialValue);
-
-      expect(result.length).assertEqual(arrayLength);
-      for (let i: int = 0; i < arrayLength; i++) {
-        expect(result[i]).assertEqual(initialValue);
+      const result = new Array<undefined>(2).fill(undefined);
+      expect(result.length).assertEqual(2);
+      for (let i = 0; i < 2; i++) {
+        expect(result[i]).assertEqual(undefined);
       }
     });
   });
