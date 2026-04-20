@@ -159,6 +159,8 @@ napi_value AVMediaDescriptionBuilderSetArtistInvalidParam(napi_env env, napi_cal
 napi_value AVMediaDescriptionBuilderSetAlbumCoverUriSuccess(napi_env env, napi_callback_info info);
 napi_value AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam(napi_env env, napi_callback_info info);
 napi_value AVMediaDescriptionBuilderSetMediaTypeSuccess(napi_env env, napi_callback_info info);
+napi_value AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess(napi_env env, napi_callback_info info);
+napi_value AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess(napi_env env, napi_callback_info info);
 napi_value AVMediaDescriptionBuilderSetMediaTypeInvalidParam(napi_env env, napi_callback_info info);
 napi_value AVMediaDescriptionBuilderSetLyricContentSuccess(napi_env env, napi_callback_info info);
 napi_value AVMediaDescriptionBuilderSetLyricContentInvalidParam(napi_env env, napi_callback_info info);

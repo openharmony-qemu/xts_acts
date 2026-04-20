@@ -288,7 +288,7 @@ export default function AVSessionTest4() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it(' ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam();
@@ -316,6 +316,46 @@ export default function AVSessionTest4() {
           done()
         } catch (err) {
           console.error("====>testAVSessionAVMediaDescriptionBuilderSetMediaType001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaType0001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_0001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionBuilderSetMediaType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionBuilderSetMediaType0001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaType0002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_0002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionBuilderSetMediaType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionBuilderSetMediaType0002 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });

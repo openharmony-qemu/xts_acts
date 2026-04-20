@@ -203,6 +203,10 @@ static void InitPush4(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam",
         AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam));
     desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeSuccess", AVMediaDescriptionBuilderSetMediaTypeSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess));
     desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeInvalidParam",
         AVMediaDescriptionBuilderSetMediaTypeInvalidParam));
     desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentSuccess",
