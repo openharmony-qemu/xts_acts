@@ -57,7 +57,7 @@ export default function WebEnableDragTest() {
 
     /**
      * @tc.name   testEnableDrag01
-     * @tc.number SUB_WEB_ENABLEDRAG_0100
+     * @tc.number SUB_WEB_ENABLE_DRAG_0100
      * @tc.desc   test enabledrag false zoomOut
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function WebEnableDragTest() {
 
     /**
      * @tc.name   testEnableDrag02
-     * @tc.number SUB_WEB_ENABLEDRAG_0200
+     * @tc.number SUB_WEB_ENABLE_DRAG_0200
      * @tc.desc   test enabledrag false zoomIn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
