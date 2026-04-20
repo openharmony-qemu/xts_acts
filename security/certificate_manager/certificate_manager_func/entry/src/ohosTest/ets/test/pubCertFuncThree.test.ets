@@ -535,15 +535,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let uri: string = 'oh:t=ak;o=object;u=100;a=20010045';
       let uriObject = generateString(255-27);
       try {
-        await certManager.getPrivateCertificate(uri.replace("object", uriObject), (err, cmResult)=>{
+          certManager.getPrivateCertificate(uri.replace("object", uriObject), (err, cmResult)=>{
           expect(err.code).assertEqual(17500002);
+          console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0200: end ");
+          done();
         });
       } catch (error) {
         console.error(`SUB_Security_CertManager_getPrivateCertificate_Func_0200 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(17500002);
+        console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0200: end ");
+        done();
       }
-      console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0200: end ");
-      done();
     });
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0300
@@ -662,15 +664,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
       }
       try {
-        await certManager.init(uri.replace("object", uriObject),req, (err, CMHandle)=>{
+          certManager.init(uri.replace("object", uriObject),req, (err, CMHandle)=>{
           expect(err.code).assertEqual(17500001);
+          console.log("SUB_Security_CertManager_InitJsApi_Func_0300: end ");
+          done();
         });
       } catch (error) {
         console.error(`SUB_Security_CertManager_InitJsApi_Func_0300 failed. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(17500001);
+        console.log("SUB_Security_CertManager_InitJsApi_Func_0300: end ");
+        done();
       }
-      console.log("SUB_Security_CertManager_InitJsApi_Func_0300: end ");
-      done();
     });
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0400
