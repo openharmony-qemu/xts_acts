@@ -16,27 +16,16 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import Utils from '../Util.test';
 
 export default function BuiltinsBigIntBitwiseAndValueTest(): void {
-  describe('BuiltinsBigIntBitwiseAndValueTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
-    beforeEach(async () => {
+  describe('BuiltinsBigIntBitwiseAndValueTest', (): void => {
+    beforeAll((): void => {});
+
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
+    });
+
+    afterEach((): void => {});
+
+    afterAll((): void => {});
 
     /**
      * @tc.name  bigIntValueOfTest0100
@@ -46,7 +35,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const original: BigInt = new BigInt(100);
       const result: BigInt = original.valueOf();
 
@@ -63,13 +52,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const original: BigInt = new BigInt(0);
       const result: BigInt = original.valueOf();
 
       expect(result === original).assertTrue();
       expect(result.equals(new BigInt(0))).assertTrue();
-      expect(result.getLong()).assertEqual(0 as long);
+      expect(result.getLong()).assertEqual(0);
       expect(result.positive()).assertTrue();
     });
 
@@ -81,7 +70,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const original: BigInt = new BigInt(-999);
       const result: BigInt = original.valueOf();
 
@@ -98,7 +87,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const largeStr: string = "18446744073709551616";
       const original: BigInt = new BigInt(largeStr);
       const result: BigInt = original.valueOf();
@@ -116,13 +105,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const original: BigInt = new BigInt(true);
       const result: BigInt = original.valueOf();
 
       expect(result === original).assertTrue();
       expect(result.equals(new BigInt(1))).assertTrue();
-      expect(result.getLong()).assertEqual(1 as long);
+      expect(result.getLong()).assertEqual(1);
     });
 
     /**
@@ -133,7 +122,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const original: BigInt = new BigInt(false);
       const result: BigInt = original.valueOf();
 
@@ -150,8 +139,8 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const maxLong: long = 9223372036854775807 as long;
+    it('bigIntValueOfTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const maxLong: Long = Long.MAX_VALUE;
       const original: BigInt = new BigInt(maxLong);
       const result: BigInt = original.valueOf();
 
@@ -169,8 +158,8 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const minLong: long = -9223372036854775808 as long;
+    it('bigIntValueOfTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const minLong: Long = Long.MIN_VALUE;
       const original: BigInt = new BigInt(minLong);
       const result: BigInt = original.valueOf();
 
@@ -188,14 +177,14 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const doubleVal: double = 123.0;
+    it('bigIntValueOfTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const doubleVal: Double = 123.0;
       const original: BigInt = new BigInt(doubleVal);
       const result: BigInt = original.valueOf();
 
       expect(result === original).assertTrue();
       expect(result.equals(new BigInt(123))).assertTrue();
-      expect(result.getLong()).assertEqual(123 as long);
+      expect(result.getLong()).assertEqual(123);
     });
 
     /**
@@ -206,7 +195,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const hexStr: string = "0xFF";
       const original: BigInt = new BigInt(hexStr);
       const result: BigInt = original.valueOf();
@@ -224,8 +213,8 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const negZero: double = -0.0;
+    it('bigIntValueOfTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const negZero: Double = -0.0;
       const original: BigInt = new BigInt(negZero);
       const result: BigInt = original.valueOf();
 
@@ -243,7 +232,7 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntValueOfTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntValueOfTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const source: BigInt = new BigInt("999999999999999999999");
       const original: BigInt = new BigInt(source);
       const result: BigInt = original.valueOf();
@@ -261,9 +250,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const result: BigInt = BigInt.asIntN(0 as long, num);
+      const result: BigInt = BigInt.asIntN(Double.toLong(0), num);
 
       expect(result.equals(new BigInt(0))).assertTrue();
     });
@@ -276,9 +265,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const zero: BigInt = new BigInt(0);
-      const result: BigInt = BigInt.asIntN(64 as long, zero);
+      const result: BigInt = BigInt.asIntN(Double.toLong(64), zero);
 
       expect(result.equals(zero)).assertTrue();
     });
@@ -291,14 +280,15 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
       try {
-        BigInt.asIntN(-1 as long, num);
+        BigInt.asIntN(Double.toLong(-1), num);
         expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof RangeError).assertTrue();
-        expect(e.code).assertEqual(401);
+        const err: RangeError = e as RangeError;
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -310,9 +300,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const tooLargeBits: long = 9007199254740992 as long;
+      const tooLargeBits: Long = Double.toLong(9007199254740992);
       try {
         BigInt.asIntN(tooLargeBits, num);
         expect(false).assertTrue();
@@ -329,9 +319,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const result: BigInt = BigInt.asIntN(16 as long, num);
+      const result: BigInt = BigInt.asIntN(Double.toLong(16), num);
 
       expect(result.equals(num)).assertTrue();
     });
@@ -344,17 +334,17 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const maxByte: BigInt = new BigInt(127);
       const minByte: BigInt = new BigInt(-128);
 
-      const resultMax: BigInt = BigInt.asIntN(8 as long, maxByte);
-      const resultMin: BigInt = BigInt.asIntN(8 as long, minByte);
+      const resultMax: BigInt = BigInt.asIntN(Double.toLong(8), maxByte);
+      const resultMin: BigInt = BigInt.asIntN(Double.toLong(8), minByte);
 
       expect(resultMax.equals(maxByte)).assertTrue();
       expect(resultMin.equals(minByte)).assertTrue();
-      expect(resultMax.getLong()).assertEqual(127 as long);
-      expect(resultMin.getLong()).assertEqual(-128 as long);
+      expect(resultMax.getLong()).assertEqual(127);
+      expect(resultMin.getLong()).assertEqual(-128);
     });
 
     /**
@@ -365,12 +355,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const overflowVal: BigInt = new BigInt(255);
-      const result: BigInt = BigInt.asIntN(8 as long, overflowVal);
+      const result: BigInt = BigInt.asIntN(Double.toLong(8), overflowVal);
 
       expect(result.equals(new BigInt(-1))).assertTrue();
-      expect(result.getLong()).assertEqual(-1 as long);
+      expect(result.getLong()).assertEqual(-1);
       expect(result.negative()).assertTrue();
     });
 
@@ -382,14 +372,14 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const maxShort: BigInt = new BigInt(32767);
       const minShort: BigInt = new BigInt(-32768);
       const overflowShort: BigInt = new BigInt(65535);
 
-      expect(BigInt.asIntN(16 as long, maxShort).equals(maxShort)).assertTrue();
-      expect(BigInt.asIntN(16 as long, minShort).equals(minShort)).assertTrue();
-      expect(BigInt.asIntN(16 as long, overflowShort).equals(new BigInt(-1))).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(16), maxShort).equals(maxShort)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(16), minShort).equals(minShort)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(16), overflowShort).equals(new BigInt(-1))).assertTrue();
     });
 
     /**
@@ -400,14 +390,14 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const maxInt: BigInt = new BigInt(2147483647);
       const minInt: BigInt = new BigInt(-2147483648);
       const largeNum: BigInt = new BigInt("2147483648");
 
-      expect(BigInt.asIntN(32 as long, maxInt).equals(maxInt)).assertTrue();
-      expect(BigInt.asIntN(32 as long, minInt).equals(minInt)).assertTrue();
-      expect(BigInt.asIntN(32 as long, largeNum).equals(minInt)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(32), maxInt).equals(maxInt)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(32), minInt).equals(minInt)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(32), largeNum).equals(minInt)).assertTrue();
     });
 
     /**
@@ -418,14 +408,14 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const maxLong: BigInt = new BigInt("9223372036854775807");
       const minLong: BigInt = new BigInt("-9223372036854775808");
       const overflowLong: BigInt = new BigInt("9223372036854775808");
 
-      expect(BigInt.asIntN(64 as long, maxLong).equals(maxLong)).assertTrue();
-      expect(BigInt.asIntN(64 as long, minLong).equals(minLong)).assertTrue();
-      expect(BigInt.asIntN(64 as long, overflowLong).equals(minLong)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(64), maxLong).equals(maxLong)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(64), minLong).equals(minLong)).assertTrue();
+      expect(BigInt.asIntN(Double.toLong(64), overflowLong).equals(minLong)).assertTrue();
     });
 
     /**
@@ -436,12 +426,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt("12345678901234567890");
-      const result: BigInt = BigInt.asIntN(8 as long, num);
+      const result: BigInt = BigInt.asIntN(Double.toLong(8), num);
 
       expect(result.equals(new BigInt(-46))).assertTrue();
-      expect(result.getLong()).assertEqual(-46 as long);
+      expect(result.getLong()).assertEqual(-46);
     });
 
     /**
@@ -452,11 +442,11 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const bitsNum: Number = new Number(8);
-      const resultNum: BigInt = BigInt.asIntN(bitsNum, num);
-      const resultLong: BigInt = BigInt.asIntN(8 as long, num);
+      const bitsNum: number = 8;
+      const resultNum: BigInt = BigInt.asIntN(Number.toLong(bitsNum), num);
+      const resultLong: BigInt = BigInt.asIntN(Double.toLong(8), num);
 
       expect(resultNum.equals(resultLong)).assertTrue();
       expect(resultNum.equals(new BigInt(-1))).assertTrue();
@@ -470,12 +460,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const bitsNum: Number = new Number(8.9);
-      const result: BigInt = BigInt.asIntN(bitsNum, num);
+      const bitsNum: number = 8.9;
+      const result: BigInt = BigInt.asIntN(Double.toLong(bitsNum), num);
       expect(result.equals(new BigInt(-1))).assertTrue();
-      expect(result.equals(BigInt.asIntN(8 as long, num))).assertTrue();
+      expect(result.equals(BigInt.asIntN(Double.toLong(8), num))).assertTrue();
     });
 
     /**
@@ -486,13 +476,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const bitsNum: Number = new Number(-8.9);
+      const bitsNum: number = -8.9;
       let thrown: boolean = false;
 
       try {
-        BigInt.asIntN(bitsNum, num);
+        BigInt.asIntN(Double.toLong(bitsNum), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -508,10 +498,10 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const maxSafe: Number = new Number(9007199254740991);
-      const result: BigInt = BigInt.asIntN(maxSafe, num);
+      const maxSafe: number = 9007199254740991;
+      const result: BigInt = BigInt.asIntN(Number.toLong(maxSafe), num);
       expect(result.equals(num)).assertTrue();
     });
 
@@ -523,10 +513,10 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const nanBits: Number = new Number(NaN);
-      const result: BigInt = BigInt.asIntN(nanBits, num);
+      const nanBits: number = NaN;
+      const result: BigInt = BigInt.asIntN(Number.toLong(nanBits), num);
       expect(result.equals(new BigInt(0))).assertTrue();
     });
 
@@ -538,13 +528,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const infBits: Number = new Number(Infinity);
+      const infBits: number = Infinity;
       let thrown: boolean = false;
 
       try {
-        BigInt.asIntN(infBits, num);
+        BigInt.asIntN(Number.toLong(infBits), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -560,13 +550,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const negInfBits: Number = new Number(-Infinity);
+      const negInfBits: number = -Infinity;
       let thrown: boolean = false;
 
       try {
-        BigInt.asIntN(negInfBits, num);
+        BigInt.asIntN(Number.toLong(negInfBits), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -582,10 +572,10 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsIntNTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsIntNTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const negZeroBits: Number = new Number(-0);
-      const result: BigInt = BigInt.asIntN(negZeroBits, num);
+      const negZeroBits: number = -0;
+      const result: BigInt = BigInt.asIntN(Number.toLong(negZeroBits), num);
       expect(result.equals(new BigInt(0))).assertTrue();
     });
 
@@ -597,9 +587,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const result: BigInt = BigInt.asUintN(0 as long, num);
+      const result: BigInt = BigInt.asUintN(Double.toLong(0), num);
 
       expect(result.equals(new BigInt(0))).assertTrue();
     });
@@ -612,9 +602,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const zero: BigInt = new BigInt(0);
-      const result: BigInt = BigInt.asUintN(64 as long, zero);
+      const result: BigInt = BigInt.asUintN(Double.toLong(64), zero);
 
       expect(result.equals(zero)).assertTrue();
     });
@@ -627,12 +617,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
       let thrown: boolean = false;
 
       try {
-        BigInt.asUintN(-1 as long, num);
+        BigInt.asUintN(Double.toLong(-1), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -648,9 +638,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const tooLargeBits: long = 9007199254740992 as long;
+      const tooLargeBits: Long = Double.toLong(9007199254740992);
       let thrown: boolean = false;
 
       try {
@@ -670,9 +660,9 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const result: BigInt = BigInt.asUintN(16 as long, num);
+      const result: BigInt = BigInt.asUintN(Double.toLong(16), num);
 
       expect(result.equals(num)).assertTrue();
       expect(result.positive()).assertTrue();
@@ -686,14 +676,14 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const min: BigInt = new BigInt(0);
       const max: BigInt = new BigInt(255);
       const overflow: BigInt = new BigInt(256);
 
-      expect(BigInt.asUintN(8 as long, min).equals(min)).assertTrue();
-      expect(BigInt.asUintN(8 as long, max).equals(max)).assertTrue();
-      expect(BigInt.asUintN(8 as long, overflow).equals(min)).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(8), min).equals(min)).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(8), max).equals(max)).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(8), overflow).equals(min)).assertTrue();
     });
 
     /**
@@ -704,13 +694,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const max: BigInt = new BigInt(65535);
       const overflow: BigInt = new BigInt(65536);
 
-      expect(BigInt.asUintN(16 as long, max).equals(max)).assertTrue();
-      expect(BigInt.asUintN(16 as long, overflow).equals(new BigInt(0))).assertTrue();
-      expect(BigInt.asUintN(16 as long, new BigInt(65537)).equals(new BigInt(1))).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(16), max).equals(max)).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(16), overflow).equals(new BigInt(0))).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(16), new BigInt(65537)).equals(new BigInt(1))).assertTrue();
     });
 
     /**
@@ -721,12 +711,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const max: BigInt = new BigInt("4294967295");
       const overflow: BigInt = new BigInt("4294967296");
 
-      expect(BigInt.asUintN(32 as long, max).equals(max)).assertTrue();
-      expect(BigInt.asUintN(32 as long, overflow).equals(new BigInt(0))).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(32), max).equals(max)).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(32), overflow).equals(new BigInt(0))).assertTrue();
     });
 
     /**
@@ -737,12 +727,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const negOne: BigInt = new BigInt(-1);
       const negLong: BigInt = new BigInt("-9223372036854775808");
 
-      expect(BigInt.asUintN(64 as long, negOne).equals(new BigInt("18446744073709551615"))).assertTrue();
-      expect(BigInt.asUintN(64 as long, negLong).equals(new BigInt("9223372036854775808"))).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(64), negOne).equals(new BigInt("18446744073709551615"))).assertTrue();
+      expect(BigInt.asUintN(Double.toLong(64), negLong).equals(new BigInt("9223372036854775808"))).assertTrue();
     });
 
     /**
@@ -753,13 +743,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const largeNum: BigInt = new BigInt("12345678901234567890");
-      const result: BigInt = BigInt.asUintN(8 as long, largeNum);
+      const result: BigInt = BigInt.asUintN(Double.toLong(8), largeNum);
 
       expect(result.equals(new BigInt(210))).assertTrue();
       expect(result.positive()).assertTrue();
-      expect(result.getLong()).assertEqual(210 as long);
+      expect(result.getLong()).assertEqual(210);
     });
 
     /**
@@ -770,11 +760,11 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(255);
-      const bitsNum: Number = new Number(8);
-      const resultNum: BigInt = BigInt.asUintN(bitsNum, num);
-      const resultLong: BigInt = BigInt.asUintN(8 as long, num);
+      const bitsNum: number = 8;
+      const resultNum: BigInt = BigInt.asUintN(Number.toLong(bitsNum), num);
+      const resultLong: BigInt = BigInt.asUintN(Double.toLong(8), num);
 
       expect(resultNum.equals(resultLong)).assertTrue();
       expect(resultNum.equals(new BigInt(255))).assertTrue();
@@ -788,12 +778,12 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(300);
-      const bitsNum: Number = new Number(8.9);
-      const result: BigInt = BigInt.asUintN(bitsNum, num);
+      const bitsNum: number = 8.9;
+      const result: BigInt = BigInt.asUintN(Double.toLong(bitsNum), num);
       expect(result.equals(new BigInt(44))).assertTrue();
-      expect(result.equals(BigInt.asUintN(8 as long, num))).assertTrue();
+      expect(result.equals(BigInt.asUintN(Double.toLong(8), num))).assertTrue();
     });
 
     /**
@@ -804,13 +794,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const bitsNum: Number = new Number(-8.9);
+      const bitsNum: number = -8.9;
       let thrown: boolean = false;
 
       try {
-        BigInt.asUintN(bitsNum, num);
+        BigInt.asUintN(Double.toLong(bitsNum), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -826,10 +816,10 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const maxSafe: Number = new Number(9007199254740991);
-      const result: BigInt = BigInt.asUintN(maxSafe, num);
+      const maxSafe: number = 9007199254740991;
+      const result: BigInt = BigInt.asUintN(Number.toLong(maxSafe), num);
       expect(result.equals(num)).assertTrue();
     });
 
@@ -841,10 +831,10 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const nanBits: Number = new Number(NaN);
-      const result: BigInt = BigInt.asUintN(nanBits, num);
+      const nanBits: number = NaN;
+      const result: BigInt = BigInt.asUintN(Number.toLong(nanBits), num);
       expect(result.equals(new BigInt(0))).assertTrue();
     });
 
@@ -856,13 +846,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const infBits: Number = new Number(Infinity);
+      const infBits: number = Infinity;
       let thrown: boolean = false;
 
       try {
-        BigInt.asUintN(infBits, num);
+        BigInt.asUintN(Number.toLong(infBits), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -878,13 +868,13 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(100);
-      const negInfBits: Number = new Number(-Infinity);
+      const negInfBits: number = -Infinity;
       let thrown: boolean = false;
 
       try {
-        BigInt.asUintN(negInfBits, num);
+        BigInt.asUintN(Number.toLong(negInfBits), num);
       } catch (e) {
         thrown = true;
         expect(e instanceof RangeError).assertTrue();
@@ -900,12 +890,11 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntAsUintNTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntAsUintNTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const num: BigInt = new BigInt(999);
-      const negZeroBits: Number = new Number(-0);
-      const result: BigInt = BigInt.asUintN(negZeroBits, num);
+      const negZeroBits: number = -0;
+      const result: BigInt = BigInt.asUintN(Number.toLong(negZeroBits), num);
       expect(result.equals(new BigInt(0))).assertTrue();
     });
-
   });
-};
+}
