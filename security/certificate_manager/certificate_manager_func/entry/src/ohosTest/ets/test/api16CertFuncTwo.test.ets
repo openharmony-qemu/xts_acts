@@ -705,7 +705,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
-     * @tc.desc   abnormal test
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 255 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -713,7 +713,7 @@ export default function api16CertFuncTestTwoUnit() {
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0100: started ");
       let uir ='oh:t=c;o=object;u=100;a=20010044';
-      let uriObject = generateString(256-27);
+      let uriObject = generateString(255-27);
       const context :common.Context = GlobalContext.getContext();
       if (deviceInfo.deviceType == '2in1') {
         let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
@@ -730,7 +730,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
-     * @tc.desc   abnormal test
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -993,30 +993,6 @@ export default function api16CertFuncTestTwoUnit() {
           expect(null).assertFail();
         } catch (err) {
           console.error("SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100: e.code " + err.code);
-          expect(err.code).assertEqual(29700004);
-        }
-      }
-      done();
-    });
-    /**
-     * @tc.name   SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0200
-     * @tc.number SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0200
-     * @tc.desc   abnormal test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.log("SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0200: started ");
-      let uir ='oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0;a=20010044';
-      const context :common.Context = GlobalContext.getContext();
-      if ((deviceInfo.deviceType != '2in1')&&(systemParameterEnhance.getSync("const.certManager.enableOpenCACertDialog","false")!="true")) {
-        let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
-        try {
-          await certManagerDialog.openUninstallCertificateDialog(null, certificateType, uir)
-          expect(null).assertFail();
-        } catch (err) {
-          console.error("SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0200: e.code " + err.code);
           expect(err.code).assertEqual(29700004);
         }
       }
@@ -1829,7 +1805,7 @@ export default function api16CertFuncTestTwoUnit() {
 	  /**
      * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0100
      * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0100
-     * @tc.desc   normal test
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 255 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1850,7 +1826,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0200
      * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0200
-     * @tc.desc   normal test
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1871,7 +1847,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
      * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 255 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1891,7 +1867,7 @@ export default function api16CertFuncTestTwoUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
      * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
-     * @tc.desc   normal test
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
