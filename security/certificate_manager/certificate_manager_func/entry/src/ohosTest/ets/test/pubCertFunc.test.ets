@@ -283,7 +283,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_3000
-     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_2000
+     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_3000
      * @tc.desc   use promise type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
