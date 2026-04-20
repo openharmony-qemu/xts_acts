@@ -492,7 +492,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '111111111111111111111111111111111';
@@ -516,7 +516,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '123456';
@@ -565,7 +565,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '123456';
