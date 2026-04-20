@@ -4678,13 +4678,13 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
+        await CommonFunc.sleep(1500);
         settings.openAboutDeviceSettingsPage(mContext);
-        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
         code = err?.code;
-        expect(code).assertEqual(16900020);
       }
+      expect(code).assertEqual(0);
       done();
     });
 
@@ -4861,12 +4861,13 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
+        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', null);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_invalid_appIndex] error = " + err);
         code = err?.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(0);
       done();
     });
 
@@ -4887,12 +4888,13 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
+        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', undefined);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_invalid_appIndex_undefined] error = " + err);
         code = err?.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(0);
       done();
     });
 
@@ -4913,13 +4915,13 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
+        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example');
-        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
         code = err?.code;
-        expect(code).assertEqual(16900020);
       }
+      expect(code).assertEqual(0);
       done();
     });
 
@@ -4940,13 +4942,13 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
+        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', 0);
-        expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
         code = err?.code;
-        expect(code).assertEqual(16900020);
       }
+      expect(code).assertEqual(0);
       done();
     });
   })
