@@ -26,6 +26,7 @@
 #include <string>
 #include <sys/stat.h>
 #include <iostream>
+#include <unistd.h>
 
 // 测试常量定义
 constexpr int MAX_DECODER_INSTANCES = 64;        // 最大解码器实例数
@@ -883,7 +884,7 @@ int VideoDecCapApi0023()
         return -1;
     }
     for (uint32_t i = 0; i < count; ++i) {
-        if (OH_AVCapability_IsSecure(capabilityList[i])) {
+        if (OH_AVCapability_IsSecure(   [i])) {   
             return 0;
         }
     }
