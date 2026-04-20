@@ -25,520 +25,390 @@ import {
   Size,
   Level
 } from "../../../../../../hypium";
-
-// 0100
 enum TestEnum0100 {
   One = -17
 }
-// 0200
 enum TestEnum0200 {
   One = -301
 }
-// 0300
 enum TestEnum0300 {
   One = -3001
 }
-// 0400
 enum TestEnum0400 {
   One = -50001
 }
-// 0500
 enum TestEnum0500 {
   One = 15
 }
-// 0600
 enum TestEnum0600 {
   One = 299
 }
-// 0700
 enum TestEnum0700 {
   One = 2999
 }
-// 0800
 enum TestEnum0800 {
   One = 49999
 }
-// 0900
 enum TestEnum0900 {
   One = "value: 2"
 }
-// 1000
 enum TestEnum1000 {
   One = "value: 15"
 }
-// 1100
 enum TestEnum1100 {
   One = "value: 15"
 }
-// 1200
 enum TestEnum1200 {
   One = "value: 13"
 }
-// 1300
 enum TestEnum1300 {
   One = "value: 2"
 }
-// 1400
 enum TestEnum1400 {
   One = "value: 15"
 }
-// 1500
 enum TestEnum1500 {
   One = "value: 13"
 }
-// 1600
 enum TestEnum1600 {
   One = "value: 2"
 }
-// 1700
 enum TestEnum1700 {
   One = "value: 15"
 }
-// 1800
 enum TestEnum1800 {
   One = "value: 13"
 }
-// 1900
 enum TestEnum1900 {
   One = "value: 13"
 }
-// 2000
 enum TestEnum2000 {
   One = "value: 2"
 }
-// 2100
 enum TestEnum2100 {
   One = "value: 15"
 }
-// 2200
 enum TestEnum2200 {
   One = "value: 13"
 }
-// 2300
 enum TestEnum2300 {
   One = "value: 2"
 }
-// 2400
 enum TestEnum2400 {
   One = "value: 15"
 }
-// 2500
 enum TestEnum2500 {
   One = "value: 13"
 }
-// 2600
 enum TestEnum2600 {
   One = "value: 2"
 }
-// 2700
 enum TestEnum2700 {
   One = 260
 }
-// 2800
 enum TestEnum2800 {
   One = 2
 }
-// 2900
 enum TestEnum2900 {
   One = 50060
 }
-// 3000
 enum TestEnum3000 {
   One = 5000
 }
-// 3100
 enum TestEnum3100 {
   One = 6
 }
-// 3200
 enum TestEnum3200 {
   One = 50016
 }
-// 3300
 enum TestEnum3300 {
   One = 49996
 }
-// 3400
 enum TestEnum3400 {
   One = 1232
 }
-// 3500
 enum TestEnum3500 {
   One = "12.32"
 }
-// 3600
 enum TestEnum3600 {
   One = "3.199997"
 }
-// 3700
 enum TestEnum3700 {
   One = "133.2"
 }
-// 3800
 enum TestEnum3800 {
   One = "113.2"
 }
-// 3900
 enum TestEnum3900 {
   One = 6
 }
-// 4000
 enum TestEnum4000 {
   One = 50519
 }
-// 4100
 enum TestEnum4100 {
   One = "505.18999999999994"
 }
-// 4200
 enum TestEnum4200 {
   One = "1.8999999999996362"
 }
-// 4300
 enum TestEnum4300 {
   One = "5061.9"
 }
-// 4400
 enum TestEnum4400 {
   One = "5041.9"
 }
-// 4500
 enum TestEnum4500 {
   One = 36
 }
-// 4600
 enum TestEnum4600 {
   One = 16
 }
-// 4700
 enum TestEnum4700 {
   One = 2600
 }
-// 4800
 enum TestEnum4800 {
   One = 26
 }
-// 4900
 enum TestEnum4900 {
   One = 0
 }
-// 5000
 enum TestEnum5000 {
   One = 270
 }
-// 5100
 enum TestEnum5100 {
   One = 250
 }
-// 5200
 enum TestEnum5200 {
   One = "yes 10"
 }
-// 5300
 enum TestEnum5300 {
   One = "no 260"
 }
-// 5400
 enum TestEnum5400 {
   One = "yes 26.3"
 }
-// 5500
 enum TestEnum5500 {
   One = "no -30"
 }
-// 5600
 enum TestEnum5600 {
   One = "no -260"
 }
-// 5700
 enum TestEnum5700 {
   One = "yes 26"
 }
-// 5800
 enum TestEnum5800 {
   One = "yes 26"
 }
-// 5900
 enum TestEnum5900 {
   One = "yes 26.3"
 }
-// 6000
 enum TestEnum6000 {
   One = "yes p"
 }
-// 6100
 enum TestEnum6100 {
   One = "yes p"
 }
-// 6200
 enum TestEnum6200 {
   One = "yes 26.7"
 }
-// 6300
 enum TestEnum6300 {
   One = 101
 }
-// 6400
 enum TestEnum6400 {
   One = 101
 }
-// 6500
 enum TestEnum6500 {
   One = 101
 }
-// 6600
 enum TestEnum6600 {
   One = 101
 }
-// 6700
 enum TestEnum6700 {
   One = 101
 }
-// 6800
 enum TestEnum6800 {
   One = 101
 }
-// 6900
 enum TestEnum6900 {
   One = 16
 }
-// 7000
 enum TestEnum7000 {
   One = 300
 }
-// 7100
 enum TestEnum7100 {
   One = 3000
 }
-// 7200
 enum TestEnum7200 {
   One = 50000
 }
-// 7300
 enum TestEnum7300 {
   One = "120.2"
 }
-// 7400
 enum TestEnum7400 {
   One = "5050.9"
 }
-// 7500
 enum TestEnum7500 {
   One = 24
 }
-// 7600
 enum TestEnum7600 {
   One = 3
 }
-// 7700
 enum TestEnum7700 {
   One = -32
 }
-// 7800
 enum TestEnum7800 {
   One = 536870879
 }
-// 7900
 enum TestEnum7900 {
   One = 2464
 }
-// 8000
 enum TestEnum8000 {
   One = 376
 }
-// 8100
 enum TestEnum8100 {
   One = 376
 }
-// 8200
 enum TestEnum8200 {
   One = -2464
 }
-// 8300
 enum TestEnum8300 {
   One = -376
 }
-// 8400
 enum TestEnum8400 {
   One = 40048
 }
-// 8500
 enum TestEnum8500 {
   One = 6250
 }
-// 8600
 enum TestEnum8600 {
   One = 6250
 }
-// 8700
 enum TestEnum8700 {
   One = 3
 }
-// 8800
 enum TestEnum8800 {
   One = -40048
 }
-// 8900
 enum TestEnum8900 {
   One = -6251
 }
-// 9000
 enum TestEnum9000 {
   One = 984
 }
-// 9100
 enum TestEnum9100 {
   One = 15
 }
-// 9200
 enum TestEnum9200 {
   One = 15
 }
-// 9300
 enum TestEnum9300 {
   One = -984
 }
-// 9400
 enum TestEnum9400 {
   One = -16
 }
-// 9500
 enum TestEnum9500 {
   One = 40408
 }
-// 9600
 enum TestEnum9600 {
   One = 631
 }
-// 9700
 enum TestEnum9700 {
   One = -631
 }
-// 9900
 enum TestEnum9900 {
   One = -40408
 }
-// 10200
 enum TestEnum10200 {
   One = 536870908
 }
-// 10700
 enum TestEnum10700 {
   One = "value = 101"
 }
-// 10800
 enum TestEnum10800 {
   One = "value = 101"
 }
-// 10900
 enum TestEnum10900 {
   One = "value = 101"
 }
-// 11000
 enum TestEnum11000 {
   One = "value = 101"
 }
-// 11100
 enum TestEnum11100 {
   One = "value = 10.1"
 }
-// 11200
 enum TestEnum11200 {
   One = "value = 101.5"
 }
-// 11300
 enum TestEnum11300 {
   One = -16
 }
-// 11400
 enum TestEnum11400 {
   One = -300
 }
-// 11500
 enum TestEnum11500 {
   One = "120.2"
 }
-// 11600
 enum TestEnum11600 {
   One = "5050.9"
 }
-// 11700
 enum TestEnum11700 {
   One = -3000
 }
-// 11800
 enum TestEnum11800 {
   One = -50000
 }
-// 11900
 enum TestEnum11900 {
   One = "-120.2"
 }
-// 12000
 enum TestEnum12000 {
   One = "-5050.9"
 }
-// 12100
 enum TestEnum12100 {
   One = 16
 }
-// 12200
 enum TestEnum12200 {
   One = 300
 }
-// 12300
 enum TestEnum12300 {
   One = 3000
 }
-// 12400
 enum TestEnum12400 {
   One = 50000
 }
-// 12500
 enum TestEnum12500 {
   One = 16
 }
-// 12600
 enum TestEnum12600 {
   One = 300
 }
-// 12700
 enum TestEnum12700 {
   One = "-120.2"
 }
-// 12800
 enum TestEnum12800 {
   One = "-5050.9"
 }
-// 12900
 enum TestEnum12900 {
   One = 3000
 }
-// 13000
 enum TestEnum13000 {
   One = 50000
 }
-// 13100
 enum TestEnum13100 {
   One = "120.2"
 }
-// 13200
 enum TestEnum13200 {
   One = "5050.9"
 }
-// 13300
 enum TestEnum13300 {
   One = -16
 }
-// 13400
 enum TestEnum13400 {
   One = -300
 }
-// 13500
 enum TestEnum13500 {
   One = -3000
 }
-// 13600
 enum TestEnum13600 {
   One = -50000
 }
@@ -552,8 +422,8 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ConstantExpressionCheckEnum() {
-  describe("ConstantExpressionCheckEnum", () => {
+export default function ConstantExpressionCheckEnumTest() {
+  describe("ConstantExpressionCheckEnumTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

@@ -42,10 +42,10 @@ import ConditionalAndExpressionTest from "./expressions/conditional_and_expressi
 import ConditionalOrExpressionTest from "./expressions/conditional_or_expression/ConditionalOrExpression.test";
 import ConstantExpressionCheckArrayTest from "./expressions/constant_expression/check_array/ConstantExpressionCheckArray.test";
 import ConstantExpressionCheckEnumTest from "./expressions/constant_expression/check_enum/ConstantExpressionCheckEnum.test";
-// import ExpressionsEnsureNotNullishTest from "./expressions/ensure_not_nullish_expression/ExpressionsEnsureNotNullish.test";
+import ExpressionsEnsureNotNullishTest from "./expressions/ensure_not_nullish_expression/ExpressionsEnsureNotNullish.test";
 // import BooleanEqualityOperatorsTest from "./expressions/equality_expressions/boolean_equality_operators/BooleanEqualityOperators.test";
 // import EnumerationEqualityOperatorsTest from "./expressions/equality_expressions/enumeration_equality_operators/EnumerationEqualityOperators.test";
-// import EqualityExpressionsTest from "./expressions/equality_expressions/EqualityExpressions.test";
+import EqualityExpressionsTest from "./expressions/equality_expressions/EqualityExpressions.test";
 // import FunctionTypeEqualityOperatorsTest from "./expressions/equality_expressions/function_type_equality_operators/FunctionTypeEqualityOperators.test";
 // import NumericalEqualityOperatorsTest from "./expressions/equality_expressions/numerical_equality_operators/NumericalEqualityOperators.test";
 // import ExpressionsReferenceEqualityTest from "./expressions/equality_expressions/reference_equality/ExpressionsReferenceEquality.test";
@@ -178,10 +178,10 @@ export default function testsuite() {
   ConditionalOrExpressionTest();
   ConstantExpressionCheckArrayTest();
   ConstantExpressionCheckEnumTest();
-  // ExpressionsEnsureNotNullishTest();
+  ExpressionsEnsureNotNullishTest();
   // BooleanEqualityOperatorsTest();
   // EnumerationEqualityOperatorsTest();
-  // EqualityExpressionsTest();
+  EqualityExpressionsTest();
   // FunctionTypeEqualityOperatorsTest();
   // NumericalEqualityOperatorsTest();
   // ExpressionsReferenceEqualityTest();
