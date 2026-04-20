@@ -1343,16 +1343,15 @@ static napi_value UsbControlTransferSetFeature(napi_env env, napi_callback_info 
     int32_t usbInitReturnValue = OH_Usb_Init();
     NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
     struct UsbDdkConfigDescriptor *config = nullptr;
-    uint8_t configIndex = 0;
-    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex, &config);
+    uint8_t configIndex1 = 0;
+    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex1, &config);
     if (ret != PARAM_0 || config == nullptr) {
         OH_Usb_Release();
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_int32(env, ret, &result));
         return result;
     }
-    std::tuple<bool, uint8_t, uint8_t, uint16_t> source;
-    source = GetEndpointInfo(config);
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> source = GetEndpointInfo(config);
     OH_Usb_FreeConfigDescriptor(config);
     if (!std::get<0>(source)) {
         OH_Usb_Release();
@@ -5037,20 +5036,34 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"usbSendPipeRequestWithAshmemFour", nullptr, UsbSendPipeRequestWithAshmemFour, nullptr, nullptr, nullptr,
             napi_default, nullptr},
-        {"usbGetDevicesOne", nullptr, UsbGetDevicesOne, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbGetDevicesTwo", nullptr, UsbGetDevicesTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbGetDevicesThree", nullptr, UsbGetDevicesThree, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferGetStatus", nullptr, UsbControlTransferGetStatus, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferSetFeature", nullptr, UsbControlTransferSetFeature, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferClearFeature", nullptr, UsbControlTransferClearFeature, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferGetDescriptor", nullptr, UsbControlTransferGetDescriptor, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferGetConfiguration", nullptr, UsbControlTransferGetConfiguration, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferGetInterface", nullptr, UsbControlTransferGetInterface, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferSetConfiguration", nullptr, UsbControlTransferSetConfiguration, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferSetupNull", nullptr, UsbControlTransferSetupNull, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferDataNull", nullptr, UsbControlTransferDataNull, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferInvalidDeviceId", nullptr, UsbControlTransferInvalidDeviceId, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferNoInit", nullptr, UsbControlTransferNoInit, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbGetDevicesOne", nullptr, UsbGetDevicesOne, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"usbGetDevicesTwo", nullptr, UsbGetDevicesTwo, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"usbGetDevicesThree", nullptr, UsbGetDevicesThree, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetStatus", nullptr, UsbControlTransferGetStatus,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetFeature", nullptr, UsbControlTransferSetFeature,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferClearFeature", nullptr, UsbControlTransferClearFeature,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetDescriptor", nullptr, UsbControlTransferGetDescriptor,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetConfiguration", nullptr, UsbControlTransferGetConfiguration,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetInterface", nullptr, UsbControlTransferGetInterface,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetConfiguration", nullptr, UsbControlTransferSetConfiguration,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetupNull", nullptr, UsbControlTransferSetupNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferDataNull", nullptr, UsbControlTransferDataNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferInvalidDeviceId", nullptr, UsbControlTransferInvalidDeviceId,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferNoInit", nullptr, UsbControlTransferNoInit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"isScsiDevice", nullptr, IsScsiDevice, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"scsiPeripheralInitOne", nullptr, ScsiPeripheralInitOne, nullptr, nullptr, nullptr,
             napi_default, nullptr},
