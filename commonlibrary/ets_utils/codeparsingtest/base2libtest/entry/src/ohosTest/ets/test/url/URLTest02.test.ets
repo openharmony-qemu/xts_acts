@@ -27,7 +27,7 @@ export default function URL02Test() {
 
     // =============== searchParams ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0100
      * @tc.name testURL02Chapter0001
      * @tc.desc Test URL.searchParams parses query string with ASCII, special chars, escapes, emojis
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0200
      * @tc.name testURL02Chapter0002
      * @tc.desc Test URL.searchParams parses numeric boundary values as strings
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0300
      * @tc.name testURL02Chapter0003
      * @tc.desc Test URL.searchParams parses special number strings (Infinity, NaN, -0, scientific)
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0400
      * @tc.name testURL02Chapter0004
      * @tc.desc Test URL.searchParams handles invalid Unicode (lone surrogates) without crashing
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0500
      * @tc.name testURL02Chapter0005
      * @tc.desc Test URL.searchParams allows modification via append/set and reflects in URL.search
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0600
      * @tc.name testURL02Chapter0006
      * @tc.desc Test URL.searchParams.getAll returns multiple values for same key
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0700
      * @tc.name testURL02Chapter0007
      * @tc.desc Test URL.searchParams.forEach iterates all entries
      * @tc.size MediumTest
@@ -233,7 +233,7 @@ export default function URL02Test() {
       expect(entries[2][1]).assertEqual("3");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0800
      * @tc.name testURL02Chapter0008
      * @tc.desc Test URL.searchParams handles escape sequences correctly
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0900
      * @tc.name testURL02Chapter0009
      * @tc.desc Test URL.searchParams handles emojis and Unicode characters correctly
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1000
      * @tc.name testURL02Chapter0010
      * @tc.desc Test URL.searchParams handles very long string values (treeString)
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1100
      * @tc.name testURL02Chapter0011
      * @tc.desc Test URL.searchParams handles substring values (sliceString)
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1200
      * @tc.name testURL02Chapter0012
      * @tc.desc Test URL.searchParams handles JSON stringified object values
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1300
      * @tc.name testURL02Chapter0013
      * @tc.desc Test URL.searchParams handles array string representation values
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1400
      * @tc.name testURL02Chapter0014
      * @tc.desc Test URL.searchParams handles numeric strings in various formats (hex, octal, scientific, bigint)
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1500
      * @tc.name testURL02Chapter0015
      * @tc.desc Test URL.searchParams handles boolean-related strings
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1600
      * @tc.name testURL02Chapter0016
      * @tc.desc Test URL.searchParams.has method with various keys
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1700
      * @tc.name testURL02Chapter0017
      * @tc.desc Test URL.searchParams.keys iterator
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1800
      * @tc.name testURL02Chapter0018
      * @tc.desc Test URL.searchParams.values iterator
      * @tc.size MediumTest
@@ -439,7 +439,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_1900
      * @tc.name testURL02Chapter0019
      * @tc.desc Test URL.searchParams.entries iterator
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2000
      * @tc.name testURL02Chapter0020
      * @tc.desc Test URL.searchParams.sort method
      * @tc.size MediumTest
@@ -489,7 +489,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2100
      * @tc.name testURL02Chapter0021
      * @tc.desc Test URL.searchParams.toString method
      * @tc.size MediumTest
@@ -503,7 +503,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2200
      * @tc.name testURL02Chapter0022
      * @tc.desc Test URL.searchParams.forEach method
      * @tc.size MediumTest
@@ -538,7 +538,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2300
      * @tc.name testURL02Chapter0023
      * @tc.desc Test URL.searchParams.append adds multiple values for same key
      * @tc.size MediumTest
@@ -562,7 +562,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2400
      * @tc.name testURL02Chapter0024
      * @tc.desc Test URL.searchParams.set updates existing key and removes others
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2500
      * @tc.name testURL02Chapter0025
      * @tc.desc Test URL.searchParams.delete removes key and updates URL.search
      * @tc.size MediumTest
@@ -597,7 +597,7 @@ export default function URL02Test() {
       expect(params.has("b")).assertFalse();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2600
      * @tc.name testURL02Chapter0026
      * @tc.desc Test URLSearchParams with invalid Unicode surrogates does not crash
      * @tc.size MediumTest
@@ -615,7 +615,7 @@ export default function URL02Test() {
 
     // =============== params ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2700
      * @tc.name testURL02Chapter0027
      * @tc.desc Test URL.params getter returns URLParams object for a simple query
      * @tc.size MediumTest
@@ -630,7 +630,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2800
      * @tc.name testURL02Chapter0028
      * @tc.desc Test URL.params handles query with numeric boundary values as strings
      * @tc.size MediumTest
@@ -695,7 +695,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2900
      * @tc.name testURL02Chapter0029
      * @tc.desc Test URL.params handles special numeric strings (Infinity, NaN, -0, scientific)
      * @tc.size MediumTest
@@ -732,7 +732,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3000
      * @tc.name testURL02Chapter0030
      * @tc.desc Test URL.params handles ASCII, escapes, emojis, and special characters
      * @tc.size MediumTest
@@ -769,7 +769,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3100
      * @tc.name testURL02Chapter0031
      * @tc.desc Test URL.params handles null, undefined, empty string as values
      * @tc.size MediumTest
@@ -799,7 +799,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3200
      * @tc.name testURL02Chapter0032
      * @tc.desc Test URL.params handles multiple values for same key
      * @tc.size MediumTest
@@ -817,7 +817,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3300
      * @tc.name testURL02Chapter0033
      * @tc.desc Test URL.params is live to changes in URL.search
      * @tc.size MediumTest
@@ -835,7 +835,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3400
      * @tc.name testURL02Chapter0034
      * @tc.desc Test URL.params handles invalid percent-encoded sequences without crashing
      * @tc.size MediumTest
@@ -864,7 +864,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3500
      * @tc.name testURL02Chapter0035
      * @tc.desc Test URL.params handles invalid unicode characters (lone surrogates) without crashing
      * @tc.size MediumTest
@@ -912,7 +912,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3600
      * @tc.name testURL02Chapter0036
      * @tc.desc Test URL.params handles a huge string value (approx 1MB) without performance degradation
      * @tc.size MediumTest
@@ -929,7 +929,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3700
      * @tc.name testURL02Chapter0037
      * @tc.desc Test URL.params handles numeric strings in hexadecimal, binary and octal formats
      * @tc.size MediumTest
@@ -959,7 +959,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3800
      * @tc.name testURL02Chapter0038
      * @tc.desc Test URL.params handles boolean strings "true" and "false"
      * @tc.size MediumTest
@@ -974,7 +974,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_3900
      * @tc.name testURL02Chapter0039
      * @tc.desc Test URL.params handles an array string representation (e.g., "[1,2,3]")
      * @tc.size MediumTest
@@ -989,7 +989,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4000
      * @tc.name testURL02Chapter0040
      * @tc.desc Test URL.params handles an object string representation (e.g., "{a:1}")
      * @tc.size MediumTest
@@ -1004,7 +1004,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4100
      * @tc.name testURL02Chapter0041
      * @tc.desc Test URL.params created from Record<string, string> where values are explicitly converted from non‑string types
      * @tc.size MediumTest
@@ -1034,7 +1034,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4200
      * @tc.name testURL02Chapter0042
      * @tc.desc Test URL.params created from string[][] containing special characters
      * @tc.size MediumTest
@@ -1060,7 +1060,7 @@ export default function URL02Test() {
     // =============== username ======================
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4300
      * @tc.name testURL02Chapter0043
      * @tc.desc Test URL.username getter and setter with normal string values
      * @tc.size MediumTest
@@ -1075,7 +1075,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4400
      * @tc.name testURL02Chapter0044
      * @tc.desc Test URL.username with various numeric and boolean string representations
      * @tc.size MediumTest
@@ -1111,7 +1111,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4500
      * @tc.name testURL02Chapter0045
      * @tc.desc Test URL.username with numeric strings and boolean strings
      * @tc.size MediumTest
@@ -1129,7 +1129,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4600
      * @tc.name testURL02Chapter0046
      * @tc.desc Test URL.username with very long string (1000 chars)
      * @tc.size MediumTest
@@ -1145,7 +1145,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4700
      * @tc.name testURL02Chapter0047
      * @tc.desc Test URL.username with very long string (1000 chars)
      * @tc.size MediumTest
@@ -1161,7 +1161,7 @@ export default function URL02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTest02_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4800
      * @tc.name testURL02Chapter0048
      * @tc.desc Test URL.username clearing username (empty string)
      * @tc.size MediumTest

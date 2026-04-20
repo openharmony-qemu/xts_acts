@@ -24,7 +24,7 @@ export default function URI04Test() {
     });
     // =============== encodedFragment12+ ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0100
      * @tc.name testURI04Chapter0001
      * @tc.desc Test encodedFragment with fragment containing Unicode characters beyond BMP
      * @tc.size MediumTest
@@ -39,7 +39,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0200
      * @tc.name testURI04Chapter0002
      * @tc.desc Test encodedFragment when URI has both query and fragment
      * @tc.size MediumTest
@@ -53,7 +53,7 @@ export default function URI04Test() {
         expect(result).assertEqual("fragment");
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0300
      * @tc.name testURI04Chapter0003
      * @tc.desc Test encodedFragment when URI has fragment containing reserved characters that are allowed (/, ?, @)
      * @tc.size MediumTest
@@ -68,7 +68,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0400
      * @tc.name testURI04Chapter0004
      * @tc.desc Test encodedFragment when fragment contains colon and semicolon (allowed)
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0500
      * @tc.name testURI04Chapter0005
      * @tc.desc Test encodedFragment when fragment contains plus sign (allowed)
      * @tc.size MediumTest
@@ -98,7 +98,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0600
      * @tc.name testURI04Chapter0006
      * @tc.desc Test encodedFragment when fragment contains hyphen and underscore (allowed)
      * @tc.size MediumTest
@@ -113,7 +113,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0700
      * @tc.name testURI04Chapter0007
      * @tc.desc Test encodedFragment with fragment containing pipe character (needs encoding)
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0800
      * @tc.name testURI04Chapter0008
      * @tc.desc Test encodedFragment with fragment containing backtick (needs encoding)
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function URI04Test() {
         expect(result).assertEqual('%60hello%60');
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0900
      * @tc.name testURI04Chapter0009
      * @tc.desc Test encodedFragment with fragment containing caret (needs encoding)
      * @tc.size MediumTest
@@ -156,7 +156,7 @@ export default function URI04Test() {
         expect(result).assertEqual('a%5Eb');
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1000
      * @tc.name testURI04Chapter0010
      * @tc.desc Test encodedFragment with fragment containing curly braces (need encoding)
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1100
      * @tc.name testURI04Chapter0011
      * @tc.desc Test encodedFragment with fragment containing square brackets (need encoding)
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1200
      * @tc.name testURI04Chapter0012
      * @tc.desc Test encodedFragment with fragment containing backslash (need encoding)
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function URI04Test() {
         expect(result).assertEqual('a%5Cb');
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1300
      * @tc.name testURI04Chapter0013
      * @tc.desc Test encodedFragment with fragment containing less-than and greater-than (need encoding)
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function URI04Test() {
         expect(result).assertEqual('a%3Cb%3Ec');
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1400
      * @tc.name testURI04Chapter0014
      * @tc.desc Test encodedFragment with fragment containing double quote (need encoding)
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function URI04Test() {
         expect(result).assertEqual(fragment);
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1500
      * @tc.name testURI04Chapter0015
      * @tc.desc Test encodedFragment with fragment containing hash character (need encoding, provided as %23)
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function URI04Test() {
         expect(result).assertEqual("a%23b");
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1600
      * @tc.name testURI04Chapter0016
      * @tc.desc Test encodedFragment with fragment containing question mark (allowed)
      * @tc.size MediumTest
@@ -259,7 +259,7 @@ export default function URI04Test() {
         expect(result).assertEqual("a?b");
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1700
      * @tc.name testURI04Chapter0017
      * @tc.desc Test encodedFragment with fragment containing slash (allowed)
      * @tc.size MediumTest
@@ -274,7 +274,7 @@ export default function URI04Test() {
         expect(result).assertEqual("a/b");
       });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1800
      * @tc.name testURI04Chapter0018
      * @tc.desc Test encodedFragment with fragment containing at sign (allowed)
      * @tc.size MediumTest
@@ -290,7 +290,7 @@ export default function URI04Test() {
       });
     // =============== encodedAuthority12+ ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1900
      * @tc.name testURI04Chapter0019
      * @tc.desc Verify encodedAuthority returns correct value for URI with host and port
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('example.com:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2000
      * @tc.name testURI04Chapter0020
      * @tc.desc Verify encodedAuthority returns correct value for URI with userInfo and host (no port)
      * @tc.size MediumTest
@@ -314,7 +314,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('user@example.com');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2100
      * @tc.name testURI04Chapter0021
      * @tc.desc Verify encodedAuthority returns correct value for full authority (userInfo, host, port)
      * @tc.size MediumTest
@@ -326,7 +326,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('user:pass@example.com:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2200
      * @tc.name testURI04Chapter0022
      * @tc.desc Verify encodedAuthority retains percent-encoded characters in userInfo
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('user%40name:pass%3Aword@example.com:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2300
      * @tc.name testURI04Chapter0023
      * @tc.desc Verify encodedAuthority returns null for URI without authority
      * @tc.size MediumTest
@@ -350,7 +350,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertNull();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2400
      * @tc.name testURI04Chapter0024
      * @tc.desc Verify encodedAuthority handles IPv6 address with port correctly
      * @tc.size MediumTest
@@ -362,7 +362,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('[2001:db8::1]:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2500
      * @tc.name testURI04Chapter0025
      * @tc.desc Verify encodedAuthority handles empty userInfo (leading '@')
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('@example.com');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2600
      * @tc.name testURI04Chapter0026
      * @tc.desc Verify encodedAuthority for simple host without port
      * @tc.size MediumTest
@@ -386,7 +386,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('example.com');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2700
      * @tc.name testURI04Chapter0027
      * @tc.desc Verify encodedAuthority preserves allowed sub-delimiters in userInfo
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('user!$&\'()*+,;=:pass!$&\'()*+,;=@example.com:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2800
      * @tc.name testURI04Chapter0028
      * @tc.desc Verify encodedAuthority handles percent-encoded non-ASCII userInfo and punycode host
      * @tc.size MediumTest
@@ -410,7 +410,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertEqual('%E7%94%A8%E6%88%B7@xn--fsq.xn--fiqz9s:8080');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_2900
      * @tc.name testURI04Chapter0029
      * @tc.desc Verify encodedAuthority returns null for scheme-only URI
      * @tc.size MediumTest
@@ -422,7 +422,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertNull();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3000
      * @tc.name testURI04Chapter0030
      * @tc.desc Verify encodedAuthority handles URI with empty authority (double slash) as null
      * @tc.size MediumTest
@@ -434,7 +434,7 @@ export default function URI04Test() {
       expect(uriObj.encodedAuthority).assertNull();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3100
      * @tc.name testURI04Chapter0031
      * @tc.desc Verify constructor throws for empty string
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function URI04Test() {
       expect(parseError !== null).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3200
      * @tc.name testURI04Chapter0032
      * @tc.desc Verify constructor throws for URI containing space
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3300
      * @tc.name testURI04Chapter0033
      * @tc.desc Verify constructor throws for unencoded '@' in userInfo causing ambiguity
      * @tc.size MediumTest
@@ -508,7 +508,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3400
      * @tc.name testURI04Chapter0034
      * @tc.desc Verify constructor throws for control characters in URI
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function URI04Test() {
       expect(parseError !== null).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3500
      * @tc.name testURI04Chapter0035
      * @tc.desc Verify constructor throws for invalid percent encoding
      * @tc.size MediumTest
@@ -555,7 +555,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3600
      * @tc.name testURI04Chapter0036
      * @tc.desc Verify constructor throws for port number out of range
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3700
      * @tc.name testURI04Chapter0037
      * @tc.desc Verify constructor throws for missing host but with port
      * @tc.size MediumTest
@@ -608,7 +608,7 @@ export default function URI04Test() {
       }
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3800
      * @tc.name testURI04Chapter0038
      * @tc.desc Verify constructor handles very long URI (stress test, should not throw)
      * @tc.size MediumTest
@@ -623,7 +623,7 @@ export default function URI04Test() {
     });
     // =============== encodedSSP12+ ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_3900
      * @tc.name testURI04Chapter0039
      * @tc.desc Verify encodedSSP for a standard URI with all components
      * @tc.size MediumTest
@@ -637,7 +637,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4000
      * @tc.name testURI04Chapter0040
      * @tc.desc Verify encodedSSP for URI without userInfo and port
      * @tc.size MediumTest
@@ -651,7 +651,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4100
      * @tc.name testURI04Chapter0041
      * @tc.desc Verify encodedSSP for URI without authority (scheme:path)
      * @tc.size MediumTest
@@ -665,7 +665,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4200
      * @tc.name testURI04Chapter0042
      * @tc.desc Verify encodedSSP for URI with scheme and authority only
      * @tc.size MediumTest
@@ -679,7 +679,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4300
      * @tc.name testURI04Chapter0043
      * @tc.desc Verify encodedSSP for URI with scheme and path (empty authority)
      * @tc.size MediumTest
@@ -693,7 +693,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4400
      * @tc.name testURI04Chapter0044
      * @tc.desc Verify encodedSSP encodes special characters in path
      * @tc.size MediumTest
@@ -707,7 +707,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4500
      * @tc.name testURI04Chapter0045
      * @tc.desc Verify encodedSSP encodes special characters in query
      * @tc.size MediumTest
@@ -721,7 +721,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4600
      * @tc.name testURI04Chapter0046
      * @tc.desc Verify encodedSSP encodes special characters in userInfo
      * @tc.size MediumTest
@@ -735,7 +735,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4700
      * @tc.name testURI04Chapter0047
      * @tc.desc Verify encodedSSP encodes escape characters like newline and tab
      * @tc.size MediumTest
@@ -749,7 +749,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4800
      * @tc.name testURI04Chapter0048
      * @tc.desc Verify encodedSSP encodes Unicode emoji correctly
      * @tc.size MediumTest
@@ -763,7 +763,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_4900
      * @tc.name testURI04Chapter0049
      * @tc.desc Verify encodedSSP for URIs with port boundary values 0 and 65535
      * @tc.size MediumTest
@@ -779,7 +779,7 @@ export default function URI04Test() {
       expect(uriObj2.encodedSSP).assertEqual("//host:65535/path");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5000
      * @tc.name testURI04Chapter0050
      * @tc.desc Reverse test: port out of range (65536) should throw error
      * @tc.size MediumTest
@@ -807,7 +807,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5100
      * @tc.name testURI04Chapter0051
      * @tc.desc Reverse test: invalid port string should throw error
      * @tc.size MediumTest
@@ -835,7 +835,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5200
      * @tc.name testURI04Chapter0052
      * @tc.desc Reverse test: host containing space should throw error
      * @tc.size MediumTest
@@ -863,7 +863,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5300
      * @tc.name testURI04Chapter0053
      * @tc.desc Reverse test: incomplete percent encoding should throw error
      * @tc.size MediumTest
@@ -890,7 +890,7 @@ export default function URI04Test() {
       }
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5400
      * @tc.name testURI04Chapter0054
      * @tc.desc Reverse test: empty string URI should throw error
      * @tc.size MediumTest
@@ -908,7 +908,7 @@ export default function URI04Test() {
       expect(errorCaught).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5500
      * @tc.name testURI04Chapter0055
      * @tc.desc Reverse test: null as URI string should throw error
      * @tc.size MediumTest
@@ -927,7 +927,7 @@ export default function URI04Test() {
       expect(errorCaught).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5600
      * @tc.name testURI04Chapter0056
      * @tc.desc Reverse test: undefined as URI string should throw error
      * @tc.size MediumTest
@@ -946,7 +946,7 @@ export default function URI04Test() {
       expect(errorCaught).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5700
      * @tc.name testURI04Chapter0057
      * @tc.desc Reverse test: port = Infinity should throw error
      * @tc.size MediumTest
@@ -974,7 +974,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5800
      * @tc.name testURI04Chapter0058
      * @tc.desc Reverse test: port = NaN should throw error
      * @tc.size MediumTest
@@ -1002,7 +1002,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_5900
      * @tc.name testURI04Chapter0059
      * @tc.desc Verify encodedSSP for URI with very long path (stress test)
      * @tc.size MediumTest
@@ -1016,7 +1016,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP.length > 10000).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6000
      * @tc.name testURI04Chapter0060
      * @tc.desc Verify encodedSSP when URI string contains array converted to string
      * @tc.size MediumTest
@@ -1031,7 +1031,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6100
      * @tc.name testURI04Chapter0061
      * @tc.desc Verify encodedSSP when URI string contains object converted to string
      * @tc.size MediumTest
@@ -1044,7 +1044,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertContain("//host/");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6200
      * @tc.name testURI04Chapter0062
      * @tc.desc Verify encodedSSP when URI string contains boolean value
      * @tc.size MediumTest
@@ -1058,7 +1058,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6300
      * @tc.name testURI04Chapter0063
      * @tc.desc Verify encodedSSP for URI with multiple slashes in path
      * @tc.size MediumTest
@@ -1072,7 +1072,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6400
      * @tc.name testURI04Chapter0064
      * @tc.desc Verify encodedSSP for URI with IPv6 host
      * @tc.size MediumTest
@@ -1086,7 +1086,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6500
      * @tc.name testURI04Chapter0065
      * @tc.desc Verify encodedSSP for URI with plus sign in userInfo (should not be encoded)
      * @tc.size MediumTest
@@ -1100,7 +1100,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6600
      * @tc.name testURI04Chapter0066
      * @tc.desc Reverse test: URI with null character should throw error
      * @tc.size MediumTest
@@ -1119,7 +1119,7 @@ export default function URI04Test() {
       expect(errorCaught).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6700
      * @tc.name testURI04Chapter0067
      * @tc.desc Reverse test: URI with lone surrogate should throw error
      * @tc.size MediumTest
@@ -1152,7 +1152,7 @@ export default function URI04Test() {
       }
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6800
      * @tc.name testURI04Chapter0068
      * @tc.desc Verify encodedSSP does not double-encode already percent-encoded characters
      * @tc.size MediumTest
@@ -1166,7 +1166,7 @@ export default function URI04Test() {
       expect(uriObj.encodedSSP).assertEqual(expected);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_6900
      * @tc.name testURI04Chapter0069
      * @tc.desc Verify encodedSSP handles URI with full ASCII printable characters in path
      * @tc.size MediumTest
@@ -1183,7 +1183,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7000
      * @tc.name testURI04Chapter0070
      * @tc.desc Reverse test: URI with unencoded space in path should throw error (if no auto-encode)
      * @tc.size MediumTest
@@ -1220,7 +1220,7 @@ export default function URI04Test() {
     });
     // =============== constructor ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7100
      * @tc.name testURI04Chapter0071
      * @tc.desc Positive test: Create URI object with a standard valid URI string (document example)
      * @tc.size MediumTest
@@ -1245,7 +1245,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7200
      * @tc.name testURI04Chapter0072
      * @tc.desc Positive test: URI with percent-encoded special characters in query parameter
      * @tc.size MediumTest
@@ -1284,7 +1284,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7300
      * @tc.name testURI04Chapter0073
      * @tc.desc Positive test: URI with allowed ASCII printable characters in path (letters, digits, -._~)
      * @tc.size MediumTest
@@ -1305,7 +1305,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7400
      * @tc.name testURI04Chapter0074
      * @tc.desc Positive test: URI with numeric values as query parameters
      * @tc.size MediumTest
@@ -1327,7 +1327,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7500
      * @tc.name testURI04Chapter0075
      * @tc.desc Positive test: URI with boolean and special numeric keywords as query values
      * @tc.size MediumTest
@@ -1350,7 +1350,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7600
      * @tc.name testURI04Chapter0076
      * @tc.desc Positive test: URI with very long query value (treeString style) to verify no crash
      * @tc.size MediumTest
@@ -1373,7 +1373,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7700
      * @tc.name testURI04Chapter0077
      * @tc.desc Positive test: URI with percent-encoded emoji in query parameter
      * @tc.size MediumTest
@@ -1399,7 +1399,7 @@ export default function URI04Test() {
       expect(hasEncodedEmoji || hasDecodedEmoji).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7800
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7800
      @tc.name testURI04Chapter0078
      @tc.desc Reverse test: Empty string should throw 10200002 (invalid uri)
      @tc.size MediumTest
@@ -1417,7 +1417,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_7900
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_7900
      @tc.name testURI04Chapter0079
      @tc.desc Reverse test: undefined parameter should throw 401
      @tc.size MediumTest
@@ -1435,7 +1435,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8000
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8000
      @tc.name testURI04Chapter0080
      @tc.desc Reverse test: null parameter should throw 401
      @tc.size MediumTest
@@ -1453,7 +1453,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8100
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8100
      @tc.name testURI04Chapter0081
      @tc.desc Reverse test: number parameter should throw 401
      @tc.size MediumTest
@@ -1472,7 +1472,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8200
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8200
      @tc.name testURI04Chapter0082
      @tc.desc Reverse test: boolean parameter should throw 401
      @tc.size MediumTest
@@ -1491,7 +1491,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8300
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8300
      @tc.name testURI04Chapter0083
      @tc.desc Reverse test: array parameter should throw 401
      @tc.size MediumTest
@@ -1510,7 +1510,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8400
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8400
      @tc.name testURI04Chapter0084
      @tc.desc Reverse test: object parameter should throw 401
      @tc.size MediumTest
@@ -1529,7 +1529,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8500
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8500
      @tc.name testURI04Chapter0085
      @tc.desc Reverse test: TypedArray parameter should throw 401
      @tc.size MediumTest
@@ -1548,7 +1548,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8600
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8600
      @tc.name testURI04Chapter0086
      @tc.desc Reverse test: URI string containing space (invalid) should throw 10200002
      @tc.size MediumTest
@@ -1566,7 +1566,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8700
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8700
      @tc.name testURI04Chapter0087
      @tc.desc Reverse test: URI string containing newline character should throw 10200002
      @tc.size MediumTest
@@ -1584,7 +1584,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8800
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8800
      @tc.name testURI04Chapter0088
      @tc.desc Reverse test: URI string containing raw emoji (not percent-encoded) should no throw 10200002
      @tc.size MediumTest
@@ -1602,7 +1602,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_8900
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_8900
      @tc.name testURI04Chapter0089
      @tc.desc Reverse test: URI string containing lone surrogate (illegal Unicode) should throw 10200002
      @tc.size MediumTest
@@ -1621,7 +1621,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9000
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9000
      @tc.name testURI04Chapter0090
      @tc.desc Reverse test: Malformed URI missing protocol should throw 10200002
      @tc.size MediumTest
@@ -1639,7 +1639,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9100
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9100
      @tc.name testURI04Chapter0091
      @tc.desc Reverse test: Malformed URI with multiple @ symbols should throw 10200002
      @tc.size MediumTest
@@ -1657,7 +1657,7 @@ export default function URI04Test() {
       expect(thrown).assertFalse();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9200
      * @tc.name testURI04Chapter0092
      * @tc.desc Reverse test: URI string that is just a number "0" should throw 10200002
      * @tc.size MediumTest
@@ -1684,7 +1684,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9300
      * @tc.name testURI04Chapter0093
      * @tc.desc Reverse test: URI string that is just "NaN" should throw 10200002
      * @tc.size MediumTest
@@ -1711,7 +1711,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9400
      * @tc.name testURI04Chapter0094
      * @tc.desc Reverse test: URI string that is just "Infinity" should throw 10200002
      * @tc.size MediumTest
@@ -1738,7 +1738,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9500
      * @tc.name testURI04Chapter0095
      * @tc.desc Reverse test: URI string containing backslash should throw 10200002
      * @tc.size MediumTest
@@ -1765,7 +1765,7 @@ export default function URI04Test() {
     });
 
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9600
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9600
      @tc.name testURI04Chapter0096
      @tc.desc Reverse test: URI string containing tab character should throw 10200002
      @tc.size MediumTest
@@ -1783,7 +1783,7 @@ export default function URI04Test() {
       expect(thrown).assertTrue();
     });
     /**
-     @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9700
+     @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9700
      @tc.name testURI04Chapter0097
      @tc.desc Reverse test: URI with multiple '#' fragments should throw 10200002
      @tc.size MediumTest
@@ -1802,7 +1802,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9800
      * @tc.name testURI04Chapter0098
      * @tc.desc Positive test: URI with percent-encoded full set of special characters (single) in query value
      * @tc.size MediumTest
@@ -1826,7 +1826,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_9900
      * @tc.name testURI04Chapter0099
      * @tc.desc Positive test: URI with percent-encoded full ASCII printable characters (excluding tab) in query value
      * @tc.size MediumTest
@@ -1852,7 +1852,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITest04_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_10000
      * @tc.name testURI04Chapter0100
      * @tc.desc Positive test: URI with percent-encoded double special characters in query value
      * @tc.size MediumTest
