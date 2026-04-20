@@ -39,9 +39,9 @@ import ExpressionsRuntimeTest from "./expressions/cast_expressions/runtime_check
 import ExpressionsTypeInferenceTest from "./expressions/cast_expressions/type_inference_in_cast_expression/ExpressionsTypeInference.test";
 import ExpressionsChainingOperatorTest from "./expressions/chaining_operator/ExpressionsChainingOperator.test";
 import ConditionalAndExpressionTest from "./expressions/conditional_and_expression/ConditionalAndExpression.test";
-// import ConditionalOrExpressionTest from "./expressions/conditional_or_expression/ConditionalOrExpression.test";
-// import ConstantExpressionCheckArrayTest from "./expressions/constant_expression/check_array/ConstantExpressionCheckArray.test";
-// import ConstantExpressionCheckEnumTest from "./expressions/constant_expression/check_enum/ConstantExpressionCheckEnum.test";
+import ConditionalOrExpressionTest from "./expressions/conditional_or_expression/ConditionalOrExpression.test";
+import ConstantExpressionCheckArrayTest from "./expressions/constant_expression/check_array/ConstantExpressionCheckArray.test";
+import ConstantExpressionCheckEnumTest from "./expressions/constant_expression/check_enum/ConstantExpressionCheckEnum.test";
 // import ExpressionsEnsureNotNullishTest from "./expressions/ensure_not_nullish_expression/ExpressionsEnsureNotNullish.test";
 // import BooleanEqualityOperatorsTest from "./expressions/equality_expressions/boolean_equality_operators/BooleanEqualityOperators.test";
 // import EnumerationEqualityOperatorsTest from "./expressions/equality_expressions/enumeration_equality_operators/EnumerationEqualityOperators.test";
@@ -175,9 +175,9 @@ export default function testsuite() {
   ExpressionsTypeInferenceTest();
   ExpressionsChainingOperatorTest();
   ConditionalAndExpressionTest();
-  // ConditionalOrExpressionTest();
-  // ConstantExpressionCheckArrayTest();
-  // ConstantExpressionCheckEnumTest();
+  ConditionalOrExpressionTest();
+  ConstantExpressionCheckArrayTest();
+  ConstantExpressionCheckEnumTest();
   // ExpressionsEnsureNotNullishTest();
   // BooleanEqualityOperatorsTest();
   // EnumerationEqualityOperatorsTest();
