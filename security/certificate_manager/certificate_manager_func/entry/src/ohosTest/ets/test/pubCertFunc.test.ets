@@ -171,7 +171,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_PubCertJsApi_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_PubCertJsApi_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: started.");
       let uri = "oh:t=ak;o=object;u=100;a=20010045";
       let uriObject = generateString(255-27);
@@ -268,7 +268,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_PubCertJsApi_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_PubCertJsApi_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_2000 started.");
       try {
         await certManager.isAuthorizedApp(generateString(255));
@@ -289,7 +289,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_PubCertJsApi_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_PubCertJsApi_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_3000 started.");
       try {
         await certManager.isAuthorizedApp(generateString(256));
@@ -468,7 +468,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '11111111111111111111111111111111';
@@ -591,7 +591,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100: started ");
       let keystore: Uint8Array = createUnit8Array(20480);
       let keystorePwd: string = '123456';
