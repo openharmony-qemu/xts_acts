@@ -48,7 +48,7 @@ export default function SetEventConfigMinidumpTest() {
      */
     it('SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        for (let i = 1; i < 15; i++){
+        for (let i = 1; i < 13; i++){
           console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0100 i : ==  ${i}`);
           let result: number = hiappevent.OhHiappEventSetEventConfigMinidump(i);
           console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0100 i : ==  ${i}, i.result =  ${result}`);
@@ -73,7 +73,7 @@ export default function SetEventConfigMinidumpTest() {
      */
     it('SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        for (let i = 15; i < 16; i++){
+        for (let i = 15; i < 17; i++){
           console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0200 i : ==  ${i}`);
           let result: number = hiappevent.OhHiappEventSetEventConfigMinidump(i);
           console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0200 i : ==  ${i}, i.result =  ${result}`);
@@ -98,6 +98,12 @@ export default function SetEventConfigMinidumpTest() {
      */
     it('SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
+        for (let i = 13; i < 15; i++){
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0300 i : ==  ${i}`);
+          let result: number = hiappevent.OhHiappEventSetEventConfigMinidump(i);
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0300 i : ==  ${i}, i.result =  ${result}`);
+          expect(result).assertEqual(0);
+        }
         for (let i = 17; i < 23; i++){
           console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_0300 i : ==  ${i}`);
           let result: number = hiappevent.OhHiappEventSetEventConfigMinidump(i);
