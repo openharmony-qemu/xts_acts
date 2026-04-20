@@ -72,6 +72,8 @@ export default function abilityTest() {
     let isFloatViewEnabled: boolean = false;
     let isDeviceSupportFloatView: boolean = false;
     let context: common.UIAbilityContext;
+    let context1: common.UIAbilityContext | undefined = undefined;
+    let context2: common.UIAbilityContext | null = null;
     let windowStage: window.WindowStage;
 
     beforeAll(async () => {
@@ -247,8 +249,76 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed to test_Create_1300016. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1300016);
         expect(e.message != null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_Create_FloatView_context_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_CONTEXT_NULL_0500
+     * @tc.desc   test create floatView with null context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_Create_FloatView_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_Create_FloatView_context_null';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context2 as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        floatView.create(config).then((data: floatView.FloatViewController) => {
+          console.info(CaseName + ' Succeeded in creating float view controller. Data: ' + data);
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.code).assertEqual(1300016);
+        expect(e.message != null).assertTrue();
+        console.log(CaseName + ' end.');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_Create_FloatView_context_undefined
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_CONTEXT_UNDEFINED_0100
+     * @tc.desc   test create floatView with undefined context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_Create_FloatView_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_Create_FloatView_context_undefined';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context1 as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        floatView.create(config).then((data: floatView.FloatViewController) => {
+          console.info(CaseName + ' Succeeded in creating float view controller. Data: ' + data);
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to create float view controller. Cause: ' + err.code + ', message: ' + err.message);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.code).assertEqual(1300016);
+        expect(e.message != null).assertTrue();
+        console.log(CaseName + ' end.');
         done();
       }
     })
@@ -288,14 +358,8 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
-          done();
-        } else if (e.code === 1300016) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+        expect(false).assertTrue();
+        done();
       }
     })
 
@@ -315,8 +379,14 @@ export default function abilityTest() {
         console.info(CaseName + ' FloatViewLimits: ' + JSON.stringify(limits));
         expect(limits != null).assertTrue();
         expect(limits.minSize != null).assertTrue();
+        expect(limits.minSize.width).assertLarger(0);
+        expect(limits.minSize.height).assertLarger(0);
         expect(limits.maxSize != null).assertTrue();
+        expect(limits.maxSize.width).assertLarger(0);
+        expect(limits.maxSize.height).assertLarger(0);
         expect(limits.ratioLimits != null).assertTrue();
+        expect(limits.ratioLimits[0].minRatio).assertLarger(0);
+        expect(limits.ratioLimits[0].maxRatio).assertLarger(0);
         console.log(CaseName + ' end.');
         done();
       } catch (e) {
@@ -357,16 +427,13 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to set UI context. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code === 801 && !isDeviceSupportFloatView) {
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
+        
         if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
         } else {
@@ -447,12 +514,8 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to set window size. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code === 801 && !isDeviceSupportFloatView) {
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
@@ -532,7 +595,6 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in setting UI context.');
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting float view.');
-          expect(true).assertTrue();
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
           console.log(CaseName + ' end.');
@@ -540,14 +602,8 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code === 801 && !isDeviceSupportFloatView) {
-            done();
-          } else if (err.code === 201) {
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
@@ -594,6 +650,58 @@ export default function abilityTest() {
           console.info(CaseName + ' Succeeded in stopping float view.');
           expect(err.code).assertEqual(1300030);
           expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_start_two_controller
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_TWOCONTROLLER_0100
+     * @tc.desc   test start two floatViewController, second start should fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_start_two_controller', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_start_two_controller';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController1 = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating floatViewController1.');
+        let floatViewController2 = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating floatViewController2.');
+        await floatViewController1.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context for floatViewController1.');
+        await floatViewController1.start();
+        console.info(CaseName + ' Succeeded in starting floatViewController1.');
+        await floatViewController2.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context for floatViewController2.');
+        floatViewController2.start().then(async () => {
+          console.info(CaseName + ' Succeeded in starting floatViewController2.');
+          await floatViewController1.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to start floatViewController2. Cause: ' + err.code + ', message: ' + err.message);
+          await floatViewController1.stop();
+          console.info(CaseName + ' Succeeded in stopping floatViewController1.');
+          expect(err.code).assertEqual(1300033);
+          expect(err.message != null).assertTrue();
+          console.log(CaseName + ' end.');
           done();
         });
       } catch (e) {
@@ -1124,6 +1232,13 @@ export default function abilityTest() {
       let rectChanged = false;
       let onRectChange = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' Float view rectChange: ' + JSON.stringify(info));
+        expect(info.windowRect.left).assertLarger(0);
+        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.width).assertLarger(0);
+        expect(info.windowRect.height).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(['SIZE_CHANGE', 'POSITION_CHANGE', 'RECT_CHANGE'].includes(info.reason)).assertTrue()
         rectChanged = true;
       };
       try {
@@ -1181,10 +1296,24 @@ export default function abilityTest() {
       };
       let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
+        expect(info.windowRect.left).assertLarger(0);
+        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.width).assertLarger(0);
+        expect(info.windowRect.height).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(['SIZE_CHANGE', 'POSITION_CHANGE', 'RECT_CHANGE'].includes(info.reason)).assertTrue()
         rectChangeCount++;
       };
       let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
+        expect(info.windowRect.left).assertLarger(0);
+        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.width).assertLarger(0);
+        expect(info.windowRect.height).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        expect(['SIZE_CHANGE', 'POSITION_CHANGE', 'RECT_CHANGE'].includes(info.reason)).assertTrue()
         rectChangeCount++;
       };
       try {
@@ -1212,6 +1341,8 @@ export default function abilityTest() {
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         await floatViewController.stop();
+        await sleep(300);
+        expect(rectChangeCount).assertEqual(2);
         console.info(CaseName + ' Succeeded in stopping float view.');
         console.log(CaseName + ' end.');
         done();
@@ -1433,10 +1564,8 @@ export default function abilityTest() {
         context: context,
         templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
       };
-      let limitsChanged = false;
       let onLimitsChange = (limits: floatView.FloatViewLimits) => {
         console.info(CaseName + ' Float view limitsChange: ' + JSON.stringify(limits));
-        limitsChanged = true;
       };
       try {
         let floatViewController = await floatView.create(config);
@@ -1679,12 +1808,8 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to start 2 float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
-          if (err.code === 801 && !isDeviceSupportFloatView) {
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(false).assertTrue();
+          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
