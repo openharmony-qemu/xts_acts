@@ -540,7 +540,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('SUB_Security_CertManager_installPrivateCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600: started ");
       let keystore: Uint8Array = commonParameter.priRsaCredData;
       let keystorePwd: string = '123456';
@@ -600,7 +600,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
 	    let level = certManager.AuthStorageLevel.EL1;
       try{
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
-        console.log("installPrivateCertificate success")
+        console.log("installPrivateCertificate success");
+        expect(null).assertFail();
       }catch(err){
         console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100 e.code = " + err.code);
         expect(err.code).assertEqual(17500003);
