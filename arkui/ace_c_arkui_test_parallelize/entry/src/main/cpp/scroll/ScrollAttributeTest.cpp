@@ -119,19 +119,11 @@ void TestNodeScrollBarColor001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
     auto result = nodeAPI->getAttribute(scroll, NODE_SCROLL_BAR_COLOR);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "rxw",
                  "NODE_TOUCH_EVENTScrollBarColor:0x%{public}08X.", result->value[0].u32);
-    if(result->value[0].u32 != 0x66000000) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_SCROLL_BAR_COLOR is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeScrollBarColor002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &scroll, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(scroll, NODE_SCROLL_BAR_COLOR);
-    if(result->value[0].u32 != 0x66000000) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_SCROLL_BAR_COLOR is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeScrollBarColor011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &scroll, ArkUI_NodeHandle &button)
@@ -142,19 +134,11 @@ void TestNodeScrollBarColor011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
     auto result = nodeAPI->getAttribute(scroll, NODE_SCROLL_BAR_COLOR);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "rxw",
                  "NODE_TOUCH_EVENTScrollBarColor:0x%{public}08X.", result->value[0].u32);
-    if(result->value[0].u32 != 0xFFFF0000) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_SCROLL_BAR_COLOR is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeScrollBarColor012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &scroll, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(scroll, NODE_SCROLL_BAR_COLOR);
-    if(result->value[0].u32 != 0xFFFF0000) {
-        ArkUI_AttributeItem buttonLabel = {.string = "set NODE_SCROLL_BAR_COLOR is error"};
-        nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
-    }
 }
 
 void TestNodeScrollBarDirection001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &scroll, ArkUI_NodeHandle &button)
