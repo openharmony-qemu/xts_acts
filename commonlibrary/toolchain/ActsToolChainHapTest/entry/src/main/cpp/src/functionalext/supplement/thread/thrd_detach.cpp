@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <threads.h>
 #include "test.h"
 

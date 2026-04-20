@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdarg>
+#include <cstdio>
+#include <cstring>
 #include <fcntl.h>
 #include "functionalext.h"
 #include "test.h"
@@ -34,7 +34,7 @@ int ReadFile(int stream, char *fmt, ...)
  * @tc.desc      : Test the vdprintf method to write to the file
  * @tc.level     : Level 0
  */
-void vdprintf_0100(void)
+void Vdprintf0100(void)
 {
     char *value = "asdf";
     char buffer[100] = {0};
@@ -62,7 +62,7 @@ void vdprintf_0100(void)
  * @tc.desc      : Test that vdprintf returns the result when the file descriptor is incorrect
  * @tc.level     : Level 2
  */
-void vdprintf_0200(void)
+void Vdprintf0200(void)
 {
     char *value = "asdf";
     int want = -1;
@@ -75,8 +75,8 @@ void vdprintf_0200(void)
 
 static int VdprintfTestImpl(int argc, char *argv[])
 {
-    vdprintf_0100();
-    vdprintf_0200();
+    Vdprintf0100();
+    Vdprintf0200();
     return g_tStatus;
 }
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <sys/stat.h>
 #include "functionalext.h"
 #define ST_MODE_1 0600

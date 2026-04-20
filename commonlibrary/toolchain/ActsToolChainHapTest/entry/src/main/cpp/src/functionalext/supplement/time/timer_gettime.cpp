@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
 #include "test.h"
 #include "time64_functions.h"
 
-#define Nanoseconds (1000000000)
+#define NANOSECONDS (1000000000)
 static int g_count = 0;
 
-static void timerHandler(int sig)
+static void TimerHandler(int sig)
 {
     g_count++;
     return;
@@ -50,7 +50,7 @@ void TimerGettime0100(void)
     sev.sigev_notify = SIGEV_SIGNAL;
     sev.sigev_signo = SIGUSR1;
     sev.sigev_value.sival_ptr = &timerid;
-    signal(SIGUSR1, timerHandler);
+    signal(SIGUSR1, TimerHandler);
 
     if (timer_create(CLOCK_MONOTONIC, &sev, &timerid) == -1) {
         t_error("%s timer create failed", __func__);
@@ -71,7 +71,7 @@ void TimerGettime0100(void)
         t_error("%s timer gettimer failed", __func__);
     }
 
-    if (tmp.it_value.tv_sec >= 1 || tmp.it_value.tv_nsec >= Nanoseconds) {
+    if (tmp.it_value.tv_sec >= 1 || tmp.it_value.tv_nsec >= NANOSECONDS) {
         t_error("%s get time failed", __func__);
     }
 

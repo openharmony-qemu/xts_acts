@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdio.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstring>
 
 #include "filepath_util.h"
 
-static const char *str = "Hello";
+static const char *g_str = "Hello";
 
 /**
  * @tc.name      : Setbuf0100
@@ -37,13 +37,13 @@ void Setbuf0100(void)
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
-    fputs(str, f);
+    fputs(g_str, f);
     fflush(f);
     fclose(f);
     f = fopen(path, "r");
     memset(buf, 0, sizeof(buf));
     fread(buf, sizeof(buf), 1, f);
-    if (strcmp(buf, str)) {
+    if (strcmp(buf, g_str)) {
         t_error("%s failed: setbuf. buf = %s\n", __func__, buf);
     }
     fclose(f);

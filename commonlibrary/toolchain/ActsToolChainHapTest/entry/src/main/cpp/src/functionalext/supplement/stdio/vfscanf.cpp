@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdarg>
+#include <cstdio>
+#include <cstring>
 #include "filepath_util.h"
+
+#define TEST_VALUE_123 123
 
 int ReadFile(FILE *stream, char *fmt, ...)
 {
@@ -44,7 +46,7 @@ void Vfscanf0100(void)
         t_error("%s fopen failed\n", __func__);
         return;
     }
-    if (fprintf(fp, "%s %d", "vfscanftest", 123) < 0) {
+    if (fprintf(fp, "%s %d", "vfscanftest", TEST_VALUE_123) < 0) {
         t_error("%s fprintf failed\n", __func__);
         return;
     }
@@ -57,7 +59,7 @@ void Vfscanf0100(void)
     if (strcmp(buffer, "vfscanftest") != 0) {
         t_error("%s vfscanf get is '%s' are not 'vfscanftest'\n", __func__, buffer);
     }
-    if (val != 123) {
+    if (val != TEST_VALUE_123) {
         t_error("%s vfscanf get is %d are not 123\n", __func__, val);
     }
     fclose(fp);
@@ -81,7 +83,7 @@ void Vfscanf0200(void)
         t_error("%s fopen failed\n", __func__);
         return;
     }
-    if (fprintf(fp, "%s %d", "vfscanftest", 123) < 0) {
+    if (fprintf(fp, "%s %d", "vfscanftest", TEST_VALUE_123) < 0) {
         t_error("%s fprintf failed\n", __func__);
         return;
     }
@@ -118,7 +120,7 @@ void Vfscanf0300(void)
         t_error("%s fopen failed", __func__);
         return;
     }
-    if (fprintf(fp, "%s %d", "vfscanftest", 123) < 0) {
+    if (fprintf(fp, "%s %d", "vfscanftest", TEST_VALUE_123) < 0) {
         t_error("%s fprintf failed", __func__);
         return;
     }

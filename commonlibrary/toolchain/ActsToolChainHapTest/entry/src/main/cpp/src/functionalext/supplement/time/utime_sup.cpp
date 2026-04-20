@@ -14,20 +14,18 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
+#include <cstdio>
 #include <sys/stat.h>
-#include <time.h>
+#include <ctime>
 #include <utime.h>
 #include "test.h"
-
-extern "C" int __utime64(const char *, const struct utimbuf *);
 
 /**
  * @tc.name      : utime_0100
  * @tc.desc      : Specify file modification and access times
  * @tc.level     : Level 0
  */
-void utime_0100(void)
+void Utime0100(void)
 {
     int fd;
     char file[] = "/data/storage/el2/base/cache/utime1.txt";
@@ -58,7 +56,7 @@ void utime_0100(void)
  * @tc.desc      : When times is a NULL pointer, the access and modification times are set to the current time
  * @tc.level     : Level 1
  */
-void utime_0200(void)
+void Utime0200(void)
 {
     const char *path = "/data/storage/el2/base/cache/utime.txt";
     int fd = open(path, O_RDWR | O_RSYNC | O_CREAT, 0664);
@@ -69,7 +67,11 @@ void utime_0200(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold, t_aold, t_now, t_mnew, t_anew;
+    time_t t_mold;
+    time_t t_aold;
+    time_t t_now;
+    time_t t_mnew;
+    time_t t_anew;
     stat(path, &buf1);
 
     t_mold = buf1.st_mtime;
@@ -91,7 +93,7 @@ void utime_0200(void)
  * @tc.desc      : Specify file modification and access times
  * @tc.level     : Level 0
  */
-void utime64_0100(void)
+void Utime640100(void)
 {
     int fd;
     char file[] = "/data/storage/el2/base/cache/utime641.txt";
@@ -105,7 +107,7 @@ void utime64_0100(void)
         stat(file, &info);
         ubuf.modtime = 0;
         time(&ubuf.actime);
-        if (__utime64(file, &ubuf) != 0) {
+        if (utime(file, &ubuf) != 0) {
             t_error("%s __utime64 failed", __func__);
         } else {
             stat(file, &info);
@@ -119,9 +121,9 @@ void utime64_0100(void)
 
 static int UtimeSupTestImpl(int argc, char *argv[])
 {
-    utime_0100();
-    utime_0200();
-    utime64_0100();
+    Utime0100();
+    Utime0200();
+    Utime640100();
     return T_STATUS;
 }
 

@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <threads.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <time.h>
-#include <errno.h>
+#include <cstdio>
+#include <ctime>
+#include <cerrno>
 #include "test.h"
 
 #define LOCK_SUCCESS (0)
@@ -131,7 +131,8 @@ void ThrdEqual0100(void)
  */
 void ThrdEqual0200(void)
 {
-    thrd_t thr1, thr2;
+    thrd_t thr1;
+    thrd_t thr2;
     int result;
 
     result = thrd_create(&thr1, ThreadfuncB, nullptr);

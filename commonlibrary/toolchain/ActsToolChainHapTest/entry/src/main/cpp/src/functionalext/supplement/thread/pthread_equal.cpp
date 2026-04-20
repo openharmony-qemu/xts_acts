@@ -18,13 +18,13 @@
 
 static pthread_t g_pthd_1, g_pthd_2;
 
-static void *ThreadfuncA(void *arg)
+static void *ThreadFuncA(void *arg)
 {
     g_pthd_1 = pthread_self();
     return arg;
 }
 
-static void *ThreadfuncB(void *arg)
+static void *ThreadFuncB(void *arg)
 {
     pthread_t pth = pthread_self();
     int ret = pthread_equal(g_pthd_1, pth);
@@ -34,7 +34,7 @@ static void *ThreadfuncB(void *arg)
     return arg;
 }
 
-static void *ThreadfuncC(void *arg)
+static void *ThreadFuncC(void *arg)
 {
     int ret = pthread_equal(g_pthd_2, pthread_self());
     if (ret == 0) {
@@ -50,15 +50,16 @@ static void *ThreadfuncC(void *arg)
  */
 void PthreadEqual0100(void)
 {
-    pthread_t pthread1, pthread2;
+    pthread_t pthread1;
+    pthread_t pthread2;
     int result;
 
-    result = pthread_create(&pthread1, nullptr, ThreadfuncA, nullptr);
+    result = pthread_create(&pthread1, nullptr, ThreadFuncA, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
     }
-    result = pthread_create(&pthread2, nullptr, ThreadfuncB, nullptr);
+    result = pthread_create(&pthread2, nullptr, ThreadFuncB, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;
@@ -83,7 +84,7 @@ void PthreadEqual0200(void)
 {
     int result;
 
-    result = pthread_create(&g_pthd_2, nullptr, ThreadfuncC, nullptr);
+    result = pthread_create(&g_pthd_2, nullptr, ThreadFuncC, nullptr);
     if (result != 0) {
         t_error("%s pthread_create failed\n", __func__);
         return;

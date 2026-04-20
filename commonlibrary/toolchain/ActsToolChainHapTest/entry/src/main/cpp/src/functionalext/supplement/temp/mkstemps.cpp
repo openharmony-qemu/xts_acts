@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 
 #define SUFFIX_LEN 5

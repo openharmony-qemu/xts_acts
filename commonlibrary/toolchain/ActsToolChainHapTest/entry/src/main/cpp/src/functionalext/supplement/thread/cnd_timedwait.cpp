@@ -20,18 +20,18 @@
 
 #define TIMEOUT_SEC 3600
 
-static cnd_t cond;
-static mtx_t mutex;
+static cnd_t g_cond;
+static mtx_t g_mutex;
 
-static int signal_parent(void *arg)
+static int SignalParent(void *arg)
 {
-    if (mtx_lock(&mutex) != thrd_success) {
+    if (mtx_lock(&g_mutex) != thrd_success) {
         t_error("%s mtx_lock failed\n", __func__);
     }
-    if (cnd_signal(&cond) != thrd_success) {
+    if (cnd_signal(&g_cond) != thrd_success) {
         t_error("%s cnd_signal failed\n", __func__);
     }
-    if (mtx_unlock(&mutex) != thrd_success) {
+    if (mtx_unlock(&g_mutex) != thrd_success) {
         t_error("%s mtx_unlock failed\n", __func__);
     }
 
@@ -43,31 +43,31 @@ static int signal_parent(void *arg)
  * @tc.desc      : The parameter is valid and can block the calling thread and release the specified mutex.
  * @tc.level     : Level 0
  */
-void cnd_timedwait_0100(void)
+void CndTimedwait0100(void)
 {
     thrd_t id;
-    struct timespec w_time;
+    struct timespec wTime;
 
-    if (cnd_init(&cond) != thrd_success) {
+    if (cnd_init(&g_cond) != thrd_success) {
         t_error("%s cnd_init failed\n", __func__);
     }
-    if (mtx_init(&mutex, mtx_plain) != thrd_success) {
+    if (mtx_init(&g_mutex, mtx_plain) != thrd_success) {
         t_error("%s mtx_init failed\n", __func__);
     }
-    if (mtx_lock(&mutex) != thrd_success) {
+    if (mtx_lock(&g_mutex) != thrd_success) {
         t_error("%s mtx_lock failed\n", __func__);
     }
-    if (clock_gettime(CLOCK_REALTIME, &w_time) != 0) {
+    if (clock_gettime(CLOCK_REALTIME, &wTime) != 0) {
         t_error("%s clock_gettime failed\n", __func__);
     }
 
-    w_time.tv_sec += TIMEOUT_SEC;
+    wTime.tv_sec += TIMEOUT_SEC;
 
-    if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
+    if (thrd_create(&id, SignalParent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);
     }
 
-    if (cnd_timedwait(&cond, &mutex, &w_time) != thrd_success) {
+    if (cnd_timedwait(&g_cond, &g_mutex, &wTime) != thrd_success) {
         t_error("%s cnd_timedwait failed\n", __func__);
     }
 
@@ -75,11 +75,11 @@ void cnd_timedwait_0100(void)
         t_error("%s thrd_join failed\n", __func__);
     }
 
-    if (mtx_unlock(&mutex) != thrd_success) {
+    if (mtx_unlock(&g_mutex) != thrd_success) {
         t_error("%s mtx_unlock failed\n", __func__);
     }
-    mtx_destroy(&mutex);
-    cnd_destroy(&cond);
+    mtx_destroy(&g_mutex);
+    cnd_destroy(&g_cond);
 }
 
 /**
@@ -87,31 +87,31 @@ void cnd_timedwait_0100(void)
  * @tc.desc      : The parameter is valid and can block the calling thread and release the specified mutex.
  * @tc.level     : Level 0
  */
-void cnd_timedwait_time64_0100(void)
+void CndTimedwaitTime640100(void)
 {
     thrd_t id;
-    struct timespec w_time;
+    struct timespec wTime;
 
-    if (cnd_init(&cond) != thrd_success) {
+    if (cnd_init(&g_cond) != thrd_success) {
         t_error("%s cnd_init failed\n", __func__);
     }
-    if (mtx_init(&mutex, mtx_plain) != thrd_success) {
+    if (mtx_init(&g_mutex, mtx_plain) != thrd_success) {
         t_error("%s mtx_init failed\n", __func__);
     }
-    if (mtx_lock(&mutex) != thrd_success) {
+    if (mtx_lock(&g_mutex) != thrd_success) {
         t_error("%s mtx_lock failed\n", __func__);
     }
-    if (clock_gettime(CLOCK_REALTIME, &w_time) != 0) {
+    if (clock_gettime(CLOCK_REALTIME, &wTime) != 0) {
         t_error("%s clock_gettime failed\n", __func__);
     }
 
-    w_time.tv_sec += TIMEOUT_SEC;
+    wTime.tv_sec += TIMEOUT_SEC;
 
-    if (thrd_create(&id, signal_parent, nullptr) != thrd_success) {
+    if (thrd_create(&id, SignalParent, nullptr) != thrd_success) {
         t_error("%s thrd_create failed\n", __func__);
     }
 
-    if (CndTimedwaitTime64(&cond, &mutex, &w_time) != thrd_success) {
+    if (CndTimedwaitTime64(&g_cond, &g_mutex, &wTime) != thrd_success) {
         t_error("%s cnd_timedwait failed\n", __func__);
     }
 
@@ -119,17 +119,17 @@ void cnd_timedwait_time64_0100(void)
         t_error("%s thrd_join failed\n", __func__);
     }
 
-    if (mtx_unlock(&mutex) != thrd_success) {
+    if (mtx_unlock(&g_mutex) != thrd_success) {
         t_error("%s mtx_unlock failed\n", __func__);
     }
-    mtx_destroy(&mutex);
-    cnd_destroy(&cond);
+    mtx_destroy(&g_mutex);
+    cnd_destroy(&g_cond);
 }
 
-static int cnd_timedwaitTest_with_args(int argc, char *argv[])
+static int CndTimedwaitTestWithArgs(int argc, char *argv[])
 {
-    cnd_timedwait_0100();
-    cnd_timedwait_time64_0100();
+    CndTimedwait0100();
+    CndTimedwaitTime640100();
     return g_tStatus;
 }
 
@@ -137,5 +137,5 @@ int CndTimedwaitTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return cnd_timedwaitTest_with_args(1, libcArgv);
+    return CndTimedwaitTestWithArgs(1, libcArgv);
 }

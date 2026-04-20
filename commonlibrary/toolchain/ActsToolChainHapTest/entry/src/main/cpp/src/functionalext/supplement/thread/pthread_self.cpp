@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <pthread.h>
 #include "test.h"
 
@@ -25,7 +25,7 @@ void *ThreadFunc(void *arg)
     if (g_tid1 != result) {
         t_error("pthread_self_0100 pthread_self get result is %ld are not want %ld", result, g_tid1);
     }
-    return 0;
+    return nullptr;
 }
 
 /**

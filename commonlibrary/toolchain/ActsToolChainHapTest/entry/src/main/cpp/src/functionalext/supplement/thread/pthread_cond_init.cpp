@@ -24,7 +24,7 @@ const int SUCCESS = 0;
  *                 and the parameter assignment can be passed normally
  * @tc.level     : Level 0
  */
-void pthread_cond_init_0100()
+void PthreadCondInit0100()
 {
     static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
     int back = pthread_cond_init(&cond, nullptr);
@@ -37,7 +37,7 @@ void pthread_cond_init_0100()
  *                 the parameter assignment can be passed normally, and the thread can be created normally
  * @tc.level     : Level 0
  */
-void pthread_cond_init_0200()
+void PthreadCondInit0200()
 {
     static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
     pthread_condattr_t a;
@@ -49,8 +49,8 @@ void pthread_cond_init_0200()
 
 static int PthreadCondInitTestImpl(int argc, char *argv[])
 {
-    pthread_cond_init_0100();
-    pthread_cond_init_0200();
+    PthreadCondInit0100();
+    PthreadCondInit0200();
     return g_tStatus;
 }
 

@@ -21,7 +21,7 @@
  * @tc.desc      : Authentication is successful (call the setvbuf function to see the return value)
  * @tc.level     : Level 0
  */
-void setvbuf_0100(void)
+void Setvbuf0100(void)
 {
     char buff[1024] = {0};
     char path[PATH_MAX] = {0};
@@ -41,7 +41,7 @@ void setvbuf_0100(void)
  * @tc.desc      : Authentication is fails (call the setvbuf function to see the return value)
  * @tc.level     : Level 2
  */
-void setvbuf_0200(void)
+void Setvbuf0200(void)
 {
     char buff[1024] = {0};
     char path[PATH_MAX] = {0};
@@ -58,8 +58,8 @@ void setvbuf_0200(void)
 
 static int SetvbufTestImpl(int argc, char *argv[])
 {
-    setvbuf_0100();
-    setvbuf_0200();
+    Setvbuf0100();
+    Setvbuf0200();
     return g_tStatus;
 }
 

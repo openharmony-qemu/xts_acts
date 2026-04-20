@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdarg.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdarg>
+#include <cstdlib>
 #include "test.h"
 
 #define BUFFER_SIZE 1000
 #define FSEEK_OFFSET 0
 
-char *getfileall(char *fname)
+char *Getfileall(char *fname)
 {
     FILE *fp;
     char *str;
@@ -38,50 +38,50 @@ char *getfileall(char *fname)
     str[0] = 0;
     rewind(fp);
 
-    while ((fgets(txt, BUFFER_SIZE, fp)) != NULL) {
+    while ((fgets(txt, BUFFER_SIZE, fp)) != nullptr) {
         strcat(str, txt);
     }
     fclose(fp);
     return str;
 }
 
-void vfprintf_test(char *file_name, char *format, char *func_name, char *want_reuslt, ...)
+void vfprintf_test(char *file_name, char *format, char *func_name, char *wantReuslt, ...)
 {
     FILE *file = fopen(file_name, "w");
     if (!file) {
         t_error("%s fopen failed\n", func_name);
     }
     va_list ap;
-    va_start(ap, want_reuslt);
+    va_start(ap, wantReuslt);
     int result = vfprintf(file, format, ap);
     va_end(ap);
     fclose(file);
     if (result < 0) {
         t_error("%s vfprintf get result is %d not less 0", func_name, result);
     }
-    char *buffer = getfileall(file_name);
-    if (strcmp(buffer, want_reuslt) != 0) {
-        t_error("%s vfprintf get is '%s' not '%s'", func_name, buffer, want_reuslt);
+    char *buffer = Getfileall(file_name);
+    if (strcmp(buffer, wantReuslt) != 0) {
+        t_error("%s vfprintf get is '%s' not '%s'", func_name, buffer, wantReuslt);
     }
     remove(file_name);
 }
 
-void vfprintf_n_test(char *file_name, char *format, char *func_name, char *want_reuslt, ...)
+void vfprintf_n_test(char *file_name, char *format, char *func_name, char *wantReuslt, ...)
 {
     FILE *file = fopen(file_name, "w");
     if (!file) {
         t_error("%s fopen failed\n", func_name);
     }
     va_list ap;
-    va_start(ap, want_reuslt);
+    va_start(ap, wantReuslt);
     int result = vfprintf(file, format, ap);
     va_end(ap);
     fclose(file);
     if (result < 0) {
         t_error("%s vfprintf get result is %d not less 0", func_name, result);
     }
-    char *buffer = getfileall(file_name);
-    if (strcmp(buffer, want_reuslt) == 0) {
+    char *buffer = Getfileall(file_name);
+    if (strcmp(buffer, wantReuslt) == 0) {
         t_error("%s vfprintf get is '%s'", func_name, buffer);
     }
     remove(file_name);
@@ -94,13 +94,15 @@ static int VfprintfTestImpl(int argc, char *argv[])
      * @tc.desc      : Format the output string through vfprintf, the formatted part is a number
      * @tc.level     : Level 0
      */
-    vfprintf_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %s and %s", "vfprintf_0100", "value is qwe and 1", "qwe", "1");
+    vfprintf_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %s and %s", "vfprintf_0100",
+                  "value is qwe and 1", "qwe", "1");
     /**
      * @tc.name      : vfprintf_0200
      * @tc.desc      : Format the output string through vfprintf, the formatted part is a string
      * @tc.level     : Level 1
      */
-    vfprintf_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %d and %d", "vfprintf_0200", "value is 1 and 1", 1, 1);
+    vfprintf_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %d and %d", "vfprintf_0200",
+                  "value is 1 and 1", 1, 1);
     /**
      * @tc.name      : vfprintf_0300
      * @tc.desc      : When calling vfprintf, the parameters passed in exceeds the number of formats to be formatted
@@ -113,7 +115,8 @@ static int VfprintfTestImpl(int argc, char *argv[])
      * formatted
      * @tc.level     : Level 2
      */
-    vfprintf_n_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %s and %d", "vfprintf_0400", "value is qer and erq", "qer", "erq");
+    vfprintf_n_test("/data/storage/el2/base/cache/vfprintf.txt", "value is %s and %d", "vfprintf_0400",
+                    "value is qer and erq", "qer", "erq");
     return g_tStatus;
 }
 

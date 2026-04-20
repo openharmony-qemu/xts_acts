@@ -22,7 +22,7 @@
 #define PRIO_HIGH 51
 #define SUCCESS_CODE 0
 
-static void *Thread1(void *arg)
+static void *Thread1Func(void *arg)
 {
     (void)arg;
     sleep(SLEEP_SECONDS);
@@ -31,7 +31,7 @@ static void *Thread1(void *arg)
     return nullptr;
 }
 
-static void *Thread2(void *arg)
+static void *Thread2Func(void *arg)
 {
     (void)arg;
     sleep(SLEEP_SECONDS);
@@ -41,7 +41,7 @@ static void *Thread2(void *arg)
     return nullptr;
 }
 
-static void setthreadproperty(pthread_attr_t *attr, struct sched_param *param)
+static void SetThreadProperty(pthread_attr_t *attr, struct sched_param *param)
 {
     int ret = pthread_attr_init(attr);
     EXPECT_EQ("pthread_setschedprio_0100", ret, CMPFLAG);
@@ -61,14 +61,14 @@ static void setthreadproperty(pthread_attr_t *attr, struct sched_param *param)
  * @tc.desc      : Set the thread properties, and judge the normal system of the function in the child thread
  * @tc.level     : Level 0
  */
-void pthread_setschedprio_0100(void)
+void PthreadSetschedprio0100(void)
 {
     pthread_t thread;
     pthread_attr_t attr;
     struct sched_param param;
 
-    setthreadproperty(&attr, &param);
-    int ret = pthread_create(&thread, &attr, Thread1, nullptr);
+    SetThreadProperty(&attr, &param);
+    int ret = pthread_create(&thread, &attr, Thread1Func, nullptr);
     if (ret != 0) {
         EXPECT_EQ("pthread_setschedprio_0100", ret, CMPFLAG);
         return;
@@ -83,14 +83,14 @@ void pthread_setschedprio_0100(void)
  * @tc.desc      : Set the thread properties, and judge abnormal system of the function in the child thread
  * @tc.level     : Level 2
  */
-void pthread_setschedprio_0200(void)
+void PthreadSetschedprio0200(void)
 {
     pthread_t thread;
     pthread_attr_t attr;
     struct sched_param param;
 
-    setthreadproperty(&attr, &param);
-    int ret = pthread_create(&thread, &attr, Thread2, nullptr);
+    SetThreadProperty(&attr, &param);
+    int ret = pthread_create(&thread, &attr, Thread2Func, nullptr);
     if (ret != 0) {
         EXPECT_EQ("pthread_setschedprio_0200", ret, CMPFLAG);
         return;
@@ -102,8 +102,8 @@ void pthread_setschedprio_0200(void)
 
 static int PthreadSetschedprioTestImpl(void)
 {
-    pthread_setschedprio_0100();
-    pthread_setschedprio_0200();
+    PthreadSetschedprio0100();
+    PthreadSetschedprio0200();
 
     return 0;
 }

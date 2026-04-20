@@ -14,7 +14,7 @@
  */
 
 #include <fcntl.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**
@@ -23,7 +23,7 @@
  *                 create a temporary file.
  * @tc.level     : Level 0
  */
-void mkostemps_0100(void)
+void Mkostemps0100(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemps_0100_XXXXXX.dat";
     int fd = mkostemps(tmpfile, strlen(".dat"), O_CREAT);
@@ -46,7 +46,7 @@ void mkostemps_0100(void)
  *                 create a temporary file.
  * @tc.level     : Level 0
  */
-void mkostemps_0200(void)
+void Mkostemps0200(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemps_0200_XXXXXX";
     int fd = mkostemps(tmpfile, 0, O_CREAT);
@@ -68,7 +68,7 @@ void mkostemps_0200(void)
  * @tc.desc      : Verify mkstemp process fail. Because provide error template.
  * @tc.level     : Level 2
  */
-void mkostemps_0300(void)
+void Mkostemps0300(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemps_0300.dat";
     int fd = mkostemps(tmpfile, strlen(".dat"), O_CREAT);
@@ -90,7 +90,7 @@ void mkostemps_0300(void)
  * @tc.desc      : Template with 'XXXXXX' not at the end
  * @tc.level     : Level 2
  */
-void mkostemps_0400(void)
+void Mkostemps0400(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemps_0400_XXXXXX_dir";
     int fd = mkostemps(tmpfile, 0, O_CREAT);
@@ -106,7 +106,7 @@ void mkostemps_0400(void)
  * @tc.desc      : Verify mkostemps with large suffix length
  * @tc.level     : Level 2
  */
-void mkostemps_0500(void)
+void Mkostemps0500(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemps_0500_XXXXXX.dat";
     int fd = mkostemps(tmpfile, 100, O_CREAT);  // Suffix length larger than actual suffix
@@ -121,7 +121,7 @@ void mkostemps_0500(void)
  * @tc.desc      : Verify mkostemp generates unique filenames on multiple calls
  * @tc.level     : Level 2
  */
-void mkostemps_0600(void)
+void Mkostemps0600(void)
 {
     char tmpfile1[] = "/data/storage/el2/base/cache/mkostemps_0600_XXXXXX";
     char tmpfile2[] = "/data/storage/el2/base/cache/mkostemps_0600_XXXXXX";
@@ -143,12 +143,12 @@ void mkostemps_0600(void)
 
 static int MkostempsTestImpl(void)
 {
-    mkostemps_0100();
-    mkostemps_0200();
-    mkostemps_0300();
-    mkostemps_0400();
-    mkostemps_0500();
-    mkostemps_0600();
+    Mkostemps0100();
+    Mkostemps0200();
+    Mkostemps0300();
+    Mkostemps0400();
+    Mkostemps0500();
+    Mkostemps0600();
     return T_STATUS;
 }
 

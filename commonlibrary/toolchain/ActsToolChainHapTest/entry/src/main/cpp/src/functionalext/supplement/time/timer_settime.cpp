@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
+#include <ctime>
 #include <unistd.h>
 
 #include "test.h"

@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <threads.h>
 #include "test.h"
 #include "time64_functions.h"
 
-#define THRD_SLEEP_INVALID_PARAM -2
+#define THRD_SLEEP_INVALID_PARAM (-2)
 
 static int g_count = 0;
 

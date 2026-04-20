@@ -14,7 +14,7 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <sys/time.h>
 #include <unistd.h>
 #include "functionalext.h"
@@ -29,7 +29,7 @@ static pthread_cond_t g_gcond;
 static pthread_mutex_t g_gmutex;
 struct timespec g_gtm;
 
-static void *ThreadfuncA(void *arg)
+static void *ThreadFuncA(void *arg)
 {
     struct timeval now;
     struct timespec outtime;
@@ -44,7 +44,7 @@ static void *ThreadfuncA(void *arg)
     return arg;
 }
 
-static void *ThreadfuncB(void *arg)
+static void *ThreadFuncB(void *arg)
 {
     pthread_mutex_lock(&g_gmutex);
     pthread_cond_signal(&g_gcond);
@@ -59,9 +59,10 @@ static void *ThreadfuncB(void *arg)
  */
 void PthreadCondTimedwait0100(void)
 {
-    pthread_t pid1, pid2;
-    pthread_create(&pid1, nullptr, ThreadfuncA, nullptr);
-    pthread_create(&pid2, nullptr, ThreadfuncB, nullptr);
+    pthread_t pid1;
+    pthread_t pid2;
+    pthread_create(&pid1, nullptr, ThreadFuncA, nullptr);
+    pthread_create(&pid2, nullptr, ThreadFuncB, nullptr);
     pthread_join(pid1, nullptr);
     pthread_join(pid2, nullptr);
     EXPECT_EQ("pthread_cond_timedwait_0200", g_flag, EXPECTED_FLAG);

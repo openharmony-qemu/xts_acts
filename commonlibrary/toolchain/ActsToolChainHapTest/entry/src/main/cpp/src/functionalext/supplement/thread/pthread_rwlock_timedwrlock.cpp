@@ -14,7 +14,7 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 #include "time64_functions.h"
 
@@ -23,7 +23,7 @@
  * @tc.desc      : Provide correct parameters, test timeout and rwlock
  * @tc.level     : Level 0
  */
-void pthread_rwlock_timedwrlock_0100(void)
+void PthreadRwlockTimedwrlock0100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -47,7 +47,7 @@ void pthread_rwlock_timedwrlock_0100(void)
  * @tc.desc      : In the locked (read lock) state, the test times out and rwlock
  * @tc.level     : Level 2
  */
-void pthread_rwlock_timedwrlock_0200(void)
+void PthreadRwlockTimedwrlock0200(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -71,7 +71,7 @@ void pthread_rwlock_timedwrlock_0200(void)
  * @tc.desc      : In the locked (write lock) state, the test times out and rwlock
  * @tc.level     : Level 2
  */
-void pthread_rwlock_timedwrlock_0300(void)
+void PthreadRwlockTimedwrlock0300(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -95,7 +95,7 @@ void pthread_rwlock_timedwrlock_0300(void)
  * @tc.desc      : Provide correct parameters, test timeout and rwlock
  * @tc.level     : Level 0
  */
-void pthread_rwlock_timedwrlock_time64_0100(void)
+void PthreadRwlockTimedwrlockTime640100(void)
 {
     struct timespec ts = {0};
     pthread_rwlock_t rwlock;
@@ -116,10 +116,10 @@ void pthread_rwlock_timedwrlock_time64_0100(void)
 
 static int PthreadRwlockTimedwrlockTestImpl(void)
 {
-    pthread_rwlock_timedwrlock_0100();
-    pthread_rwlock_timedwrlock_0200();
-    pthread_rwlock_timedwrlock_0300();
-    pthread_rwlock_timedwrlock_time64_0100();
+    PthreadRwlockTimedwrlock0100();
+    PthreadRwlockTimedwrlock0200();
+    PthreadRwlockTimedwrlock0300();
+    PthreadRwlockTimedwrlockTime640100();
     return g_tStatus;
 }
 

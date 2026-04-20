@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -30,7 +30,7 @@ const int FAILED = -1;
  *
  * /data/storage/el2/base/cache/
  */
-void access_0100(void)
+void Access0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -49,7 +49,7 @@ void access_0100(void)
  *                 the parameter amode is F_OK,function returns SUCCESSfully.
  * @tc.level     : Level 0
  */
-void access_0200(void)
+void Access0200(void)
 {
     char passbuff[90];
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
@@ -70,7 +70,7 @@ void access_0200(void)
  *                 the parameter amode is F_OK,function returns failure.
  * @tc.level     : Level 2
  */
-void access_0300(void)
+void Access0300(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/noaccesstest.txt";
     int isExist = access(ptr, F_OK);
@@ -98,7 +98,7 @@ void Access0400(void)
  *                 the parameter amode is R_OK,function returns successfully.
  * @tc.level     : Level 0
  */
-void access_0500(void)
+void Access0500(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -117,7 +117,7 @@ void access_0500(void)
  *                 the parameter amode is W_OK,function returns successfully.
  * @tc.level     : Level 0
  */
-void access_0600(void)
+void Access0600(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -136,7 +136,7 @@ void access_0600(void)
  *                 the parameter amode is W_OK,function returns successfully.
  * @tc.level     : Level 0
  */
-void access_0700(void)
+void Access0700(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -156,7 +156,7 @@ void access_0700(void)
  *                 the parameter amode is R_OK,function returns failure.
  * @tc.level     : Level 2
  */
-void access_0800(void)
+void Access0800(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
@@ -169,21 +169,21 @@ void access_0800(void)
     ptr = nullptr;
 }
 
-TEST_FUN G_Fun_Array[] = {
-    access_0100,
-    access_0200,
-    access_0300,
-    access_0500,
-    access_0600,
-    access_0700,
-    access_0800,
+TEST_FUN g_funArray[] = {
+    Access0100,
+    Access0200,
+    Access0300,
+    Access0500,
+    Access0600,
+    Access0700,
+    Access0800,
 };
 
-static int accessTest_with_args(int argc, char *argv[])
+static int AccessTestWithArgs(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(G_Fun_Array[0]);
+    int num = sizeof(g_funArray) / sizeof(g_funArray[0]);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_funArray[pos]();
     }
     return g_tStatus;
 }
@@ -192,5 +192,5 @@ int AccessTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, nullptr };
-    return accessTest_with_args(1, libcArgv);
+    return AccessTestWithArgs(1, libcArgv);
 }

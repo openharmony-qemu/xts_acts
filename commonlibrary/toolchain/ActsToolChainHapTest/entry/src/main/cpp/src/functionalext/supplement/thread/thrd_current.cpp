@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <threads.h>
 #include <pthread.h>
-#include <stdio.h>
-#include <time.h>
-#include <errno.h>
+#include <cstdio>
+#include <ctime>
+#include <cerrno>
 #include "test.h"
 
 #define LOCK_SUCCESS (0)
@@ -61,7 +61,7 @@ int TrylockWithTimeout(pthread_mutex_t *mutex)
     } while (1);
 }
 
-static int threadfuncA(void *arg)
+static int ThreadFuncA(void *arg)
 {
     g_count++;
     thrd_t id = thrd_current();
@@ -72,7 +72,7 @@ static int threadfuncA(void *arg)
     thrd_exit(thrd_success);
 }
 
-static int ThreadfuncB(void *arg)
+static int ThreadFuncB(void *arg)
 {
     int result = TrylockWithTimeout(&g_mutex);
     if (result == LOCK_SUCCESS) {
@@ -92,11 +92,11 @@ static int ThreadfuncB(void *arg)
  * @tc.desc      : Returns the identifier of the calling thread
  * @tc.level     : Level 0
  */
-void thrd_current_0100(void)
+void ThrdCurrent0100(void)
 {
     int result;
 
-    result = thrd_create(&g_thr, threadfuncA, nullptr);
+    result = thrd_create(&g_thr, ThreadFuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -123,17 +123,18 @@ void thrd_current_0100(void)
  * @tc.desc      : Create two threads to execute the same func
  * @tc.level     : Level 1
  */
-void thrd_current_0200(void)
+void ThrdCurrent0200(void)
 {
-    thrd_t thr1, thr2;
+    thrd_t thr1;
+    thrd_t thr2;
     int result;
 
-    result = thrd_create(&thr1, ThreadfuncB, nullptr);
+    result = thrd_create(&thr1, ThreadFuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
 
-    result = thrd_create(&thr2, ThreadfuncB, nullptr);
+    result = thrd_create(&thr2, ThreadFuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -174,8 +175,8 @@ void thrd_current_0200(void)
 
 static int ThrdCurrentTestImpl(int argc, char *argv[])
 {
-    thrd_current_0100();
-    thrd_current_0200();
+    ThrdCurrent0100();
+    ThrdCurrent0200();
     return g_tStatus;
 }
 

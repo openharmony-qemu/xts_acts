@@ -14,7 +14,7 @@
  */
 
 #include <fcntl.h>
-#include <string.h>
+#include <cstring>
 #include <unistd.h>
 #include "test.h"
 
@@ -23,7 +23,7 @@
  * @tc.desc      : Change the current working directory of the calling process to the directory pointed to fd
  * @tc.level     : Level 0
  */
-void fchdir_0100(void)
+void Fchdir0100(void)
 {
     char buf[30];
 
@@ -54,7 +54,7 @@ void fchdir_0100(void)
 
 static int FchdirTestImpl(int argc, char *argv[])
 {
-    fchdir_0100();
+    Fchdir0100();
     return g_tStatus;
 }
 

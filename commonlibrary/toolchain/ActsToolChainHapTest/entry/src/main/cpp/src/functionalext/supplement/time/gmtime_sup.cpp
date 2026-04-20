@@ -13,17 +13,17 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 #include "functionalext.h"
 #include "time64_functions.h"
 
-struct gmtime_struct {
+struct GmtimeStruct {
     const char *tz;
     const char *result;
 };
 
-static const struct gmtime_struct G_RESULT_DATA[] = {
+static const struct GmtimeStruct G_RESULT_DATA[] = {
     {"Pacific/Rarotonga", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Wake", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Tarawa", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
@@ -464,7 +464,7 @@ static const struct gmtime_struct G_RESULT_DATA[] = {
 };
 
 static time_t g_time = 1659177614;
-static int16_t gYearBase = 1900;
+static int16_t g_yearBase = 1900;
 static int16_t gBufferSize = 500;
 
 /**
@@ -489,12 +489,11 @@ static void Gmtime0100(void)
 #endif
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm *gmtm;
-        gmtm = gmtime(&g_time);
+        struct tm *gmtm = gmtime(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-            (gmtm->tm_year + gYearBase),
+            (gmtm->tm_year + g_yearBase),
             gmtm->tm_mon,
             gmtm->tm_mday,
             gmtm->tm_hour,
@@ -515,7 +514,7 @@ static void Gmtime0100(void)
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-static void gmtime64_0100(void)
+static void Gmtime640100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
         const char *tz = G_RESULT_DATA[i].tz;
@@ -532,12 +531,11 @@ static void gmtime64_0100(void)
 #endif
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm *gmtm;
-        gmtm = Gmtime64(&g_time);
+        struct tm *gmtm = Gmtime64(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
             "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-            (gmtm->tm_year + gYearBase),
+            (gmtm->tm_year + g_yearBase),
             gmtm->tm_mon,
             gmtm->tm_mday,
             gmtm->tm_hour,
@@ -556,7 +554,7 @@ static void gmtime64_0100(void)
 static int GmtimeSupTestImpl(void)
 {
     Gmtime0100();
-    gmtime64_0100();
+    Gmtime640100();
     return T_STATUS;
 }
 

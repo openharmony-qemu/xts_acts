@@ -68,5 +68,3 @@ int PthreadSpinUnlockTest(void)
 {
     return PthreadSpinUnlockTestImpl();
 }
-
-

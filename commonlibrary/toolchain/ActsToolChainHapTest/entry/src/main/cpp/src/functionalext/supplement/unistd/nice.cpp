@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <limits.h>
-#include <stdlib.h>
+#include <climits>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 

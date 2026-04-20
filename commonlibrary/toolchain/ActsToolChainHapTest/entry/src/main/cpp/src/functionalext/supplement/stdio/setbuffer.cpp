@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdio.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstring>
 #include "filepath_util.h"
 
 static const char *STR = "Hello";

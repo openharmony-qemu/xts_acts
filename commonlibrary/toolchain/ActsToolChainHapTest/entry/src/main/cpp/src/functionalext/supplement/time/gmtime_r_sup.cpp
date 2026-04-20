@@ -13,17 +13,17 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 #include "functionalext.h"
 #include "time64_functions.h"
 
-struct gmtime_r_struct {
+struct GmtimeRStruct {
     const char *tz;
     const char *result;
 };
 
-static const struct gmtime_r_struct gResultData[] = {
+static const struct GmtimeRStruct gResultData[] = {
     {"Pacific/Rarotonga", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Wake", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Tarawa", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
@@ -472,7 +472,7 @@ static int16_t gBufferSize = 500;
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-static void gmtime_r_0100(void)
+static void GmtimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
@@ -515,7 +515,7 @@ static void gmtime_r_0100(void)
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-void gmtime64_r_0100(void)
+void Gmtime64R0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
         const char *tz = gResultData[i].tz;
@@ -555,8 +555,8 @@ void gmtime64_r_0100(void)
 
 static int GmtimeRSupTestImpl(void)
 {
-    gmtime_r_0100();
-    gmtime64_r_0100();
+    GmtimeR0100();
+    Gmtime64R0100();
     return T_STATUS;
 }
 

@@ -14,7 +14,8 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "functionalext.h"
 #include "time64_functions.h"
 
@@ -27,7 +28,8 @@
  */
 void PthreadMutexTimedlock0100(void)
 {
-    struct timespec ts = {0}; ts.tv_sec = 1;
+    struct timespec ts = {0};
+    ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
     pthread_mutex_t mutex;
     pthread_mutexattr_init(&mutex_attr);
@@ -49,7 +51,8 @@ void PthreadMutexTimedlock0100(void)
  */
 void PthreadMutexTimedlock0200(void)
 {
-    struct timespec ts = {0}; ts.tv_sec = 1;
+    struct timespec ts = {0};
+    ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
     pthread_mutex_t mutex;
 
@@ -71,7 +74,8 @@ void PthreadMutexTimedlock0200(void)
  */
 void PthreadMutexTimedlock0300(void)
 {
-    struct timespec ts = {0}; ts.tv_sec = 1;
+    struct timespec ts = {0};
+    ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
     pthread_mutex_t mutex;
     pthread_mutexattr_init(&mutex_attr);
@@ -94,7 +98,8 @@ void PthreadMutexTimedlock0300(void)
  */
 void PthreadMutexTimedlockTime640100(void)
 {
-    struct timespec ts = {0}; ts.tv_sec = 1;
+    struct timespec ts = {0};
+    ts.tv_sec = 1;
     pthread_mutexattr_t mutex_attr;
     pthread_mutex_t mutex;
     pthread_mutexattr_init(&mutex_attr);

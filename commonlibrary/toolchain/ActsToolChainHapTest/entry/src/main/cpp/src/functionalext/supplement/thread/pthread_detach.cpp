@@ -14,17 +14,17 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdio>
 #include <unistd.h>
 #include "functionalext.h"
-static int flag = 0;
+static int g_flag = 0;
 const int SLEEPTIME = 3;
 
-static void *threadfunc(void *arg)
+static void *ThreadFunc(void *arg)
 {
     sleep(1);
-    flag++;
-    pthread_exit(0);
+    g_flag++;
+    pthread_exit(nullptr);
     return arg;
 }
 
@@ -33,19 +33,19 @@ static void *threadfunc(void *arg)
  * @tc.desc:      Verify pthread_detach process sucess
  * @tc.level:     level 0.
  */
-void pthread_detach_0100(void)
+void PthreadDetach0100(void)
 {
     pthread_t pid;
-    flag = 0;
-    pthread_create(&pid, nullptr, threadfunc, nullptr);
+    g_flag = 0;
+    pthread_create(&pid, nullptr, ThreadFunc, nullptr);
     pthread_detach(pid);
-    EXPECT_EQ("pthread_detach_0100", flag, 0);
+    EXPECT_EQ("pthread_detach_0100", g_flag, 0);
     sleep(SLEEPTIME);
 }
 
 static int PthreadDetachTestImpl(void)
 {
-    pthread_detach_0100();
+    PthreadDetach0100();
     return g_tStatus;
 }
 

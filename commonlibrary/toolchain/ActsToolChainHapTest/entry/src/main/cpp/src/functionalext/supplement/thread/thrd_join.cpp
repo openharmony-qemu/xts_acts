@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <threads.h>
 #include "test.h"
 #include <sys/wait.h>
@@ -42,8 +42,7 @@ static int Threadfunc(void *arg)
 void ThrdJoin0100(void)
 {
     thrd_t id;
-    int result;
-    result = thrd_create(&id, Threadfunc, nullptr);
+    int result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }
@@ -74,8 +73,7 @@ void ThrdJoin0200(void)
 {
     thrd_t id;
     int ret = 1;
-    int result;
-    result = thrd_create(&id, Threadfunc, nullptr);
+    int result = thrd_create(&id, Threadfunc, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }

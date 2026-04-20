@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <pthread.h>
 #include "test.h"
 #include "functionalext.h"
@@ -24,7 +24,7 @@
 pthread_t g_pid;
 static int g_flag = 0;
 
-static void *Threadfunc(void *arg)
+static void *ThreadFunc(void *arg)
 {
     sleep(SLEEP_SECONDS);
     g_flag++;
@@ -40,7 +40,7 @@ static void *Threadfunc(void *arg)
 static void PthreadJoin0100(void)
 {
     g_flag = 0;
-    pthread_create(&g_pid, nullptr, Threadfunc, nullptr);
+    pthread_create(&g_pid, nullptr, ThreadFunc, nullptr);
     int result = pthread_join(g_pid, nullptr);
     if (result != 0) {
         t_error("%s pthread_join error get result is %d are not want 0\n", __func__, result);

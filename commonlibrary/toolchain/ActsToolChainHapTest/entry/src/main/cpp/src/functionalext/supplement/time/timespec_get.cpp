@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <time.h>
+#include <cstdio>
+#include <ctime>
 #include "test.h"
 #include "time64_functions.h"
 
@@ -25,7 +25,7 @@
  * @tc.desc      : Base is not TIME_UTC
  * @tc.level     : Level 0
  */
-void timespec_get_0100(void)
+void TimespecGet0100(void)
 {
     struct timespec ts;
     int result = timespec_get(&ts, 0);
@@ -39,7 +39,7 @@ void timespec_get_0100(void)
  * @tc.desc      : Base is TIME_UTC
  * @tc.level     : Level 1
  */
-void timespec_get_0200(void)
+void TimespecGet0200(void)
 {
     struct timespec ts;
     int result = timespec_get(&ts, TIME_UTC);
@@ -56,7 +56,7 @@ void timespec_get_0200(void)
  * @tc.desc      : Base is TIME_UTC
  * @tc.level     : Level 1
  */
-void timespec_get_time64_0200(void)
+void TimespecGetTime640200(void)
 {
     struct timespec ts;
     int result = TimespecGetTime64(&ts, TIME_UTC);
@@ -70,9 +70,9 @@ void timespec_get_time64_0200(void)
 
 static int TimespecGetTestImpl(int argc, char *argv[])
 {
-    timespec_get_0100();
-    timespec_get_0200();
-    timespec_get_time64_0200();
+    TimespecGet0100();
+    TimespecGet0200();
+    TimespecGetTime640200();
     return T_STATUS;
 }
 

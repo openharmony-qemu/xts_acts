@@ -15,7 +15,7 @@
 
 #include <pthread.h>
 #include <semaphore.h>
-#include <limits.h>
+#include <climits>
 
 #include "functionalext.h"
 
@@ -23,7 +23,7 @@
 
 pthread_barrier_t g_mybarrier;
 
-static void *Threadfunc(void *arg)
+static void *ThreadFunc(void *arg)
 {
     (void)arg;
     sleep(1);
@@ -46,7 +46,7 @@ void PthreadBarrierWait0100(void)
     EXPECT_EQ("PthreadBarrierWait0100", ret, CMPFLAG);
 
     for (i = 0; i < THREADNUM; i++) {
-        if (pthread_create(&ids[i], nullptr, Threadfunc, nullptr) != 0) {
+        if (pthread_create(&ids[i], nullptr, ThreadFunc, nullptr) != 0) {
             t_error("create thread failed\n");
             return;
         }

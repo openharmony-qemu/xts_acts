@@ -13,19 +13,19 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <errno.h>
-#include <signal.h>
-#include <time.h>
+#include <cstdio>
+#include <cerrno>
+#include <csignal>
+#include <ctime>
 #include <unistd.h>
 
 #include "test.h"
-#define SIGNUM 40
-#define USEC_DELAY 1000000
-#define NSEC_DELAY 1000000
-#define TIMER_FLAG 0
-#define SLEEP_SECONDS 1
-#define FAILURE_CODE -1
+#define SIGNUM (40)
+#define USEC_DELAY (1000000)
+#define NSEC_DELAY (1000000)
+#define TIMER_FLAG (0)
+#define SLEEP_SECONDS (1)
+#define FAILURE_CODE (-1)
 static int g_count = 0;
 static timer_t g_timerid;
 

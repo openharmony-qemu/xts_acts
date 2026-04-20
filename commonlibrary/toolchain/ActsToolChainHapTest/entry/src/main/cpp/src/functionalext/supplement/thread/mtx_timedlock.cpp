@@ -15,7 +15,8 @@
 
 #include <pthread.h>
 #include <threads.h>
-#include <time.h>
+#include <cstdio>
+#include <cstdlib>
 #include "functionalext.h"
 #include "time64_functions.h"
 

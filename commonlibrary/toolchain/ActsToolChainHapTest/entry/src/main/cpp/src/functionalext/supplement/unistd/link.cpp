@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdlib>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "functionalext.h"
@@ -24,7 +24,7 @@
  * @tc.desc      : Determine whether the created connection is successful and whether the file exists
  * @tc.level     : Level 0
  */
-void link_0100(void)
+void Link0100(void)
 {
     system("touch /etc/a.txt");
     int result = link("/etc/a.txt", "/etc/a_link.txt");
@@ -38,7 +38,7 @@ void link_0100(void)
  * @tc.desc      : Determine whether the file is successfully created when creating a hard link file with the same name
  * @tc.level     : Level 2
  */
-void link_0200(void)
+void Link0200(void)
 {
     if (access("/etc/a_link.txt", F_OK) != 0) {
         int result = link("/etc/a.txt", "/etc/a_link.txt");
@@ -54,7 +54,7 @@ void link_0200(void)
  * @tc.desc      : Outlier judgment
  * @tc.level     : Level 2
  */
-void link_0300(void)
+void Link0300(void)
 {
     int result = link(nullptr, nullptr);
     EXPECT_EQ("link_0300", result, ERREXPECT);
@@ -71,9 +71,9 @@ void link_0300(void)
 
 static int LinkTestImpl(void)
 {
-    // link_0100();
-    // link_0200();
-    // link_0300();
+    // Link0100();
+    // Link0200();
+    // Link0300();
 
     return g_tStatus;
 }

@@ -13,14 +13,15 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <threads.h>
 #include <unistd.h>
 #include "functionalext.h"
 
 static mtx_t g_mtex;
 
-static int threadfuncA(void *arg)
+static int ThreadFuncA(void *arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -31,7 +32,7 @@ static int threadfuncA(void *arg)
     return 0;
 }
 
-static int threadfuncB(void *arg)
+static int ThreadFuncB(void *arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -47,7 +48,7 @@ static int threadfuncB(void *arg)
  * @tc.desc      : Verify process mtx_trylock success when mtx_init second args is mtx_plain | tx_recursive.
  * @tc.level     : Level 0
  */
-void mtx_trylock_0100(void)
+void MtxTrylock0100(void)
 {
     int result = mtx_init(&g_mtex, mtx_plain | mtx_recursive);
     if (result != thrd_success) {
@@ -55,7 +56,7 @@ void mtx_trylock_0100(void)
         return;
     }
     thrd_t tid1;
-    result = thrd_create(&tid1, threadfuncA, nullptr);
+    result = thrd_create(&tid1, ThreadFuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
@@ -72,7 +73,7 @@ void mtx_trylock_0100(void)
  * @tc.desc      : Verify process mtx_trylock fail when mtx_init second args is mtx_plain.
  * @tc.level     : Level 2
  */
-void mtx_trylock_0200(void)
+void MtxTrylock0200(void)
 {
     int result = mtx_init(&g_mtex, mtx_plain);
     if (result != thrd_success) {
@@ -80,7 +81,7 @@ void mtx_trylock_0200(void)
         return;
     }
     thrd_t tid2;
-    result = thrd_create(&tid2, threadfuncB, nullptr);
+    result = thrd_create(&tid2, ThreadFuncB, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
@@ -94,8 +95,8 @@ void mtx_trylock_0200(void)
 
 static int MtxTrylockTestImpl(int argc, char *argv[])
 {
-    mtx_trylock_0100();
-    mtx_trylock_0200();
+    MtxTrylock0100();
+    MtxTrylock0200();
     return g_tStatus;
 }
 

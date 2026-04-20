@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <threads.h>
 #include "functionalext.h"
 
 static char list[100];
 static char buf[12] = "called once";
-void do_once(void)
+void DoOnce(void)
 {
     FILE *fp = fopen("/data/storage/el2/base/cache/call_once.txt", "a+");
     fwrite(buf, sizeof(char), strlen(buf), fp);
@@ -29,9 +30,9 @@ void do_once(void)
     fclose(fp2);
 }
 static once_flag flag = ONCE_FLAG_INIT;
-static void func(void *data)
+static void Func(void *data)
 {
-    call_once(&flag, do_once);
+    call_once(&flag, DoOnce);
 }
 
 /**
@@ -46,11 +47,14 @@ void CallOnce0100(void)
 
 int CallOnceTest(void)
 {
-    thrd_t t1, t2, t3, t4;
-    thrd_create(&t1, reinterpret_cast<thrd_start_t>(func), nullptr);
-    thrd_create(&t2, reinterpret_cast<thrd_start_t>(func), nullptr);
-    thrd_create(&t3, reinterpret_cast<thrd_start_t>(func), nullptr);
-    thrd_create(&t4, reinterpret_cast<thrd_start_t>(func), nullptr);
+    thrd_t t1;
+    thrd_t t2;
+    thrd_t t3;
+    thrd_t t4;
+    thrd_create(&t1, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    thrd_create(&t2, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    thrd_create(&t3, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    thrd_create(&t4, reinterpret_cast<thrd_start_t>(Func), nullptr);
     thrd_join(t1, nullptr);
     thrd_join(t2, nullptr);
     thrd_join(t3, nullptr);

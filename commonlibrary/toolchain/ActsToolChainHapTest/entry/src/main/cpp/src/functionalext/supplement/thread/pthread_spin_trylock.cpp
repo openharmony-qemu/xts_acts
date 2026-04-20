@@ -22,7 +22,7 @@
 static pthread_spinlock_t g_lock = 0;
 static int g_count = 0;
 
-static void *Thread1(void *arg)
+static void *Thread1Func(void *arg)
 {
     int ret = pthread_spin_trylock(&g_lock);
     EXPECT_EQ("PthreadSpinTrylock0100", ret, CMPFLAG);
@@ -31,7 +31,7 @@ static void *Thread1(void *arg)
     return const_cast<char *>("success");
 }
 
-static void *Thread2(void *arg)
+static void *Thread2Func(void *arg)
 {
     int ret = pthread_spin_lock(&g_lock);
     EXPECT_EQ("PthreadSpinTrylock0200", ret, CMPFLAG);
@@ -55,7 +55,7 @@ void PthreadSpinTrylock0100(void)
     int ret = pthread_spin_init(&g_lock, PTHREAD_PROCESS_PRIVATE);
 
     EXPECT_EQ("PthreadSpinTrylock0100", ret, CMPFLAG);
-    ret = pthread_create(&thread, nullptr, Thread1, nullptr);
+    ret = pthread_create(&thread, nullptr, Thread1Func, nullptr);
     if (ret != 0) {
         EXPECT_EQ("PthreadSpinTrylock0100", ret, CMPFLAG);
         return;
@@ -85,7 +85,7 @@ void PthreadSpinTrylock0200(void)
     int ret = pthread_spin_init(&g_lock, PTHREAD_PROCESS_PRIVATE);
 
     EXPECT_EQ("PthreadSpinTrylock0200", ret, CMPFLAG);
-    ret = pthread_create(&thread, nullptr, Thread2, nullptr);
+    ret = pthread_create(&thread, nullptr, Thread2Func, nullptr);
     if (ret != 0) {
         EXPECT_EQ("PthreadSpinTrylock0200", ret, CMPFLAG);
         return;
@@ -107,5 +107,3 @@ int PthreadSpinTrylockTest(void)
 {
     return PthreadSpinTrylockTestImpl();
 }
-
-

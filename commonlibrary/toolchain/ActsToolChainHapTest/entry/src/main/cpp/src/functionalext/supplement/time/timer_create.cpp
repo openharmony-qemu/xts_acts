@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <time.h>
+#include <cerrno>
+#include <csignal>
+#include <ctime>
 #include <unistd.h>
 #include <dlfcn.h>
-#include <stdio.h>
+#include <cstdio>
 #include <pthread.h>
 
 #include "test.h"

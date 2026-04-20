@@ -13,20 +13,20 @@
  * limitations under the License.
  */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <signal.h>
+#include <cstdarg>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <csignal>
 #include <fcntl.h>
-#include <locale.h>
-#include <wchar.h>
+#include <clocale>
+#include <cwchar>
 #include "test.h"
 
 #define ARRAY_SIZE 5
 #define STR_LEN 5
 
-static void deal_aberrant(int code)
+static void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
         t_error("vfwscanf_0200 code is %d are not SIGSEGV", __func__, code);
@@ -34,7 +34,7 @@ static void deal_aberrant(int code)
     exit(g_tStatus);
 }
 
-int read_from_file(FILE *fp, const wchar_t *format, ...)
+int ReadFromFile(FILE *fp, const wchar_t *format, ...)
 {
     va_list args;
     va_start(args, format);
@@ -48,7 +48,7 @@ int read_from_file(FILE *fp, const wchar_t *format, ...)
  * @tc.desc      : Test vfwscanf method to read wide string from file
  * @tc.level     : Level 0
  */
-void vfwscanf_0100(void)
+void Vfwscanf0100(void)
 {
     setlocale(LC_ALL, "en_US.UTF-8");
 
@@ -61,9 +61,10 @@ void vfwscanf_0100(void)
     }
     rewind(fp);
 
-    wchar_t ch, str[STR_LEN];
+    wchar_t ch;
+    wchar_t str[STR_LEN];
     for (int i = 0; i < ARRAY_SIZE; i++) {
-        read_from_file(fp, L"%lc %ls ", &ch, str);
+        ReadFromFile(fp, L"%lc %ls ", &ch, str);
         if (wcscmp(str, names[i]) != 0) {
             t_error("%s vfwscanf in %d get result is %ls are not want %ls\n", __func__, i, str, names[i]);
         }
@@ -78,18 +79,18 @@ void vfwscanf_0100(void)
  * @tc.desc      : Test the result of the vfwscanf function when the incoming file is empty
  * @tc.level     : Level 2
  */
-void vfwscanf_0200(void)
+void Vfwscanf0200(void)
 {
     wchar_t symbol[] = L"\u0915\u0916\u0917\u0918\u0919";
     wchar_t names[ARRAY_SIZE][STR_LEN] = {L"Ka", L"Kha", L"Ga", L"Gha", L"Nga"};
-    signal(SIGSEGV, deal_aberrant);
-    read_from_file(nullptr, symbol, names);
+    signal(SIGSEGV, DealAberrant);
+    ReadFromFile(nullptr, symbol, names);
 }
 
 static int VfwscanfTestImpl(int argc, char *argv[])
 {
-    vfwscanf_0100();
-    vfwscanf_0200();
+    Vfwscanf0100();
+    Vfwscanf0200();
     return g_tStatus;
 }
 

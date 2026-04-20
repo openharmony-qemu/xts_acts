@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <wchar.h>
+#include <csignal>
+#include <cstdio>
+#include <cstdlib>
+#include <cwchar>
 
 #include "filepath_util.h"
 
@@ -30,7 +30,7 @@ static void Handler(int sig)
  * @tc.desc      : push back a wide character
  * @tc.level     : Level 0
  */
-void ungetwc_0100(void)
+void Ungetwc0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -63,7 +63,7 @@ void ungetwc_0100(void)
  * @tc.desc      : push back a wide character with an invalid FILE stream
  * @tc.level     : Level 2
  */
-void ungetwc_0200(void)
+void Ungetwc0200(void)
 {
     signal(SIGSEGV, Handler);
 
@@ -73,8 +73,8 @@ void ungetwc_0200(void)
 
 static int UngetwcTestImpl(int argc, char *argv[])
 {
-    ungetwc_0100();
-    ungetwc_0200();
+    Ungetwc0100();
+    Ungetwc0200();
 
     return g_tStatus;
 }

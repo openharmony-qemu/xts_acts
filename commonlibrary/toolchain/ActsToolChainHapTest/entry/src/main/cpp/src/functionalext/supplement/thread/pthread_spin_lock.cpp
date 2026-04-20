@@ -97,5 +97,3 @@ int PthreadSpinLockTest(void)
 {
     return PthreadSpinLockTestImpl();
 }
-
-

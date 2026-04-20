@@ -17,18 +17,18 @@
 #include <threads.h>
 #include "test.h"
 
-static cnd_t cond;
-static mtx_t mutex;
-static unsigned int waiting_threads;
+static cnd_t g_cond;
+static mtx_t g_mutex;
+static unsigned int g_waitingThreads;
 
 #define N 3
 
 static int ChildWait(void *data)
 {
-    mtx_lock(&mutex);
-    ++waiting_threads;
-    cnd_wait(&cond, &mutex);
-    mtx_unlock(&mutex);
+    mtx_lock(&g_mutex);
+    ++g_waitingThreads;
+    cnd_wait(&g_cond, &g_mutex);
+    mtx_unlock(&g_mutex);
 
     thrd_exit(thrd_success);
 }
@@ -43,11 +43,11 @@ void CndBroadcast0100(void)
     thrd_t ids[N];
     unsigned char i;
 
-    if (cnd_init(&cond) != thrd_success) {
+    if (cnd_init(&g_cond) != thrd_success) {
         t_error("%s cnd_init failed\n", __func__);
     }
 
-    if (mtx_init(&mutex, mtx_plain) != thrd_success) {
+    if (mtx_init(&g_mutex, mtx_plain) != thrd_success) {
         t_error("%s mtx_init failed\n", __func__);
     }
 
@@ -58,12 +58,12 @@ void CndBroadcast0100(void)
     }
 
     while (true) {
-        mtx_lock(&mutex);
-        if (waiting_threads > N) {
+        mtx_lock(&g_mutex);
+        if (g_waitingThreads > N) {
             t_error("%s ", __func__);
         }
-        bool done_waiting = waiting_threads == N;
-        mtx_unlock(&mutex);
+        bool done_waiting = g_waitingThreads == N;
+        mtx_unlock(&g_mutex);
         if (done_waiting) {
             break;
         }
@@ -73,11 +73,11 @@ void CndBroadcast0100(void)
         }
     }
 
-    mtx_lock(&mutex);
-    if (cnd_broadcast(&cond) != thrd_success) {
+    mtx_lock(&g_mutex);
+    if (cnd_broadcast(&g_cond) != thrd_success) {
         t_error("%s cnd_broadcast failed\n", __func__);
     }
-    mtx_unlock(&mutex);
+    mtx_unlock(&g_mutex);
 
     for (i = 0; i < N; ++i) {
         if (thrd_join(ids[i], nullptr) != thrd_success) {
@@ -85,8 +85,8 @@ void CndBroadcast0100(void)
         }
     }
 
-    mtx_destroy(&mutex);
-    cnd_destroy(&cond);
+    mtx_destroy(&g_mutex);
+    cnd_destroy(&g_cond);
 }
 
 static int CndBroadcastTestWithArgs(int argc, char *argv[])

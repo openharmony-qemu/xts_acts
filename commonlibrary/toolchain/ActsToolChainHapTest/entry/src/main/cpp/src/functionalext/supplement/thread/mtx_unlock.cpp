@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <threads.h>
 #include <unistd.h>
 #include "functionalext.h"
 
 static mtx_t g_mtx;
 
-static int threadfuncA(void *arg)
+static int ThreadFuncA(void *arg)
 {
     int ret = mtx_lock(&g_mtx);
     EXPECT_EQ("mtx_unlock_0100", ret, 0);
@@ -34,7 +34,7 @@ static int threadfuncA(void *arg)
  * @tc.desc      : Verify process mtx_unlock once success.
  * @tc.level     : Level 0.
  */
-void mtx_unlock_0100(void)
+void MtxUnlock0100(void)
 {
     int result = mtx_init(&g_mtx, mtx_plain);
     if (result != thrd_success) {
@@ -42,7 +42,7 @@ void mtx_unlock_0100(void)
         return;
     }
     thrd_t tid1;
-    result = thrd_create(&tid1, threadfuncA, nullptr);
+    result = thrd_create(&tid1, ThreadFuncA, nullptr);
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
         return;
@@ -56,7 +56,7 @@ void mtx_unlock_0100(void)
 
 static int MtxUnlockTestImpl(void)
 {
-    mtx_unlock_0100();
+    MtxUnlock0100();
     return g_tStatus;
 }
 

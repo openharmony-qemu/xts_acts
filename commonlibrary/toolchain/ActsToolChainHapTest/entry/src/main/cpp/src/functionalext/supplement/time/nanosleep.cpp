@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <time.h>
+#include <ctime>
 #include "functionalext.h"
 #include "time64_functions.h"
 
@@ -22,7 +22,7 @@
  * @tc.desc      : Verify that the execution of the program can be paused
  * @tc.level     : Level 0
  */
-void nanosleep_0100(void)
+void Nanosleep0100(void)
 {
     struct timespec nSleep;
     nSleep.tv_sec = 0;
@@ -36,7 +36,7 @@ void nanosleep_0100(void)
  * @tc.desc      : Verify that the execution of the program can be paused with time64
  * @tc.level     : Level 0
  */
-void nanosleep_time64_0100(void)
+void NanosleepTime640100(void)
 {
     struct timespec nSleep;
     nSleep.tv_sec = 0;
@@ -47,8 +47,8 @@ void nanosleep_time64_0100(void)
 
 static int NanosleepTestImpl(int argc, char *argv[])
 {
-    nanosleep_0100();
-    nanosleep_time64_0100();
+    Nanosleep0100();
+    NanosleepTime640100();
     return T_STATUS;
 }
 

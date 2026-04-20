@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <time.h>
+#include <ctime>
 #include "functionalext.h"
 #include "time64_functions.h"
 
@@ -22,7 +22,7 @@
  * @tc.desc      : Verify that the resolution in the specified poem can be found (the parameter is CLOCK_REALTIME)
  * @tc.level     : Level 0
  */
-void clock_getres_0100(void)
+void ClockGetres0100(void)
 {
     struct timespec ts;
     int result = clock_getres(CLOCK_REALTIME, &ts);
@@ -34,7 +34,7 @@ void clock_getres_0100(void)
  * @tc.desc      : Verify that the resolution in the specified poem can be found (the parameter is CLOCK_TAI)
  * @tc.level     : Level 0
  */
-void clock_getres_0200(void)
+void ClockGetres0200(void)
 {
     struct timespec ts;
     int result = clock_getres(CLOCK_TAI, &ts);
@@ -46,7 +46,7 @@ void clock_getres_0200(void)
  * @tc.desc      : Verify that the resolution in the specified poem can be found (the parameter is CLOCK_MONOTONIC)
  * @tc.level     : Level 0
  */
-void clock_getres_0300(void)
+void ClockGetres0300(void)
 {
     struct timespec ts;
     int result = clock_getres(CLOCK_MONOTONIC, &ts);
@@ -58,7 +58,7 @@ void clock_getres_0300(void)
  * @tc.desc      : Verify that the resolution in the specified poem can be found (the parameter is CLOCK_BOOTTIME)
  * @tc.level     : Level 0
  */
-void clock_getres_0400(void)
+void ClockGetres0400(void)
 {
     struct timespec ts;
     int result = clock_getres(CLOCK_BOOTTIME, &ts);
@@ -70,7 +70,7 @@ void clock_getres_0400(void)
  * @tc.desc      : Verify that the resolution in the specified poem cannot be found (parameter is 100)
  * @tc.level     : Level 2
  */
-void clock_getres_0500(void)
+void ClockGetres0500(void)
 {
     struct timespec ts;
     int result = clock_getres(100, &ts);
@@ -82,7 +82,7 @@ void clock_getres_0500(void)
  * @tc.desc      : Verify that the resolution in the specified poem can be found (the parameter is CLOCK_REALTIME)
  * @tc.level     : Level 0
  */
-void clock_getres_time64_0100(void)
+void ClockGetresTime640100(void)
 {
     struct timespec ts;
     int result = ClockGetresTime64(CLOCK_REALTIME, &ts);
@@ -91,11 +91,11 @@ void clock_getres_time64_0100(void)
 
 int ClockGetresTest(void)
 {
-    clock_getres_0100();
-    clock_getres_0200();
-    clock_getres_0300();
-    clock_getres_0400();
-    clock_getres_0500();
-    clock_getres_time64_0100();
+    ClockGetres0100();
+    ClockGetres0200();
+    ClockGetres0300();
+    ClockGetres0400();
+    ClockGetres0500();
+    ClockGetresTime640100();
     return T_STATUS;
 }

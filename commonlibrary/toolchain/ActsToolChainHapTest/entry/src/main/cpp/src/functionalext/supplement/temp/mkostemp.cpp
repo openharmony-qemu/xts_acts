@@ -14,7 +14,7 @@
  */
 
 #include <fcntl.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**
@@ -23,7 +23,7 @@
  *                 specified in flags: O_APPEND, create a temporary file.
  * @tc.level     : Level 0
  */
-void mkostemp_0100(void)
+void Mkostemp0100(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemp_0100_XXXXXX";
     int fd = mkostemp(tmpfile, O_APPEND);
@@ -46,7 +46,7 @@ void mkostemp_0100(void)
  *                 specified in flags: O_CLOEXEC, create a temporary file.
  * @tc.level     : Level 0
  */
-void mkostemp_0200(void)
+void Mkostemp0200(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemp_0200_XXXXXX";
     int fd = mkostemp(tmpfile, O_CLOEXEC);
@@ -69,7 +69,7 @@ void mkostemp_0200(void)
  *                 specified in flags: O_CLOEXEC, create a temporary file.
  * @tc.level     : Level 0
  */
-void mkostemp_0300(void)
+void Mkostemp0300(void)
 {
     char tmpfile[] = "/data/storage/el2/base/cache/mkostemp_0300_XXXXXX";
     int fd = mkostemp(tmpfile, O_SYNC);
@@ -92,7 +92,7 @@ void mkostemp_0300(void)
  *                 create temp file fail.
  * @tc.level     : Level 2
  */
-void mkostemp_0400(void)
+void Mkostemp0400(void)
 {
     char tmpfile[] = "/tmp/mkostemp_0400.dat";
     int fd = mkostemp(tmpfile, O_APPEND);
@@ -115,7 +115,7 @@ void mkostemp_0400(void)
  *                 create temp file fail.
  * @tc.level     : Level 2
  */
-void mkostemp_0500(void)
+void Mkostemp0500(void)
 {
     char tmpfile[] = "/tmp/mkostemp_0500.dat";
     int fd = mkostemp(tmpfile, O_CLOEXEC);
@@ -138,7 +138,7 @@ void mkostemp_0500(void)
  *                 create temp file fail.
  * @tc.level     : Level 2
  */
-void mkostemp_0600(void)
+void Mkostemp0600(void)
 {
     char tmpfile[] = "/tmp/mkostemp_0600.dat";
     int fd = mkostemp(tmpfile, O_SYNC);
@@ -160,7 +160,7 @@ void mkostemp_0600(void)
  * @tc.desc      : Template with 'XXXXXX' not at the end
  * @tc.level     : Level 2
  */
-void mkostemp_0700(void)
+void Mkostemp0700(void)
 {
     char temp_dir[] = "/data/storage/el2/base/cache/mkostemp_0700_XXXXXX_dir";
     int fd = mkostemp(temp_dir, O_SYNC);
@@ -177,7 +177,7 @@ void mkostemp_0700(void)
  * @tc.desc      : Verify mkostemp generates unique filenames on multiple calls.
  * @tc.level     : Level 0
  */
-void mkostemp_0800(void)
+void Mkostemp0800(void)
 {
     char tmpfile1[] = "/data/storage/el2/base/cache/mkostemp_0800_XXXXXX";
     char tmpfile2[] = "/data/storage/el2/base/cache/mkostemp_0800_XXXXXX";
@@ -197,14 +197,14 @@ void mkostemp_0800(void)
 
 static int MkostempTestImpl(void)
 {
-    mkostemp_0100();
-    mkostemp_0200();
-    mkostemp_0300();
-    mkostemp_0400();
-    mkostemp_0500();
-    mkostemp_0600();
-    mkostemp_0700();
-    mkostemp_0800();
+    Mkostemp0100();
+    Mkostemp0200();
+    Mkostemp0300();
+    Mkostemp0400();
+    Mkostemp0500();
+    Mkostemp0600();
+    Mkostemp0700();
+    Mkostemp0800();
     return T_STATUS;
 }
 
