@@ -1725,5 +1725,165 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.name   fileIO_test_open_async_035
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3500
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+it('fileIO_test_open_async_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_035');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = await fileIO.open(fpath, fileIO.OpenMode.UNCACHE);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.read(file.fd, new ArrayBuffer(4096))
+        .then((readLen) => {
+          expect(readLen == FILE_CONTENT.length).assertTrue();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        });
+    } catch (e) {
+      console.log('fileIO_test_open_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_036
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3600
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_036');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let length = 20;
+
+    try {
+      fileIO.open(fpath, fileIO.OpenMode.UNCACHE, (err, file) => {
+        if(err) {
+          console.log('fileIO_test_open_async_036 error package' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.write(file.fd, new ArrayBuffer(length))
+          .then((bytesWritten) => {
+            expect(bytesWritten == length).assertTrue();
+            fileIO.closeSync(file);
+            fileIO.unlinkSync(fpath);
+          });
+        });
+        done();
+    } catch (e) {
+      console.log('fileIO_test_open_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_037
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3700
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_037');
+
+    try {
+      let file = await fileIO.open(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_open_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_038
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3800
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_038');
+
+    try {
+      fileIO.open(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY, (err, file) => {
+        if(err) {
+          console.log('fileIO_test_open_async_038 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_open_async_038 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_sync_039
+   * @tc.number fileIO_test_open_sync_039
+   * @tc.desc   Test openSync() interfaces. mode=0o10000000000.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_sync_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_open_sync_039');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.UNCACHE);
+      expect(isIntNum(file.fd)).assertTrue();
+      let readlen = fileIO.readSync(file.fd, new ArrayBuffer(4096));
+      expect(readlen == FILE_CONTENT.length).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_open_sync_039 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_sync_040
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_4000
+   * @tc.desc   Test openSync() interfaces. mode=0o10000000000.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_sync_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_open_sync_040');
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE );
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_open_sync_040 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
 });
 }
