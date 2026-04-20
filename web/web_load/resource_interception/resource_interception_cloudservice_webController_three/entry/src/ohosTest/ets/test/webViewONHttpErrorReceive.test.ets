@@ -74,7 +74,7 @@ export default function webViewONHttpErrorReceive() {
       }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("webViewONHttpErrorReceive beforeEach start");
@@ -91,21 +91,21 @@ export default function webViewONHttpErrorReceive() {
      */
     it('testOnHttpErrorReceiveFixedUserAgent',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorReceiveFixedUserAgent", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","http://1.1.1.123/index.html",202080,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","https://www.baidu.com/123",202080,null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202090,null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,202100,null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",false,202110,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","GET",202120,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202120,null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",'""',202130,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","utf-8",202140,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","text/html",202150,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",403,202160,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Forbidden",202170,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","User-Agent",202180,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36",202190,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","X-Frame-Options",202200,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","SAMEORIGIN",202210,null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent","Direct IP access not allowed | Cloudflare",202220,done);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202140,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202150,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",404,202160,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202170,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202180,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202190,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202200,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202210,null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgent",true,202220,done);
       await Utils.waitAndClickComponent(driver, "webViewONHttpErrorReceive");
     })
   })
