@@ -96,7 +96,7 @@ napi_value NodeXTSWaterFlowTest::CreateCNodeTreeWaterFlow(napi_env env, napi_cal
                            void (RunOnSubThreadWaterFlow)(ArkUI_NativeNodeAPI_1 *nodeAPI,
                                                 std::vector<ArkUI_NodeHandle> &nodeList)) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "CreateCNodeTreeWaterFlow begin");
-    if (waterFlow_asyncData) {
+    if (g_waterFlowAsyncData) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "g_waterFlowAsyncDatanot nullptr");
         return nullptr;
     }
@@ -126,11 +126,11 @@ napi_value NodeXTSWaterFlowTest::CreateCNodeTreeWaterFlow(napi_env env, napi_cal
     }
 
     g_waterFlowAsyncData= new MyAsyncData();
-    waterFlow_asyncData->root = root;
-    waterFlow_asyncData->RunOnUIThreadWaterFlow = RunOnUIThreadWaterFlow;
-    waterFlow_asyncData->RunOnSubThreadWaterFlow = RunOnSubThreadWaterFlow;
+    g_waterFlowAsyncData->root = root;
+    g_waterFlowAsyncData->RunOnUIThreadWaterFlow = RunOnUIThreadWaterFlow;
+    g_waterFlowAsyncData->RunOnSubThreadWaterFlow = RunOnSubThreadWaterFlow;
 
-    if (OH_ArkUI_PostAsyncUITask(contextHandle, waterFlow_asyncData, (void (*)(void *))OnCreateNodeWaterFlow, (void (*)(void *))OnAttachTreeWaterFlow) != 0) {
+    if (OH_ArkUI_PostAsyncUITask(contextHandle, g_waterFlowAsyncData, (void (*)(void *))OnCreateNodeWaterFlow, (void (*)(void *))OnAttachTreeWaterFlow) != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "OH_ArkUI_PostAsyncUITask failed");
     }
     delete contextHandle;
@@ -147,13 +147,13 @@ napi_value NodeXTSWaterFlowTest::DisposeCNodeTreeWaterFlow(napi_env env, napi_ca
     // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
-    if (!waterFlow_asyncData) {
+    if (!g_waterFlowAsyncData) {
         return nullptr;
     }
-    auto root = waterFlow_asyncData->root;
-    auto nodeList = waterFlow_asyncData->nodeList;
+    auto root = g_waterFlowAsyncData->root;
+    auto nodeList = g_waterFlowAsyncData->nodeList;
     if (!root) {
-        delete waterFlow_asyncData;
+        delete g_waterFlowAsyncData;
         g_waterFlowAsyncData= nullptr;
         return nullptr;
     }
@@ -164,7 +164,7 @@ napi_value NodeXTSWaterFlowTest::DisposeCNodeTreeWaterFlow(napi_env env, napi_ca
     if (!nodeAPI) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "MultiThreadTestFwk",
                      "get ArkUI_AsyncNativeNodeAPI_1 failed");
-        delete waterFlow_asyncData;
+        delete g_waterFlowAsyncData;
         g_waterFlowAsyncData= nullptr;
         return nullptr;
     }
@@ -178,7 +178,7 @@ napi_value NodeXTSWaterFlowTest::DisposeCNodeTreeWaterFlow(napi_env env, napi_ca
         nodeAPI->disposeNode(node);
     }
     nodeAPI->disposeNode(root);
-    delete waterFlow_asyncData;
+    delete g_waterFlowAsyncData;
     g_waterFlowAsyncData= nullptr;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MultiThreadTestFwk", "DisposeCNodeTreeWaterFlow end");
     return nullptr;
