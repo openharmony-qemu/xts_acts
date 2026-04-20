@@ -293,9 +293,9 @@ export const AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam: () => number
 
 export const AVMediaDescriptionBuilderSetMediaTypeSuccess: () => number;
 
-export const AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess: () => number;
+export const AVMediaDescriptionBuilderSetMediaTypeAudioSuccess: () => number;
 
-export const AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess: () => number;
+export const AVMediaDescriptionBuilderSetMediaTypeVideoSuccess: () => number;
 
 export const AVMediaDescriptionBuilderSetMediaTypeInvalidParam: () => number;
 

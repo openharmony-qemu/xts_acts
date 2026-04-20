@@ -331,7 +331,7 @@ export default function AVSessionTest4() {
     it('testAVSessionAVMediaDescriptionBuilderSetMediaType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess();
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeAudioSuccess();
           expect(result).assertEqual(1);
           done()
         } catch (err) {
@@ -351,7 +351,7 @@ export default function AVSessionTest4() {
     it('testAVSessionAVMediaDescriptionBuilderSetMediaType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess();
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeVideoSuccess();
           expect(result).assertEqual(1);
           done()
         } catch (err) {

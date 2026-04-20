@@ -240,7 +240,7 @@ napi_value AVMediaDescriptionBuilderSetMediaTypeSuccess(napi_env env, napi_callb
     return retValue;
 }
 
-napi_value AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess(napi_env env, napi_callback_info info)
+napi_value AVMediaDescriptionBuilderSetMediaTypeAudioSuccess(napi_env env, napi_callback_info info)
 {
     OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
     OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
@@ -255,7 +255,7 @@ napi_value AVMediaDescriptionBuilderSetMediaTypeAUDIOSuccess(napi_env env, napi_
     return retValue;
 }
 
-napi_value AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess(napi_env env, napi_callback_info info)
+napi_value AVMediaDescriptionBuilderSetMediaTypeVideoSuccess(napi_env env, napi_callback_info info)
 {
     OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
     OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
