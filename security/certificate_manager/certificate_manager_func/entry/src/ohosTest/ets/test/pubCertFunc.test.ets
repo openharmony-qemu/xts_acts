@@ -812,16 +812,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: started. ");
       let keyUri: string | undefined = generateString(256);
       try{
-        await certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
+          certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
           expect(err.code).assertEqual(401);
+          console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
           done();
         });
       }catch(err){
         console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300 e.code = " + err.code);
         expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
         done();
       }
-      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
     });
     /**
      * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
@@ -835,15 +836,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: started. ");
       let keyUri: string | undefined = generateString(257);
       try{
-        await certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
+          certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
           expect(err.code).assertEqual(401);
+          console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: end. ");
+          done();
         });
       }catch(err){
         console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400 e.code = " + err.code);
         expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: end. ");
+        done();
       }
-      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: end. ");
-      done();
     });
     /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0030
