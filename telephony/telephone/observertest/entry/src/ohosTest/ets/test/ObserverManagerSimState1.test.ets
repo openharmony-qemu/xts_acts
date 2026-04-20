@@ -747,7 +747,7 @@ export default function observerManagerSimStateTest1() {
             ExpectTrue(data);
             if (data) {
               observer.offGetSimActiveState((res: boolean) => {
-                console.info(`${caseName} res: ${res}}`);
+                console.info(`${caseName} res: ${res}`);
                 ExpectTrue(res);
                 done();
               });
@@ -758,7 +758,7 @@ export default function observerManagerSimStateTest1() {
             }
           });         
         } catch (error) {
-          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          console.info(`${caseName} catchError ${JSON.stringify(error)}`);
           ExpectFail();
           done();
         }
