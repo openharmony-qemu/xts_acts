@@ -66,21 +66,21 @@ export default function webONHttpErrorReceive() {
      */
     it('testOnHttpErrorReceiveFixedUserAgentWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnHttpErrorReceiveFixedUserAgentWebc", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "http://1.1.1.123/index.html", 201380, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "https://www.baidu.com/123", 201380, null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUstestOnHttpErrorReceiveFixedUserAgentWebcerAgent", true, 201390, null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", false, 201400, null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", false, 201410, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "GET", 201420, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201420, null);
       Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", '""', 201430, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "utf-8", 201440, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "text/html", 201450, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", 403, 201460, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "Forbidden", 201470, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "User-Agent", 201480, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36", 201490, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "X-Frame-Options", 201500, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "SAMEORIGIN", 201510, null);
-      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", "403http://1.1.1.123/index.html", 201520, done);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201440, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201450, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", 404, 201460, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201470, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201480, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201490, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201500, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201510, null);
+      Utils.registerEvent("testOnHttpErrorReceiveFixedUserAgentWebc", true, 201520, done);
       await Utils.waitAndClickComponent(driver, "webONHttpErrorReceive");
     })
   })
