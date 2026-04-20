@@ -30,9 +30,9 @@ void Freopen0100(void)
     FILE *fp = freopen(ptr, "w+", stdin);
     EXPECT_PTRNE("Freopen0100", fp, NULL);
 
-    fclose(stdin);
-    fclose(fp);
-    remove(ptr);
+    (void)fclose(stdin);
+    (void)fclose(fp);
+    (void)remove(ptr);
 }
 
 static int FreopenTestImpl(int argc, char *argv[])

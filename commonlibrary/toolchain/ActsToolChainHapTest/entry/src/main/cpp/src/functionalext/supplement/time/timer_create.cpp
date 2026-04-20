@@ -47,7 +47,7 @@ void TimerCreate0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, Handler);
+    (void)signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {

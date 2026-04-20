@@ -44,7 +44,7 @@ int ClocaleMbfuncsTest(void)
     int c;
     int niErrors = 0;
 
-    setlocale(LC_CTYPE, "C");
+    (void)setlocale(LC_CTYPE, "C");
 
     if (MB_CUR_MAX != 1) {
         t_error("MB_CUR_MAX = %d, expected 1\n", static_cast<int>(MB_CUR_MAX));

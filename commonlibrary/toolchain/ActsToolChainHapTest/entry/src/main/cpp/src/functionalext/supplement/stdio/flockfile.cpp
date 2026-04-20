@@ -59,7 +59,7 @@ void *DoChildTwo(void *p)
 
     int count = atoi(buf);
     ++count;
-    sprintf(buf, "%d", count);
+    (void)sprintf(buf, "%d", count);
     if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
@@ -116,8 +116,8 @@ void Flockfile0200(void)
         }
     }
 
-    fclose(g_fp);
-    remove(PATH);
+    (void)fclose(g_fp);
+    (void)remove(PATH);
 }
 
 static int FlockfileTestImpl(int argc, char *argv[])

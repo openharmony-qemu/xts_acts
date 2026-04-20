@@ -47,8 +47,8 @@ static void Getc0100(void)
         t_error("%s getc failed\n", __func__);
     }
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 static int GetcTestImpl(int argc, char *argv[])

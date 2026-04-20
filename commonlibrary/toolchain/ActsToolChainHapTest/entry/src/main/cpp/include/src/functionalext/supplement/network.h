@@ -17,7 +17,7 @@
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_NETWORK_H_H
 
 int HErrnoLocationTest();
-int __recvmmsg_time64Test();
+int RecvmmsgTime64Test();
 int Accept4Test();
 int DnCompTest();
 int DnSkipnameTest();

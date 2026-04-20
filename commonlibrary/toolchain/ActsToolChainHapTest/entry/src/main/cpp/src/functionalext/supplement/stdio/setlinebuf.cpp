@@ -37,18 +37,18 @@ void Setlinebuf0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fputs(STR, f);
-    fclose(f);
+    (void)fputs(STR, f);
+    (void)fclose(f);
     f = fopen(path, "r");
 
     memset(buffer, 0, sizeof(buffer));
-    fread(buffer, sizeof(buffer), 1, f);
+    (void)fread(buffer, sizeof(buffer), 1, f);
 
     if (strcmp(buffer, STR)) {
         t_error("%s failed: setlinebuf. buf = %s\n", __func__, buffer);
     }
-    fclose(f);
-    remove(path);
+    (void)fclose(f);
+    (void)remove(path);
 }
 
 /**

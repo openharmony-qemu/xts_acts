@@ -57,8 +57,8 @@ void Fwprintf0300(void)
     int ret = strlen("This is a test!");
     EXPECT_EQ("Fwprintf0300", result, ret);
 
-    fclose(fptr);
-    remove("/data/storage/el2/base/cache/test.txt");
+    (void)fclose(fptr);
+    (void)remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
@@ -69,18 +69,18 @@ void Fwprintf0300(void)
  */
 void Fwprintf0400(void)
 {
-    const char *PATH = "/data/storage/el2/base/cache/test.txt";
+    const char *path = "/data/storage/el2/base/cache/test.txt";
 
-    FILE *fptr1 = fopen(PATH, "w");
+    FILE *fptr1 = fopen(path, "w");
     EXPECT_PTRNE("Fwprintf0400", fptr1, NULL);
-    fclose(fptr1);
+    (void)fclose(fptr1);
 
-    FILE *fptr2 = fopen(PATH, "r");
+    FILE *fptr2 = fopen(path, "r");
     int result = fwprintf(fptr2, L"This is a test!");
     EXPECT_EQ("Fwprintf0400", result, -1);
 
-    fclose(fptr2);
-    remove(PATH);
+    (void)fclose(fptr2);
+    (void)remove(path);
 }
 
 static int FwprintfTestImpl(int argc, char *argv[])

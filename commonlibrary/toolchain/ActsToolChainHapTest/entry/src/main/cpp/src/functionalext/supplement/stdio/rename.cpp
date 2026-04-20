@@ -36,7 +36,7 @@ void Rename0100(void)
     fd = open(newname, O_RDONLY);
     EXPECT_NE("rename_0100", fd, -1);
     close(fd);
-    remove(newname);
+    (void)remove(newname);
 }
 
 /**
@@ -69,13 +69,13 @@ void Rename0300(void)
     EXPECT_TRUE("rename_0300", retOld > 0);
     close(fdOld);
 
-    int fd_new = open(newname, O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("rename_0100", fd_new != -1);
+    int fdNew = open(newname, O_RDWR | O_CREAT, TEST_MODE);
+    EXPECT_TRUE("rename_0100", fdNew != -1);
 
-    char str_new[] = "new";
-    int ret_new = write(fdOld, str_new, sizeof(str_new));
-    EXPECT_TRUE("rename_0300", ret_new > 0);
-    close(fd_new);
+    char strNew[] = "new";
+    int retNew = write(fdOld, strNew, sizeof(strNew));
+    EXPECT_TRUE("rename_0300", retNew > 0);
+    close(fdNew);
 
     int result = rename(oldname, newname);
     EXPECT_EQ("rename_0300", result, 0);
@@ -89,7 +89,7 @@ void Rename0300(void)
     EXPECT_TRUE("rename_0300", nread > 0);
     EXPECT_TRUE("rename_0300", strcmp(buf, "old") == 0);
 
-    remove(newname);
+    (void)remove(newname);
 }
 
 static int RenameTestImpl(int argc, char *argv[])

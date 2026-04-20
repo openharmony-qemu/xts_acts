@@ -33,11 +33,13 @@ void Fputws0100(void)
     setlocale(LC_ALL, "en_US.utf8");
     int ret = fputws(L"this is the test", fptr);
     EXPECT_TRUE("Fputws0100", ret >= 0);
-    fseek(fptr, 0, SEEK_SET);
+    if (fseek(fptr, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     int rsize = fread(str, sizeof(char), 100, fptr);
     EXPECT_EQ("Fputws0100", rsize, ret);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -52,13 +54,13 @@ void Fputws0200(void)
     const char *ptr = "/data/storage/el2/base/cache/fputwstest.txt";
     FILE *fptr = fopen(ptr, "w+");
     EXPECT_TRUE("Fputws0200", fptr != nullptr);
-    fclose(fptr);
+    (void)fclose(fptr);
     fptr = fopen(ptr, "r");
     EXPECT_TRUE("Fputws0200", fptr != nullptr);
     int ret = fputws(L"this is the test", fptr);
     EXPECT_EQ("Fputws0200", ret, FAILED);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }

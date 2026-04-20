@@ -19,7 +19,7 @@
 
 #include "filepath_util.h"
 
-static const char *g_str = "Hello";
+static const char *STR = "Hello";
 
 /**
  * @tc.name      : Setbuf0100
@@ -37,17 +37,19 @@ void Setbuf0100(void)
     if (errno != 0) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
-    fputs(g_str, f);
-    fflush(f);
-    fclose(f);
+    (void)fputs(STR, f);
+    if (fflush(f) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    (void)fclose(f);
     f = fopen(path, "r");
     memset(buf, 0, sizeof(buf));
-    fread(buf, sizeof(buf), 1, f);
-    if (strcmp(buf, g_str)) {
+    (void)fread(buf, sizeof(buf), 1, f);
+    if (strcmp(buf, STR)) {
         t_error("%s failed: setbuf. buf = %s\n", __func__, buf);
     }
-    fclose(f);
-    remove(path);
+    (void)fclose(f);
+    (void)remove(path);
 }
 
 /**
@@ -67,9 +69,9 @@ void Setbuf0200(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fclose(f);
+    (void)fclose(f);
 
-    remove(path);
+    (void)remove(path);
 }
 
 static int SetbufTestImpl(int argc, char *argv[])

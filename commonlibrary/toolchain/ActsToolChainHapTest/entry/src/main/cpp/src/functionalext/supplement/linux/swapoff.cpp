@@ -31,7 +31,7 @@ void Swapoff0100(void)
     FILE_ABSOLUTE_DIR(dir_path);
     errno = 0;
     char cmd[PATH_MAX] = {0};
-    snprintf(cmd, sizeof(cmd), "cd %s; dd if=/dev/zero of=swapfile count=1 bs=1k; mkswap swapfile", dir_path);
+    (void)snprintf(cmd, sizeof(cmd), "cd %s; dd if=/dev/zero of=swapfile count=1 bs=1k; mkswap swapfile", dir_path);
     system(cmd);
 
     char path[PATH_MAX] = {0};
@@ -39,7 +39,7 @@ void Swapoff0100(void)
     int result = swapon(path, SWAP_FLAG_PREFER);
     if (result == -1) {
         t_error("%s swapon failed\n", __func__);
-        remove(path);
+        (void)remove(path);
         return;
     }
     if (errno == ENOSYS) {

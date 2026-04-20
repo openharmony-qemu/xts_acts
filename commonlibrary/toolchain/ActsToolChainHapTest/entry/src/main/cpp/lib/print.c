@@ -59,8 +59,7 @@ int t_printf(const char *s, ...)
     va_end(ap);
     if (n < 0) {
         n = 0;
-    }
-    else if (n >= sizeof buf) {
+    } else if (n >= sizeof buf) {
         n = sizeof buf;
         buf[n - OFFSET_1] = '\n';
         buf[n - OFFSET_2] = '.';

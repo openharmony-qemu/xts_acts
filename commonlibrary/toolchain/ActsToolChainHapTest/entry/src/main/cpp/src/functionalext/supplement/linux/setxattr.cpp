@@ -69,7 +69,7 @@ void Setxattr0100(void)
         t_error("%s failed: buf = %s\n", __func__, buf);
     }
 
-    remove(path);
+    (void)remove(path);
 }
 
 /**

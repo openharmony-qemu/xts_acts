@@ -51,7 +51,7 @@ void TimerSettime0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, Handler);
+    (void)signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {
@@ -86,7 +86,7 @@ void TimerSettime0100(void)
  */
 void TimerSettime0200(void)
 {
-    signal(SIGSEGV, ExceptionHandler);
+    (void)signal(SIGSEGV, ExceptionHandler);
 
     timer_settime(nullptr, 0, nullptr, nullptr);
 }
@@ -105,7 +105,7 @@ void TimerSettime640100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &timerid;
 
-    signal(SIGNUM, Handler);
+    (void)signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &timerid);
     if (result != 0) {

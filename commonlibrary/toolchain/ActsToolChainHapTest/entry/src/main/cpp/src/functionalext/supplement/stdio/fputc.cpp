@@ -30,7 +30,7 @@ void Fputc0100(void)
     FILE *fptr = fopen(path, "w");
     int exit = fputc('a', fptr);
     EXPECT_EQ("Fputc0100", exit, CHAR_A_ASCII);
-    fclose(fptr);
+    (void)fclose(fptr);
 }
 
 /**
@@ -45,8 +45,8 @@ void Fputc0200(void)
     FILE *fptr = fopen(path, "r");
     int exit = fputc('a', fptr);
     EXPECT_EQ("Fputc0200", exit, EOF);
-    fclose(fptr);
-    remove(path);
+    (void)fclose(fptr);
+    (void)remove(path);
 }
 
 static int FputcTestImpl(void)

@@ -52,8 +52,8 @@ void Putw0100(void)
     if (result != 0) {
         t_error("%s putw error get result is %d are not want 0\n", __func__, result);
     }
-    fclose(fp);
-    remove(file);
+    (void)fclose(fp);
+    (void)remove(file);
 }
 
 /**

@@ -36,8 +36,8 @@ void Sighold0100(void)
 
     int sig = SIGALRM;
     struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction old_act = {};
-    int result = sigaction(sig, &act, &old_act);
+    struct sigaction oldAct = {};
+    int result = sigaction(sig, &act, &oldAct);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         return;

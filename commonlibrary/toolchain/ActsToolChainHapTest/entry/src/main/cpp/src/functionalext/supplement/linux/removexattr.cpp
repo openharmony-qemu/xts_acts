@@ -85,7 +85,7 @@ void Removexattr0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    remove(path);
+    (void)remove(path);
 }
 
 /**

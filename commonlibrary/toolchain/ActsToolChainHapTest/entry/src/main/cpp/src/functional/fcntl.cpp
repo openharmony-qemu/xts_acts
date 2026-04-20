@@ -23,7 +23,7 @@
 #include "functionalext.h"
 
 #define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__), 0))
-#define TESTE(c) (errno=0, TEST(c, "errno = %s\n", strerror(errno)))
+#define TESTE(c) (errno = 0, TEST(c, "errno = %s\n", strerror(errno)))
 #ifdef MUSL_EXTERNAL_FUNCTION
 #define TEST_FILE "/data/storage/el2/base/cache/test_fcntl64.tmp"
 #define LARGE_OFFSET_FILE "/data/storage/el2/base/cache/large_file.tmp"
@@ -87,7 +87,7 @@ void Fcntl0100(void)
     }
     TEST(status == 0, "child failed to detect lock held by parent\n");
 
-    fclose(f);
+    (void)fclose(f);
 }
 
 #ifdef MUSL_EXTERNAL_FUNCTION

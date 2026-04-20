@@ -7,7 +7,7 @@
 #include "test.h"
 
 #define T(f) if (f) t_error(#f" failed: %s\n", strerror(errno))
-#define T2(r, f) if (((r)=(f))) t_error(#f" failed: %s\n", strerror(r))
+#define T2(r, f) if (((r) = (f))) t_error(#f" failed: %s\n", strerror(r))
 
 static void *StartFunc(void *arg)
 {

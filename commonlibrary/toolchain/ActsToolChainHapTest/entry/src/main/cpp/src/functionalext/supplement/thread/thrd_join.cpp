@@ -110,7 +110,7 @@ void ThrdJoin0300(void)
     if (pid == -1) {
         t_error("ThrdJoin0300: Error forking process");
     } else if (pid == 0) {
-        thrd_join(0, nullptr);
+        (void)thrd_join(0, nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);

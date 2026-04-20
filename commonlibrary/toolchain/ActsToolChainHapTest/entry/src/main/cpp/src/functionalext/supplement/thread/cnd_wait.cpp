@@ -25,10 +25,10 @@ static cnd_t g_cnd;
 void CndWaitFirst(void *arg)
 {
     int res = -1;
-    mtx_lock(&g_mtx);
+    (void)mtx_lock(&g_mtx);
     res = cnd_wait(&g_cnd, &g_mtx);
     EXPECT_EQ("CndWait0100", res, thrd_success);
-    mtx_unlock(&g_mtx);
+    (void)mtx_unlock(&g_mtx);
 }
 
 /**
@@ -40,15 +40,15 @@ void CndWait0100(void)
 {
     thrd_t id1;
     int ret;
-    cnd_init(&g_cnd);
+    (void)cnd_init(&g_cnd);
     mtx_init(&g_mtx, 0);
     ret = thrd_create(&id1, reinterpret_cast<thrd_start_t>(CndWaitFirst), reinterpret_cast<void *>(1));
     EXPECT_EQ("CndWait0100", ret, SUCCESS_CODE);
     sleep(SLEEP_SECONDS);
-    mtx_lock(&g_mtx);
+    (void)mtx_lock(&g_mtx);
     cnd_signal(&g_cnd);
-    mtx_unlock(&g_mtx);
-    thrd_join(id1, nullptr);
+    (void)mtx_unlock(&g_mtx);
+    (void)thrd_join(id1, nullptr);
     cnd_destroy(&g_cnd);
     mtx_destroy(&g_mtx);
 }

@@ -32,8 +32,8 @@ void Fwide0100(void)
     int result = fwide(fp, 5);
     EXPECT_TRUE("Fwide0100", result > 0);
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -49,8 +49,8 @@ void Fwide0200(void)
     int result = fwide(fp, 0);
     EXPECT_EQ("Fwide0200", result, 0);
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -66,8 +66,8 @@ void Fwide0300(void)
     int result = fwide(fp, -5);
     EXPECT_TRUE("Fwide0300", result < 0);
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 static int FwideTestImpl(int argc, char *argv[])

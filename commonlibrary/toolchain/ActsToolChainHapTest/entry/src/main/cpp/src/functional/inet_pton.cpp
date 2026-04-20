@@ -40,8 +40,8 @@ static void Tobin(void *d, char *s)
 {
     int i;
     unsigned char *p = static_cast<unsigned char*>(d);
-    for (i = 0; s[HEX_DIGIT_PAIR*i]; i++) {
-        p[i] = Digit(s[HEX_DIGIT_PAIR*i]) * HEX_BASE + Digit(s[HEX_DIGIT_PAIR*i+1]);
+    for (i = 0; s[HEX_DIGIT_PAIR * i]; i++) {
+        p[i] = Digit(s[HEX_DIGIT_PAIR * i]) * HEX_BASE + Digit(s[HEX_DIGIT_PAIR * i + 1]);
     }
 }
 
@@ -121,18 +121,18 @@ static int InetPtonTestImpl(void)
     if (inet_pton(INVALID_AF, "", nullptr) != -1 || errno != EAFNOSUPPORT) {
         t_error("inet_pton(12345,,) should fail with EAFNOSUPPORT, got %s\n", strerror(errno));
     }
-    errno=0;
+    errno = 0;
     if (inet_ntop(AF_INET, "xxxx", "", 0) != nullptr || errno != ENOSPC) {
         t_error("inet_ntop(,,0,0) should fail with ENOSPC, got %s\n", strerror(errno));
     }
-    errno=0;
+    errno = 0;
 
     // dotted-decimal notation
     V4("0.0.0.0", 1, "00000000")
     V4("127.0.0.1", 1, "7f000001")
     V4("10.0.128.31", 1, "0a00801f")
     V4("255.255.255.255", 1, "ffffffff")
-errno=0;
+errno = 0;
 
 // dotted-decimal notation
 V4("0.0.0.0", 1, "00000000")

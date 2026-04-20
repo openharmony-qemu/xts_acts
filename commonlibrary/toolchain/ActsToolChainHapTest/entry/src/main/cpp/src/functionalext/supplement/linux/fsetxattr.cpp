@@ -46,7 +46,7 @@ void Fsetxattr0100(void)
     EXPECT_STREQ("Fsetxattr0100", buf, "bar");
 
     close(fd);
-    remove(PATH);
+    (void)remove(PATH);
 }
 
 static int FsetxattrTestImpl(int argc, char *argv[])

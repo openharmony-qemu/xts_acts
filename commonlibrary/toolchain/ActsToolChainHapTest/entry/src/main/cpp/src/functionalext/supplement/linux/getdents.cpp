@@ -22,7 +22,7 @@
 #include <fcntl.h>
 #include "functionalext.h"
 
-const int g_failed = -1;
+const int FAILED = -1;
 
 /**
  * @tc.name      : Getdents0100
@@ -33,8 +33,8 @@ const int g_failed = -1;
 void Getdents0100(void)
 {
     struct dirent buf;
-    static const char *g_path = "/data/storage/el2/base/cache/";
-    int fd = open(g_path, O_RDONLY);
+    static const char *g_ppath = "/data/storage/el2/base/cache/";
+    int fd = open(g_ppath, O_RDONLY);
     EXPECT_NE("Getdents0100", fd, -1);
     int result = getdents(fd, &buf, INT_MAX);
     EXPECT_TRUE("Getdents0100", result > 0);
@@ -50,7 +50,7 @@ void Getdents0200(void)
     struct dirent buf;
     int fd = open("/data/storage/el2/base/cache/getdents", O_RDONLY);
     int result = getdents(fd, &buf, INT_MAX);
-    EXPECT_EQ("Getdents0200", result, g_failed);
+    EXPECT_EQ("Getdents0200", result, FAILED);
 }
 
 /**
@@ -61,11 +61,11 @@ void Getdents0200(void)
 void Getdents0300(void)
 {
     struct dirent buf;
-    static const char *g_path = "/data/storage/el2/base/cache/";
-    int fd = open(g_path, O_RDONLY);
+    static const char *gPath = "/data/storage/el2/base/cache/";
+    int fd = open(gPath, O_RDONLY);
     EXPECT_NE("Getdents0300", fd, -1);
     int result = getdents(fd, NULL, INT_MAX);
-    EXPECT_EQ("Getdents0300", result, g_failed);
+    EXPECT_EQ("Getdents0300", result, FAILED);
 }
 
 static int GetdentsTestImpl(int argc, char *argv[])

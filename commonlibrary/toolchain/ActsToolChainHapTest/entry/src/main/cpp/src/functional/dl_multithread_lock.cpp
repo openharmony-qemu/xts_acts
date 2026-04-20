@@ -54,7 +54,7 @@ int CheckLoaded(char* so)
             return 1;
         }
     }
-    fclose(fp);
+    (void)fclose(fp);
     return 0;
 }
 

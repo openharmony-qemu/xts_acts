@@ -18,21 +18,21 @@
 #include <threads.h>
 #include "functionalext.h"
 
-static char list[100];
-static char buf[12] = "called once";
+static char g_list[100];
+static char g_buf[12] = "called once";
 void DoOnce(void)
 {
     FILE *fp = fopen("/data/storage/el2/base/cache/call_once.txt", "a+");
-    fwrite(buf, sizeof(char), strlen(buf), fp);
-    fclose(fp);
+    (void)fwrite(g_buf, sizeof(char), strlen(g_buf), fp);
+    (void)fclose(fp);
     FILE *fp2 = fopen("/data/storage/el2/base/cache/call_once.txt", "r");
-    fread(list, sizeof(list), 1, fp2);
-    fclose(fp2);
+    (void)fread(g_list, sizeof(g_list), 1, fp2);
+    (void)fclose(fp2);
 }
-static once_flag flag = ONCE_FLAG_INIT;
+static once_flag g_flag = ONCE_FLAG_INIT;
 static void Func(void *data)
 {
-    call_once(&flag, DoOnce);
+    call_once(&g_flag, DoOnce);
 }
 
 /**
@@ -42,7 +42,7 @@ static void Func(void *data)
  */
 void CallOnce0100(void)
 {
-    EXPECT_EQ("CallOnce0100", strcmp(list, buf), 0);
+    EXPECT_EQ("CallOnce0100", strcmp(g_list, g_buf), 0);
 }
 
 int CallOnceTest(void)
@@ -51,16 +51,16 @@ int CallOnceTest(void)
     thrd_t t2;
     thrd_t t3;
     thrd_t t4;
-    thrd_create(&t1, reinterpret_cast<thrd_start_t>(Func), nullptr);
-    thrd_create(&t2, reinterpret_cast<thrd_start_t>(Func), nullptr);
-    thrd_create(&t3, reinterpret_cast<thrd_start_t>(Func), nullptr);
-    thrd_create(&t4, reinterpret_cast<thrd_start_t>(Func), nullptr);
-    thrd_join(t1, nullptr);
-    thrd_join(t2, nullptr);
-    thrd_join(t3, nullptr);
-    thrd_join(t4, nullptr);
+    (void)thrd_create(&t1, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    (void)thrd_create(&t2, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    (void)thrd_create(&t3, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    (void)thrd_create(&t4, reinterpret_cast<thrd_start_t>(Func), nullptr);
+    (void)thrd_join(t1, nullptr);
+    (void)thrd_join(t2, nullptr);
+    (void)thrd_join(t3, nullptr);
+    (void)thrd_join(t4, nullptr);
     CallOnce0100();
-    remove("/data/storage/el2/base/cache/call_once.txt");
-    memset(list, 0x00, sizeof(list));
+    (void)remove("/data/storage/el2/base/cache/call_once.txt");
+    memset(g_list, 0x00, sizeof(g_list));
     return g_tStatus;
 }

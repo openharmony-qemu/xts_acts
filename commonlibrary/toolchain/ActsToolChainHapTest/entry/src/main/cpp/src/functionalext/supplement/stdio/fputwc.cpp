@@ -47,15 +47,15 @@ void Fputwc0100()
         t_error("%s File opening failed", __func__);
     }
 
-    fclose(fp);
+    (void)fclose(fp);
     FILE *ffp = fopen("/data/storage/el2/base/cache/file.txt", "r");
     EXPECT_PTRNE("Fputwc0100", ffp, NULL);
     fgetws(buf, wcslen(str) + 1, ffp);
     EXPECT_EQ("Fputwc0100", ri, 0);
     EXPECT_EQ("Fputwc0100", wcscoll(buf, str), STRING_EQUAL);
 
-    fclose(ffp);
-    remove("/data/storage/el2/base/cache/file.txt");
+    (void)fclose(ffp);
+    (void)remove("/data/storage/el2/base/cache/file.txt");
 }
 
 /**
@@ -81,14 +81,14 @@ void Fputwc0200()
     } else {
         t_error("%s File opening failed", __func__);
     }
-    fclose(fp);
+    (void)fclose(fp);
     FILE *ffp = fopen("/data/storage/el2/base/cache/file.txt", "r");
     EXPECT_PTRNE("Fputwc0200", ffp, NULL);
     fgetws(buf, wcslen(str) + 1, ffp);
     EXPECT_EQ("Fputwc0200", ri, 0);
     EXPECT_EQ("Fputwc0200", wcscoll(buf, str), STRING_EQUAL);
-    fclose(ffp);
-    remove("/data/storage/el2/base/cache/file.txt");
+    (void)fclose(ffp);
+    (void)remove("/data/storage/el2/base/cache/file.txt");
 }
 
 static int FputwcTestImpl(int argc, char *argv[])

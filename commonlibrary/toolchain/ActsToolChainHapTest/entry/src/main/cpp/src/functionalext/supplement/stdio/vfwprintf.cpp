@@ -47,14 +47,14 @@ int ReadFile(FILE *stream, wchar_t *fmt, ...)
 void Vfwprintf0100(void)
 {
     wchar_t *value = L"hello %ls";
-    char *file_name = "/data/storage/el2/base/cache/temp_vfwprintf.txt";
-    FILE *file = fopen(file_name, "w");
+    char *fileName = "/data/storage/el2/base/cache/temp_vfwprintf.txt";
+    FILE *file = fopen(fileName, "w");
     int resule = ReadFile(file, value, L"world");
     if (resule < 0) {
         t_error("%s vfwprintf error get result is %d are not less 0\n", __func__, resule);
     }
-    fclose(file);
-    unlink(file_name);
+    (void)fclose(file);
+    unlink(fileName);
 }
 
 /**

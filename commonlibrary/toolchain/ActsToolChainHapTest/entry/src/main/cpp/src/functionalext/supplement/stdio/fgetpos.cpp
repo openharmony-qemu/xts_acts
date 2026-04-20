@@ -35,14 +35,16 @@ void Fgetpos0100()
     FILE *fp = fopen(path, "w+");
     EXPECT_PTRNE("Fgetpos0100", fp, NULL);
 
-    fputs(buff, fp);
-    fseek(fp, 0, SEEK_END);
+    (void)fputs(buff, fp);
+    if (fseek(fp, 0, SEEK_END) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
 
     int result = fgetpos(fp, &pos);
     EXPECT_EQ("Fgetpos0100", result, 0);
 
-    fclose(fp);
-    remove(path);
+    (void)fclose(fp);
+    (void)remove(path);
 }
 
 /**
@@ -59,13 +61,15 @@ void Fgetpos0200()
     FILE *fptr = fopen(path, "w+");
     EXPECT_PTRNE("Fgetpos0100", fptr, NULL);
 
-    fputs(buff, fptr);
-    fseek(fptr, 0, SEEK_SET);
+    (void)fputs(buff, fptr);
+    if (fseek(fptr, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     int result = fgetpos(fptr, &pos);
     EXPECT_EQ("Fgetpos0200", result, 0);
 
-    fclose(fptr);
-    remove(path);
+    (void)fclose(fptr);
+    (void)remove(path);
 }
 
 static TEST_FUN g_funArray[] = {

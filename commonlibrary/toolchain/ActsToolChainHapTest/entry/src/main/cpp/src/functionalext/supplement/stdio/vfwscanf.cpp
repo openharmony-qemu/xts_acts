@@ -70,7 +70,7 @@ void Vfwscanf0100(void)
         }
     }
 
-    fclose(fp);
+    (void)fclose(fp);
     unlink("/data/storage/el2/base/cache/example.txt");
 }
 

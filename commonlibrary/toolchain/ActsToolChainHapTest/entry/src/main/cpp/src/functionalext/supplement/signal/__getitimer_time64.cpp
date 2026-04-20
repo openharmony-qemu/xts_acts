@@ -58,7 +58,7 @@ static void SignalHandler(int signo)
  */
 void GetitimerTime640100(void)
 {
-    signal(SIGALRM, SignalHandler);
+    (void)signal(SIGALRM, SignalHandler);
     struct itimerval old;
     int result = GetitimerTime64(ITIMER_REAL, &old);
     EXPECT_EQ("GetitimerTime640100", result, 0);

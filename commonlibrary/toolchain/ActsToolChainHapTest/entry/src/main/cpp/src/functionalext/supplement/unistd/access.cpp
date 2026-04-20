@@ -37,8 +37,8 @@ void Access0100(void)
     EXPECT_PTRNE("access_0100", fptr, nullptr);
     int isExist = access(ptr, F_OK);
     EXPECT_EQ("access_0100", isExist, SUCCESS);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -58,8 +58,8 @@ void Access0200(void)
     getcwd(passbuff, sizeof(passbuff));
     int isExist = access(passbuff, F_OK);
     EXPECT_EQ("access_0200", isExist, SUCCESS);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -75,7 +75,7 @@ void Access0300(void)
     const char *ptr = "/data/storage/el2/base/cache/noaccesstest.txt";
     int isExist = access(ptr, F_OK);
     EXPECT_EQ("access_0300", isExist, FAILED);
-    remove(ptr);
+    (void)remove(ptr);
 }
 
 /**
@@ -89,7 +89,7 @@ void Access0400(void)
     const char *ptr = "/data/storage/el2/base/cache/noaccesstest";
     int isExist = access(ptr, F_OK);
     EXPECT_EQ("Access0400", isExist, FAILED);
-    remove(ptr);
+    (void)remove(ptr);
 }
 
 /**
@@ -105,8 +105,8 @@ void Access0500(void)
     EXPECT_PTRNE("access_0500", fptr, NULL);
     int isRead = access(ptr, R_OK);
     EXPECT_EQ("access_0500", isRead, SUCCESS);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -124,8 +124,8 @@ void Access0600(void)
     EXPECT_PTRNE("access_0600", fptr, NULL);
     int isWrite = access(ptr, W_OK);
     EXPECT_EQ("access_0600", isWrite, SUCCESS);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -144,8 +144,8 @@ void Access0700(void)
     system("chmod 777 /data/storage/el2/base/cache/accesstest.txt");
     int isExecute = access(ptr, X_OK);
     EXPECT_EQ("access_0700", isExecute, SUCCESS);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -163,8 +163,8 @@ void Access0800(void)
     EXPECT_PTRNE("access_0800", fptr, NULL);
     int isExecute = access(ptr, X_OK);
     EXPECT_EQ("access_0800", isExecute, FAILED);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }

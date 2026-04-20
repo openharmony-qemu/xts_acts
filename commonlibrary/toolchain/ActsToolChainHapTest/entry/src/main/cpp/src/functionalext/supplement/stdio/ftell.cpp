@@ -20,7 +20,7 @@
 
 #define STR_LEN 22
 #define MID_OFFSET 8
-static const char *wrstring = "This is a test sample!";
+static const char *WRSTRING = "This is a test sample!";
 static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
@@ -35,7 +35,7 @@ static void Ftell0100(void)
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fptr);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fptr);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -50,8 +50,8 @@ static void Ftell0100(void)
         t_error("%s ftell failed\n", __func__);
     }
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -66,7 +66,7 @@ void Ftell0200(void)
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fptr);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fptr);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -81,8 +81,8 @@ void Ftell0200(void)
         t_error("%s ftell failed\n", __func__);
     }
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -97,7 +97,7 @@ void Ftell0300(void)
         t_error("%s fopen failed\n", __func__);
     }
 
-    size_t ret = fwrite(wrstring, sizeof(char), strlen(wrstring), fptr);
+    size_t ret = fwrite(WRSTRING, sizeof(char), strlen(WRSTRING), fptr);
     if (ret < 0) {
         t_error("%s fwrite failed\n", __func__);
     }
@@ -111,8 +111,8 @@ void Ftell0300(void)
         t_error("%s ftell failed\n", __func__);
     }
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 static int FtellTestImpl(int argc, char *argv[])

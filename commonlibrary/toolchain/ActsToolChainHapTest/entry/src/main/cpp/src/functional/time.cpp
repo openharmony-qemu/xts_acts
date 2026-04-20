@@ -49,7 +49,7 @@ char *TmStrFunc(struct tm tm)
     static int i;
     static char b[TM_BUFFER_COUNT][TM_BUFFER_SIZE];
     i = (i + 1) % TM_BUFFER_COUNT;
-    snprintf(b[i], sizeof b[i],
+    (void)snprintf(b[i], sizeof b[i],
         "s=%02d m=%02d h=%02d mday=%02d mon=%02d year=%04d wday=%d yday=%d isdst=%d",
         tm.tm_sec, tm.tm_min, tm.tm_hour,
         tm.tm_mday, tm.tm_mon, tm.tm_year,

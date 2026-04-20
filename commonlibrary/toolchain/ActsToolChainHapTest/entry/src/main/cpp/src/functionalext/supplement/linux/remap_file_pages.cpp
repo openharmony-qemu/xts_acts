@@ -26,7 +26,7 @@
 #define MEMCPY_OFFSET_4 4
 #define REMAP_PAGE_INDEX 0
 #define REMAP_PAGE_INDEX_1 1
-static const char *path = "/data/storage/el2/base/cache/remap_file_pages.txt";
+static const char *PATH = "/data/storage/el2/base/cache/remap_file_pages.txt";
 static const char *TEXT =
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -110,7 +110,7 @@ void RemapFilePages0100(void)
 {
     char str[LEN] = {0};
 
-    int fd = open(path, O_RDWR | O_CREAT, 0644);
+    int fd = open(PATH, O_RDWR | O_CREAT, 0644);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }
@@ -119,7 +119,7 @@ void RemapFilePages0100(void)
         t_error("%s write failed\n", __func__);
     }
     close(fd);
-    fd = open(path, O_RDWR);
+    fd = open(PATH, O_RDWR);
     if (fd < 0) {
         t_error("%s open failed\n", __func__);
     }

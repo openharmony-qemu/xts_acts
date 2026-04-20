@@ -62,8 +62,8 @@ void Vfscanf0100(void)
     if (val != TEST_VALUE_123) {
         t_error("%s vfscanf get is %d are not 123\n", __func__, val);
     }
-    fclose(fp);
-    remove(file);
+    (void)fclose(fp);
+    (void)remove(file);
 }
 
 /**
@@ -99,8 +99,8 @@ void Vfscanf0200(void)
     if (strcmp(val, "123") != 0) {
         t_error("%s vfscanf get is '%s' are not '123'\n", __func__, val);
     }
-    fclose(fp);
-    remove(file);
+    (void)fclose(fp);
+    (void)remove(file);
 }
 
 /**
@@ -136,8 +136,8 @@ void Vfscanf0300(void)
     if (val2 != 0) {
         t_error("%s vfscanf get is %d are not 0\n", __func__, val2);
     }
-    fclose(fp);
-    remove(file);
+    (void)fclose(fp);
+    (void)remove(file);
 }
 
 static int VfscanfTestImpl(int argc, char *argv[])

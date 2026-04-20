@@ -32,7 +32,9 @@ void Fgetws0100()
 
     size_t fw = fwrite(str, sizeof(char), sizeof(str), fp);
     EXPECT_TRUE("fgetws_0100", fw > 0);
-    fseek(fp, 0, SEEK_SET);
+    if (fseek(fp, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
 
     wchar_t *ret = fgetws(mystring, 100, fp);
     EXPECT_PTRNE("fgetws_0100", ret, NULL);
@@ -40,7 +42,7 @@ void Fgetws0100()
     if (wcscmp(mystring, L"test")) {
         t_error("%s str invalid\n", __func__);
     }
-    fclose(fp);
+    (void)fclose(fp);
 }
 
 /**
@@ -57,14 +59,16 @@ void Fgetws0200()
     FILE *fptr = fopen(ptr, "w+");
     EXPECT_PTRNE("fgetws_0100", fptr, NULL);
 
-    fwrite(line, sizeof(line) / sizeof(wchar_t), sizeof(*line), fptr);
-    fflush(fptr);
+    (void)fwrite(line, sizeof(line) / sizeof(wchar_t), sizeof(*line), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
 
     wchar_t *ch = fgetws(wrstring, EINVAL, fptr);
     EXPECT_PTREQ("fgetws_0200", ch, NULL);
 
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
 }
 
 static int FgetwsTestImpl(int argc, char *argv[])

@@ -139,7 +139,7 @@ static int FopencookieTestImpl(int argc, char *argv[])
             return 1;
         }
     }
-    fclose(file);
+    (void)fclose(file);
     return 0;
 }
 

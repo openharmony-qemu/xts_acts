@@ -32,8 +32,8 @@ void Setvbuf0100(void)
     int result = setvbuf(fptr, buff, _IOFBF, 1024);
     EXPECT_EQ("setvbuf_0100", result, 0);
 
-    fclose(fptr);
-    remove(path);
+    (void)fclose(fptr);
+    (void)remove(path);
 }
 
 /**
@@ -52,8 +52,8 @@ void Setvbuf0200(void)
     int result = setvbuf(fptr, buff, -1, 1024);
     EXPECT_EQ("setvbuf_0200", result, -1);
 
-    fclose(fptr);
-    remove(path);
+    (void)fclose(fptr);
+    (void)remove(path);
 }
 
 static int SetvbufTestImpl(int argc, char *argv[])

@@ -24,20 +24,20 @@
  */
 void Flistxattr0100(void)
 {
-    const char *g_path = "/data/storage/el2/base/cache/test.txt";
-    char g_name[] = "user.x";
-    char g_value[] = "the past is not dead.";
+    const char *gPath = "/data/storage/el2/base/cache/test.txt";
+    char gName[] = "user.x";
+    char gValue[] = "the past is not dead.";
 
-    int fd = open(g_path, O_CREAT | O_WRONLY, 0667);
+    int fd = open(gPath, O_CREAT | O_WRONLY, 0667);
     EXPECT_NE("Flistxattr0100", fd, -1);
 
-    fsetxattr(fd, g_name, g_value, strlen(g_value), 0);
+    fsetxattr(fd, gName, gValue, strlen(gValue), 0);
 
-    ssize_t result = flistxattr(fd, g_name, 0);
+    ssize_t result = flistxattr(fd, gName, 0);
     EXPECT_NE("Flistxattr0100", result, -1);
 
     close(fd);
-    remove(g_path);
+    (void)remove(gPath);
 }
 
 static int FlistxattrTestImpl(int argc, char *argv[])

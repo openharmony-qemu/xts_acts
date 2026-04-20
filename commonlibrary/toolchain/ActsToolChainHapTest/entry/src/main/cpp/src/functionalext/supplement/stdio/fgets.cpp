@@ -28,16 +28,20 @@ void Fgets0100(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 100, fptr);
     if (strcmp(content, "this is a test\n") == 0) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0100", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
     wrString = nullptr;
@@ -55,16 +59,20 @@ void Fgets0200(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 5, fptr);
     if (strcmp(content, "this") == 0) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0200", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -81,16 +89,20 @@ void Fgets0300(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 2, fptr);
     if (strcmp(content, "t") == 0) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0300", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -107,16 +119,20 @@ void Fgets0400(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 1, fptr);
     if (*content == 0) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0400", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -133,16 +149,20 @@ void Fgets0500(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 0, fptr);
     if (content == NULL) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0500", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -159,16 +179,20 @@ void Fgets0600(void)
     const char *ptr = "/data/storage/el2/base/cache/fgetstest.txt";
     char *wrString = "this is a test\n";
     FILE *fptr = fopen(ptr, "wr+");
-    fwrite(wrString, sizeof(char), strlen(wrString), fptr);
-    fflush(fptr);
-    fseek(fptr, 0L, SEEK_END);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fptr);
+    if (fflush(fptr) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    if (fseek(fptr, 0L, SEEK_END) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *content = fgets(str, 100, fptr);
     if (content == NULL) {
         successFlag = true;
     }
     EXPECT_TRUE("Fgets0600", successFlag);
-    fclose(fptr);
-    remove(ptr);
+    (void)fclose(fptr);
+    (void)remove(ptr);
     fptr = nullptr;
     ptr = nullptr;
 }

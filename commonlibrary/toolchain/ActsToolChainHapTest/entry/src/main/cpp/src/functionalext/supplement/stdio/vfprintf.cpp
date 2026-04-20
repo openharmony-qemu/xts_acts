@@ -32,7 +32,10 @@ char *Getfileall(char *fname)
         printf("打开文件%s错误\n", fname);
         return nullptr;
     }
-    fseek(fp, FSEEK_OFFSET, SEEK_END);
+    if (fseek(fp, FSEEK_OFFSET, SEEK_END) != 0) {
+        (void)fclose(fp);
+        return nullptr;
+    }
     filesize = ftell(fp);
     str = (char *)malloc(filesize);
     str[0] = 0;
@@ -41,50 +44,50 @@ char *Getfileall(char *fname)
     while ((fgets(txt, BUFFER_SIZE, fp)) != nullptr) {
         strcat(str, txt);
     }
-    fclose(fp);
+    (void)fclose(fp);
     return str;
 }
 
-void vfprintf_test(char *file_name, char *format, char *func_name, char *wantReuslt, ...)
+void vfprintf_test(char *file_name, char *format, char *funcName, char *wantReuslt, ...)
 {
     FILE *file = fopen(file_name, "w");
     if (!file) {
-        t_error("%s fopen failed\n", func_name);
+        t_error("%s fopen failed\n", funcName);
     }
     va_list ap;
     va_start(ap, wantReuslt);
     int result = vfprintf(file, format, ap);
     va_end(ap);
-    fclose(file);
+    (void)fclose(file);
     if (result < 0) {
-        t_error("%s vfprintf get result is %d not less 0", func_name, result);
+        t_error("%s vfprintf get result is %d not less 0", funcName, result);
     }
     char *buffer = Getfileall(file_name);
     if (strcmp(buffer, wantReuslt) != 0) {
-        t_error("%s vfprintf get is '%s' not '%s'", func_name, buffer, wantReuslt);
+        t_error("%s vfprintf get is '%s' not '%s'", funcName, buffer, wantReuslt);
     }
-    remove(file_name);
+    (void)remove(file_name);
 }
 
-void vfprintf_n_test(char *file_name, char *format, char *func_name, char *wantReuslt, ...)
+void vfprintf_n_test(char *file_name, char *format, char *funcName, char *wantReuslt, ...)
 {
     FILE *file = fopen(file_name, "w");
     if (!file) {
-        t_error("%s fopen failed\n", func_name);
+        t_error("%s fopen failed\n", funcName);
     }
     va_list ap;
     va_start(ap, wantReuslt);
     int result = vfprintf(file, format, ap);
     va_end(ap);
-    fclose(file);
+    (void)fclose(file);
     if (result < 0) {
-        t_error("%s vfprintf get result is %d not less 0", func_name, result);
+        t_error("%s vfprintf get result is %d not less 0", funcName, result);
     }
     char *buffer = Getfileall(file_name);
     if (strcmp(buffer, wantReuslt) == 0) {
-        t_error("%s vfprintf get is '%s'", func_name, buffer);
+        t_error("%s vfprintf get is '%s'", funcName, buffer);
     }
-    remove(file_name);
+    (void)remove(file_name);
 }
 
 static int VfprintfTestImpl(int argc, char *argv[])

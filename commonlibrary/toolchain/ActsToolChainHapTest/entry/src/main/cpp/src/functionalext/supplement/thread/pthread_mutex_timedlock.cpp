@@ -30,18 +30,18 @@ void PthreadMutexTimedlock0100(void)
 {
     struct timespec ts = {0};
     ts.tv_sec = 1;
-    pthread_mutexattr_t mutex_attr;
+    pthread_mutexattr_t mutexAttr;
     pthread_mutex_t mutex;
-    pthread_mutexattr_init(&mutex_attr);
-    pthread_mutexattr_settype(&mutex_attr, TEST_MUTEX_ATTR);
-    pthread_mutex_init(&mutex, &mutex_attr);
+    pthread_mutexattr_init(&mutexAttr);
+    pthread_mutexattr_settype(&mutexAttr, TEST_MUTEX_ATTR);
+    pthread_mutex_init(&mutex, &mutexAttr);
 
     int rev = pthread_mutex_timedlock(&mutex, &ts);
     EXPECT_EQ("PthreadMutexTimedlock0100", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
-    pthread_mutexattr_destroy(&mutex_attr);
+    pthread_mutexattr_destroy(&mutexAttr);
 }
 
 /**
@@ -53,18 +53,18 @@ void PthreadMutexTimedlock0200(void)
 {
     struct timespec ts = {0};
     ts.tv_sec = 1;
-    pthread_mutexattr_t mutex_attr;
+    pthread_mutexattr_t mutexAttr;
     pthread_mutex_t mutex;
 
-    pthread_mutexattr_init(&mutex_attr);
-    pthread_mutexattr_settype(&mutex_attr, PTHREAD_MUTEX_ERRORCHECK);
-    pthread_mutex_init(&mutex, &mutex_attr);
+    pthread_mutexattr_init(&mutexAttr);
+    pthread_mutexattr_settype(&mutexAttr, PTHREAD_MUTEX_ERRORCHECK);
+    pthread_mutex_init(&mutex, &mutexAttr);
     int rev = pthread_mutex_timedlock(&mutex, &ts);
     EXPECT_EQ("PthreadMutexTimedlock0200", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
-    pthread_mutexattr_destroy(&mutex_attr);
+    pthread_mutexattr_destroy(&mutexAttr);
 }
 
 /**
@@ -76,11 +76,11 @@ void PthreadMutexTimedlock0300(void)
 {
     struct timespec ts = {0};
     ts.tv_sec = 1;
-    pthread_mutexattr_t mutex_attr;
+    pthread_mutexattr_t mutexAttr;
     pthread_mutex_t mutex;
-    pthread_mutexattr_init(&mutex_attr);
-    pthread_mutexattr_settype(&mutex_attr, TEST_MUTEX_ATTR);
-    pthread_mutex_init(&mutex, &mutex_attr);
+    pthread_mutexattr_init(&mutexAttr);
+    pthread_mutexattr_settype(&mutexAttr, TEST_MUTEX_ATTR);
+    pthread_mutex_init(&mutex, &mutexAttr);
     int rev = pthread_mutex_lock(&mutex);
     EXPECT_EQ("PthreadMutexTimedlock0300", rev, 0);
     rev = pthread_mutex_timedlock(&mutex, &ts);
@@ -88,7 +88,7 @@ void PthreadMutexTimedlock0300(void)
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
-    pthread_mutexattr_destroy(&mutex_attr);
+    pthread_mutexattr_destroy(&mutexAttr);
 }
 
 /**
@@ -100,18 +100,18 @@ void PthreadMutexTimedlockTime640100(void)
 {
     struct timespec ts = {0};
     ts.tv_sec = 1;
-    pthread_mutexattr_t mutex_attr;
+    pthread_mutexattr_t mutexAttr;
     pthread_mutex_t mutex;
-    pthread_mutexattr_init(&mutex_attr);
-    pthread_mutexattr_settype(&mutex_attr, TEST_MUTEX_ATTR);
-    pthread_mutex_init(&mutex, &mutex_attr);
+    pthread_mutexattr_init(&mutexAttr);
+    pthread_mutexattr_settype(&mutexAttr, TEST_MUTEX_ATTR);
+    pthread_mutex_init(&mutex, &mutexAttr);
 
     int rev = PthreadMutexTimedlockTime64(&mutex, &ts);
     EXPECT_EQ("PthreadMutexTimedlockTime640100", rev, 0);
 
     pthread_mutex_unlock(&mutex);
     pthread_mutex_destroy(&mutex);
-    pthread_mutexattr_destroy(&mutex_attr);
+    pthread_mutexattr_destroy(&mutexAttr);
 }
 
 static int PthreadMutexTimedlockTestImpl(void)

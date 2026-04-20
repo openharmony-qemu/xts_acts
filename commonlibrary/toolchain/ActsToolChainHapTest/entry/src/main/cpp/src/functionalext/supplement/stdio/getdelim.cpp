@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include "functionalext.h"
 
-static const char *g_getdelimPath = "/data/storage/el2/base/cache/getdelim.txt";
+static const char *GETDELIM_PATH = "/data/storage/el2/base/cache/getdelim.txt";
 
 /**
  * @tc.name      : getdelim_0100
@@ -30,18 +30,20 @@ void Getdelim0100(void)
     char *line = nullptr;
     size_t len = 0;
 
-    FILE *fp = fopen(g_getdelimPath, "w+");
+    FILE *fp = fopen(GETDELIM_PATH, "w+");
     EXPECT_PTRNE("getdelim_0100", fp, nullptr);
 
-    fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
-    fseek(fp, 0, SEEK_SET);
+    (void)fwrite(wrstring, sizeof(char), strlen(wrstring), fp);
+    if (fseek(fp, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
 
     ssize_t result = getdelim(&line, &len, ',', fp);
     EXPECT_TRUE("getdelim_0100", result > 0);
     EXPECT_TRUE("getdelim_0100", strcmp(line, "hello,") == 0);
     EXPECT_TRUE("getdelim_0100", len > strlen("hello,"));
 
-    remove(g_getdelimPath);
+    (void)remove(GETDELIM_PATH);
 }
 
 /**
@@ -54,12 +56,12 @@ void Getdelim0200(void)
     char *line = nullptr;
     char *wrstring = "helloworld";
 
-    FILE *fp = fopen(g_getdelimPath, "w+");
+    FILE *fp = fopen(GETDELIM_PATH, "w+");
     EXPECT_PTRNE("getdelim_0200", fp, NULL);
 
     ssize_t result = getdelim(&line, nullptr, 'l', fp);
     EXPECT_EQ("getdelim_0200", result, -1);
-    remove(g_getdelimPath);
+    (void)remove(GETDELIM_PATH);
 }
 
 /**
@@ -72,12 +74,12 @@ void Getdelim0300(void)
     size_t a = 0;
     char *wrstring = "helloworld";
 
-    FILE *fp = fopen(g_getdelimPath, "w+");
+    FILE *fp = fopen(GETDELIM_PATH, "w+");
     EXPECT_PTRNE("getdelim_0300", fp, NULL);
 
     ssize_t result = getdelim(nullptr, &a, 'l', fp);
     EXPECT_EQ("getdelim_0300", result, -1);
-    remove(g_getdelimPath);
+    (void)remove(GETDELIM_PATH);
 }
 
 static int GetdelimTestImpl(int argc, char *argv[])

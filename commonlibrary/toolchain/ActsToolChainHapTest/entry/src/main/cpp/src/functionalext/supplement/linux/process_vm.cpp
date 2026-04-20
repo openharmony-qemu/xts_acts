@@ -18,8 +18,8 @@
 #include <sys/uio.h>
 #include "functionalext.h"
 
-#define __VALUE_BUFFER_SIZE__ 256
-#define __VALUE_DATA_SIZE__ 2
+#define VALUE_BUFFER_SIZE 256
+#define VALUE_DATA_SIZE 2
 
 /**
  * @tc.name      : ProcessVmWritev0100
@@ -28,8 +28,8 @@
  */
 void ProcessVmWritev0100(void)
 {
-    char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmWritev0100.";
-    char dst[__VALUE_BUFFER_SIZE__] = "";
+    char src[VALUE_BUFFER_SIZE] = "This is ProcessVmWritev0100.";
+    char dst[VALUE_BUFFER_SIZE] = "";
     struct iovec local = {.iov_base = dst, .iov_len = sizeof(dst)};
     struct iovec remote = {.iov_base = src, .iov_len = sizeof(src)};
 
@@ -45,15 +45,15 @@ void ProcessVmWritev0100(void)
  */
 void ProcessVmWritev0200(void)
 {
-    char src1[__VALUE_BUFFER_SIZE__] = "This is ProcessVmWritev0200_1.";
-    char src2[__VALUE_BUFFER_SIZE__] = "This is ProcessVmWritev0200_2.";
-    char dst1[__VALUE_BUFFER_SIZE__] = "";
-    char dst2[__VALUE_BUFFER_SIZE__] = "";
-    struct iovec local[__VALUE_DATA_SIZE__] = {
+    char src1[VALUE_BUFFER_SIZE] = "This is ProcessVmWritev0200_1.";
+    char src2[VALUE_BUFFER_SIZE] = "This is ProcessVmWritev0200_2.";
+    char dst1[VALUE_BUFFER_SIZE] = "";
+    char dst2[VALUE_BUFFER_SIZE] = "";
+    struct iovec local[VALUE_DATA_SIZE] = {
         {.iov_base = dst1, .iov_len = sizeof(dst1)},
         {.iov_base = dst2, .iov_len = sizeof(dst2)},
     };
-    struct iovec remote[__VALUE_DATA_SIZE__] = {
+    struct iovec remote[VALUE_DATA_SIZE] = {
         {.iov_base = src1, .iov_len = sizeof(src1)},
         {.iov_base = src2, .iov_len = sizeof(src2)},
     };
@@ -61,7 +61,7 @@ void ProcessVmWritev0200(void)
     ssize_t rev = process_vm_readv(getpid(), local, 2, remote, 2, 0);
     EXPECT_EQ("ProcessVmWritev0200", rev, sizeof(dst1) + sizeof(dst2));
     int i;
-     for (i = 0; i < __VALUE_DATA_SIZE__; i++) {
+     for (i = 0; i < VALUE_DATA_SIZE; i++) {
         EXPECT_STREQ("ProcessVmWritev0200", (char*)local[i].iov_base, (char*)remote[i].iov_base);
     }
 }
@@ -73,7 +73,7 @@ void ProcessVmWritev0200(void)
  */
 void ProcessVmWritev0300(void)
 {
-    char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmWritev0300.";
+    char src[VALUE_BUFFER_SIZE] = "This is ProcessVmWritev0300.";
     struct iovec local = {
         .iov_base = nullptr,
         .iov_len = 0,
@@ -91,15 +91,15 @@ void ProcessVmWritev0300(void)
  */
 void ProcessVmReadv0100(void)
 {
-    char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmReadv0100.";
-    char dst[__VALUE_BUFFER_SIZE__] = "";
+    char src[VALUE_BUFFER_SIZE] = "This is ProcessVmReadv0100.";
+    char dst[VALUE_BUFFER_SIZE] = "";
     struct iovec remote;
     struct iovec local;
     remote.iov_base = src;
-    remote.iov_len = __VALUE_BUFFER_SIZE__;
+    remote.iov_len = VALUE_BUFFER_SIZE;
 
     local.iov_base = dst;
-    local.iov_len = __VALUE_BUFFER_SIZE__;
+    local.iov_len = VALUE_BUFFER_SIZE;
 
     int ret = process_vm_readv(getpid(), &local, 1, &remote, 1, 0);
     EXPECT_EQ("ProcessVmReadv0100", ret, sizeof(src));
@@ -113,14 +113,14 @@ void ProcessVmReadv0100(void)
  */
 void ProcessVmReadv0200(void)
 {
-    char dst[__VALUE_BUFFER_SIZE__] = "";
+    char dst[VALUE_BUFFER_SIZE] = "";
     struct iovec remote;
     struct iovec local;
     remote.iov_base = nullptr;
-    remote.iov_len = __VALUE_BUFFER_SIZE__;
+    remote.iov_len = VALUE_BUFFER_SIZE;
 
     local.iov_base = dst;
-    local.iov_len = __VALUE_BUFFER_SIZE__;
+    local.iov_len = VALUE_BUFFER_SIZE;
 
     int ret = process_vm_readv(getpid(), &local, 1, &remote, 1, 0);
     EXPECT_EQ("ProcessVmReadv0200", ret, ERREXPECT);
@@ -134,14 +134,14 @@ void ProcessVmReadv0200(void)
  */
 void ProcessVmReadv0300(void)
 {
-    char src[__VALUE_BUFFER_SIZE__] = "This is ProcessVmReadv0300.";
+    char src[VALUE_BUFFER_SIZE] = "This is ProcessVmReadv0300.";
     struct iovec remote;
     struct iovec local;
     remote.iov_base = src;
-    remote.iov_len = __VALUE_BUFFER_SIZE__;
+    remote.iov_len = VALUE_BUFFER_SIZE;
 
     local.iov_base = nullptr;
-    local.iov_len = __VALUE_BUFFER_SIZE__;
+    local.iov_len = VALUE_BUFFER_SIZE;
 
     int ret = process_vm_readv(getpid(), &local, 1, &remote, 1, 0);
     EXPECT_EQ("ProcessVmReadv0300", ret, ERREXPECT);

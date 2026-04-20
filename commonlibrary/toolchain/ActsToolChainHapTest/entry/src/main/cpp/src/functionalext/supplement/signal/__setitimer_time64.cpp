@@ -65,7 +65,7 @@ static void SignalHandler(int signo)
  */
 void SetitimerTime640100(void)
 {
-    signal(SIGALRM, SignalHandler);
+    (void)signal(SIGALRM, SignalHandler);
     struct itimerval it;
     memset(&it, 0, sizeof(it));
 

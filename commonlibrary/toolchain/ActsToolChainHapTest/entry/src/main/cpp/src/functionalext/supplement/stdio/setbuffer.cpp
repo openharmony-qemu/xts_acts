@@ -37,21 +37,23 @@ void Setbuffer0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fputs(STR, fp);
-    fflush(fp);
-    fclose(fp);
+    (void)fputs(STR, fp);
+    if (fflush(fp) != 0) {
+        t_error("%s fflush failed\n", __func__);
+    }
+    (void)fclose(fp);
 
     fp = fopen(path, "r");
 
     memset(buf, 0, sizeof(buf));
-    fread(buf, sizeof(buf), 1, fp);
+    (void)fread(buf, sizeof(buf), 1, fp);
 
     if (strcmp(buf, STR)) {
         t_error("%s failed: setbuf. buf = %s\n", __func__, buf);
     }
 
-    fclose(fp);
-    remove(path);
+    (void)fclose(fp);
+    (void)remove(path);
 }
 
 /**
@@ -71,8 +73,8 @@ void Setbuffer0200(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    fclose(f);
-    remove(path);
+    (void)fclose(f);
+    (void)remove(path);
 }
 
 static int SetbufferTestImpl(int argc, char *argv[])

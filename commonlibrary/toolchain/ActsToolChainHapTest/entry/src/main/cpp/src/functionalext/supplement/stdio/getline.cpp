@@ -33,15 +33,17 @@ void Getline0100(void)
 
     FILE *fp = fopen(TEST_TXT_PATH, "w+");
     EXPECT_PTRNE("Getline0100", fp, NULL);
-    fwrite(wrString, sizeof(char), strlen(wrString), fp);
-    fseek(fp, 0, SEEK_SET);
+    (void)fwrite(wrString, sizeof(char), strlen(wrString), fp);
+    if (fseek(fp, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
 
     ssize_t read = getline(&line, &len, fp);
     EXPECT_EQ("Getline0100", read, STR_LEN);
     EXPECT_STREQ("Getline0100", line, "helloworld");
 
-    fclose(fp);
-    remove(TEST_TXT_PATH);
+    (void)fclose(fp);
+    (void)remove(TEST_TXT_PATH);
 }
 
 /**
@@ -59,8 +61,8 @@ void Getline0200(void)
     ssize_t read = getline(NULL, &len, fp);
     EXPECT_EQ("Getline0200", read, -1);
 
-    fclose(fp);
-    remove(FILE_TXT_PATH);
+    (void)fclose(fp);
+    (void)remove(FILE_TXT_PATH);
 }
 
 /**
@@ -77,8 +79,8 @@ void Getline0300(void)
 
     ssize_t read = getline(&line, 0, fp);
     EXPECT_EQ("Getline0300", read, -1);
-    fclose(fp);
-    remove(FILE_TXT_PATH);
+    (void)fclose(fp);
+    (void)remove(FILE_TXT_PATH);
 }
 
 static int GetlineTestImpl(int argc, char *argv[])

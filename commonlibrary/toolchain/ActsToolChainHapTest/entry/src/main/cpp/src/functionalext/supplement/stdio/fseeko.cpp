@@ -46,8 +46,8 @@ void Fseeko0100(void)
         t_error("%s fseeko failed, ch is %c\n", __func__, ch);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -76,8 +76,8 @@ void Fseeko0200(void)
         t_error("%s fseeko failed, ch is %c\n", __func__, ch);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -112,8 +112,8 @@ void Fseeko0300(void)
         t_error("%s fseeko failed, ch is %c\n", __func__, ch);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -142,8 +142,8 @@ void Fseeko0400(void)
         t_error("%s fseeko failed, ch is %c\n", __func__, ch);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -168,8 +168,8 @@ void Fseeko0500(void)
         t_error("%s fseeko should be failed, result is %d\n", __func__, result);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 /**
@@ -194,8 +194,8 @@ void Fseeko0600(void)
         t_error("%s fseeko failed, result is %d\n", __func__, result);
     }
 
-    fclose(fp);
-    remove(PATH);
+    (void)fclose(fp);
+    (void)remove(PATH);
 }
 
 static int FseekoTestImpl(int argc, char *argv[])

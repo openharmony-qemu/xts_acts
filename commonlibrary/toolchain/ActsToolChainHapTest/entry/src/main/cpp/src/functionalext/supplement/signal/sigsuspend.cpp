@@ -41,42 +41,42 @@ void Sigsuspend0100(void)
 
     int flags = 0;
     struct sigaction act = {.sa_flags = flags, .sa_handler = Handler};
-    struct sigaction old_act = {};
-    int result = sigaction(sig, &act, &old_act);
+    struct sigaction oldAct = {};
+    int result = sigaction(sig, &act, &oldAct);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    sigset_t pending_set;
-    sigemptyset(&pending_set);
-    sigpending(&pending_set);
+    sigset_t pendingSet;
+    sigemptyset(&pendingSet);
+    sigpending(&pendingSet);
 
     for (int i = SIGHUP; i <= SIGSTKSZ; ++i) {
-        result = sigismember(&pending_set, i);
+        result = sigismember(&pendingSet, i);
         if (result != 0) {
             t_error("%s failed: result = %d, i = %d\n", __func__, result, i);
         }
     }
 
-    raise(sig);
+    (void)raise(sig);
     if (g_handlerCount != 0) {
         t_error("%s failed: g_handlerCount = %d\n", __func__, g_handlerCount);
     }
 
-    sigemptyset(&pending_set);
-    sigpending(&pending_set);
+    sigemptyset(&pendingSet);
+    sigpending(&pendingSet);
 
     for (int i = SIGHUP; i <= SIGSTKSZ; ++i) {
-        if ((i == sig) != (sigismember(&pending_set, i))) {
+        if ((i == sig) != (sigismember(&pendingSet, i))) {
             t_error("%s failed: i = %d, sig = %d\n", __func__, i, sig);
         }
     }
 
-    sigset_t set_without_sig;
-    sigfillset(&set_without_sig);
-    sigdelset(&set_without_sig, sig);
+    sigset_t setWithoutSig;
+    sigfillset(&setWithoutSig);
+    sigdelset(&setWithoutSig, sig);
 
-    result = sigsuspend(&set_without_sig);
+    result = sigsuspend(&setWithoutSig);
     if (result != -1) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

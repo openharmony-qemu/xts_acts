@@ -52,7 +52,7 @@ void Fremovexattr0100(void)
     EXPECT_EQ("Fremovexattr0100", result, FAILURE_CODE);
 
     close(fd);
-    remove(PATH);
+    (void)remove(PATH);
 }
 
 static int FremovexattrTestImpl(int argc, char *argv[])

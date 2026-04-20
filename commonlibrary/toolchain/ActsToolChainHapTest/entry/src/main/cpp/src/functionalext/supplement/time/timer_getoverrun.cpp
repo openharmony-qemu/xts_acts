@@ -53,7 +53,7 @@ void TimerGetoverrun0100(void)
     sev.sigev_signo = SIGNUM;
     sev.sigev_value.sival_ptr = &g_timerid;
 
-    signal(SIGNUM, Handler);
+    (void)signal(SIGNUM, Handler);
 
     int result = timer_create(CLOCK_REALTIME, &sev, &g_timerid);
     if (result != 0) {

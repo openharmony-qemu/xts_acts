@@ -24,13 +24,13 @@
 #define DNS_QBUF_OFFSET 4
 #define DATA_LENGTH 0
 
-const int g_op = QUERY;
-const int g_dnsClass = C_IN;
-const int g_type = T_TXT;
-const char g_dname[] = "www.example.com";
-const unsigned char *g_data = reinterpret_cast<const unsigned char *>("");
-const char g_qbuf[] = "\0\1\0\0\0\0\0\0";
-const char g_qname[] = "\3www\7example\3com";
+const int OP = QUERY;
+const int DNS_CLASS = C_IN;
+const int TYPE = T_TXT;
+const char DNAME[] = "www.example.com";
+const unsigned char *DATA = reinterpret_cast<const unsigned char *>("");
+const char QBUF[] = "\0\1\0\0\0\0\0\0";
+const char QNAME[] = "\3www\7example\3com";
 
 /**
  * @tc.name      : ResMkquery0100
@@ -41,17 +41,17 @@ void ResMkquery0100(void)
 {
     unsigned char buf[BUFSIZ] = {0};
 
-    int result = res_mkquery(g_op, g_dname, g_dnsClass, g_type, g_data, DATA_LENGTH, nullptr, buf, sizeof(buf));
+    int result = res_mkquery(OP, DNAME, DNS_CLASS, TYPE, DATA, DATA_LENGTH, nullptr, buf, sizeof(buf));
     if (result < 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + DNS_HEADER_OFFSET, g_qname, sizeof(g_qname) - 1);
+    result = memcmp(buf + DNS_HEADER_OFFSET, QNAME, sizeof(QNAME) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = memcmp(buf + DNS_QBUF_OFFSET, g_qbuf, sizeof(g_qbuf) - 1);
+    result = memcmp(buf + DNS_QBUF_OFFSET, QBUF, sizeof(QBUF) - 1);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -64,7 +64,7 @@ void ResMkquery0100(void)
  */
 void ResMkquery0200(void)
 {
-    int result = res_mkquery(g_op, g_dname, g_dnsClass, T_ANY + 1, g_data, DATA_LENGTH, nullptr, nullptr, DATA_LENGTH);
+    int result = res_mkquery(OP, DNAME, DNS_CLASS, T_ANY + 1, DATA, DATA_LENGTH, nullptr, nullptr, DATA_LENGTH);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

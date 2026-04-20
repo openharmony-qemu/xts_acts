@@ -45,7 +45,7 @@ void *ChildFunc(void *p)
     int count = atoi(buf);
     ++count;
 
-    sprintf(buf, "%d", count);
+    (void)sprintf(buf, "%d", count);
     if (fseek(filep, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
@@ -53,7 +53,7 @@ void *ChildFunc(void *p)
 
     funlockfile(filep);
 
-    fclose(filep);
+    (void)fclose(filep);
     return nullptr;
 }
 
@@ -86,11 +86,11 @@ static int FunlockfileTestImpl(int argc, char *argv[])
     if (fp == nullptr) {
         t_error("%s fopen failed\n", __func__);
     }
-    fclose(fp);
+    (void)fclose(fp);
 
     Funlockfile0100();
 
-    remove(PATH);
+    (void)remove(PATH);
     return g_tStatus;
 }
 

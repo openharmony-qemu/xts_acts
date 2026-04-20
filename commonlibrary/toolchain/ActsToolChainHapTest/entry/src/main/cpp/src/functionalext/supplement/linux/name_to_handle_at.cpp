@@ -19,7 +19,7 @@
 #include <cstdio>
 #include "test.h"
 
-const char *g_pathName = "/proc/self/mountinfo";
+const char *PATH_NAME = "/proc/self/mountinfo";
 
 /**
  * @tc.name      : NameToHandleAt0100
@@ -30,7 +30,7 @@ void NameToHandleAt0100(void)
 {
     struct file_handle *fhp;
     char buf[1000];
-    int mount_id;
+    int mountId;
     int fhsize;
     int flags;
     int dirfd;
@@ -45,7 +45,7 @@ void NameToHandleAt0100(void)
     flags = 0;
     fhp->handle_bytes = 0;
 
-    if (name_to_handle_at(dirfd, g_pathName, fhp, &mount_id, flags) != -1 || errno != EOVERFLOW) {
+    if (name_to_handle_at(dirfd, PATH_NAME, fhp, &mountId, flags) != -1 || errno != EOVERFLOW) {
         t_error("%s Unexpected name_to_handle_at\n", __func__);
     }
 
@@ -55,12 +55,12 @@ void NameToHandleAt0100(void)
         t_error("%s realloc failed\n", __func__);
     }
 
-    int result = name_to_handle_at(dirfd, g_pathName, fhp, &mount_id, flags);
+    int result = name_to_handle_at(dirfd, PATH_NAME, fhp, &mountId, flags);
     if (result == -1) {
         t_error("%s name_to_handle_at failed\n");
     }
 
-    int fd = open_by_handle_at(mount_id, fhp, O_RDONLY);
+    int fd = open_by_handle_at(mountId, fhp, O_RDONLY);
     if (fd == -1) {
         t_error("%s open_by_handle_at failed\n", __func__);
     }

@@ -26,9 +26,9 @@ typedef void (*TEST_FUN)();
 void InetNtop0100(void)
 {
     char ip4test[] = "10.10.0.1";
-    struct in_addr sin_addr;
-    inet_pton(AF_INET, ip4test, &sin_addr);
-    const char *ptr = inet_ntop(AF_INET, &sin_addr, ip4test, sizeof(ip4test));
+    struct in_addr sinAddr;
+    inet_pton(AF_INET, ip4test, &sinAddr);
+    const char *ptr = inet_ntop(AF_INET, &sinAddr, ip4test, sizeof(ip4test));
     EXPECT_PTRNE("InetNtop0100", ptr, NULL);
     EXPECT_STREQ("InetNtop0100", ptr, ip4test);
 }
@@ -42,9 +42,9 @@ void InetNtop0100(void)
 void InetNtop0200(void)
 {
     char ip6test[] = "A157:CD01:3579:1526:DBAC:EF21:4356:7879";
-    struct in_addr sin_addr;
-    inet_pton(AF_INET6, ip6test, &sin_addr);
-    const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
+    struct in_addr sinAddr;
+    inet_pton(AF_INET6, ip6test, &sinAddr);
+    const char *ptr = inet_ntop(AF_INET6, &sinAddr, ip6test, sizeof(ip6test));
     EXPECT_PTRNE("InetNtop0200", ptr, NULL);
     EXPECT_STREQ("InetNtop0200", ptr, ip6test);
 }
@@ -58,9 +58,9 @@ void InetNtop0200(void)
 void InetNtop0300(void)
 {
     char ip6test[] = "fe80::bed5:4695:6cac:bef8";
-    struct in_addr sin_addr;
-    inet_pton(AF_INET6, ip6test, &sin_addr);
-    const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
+    struct in_addr sinAddr;
+    inet_pton(AF_INET6, ip6test, &sinAddr);
+    const char *ptr = inet_ntop(AF_INET6, &sinAddr, ip6test, sizeof(ip6test));
     EXPECT_PTRNE("InetNtop0300", ptr, NULL);
     EXPECT_STREQ("InetNtop0300", ptr, ip6test);
 }
@@ -74,9 +74,9 @@ void InetNtop0300(void)
 void InetNtop0400(void)
 {
     char ip6test[] = "::10.10.0.1";
-    struct in_addr sin_addr;
-    inet_pton(AF_INET6, ip6test, &sin_addr);
-    const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
+    struct in_addr sinAddr;
+    inet_pton(AF_INET6, ip6test, &sinAddr);
+    const char *ptr = inet_ntop(AF_INET6, &sinAddr, ip6test, sizeof(ip6test));
     EXPECT_PTRNE("InetNtop0400", ptr, NULL);
     EXPECT_EQ("InetNtop0400", ptr, ip6test);
 }
@@ -89,9 +89,9 @@ void InetNtop0400(void)
 void InetNtop0500(void)
 {
     char ip4test[] = "10.10.0.1";
-    struct in_addr sin_addr;
-    inet_pton(AF_UNIX, ip4test, &sin_addr);
-    const char *ptr = inet_ntop(AF_UNIX, &sin_addr, ip4test, sizeof(ip4test));
+    struct in_addr sinAddr;
+    inet_pton(AF_UNIX, ip4test, &sinAddr);
+    const char *ptr = inet_ntop(AF_UNIX, &sinAddr, ip4test, sizeof(ip4test));
     EXPECT_PTREQ("InetNtop0500", ptr, NULL);
 }
 
@@ -103,9 +103,9 @@ void InetNtop0500(void)
 void InetNtop0600(void)
 {
     char ip6test[] = "10.10.0.1";
-    struct in_addr sin_addr;
-    inet_pton(AF_INET6, ip6test, &sin_addr);
-    const char *ptr = inet_ntop(AF_INET6, &sin_addr, ip6test, sizeof(ip6test));
+    struct in_addr sinAddr;
+    inet_pton(AF_INET6, ip6test, &sinAddr);
+    const char *ptr = inet_ntop(AF_INET6, &sinAddr, ip6test, sizeof(ip6test));
     EXPECT_PTREQ("InetNtop0600", ptr, NULL);
 }
 

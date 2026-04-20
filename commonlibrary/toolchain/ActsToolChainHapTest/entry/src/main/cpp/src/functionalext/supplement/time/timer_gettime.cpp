@@ -50,7 +50,7 @@ void TimerGettime0100(void)
     sev.sigev_notify = SIGEV_SIGNAL;
     sev.sigev_signo = SIGUSR1;
     sev.sigev_value.sival_ptr = &timerid;
-    signal(SIGUSR1, TimerHandler);
+    (void)signal(SIGUSR1, TimerHandler);
 
     if (timer_create(CLOCK_MONOTONIC, &sev, &timerid) == -1) {
         t_error("%s timer create failed", __func__);

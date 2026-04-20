@@ -60,7 +60,7 @@ void Dprintf0300(void)
     EXPECT_EQ("Dprintf0300", result, ret);
 
     close(fd);
-    remove(path);
+    (void)remove(path);
 }
 
 /**
@@ -79,7 +79,7 @@ void Dprintf0400(void)
     EXPECT_EQ("Dprintf0400", result, -1);
 
     close(fd);
-    remove(path);
+    (void)remove(path);
 }
 
 static int DprintfTestWithArgs(int argc, char *argv[])

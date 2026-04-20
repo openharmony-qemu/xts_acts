@@ -25,17 +25,17 @@ static unsigned int g_waitingThreads;
 
 static int ChildWait(void *data)
 {
-    mtx_lock(&g_mutex);
+    (void)mtx_lock(&g_mutex);
     ++g_waitingThreads;
     cnd_wait(&g_cond, &g_mutex);
-    mtx_unlock(&g_mutex);
+    (void)mtx_unlock(&g_mutex);
 
     thrd_exit(thrd_success);
 }
 
 /**
  * @tc.name      : CndBroadcast0100
- * @tc.desc      :
+ * @tc.desc      : Test cnd_broadcast to wake up all waiting threads
  * @tc.level     : Level 0
  */
 void CndBroadcast0100(void)
@@ -58,13 +58,13 @@ void CndBroadcast0100(void)
     }
 
     while (true) {
-        mtx_lock(&g_mutex);
+        (void)mtx_lock(&g_mutex);
         if (g_waitingThreads > N) {
             t_error("%s ", __func__);
         }
-        bool done_waiting = g_waitingThreads == N;
-        mtx_unlock(&g_mutex);
-        if (done_waiting) {
+        bool doneWaiting = g_waitingThreads == N;
+        (void)mtx_unlock(&g_mutex);
+        if (doneWaiting) {
             break;
         }
         {
@@ -73,11 +73,11 @@ void CndBroadcast0100(void)
         }
     }
 
-    mtx_lock(&g_mutex);
+    (void)mtx_lock(&g_mutex);
     if (cnd_broadcast(&g_cond) != thrd_success) {
         t_error("%s cnd_broadcast failed\n", __func__);
     }
-    mtx_unlock(&g_mutex);
+    (void)mtx_unlock(&g_mutex);
 
     for (i = 0; i < N; ++i) {
         if (thrd_join(ids[i], nullptr) != thrd_success) {

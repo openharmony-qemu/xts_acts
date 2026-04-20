@@ -34,8 +34,8 @@ static void Fwrite0100(void)
     int result = fwrite(buf, sizeof(char), strlen(buf), fptr);
     EXPECT_TRUE("Fwrite0100", result == strlen(buf));
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -52,8 +52,8 @@ void Fwrite0200(void)
     int result = fwrite(buf, 0, strlen(buf), fptr);
     EXPECT_EQ("Fwrite0200", result, 0);
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -70,8 +70,8 @@ void Fwrite0300(void)
     int result = fwrite(buf, sizeof(char), 0, fptr);
     EXPECT_EQ("Fwrite0300", result, 0);
 
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 void Fwrite0400(void)

@@ -32,8 +32,10 @@ void Fgetln0100(void)
         t_error("%s fopen failed\n", __func__);
     }
 
-    fputs("HelloWorld", f);
-    fseek(f, 0, SEEK_SET);
+    (void)fputs("HelloWorld", f);
+    if (fseek(f, 0, SEEK_SET) != 0) {
+        t_error("%s fseek failed\n", __func__);
+    }
     char *result = fgetln(f, &plen);
     if (!result) {
         t_error("%s fgetln failed\n", __func__);
@@ -45,13 +47,13 @@ void Fgetln0100(void)
         t_error("%s failed, plen is %zu\n", __func__, plen);
     }
 
-    fclose(f);
-    remove("/data/storage/el2/base/cache/test.txt");
+    (void)fclose(f);
+    (void)remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
  * @tc.name       : Fgetln0200
- * @tc.desc       :
+ * @tc.desc       : Test fgetln with invalid file pointer
  * @tc.level      : level 2
  */
 void Fgetln0200(void)
@@ -68,8 +70,8 @@ void Fgetln0200(void)
         t_error("%s fgetln should be failed\n", __func__);
     }
 
-    fclose(f);
-    remove("/data/storage/el2/base/cache/test.txt");
+    (void)fclose(f);
+    (void)remove("/data/storage/el2/base/cache/test.txt");
 }
 
 static int FgetlnTestImpl(int argc, char *argv[])

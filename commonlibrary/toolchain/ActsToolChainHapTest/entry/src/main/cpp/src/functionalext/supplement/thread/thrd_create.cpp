@@ -102,7 +102,7 @@ void ThrdCreate0200(void)
  */
 void ThrdCreate0300(void)
 {
-    thrd_create(nullptr, Threadfunc, nullptr);
+    (void)thrd_create(nullptr, Threadfunc, nullptr);
 }
 
 static int ThrdCreateTestImpl(int argc, char *argv[])

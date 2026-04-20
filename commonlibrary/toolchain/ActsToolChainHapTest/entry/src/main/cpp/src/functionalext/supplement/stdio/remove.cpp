@@ -25,7 +25,7 @@ void Remove0100(void)
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
     FILE *fptr = fopen(ptr, "w");
     EXPECT_TRUE("remove_0100", fptr != NULL);
-    fclose(fptr);
+    (void)fclose(fptr);
     int ret = remove(ptr);
     EXPECT_EQ("remove_0100", ret, 0);
     fptr = nullptr;

@@ -56,7 +56,7 @@ void Fprintf0300(void)
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     EXPECT_EQ("Fprintf0300", len, strlen(str));
 }
@@ -73,10 +73,10 @@ void Fprintf0400(void)
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "r");
     if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     EXPECT_EQ("Fprintf0400", len, ERRORLEN);
-    remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
+    (void)remove("/data/storage/el2/base/cache/tempory_testfprintf.txt");
 }
 
 /**
@@ -93,7 +93,7 @@ void Fprintf0500(void)
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
         len = fprintf(fptr, "String: %s, Int: %d, Double: %.2f", str, num, d);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     int expectedLen = strlen("String: Test, Int: 123, Double: 45.67");
     EXPECT_EQ("Fprintf0500", len, expectedLen);
@@ -114,8 +114,8 @@ void Fprintf0600(void)
     // Write first line
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
-        fprintf(fptr, "%s", str1);
-        fclose(fptr);
+        (void)fprintf(fptr, "%s", str1);
+        (void)fclose(fptr);
     }
     
     // Append second line
@@ -123,7 +123,7 @@ void Fprintf0600(void)
     size_t len = 0;
     if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str2);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     
     EXPECT_EQ("Fprintf0600", len, strlen(str2));
@@ -145,7 +145,7 @@ void Fprintf0700(void)
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
         len = fprintf(fptr, "%s", largeStr);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     
     EXPECT_EQ("Fprintf0700", len, strlen(largeStr));
@@ -164,7 +164,7 @@ void Fprintf0800(void)
     FILE *fptr = fopen("/data/storage/el2/base/cache/tempory_testfprintf.txt", "w");
     if (fptr != nullptr) {
         len = fprintf(fptr, "%s", str);
-        fclose(fptr);
+        (void)fclose(fptr);
     }
     
     EXPECT_EQ("Fprintf0800", len, strlen(str));

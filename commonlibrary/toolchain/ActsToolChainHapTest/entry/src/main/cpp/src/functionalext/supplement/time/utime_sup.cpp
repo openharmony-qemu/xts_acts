@@ -48,7 +48,7 @@ void Utime0100(void)
             }
         }
     }
-    remove(file);
+    (void)remove(file);
 }
 
 /**
@@ -67,25 +67,25 @@ void Utime0200(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold;
-    time_t t_aold;
-    time_t t_now;
-    time_t t_mnew;
-    time_t t_anew;
+    time_t tMold;
+    time_t tAold;
+    time_t tNow;
+    time_t tMnew;
+    time_t tAnew;
     stat(path, &buf1);
 
-    t_mold = buf1.st_mtime;
-    t_aold = buf1.st_atime;
-    t_now = time(nullptr);
+    tMold = buf1.st_mtime;
+    tAold = buf1.st_atime;
+    tNow = time(nullptr);
     if (utime(path, nullptr) != 0) {
         stat(path, &buf2);
-        t_mnew = buf2.st_mtime;
-        t_anew = buf2.st_atime;
-        if (t_mnew != t_now && t_anew != t_now) {
+        tMnew = buf2.st_mtime;
+        tAnew = buf2.st_atime;
+        if (tMnew != tNow && tAnew != tNow) {
             t_error("%s utime failed", __func__);
         }
     }
-    remove(path);
+    (void)remove(path);
 }
 
 /**
@@ -116,7 +116,7 @@ void Utime640100(void)
             }
         }
     }
-    remove(file);
+    (void)remove(file);
 }
 
 static int UtimeSupTestImpl(int argc, char *argv[])

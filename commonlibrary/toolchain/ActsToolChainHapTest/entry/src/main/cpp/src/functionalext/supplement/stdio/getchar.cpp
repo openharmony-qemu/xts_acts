@@ -51,7 +51,7 @@ void Getchar0100(void)
     }
 
     close(fd);
-    remove(PATH);
+    (void)remove(PATH);
 }
 
 static int GetcharTestImpl(int argc, char *argv[])

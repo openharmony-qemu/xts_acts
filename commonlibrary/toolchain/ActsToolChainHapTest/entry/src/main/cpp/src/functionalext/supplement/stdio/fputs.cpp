@@ -29,8 +29,8 @@ void Fputs0100(void)
 
     int len = fputs("this is a test string", fptr);
     EXPECT_TRUE("Fputs0100", len >= 0);
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -45,8 +45,8 @@ void Fputs0200(void)
 
     int len = fputs("", fptr);
     EXPECT_TRUE("Fputs0200", len >= 0);
-    fclose(fptr);
-    remove(PATH);
+    (void)fclose(fptr);
+    (void)remove(PATH);
 }
 
 /**
@@ -57,12 +57,12 @@ void Fputs0200(void)
 void Fputs0300(void)
 {
     FILE *p = fopen(PATH, "w");
-    fclose(p);
+    (void)fclose(p);
     p = fopen(PATH, "r");
     int len = fputs("this is a test string", p);
     EXPECT_EQ("Fputs0300", len, EOF);
-    fclose(p);
-    remove(PATH);
+    (void)fclose(p);
+    (void)remove(PATH);
 }
 
 static int FputsTestImpl(int argc, char *argv[])

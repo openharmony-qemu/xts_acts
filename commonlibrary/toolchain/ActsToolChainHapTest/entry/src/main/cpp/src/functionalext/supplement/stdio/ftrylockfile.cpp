@@ -29,8 +29,8 @@ void Ftrylockfile0100(void)
     ret = ftrylockfile(fptr);
     EXPECT_EQ("Ftrylockfile0100", ret, 0);
     funlockfile(fptr);
-    fclose(fptr);
-    remove("ftrylockfile.txt");
+    (void)fclose(fptr);
+    (void)remove("ftrylockfile.txt");
 }
 
 static int FtrylockfileTestImpl(int argc, char *argv[])
