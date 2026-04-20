@@ -293,6 +293,10 @@ export const AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam: () => number
 
 export const AVMediaDescriptionBuilderSetMediaTypeSuccess: () => number;
 
+export const AVMediaDescriptionBuilderSetMediaTypeAudioSuccess: () => number;
+
+export const AVMediaDescriptionBuilderSetMediaTypeVideoSuccess: () => number;
+
 export const AVMediaDescriptionBuilderSetMediaTypeInvalidParam: () => number;
 
 export const AVMediaDescriptionBuilderSetLyricContentSuccess: () => number;

@@ -452,6 +452,10 @@ static void InitPush9(std::vector<napi_property_descriptor> &desc)
         AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED));
     desc.push_back(XL("AVSession_AVQUEUEITEM_ERROR_NO_MEMORY",
         AVSession_AVQUEUEITEM_ERROR_NO_MEMORY));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeAudioSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeAudioSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeVideoSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeVideoSuccess));
 }
 static napi_value Init(napi_env env, napi_value exports)
 {

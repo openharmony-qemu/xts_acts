@@ -240,6 +240,36 @@ napi_value AVMediaDescriptionBuilderSetMediaTypeSuccess(napi_env env, napi_callb
     return retValue;
 }
 
+napi_value AVMediaDescriptionBuilderSetMediaTypeAudioSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
+    const char *mediaType = "AUDIO";
+    int32_t result = OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(builder, mediaType);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVMediaDescriptionBuilderSetMediaTypeVideoSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
+    const char *mediaType = "VIDEO";
+    int32_t result = OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(builder, mediaType);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
 napi_value AVMediaDescriptionBuilderSetMediaTypeInvalidParam(napi_env env, napi_callback_info info)
 {
     OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
