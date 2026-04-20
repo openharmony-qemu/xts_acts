@@ -24,13 +24,28 @@ import { Hypium } from "../../../hypium";
 import { hilog } from "@kit.PerformanceAnalysisKit";
 
 const TAG = "cameraXts.common";
-
-const COMMON_WAIT_DURATION: number = 500;
+export const COMMON_WAIT_DURATION: number = 500;
 const domain = 0x0000;
 const tag = 'ListTest';
 
-
-export function resourceName():string {
+export async function getFd(pathName: string):Promise<int> {
+  console.info(TAG, 'case come in getFd');
+  let appContext: Context = Hypium.get("Context") as Context;
+  pathName = appContext.filesDir + "/" + pathName;
+  console.log(TAG, 'pathName =' + pathName);
+  let file = fs.openSync(pathName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let fdNumber = file.fd;
+  console.info(TAG, 'case getFd number is: ' + fdNumber);
+  return fdNumber;
+}
+export function sleep(ms: int): Promise<int> {
+  return new Promise<int>((resolve) => {
+    setTimeout(() => {
+      resolve(0);
+    }, ms);
+  });
+}
+export function resourceName(): string {
   let timestamp = Date.now();
   let filename = `avRecorder_${timestamp}.mp4`;
   return filename;
@@ -51,8 +66,6 @@ export async function getPermission(name?: Permissions): Promise<void> {
     arr.push('ohos.permission.GRANT_SENSITIVE_PERMISSIONS')
     arr.push('ohos.permission.MICROPHONE')
     arr.push('ohos.permission.MEDIA_LOCATION')
-    arr.push('ohos.permission.READ_IMAGEVIDEO')
-    arr.push('ohos.permission.WRITE_IMAGEVIDEO')
     hilog.info(domain, tag, '%{public}s', '  beforeAll requestPermissionsFromUser');
     atManager.requestPermissionsFromUser(context, arr,
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
@@ -61,7 +74,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
     await Utils.msSleep(500);
 
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < arr.length; i++) {
 
       let dr = Driver.create();
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
