@@ -259,7 +259,7 @@ napi_value AVMediaDescriptionBuilderSetMediaTypeVIDEOSuccess(napi_env env, napi_
 {
     OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
     OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
-    const char *mediaType = "AUDIO";
+    const char *mediaType = "VEDIO";
     int32_t result = OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(builder, mediaType);
     napi_value retValue;
     if (result == AVQUEUEITEM_SUCCESS) {
