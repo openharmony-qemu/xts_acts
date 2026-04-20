@@ -412,43 +412,15 @@ enum TestEnum9600 {
 }
 // 9700
 enum TestEnum9700 {
-  One = 631
-}
-// 9800
-enum TestEnum9800 {
-  One = -24
+  One = -631
 }
 // 9900
 enum TestEnum9900 {
   One = -40408
 }
-// 10000
-enum TestEnum10000 {
-  One = -632
-}
-// 10100
-enum TestEnum10100 {
-  One = -4
-}
 // 10200
 enum TestEnum10200 {
   One = 536870908
-}
-// 10300
-enum TestEnum10300 {
-  One = 64
-}
-// 10400
-enum TestEnum10400 {
-  One = 32
-}
-// 10500
-enum TestEnum10500 {
-  One = 32
-}
-// 10600
-enum TestEnum10600 {
-  One = -64
 }
 // 10700
 enum TestEnum10700 {
@@ -1941,5 +1913,105 @@ export default function ConstantExpressionCheckEnum() {
       expect(TestEnum9400.One.valueOf()).assertEqual(testValue)
     })
 
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ENUM_9500
+     * @tc.name      testConstantExpressionCheckEnum0095
+     * @tc.desc      Constant shift expression as enum initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckEnum0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(TestEnum9500.One.valueOf()).assertEqual(40408);
+      expect(TestEnum9600.One.valueOf()).assertEqual(631);
+      expect(TestEnum9700.One.valueOf()).assertEqual(-631);
+      expect(TestEnum9900.One.valueOf()).assertEqual(-40408);
+      expect(TestEnum10200.One.valueOf()).assertEqual(536870908);
+    });
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ENUM_9600
+     * @tc.name      testConstantExpressionCheckEnum0096
+     * @tc.desc      Constant expression chain initializer, declared in the same compilation unit.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckEnum0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numByte: byte = 101;
+      expect(TestEnum10700.One.valueOf()).assertEqual("value = " + numByte);
+
+      const numShort: short = 101;
+      expect(TestEnum10800.One.valueOf()).assertEqual("value = " + numShort);
+
+      const numInt: int = 101;
+      expect(TestEnum10900.One.valueOf()).assertEqual("value = " + numInt);
+
+      const numLong: long = 101;
+      expect(TestEnum11000.One.valueOf()).assertEqual("value = " + numLong);
+
+      const numFloat: float = 10.1f;
+      expect(TestEnum11100.One.valueOf()).assertEqual("value = " + numFloat);
+
+      const numNumber: number = 101.5;
+      expect(TestEnum11200.One.valueOf()).assertEqual("value = " + numNumber);
+    });
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ENUM_9700
+     * @tc.name      testConstantExpressionCheckEnum0097
+     * @tc.desc      Constant expression with unary minus as enum initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckEnum0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(TestEnum11300.One.valueOf()).assertEqual(-16 as byte);
+      expect(TestEnum11400.One.valueOf()).assertEqual(-300 as short);
+      expect(TestEnum11500.One.valueOf()).assertEqual(120.2f.toString());
+      expect(TestEnum11600.One.valueOf()).assertEqual(5050.9.toString());
+      expect(TestEnum11700.One.valueOf()).assertEqual(-3000 as int);
+      expect(TestEnum11800.One.valueOf()).assertEqual(-50000 as long);
+      expect(TestEnum11900.One.valueOf()).assertEqual((-120.2f).toString());
+      expect(TestEnum12000.One.valueOf()).assertEqual((-5050.9).toString());
+      expect(TestEnum12100.One.valueOf()).assertEqual(16 as byte);
+      expect(TestEnum12200.One.valueOf()).assertEqual(300 as short);
+      expect(TestEnum12300.One.valueOf()).assertEqual(3000 as int);
+      expect(TestEnum12400.One.valueOf()).assertEqual(50000 as long);
+    });
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ENUM_9800
+     * @tc.name      testConstantExpressionCheckEnum0098
+     * @tc.desc      Constant expression with unary plus as enum initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckEnum0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(TestEnum12500.One.valueOf()).assertEqual(16 as byte);
+      expect(TestEnum12600.One.valueOf()).assertEqual(300 as short);
+      expect(TestEnum12700.One.valueOf()).assertEqual((-120.2f).toString());
+      expect(TestEnum12800.One.valueOf()).assertEqual((-5050.9).toString());
+      expect(TestEnum12900.One.valueOf()).assertEqual(3000 as int);
+      expect(TestEnum13000.One.valueOf()).assertEqual(50000 as long);
+      expect(TestEnum13100.One.valueOf()).assertEqual(120.2f.toString());
+      expect(TestEnum13200.One.valueOf()).assertEqual(5050.9.toString());
+    });
+
+    /**
+     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ENUM_9900
+     * @tc.name      testConstantExpressionCheckEnum0099
+     * @tc.desc      Constant expression with unary plus as enum initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testConstantExpressionCheckEnum0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(TestEnum13300.One.valueOf()).assertEqual(-16 as byte);
+      expect(TestEnum13400.One.valueOf()).assertEqual(-300 as short);
+      expect(TestEnum13500.One.valueOf()).assertEqual(-3000 as int);
+      expect(TestEnum13600.One.valueOf()).assertEqual(-50000 as long);
+    });
   })
 }
