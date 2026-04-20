@@ -503,7 +503,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0100
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0100
-     * @tc.desc   abnormal test
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -525,7 +525,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0200
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0200
-     * @tc.desc   abnormal test
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -548,7 +548,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0300
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0300
-     * @tc.desc   abnormal test
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 257 return 17500002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -556,7 +556,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     it('SUB_Security_CertManager_getPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0300: started ");
       let uri: string = 'oh:t=ak;o=object;u=100;a=20010045';
-      let uriObject = generateString(256-27);
+      let uriObject = generateString(257-27);
       try {
         await certManager.getPrivateCertificate(uri.replace("object", uriObject));
         expect(null).assertFail();
@@ -570,7 +570,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0400
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0400
-     * @tc.desc   abnormal test
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 257 return 17500002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -593,7 +593,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0100
      * @tc.number SUB_Security_CertManager_InitJsApi_Func_0100
-     * @tc.desc   abnormal test
+     * @tc.desc   Call init interface with length of keyUri is 255 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -620,7 +620,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0200
      * @tc.number SUB_Security_CertManager_InitJsApi_Func_0200
-     * @tc.desc   abnormal test
+     * @tc.desc   Call init interface with length of keyUri is 256 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -647,7 +647,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0300
      * @tc.number SUB_Security_CertManager_InitJsApi_Func_0300
-     * @tc.desc   abnormal test
+     * @tc.desc   Call init interface with length of keyUri is 255 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -675,7 +675,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0400
      * @tc.number SUB_Security_CertManager_InitJsApi_Func_0400
-     * @tc.desc   abnormal test
+     * @tc.desc   Call init interface with length of keyUri is 256 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
