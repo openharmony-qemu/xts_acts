@@ -203,10 +203,6 @@ static void InitPush4(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam",
         AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam));
     desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeSuccess", AVMediaDescriptionBuilderSetMediaTypeSuccess));
-    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeAudioSuccess",
-        AVMediaDescriptionBuilderSetMediaTypeAudioSuccess));
-    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeVideoSuccess",
-        AVMediaDescriptionBuilderSetMediaTypeVideoSuccess));
     desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeInvalidParam",
         AVMediaDescriptionBuilderSetMediaTypeInvalidParam));
     desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentSuccess",
@@ -456,6 +452,10 @@ static void InitPush9(std::vector<napi_property_descriptor> &desc)
         AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED));
     desc.push_back(XL("AVSession_AVQUEUEITEM_ERROR_NO_MEMORY",
         AVSession_AVQUEUEITEM_ERROR_NO_MEMORY));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeAudioSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeAudioSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeVideoSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeVideoSuccess));
 }
 static napi_value Init(napi_env env, napi_value exports)
 {
