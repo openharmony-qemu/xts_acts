@@ -1842,7 +1842,7 @@ export default function api16CertFuncTestTwoUnit() {
         expect(null).assertFail();
       }catch(error){
         console.error("SUB_Security_CertManager_getUserTrustedCertificate_0100 failed to get user trusted certificate.")
-        expect(error.code).assertEqual(401)'
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_getUserTrustedCertificate_0100 end');
       done();
@@ -1863,7 +1863,7 @@ export default function api16CertFuncTestTwoUnit() {
         expect(null).assertFail();
       }catch(error){
         console.error("SUB_Security_CertManager_getUserTrustedCertificate_0200 failed to get user trusted certificate.")
-        expect(error.code).assertEqual(401)'
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_getUserTrustedCertificate_0200 end');
       done();
