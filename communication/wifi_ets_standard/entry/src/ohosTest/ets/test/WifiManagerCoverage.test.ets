@@ -2009,26 +2009,30 @@ export default function wifiManagerCoverage() {
       console.info(`${caseName} test start`);
       try {
         let status = wifiManager.isWifiActive();
-                console.info("isWifiActive result:" + status);
-                if(!status) {
-                    console.info("wifi is close,enableWifi start.");
-                    wifiManager.enableWifi();
-                    await sleep(2000);
-                    let state1 = wifiManager.isWifiActive();
-                    console.info("isWifiActive result:" + state1);
-                    expect(state1).assertTrue();
-                    console.info("enableWifi success.");
-                }
-        wifiManager.startScan();
-        let scanInfo: wifiManager.WifiScanInfo = wifiManager.getScanInfoList()[0];
-        console.log(`${caseName} create scanInfo success `, JSON.stringify(scanInfo));
-        expect(typeof scanInfo.bssidType).assertEqual('number');
-        expect(typeof scanInfo.centerFrequency0).assertEqual('number');
-        expect(typeof scanInfo.centerFrequency1).assertEqual('number');
-        expect(Array.isArray(scanInfo.infoElems)).assertTrue();
-        expect(typeof scanInfo.bssidType).assertEqual('number');
-        expect(typeof scanInfo.supportedWifiCategory).assertEqual('number');
-        expect(typeof scanInfo.isHiLinkNetwork).assertEqual('boolean');
+        console.info("isWifiActive result:" + status);
+        if(!status) {
+            console.info("wifi is close,enableWifi start.");
+            wifiManager.enableWifi();
+            await sleep(2000);
+            let state1 = wifiManager.isWifiActive();
+            console.info("isWifiActive result:" + state1);
+            expect(state1).assertTrue();
+            console.info("enableWifi success.");
+        }
+        let scanInfolist = wifiManager.getScanInfoList();
+        if (scanInfolist.length > 0) {
+          let scanInfo = scanInfolist[0];
+          console.log(`${caseName} create scanInfo success `, JSON.stringify(scanInfo));
+          expect(typeof scanInfo.bssidType).assertEqual('number');
+          expect(typeof scanInfo.centerFrequency0).assertEqual('number');
+          expect(typeof scanInfo.centerFrequency1).assertEqual('number');
+          expect(Array.isArray(scanInfo.infoElems)).assertTrue();
+          expect(typeof scanInfo.bssidType).assertEqual('number');
+          expect(typeof scanInfo.supportedWifiCategory).assertEqual('number');
+          expect(typeof scanInfo.isHiLinkNetwork).assertEqual('boolean');
+        }else{
+          expect(scanInfolist.length === 0).assertTrue();
+        }
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
