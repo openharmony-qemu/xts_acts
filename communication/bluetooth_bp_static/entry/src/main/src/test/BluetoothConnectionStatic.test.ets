@@ -1261,7 +1261,7 @@ export default function bluetoothConnectionTest() {
     it("connectAllowedProfiles_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.connectAllowedProfiles(deviceId).then(() => {
+          await connection.connectAllowedProfiles("55:45:55:45:55:45").then(() => {
             hilog.info(domain, tag, 'connectAllowedProfiles success');
           });
           expect().assertFail();
