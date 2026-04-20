@@ -525,7 +525,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0200
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0200
-     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 256 return 401
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 255 return 17500002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -548,7 +548,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0300
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0300
-     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 257 return 17500002
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 257 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -562,7 +562,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`SUB_Security_CertManager_getPrivateCertificate_Func_0300 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(17500002);
+        expect(error.code).assertEqual(401);
       }
       console.log("SUB_Security_CertManager_getPrivateCertificate_Func_0300: end ");
       done();
@@ -570,7 +570,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_getPrivateCertificate_Func_0400
      * @tc.number SUB_Security_CertManager_getPrivateCertificate_Func_0400
-     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 257 return 17500002
+     * @tc.desc   Call getPrivateCertificate interface with length of keyUri is 255 return 17500002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -620,7 +620,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_InitJsApi_Func_0200
      * @tc.number SUB_Security_CertManager_InitJsApi_Func_0200
-     * @tc.desc   Call init interface with length of keyUri is 256 return 17500001
+     * @tc.desc   Call init interface with length of keyUri is 256 return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -639,7 +639,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`SUB_Security_CertManager_InitJsApi_Func_0200 failed. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(17500001);
+        expect(error.code).assertEqual(401);
       }
       console.log("SUB_Security_CertManager_InitJsApi_Func_0200: end ");
       done();
