@@ -444,5 +444,89 @@ export default function actsApiTest() {
       let result = testNapi.apitest(28);
       expect(result).assertEqual(TEST_SUCCESS);
     });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0200
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0200
+     * @tc.desc    Obtain a list of supported capabilities and their names for the video encoder
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0200', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0200');
+      let result = testNapi.apitest(29);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0300
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0300
+     * @tc.desc    Obtain a list of supported capabilities and their names for the video decoder
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0300', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0300');
+      let result = testNapi.apitest(30);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_AUDIO_ENC_CAP_API_0400
+     * @tc.name    SUB_MUlTIMEDIA_AUDIO_ENC_CAP_API_0400
+     * @tc.desc    Obtain a list of supported capabilities and their names for the audio encoder
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_AUDIO_ENC_CAP_API_0400', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_AUDIO_ENC_CAP_API_0400');
+      let result = testNapi.apitest(31);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_AUDIO_DEC_CAP_API_0500
+     * @tc.name    SUB_MUlTIMEDIA_AUDIO_DEC_CAP_API_0500
+     * @tc.desc    Obtain a list of supported capabilities and their names for the audio decoder
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_AUDIO_DEC_CAP_API_0500', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_AUDIO_DEC_CAP_API_0500');
+      let result = testNapi.apitest(32);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
+     * @tc.desc    Check the encoder type
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600');
+      let result = testNapi.apitest(33);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0700
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0700
+     * @tc.desc    Check the secure decoder type
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0700', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0700');
+      let result = testNapi.apitest(34);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
   });
 }

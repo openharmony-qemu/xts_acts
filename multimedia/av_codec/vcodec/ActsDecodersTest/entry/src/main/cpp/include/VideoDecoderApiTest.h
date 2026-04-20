@@ -55,6 +55,12 @@ int VideoAv1DecCapApi0014();
 int VideoAv1DecCapApi0015();
 int VideoWvc1DecCapApi0016();
 int VideoAv1DecCapApi0017();
+int VideoEncCapApi0018();
+int VideoDecCapApi0019();
+int VideoEncCapApi0020();
+int VideoDecCapApi0021();
+int VideoEncCapApi0022();
+int VideoDecCapApi0023();
 
 } // namespace Media
 } // namespace OHOS
