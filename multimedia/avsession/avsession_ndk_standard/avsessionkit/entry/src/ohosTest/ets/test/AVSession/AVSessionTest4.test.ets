@@ -288,7 +288,7 @@ export default function AVSessionTest4() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam();
