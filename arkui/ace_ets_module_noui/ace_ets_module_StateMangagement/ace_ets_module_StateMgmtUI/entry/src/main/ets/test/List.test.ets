@@ -47,7 +47,7 @@ import LifeCycleTest0300 from './lifecycle/LifeCycleTest0300.test';
 import LifeCycleTest0310 from './lifecycle/LifeCycleTest0310.test';
 import LifeCycleUndefinedNullTest from './lifecycle/LifeCycleUndefinedNullTest.test';
 import CircularReferenceTest from './circularReference/CircularReferenceTest.test';
-
+import CustomPropertyTest from './customProperty/CustomProperty.test';
 
 export default function testsuite() {
     MutableBuilder001();
@@ -84,4 +84,5 @@ export default function testsuite() {
     LifeCycleTest0310();
     LifeCycleUndefinedNullTest();
     CircularReferenceTest();
+    CustomPropertyTest();
 }
