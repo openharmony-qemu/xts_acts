@@ -33,12 +33,12 @@ export default function replaceTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testReplace0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0100
-     * @tc.desc    Replace first matched substring with plain text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0100
+     * @tc.desc Replace first matched substring with plain text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('world');
@@ -47,12 +47,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0200
-     * @tc.desc    Global replace substitutes all numeric groups
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0200
+     * @tc.desc Global replace substitutes all numeric groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+', 'g');
@@ -61,12 +61,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0300
-     * @tc.desc    Replace supports numbered back-reference tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0300
+     * @tc.desc Replace supports numbered back-reference tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(ab)(cd)');
@@ -75,12 +75,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0400
-     * @tc.desc    Global single-character replace updates all matches
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0400
+     * @tc.desc Global single-character replace updates all matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a', 'g');
@@ -89,12 +89,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0500
-     * @tc.desc    Replace: $& and $$ tokens and literal dollar handling
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0500
+     * @tc.desc Replace: $& and $$ tokens and literal dollar handling
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out1 = 'abc'.replace(new RegExp('b'), '[$&]');
@@ -106,12 +106,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0600
-     * @tc.desc    Replace: capture groups ($1..$n) with optional/unmatched groups
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0600
+     * @tc.desc Replace: capture groups ($1..$n) with optional/unmatched groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out1 = 'abcd'.replace(new RegExp('(ab)(cd)'), '$2$1');
@@ -124,12 +124,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0700
-     * @tc.desc    Replace: global and non-global differences and first-only behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0700
+     * @tc.desc Replace: global and non-global differences and first-only behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const s = 'a1a2a3';
@@ -138,12 +138,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0800
-     * @tc.desc    Replace: numbered backreferences $1/$2 reorder captured groups in replacement
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0800
+     * @tc.desc Replace: numbered backreferences $1/$2 reorder captured groups in replacement
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'xxabcdyy'.replace(new RegExp('(ab)(cd)'), '$2-$1');
@@ -151,12 +151,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0900
-     * @tc.desc    Replace: multiline and dot behavior with and without dotAll (s)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0900
+     * @tc.desc Replace: multiline and dot behavior with and without dotAll (s)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'hello\nworld';
@@ -169,12 +169,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1000
-     * @tc.desc    Replace: escaping special characters and backslash in replacement
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1000
+     * @tc.desc Replace: escaping special characters and backslash in replacement
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a+b*c?.';
@@ -188,12 +188,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1100
-     * @tc.desc    Replace: zero-length matches do not cause infinite loops (global)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1100
+     * @tc.desc Replace: zero-length matches do not cause infinite loops (global)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // /(?:)/g matches between characters; replace should terminate.
@@ -202,12 +202,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1200
-     * @tc.desc    Replace: non-RegExp searchValue coercion (string semantics)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1200
+     * @tc.desc Replace: non-RegExp searchValue coercion (string semantics)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const text = 'a.b.c';
@@ -216,12 +216,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1300
-     * @tc.desc    Replace: prefix and suffix tokens ($` and $') in replacement
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1300
+     * @tc.desc Replace: prefix and suffix tokens ($` and $') in replacement
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out1 = 'abc'.replace(new RegExp('b'), '<$`>');
@@ -231,12 +231,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1400
-     * @tc.desc    Replace: global regex replaces every digit run with a literal string
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1400
+     * @tc.desc Replace: global regex replaces every digit run with a literal string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a1b22c333'.replace(new RegExp('\\d+', 'g'), '#');
@@ -244,16 +244,16 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1500
-     * @tc.desc    Replace: named capture back-reference in replacement string
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1500
+     * @tc.desc Replace: named capture back-reference in replacement string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<a>\\w+)-(?<b>\\w+)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = 'left-right'.replace(new RegExp('(?<a>\\w+)-(?<b>\\w+)'), '$<b>/$<a>');
@@ -261,12 +261,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1600
-     * @tc.desc    Replace: multiline anchor replacement in each line
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1600
+     * @tc.desc Replace: multiline anchor replacement in each line
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a\nb\nc';
@@ -277,12 +277,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1700
-     * @tc.desc    Replace: quantifier and class based replacements
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1700
+     * @tc.desc Replace: quantifier and class based replacements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('a11b222c3333'.replace(new RegExp('\\d{2,3}', 'g'), 'N')).assertEqual('aNbNcN3');
@@ -292,12 +292,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1800
-     * @tc.desc    Replace: unicode replacement and dotAll gate behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1800
+     * @tc.desc Replace: unicode replacement and dotAll gate behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('😀😀'.replace(new RegExp('😀', 'g'), 'X')).assertEqual('XX');
@@ -309,12 +309,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1900
-     * @tc.desc    Replace: no match returns original string unchanged
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1900
+     * @tc.desc Replace: no match returns original string unchanged
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'abcdef';
@@ -323,12 +323,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2000
-     * @tc.desc    Replace: empty pattern in non-global mode inserts once at start
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2000
+     * @tc.desc Replace: empty pattern in non-global mode inserts once at start
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('abc'.replace(new RegExp(''), '-')).assertEqual('-abc');
@@ -336,12 +336,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2100
-     * @tc.desc    Replace: case-insensitive global replacement covers all variants
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2100
+     * @tc.desc Replace: case-insensitive global replacement covers all variants
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'Abc aBC ABC';
@@ -350,12 +350,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2200
-     * @tc.desc    Replace: multi-group reordering token expansion remains stable
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2200
+     * @tc.desc Replace: multi-group reordering token expansion remains stable
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = '2026-04-17';
@@ -364,12 +364,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0222
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2300
-     * @tc.desc    Replace: string searchValue replaces only the first occurrence
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0222
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2300
+     * @tc.desc Replace: string searchValue replaces only the first occurrence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Product copy often uses simple string replace; only the first hit must change to avoid silent bulk edits.
@@ -380,12 +380,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0223
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2400
-     * @tc.desc    Replace: string searchValue treats $n as literal text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0223
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2400
+     * @tc.desc Replace: string searchValue treats $n as literal text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When the pattern is not a RegExp, replacement expansion rules differ from capture back-references.
@@ -396,27 +396,27 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0224
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2500
-     * @tc.desc    Replace: referencing a missing capture index leaves literal or empty per engine rules
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0224
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2500
+     * @tc.desc Replace: referencing a missing capture index leaves literal or empty per engine rules
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mis-numbered templates are common after refactors; engines must not throw and must stay deterministic.
-      // We assert the stable V8-style literal for an absent $2 rather than guessing silent empty substitution.
+      // We assert the stable engine-style literal for an absent $2 rather than guessing silent empty substitution.
       const out = 'foo'.replace(new RegExp('(f)'), '$2');
       expect(out).assertEqual('$2oo');
     });
 
     /**
-     * @tc.name    testReplace0225
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2600
-     * @tc.desc    Replace: nested capturing groups expand $1..$3 predictably
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0225
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2600
+     * @tc.desc Replace: nested capturing groups expand $1..$3 predictably
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Log parsers often nest groups; replacement templates must mirror the group numbering users see in debuggers.
@@ -427,12 +427,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0226
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2700
-     * @tc.desc    Replace: gi flag combination replaces every case variant
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0226
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2700
+     * @tc.desc Replace: gi flag combination replaces every case variant
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // User-generated content mixes casing; case-insensitive global replace is the usual normalization primitive.
@@ -442,12 +442,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0227
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2800
-     * @tc.desc    Replace: multiline gm replaces line starts across records
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0227
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2800
+     * @tc.desc Replace: multiline gm replaces line starts across records
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Config files and stack traces are multiline; without m, ^ only matches the whole string start once.
@@ -457,12 +457,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0228
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2900
-     * @tc.desc    Replace: digit runs can be wrapped using $& token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0228
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_2900
+     * @tc.desc Replace: digit runs can be wrapped using $& token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Invoice scrubbing often brackets numbers; $& avoids retyping the matched substring and drift on pattern edits.
@@ -471,12 +471,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0229
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3000
-     * @tc.desc    Replace: $$ inserts a single dollar in numeric-heavy replacements
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0229
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3000
+     * @tc.desc Replace: $$ inserts a single dollar in numeric-heavy replacements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Currency formatting must escape $ correctly or parsers treat the tail as a capture reference.
@@ -485,12 +485,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0230
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3100
-     * @tc.desc    Replace: non-global regex ignores lastIndex for the first match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0230
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3100
+     * @tc.desc Replace: non-global regex ignores lastIndex for the first match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Callers sometimes mutate lastIndex on shared regex objects; non-global replace must still hit the leftmost occurrence.
@@ -502,12 +502,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0231
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3200
-     * @tc.desc    Replace: global regex replaces every match and normalizes lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0231
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3200
+     * @tc.desc Replace: global regex replaces every match and normalizes lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Batch cleaners usually intend global replace to sweep the whole string, not resume a half-finished exec loop.
@@ -520,18 +520,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0232
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3300
-     * @tc.desc    Replace: sticky regex replaces at lastIndex when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0232
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3300
+     * @tc.desc Replace: sticky regex replaces at lastIndex when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Sticky scanning is used for incremental tokenizers; replace must mutate the intended code unit, not the first match globally.
       // Feature-gating avoids hard failures on engines that omit the y flag.
       if (!supportsRegExp('a', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const str = 'aaa';
@@ -541,12 +541,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0233
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3400
-     * @tc.desc    Replace: global completion resets lastIndex to zero
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0233
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3400
+     * @tc.desc Replace: global completion resets lastIndex to zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Long-lived global regexes are reused; leaving lastIndex at the string end breaks the next operation.
@@ -559,12 +559,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0234
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3500
-     * @tc.desc    Replace: hasIndices flag does not change replacement text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0234
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3500
+     * @tc.desc Replace: hasIndices flag does not change replacement text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // d is for diagnostics; business logic should not branch on it for simple substitutions.
@@ -578,12 +578,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0235
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3600
-     * @tc.desc    Replace: empty subject leaves replace as no-op for non-empty pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0235
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3600
+     * @tc.desc Replace: empty subject leaves replace as no-op for non-empty pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty payloads appear in optional fields; replace must not invent characters or throw.
@@ -592,12 +592,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0236
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3700
-     * @tc.desc    Replace: empty pattern with global inserts between code units
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0236
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3700
+     * @tc.desc Replace: empty pattern with global inserts between code units
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some formatters interleave separators using an empty-matching global regex; termination must be guaranteed.
@@ -606,15 +606,15 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0237
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3800
-     * @tc.desc    Replace: long inputs complete global substitution without truncation
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0237
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3800
+     * @tc.desc Replace: long inputs complete global substitution without truncation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Batch jobs run on large blobs; substring limits here would surface as partial masking in privacy tooling.
+      // Batch jobs run on large blobs; substring limits here would appear as partial masking in privacy tooling.
       // A bounded but non-trivial length keeps CI fast while still stressing iteration.
       const str = 'a'.repeat(800);
       const out = str.replace(new RegExp('a', 'g'), 'b');
@@ -623,12 +623,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0238
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3900
-     * @tc.desc    Replace: empty replacement deletes the match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0238
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_3900
+     * @tc.desc Replace: empty replacement deletes the match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Redaction pipelines often strip markers; empty replacement is the idiomatic delete operation.
@@ -637,12 +637,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0239
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4000
-     * @tc.desc    Replace: whole-string substitution uses anchored greedy pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0239
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4000
+     * @tc.desc Replace: whole-string substitution uses anchored greedy pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Feature flags and canned responses replace the entire payload atomically to avoid partial exposure.
@@ -651,12 +651,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0240
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4100
-     * @tc.desc    Replace: whitespace normalization chains for logs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0240
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4100
+     * @tc.desc Replace: whitespace normalization chains for logs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Log exporters mix \n and \t; deterministic whitespace folding simplifies diffing across platforms.
@@ -667,12 +667,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0241
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4200
-     * @tc.desc    Replace: accented Latin normalizes to ASCII for legacy storage
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0241
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4200
+     * @tc.desc Replace: accented Latin normalizes to ASCII for legacy storage
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Older backends lack full Unicode columns; stripping accents avoids collation surprises on indexes.
@@ -681,12 +681,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0242
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4300
-     * @tc.desc    Replace: emoji tokens swap to textual emoticons
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0242
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4300
+     * @tc.desc Replace: emoji tokens swap to textual emoticons
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Push notifications and SMS gateways still prefer ASCII fallbacks for emoji-heavy chat input.
@@ -696,12 +696,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0243
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4400
-     * @tc.desc    Replace: Unicode code point escapes with u flag when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0243
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4400
+     * @tc.desc Replace: Unicode code point escapes with u flag when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mathematical Alphanumeric symbols appear in imported STEM content; u-mode keeps code points intact.
@@ -711,17 +711,17 @@ export default function replaceTest002(): void {
         const out = str.replace(new RegExp('\\u{1D7D8}', 'gu'), '0');
         expect(out).assertEqual('0𝟙𝟚');
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testReplace0244
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4500
-     * @tc.desc    Replace: surrogate pair character with u flag replaces one glyph
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0244
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4500
+     * @tc.desc Replace: surrogate pair character with u flag replaces one glyph
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // SMP glyphs use surrogate pairs in UTF-16; splitting them corrupts user-visible text in editors.
@@ -732,17 +732,17 @@ export default function replaceTest002(): void {
         expect(str.replace(new RegExp(ch, 'u'), 'X')).assertEqual('X' + ch);
         expect(str.replace(new RegExp(ch, 'gu'), 'X')).assertEqual('XX');
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testReplace0245
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4600
-     * @tc.desc    Replace: Symbol.replace on RegExp matches String.prototype.replace
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0245
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4600
+     * @tc.desc Replace: Symbol.replace on RegExp matches String.prototype.replace
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Polyfills and native interop sometimes dispatch through @@replace; both entry points must agree.
@@ -754,12 +754,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0246
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4700
-     * @tc.desc    Replace: invalid pattern throws at construction time
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0246
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4700
+     * @tc.desc Replace: invalid pattern throws at construction time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // User-supplied filters must fail fast during compilation, not mid-replace on production traffic.
@@ -774,12 +774,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0247
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4800
-     * @tc.desc    Replace: word-boundary cleanup removes stray tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0247
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4800
+     * @tc.desc Replace: word-boundary cleanup removes stray tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Token scrubbing in chat moderation relies on \\b to avoid chopping substrings inside identifiers.
@@ -788,12 +788,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0248
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4900
-     * @tc.desc    Replace: alternation with captures still expands $1 from the active branch
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0248
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_4900
+     * @tc.desc Replace: alternation with captures still expands $1 from the active branch
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Router configs often encode mutually exclusive branches; replacements must pick the matched arm only.
@@ -803,12 +803,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0249
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5000
-     * @tc.desc    Replace: $` and $' reflect updated surroundings on second global pass semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0249
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5000
+     * @tc.desc Replace: $` and $' reflect updated surroundings on second global pass semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Template expanders stitch context around each match; global passes must recompute prefix/suffix per match.
@@ -818,12 +818,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0250
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5100
-     * @tc.desc    Replace: numeric pattern coerces through ToString for string replace
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0250
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5100
+     * @tc.desc Replace: numeric pattern coerces through ToString for string replace
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // IDs arrive as numbers from JSON; coercing them for replace avoids brittle manual stringification at every call site.
@@ -832,26 +832,26 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0251
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5200
-     * @tc.desc    Replace: custom Symbol.replace can bypass RegExp parsing entirely
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0251
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5200
+     * @tc.desc Replace: custom Symbol.replace can bypass RegExp parsing entirely
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Higher-level frameworks sometimes supply pluggable replacers for i18n or redaction policies.
-      // Honoring @@replace keeps those adapters composable with the same String.prototype.replace surface.
+      // Honoring @@replace keeps those adapters composable with the same String.prototype.replace behavior.
       expect(stringReplaceCustomSymbolReplace()).assertTrue();
     });
 
     /**
-     * @tc.name    testReplace0252
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5300
-     * @tc.desc    Replace: null and undefined searchValue stringify to literal tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0252
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5300
+     * @tc.desc Replace: null and undefined searchValue stringify to literal tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Telemetry lines often contain the words null/undefined; coercion rules must stay aligned with other string ops.
@@ -862,12 +862,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0253
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5400
-     * @tc.desc    Replace: plain object searchValue uses ToString for pattern text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0253
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5400
+     * @tc.desc Replace: plain object searchValue uses ToString for pattern text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Debug dumps sometimes embed default object serialization; scrubbers must treat it as a fixed literal.
@@ -879,12 +879,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0254
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5500
-     * @tc.desc    Replace: chained passes model multi-stage sanitation pipelines
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0254
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5500
+     * @tc.desc Replace: chained passes model multi-stage sanitation pipelines
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Security middleware applies transforms in a fixed order; each stage must see the prior stage’s output.
@@ -897,12 +897,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0255
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5600
-     * @tc.desc    Replace: angle-bracket token removal uses non-global first hit
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0255
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5600
+     * @tc.desc Replace: angle-bracket token removal uses non-global first hit
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // CMS snippets may contain a single forbidden tag; removing only the first keeps surrounding markup reviewable.
@@ -912,12 +912,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0256
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5700
-     * @tc.desc    Replace: high-numbered capture $9 expands correctly on full-line match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0256
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5700
+     * @tc.desc Replace: high-numbered capture $9 expands correctly on full-line match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Deeply nested parsers may hit many groups; replacement templates must address groups beyond $3 reliably.
@@ -931,12 +931,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0257
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5800
-     * @tc.desc    Replace: combining $$ and $& preserves currency-like literals
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0257
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5800
+     * @tc.desc Replace: combining $$ and $& preserves currency-like literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Receipt formatting often needs both the matched numeral and a literal dollar sign in one template.
@@ -945,12 +945,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0258
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5900
-     * @tc.desc    Replace: rebuilt RegExp from source and flags behaves like the original
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0258
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_5900
+     * @tc.desc Replace: rebuilt RegExp from source and flags behaves like the original
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Config round-trips often persist pattern strings; rebuilding verifies persistence did not corrupt escapes.
@@ -962,12 +962,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0259
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6000
-     * @tc.desc    Replace: invalid flags throw and block silent misconfiguration
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0259
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6000
+     * @tc.desc Replace: invalid flags throw and block silent misconfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Feature flags in admin consoles must be validated; accepting unknown letters would mask typos.
@@ -982,18 +982,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0260
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6100
-     * @tc.desc    Replace: lookbehind-gated digit swap after colon when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0260
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6100
+     * @tc.desc Replace: lookbehind-gated digit swap after colon when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Key/value redaction frequently targets values only after a delimiter; lookbehind expresses that intent directly.
+      // Key/value redaction frequently targets values only after a delimiter; lookbehind expresses that purpose directly.
       // Where unsupported, skipping avoids false negatives on lightweight engines.
       if (!supportsRegExp('(?<=:)\\d+')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('price:100'.replace(new RegExp('(?<=:)\\d+'), 'N')).assertEqual('price:N');
@@ -1001,30 +1001,30 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0261
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6200
-     * @tc.desc    Replace: unicode property letter class replacement when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0261
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6200
+     * @tc.desc Replace: unicode property letter class replacement when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Locale-aware masking often uses \\p{L} instead of ASCII-only classes to include accented vendor names.
       // Feature-gating preserves portability for devices with reduced Unicode tables.
       if (!supportsRegExp('\\p{L}+', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('ABC123αβγ'.replace(new RegExp('\\p{L}+', 'gu'), 'L')).assertEqual('L123L');
     });
 
     /**
-     * @tc.name    testReplace0262
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6300
-     * @tc.desc    Replace: non-global replace leaves lastIndex cleared on completion
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0262
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6300
+     * @tc.desc Replace: non-global replace leaves lastIndex cleared on completion
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Shared regex caches must not leak match cursors across unrelated replace calls on typical engines.
@@ -1037,12 +1037,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0263
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6400
-     * @tc.desc    Replace: Windows-style paths normalize slashes for cross-platform URLs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0263
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6400
+     * @tc.desc Replace: Windows-style paths normalize slashes for cross-platform URLs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Desktop clients emit backslashes; web endpoints expect forward slashes in hrefs and deep links.
@@ -1052,12 +1052,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0264
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6500
-     * @tc.desc    Replace: trim-like whitespace collapse using \\s class
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0264
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6500
+     * @tc.desc Replace: trim-like whitespace collapse using \\s class
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Form posts can include odd Unicode spaces; \\s covers more than literal space in compliant engines.
@@ -1066,12 +1066,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0265
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6600
-     * @tc.desc    Replace: optional suffix group leaves $2 empty in expansion
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0265
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6600
+     * @tc.desc Replace: optional suffix group leaves $2 empty in expansion
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Version strings may omit patch levels; templates must tolerate missing captures without throwing.
@@ -1081,12 +1081,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0266
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6700
-     * @tc.desc    Replace: hex escape sequences match control characters in legacy logs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0266
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6700
+     * @tc.desc Replace: hex escape sequences match control characters in legacy logs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Binary dumps sometimes embed ESC bytes; hex escapes let us strip them without raw control characters in source.
@@ -1095,12 +1095,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0267
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6800
-     * @tc.desc    Replace: reluctant quantifier changes match span for cleanup rules
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0267
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6800
+     * @tc.desc Replace: reluctant quantifier changes match span for cleanup rules
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Lazy quantifiers prevent greedy patterns from swallowing delimiters in loosely structured feeds.
@@ -1110,12 +1110,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0268
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6900
-     * @tc.desc    Replace: word boundaries prevent partial token masking inside identifiers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0268
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_6900
+     * @tc.desc Replace: word boundaries prevent partial token masking inside identifiers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Moderation lists must not break usernames like 'foobar' when banning the token 'foo'.
@@ -1124,12 +1124,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0269
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7000
-     * @tc.desc    Replace: multiline $ anchor removes trailing line noise
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0269
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7000
+     * @tc.desc Replace: multiline $ anchor removes trailing line noise
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Diff tools append trailing markers per line; gm lets us strip each line tail without touching inner text.
@@ -1139,12 +1139,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0270
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7100
-     * @tc.desc    Replace: surrogate-pair emoji global replace without u still operates on UTF-16 units
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0270
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7100
+     * @tc.desc Replace: surrogate-pair emoji global replace without u still operates on UTF-16 units
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some runtimes ship without u-mode; emoji-aware features must degrade predictably on UTF-16 code units.
@@ -1154,26 +1154,26 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0271
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7200
-     * @tc.desc    Replace: replaceAll requires global RegExp and replaces every match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0271
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7200
+     * @tc.desc Replace: replaceAll requires global RegExp and replaces every match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // replaceAll is the explicit API for bulk edits; it encodes reviewer expectations better than ad-hoc /g flags.
-      // Calling it with a global regex documents intent and avoids silent first-match-only mistakes.
+      // Calling it with a global regex documents purpose and avoids silent first-match-only mistakes.
       expect('a|b|c'.replaceAll(new RegExp('\\|', 'g'), '-')).assertEqual('a-b-c');
     });
 
     /**
-     * @tc.name    testReplace0272
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7300
-     * @tc.desc    Replace: single-capture reorder for human names stays stable under gi
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0272
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7300
+     * @tc.desc Replace: single-capture reorder for human names stays stable under gi
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Directory exports often need "Last, First" even when source rows vary in casing.
@@ -1184,12 +1184,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0273
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7400
-     * @tc.desc    Replace: Fahrenheit to Celsius style numeric rewrite via pattern sweep
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0273
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7400
+     * @tc.desc Replace: Fahrenheit to Celsius style numeric rewrite via pattern sweep
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // IoT dashboards embed unit suffixes; converting at display time avoids floating point drift in storage.
@@ -1200,12 +1200,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0274
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7500
-     * @tc.desc    Replace: SQL-like quote doubling uses global pass
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0274
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7500
+     * @tc.desc Replace: SQL-like quote doubling uses global pass
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Escaping user input for SQL or CSV often doubles quotes; missing the global flag creates injection windows.
@@ -1218,12 +1218,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0275
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7600
-     * @tc.desc    Replace: UUID hyphen removal uses character-class sweep
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0275
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7600
+     * @tc.desc Replace: UUID hyphen removal uses character-class sweep
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Downstream binary protocols want compact IDs; stripping punctuation must be exact and repeatable.
@@ -1233,12 +1233,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0276
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7700
-     * @tc.desc    Replace: CRLF normalization for cross-platform text ingestion
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0276
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7700
+     * @tc.desc Replace: CRLF normalization for cross-platform text ingestion
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Windows editors emit CRLF while Unix pipelines expect LF-only; doing this before diffing prevents noise.
@@ -1248,12 +1248,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0277
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7800
-     * @tc.desc    Replace: collapse interior whitespace runs for dedupe keys
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0277
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7800
+     * @tc.desc Replace: collapse interior whitespace runs for dedupe keys
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Copy/paste from PDFs introduces irregular spaces; normalizing before hashing avoids duplicate entities.
@@ -1262,12 +1262,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0278
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7900
-     * @tc.desc    Replace: MAC address separators swap for hardware vendor APIs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0278
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_7900
+     * @tc.desc Replace: MAC address separators swap for hardware vendor APIs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // BLE stacks sometimes require hyphenated forms while OS layers print colons; conversion must be total.
@@ -1277,12 +1277,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0279
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8000
-     * @tc.desc    Replace: strip UTF-8 BOM when present at string head
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0279
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8000
+     * @tc.desc Replace: strip UTF-8 BOM when present at string head
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Exported CSV files from Excel may include a BOM; parsers treat it as data unless explicitly removed.
@@ -1292,12 +1292,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0280
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8100
-     * @tc.desc    Replace: per-line trailing dot removal with multiline end anchor
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0280
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8100
+     * @tc.desc Replace: per-line trailing dot removal with multiline end anchor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Sentence-segmentation tools often leave stray periods on headings; gm applies the rule per record safely.
@@ -1306,12 +1306,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0281
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8200
-     * @tc.desc    Replace: TSV repair swaps tabs to pipes for viewers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0281
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8200
+     * @tc.desc Replace: TSV repair swaps tabs to pipes for viewers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Support staff paste tabular data into tickets; converting delimiters avoids the editor collapsing columns.
@@ -1320,18 +1320,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0282
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8300
-     * @tc.desc    Replace: lookahead-gated digit swap when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0282
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8300
+     * @tc.desc Replace: lookahead-gated digit swap when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // lookahead keeps the following context stable while still targeting a prefix numeral in telemetry keys.
       // Engines without lookahead would throw on compile, so we gate the assertion.
       if (!supportsRegExp('\\d(?=def)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       // Only the digit directly followed by "def" is replaced (here: '3').
@@ -1339,66 +1339,66 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0283
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8400
-     * @tc.desc    Replace: negative lookahead prevents editing the wrong digit run
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0283
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8400
+     * @tc.desc Replace: negative lookahead prevents editing the wrong digit run
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Finance strings mix account numbers and amounts; negative lookahead avoids rewriting unrelated digit clusters.
       // Feature detection keeps minimal engines from failing at suite load time.
       if (!supportsRegExp('\\d(?!00)\\d')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('100 1200'.replace(new RegExp('\\d(?!00)\\d', 'g'), 'x')).assertEqual('1x xx');
     });
 
     /**
-     * @tc.name    testReplace0284
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8500
-     * @tc.desc    Replace: atomic group is feature-gated for catastrophic backtracking mitigation
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0284
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8500
+     * @tc.desc Replace: atomic group is feature-gated for catastrophic backtracking mitigation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Untrusted pattern hosts sometimes enable atomic groups to cap worst-case paths in validation.
       // Unsupported engines should skip rather than break the entire compliance run.
       if (!supportsRegExp('(?>a*)bc')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('aaabc'.replace(new RegExp('(?>a*)bc'), 'X')).assertEqual('X');
     });
 
     /**
-     * @tc.name    testReplace0285
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8600
-     * @tc.desc    Replace: possessive quantifier path is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0285
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8600
+     * @tc.desc Replace: possessive quantifier path is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Possessive repeats are another defense against pathological backtracking on nested quantifiers.
       // Coverage is optional but valuable on full ECMAScript stacks.
       if (!supportsRegExp('a*+b')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('aaab'.replace(new RegExp('a*+b'), 'X')).assertEqual('X');
     });
 
     /**
-     * @tc.name    testReplace0286
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8700
-     * @tc.desc    Replace: String.prototype.replace.call coerces primitive receiver
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0286
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8700
+     * @tc.desc Replace: String.prototype.replace.call coerces primitive receiver
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Framework helpers frequently use call/apply; coercion must match ordinary method dispatch.
@@ -1408,18 +1408,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0287
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8800
-     * @tc.desc    Replace: multiple named captures reorder pairs when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0287
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8800
+     * @tc.desc Replace: multiple named captures reorder pairs when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Structured logs use key:value pairs; named groups make templates readable for non-regex experts.
       // When unavailable, skipping avoids blocking releases on trimmed runtimes.
       if (!supportsRegExp('(?<k>\\w+):(?<v>\\w+)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = 'name:Jane id:42'.replace(new RegExp('(?<k>\\w+):(?<v>\\w+)', 'g'), '$<v>=$<k>');
@@ -1427,12 +1427,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0288
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8900
-     * @tc.desc    Replace: backreference inside pattern enforces doubled-letter rule
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0288
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_8900
+     * @tc.desc Replace: backreference inside pattern enforces doubled-letter rule
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Pattern backreferences catch repeated characters in simple password policies without extra passes.
@@ -1441,12 +1441,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0289
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9000
-     * @tc.desc    Replace: alternation with shared prefix preserves leftmost-first substitution
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0289
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9000
+     * @tc.desc Replace: alternation with shared prefix preserves leftmost-first substitution
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Router tables often list overlapping literals; only the first alternative may fire per match span.
@@ -1455,12 +1455,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0290
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9100
-     * @tc.desc    Replace: global dotAll replaces across newlines when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0290
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9100
+     * @tc.desc Replace: global dotAll replaces across newlines when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Minified JSON sometimes embeds raw newlines inside strings; dotAll allows one-shot scrubbing.
@@ -1469,17 +1469,17 @@ export default function replaceTest002(): void {
       if (supportsRegExp('START.END', 's')) {
         expect(blob.replace(new RegExp('START.END', 'sg'), 'OK')).assertEqual('OK');
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testReplace0291
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9200
-     * @tc.desc    Replace: IPv4-like token mask leaves separators intact
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0291
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9200
+     * @tc.desc Replace: IPv4-like token mask leaves separators intact
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Support tickets include customer IPs; masking octets protects PII while keeping structure for triage.
@@ -1488,12 +1488,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0292
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9300
-     * @tc.desc    Replace: credit-card-like digit runs mask to fixed token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0292
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9300
+     * @tc.desc Replace: credit-card-like digit runs mask to fixed token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Chat logs accidentally paste PANs; replacing contiguous digits is a first-line PCI mitigation.
@@ -1502,12 +1502,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0293
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9400
-     * @tc.desc    Replace: JSON string quote normalization uses non-regex first replace
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0293
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9400
+     * @tc.desc Replace: JSON string quote normalization uses non-regex first replace
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some services emit single-quoted pseudo-JSON; a staged replace avoids ambiguous regex escapes on quotes.
@@ -1519,18 +1519,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0294
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9500
-     * @tc.desc    Replace: sticky global scan replaces consecutive code units at cursor
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0294
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9500
+     * @tc.desc Replace: sticky global scan replaces consecutive code units at cursor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Tokenizers advance lastIndex manually; sticky global replace must consume sequential matches only.
       // Feature-gating acknowledges engines that omit y.
       if (!supportsRegExp('a', 'gy')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('a', 'gy');
@@ -1539,12 +1539,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0295
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9600
-     * @tc.desc    Replace: long replacement string preserves allocation semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0295
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9600
+     * @tc.desc Replace: long replacement string preserves allocation semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some templates expand to large literals; engines must handle sizeable replacement buffers without truncation.
@@ -1554,12 +1554,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0296
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9700
-     * @tc.desc    Replace: trim-like edge stripping without dedicated string helpers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0296
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9700
+     * @tc.desc Replace: trim-like edge stripping without dedicated string helpers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Older bundles may lack trimStart/trimEnd; anchored whitespace removal covers the same product requirement.
@@ -1571,30 +1571,30 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0297
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9800
-     * @tc.desc    Replace: Unicode code point escape in pattern when u is supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0297
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9800
+     * @tc.desc Replace: Unicode code point escape in pattern when u is supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Supplementary-plane symbols need explicit code point syntax; ASCII-only sources rely on \\u{...} escapes.
       // Gate the assertion so builds without Unicode mode still pass certification.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('A😀B'.replace(new RegExp('\\u{1F600}', 'u'), 'E')).assertEqual('AEB');
     });
 
     /**
-     * @tc.name    testReplace0298
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9900
-     * @tc.desc    Replace: optional suffix removes version patch segment only when present
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0298
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_9900
+     * @tc.desc Replace: optional suffix removes version patch segment only when present
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Release channels sometimes publish both semver and short tags; optional groups express either shape uniformly.
@@ -1604,12 +1604,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0299
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0100
-     * @tc.desc    Replace: non-word runs collapse for slug previews
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0299
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0100
+     * @tc.desc Replace: non-word runs collapse for slug previews
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Slugs cannot contain punctuation bursts; \\W+ folding is a pragmatic first pass before lowercasing.
@@ -1619,12 +1619,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0300
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0200
-     * @tc.desc    Replace: internal duplicate spaces in identifiers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0300
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0200
+     * @tc.desc Replace: internal duplicate spaces in identifiers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // OCR on shipping labels introduces double spaces inside names; normalizing avoids failed exact lookups.
@@ -1633,12 +1633,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0301
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0300
-     * @tc.desc    Replace: cloning RegExp via constructor preserves substitution behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0301
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0300
+     * @tc.desc Replace: cloning RegExp via constructor preserves substitution behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Hot-reload layers rebuild regex objects from persisted metadata; clone fidelity prevents rule drift.
@@ -1649,12 +1649,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0302
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0400
-     * @tc.desc    Replace: end-of-string optional semicolon strip for minified snippets
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0302
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0400
+     * @tc.desc Replace: end-of-string optional semicolon strip for minified snippets
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Bundlers sometimes emit trailing semicolons; stripping one terminator simplifies diffing generated code.
@@ -1663,12 +1663,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0303
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0500
-     * @tc.desc    Replace: reluctant group vs greedy group changes span inside delimiters
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0303
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0500
+     * @tc.desc Replace: reluctant group vs greedy group changes span inside delimiters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Greedy spans are unsafe around nested markup; lazy quantifiers limit how far a sanitizer walks.
@@ -1681,12 +1681,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0304
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0600
-     * @tc.desc    Replace: positive character class range expands predictably
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0304
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0600
+     * @tc.desc Replace: positive character class range expands predictably
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Range classes underpin policy engines that whitelist hex nibbles in trace identifiers.
@@ -1695,12 +1695,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0305
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0700
-     * @tc.desc    Replace: line comment strip for single-line diagnostics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0305
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0700
+     * @tc.desc Replace: line comment strip for single-line diagnostics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Support bundles paste compiler lines with // annotations; removing them clarifies shared repro steps.
@@ -1710,12 +1710,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0306
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0800
-     * @tc.desc    Replace: Greek letters without property escapes still match literal UTF-16 text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0306
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0800
+     * @tc.desc Replace: Greek letters without property escapes still match literal UTF-16 text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Not every runtime enables \\p classes; literal Unicode still works for small fixed alphabets.
@@ -1724,12 +1724,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0307
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_0900
-     * @tc.desc    Replace: idempotent pass proves stable pipeline stage
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0307
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_0900
+     * @tc.desc Replace: idempotent pass proves stable pipeline stage
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Data-quality jobs may rerun the same sanitizer twice; idempotence prevents oscillating strings in stores.
@@ -1742,12 +1742,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0308
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1000
-     * @tc.desc    Replace: surrogate pair math symbol without u flag replaces by UTF-16 sequence
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0308
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1000
+     * @tc.desc Replace: surrogate pair math symbol without u flag replaces by UTF-16 sequence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When u-mode is off, testers still need deterministic behavior on supplementary-plane literals in source.
@@ -1757,18 +1757,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0309
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1100
-     * @tc.desc    Replace: partition letter-digit boundaries for hardware SKUs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0309
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1100
+     * @tc.desc Replace: partition letter-digit boundaries for hardware SKUs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Warehouse labels concatenate model letters with numeric revisions; inserting a dash aids OCR verification.
       // The boundary class avoids splitting inside pure digit runs or pure letter runs.
       if (!supportsRegExp('(?<=[^\\d-])(?=\\d)|(?<=\\d)(?=[^\\d-])')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       // Exclude '-' so already-partitioned SKUs do not accumulate extra dashes.
@@ -1778,18 +1778,18 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0310
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1200
-     * @tc.desc    Replace: lookbehind boundary insert is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0310
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1200
+     * @tc.desc Replace: lookbehind boundary insert is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Lookbehind is the most readable way to assert digit boundaries without consuming characters.
       // Engines without lookbehind should skip rather than fail the whole replace suite.
       if (!supportsRegExp('(?<=\\D)(?=\\d)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       expect('a1'.replace(new RegExp('(?<=\\D)(?=\\d)'), '-')).assertEqual('a-1');
@@ -1797,12 +1797,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0311
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1300
-     * @tc.desc    Replace: horizontal tab to space for TSV mistaken as CSV
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0311
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1300
+     * @tc.desc Replace: horizontal tab to space for TSV mistaken as CSV
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Users paste spreadsheet cells with tabs into single-line inputs; normalizing to spaces avoids UI overflow.
@@ -1811,12 +1811,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0312
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1400
-     * @tc.desc    Replace: reverse-order numbered groups still expand left-to-right in template
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0312
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1400
+     * @tc.desc Replace: reverse-order numbered groups still expand left-to-right in template
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some templates intentionally print $2 before $1 even when groups appear in opposite order in the pattern.
@@ -1825,12 +1825,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0313
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1500
-     * @tc.desc    Replace: XML-ish self-closing stub normalization
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0313
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1500
+     * @tc.desc Replace: XML-ish self-closing stub normalization
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Legacy exporters emit non-standard empty elements; a narrow regex repairs them before schema validation.
@@ -1839,12 +1839,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0314
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1600
-     * @tc.desc    Replace: suffix local number formatting on mixed alphanumeric caller ids
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0314
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1600
+     * @tc.desc Replace: suffix local number formatting on mixed alphanumeric caller ids
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Call-center exports prepend campaign codes; support still needs the trailing digits grouped for dialer tools.
@@ -1853,12 +1853,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0315
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1700
-     * @tc.desc    Replace: strip simple parenthetical notes from display titles
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0315
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1700
+     * @tc.desc Replace: strip simple parenthetical notes from display titles
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Catalog entries append legal disclaimers in parentheses; storefront UIs hide them to save horizontal space.
@@ -1867,12 +1867,12 @@ export default function replaceTest002(): void {
     });
 
     /**
-     * @tc.name    testReplace0316
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_TEST_1800
-     * @tc.desc    Replace: uniform line endings before hashing file contents
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testReplace0316
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_SUPPLEMENT_EXT_TEST_1800
+     * @tc.desc Replace: uniform line endings before hashing file contents
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testReplace0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mixed LF/CRLF breaks content-defined chunking in sync clients; normalizing endings stabilizes signatures.
