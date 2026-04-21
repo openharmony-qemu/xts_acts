@@ -58,7 +58,7 @@ export default function EqualityExpressionsTest() {
     })
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0100
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0100
      * @tc.name      testEqualityExpressions0001
      * @tc.desc      comparison with literals - decimal literal
      * @tc.size      MediumTest
@@ -75,7 +75,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0200
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0200
      * @tc.name      testEqualityExpressions0002
      * @tc.desc      comparison with literals - hex literal
      * @tc.size      MediumTest
@@ -92,7 +92,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0300
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0300
      * @tc.name      testEqualityExpressions0003
      * @tc.desc      comparison with literals - octal literal
      * @tc.size      MediumTest
@@ -109,7 +109,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0400
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0400
      * @tc.name      testEqualityExpressions0004
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -126,7 +126,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0500
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0500
      * @tc.name      testEqualityExpressions0005
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0600
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0600
      * @tc.name      testEqualityExpressions0006
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -156,7 +156,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0700
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0700
      * @tc.name      testEqualityExpressions0007
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -171,7 +171,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0800
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0800
      * @tc.name      testEqualityExpressions0008
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_0900
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0900
      * @tc.name      testEqualityExpressions0009
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
@@ -201,14 +201,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1000
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1000
      * @tc.name      testEqualityExpressions0010
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = true;
       let b = false;
       expect(a == b).assertEqual(a === b);
@@ -216,14 +216,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1100
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1100
      * @tc.name      testEqualityExpressions0011
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: boolean[] = [true];
       let b: boolean[] = [false];
       expect(a == b).assertEqual(a === b);
@@ -231,14 +231,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1200
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1200
      * @tc.name      testEqualityExpressions0012
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 'A';
       let b = 'B';
       expect(a == b).assertEqual(a === b);
@@ -246,14 +246,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1300
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1300
      * @tc.name      testEqualityExpressions0013
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string[] = ['A'];
       let b: string[] = ['B'];
       expect(a == b).assertEqual(a === b);
@@ -261,14 +261,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1400
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1400
      * @tc.name      testEqualityExpressions0014
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = "A";
       let b = "A";
       expect(a == b).assertEqual(a === b);
@@ -276,14 +276,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1500
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1500
      * @tc.name      testEqualityExpressions0015
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string[] = ["A"];
       let b: string[] = ["A"];
       expect(a == b).assertEqual(a === b);
@@ -291,14 +291,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1600
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1600
      * @tc.name      testEqualityExpressions0016
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0;
       let b = 1;
       expect(a == b).assertEqual(a === b);
@@ -306,14 +306,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1700
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1700
      * @tc.name      testEqualityExpressions0017
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: number[] = [0];
       let b: number[] = [1];
       expect(a == b).assertEqual(a === b);
@@ -321,14 +321,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1800
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1800
      * @tc.name      testEqualityExpressions0018
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Object[] = new Array<Object>(1);
       let b: Object[] = new Array<Object>(1);
       expect(a == b).assertEqual(a === b);
@@ -336,14 +336,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_1900
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1900
      * @tc.name      testEqualityExpressions0019
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = (p: number): number => { return p * p; };
       let b = (p: number): number => { return p * p; };
       expect(a == b).assertEqual(a === b);
@@ -351,14 +351,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2000
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2000
      * @tc.name      testEqualityExpressions0020
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Function[] = [(p: number): number => { return p * p; }];
       let b: Function[] = [(p: number): number => { return p * p; }];
       expect(a == b).assertEqual(a === b);
@@ -366,14 +366,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2100
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2100
      * @tc.name      testEqualityExpressions0021
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0;
       let b = 0;
       let c = 1;
@@ -383,14 +383,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2200
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2200
      * @tc.name      testEqualityExpressions0022
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0;
       let b = 0;
       let c = 1;
@@ -398,14 +398,14 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2300
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2300
      * @tc.name      testEqualityExpressions0023
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0;
       let b = 1;
       let cmp1 = a != b;
@@ -414,56 +414,56 @@ export default function EqualityExpressionsTest() {
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2400
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2400
      * @tc.name      testEqualityExpressions0024
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: boolean = true;
       let b: boolean = true;
       expect(a).assertEqual(b);
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2500
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2500
      * @tc.name      testEqualityExpressions0025
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 12;
       let b = 12;
       expect(a).assertEqual(b);
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2600
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2600
      * @tc.name      testEqualityExpressions0026
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 'c';
       let b = 'c';
       expect(a).assertEqual(b);
     });
 
     /**
-     * @tc.number    SUB_EQUALITY_EXPRESSIONS_2700
+     * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2700
      * @tc.name      testEqualityExpressions0027
      * @tc.desc      comparison with literals - binary literal
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEqualityExpressions0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testEqualityExpressions0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 234.0;
       let b = 234.0;
       expect(a).assertEqual(b);

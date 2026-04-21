@@ -629,7 +629,7 @@ export default function ConstantExpressionCheckEnumTest() {
      */
     it("testConstantExpressionCheckEnum0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: float = 10.5f
-      const testValue: string = "value: " + (value1 | 7.0f)
+      const testValue: string = "value: " + (value1 | 7.0)
       expect(TestEnum1400.One.valueOf()).assertEqual(testValue)
     })
 
@@ -643,7 +643,7 @@ export default function ConstantExpressionCheckEnumTest() {
      */
     it("testConstantExpressionCheckEnum0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value1: float = 10.5f
-      const testValue: string = "value: " + (value1 ^ 7.0f)
+      const testValue: string = "value: " + (value1 ^ 7.0)
       expect(TestEnum1500.One.valueOf()).assertEqual(testValue)
     })
 

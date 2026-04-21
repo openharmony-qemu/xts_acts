@@ -50,7 +50,7 @@ import NumericalEqualityOperatorsTest from "./expressions/equality_expressions/n
 import NumericalEqualityOperatorsOneTest from "./expressions/equality_expressions/numerical_equality_operators/NumericalEqualityOperators_1.test";
 import ExpressionsReferenceEqualityTest from "./expressions/equality_expressions/reference_equality/ExpressionsReferenceEquality.test";
 import TypeParameterOperatorsTest from "./expressions/equality_expressions/reference_equality_based_on_actual_type/type_parameter_equality_operators/TypeParameterOperators.test";
-// import UnionEqualityOperatorsTest from "./expressions/equality_expressions/reference_equality_based_on_actual_type/union_equality_operators/UnionEqualityOperators.test";
+import UnionEqualityOperatorsTest from "./expressions/equality_expressions/reference_equality_based_on_actual_type/union_equality_operators/UnionEqualityOperators.test";
 import StringEqualityOperatorsTest from "./expressions/equality_expressions/string_equality_operators/StringEqualityOperators.test";
 import EqualityExpressionsTest from "./expressions/equality_expressions/EqualityExpressions.test";
 // import ExpressionEvaluationArgumentsTest from "./expressions/evaluation_of_expressions/evaluation_of_arguments/ExpressionEvaluationArguments.test";
@@ -187,7 +187,7 @@ export default function testsuite() {
   NumericalEqualityOperatorsOneTest();
   ExpressionsReferenceEqualityTest();
   TypeParameterOperatorsTest();
-  // UnionEqualityOperatorsTest();
+  UnionEqualityOperatorsTest();
   StringEqualityOperatorsTest();
   EqualityExpressionsTest();
   // ExpressionEvaluationArgumentsTest();
