@@ -59,7 +59,7 @@ enum ApiTestCaseNumber {
     TEST_CASE_CAP_API_0023 = 34,
     TEST_CASE_CAP_API_0024 = 35,
     TEST_CASE_CAP_API_0025 = 36,
-    TEST_CASE_CAP_API_0026 = 37,    
+    TEST_CASE_CAP_API_0026 = 37
 };
 
 // Function Test case number enum
