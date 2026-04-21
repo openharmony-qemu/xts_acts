@@ -185,6 +185,7 @@ export default function ActsOsAccountTestStatic() {
             expect(domainInfo.domain).not().assertUndefined();
             expect(domainInfo.accountName).not().assertUndefined();
             expect(domainInfo.serverConfigId).not().assertUndefined();
+            expect(domainInfo.additionalInfo).not().assertUndefined();
           } else {
             expect(domainInfo == null).assertTrue();
           }
