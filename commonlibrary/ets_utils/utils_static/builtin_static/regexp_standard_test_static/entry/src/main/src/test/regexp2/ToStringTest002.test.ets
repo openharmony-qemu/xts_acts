@@ -32,12 +32,12 @@ export default function toStringTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testToString0300
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0100
-     * @tc.desc    toString renders default slash-wrapped pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0300
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0100
+     * @tc.desc toString renders default slash-wrapped pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc');
@@ -46,12 +46,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0301
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0200
-     * @tc.desc    toString keeps provided global and ignoreCase flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0301
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0200
+     * @tc.desc toString keeps provided global and ignoreCase flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc', 'gi');
@@ -60,12 +60,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0302
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0300
-     * @tc.desc    source and flags expose constructor-normalized values
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0302
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0300
+     * @tc.desc source and flags expose constructor-normalized values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+');
@@ -74,12 +74,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0303
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0400
-     * @tc.desc    toString includes multiline flag in output
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0303
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0400
+     * @tc.desc toString includes multiline flag in output
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a', 'm');
@@ -87,12 +87,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0304
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0500
-     * @tc.desc    toString escapes forward slash in pattern representation
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0304
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0500
+     * @tc.desc toString escapes forward slash in pattern representation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a/b');
@@ -101,12 +101,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0305
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0600
-     * @tc.desc    flags ordering in toString is stable (gimsyu when present)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0305
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0600
+     * @tc.desc flags ordering in toString is stable (gimsyu when present)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('x', 'mig');
@@ -116,12 +116,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0306
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0700
-     * @tc.desc    source preserves escaping for backslash sequences
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0306
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0700
+     * @tc.desc source preserves escaping for backslash sequences
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\n\\t\\r');
@@ -130,12 +130,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0307
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0800
-     * @tc.desc    toString for empty pattern renders // with flags if any
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0307
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0800
+     * @tc.desc toString for empty pattern renders // with flags if any
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('').toString()).assertEqual('/(?:)/');
@@ -143,12 +143,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0308
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0900
-     * @tc.desc    toString reflects sticky/unicode/dotAll flags when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0308
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_0900
+     * @tc.desc toString reflects sticky/unicode/dotAll flags when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('x', 'y')) {
@@ -163,12 +163,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0309
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1000
-     * @tc.desc    constructor from RegExp clones source/flags; toString matches
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0309
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1000
+     * @tc.desc constructor from RegExp clones source/flags; toString matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('ab+c', 'gi');
@@ -179,12 +179,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0310
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1100
-     * @tc.desc    toString is consistent with source+flags round trip
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0310
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1100
+     * @tc.desc toString is consistent with source+flags round trip
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re1 = new RegExp('a\\d+', 'g');
@@ -195,12 +195,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0311
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1200
-     * @tc.desc    toString returns a string in slash-delimited format
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0311
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1200
+     * @tc.desc toString returns a string in slash-delimited format
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('test', 'gi');
@@ -211,12 +211,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0312
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1300
-     * @tc.desc    toString keeps metacharacters and quantifiers unchanged
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0312
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1300
+     * @tc.desc toString keeps metacharacters and quantifiers unchanged
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+\\w*\\s?');
@@ -225,12 +225,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0313
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1400
-     * @tc.desc    toString supports non-capturing and named groups if supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0313
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1400
+     * @tc.desc toString supports non-capturing and named groups if supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nonCapturing = new RegExp('(?:abc)+');
@@ -242,12 +242,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0314
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1500
-     * @tc.desc    rebuilding with explicit flags updates serialized flag segment
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0314
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1500
+     * @tc.desc rebuilding with explicit flags updates serialized flag segment
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('abc', 'g');
@@ -258,12 +258,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0315
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1600
-     * @tc.desc    toString keeps character class and range syntax unchanged
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0315
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1600
+     * @tc.desc toString keeps character class and range syntax unchanged
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('[a-zA-Z0-9_]+');
@@ -272,12 +272,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0316
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1700
-     * @tc.desc    toString preserves anchor and boundary assertions
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0316
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1700
+     * @tc.desc toString preserves anchor and boundary assertions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('^\\btest\\b$');
@@ -286,12 +286,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0317
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1800
-     * @tc.desc    toString exposes normalized flags when input order is mixed
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0317
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1800
+     * @tc.desc toString exposes normalized flags when input order is mixed
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc', 'mig');
@@ -300,12 +300,12 @@ export default function toStringTest002(): void {
     });
 
     /**
-     * @tc.name    testToString0318
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1900
-     * @tc.desc    toString remains stable through repeated source/flags rebuilds
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testToString0318
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_SUPPLEMENT_TEST_1900
+     * @tc.desc toString remains stable through repeated source/flags rebuilds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testToString0318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1 = new RegExp('x\\d+', 'gi');

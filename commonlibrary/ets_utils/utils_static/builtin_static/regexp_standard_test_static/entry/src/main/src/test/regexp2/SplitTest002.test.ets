@@ -32,12 +32,12 @@ export default function splitTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testSplit0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0100
-     * @tc.desc    Split by regex separators into expected tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0100
+     * @tc.desc Split by regex separators into expected tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('[,;]');
@@ -49,12 +49,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0200
-     * @tc.desc    Split keeps capturing separators in result
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0200
+     * @tc.desc Split keeps capturing separators in result
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(,)');
@@ -66,12 +66,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0300
-     * @tc.desc    Split returns original string when no delimiter matches
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0300
+     * @tc.desc Split returns original string when no delimiter matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\s+');
@@ -81,12 +81,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0400
-     * @tc.desc    Split limit truncates output length as expected
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0400
+     * @tc.desc Split limit truncates output length as expected
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp(',');
@@ -97,12 +97,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0500
-     * @tc.desc    Split: consecutive delimiters produce empty items
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0500
+     * @tc.desc Split: consecutive delimiters produce empty items
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a,,b,'.split(new RegExp(','));
@@ -114,12 +114,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0600
-     * @tc.desc    Split: leading delimiter yields leading empty item
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0600
+     * @tc.desc Split: leading delimiter yields leading empty item
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = ',a,b'.split(new RegExp(','));
@@ -130,12 +130,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0700
-     * @tc.desc    Split: whitespace regex trims multiple separators
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0700
+     * @tc.desc Split: whitespace regex trims multiple separators
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a \t  b\nc'.split(new RegExp('\\s+'));
@@ -146,12 +146,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0800
-     * @tc.desc    Split: capturing groups are included between tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0800
+     * @tc.desc Split: capturing groups are included between tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a,b;c'.split(new RegExp('([,;])'));
@@ -164,12 +164,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0900
-     * @tc.desc    Split: limit=0 returns empty array per JS spec behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_0900
+     * @tc.desc Split: limit=0 returns empty array per JS spec behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a,b,c'.split(new RegExp(','), 0);
@@ -177,12 +177,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1000
-     * @tc.desc    Split: empty pattern splits between UTF-16 code units
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1000
+     * @tc.desc Split: empty pattern splits between UTF-16 code units
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'abc'.split(new RegExp('(?:)'));
@@ -193,12 +193,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1100
-     * @tc.desc    Split: word boundary delimiter separates tokens as expected
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1100
+     * @tc.desc Split: word boundary delimiter separates tokens as expected
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'foo-bar_baz'.split(new RegExp('\\b'));
@@ -208,12 +208,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1200
-     * @tc.desc    Split: limit greater than result length keeps full output
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1200
+     * @tc.desc Split: limit greater than result length keeps full output
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a,b,c'.split(new RegExp(','), 99);
@@ -224,12 +224,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1300
-     * @tc.desc    Split: multi-character regex delimiter
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1300
+     * @tc.desc Split: multi-character regex delimiter
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'x--y----z'.split(new RegExp('--+'));
@@ -240,12 +240,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1400
-     * @tc.desc    Split: newline delimiters with and without carriage return
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1400
+     * @tc.desc Split: newline delimiters with and without carriage return
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out1 = 'a\nb\nc'.split(new RegExp('\\n'));
@@ -258,12 +258,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1500
-     * @tc.desc    Split: capturing groups include optional undefined group slots
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1500
+     * @tc.desc Split: capturing groups include optional undefined group slots
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a-1-b'.split(new RegExp('(-)(\\d)?'));
@@ -274,12 +274,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1600
-     * @tc.desc    Split: unicode separator token and emoji handling
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1600
+     * @tc.desc Split: unicode separator token and emoji handling
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a😀b😀c'.split(new RegExp('😀'));
@@ -290,12 +290,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1700
-     * @tc.desc    Split: non-RegExp separator string semantics via any coercion
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1700
+     * @tc.desc Split: non-RegExp separator string semantics via any coercion
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const s = 'path/to/file';
@@ -307,12 +307,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1800
-     * @tc.desc    Split: dotAll flag does not affect plain separator regex match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1800
+     * @tc.desc Split: dotAll flag does not affect plain separator regex match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a\nb\nc';
@@ -325,12 +325,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1900
-     * @tc.desc    Split: non-matching delimiter keeps input as a single token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_1900
+     * @tc.desc Split: non-matching delimiter keeps input as a single token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'abcdef'.split(new RegExp('XYZ'));
@@ -339,12 +339,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2000
-     * @tc.desc    Split: leading and trailing separators preserve edge empties
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2000
+     * @tc.desc Split: leading and trailing separators preserve edge empties
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = ',a,b,'.split(new RegExp(','));
@@ -356,12 +356,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2100
-     * @tc.desc    Split: reconstruction from existing RegExp keeps delimiter semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2100
+     * @tc.desc Split: reconstruction from existing RegExp keeps delimiter semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('\\s+');
@@ -376,12 +376,12 @@ export default function splitTest002(): void {
     });
 
     /**
-     * @tc.name    testSplit0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2200
-     * @tc.desc    Split: alternation delimiters handle mixed separators in one pass
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSplit0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_SUPPLEMENT_TEST_2200
+     * @tc.desc Split: alternation delimiters handle mixed separators in one pass
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSplit0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a,b;c|d'.split(new RegExp('[,;|]'));

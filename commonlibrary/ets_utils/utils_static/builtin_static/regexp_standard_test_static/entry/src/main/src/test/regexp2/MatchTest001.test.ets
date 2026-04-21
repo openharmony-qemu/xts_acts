@@ -91,10 +91,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0100
-       * @tc.desc   Test RegExp[Symbol.matchAll] basic call returns iterator matches and indices
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test RegExp[Symbol.matchAll] basic call returns iterator matches and indices
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // Baseline iterator semantics: many consumers replace manual exec loops with matchAll for clarity and performance.
@@ -110,10 +110,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0101
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0200
-       * @tc.desc   Test RegExp[Symbol.matchAll] equivalence with String.matchAll for global regex
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test RegExp[Symbol.matchAll] equivalence with String.matchAll for global regex
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // Interop requirement: apps commonly mix String.matchAll and RegExp[@@matchAll] depending on input type.
@@ -127,10 +127,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0102
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0300
-       * @tc.desc   Test RegExp[Symbol.matchAll] returns an iterator object and can be advanced
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test RegExp[Symbol.matchAll] returns an iterator object and can be advanced
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // Iterator protocol is a contract relied on by stream-style pipelines (consume one match at a time).
@@ -147,10 +147,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0103
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0400
-       * @tc.desc   Test match results structure is consistent with exec-style match data
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test match results structure is consistent with exec-style match data
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // ECMA-262 ties @@matchAll to the same match record shape as RegExp.prototype.exec; nested captures
@@ -173,10 +173,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0104
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0500
-       * @tc.desc   Test match object properties including groups behavior when no named groups
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test match object properties including groups behavior when no named groups
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // groups being undefined (not {}) is observable and used by consumers to branch between named-group and legacy paths.
@@ -197,10 +197,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0105
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0600
-       * @tc.desc   Test non-global RegExp with String.matchAll throws TypeError
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test non-global RegExp with String.matchAll throws TypeError
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // String.prototype.matchAll delegates here and requires a global RegExp; non-global receivers throw (TypeError).
@@ -229,10 +229,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0106
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0700
-       * @tc.desc   Test global g RegExp matchAll returns all matches
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test global g RegExp matchAll returns all matches
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // Global scanning is the primary production use-case (collect all occurrences); result count is an easy correctness signal.
@@ -246,10 +246,10 @@ export default function matchTest(): void {
       /**
        * @tc.name testMatch0107
        * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0800
-       * @tc.desc   Test non-global numeric pattern with String.matchAll throws TypeError
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.desc Test non-global numeric pattern with String.matchAll throws TypeError
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL1
        */
       it('testMatch0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         // Same global requirement as testMatch0105: non-global RegExp with String.matchAll must throw.
@@ -298,10 +298,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0108
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0100
-         * @tc.desc   Test RegExp[Symbol.matchAll] positive lookahead assertion
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] positive lookahead assertion
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Lookahead is used to validate context without consuming it (e.g., “amount before currency label”).
@@ -318,10 +318,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0109
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0200
-         * @tc.desc   Test RegExp[Symbol.matchAll] negative lookahead assertion
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] negative lookahead assertion
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Negative lookahead is a common “exclude a suffix” business rule (e.g., currency vs unit disambiguation).
@@ -337,10 +337,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0110
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0300
-         * @tc.desc   Test RegExp[Symbol.matchAll] line start anchor
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] line start anchor
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Anchor semantics underpin line-based processing (logs/configs); multiline mode must treat each line as a valid start.
@@ -357,10 +357,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0111
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0400
-         * @tc.desc   Test RegExp[Symbol.matchAll] line end anchor
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] line end anchor
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // End-of-line anchoring is used for suffix validation per record; multiline must not collapse to “end of whole string”.
@@ -377,10 +377,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0112
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0500
-         * @tc.desc   Test RegExp[Symbol.matchAll] word boundary matching
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] word boundary matching
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Word boundaries implement “token” matching (whole-word search); substring matches would be incorrect in many UIs.
@@ -397,10 +397,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0113
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0600
-         * @tc.desc   Test RegExp[Symbol.matchAll] emoji character matching
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] emoji character matching
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Real-world text contains non-BMP characters; matching must work at the code point level to support modern UX.
@@ -439,10 +439,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0114
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0700
-         * @tc.desc   Test matchAll results match an exec loop for global regex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test matchAll results match an exec loop for global regex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Many codebases still use exec loops; matchAll must remain a drop-in replacement for correctness and maintainability.
@@ -472,10 +472,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0115
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0800
-         * @tc.desc   Test matchAll preserves capture groups compared with string match
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test matchAll preserves capture groups compared with string match
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Captures are the business payload (fields) produced by matchAll; if they drift, extraction pipelines silently corrupt data.
@@ -497,10 +497,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0116
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0900
-         * @tc.desc   Test matchAll does not change lastIndex unlike exec
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test matchAll does not change lastIndex unlike exec
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Unlike exec, matchAll should be “non-invasive”: it must not mutate lastIndex and interfere with other scans.
@@ -546,13 +546,13 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0117
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1000
-         * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp object
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] with RegExp object
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Receiver/this-value handling is a protocol surface: Symbol.matchAll must work when invoked through helpers and wrappers.
+          // Receiver/this-value handling is a protocol contract: Symbol.matchAll must work when invoked through helpers and wrappers.
           // This guards against regressions where matchAll only works for direct method calls.
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test";
@@ -588,10 +588,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0118
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1100
-         * @tc.desc   Test indices is undefined without d flag
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test indices is undefined without d flag
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Even without indices support, the core matchAll results must remain correct and structured.
@@ -609,13 +609,13 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0119
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1200
-         * @tc.desc   Test d flag behavior when it is not supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test d flag behavior when it is not supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // This “d not supported” path is a portability guarantee: suites should still validate core semantics on minimal VMs.
+          // This 'd not supported' path is a portability guarantee: suites should still validate core semantics on minimal runtimes.
           // Ensuring matchAll continues to work avoids feature gating from accidentally disabling all matching.
           const regex: RegExp = new RegExp("\\w+", "g");
           const str: string = "a b";
@@ -650,10 +650,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0120
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1300
-         * @tc.desc   Test RegExp[Symbol.matchAll] RegExp subclass case
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] RegExp subclass case
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Subclassing/species changes often appear in framework code; basic subclass instances must still behave predictably.
@@ -692,10 +692,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0121
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1400
-         * @tc.desc   Test RegExp[Symbol.matchAll] converts number parameter to string
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] converts number parameter to string
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Non-string inputs appear naturally via loose typing; matchAll must follow ToString rules for web-compat behavior.
@@ -713,10 +713,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0122
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1500
-         * @tc.desc   Test RegExp[Symbol.matchAll] converts object parameter to string
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] converts object parameter to string
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Default object stringification is relied on by many debugging/templating flows; behavior should be consistent.
@@ -734,10 +734,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0123
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1600
-         * @tc.desc   Test RegExp[Symbol.matchAll] converts custom object via toString
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] converts custom object via toString
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Domain objects commonly implement toString for display/extraction; matchAll must respect that contract.
@@ -782,10 +782,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0124
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1700
-         * @tc.desc   Test RegExp[Symbol.matchAll] HTML tag extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] HTML tag extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // HTML-like extraction is a realistic workload: captures drive downstream rendering/sanitization.
@@ -805,10 +805,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0125
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1800
-         * @tc.desc   Test RegExp[Symbol.matchAll] URL query parameter extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] URL query parameter extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // URL query parsing is common in analytics/routing; capture groups map directly to key/value business fields.
@@ -828,10 +828,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0126
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1900
-         * @tc.desc   Test RegExp[Symbol.matchAll] log format parsing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] log format parsing
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Log parsing is a production-critical pipeline; named positional groups become severity/date/message fields.
@@ -850,10 +850,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0127
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2000
-         * @tc.desc   Test RegExp[Symbol.matchAll] date extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] date extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Date extraction is frequently used in ETL; correctness depends on matching whole tokens, not substrings.
@@ -871,10 +871,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0128
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2100
-         * @tc.desc   Test RegExp[Symbol.matchAll] price extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] price extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Monetary parsing drives pricing logic; capturing both formatted and integer values must remain stable.
@@ -893,10 +893,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0129
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2200
-         * @tc.desc   Test RegExp[Symbol.matchAll] phone number extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] phone number extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Phone extraction is business-critical for contact parsing; permissive separators must stay interoperable across datasets.
@@ -914,10 +914,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0130
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2300
-         * @tc.desc   Test RegExp[Symbol.matchAll] named capture groups extraction
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] named capture groups extraction
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g")) {
@@ -968,10 +968,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0131
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2400
-         * @tc.desc   Test RegExp[Symbol.matchAll] complex nested groups
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] complex nested groups
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Nested alternation/capture combinations are high-risk for engine backtracking bugs.
@@ -993,13 +993,13 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0132
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2500
-         * @tc.desc   Test RegExp[Symbol.matchAll] alternation patterns
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] alternation patterns
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Alternation-heavy patterns are common in keyword classification and intent matching.
+          // Alternation-heavy patterns are common in keyword classification and purpose matching.
           // Ensuring full coverage prevents missed categories in downstream business routing.
           const regex: RegExp = new RegExp("cat|dog|bird|fish", "g");
           const str: string = "cat dog bird fish cat";
@@ -1017,10 +1017,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0133
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2600
-         * @tc.desc   Test RegExp[Symbol.matchAll] multiline text matching
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] multiline text matching
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Multiline boundaries are core to line-oriented processing in logs and config files.
@@ -1038,10 +1038,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0134
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2700
-         * @tc.desc   Test RegExp[Symbol.matchAll] dynamic regex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] dynamic regex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Runtime-generated patterns are common when rules are loaded from config.
@@ -1058,10 +1058,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0135
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2800
-         * @tc.desc   Test RegExp[Symbol.matchAll] user input pattern
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] user input pattern
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // User-provided terms with case-folding are a realistic search scenario in UI/business tools.
@@ -1078,13 +1078,13 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0136
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2900
-         * @tc.desc   Test RegExp[Symbol.matchAll] many matches results
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] many matches results
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // High-cardinality match streams surface iterator progress and memory issues quickly.
+          // High-cardinality match streams reveal iterator progress and memory issues quickly.
           // Boundary checks on first/last result catch truncation or ordering defects.
           const regex: RegExp = new RegExp("\\d", "g");
           const str: string = "0123456789";
@@ -1121,10 +1121,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0137
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3000
-         * @tc.desc   Test RegExp[Symbol.matchAll] early termination in for-of
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] early termination in for-of
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Early termination is common in “find first N” flows; iterator must support safe partial consumption.
@@ -1146,10 +1146,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0138
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3100
-         * @tc.desc   Test RegExp[Symbol.matchAll] early return first match
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] early return first match
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // First-hit retrieval is a frequent pattern in validation and autocomplete.
@@ -1192,10 +1192,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0139
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3200
-         * @tc.desc   Test RegExp[Symbol.matchAll] new RegExp form
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] new RegExp form
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Constructor-based regex is the deployment path in restricted ArkTS profiles.
@@ -1213,10 +1213,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0140
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3300
-         * @tc.desc   Test RegExp[Symbol.matchAll] constructor special escape characters
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] constructor special escape characters
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Escaped constructor patterns are prone to double-escaping bugs in generated code.
@@ -1234,10 +1234,10 @@ export default function matchTest(): void {
         /**
          * @tc.name testMatch0141
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3400
-         * @tc.desc   Test RegExp[Symbol.matchAll] dynamic patterns constructed at runtime
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] dynamic patterns constructed at runtime
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Joining keyword lists into one pattern is a common optimization for bulk matching.
@@ -1280,10 +1280,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0142
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0100
-         * @tc.desc   Test RegExp[Symbol.matchAll] sticky matches from lastIndex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] sticky matches from lastIndex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Sticky+global semantics are used by tokenizer-style scanners that require contiguous progress.
@@ -1299,10 +1299,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0143
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0200
-         * @tc.desc   Test RegExp[Symbol.matchAll] sticky only matches at lastIndex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] sticky only matches at lastIndex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Explicit lastIndex anchoring is central to resumable scanning workflows.
@@ -1341,10 +1341,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0144
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0300
-         * @tc.desc   Test RegExp[Symbol.matchAll] emoji matches with u flag
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] emoji matches with u flag
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Unicode mode must treat emoji as whole code points to avoid split matches.
@@ -1360,10 +1360,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0145
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0400
-         * @tc.desc   Test RegExp[Symbol.matchAll] surrogate pairs match correctly with u flag
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] surrogate pairs match correctly with u flag
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Surrogate-pair iteration correctness is required for consistent emoji counting/search.
@@ -1402,10 +1402,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0146
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0500
-         * @tc.desc   Test RegExp[Symbol.matchAll] dotAll s matches newline
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] dotAll s matches newline
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // DotAll is widely used for multiline blob parsing (logs, payload snippets).
@@ -1443,10 +1443,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0147
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0600
-         * @tc.desc   Test RegExp[Symbol.matchAll] multiline m line start anchor
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] multiline m line start anchor
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Multiline anchors must remain predictable for per-line rule engines.
@@ -1484,10 +1484,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0148
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0700
-         * @tc.desc   Test RegExp[Symbol.matchAll] ignoreCase i matches
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] ignoreCase i matches
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Case-insensitive bulk matching underpins user search and moderation filters.
@@ -1526,10 +1526,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0149
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0800
-         * @tc.desc   Test RegExp[Symbol.matchAll] g and i flags combination
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] g and i flags combination
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Combined flags should compose cleanly, not override each other.
@@ -1543,10 +1543,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0150
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0900
-         * @tc.desc   Test RegExp[Symbol.matchAll] g i m flags combination
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] g i m flags combination
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // g+i+m interactions are common in text processing stacks.
@@ -1582,10 +1582,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0151
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1000
-         * @tc.desc   Test RegExp[Symbol.matchAll] single capture group
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] single capture group
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Capture group payloads are often consumed directly as extracted fields.
@@ -1602,10 +1602,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0152
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1100
-         * @tc.desc   Test RegExp[Symbol.matchAll] multiple capture groups
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] multiple capture groups
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Multi-group extraction is core to tuple-like parsing tasks.
@@ -1623,10 +1623,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0153
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1200
-         * @tc.desc   Test RegExp[Symbol.matchAll] nested capture groups
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] nested capture groups
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Nested capture hierarchies are fragile during engine/refactor changes.
@@ -1644,10 +1644,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0154
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1300
-         * @tc.desc   Test RegExp[Symbol.matchAll] non-capture groups are excluded
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] non-capture groups are excluded
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Non-capturing groups are used to optimize patterns without changing outputs.
@@ -1662,12 +1662,12 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0155
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1400
-         * @tc.desc   Test RegExp[Symbol.matchAll] named capture groups through groups
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] named capture groups through groups
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
-        it('testMatch0155', filterLevel1, () => {
+        it('testMatch0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g")) {
             return;
           }
@@ -1692,10 +1692,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0156
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1500
-         * @tc.desc   Test RegExp[Symbol.matchAll] groups is undefined when no named groups
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] groups is undefined when no named groups
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Absent named groups should be explicitly undefined for predictable branching.
@@ -1731,12 +1731,12 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0157
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1600
-         * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex does not change original regex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] lastIndex does not change original regex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
-        it('testMatch0157', filterLevel1, () => {
+        it('testMatch0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // matchAll should not mutate caller-owned regex cursor state.
           // This is critical when the same regex instance is shared across routines.
           const regex: RegExp = new RegExp("[a-c]", "g");
@@ -1750,10 +1750,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0158
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1700
-         * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex starts from 0 by default
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] lastIndex starts from 0 by default
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Default cursor semantics (starting at 0) are assumed by most callers.
@@ -1768,10 +1768,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0159
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1800
-         * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex out of range returns no matches
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] lastIndex out of range returns no matches
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Out-of-range cursors must degrade to empty results, not crashes.
@@ -1808,10 +1808,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0160
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_1900
-         * @tc.desc   Test RegExp[Symbol.matchAll] iterator protocol next method
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] iterator protocol next method
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Explicit iterator stepping is used in streaming parsers.
@@ -1836,10 +1836,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0161
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2000
-         * @tc.desc   Test RegExp[Symbol.matchAll] for-of iterator traversal
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] for-of iterator traversal
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // for-of is the idiomatic consumer path for matchAll.
@@ -1858,10 +1858,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0162
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2100
-         * @tc.desc   Test RegExp[Symbol.matchAll] Array.from conversion
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] Array.from conversion
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Array.from is a common materialization step in app logic.
@@ -1875,10 +1875,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0163
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2200
-         * @tc.desc   Test RegExp[Symbol.matchAll] explicit Array.from conversion
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] explicit Array.from conversion
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Explicit conversion plus value checks protect ordering guarantees.
@@ -1895,10 +1895,10 @@ export default function matchTest(): void {
         /**
         * @tc.name testMatch0164
          * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2300
-         * @tc.desc   Test RegExp[Symbol.matchAll] iterator partial consumption state
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.desc Test RegExp[Symbol.matchAll] iterator partial consumption state
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testMatch0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           // Partial consumption must preserve iterator continuity.

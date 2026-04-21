@@ -32,12 +32,12 @@ export default function regExpComplete002Test(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testRegExpComplete0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0100
-     * @tc.desc    Source and flags reflect constructor inputs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0100
+     * @tc.desc Source and flags reflect constructor inputs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc', 'gi');
@@ -46,12 +46,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0200
-     * @tc.desc    Cloned RegExp preserves source and flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0200
+     * @tc.desc Cloned RegExp preserves source and flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a');
@@ -61,12 +61,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0300
-     * @tc.desc    Global exec iterates matches and tracks lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0300
+     * @tc.desc Global exec iterates matches and tracks lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\w+', 'g');
@@ -83,12 +83,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0400
-     * @tc.desc    Multiline anchor works with line-ending boundaries
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0400
+     * @tc.desc Multiline anchor works with line-ending boundaries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('line$', 'm');
@@ -97,12 +97,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0500
-     * @tc.desc    lastIndex defaults and is mutable for global/sticky regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0500
+     * @tc.desc lastIndex defaults and is mutable for global/sticky regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const g = new RegExp('a', 'g');
@@ -118,12 +118,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0600
-     * @tc.desc    exec/test global lastIndex resets to 0 after failing to match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0600
+     * @tc.desc exec/test global lastIndex resets to 0 after failing to match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('foo', 'g');
@@ -140,12 +140,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0700
-     * @tc.desc    toString/source/flags are consistent across construction forms
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0700
+     * @tc.desc toString/source/flags are consistent across construction forms
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1 = new RegExp('ab+c', 'gi');
@@ -156,12 +156,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0800
-     * @tc.desc    compile-time safe feature probes for s/u/y flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0800
+     * @tc.desc compile-time safe feature probes for s/u/y flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'hello\nworld 😀';
@@ -185,12 +185,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0900
-     * @tc.desc    constructor throws when flags contain duplicates or invalid
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_0900
+     * @tc.desc constructor throws when flags contain duplicates or invalid
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let threw = false;
@@ -211,12 +211,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1000
-     * @tc.desc    escaping forward slash is reflected in source and toString
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1000
+     * @tc.desc escaping forward slash is reflected in source and toString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a/b', 'g');
@@ -225,12 +225,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1100
-     * @tc.desc    Boolean flag properties reflect constructor flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1100
+     * @tc.desc Boolean flag properties reflect constructor flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc', 'gim');
@@ -242,12 +242,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1200
-     * @tc.desc    dotAll unicode sticky and hasIndices properties if supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1200
+     * @tc.desc dotAll unicode sticky and hasIndices properties if supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('a.b', 's')) {
@@ -265,12 +265,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1300
-     * @tc.desc    Reconstructing from RegExp with explicit flags overrides source flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1300
+     * @tc.desc Reconstructing from RegExp with explicit flags overrides source flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('abc', 'gi');
@@ -282,12 +282,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1400
-     * @tc.desc    Non-global test ignores lastIndex mutations
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1400
+     * @tc.desc Non-global test ignores lastIndex mutations
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('b');
@@ -301,12 +301,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1500
-     * @tc.desc    source preserves escapes for classes and quantifiers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1500
+     * @tc.desc source preserves escapes for classes and quantifiers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('[A-Z]{2,4}\\d+');
@@ -315,12 +315,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1600
-     * @tc.desc    Empty source serializes consistently with empty constructor input
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1600
+     * @tc.desc Empty source serializes consistently with empty constructor input
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1 = new RegExp('');
@@ -331,16 +331,15 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1700
-     * @tc.desc    Sticky regex obeys lastIndex and resets after failed test
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1700
+     * @tc.desc Sticky regex obeys lastIndex and resets after failed test
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
-        expect(true).assertTrue();
         return;
       }
       const re = new RegExp('foo', 'y');
@@ -354,12 +353,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1800
-     * @tc.desc    Duplicate flags always fail even when source is a RegExp object
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1800
+     * @tc.desc Duplicate flags always fail even when source is a RegExp object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let threw = false;
@@ -373,12 +372,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1900
-     * @tc.desc    flags string stays normalized after reconstruction cycles
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_1900
+     * @tc.desc flags string stays normalized after reconstruction cycles
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1 = new RegExp('abc', 'mig');
@@ -391,12 +390,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2000
-     * @tc.desc    Default boolean properties are false when flags are absent
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2000
+     * @tc.desc Default boolean properties are false when flags are absent
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc');
@@ -408,12 +407,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2100
-     * @tc.desc    lastIndex mutability remains stable after multiple test calls
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2100
+     * @tc.desc lastIndex mutability remains stable after multiple test calls
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('x', 'g');
@@ -427,12 +426,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2200
-     * @tc.desc    Rebuild chain preserves source text with escaped backslashes
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2200
+     * @tc.desc Rebuild chain preserves source text with escaped backslashes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1 = new RegExp('\\w+\\d+');
@@ -444,12 +443,12 @@ export default function regExpComplete002Test(): void {
     });
 
     /**
-     * @tc.name    testRegExpComplete0222
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2300
-     * @tc.desc    Invalid source pattern throws regardless of flag combinations
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testRegExpComplete0222
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_SUPPLEMENT_TEST_2300
+     * @tc.desc Invalid source pattern throws regardless of flag combinations
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpComplete0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let threw1 = false;
