@@ -884,7 +884,7 @@ int VideoDecCapApi0023()
         return -1;
     }
     for (uint32_t i = 0; i < count; ++i) {
-        if (OH_AVCapability_IsSecure([i])) {   
+        if (OH_AVCapability_IsSecure([i])) {
             return 0;
         }
     }
