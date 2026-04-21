@@ -3174,12 +3174,12 @@ export default function btBleManagerTest() {
         bluetoothBle.stopAdvertising();
       }catch(error) {
         console.error(`[bluetooth_js]startAdvertising1 failed, code is ${error.code},message is ${error.message}`);
-        if (error.code == 801) {
+        if (error.code === 801) {
           console.info('[bluetooth_js]startAdvertising1 is not support');
           expect(true).assertTrue();
         } else {
           if (nLength > 24) {
-            expect(error.code == 2902054).assertTrue();
+            expect(error.code === 2902054).assertTrue();
           }else{
             expect(Number(error.code)).assertEqual(2900099);
           }
