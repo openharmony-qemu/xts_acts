@@ -291,7 +291,7 @@ int VideoVc1DecCapApi0007()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    if (  == nullptr) {
+    if (capability == nullptr) {
         return 0;
     }
     
