@@ -4670,23 +4670,23 @@ export default function settingUiJsunit() {
    * @tc.level  LEVEL0
    */
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400',
-  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-  async (done: Function) => {
-    if (!isDeviceSupportAboutDevice()) {	 
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {	 
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(mContext);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
       done();
-      return;
-    }
-    let code = 0;
-    try {
-      settings.openAboutDeviceSettingsPage(mContext);
-      expect(code).assertEqual(0);
-    } catch (err) {
-      console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
-      code = err?.code;
-      expect(code).assertEqual(16900020);
-    }
-    done();
-  });
+    });
 
   /**
    * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_0100
