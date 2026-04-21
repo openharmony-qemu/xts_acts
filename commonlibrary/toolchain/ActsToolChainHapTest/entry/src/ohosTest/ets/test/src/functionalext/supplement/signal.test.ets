@@ -60,7 +60,7 @@ export default function signal_group_test() {
       done();
     });
     /**
-     * @tc.name   __getitimer_time64
+     * @tc.name   getitimer_time64
      * @tc.number SUB_THIRDPARTY_MUSL_GETITIMER_TIME64_0100
      * @tc.desc   libc-test __getitimer_time64
      * @tc.type   FUNCTION
@@ -73,7 +73,7 @@ export default function signal_group_test() {
       done();
     });
     /**
-     * @tc.name   __setitimer_time64
+     * @tc.name   setitimer_time64
      * @tc.number SUB_THIRDPARTY_MUSL_SETITIMER_TIME64_0100
      * @tc.desc   libc-test __setitimer_time64
      * @tc.type   FUNCTION
