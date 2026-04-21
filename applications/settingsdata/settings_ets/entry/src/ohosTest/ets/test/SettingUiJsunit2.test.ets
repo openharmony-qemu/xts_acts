@@ -4845,14 +4845,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0700
-   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0700
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_0700',
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportAppDetail()) {
@@ -4862,23 +4862,24 @@ export default function settingUiJsunit() {
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', null);
+        expect(code).assertEqual(0);
       } catch (err) {
-        console.error("[openAppDetailSettingsPage_invalid_appIndex] error = " + err);
+        console.error("[openAppDetailSettingsPage_valid_appIndex] error = " + err);
         code = err?.code;
+        expect(code).assertEqual(16900020);
       }
-      expect(code).assertEqual(16900010);
       done();
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_undefined_0800
-   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_undefined_0800
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_appIndex_undefined_0800',
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportAppDetail()) {
@@ -4888,11 +4889,12 @@ export default function settingUiJsunit() {
       let code = 0;
       try {
         settings.openAppDetailSettingsPage(mContext, 'com.example', undefined);
+        expect(code).assertEqual(0);
       } catch (err) {
-        console.error("[openAppDetailSettingsPage_invalid_appIndex_undefined] error = " + err);
+        console.error("[openAppDetailSettingsPage_valid_appIndex_undefined] error = " + err);
         code = err?.code;
+        expect(code).assertEqual(16900020);
       }
-      expect(code).assertEqual(16900010);
       done();
     });
 
