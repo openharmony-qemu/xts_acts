@@ -31,7 +31,7 @@ export default function BuiltinsStackTraceTest(): void {
 
     /**
      * @tc.name    stackTraceTest0100
-     * @tc.number  STACK_TRACE_TEST_0100
+     * @tc.number  SUB_STACK_TRACE_TEST_0100
      * @tc.desc    Verify provisionStackTrace returns non-empty array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -46,7 +46,7 @@ export default function BuiltinsStackTraceTest(): void {
 
     /**
      * @tc.name    stackTraceTest0200
-     * @tc.number  STACK_TRACE_TEST_0200
+     * @tc.number  SUB_STACK_TRACE_TEST_0200
      * @tc.desc    Verify StackTraceElement toString method
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -68,7 +68,7 @@ export default function BuiltinsStackTraceTest(): void {
 
     /**
      * @tc.name    stackTraceTest0300
-     * @tc.number  STACK_TRACE_TEST_0300
+     * @tc.number  SUB_STACK_TRACE_TEST_0300
      * @tc.desc    Verify provisionStackTrace returns array of StackTraceElement
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -88,7 +88,7 @@ export default function BuiltinsStackTraceTest(): void {
 
     /**
      * @tc.name    stackTraceTest0400
-     * @tc.number  STACK_TRACE_TEST_0400
+     * @tc.number  SUB_STACK_TRACE_TEST_0400
      * @tc.desc    Verify StackTraceElement toString format
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
