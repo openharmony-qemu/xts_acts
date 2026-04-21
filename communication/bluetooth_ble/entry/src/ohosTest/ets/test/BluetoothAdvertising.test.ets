@@ -1990,12 +1990,12 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
         console.info(`${caseName} ` +"02errCode:" + err.code + ",02errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
           if (nLength > 24) {
-            expect(err.code == 2902054).assertTrue();
+            expect(err.code === 2902054).assertTrue();
           }else{
             expect().assertFail();
           }
@@ -2051,12 +2051,12 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
         console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
           if (nLength > 24) {
-            expect(err.code == 2902054).assertTrue();
+            expect(err.code === 2902054).assertTrue();
           }else{
             expect().assertFail();
           }
@@ -2144,12 +2144,12 @@ export default function bluetoothAdvertisingTest() {
         expect(advStatus).assertEqual(4);
       } catch (err) {
         console.info(`${caseName} [bluetooth_js] errCode:` + err.code + ",01errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
           if (nLength > 24) {
-            expect(err.code == 2902054).assertTrue();
+            expect(err.code === 2902054).assertTrue();
           }else{
             expect().assertFail();
           }
