@@ -450,6 +450,7 @@ export default function requestSpecialUnitTest() {
       try {
         for (let i = 0; i < 49; i++){
           let task: request.agent.Task = await request.agent.create(baseContext, config);
+          await task.setMaxSpeed(16 * 1024);
           console.info("====>SUB_Request_Download_on_wait_0500 create task success times: " + i);
           task.on('wait', waitOccurCallBack);
           await task.start();
