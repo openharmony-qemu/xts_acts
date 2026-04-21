@@ -149,7 +149,7 @@ export default function image10bitPixelMap() {
       const fileSize = stats.size;
       const bufferRead = new ArrayBuffer(fileSize)
       fs.readSync(file.fd, bufferRead)
-      openHdrPic = { uri: filePath, fd: file.fd as int, fileSize: fileSize as int, fileData: bufferRead }
+      openHdrPic = { uri: filePath, fd: file.fd as int, fileSize: fileSize.toInt(), fileData: bufferRead }
       return bufferRead
     }
 
