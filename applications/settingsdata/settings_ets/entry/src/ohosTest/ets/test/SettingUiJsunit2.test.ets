@@ -4678,7 +4678,6 @@ export default function settingUiJsunit() {
     }
     let code = 0;
     try {
-      await CommonFunc.sleep(1500);
       settings.openAboutDeviceSettingsPage(mContext);
       expect(code).assertEqual(0);
     } catch (err) {
@@ -4862,7 +4861,6 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', null);
         expect(code).assertEqual(0);
       } catch (err) {
@@ -4890,7 +4888,6 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', undefined);
         expect(code).assertEqual(0);
       } catch (err) {
@@ -4918,7 +4915,6 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example');
         expect(code).assertEqual(0);
       } catch (err) {
@@ -4946,7 +4942,6 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        await CommonFunc.sleep(1500);
         settings.openAppDetailSettingsPage(mContext, 'com.example', 0);
         expect(code).assertEqual(0);
       } catch (err) {
