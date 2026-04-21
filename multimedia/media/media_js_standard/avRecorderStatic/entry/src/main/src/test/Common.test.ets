@@ -198,12 +198,12 @@ export default class Commmon {
   async createAVRecorder(): Promise<media.AVRecorder | undefined> {
     console.info('case createAVRecorder called');
     try {
-      let avRecorder: media.AVRecorder = await media.createAVRecorder();
+      let avRecorder: media.AVRecorder | undefined = await media.createAVRecorder();
       if (avRecorder) {
         return avRecorder;
       }
-    } catch (error: Error) {
-      console.info(`createAVRecorder catchCallback, error:${error}`);
+    } catch (error) {
+      console.info(`createAVRecorder catchCallback, error: ${error}`);
     };
     return undefined;
   }
