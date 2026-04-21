@@ -2904,9 +2904,7 @@ export default function avRecorderTest() {
       avConfig.profile.audioBitrate = 64000;
       avConfig.profile.audioChannels = 1;
       avConfig.profile.audioSampleRate = 8000;
-      if (avRecorder) {
-        await commonFun.avRecorderSetMetadataTest(avConfig, avRecorder, RECORDER_TIME, done);
-      }
+      await commonFun.avRecorderSetMetadataTest(avConfig, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 end');
       done();
     });
