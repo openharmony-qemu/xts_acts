@@ -67,7 +67,7 @@ export default function signal_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__getitimer_time64", Level.LEVEL1, async (done: Function) => {
+    it("getitimer_time64", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__getitimer_time64");
       expect(result).assertEqual(0);
       done();
@@ -80,7 +80,7 @@ export default function signal_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__setitimer_time64", Level.LEVEL1, async (done: Function) => {
+    it("setitimer_time64", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__setitimer_time64");
       expect(result).assertEqual(0);
       done();

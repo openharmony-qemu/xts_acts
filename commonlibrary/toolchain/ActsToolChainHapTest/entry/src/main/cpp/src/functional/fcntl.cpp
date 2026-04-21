@@ -23,7 +23,7 @@
 
 #include "functionalext.h"
 
-static inline int TestConditionFcntl(bool condition, const char *expr, const char *fmt, ...)
+static int TestConditionFcntl(bool condition, const char *expr, const char *fmt, ...)
 {
     if (condition) {
         return 1;

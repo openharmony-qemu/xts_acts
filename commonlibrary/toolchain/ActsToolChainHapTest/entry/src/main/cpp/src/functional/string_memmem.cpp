@@ -38,7 +38,7 @@ static inline void TestMemmemNotFound(const struct MemmemTestParams *params)
     const void *q = memmem(p, strlen(params->s), params->sub, strlen(params->sub));
     if (q) {
         t_error("memmem(%s %s, %d, %s, %d) returned str+%d, wanted 0\n",
-            params->sExpr, params->tailExpr, static_cast<int>(strlen(params->s)), 
+            params->sExpr, params->tailExpr, static_cast<int>(strlen(params->s)),
             params->subExpr, static_cast<int>(strlen(params->sub)),
             static_cast<int>(static_cast<const char *>(q) - p));
     }

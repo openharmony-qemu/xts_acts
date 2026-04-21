@@ -366,8 +366,8 @@ export default function network_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__recvmmsg_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__recvmmsg_time64");
+    it("recvmmsg_time64", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("recvmmsg_time64");
       expect(result).assertEqual(0);
       done();
     });

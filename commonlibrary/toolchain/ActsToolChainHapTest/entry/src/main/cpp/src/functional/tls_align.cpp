@@ -21,7 +21,7 @@ struct TlsAlignItem {
     unsigned align;
     unsigned long addr;
 };
-extern TlsAlignItem g_t[4];
+extern struct TlsAlignItem g_t[4];
 
 static int TlsAlignTestImpl()
 {

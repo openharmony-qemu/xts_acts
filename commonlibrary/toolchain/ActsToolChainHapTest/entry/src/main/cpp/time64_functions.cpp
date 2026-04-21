@@ -116,9 +116,9 @@ int UtimensatTime64(int dirfd, const char *pathname, const struct timespec times
     return utimensat(dirfd, pathname, times, flags);
 }
 
-int MtxTimedlockTime64(mtx_t *mutex, const struct timespec *time_point)
+int MtxTimedlockTime64(mtx_t *mutex, const struct timespec *timePoint)
 {
-    return mtx_timedlock(mutex, time_point);
+    return mtx_timedlock(mutex, timePoint);
 }
 
 int PthreadMutexTimedlockTime64(pthread_mutex_t *mutex, const struct timespec *abstime)
