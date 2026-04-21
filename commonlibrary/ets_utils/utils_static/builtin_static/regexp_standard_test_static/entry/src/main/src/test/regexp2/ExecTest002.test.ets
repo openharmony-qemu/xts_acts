@@ -54,12 +54,12 @@ export default function execTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testExec0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0100
-     * @tc.desc    Global exec returns first match and updates lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0100
+     * @tc.desc Global exec returns first match and updates lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+', 'g');
@@ -74,12 +74,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0200
-     * @tc.desc    Exec returns capture groups and match index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0200
+     * @tc.desc Exec returns capture groups and match index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(ab)(cd)');
@@ -95,12 +95,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0300
-     * @tc.desc    Exec returns null when input has no match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0300
+     * @tc.desc Exec returns null when input has no match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('z+');
@@ -109,12 +109,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0400
-     * @tc.desc    Empty pattern exec matches at position zero
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0400
+     * @tc.desc Empty pattern exec matches at position zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(?:)');
@@ -128,12 +128,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0500
-     * @tc.desc    Anchors and boundaries (^ $ \\b \\B)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0500
+     * @tc.desc Anchors and boundaries (^ $ \\b \\B)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('^hello').exec('hello world') !== null).assertTrue();
@@ -147,12 +147,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0600
-     * @tc.desc    Quantifiers (* + ? {n} {n,m}) and greedy/lazy
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0600
+     * @tc.desc Quantifiers (* + ? {n} {n,m}) and greedy/lazy
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('a*b').exec('b') !== null).assertTrue();
@@ -176,12 +176,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0700
-     * @tc.desc    Flags: i/m/s/u/y (feature-gated) and global lastIndex reset
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0700
+     * @tc.desc Flags: i/m/s/u/y (feature-gated) and global lastIndex reset
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('hello', 'i').exec('HELLO') !== null).assertTrue();
@@ -217,12 +217,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0800
-     * @tc.desc    Exec non-global result carries index/input metadata
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0800
+     * @tc.desc Exec non-global result carries index/input metadata
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = new RegExp('(ab)(cd)').exec('xxabcdyy');
@@ -238,12 +238,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0900
-     * @tc.desc    Exec with global regex iterates all matches in sequence
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_0900
+     * @tc.desc Exec with global regex iterates all matches in sequence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+', 'g');
@@ -265,12 +265,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1000
-     * @tc.desc    Exec respects start position from lastIndex for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1000
+     * @tc.desc Exec respects start position from lastIndex for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('foo', 'g');
@@ -286,12 +286,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1100
-     * @tc.desc    Exec zero-length global matches still advance and terminate
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1100
+     * @tc.desc Exec zero-length global matches still advance and terminate
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(?:)', 'g');
@@ -310,16 +310,16 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1200
-     * @tc.desc    Exec with named capture groups exposes groups object
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1200
+     * @tc.desc Exec with named capture groups exposes groups object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})').exec('2026-04-17');
@@ -335,12 +335,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1300
-     * @tc.desc    Exec supports optional capture groups and undefined entries
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1300
+     * @tc.desc Exec supports optional capture groups and undefined entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = new RegExp('(a)(b)?').exec('a');
@@ -354,16 +354,16 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1400
-     * @tc.desc    Exec indices (d flag) when supported returns start/end pairs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1400
+     * @tc.desc Exec indices (d flag) when supported returns start/end pairs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'd')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('(foo)', 'd').exec('xxfooyy');
@@ -379,12 +379,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1500
-     * @tc.desc    Exec on multiline input validates index and matched line
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1500
+     * @tc.desc Exec on multiline input validates index and matched line
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('^line\\d', 'm');
@@ -398,12 +398,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1600
-     * @tc.desc    Exec lastIndex larger than input yields null and resets for global
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1600
+     * @tc.desc Exec lastIndex larger than input yields null and resets for global
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a', 'g');
@@ -414,12 +414,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1700
-     * @tc.desc    Exec with alternation chooses leftmost earliest match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1700
+     * @tc.desc Exec with alternation chooses leftmost earliest match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('cat|dog');
@@ -433,16 +433,16 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1800
-     * @tc.desc    Exec sticky requires exact lastIndex position when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1800
+     * @tc.desc Exec sticky requires exact lastIndex position when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('foo', 'y');
@@ -456,12 +456,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1900
-     * @tc.desc    Exec nested capture groups preserve numbering order
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_1900
+     * @tc.desc Exec nested capture groups preserve numbering order
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Data import rules often nest groups to capture both a whole segment and its subfields.
@@ -479,12 +479,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2000
-     * @tc.desc    Exec non-capturing groups omit intermediate array entries
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2000
+     * @tc.desc Exec non-capturing groups omit intermediate array entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-capturing groups are common in readability-focused regexes where only one field is actually consumed.
@@ -501,18 +501,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2100
-     * @tc.desc    Exec mixed named and numbered groups remains addressable by index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2100
+     * @tc.desc Exec mixed named and numbered groups remains addressable by index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Migration codebases often mix old numeric consumers with newer named captures during a transition period.
       // Index-based access must keep working so rollout can happen incrementally instead of as a risky big-bang change.
       if (!supportsRegExp('(?<name>\\w+)\\s+(\\d+)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('(?<name>\\w+)\\s+(\\d+)').exec('John 25');
@@ -526,12 +526,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2200
-     * @tc.desc    Exec result input property preserves original searched string
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2200
+     * @tc.desc Exec result input property preserves original searched string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Error reporting and parser diagnostics often echo the original source line next to a capture result.
@@ -547,12 +547,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0222
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2300
-     * @tc.desc    Exec without d flag exposes no indices property
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0222
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2300
+     * @tc.desc Exec without d flag exposes no indices property
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Diagnostics payloads should stay lightweight unless indices are explicitly requested.
@@ -568,12 +568,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0223
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2400
-     * @tc.desc    Exec global iteration over repeated ab-star pattern counts all hits
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0223
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2400
+     * @tc.desc Exec global iteration over repeated ab-star pattern counts all hits
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Tokenizers often use a while-exec loop instead of split so they can preserve offsets and matched text.
@@ -594,12 +594,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0224
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2500
-     * @tc.desc    Exec ignoreCase flag matches any casing variant
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0224
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2500
+     * @tc.desc Exec ignoreCase flag matches any casing variant
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // User-entered identifiers frequently vary by capitalization across systems that should still interoperate.
@@ -619,12 +619,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0225
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2600
-     * @tc.desc    Exec multiline anchors locate both start and end per line
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0225
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2600
+     * @tc.desc Exec multiline anchors locate both start and end per line
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Log parsers often inspect buffers line-by-line without splitting them to preserve absolute positions.
@@ -641,12 +641,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0226
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2700
-     * @tc.desc    Exec dotAll flag crosses newline only when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0226
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2700
+     * @tc.desc Exec dotAll flag crosses newline only when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some payload formats embed hard newlines inside logically single fields, such as stack traces or messages.
@@ -663,18 +663,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0227
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2800
-     * @tc.desc    Exec unicode code point escapes match supplementary characters when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0227
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2800
+     * @tc.desc Exec unicode code point escapes match supplementary characters when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Education and scientific content often includes supplementary-plane symbols that break naive UTF-16 assumptions.
       // Unicode-mode coverage ensures one visual glyph is treated as the intended logical token in compliant runtimes.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('\\u{1F600}', 'u').exec('A😀B');
@@ -687,12 +687,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0228
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2900
-     * @tc.desc    Exec on empty input with non-empty pattern returns null
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0228
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_2900
+     * @tc.desc Exec on empty input with non-empty pattern returns null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Blank optional fields are common in forms and exports, and parsers should short-circuit cleanly on them.
@@ -702,12 +702,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0229
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3000
-     * @tc.desc    Exec long-string search finds target near the tail
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0229
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3000
+     * @tc.desc Exec long-string search finds target near the tail
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Production scans often traverse large buffers such as logs, cached pages, or imported reports.
@@ -724,12 +724,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0230
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3100
-     * @tc.desc    Exec lookahead and negative lookahead are feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0230
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3100
+     * @tc.desc Exec lookahead and negative lookahead are feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Parsers frequently need to inspect following context without consuming it, especially for suffix-sensitive tokens.
@@ -760,12 +760,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0231
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3200
-     * @tc.desc    Exec lookbehind and negative lookbehind are feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0231
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3200
+     * @tc.desc Exec lookbehind and negative lookbehind are feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Value extractors often need characters only after a delimiter, and lookbehind keeps the delimiter untouched.
@@ -799,12 +799,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0232
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3300
-     * @tc.desc    Exec practical email validator returns full-string match only for valid input
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0232
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3300
+     * @tc.desc Exec practical email validator returns full-string match only for valid input
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Business validation often relies on exec because it returns both success and the matched text in one call.
@@ -821,12 +821,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0233
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3400
-     * @tc.desc    Exec global loop collects all match indices in order
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0233
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3400
+     * @tc.desc Exec global loop collects all match indices in order
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many analytics rules report offsets for highlighting and redaction, so we treat indices as part of the API contract.
@@ -847,18 +847,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0234
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3500
-     * @tc.desc    Exec hasIndices (d) provides indices for whole match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0234
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3500
+     * @tc.desc Exec hasIndices (d) provides indices for whole match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Indices are used by editors and syntax highlighters to patch text ranges without recomputing spans.
       // Feature-gating avoids hard failures on runtimes that don't implement the d flag yet.
       if (!supportsRegExp('test', 'd')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('test', 'd').exec('this is a test');
@@ -872,12 +872,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0235
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3600
-     * @tc.desc    Exec null input follows ToString coercion contract
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0235
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3600
+     * @tc.desc Exec null input follows ToString coercion contract
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Null input coercion differs across runtimes; helper encodes the target contract for this suite.
@@ -885,12 +885,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0236
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3700
-     * @tc.desc    Exec undefined input follows ToString coercion contract
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0236
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3700
+     * @tc.desc Exec undefined input follows ToString coercion contract
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Undefined input coercion differs across runtimes; helper encodes the target contract for this suite.
@@ -898,12 +898,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0237
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3800
-     * @tc.desc    Exec numeric input is coerced to string
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0237
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3800
+     * @tc.desc Exec numeric input is coerced to string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Business identifiers are often numeric in data layers, but string-based in payloads and logs.
@@ -912,12 +912,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0238
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3900
-     * @tc.desc    Exec object input uses toString coercion when available
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0238
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_3900
+     * @tc.desc Exec object input uses toString coercion when available
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some frameworks pass wrapper objects; honoring ToString makes regex behavior predictable across adapter layers.
@@ -926,12 +926,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0239
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4000
-     * @tc.desc    Exec object without toString should throw
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0239
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4000
+     * @tc.desc Exec object without toString should throw
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Security-sensitive parsers prefer failures over implicit "[object Object]" stringification.
@@ -940,18 +940,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0240
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4100
-     * @tc.desc    Exec sticky lastIndex update reflects exact match length
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0240
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4100
+     * @tc.desc Exec sticky lastIndex update reflects exact match length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Sticky tokenizers rely on lastIndex as the authoritative cursor into a stream.
       // Verifying the updated cursor prevents subtle off-by-one bugs in incremental parsers.
       if (!supportsRegExp('foo', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('foo', 'y');
@@ -963,12 +963,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0241
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4200
-     * @tc.desc    Exec failure resets lastIndex for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0241
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4200
+     * @tc.desc Exec failure resets lastIndex for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Reused global regex objects are common in hot paths; leaving lastIndex stale breaks the next scan.
@@ -981,12 +981,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0242
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4300
-     * @tc.desc    Exec without global does not update lastIndex on success
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0242
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4300
+     * @tc.desc Exec without global does not update lastIndex on success
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many codebases cache non-global regexes; treating them as stateful would make results depend on call history.
@@ -999,12 +999,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0243
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4400
-     * @tc.desc    Exec character classes match expected single code unit
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0243
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4400
+     * @tc.desc Exec character classes match expected single code unit
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Validation DSLs often use compact classes; correctness here prevents subtle routing errors.
@@ -1020,12 +1020,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0244
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4500
-     * @tc.desc    Exec range class distinguishes lowercase from uppercase
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0244
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4500
+     * @tc.desc Exec range class distinguishes lowercase from uppercase
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Case-sensitive range behavior is relied upon by tokenizers that separate identifiers from keywords.
@@ -1036,12 +1036,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0245
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4600
-     * @tc.desc    Exec predefined classes extract digit runs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0245
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4600
+     * @tc.desc Exec predefined classes extract digit runs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Parsers commonly use \\d+ as the first extraction step for IDs embedded in text.
@@ -1055,12 +1055,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0246
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4700
-     * @tc.desc    Exec escaped metacharacter matches literal dot
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0246
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4700
+     * @tc.desc Exec escaped metacharacter matches literal dot
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // In config languages, a dot is often data, not "any char"; escaping must stay literal.
@@ -1074,12 +1074,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0247
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4800
-     * @tc.desc    Exec tab and newline tokens match control characters
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0247
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4800
+     * @tc.desc Exec tab and newline tokens match control characters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Text ingestion often normalizes whitespace; recognizing \\t/\\n is essential for portable cleanup.
@@ -1089,12 +1089,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0248
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4900
-     * @tc.desc    Exec BMP unicode range matches expected CJK substring
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0248
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_4900
+     * @tc.desc Exec BMP unicode range matches expected CJK substring
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // International payloads are often mixed-language; a BMP range is a pragmatic fallback when \\p is unavailable.
@@ -1108,18 +1108,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0249
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5000
-     * @tc.desc    Exec Unicode property escape for Emoji is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0249
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5000
+     * @tc.desc Exec Unicode property escape for Emoji is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Emoji property escapes improve readability of moderation and formatting rules.
       // Gating keeps the suite runnable on runtimes that only support literal emoji matching.
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('\\p{Emoji}', 'u').exec('Hello 😀 World');
@@ -1130,12 +1130,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0250
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5100
-     * @tc.desc    Exec zero-length global multiline requires bounded progress
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0250
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5100
+     * @tc.desc Exec zero-length global multiline requires bounded progress
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Zero-length matches are a common source of infinite loops in streaming parsers.
@@ -1160,12 +1160,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0251
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5200
-     * @tc.desc    Exec switching strings does not implicitly reset lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0251
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5200
+     * @tc.desc Exec switching strings does not implicitly reset lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Long-lived regex objects are often reused across records; some implementations keep lastIndex sticky across inputs.
@@ -1178,12 +1178,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0252
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5300
-     * @tc.desc    Exec manual lastIndex reset replays the same first hit
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0252
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5300
+     * @tc.desc Exec manual lastIndex reset replays the same first hit
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some pipelines intentionally rewind scanning to re-run a pass after applying a patch.
@@ -1203,12 +1203,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0253
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5400
-     * @tc.desc    Exec and test share lastIndex state for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0253
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5400
+     * @tc.desc Exec and test share lastIndex state for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mixed usage (test for quick predicate, exec for capture) is common in parsers for performance reasons.
@@ -1224,12 +1224,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0254
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5500
-     * @tc.desc    Exec and String.match(g) align on successive hits
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0254
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5500
+     * @tc.desc Exec and String.match(g) align on successive hits
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some feature code uses match() for convenience but relies on exec() for offsets.
@@ -1250,12 +1250,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0255
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5600
-     * @tc.desc    Exec and String.search return consistent first-hit index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0255
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5600
+     * @tc.desc Exec and String.search return consistent first-hit index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Search is often used as a quick index lookup; exec is used for capture extraction.
@@ -1271,12 +1271,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0256
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5700
-     * @tc.desc    Exec start and end anchors accept only boundary-aligned matches
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0256
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5700
+     * @tc.desc Exec start and end anchors accept only boundary-aligned matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Anchors are commonly used in validators where partial matches would leak invalid payloads through.
@@ -1288,12 +1288,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0257
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5800
-     * @tc.desc    Exec word and non-word boundaries distinguish token edges
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0257
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5800
+     * @tc.desc Exec word and non-word boundaries distinguish token edges
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Content moderation and keyword tagging rely on token boundaries to avoid false positives in larger words.
@@ -1305,12 +1305,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0258
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5900
-     * @tc.desc    Exec dynamic RegExp construction respects pattern and flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0258
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_5900
+     * @tc.desc Exec dynamic RegExp construction respects pattern and flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Rule engines frequently store patterns in config and reconstruct them at runtime.
@@ -1327,12 +1327,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0259
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6000
-     * @tc.desc    Exec alternation backtracking picks matching branch capture
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0259
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6000
+     * @tc.desc Exec alternation backtracking picks matching branch capture
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Parsers with alternatives depend on branch-local captures to decide follow-up logic.
@@ -1349,12 +1349,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0260
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6100
-     * @tc.desc    Exec nested structure pattern captures whole complex token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0260
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6100
+     * @tc.desc Exec nested structure pattern captures whole complex token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Complex identifiers often combine alpha and numeric parts that should be validated as a single unit.
@@ -1369,12 +1369,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0261
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6200
-     * @tc.desc    Exec lastIndex starts at zero and stays for non-global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0261
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6200
+     * @tc.desc Exec lastIndex starts at zero and stays for non-global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-global regexes are expected to be stateless in most call chains.
@@ -1386,18 +1386,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0262
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6300
-     * @tc.desc    Exec sticky mode requires exact cursor and supports alternate positions
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0262
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6300
+     * @tc.desc Exec sticky mode requires exact cursor and supports alternate positions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Incremental lexers use sticky mode to avoid rescanning already-tokenized prefixes.
       // Accurate cursor semantics are essential for deterministic parser state machines.
       if (!supportsRegExp('test', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('test', 'y');
@@ -1414,12 +1414,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0263
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6400
-     * @tc.desc    Exec out-of-range lastIndex fails and resets for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0263
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6400
+     * @tc.desc Exec out-of-range lastIndex fails and resets for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Defensive checks against invalid cursor values prevent stale offsets from contaminating a new scan cycle.
@@ -1432,12 +1432,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0264
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6500
-     * @tc.desc    Exec negative lastIndex is clamped to zero for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0264
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6500
+     * @tc.desc Exec negative lastIndex is clamped to zero for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some callers accidentally set sentinel negatives; clamping avoids undefined scanning windows.
@@ -1453,12 +1453,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0265
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6600
-     * @tc.desc    Exec result type exposes array-like payload with metadata fields
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0265
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6600
+     * @tc.desc Exec result type exposes array-like payload with metadata fields
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Type shape checks catch runtime regressions where metadata properties are dropped by optimization passes.
@@ -1474,12 +1474,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0266
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6700
-     * @tc.desc    Exec no-match returns null and keeps non-global cursor unchanged
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0266
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6700
+     * @tc.desc Exec no-match returns null and keeps non-global cursor unchanged
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Null returns are consumed by many parser loops as termination signals.
@@ -1492,12 +1492,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0267
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6800
-     * @tc.desc    Exec invalid pattern construction throws before matching
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0267
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6800
+     * @tc.desc Exec invalid pattern construction throws before matching
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Pattern sources can come from admin-configured rules and must fail fast when malformed.
@@ -1512,12 +1512,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0268
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6900
-     * @tc.desc    Exec invalid flags construction throws for unsupported flag letters
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0268
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_6900
+     * @tc.desc Exec invalid flags construction throws for unsupported flag letters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Flag typos are frequent in dynamic configuration; rejecting them avoids silently altered matching semantics.
@@ -1532,18 +1532,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0269
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7000
-     * @tc.desc    Exec with d and named groups exposes indices.groups when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0269
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7000
+     * @tc.desc Exec with d and named groups exposes indices.groups when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Rich editors and refactoring tools depend on group-specific ranges to update only selected subfields.
       // This verifies the most information-dense exec payload shape for advanced runtimes.
       if (!supportsRegExp('(?<word>hello)', 'd')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = new RegExp('(?<word>hello)', 'd').exec('hello world');
@@ -1556,12 +1556,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0270
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7100
-     * @tc.desc    Exec and matchAll align on match count and first payload
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0270
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7100
+     * @tc.desc Exec and matchAll align on match count and first payload
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Teams often migrate from exec loops to matchAll for readability; both paths should stay semantically aligned.
@@ -1590,12 +1590,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0271
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7200
-     * @tc.desc    Exec preserves regexp source and flags after matching
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0271
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7200
+     * @tc.desc Exec preserves regexp source and flags after matching
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Operational code frequently introspects pattern metadata for logging and cache keys.
@@ -1608,12 +1608,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0272
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7300
-     * @tc.desc    Exec protocol detection by start-anchor remains deterministic
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0272
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7300
+     * @tc.desc Exec protocol detection by start-anchor remains deterministic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // URL routing logic frequently branches on protocol prefix and relies on strict position zero matching.
@@ -1627,12 +1627,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0273
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7400
-     * @tc.desc    Exec IPv4 pattern matches legal values and rejects out-of-range octets
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0273
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7400
+     * @tc.desc Exec IPv4 pattern matches legal values and rejects out-of-range octets
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Network tooling and audit logs require strict octet bounds, not just digit groups.
@@ -1643,12 +1643,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0274
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7500
-     * @tc.desc    Exec date prefix pattern validates yyyy-mm-dd at string start
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0274
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7500
+     * @tc.desc Exec date prefix pattern validates yyyy-mm-dd at string start
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // ETL pipelines often fast-path date-prefixed records before full parsing.
@@ -1659,12 +1659,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0275
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7600
-     * @tc.desc    Exec key-value extraction returns key and value captures
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0275
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7600
+     * @tc.desc Exec key-value extraction returns key and value captures
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Config parsers frequently split "key:value" pairs while preserving both sides for validation.
@@ -1678,12 +1678,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0276
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7700
-     * @tc.desc    Exec multiple alternation branches choose earliest leftmost hit
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0276
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7700
+     * @tc.desc Exec multiple alternation branches choose earliest leftmost hit
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Rule sets with overlapping alternatives depend on stable leftmost-first semantics.
@@ -1697,12 +1697,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0277
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7800
-     * @tc.desc    Exec optional groups allow missing trailing segments
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0277
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7800
+     * @tc.desc Exec optional groups allow missing trailing segments
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Version and identifier formats often include optional tails that should not break base parsing.
@@ -1719,12 +1719,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0278
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7900
-     * @tc.desc    Exec hexadecimal token extraction with case-insensitive flag
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0278
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_7900
+     * @tc.desc Exec hexadecimal token extraction with case-insensitive flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Trace IDs and hashes often appear in mixed case; i-flag simplifies extraction logic.
@@ -1740,18 +1740,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0279
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8000
-     * @tc.desc    Exec with gy flags consumes contiguous token run only
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0279
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8000
+     * @tc.desc Exec with gy flags consumes contiguous token run only
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // gy is useful for strict token streams where gaps are invalid and should terminate parsing.
       // This guards against accidental fallback to global scanning that would skip invalid separators.
       if (!supportsRegExp('a', 'gy')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('a', 'gy');
@@ -1766,12 +1766,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0280
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8100
-     * @tc.desc    Exec comparison with rebuilt regex from source and flags
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0280
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8100
+     * @tc.desc Exec comparison with rebuilt regex from source and flags
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Persisted regex metadata is often reconstructed during hot reload or process restart.
@@ -1789,12 +1789,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0281
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8200
-     * @tc.desc    Exec trim-safe key extraction ignores surrounding whitespace
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0281
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8200
+     * @tc.desc Exec trim-safe key extraction ignores surrounding whitespace
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Human-edited config lines often include inconsistent whitespace around separators.
@@ -1808,12 +1808,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0282
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8300
-     * @tc.desc    Exec timestamp extraction captures date and time parts
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0282
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8300
+     * @tc.desc Exec timestamp extraction captures date and time parts
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Operational logs frequently require splitting timestamps into structured fields for indexing.
@@ -1827,18 +1827,18 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0283
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8400
-     * @tc.desc    Exec invalid Unicode property escape throws when Unicode properties are supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0283
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8400
+     * @tc.desc Exec invalid Unicode property escape throws when Unicode properties are supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Property names are often assembled from config; invalid values should fail fast at regex construction.
       // This prevents silently-broken i18n filters from reaching production.
       if (!supportsRegExp('\\p{L}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       let threw = false;
@@ -1851,12 +1851,12 @@ export default function execTest002(): void {
     });
 
     /**
-     * @tc.name    testExec0284
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8500
-     * @tc.desc    Exec empty pattern global on non-empty input is bounded and reset-safe
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testExec0284
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SUPPLEMENT_TEST_8500
+     * @tc.desc Exec empty pattern global on non-empty input is bounded and reset-safe
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty-pattern global scans appear in formatter internals and can easily hang if cursor logic is wrong.
