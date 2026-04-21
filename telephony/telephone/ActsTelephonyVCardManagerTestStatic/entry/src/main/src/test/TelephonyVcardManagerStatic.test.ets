@@ -299,6 +299,34 @@ export default function TelephonyVcardManagerStatic() {
     })
 
     /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_0700
+     * @tc.name    testTelephonyVcardImportVCard_static_0700
+     * @tc.desc    Import the VCard file into the contact database;callback.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_0700';
+        hilog.info(domain, tag, `${caseName} test start`);
+        let accountId: int = 0;
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          vcard.importVCard(context, "", accountId, (err) => {
+            hilog.info(domain, tag, `${caseName} error: ${JSON.stringify(err?.code)}`);
+            expect(err?.code === 8300001).assertTrue();
+            done();
+          });
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
      * @tc.number  SUB_Telephony_Vcard_ExportVCard_0100
      * @tc.name    testTelephonyVcardExportVCard_static_0100
      * @tc.desc    Import the VCard file into the contact database;callback.
