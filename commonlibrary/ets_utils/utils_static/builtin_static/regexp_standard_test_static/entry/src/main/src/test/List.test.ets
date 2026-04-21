@@ -30,6 +30,9 @@ import RegularExpressions10Test from './regexp/RegularExpressions10.test';
 import RegularExpressions12Test from './regexp/RegularExpressions12.test';
 import RegularExpressions13Test from './regexp/RegularExpressions13.test';
 import RegularExpressions14Test from './regexp/RegularExpressions14.test';
+import ExecTest003 from './regexp2/ExecTest003.test';
+import MatchTest003 from './regexp2/MatchTest003.test';
+import TestTest003 from './regexp2/TestTest003.test';
 
 export default function testsuite() {
   RegExpTest001();
@@ -50,4 +53,7 @@ export default function testsuite() {
   RegularExpressions12Test();
   RegularExpressions13Test();
   RegularExpressions14Test();
+  ExecTest003();
+  MatchTest003();
+  TestTest003();
 }
