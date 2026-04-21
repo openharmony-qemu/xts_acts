@@ -257,10 +257,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec simple pattern /hello/ match and index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec simple pattern /hello/ match and index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Baseline behavior: exec() is the “truth source” that many helper APIs (matchAll/search/split) build on.
@@ -273,10 +273,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec returns null when pattern does not match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec returns null when pattern does not match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Miss-path must be a stable sentinel (null), otherwise callers that branch on “matched or not” mis-handle errors.
@@ -288,10 +288,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec /abc/ on empty string returns null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec /abc/ on empty string returns null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty-input handling is a frequent edge in input validation and log parsing; it must not produce phantom matches.
@@ -303,10 +303,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec empty non-capturing pattern (?:)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec empty non-capturing pattern (?:)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty-pattern semantics are used by tokenizers as “zero-width progress markers”; behavior must stay spec-aligned.
@@ -319,10 +319,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0500
-     * @tc.desc   Test String.search index aligns with exec match position for /a/ on abc
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test String.search index aligns with exec match position for /a/ on abc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Business-side invariants: higher-level APIs (search) must agree with exec’s notion of “where the match starts”.
@@ -339,10 +339,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0600
-     * @tc.desc   Test exec returns null when pattern does not match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test exec returns null when pattern does not match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Negative tests protect against “partial engine success” where a failure becomes an empty/undefined match.
@@ -356,10 +356,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0700
-     * @tc.desc   Boundary: exec /hello/ on empty string returns null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Boundary: exec /hello/ on empty string returns null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Boundary case: empty input should not accidentally match non-empty literals due to stale state or lastIndex bugs.
@@ -371,10 +371,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0107
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0800
-     * @tc.desc   Boundary: exec empty non-capturing pattern on empty string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Boundary: exec empty non-capturing pattern on empty string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Zero-width patterns must still behave consistently on empty input; many “split by boundary” tasks depend on this.
@@ -387,10 +387,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0108
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_0900
-     * @tc.desc   Boundary: String.search returns -1 when pattern never matches
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Boundary: String.search returns -1 when pattern never matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // String.search is widely used for “fast existence checks”; -1 is the agreed sentinel for “not found”.
@@ -401,10 +401,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0109
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_1000
-     * @tc.desc   Boundary: String.search on empty string when pattern requires a character
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Boundary: String.search on empty string when pattern requires a character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty string is a high-frequency production input (optional fields, blank lines); it should not yield false positives.
@@ -415,10 +415,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0110
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BASIC_TEST_1100
-     * @tc.desc   Boundary: exec with whitespace-only input and no match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Boundary: exec with whitespace-only input and no match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Whitespace-only payloads are common in log/CSV ingestion; we must not accidentally match due to trimming assumptions.
@@ -452,10 +452,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0111
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec with start anchor ^hello
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with start anchor ^hello
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Anchors are widely used in input validation (prefix constraints) where “contains” is not acceptable.
@@ -469,10 +469,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0112
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec with end anchor world$
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with end anchor world$
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Suffix anchoring is critical for file-type checks and protocol parsing where trailing tokens must be exact.
@@ -486,10 +486,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0113
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec with word boundary \\b for whole word test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with word boundary \\b for whole word test
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Word boundaries model “token” semantics used in search, highlighting, and log parsing; substring matches are wrong there.
@@ -505,10 +505,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0114
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec with non-word boundary \\B after test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with non-word boundary \\B after test
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // \B is the complement of \b and is used to intentionally match inside tokens (e.g., camelCase / internal markers).
@@ -544,10 +544,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0115
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BOUNDARY_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec word boundary \\b and non-word boundary \\B
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec word boundary \\b and non-word boundary \\B
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // These zero-width boundary tokens are easy to “mostly implement” while shifting indices by one—index stability matters.
@@ -562,10 +562,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0116
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BOUNDARY_TEST_0200
-     * @tc.desc   Test exec helper for literal /test/ and /123/ patterns and index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test exec helper for literal /test/ and /123/ patterns and index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Fixed-offset literal matches are a practical baseline: if index bookkeeping breaks here, it will break everywhere.
@@ -603,10 +603,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0117
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec alternation capture a(b|c)d
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec alternation capture a(b|c)d
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Alternation is a common “one-of-many formats” business need (e.g., multiple ID prefixes); correctness depends on choosing the right branch.
@@ -620,13 +620,13 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0118
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec nested letter-and-digit group
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec nested letter-and-digit group
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Nested groups stress the engine’s backtracking bookkeeping; regressions here usually surface as “right text, wrong capture slot”.
+      // Nested groups stress the engine's backtracking bookkeeping; regressions here usually appear as 'right text, wrong capture slot'.
       // We assert the captured group (not only the whole match) because business code typically consumes the extracted token.
       const result = ExecBacktrack.matchNestedPattern("test123");
       expect(result?.[1]).assertEqual("test123");
@@ -657,10 +657,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0119
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec ordinary numbered capture groups for date
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec ordinary numbered capture groups for date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Extracting structured fields (dates/ids) is a common business pattern; capture-slot stability is the contract here.
@@ -676,10 +676,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0120
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec nested capture groups
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec nested capture groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Nested captures are where engines most often regress: boundaries look right, but grouping hierarchy is mis-recorded.
@@ -696,10 +696,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0121
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec named capture groups year month day
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec named capture groups year month day
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})')) {
@@ -718,10 +718,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0122
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec non-capturing groups with one capture
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec non-capturing groups with one capture
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-capturing groups are a performance/clarity tool; they must not accidentally “consume” capture indices.
@@ -734,10 +734,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0123
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0500
-     * @tc.desc   Test RegExp.prototype.exec optional capture group (\\s+world)?
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec optional capture group (\\s+world)?
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Optional captures are common for “suffix present or not” formats; absence must be represented as undefined (not empty string).
@@ -752,10 +752,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0124
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0600
-     * @tc.desc   Test RegExp.prototype.exec mixed named and numbered capture groups
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec mixed named and numbered capture groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<name>\\w+)\\s+(\\d+)')) {
@@ -794,10 +794,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0125
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec simple character class [abc]
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec simple character class [abc]
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Char classes are heavily used in sanitization/allow-lists; correctness matters more than “one sample matches”.
@@ -814,10 +814,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0126
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec range character class [a-z]
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec range character class [a-z]
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Ranges are a frequent source of lexer/locale regressions; business code expects ASCII semantics for [a-z] here.
@@ -834,10 +834,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0127
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec negated character class [^abc]
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec negated character class [^abc]
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Negated classes are used for “reject these characters” rules; a wrong negation flips allow/deny logic.
@@ -852,10 +852,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0128
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec predefined class \\d+
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec predefined class \\d+
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // \d is foundational for numeric extraction (IDs, amounts); a mismatch here cascades into many parsing features.
@@ -890,10 +890,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0129
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec coerces null argument to string "null"
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec coerces null argument to string "null"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Input coercion is part of the JS contract: APIs accept “any” and apply ToString consistently.
@@ -904,10 +904,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0130
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec coerces undefined argument to string "undefined"
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec coerces undefined argument to string "undefined"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Undefined is a common “optional argument not passed” value; coercion must be stable to keep behavior predictable.
@@ -918,10 +918,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0131
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec coerces number argument via ToString
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec coerces number argument via ToString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Numeric inputs frequently flow into regex APIs via loose typing (JSON decode, form values); ToString must be consistent.
@@ -932,10 +932,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0132
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec coerces object with toString
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec coerces object with toString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Object-to-string coercion is the extensibility hook used by domain objects (IDs, wrappers) to participate in matching.
@@ -946,10 +946,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0133
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0500
-     * @tc.desc   Test RegExp.prototype.exec throws TypeError for Object.create(null) without toString
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec throws TypeError for Object.create(null) without toString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Prototype-null objects are a hardening pattern; they intentionally lack Object.prototype methods.
@@ -982,10 +982,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0134
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec with pattern from RegExp constructor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with pattern from RegExp constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Constructor compilation is a separate failure mode from matching; apps build patterns dynamically from configs.
@@ -998,10 +998,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0135
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec with regex literal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with regex literal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // We still validate the “literal-like” path because some builds treat ctor vs literal differently (caching, preparse tables).
@@ -1014,10 +1014,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0136
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec with dynamic pattern and ignoreCase flag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with dynamic pattern and ignoreCase flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Dynamic flags are how apps toggle case sensitivity per market/user input; behavior must match spec across devices.
@@ -1054,10 +1054,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0137
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec with ignoreCase i flag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with ignoreCase i flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Case-insensitive matching is a compatibility requirement for user-entered data (names, headers) with unpredictable casing.
@@ -1070,10 +1070,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0138
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec with multiline m flag and ^ anchor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with multiline m flag and ^ anchor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Multiline matching underpins log parsing: ^ should match “line starts”, not only “string start”.
@@ -1086,10 +1086,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0139
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec with dotAll s flag matching newline
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with dotAll s flag matching newline
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // dotAll is needed for multiline payload extraction (stack traces, JSON blobs) where newline is not a hard separator.
@@ -1102,10 +1102,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0140
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec with unicode u flag and code point escape
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with unicode u flag and code point escape
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Unicode mode is critical for internationalization: code point escapes must match a single scalar value, not surrogate halves.
@@ -1119,10 +1119,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0141
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0500
-     * @tc.desc   Test RegExp.prototype.exec with hasIndices d flag when supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec with hasIndices d flag when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // hasIndices is an opt-in feature used by highlighters and redaction tools that need exact spans, not just matched text.
@@ -1143,10 +1143,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0142
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0700
-     * @tc.desc   Test d flag unsupported when hasIndices not available
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test d flag unsupported when hasIndices not available
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Negative capability check matters for portability: code can branch on feature support instead of crashing at runtime.
@@ -1160,10 +1160,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0143
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0600
-     * @tc.desc   Test RegExp.prototype.exec global g flag loop collects match indices
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec global g flag loop collects match indices
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Global iteration is the typical “scan the whole string” workflow; correctness depends on stable lastIndex progression.
@@ -1209,10 +1209,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0144
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec updates lastIndex for global pattern
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec updates lastIndex for global pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // lastIndex is observable shared state used by incremental scanners; wrong updates break “resume where left off” logic.
@@ -1230,10 +1230,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0145
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec traverses multiple matches with g flag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec traverses multiple matches with g flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Global quantifier patterns are common in extraction; engines must not get stuck on empty/overlapping internal paths.
@@ -1251,10 +1251,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0146
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec sticky y flag requires match at lastIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec sticky y flag requires match at lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Sticky mode models tokenizers that require adjacency; it must not “skip ahead” like global scanning.
@@ -1273,10 +1273,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0147
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0400
-     * @tc.desc   Test RegExp lastIndex resets to 0 on global match failure
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp lastIndex resets to 0 on global match failure
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // On a global miss, engines are expected to reset lastIndex so subsequent scans restart cleanly.
@@ -1290,10 +1290,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0148
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0500
-     * @tc.desc   Test RegExp non-global exec does not advance lastIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp non-global exec does not advance lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-global exec should be side-effect free with respect to lastIndex; apps rely on that when reusing a RegExp instance.
@@ -1328,10 +1328,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0149
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec zero-length matches with ^ multiline global
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec zero-length matches with ^ multiline global
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Zero-length global matches are a classic footgun: without explicit advancement, loops can become infinite.
@@ -1357,10 +1357,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0150
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0200
-     * @tc.desc   Test RegExp lastIndex reset when exec fails on a new string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp lastIndex reset when exec fails on a new string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Reusing a global RegExp across different inputs is common in services; a miss on a new string must not poison state.
@@ -1379,10 +1379,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0151
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0300
-     * @tc.desc   Test manual lastIndex reset before repeated exec on same string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test manual lastIndex reset before repeated exec on same string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Manual lastIndex control is used by resumable parsers (checkpointing); the engine must respect explicit resets.
@@ -1421,10 +1421,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0152
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0100
-     * @tc.desc   Test lastIndex initial value 0 for non-global RegExp after exec
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test lastIndex initial value 0 for non-global RegExp after exec
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-global regexes are often reused as “pure functions”; lastIndex must not become hidden mutable state in that mode.
@@ -1438,10 +1438,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0153
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0200
-     * @tc.desc   Test sticky RegExp exec honors lastIndex for next attempt
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test sticky RegExp exec honors lastIndex for next attempt
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Sticky semantics are used for step-by-step parsers: each token must start exactly at the cursor (lastIndex).
@@ -1464,10 +1464,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0154
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0300
-     * @tc.desc   Test global exec returns null when lastIndex exceeds string length
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test global exec returns null when lastIndex exceeds string length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Defensive lastIndex values occur when user code persists cursors; exceeding length must fail cleanly (null), not throw.
@@ -1481,10 +1481,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0155
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0400
-     * @tc.desc   Test negative lastIndex is treated as zero for global exec
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test negative lastIndex is treated as zero for global exec
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Negative lastIndex values show up via arithmetic bugs; spec treats them as 0 to keep engines forgiving and consistent.
@@ -1520,10 +1520,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0156
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec greedy quantifier .*
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec greedy quantifier .*
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Greedy consumption is the default extraction model; correctness matters for “capture the whole record” scenarios.
@@ -1535,10 +1535,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0157
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec non-greedy quantifier .*?
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec non-greedy quantifier .*?
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-greedy is used to stop at the first delimiter (common in log parsing); engines often regress in backtracking here.
@@ -1550,10 +1550,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0158
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec fixed count quantifier a{3}
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec fixed count quantifier a{3}
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Exact counts are used in strict formats (fixed-length IDs); partial matches must not be accepted.
@@ -1565,10 +1565,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0159
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec range quantifier a{2,4}
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec range quantifier a{2,4}
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Range quantifiers support variable-length fields while still constraining upper bounds (e.g., short codes).
@@ -1584,10 +1584,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0160
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0500
-     * @tc.desc   Test RegExp.prototype.exec zero-or-more quantifier a*
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec zero-or-more quantifier a*
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // a* is a common “optional prefix” pattern and is a frequent source of zero-length edge behavior.
@@ -1603,10 +1603,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0161
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0600
-     * @tc.desc   Test RegExp.prototype.exec one-or-more quantifier a+
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec one-or-more quantifier a+
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // a+ is used to enforce presence (non-empty fields); engines must not allow empty-string matches.
@@ -1642,10 +1642,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0162
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0100
-     * @tc.desc   Test RegExpExecArray index property after exec
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExpExecArray index property after exec
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Consumers frequently slice the original string using match.index; wrong indices break highlighting and redaction.
@@ -1657,10 +1657,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0163
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0200
-     * @tc.desc   Test RegExpExecArray input property equals original string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExpExecArray input property equals original string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // input is a debugging/telemetry aid and is used by some libs to correlate matches back to their source.
@@ -1673,10 +1673,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0164
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0300
-     * @tc.desc   Test RegExpExecArray groups property for named capture
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExpExecArray groups property for named capture
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<word>hello)')) {
@@ -1692,14 +1692,14 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0165
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0400
-     * @tc.desc   Test RegExpExecArray indices property when d flag is set
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExpExecArray indices property when d flag is set
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When supported, indices enable exact-span operations (masking, clickable links); we at least assert the flag path executes.
-      // The early return keeps the suite portable across VMs with partial feature sets.
+      // The early return keeps the suite portable across runtimes with partial feature sets.
       if (!supportsRegExp('(?<word>hello)', 'd')) {
         return;
       }
@@ -1716,10 +1716,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0166
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0500
-     * @tc.desc   Test named capture exec full match string without d flag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test named capture exec full match string without d flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<word>hello)')) {
@@ -1757,10 +1757,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0167
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec returns array-like object with index and input types
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec returns array-like object with index and input types
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Result shape stability matters for interop: code assumes an Array with additional fields, not a plain object.
@@ -1776,10 +1776,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0168
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec returns null on failure and lastIndex unchanged
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec returns null on failure and lastIndex unchanged
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Failure should be a clean null and must not mutate lastIndex for non-global regexes.
@@ -1793,10 +1793,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0169
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0300
-    * @tc.desc   Test placeholder for enumerable properties on exec result (commented checks)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+    * @tc.desc Test placeholder for enumerable properties on exec result (commented checks)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Even without deep property enumeration checks, we keep a regression anchor for capture ordering and index correctness.
@@ -1833,10 +1833,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0170
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec escaped dot matches literal period
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec escaped dot matches literal period
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Escaping metacharacters is a core interoperability requirement; many business rules treat '.' as literal punctuation.
@@ -1848,10 +1848,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0171
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec tab and newline escape sequences
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec tab and newline escape sequences
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Control characters appear in real payloads (TSV, logs); they must be matchable via escapes for robust parsing.
@@ -1865,10 +1865,10 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0172
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec Unicode Han character class range
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec Unicode Han character class range
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // CJK text handling is a product requirement in many locales; range handling must not be corrupted by unicode mode differences.
@@ -1880,14 +1880,14 @@ export default function execTest(): void {
     /**
      * @tc.name testExec0173
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec Unicode property escape \\p{Emoji} with u flag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec Unicode property escape \\p{Emoji} with u flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       // Property escapes enable semantic matching (emoji, scripts) used in UX filters and input validation.

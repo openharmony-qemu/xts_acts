@@ -114,10 +114,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0100
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0100
-        * @tc.desc   Test returns the first match index
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test returns the first match index
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('[A-Z]'), 'hey JudE')).assertEqual(4);
@@ -126,10 +126,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0101
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0200
-        * @tc.desc   Test returns -1 when not found
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test returns -1 when not found
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('[.]'), 'hey JudE')).assertEqual(-1);
@@ -138,10 +138,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0102
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0300
-        * @tc.desc   Test accepts a string pattern
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test accepts a string pattern
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect('Hello World'.search('World')).assertEqual(6);
@@ -150,10 +150,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0103
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0400
-        * @tc.desc   Test empty pattern returns 0
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test empty pattern returns 0
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect('Hello'.search('')).assertEqual(0);
@@ -185,10 +185,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0104
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0500
-        * @tc.desc   Test global flag does not change the result
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test global flag does not change the result
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('abc', 'g'), 'abc abc abc')).assertEqual(0);
@@ -197,10 +197,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0105
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0600
-        * @tc.desc   Test ignore-case flag works
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test ignore-case flag works
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('world', 'i'), 'Hello World')).assertEqual(6);
@@ -209,10 +209,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0106
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0700
-        * @tc.desc   Test multiline anchors work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test multiline anchors work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('^Line2', 'm'), 'Line1\nLine2\nLine3')).assertEqual(6);
@@ -221,10 +221,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0107
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0800
-        * @tc.desc   Test combined flags work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test combined flags work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('world', 'gim'), 'Hello\nWORLD\nworld')).assertEqual(6);
@@ -233,10 +233,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0108
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0900
-        * @tc.desc   Test unicode flag works
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test unicode flag works
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('\\?', 'u'), 'caf?')).assertEqual(3);
@@ -245,10 +245,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0109
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1000
-        * @tc.desc   Test sticky flag does not affect the result
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test sticky flag does not affect the result
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const re: RegExp = new RegExp('abc', 'y');
@@ -259,10 +259,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0110
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1100
-        * @tc.desc   Test dotAll matches newline when supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test dotAll matches newline when supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('.', 's')) {
@@ -274,10 +274,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0111
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4300
-        * @tc.desc   Test dotAll flag unsupported when not available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test dotAll flag unsupported when not available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (supportsRegExp('.', 's')) {
@@ -289,10 +289,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0112
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1200
-        * @tc.desc   Test hasIndices does not change search return when supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test hasIndices does not change search return when supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('test(\\d+)', 'd')) {
@@ -305,10 +305,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0113
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4400
-        * @tc.desc   Test d flag unsupported when hasIndices not available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test d flag unsupported when hasIndices not available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (supportsRegExp('test(\\d+)', 'd')) {
@@ -342,10 +342,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0114
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1300
-        * @tc.desc   Test ignores an existing lastIndex
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test ignores an existing lastIndex
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const re: RegExp = new RegExp('abc', 'g');
@@ -356,10 +356,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0115
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1400
-        * @tc.desc   Test restores lastIndex after the call
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test restores lastIndex after the call
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const re: RegExp = new RegExp('abc', 'g');
@@ -371,10 +371,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0116
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1500
-        * @tc.desc   Test ignores lastIndex for sticky patterns
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test ignores lastIndex for sticky patterns
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const re: RegExp = new RegExp('abc', 'y');
@@ -407,10 +407,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0117
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1600
-        * @tc.desc   Test special and escaped characters work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test special and escaped characters work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('@'), 'price@100')).assertEqual(5);
@@ -420,10 +420,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0118
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1700
-        * @tc.desc   Test character classes work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test character classes work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('[0-9]'), 'abc123')).assertEqual(3);
@@ -433,10 +433,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0119
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1800
-        * @tc.desc   Test unicode and emoji work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test unicode and emoji work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(regexpSymbolSearch(new RegExp('\\u00A3'), 'a\u00A3')).assertEqual(1);
@@ -447,10 +447,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0120
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_1900
-        * @tc.desc   Test unicode property escapes work when supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test unicode property escapes work when supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\p{Greek}', 'u') || !supportsRegExp('\\P{N}', 'u')) {
@@ -465,10 +465,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0121
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4500
-        * @tc.desc   Test unicode property escapes unsupported when not available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test unicode property escapes unsupported when not available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (supportsRegExp('\\p{Greek}', 'u')) {
@@ -480,10 +480,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0122
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2000
-        * @tc.desc   Test predefined character classes work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test predefined character classes work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str: string = 'test123';
@@ -517,10 +517,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0123
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2100
-        * @tc.desc   Test handles empty and single-char cases
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test handles empty and single-char cases
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('abc'), '')).assertEqual(-1);
@@ -530,10 +530,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0124
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2200
-        * @tc.desc   Test start/end anchors work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test start/end anchors work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str: string = 'Hello World';
@@ -544,10 +544,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0125
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2300
-        * @tc.desc   Test works for long strings
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test works for long strings
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str: string = 'a'.repeat(10000) + 'target';
@@ -557,10 +557,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0126
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2400
-        * @tc.desc   Test lookahead works
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test lookahead works
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('\\d(?=def)'), 'abc123def')).assertEqual(5);
@@ -570,10 +570,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0127
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2500
-        * @tc.desc   Test lookbehind works when supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test lookbehind works when supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsLookbehindSemantics()) {
@@ -588,10 +588,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0128
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4600
-        * @tc.desc   Test lookbehind unsupported when not available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test lookbehind unsupported when not available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (supportsLookbehindSemantics()) {
@@ -603,10 +603,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0129
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2600
-        * @tc.desc   Test word boundaries work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test word boundaries work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('\\bhello\\b', 'i'), 'Hello world, hello')).assertEqual(0);
@@ -637,10 +637,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0130
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2700
-        * @tc.desc   Test coerces number/null/undefined/boolean
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test coerces number/null/undefined/boolean
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect('abc123'.search(String(123))).assertEqual(3);
@@ -652,10 +652,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0131
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2800
-        * @tc.desc   Test coerces object/array to string when pattern is comma
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test coerces object/array to string when pattern is comma
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const obj: PlainObjectForToString = new PlainObjectForToString();
@@ -671,10 +671,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0132
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4700
-        * @tc.desc   Test coerces object/array to string when pattern is not comma
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test coerces object/array to string when pattern is not comma
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const obj: PlainObjectForToString = new PlainObjectForToString();
@@ -711,10 +711,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0133
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_2900
-        * @tc.desc   Test preserves group/quantifier/alternation semantics
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test preserves group/quantifier/alternation semantics
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('(\\d{4})-(\\d{2})-(\\d{2})'), '2023-12-25')).assertEqual(0);
@@ -731,10 +731,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0134
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3000
-        * @tc.desc   Test constructor forms work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test constructor forms work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('test'), 'test')).assertEqual(0);
@@ -746,10 +746,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0135
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3100
-        * @tc.desc   Test covers -1, 0 and positive return values
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test covers -1, 0 and positive return values
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('xyz'), 'test')).assertEqual(-1);
@@ -762,10 +762,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0136
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3200
-        * @tc.desc   Test covers common application scenarios
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test covers common application scenarios
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const hasEmail: boolean = regexpSymbolSearch(new RegExp('^[\\w.-]+@[\\w.-]+\\.\\w+$'), 'test@example.com') !== -1;
@@ -806,10 +806,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0137
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3300
-        * @tc.desc   Test invalid regex or flag throws syntax error
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test invalid regex or flag throws syntax error
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let e1: boolean = false;
@@ -834,10 +834,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0138
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3400
-        * @tc.desc   Test invalid unicode property throws
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test invalid unicode property throws
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let thrown: boolean = false;
@@ -852,10 +852,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0139
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3500
-        * @tc.desc   Test undefined pattern is coerced to "undefined"
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test undefined pattern is coerced to "undefined"
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect('null undefined'.search('undefined')).assertEqual(5);
@@ -864,10 +864,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0140
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3600
-        * @tc.desc   Test feature detection is consistent
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test feature detection is consistent
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const supportsLookbehind: boolean = supportsRegExp('(?<=a)b');
@@ -906,10 +906,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0141
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3700
-        * @tc.desc   Test zero-width matches return expected positions
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test zero-width matches return expected positions
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const str: string = 'abc';
@@ -922,10 +922,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0142
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3800
-        * @tc.desc   Test extreme quantifier and nested group work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test extreme quantifier and nested group work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const longA: string = 'a'.repeat(1000);
@@ -936,10 +936,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0143
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_3900
-        * @tc.desc   Test zero-width global does not loop indefinitely
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test zero-width global does not loop indefinitely
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(regexpSymbolSearch(new RegExp('(?=)', 'g'), 'test')).assertEqual(0);
@@ -948,10 +948,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0144
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4000
-        * @tc.desc   Test many capture groups work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test many capture groups work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const group: string = '(\\w)';
@@ -964,10 +964,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0145
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4100
-        * @tc.desc   Test real-world validation patterns work
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test real-world validation patterns work
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const ipv4: boolean = regexpSymbolSearch(new RegExp('^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$'), '192.168.1.1') !== -1;
@@ -986,10 +986,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0146
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4200
-        * @tc.desc   Test unicode script cases work when supported
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test unicode script cases work when supported
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('\\p{Script=Hiragana}+', 'u')) {
@@ -1002,10 +1002,10 @@ export default function searchTest(): void {
       /**
          * @tc.name testSearch0147
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_4800
-        * @tc.desc   Test Hiragana script property unsupported when not available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test Hiragana script property unsupported when not available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (supportsRegExp('\\p{Script=Hiragana}+', 'u')) {
@@ -1039,10 +1039,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0148
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0100
-        * @tc.desc   Test uses RegExp[Symbol.search] semantics
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test uses RegExp[Symbol.search] semantics
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchStringEqualsRegExpSymbolSearch()).assertTrue();
@@ -1051,10 +1051,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0149
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0200
-        * @tc.desc   Test supports custom objects via Symbol.search
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test supports custom objects via Symbol.search
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchCustomSymbolSearchObject()).assertTrue();
@@ -1063,10 +1063,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0150
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0300
-        * @tc.desc   Test coerces BigInt to string
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test coerces BigInt to string
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchBigIntCoerces()).assertTrue();
@@ -1075,10 +1075,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0151
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0400
-        * @tc.desc   Test throws TypeError for Symbol pattern
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test throws TypeError for Symbol pattern
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchSymbolParameterThrows()).assertTrue();
@@ -1087,10 +1087,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0152
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0500
-        * @tc.desc   Test coerces function to string pattern
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test coerces function to string pattern
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchFunctionCoerces()).assertTrue();
@@ -1099,10 +1099,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0153
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0600
-        * @tc.desc   Test uses @@toPrimitive when available
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test uses @@toPrimitive when available
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(searchObjectWithSymbolToPrimitive()).assertTrue();
@@ -1111,10 +1111,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0154
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0700
-        * @tc.desc   Test throws when calling RegExp[Symbol.search] with undefined receiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test throws when calling RegExp[Symbol.search] with undefined receiver
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(regexpSearchCallUndefinedThrows()).assertTrue();
@@ -1123,10 +1123,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0155
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0800
-        * @tc.desc   Test throws when calling RegExp[Symbol.search] with null receiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test throws when calling RegExp[Symbol.search] with null receiver
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(regexpSearchCallNullThrows()).assertTrue();
@@ -1135,10 +1135,10 @@ export default function searchTest(): void {
         /**
          * @tc.name testSearch0156
          * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0900
-        * @tc.desc   Test supports regex-like objects via RegExp[Symbol.search]
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+        * @tc.desc Test supports regex-like objects via RegExp[Symbol.search]
+         * @tc.type FUNCTION
+         * @tc.size MEDIUMTEST
+         * @tc.level LEVEL1
          */
         it('testSearch0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(regexpSearchRegexLikeIndex()).assertTrue();
