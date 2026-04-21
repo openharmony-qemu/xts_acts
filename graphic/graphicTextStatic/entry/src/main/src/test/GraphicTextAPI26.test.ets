@@ -1537,7 +1537,7 @@ export default function GraphicTextAPI26() {
 
           let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
           console.info(msgStr + ' returnedStyle tailIndents length: ' + returnedStyle.tailIndents?.length);
-          expect(returnedStyle.tailIndents?.length).assertUndefined();
+          expect(returnedStyle.tailIndents?.length).assertEqual(0);
           console.info(msgStr + ' end');
           done();
         } catch (err) {
@@ -1576,7 +1576,7 @@ export default function GraphicTextAPI26() {
 
           let returnedStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
           console.info(msgStr + ' returnedStyle headIndents length: ' + returnedStyle.headIndents?.length);
-          expect(returnedStyle.headIndents?.length).assertUndefined();
+          expect(returnedStyle.headIndents?.length).assertEqual(0);
           console.info(msgStr + ' end');
           done();
         } catch (err) {
