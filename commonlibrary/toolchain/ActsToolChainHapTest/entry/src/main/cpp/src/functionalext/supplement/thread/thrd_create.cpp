@@ -73,7 +73,7 @@ void ThrdCreate0100(void)
 void ThrdCreate0200(void)
 {
     thrd_t id;
-    int result = thrd_create(&id, Threadfunc, (char *)SRC);
+    int result = thrd_create(&id, Threadfunc, const_cast<char*>(SRC));
     if (result != thrd_success) {
         t_error("%s thrd_create failed", __func__);
     }

@@ -17,6 +17,7 @@
 #include <fcntl.h>
 #include <malloc.h>
 #include <cstdio>
+#include <cstring>
 #include "test.h"
 
 const char *PATH_NAME = "/proc/self/mountinfo";
@@ -50,10 +51,15 @@ void NameToHandleAt0100(void)
     }
 
     fhsize = sizeof(*fhp) + fhp->handle_bytes;
-    fhp = (struct file_handle *)realloc(fhp, fhsize);
-    if (fhp == nullptr) {
-        t_error("%s realloc failed\n", __func__);
+    struct file_handle *newfhp = static_cast<struct file_handle *>(malloc(static_cast<size_t>(fhsize)));
+    if (newfhp == nullptr) {
+        free(fhp);
+        t_error("%s malloc failed\n", __func__);
+        return;
     }
+    memcpy(newfhp, fhp, sizeof(*fhp));
+    free(fhp);
+    fhp = newfhp;
 
     int result = name_to_handle_at(dirfd, PATH_NAME, fhp, &mountId, flags);
     if (result == -1) {

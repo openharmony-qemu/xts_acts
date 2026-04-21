@@ -51,7 +51,7 @@ static void SendSss(void)
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     addr.sin_port = htons(SOCKET_PORT);
-    if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == FAILURE_CODE) {
+    if (connect(sockfd, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) == FAILURE_CODE) {
         t_error("recvmmsg_0100 connect error");
         exit(EXIT_FAILURE);
     }

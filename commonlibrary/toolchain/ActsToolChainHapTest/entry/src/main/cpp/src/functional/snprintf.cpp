@@ -35,6 +35,7 @@
 #define DECIMAL_BASE 10
 #define SKIP_FIRST_CHAR 2
 #define INT_MAX_VALUE 2147483647
+#define BUFFER_OVERRUN_CHECK_INDEX 5
 
 template<typename T>
 static inline bool TestEqual(T &result, T value, T expected, const char *expr, const char *msg)
@@ -155,7 +156,7 @@ static const struct {
     { "%.2e", 1505001.0, "1.51e+06" },
     { "%.2e", 1506000.0, "1.51e+06" },
     
-    /* correctness in DBL_DIG places */
+    /* correctness in DBL_DIG digits */
     { "%.15g", 1.23456789012345, "1.23456789012345" },
 
     /* correct choice of notation for %g */
@@ -170,7 +171,7 @@ static const struct {
     { "%.10g", 0.1, "0.1" },
     { "%.11g", 0.1, "0.1" },
 
-    /* pi in double precision, printed to a few extra places */
+    /* pi in double precision, printed to a few extra decimal positions */
     { "%.15f", M_PI, "3.141592653589793" },
     { "%.18f", M_PI, "3.141592653589793116" },
 
@@ -192,7 +193,7 @@ static void TestBasicSnprintf(char *b)
     strcpy(b, "xxxxxxxx");
     TEST(i, snprintf(b, SMALL_BUFFER, "%d", TEST_VALUE), STR_LEN_6, "length returned %d != %d");
     TEST_S(b, "123", "incorrect output");
-    if (b[5] != 'x') {
+    if (b[BUFFER_OVERRUN_CHECK_INDEX] != 'x') {
         t_error("b[5] failed (buffer overrun)\n");
     }
 }
@@ -218,7 +219,7 @@ static void TestTinyDoubles(char *b)
     if (b[1] != '1') {
         t_error("b[1] failed ('%c' != '%c')\n", b[1], '1');
     }
-    for (j = 2; b[j] == '0'; j++) {
+    for (j = SKIP_FIRST_CHAR; b[j] == '0'; j++) {
     }
     TEST(i, j, EXP_1024, "%d != %d");
 

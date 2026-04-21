@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#include <stdbool.h>
 #include "functionalext.h"
 
 /**

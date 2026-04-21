@@ -37,7 +37,7 @@
 
 #define TEST_F(x) ( \
     TEST(i, sscanf(# x, "%lf", &d), 1, "got %d fields, expected %d"), \
-    TEST(t, d, (double)(x), "%g != %g"))
+    TEST(t, d, static_cast<double>(x), "%g != %g"))
 
 static void TestBasicStringScanf(void)
 {

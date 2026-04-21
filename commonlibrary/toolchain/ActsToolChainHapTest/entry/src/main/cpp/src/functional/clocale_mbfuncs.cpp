@@ -16,7 +16,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cwchar>
-#include <wctype.h>
+#include <cwctype>
 #include <cstdlib>
 #include <clocale>
 #include <langinfo.h>

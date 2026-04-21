@@ -13,7 +13,7 @@
  * limitations under the License.
  */
  
-#include <stdint.h>
+#include <cstdint>
 #include <cstring>
 #include <pthread.h>
 #include "test.h"
@@ -35,6 +35,9 @@ static int g_tnum;
 
 static unsigned ptrmod(void *p, unsigned m)
 {
+    if (m == 0) {
+        return 0;
+    }
     volatile unsigned n = static_cast<unsigned>(reinterpret_cast<uintptr_t>(p));
     return n % m;
 }

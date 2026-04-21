@@ -23,13 +23,15 @@
 #include <cstring>
 #include "test.h"
 
-static inline void TestMemmemNotFound(const char *s, const char *tail, const char *sub, const char *sExpr, const char *tailExpr, const char *subExpr)
+static inline void TestMemmemNotFound(const char *s, const char *tail, const char *sub,
+                                      const char *sExpr, const char *tailExpr, const char *subExpr)
 {
     const char *p = tail;
     const void *q = memmem(p, strlen(s), sub, strlen(sub));
     if (q) {
         t_error("memmem(%s %s, %d, %s, %d) returned str+%d, wanted 0\n",
-            sExpr, tailExpr, (int)strlen(s), subExpr, (int)strlen(sub), (int)(static_cast<const char *>(q) - p));
+            sExpr, tailExpr, static_cast<int>(strlen(s)), subExpr, static_cast<int>(strlen(sub)),
+            static_cast<int>(static_cast<const char *>(q) - p));
     }
 }
 
@@ -37,10 +39,11 @@ static inline void TestMemmemFound(const char *s, const char *sub, int n, const 
 {
     const char *p = s;
     const void *q = memmem(p, strlen(p), sub, strlen(sub));
-    if (q == 0) {
+    if (q == nullptr) {
         t_error("memmem(%s,%s) returned 0, wanted str+%d\n", sExpr, subExpr, n);
     } else if ((static_cast<const char *>(q) - p) != n) {
-        t_error("memmem(%s,%s) returned str+%d, wanted str+%d\n", sExpr, subExpr, (int)(static_cast<const char *>(q) - p), n);
+        t_error("memmem(%s,%s) returned str+%d, wanted str+%d\n",
+            sExpr, subExpr, static_cast<int>(static_cast<const char *>(q) - p), n);
     }
 }
 

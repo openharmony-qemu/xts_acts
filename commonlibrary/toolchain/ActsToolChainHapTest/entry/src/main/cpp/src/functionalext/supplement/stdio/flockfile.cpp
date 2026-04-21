@@ -20,6 +20,7 @@
 #include "test.h"
 
 #define THREAD_COUNT 100
+#define BUFFER_SIZE 64
 
 static FILE *g_fp;
 static const char *PATH = "/data/storage/el2/base/cache/test.txt";
@@ -48,14 +49,14 @@ void *DoChildOne(void *a)
 
 void *DoChildTwo(void *p)
 {
-    char buf[64];
+    char buf[BUFFER_SIZE];
 
     flockfile(g_fp);
 
     if (fseek(g_fp, 0L, SEEK_SET) == -1) {
         t_error("%s fseek failed\n", __func__);
     }
-    (void)fread(buf, 64, 1, g_fp);
+    (void)fread(buf, BUFFER_SIZE, 1, g_fp);
 
     int count = atoi(buf);
     ++count;
@@ -117,6 +118,7 @@ void Flockfile0200(void)
     }
 
     (void)fclose(g_fp);
+    g_fp = nullptr;
     (void)remove(PATH);
 }
 

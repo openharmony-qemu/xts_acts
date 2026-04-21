@@ -58,7 +58,7 @@ int TrylockWithTimeout(pthread_mutex_t *mutex)
         if (sleepCount >= LOCK_WAIT_MAX_TIME_COUNT) {
             return LOCK_TIMEOUT;
         }
-    } while (1);
+    } while (true);
 }
 
 static int ThreadFuncA(void *arg)

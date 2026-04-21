@@ -57,7 +57,7 @@ char *TmStrFunc(struct tm tm)
     return b[i];
 }
 
-static inline struct tm CreateTm(int ss, int mm, int hh, int md, int mo, int yr, int wd, int yd, int dst)
+static struct tm CreateTm(int ss, int mm, int hh, int md, int mo, int yr, int wd, int yd, int dst)
 {
     struct tm result = {0};
     result.tm_sec = ss;
@@ -103,7 +103,7 @@ static void Tm2Sec(struct tm *tm, int big, char *m)
 {
     struct tm *r;
     time_t t;
-    int overflow = big && (time_t)LLONG_MAX != LLONG_MAX;
+    int overflow = big && static_cast<time_t>(LLONG_MAX) != LLONG_MAX;
 
     errno = 0;
     t = mktime(tm);

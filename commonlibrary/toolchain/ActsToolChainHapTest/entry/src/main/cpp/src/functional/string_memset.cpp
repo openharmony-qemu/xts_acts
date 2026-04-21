@@ -18,7 +18,7 @@
 #include <cstdint>
 #include "test.h"
 
-#define N 500
+#define N (500)
 #define ALIGN_MASK 63
 #define ALIGN_SIZE 64
 #define TEST_LEN 1000
@@ -43,7 +43,8 @@ static void TestAlign(int align, int len)
     int i;
 
     if (len + ALIGN_SIZE > g_buf + N - s || len + ALIGN_SIZE > g_buf2 + N - want) {
-        abort();
+        t_error("Buffer overflow: len=%d, align=%d exceeds buffer bounds\n", len, align);
+        return;
     }
     for (i = 0; i < N; i++) {
         g_buf[i] = g_buf2[i] = ' ';
@@ -71,7 +72,7 @@ static void TestValue(int c)
 
     g_pmemset(g_buf, c, TEST_LEN);
     for (i = 0; i < TEST_LEN; i++) {
-        if ((unsigned char)g_buf[i] != (unsigned char)c) {
+        if (static_cast<unsigned char>(g_buf[i]) != static_cast<unsigned char>(c)) {
             t_error("memset(%d) failed: got %d\n", c, g_buf[i]);
             break;
         }

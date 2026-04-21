@@ -87,7 +87,7 @@ static char *g_searchkey;
 static void GetParent(const void *node, VISIT v, int d)
 {
     static const void *p;
-    struct E *e = *(struct E**)node;
+    struct E *e = *static_cast<struct E**>(const_cast<void*>(node));
 
     if (v == preorder || v == leaf) {
         if (strcmp(g_searchkey, e->k) == 0) {

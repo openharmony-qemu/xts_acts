@@ -26,6 +26,9 @@
 #define HEX_WIDTH (10)
 #define HEX_BASE (16)
 #define DECIMAL_BASE (10)
+#define IPV4_ADDR_SIZE (4)
+#define IPV6_ADDR_SIZE (16)
+#define IPV4_MAPPED_PREFIX_LEN (24)
 
 static int Digit(int c)
 {
@@ -68,7 +71,7 @@ static inline void TestInetPtonV6(const char *src, int ret, const char *hex, con
     if (ret != 1) {
         return;
     }
-    Tohex(hexaddr, binaddr, 16);
+    Tohex(hexaddr, binaddr, IPV6_ADDR_SIZE);
     if (strcmp(hexaddr, hex)) {
         t_error("inet_pton(AF_INET6, %s, addr) got addr %s, want %s\n", srcExpr, hexaddr, hex);
     }
@@ -80,18 +83,18 @@ static inline void TestInetPtonV6(const char *src, int ret, const char *hex, con
     if (inet_pton(AF_INET6, txtaddr, binaddr) != 1) {
         t_error("inet_ntop(AF_INET6, <%s>, buf, size) got %s, it is rejected by inet_pton\n", hexExpr, txtaddr);
     }
-    Tohex(hexaddr, binaddr, 16);
+    Tohex(hexaddr, binaddr, IPV6_ADDR_SIZE);
     if (strcmp(hexaddr, hex)) {
         t_error("inet_ntop(AF_INET6, <%s>, buf, size) got %s that is %s, want %s\n", hexExpr, txtaddr, hexaddr, hex);
     }
-    if (strncmp(hex, "00000000000000000000ffff", 24) == 0 && !strchr(txtaddr, '.')) {
+    if (strncmp(hex, "00000000000000000000ffff", IPV4_MAPPED_PREFIX_LEN) == 0 && !strchr(txtaddr, '.')) {
         t_error("inet_ntop(AF_INET6, <%s>, buf, size) got %s, should be ipv4 mapped\n", hexExpr, txtaddr);
     }
 }
 
 #define V6(src, ret, hex) TestInetPtonV6(src, ret, hex, #src, #hex)
 
-static inline void TestInetPtonV4(const char *src, int ret, const char *hex, const char *srcExpr, const char *hexExpr)
+static void TestInetPtonV4(const char *src, int ret, const char *hex, const char *srcExpr, const char *hexExpr)
 {
     int r;
     uint32_t a;
@@ -114,7 +117,7 @@ static inline void TestInetPtonV4(const char *src, int ret, const char *hex, con
         return;
     }
 
-    Tohex(buf, &a, 4);
+    Tohex(buf, &a, IPV4_ADDR_SIZE);
     if (strcmp(buf, hex)) {
         t_error("inet_pton(AF_INET, %s, addr) got addr %s, want %s\n", srcExpr, buf, hex);
     }

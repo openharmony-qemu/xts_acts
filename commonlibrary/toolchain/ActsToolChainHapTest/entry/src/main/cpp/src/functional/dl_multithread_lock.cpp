@@ -40,7 +40,7 @@ int CheckLoaded(char* so)
     int pid = getpid();
     char path[MAX_BUF] = { 0 };
     if (sprintf(path, "/proc/%d/maps", pid) < 0) {
-       t_error("Failed in sprintf: %s\n", strerror(errno));
+        t_error("Failed in sprintf: %s\n", strerror(errno));
     }
     FILE* fp = fopen(path, "r");
     if (fp == nullptr) {
@@ -135,7 +135,7 @@ static void* DlopenDlcloseTest002(void* arg)
 {
     void* handle = dlopen(INIT_LIB_PATH, RTLD_NOW);
     if (!handle) {
-      t_error("dlopen(name=%s, mode=%d) failed: %s\n", INIT_LIB_PATH, RTLD_NOW, dlerror());
+        t_error("dlopen(name=%s, mode=%d) failed: %s\n", INIT_LIB_PATH, RTLD_NOW, dlerror());
     }
     g_initHandler = handle;
     return arg;
@@ -179,6 +179,11 @@ static void* DlopenDlcloseTest006(void* arg)
 
 static void DoTestConcurrently(void *(*test) (void *arg), size_t numThreads)
 {
+    if (numThreads == 0 || numThreads > SIZE_MAX / sizeof(pthread_t)) {
+        t_error("Invalid number of threads: %zu\n", numThreads);
+        return;
+    }
+    
     pthread_t *threads = static_cast<pthread_t *>(malloc(sizeof(pthread_t) * numThreads));
     if (threads == nullptr) {
         t_error("Failed to allocate memory: %s\n", strerror(errno));

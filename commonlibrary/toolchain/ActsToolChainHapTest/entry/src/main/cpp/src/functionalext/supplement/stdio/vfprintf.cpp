@@ -17,6 +17,7 @@
 #include <cstring>
 #include <cstdarg>
 #include <cstdlib>
+#include <climits>
 #include "test.h"
 
 #define BUFFER_SIZE 1000
@@ -37,7 +38,15 @@ char *Getfileall(char *fname)
         return nullptr;
     }
     filesize = ftell(fp);
-    str = (char *)malloc(filesize);
+    if (filesize < 0 || filesize > INT_MAX - 1) {
+        (void)fclose(fp);
+        return nullptr;
+    }
+    str = static_cast<char *>(malloc(static_cast<size_t>(filesize)));
+    if (str == nullptr) {
+        (void)fclose(fp);
+        return nullptr;
+    }
     str[0] = 0;
     rewind(fp);
 

@@ -93,7 +93,7 @@ static const struct {
     { L"%f", 1.4, L"1.400000" },
     { L"%f", 1.5, L"1.500000" },
     
-    /* correctness in DBL_DIG places */
+    /* correctness in DBL_DIG digits */
     { L"%.15g", 1.23456789012345, L"1.23456789012345" },
 
     /* correct choice of notation for %g */
@@ -104,7 +104,7 @@ static const struct {
     { L"%.7g", 1234567, L"1234567" },
     { L"%.7g", 12345678, L"1.234568e+07" },
 
-    /* pi in double precision, printed to a few extra places */
+    /* pi in double precision, printed to a few extra decimal positions */
     { L"%.15f", M_PI, L"3.141592653589793" },
     { L"%.18f", M_PI, L"3.141592653589793116" },
 

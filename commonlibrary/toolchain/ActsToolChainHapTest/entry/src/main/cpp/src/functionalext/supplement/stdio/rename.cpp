@@ -68,14 +68,16 @@ void Rename0300(void)
     int retOld = write(fdOld, strOld, sizeof(strOld));
     EXPECT_TRUE("rename_0300", retOld > 0);
     close(fdOld);
+    fdOld = -1;
 
     int fdNew = open(newname, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_TRUE("rename_0100", fdNew != -1);
 
     char strNew[] = "new";
-    int retNew = write(fdOld, strNew, sizeof(strNew));
+    int retNew = write(fdNew, strNew, sizeof(strNew));
     EXPECT_TRUE("rename_0300", retNew > 0);
     close(fdNew);
+    fdNew = -1;
 
     int result = rename(oldname, newname);
     EXPECT_EQ("rename_0300", result, 0);

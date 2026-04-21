@@ -12,6 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+#ifndef TEST_H
+#define TEST_H
  
 #include <stdint.h>
 #include <unistd.h>
@@ -116,3 +119,5 @@ void find_and_check_file(const char *log_dir, const char *file_tag, const char *
 #ifdef __cplusplus
 }
 #endif
+
+#endif // TEST_H
