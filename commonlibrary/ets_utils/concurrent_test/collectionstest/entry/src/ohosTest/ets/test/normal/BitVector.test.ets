@@ -25,7 +25,7 @@ export default function BitVectorTest() {
     })
     /**
      * @tc.name   testBitVectorConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1000
      * @tc.desc   Testing the constructor of bitVector, length is -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -44,7 +44,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1010
      * @tc.desc   Testing the constructor of bitVector, length is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1020
      * @tc.desc   Testing the constructor of bitVector, length is 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1030
      * @tc.desc   Testing the constructor of bitVector, length is 100000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1040
      * @tc.desc   Testing the constructor of bitVector, NaN parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1050
      * @tc.desc   Testing the constructor of bitVector, Infinity parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1060
      * @tc.desc   Testing the constructor of bitVector, -Infinity parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1070
      * @tc.desc   Testing the constructor of bitVector, float 0.5 parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorConstructor0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1080
      * @tc.desc   Testing the constructor of bitVector, instance type validation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1090
      * @tc.desc   Testing the Push of bitVector, push 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1100
      * @tc.desc   Testing the Push of bitVector, push 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1110
      * @tc.desc   Testing the Push of bitVector, push -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1120
      * @tc.desc   Testing the Push of bitVector, push 65535
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1130
      * @tc.desc   Testing the Push of bitVector, push -65535
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1140
      * @tc.desc   Testing the Push of bitVector, push 2.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1150
      * @tc.desc   Testing the Push of bitVector, push 10 times 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1160
      * @tc.desc   Testing the Push of bitVector, push 100000 times 0 and 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1170
      * @tc.desc   BitVector push with extra parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPush0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1180
      * @tc.desc   BitVector push return value type validation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1190
      * @tc.desc   Testing the pop of bitVector, pop 10 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0210
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1200
      * @tc.desc   Testing the pop of bitVector, pop 100000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -463,7 +463,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0220
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1210
      * @tc.desc   Testing the pop of bitVector, pop succeed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -492,7 +492,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0230
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1220
      * @tc.desc   Testing the pop of bitVector, pop succeed and return length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0240
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1230
      * @tc.desc   Testing the pop of bitVector, bitVector is null, pop failed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -545,7 +545,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0250
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1240
      * @tc.desc   Testing the pop of bitVector, pop called without parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0260
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1250
      * @tc.desc   Testing the pop of bitVector, pop called with extra parameters should ignore them.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -591,7 +591,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0270
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1260
      * @tc.desc   Testing the pop of bitVector, return value type should be number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0280
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1270
      * @tc.desc   Testing the pop of bitVector, return value should be 0 or 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -638,7 +638,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0290
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1280
      * @tc.desc   Testing the pop of bitVector, push after pop operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1290
      * @tc.desc   Testing the pop of bitVector, alternating push and pop operations.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -697,7 +697,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0310
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1300
      * @tc.desc   Testing the pop of bitVector, single element BitVector becomes empty after pop.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -722,7 +722,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0320
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1310
      * @tc.desc   Testing the pop of bitVector, index access after pop operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -749,7 +749,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0330
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1320
      * @tc.desc   Testing the pop of bitVector, iterator after pop operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -780,7 +780,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorPop0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0340
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1330
      * @tc.desc   Testing the pop of bitVector, length change after pop operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -810,7 +810,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0350
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1340
      * @tc.desc   Testing the has of bitVector, element=0 fromIndex=0 toIndex=10, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -840,7 +840,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0360
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1350
      * @tc.desc   Testing the has of bitVector, element=0 fromIndex=0 toIndex=5, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -870,7 +870,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0370
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1360
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=0 toIndex=5, return false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -900,7 +900,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0380
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1370
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=0 toIndex=10, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0390
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1380
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=-1 toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -961,7 +961,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1390
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=0 toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -992,7 +992,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0410
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1400
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=5 toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1023,7 +1023,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0420
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1410
      * @tc.desc   Testing the has of bitVector, element=1 fromIndex=5 toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1054,7 +1054,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0430
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1420
      * @tc.desc   BitVector has with single parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1078,7 +1078,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0440
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1430
      * @tc.desc   BitVector has with two parameters test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1103,7 +1103,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0450
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1440
      * @tc.desc   BitVector has with extra parameters test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1126,7 +1126,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0460
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1450
      * @tc.desc   BitVector has with fromIndex=NaN test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1146,7 +1146,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0470
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1460
      * @tc.desc   BitVector has with fromIndex=float number test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1166,7 +1166,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0480
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1470
      * @tc.desc   BitVector has on empty BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1186,7 +1186,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0490
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1480
      * @tc.desc   BitVector has return value type verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1213,7 +1213,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1490
      * @tc.desc   BitVector has with element=positive number test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1237,7 +1237,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorHas0023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0510
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1500
      * @tc.desc   BitVector has with element=negative number test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1261,7 +1261,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetBitsByRange0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0520
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1510
      * @tc.desc   Testing the setBitsByRange of bitVector, element=0 fromIndex=0 toIndex=10, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1286,7 +1286,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0530
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1520
      * @tc.desc   Testing the setBitsByRange of bitVector, element=0 fromIndex=0 toIndex=5, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1311,7 +1311,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0540
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1530
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=0 toIndex=5, return false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1336,7 +1336,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0550
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1540
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=0 toIndex=10, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1361,7 +1361,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0560
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1550
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=-1 toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1387,7 +1387,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0570
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1560
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=0 toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1413,7 +1413,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0580
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1570
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=5 toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1439,7 +1439,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0590
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1580
      * @tc.desc   Testing the setBitsByRange of bitVector, element=1 fromIndex=5 toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1465,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1590
      * @tc.desc   Testing the setBitsByRange of bitVector, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1505,7 +1505,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0610
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1600
      * @tc.desc   BitVector setBitsByRange with extra parameters test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1531,7 +1531,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0620
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1610
      * @tc.desc   BitVector setBitsByRange with negative fromIndex test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1555,7 +1555,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0630
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1620
      * @tc.desc   BitVector setBitsByRange with toIndex out of range test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1579,7 +1579,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0640
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1630
      * @tc.desc   BitVector setBitsByRange with fromIndex greater than toIndex test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1603,7 +1603,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0650
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1640
      * @tc.desc   BitVector setBitsByRange set entire range and verify return value as void test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1633,7 +1633,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetBitsByRange0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0660
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1650
      * @tc.desc   BitVector setBitsByRange set large range (1000 elements) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1660,7 +1660,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorSetAllBits0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0670
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1660
      * @tc.desc   Testing the SetAllBits of bitVector, set 0, return 0(all).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1689,7 +1689,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0680
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1670
      * @tc.desc   Testing the SetAllBits of bitVector, set 1, return 1(all).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1718,7 +1718,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0690
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1680
      * @tc.desc   Testing the SetAllBits of bitVector, set -1, return 1(all).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1747,7 +1747,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1690
      * @tc.desc   Testing the SetAllBits of bitVector, set 65535, return 1(all).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1776,7 +1776,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0710
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1700
      * @tc.desc   Testing the SetAllBits of bitVector, set 2.5, return 1(all).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1805,7 +1805,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0720
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1710
      * @tc.desc   BitVector setAllBits with extra parameters test, extra params should be ignored.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1830,7 +1830,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorSetAllBits0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0730
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1720
      * @tc.desc   BitVector setAllBits return value void verification and large BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1860,7 +1860,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetBitsByRange0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0740
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1730
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=0,toIndex=6, return 000001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1894,7 +1894,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0750
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1740
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=4,toIndex=10, return 011111.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1928,7 +1928,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0760
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1750
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=4,toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1956,7 +1956,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0770
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1760
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=-1,toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1984,7 +1984,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0780
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1770
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=5,toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2012,7 +2012,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0790
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1780
      * @tc.desc   Testing the getBitsByRange of bitVector, fromIndex=5,toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2040,7 +2040,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1790
      * @tc.desc   BitVector getBitsByRange with NaN fromIndex parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2064,7 +2064,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0810
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1800
      * @tc.desc   BitVector getBitsByRange with NaN toIndex parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2088,7 +2088,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0820
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1810
      * @tc.desc   BitVector getBitsByRange with negative fromIndex parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2112,7 +2112,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0830
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1820
      * @tc.desc   BitVector getBitsByRange with toIndex out of range test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2136,7 +2136,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitsByRange0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0840
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1830
      * @tc.desc   BitVector getBitsByRange with large range 1000 elements test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2164,7 +2164,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorResize0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0850
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1840
      * @tc.desc   Testing the resize of bitVector, size is -1, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2188,7 +2188,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0860
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1850
      * @tc.desc   Testing the resize of bitVector, size is 5, return 01000.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2216,7 +2216,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0870
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1860
      * @tc.desc   Testing the resize of bitVector, size is 1, return 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2240,7 +2240,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0880
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1870
      * @tc.desc   BitVector resize with extra parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2260,7 +2260,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0890
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1880
      * @tc.desc   BitVector resize with NaN parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2280,7 +2280,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1890
      * @tc.desc   BitVector resize with Infinity parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2300,7 +2300,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0910
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1900
      * @tc.desc   BitVector resize to 0 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2323,7 +2323,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0920
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1910
      * @tc.desc   BitVector resize to large size 100000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2348,7 +2348,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0930
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1920
      * @tc.desc   BitVector resize to same size test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2374,7 +2374,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorResize0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0940
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1930
      * @tc.desc   BitVector resize verify original data preserved test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2409,7 +2409,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0950
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1940
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is 0~6, return 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2437,7 +2437,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0960
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1950
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is 4~10, return 5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2465,7 +2465,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0970
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1960
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is 4~11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2493,7 +2493,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0980
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1970
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is -1~10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2521,7 +2521,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_0990
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1980
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is 5~4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2549,7 +2549,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1990
      * @tc.desc   Testing the getBitCountByRange of bitVector, range is 5~5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2577,7 +2577,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2000
      * @tc.desc   BitVector getBitCountByRange element non-zero value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2605,7 +2605,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2010
      * @tc.desc   BitVector getBitCountByRange element negative value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2633,7 +2633,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2020
      * @tc.desc   BitVector getBitCountByRange fromIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2661,7 +2661,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2030
      * @tc.desc   BitVector getBitCountByRange toIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2689,7 +2689,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2040
      * @tc.desc   BitVector getBitCountByRange all zeros return 0 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2715,7 +2715,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2050
      * @tc.desc   BitVector getBitCountByRange all ones return 5 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2741,7 +2741,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2060
      * @tc.desc   BitVector getBitCountByRange large BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2765,7 +2765,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2070
      * @tc.desc   BitVector getBitCountByRange single element BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2787,7 +2787,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2080
      * @tc.desc   BitVector getBitCountByRange return type verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2817,7 +2817,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2090
      * @tc.desc   BitVector getBitCountByRange fromIndex Infinity error code 10200001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2845,7 +2845,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2100
      * @tc.desc   BitVector getBitCountByRange toIndex Infinity error code 10200001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2873,7 +2873,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2110
      * @tc.desc   BitVector getBitCountByRange alternating bits test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2897,7 +2897,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0027
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2120
      * @tc.desc   BitVector getBitCountByRange fromIndex length-1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2923,7 +2923,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0028
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2130
      * @tc.desc   BitVector getBitCountByRange toIndex fromIndex+1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2949,7 +2949,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0029
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2140
      * @tc.desc   BitVector getBitCountByRange toIndex fromIndex+2 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2975,7 +2975,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetBitCountByRange0030
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2150
      * @tc.desc   BitVector getBitCountByRange single element match return 1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3001,7 +3001,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetIndexOf0026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2160
      * @tc.desc   BitVector getIndexOf multiple matches return first test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3026,7 +3026,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0027
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2170
      * @tc.desc   BitVector getIndexOf last element match test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3051,7 +3051,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0028
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2180
      * @tc.desc   BitVector getIndexOf fromIndex length-1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3076,7 +3076,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2190
      * @tc.desc   Testing the getIndexOf of bitVector, element=0 fromIndex=0 toIndex=10, return 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3103,7 +3103,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1210
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2200
      * @tc.desc   Testing the getIndexOf of bitVector, element=0 fromIndex=0 toIndex=5, return 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3130,7 +3130,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1220
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2210
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=0 toIndex=5, return -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3157,7 +3157,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1230
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2220
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=0 toIndex=10, return 5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3184,7 +3184,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1240
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2230
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=-1 toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3212,7 +3212,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1250
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2240
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=0 toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3240,7 +3240,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1260
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2250
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=5 toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3268,7 +3268,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1270
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2260
      * @tc.desc   Testing the getIndexOf of bitVector, element=1 fromIndex=5 toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3296,7 +3296,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1280
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2270
      * @tc.desc   BitVector getIndexOf element non-zero value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3323,7 +3323,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1290
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2280
      * @tc.desc   BitVector getIndexOf element negative value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3350,7 +3350,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2290
      * @tc.desc   BitVector getIndexOf fromIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3377,7 +3377,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1310
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2300
      * @tc.desc   BitVector getIndexOf toIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3404,7 +3404,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1320
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2310
      * @tc.desc   BitVector getIndexOf all zeros return -1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3427,7 +3427,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1330
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2320
      * @tc.desc   BitVector getIndexOf all ones return -1 for 0 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3450,7 +3450,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1340
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2330
      * @tc.desc   BitVector getIndexOf large BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3474,7 +3474,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1350
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2340
      * @tc.desc   BitVector getIndexOf single element BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3495,7 +3495,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1360
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2350
      * @tc.desc   BitVector getIndexOf return type verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3523,7 +3523,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetIndexOf0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1370
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2360
      * @tc.desc   BitVector getIndexOf first element match test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3548,7 +3548,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1380
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2370
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=0 fromIndex=0 toIndex=10, return 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3576,7 +3576,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1390
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2380
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=0 fromIndex=0 toIndex=5, return 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3604,7 +3604,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2390
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=0 toIndex=5, return -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3632,7 +3632,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1410
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2400
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=0 toIndex=10, return 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3660,7 +3660,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1420
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2410
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=-1 toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3689,7 +3689,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1430
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2420
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=0 toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3718,7 +3718,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1440
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2430
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=5 toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3747,7 +3747,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1450
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2440
      * @tc.desc   Testing the getLastIndexOf of bitVector, element=1 fromIndex=5 toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3776,7 +3776,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1460
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2450
      * @tc.desc   BitVector getLastIndexOf element non-zero value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3802,7 +3802,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1470
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2460
      * @tc.desc   BitVector getLastIndexOf element negative value test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3828,7 +3828,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1480
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2470
      * @tc.desc   BitVector getLastIndexOf fromIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3854,7 +3854,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1490
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2480
      * @tc.desc   BitVector getLastIndexOf fromIndex Infinity error code 10200001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3880,7 +3880,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2490
      * @tc.desc   BitVector getLastIndexOf toIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3906,7 +3906,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1510
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2500
      * @tc.desc   BitVector getLastIndexOf all zeros return -1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3932,7 +3932,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1520
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2510
      * @tc.desc   BitVector getLastIndexOf all ones return -1 for 0 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3958,7 +3958,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1530
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2520
      * @tc.desc   BitVector getLastIndexOf large BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3982,7 +3982,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1540
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2530
      * @tc.desc   BitVector getLastIndexOf single element BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4004,7 +4004,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1550
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2540
      * @tc.desc   BitVector getLastIndexOf method binding error code 10200011 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4033,7 +4033,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1560
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2550
      * @tc.desc   BitVector getLastIndexOf return type verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4060,7 +4060,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1570
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2560
      * @tc.desc   BitVector getLastIndexOf fromIndex length-1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4086,7 +4086,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1580
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2570
      * @tc.desc   BitVector getLastIndexOf toIndex fromIndex+1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4112,7 +4112,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorGetLastIndexOf0026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1590
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2580
      * @tc.desc   BitVector getLastIndexOf multiple matches return last test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4139,7 +4139,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2590
      * @tc.desc   Testing the flipBitByIndex of bitVector, index is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4165,7 +4165,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1610
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2600
      * @tc.desc   Testing the flipBitByIndex of bitVector, index is 5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4190,7 +4190,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1620
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2610
      * @tc.desc   Testing the flipBitByIndex of bitVector, index is -1, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4215,7 +4215,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1630
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2620
      * @tc.desc   BitVector flipBitByIndex with extra parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4239,7 +4239,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1640
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2630
      * @tc.desc   BitVector flipBitByIndex with NaN parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4263,7 +4263,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1650
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2640
      * @tc.desc   BitVector flipBitByIndex with Infinity parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4287,7 +4287,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1660
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2650
      * @tc.desc   BitVector flipBitByIndex with negative index test, throws error 10200001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4311,7 +4311,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1670
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2660
      * @tc.desc   BitVector flipBitByIndex flips bit from 0 to 1 and verifies return value is void.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4338,7 +4338,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitByIndex0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1680
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2670
      * @tc.desc   BitVector flipBitByIndex flips bit from 1 to 0 and double flip returns original value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4368,7 +4368,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1690
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2680
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=0,toIndex=6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4399,7 +4399,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2690
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=4,toIndex=10.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4430,7 +4430,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1710
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2700
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=4,toIndex=11, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4458,7 +4458,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1720
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2710
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=-1,toIndex=10, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4486,7 +4486,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1730
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2720
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=5,toIndex=4, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4514,7 +4514,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1740
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2730
      * @tc.desc   Testing the flipBitsByRange of bitVector, fromIndex=5,toIndex=5, return error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4542,7 +4542,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1750
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2740
      * @tc.desc   BitVector flipBitsByRange fromIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4565,7 +4565,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1760
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2750
      * @tc.desc   BitVector flipBitsByRange full range flip test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4595,7 +4595,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1770
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2760
      * @tc.desc   BitVector flipBitsByRange single element range test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4623,7 +4623,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1780
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2770
      * @tc.desc   BitVector flipBitsByRange range outside unchanged test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4650,7 +4650,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1790
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2780
      * @tc.desc   BitVector flipBitsByRange double flip restore test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4680,7 +4680,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2790
      * @tc.desc   BitVector flipBitsByRange single element BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4702,7 +4702,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1810
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2800
      * @tc.desc   BitVector flipBitsByRange large BitVector test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4728,7 +4728,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1820
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2810
      * @tc.desc   BitVector flipBitsByRange return undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4754,7 +4754,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1830
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2820
      * @tc.desc   BitVector flipBitsByRange length unchanged test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4781,7 +4781,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1840
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2830
      * @tc.desc   BitVector flipBitsByRange fromIndex Infinity error code 10200001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4807,7 +4807,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1850
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2840
      * @tc.desc   BitVector flipBitsByRange toIndex NaN error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4833,7 +4833,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1860
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2850
      * @tc.desc   BitVector flipBitsByRange hex fromIndex test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4858,7 +4858,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1870
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2860
      * @tc.desc   BitVector flipBitsByRange octal fromIndex test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4882,7 +4882,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1880
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2870
      * @tc.desc   BitVector flipBitsByRange fromIndex included verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4908,7 +4908,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1890
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2880
      * @tc.desc   BitVector flipBitsByRange toIndex excluded verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4934,7 +4934,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorFlipBitsByRange0027
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2890
      * @tc.desc   BitVector flipBitsByRange multiple different ranges test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4966,7 +4966,7 @@ export default function BitVectorTest() {
       });
     /**
      * @tc.name   testBitVectorValues0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1910
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2900
      * @tc.desc   Testing the values of bitVector, bitvector is null, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4986,7 +4986,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1920
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2910
      * @tc.desc   Testing the values of bitVector, bitvector is not null, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5013,7 +5013,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1930
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2920
      * @tc.desc   Testing the values of bitVector, bitvector is not null, return true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5043,7 +5043,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1940
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2930
      * @tc.desc   BitVector values() for...of iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5073,7 +5073,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1950
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2940
      * @tc.desc   BitVector values() while loop iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5104,7 +5104,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1960
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2950
      * @tc.desc   BitVector values() single element iterator test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5132,7 +5132,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1970
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2960
      * @tc.desc   BitVector values() all zeros iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5159,7 +5159,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1980
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2970
      * @tc.desc   BitVector values() all ones iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5186,7 +5186,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_1990
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2980
      * @tc.desc   BitVector values() return type verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5211,7 +5211,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2990
      * @tc.desc   BitVector values() large BitVector iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5240,7 +5240,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3000
      * @tc.desc   BitVector values() multiple iterators independence test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5267,7 +5267,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3010
      * @tc.desc   BitVector values() iterator consumed done test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5297,7 +5297,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorValues0017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3020
      * @tc.desc   BitVector values() spread operator to array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5324,7 +5324,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3030
      * @tc.desc   BitVector values() Array.from conversion test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5351,7 +5351,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3040
      * @tc.desc   BitVector values() partial iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5385,7 +5385,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3050
      * @tc.desc   BitVector values() destructuring assignment test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5412,7 +5412,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3060
      * @tc.desc   BitVector values() break early termination test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5443,7 +5443,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3070
      * @tc.desc   BitVector values() iteration order verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5474,7 +5474,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3080
      * @tc.desc   BitVector values() value consistency verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5503,7 +5503,7 @@ export default function BitVectorTest() {
     });
     /**
      * @tc.name   testBitVectorValues0025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3090
      * @tc.desc   BitVector values() re-iterate after modification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5540,7 +5540,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorMissing0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3100
      * @tc.desc   Test BitVector getBitsByRange().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5560,7 +5560,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3110
      * @tc.desc   BitVector [Symbol.iterator] empty BitVector iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5583,7 +5583,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3120
      * @tc.desc   BitVector [Symbol.iterator] single element BitVector iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5609,7 +5609,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3130
      * @tc.desc   BitVector [Symbol.iterator] multiple elements BitVector iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5644,7 +5644,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3140
      * @tc.desc   BitVector [Symbol.iterator] for...of traversal all elements test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5677,7 +5677,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3150
      * @tc.desc   BitVector [Symbol.iterator] verify iteration order from head to tail test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5715,7 +5715,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3160
      * @tc.desc   BitVector [Symbol.iterator] next() method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5745,7 +5745,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3170
      * @tc.desc   BitVector [Symbol.iterator] done property verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5773,7 +5773,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3180
      * @tc.desc   BitVector [Symbol.iterator] value property verification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5811,7 +5811,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3190
      * @tc.desc   BitVector [Symbol.iterator] iteration during BitVector modification test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5847,7 +5847,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2210
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3200
      * @tc.desc   BitVector [Symbol.iterator] compare with values() method test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5882,7 +5882,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2220
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3210
      * @tc.desc   BitVector [Symbol.iterator] large elements iteration test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5910,7 +5910,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2230
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3220
      * @tc.desc   BitVector [Symbol.iterator] BitVector created with initial length test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5938,7 +5938,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2240
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3230
      * @tc.desc   BitVector [Symbol.iterator] use spread operator test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5967,7 +5967,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2250
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3240
      * @tc.desc   BitVector [Symbol.iterator] use Array.from test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5996,7 +5996,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIterator0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2260
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3250
      * @tc.desc   BitVector [Symbol.iterator] after pop operation test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6028,7 +6028,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2270
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3260
      * @tc.desc   BitVector [index] access first element (index=0) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6051,7 +6051,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2280
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3270
      * @tc.desc   BitVector [index] access last element (index=length-1) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6074,7 +6074,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2290
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3280
      * @tc.desc   BitVector [index] return value type validation (number) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6101,7 +6101,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3290
      * @tc.desc   BitVector [index] empty BitVector index access test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6122,7 +6122,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2310
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3300
      * @tc.desc   BitVector [index] index equals length (out of bounds) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6145,7 +6145,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2320
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3310
      * @tc.desc   BitVector [index] large index value (out of bounds) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6168,7 +6168,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2330
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3320
      * @tc.desc   BitVector [index] negative index (-1) test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6191,7 +6191,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2340
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3330
      * @tc.desc   BitVector [index] NaN as index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6214,7 +6214,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2350
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3340
      * @tc.desc   BitVector [index] Infinity as index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6237,7 +6237,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2360
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3350
      * @tc.desc   BitVector [index] float number (1.5) as index test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6261,7 +6261,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2370
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3360
      * @tc.desc   BitVector [index] multiple indices access test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6290,7 +6290,7 @@ export default function BitVectorTest() {
 
     /**
      * @tc.name   testBitVectorIndex0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_2380
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BITVECTOR_3370
      * @tc.desc   BitVector [index] with constructor initial length test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6312,4 +6312,6 @@ export default function BitVectorTest() {
 
   })
 }
+
+
 
