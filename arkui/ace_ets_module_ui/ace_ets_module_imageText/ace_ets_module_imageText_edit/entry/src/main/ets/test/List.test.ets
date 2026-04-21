@@ -72,6 +72,8 @@ import TextAreaTextDirectionTest from './TextAreaApi23Test/TextAreaTextDirection
 import TextAreaSpecialAttrsTest from './TextAreaTest/TextAreaSpecialAttrs.test';
 import TextAreaTypeTest from './TextAreaTest/TextAreaType.test';
 import TextAreaStyleTest from './TextAreaTest/TextAreaStyle.test';
+import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
+import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -126,6 +128,8 @@ import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAt
 import TextInputTextDirectionTest from './TextInputApi23Test/TextInputTextDirection.test';
 import TextInputMethodsNullTest from './TextInputTest/TextInputMethodsNull.test';
 import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControllerMethodsNull.test';
+import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.test';
+import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
