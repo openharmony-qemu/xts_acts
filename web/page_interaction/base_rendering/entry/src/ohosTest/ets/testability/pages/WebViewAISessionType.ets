@@ -245,16 +245,12 @@ struct Summarizer {
           switch (this.str) {
             case "emitWebViewLanguageModel01": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewLanguageModel01111')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('Create'));
-                  await buttonOne.click();
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250420);
-                }
+                console.log('emitWebViewLanguageModel01111')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/prompt.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('Create'));
+                await buttonOne.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -264,17 +260,13 @@ struct Summarizer {
             case "emitWebViewLanguageModel02": {
               try {
                 console.log('emitWebViewLanguageModel0222')
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
-                  let buttonOne = await driver.findComponent(ON.text('Create'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  this.controller.runJavaScript('executeClick()');
-                } else {
-                  Utils.emitEvent('onExecuteAIAction', 20250421);
-                }
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/prompt.html");
+                await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
+                let buttonOne = await driver.findComponent(ON.text('Create'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('executeClick()');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -284,17 +276,13 @@ struct Summarizer {
             case "emitWebViewLanguageModel03": {
               try {
                 console.log('emitWebViewLanguageModel0333')
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/prompt.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('Create'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  this.controller.runJavaScript('destroyClick()');
-                } else {
-                  Utils.emitEvent('onDestroyAIAction', 20250422);
-                }
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/prompt.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('Create'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('destroyClick()');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -303,18 +291,14 @@ struct Summarizer {
 
             case "emitWebViewLanguageDetector04": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewLanguageDetector0444')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/language_detector.html");
-                  await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
-                  let buttonOne = await driver.findComponent(ON.text('中文'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  this.controller.runJavaScript('detectClick()');
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250423);
-                }
+                console.log('emitWebViewLanguageDetector0444')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/language_detector.html");
+                await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
+                let buttonOne = await driver.findComponent(ON.text('中文'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                this.controller.runJavaScript('detectClick()');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -323,16 +307,12 @@ struct Summarizer {
 
             case "emitWebViewProofreader05": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewProofreader0555')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/proofreader.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('开始校对'));
-                  await buttonOne.click();
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250425);
-                }
+                console.log('emitWebViewProofreader0555')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/proofreader.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('开始校对'));
+                await buttonOne.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -341,16 +321,12 @@ struct Summarizer {
 
             case "emitWebViewProofreader06": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewProofreader0666')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/proofreader.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('返回导航页'));
-                  await buttonOne.click();
-                } else {
-                  Utils.emitEvent('onDestroyAISession', 20250426);
-                }
+                console.log('emitWebViewProofreader0666')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/proofreader.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('返回导航页'));
+                await buttonOne.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -358,16 +334,12 @@ struct Summarizer {
             }
             case "emitWebViewWriter07": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewWriter0777')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/writer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('生成内容'));
-                  await buttonOne.click();
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250427);
-                }
+                console.log('emitWebViewWriter0777')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/writer.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('生成内容'));
+                await buttonOne.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -375,19 +347,15 @@ struct Summarizer {
             }
             case "emitWebViewWriter08": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewWriter0888')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/writer.html");
-                  await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
-                  let buttonOne = await driver.findComponent(ON.text('生成内容'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  let buttonTwo = await driver.findComponent(ON.text('返回导航页'));
-                  await buttonTwo.click();
-                } else {
-                  Utils.emitEvent('onDestroyAISession', 20250428);
-                }
+                console.log('emitWebViewWriter0888')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/writer.html");
+                await Utils.waitForExist(()=>this.isPageEnd,this.str+' isPageEnd', 1,1000);
+                let buttonOne = await driver.findComponent(ON.text('生成内容'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                let buttonTwo = await driver.findComponent(ON.text('返回导航页'));
+                await buttonTwo.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -396,16 +364,12 @@ struct Summarizer {
 
             case "emitWebViewWriter09": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewWriter0999')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/rewriter.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonTwo = await driver.findComponent(ON.text('下载模型并重写'));
-                  await buttonTwo.click();
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250429);
-                }
+                console.log('emitWebViewWriter0999')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/rewriter.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonTwo = await driver.findComponent(ON.text('下载模型并重写'));
+                await buttonTwo.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -414,19 +378,15 @@ struct Summarizer {
 
             case "emitWebViewWriter10": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewWriter010')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/rewriter.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('下载模型并重写'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  let buttonTwo = await driver.findComponent(ON.text('返回导航页'));
-                  await buttonTwo.click();
-                } else {
-                  Utils.emitEvent('onDestroyAISession', 20250430);
-                }
+                console.log('emitWebViewWriter010')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/rewriter.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('下载模型并重写'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                let buttonTwo = await driver.findComponent(ON.text('返回导航页'));
+                await buttonTwo.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -436,15 +396,11 @@ struct Summarizer {
             case "emitWebViewTranslator11": {
               try {
                 console.log('emitWebViewTranslator11')
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/translator.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('开始翻译'));
-                  await buttonOne.click();
-                } else {
-                  Utils.emitEvent('onExecuteAIAction', 20250431);
-                }
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/translator.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('开始翻译'));
+                await buttonOne.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -454,18 +410,14 @@ struct Summarizer {
             case "emitWebViewSummarizer12": {
               try {
                 console.log('emitWebViewSummarizer12')
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/summarizer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('示例文章'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  let buttonTwo = await driver.findComponent(ON.text('批量总结'));
-                  await buttonTwo.click();
-                } else {
-                  Utils.emitEvent('onCreateAISession', 20250432);
-                }
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/summarizer.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('示例文章'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                let buttonTwo = await driver.findComponent(ON.text('批量总结'));
+                await buttonTwo.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -475,23 +427,18 @@ struct Summarizer {
 
             case "emitWebViewSummarizer13": {
               try {
-                if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M144) {
-                  console.log('emitWebViewSummarizer13')
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/summarizer.html");
-                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('示例文章'));
-                  await buttonOne.click();
-                  await Utils.sleep(2000)
-                  let buttonTwo = await driver.findComponent(ON.text('批量总结'));
-                  await buttonTwo.click();
-                  await Utils.sleep(2000);
-                  let buttonThree = await driver.findComponent(ON.text('返回导航页'));
-                  await buttonThree.click();
-                } else {
-                  console.log('emitWebViewSummarizer13_noM144');
-                  Utils.emitEvent('onDestroyAISession', 20250433);
-                }
+                console.log('emitWebViewSummarizer13')
+                this.isPageEnd = -1;
+                this.controller.loadUrl("resource://rawfile/summarizer.html");
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('示例文章'));
+                await buttonOne.click();
+                await Utils.sleep(2000)
+                let buttonTwo = await driver.findComponent(ON.text('批量总结'));
+                await buttonTwo.click();
+                await Utils.sleep(2000);
+                let buttonThree = await driver.findComponent(ON.text('返回导航页'));
+                await buttonThree.click();
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
