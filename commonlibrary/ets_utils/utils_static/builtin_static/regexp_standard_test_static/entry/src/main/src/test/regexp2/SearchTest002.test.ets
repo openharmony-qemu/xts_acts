@@ -58,12 +58,12 @@ export default function searchTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testSearch0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0100
-     * @tc.desc    Search returns the first matched index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0100
+     * @tc.desc Search returns the first matched index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('world');
@@ -72,12 +72,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0200
-     * @tc.desc    Search returns -1 when pattern is not found
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0200
+     * @tc.desc Search returns -1 when pattern is not found
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+');
@@ -86,12 +86,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0300
-     * @tc.desc    Search ignores regex lastIndex mutations
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0300
+     * @tc.desc Search ignores regex lastIndex mutations
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('a', 'g');
@@ -103,12 +103,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0400
-     * @tc.desc    Search supports case-insensitive matching
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0400
+     * @tc.desc Search supports case-insensitive matching
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const idx = 'ABC'.search(new RegExp('abc', 'i'));
@@ -116,12 +116,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0500
-     * @tc.desc    Search: anchors/boundaries/char classes return correct index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0500
+     * @tc.desc Search: anchors/boundaries/char classes return correct index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const cases: Array<[string, RegExp, number]> = [
@@ -149,12 +149,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0600
-     * @tc.desc    Search: alternation/grouping/quantifiers/greedy-lazy behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0600
+     * @tc.desc Search: alternation/grouping/quantifiers/greedy-lazy behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const cases: Array<[string, RegExp, number]> = [
@@ -166,7 +166,7 @@ export default function searchTest002(): void {
         ['zzzab', new RegExp('a?b'), 3],
         ['zzzaaab', new RegExp('a*b'), 3],
         ['ab', new RegExp('a{1,2}b'), 0],
-        ['aab', new RegExp('a{2}b'), 0],
+        ['aa' + 'b', new RegExp('a{2}b'), 0],
         ['aaaab', new RegExp('a{2,4}b'), 0],
         ['b', new RegExp('a*b'), 0],
         ['baaa', new RegExp('a+'), 1],
@@ -189,12 +189,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0700
-     * @tc.desc    Search: multiline flag affects ^ and $ behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0700
+     * @tc.desc Search: multiline flag affects ^ and $ behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'first\nsecond\nthird';
@@ -205,12 +205,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0800
-     * @tc.desc    Search: escaping of special characters behaves correctly
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0800
+     * @tc.desc Search: escaping of special characters behaves correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a+b*c?.()[]{}|^$\\';
@@ -231,12 +231,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0900
-     * @tc.desc    Search: dotAll flag (s) when supported matches newline
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0900
+     * @tc.desc Search: dotAll flag (s) when supported matches newline
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'hello\nworld';
@@ -247,12 +247,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1000
-     * @tc.desc    Search: unicode flag (u) for code point escapes when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1000
+     * @tc.desc Search: unicode flag (u) for code point escapes when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'Hi 😀 there';
@@ -264,12 +264,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1100
-     * @tc.desc    Search: lookahead patterns work when supported by engine
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1100
+     * @tc.desc Search: lookahead patterns work when supported by engine
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'price=100USD';
@@ -290,12 +290,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1200
-     * @tc.desc    Search: non-RegExp argument is coerced to string pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1200
+     * @tc.desc Search: non-RegExp argument is coerced to string pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // String.search accepts RegExp; if a non-RegExp is provided, it's coerced.
@@ -306,12 +306,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1300
-     * @tc.desc    Search: empty pattern matches at position zero
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1300
+     * @tc.desc Search: empty pattern matches at position zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('abc'.search(new RegExp(''))).assertEqual(0);
@@ -320,12 +320,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1400
-     * @tc.desc    Search: alternation priority and grouping semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1400
+     * @tc.desc Search: alternation priority and grouping semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('foobarbaz'.search(new RegExp('foo|bar'))).assertEqual(0);
@@ -336,12 +336,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1500
-     * @tc.desc    Search: search with global/sticky flags ignores lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1500
+     * @tc.desc Search: search with global/sticky flags ignores lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const g = new RegExp('foo', 'g');
@@ -357,12 +357,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1600
-     * @tc.desc    Search: start/end anchor cases with empty string
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1600
+     * @tc.desc Search: start/end anchor cases with empty string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(''.search(new RegExp('^$'))).assertEqual(0);
@@ -373,12 +373,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1700
-     * @tc.desc    Search: escaped unicode and hex character patterns
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1700
+     * @tc.desc Search: escaped unicode and hex character patterns
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('ABC'.search(new RegExp('\\x42'))).assertEqual(1);
@@ -388,12 +388,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1800
-     * @tc.desc    Search: mixed separators with character set delimiters
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1800
+     * @tc.desc Search: mixed separators with character set delimiters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const cases: Array<[string, RegExp, number]> = [
@@ -410,12 +410,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1900
-     * @tc.desc    Search: case-insensitive locale-neutral behavior on ascii
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_1900
+     * @tc.desc Search: case-insensitive locale-neutral behavior on ascii
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('AlphaBeta'.search(new RegExp('beta', 'i'))).assertEqual(5);
@@ -425,12 +425,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2000
-     * @tc.desc    Search: no match preserves -1 across anchors and classes
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2000
+     * @tc.desc Search: no match preserves -1 across anchors and classes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('abc'.search(new RegExp('^z'))).assertEqual(-1);
@@ -440,16 +440,16 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2100
-     * @tc.desc    Search: lookbehind assertions when supported by engine
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2100
+     * @tc.desc Search: lookbehind assertions when supported by engine
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsLookbehindSemantics()) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const input = 'USD100 EUR200';
@@ -462,12 +462,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2200
-     * @tc.desc    Search: constructor from RegExp keeps effective search semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2200
+     * @tc.desc Search: constructor from RegExp keeps effective search semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('abc', 'i');
@@ -479,12 +479,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0222
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2300
-     * @tc.desc    Search: numeric pattern coercion for non-RegExp argument
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0222
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2300
+     * @tc.desc Search: numeric pattern coercion for non-RegExp argument
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-RegExp argument is coerced via RegExp constructor semantics.
@@ -494,12 +494,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0223
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2400
-     * @tc.desc    Search: whitespace anchors with multiline input stay deterministic
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0223
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2400
+     * @tc.desc Search: whitespace anchors with multiline input stay deterministic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = '  line1\n\tline2\nline3  ';
@@ -510,12 +510,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0224
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2500
-     * @tc.desc    Search: rebuilt regex from source and flags yields same index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0224
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2500
+     * @tc.desc Search: rebuilt regex from source and flags yields same index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('x\\d+', 'i');
@@ -527,12 +527,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0225
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2600
-     * @tc.desc    Search: nested group and alternation boundary conditions
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0225
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2600
+     * @tc.desc Search: nested group and alternation boundary conditions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const text = 'prefix-AB12-suffix';
@@ -542,12 +542,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0226
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2700
-     * @tc.desc    Search: empty source via constructor remains start-position match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0226
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2700
+     * @tc.desc Search: empty source via constructor remains start-position match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const empty = new RegExp('');
@@ -558,12 +558,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0227
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2800
-     * @tc.desc    Search: basic success and failure with character class
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0227
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2800
+     * @tc.desc Search: basic success and failure with character class
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'hey JudE';
@@ -572,12 +572,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0228
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2900
-     * @tc.desc    Search: string pattern searches are coerced and match literally
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0228
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_2900
+     * @tc.desc Search: string pattern searches are coerced and match literally
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello World';
@@ -586,12 +586,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0229
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3000
-     * @tc.desc    Search: global flag does not change returned index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0229
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3000
+     * @tc.desc Search: global flag does not change returned index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc abc abc';
@@ -600,12 +600,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0230
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3100
-     * @tc.desc    Search: ignoreCase flag finds match regardless of case
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0230
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3100
+     * @tc.desc Search: ignoreCase flag finds match regardless of case
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello World';
@@ -614,12 +614,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0231
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3200
-     * @tc.desc    Search: multiline flag changes anchor matching across lines
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0231
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3200
+     * @tc.desc Search: multiline flag changes anchor matching across lines
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Line1\nLine2\nLine3';
@@ -628,12 +628,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0232
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3300
-     * @tc.desc    Search: combined flags behave like first-match finder
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0232
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3300
+     * @tc.desc Search: combined flags behave like first-match finder
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello\nWORLD\nworld';
@@ -641,12 +641,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0233
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3400
-     * @tc.desc    Search: unicode literal match works and u flag is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0233
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3400
+     * @tc.desc Search: unicode literal match works and u flag is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'café';
@@ -657,16 +657,16 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0234
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3500
-     * @tc.desc    Search: sticky flag is ignored for start position but lastIndex is preserved
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0234
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3500
+     * @tc.desc Search: sticky flag is ignored for start position but lastIndex is preserved
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('abc', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const str = 'abcabc';
@@ -677,12 +677,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0235
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3600
-     * @tc.desc    Search: dotAll flag allows '.' to match newline when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0235
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3600
+     * @tc.desc Search: dotAll flag allows '.' to match newline when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello\nWorld';
@@ -693,12 +693,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0236
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3700
-     * @tc.desc    Search: hasIndices flag does not change search return value
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0236
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3700
+     * @tc.desc Search: hasIndices flag does not change search return value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'test123';
@@ -709,12 +709,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0237
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3800
-     * @tc.desc    Search: lastIndex is ignored and not modified for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0237
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3800
+     * @tc.desc Search: lastIndex is ignored and not modified for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc abc';
@@ -725,12 +725,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0238
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3900
-     * @tc.desc    Search: special character search handles punctuation
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0238
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_3900
+     * @tc.desc Search: special character search handles punctuation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'price@100';
@@ -739,12 +739,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0239
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4000
-     * @tc.desc    Search: escaped newline token finds line break reliably
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0239
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4000
+     * @tc.desc Search: escaped newline token finds line break reliably
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello\nWorld';
@@ -753,12 +753,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0240
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4100
-     * @tc.desc    Search: word boundary behavior matches word/non-word transitions
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0240
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4100
+     * @tc.desc Search: word boundary behavior matches word/non-word transitions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('test'.search(new RegExp('\\btest\\b'))).assertEqual(0);
@@ -767,12 +767,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0241
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4200
-     * @tc.desc    Search: alternation priority returns earliest leftmost match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0241
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4200
+     * @tc.desc Search: alternation priority returns earliest leftmost match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('xxdog cat'.search(new RegExp('cat|dog'))).assertEqual(2);
@@ -781,12 +781,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0242
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4300
-     * @tc.desc    Search: quantifier patterns find expected earliest index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0242
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4300
+     * @tc.desc Search: quantifier patterns find expected earliest index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('xxaaabyy'.search(new RegExp('a{2,4}b'))).assertEqual(2);
@@ -795,12 +795,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0243
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4400
-     * @tc.desc    Search: lookahead and negative lookahead when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0243
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4400
+     * @tc.desc Search: lookahead and negative lookahead when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'price=100USD fee=200EUR';
@@ -814,12 +814,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0244
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4500
-     * @tc.desc    Search: beginning and end anchors on empty and non-empty strings
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0244
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4500
+     * @tc.desc Search: beginning and end anchors on empty and non-empty strings
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(''.search(new RegExp('^$'))).assertEqual(0);
@@ -829,12 +829,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0245
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4600
-     * @tc.desc    Search: escaping of regex metacharacters is consistent
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0245
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4600
+     * @tc.desc Search: escaping of regex metacharacters is consistent
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a+b*c?.()[]{}|^$\\';
@@ -847,12 +847,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0246
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4700
-     * @tc.desc    Search: bracket and brace escapes locate literal characters
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0246
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4700
+     * @tc.desc Search: bracket and brace escapes locate literal characters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a+b*c?.()[]{}|^$\\';
@@ -864,12 +864,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0247
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4800
-     * @tc.desc    Search: character class negation and ranges are respected
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0247
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4800
+     * @tc.desc Search: character class negation and ranges are respected
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('xyz'.search(new RegExp('[^a-c]+'))).assertEqual(0);
@@ -879,12 +879,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0248
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4900
-     * @tc.desc    Search: repeated delimiter class finds first separator index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0248
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_4900
+     * @tc.desc Search: repeated delimiter class finds first separator index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'a,b;c|d';
@@ -893,12 +893,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0249
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5000
-     * @tc.desc    Search: startsWith-like behavior with ^ anchor is consistent
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0249
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5000
+     * @tc.desc Search: startsWith-like behavior with ^ anchor is consistent
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('hello world'.search(new RegExp('^hello'))).assertEqual(0);
@@ -907,12 +907,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0250
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5100
-     * @tc.desc    Search: empty pattern always matches at position zero
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0250
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5100
+     * @tc.desc Search: empty pattern always matches at position zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('Hello'.search('')).assertEqual(0);
@@ -921,12 +921,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0251
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5200
-     * @tc.desc    Search: tab token search locates whitespace boundaries
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0251
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5200
+     * @tc.desc Search: tab token search locates whitespace boundaries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo\tbar';
@@ -935,12 +935,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0252
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5300
-     * @tc.desc    Search: carriage return + newline pattern finds CRLF boundary
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0252
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5300
+     * @tc.desc Search: carriage return + newline pattern finds CRLF boundary
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'a\r\nb';
@@ -949,12 +949,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0253
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5400
-     * @tc.desc    Search: numeric class tokens distinguish digits and non-digits
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0253
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5400
+     * @tc.desc Search: numeric class tokens distinguish digits and non-digits
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('a9z'.search(new RegExp('\\d'))).assertEqual(1);
@@ -963,12 +963,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0254
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5500
-     * @tc.desc    Search: unicode emoji literal search is stable on UTF-16 strings
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0254
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5500
+     * @tc.desc Search: unicode emoji literal search is stable on UTF-16 strings
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello 😀 World';
@@ -977,12 +977,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0255
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5600
-     * @tc.desc    Search: end-anchor with multiline finds the first line-ending match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0255
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5600
+     * @tc.desc Search: end-anchor with multiline finds the first line-ending match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'a1\nb2\nc3';
@@ -991,12 +991,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0256
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5700
-     * @tc.desc    Search: grouping does not affect returned index but affects acceptance
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0256
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5700
+     * @tc.desc Search: grouping does not affect returned index but affects acceptance
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'xxabcdyy';
@@ -1006,12 +1006,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0257
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5800
-     * @tc.desc    Search: reluctant quantifier changes acceptance but index remains start
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0257
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5800
+     * @tc.desc Search: reluctant quantifier changes acceptance but index remains start
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'a123b456b';
@@ -1020,12 +1020,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0258
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5900
-     * @tc.desc    Search: escaped backslash sequences are preserved as literals
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0258
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_5900
+     * @tc.desc Search: escaped backslash sequences are preserved as literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'path\\to\\file';
@@ -1034,12 +1034,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0259
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6000
-     * @tc.desc    Search: repeated matches do not change the returned index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0259
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6000
+     * @tc.desc Search: repeated matches do not change the returned index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'aaaa';
@@ -1048,12 +1048,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0260
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6100
-     * @tc.desc    Search: non-word character class matches punctuation sequences
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0260
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6100
+     * @tc.desc Search: non-word character class matches punctuation sequences
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'ab--cd';
@@ -1062,12 +1062,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0261
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6200
-     * @tc.desc    Search: digit class finds first number in mixed text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0261
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6200
+     * @tc.desc Search: digit class finds first number in mixed text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc123';
@@ -1076,12 +1076,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0262
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6300
-     * @tc.desc    Search: negated class excludes word/space/apostrophe when matching punctuation
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0262
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6300
+     * @tc.desc Search: negated class excludes word/space/apostrophe when matching punctuation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = "I think Ruth's dog is cuter than your dog!";
@@ -1089,12 +1089,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0263
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6400
-     * @tc.desc    Search: CJK character search uses code unit index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0263
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6400
+     * @tc.desc Search: CJK character search uses code unit index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = '你好世界';
@@ -1103,46 +1103,46 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0264
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6500
-     * @tc.desc    Search: unicode property escapes are feature-gated for portability
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0264
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6500
+     * @tc.desc Search: unicode property escapes are feature-gated for portability
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'ABC αβγ';
       if (supportsRegExp('\\p{Script=Greek}', 'u')) {
         expect(str.search(new RegExp('\\p{Script=Greek}', 'u'))).assertEqual(4);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0265
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6600
-     * @tc.desc    Search: negated unicode property escapes are feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0265
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6600
+     * @tc.desc Search: negated unicode property escapes are feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = '123ABC';
       if (supportsRegExp('\\P{Number}', 'u')) {
         expect(str.search(new RegExp('\\P{Number}', 'u'))).assertEqual(3);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0266
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6700
-     * @tc.desc    Search: empty string returns -1 for non-empty pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0266
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6700
+     * @tc.desc Search: empty string returns -1 for non-empty pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(''.search(new RegExp('abc'))).assertEqual(-1);
@@ -1150,12 +1150,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0267
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6800
-     * @tc.desc    Search: empty string matches empty pattern at index 0
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0267
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6800
+     * @tc.desc Search: empty string matches empty pattern at index 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(''.search(new RegExp('(?:)'))).assertEqual(0);
@@ -1163,12 +1163,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0268
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6900
-     * @tc.desc    Search: single-character string boundary is handled correctly
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0268
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_6900
+     * @tc.desc Search: single-character string boundary is handled correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('a'.search(new RegExp('a'))).assertEqual(0);
@@ -1177,12 +1177,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0269
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7000
-     * @tc.desc    Search: long string case ensures engines do not cut off scanning
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0269
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7000
+     * @tc.desc Search: long string case ensures engines do not cut off scanning
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const prefix = 'a'.repeat(1000);
@@ -1192,68 +1192,68 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0270
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7100
-     * @tc.desc    Search: lookahead forms are feature-gated due to engine variability
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0270
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7100
+     * @tc.desc Search: lookahead forms are feature-gated due to engine variability
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc123def';
       if (supportsRegExp('\\d(?=def)')) {
         expect(str.search(new RegExp('\\d(?=def)'))).assertEqual(5);
       } else {
-        expect(true).assertTrue();
+        return;
       }
       if (supportsRegExp('\\d(?!def)')) {
         expect(str.search(new RegExp('\\d(?!def)'))).assertEqual(3);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0271
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7200
-     * @tc.desc    Search: lookbehind is feature-gated to avoid hard failures
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0271
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7200
+     * @tc.desc Search: lookbehind is feature-gated to avoid hard failures
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'price:100';
       if (supportsRegExp('(?<=:)\\d+')) {
         expect(str.search(new RegExp('(?<=:)\\d+'))).assertEqual(6);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0272
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7300
-     * @tc.desc    Search: negative lookbehind is feature-gated for compatibility
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0272
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7300
+     * @tc.desc Search: negative lookbehind is feature-gated for compatibility
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc100 def100';
       if (supportsLookbehindSemantics() && supportsRegExp('(?<!abc)\\d+')) {
         expect(str.search(new RegExp('(?<!abc)\\d+'))).assertEqual(10);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0273
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7400
-     * @tc.desc    Search: word boundary with ignoreCase finds standalone token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0273
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7400
+     * @tc.desc Search: word boundary with ignoreCase finds standalone token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'Hello world, hello';
@@ -1262,12 +1262,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0274
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7500
-     * @tc.desc    Search: non-word boundary \\B matches inside an identifier span
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0274
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7500
+     * @tc.desc Search: non-word boundary \\B matches inside an identifier span
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc123';
@@ -1276,12 +1276,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0275
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7600
-     * @tc.desc    Search: Symbol.search equivalence with String.search when accessible
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0275
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7600
+     * @tc.desc Search: Symbol.search equivalence with String.search when accessible
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Avoid direct Symbol.* usage (not supported in this ArkTS profile); helper encapsulates it safely.
@@ -1289,12 +1289,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0276
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7700
-     * @tc.desc    Search: lastIndex stays stable for y and g when invoking search repeatedly
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0276
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7700
+     * @tc.desc Search: lastIndex stays stable for y and g when invoking search repeatedly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'abc abc';
@@ -1311,12 +1311,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0277
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7800
-     * @tc.desc    Search: custom object Symbol.search overrides default coercion path
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0277
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7800
+     * @tc.desc Search: custom object Symbol.search overrides default coercion path
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Symbol.search is not directly expressible here; helper validates custom Symbol.search semantics.
@@ -1324,12 +1324,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0278
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7900
-     * @tc.desc    Search: numeric argument is coerced to string pattern
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0278
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_7900
+     * @tc.desc Search: numeric argument is coerced to string pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Business inputs often come from typed fields; coercion prevents silent mismatch between numbers and text.
@@ -1340,12 +1340,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0279
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8000
-     * @tc.desc    Search: null and undefined are coerced to literal strings
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0279
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8000
+     * @tc.desc Search: null and undefined are coerced to literal strings
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Logs and telemetry strings can contain "null"/"undefined" tokens; regressions here break parsing rules.
@@ -1356,12 +1356,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0280
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8100
-     * @tc.desc    Search: object argument uses toString / Symbol.toPrimitive(string)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0280
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8100
+     * @tc.desc Search: object argument uses toString / Symbol.toPrimitive(string)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Symbol.toPrimitive is not directly usable in this ArkTS profile; helper encapsulates the behavior check.
@@ -1369,12 +1369,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0281
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8200
-     * @tc.desc    Search: boolean and array arguments follow ToString coercion
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0281
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8200
+     * @tc.desc Search: boolean and array arguments follow ToString coercion
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Configuration values can be booleans/arrays but still end up compared against string payloads.
@@ -1384,12 +1384,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0282
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8300
-     * @tc.desc    Search: Symbol argument should throw TypeError
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0282
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8300
+     * @tc.desc Search: Symbol argument should throw TypeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Symbol values are handled via helper to keep this file compile-safe.
@@ -1397,12 +1397,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0283
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8400
-     * @tc.desc    Search: BigInt argument is coerced to string when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0283
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8400
+     * @tc.desc Search: BigInt argument is coerced to string when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // BigInt feature checks and coercion are implemented in helper to avoid unsupported typing constructs.
@@ -1410,12 +1410,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0284
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8500
-     * @tc.desc    Search: RegExp.prototype[Symbol.search] rejects invalid this
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0284
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8500
+     * @tc.desc Search: RegExp.prototype[Symbol.search] rejects invalid this
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // RegExp.prototype[Symbol.search] invalid-this checks are wrapped in helper for compile safety.
@@ -1424,12 +1424,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0285
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8600
-     * @tc.desc    Search: capture groups do not change search return index
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0285
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8600
+     * @tc.desc Search: capture groups do not change search return index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many business patterns are written with captures for later extraction, yet search must remain index-only.
@@ -1440,12 +1440,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0286
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8700
-     * @tc.desc    Search: non-capturing groups and alternation are accepted
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0286
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8700
+     * @tc.desc Search: non-capturing groups and alternation are accepted
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-capturing groups reduce overhead when only structure is needed; engines must not treat them specially.
@@ -1455,12 +1455,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0287
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8800
-     * @tc.desc    Search: named capture groups are feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0287
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8800
+     * @tc.desc Search: named capture groups are feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Named groups are common in readable validators, but not every runtime enables them.
@@ -1469,17 +1469,17 @@ export default function searchTest002(): void {
       if (supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
         expect(str.search(new RegExp('(?<first>\\w+)\\s(?<last>\\w+)'))).assertEqual(0);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0288
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8900
-     * @tc.desc    Search: atomic group is feature-gated due to non-universal support
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0288
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_8900
+     * @tc.desc Search: atomic group is feature-gated due to non-universal support
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Atomic groups are used to limit catastrophic backtracking in untrusted-input validators.
@@ -1488,17 +1488,17 @@ export default function searchTest002(): void {
       if (supportsRegExp('(?>a*)bc')) {
         expect(str.search(new RegExp('(?>a*)bc'))).assertEqual(0);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0289
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9000
-     * @tc.desc    Search: possessive quantifier is feature-gated and should not break execution
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0289
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9000
+     * @tc.desc Search: possessive quantifier is feature-gated and should not break execution
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Possessive quantifiers are another mitigation against backtracking blowups in prod workloads.
@@ -1507,17 +1507,17 @@ export default function searchTest002(): void {
       if (supportsRegExp('a*+b')) {
         expect(str.search(new RegExp('a*+b'))).assertEqual(0);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0290
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9100
-     * @tc.desc    Search: invalid pattern should throw SyntaxError at construction time
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0290
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9100
+     * @tc.desc Search: invalid pattern should throw SyntaxError at construction time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Engines differ in error messages, but they must not accept malformed patterns silently.
@@ -1532,15 +1532,15 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0291
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9200
-     * @tc.desc    Search: invalid flags should throw SyntaxError
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0291
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9200
+     * @tc.desc Search: invalid flags should throw SyntaxError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Flag parsing is part of the compatibility surface; accepting unknown flags can hide app bugs.
+      // Flag parsing is part of the compatibility contract; accepting unknown flags can hide app bugs.
       // A deterministic throw makes it safe to validate user-provided config at startup.
       let threw = false;
       try {
@@ -1552,18 +1552,18 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0292
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9300
-     * @tc.desc    Search: invalid unicode escape under u should throw when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0292
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9300
+     * @tc.desc Search: invalid unicode escape under u should throw when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Unicode mode tightens syntax validation; failing early avoids data-dependent parsing in production.
       // Feature-gating prevents false failures on engines that do not implement the u flag.
       if (!supportsRegExp('a', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       let threw = false;
@@ -1576,18 +1576,18 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0293
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9400
-     * @tc.desc    Search: invalid unicode property escape should throw when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0293
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9400
+     * @tc.desc Search: invalid unicode property escape should throw when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Unicode properties are commonly used in international input filters; rejecting invalid names is critical.
       // This locks behavior so configuration errors are caught during testing rather than after release.
       if (!supportsRegExp('\\p{L}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       let threw = false;
@@ -1600,12 +1600,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0294
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9500
-     * @tc.desc    Search: String.prototype.search can be applied to non-string this via call
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0294
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9500
+     * @tc.desc Search: String.prototype.search can be applied to non-string this via call
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Frameworks sometimes use call/apply against primitive-like values; coercion should remain standard.
@@ -1615,12 +1615,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0295
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9600
-     * @tc.desc    Search: explicit undefined is coerced consistently to literal text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0295
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9600
+     * @tc.desc Search: explicit undefined is coerced consistently to literal text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // ArkTS typing may not allow calling search() without arguments; keep this case compile-safe.
@@ -1631,12 +1631,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0296
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9700
-     * @tc.desc    Search: supportsRegExp probes align with runtime behavior for dotAll and properties
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0296
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9700
+     * @tc.desc Search: supportsRegExp probes align with runtime behavior for dotAll and properties
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Test suites must adapt to multiple engines without "skipping everything" or hard failing.
@@ -1648,12 +1648,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0297
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9800
-     * @tc.desc    Search: practical hasPattern helper behavior for business checks
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0297
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9800
+     * @tc.desc Search: practical hasPattern helper behavior for business checks
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many callers only need containment checks; search is used as a fast predicate in pipelines.
@@ -1664,12 +1664,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0298
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9900
-     * @tc.desc    Search: email-like validation uses anchored pattern with predictable outcome
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0298
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_9900
+     * @tc.desc Search: email-like validation uses anchored pattern with predictable outcome
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Email checks are frequently used for UX gating; over-permissive matches create downstream failures.
@@ -1680,12 +1680,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0299
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0100
-     * @tc.desc    Search: URL protocol detection distinguishes https/http/unknown
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0299
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0100
+     * @tc.desc Search: URL protocol detection distinguishes https/http/unknown
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Protocol routing is a common business decision; it must be stable to avoid mis-classifying endpoints.
@@ -1705,12 +1705,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0300
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0200
-     * @tc.desc    Search: IPv4 format validation pattern matches only legal ranges
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0300
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0200
+     * @tc.desc Search: IPv4 format validation pattern matches only legal ranges
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // IP validators are security-relevant; accepting out-of-range octets breaks allowlists and routing rules.
@@ -1721,12 +1721,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0301
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0300
-     * @tc.desc    Search: phone-like validation allows common dash grouping
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0301
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0300
+     * @tc.desc Search: phone-like validation allows common dash grouping
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Input normalization is expensive; allowing a few canonical formats reduces friction in onboarding flows.
@@ -1737,28 +1737,28 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0302
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0400
-     * @tc.desc    Search: date prefix detection supports yyyy-mm-dd at start
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0302
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0400
+     * @tc.desc Search: date prefix detection supports yyyy-mm-dd at start
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Date parsing pipelines often rely on quick prefix recognition before full parsing.
-      // Using search with ^ avoids scanning and makes intent explicit for large payload strings.
+      // Using search with ^ avoids scanning and makes purpose explicit for large payload strings.
       const date = new RegExp('^\\d{4}-\\d{2}-\\d{2}');
       expect('2023-12-25T00:00:00Z'.search(date)).assertEqual(0);
       expect('x2023-12-25'.search(date)).assertEqual(-1);
     });
 
     /**
-     * @tc.name    testSearch0303
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0500
-     * @tc.desc    Search: mixed flag combinations still return first leftmost match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0303
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0500
+     * @tc.desc Search: mixed flag combinations still return first leftmost match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Apps may ship config-driven patterns with multiple flags; search must remain a first-match primitive.
@@ -1769,12 +1769,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0304
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0600
-     * @tc.desc    Search: dotAll + multiline combination is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0304
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0600
+     * @tc.desc Search: dotAll + multiline combination is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // In monitoring pipelines, multiline payloads are common; dotAll changes whether '.' spans records.
@@ -1783,17 +1783,17 @@ export default function searchTest002(): void {
       if (supportsRegExp('.+', 'sm')) {
         expect(str.search(new RegExp('.+', 'sm'))).assertEqual(0);
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testSearch0305
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0700
-     * @tc.desc    Search: regex-like object with exec can be used via RegExp.prototype[Symbol.search]
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0305
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0700
+     * @tc.desc Search: regex-like object with exec can be used via RegExp.prototype[Symbol.search]
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Regex-like object integration is exercised via helper to avoid index-signature/object-literal type syntax.
@@ -1801,12 +1801,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0306
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0800
-     * @tc.desc    Search: function argument uses ToString and typically matches 'function' prefix
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0306
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0800
+     * @tc.desc Search: function argument uses ToString and typically matches 'function' prefix
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Callers sometimes pass callbacks mistakenly; ToString coercion makes this debuggable rather than silent.
@@ -1817,12 +1817,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0307
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0900
-     * @tc.desc    Search: findCharPosition helper escapes input to avoid regex injection
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0307
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0900
+     * @tc.desc Search: findCharPosition helper escapes input to avoid regex injection
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Real business input can contain regex metacharacters; escaping prevents "pattern injection".
@@ -1837,12 +1837,12 @@ export default function searchTest002(): void {
     });
 
     /**
-     * @tc.name    testSearch0308
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_1000
-     * @tc.desc    Search: findFirstNumber helper returns -1 for no digits
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testSearch0308
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_1000
+     * @tc.desc Search: findFirstNumber helper returns -1 for no digits
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testSearch0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // This is a common parsing building block for IDs and telemetry fields.
