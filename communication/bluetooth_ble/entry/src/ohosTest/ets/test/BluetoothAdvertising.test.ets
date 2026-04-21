@@ -16,12 +16,14 @@
 import bluetooth from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import { BusinessError } from '@ohos.base';
+import connection from '@ohos.bluetooth.connection';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
 let CLOSE_BT_TEXT:string = "关闭";
+let nLength:number=0;
 
 function sleep(delay : number) :Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
@@ -119,7 +121,13 @@ export default function bluetoothAdvertisingTest() {
 
     beforeAll(async (done : Function) =>  {
       await clickRequestPermission(PERMISSION_TEXT);
-
+      try {
+        let deviceName = connection.getLocalName()
+        nLength = deviceName.length
+        console.info(`deviceName.length = ${nLength}`)
+      }catch (err){
+        expect(Number(err.code)).assertEqual(801)
+      }
       console.info('beforeAll called');
       done();
     })
@@ -1971,26 +1979,26 @@ export default function bluetoothAdvertisingTest() {
         advertisingResponse: advResponse,
         duration: 100,
       }
-      let advHandle = 0xFF;
       try {
         console.info(`${caseName} test start`)
-        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-          console.info('[bluetooth_js]startAdvertising promise info02:' + JSON.stringify(outAdvHandle));
-          advHandle = outAdvHandle;
-          console.info('[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        });
+        console.info(`${caseName} deviceName.length = ${nLength}`)
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
         await sleep(500);
         await sleep(900);
-        await bluetooth.stopAdvertising(advHandle).then((data) => {
-          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
-        });
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
-        console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
+        console.info(`${caseName} ` +"02errCode:" + err.code + ",02errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
-          expect().assertFail();
+          if (nLength > 24) {
+            expect(err.code == 2902054).assertTrue();
+          }else{
+            expect().assertFail();
+          }
         }
       }
       await sleep(2000);
@@ -2032,26 +2040,26 @@ export default function bluetoothAdvertisingTest() {
         advertisingResponse: advResponse,
         duration: 100,
       }
-      let advHandle = 0xFF;
       try {
         console.info(`${caseName} test start`)
-        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-          console.info('[bluetooth_js]startAdvertising promise info02:' + JSON.stringify(outAdvHandle));
-          advHandle = outAdvHandle;
-          console.info('[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        });
+        console.info(`${caseName} deviceName.length = ${nLength}`)
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
         await sleep(500);
         await sleep(900);
-        await bluetooth.stopAdvertising(advHandle).then((data) => {
-          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
-        });
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
         console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
-          expect().assertFail();
+          if (nLength > 24) {
+            expect(err.code == 2902054).assertTrue();
+          }else{
+            expect().assertFail();
+          }
         }
       }
       await sleep(2000);
@@ -2101,36 +2109,32 @@ export default function bluetoothAdvertisingTest() {
         duration: 0,
       }
 
-      let advHandle = 0xFF;
+
       try {
         console.info(`${caseName} test start`)
         bluetooth.on('advertisingStateChange', onReceiveEvent);
-        let startAdv = () => {
-          return new Promise<void>((resolve,reject) => {
+        console.info(`${caseName} deviceName.length = ${nLength}`)
+        let startAdv =  (): Promise<number> => {
+          return new Promise<number>((resolve,reject) => {
             bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
               if (err) {
-                console.info('startAdvertising callback failed' + err);
-                reject(err.code);
-                expect().assertFail()
-              } else
-              {
-                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(outAdvHandle));
-                advHandle = outAdvHandle;
-                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(advHandle));
+                console.info(`${caseName} startAdvertising callback failed` + err.code);
+                reject(err);
+              } else{
+                console.info(`${caseName} [bluetooth_js]startAdvertising callback info016:` +JSON.stringify(outAdvHandle));
+                resolve(outAdvHandle);
               }
-              resolve();
             });
           });
         }
-        await startAdv().then((data) => {
-          console.info('[bluetooth_js] startAdv promise result016:' + JSON.stringify(data));
-        });
+        let advHandle = await startAdv();
+        console.info(`${caseName} [bluetooth_js] startAdv promise result016:` + JSON.stringify(advHandle));
+
         await sleep(300);
         expect(advStatus).assertEqual(1);
         await sleep(5000);
-        await bluetooth.stopAdvertising(advHandle).then((data) => {
-          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
-        });
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
         let count = 0;
         while(advStatus == 1) {
           await sleep(100);
@@ -2139,19 +2143,23 @@ export default function bluetoothAdvertisingTest() {
         console.info('[bluetooth_js] advStatus change count promise result01: ' + count);
         expect(advStatus).assertEqual(4);
       } catch (err) {
-        console.info("[bluetooth_js] errCode:" + err.code + ",01errMessage:" + err.message);
+        console.info(`${caseName} [bluetooth_js] errCode:` + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
           expect(true).assertTrue();
         } else {
-          expect().assertFail();
+          if (nLength > 24) {
+            expect(err.code == 2902054).assertTrue();
+          }else{
+            expect().assertFail();
+          }
         }
       }
-      await bluetooth.off('advertisingStateChange', onReceiveEvent);
+      bluetooth.off('advertisingStateChange', onReceiveEvent);
       await sleep(2000);
       done();
     })
-
+    
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800
