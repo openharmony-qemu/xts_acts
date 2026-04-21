@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -178,3 +178,14 @@ export const usbSerialFlushOutputOne: (a: number) => number;
 export const usbSerialFlushOutputTwo: (a: number) => number;
 export const usbSerialFlushOutputThree: (a: number) => number;
 export const usbSerialFlushOutputFour: (a: number) => number;
+export const usbControlTransferGetStatus: (a: number) => number;
+export const usbControlTransferSetFeature: (a: number) => number;
+export const usbControlTransferClearFeature: (a: number) => number;
+export const usbControlTransferGetDescriptor: (a: number) => number;
+export const usbControlTransferGetConfiguration: (a: number) => number;
+export const usbControlTransferGetInterface: (a: number) => number;
+export const usbControlTransferSetConfiguration: (a: number) => number;
+export const usbControlTransferSetupNull: (a: number) => number;
+export const usbControlTransferDataNull: (a: number) => number;
+export const usbControlTransferInvalidDeviceId: (a: number) => number;
+export const usbControlTransferNoInit: (a: number) => number;

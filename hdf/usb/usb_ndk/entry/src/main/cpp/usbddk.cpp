@@ -1308,6 +1308,273 @@ static napi_value UsbGetDevicesThree(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value UsbControlTransferGetStatus(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[2] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x00;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0002;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferSetFeature(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbDdkConfigDescriptor *config = nullptr;
+    uint8_t configIndex1 = 0;
+    int32_t ret = OH_Usb_GetConfigDescriptor(deviceId, configIndex1, &config);
+    if (ret != PARAM_0 || config == nullptr) {
+        OH_Usb_Release();
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, ret, &result));
+        return result;
+    }
+    std::tuple<bool, uint8_t, uint8_t, uint16_t> source = GetEndpointInfo(config);
+    OH_Usb_FreeConfigDescriptor(config);
+    if (!std::get<0>(source)) {
+        OH_Usb_Release();
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, USB_DDK_FAILED, &result));
+        return result;
+    }
+    uint8_t endpoint = std::get<2>(source);
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x02;
+    setup.bRequest = 0x03;
+    setup.wValue = 0x0000;
+    setup.wIndex = endpoint;
+    setup.wLength = 0x0000;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferClearFeature(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x02;
+    setup.bRequest = 0x01;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0000;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferGetDescriptor(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[18] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x06;
+    setup.wValue = 0x0100;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0012;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferGetConfiguration(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x08;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0001;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferGetInterface(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x81;
+    setup.bRequest = 0x0A;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0001;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferSetConfiguration(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x00;
+    setup.bRequest = 0x09;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0000;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferSetupNull(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    uint8_t data[1] = {0};
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, nullptr, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferDataNull(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct UsbControlRequestSetup setup = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x06;
+    setup.wValue = 0x0100;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0012;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, nullptr, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferInvalidDeviceId(napi_env env, napi_callback_info info)
+{
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    uint64_t deviceId = UINT64_MAX;
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x00;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0002;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferNoInit(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr));
+    int64_t deviceId64;
+    NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[1] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x00;
+    setup.wValue = 0x0000;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0002;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, timeout);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
 static napi_value IsScsiDevice(napi_env env, napi_callback_info info)
 {
     uint64_t deviceId = GetDeviceId(env, info);
@@ -4772,6 +5039,28 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbGetDevicesOne", nullptr, UsbGetDevicesOne, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetDevicesTwo", nullptr, UsbGetDevicesTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetDevicesThree", nullptr, UsbGetDevicesThree, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetStatus", nullptr, UsbControlTransferGetStatus,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetFeature", nullptr, UsbControlTransferSetFeature,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferClearFeature", nullptr, UsbControlTransferClearFeature,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetDescriptor", nullptr, UsbControlTransferGetDescriptor,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetConfiguration", nullptr, UsbControlTransferGetConfiguration,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferGetInterface", nullptr, UsbControlTransferGetInterface,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetConfiguration", nullptr, UsbControlTransferSetConfiguration,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferSetupNull", nullptr, UsbControlTransferSetupNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferDataNull", nullptr, UsbControlTransferDataNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferInvalidDeviceId", nullptr, UsbControlTransferInvalidDeviceId,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferNoInit", nullptr, UsbControlTransferNoInit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"isScsiDevice", nullptr, IsScsiDevice, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"scsiPeripheralInitOne", nullptr, ScsiPeripheralInitOne, nullptr, nullptr, nullptr,
             napi_default, nullptr},
