@@ -2031,6 +2031,7 @@ export default function wifiManagerCoverage() {
           expect(typeof scanInfo.supportedWifiCategory).assertEqual('number');
           expect(typeof scanInfo.isHiLinkNetwork).assertEqual('boolean');
         }else{
+          //当环境内无wifi或者热点时，获取列表长度为0
           expect(scanInfolist.length === 0).assertTrue();
         }
       } catch (error) {
