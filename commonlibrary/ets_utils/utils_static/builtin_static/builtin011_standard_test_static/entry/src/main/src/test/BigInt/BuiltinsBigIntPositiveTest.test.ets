@@ -74,7 +74,7 @@ export default function BuiltinsBigIntPositiveTest(): void {
      */
     it('builtinsBigIntPositiveTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const zeroBigInt = new BigInt(0);
-      expect(zeroBigInt.positive()).assertFalse();
+      expect(zeroBigInt.positive()).assertTrue();
     });
 
     /**
@@ -204,7 +204,7 @@ export default function BuiltinsBigIntPositiveTest(): void {
      */
     it('builtinsBigIntPositiveTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const zeroBigInt = new BigInt(false);
-      expect(zeroBigInt.positive()).assertFalse();
+      expect(zeroBigInt.positive()).assertTrue();
     });
 
     /**

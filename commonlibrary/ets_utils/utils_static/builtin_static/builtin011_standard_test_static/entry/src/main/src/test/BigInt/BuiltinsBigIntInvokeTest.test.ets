@@ -972,15 +972,15 @@ export default function BuiltinsBigIntInvokeTest(): void {
     /**
      * @tc.name    builtinsBigIntInvokeTest6500
      * @tc.number  SUB_BUILTINS_BIGINT_INVOKE_TEST_6500
-     * @tc.desc    Verify $_invoke with Number(9223372036854775807)
+     * @tc.desc    Verify $_invoke with Number(9007199254740991)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const numberObj = new Number(9223372036854775807);
+      const numberObj = new Number(9007199254740991);
       const result = BigInt.$_invoke(numberObj);
-      const expected = new BigInt("9223372036854775807");
+      const expected = new BigInt("9007199254740991");
       expect(result.equals(expected)).assertTrue();
     });
 

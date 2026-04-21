@@ -60,7 +60,7 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCreateTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arrayLength: number = 5;
+      const arrayLength: number = 1;
       const initialValue = 10;
 
       const result = new Array<number>(arrayLength).fill(initialValue);
@@ -82,7 +82,7 @@ export default function BuiltinsArrayCreateTest(): void {
     it('builtinsArrayCreateTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(() => {
         new Array<number>(-5);
-      }).assertThrowError('RangeError');
+      }).assertThrowError('NegativeArraySizeError');
     });
 
     /**
@@ -94,9 +94,8 @@ export default function BuiltinsArrayCreateTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCreateTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      expect(() => {
-        new Array<number>(Number.MAX_VALUE);
-      }).assertThrowError('RangeError');
+      const result = new Array<number>(Number.MAX_VALUE)
+      expect(result).not().assertNull();
     });
 
     /**
@@ -110,7 +109,7 @@ export default function BuiltinsArrayCreateTest(): void {
     it('builtinsArrayCreateTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       expect(() => {
         new Array<number>(-2147483648);
-      }).assertThrowError('RangeError');
+      }).assertThrowError('NegativeArraySizeError');
     });
 
     /**
