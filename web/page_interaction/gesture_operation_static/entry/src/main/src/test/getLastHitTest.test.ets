@@ -162,7 +162,7 @@ beforeEach(async (done: () => void): Promise<void> => {
         }
         Utils.registerEvent("getLastHitTest002", true, 20250314, done);
         inspector.sendEventByKey('webGetLastHitTest', 10, '');
-        await Utils.msSleep(2000)
+        await Utils.msSleep(5000)
         done()
       })
 

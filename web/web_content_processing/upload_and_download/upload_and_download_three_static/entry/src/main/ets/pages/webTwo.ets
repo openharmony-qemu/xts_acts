@@ -21,7 +21,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback, RecordData, BusinessError } from '@ohos.base'
 import web_webview from '@ohos.web.webview';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -31,6 +31,7 @@ struct Second {
   stringObj: StringFields  = new StringFields ();
   @State outputStr: string = '';
   webviewCtl: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+  controller2: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   delegate: web_webview.WebDownloadDelegate = new web_webview.WebDownloadDelegate();
   @State str: string = 'emitonDownloadFailed';
   @State embedStatus: string = '';
@@ -74,6 +75,26 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+            case 'emitRefreshTrue': {
+              try {
+                this.webviewCtl.refresh(true);
+                Utils.emitEvent(true, 7)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitRefreshFalse': {
+              try {
+                this.webviewCtl.refresh(false);
+                Utils.emitEvent(true, 8)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }
@@ -85,6 +106,75 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
           .javaScriptAccess(true)
           .domStorageAccess(true)
           .onlineImageAccess(true)
+          .enableFollowSystemFontWeight(false)
+
+        Web({ src: 'www.baidu.com', controller: this.controller2})
+          .enableImageAnalyzer(undefined)
+          .rotateRenderEffect(undefined)
+          .enableWebAVSession(undefined)
+          .editMenuOptions(undefined)
+          .onAdsBlocked(undefined)
+          .onOverrideErrorPage(undefined)
+          .copyOptions(undefined)
+          .enableNativeEmbedMode(undefined)
+          .layoutMode(undefined)
+          .verticalScrollBarAccess(undefined)
+          .horizontalScrollBarAccess(undefined)
+          .forceDisplayScrollBar(undefined)
+          .onSslErrorEvent(undefined)
+          .onSslErrorEventReceive(undefined)
+          .onContextMenuHide(undefined)
+          .onContextMenuShow(undefined)
+          .onScreenCaptureRequest(undefined)
+          .onPermissionRequest(undefined)
+          .onInterceptRequest(undefined)
+          .onHttpAuthRequest(undefined)
+          .onResourceLoad(undefined)
+          .onShowFileSelector(undefined)
+          .onHttpErrorReceive(undefined)
+          .onErrorReceive(undefined)
+          .onRequestSelected(undefined)
+          .onLoadFinished(undefined)
+          .onLoadStarted(undefined)
+          .onPageEnd(undefined)
+          .metaViewport(undefined)
+          .initialScale(undefined)
+          .databaseAccess(undefined)
+          .textZoomRatio(undefined)
+          .overScrollMode(undefined)
+          .domStorageAccess(undefined)
+          .onlineImageAccess(undefined)
+          .fileAccess(undefined)
+          .javaScriptAccess(undefined)
+          .onFirstScreenPaint(undefined)
+          .blankScreenDetectionConfig(undefined)
+          .onDetectedBlankScreen(undefined)
+          .forceEnableZoom(undefined)
+          .onActivateContent(undefined)
+          .enableFollowSystemFontWeight(undefined)
+          .enableHapticFeedback(undefined)
+          .onInterceptKeyboardAttach(undefined)
+          .onViewportFitChanged(undefined)
+          .onOverrideUrlLoading(undefined)
+          .onIntelligentTrackingPreventionResult(undefined)
+          .onNavigationEntryCommitted(undefined)
+          .onControllerAttached(undefined)
+          .onLoadIntercept(undefined)
+          .onLargestContentfulPaint(undefined)
+          .onFirstMeaningfulPaint(undefined)
+          .onFirstContentfulPaint(undefined)
+          .onAudioStateChanged(undefined)
+          .onPageVisible(undefined)
+          .defaultTextEncodingFormat(undefined)
+          .minLogicalFontSize(undefined)
+          .minFontSize(undefined)
+          .defaultFontSize(undefined)
+          .defaultFixedFontSize(undefined)
+          .onFullScreenEnter(undefined)
+          .onFullScreenExit(undefined)
+          .onConsole(undefined)
+          .onTitleReceive(undefined)
+          .onProgressChange(undefined)
       }
     }
   }

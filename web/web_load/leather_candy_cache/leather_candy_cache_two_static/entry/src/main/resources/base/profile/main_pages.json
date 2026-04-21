@@ -2,7 +2,7 @@
   "src": [
     "pages/ClearPrefetchedResourceTest",
     "pages/InjectOfflineResourcesTest",
-    "pages/WebBlanklessErrorCode",
-    "pages/SetBlanklessLoadingWithParamsTest"
+    "pages/SetBlanklessLoadingWithParamsTest",
+    "pages/SetBlanklessLoadingWithKeyTest"
   ]
 }

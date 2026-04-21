@@ -21,7 +21,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base'
 import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -30,6 +30,7 @@ class StringFields {
 struct webViewController {
   stringObj: StringFields = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controller_new: webview.WebviewController = new webview.WebviewController(undefined);
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -98,6 +99,29 @@ struct webViewController {
                   console.log("result:" + result + JSON.stringify(result))
                   console.log("the status of navigator.onLine: " + result);
                   Utils.emitEvent(result, 100056)
+                }
+              })
+              break;
+            }
+
+            case "testSetNetworkAvailable003": {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexCopy.html')
+                this.controller_new.setNetworkAvailable(true);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100057)
+              }
+              this.controller.runJavaScript("getNavigatorOnLine()", (error, result) => {
+                if (error) {
+                  console.info(`run JavaScript error: ` + JSON.stringify(error))
+                  return;
+                }
+                if (result) {
+                  console.log("result:" + result + JSON.stringify(result))
+                  console.log("the status of navigator.onLine: " + result);
+                  Utils.emitEvent(result, 100057)
                 }
               })
               break;

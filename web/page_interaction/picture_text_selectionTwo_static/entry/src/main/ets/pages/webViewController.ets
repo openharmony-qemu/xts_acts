@@ -32,6 +32,7 @@ import { Hypium } from '../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import {BusinessError,Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
+
 class StringFields {
   public str: string = '';
 }
