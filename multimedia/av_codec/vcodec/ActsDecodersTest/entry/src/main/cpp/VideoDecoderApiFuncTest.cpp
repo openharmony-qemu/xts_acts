@@ -291,7 +291,7 @@ int VideoVc1DecCapApi0007()
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    if (capability == nullptr) {
+    if (  == nullptr) {
         return 0;
     }
     
@@ -884,11 +884,51 @@ int VideoDecCapApi0023()
         return -1;
     }
     for (uint32_t i = 0; i < count; ++i) {
-        if (OH_AVCapability_IsSecure([i])) {
+        if (OH_AVCapability_IsSecure(capabilityList[i])) {
             return 0;
         }
     }
     return -1;
 }
+
+// Check the encoder type
+int VideoDecCapApi0024()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_CheckMimeType(nullptr, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0025()
+{
+    OH_AVCapability *capHevcHw = nullptr;
+    bool checkMimeType = true;
+    capHevcHw = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (capHevcHw == nullptr) {
+        return 0;
+    }
+    checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, nullptr);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0026()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_IsSecure(nullptr);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
 } // namespace Media
 } // namespace OHOS

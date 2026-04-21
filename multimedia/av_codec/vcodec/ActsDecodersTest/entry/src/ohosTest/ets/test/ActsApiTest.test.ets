@@ -20,6 +20,7 @@ import testNapi from 'libdecoder_test.so';
 const TAG = 'ActsApiTest';
 const DOMAIN = 0x0001;
 const TEST_SUCCESS = 0;
+const TEST_FAILED = -1;
 
 export default function actsApiTest() {
   describe('ActsApiTest', () => {
@@ -527,6 +528,48 @@ export default function actsApiTest() {
       hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0700');
       let result = testNapi.apitest(34);
       expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0800
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0800
+     * @tc.desc    Check the mimetype decoder type is nullptr
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0800', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0800');
+      let result = testNapi.apitest(35);
+      expect(result).assertEqual(TEST_FAILED);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0900
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0900
+     * @tc.desc    Check the mimetype decoder type is nullptr
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0900', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_0900');
+      let result = testNapi.apitest(36);
+      expect(result).assertEqual(TEST_FAILED);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_1000
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_1000
+     * @tc.desc    Check the secure decoder type is nullptr
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_1000', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_DEC_CAP_API_1000');
+      let result = testNapi.apitest(37);
+      expect(result).assertEqual(TEST_FAILED);
     });
   });
 }
