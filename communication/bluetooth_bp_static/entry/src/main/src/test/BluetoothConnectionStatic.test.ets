@@ -26,6 +26,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtConnectionTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let deviceId: string = "00:11:22:33:44:55";
+let deviceId1: string = "55:45:55:45:55:45"; //此用例connectAllowedProfiles_promise专属
 let g_context: common.UIAbilityContext;
 
 function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // data为配对请求的入参，配对请求参数
@@ -1261,7 +1262,7 @@ export default function bluetoothConnectionTest() {
     it("connectAllowedProfiles_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.connectAllowedProfiles("55:45:55:45:55:45");
+          await connection.connectAllowedProfiles(deviceId1);
           hilog.info(domain, tag, 'connectAllowedProfiles success');
           expect().assertFail();
         } catch (err) {
