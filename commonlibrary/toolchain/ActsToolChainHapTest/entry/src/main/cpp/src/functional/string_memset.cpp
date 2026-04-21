@@ -19,12 +19,12 @@
 #include "test.h"
 
 #define N (500)
-#define ALIGN_MASK 63
-#define ALIGN_SIZE 64
-#define TEST_LEN 1000
-#define LOOP_LIMIT 4
-#define PRINT_LEN 128
-#define TEST_NEGATIVE_FIVE -5
+#define ALIGN_MASK (63)
+#define ALIGN_SIZE (64)
+#define TEST_LEN (1000)
+#define LOOP_LIMIT (4)
+#define PRINT_LEN (128)
+#define TEST_NEGATIVE_FIVE (-5)
 static char g_buf[N];
 static char g_buf2[N];
 

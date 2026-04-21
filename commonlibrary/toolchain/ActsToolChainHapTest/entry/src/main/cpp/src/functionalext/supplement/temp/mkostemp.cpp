@@ -162,13 +162,13 @@ void Mkostemp0600(void)
  */
 void Mkostemp0700(void)
 {
-    char temp_dir[] = "/data/storage/el2/base/cache/mkostemp_0700_XXXXXX_dir";
-    int fd = mkostemp(temp_dir, O_SYNC);
+    char tempDir[] = "/data/storage/el2/base/cache/mkostemp_0700_XXXXXX_dir";
+    int fd = mkostemp(tempDir, O_SYNC);
     //XXXXXX is not at the end, mkdtemp() will fail and return -1. Now template is unchanged.
     EXPECT_TRUE("mkostemp_0700", fd == -1);
     if (fd == -1) {
         EXPECT_EQ("mkostemp_0700", errno, EINVAL);
-        EXPECT_STREQ("mkostemp_0700", temp_dir, "/data/storage/el2/base/cache/mkostemp_0700_XXXXXX_dir");
+        EXPECT_STREQ("mkostemp_0700", tempDir, "/data/storage/el2/base/cache/mkostemp_0700_XXXXXX_dir");
     }
 }
 

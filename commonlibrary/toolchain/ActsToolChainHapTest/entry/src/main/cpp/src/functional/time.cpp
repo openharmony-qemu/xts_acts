@@ -57,18 +57,30 @@ char *TmStrFunc(struct tm tm)
     return b[i];
 }
 
-static struct tm CreateTm(int ss, int mm, int hh, int md, int mo, int yr, int wd, int yd, int dst)
+struct TmParams {
+    int ss;
+    int mm;
+    int hh;
+    int md;
+    int mo;
+    int yr;
+    int wd;
+    int yd;
+    int dst;
+};
+
+static struct tm CreateTm(const struct TmParams *params)
 {
     struct tm result = {0};
-    result.tm_sec = ss;
-    result.tm_min = mm;
-    result.tm_hour = hh;
-    result.tm_mday = md;
-    result.tm_mon = mo;
-    result.tm_year = yr;
-    result.tm_wday = wd;
-    result.tm_yday = yd;
-    result.tm_isdst = dst;
+    result.tm_sec = params->ss;
+    result.tm_min = params->mm;
+    result.tm_hour = params->hh;
+    result.tm_mday = params->md;
+    result.tm_mon = params->mo;
+    result.tm_year = params->yr;
+    result.tm_wday = params->wd;
+    result.tm_yday = params->yd;
+    result.tm_isdst = params->dst;
     return result;
 }
 
@@ -145,7 +157,7 @@ static int TimeTestImpl(void)
         Sec2Tm(t * TIME_OFFSET, "EPOCH+eps");
     }
 
-    /* FIXME: set a TZ var and check DST boundary conditions */
+    /* Note: DST boundary conditions testing with TZ variable is not implemented */
     return g_tStatus;
 }
 

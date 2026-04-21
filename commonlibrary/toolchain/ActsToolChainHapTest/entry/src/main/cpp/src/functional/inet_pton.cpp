@@ -26,6 +26,7 @@
 #define HEX_WIDTH (10)
 #define HEX_BASE (16)
 #define DECIMAL_BASE (10)
+#define IPV4_BYTES (4)
 #define IPV4_ADDR_SIZE (4)
 #define IPV6_ADDR_SIZE (16)
 #define IPV4_MAPPED_PREFIX_LEN (24)
@@ -57,7 +58,7 @@ static void Tohex(char *d, void *s, int n)
     }
 }
 
-static inline void TestInetPtonV6(const char *src, int ret, const char *hex, const char *srcExpr, const char *hexExpr)
+static void TestInetPtonV6(const char *src, int ret, const char *hex, const char *srcExpr, const char *hexExpr)
 {
     int r;
     char binaddr[16] = {0};
@@ -103,7 +104,7 @@ static void TestInetPtonV4(const char *src, int ret, const char *hex, const char
     char *p;
 
     a = inet_addr(src);
-    Tohex(buf, &a, 4);
+    Tohex(buf, &a, IPV4_BYTES);
     if (strcmp(buf, hex)) {
         t_error("inet_addr(%s) returned %s, want %s\n", srcExpr, buf, hex);
     }

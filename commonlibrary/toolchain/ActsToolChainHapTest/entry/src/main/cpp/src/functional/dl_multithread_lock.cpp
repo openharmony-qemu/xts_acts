@@ -161,12 +161,12 @@ static void* DlopenDlcloseTest0042(void* arg)
 
 static void* DlopenDlcloseTest005(void* arg)
 {
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
-    if (get_val == nullptr) {
+    int (*getVal)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
+    if (getVal == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
-    if (get_val != nullptr && get_val() != 1) {
-        t_error("This val after init should be 1, but %d\n", get_val());
+    if (getVal != nullptr && getVal() != 1) {
+        t_error("This val after init should be 1, but %d\n", getVal());
     }
     return arg;
 }
@@ -271,12 +271,12 @@ void DlMultithreadLock0200(void)
     if (!CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {
         t_error("This so file should exist, %s\n", const_cast<char *>(INIT_LIB_PATH));
     }
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
-    if (get_val == nullptr) {
+    int (*getVal)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
+    if (getVal == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
-    if (get_val != nullptr && get_val() != 1) {
-        t_error("This val after init should be 1, but %d\n", get_val());
+    if (getVal != nullptr && getVal() != 1) {
+        t_error("This val after init should be 1, but %d\n", getVal());
     }
 }
 
@@ -292,12 +292,12 @@ void DlMultithreadLock0300(void)
     if (!CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {
         t_error("This so file should exist, %s\n", const_cast<char *>(INIT_LIB_PATH));
     }
-    int (*get_val)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
-    if (get_val == nullptr) {
+    int (*getVal)(void) = reinterpret_cast<int (*)(void)>(dlsym(g_initHandler, "getVal"));
+    if (getVal == nullptr) {
         t_error("dlsym failed, don't find the symbol getVal\n");
     }
-    if (get_val != nullptr && get_val() != 1) {
-        t_error("This val after init should be 1, but %d\n", get_val());
+    if (getVal != nullptr && getVal() != 1) {
+        t_error("This val after init should be 1, but %d\n", getVal());
     }
     dlclose(g_initHandler);
     if (CheckLoaded(const_cast<char *>(INIT_LIB_PATH))) {

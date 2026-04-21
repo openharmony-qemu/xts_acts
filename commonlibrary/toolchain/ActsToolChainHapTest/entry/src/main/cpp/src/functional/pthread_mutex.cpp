@@ -36,7 +36,10 @@ static inline void TestErrnoCondition(bool condition, const char *expr)
     }
 }
 
-#define T(f) TestPthreadResult((f), &r, #f)
+#define T(f) do { \
+    int tmpResult; \
+    TestPthreadResult((f), &tmpResult, #f); \
+} while (0)
 #define E(f) TestErrnoCondition((f), #f)
 #define NSEC_PER_MS 1000000
 #define NSEC_PER_SEC 1000000000

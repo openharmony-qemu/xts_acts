@@ -30,7 +30,7 @@ static inline void TestCondition(bool condition, int *statusPtr, const char *exp
     }
 }
 
-#define TEST(c) TestCondition((c), &status, #c)
+#define TEST(c, statusPtr) TestCondition((c), (statusPtr), #c)
 
 void Fdopen1(int& status)
 {
@@ -39,27 +39,27 @@ void Fdopen1(int& status)
     int fd;
     FILE* f;
 
-    TEST((fd = mkstemp(tmp)) > STD_FD_MAX);
-    TEST(write(fd, "hello", 6) == 6);
-    TEST(f = fdopen(fd, "rb"));
+    TEST((fd = mkstemp(tmp)) > STD_FD_MAX, &status);
+    TEST(write(fd, "hello", 6) == 6, &status);
+    TEST(f = fdopen(fd, "rb"), &status);
     if (f) {
-        TEST(ftello(f) == 6);
-        TEST(fseeko(f, 0, SEEK_SET) == 0);
-        TEST(fgets(foo, sizeof foo, f));
+        TEST(ftello(f) == 6, &status);
+        TEST(fseeko(f, 0, SEEK_SET) == 0, &status);
+        TEST(fgets(foo, sizeof foo, f), &status);
         if (strcmp(foo, "hello") != 0) {
             LibcTestError(&status, "fgets read back: \"%s\"; wanted: \"hello\"\n", foo);
         }
         fclose(f);
     }
     if (fd > STD_FD_MAX) {
-        TEST(unlink(tmp) != -1);
+        TEST(unlink(tmp) != -1, &status);
     }
 }
 
 void Fdopen2(int& status)
 {
     FILE* f = fdopen(-1, "w");
-    TEST(f == nullptr);
+    TEST(f == nullptr, &status);
     printf("f == %p\n", f);
 }
 

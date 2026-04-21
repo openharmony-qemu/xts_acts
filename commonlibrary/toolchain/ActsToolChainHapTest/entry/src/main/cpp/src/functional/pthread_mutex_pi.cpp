@@ -40,7 +40,10 @@ static inline void TestErrnoConditionPi(bool condition, const char *expr)
     }
 }
 
-#define T(f) TestPthreadResultPi((f), &r, #f)
+#define T(f) do { \
+    int tmpResult; \
+    TestPthreadResultPi((f), &tmpResult, #f); \
+} while (0)
 #define E(f) TestErrnoConditionPi((f), #f)
 
 static void *RelockFunc(void *arg)

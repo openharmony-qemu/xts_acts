@@ -31,9 +31,13 @@ static inline int TestConditionFcntl(bool condition, const char *expr, const cha
     va_list args;
     va_start(args, fmt);
     char msg[256];
-    vsnprintf(msg, sizeof(msg), fmt, args);
+    int n = vsnprintf(msg, sizeof(msg), fmt, args);
     va_end(args);
-    t_error("%s failed: %s", expr, msg);
+    if (n < 0) {
+        t_error("%s failed: format error", expr);
+    } else {
+        t_error("%s failed: %s", expr, msg);
+    }
     return 0;
 }
 

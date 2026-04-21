@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-/* TODO: not thread-safe nor fork-safe */
+/* Note: g_tStatus is not thread-safe nor fork-safe */
 extern volatile int g_tStatus;
 
 #define T_LOC2(l) __FILE__ ":" #l

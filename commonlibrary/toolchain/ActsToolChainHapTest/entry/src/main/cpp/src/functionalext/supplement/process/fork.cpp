@@ -29,7 +29,7 @@ void Fork0100()
     pid_t fpid;
     int count = 0;
     int options = 0;
-    const char *sign_r = "1";
+    const char *signR = "1";
     const char *signF = "0";
     char list1[2];
     char list2[2];
@@ -42,7 +42,7 @@ void Fork0100()
         if (!fp) {
             t_error("failed to open test1.txt for writing");
         }
-        fwrite(sign_r, sizeof(char), strlen(sign_r), fp);
+        fwrite(signR, sizeof(char), strlen(signR), fp);
         fclose(fp);
         _exit(EXIT_SUCCESS);
     } else {
@@ -50,7 +50,7 @@ void Fork0100()
         if (!fp) {
             t_error("failed to open test2.txt for writing");
         }
-        fwrite(sign_r, sizeof(char), strlen(sign_r), fp);
+        fwrite(signR, sizeof(char), strlen(signR), fp);
         fclose(fp);
         waitpid(fpid, nullptr, options);
 	

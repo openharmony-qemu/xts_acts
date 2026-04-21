@@ -23,7 +23,7 @@ struct GmtimeRStruct {
     const char *result;
 };
 
-static const struct GmtimeRStruct gResultData[] = {
+static const struct GmtimeRStruct G_RESULT_DATA[] = {
     {"Pacific/Rarotonga", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Wake", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
     {"Pacific/Tarawa", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT"},
@@ -474,8 +474,8 @@ static int16_t g_bufferSize = 500;
  */
 static void GmtimeR0100(void)
 {
-    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
-        const char *tz = gResultData[i].tz;
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
+        const char *tz = G_RESULT_DATA[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
         char *str = strrchr(tz, TIME_ZONE_SUB_TAG);
@@ -506,7 +506,7 @@ static void GmtimeR0100(void)
             gmtm->tm_gmtoff,
             gmtm->tm_zone);
         EXPECT_TRUE("gmtime_r_0100", cnt > 0);
-        EXPECT_STREQ("gmtime_r_0100", gResultData[i].result, buff);
+        EXPECT_STREQ("gmtime_r_0100", G_RESULT_DATA[i].result, buff);
     }
 }
 
@@ -517,8 +517,8 @@ static void GmtimeR0100(void)
  */
 void Gmtime64R0100(void)
 {
-    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(gResultData) / sizeof(gResultData[0])); i++) {
-        const char *tz = gResultData[i].tz;
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
+        const char *tz = G_RESULT_DATA[i].tz;
         const char *handlerChar;
 #ifdef TIME_ZONE_SUB_TAG
         char *str = strrchr(tz, TIME_ZONE_SUB_TAG);
@@ -549,7 +549,7 @@ void Gmtime64R0100(void)
             gmtm->tm_gmtoff,
             gmtm->tm_zone);
         EXPECT_TRUE("gmtime64_r_0100", cnt > 0);
-        EXPECT_STREQ("gmtime64_r_0100", gResultData[i].result, buff);
+        EXPECT_STREQ("gmtime64_r_0100", G_RESULT_DATA[i].result, buff);
     }
 }
 

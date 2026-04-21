@@ -20,15 +20,15 @@
 #define THREAD_COUNT 5
 #define SLEEP_SECONDS 3
 
-static const char* g_libPath = "/data/storage/el1/bundle/libs/arm/libdl_multithread_test_dso.so";
+static const char* LIB_PATH = "/data/storage/el1/bundle/libs/arm/libdl_multithread_test_dso.so";
 static bool g_stop = false;
 
 static void* DlTest(void *arg)
 {
     while (!g_stop) {
-        void* handle = dlopen(g_libPath, RTLD_GLOBAL);
+        void* handle = dlopen(LIB_PATH, RTLD_GLOBAL);
         if (!handle) {
-            t_error("dlopen(name=%s, mode=%d) failed: %s\n", g_libPath, RTLD_GLOBAL, dlerror());
+            t_error("dlopen(name=%s, mode=%d) failed: %s\n", LIB_PATH, RTLD_GLOBAL, dlerror());
         }
         dlclose(handle);
     }

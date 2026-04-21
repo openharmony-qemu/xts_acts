@@ -38,7 +38,8 @@ void TimerfdSettime0100(void)
 {
     struct itimerspec its = {{0, 0}, {DATA_TWO, 0}};
     struct itimerspec val;
-    int fd, result;
+    int fd;
+    int result;
 
     fd = timerfd_create(CLOCK_REALTIME, 0);
     if (fd < 0) {

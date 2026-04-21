@@ -23,14 +23,23 @@
 #include <cstring>
 #include "test.h"
 
-static inline void TestMemmemNotFound(const char *s, const char *tail, const char *sub,
-                                      const char *sExpr, const char *tailExpr, const char *subExpr)
+struct MemmemTestParams {
+    const char *s;
+    const char *tail;
+    const char *sub;
+    const char *sExpr;
+    const char *tailExpr;
+    const char *subExpr;
+};
+
+static inline void TestMemmemNotFound(const struct MemmemTestParams *params)
 {
-    const char *p = tail;
-    const void *q = memmem(p, strlen(s), sub, strlen(sub));
+    const char *p = params->tail;
+    const void *q = memmem(p, strlen(params->s), params->sub, strlen(params->sub));
     if (q) {
         t_error("memmem(%s %s, %d, %s, %d) returned str+%d, wanted 0\n",
-            sExpr, tailExpr, static_cast<int>(strlen(s)), subExpr, static_cast<int>(strlen(sub)),
+            params->sExpr, params->tailExpr, static_cast<int>(strlen(params->s)), 
+            params->subExpr, static_cast<int>(strlen(params->sub)),
             static_cast<int>(static_cast<const char *>(q) - p));
     }
 }
@@ -47,7 +56,10 @@ static inline void TestMemmemFound(const char *s, const char *sub, int n, const 
     }
 }
 
-#define N(s, tail, sub) TestMemmemNotFound(s, s tail, sub, #s, #tail, #sub)
+#define N(s, tail, sub) do { \
+    struct MemmemTestParams params = {s, s tail, sub, #s, #tail, #sub}; \
+    TestMemmemNotFound(&params); \
+} while (0)
 #define T(s, sub, n) TestMemmemFound(s, sub, n, #s, #sub)
 
 static int StringMemmemTestImpl(void)
