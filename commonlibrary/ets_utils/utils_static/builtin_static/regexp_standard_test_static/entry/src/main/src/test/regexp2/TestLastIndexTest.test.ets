@@ -55,10 +55,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0210
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0100
-     * @tc.desc   Test global lastIndex update and reset
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test global lastIndex update and reset
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar foo';
@@ -75,10 +75,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0211
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0200
-     * @tc.desc   Test sticky lastIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test sticky lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
@@ -98,10 +98,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0212
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0300
-     * @tc.desc   Test manual reset lastIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test manual reset lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo foo';
@@ -114,10 +114,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0213
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0400
-     * @tc.desc   Test independence between instances
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test independence between instances
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar foo';
@@ -133,10 +133,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0214
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0500
-     * @tc.desc   Test lastIndex extremes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test lastIndex extremes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'test';
@@ -150,10 +150,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0215
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0600
-     * @tc.desc   Test non global ignores lastIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test non global ignores lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo foo';
@@ -167,10 +167,10 @@ export default function testLastIndexTest(): void {
     /**
      * @tc.name testLastIndex0216
      * @tc.number SUB_COMMONLIBRARY_REGEXP_LASTINDEX_TEST_0700
-     * @tc.desc   Test lastIndex affects return value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test lastIndex affects return value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testLastIndex0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'foo bar';

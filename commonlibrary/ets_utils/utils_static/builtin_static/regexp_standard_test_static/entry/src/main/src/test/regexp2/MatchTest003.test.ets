@@ -42,10 +42,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0165
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2400
-     * @tc.desc   Test RegExp[Symbol.matchAll] no matches returns empty results array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] no matches returns empty results array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("test", "g");
@@ -57,10 +57,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0166
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2500
-     * @tc.desc   Test RegExp[Symbol.matchAll] no matches iterator done immediately
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] no matches iterator done immediately
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("test", "g");
@@ -74,10 +74,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0167
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2600
-     * @tc.desc   Test RegExp[Symbol.matchAll] zero-width assertions
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] zero-width assertions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("\\d(?=\\.)", "g");
@@ -90,10 +90,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0168
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2700
-     * @tc.desc   Test RegExp[Symbol.matchAll] empty match returns empty string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] empty match returns empty string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("(?:)", "g");
@@ -108,10 +108,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0169
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2800
-     * @tc.desc   Test RegExp[Symbol.matchAll] empty string input returns no matches
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] empty string input returns no matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("test", "g");
@@ -123,10 +123,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0170
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_2900
-     * @tc.desc   Test RegExp[Symbol.matchAll] empty string with empty match
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] empty string with empty match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("(?:)", "g");
@@ -140,10 +140,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0171
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_3000
-     * @tc.desc   Test RegExp[Symbol.matchAll] single character string
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] single character string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regex: RegExp = new RegExp("a", "g");
@@ -156,10 +156,10 @@ export default function matchTest003(): void {
     /**
     * @tc.name testMatch0172
      * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_3100
-     * @tc.desc   Test RegExp[Symbol.matchAll] special unicode characters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp[Symbol.matchAll] special unicode characters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emoji = String.fromCodePoint(0x1F600);

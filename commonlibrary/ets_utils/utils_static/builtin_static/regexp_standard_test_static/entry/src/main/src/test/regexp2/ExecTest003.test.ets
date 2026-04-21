@@ -73,10 +73,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0174
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0100
-     * @tc.desc   Test RegExp.prototype.exec positive lookahead (?=)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec positive lookahead (?=)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecial.matchPositiveLookahead("foobar");
@@ -88,10 +88,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0175
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0200
-     * @tc.desc   Test RegExp.prototype.exec negative lookahead (?!)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec negative lookahead (?!)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecial.matchNegativeLookahead("foobaz");
@@ -103,10 +103,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0176
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0300
-     * @tc.desc   Test RegExp.prototype.exec positive lookbehind (?<=) when supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec positive lookbehind (?<=) when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<=test)123')) {
@@ -123,10 +123,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0177
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0500
-     * @tc.desc   Test positive lookbehind yields no match when unsupported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test positive lookbehind yields no match when unsupported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('(?<=test)123')) {
@@ -138,10 +138,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0178
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0400
-     * @tc.desc   Test RegExp.prototype.exec negative lookbehind (?<!) when supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test RegExp.prototype.exec negative lookbehind (?<!) when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<!test)123')) {
@@ -158,10 +158,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0179
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0600
-     * @tc.desc   Test negative lookbehind yields no match when unsupported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test negative lookbehind yields no match when unsupported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('(?<!test)123')) {
@@ -195,10 +195,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0180
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0100
-     * @tc.desc   Test exec and test share lastIndex on same global RegExp
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test exec and test share lastIndex on same global RegExp
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = new RegExp('foo', 'g');
@@ -213,10 +213,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0181
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0200
-     * @tc.desc   Test exec results align with String.match for global regex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test exec results align with String.match for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = new RegExp('foo', 'g');
@@ -232,10 +232,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0182
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0300
-     * @tc.desc   Test String.matchAll iterator yields same substrings as multiple exec
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test String.matchAll iterator yields same substrings as multiple exec
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = new RegExp('foo', 'g');
@@ -250,10 +250,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0183
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0400
-     * @tc.desc   Test replace does not leave lastIndex mutated for non-global regex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test replace does not leave lastIndex mutated for non-global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = new RegExp('foo');
@@ -266,10 +266,10 @@ export default function execTest003(): void {
     /**
      * @tc.name testExec0184
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0500
-     * @tc.desc   Test exec match index equals RegExp @@search result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test exec match index equals RegExp @@search result
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testExec0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = new RegExp('hello');

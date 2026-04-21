@@ -71,10 +71,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0100
-     * @tc.desc   Test source abc i and dollar plus g
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test source abc i and dollar plus g
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Instance metadata (source) is used by rule introspection and dynamic UI/debug tooling; it must be stable and unescaped as specified.
@@ -90,10 +90,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0101
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0200
-     * @tc.desc   Test source readonly strict
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test source readonly strict
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some security-hardening styles attempt to 鈥減atch鈥?RegExp.source; spec treats it as read-only, and strict mode should enforce that.
@@ -104,10 +104,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0102
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0300
-     * @tc.desc   Test flags gim and empty pattern
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test flags gim and empty pattern
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // flags is frequently logged and compared for feature parity; ordering/contents are part of the observable contract.
@@ -121,10 +121,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0900
-     * @tc.desc   Test s flag unsupported when dotAll not available
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test s flag unsupported when dotAll not available
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Optional features must be discoverable without throwing so apps can remain portable (feature-detect then choose a fallback).
@@ -141,10 +141,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0109
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0800
-     * @tc.desc   Test flags include s when dotAll supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test flags include s when dotAll supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When dotAll is supported, the instance must reflect it via flags so higher-level logic can audit/serialize behavior.
@@ -159,10 +159,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0104
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0400
-     * @tc.desc   Test global ignoreCase multiline
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test global ignoreCase multiline
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // These booleans are often used as quick capability checks (e.g., 鈥渋sGlobal?鈥? without parsing the flags string.
@@ -179,10 +179,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0105
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0500
-     * @tc.desc   Test dotAll true when s flag supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test dotAll true when s flag supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // dotAll drives multiline record extraction; apps check dotAll directly to decide safe pattern rewrites.
@@ -196,10 +196,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0108
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0700
-     * @tc.desc   Test dotAll sticky unicode on literals
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test dotAll sticky unicode on literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Default property values must be predictable so libraries can reason about behavior without special-casing 鈥渦nset flags鈥?
@@ -223,10 +223,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0106
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0600
-     * @tc.desc   Test hasIndices true when d flag supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test hasIndices true when d flag supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // hasIndices is a capability used by highlighters/redactors that require match spans, not just text.
@@ -244,10 +244,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0107
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1100
-     * @tc.desc   Test literal without d flag hasIndices false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test literal without d flag hasIndices false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When d is absent, hasIndices must be false to keep feature detection trustworthy.
@@ -258,10 +258,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0200
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1200
-     * @tc.desc   Test flags normalization and basic flag booleans
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test flags normalization and basic flag booleans
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('x', 'mig');
@@ -274,10 +274,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0201
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1300
-     * @tc.desc   Test sticky and unicode flags when yu is supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test sticky and unicode flags when yu is supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('x', 'yu')) {
@@ -293,10 +293,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0202
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1400
-     * @tc.desc   Test d flag presence and hasIndices behavior
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test d flag presence and hasIndices behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('x', 'd')) {
@@ -312,10 +312,10 @@ export default function instancePropertiesTest(): void {
     /**
      * @tc.name testRegExpInstance0203
      * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_1500
-     * @tc.desc   Test escaped slash source keeps expected fragments
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test escaped slash source keeps expected fragments
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRegExpInstance0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\/api\\/v2');

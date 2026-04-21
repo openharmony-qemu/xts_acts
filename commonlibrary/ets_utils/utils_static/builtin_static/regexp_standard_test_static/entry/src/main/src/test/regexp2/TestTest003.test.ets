@@ -50,10 +50,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0203
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0200
-     * @tc.desc   Test zero width
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test zero width
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('\\b').test('test')).assertTrue();
@@ -62,10 +62,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0204
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0300
-     * @tc.desc   Test empty alternative
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test empty alternative
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('a|').test('')).assertTrue();
@@ -75,10 +75,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0205
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0400
-     * @tc.desc   Test double anchor
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test double anchor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('^^').test('test')).assertTrue();
@@ -87,10 +87,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0206
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0500
-     * @tc.desc   Test nested star
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test nested star
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('(a)*').test('')).assertTrue();
@@ -100,10 +100,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0207
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0600
-     * @tc.desc   Test special combo
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test special combo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = '\\d\\w\\s';
@@ -136,10 +136,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0208
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0700
-     * @tc.desc   Test form email validation
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test form email validation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const validateEmail = (email: string): boolean => {
@@ -153,10 +153,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0209
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0800
-     * @tc.desc   Test data cleaning
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test data cleaning
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isClean = (s: string): boolean => new RegExp('^[a-zA-Z0-9\\s]+$').test(s);
@@ -167,10 +167,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0210
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0900
-     * @tc.desc   Test search keyword
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test search keyword
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isValidKeyword = (k: string): boolean => new RegExp('^[a-zA-Z0-9\\s\\-_]{2,50}$').test(k);
@@ -181,10 +181,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0211
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_1000
-     * @tc.desc   Test log analysis
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test log analysis
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isErrorLog = (log: string): boolean => log.indexOf('[ERROR]') !== -1;
@@ -195,10 +195,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0212
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_1100
-     * @tc.desc   Test config line
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test config line
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isValidConfigLine = (line: string): boolean => new RegExp('^[a-zA-Z_]\\w*\\s*=\\s*[^#]+').test(line);
@@ -209,10 +209,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0213
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0100
-     * @tc.desc   Test dotAll s flag spans newline when supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test dotAll s flag spans newline when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'hello\nworld';
@@ -226,10 +226,10 @@ export default function testTest003(): void {
     /**
      * @tc.name testTest0214
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0200
-     * @tc.desc   Test dot with u flag matches supplementary plane when supported
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc Test dot with u flag matches supplementary plane when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = String.fromCodePoint(0x1D306);

@@ -1058,9 +1058,9 @@ export default function replaceTest(): void {
         });
 
         /**
-         * @tc.name testReplace0147
+         * @tc.name   testReplace0147
          * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1200
-        * @tc.desc   Test Emoji replace with Unicode flag on surrogate pairs
+         * @tc.desc   Test Emoji replace with Unicode flag on surrogate pairs
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
@@ -1761,7 +1761,7 @@ export default function replaceTest(): void {
         });
       });
 
-      // Invalid patterns and illegal replacement tokens should surface as catchable errors, not silent corruption.
+      // Invalid patterns and illegal replacement tokens should throw catchable errors instead of causing silent corruption.
       describe('Error_and_Exception_Handling', () => {
         beforeAll(() => {
           // Presets an action, which is performed only once before all test cases of the test suite start.
