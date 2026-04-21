@@ -51,7 +51,7 @@ export class MyNodeAdapter extends NodeAdapter {
   cachePool: Array<FrameNode> = new Array<FrameNode>();
   changed: boolean = false
   reloadTimes: int = 0;
-  data: Array<string> = new Array<string>(100);
+  data: Array<string> = Array.create<string>(100, '');
   hostNode: FrameNode | null = null;
 
   constructor(uiContext: UIContext, count: int) {

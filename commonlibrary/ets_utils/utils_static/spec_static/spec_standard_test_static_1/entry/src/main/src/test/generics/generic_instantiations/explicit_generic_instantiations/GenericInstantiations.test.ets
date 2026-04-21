@@ -80,8 +80,8 @@ function foo_14<T, U>(p: T, q: U): T|U {
 }
 
 function bar_15<T>(p: T): Array<T> {
-  let x = new Array<T>(5)
-  return x.fill(p)
+  let x = Array.create<T>(5, p)
+  return x
 }
 
 function foo_15<T, U>(p: T, q: U): [Array<T>, Array<U>] {
@@ -135,8 +135,8 @@ class Cls_33 {
 
 class Bar_34 {
   static bar<T>(p: T): Array<T> {
-    let x = new Array<T>(5)
-    return x.fill(p)
+    let x = Array.create<T>(5, p)
+    return x
   }
 }
 

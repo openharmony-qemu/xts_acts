@@ -104,8 +104,7 @@ export default function AwaitedUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testAwaitedUtilityType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i: o_1 = new Array<number>(3);
-      i.fill(1);
+      let i: o_1 = Array.create<number>(3, 1);
       expect(i.at(0)).assertEqual(1);
       expect(i instanceof Array).assertTrue();
     })

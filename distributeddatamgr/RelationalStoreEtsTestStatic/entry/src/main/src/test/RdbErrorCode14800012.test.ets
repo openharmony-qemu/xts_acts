@@ -57,7 +57,7 @@ let STORE_CONFIG: relationalStore.StoreConfig = {
 
 let context: common.UIAbilityContext | undefined;
 let rdbStore: relationalStore.RdbStore | undefined;
-let vbs: Array<relationalStore.ValuesBucket> = new Array<relationalStore.ValuesBucket>(3);
+let vbs: Array<relationalStore.ValuesBucket> = [];
 const valueBucket0: relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,
@@ -76,9 +76,9 @@ const valueBucket2: relationalStore.ValuesBucket = {
   "data3": 100000.9,
   "data4": new Uint8Array(0),
 }
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
-vbs[2] = valueBucket2
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
+vbs.push(valueBucket2)
 
 export async function attachBatchInsert(store: relationalStore.RdbStore, tableName: string) {
   let u8 = new Uint8Array([1, 2, 3]);
