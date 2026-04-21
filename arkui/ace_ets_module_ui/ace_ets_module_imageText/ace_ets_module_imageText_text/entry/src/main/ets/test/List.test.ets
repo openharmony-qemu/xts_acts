@@ -145,6 +145,7 @@ import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test
 import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test';
 import TextGetCharacter from './TextTest/TextGetCharacter.test';
 import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
+import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimization.test';
 
 
 
@@ -282,5 +283,5 @@ export default function testsuite() {
   LayoutManagerTextCommonTest();
   TextGetCharacter();
   TextLayoutManagerMethodsTest();
-
+  TextOrphanCharOptimizationTest();
 }
