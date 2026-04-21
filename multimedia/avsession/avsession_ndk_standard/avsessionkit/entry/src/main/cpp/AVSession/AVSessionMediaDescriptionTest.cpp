@@ -973,3 +973,37 @@ napi_value AVMediaDescriptionDestroyInvalidParam(napi_env env, napi_callback_inf
     }
     return retValue;
 }
+
+napi_value AVMediaDescriptionBuilderSetMediaTypeNullSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
+    const char *mediaType = "";
+    int32_t result = OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(builder, mediaType);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVMediaDescriptionGetAppNameNullSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
+    const char *appName = "";
+    OH_AVSession_AVMediaDescriptionBuilder_SetAppName(builder, appName);
+    OH_AVSession_AVMediaDescription *avMediaDescription = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(builder, &avMediaDescription);
+    char *getAppName = nullptr;
+    int32_t result = OH_AVSession_AVMediaDescription_GetAppName(avMediaDescription, &getAppName);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}

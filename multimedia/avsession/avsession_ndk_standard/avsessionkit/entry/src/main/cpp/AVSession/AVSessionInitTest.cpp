@@ -456,6 +456,12 @@ static void InitPush9(std::vector<napi_property_descriptor> &desc)
         AVMediaDescriptionBuilderSetMediaTypeAudioSuccess));
     desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeVideoSuccess",
         AVMediaDescriptionBuilderSetMediaTypeVideoSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeNullSuccess",
+        AVMediaDescriptionBuilderSetMediaTypeNullSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAppNameNullSuccess",
+        AVMediaDescriptionGetAppNameNullSuccess));       
+    desc.push_back(XL("AVSessionCreateNullInvalidParam",
+        AVSessionCreateNullInvalidParam));  
 }
 static napi_value Init(napi_env env, napi_value exports)
 {
