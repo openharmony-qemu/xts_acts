@@ -1678,13 +1678,7 @@ export default function atomicsAddTest() {
       const i32a = new Int32Array(sab);
       i32a[0] = 0;
 
-      // Start waiting for the value to change
-      const waitPromise = new Promise<string>((resolve) => {
-        setTimeout(() => {
-          const result = Atomics.wait(i32a, 0, 0, 2000); // Wait up to 5 seconds
-          resolve(result);
-        }, 0);
-      });
+      const waitPromise = Atomics.waitAsync(i32a, 0, 0, 2000);
 
       // Simulate async add operation using setTimeout
       setTimeout(() => {
