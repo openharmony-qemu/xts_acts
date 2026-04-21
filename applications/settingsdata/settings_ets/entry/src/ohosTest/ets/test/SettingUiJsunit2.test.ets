@@ -4672,7 +4672,7 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
-      if (!isDeviceSupportAboutDevice()) {	 
+      if (!isDeviceSupportAboutDevice()) {
         done();
         return;
       }
