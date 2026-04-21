@@ -80,7 +80,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -96,7 +96,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -112,7 +112,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -128,7 +128,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -144,7 +144,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -160,7 +160,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -176,7 +176,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -192,7 +192,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = [1, 2, 3];
       let c: int[] = [1, 2, 4];
@@ -208,7 +208,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: A_1 | null = null;
       let c: A_1 | null = null;
       expect(b === c && b == c ).assertTrue()
@@ -221,7 +221,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((null === null) == true ).assertTrue()
       expect((null == null) == true ).assertTrue()
       expect((null !== null) == false ).assertTrue()
@@ -235,7 +235,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: A_2 | null = null;
       let c: A_2 | null = null;
       expect((b !== c) == false ).assertTrue()
@@ -249,7 +249,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [1, 2, 3];
       let b: int[] = a;
       expect((a !== a) == false ).assertTrue()
@@ -265,7 +265,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_3: A_3 = new A_3();
       let b: A_3 = A_3;
       expect((A_3 !== A_3) == false ).assertTrue()
@@ -281,7 +281,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_4 = new A_4()	
       let B_4 = new B_4()
       expect((null == null) == true ).assertTrue()
@@ -294,7 +294,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_5 = new A_5()	
       let B_5 = new B_5()
       expect((null != null) == false ).assertTrue()
@@ -307,7 +307,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_6 = new A_6()	
       let B_6 = new B_6()
       expect((A_6 != B_6) == true ).assertTrue()
@@ -320,7 +320,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_7 = new A_7()	
       let B_7 = new B_7()
       expect((A_7 == B_7) == false ).assertTrue()
@@ -333,7 +333,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_8 = new A_8()	
       let B_8 = new B_8()
       expect((A_8 == A_8) == true ).assertTrue()
@@ -346,7 +346,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_9 = new A_9()	
       let B_9 = new B_9()
       expect((A_9 == null) == false ).assertTrue()
@@ -359,7 +359,7 @@ export default function ExpressionsReferenceEqualityTest() {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testExpressionsReferenceEquality0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testExpressionsReferenceEquality0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let A_10: A_10 = new A_10();
       let B_10: B_10 = new B_10();
       expect(A_10 != B_10).assertTrue()

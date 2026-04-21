@@ -141,7 +141,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo_1 == foo_1).assertTrue()
       expect(foo_1 != foo_1).assertFalse()
       expect(foo_1 === foo_1).assertTrue()
@@ -155,7 +155,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a_2 = new A_2()
       expect(a_2.foo == a_2.foo).assertTrue()
       expect(a_2.foo != a_2.foo).assertFalse()
@@ -170,7 +170,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_3.foo == A_3.foo).assertTrue()
       expect(A_3.foo != A_3.foo).assertFalse()
       expect(A_3.foo === A_3.foo).assertTrue()
@@ -184,7 +184,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo_4 == bar_4).assertFalse()
       expect(foo_4 != bar_4).assertTrue()
       expect(foo_4 === bar_4).assertFalse()
@@ -198,7 +198,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo_5 == null).assertFalse()
       expect(foo_5 != null).assertTrue()
       expect(foo_5 === null).assertFalse()
@@ -212,7 +212,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo_6 == undefined).assertFalse()
       expect(foo_6 != undefined).assertTrue()
       expect(foo_6 === undefined).assertFalse()
@@ -226,7 +226,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo_7 == bar_7).assertFalse()
       expect(foo_7 != bar_7).assertTrue()
       expect(foo_7 === bar_7).assertFalse()
@@ -240,7 +240,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a_9 = new A_9()
       expect(a_9.foo == null).assertFalse()
       expect(a_9.foo != null).assertTrue()
@@ -255,7 +255,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a_10 = new A_10()
       expect(a_10.foo == undefined).assertFalse()
       expect(a_10.foo != undefined).assertTrue()
@@ -270,7 +270,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_12.foo == B_12.foo).assertFalse()
       expect(A_12.foo != B_12.foo).assertTrue()
       expect(A_12.foo === B_12.foo).assertFalse()
@@ -284,7 +284,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_13.foo == null).assertFalse()
       expect(A_13.foo != null).assertTrue()
       expect(A_13.foo === null).assertFalse()
@@ -298,7 +298,7 @@ export default function FunctionTypeEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFunctionTypeEqualityOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testFunctionTypeEqualityOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_14.foo == undefined).assertFalse()
       expect(A_14.foo != undefined).assertTrue()
       expect(A_14.foo === undefined).assertFalse()

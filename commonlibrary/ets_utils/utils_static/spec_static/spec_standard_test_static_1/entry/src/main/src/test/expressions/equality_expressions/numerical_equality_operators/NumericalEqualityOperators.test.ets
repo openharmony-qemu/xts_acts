@@ -92,7 +92,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = c'a';
       let c2 = c'a';
       let c3 = c'b';
@@ -113,7 +113,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 11
       let right: byte = 11
       expect(left).assertEqual(right);
@@ -126,7 +126,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 23
       let right: short = 45
       expect(left).not().assertEqual(right);
@@ -139,7 +139,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 55
       let right: int = 12
       expect(left).not().assertEqual(right);
@@ -152,7 +152,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 13
       let right: long = 24
       expect(left).not().assertEqual(right);
@@ -165,7 +165,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 33
       let right: float = 33.0f
       expect(left).assertEqual(right);
@@ -178,7 +178,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 21
       let right: double = 21.0
       expect(left).assertEqual(right);
@@ -191,7 +191,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 127
       let right: bigint = 127n
       expect(left.toString()).assertEqual(right.toString());
@@ -204,7 +204,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = -3
       let right: byte = -3
       expect(left).assertEqual(right);
@@ -217,7 +217,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = -1
       let right: short = 1
       expect(left).not().assertEqual(right);
@@ -230,7 +230,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = 127
       let right: int = 128
       expect(left).not().assertEqual(right);
@@ -243,7 +243,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = -128
       let right: long = -122
       expect(left).not().assertEqual(right);
@@ -256,7 +256,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = 1
       let right: float = 1.0f
       expect(left).assertEqual(right);
@@ -269,7 +269,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = 32767
       let right: double = 32767.0
       expect(left).assertEqual(right);
@@ -282,7 +282,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: short = -32768
       let right: bigint = -32768n
       expect(left.toString()).assertEqual(right.toString());
@@ -295,7 +295,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = 13
       let right: byte = 13
       expect(left).assertEqual(right);
@@ -308,7 +308,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = 127
       let right: short = 145
       expect(left).not().assertEqual(right);
@@ -321,7 +321,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = -1
       let right: int = 1
       expect(left).not().assertEqual(right);
@@ -334,7 +334,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = 897
       let right: long = 789
       expect(left).not().assertEqual(right);
@@ -347,7 +347,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = 1342
       let right: float = 1342.0f
       expect(left).assertEqual(right);
@@ -360,7 +360,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = -9
       let right: double = -9.0
       expect(left).assertEqual(right);
@@ -373,7 +373,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: int = 40000
       let right: bigint = 40000n
       expect(left.toString()).assertEqual(right.toString());
@@ -386,7 +386,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 1
       let right: byte = 1
       expect(left).assertEqual(right);
@@ -399,7 +399,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 32768
       let right: short = -32768
       expect(left).not().assertEqual(right);
@@ -412,7 +412,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 2341
       let right: int = 12311
       expect(left).not().assertEqual(right);
@@ -425,7 +425,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 2
       let right: long = -2
       expect(left).not().assertEqual(right);
@@ -438,7 +438,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 231
       let right: float = 231.0f
       expect(left).assertEqual(right);
@@ -451,7 +451,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = -1
       let right: double = -1.0
       expect(left).assertEqual(right);
@@ -464,7 +464,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: long = 213
       let right: bigint = 213n
       expect(left.toString()).assertEqual(right.toString());
@@ -477,7 +477,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = 33.0f
       let right: byte = 33
       expect(left).assertEqual(right);
@@ -490,7 +490,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = 32766.9f
       let right: short = 32767
       expect(left).not().assertEqual(right);
@@ -503,7 +503,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = 11.9f
       let right: int = 12
       expect(left).not().assertEqual(right);
@@ -516,7 +516,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = -0.1f
       let right: long = 0
       expect(left).not().assertEqual(right);
@@ -529,7 +529,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = 3.14159f
       let right: float = 3.14159f
       expect(left).assertEqual(right);
@@ -542,7 +542,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = -3.0f
       let right: double = -3.0
       expect(left).assertEqual(right);
@@ -555,7 +555,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: float = 14678.0f
       let right: bigint = 14678n
       expect(left.toString()).assertEqual(right.toString());
@@ -568,7 +568,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 127.0
       let right: byte = 127
       expect(left).assertEqual(right);
@@ -581,7 +581,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 7.1
       let right: short = 7
       expect(left).not().assertEqual(right);
@@ -594,7 +594,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 12321.1
       let right: int = 12321
       expect(left).not().assertEqual(right);
@@ -607,7 +607,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 9863.0
       let right: long = 4
       expect(left).not().assertEqual(right);
@@ -620,7 +620,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 11.0
       let right: float = 11.0f
       expect(left).assertEqual(right);
@@ -633,7 +633,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 387.321
       let right: double = 387.321
       expect(left).assertEqual(right);
@@ -646,7 +646,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 90.0
       let right: bigint = 90n
       expect(left.toString()).assertEqual(right.toString());
@@ -659,7 +659,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 1n
       let right: byte = 0b1
       expect(left.toString()).assertEqual(right.toString());
@@ -672,7 +672,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 1111n
       let right: short = 1112
       expect(left).not().assertEqual(right);
@@ -685,7 +685,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 1111n
       let right: short = 1112
       expect(left).not().assertEqual(right);
@@ -698,7 +698,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = -2147483648n
       let right: int = -2147483648
       expect(left.toString()).assertEqual(right.toString());
@@ -711,7 +711,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 2n
       let right: long = 2
       expect(left.toString()).assertEqual(right.toString());
@@ -724,7 +724,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 36n
       let right: float = 35.0f
       expect(left).not().assertEqual(right);
@@ -737,7 +737,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 24n
       let right: double = 24.1
       expect(left).not().assertEqual(right);
@@ -750,7 +750,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: bigint = 121n
       let right: bigint = 212n
       expect(left).not().assertEqual(right);
@@ -763,7 +763,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 2
       let right: byte = 1
       expect(left).not().assertEqual(right);
@@ -776,7 +776,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 1
       let right: byte = 2
       expect(left).not().assertEqual(right);
@@ -789,7 +789,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = -2
       let right: byte = -1
       expect(left).not().assertEqual(right);
@@ -802,7 +802,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = -34
       let right: short = -34
       expect(left).assertEqual(right);
@@ -815,7 +815,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 3
       let right: short = 3
       expect(left).assertEqual(right);
@@ -828,7 +828,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 11
       let right: short = 11
       expect(left).assertEqual(right);
@@ -841,7 +841,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 0b1000011
       let right: int = 67
       expect(left).assertEqual(right);
@@ -854,7 +854,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 2
       let right: int = 1
       expect(left).not().assertEqual(right);
@@ -867,7 +867,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 88
       let right: int = 99
       expect(left).not().assertEqual(right);
@@ -880,7 +880,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 2
       let right: long = 2
       expect(left).assertEqual(right);
@@ -893,7 +893,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 4
       let right: long = 4
       expect(left).assertEqual(right);
@@ -906,7 +906,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 100
       let right: long = 1000
       expect(left).not().assertEqual(right);
@@ -919,7 +919,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 22
       let right: float = 23.0f
       expect(left).not().assertEqual(right);
@@ -932,7 +932,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 33
       let right: float = -33.0f
       expect(left).not().assertEqual(right);
@@ -945,7 +945,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 1
       let right: double = 1.2
       expect(left).not().assertEqual(right);
@@ -958,7 +958,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 24
       let right: double = 789.2
       expect(left).not().assertEqual(right);
@@ -971,7 +971,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 1
       let right: bigint = 2n
       expect(left).not().assertEqual(right);
@@ -984,7 +984,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: byte = 1
       let right: bigint = 2n
       expect(left).not().assertEqual(right);
@@ -997,7 +997,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0.1;
       let b = sqrt(-1);
       expect(a == b).assertFalse()
@@ -1013,7 +1013,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = sqrt(-1);
       expect(a == a).assertFalse()
       expect(a === a).assertFalse()
@@ -1026,7 +1026,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = +0.0;
       let b = -0.0;
 
@@ -1041,7 +1041,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0.1;
       let b = 0.0;
 
@@ -1058,7 +1058,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0.1;
       let b = -log(0);
       let c = log(0);
@@ -1079,7 +1079,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 5
       let right = 5
       expect(left).assertEqual(right);
@@ -1092,7 +1092,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 10
       let right = 5
       expect(left).not().assertEqual(right);
@@ -1105,7 +1105,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 5
       let right = 5
       expect(left).assertEqual(right);
@@ -1118,7 +1118,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 10
       let right = 5
       expect(left).not().assertEqual(right);
@@ -1131,7 +1131,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 1
       let right = 1.0
       expect(left).assertEqual(right);
@@ -1144,7 +1144,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0
       let right = 0.5
       expect(left).not().assertEqual(right);
@@ -1157,7 +1157,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0
       let right = -0
       expect(left).assertEqual(right);
@@ -1170,7 +1170,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 5
       let right = 5
       expect(left).assertEqual(right);
@@ -1183,7 +1183,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 10
       let right = 5
       expect(left).not().assertEqual(right);
@@ -1196,7 +1196,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 5
       let right = 5
       expect(left).assertEqual(right);
@@ -1209,7 +1209,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 10
       let right = 5
       expect(left).not().assertEqual(right);
@@ -1222,7 +1222,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 1
       let right = 1.0
       expect(left).assertEqual(right);
@@ -1235,7 +1235,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0
       let right = 0.5
       expect(left).not().assertEqual(right);
@@ -1248,7 +1248,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0
       let right = -0
       expect(left).assertEqual(right);
@@ -1261,7 +1261,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.1
       let right = Double.POSITIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1274,7 +1274,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.1
       let right = Double.POSITIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1287,7 +1287,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.POSITIVE_INFINITY
       let right = 0.1
       expect(left).not().assertEqual(right);
@@ -1300,7 +1300,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.POSITIVE_INFINITY
       let right = 0.1
       expect(left).not().assertEqual(right);
@@ -1313,7 +1313,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.NEGATIVE_INFINITY
       let right = 0.1
       expect(left).not().assertEqual(right);
@@ -1326,7 +1326,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.NEGATIVE_INFINITY
       let right = 0.1
       expect(left).not().assertEqual(right);
@@ -1339,7 +1339,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.1
       let right = Double.NEGATIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1352,7 +1352,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.1
       let right = Double.NEGATIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1365,7 +1365,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.3
       let right = Double.POSITIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1378,7 +1378,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.3
       let right = Double.POSITIVE_INFINITY
       expect(left).not().assertEqual(right);
@@ -1391,7 +1391,7 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericalEqualityOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericalEqualityOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.POSITIVE_INFINITY
       let right = 0.3
       expect(left).not().assertEqual(right);

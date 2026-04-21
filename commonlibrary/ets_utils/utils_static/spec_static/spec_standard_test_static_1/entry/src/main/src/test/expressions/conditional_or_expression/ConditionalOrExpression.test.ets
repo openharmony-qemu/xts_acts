@@ -95,32 +95,31 @@ export default function ConditionalOrExpressionTest() {
      */
     it("testConditionalOrExpression0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: boolean = true;
-      // 测试逻辑或短路：左侧为true，右侧不执行
       let execRight = false;
       let result = a || (execRight = true);
       expect(result).assertTrue();
-      expect(execRight).assertFalse(); // 验证右侧未执行
+      expect(execRight).assertFalse();
     })
 
     /**
      * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0400
      * @tc.name      testConditionalOrExpression0004
-     * @tc.desc      Conditional OR left to right execution
+     * @tc.desc      Conditional OR for 3x boolean - false false false
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConditionalOrExpression0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 测试基础逻辑或从左到右执行规则
       let a: boolean = false;
-      let b: boolean = true;
-      expect(a || b).assertTrue();
+      let b: boolean = false;
+      let c: boolean = false;
+      expect(a || b || c).assertFalse();
     })
 
     /**
      * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0500
      * @tc.name      testConditionalOrExpression0005
-     * @tc.desc      Conditional OR for 3x boolean - false false false
+     * @tc.desc      Conditional OR for 3x boolean - false false true
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -128,34 +127,19 @@ export default function ConditionalOrExpressionTest() {
     it("testConditionalOrExpression0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: boolean = false;
       let b: boolean = false;
-      let c: boolean = false;
-      expect(a || b || c).assertFalse();
+      let c: boolean = true;
+      expect(a || b || c).assertTrue();
     })
 
     /**
      * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0600
      * @tc.name      testConditionalOrExpression0006
-     * @tc.desc      Conditional OR for 3x boolean - false false true
+     * @tc.desc      Conditional OR for 3x boolean - true short-circuit
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testConditionalOrExpression0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = false;
-      let c: boolean = true;
-      expect(a || b || c).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0700
-     * @tc.name      testConditionalOrExpression0007
-     * @tc.desc      Conditional OR for 3x boolean - true short-circuit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: boolean = true;
       let b: boolean = false;
       let execRight = false;
@@ -164,109 +148,5 @@ export default function ConditionalOrExpressionTest() {
       expect(execRight).assertFalse();
     })
 
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0800
-     * @tc.name      testConditionalOrExpression0008
-     * @tc.desc      Conditional OR for 2x boolean - false false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = false;
-      expect(a || b).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_0900
-     * @tc.name      testConditionalOrExpression0009
-     * @tc.desc      Conditional OR for 2x boolean - false true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = true;
-      expect(a || b).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_1000
-     * @tc.name      testConditionalOrExpression0010
-     * @tc.desc      Conditional OR for 2x boolean - true short-circuit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let execRight = false;
-      let result = a || (execRight = true);
-      expect(result).assertTrue();
-      expect(execRight).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_1100
-     * @tc.name      testConditionalOrExpression0011
-     * @tc.desc      Conditional OR basic function test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = false;
-      expect(a || b).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_1200
-     * @tc.name      testConditionalOrExpression0012
-     * @tc.desc      Conditional OR for 3x boolean - false false false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = false;
-      let c: boolean = false;
-      expect(a || b || c).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_1300
-     * @tc.name      testConditionalOrExpression0013
-     * @tc.desc      Conditional OR for 3x boolean - false false true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = false;
-      let c: boolean = true;
-      expect(a || b || c).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_OR_EXPRESSION_1400
-     * @tc.name      testConditionalOrExpression0014
-     * @tc.desc      Conditional OR for 3x boolean - true short-circuit
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalOrExpression0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = false;
-      let execRight = false;
-      let result = a || (execRight = true) || b;
-      expect(result).assertTrue();
-      expect(execRight).assertFalse();
-    })
   })
 }
