@@ -3179,7 +3179,7 @@ export default function btBleManagerTest() {
           expect(true).assertTrue();
         } else {
           if (nLength > 24) {
-            expect(error.code === 2902054).assertTrue();
+            expect(Number(error.code) === 2902054).assertTrue();
           }else{
             expect(Number(error.code)).assertEqual(2900099);
           }
