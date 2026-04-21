@@ -320,7 +320,6 @@ export default function execTest002(): void {
     it('testExec0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})')) {
         return;
-        return;
       }
       const out = new RegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})').exec('2026-04-17');
       expect(out !== null).assertTrue();
@@ -363,7 +362,6 @@ export default function execTest002(): void {
      */
     it('testExec0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'd')) {
-        return;
         return;
       }
       const out = new RegExp('(foo)', 'd').exec('xxfooyy');
@@ -443,7 +441,6 @@ export default function execTest002(): void {
     it('testExec0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
         return;
-        return;
       }
       const re = new RegExp('foo', 'y');
       const input = 'foo foo';
@@ -512,7 +509,6 @@ export default function execTest002(): void {
       // Migration codebases often mix old numeric consumers with newer named captures during a transition period.
       // Index-based access must keep working so rollout can happen incrementally instead of as a risky big-bang change.
       if (!supportsRegExp('(?<name>\\w+)\\s+(\\d+)')) {
-        return;
         return;
       }
       const out = new RegExp('(?<name>\\w+)\\s+(\\d+)').exec('John 25');
@@ -674,7 +670,6 @@ export default function execTest002(): void {
       // Education and scientific content often includes supplementary-plane symbols that break naive UTF-16 assumptions.
       // Unicode-mode coverage ensures one visual glyph is treated as the intended logical token in compliant runtimes.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        return;
         return;
       }
       const out = new RegExp('\\u{1F600}', 'u').exec('A😀B');
@@ -859,7 +854,6 @@ export default function execTest002(): void {
       // Feature-gating avoids hard failures on runtimes that don't implement the d flag yet.
       if (!supportsRegExp('test', 'd')) {
         return;
-        return;
       }
       const out = new RegExp('test', 'd').exec('this is a test');
       expect(out !== null).assertTrue();
@@ -951,7 +945,6 @@ export default function execTest002(): void {
       // Sticky tokenizers rely on lastIndex as the authoritative cursor into a stream.
       // Verifying the updated cursor prevents subtle off-by-one bugs in incremental parsers.
       if (!supportsRegExp('foo', 'y')) {
-        return;
         return;
       }
       const re = new RegExp('foo', 'y');
@@ -1119,7 +1112,6 @@ export default function execTest002(): void {
       // Emoji property escapes improve readability of moderation and formatting rules.
       // Gating keeps the suite runnable on runtimes that only support literal emoji matching.
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
-        return;
         return;
       }
       const out = new RegExp('\\p{Emoji}', 'u').exec('Hello 😀 World');
@@ -1398,7 +1390,6 @@ export default function execTest002(): void {
       // Accurate cursor semantics are essential for deterministic parser state machines.
       if (!supportsRegExp('test', 'y')) {
         return;
-        return;
       }
       const re = new RegExp('test', 'y');
       const str = 'test test';
@@ -1543,7 +1534,6 @@ export default function execTest002(): void {
       // Rich editors and refactoring tools depend on group-specific ranges to update only selected subfields.
       // This verifies the most information-dense exec payload shape for advanced runtimes.
       if (!supportsRegExp('(?<word>hello)', 'd')) {
-        return;
         return;
       }
       const out = new RegExp('(?<word>hello)', 'd').exec('hello world');
@@ -1752,7 +1742,6 @@ export default function execTest002(): void {
       // This guards against accidental fallback to global scanning that would skip invalid separators.
       if (!supportsRegExp('a', 'gy')) {
         return;
-        return;
       }
       const re = new RegExp('a', 'gy');
       const s = 'aa-b';
@@ -1838,7 +1827,6 @@ export default function execTest002(): void {
       // Property names are often assembled from config; invalid values should fail fast at regex construction.
       // This prevents silently-broken i18n filters from reaching production.
       if (!supportsRegExp('\\p{L}', 'u')) {
-        return;
         return;
       }
       let threw = false;

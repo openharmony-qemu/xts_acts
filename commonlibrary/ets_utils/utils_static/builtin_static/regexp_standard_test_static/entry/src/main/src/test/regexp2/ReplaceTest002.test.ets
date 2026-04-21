@@ -254,7 +254,6 @@ export default function replaceTest002(): void {
     it('testReplace0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<a>\\w+)-(?<b>\\w+)')) {
         return;
-        return;
       }
       const out = 'left-right'.replace(new RegExp('(?<a>\\w+)-(?<b>\\w+)'), '$<b>/$<a>');
       expect(out).assertEqual('right/left');
@@ -532,7 +531,6 @@ export default function replaceTest002(): void {
       // Feature-gating avoids hard failures on engines that omit the y flag.
       if (!supportsRegExp('a', 'y')) {
         return;
-        return;
       }
       const str = 'aaa';
       const re = new RegExp('a', 'y');
@@ -706,9 +704,10 @@ export default function replaceTest002(): void {
     it('testReplace0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mathematical Alphanumeric symbols appear in imported STEM content; u-mode keeps code points intact.
       // Without support we skip rather than breaking schools' content pipelines on minimal engines.
-      const str = '𝟘𝟙𝟚';
-      if (supportsRegExp('\\u{1D7D8}', 'u')) {
-        const out = str.replace(new RegExp('\\u{1D7D8}', 'gu'), '0');
+      const digitZero = String.fromCodePoint(120792);
+      const str = digitZero + '𝟙𝟚';
+      if (supportsRegExp(digitZero, 'u')) {
+        const out = str.replace(new RegExp(digitZero, 'gu'), '0');
         expect(out).assertEqual('0𝟙𝟚');
       } else {
         return;
@@ -994,7 +993,6 @@ export default function replaceTest002(): void {
       // Where unsupported, skipping avoids false negatives on lightweight engines.
       if (!supportsRegExp('(?<=:)\\d+')) {
         return;
-        return;
       }
       expect('price:100'.replace(new RegExp('(?<=:)\\d+'), 'N')).assertEqual('price:N');
       expect('price100'.replace(new RegExp('(?<=:)\\d+'), 'N')).assertEqual('price100');
@@ -1012,7 +1010,6 @@ export default function replaceTest002(): void {
       // Locale-aware masking often uses \\p{L} instead of ASCII-only classes to include accented vendor names.
       // Feature-gating preserves portability for devices with reduced Unicode tables.
       if (!supportsRegExp('\\p{L}+', 'u')) {
-        return;
         return;
       }
       expect('ABC123αβγ'.replace(new RegExp('\\p{L}+', 'gu'), 'L')).assertEqual('L123L');
@@ -1332,7 +1329,6 @@ export default function replaceTest002(): void {
       // Engines without lookahead would throw on compile, so we gate the assertion.
       if (!supportsRegExp('\\d(?=def)')) {
         return;
-        return;
       }
       // Only the digit directly followed by "def" is replaced (here: '3').
       expect('abc123def'.replace(new RegExp('\\d(?=def)'), '#')).assertEqual('abc12#def');
@@ -1351,7 +1347,6 @@ export default function replaceTest002(): void {
       // Feature detection keeps minimal engines from failing at suite load time.
       if (!supportsRegExp('\\d(?!00)\\d')) {
         return;
-        return;
       }
       expect('100 1200'.replace(new RegExp('\\d(?!00)\\d', 'g'), 'x')).assertEqual('1x xx');
     });
@@ -1369,7 +1364,6 @@ export default function replaceTest002(): void {
       // Unsupported engines should skip rather than break the entire compliance run.
       if (!supportsRegExp('(?>a*)bc')) {
         return;
-        return;
       }
       expect('aaabc'.replace(new RegExp('(?>a*)bc'), 'X')).assertEqual('X');
     });
@@ -1386,7 +1380,6 @@ export default function replaceTest002(): void {
       // Possessive repeats are another defense against pathological backtracking on nested quantifiers.
       // Coverage is optional but valuable on full ECMAScript stacks.
       if (!supportsRegExp('a*+b')) {
-        return;
         return;
       }
       expect('aaab'.replace(new RegExp('a*+b'), 'X')).assertEqual('X');
@@ -1419,7 +1412,6 @@ export default function replaceTest002(): void {
       // Structured logs use key:value pairs; named groups make templates readable for non-regex experts.
       // When unavailable, skipping avoids blocking releases on trimmed runtimes.
       if (!supportsRegExp('(?<k>\\w+):(?<v>\\w+)')) {
-        return;
         return;
       }
       const out = 'name:Jane id:42'.replace(new RegExp('(?<k>\\w+):(?<v>\\w+)', 'g'), '$<v>=$<k>');
@@ -1531,7 +1523,6 @@ export default function replaceTest002(): void {
       // Feature-gating acknowledges engines that omit y.
       if (!supportsRegExp('a', 'gy')) {
         return;
-        return;
       }
       const re = new RegExp('a', 'gy');
       re.lastIndex = 0;
@@ -1582,7 +1573,6 @@ export default function replaceTest002(): void {
       // Supplementary-plane symbols need explicit code point syntax; ASCII-only sources rely on \\u{...} escapes.
       // Gate the assertion so builds without Unicode mode still pass certification.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        return;
         return;
       }
       expect('A😀B'.replace(new RegExp('\\u{1F600}', 'u'), 'E')).assertEqual('AEB');
@@ -1769,7 +1759,6 @@ export default function replaceTest002(): void {
       // The boundary class avoids splitting inside pure digit runs or pure letter runs.
       if (!supportsRegExp('(?<=[^\\d-])(?=\\d)|(?<=\\d)(?=[^\\d-])')) {
         return;
-        return;
       }
       // Exclude '-' so already-partitioned SKUs do not accumulate extra dashes.
       const boundary = new RegExp('(?<=[^\\d-])(?=\\d)|(?<=\\d)(?=[^\\d-])', 'g');
@@ -1789,7 +1778,6 @@ export default function replaceTest002(): void {
       // Lookbehind is the most readable way to assert digit boundaries without consuming characters.
       // Engines without lookbehind should skip rather than fail the whole replace suite.
       if (!supportsRegExp('(?<=\\D)(?=\\d)')) {
-        return;
         return;
       }
       expect('a1'.replace(new RegExp('(?<=\\D)(?=\\d)'), '-')).assertEqual('a-1');

@@ -137,6 +137,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0100
+         */
         it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World, Hello Universe";
           const result = str.replace("Hello", "Hi");
@@ -153,6 +156,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0101
+         */
         it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "apple, apple, apple";
           const result = str.replace("apple", "orange");
@@ -169,6 +175,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0102
+         */
         it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "xxx";
           const result = str.replace("", "_");
@@ -185,6 +194,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0103
+         */
         it('testReplace0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace("goodbye", "Hi");
@@ -201,6 +213,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0104
+         */
         it('testReplace0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "a.b.c";
           const result = str.replace(".", "_");
@@ -239,6 +254,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0105
+         */
         it('testReplace0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "cat, dog, cat";
           const result = str.replace(new RegExp('cat'), "bird");
@@ -255,6 +273,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0106
+         */
         it('testReplace0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "cat, dog, cat";
           const result = str.replace(new RegExp('cat', 'g'), "bird");
@@ -271,6 +292,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0107
+         */
         it('testReplace0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello world, hello universe";
           const result = str.replace(new RegExp('hello', 'i'), "Hi");
@@ -287,6 +311,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0108
+         */
         it('testReplace0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Line1\nLine2\nLine3";
           const result = str.replace(new RegExp('^Line', 'gm'), "Row");
@@ -303,6 +330,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0109
+         */
         it('testReplace0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello HELLO hello HeLLo";
           const result = str.replace(new RegExp('hello', 'gi'), "Hi");
@@ -319,6 +349,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0110
+         */
         it('testReplace0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello\nWorld";
           const result = str.replace(new RegExp('Hello.World', 's'), "Hi");
@@ -335,6 +368,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0111
+         */
         it('testReplace0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const mathSansHigh = 55349;
           const mathSansDigitZeroLow = 57240;
@@ -359,6 +395,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0112
+         */
         it('testReplace0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "aaa";
           const regex = new RegExp('a', 'y');
@@ -377,6 +416,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0113
+         */
         it('testReplace0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "test123";
           try {
@@ -420,6 +462,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0114
+         */
         it('testReplace0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "price: 100";
           const result = str.replace(new RegExp('\\d+'), "$$");
@@ -436,6 +481,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0115
+         */
         it('testReplace0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "$&!");
@@ -452,6 +500,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0116
+         */
         it('testReplace0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "[$`]");
@@ -468,6 +519,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0117
+         */
         it('testReplace0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('Hello'), "[$']");
@@ -484,6 +538,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0118
+         */
         it('testReplace0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "John Smith";
           const result = str.replace(new RegExp('(\\w+)\\s(\\w+)'), "$2, $1");
@@ -500,6 +557,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0119
+         */
         it('testReplace0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "2023-12-25";
           const result = str.replace(new RegExp('(\\d{4})-(\\d{2})-(\\d{2})'), "$3/$2/$1");
@@ -516,6 +576,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0120
+         */
         it('testReplace0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
             return;
@@ -535,6 +598,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0121
+         */
         it('testReplace0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "foo";
           const result = str.replace(new RegExp('(f)'), "$2");
@@ -551,6 +617,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0122
+         */
         it('testReplace0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "foo";
           const result = str.replace("f", "$1");
@@ -567,6 +636,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0123
+         */
         it('testReplace0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc123";
           const result = str.replace(new RegExp('((\\w)(\\w))'), "$1-$2-$3");
@@ -605,6 +677,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0124
+         */
         it('testReplace0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace("World", "WORLD");
@@ -621,6 +696,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0125
+         */
         it('testReplace0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc123";
           const result = str.replace(new RegExp('\\d+'), '[123]');
@@ -637,6 +715,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0126
+         */
         it('testReplace0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "John Smith";
           const result = str.replace(new RegExp('(\\w+)\\s(\\w+)'), "$2, $1");
@@ -653,6 +734,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0127
+         */
         it('testReplace0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abcde";
           const result = str.replace("cd", "cd@2");
@@ -669,6 +753,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0128
+         */
         it('testReplace0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello";
           const result = str.replace("l", "l[5]");
@@ -685,6 +772,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0129
+         */
         it('testReplace0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
             return;
@@ -704,6 +794,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0130
+         */
         it('testReplace0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "a1b2c3";
           const result = str.replace(new RegExp('\\d', 'g'), "X");
@@ -720,6 +813,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0131
+         */
         it('testReplace0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc";
           const result = str.replace("a", "A").replace("b", "B");
@@ -736,6 +832,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0132
+         */
         it('testReplace0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const f2c = (() => {
             const convert = (str: string, p1: string): string => {
@@ -770,6 +869,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0133
+         */
         it('testReplace0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('(?<key>\\w+):(?<value>\\w+)', 'g')) {
             return;
@@ -789,6 +891,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0134
+         */
         it('testReplace0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc";
           const result = str.replace(new RegExp('a'), (): string => {
@@ -807,6 +912,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0135
+         */
         it('testReplace0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc";
           let caughtError = false;
@@ -855,6 +963,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0136
+         */
         it('testReplace0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc abc";
           const regex = new RegExp('abc');
@@ -873,6 +984,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0137
+         */
         it('testReplace0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc abc abc";
           const regex = new RegExp('abc', 'g');
@@ -892,6 +1006,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0138
+         */
         it('testReplace0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "aaa";
           const regex = new RegExp('a', 'y');
@@ -910,6 +1027,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0139
+         */
         it('testReplace0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "test test";
           const regex = new RegExp('test', 'g');
@@ -929,6 +1049,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0140
+         */
         it('testReplace0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc abc";
           const regex = new RegExp('abc', 'g');
@@ -970,6 +1093,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0141
+         */
         it('testReplace0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "";
           const result = str.replace(new RegExp('a'), "b");
@@ -986,6 +1112,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0142
+         */
         it('testReplace0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "test";
           const result = str.replace(new RegExp('(?:)'), "_");
@@ -1002,6 +1131,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0143
+         */
         it('testReplace0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "a";
           const result = str.replace(new RegExp('a'), "b");
@@ -1018,6 +1150,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0144
+         */
         it('testReplace0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "a".repeat(10000);
           const result = str.replace(new RegExp('a', 'g'), "b");
@@ -1035,6 +1170,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0145
+         */
         it('testReplace0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "");
@@ -1051,6 +1189,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0146
+         */
         it('testReplace0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello";
           const result = str.replace(new RegExp('^.*$'), "Bye");
@@ -1067,6 +1208,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0147
+         */
         it('testReplace0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji;
@@ -1106,6 +1250,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0148
+         */
         it('testReplace0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "Hello\nWorld\t!";
           const result = str.replace(new RegExp('\\n', 'g'), " ").replace(new RegExp('\\t', 'g'), "  ");
@@ -1122,6 +1269,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0149
+         */
         it('testReplace0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "caf\u00e9";
           const result = str.replace(new RegExp('\\u00e9'), "e");
@@ -1138,6 +1288,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0150
+         */
         it('testReplace0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = "Hello " + emoji + " World";
@@ -1155,6 +1308,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0151
+         */
         it('testReplace0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const mathSansHigh = 55349;
           const mathSansDigitZeroLow = 57240;
@@ -1179,6 +1335,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0152
+         */
         it('testReplace0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji;
@@ -1198,6 +1357,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0153
+         */
         it('testReplace0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "e\u0301";
           const result = str.replace(new RegExp('\\u0301', 'u'), "");
@@ -1214,6 +1376,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0154
+         */
         it('testReplace0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji + emoji;
@@ -1231,6 +1396,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0155
+         */
         it('testReplace0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('\\p{Script=Greek}', 'gu')) {
             return;
@@ -1272,6 +1440,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0156
+         */
         it('testReplace0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('a', 'y')) {
             return;
@@ -1293,6 +1464,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0157
+         */
         it('testReplace0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('Hello.World', 's')) {
             return;
@@ -1312,6 +1486,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0158
+         */
         it('testReplace0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsRegExp('test', 'gim') || !supportsRegExp('.+', 'sm')) {
             return;
@@ -1333,6 +1510,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0159
+         */
         it('testReplace0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "test test test";
           const result1 = str.replace(new RegExp('test'), "XYZ");
@@ -1373,6 +1553,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0160
+         */
         it('testReplace0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsLookbehindSemantics()) {
             return;
@@ -1392,6 +1575,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0161
+         */
         it('testReplace0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc123 def456";
           const result = str.replace(new RegExp('\\d(?=\\d)', 'g'), "*");
@@ -1408,6 +1594,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0162
+         */
         it('testReplace0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc1 def2";
           const result = str.replace(new RegExp('\\w(?!\\d)', 'g'), "");
@@ -1424,6 +1613,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0163
+         */
         it('testReplace0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           if (!supportsLookbehindSemantics()) {
             return;
@@ -1443,6 +1635,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0164
+         */
         it('testReplace0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "abc100 def100";
           if (!supportsLookbehindSemantics()) {
@@ -1463,6 +1658,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0165
+         */
         it('testReplace0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           let regex: RegExp | null = null;
           try {
@@ -1487,6 +1685,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0166
+         */
         it('testReplace0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           let regex: RegExp | null = null;
           try {
@@ -1511,6 +1712,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0167
+         */
         it('testReplace0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "test test";
           const regex = new RegExp('\\Gtest', 'g');
@@ -1550,6 +1754,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0168
+         */
         it('testReplace0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           const str = "hello";
           const result = str.replace(new RegExp('hello'), "HELLO");
@@ -1566,6 +1773,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0169
+         */
         it('testReplace0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithNumber()).assertEqual("123");
         });
@@ -1580,6 +1790,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0170
+         */
         it('testReplace0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithObjectToString()).assertEqual("REPLACED");
         });
@@ -1594,6 +1807,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0171
+         */
         it('testReplace0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithSymbolToPrimitive()).assertEqual("REPLACED");
         });
@@ -1608,6 +1824,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0172
+         */
         it('testReplace0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithNull()).assertEqual("null");
         });
@@ -1622,6 +1841,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0173
+         */
         it('testReplace0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithUndefined()).assertEqual("undefined");
         });
@@ -1636,6 +1858,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0174
+         */
         it('testReplace0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithSymbolValueThrows()).assertTrue();
         });
@@ -1650,6 +1875,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0175
+         */
         it('testReplace0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithBigInt()).assertEqual("123");
         });
@@ -1664,6 +1892,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0176
+         */
         it('testReplace0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithBoolean()).assertEqual("true");
         });
@@ -1678,6 +1909,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0177
+         */
         it('testReplace0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceTestWithArray()).assertEqual("a,b");
         });
@@ -1714,6 +1948,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0178
+         */
         it('testReplace0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexNonRegExpReceiverSymbolReplaceThrows()).assertTrue();
         });
@@ -1728,6 +1965,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0179
+         */
         it('testReplace0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceUndefinedThisThrows()).assertTrue();
         });
@@ -1742,6 +1982,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0180
+         */
         it('testReplace0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceNullThisThrows()).assertTrue();
         });
@@ -1756,6 +1999,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0181
+         */
         it('testReplace0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceRegexLikeResult()).assertEqual("X value");
         });
@@ -1792,6 +2038,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0182
+         */
         it('testReplace0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexInvalidRegExpCharClassCtorThrows()).assertTrue();
         });
@@ -1806,6 +2055,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0183
+         */
         it('testReplace0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexInvalidRegExpFlagCtorThrows()).assertTrue();
         });
@@ -1820,6 +2072,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0184
+         */
         it('testReplace0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexInvalidUnicodeCodePointThrows()).assertTrue();
         });
@@ -1834,6 +2089,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0185
+         */
         it('testReplace0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexInvalidLookbehindThrows()).assertTrue();
         });
@@ -1848,6 +2106,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0186
+         */
         it('testReplace0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexInvalidUnicodePropertyThrows()).assertTrue();
         });
@@ -1862,6 +2123,9 @@ export default function replaceTest(): void {
          */
         // Replacement behavior is part of business data-normalization contracts, so outputs must remain stable across engines.
         // This test guards compatibility for downstream masking, formatting, and sanitization pipelines.
+        /**
+         * @tc.name testReplace0187
+         */
         it('testReplace0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           expect(replaceComplexReplaceHelloHWithNumber()).assertEqual("123ello");
         });

@@ -263,7 +263,6 @@ export default function matchTest002(): void {
       if (!supportsRegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})')) {
         // Engine does not support named capture; treat as skip.
         return;
-        return;
       }
       const out = input.match(new RegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})'));
       expect(out !== null).assertTrue();
@@ -668,7 +667,6 @@ export default function matchTest002(): void {
       // Feature-gating prevents breakage on runtimes without sticky support.
       if (!supportsRegExp('[abc]', 'gy')) {
         return;
-        return;
       }
       const regex = new RegExp('[abc]', 'gy');
       const str = 'ab-c';
@@ -713,7 +711,6 @@ export default function matchTest002(): void {
       // Feature-gating keeps devices with reduced Unicode support from failing the whole suite.
       if (!supportsRegExp('\\p{L}+', 'u')) {
         return;
-        return;
       }
       const regex = new RegExp('\\p{L}+', 'gu');
       const str = 'ABC αβγ';
@@ -756,7 +753,6 @@ export default function matchTest002(): void {
       // Named groups make extraction templates readable and reduce off-by-one mistakes in long capture lists.
       // Gating keeps the suite portable while still validating behavior on capable engines.
       if (!supportsRegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})')) {
-        return;
         return;
       }
       const regex = new RegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})', 'g');
@@ -824,7 +820,6 @@ export default function matchTest002(): void {
       // Log blobs are multiline; dotAll changes whether '.' spans lines while m changes anchor behavior per line.
       // Gating keeps the suite portable while still validating richer engines.
       if (!supportsRegExp('test.+test', 'gsm')) {
-        return;
         return;
       }
       const re = new RegExp('test.+test', 'gsm');
@@ -919,7 +914,6 @@ export default function matchTest002(): void {
       // We gate support to avoid compile-time failures on runtimes without sticky.
       if (!supportsRegExp('abc', 'y')) {
         return;
-        return;
       }
       const re = new RegExp('abc', 'y');
       re.lastIndex = 3;
@@ -943,7 +937,6 @@ export default function matchTest002(): void {
       // Some patterns are stored in ASCII-only configs and rely on \\u{...} escapes for portability.
       // Feature gating ensures the suite still runs where u-mode escapes are not implemented.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        return;
         return;
       }
       const out = 'A😀B'.match(new RegExp('\\u{1F600}', 'u'));
@@ -1003,7 +996,6 @@ export default function matchTest002(): void {
       // The gui combo is common in tokenizers that want both exhaustiveness and case folding.
       if (!supportsRegExp('\\p{L}+', 'u')) {
         return;
-        return;
       }
       const regex = new RegExp('\\p{L}+', 'gui');
       const str = 'ABC αβγ aBc';
@@ -1045,7 +1037,6 @@ export default function matchTest002(): void {
       // Some engines support rich flag sets; when available, this combo models strict token streams across newlines.
       // We gate to keep the suite portable and avoid syntax errors on reduced runtimes.
       if (!supportsRegExp('.+', 'suy')) {
-        return;
         return;
       }
       const regex = new RegExp('.+', 'gsuy');
@@ -1248,7 +1239,6 @@ export default function matchTest002(): void {
       const str = 'a\nb a\tb';
       if (!supportsRegExp('a.b', 's')) {
         return;
-        return;
       }
       const regex = new RegExp('a.b', 'gs');
       const out = Array.from(str.matchAll(regex)).map((m) => m[0]);
@@ -1363,7 +1353,6 @@ export default function matchTest002(): void {
       // Ensuring inactive named groups are undefined avoids ambiguous "empty string" interpretations in mappers.
       if (!supportsRegExp('(?<a>\\d+)|(?<b>\\w+)')) {
         return;
-        return;
       }
       const regex = new RegExp('(?<a>\\d+)|(?<b>\\w+)', 'g');
       const out = Array.from('123'.matchAll(regex));
@@ -1451,7 +1440,6 @@ export default function matchTest002(): void {
       // Empty matches are risky for iterators; Unicode mode affects advancement around surrogate pairs.
       // We assert only bounds to keep behavior stable across engines while still catching hangs.
       if (!supportsRegExp('(?:)', 'gu')) {
-        return;
         return;
       }
       const str = '😀';
@@ -1767,7 +1755,6 @@ export default function matchTest002(): void {
       // Feature-gating avoids runtime failures on engines that don't implement lookbehind.
       if (!supportsRegExp('(?<=:)\\w+')) {
         return;
-        return;
       }
       const out = 'key:value'.match(new RegExp('(?<=:)\\w+'));
       expect(out !== null).assertTrue();
@@ -1788,7 +1775,6 @@ export default function matchTest002(): void {
       // Finance feeds often mix units; negative lookahead is used to isolate non-USD amounts quickly.
       // Feature-gating keeps baseline engines stable while still testing richer parsers.
       if (!supportsRegExp('\\d+(?!USD)')) {
-        return;
         return;
       }
       const str = '100USD 200EUR 300';

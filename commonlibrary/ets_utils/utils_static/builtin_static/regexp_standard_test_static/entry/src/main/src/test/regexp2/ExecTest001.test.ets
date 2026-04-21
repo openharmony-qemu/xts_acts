@@ -1888,7 +1888,6 @@ export default function execTest(): void {
     it('testExec0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
         return;
-        return;
       }
       // Property escapes enable semantic matching (emoji, scripts) used in UX filters and input validation.
       // We validate actual emoji extraction so engines with incomplete unicode tables don’t silently misclassify characters.

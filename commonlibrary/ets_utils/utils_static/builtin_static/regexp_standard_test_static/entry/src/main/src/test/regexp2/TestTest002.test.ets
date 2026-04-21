@@ -230,7 +230,6 @@ export default function testTest002(): void {
     it('testTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
         return;
-        return;
       }
       const re = new RegExp('foo', 'y');
       re.lastIndex = 0;

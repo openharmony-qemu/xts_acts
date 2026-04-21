@@ -450,7 +450,6 @@ export default function searchTest002(): void {
     it('testSearch0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsLookbehindSemantics()) {
         return;
-        return;
       }
       const input = 'USD100 EUR200';
       if (supportsRegExp('(?<=USD)\\d+')) {
@@ -666,7 +665,6 @@ export default function searchTest002(): void {
      */
     it('testSearch0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('abc', 'y')) {
-        return;
         return;
       }
       const str = 'abcabc';
@@ -1564,7 +1562,6 @@ export default function searchTest002(): void {
       // Feature-gating prevents false failures on engines that do not implement the u flag.
       if (!supportsRegExp('a', 'u')) {
         return;
-        return;
       }
       let threw = false;
       try {
@@ -1587,7 +1584,6 @@ export default function searchTest002(): void {
       // Unicode properties are commonly used in international input filters; rejecting invalid names is critical.
       // This locks behavior so configuration errors are caught during testing rather than after release.
       if (!supportsRegExp('\\p{L}', 'u')) {
-        return;
         return;
       }
       let threw = false;
@@ -1681,7 +1677,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0299
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0100
      * @tc.desc Search: URL protocol detection distinguishes https/http/unknown
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1722,7 +1718,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0301
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0300
      * @tc.desc Search: phone-like validation allows common dash grouping
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1738,7 +1734,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0302
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0400
      * @tc.desc Search: date prefix detection supports yyyy-mm-dd at start
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1754,7 +1750,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0303
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0500
      * @tc.desc Search: mixed flag combinations still return first leftmost match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1770,7 +1766,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0304
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0600
      * @tc.desc Search: dotAll + multiline combination is feature-gated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1789,7 +1785,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0305
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0700
      * @tc.desc Search: regex-like object with exec can be used via RegExp.prototype[Symbol.search]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1802,7 +1798,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0306
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0800
      * @tc.desc Search: function argument uses ToString and typically matches 'function' prefix
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1818,7 +1814,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0307
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0900
      * @tc.desc Search: findCharPosition helper escapes input to avoid regex injection
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1838,7 +1834,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0308
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT2_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_1000
      * @tc.desc Search: findFirstNumber helper returns -1 for no digits
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
