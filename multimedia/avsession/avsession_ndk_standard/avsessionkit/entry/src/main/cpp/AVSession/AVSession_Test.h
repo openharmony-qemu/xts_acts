@@ -313,5 +313,8 @@ napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED(napi_env e
 napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED(napi_env env, napi_callback_info info);
 napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED(napi_env env, napi_callback_info info);
 napi_value AVSession_AVQUEUEITEM_ERROR_NO_MEMORY(napi_env env, napi_callback_info info);
+napi_value AVMediaDescriptionBuilderSetMediaTypeNullSuccess(napi_env env, napi_callback_info info);
+napi_value AVMediaDescriptionGetAppNameNullSuccess(napi_env env, napi_callback_info info);
+napi_value AVSessionCreateNullInvalidParam(napi_env env, napi_callback_info info);
 
 #endif // OSACCOUNT_NATIVE_AV_SESSION_TEST_H
