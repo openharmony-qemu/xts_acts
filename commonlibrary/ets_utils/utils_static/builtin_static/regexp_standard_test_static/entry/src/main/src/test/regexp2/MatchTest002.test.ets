@@ -33,12 +33,12 @@ export default function matchTest002(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    testMatch0200
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0100
-     * @tc.desc    Match returns all numeric groups with global flag
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0100
+     * @tc.desc Match returns all numeric groups with global flag
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('\\d+', 'g');
@@ -54,12 +54,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0201
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0200
-     * @tc.desc    Match returns whole result and capture groups
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0201
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0200
+     * @tc.desc Match returns whole result and capture groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('(ab)(cd)');
@@ -74,12 +74,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0202
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0300
-     * @tc.desc    Match returns null when pattern is absent
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0202
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0300
+     * @tc.desc Match returns null when pattern is absent
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('z+');
@@ -88,12 +88,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0203
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0400
-     * @tc.desc    Match supports case-insensitive single capture
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0203
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0400
+     * @tc.desc Match supports case-insensitive single capture
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('abc', 'i');
@@ -106,12 +106,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0204
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0500
-     * @tc.desc    Match: non-global returns match with index/input properties
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0204
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0500
+     * @tc.desc Match: non-global returns match with index/input properties
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'xxabcdyy'.match(new RegExp('ab(cd)'));
@@ -126,12 +126,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0205
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0600
-     * @tc.desc    Match: global ignores capture groups and returns strings array
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0205
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0600
+     * @tc.desc Match: global ignores capture groups and returns strings array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'ab1ab2ab3'.match(new RegExp('(ab)(\\d)', 'g'));
@@ -146,12 +146,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0206
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0700
-     * @tc.desc    Match: empty pattern matches at position zero
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0206
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0700
+     * @tc.desc Match: empty pattern matches at position zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'abc'.match(new RegExp('(?:)'));
@@ -165,12 +165,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0207
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0800
-     * @tc.desc    Match: alternation and anchors return correct match
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0207
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0800
+     * @tc.desc Match: alternation and anchors return correct match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out1 = 'xxcatyy'.match(new RegExp('(dog|cat)'));
@@ -187,12 +187,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0208
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0900
-     * @tc.desc    Match: greedy vs lazy are observable in matched substring
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0208
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_0900
+     * @tc.desc Match: greedy vs lazy are observable in matched substring
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a123b456b';
@@ -207,12 +207,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0209
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1000
-     * @tc.desc    Match: multiline flag changes ^ and $ matching behavior
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0209
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1000
+     * @tc.desc Match: multiline flag changes ^ and $ matching behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'first\nsecond\nthird';
@@ -230,12 +230,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0210
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1100
-     * @tc.desc    Match: unicode flag with code point escapes when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1100
+     * @tc.desc Match: unicode flag with code point escapes when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'Hi 😀 there';
@@ -251,18 +251,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0211
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1200
-     * @tc.desc    Match: named capturing groups (groups) when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1200
+     * @tc.desc Match: named capturing groups (groups) when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = '2026-04-17';
       if (!supportsRegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})')) {
         // Engine does not support named capture; treat as skip.
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = input.match(new RegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})'));
@@ -278,12 +278,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0212
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1300
-     * @tc.desc    Match: dotAll (s) flag when supported affects '.' over newline
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1300
+     * @tc.desc Match: dotAll (s) flag when supported affects '.' over newline
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'hello\nworld';
@@ -298,12 +298,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0213
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1400
-     * @tc.desc    Match: word boundaries and non-word boundaries behave
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1400
+     * @tc.desc Match: word boundaries and non-word boundaries behave
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('test'.match(new RegExp('\\btest\\b')) !== null).assertTrue();
@@ -313,12 +313,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0214
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1500
-     * @tc.desc    Match: backslash and special character escaping works
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1500
+     * @tc.desc Match: backslash and special character escaping works
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a+b*c?.()[]{}|^$\\';
@@ -349,12 +349,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0215
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1600
-     * @tc.desc    Match: no-match cases return null across common patterns
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1600
+     * @tc.desc Match: no-match cases return null across common patterns
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('abc'.match(new RegExp('z+')) === null).assertTrue();
@@ -363,12 +363,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0216
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1700
-     * @tc.desc    Match: global multiline captures each line start token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1700
+     * @tc.desc Match: global multiline captures each line start token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a1\nb2\nc3';
@@ -384,12 +384,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0217
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1800
-     * @tc.desc    Match: lookahead and negative lookahead when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0217
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1800
+     * @tc.desc Match: lookahead and negative lookahead when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'price=100USD fee=200EUR';
@@ -416,12 +416,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0218
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1900
-     * @tc.desc    Match: rebuilt RegExp from existing one keeps semantics
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0218
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_1900
+     * @tc.desc Match: rebuilt RegExp from existing one keeps semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base = new RegExp('abc', 'i');
@@ -438,12 +438,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0219
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2000
-     * @tc.desc    Match: global match returns only full matches and ignores capture groups
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0219
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2000
+     * @tc.desc Match: global match returns only full matches and ignores capture groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many code paths assume global match is a pure "find all" API and never depend on capture group slots.
@@ -461,12 +461,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0220
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2100
-     * @tc.desc    Match: non-global match returns capture groups and index/input metadata
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0220
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2100
+     * @tc.desc Match: non-global match returns capture groups and index/input metadata
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // When business logic needs both extraction and position, non-global match is the common single-call primitive.
@@ -485,12 +485,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0221
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2200
-     * @tc.desc    Match: lastIndex is ignored and reset-safe even for global regex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0221
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2200
+     * @tc.desc Match: lastIndex is ignored and reset-safe even for global regex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Shared regex instances can carry lastIndex state from other operations (exec/test).
@@ -510,12 +510,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0222
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2300
-     * @tc.desc    Match: empty pattern behaviors differ for global vs non-global
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0222
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2300
+     * @tc.desc Match: empty pattern behaviors differ for global vs non-global
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty-pattern cases show up in template engines and split/join style helpers.
@@ -533,12 +533,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0223
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2400
-     * @tc.desc    Match: non-RegExp argument is coerced to string pattern (literal match)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0223
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2400
+     * @tc.desc Match: non-RegExp argument is coerced to string pattern (literal match)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many product call sites pass a string when they mean a literal substring search.
@@ -549,12 +549,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0224
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2500
-     * @tc.desc    Match: RegExp instances use well-known Symbol.match for String.prototype.match dispatch
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0224
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2500
+     * @tc.desc Match: RegExp instances use well-known Symbol.match for String.prototype.match dispatch
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Custom @@match objects are awkward in strict ArkTS; we still anchor coverage on the native RegExp path.
@@ -568,12 +568,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0225
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2600
-     * @tc.desc    Match: invalid RegExp construction throws (pattern/flags)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0225
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2600
+     * @tc.desc Match: invalid RegExp construction throws (pattern/flags)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Patterns often come from configuration; failing fast avoids silent "best effort" behavior.
@@ -595,12 +595,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0226
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2700
-     * @tc.desc    MatchAll: String.matchAll yields exec-shaped rows for global regex with capture groups
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0226
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2700
+     * @tc.desc MatchAll: String.matchAll yields exec-shaped rows for global regex with capture groups
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // matchAll is the safer API for streaming token extraction because it doesn't mutate the original regex object.
@@ -614,12 +614,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0227
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2800
-     * @tc.desc    MatchAll: regex[Symbol.matchAll](str) equals str.matchAll(regex)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0227
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2800
+     * @tc.desc MatchAll: regex[Symbol.matchAll](str) equals str.matchAll(regex)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some code uses the RegExp entrypoint, other code uses the String entrypoint.
@@ -636,12 +636,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0228
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2900
-     * @tc.desc    MatchAll: iterator exposes next() and is iterable
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0228
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_2900
+     * @tc.desc MatchAll: iterator exposes next() and is iterable
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Iterator contracts matter for consumers that lazily page results rather than materializing arrays.
@@ -656,18 +656,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0229
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3000
-     * @tc.desc    MatchAll: y+g (gy) sticky-global returns contiguous matches only when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0229
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3000
+     * @tc.desc MatchAll: y+g (gy) sticky-global returns contiguous matches only when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // gy is used for strict token streams where separators are invalid and should terminate scanning.
       // Feature-gating prevents breakage on runtimes without sticky support.
       if (!supportsRegExp('[abc]', 'gy')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('[abc]', 'gy');
@@ -679,12 +679,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0230
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3100
-     * @tc.desc    Match: dotAll impacts '.' across newline when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0230
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3100
+     * @tc.desc Match: dotAll impacts '.' across newline when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Multiline payloads such as stack traces often need a single-token match that spans newline boundaries.
@@ -701,18 +701,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0231
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3200
-     * @tc.desc    MatchAll: Unicode property letters split Latin and Greek when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0231
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3200
+     * @tc.desc MatchAll: Unicode property letters split Latin and Greek when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Unicode properties let business rules match letters across locales without manual ranges.
       // Feature-gating keeps devices with reduced Unicode support from failing the whole suite.
       if (!supportsRegExp('\\p{L}+', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('\\p{L}+', 'gu');
@@ -724,12 +724,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0232
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3300
-     * @tc.desc    MatchAll: capture groups are present per match in iterator results
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0232
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3300
+     * @tc.desc MatchAll: capture groups are present per match in iterator results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Captures in matchAll enable streaming extraction without a second pass over the buffer.
@@ -745,18 +745,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0233
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3400
-     * @tc.desc    MatchAll: named capture groups appear in groups when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0233
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3400
+     * @tc.desc MatchAll: named capture groups appear in groups when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Named groups make extraction templates readable and reduce off-by-one mistakes in long capture lists.
       // Gating keeps the suite portable while still validating behavior on capable engines.
       if (!supportsRegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})', 'g');
@@ -770,12 +770,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0234
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3500
-     * @tc.desc    MatchAll: String.matchAll requires global RegExp and should throw otherwise
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0234
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3500
+     * @tc.desc MatchAll: String.matchAll requires global RegExp and should throw otherwise
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // matchAll is designed for exhaustive iteration; requiring /g prevents accidental single-hit iteration bugs.
@@ -794,12 +794,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0235
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3600
-     * @tc.desc    MatchAll: does not mutate original regex lastIndex during iteration
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0235
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3600
+     * @tc.desc MatchAll: does not mutate original regex lastIndex during iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // matchAll is often chosen specifically to avoid shared-state hazards in concurrent parsing paths.
@@ -813,18 +813,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0236
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3700
-     * @tc.desc    MatchAll: dotAll+multiline combination is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0236
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3700
+     * @tc.desc MatchAll: dotAll+multiline combination is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Log blobs are multiline; dotAll changes whether '.' spans lines while m changes anchor behavior per line.
       // Gating keeps the suite portable while still validating richer engines.
       if (!supportsRegExp('test.+test', 'gsm')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('test.+test', 'gsm');
@@ -846,16 +846,16 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0237
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3800
-     * @tc.desc    MatchAll: multiline anchor finds two line heads
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0237
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3800
+     * @tc.desc MatchAll: multiline anchor finds two line heads
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // m-anchored scanning is common in stack trace and config parsing where splitting loses absolute offsets.
-      // matchAll provides a clean, iterator-based surface for line-wise extraction.
+      // matchAll provides a clean, iterator-based API for line-wise extraction.
       const re = new RegExp('^test', 'gm');
       const str = 'test\ntest';
       const out = Array.from(str.matchAll(re));
@@ -865,12 +865,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0238
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3900
-     * @tc.desc    MatchAll: ignoreCase+global matches all case variants
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0238
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_3900
+     * @tc.desc MatchAll: ignoreCase+global matches all case variants
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // User-generated content frequently varies by case; normalization relies on gi scans being exhaustive.
@@ -885,12 +885,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0239
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4000
-     * @tc.desc    MatchAll: surrogate pair handling differs with u flag (feature-gated)
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0239
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4000
+     * @tc.desc MatchAll: surrogate pair handling differs with u flag (feature-gated)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Supplementary-plane characters appear in math/music text; u-mode prevents splitting surrogate pairs.
@@ -902,23 +902,23 @@ export default function matchTest002(): void {
         expect(b).assertEqual(2);
         expect(a >= b).assertTrue();
       } else {
-        expect(true).assertTrue();
+        return;
       }
     });
 
     /**
-     * @tc.name    testMatch0240
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4100
-     * @tc.desc    Match: non-global sticky regex respects lastIndex when finding the next occurrence
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0240
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4100
+     * @tc.desc Match: non-global sticky regex respects lastIndex when finding the next occurrence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some engines accept y on RegExp; match() should still behave as a deterministic finder.
       // We gate support to avoid compile-time failures on runtimes without sticky.
       if (!supportsRegExp('abc', 'y')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const re = new RegExp('abc', 'y');
@@ -932,18 +932,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0241
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4200
-     * @tc.desc    Match: Unicode code point escape matches emoji when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0241
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4200
+     * @tc.desc Match: Unicode code point escape matches emoji when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some patterns are stored in ASCII-only configs and rely on \\u{...} escapes for portability.
       // Feature gating ensures the suite still runs where u-mode escapes are not implemented.
       if (!supportsRegExp('\\u{1F600}', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = 'A😀B'.match(new RegExp('\\u{1F600}', 'u'));
@@ -954,12 +954,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0242
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4300
-     * @tc.desc    MatchAll: nested capture structure exposes correct group slots
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0242
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4300
+     * @tc.desc MatchAll: nested capture structure exposes correct group slots
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Nested captures are common in legacy patterns; group slots must remain stable for downstream templates.
@@ -974,12 +974,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0243
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4400
-     * @tc.desc    MatchAll: non-capturing groups do not add extra slots
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0243
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4400
+     * @tc.desc MatchAll: non-capturing groups do not add extra slots
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Non-capturing groups keep templates simpler by avoiding shifting numeric capture indices.
@@ -991,18 +991,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0244
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4500
-     * @tc.desc    MatchAll: Unicode property letters with gui split scripts when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0244
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4500
+     * @tc.desc MatchAll: Unicode property letters with gui split scripts when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // International text often mixes scripts; Unicode properties avoid brittle hand-maintained ranges.
       // The gui combo is common in tokenizers that want both exhaustiveness and case folding.
       if (!supportsRegExp('\\p{L}+', 'u')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('\\p{L}+', 'gui');
@@ -1015,12 +1015,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0245
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4600
-     * @tc.desc    MatchAll: empty pattern global is bounded and terminates safely
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0245
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4600
+     * @tc.desc MatchAll: empty pattern global is bounded and terminates safely
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty-pattern iterations are easy to get wrong and can hang batch processors.
@@ -1034,18 +1034,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0246
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4700
-     * @tc.desc    MatchAll: dotAll+sticky+unicode combo is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0246
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4700
+     * @tc.desc MatchAll: dotAll+sticky+unicode combo is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some engines support rich flag sets; when available, this combo models strict token streams across newlines.
       // We gate to keep the suite portable and avoid syntax errors on reduced runtimes.
       if (!supportsRegExp('.+', 'suy')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('.+', 'gsuy');
@@ -1055,12 +1055,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0247
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4800
-     * @tc.desc    MatchAll: gim combination finds tokens across lines with case folding
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0247
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4800
+     * @tc.desc MatchAll: gim combination finds tokens across lines with case folding
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // In real logs, case varies and records are multiline; gim is a common normalization setting.
@@ -1074,12 +1074,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0248
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4900
-     * @tc.desc    Match: URL protocol and host extraction for routing decisions
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0248
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_4900
+     * @tc.desc Match: URL protocol and host extraction for routing decisions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // URL parsing is security-relevant; extracting protocol/host drives allowlists and feature routing.
@@ -1094,12 +1094,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0249
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5000
-     * @tc.desc    Match: Windows path segment extraction normalizes separators
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0249
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5000
+     * @tc.desc Match: Windows path segment extraction normalizes separators
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Desktop clients emit backslashes; extracting the filename is common in upload and sync features.
@@ -1113,12 +1113,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0250
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5100
-     * @tc.desc    Match: semantic version capture tolerates optional patch segment
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0250
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5100
+     * @tc.desc Match: semantic version capture tolerates optional patch segment
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Release channels mix short tags and full semver; optional groups keep one parser for both formats.
@@ -1136,12 +1136,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0251
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5200
-     * @tc.desc    MatchAll: log field scanning extracts key=value pairs globally
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0251
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5200
+     * @tc.desc MatchAll: log field scanning extracts key=value pairs globally
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Observability pipelines parse repeated key=value tokens; global iteration must preserve all fields.
@@ -1159,12 +1159,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0252
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5300
-     * @tc.desc    MatchAll: groups is undefined when no named captures exist
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0252
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5300
+     * @tc.desc MatchAll: groups is undefined when no named captures exist
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some consumers probe for groups to detect "named-mode"; undefined is part of the contract for non-named patterns.
@@ -1177,12 +1177,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0253
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5400
-     * @tc.desc    MatchAll: mixed capturing and non-capturing groups preserve index slots
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0253
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5400
+     * @tc.desc MatchAll: mixed capturing and non-capturing groups preserve index slots
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Teams refactor patterns for readability by converting some groups to non-capturing.
@@ -1196,12 +1196,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0254
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5500
-     * @tc.desc    MatchAll: deep nested captures produce stable array length
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0254
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5500
+     * @tc.desc MatchAll: deep nested captures produce stable array length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Deep nesting shows up in legacy regexes generated by tools; consumers rely on fixed arity.
@@ -1214,12 +1214,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0255
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5600
-     * @tc.desc    MatchAll: without u flag, surrogate pairs may split into two code units
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0255
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5600
+     * @tc.desc MatchAll: without u flag, surrogate pairs may split into two code units
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some devices run reduced Unicode mode; behavior must be predictable even if grapheme correctness is limited.
@@ -1235,19 +1235,19 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0256
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5700
-     * @tc.desc    MatchAll: dotAll scans across newline when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0256
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5700
+     * @tc.desc MatchAll: dotAll scans across newline when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Multi-line event payloads are common; dotAll enables single-pass extraction without [\\s\\S] hacks.
       // Gating keeps compatibility while validating the richer path where enabled.
       const str = 'a\nb a\tb';
       if (!supportsRegExp('a.b', 's')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('a.b', 'gs');
@@ -1258,12 +1258,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0257
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5800
-     * @tc.desc    MatchAll: multiline $ anchor trims line-end semicolons
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0257
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5800
+     * @tc.desc MatchAll: multiline $ anchor trims line-end semicolons
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Many tools emit ';' terminators per line; identifying them is a precursor to safe cleanup.
@@ -1274,12 +1274,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0258
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5900
-     * @tc.desc    MatchAll: querystring key=value extraction handles repeated keys
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0258
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_5900
+     * @tc.desc MatchAll: querystring key=value extraction handles repeated keys
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Routing and analytics often read querystrings; repeated keys must be captured without dropping earlier ones.
@@ -1296,12 +1296,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0259
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6000
-     * @tc.desc    Match: email capture extracts local and domain parts
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0259
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6000
+     * @tc.desc Match: email capture extracts local and domain parts
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Support tooling often masks or routes by domain; capturing parts avoids re-splitting the string later.
@@ -1315,12 +1315,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0260
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6100
-     * @tc.desc    MatchAll: IPv4 extraction finds dotted quad tokens inside text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0260
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6100
+     * @tc.desc MatchAll: IPv4 extraction finds dotted quad tokens inside text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Logs often contain many IP-like tokens; extracting them supports PII masking and abuse triage.
@@ -1333,12 +1333,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0261
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6200
-     * @tc.desc    MatchAll: quoted value capture handles spaces without splitting tokens
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0261
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6200
+     * @tc.desc MatchAll: quoted value capture handles spaces without splitting tokens
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Command lines and config lines frequently allow quoted values with spaces.
@@ -1351,18 +1351,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0262
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6300
-     * @tc.desc    MatchAll: alternation with named groups leaves inactive names undefined when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0262
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6300
+     * @tc.desc MatchAll: alternation with named groups leaves inactive names undefined when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Real-world patterns often use alternation to represent multiple record shapes.
       // Ensuring inactive named groups are undefined avoids ambiguous "empty string" interpretations in mappers.
       if (!supportsRegExp('(?<a>\\d+)|(?<b>\\w+)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const regex = new RegExp('(?<a>\\d+)|(?<b>\\w+)', 'g');
@@ -1374,12 +1374,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0263
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6400
-     * @tc.desc    MatchAll: iterator results include index and input fields like exec
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0263
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6400
+     * @tc.desc MatchAll: iterator results include index and input fields like exec
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Some pipelines consume matchAll results as exec-like objects and rely on index/input for patch generation.
@@ -1394,12 +1394,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0264
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6500
-     * @tc.desc    MatchAll: iterator can be partially consumed without losing correctness
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0264
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6500
+     * @tc.desc MatchAll: iterator can be partially consumed without losing correctness
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Streaming consumers often stop early after finding the first N hits, then resume later.
@@ -1421,12 +1421,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0265
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6600
-     * @tc.desc    MatchAll: iteration does not advance the original regex lastIndex
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0265
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6600
+     * @tc.desc MatchAll: iteration does not advance the original regex lastIndex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // matchAll is frequently used to avoid shared mutable state between parsing stages.
@@ -1440,18 +1440,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0266
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6700
-     * @tc.desc    MatchAll: empty match with gu is feature-gated and bounded
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0266
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6700
+     * @tc.desc MatchAll: empty match with gu is feature-gated and bounded
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Empty matches are risky for iterators; Unicode mode affects advancement around surrogate pairs.
       // We assert only bounds to keep behavior stable across engines while still catching hangs.
       if (!supportsRegExp('(?:)', 'gu')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const str = '😀';
@@ -1461,12 +1461,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0267
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6800
-     * @tc.desc    MatchAll: with and without u flag differ on surrogate pair '.' scanning
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0267
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6800
+     * @tc.desc MatchAll: with and without u flag differ on surrogate pair '.' scanning
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // This captures a portability boundary: code-unit iteration vs code-point iteration.
@@ -1484,12 +1484,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0268
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6900
-     * @tc.desc    Match: multiline anchor match returns correct index and capture
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0268
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_6900
+     * @tc.desc Match: multiline anchor match returns correct index and capture
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Multiline matching is used for line-oriented parsers where splitting would lose absolute offsets.
@@ -1504,12 +1504,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0269
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7000
-     * @tc.desc    MatchAll: URL path segment scanning extracts each segment token
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0269
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7000
+     * @tc.desc MatchAll: URL path segment scanning extracts each segment token
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Segment extraction is a common routing step; it must ignore empty segments and preserve ordering.
@@ -1523,12 +1523,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0270
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7100
-     * @tc.desc    MatchAll: JSON-like key extraction handles quoted keys
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0270
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7100
+     * @tc.desc MatchAll: JSON-like key extraction handles quoted keys
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Log payloads are often JSON-ish; extracting keys supports indexing without full JSON parsing.
@@ -1542,12 +1542,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0271
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7200
-     * @tc.desc    MatchAll: error-like stack lines extract file and line numbers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0271
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7200
+     * @tc.desc MatchAll: error-like stack lines extract file and line numbers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Support pipelines parse stack traces to group crashes by callsite.
@@ -1562,12 +1562,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0272
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7300
-     * @tc.desc    Match: strict token match prevents partial matches inside identifiers
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0272
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7300
+     * @tc.desc Match: strict token match prevents partial matches inside identifiers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Keyword scanners use boundaries to avoid matching inside longer identifiers.
@@ -1577,12 +1577,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0273
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7400
-     * @tc.desc    MatchAll: capturing numeric metric names and values from telemetry
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0273
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7400
+     * @tc.desc MatchAll: capturing numeric metric names and values from telemetry
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Monitoring formats often emit name=value pairs separated by commas.
@@ -1597,12 +1597,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0274
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7500
-     * @tc.desc    Match: protocol, host and optional port extraction from URL
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0274
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7500
+     * @tc.desc Match: protocol, host and optional port extraction from URL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Service routers decide security policy from scheme/host/port before path-level handling.
@@ -1618,12 +1618,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0275
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7600
-     * @tc.desc    MatchAll: host-like tokens are extracted from mixed text
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0275
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7600
+     * @tc.desc MatchAll: host-like tokens are extracted from mixed text
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Incident timelines often include many hosts in free text that need quick indexing.
@@ -1636,12 +1636,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0276
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7700
-     * @tc.desc    Match: ISO datetime prefix capture supports T and space separators
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0276
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7700
+     * @tc.desc Match: ISO datetime prefix capture supports T and space separators
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Data pipelines ingest timestamps from multiple producers with minor separator differences.
@@ -1657,12 +1657,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0277
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7800
-     * @tc.desc    MatchAll: log level and message extraction from multiline logs
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0277
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7800
+     * @tc.desc MatchAll: log level and message extraction from multiline logs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Alerting systems classify logs by level; extracting level/message in one pass improves indexing throughput.
@@ -1677,12 +1677,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0278
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7900
-     * @tc.desc    MatchAll: quoted string extraction supports escaped quote patterns
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0278
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_7900
+     * @tc.desc MatchAll: quoted string extraction supports escaped quote patterns
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Configuration snippets often include quoted values containing escaped characters.
@@ -1697,12 +1697,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0279
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8000
-     * @tc.desc    Match: greedy vs lazy differences are visible in first match span
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0279
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8000
+     * @tc.desc Match: greedy vs lazy differences are visible in first match span
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Template parsers often wrap tags and need non-greedy behavior to avoid swallowing neighbors.
@@ -1719,12 +1719,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0280
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8100
-     * @tc.desc    MatchAll: hexadecimal ID extraction is case-insensitive and global
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0280
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8100
+     * @tc.desc MatchAll: hexadecimal ID extraction is case-insensitive and global
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Trace systems emit hex IDs in mixed case; extraction should not depend on producer casing.
@@ -1737,12 +1737,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0281
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8200
-     * @tc.desc    MatchAll: semicolon-delimited key pairs handle trailing spaces
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0281
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8200
+     * @tc.desc MatchAll: semicolon-delimited key pairs handle trailing spaces
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Legacy protocols often use semicolon-separated pairs with inconsistent whitespace.
@@ -1755,18 +1755,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0282
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8300
-     * @tc.desc    Match: lookbehind-based suffix extraction is feature-gated
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0282
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8300
+     * @tc.desc Match: lookbehind-based suffix extraction is feature-gated
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Lookbehind provides cleaner patterns for delimiter-based extraction without capturing prefixes.
       // Feature-gating avoids runtime failures on engines that don't implement lookbehind.
       if (!supportsRegExp('(?<=:)\\w+')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const out = 'key:value'.match(new RegExp('(?<=:)\\w+'));
@@ -1777,18 +1777,18 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0283
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8400
-     * @tc.desc    MatchAll: negative lookahead filter skips USD-suffixed numbers when supported
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0283
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8400
+     * @tc.desc MatchAll: negative lookahead filter skips USD-suffixed numbers when supported
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Finance feeds often mix units; negative lookahead is used to isolate non-USD amounts quickly.
       // Feature-gating keeps baseline engines stable while still testing richer parsers.
       if (!supportsRegExp('\\d+(?!USD)')) {
-        expect(true).assertTrue();
+        return;
         return;
       }
       const str = '100USD 200EUR 300';
@@ -1799,12 +1799,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0284
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8500
-     * @tc.desc    MatchAll: trailing file extensions extracted from mixed paths
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0284
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8500
+     * @tc.desc MatchAll: trailing file extensions extracted from mixed paths
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // File classifiers often need only the extension from heterogeneous path formats.
@@ -1819,12 +1819,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0285
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8600
-     * @tc.desc    Match: strict IPv4 validator rejects out-of-range octets
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0285
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8600
+     * @tc.desc Match: strict IPv4 validator rejects out-of-range octets
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Security filters require bounded octets; loose patterns can whitelist invalid addresses.
@@ -1835,12 +1835,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0286
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8700
-     * @tc.desc    MatchAll: duplicated separators still produce correct token sequence
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0286
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8700
+     * @tc.desc MatchAll: duplicated separators still produce correct token sequence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // User input often contains repeated separators from copy/paste artifacts.
@@ -1854,12 +1854,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0287
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8800
-     * @tc.desc    MatchAll: optional quoted value branch leaves inactive capture undefined
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0287
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8800
+     * @tc.desc MatchAll: optional quoted value branch leaves inactive capture undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Mixed-value formats can have quoted or bare values; optional branches keep one parser path.
@@ -1875,12 +1875,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0288
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8900
-     * @tc.desc    Match: rebuilt regex from source and flags preserves behavior on grouped patterns
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0288
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_8900
+     * @tc.desc Match: rebuilt regex from source and flags preserves behavior on grouped patterns
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Persisted regex metadata is often reconstructed after process restart.
@@ -1897,12 +1897,12 @@ export default function matchTest002(): void {
     });
 
     /**
-     * @tc.name    testMatch0289
-     * @tc.number  SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_9000
-     * @tc.desc    MatchAll: grouped date tokens extract year month day globally
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.name testMatch0289
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCH_SUPPLEMENT_TEST_9000
+     * @tc.desc MatchAll: grouped date tokens extract year month day globally
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testMatch0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Calendar-like payloads often contain multiple dates that must be indexed without splitting the whole string.
