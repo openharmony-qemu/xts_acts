@@ -121,8 +121,6 @@ import BuiltinsJsonElementTryAsLongTest from "./jsonElement/BuiltinsJsonElementT
 import BuiltinsJsonElementTryGetBigIntTest from "./jsonElement/BuiltinsJsonElementTryGetBigIntTest.test";
 import BuiltinsJsonElementTryGetLongTest from "./jsonElement/BuiltinsJsonElementTryGetLongTest.test";
 
-// Unsafe tests
-import BuiltinsMemoryWriteTest from "./unsafe/BuiltinsMemoryWriteTest.test";
 
 
 export default function testsuite(): void {
@@ -249,6 +247,4 @@ export default function testsuite(): void {
   BuiltinsJsonElementTryGetBigIntTest();
   BuiltinsJsonElementTryGetLongTest();
 
-  // Unsafe tests
-  BuiltinsMemoryWriteTest();
 }

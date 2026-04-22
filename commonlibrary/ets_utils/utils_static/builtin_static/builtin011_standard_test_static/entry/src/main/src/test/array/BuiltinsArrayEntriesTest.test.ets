@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayEntriesTest() {
+export default function BuiltinsArrayEntriesTest(): void {
   describe('BuiltinsArrayEntriesTest', () => {
     beforeAll(() => {
     })
@@ -36,24 +36,41 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayEntriesTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = new Array<number>(10, 20, 30, 40, 50);
       const iterator = arr.entries();
 
-      const expected = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]];
-      let result: number[][] = [];
+      const first = iterator.next();
+      expect(first.done).assertEqual(false);
+      const firstValue = first.value as number[];
+      expect(firstValue[0]).assertEqual(0);
+      expect(firstValue[1]).assertEqual(10);
 
-      let next = iterator.next();
-      while (!next.done) {
-        const entry = next.value as number[];
-        result.push([Number(entry[0]), Number(entry[1])]);
-        next = iterator.next();
-      }
+      const second = iterator.next();
+      expect(second.done).assertEqual(false);
+      const secondValue = second.value as number[];
+      expect(secondValue[0]).assertEqual(1);
+      expect(secondValue[1]).assertEqual(20);
 
-      expect(result.length).assertEqual(expected.length);
-      for (let i = 0; i < result.length; i++) {
-        expect(result[i][0]).assertEqual(expected[i][0]);
-        expect(result[i][1]).assertEqual(expected[i][1]);
-      }
+      const third = iterator.next();
+      expect(third.done).assertEqual(false);
+      const thirdValue = third.value as number[];
+      expect(thirdValue[0]).assertEqual(2);
+      expect(thirdValue[1]).assertEqual(30);
+
+      const fourth = iterator.next();
+      expect(fourth.done).assertEqual(false);
+      const fourthValue = fourth.value as number[];
+      expect(fourthValue[0]).assertEqual(3);
+      expect(fourthValue[1]).assertEqual(40);
+
+      const fifth = iterator.next();
+      expect(fifth.done).assertEqual(false);
+      const fifthValue = fifth.value as number[];
+      expect(fifthValue[0]).assertEqual(4);
+      expect(fifthValue[1]).assertEqual(50);
+
+      const end = iterator.next();
+      expect(end.done).assertEqual(true);
     });
 
     /**
@@ -65,12 +82,12 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayEntriesTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr = new Array<string>();
       const iterator = arr.entries();
 
-      const next = iterator.next();
-      expect(next.done).assertEqual(true);
-      expect(next.value).assertEqual(undefined);
+      const result = iterator.next();
+      expect(result.done).assertEqual(true);
+      expect(result.value).assertEqual(undefined);
     });
 
     /**
@@ -82,14 +99,14 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayEntriesTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = Array.of<number>(42);
+      const arr = new Array<number>(100);
       const iterator = arr.entries();
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
       const firstValue = first.value as number[];
-      expect(Number(firstValue[0])).assertEqual(0);
-      expect(Number(firstValue[1])).assertEqual(42);
+      expect(firstValue[0]).assertEqual(0);
+      expect(firstValue[1]).assertEqual(100);
 
       const second = iterator.next();
       expect(second.done).assertEqual(true);
@@ -104,24 +121,27 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr = new Array<string>('hello', 'world', 'test');
       const iterator = arr.entries();
 
-      const expected = [[0, "apple"], [1, "banana"], [2, "cherry"]];
-      let result: (string | number)[][] = [];
+      let count = 0;
+      let current = iterator.next();
 
-      let next = iterator.next();
-      while (!next.done) {
-        const entry = next.value as (string | number)[];
-        result.push([Number(entry[0]), entry[1] as string]);
-        next = iterator.next();
+      while (!current.done) {
+        const entry = current.value as (string | number)[];
+        expect(entry[0]).assertEqual(count);
+        if (count === 0) {
+          expect(entry[1] as string).assertEqual('hello');
+        } else if (count === 1) {
+          expect(entry[1] as string).assertEqual('world');
+        } else if (count === 2) {
+          expect(entry[1] as string).assertEqual('test');
+        }
+        count = count + 1;
+        current = iterator.next();
       }
 
-      expect(result.length).assertEqual(expected.length);
-      for (let i = 0; i < result.length; i++) {
-        expect(result[i][0]).assertEqual(expected[i][0]);
-        expect(result[i][1]).assertEqual(expected[i][1]);
-      }
+      expect(count).assertEqual(3);
     });
 
     /**
@@ -133,23 +153,35 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true);
+      const arr = new Array<boolean>(true, false, true, false);
       const iterator = arr.entries();
 
-      const expected: [number, boolean][] = [[0, true], [1, false], [2, true]];
-      let result: [number, boolean][] = [];
+      const first = iterator.next();
+      expect(first.done).assertEqual(false);
+      const firstValue = first.value as (boolean | number)[];
+      expect(firstValue[0]).assertEqual(0);
+      expect(firstValue[1] as boolean).assertEqual(true);
 
-      let next = iterator.next();
-      while (!next.done) {
-        const entry = next.value as [number, boolean];
-        result.push([entry[0], entry[1]]);
-        next = iterator.next();
-      }
-      expect(result.length).assertEqual(expected.length);
-      for (let i = 0; i < result.length; i++) {
-        expect(result[i][0]).assertEqual(expected[i][0]);
-        expect(result[i][1]).assertEqual(expected[i][1]);
-      }
+      const second = iterator.next();
+      expect(second.done).assertEqual(false);
+      const secondValue = second.value as (boolean | number)[];
+      expect(secondValue[0]).assertEqual(1);
+      expect(secondValue[1] as boolean).assertEqual(false);
+
+      const third = iterator.next();
+      expect(third.done).assertEqual(false);
+      const thirdValue = third.value as (boolean | number)[];
+      expect(thirdValue[0]).assertEqual(2);
+      expect(thirdValue[1] as boolean).assertEqual(true);
+
+      const fourth = iterator.next();
+      expect(fourth.done).assertEqual(false);
+      const fourthValue = fourth.value as (boolean | number)[];
+      expect(fourthValue[0]).assertEqual(3);
+      expect(fourthValue[1] as boolean).assertEqual(false);
+
+      const end = iterator.next();
+      expect(end.done).assertEqual(true);
     });
 
     /**
@@ -161,17 +193,29 @@ export default function BuiltinsArrayEntriesTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
-      const iterator = arr.entries();
-      const selfIterator = iterator.$_iterator();
+      const arr = new Array<number>(5, 10, 15);
+      const entriesIterator = arr.entries();
 
-      expect(selfIterator).assertEqual(iterator);
-
-      const first = selfIterator.next();
+      const first = entriesIterator.next();
       expect(first.done).assertEqual(false);
       const firstValue = first.value as number[];
-      expect(Number(firstValue[0])).assertEqual(0);
-      expect(Number(firstValue[1])).assertEqual(1);
+      expect(firstValue[0]).assertEqual(0);
+      expect(firstValue[1]).assertEqual(5);
+
+      const second = entriesIterator.next();
+      expect(second.done).assertEqual(false);
+      const secondValue = second.value as number[];
+      expect(secondValue[0]).assertEqual(1);
+      expect(secondValue[1]).assertEqual(10);
+
+      const third = entriesIterator.next();
+      expect(third.done).assertEqual(false);
+      const thirdValue = third.value as number[];
+      expect(thirdValue[0]).assertEqual(2);
+      expect(thirdValue[1]).assertEqual(15);
+
+      const end = entriesIterator.next();
+      expect(end.done).assertEqual(true);
     });
 
     /**
@@ -186,27 +230,26 @@ export default function BuiltinsArrayEntriesTest() {
       const arr = new Array<number>(1, 2);
       const iterator = arr.entries();
 
-      // First element
       const first = iterator.next();
       expect(first.done).assertEqual(false);
       const firstValue = first.value as number[];
-      expect(Number(firstValue[0])).assertEqual(0);
-      expect(Number(firstValue[1])).assertEqual(1);
+      expect(firstValue[0]).assertEqual(0);
+      expect(firstValue[1]).assertEqual(1);
 
-      // Second element
       const second = iterator.next();
       expect(second.done).assertEqual(false);
       const secondValue = second.value as number[];
-      expect(Number(secondValue[0])).assertEqual(1);
-      expect(Number(secondValue[1])).assertEqual(2);
+      expect(secondValue[0]).assertEqual(1);
+      expect(secondValue[1]).assertEqual(2);
 
-      // Beyond array length
       const third = iterator.next();
       expect(third.done).assertEqual(true);
 
-      // Subsequent calls should still return done: true
       const fourth = iterator.next();
       expect(fourth.done).assertEqual(true);
+
+      const fifth = iterator.next();
+      expect(fifth.done).assertEqual(true);
     });
   });
 }

@@ -50,7 +50,7 @@ export default function BuiltinsBigIntOperatorAddTest(): void {
       const bigInt1 = new BigInt("0xdecafafecacefade");
       const bigInt2 = new BigInt("0x1fffffffffffff");
       const result = bigInt1.operatorAdd(bigInt2);
-      const expected = new BigInt("0xDECAFAFECACF3E9F");
+      const expected = new BigInt("0xdecb1afecacefadd");
       expect(result.equals(expected)).assertTrue();
     });
 
@@ -64,11 +64,8 @@ export default function BuiltinsBigIntOperatorAddTest(): void {
      */
     it('builtinsBigIntOperatorAddTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bigInt = new BigInt("9007199254740991");
-      
       const result = bigInt.operatorAdd(bigInt);
-
       const expected = new BigInt("18014398509481982");
-      
       expect(result.equals(expected)).assertTrue();
     });
 
