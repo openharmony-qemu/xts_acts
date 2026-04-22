@@ -81,6 +81,71 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
+     * @tc.desc   getAuxiliaryPictureInfo the auxiliaryPictureType emu the size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
+
+      const formats = [
+        image.AuxiliaryPictureType.GAINMAP,
+        image.AuxiliaryPictureType.DEPTH_MAP,
+        image.AuxiliaryPictureType.UNREFOCUS_MAP,
+        image.AuxiliaryPictureType.LINEAR_MAP,
+        image.AuxiliaryPictureType.FRAGMENT_MAP];
+      console.info(TAG, testName,`formats success:`,formats);
+      for (const format of formats) {
+        let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+        console.info(TAG, testName,`image.AuxiliaryPictureType success:`,auxType);
+        let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        console.info(TAG, testName,`auxPictureObj success:`,auxPictureObj);
+        try {
+          if (auxPictureObj != null) {
+            let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+            let info: image.AuxiliaryPictureInfo = {
+              auxiliaryPictureType: format,
+              size: { height: 100, width: 200 },
+              pixelFormat: image.PixelMapFormat.RGBA_8888,
+              rowStride: 0,
+              colorSpace: colorSpaceManager.create(colorSpaceName),
+            };
+            auxPictureObj.setAuxiliaryPictureInfo(info);
+            let res:image.AuxiliaryPictureInfo | undefined = auxPictureObj.getAuxiliaryPictureInfo();
+            console.info(TAG, testName,`auxPictureObj getAuxiliaryPictureInfo success:`,JSON.stringify(res));
+            expect(res!.auxiliaryPictureType == format).assertTrue();
+            expect(res!.size.height).assertEqual(100);
+            expect(res!.size.width).assertEqual(200);
+          } else {
+            console.error(TAG, testName, 'AuxPictureObj is null.');
+            expect().assertFail();
+          }
+        } catch (error) {
+          console.info(TAG, testName, `failed; error: ${error},${error.code}`, testName);
+          expect().assertFail();
+        } finally {
+          auxPictureObj.release();
+        }
+      }
+      done();
+    });
+
+
+
+
+
+
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
