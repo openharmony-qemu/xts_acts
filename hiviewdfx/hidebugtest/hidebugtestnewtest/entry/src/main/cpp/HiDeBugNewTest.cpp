@@ -939,6 +939,90 @@ static napi_value TestRequestTraceReserved1(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value CheckHidebugTraceStorageLimit(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::OH_HIDEBUG_TRACE_STORAGE_LIMIT == 11400120;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugSuccess(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_SUCCESS == 11400400;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugPermissionDenied(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_PERMISSION_DENIED == 11400420;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugAlreadyStarted(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_ALREADY_STARTED == 11400421;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugNotStarted(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_NOT_STARTED == 11400422;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugProcessOverlimit(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_PROCESS_OVERLIMIT == 11400423;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugConflict(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_CONFLICT == 11400424;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugAutoStoppedByDuration(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_AUTO_STOPPED_BY_DURATION == 11400425;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugDailyQuotaExceeded(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_DAILY_QUOTA_EXCEEDED == 11400426;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugCpuOverloaded(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_CPU_OVERLOADED == 11400427;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugMemPressureCritical(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_MEM_PRESSURE_CRITICAL == 11400428;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+static napi_value CheckHidebugStoragePressureCritical(napi_env env, napi_callback_info info){
+    bool res = HiDebug_ErrorCode::HIDEBUG_RES_PROF_STORAGE_PRESSURE_CRITICAL == 11400429;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -984,6 +1068,27 @@ static napi_value Init(napi_env env, napi_value exports)
         { "TestRequestTracedurationMs3", nullptr, TestRequestTracedurationMs3, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTracedurationMs4", nullptr, TestRequestTracedurationMs4, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceReserved1", nullptr, TestRequestTraceReserved1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugTraceStorageLimit", nullptr, CheckHidebugTraceStorageLimit, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugSuccess", nullptr, CheckHidebugSuccess, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugPermissionDenied", nullptr, CheckHidebugPermissionDenied, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugAlreadyStarted", nullptr, CheckHidebugAlreadyStarted, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugNotStarted", nullptr, CheckHidebugNotStarted, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugProcessOverlimit", nullptr, CheckHidebugProcessOverlimit, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugConflict", nullptr, CheckHidebugConflict, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkHidebugAutoStoppedByDuration", nullptr, CheckHidebugAutoStoppedByDuration, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugDailyQuotaExceeded", nullptr, CheckHidebugDailyQuotaExceeded, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugCpuOverloaded", nullptr, CheckHidebugCpuOverloaded, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugMemPressureCritical", nullptr, CheckHidebugMemPressureCritical, nullptr, nullptr, nullptr,
+        napi_default, nullptr },
+        { "checkHidebugStoragePressureCritical", nullptr, CheckHidebugStoragePressureCritical, nullptr, nullptr,
+        nullptr, napi_default, nullptr },
         
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
