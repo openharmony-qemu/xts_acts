@@ -1809,11 +1809,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0050
-     * @tc.number VIDEO_HWDEC_API_ADD_50
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0050
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0050', Level.LEVEL2, async (done: Function) => {
@@ -1823,11 +1819,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0060
-     * @tc.number VIDEO_HWDEC_API_ADD_60
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0060
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0060', Level.LEVEL2, async (done: Function) => {
@@ -1837,11 +1829,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0070
-     * @tc.number VIDEO_HWDEC_API_ADD_70
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0070
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0070', Level.LEVEL2, async (done: Function) => {
@@ -1851,11 +1839,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0080
-     * @tc.number VIDEO_HWDEC_API_ADD_80
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0080
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0080', Level.LEVEL2, async (done: Function) => {
@@ -1865,11 +1849,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0090
-     * @tc.number VIDEO_HWDEC_API_ADD_90
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0090
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0090', Level.LEVEL2, async (done: Function) => {
@@ -1879,11 +1859,7 @@ export default function ApiTest() {
     })
 
     /**
-     * @tc.name   VIDEO_HWDEC_API_ADD_0100
-     * @tc.number VIDEO_HWDEC_API_ADD_100
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.number TC0100
      * @tc.level  LEVEL2
      */
     it('VIDEO_HWDEC_API_ADD_0100', Level.LEVEL2, async (done: Function) => {
