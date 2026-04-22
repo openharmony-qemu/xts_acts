@@ -119,7 +119,7 @@ export default function CertManagerApiTest() {
         expect(null).assertFail();
       }
 
-      let result: number = CertManagerApi.OHCertManagerNativeApiPrivateFunc0100(keyUri)
+      let result: number = CertManagerApi.OHCertManagerNativeApiPrivateFunc0100(keyUri);
       expect(result).assertEqual(0);
 
       if (keyUri != undefined) {
@@ -144,7 +144,7 @@ export default function CertManagerApiTest() {
       console.info('SUB_Security_CertManager_Ukey_2004 start');
       let keyUri = '';
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiPrivateErr0100(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiPrivateErr0100(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2004: e.code " + error.code);
@@ -167,7 +167,7 @@ export default function CertManagerApiTest() {
       let result1 = bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
       let keyUri = "oh:t=ak;o=appCertAliasDemoEcc1;u=100;a="+result1.appInfo.uid;
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiPrivateErr0200(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiPrivateErr0200(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2005: e.code " + error.code);
@@ -188,7 +188,7 @@ export default function CertManagerApiTest() {
       console.info('SUB_Security_CertManager_Ukey_2008 start');
       let keyUri = '';
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0100(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0100(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2008: e.code " + error.code);
@@ -210,7 +210,7 @@ export default function CertManagerApiTest() {
 
       let keyUri = "oh:t=ak;o=RnotoxS2B2gYLIiz9WrSsaKfrSa-hT7TB7MkApLXiZEA;u=100;a=20020100";
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0200(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0200(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2009: e.code " + error.code);
@@ -232,7 +232,7 @@ export default function CertManagerApiTest() {
       let result1 = bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
       let keyUri = "oh:t=ak;o=RnotoxS2B2gYLIiz9WrSsaKfrSa-hT7TB7MkApLXiZEA;u=100;a=20020100?ca="+result1.appInfo.uid+"&m=842C6D552111E5615BA256FC47BB3ABA3D3872F0931CB575756E43E58E4A0393\0";
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0300(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiPublicErr0300(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2011: e.code " + error.code);
@@ -253,7 +253,7 @@ export default function CertManagerApiTest() {
       console.info('SUB_Security_CertManager_Ukey_2001 start');
       let keyUri = "oh:t=ak;o=RnotoxS2B2gYLIiz9WrSsaKfrSa-hT7TB7MkApLXiZEA;;u=100;a=20020100\0";
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiUkeyErr0100(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiUkeyErr0100(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2001: e.code " + error.code);
@@ -274,12 +274,125 @@ export default function CertManagerApiTest() {
       console.info('SUB_Security_CertManager_Ukey_2010 start');
       let keyUri = "";
       try {
-        let result: number = CertManagerApi.OHCertManagerNativeApiUkeyErr0200(keyUri)
+        let result: number = CertManagerApi.OHCertManagerNativeApiUkeyErr0200(keyUri);
         expect(result).assertEqual(0);
       } catch (error) {
         console.error("SUB_Security_CertManager_Ukey_2010: e.code " + error.code);
         expect(null).assertFail();
       }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_Enum_0100
+     * @tc.number SUB_Security_CertManager_Enum_0100
+     * @tc.desc   verify all enum definitions from cm_native_type.h
+     *             OH_CM_ErrorCode: OH_CM_SUCCESS=0, OH_CM_HAS_NO_PERMISSION=201,
+     *             OH_CM_CAPABILITY_NOT_SUPPORTED=801, OH_CM_INNER_FAILURE=17500001,
+     *             OH_CM_NOT_FOUND=17500002, OH_CM_INVALID_CERT_FORMAT=17500003,
+     *             OH_CM_MAX_CERT_COUNT_REACHED=17500004, OH_CM_NO_AUTHORIZATION=17500005,
+     *             OH_CM_DEVICE_ENTER_ADVSECMODE=17500007, OH_CM_STORE_PATH_NOT_SUPPORTED=17500009,
+     *             OH_CM_ACCESS_UKEY_SERVICE_FAILED=17500010, OH_CM_PARAMETER_VALIDATION_FAILED=17500011
+     *             OH_CM_CertificatePurpose: OH_CM_CERT_PURPOSE_DEFAULT=0, OH_CM_CERT_PURPOSE_ALL=1,
+     *             OH_CM_CERT_PURPOSE_SIGN=2, OH_CM_CERT_PURPOSE_ENCRYPT=3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_Enum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_Enum_0100 start');
+      try {
+        let enumValues = CertManagerApi.OHCertManagerNativeApiEnumValidation0100('');
+        console.info('SUB_Security_CertManager_Enum_0100 enumValues: ' + JSON.stringify(enumValues));
+
+        expect(enumValues.OH_CM_SUCCESS).assertEqual(0);
+        expect(enumValues.OH_CM_HAS_NO_PERMISSION).assertEqual(201);
+        expect(enumValues.OH_CM_CAPABILITY_NOT_SUPPORTED).assertEqual(801);
+        expect(enumValues.OH_CM_INNER_FAILURE).assertEqual(17500001);
+        expect(enumValues.OH_CM_NOT_FOUND).assertEqual(17500002);
+        expect(enumValues.OH_CM_INVALID_CERT_FORMAT).assertEqual(17500003);
+        expect(enumValues.OH_CM_MAX_CERT_COUNT_REACHED).assertEqual(17500004);
+        expect(enumValues.OH_CM_NO_AUTHORIZATION).assertEqual(17500005);
+        expect(enumValues.OH_CM_DEVICE_ENTER_ADVSECMODE).assertEqual(17500007);
+        expect(enumValues.OH_CM_STORE_PATH_NOT_SUPPORTED).assertEqual(17500009);
+        expect(enumValues.OH_CM_ACCESS_UKEY_SERVICE_FAILED).assertEqual(17500010);
+        expect(enumValues.OH_CM_PARAMETER_VALIDATION_FAILED).assertEqual(17500011);
+        expect(enumValues.OH_CM_CERT_PURPOSE_DEFAULT).assertEqual(0);
+        expect(enumValues.OH_CM_CERT_PURPOSE_ALL).assertEqual(1);
+        expect(enumValues.OH_CM_CERT_PURPOSE_SIGN).assertEqual(2);
+        expect(enumValues.OH_CM_CERT_PURPOSE_ENCRYPT).assertEqual(3);
+      } catch (error) {
+        console.error("SUB_Security_CertManager_Enum_0100: e.code " + error.code);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_Credential_0100
+     * @tc.number SUB_Security_CertManager_Credential_0100
+     * @tc.desc   verify OH_CM_Credential struct fields from OH_CertManager_GetPrivateCertificate
+     *             OH_CM_Credential fields: isExist, type, alias, keyUri, certNum, keyNum,
+     *             credData.size, certPurpose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_Credential_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_Credential_0100 start');
+      let keyUri: string | undefined;
+      let pwd = '123456';
+      let alias = 'appCertAliasDemoEcc';
+
+      try {
+        let installResult: certManager.CMResult = await certManager.installPrivateCertificate(
+          new Uint8Array(priEccCredData), pwd, alias);
+        console.info('SUB_Security_CertManager_Credential_0100 installPrivateCertificate success! uri:' +
+          JSON.stringify(installResult.uri));
+        keyUri = installResult.uri;
+      } catch (error) {
+        console.error("SUB_Security_CertManager_Credential_0100 install: e.code " + error.code);
+        expect(null).assertFail();
+        done();
+        return;
+      }
+
+      try {
+        let credResult = CertManagerApi.OHCertManagerNativeApiCredentialTest0100(keyUri);
+        console.info('SUB_Security_CertManager_Credential_0100 result: ' + JSON.stringify(credResult));
+
+        expect(credResult.resultCode).assertEqual(0);
+        expect(credResult.isExist).assertEqual(1);
+        expect(credResult.type.length >= 0).assertTrue();
+        expect(credResult.alias).assertEqual(alias);
+        expect(credResult.keyUri.length >= 0).assertTrue();
+        expect(credResult.certNum >= 1).assertTrue();
+        expect(credResult.keyNum >= 1).assertTrue();
+        expect(credResult.credDataSize >= 0).assertTrue();
+        expect(credResult.certPurpose).assertEqual(0);
+
+        console.info('SUB_Security_CertManager_Credential_0100 isExist: ' + credResult.isExist);
+        console.info('SUB_Security_CertManager_Credential_0100 type: ' + credResult.type);
+        console.info('SUB_Security_CertManager_Credential_0100 alias: ' + credResult.alias);
+        console.info('SUB_Security_CertManager_Credential_0100 keyUri: ' + credResult.keyUri);
+        console.info('SUB_Security_CertManager_Credential_0100 certNum: ' + credResult.certNum);
+        console.info('SUB_Security_CertManager_Credential_0100 keyNum: ' + credResult.keyNum);
+        console.info('SUB_Security_CertManager_Credential_0100 credDataSize: ' + credResult.credDataSize);
+        console.info('SUB_Security_CertManager_Credential_0100 certPurpose: ' + credResult.certPurpose);
+      } catch (error) {
+        console.error("SUB_Security_CertManager_Credential_0100 get credential: e.code " + error.code);
+        expect(null).assertFail();
+      }
+
+      if (keyUri != undefined) {
+        await certManager.uninstallPrivateCertificate(keyUri);
+        console.info('SUB_Security_CertManager_Credential_0100 uninstallPrivateCertificate success');
+      } else {
+        console.error("SUB_Security_CertManager_Credential_0100 keyUri is undefined!");
+        expect(null).assertFail();
+      }
+
+      console.info('SUB_Security_CertManager_Credential_0100 done');
       done();
     });
   })

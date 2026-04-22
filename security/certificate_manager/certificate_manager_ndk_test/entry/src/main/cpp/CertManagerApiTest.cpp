@@ -365,6 +365,161 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     return ret;
 }
 
+static napi_value OHCertManagerNativeApiEnumValidation0100(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    napi_value OH_CM_SUCCESS_VAL;
+    napi_create_int32(env, OH_CM_SUCCESS, &OH_CM_SUCCESS_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_SUCCESS", OH_CM_SUCCESS_VAL);
+
+    napi_value OH_CM_HAS_NO_PERMISSION_VAL;
+    napi_create_int32(env, OH_CM_HAS_NO_PERMISSION, &OH_CM_HAS_NO_PERMISSION_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_HAS_NO_PERMISSION", OH_CM_HAS_NO_PERMISSION_VAL);
+
+    napi_value OH_CM_CAPABILITY_NOT_SUPPORTED_VAL;
+    napi_create_int32(env, OH_CM_CAPABILITY_NOT_SUPPORTED, &OH_CM_CAPABILITY_NOT_SUPPORTED_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_CAPABILITY_NOT_SUPPORTED", OH_CM_CAPABILITY_NOT_SUPPORTED_VAL);
+
+    napi_value OH_CM_INNER_FAILURE_VAL;
+    napi_create_int32(env, OH_CM_INNER_FAILURE, &OH_CM_INNER_FAILURE_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_INNER_FAILURE", OH_CM_INNER_FAILURE_VAL);
+
+    napi_value OH_CM_NOT_FOUND_VAL;
+    napi_create_int32(env, OH_CM_NOT_FOUND, &OH_CM_NOT_FOUND_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_NOT_FOUND", OH_CM_NOT_FOUND_VAL);
+
+    napi_value OH_CM_INVALID_CERT_FORMAT_VAL;
+    napi_create_int32(env, OH_CM_INVALID_CERT_FORMAT, &OH_CM_INVALID_CERT_FORMAT_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_INVALID_CERT_FORMAT", OH_CM_INVALID_CERT_FORMAT_VAL);
+
+    napi_value OH_CM_MAX_CERT_COUNT_REACHED_VAL;
+    napi_create_int32(env, OH_CM_MAX_CERT_COUNT_REACHED, &OH_CM_MAX_CERT_COUNT_REACHED_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_MAX_CERT_COUNT_REACHED", OH_CM_MAX_CERT_COUNT_REACHED_VAL);
+
+    napi_value OH_CM_NO_AUTHORIZATION_VAL;
+    napi_create_int32(env, OH_CM_NO_AUTHORIZATION, &OH_CM_NO_AUTHORIZATION_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_NO_AUTHORIZATION", OH_CM_NO_AUTHORIZATION_VAL);
+
+    napi_value OH_CM_DEVICE_ENTER_ADVSECMODE_VAL;
+    napi_create_int32(env, OH_CM_DEVICE_ENTER_ADVSECMODE, &OH_CM_DEVICE_ENTER_ADVSECMODE_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_DEVICE_ENTER_ADVSECMODE", OH_CM_DEVICE_ENTER_ADVSECMODE_VAL);
+
+    napi_value OH_CM_STORE_PATH_NOT_SUPPORTED_VAL;
+    napi_create_int32(env, OH_CM_STORE_PATH_NOT_SUPPORTED, &OH_CM_STORE_PATH_NOT_SUPPORTED_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_STORE_PATH_NOT_SUPPORTED", OH_CM_STORE_PATH_NOT_SUPPORTED_VAL);
+
+    napi_value OH_CM_ACCESS_UKEY_SERVICE_FAILED_VAL;
+    napi_create_int32(env, OH_CM_ACCESS_UKEY_SERVICE_FAILED, &OH_CM_ACCESS_UKEY_SERVICE_FAILED_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_ACCESS_UKEY_SERVICE_FAILED", OH_CM_ACCESS_UKEY_SERVICE_FAILED_VAL);
+
+    napi_value OH_CM_PARAMETER_VALIDATION_FAILED_VAL;
+    napi_create_int32(env, OH_CM_PARAMETER_VALIDATION_FAILED, &OH_CM_PARAMETER_VALIDATION_FAILED_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_PARAMETER_VALIDATION_FAILED", OH_CM_PARAMETER_VALIDATION_FAILED_VAL);
+
+    napi_value OH_CM_CERT_PURPOSE_DEFAULT_VAL;
+    napi_create_int32(env, OH_CM_CERT_PURPOSE_DEFAULT, &OH_CM_CERT_PURPOSE_DEFAULT_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_CERT_PURPOSE_DEFAULT", OH_CM_CERT_PURPOSE_DEFAULT_VAL);
+
+    napi_value OH_CM_CERT_PURPOSE_ALL_VAL;
+    napi_create_int32(env, OH_CM_CERT_PURPOSE_ALL, &OH_CM_CERT_PURPOSE_ALL_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_CERT_PURPOSE_ALL", OH_CM_CERT_PURPOSE_ALL_VAL);
+
+    napi_value OH_CM_CERT_PURPOSE_SIGN_VAL;
+    napi_create_int32(env, OH_CM_CERT_PURPOSE_SIGN, &OH_CM_CERT_PURPOSE_SIGN_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_CERT_PURPOSE_SIGN", OH_CM_CERT_PURPOSE_SIGN_VAL);
+
+    napi_value OH_CM_CERT_PURPOSE_ENCRYPT_VAL;
+    napi_create_int32(env, OH_CM_CERT_PURPOSE_ENCRYPT, &OH_CM_CERT_PURPOSE_ENCRYPT_VAL);
+    napi_set_named_property(env, resultObj, "OH_CM_CERT_PURPOSE_ENCRYPT", OH_CM_CERT_PURPOSE_ENCRYPT_VAL);
+
+    return resultObj;
+}
+
+static napi_value OHCertManagerNativeApiCredentialTest0100(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
+    if (str_length >= SIZE_MAX) {
+        napi_throw_error(env, nullptr, "string length range error");
+        return nullptr;
+    }
+
+    char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
+    size_t copied;
+    napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
+    std::string identity = buffer;
+    free(buffer);
+    
+    OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
+    OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
+    if (credential == nullptr) {
+        napi_throw_error(env, nullptr, "malloc credential error");
+        return nullptr;
+    }
+    
+    int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
+    
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    napi_value resultCode;
+    napi_create_int32(env, ohResult, &resultCode);
+    napi_set_named_property(env, resultObj, "resultCode", resultCode);
+    
+    napi_value isExistVal;
+    napi_create_uint32(env, credential->isExist, &isExistVal);
+    napi_set_named_property(env, resultObj, "isExist", isExistVal);
+    
+    napi_value typeVal;
+    napi_create_string_utf8(env, credential->type, NAPI_AUTO_LENGTH, &typeVal);
+    napi_set_named_property(env, resultObj, "type", typeVal);
+    
+    napi_value aliasVal;
+    napi_create_string_utf8(env, credential->alias, NAPI_AUTO_LENGTH, &aliasVal);
+    napi_set_named_property(env, resultObj, "alias", aliasVal);
+    
+    napi_value keyUriVal;
+    napi_create_string_utf8(env, credential->keyUri, NAPI_AUTO_LENGTH, &keyUriVal);
+    napi_set_named_property(env, resultObj, "keyUri", keyUriVal);
+    
+    napi_value certNumVal;
+    napi_create_uint32(env, credential->certNum, &certNumVal);
+    napi_set_named_property(env, resultObj, "certNum", certNumVal);
+    
+    napi_value keyNumVal;
+    napi_create_uint32(env, credential->keyNum, &keyNumVal);
+    napi_set_named_property(env, resultObj, "keyNum", keyNumVal);
+    
+    napi_value credDataSizeVal;
+    napi_create_uint32(env, credential->credData.size, &credDataSizeVal);
+    napi_set_named_property(env, resultObj, "credDataSize", credDataSizeVal);
+    
+    napi_value certPurposeVal;
+    napi_create_uint32(env, static_cast<uint32_t>(credential->certPurpose), &certPurposeVal);
+    napi_set_named_property(env, resultObj, "certPurpose", certPurposeVal);
+    
+    OH_CertManager_FreeCredential(credential);
+    free(credential);
+    
+    return resultObj;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -378,7 +533,9 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OHCertManagerNativeApiPrivateErr0200", nullptr, OHCertManagerNativeApiPrivateErr0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0100", nullptr, OHCertManagerNativeApiPublicErr0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0200", nullptr, OHCertManagerNativeApiPublicErr0200, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertManagerNativeApiPublicErr0300", nullptr, OHCertManagerNativeApiPublicErr0300, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "OHCertManagerNativeApiPublicErr0300", nullptr, OHCertManagerNativeApiPublicErr0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OHCertManagerNativeApiEnumValidation0100", nullptr, OHCertManagerNativeApiEnumValidation0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OHCertManagerNativeApiCredentialTest0100", nullptr, OHCertManagerNativeApiCredentialTest0100, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
