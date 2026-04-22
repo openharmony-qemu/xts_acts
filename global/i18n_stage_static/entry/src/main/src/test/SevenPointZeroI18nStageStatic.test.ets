@@ -598,5 +598,457 @@ export default function SevenPointZeroI18nStageStaticTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0100
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0100
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0xE4, 0xB8, 0xAD, 0xE5, 0x9B, 0xBD]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0100 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0100 value:', info.confidence);
+      expect(info.encodingName).assertEqual('UTF-8');
+      expect(info.confidence).assertEqual(80);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0200
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0200
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0x44, 0x65, 0x72, 0x43, 0x6F, 0x64, 0x65]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0200 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0200 value:', info.confidence);
+      expect(info.encodingName).assertEqual('ISO-8859-1');
+      expect(info.confidence).assertEqual(75);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0300
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0300
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0xC2, 0xC8]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0300 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0300 value:', info.confidence);
+      expect(info.encodingName).assertEqual('GB18030');
+      expect(info.confidence).assertEqual(10);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0400
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0400
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0400', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0xD6, 0xD0, 0xCE, 0xC4]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0400 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0400 value:', info.confidence);
+      expect(info.encodingName).assertEqual('UTF-16BE');
+      expect(info.confidence).assertEqual(10);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0500
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0500
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0500', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0x00, 0x00, 0x4E, 0x2D]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0500 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0500 value:', info.confidence);
+      expect(info.encodingName).assertEqual('UTF-32BE');
+      expect(info.confidence).assertEqual(80);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0600
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0600
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0600', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0xC4, 0xEA, 0xCC, 0xE5]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0600 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0600 value:', info.confidence);
+      expect(info.encodingName).assertEqual('ISO-8859-7');
+      expect(info.confidence).assertEqual(60);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0700
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0700
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0700', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array([0xF0, 0xF4, 0xF6]);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_0700 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_0700 value:', info.confidence);
+      expect(info.encodingName).assertEqual('');
+      expect(info.confidence).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0800
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0800
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0800', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array1 = new Uint8Array([0x44, 0x65, 0x72, 0x43, 0x6F, 0x64, 0x65]);
+      let uint8Array2 = new Uint8Array([0x44, 0x65]);
+      let info1 = i18n.Unicode.detectEncoding(uint8Array1);
+      let info2 = i18n.Unicode.detectEncoding(uint8Array2);
+      console.log('SUB_GLOBAL_detectEncoding_static_0800 value:', info1.confidence);
+      console.log('SUB_GLOBAL_detectEncoding_static_0800 value:', info2.confidence);
+      expect(info1.confidence < info2.confidence).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_0900
+     * @tc.number SUB_GLOBAL_detectEncoding_static_0900
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_0900', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array1 = new Uint8Array([0xC4, 0xEA, 0xCC, 0xE5]);
+      let uint8Array2 = new Uint8Array([0xC4, 0xEA, 0xCC, 0xE5, 0x11, 0x11, 0x11]);
+      let info1 = i18n.Unicode.detectEncoding(uint8Array1);
+      let info2 = i18n.Unicode.detectEncoding(uint8Array2);
+      console.log('SUB_GLOBAL_detectEncoding_static_0900 value:', info1.confidence);
+      console.log('SUB_GLOBAL_detectEncoding_static_0900 value:', info2.confidence);
+      expect(info1.confidence > info2.confidence).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_1000
+     * @tc.number SUB_GLOBAL_detectEncoding_static_1000
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_1000', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array();
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_1000 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_1000 value:', info.confidence);
+      expect(info.encodingName).assertEqual('');
+      expect(info.confidence).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_GLOBAL_detectEncoding_static_1100
+     * @tc.number SUB_GLOBAL_detectEncoding_static_1100
+     * @tc.desc   with detectEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_detectEncoding_static_1100', Level.LEVEL2, async (): Promise<void> => {
+      let uint8Array = new Uint8Array(0x000000000);
+      let info = i18n.Unicode.detectEncoding(uint8Array);
+      console.log('SUB_GLOBAL_detectEncoding_static_1100 value:', info.encodingName);
+      console.log('SUB_GLOBAL_detectEncoding_static_1100 value:', info.confidence);
+      expect(info.encodingName).assertEqual('');
+      expect(info.confidence).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   test_SymbolDateTimeFormat_static_0700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_0700
+     * @tc.desc   test SymbolDateTimeFormat with undefined amPMSymbol param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_static_0700', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": undefined };
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_static_0700 result:');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_static_0700 catch error:', e.code + e.message);
+        expect(Number(e.code) === 401).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_0300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1000
+     * @tc.desc   test SymbolNumberFormat with custom 0 character
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(12345.06);
+        console.log('test_SymbolNumberFormat_static_0300 result:', numberFormat);
+        expect(numberFormat === '12,345.B6').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_0300 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_0500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1200
+     * @tc.desc   test SymbolNumberFormat with empty SymbolNumberFormatOptions param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_0500', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_0500 result:', options.zero);
+        expect(options.zero === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_0500 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_0900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1600
+     * @tc.desc   test SymbolNumberFormat with empty nan option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_0900', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_0900 result:', options.nan);
+        expect(options.nan === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_0900 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_1300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2000
+     * @tc.desc   test SymbolNumberFormat with empty minusSign param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_1300', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "minusSign": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_1300 result:', options.minusSign);
+        expect(options.minusSign === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_1300 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_1700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2400
+     * @tc.desc   test SymbolNumberFormat with empty plusSign param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_1700', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'plusSign': "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_1700 result:' + options.plusSign);
+        expect(options.plusSign === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_1700 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   test_SymbolNumberFormat_static_2100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2800
+     * @tc.desc   test SymbolNumberFormat with resolvedOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_2100', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': '' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_2100 result:' + options.infinity);
+        expect(options.infinity === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_static_2100 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0100
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0100
+     * @tc.desc   test setAppDefaultTimeZoneById with Asia/Hong_Kong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('Asia/Hong_Kong');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_static_0100 value:', value);
+      expect(value).assertEqual('Asia/Hong_Kong');
+      expect(value2).assertEqual('香港标准时间');
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0200
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0200
+     * @tc.desc   test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_static_0200 value:', value);
+      expect(value).assertEqual('America/New_York');
+      expect(value2).assertEqual('北美东部时间');
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0300
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0300
+     * @tc.desc   test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh', {
+        timeZone: value,
+        dateStyle: 'long',
+        timeStyle: 'long',
+        hour12: false
+      });
+      let date: Date = new Date(2025, 4, 13, 12, 30);
+      let dateFormat = dateTimeFormat.format(date);
+      console.log('i18n_setAppDefaultTimeZoneById_static_0300 value:', dateFormat);
+      expect(dateFormat).assertEqual('2025/5/13 GMT-4 00:30:00');
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0400
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0400
+     * @tc.desc   test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0400', Level.LEVEL2, async (): Promise<void> => {
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      console.log('i18n_setAppDefaultTimeZoneById_static_0400 value:', value);
+      expect(value).assertEqual('Asia/Shanghai');
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0500
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0500
+     * @tc.desc   test getAppDefaultTimeZone with Asia/123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0500', Level.LEVEL2, async (): Promise<void> => {
+      try {
+        i18n.TimeZone.setAppDefaultTimeZoneById('Asia/123');
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_static_0500 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name   i18n_setAppDefaultTimeZoneById_static_0800
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0800
+     * @tc.desc   test getAppDefaultTimeZone with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_static_0800', Level.LEVEL2, async (): Promise<void> => {
+      try {
+        i18n.TimeZone.setAppDefaultTimeZoneById(undefined);
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_static_0800 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
   })
 }
