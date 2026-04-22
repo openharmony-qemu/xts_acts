@@ -2658,7 +2658,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             validateDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validate(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
