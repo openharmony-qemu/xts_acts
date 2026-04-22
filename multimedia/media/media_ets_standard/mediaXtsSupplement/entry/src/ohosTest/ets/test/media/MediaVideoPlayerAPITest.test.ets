@@ -427,7 +427,7 @@
                 await videoPlayer.prepare();
                 await videoPlayer.play();
 
-                const seekMode = media.seekmode.SEEK_NEXT_SYNC;
+                const seekMode = media.SeekMode.SEEK_NEXT_SYNC;
                 const result:number = await (videoPlayer as media.VideoPlayer).seek(SEEK_TIME, seekMode);
                 expect(result).assertLarger(0);
                 console.info(TAG, `${testName} success, seekDoneTime: ${result}`);
@@ -976,7 +976,7 @@
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROPERTIES_0100
          * @tc.name   Test createVideoPlayer properties coverage
-         * @tc.desc   Test createVideoPlayer url, fdSrc, loop, currentTime properties
+         * @tc.desc   Test createVideoPlayer with url, fdSrc, loop, currentTime properties
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -1026,7 +1026,7 @@
         //个人新增16913
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0700
-         * @tc.name   Test seek with null timeMs (callback)
+         * @tc.name   Test seek with null timeMs (Callback)
          * @tc.desc   Test seek with null timeMs parameter
          * @tc.size   MEDIUM
          * @tc.type   Function
