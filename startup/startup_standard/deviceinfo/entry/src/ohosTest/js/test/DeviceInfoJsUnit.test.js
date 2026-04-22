@@ -2170,14 +2170,14 @@ export default function DeviceInfoTest() {
 
         /**
          * @tc.name   testGetDeviceColor
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_082
+         * @tc.number SUB_STARTUP_INIT_DEVCEINFO_8200
          * @tc.desc   Get DeviceColor.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('testGetDeviceColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_082 start');
+            console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let deviceCorlor = deviceinfo.deviceCorlor;
             
             if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
@@ -2190,7 +2190,7 @@ export default function DeviceInfoTest() {
                 done();               
             }
 
-            console.info('device_info_test_082 end');
+            console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 end');
         })
     })
 }
