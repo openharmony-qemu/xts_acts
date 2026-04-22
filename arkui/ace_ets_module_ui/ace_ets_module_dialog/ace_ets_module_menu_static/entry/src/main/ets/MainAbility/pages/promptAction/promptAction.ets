@@ -112,7 +112,7 @@ struct promptActionPage {
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText),
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildText),
           );
 
           promptActionInstance.openCustomDialogWithController(contentNode, this.dialogController, {
