@@ -193,7 +193,7 @@ export default function WebViewAISessionTypeSuite() {
     })
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0100
+     * @tc.number     SUB_WEB_SESSION_OPTIONS_1000
      * @tc.name       testWebViewWriter10
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
@@ -207,7 +207,7 @@ export default function WebViewAISessionTypeSuite() {
     })
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0110
+     * @tc.number     SUB_WEB_SESSION_OPTIONS_1100
      * @tc.name       testWebViewTranslator11
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
@@ -222,7 +222,7 @@ export default function WebViewAISessionTypeSuite() {
 
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0120
+     * @tc.number     SUB_WEB_SESSION_OPTIONS_1200
      * @tc.name       testWebViewTranslator12
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
@@ -236,7 +236,7 @@ export default function WebViewAISessionTypeSuite() {
     })
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0130
+     * @tc.number     SUB_WEB_SESSION_OPTIONS_1300
      * @tc.name       testWebViewTranslator13
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
