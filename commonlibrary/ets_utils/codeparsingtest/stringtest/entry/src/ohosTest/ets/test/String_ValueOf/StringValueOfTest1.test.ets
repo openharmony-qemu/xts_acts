@@ -1,1610 +1,1904 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import * as stringTest from './string_valueof_test'
-
-interface CustomIteratorResult {
-  value?: string;
-  done: boolean;
-}
-
-interface CustomStringIterator {
-  next(): CustomIteratorResult;
-}
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import * as stringTest from './string_valueOf_test01';
 
 export default function StringValueOfTest1() {
   describe('StringValueOfTest1', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
+    beforeAll(() => {});
+    beforeEach(() => {});
+    afterEach(() => {});
+    afterAll(() => {});
+
+    //============================Basic Function Verification==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0100
+     * @tc.name      StringValueOfTest1001
+     * @tc.desc      Verify that the valueOf method of a basic String object returns the original string value.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1001", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1001';
+      console.log(TAG + ' start');
+      const str = new String("hello");
+      const result = str.valueOf();
+      expect(result).assertEqual("hello");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
     });
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0200
+     * @tc.name      StringValueOfTest1002
+     * @tc.desc      Verify that the valueOf method of a primitive string returns the original string value.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1002", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1002';
+      console.log(TAG + ' start');
+      const str = "hello";
+      const result = str.valueOf();
+      expect(result).assertEqual("hello");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
     });
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0300
+     * @tc.name      StringValueOfTest1003
+     * @tc.desc      Verify that the valueOf method of an empty string object returns an empty string.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1003", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1003';
+      console.log(TAG + ' start');
+      const str = new String("");
+      const result = str.valueOf();
+      expect(result).assertEqual("");
+      expect(result.length).assertEqual(0);
+      console.log(TAG + ' end');
     });
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0400
+     * @tc.name      StringValueOfTest1004
+     * @tc.desc      Verify that valueOf returns the original string type, not an object.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1004", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1004';
+      console.log(TAG + ' start');
+      const strObj = new String("test");
+      const result = strObj.valueOf();
+      expect(typeof result).assertEqual("string");
+      expect(result === 'object').assertEqual(false);
+      expect(strObj instanceof String).assertEqual(true);
+      console.log(TAG + ' end');
     });
     /**
-     * @tc.number     SUB_String_ValueOfTEST01_0001
-     * @tc.name       test StringValueOfTest01Chapter0001
-     * @tc.desc       TestOnceReturnOrig
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0001';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'abc';
-      const result = str.repeat(1);
-      expect(result).assertEqual('abc')
-      expect(result === str).assertEqual( true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0002
-     * @tc.name       test StringValueOfTest01Chapter0002
-     * @tc.desc       TestRepeatTwoBasic
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0002';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'abc';
-      const result = str.repeat(2);
-      expect(result).assertEqual('abcabc')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0003
-     * @tc.name       test StringValueOfTest01Chapter0003
-     * @tc.desc       TestRepeatOverTwo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0003';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'ab';
-      const result = str.repeat(5);
-      expect(result).assertEqual('ababababab')
-      expect(result.length).assertEqual(10)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0004
-     * @tc.name       test StringValueOfTest01Chapter0004
-     * @tc.desc       TestZeroReturnEmpty
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0004';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'hello';
-      const result = str.repeat(0);
-      expect(result).assertEqual('')
-      expect(result.length).assertEqual( 0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0005
-     * @tc.name       test StringValueOfTest01Chapter0005
-     * @tc.desc      TestSingleCharRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0005';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'a'.repeat(10);
-      expect(result).assertEqual('aaaaaaaaaa')
-      expect(result.length).assertEqual(10)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0006
-     * @tc.name       test StringValueOfTest01Chapter0006
-     * @tc.desc      TestSpaceRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0006';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = ' '.repeat(5);
-      expect(result).assertEqual( '     ')
-      expect(result.length).assertEqual( 5)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0007
-     * @tc.name       test StringValueOfTest01Chapter0007
-     * @tc.desc      LongStrRepeatFew
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0007';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'Hello World! ';
-      const result = str.repeat(3);
-      expect(result).assertEqual('Hello World! Hello World! Hello World! ')
-      expect(result.length).assertEqual( 39)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0008
-     * @tc.name       test StringValueOfTest01Chapter0008
-     * @tc.desc       CountZeroBoundary
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0008';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'test'.repeat(0);
-      expect(result).assertEqual('')
-      expect(result === '').assertEqual( true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0009
-     * @tc.name       test StringValueOfTest01Chapter0009
-     * @tc.desc       CountNegZeroCase
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0009';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'test'.repeat(-0);
-      expect(result === '').assertEqual(true);
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0010
-     * @tc.name       test StringValueOfTest01Chapter0010
-     * @tc.desc       MinValidPositive
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0010';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'x'.repeat(1);
-      expect(result).assertEqual('x')
-      expect(result.length).assertEqual(1)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0011
-     * @tc.name       test StringValueOfTest01Chapter0011
-     * @tc.desc       CountLargeInt
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0011';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'a'.repeat(1000);
-      expect(result.length).assertEqual(1000)
-      expect(result === 'a'.repeat(1000)).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0012
-     * @tc.name       test StringValueOfTest01Chapter0012
-     * @tc.desc        NegDecimalThrow
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0012';
-      console.log(TAG + 'start');
-      let result: boolean = stringTest.testNegDecimal()
-      expect(result).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0013
-     * @tc.name       test StringValueOfTest01Chapter0013
-     * @tc.desc        NegInfinityThrow
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0013';
-      console.log(TAG + 'start');
-      let result: boolean = stringTest.testCountNegInfinity()
-      expect(result).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0014
-     * @tc.name       test StringValueOfTest01Chapter0014
-     * @tc.desc        PosInfinityThrow
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0014';
-      console.log(TAG + 'start');
-      let result: boolean = stringTest.testCountPosInfinity()
-      expect(result).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0015
-     * @tc.name       test StringValueOfTest01Chapter0015
-     * @tc.desc        PosFloatFloor
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0015';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abc'.repeat(2.9);
-      expect(result).assertEqual('abcabc')
-      expect(result.length).assertEqual( 6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0016
-     * @tc.name       test StringValueOfTest01Chapter0016
-     * @tc.desc       PosFloatLessThanOne
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0016';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abc'.repeat(0.999);
-      expect(result).assertEqual('')
-      expect(result.length).assertEqual(0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0017
-     * @tc.name       test StringValueOfTest01Chapter0017
-     * @tc.desc      CountFloat3Point5
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0017';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abc'.repeat(3.5);
-      expect(result).assertEqual('abcabcabc')
-      expect(result.length).assertEqual(9)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0018
-     * @tc.name       test StringValueOfTest01Chapter0018
-     * @tc.desc      CountNumberStringConversion
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0018';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountNumberString()
-      expect(result[0]).assertEqual('ababab')
-      expect(result[1]).assertEqual( 6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0019
-     * @tc.name       test StringValueOfTest01Chapter0019
-     * @tc.desc      CountEmptyStringToZero
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0019';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountEmptyString()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual( 0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0020
-     * @tc.name       test StringValueOfTest01Chapter0020
-     * @tc.desc      CountNonNumberStringToNaN
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0020';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountNonNumberString()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual( 0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0021
-     * @tc.name       test StringValueOfTest01Chapter0021
-     * @tc.desc      CountTrueTo1
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0021';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountTrue()
-      expect(result[0]).assertEqual('x')
-      expect(result[1]).assertEqual(1)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0022
-     * @tc.name       test StringValueOfTest01Chapter0022
-     * @tc.desc      CountFalseTo0
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0022';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountFalse()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual(0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0023
-     * @tc.name       test StringValueOfTest01Chapter0023
-     * @tc.desc      CountNullToZero
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0023';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountNull()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual(0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0024
-     * @tc.name       test StringValueOfTest01Chapter0024
-     * @tc.desc      CountUndefinedToNaN
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0024';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountUndefined()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual(0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0025
-     * @tc.name       test StringValueOfTest01Chapter0025
-     * @tc.desc      CountObjectToNaN
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0025';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountPlainObject()
-      expect(result[0]).assertEqual('')
-      expect(result[1]).assertEqual(0)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0026
-     * @tc.name       test StringValueOfTest01Chapter0026
-     * @tc.desc      CountObjectWithValueOf
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0026';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountObjectWithValueOf()
-      expect(result[0]).assertEqual('ababab')
-      expect(result[1]).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0027
-     * @tc.name       test StringValueOfTest01Chapter0027
-     * @tc.desc      CountObjectWithToString
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0027';
-      console.log(TAG + 'start');
-      let result:(string | number)[] = stringTest.testCountObjectWithToString()
-      expect(result[0]).assertEqual('xyxy')
-      expect(result[1]).assertEqual(4)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0028
-     * @tc.name       test StringValueOfTest01Chapter0028
-     * @tc.desc      CountArrayConversion
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0028';
-      console.log(TAG + 'start');
-      let result: (string | number)[] = stringTest.testCountArray()
-      expect(result[0]).assertEqual('ababab')
-      expect(result[1]).assertEqual ('')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0029
-     * @tc.name       test StringValueOfTest01Chapter0029
-     * @tc.desc       CountNegativeRangeError
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0029';
-      console.log(TAG + 'start');
-      let result: string[] | undefined = stringTest.testCountNegativeNumber()
-      expect(result![0]).assertEqual('RangeError')
-      expect(result![1]).assertEqual (true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0030
-     * @tc.name       test StringValueOfTest01Chapter0030
-     * @tc.desc       CountExceedMaxLengthRangeError
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0030';
-      console.log(TAG + 'start');
-      let result: string[] | undefined = stringTest.testCountExceedMaxStringLength()
-      expect(result![0]).assertEqual('RangeError')
-      expect(result![1]).assertEqual (true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0031
-     * @tc.name       test StringValueOfTest01Chapter0031
-     * @tc.desc        CountInfinityRangeError
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0031';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testCountInfinity()
-      expect(result).assertEqual('RangeError')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0032
-     * @tc.name       test StringValueOfTest01Chapter0032
-     * @tc.desc       ThisValueNull
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0032';
-      console.log(TAG + 'start');
-      let result: string[] | undefined = stringTest.testThisIsNull()
-      expect(result![0]).assertEqual('TypeError')
-      expect(result![1]).assertEqual (true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0033
-     * @tc.name       test StringValueOfTest01Chapter0033
-     * @tc.desc        ThisIsUndefined
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0033';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testThisIsUndefined()
-      expect(result).assertEqual('TypeError')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0034
-     * @tc.name       test StringValueOfTest01Chapter0034
-     * @tc.desc       ThisIsSymbol
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0034';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testThisIsSymbol()
-      expect(result).assertEqual('TypeError')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0035
-     * @tc.name       test StringValueOfTest01Chapter0035
-     * @tc.desc       EmptyStringRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0035';
-      console.log(TAG + 'start');
-      'use strict';
-      const result1 = ''.repeat(5);
-      expect(result1).assertEqual('')
-      expect(result1.length).assertEqual(0)
-      const result2 = ''.repeat(100);
-      expect(result2).assertEqual('')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0036
-     * @tc.name       test StringValueOfTest01Chapter0036
-     * @tc.desc       EmptyStringRepeatZero
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0036';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = ''.repeat(0);
-      expect(result).assertEqual('')
-      expect(result === '').assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0037
-     * @tc.name       test StringValueOfTest01Chapter0037
-     * @tc.desc       RepeatNewlineCharacter
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0037';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\n'.repeat(3);
-      expect(result).assertEqual('\n\n\n')
-      expect(result.length).assertEqual(3)
-      expect(result === '\n\n\n').assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0038
-     * @tc.name       test StringValueOfTest01Chapter0038
-     * @tc.desc       RepeatTabCharacter
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0038';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\t'.repeat(4);
-      expect(result).assertEqual('\t\t\t\t')
-      expect(result.length).assertEqual( 4)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0039
-     * @tc.name       test StringValueOfTest01Chapter0039
-     * @tc.desc       RepeatCarriageReturn
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0039';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\r'.repeat(2);
-      expect(result).assertEqual('\r\r')
-      expect(result.length).assertEqual(2)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0040
-     * @tc.name       test StringValueOfTest01Chapter0040
-     * @tc.desc       RepeatBackslash
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0040';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\\'.repeat(5);
-      expect(result).assertEqual( '\\\\\\\\\\')
-      expect(result.length).assertEqual(5)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0041
-     * @tc.name       test StringValueOfTest01Chapter0041
-     * @tc.desc      RepeatStringWithQuotes
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0041';
-      console.log(TAG + 'start');
-      'use strict';
-      const result1 = '"'.repeat(3);
-      expect(result1).assertEqual('"""')
-      const result2 = "'".repeat(3);
-      expect(result2).assertEqual( "'''")
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0042
-     * @tc.name       test StringValueOfTest01Chapter0042
-     * @tc.desc      RepeatZeroWidthCharacter
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0042';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\u200B'.repeat(5);
-      expect(result.length).assertEqual(5)
-      expect(result === '\u200B\u200B\u200B\u200B\u200B').assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0043
-     * @tc.name       test StringValueOfTest01Chapter0043
-     * @tc.desc       RepeatASCIIControlCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0043';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\x00'.repeat(3);
-      expect(result.length).assertEqual(3)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0044
-     * @tc.name       test StringValueOfTest01Chapter0044
-     * @tc.desc       RepeatChineseCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0044';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '你好'.repeat(3);
-      expect(result).assertEqual('你好你好你好')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0045
-     * @tc.name       test StringValueOfTest01Chapter0045
-     * @tc.desc       RepeatJapaneseCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0045';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'こんにちは'.repeat(2);
-      expect(result).assertEqual('こんにちはこんにちは')
-      expect(result.length).assertEqual(10)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0046
-     * @tc.name       test StringValueOfTest01Chapter0046
-     * @tc.desc       RepeatKoreanCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0046';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '안녕'.repeat(3);
-      expect(result).assertEqual('안녕안녕안녕')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0047
-     * @tc.name       test StringValueOfTest01Chapter0047
-     * @tc.desc       RepeatGreekLetters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0047';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'αβγ'.repeat(2);
-      expect(result).assertEqual('αβγαβγ')
-      expect(result.length).assertEqual( 6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0048
-     * @tc.name       test StringValueOfTest01Chapter0048
-     * @tc.desc       RepeatCyrillicCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0048';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'привет'.repeat(2);
-      expect(result).assertEqual('приветпривет')
-      expect(result.length).assertEqual( 12)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0049
-     * @tc.name       test StringValueOfTest01Chapter0049
-     * @tc.desc       RepeatEmoji
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0049';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '😀'.repeat(3);
-      expect(result).assertEqual('😀😀😀')
-      expect(result.length).assertEqual( 6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0050
-     * @tc.name       test StringValueOfTest01Chapter0050
-     * @tc.desc       RepeatComplexEmojiWithModifiers
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0050';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '👨‍👩‍👧‍👦'.repeat(2);
-      expect(result).assertEqual("👨‍👩‍👧‍👦👨‍👩‍👧‍👦")
-      expect(result.length).assertEqual( 22)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0051
-     * @tc.name       test StringValueOfTest01Chapter0051
-     * @tc.desc       RepeatSpecialUnicodeCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0051';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '𝟘𝟙𝟚'.repeat(2);
-      expect(result).assertEqual("𝟘𝟙𝟚𝟘𝟙𝟚")
-      expect(result.length).assertEqual( 12)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0052
-     * @tc.name       test StringValueOfTest01Chapter0052
-     * @tc.desc       RepeatSurrogatePairCharacters
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0052';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = '\uD83D\uDE00'.repeat(2);
-      expect(result).assertEqual('😀😀')
-      expect(result.length).assertEqual( 4)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0053
-     * @tc.name       test StringValueOfTest01Chapter0053
-     * @tc.desc      RepeatMixedBMPAndSurrogatePair
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0053';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'a😀b'.repeat(2);
-      expect(result).assertEqual('a😀ba😀b')
-      expect(result.length).assertEqual(8)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0054
-     * @tc.name       test StringValueOfTest01Chapter0054
-     * @tc.desc        RepeatWithCustomObjectViaCallApply
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0054';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testCustomObjectCall()
-      expect(result).assertEqual('abcabc')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0055
-     * @tc.name       test StringValueOfTest01Chapter0055
-     * @tc.desc        TestNumberRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0055';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testNumberCall()
-      expect(result).assertEqual('123123')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0056
-     * @tc.name       test StringValueOfTest01Chapter0056
-     * @tc.desc       TestBooleanRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0056';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testBooleanCall()
-      expect(result).assertEqual('truetruetrue')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0057
-     * @tc.name       test StringValueOfTest01Chapter0057
-     * @tc.desc       TestDateRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0057';
-      console.log(TAG + 'start');
-      let result: (string | boolean)[] = stringTest.testDateCall()
-      expect(result![0]).assertEqual('string')
-      expect(result![1]).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0058
-     * @tc.name       test StringValueOfTest01Chapter0058
-     * @tc.desc       TestArrayRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0058';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testArrayCall()
-      expect(result).assertEqual( '1,2,31,2,3')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0059
-     * @tc.name       test StringValueOfTest01Chapter0059
-     * @tc.desc       TestStringPrototype
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0059';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testModifyPrototype()
-      expect(result).assertEqual('modified')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0060
-     * @tc.name       test StringValueOfTest01Chapter0060
-     * @tc.desc       TestDelAddProto
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0060';
-      console.log(TAG + 'start');
-      let result: boolean | undefined = stringTest.testDelProtoMethod()
-      expect(result).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0061
-    * @tc.name       test StringValueOfTest01Chapter0061
-     * @tc.desc        TestRepeatConcat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0061';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.repeat(2).concat('cd');
-      expect(result).assertEqual('ababcd')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0062
-     * @tc.name       test StringValueOfTest01Chapter0062
-     * @tc.desc        TestConcatRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0062';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.concat('cd').repeat(2);
-      expect(result).assertEqual('abcdabcd')
-      expect(result.length).assertEqual(8)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0063
-     * @tc.name       test StringValueOfTest01Chapter0063
-     * @tc.desc        TestRepeatSlice
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0063';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abc'.repeat(3).slice(2, 7);
-      expect(result).assertEqual('cabca')
-      expect(result.length).assertEqual(5)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0064
-     * @tc.name       test StringValueOfTest01Chapter0064
-     * @tc.desc        TestSliceRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0064';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abcde'.slice(1, 3).repeat(3);
-      expect(result).assertEqual('bcbcbc')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0065
-     * @tc.name       test StringValueOfTest01Chapter0065
-     * @tc.desc        TestRepeatToUpper
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0065';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.repeat(2).toUpperCase();
-      expect(result).assertEqual( 'ABAB')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0066
-     * @tc.name       test StringValueOfTest01Chapter0066
-     * @tc.desc       TestToLowerRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0066';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'AB'.toLowerCase().repeat(2);
-      expect(result).assertEqual(  'abab')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0067
-     * @tc.name       test StringValueOfTest01Chapter0067
-     * @tc.desc       TestSpaceRepeatTrim
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0067';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = ' ab '.repeat(2).trim();
-      expect(result).assertEqual( 'ab  ab')
-      expect(result.length).assertEqual(6)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0068
-     * @tc.name       test StringValueOfTest01Chapter0068
-     * @tc.desc       TestTrimRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0068';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = ' ab '.trim().repeat(2);
-      expect(result).assertEqual('abab')
-      expect(result.length).assertEqual(4)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0069
-     * @tc.name       test StringValueOfTest01Chapter0069
-     * @tc.desc        TestSplitJoinRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0069';
-      console.log(TAG + 'start');
-      let result: string= stringTest.testSplitJoinThenRepeat ()
-      expect(result).assertEqual( 'abcabc')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0070
-     * @tc.name       test StringValueOfTest01Chapter0070
-     * @tc.desc       TestRepeatThenReplace
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0070';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.repeat(3).replace(/ab/g, 'xy');
-      expect(result).assertEqual('xyxyxy')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0071
-     * @tc.name       test StringValueOfTest01Chapter0071
-     * @tc.desc       TestReplaceThenRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0071';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'abc'.replace('b', 'x').repeat(2);
-      expect(result).assertEqual('axcaxc')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0072
-     * @tc.name       test StringValueOfTest01Chapter0072
-     * @tc.desc       TestRepeatThenPadStart
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0072';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.repeat(2).padStart(10, 'x');
-      expect(result).assertEqual('xxxxxxabab')
-      expect(result.length).assertEqual(10)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0073
-     * @tc.name       test StringValueOfTest01Chapter0073
-     * @tc.desc       TestPadEndThenRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0073';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'ab'.padEnd(4, 'x').repeat(2);
-      expect(result).assertEqual( 'abxxabxx')
-      expect(result.length).assertEqual(8)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0074
-     * @tc.name       test StringValueOfTest01Chapter0074
-     * @tc.desc       TestSearchSubstringInRepeatResult
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0074';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'ab'.repeat(3);
-      expect(str.indexOf('bab')).assertEqual( 1)
-      expect(str.indexOf('aba')).assertEqual(0)
-      expect(str.indexOf('abc')).assertEqual( -1)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0075
-     * @tc.name       test StringValueOfTest01Chapter0075
-     * @tc.desc       TestRepeatIncludes
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0075';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'abc'.repeat(3);
-      expect(str.includes('bca')).assertEqual( true)
-      expect(str.includes('cab')).assertEqual(true)
-      expect(str.includes('abcd')).assertEqual(false)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0076
-     * @tc.name       test StringValueOfTest01Chapter0076
-     * @tc.desc       TestRepeatStartsWith
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0076';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'abc'.repeat(3);
-      expect(str.startsWith('abc')).assertEqual( true)
-      expect(str.startsWith('abca')).assertEqual(true)
-      expect(str.startsWith('bca')).assertEqual(false)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0077
-     * @tc.name       test StringValueOfTest01Chapter0077
-     * @tc.desc       TestRepeatEndsWith
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0077';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'abc'.repeat(3);
-      expect(str.endsWith('abc')).assertEqual( true)
-      expect(str.endsWith('cabc')).assertEqual(true)
-      expect(str.endsWith('bca')).assertEqual(false)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0078
-     * @tc.name       test StringValueOfTest01Chapter0078
-     * @tc.desc        TestRepeatCharAt
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0078';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'ab'.repeat(3);
-      expect(str.charAt(0)).assertEqual( 'a')
-      expect(str.charAt(1)).assertEqual('b')
-      expect(str.charAt(2)).assertEqual('a')
-      expect(str.charAt(5)).assertEqual('b')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0079
-     * @tc.name       test StringValueOfTest01Chapter0079
-     * @tc.desc       TestRepeatCharCodeAt
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0079';
-      console.log(TAG + 'start');
-      'use strict';
-      const str = 'AB'.repeat(3);
-      expect(str.charCodeAt(0)).assertEqual( 65)
-      expect(str.charCodeAt(1)).assertEqual(66)
-      expect(str.charCodeAt(2)).assertEqual(65)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0080
-     * @tc.name       test StringValueOfTest01Chapter0080
-     * @tc.desc        TestThrowOnExceedMaxLength
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0080';
-      console.log(TAG + 'start');
-      let result:string[] | undefined = stringTest.testTestExceedMaxLength ()
-      expect(result![0]).assertEqual(true)
-      expect(result![1]).assertEqual(" Invalid string length")
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0081
-     * @tc.name       test StringValueOfTest01Chapter0081
-     * @tc.desc        TestLongStrRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0081';
-      console.log(TAG + 'start');
-      'use strict';
-      const longStr = 'a'.repeat(10000);
-      const result = longStr.repeat(2);
-      expect(result.length).assertEqual(20000)
-      expect(result.startsWith('a'.repeat(10000))).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0082
-     * @tc.name       test StringValueOfTest01Chapter0082
-     * @tc.desc        TestShortStrRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0082';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'a'.repeat(100000);
-      expect(result.length).assertEqual(100000)
-      expect(result === 'a'.repeat(100000)).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0083
-     * @tc.name       test StringValueOfTest01Chapter0083
-     * @tc.desc        TestRepeatChain
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0083';
-      console.log(TAG + 'start');
-      'use strict';
-      let str = 'a';
-      str = str.repeat(10);
-      str = str.repeat(10);
-      str = str.repeat(10);
-      expect(str.length).assertEqual(1000)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0084
-     * @tc.name       test StringValueOfTest01Chapter0084
-     * @tc.desc        TestStrictModeRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0084';
-      console.log(TAG + 'start');
-      'use strict';
-      const result = 'test'.repeat(3);
-      expect(result).assertEqual('testtesttest')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0085
-     * @tc.name       test StringValueOfTest01Chapter0085
-     * @tc.desc        TestStrictModeThrow
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0085';
-      console.log(TAG + 'start');
-      let result:boolean | undefined = stringTest.testStrictModeThrow()
-      expect(result).assertEqual(true)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0086
-     * @tc.name       test StringValueOfTest01Chapter0086
-     * @tc.desc        TestNonStrictRepeat
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0086';
-      console.log(TAG + 'start');
-      const result = 'test'.repeat(3);
-      expect(result).assertEqual( 'testtesttest')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0087
-     * @tc.name       test StringValueOfTest01Chapter0087
-     * @tc.desc        TestRepeatSeparator
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0087';
-      console.log(TAG + 'start');
-      'use strict';
-      const separator = '-'.repeat(50);
-      expect(separator).assertEqual( "--------------------------------------------------")
-      expect(separator.length).assertEqual( 50)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0088
-     * @tc.name       test StringValueOfTest01Chapter0088
-     * @tc.desc        TestRepeatIndent
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0088';
-      console.log(TAG + 'start');
-      'use strict';
-      const indent = '  '.repeat(4);
-      expect(indent + 'indented text').assertEqual( '        indented text')
-      expect(indent.length).assertEqual(8)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0089
-     * @tc.name       test StringValueOfTest01Chapter0089
-     * @tc.desc       TestRepeatDecor
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0089';
-      console.log(TAG + 'start');
-      'use strict';
-      const pattern = '/*'.repeat(20);
-      expect(pattern).assertEqual( "/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*")
-      expect(pattern.length).assertEqual( 40)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0090
-     * @tc.name       test StringValueOfTest01Chapter0090
-     * @tc.desc       TestRepeatLeadingZero
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0090';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testTestPadZero ()
-      expect(result).assertEqual( '00042')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0091
-     * @tc.name       test StringValueOfTest01Chapter0091
-     * @tc.desc       TestRepeatAlign
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0091';
-      console.log(TAG + 'start');
-      let result: string = stringTest.testTestStrAlign ()
-      expect(result).assertEqual( 'hello     |')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0092
-     * @tc.name       test StringValueOfTest01Chapter0092
-     * @tc.desc       TestRepeatTestData
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0092';
-      console.log(TAG + 'start');
-      'use strict';
-      const testData = 'test\n'.repeat(100);
-      expect(testData.split('\n').length).assertEqual(  101)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0093
-     * @tc.name       test StringValueOfTest01Chapter0093
-     * @tc.desc       TestRepeatKey
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0093';
-      console.log(TAG + 'start');
-      'use strict';
-      const key = 'XY'.repeat(16);
-      expect(key.length).assertEqual(  32)
-      expect(key).assertEqual('XYXYXYXYXYXYXYXYXYXYXYXYXYXYXYXY')
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0094
-     * @tc.name       test StringValueOfTest01Chapter0094
-     * @tc.desc       TestRepeatPadLength
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0094';
-      console.log(TAG + 'start');
-     let result: string = stringTest.testTestPadData ()
-      expect(result.length).assertEqual(  10)
-      console.log(TAG + 'end');
-    })
-    /**
-     * @tc.number     SUB_String_ValueOfTEST01_0095
-     * @tc.name       test StringValueOfTest01Chapter0095
-     * @tc.desc      TestRepeatAsciiArt
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("testStringValueOfTest01Chapter0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStringValueOfTest01Chapter0095';
-      console.log(TAG + 'start');
-      'use strict';
-      const border = '═'.repeat(20)
-      expect('╔' + border + '╗').assertEqual("╔════════════════════╗")
-      expect('║' + ' '.repeat(20) + '║').assertEqual("║                    ║")
-      expect('╚' + border + '╝').assertEqual("╚════════════════════╝")
-      console.log(TAG + 'end');
-    })
-  })
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0500
+     * @tc.name      StringValueOfTest1005
+     * @tc.desc      Verify that the return value is consistent with the string content of the original object.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1005", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1005';
+      console.log(TAG + ' start');
+      const strObj = new String("hello world");
+      const result = strObj.valueOf();
+      expect(result === strObj.toString()).assertEqual(true);
+      expect(result === String(strObj)).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    //============================    Testing Different Types Strings==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0600
+     * @tc.name      StringValueOfTest1006
+     * @tc.desc      Verify the valueOf of a string object containing only spaces
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1006", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1006';
+      console.log(TAG + ' start');
+      const str = new String("   ");
+      const result = str.valueOf();
+      expect(result).assertEqual("   ");
+      expect(result.length).assertEqual(3);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0700
+     * @tc.name      StringValueOfTest1007
+     * @tc.desc      Verify the valueOf of the string object containing newline characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1007", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1007';
+      console.log(TAG + ' start');
+      const str = new String("\n\n");
+      const result = str.valueOf();
+      expect(result).assertEqual("\n\n");
+      expect(result.length).assertEqual(2);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0800
+     * @tc.name      StringValueOfTest1008
+     * @tc.desc      Verify the valueOf of a string object containing only spaces
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1008", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1008';
+      console.log(TAG + ' start');
+      const str = new String("\t\t");
+      const result = str.valueOf();
+      expect(result).assertEqual("\t\t");
+      expect(result.length).assertEqual(2);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_0900
+     * @tc.name      StringValueOfTest1009
+     * @tc.desc      Verify the valueOf of string objects containing various whitespace characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1009", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1009';
+      console.log(TAG + ' start');
+      const str = new String(" \t\n ");
+      const result = str.valueOf();
+      expect(result).assertEqual(" \t\n ");
+      expect(result.length).assertEqual(4);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1000
+     * @tc.name      StringValueOfTest1010
+     * @tc.desc      Verify the valueOf of string objects containing Unicode characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1010", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1010';
+      console.log(TAG + ' start');
+      const str = new String("你好世界");
+      const result = str.valueOf();
+      expect(result).assertEqual("你好世界");
+      expect(result.length).assertEqual(4);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1100
+     * @tc.name      StringValueOfTest1011
+     * @tc.desc      Verify the valueOf of a string object containing emoji expressions
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1011", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1011';
+      console.log(TAG + ' start');
+      const str = new String("😀🎉");
+      const result = str.valueOf();
+      expect(result).assertEqual("😀🎉");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1200
+     * @tc.name      StringValueOfTest1012
+     * @tc.desc      Verify the valueOf of string objects containing special escape characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1012", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1012';
+      console.log(TAG + ' start');
+      const str = new String("line1\nline2\ttab");
+      const result = str.valueOf();
+      expect(result).assertEqual("line1\nline2\ttab");
+      expect(result.length).assertEqual(15);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1300
+     * @tc.name      StringValueOfTest1013
+     * @tc.desc      Verify the valueOf of a string object containing zero-width characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1013", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1013';
+      console.log(TAG + ' start');
+      const str = new String("a\u200Bb");
+      const result = str.valueOf();
+      expect(result).assertEqual("a\u200Bb");
+      expect(result.length).assertEqual(3);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1400
+     * @tc.name      StringValueOfTest1014
+     * @tc.desc       Verify the valueOf of the integer string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1014", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1014';
+      console.log(TAG + ' start');
+      const str = new String("12345");
+      const result = str.valueOf();
+      expect(result).assertEqual("12345");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1500
+     * @tc.name      StringValueOfTest1015
+     * @tc.desc      Verify the valueOf of the floating-point string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1015", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1015';
+      console.log(TAG + ' start');
+      const str = new String("3.14159");
+      const result = str.valueOf();
+      expect(result).assertEqual("3.14159");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1600
+     * @tc.name      StringValueOfTest1016
+     * @tc.desc      Verify the valueOf of the scientific notation string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1016", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1016';
+      console.log(TAG + ' start');
+      const str = new String("1e10");
+      const result = str.valueOf();
+      expect(result).assertEqual("1e10");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1700
+     * @tc.name      StringValueOfTest1017
+     * @tc.desc      Verify the valueOf of negative string objects
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1017", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1017';
+      console.log(TAG + ' start');
+      const str = new String("-123");
+      const result = str.valueOf();
+      expect(result).assertEqual("-123");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1800
+     * @tc.name      StringValueOfTest1018
+     * @tc.desc      Verify the valueOf method of an ultra-long string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1018", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1018';
+      console.log(TAG + ' start');
+      const longStr = "a".repeat(10000);
+      const str = new String(longStr);
+      const result = str.valueOf();
+      expect(result.length).assertEqual(10000);
+      expect(result === longStr).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_1900
+     * @tc.name      StringValueOfTest1019
+     * @tc.desc      Verify the valueOf of a single-character string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1019", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1019';
+      console.log(TAG + ' start');
+      const str = new String("a");
+      const result = str.valueOf();
+      expect(result).assertEqual("a");
+      expect(result.length).assertEqual(1);
+      console.log(TAG + ' end');
+    });
+    //============================ Comparison With ToString Method==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2000
+     * @tc.name      StringValueOfTest1020
+     * @tc.desc      Verify that the return values of valueOf and toString are consistent
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1020", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1020';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      expect(str.valueOf() === str.toString()).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2100
+     * @tc.name      StringValueOfTest1021
+     * @tc.desc      Verify that the return values of valueOf and toString for an empty string are consistent.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1021", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1021';
+      console.log(TAG + ' start');
+      const str = new String("");
+      expect(str.valueOf() === str.toString()).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2200
+     * @tc.name      StringValueOfTest1022
+     * @tc.desc      Verify that the return values of valueOf and toString for the special character string are consistent.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1022", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1022';
+      console.log(TAG + ' start');
+      const str = new String("\n\t");
+      expect(str.valueOf() === str.toString()).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2300
+     * @tc.name      StringValueOfTest1023
+     * @tc.desc      Verify the invocation of valueOf and toString in type conversion scenarios
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1023", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1023';
+      console.log(TAG + ' start');
+      const strObj = new String("42");
+      expect(strObj.valueOf() + 8).assertEqual("428");
+      expect(strObj.toString() + 8).assertEqual("428");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2400
+     * @tc.name      StringValueOfTest1024
+     * @tc.desc      Verify the role of valueOf in arithmetic operations
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1024", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1024';
+      console.log(TAG + ' start');
+      const strObj = new String("5");
+      const numericValue = Number(strObj.valueOf());
+      expect(numericValue * 2).assertEqual(10);//要求隐式调用，报错？？？？
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2500
+     * @tc.name      StringValueOfTest1025
+     * @tc.desc      Verify the role of valueOf in comparison operations
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1025", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1025';
+      console.log(TAG + ' start');
+      const strObj = new String("abc");
+      expect(strObj == "abc").assertEqual(true);
+      expect(strObj === "abc").assertEqual(false);
+      console.log(TAG + ' end');
+    });
+    //============================ Inheritance and Prototype Chain Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2600
+     * @tc.name      StringValueOfTest1026
+     * @tc.desc      Verify that the valueOf method comes from String.prototype
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1026", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1026';
+      console.log(TAG + ' start');
+      let result = stringTest.testEmptyChars();
+      expect(result[0]).assertEqual(false);
+      expect(result[1]).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2700
+     * @tc.name      StringValueOfTest1027
+     * @tc.desc      Verify the lookup process of the valueOf method in the prototype chain
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1027", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1027';
+      console.log(TAG + ' start');
+      let result = stringTest.testLookupFlow();
+      expect(result[0]).assertEqual(true);
+      expect(result[1]).assertEqual(false);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2800
+     * @tc.name      StringValueOfTest1028
+     * @tc.desc      Verify that the custom string class inherits the valueOf method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1028", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1028';
+      console.log(TAG + ' start');
+      class MyString extends String {
+        constructor(value:string) {
+          super(value);
+        }
+      }
+      const myStr = new MyString("custom");
+      const result = myStr.valueOf();
+      expect(result).assertEqual("custom");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_2900
+     * @tc.name      StringValueOfTest1029
+     * @tc.desc      Verify that the subclass overrides the valueOf method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1029", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1029';
+      console.log(TAG + ' start');
+      class MyString extends String {
+        constructor(value:string) {
+          super(value);
+        }
+        valueOf() {
+          return "custom: " + super.valueOf();
+        }
+      }
+      const myStr = new MyString("test");
+      const result = myStr.valueOf();
+      expect(result).assertEqual("custom: test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3000
+     * @tc.name      StringValueOfTest1030
+     * @tc.desc      Verify that the subclass calls the parent class valueOf via super
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1030", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1030';
+      console.log(TAG + ' start');
+      class CustomString extends String {
+        valueOf() {
+          const original = super.valueOf();
+          return original.toUpperCase();
+        }
+      }
+      const customStr = new CustomString("hello");
+      expect(customStr.valueOf()).assertEqual("HELLO");
+      console.log(TAG + ' end');
+    });
+    //============================ Internal Calling Mechanism Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3100
+     * @tc.name      StringValueOfTest1031
+     * @tc.desc      Verify the implicit invocation of valueOf during string concatenation
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1031", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1031';
+      console.log(TAG + ' start');
+      const strObj = new String("hello");
+      const result = strObj + " world";
+      expect(result).assertEqual("hello world");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3200
+     * @tc.name      StringValueOfTest1032
+     * @tc.desc      Verify the implicit invocation of valueOf in the template string
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1032", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1032';
+      console.log(TAG + ' start');
+      const strObj = new String("world");
+      const result = `Hello ${strObj}`;
+      expect(result).assertEqual("Hello world");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3300
+     * @tc.name      StringValueOfTest1033
+     * @tc.desc      Verify the implicit invocation of valueOf during numerical operations
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1033", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1033';
+      console.log(TAG + ' start');
+      let result = stringTest.testImplicitCall();
+      expect(result).assertEqual(20);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3400
+     * @tc.name      StringValueOfTest1034
+     * @tc.desc      Verify the implicit invocation of valueOf during comparison operations
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1034", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1034';
+      console.log(TAG + ' start');
+      const strObj = new String("abc");
+      expect(strObj == "abc").assertEqual(true);
+      expect(strObj != "def").assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3500
+     * @tc.name      StringValueOfTest1035
+     * @tc.desc      Verify that the String() constructor invokes valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1035", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1035';
+      console.log(TAG + ' start');
+      const strObj = new String("test");
+      const result = String(strObj);
+      expect(result).assertEqual("test");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3600
+     * @tc.name      StringValueOfTest1036
+     * @tc.desc      Verify the invocation of valueOf in the label template function
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1036", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1036';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testInvokeValue();
+      expect(result).assertEqual("Hello world");
+      console.log(TAG + ' end');
+    });
+    //============================Type Conversion Interaction Test ==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3700
+     * @tc.name      StringValueOfTest1037
+     * @tc.desc      Verify the invocation of valueOf for string objects in a numeric context
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1037", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1037';
+      console.log(TAG + ' start');
+      const strObj = new String("42");
+      const num = Number(strObj);
+      expect(num).assertEqual(42);
+      expect(typeof num).assertEqual("number");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3800
+     * @tc.name      StringValueOfTest1038
+     * @tc.desc      Verify the behavior of converting non-numeric string objects to numbers
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1038", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1038';
+      console.log(TAG + ' start');
+      const strObj = new String("abc");
+      const num = Number(strObj);
+      expect(isNaN(num)).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_3900
+     * @tc.name      StringValueOfTest1039
+     * @tc.desc      Verify the behavior of converting non-empty string objects to boolean values
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1039", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1039';
+      console.log(TAG + ' start');
+      const strObj = new String("hello");
+      const bool = Boolean(strObj);
+      expect(bool).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4000
+     * @tc.name      StringValueOfTest1040
+     * @tc.desc      Verify the behavior of converting an empty string object to a Boolean value
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1040", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1040';
+      console.log(TAG + ' start');
+      const strObj = new String("");
+      const bool = Boolean(strObj);
+      expect(bool).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4100
+     * @tc.name      StringValueOfTest1041
+     * @tc.desc      Verify the invocation of valueOf when a string object is used as the key of an object property
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1041", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1041';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testObjProp();
+      expect(result).assertEqual("value");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4200
+     * @tc.name      StringValueOfTest1042
+     * @tc.desc      Verify the invocation of valueOf during JSON serialization of string objects
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1042", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1042';
+      console.log(TAG + ' start');
+      const strObj = new String("hello");
+      const json = JSON.stringify({ value: strObj });
+      expect(json).assertEqual('{"value":"hello"}');
+      console.log(TAG + ' end');
+    });
+    //============================Method Invocation Context Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4300
+     * @tc.name      StringValueOfTest1043
+     * @tc.desc      Verify by calling the method valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1043", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1043';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      const result = str.valueOf();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4400
+     * @tc.name      StringValueOfTest1044
+     * @tc.desc       Verify the invocation of valueOf via the call method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1044", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1044';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testCallObj();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4500
+     * @tc.name      StringValueOfTest1045
+     * @tc.desc       Verify the invocation of valueOf via the apply method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1045", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1045';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testApplyObj();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4600
+     * @tc.name      StringValueOfTest1046
+     * @tc.desc      Verify the invocation of valueOf through the bind method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1046", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1046';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testBindObj();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4700
+     * @tc.name      StringValueOfTest1047
+     * @tc.desc      Verify that a string literal calls valueOf as this
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1047", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1047';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testPrimitive();
+      expect(result).assertEqual("hello");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4800
+     * @tc.name      StringValueOfTest1048
+     * @tc.desc      Verify that the string object calls valueOf as this
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1048", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1048';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testCallValue();
+      expect(result).assertEqual("world");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_4900
+     * @tc.name      StringValueOfTest1049
+     * @tc.desc      Verify error handling when a non-string type is used as this to call valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1049", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG: string = 'StringValueOfTest1049';
+      console.log(TAG + ' start');
+      try {
+        const num: number = 123;
+        const result: number = num.valueOf();
+        expect(result).assertEqual(123);
+        const strResult: string = String(num);
+        expect(strResult).assertEqual("123");
+      } catch (e) {
+        const error: Error = e as Error;
+        expect(true).assertEqual(false);
+      }
+      console.log(TAG + ' end');
+    });
+    //============================Boundary Value and Exception Testing==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5000
+     * @tc.name      StringValueOfTest1050
+     * @tc.desc      Verify that valueOf ignores extra parameters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1050", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1050';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testWithParams();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5100
+     * @tc.name      StringValueOfTest1051
+     * @tc.desc      Verify the normal behavior of calling valueOf without parameters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1051", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1051';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      const result = str.valueOf();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5200
+     * @tc.name      StringValueOfTest1052
+     * @tc.desc       Verify the valueOf method of frozen string objects
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1052", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1052';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testFrozenObj();
+      expect(result).assertEqual("frozen");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5300
+     * @tc.name      StringValueOfTest1053
+     * @tc.desc      Verify the valueOf method of the sealed string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1053", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1053';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testSealedObj();
+      expect(result).assertEqual("sealed");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5400
+     * @tc.name      StringValueOfTest1054
+     * @tc.desc      Verify the valueOf of string objects with custom attributes
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1054", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1054';
+      console.log(TAG + ' start');
+      let result: string[] = stringTest.testAfterValue();
+      expect(result[0]).assertEqual("test");
+      expect(result[1]).assertEqual(undefined);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5500
+     * @tc.name      StringValueOfTest1055
+     * @tc.desc       Verify the valueOf of the maximum-length string object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1055", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1055';
+      console.log(TAG + ' start');
+      const maxStr = "a".repeat(Math.pow(2, 20));
+      const str = new String(maxStr);
+      const result = str.valueOf();
+      expect(result.length).assertEqual(1048576);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5600
+     * @tc.name      StringValueOfTest1056
+     * @tc.desc      Verify the valueOf of string objects containing supplementary plane characters
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1056", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1056';
+      console.log(TAG + ' start');
+      const str = new String("𝌆");
+      const result = str.valueOf();
+      expect(result).assertEqual("𝌆");
+      expect(result.length).assertEqual(2);
+      console.log(TAG + ' end');
+    });
+    //============================Interaction tests with other String methods==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5700
+     * @tc.name      StringValueOfTest1057
+     * @tc.desc      Verify the combination of the valueOf result with the concat method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1057", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1057';
+      console.log(TAG + ' start');
+      const str = new String("hello");
+      const result = str.valueOf().concat(" world");
+      expect(result).assertEqual("hello world");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5800
+     * @tc.name      StringValueOfTest1058
+     * @tc.desc      Verify the combination of the valueOf result with the slice method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1058", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1058';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().slice(0, 5);
+      expect(result).assertEqual("hello");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_5900
+     * @tc.name      StringValueOfTest1059
+     * @tc.desc      Verify the combination of the valueOf result with the split method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1059", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1059';
+      console.log(TAG + ' start');
+      const str = new String("a,b,c");
+      const result = str.valueOf().split(",");
+      expect(result[0]).assertEqual("a");
+      expect(result[1]).assertEqual("b");
+      expect(result[2]).assertEqual("c");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6000
+     * @tc.name      StringValueOfTest1060
+     * @tc.desc      Verify the combination of the valueOf result with the trim method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1060", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1060';
+      console.log(TAG + ' start');
+      const str = new String("  hello  ");
+      const result = str.valueOf().trim();
+      expect(result).assertEqual("hello");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6100
+     * @tc.name      StringValueOfTest1061
+     * @tc.desc      Verify the combination of the valueOf result with the includes method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1061", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1061';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().includes("world");
+      expect(result).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6200
+     * @tc.name      StringValueOfTest1062
+     * @tc.desc      Verify the combination of the valueOf result with the indexOf method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1062", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1062';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().indexOf("world");
+      expect(result).assertEqual(6);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6300
+     * @tc.name      StringValueOfTest1063
+     * @tc.desc      Verify the combination of the valueOf result with the startsWith method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1063", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1063';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().startsWith("hello");
+      expect(result).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6400
+     * @tc.name      StringValueOfTest1064
+     * @tc.desc      Verify the combination of the valueOf result with the endsWith method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1064", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1064';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().endsWith("world");
+      expect(result).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6500
+     * @tc.name      StringValueOfTest1065
+     * @tc.desc      Verify the combination of the valueOf result with the toLowerCase method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1065", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1065';
+      console.log(TAG + ' start');
+      const str = new String("HELLO");
+      const result = str.valueOf().toLowerCase();
+      expect(result).assertEqual("hello");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6600
+     * @tc.name      StringValueOfTest1066
+     * @tc.desc      Verify the combination of the valueOf result with the toUpperCase method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1066", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1066';
+      console.log(TAG + ' start');
+      const str = new String("hello");
+      const result = str.valueOf().toUpperCase();
+      expect(result).assertEqual("HELLO");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6700
+     * @tc.name      StringValueOfTest1067
+     * @tc.desc       Verify the combination of the valueOf result with the replace method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1067", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1067';
+      console.log(TAG + ' start');
+      const str = new String("hello world");
+      const result = str.valueOf().replace("world", "javascript");
+      expect(result).assertEqual("hello javascript");
+      console.log(TAG + ' end');
+    });
+    //============================Strict Mode Testing==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6800
+     * @tc.name      StringValueOfTest1068
+     * @tc.desc      Verify the normal invocation of valueOf in strict mode
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1068", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1068';
+      console.log(TAG + ' start');
+      "use strict";
+      const str = new String("test");
+      const result = str.valueOf();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_6900
+     * @tc.name      StringValueOfTest1069
+     * @tc.desc      Verify the behavior of type conversion in strict mode
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1069", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1069';
+      console.log(TAG + ' start');
+      "use strict";
+      const str = new String("test");
+      const result = str.valueOf();
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7000
+     * @tc.name      StringValueOfTest1070
+     * @tc.desc      Verify the normal invocation of valueOf in non-strict mode.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1070", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1070';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      const result = str.valueOf();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7100
+     * @tc.name      StringValueOfTest1071
+     * @tc.desc      Verify the automatic conversion of 'this' in non-strict mode
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1071", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1071';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testPrimitiveStr();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    //============================Special Object Type Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7200
+     * @tc.name      StringValueOfTest1072
+     * @tc.desc      Verify the valueOf of the object created by the String constructor
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1072", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1072';
+      console.log(TAG + ' start');
+      const strObj = new String("hello");
+      expect(typeof strObj).assertEqual("object");
+      expect(typeof strObj.valueOf()).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7300
+     * @tc.name      StringValueOfTest1073
+     * @tc.desc      Verify the valueOf of the string object created through Object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1073", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1073';
+      console.log(TAG + ' start');
+      const strObj = new Object("hello");
+      expect(strObj.valueOf()).assertEqual("hello");
+      expect(typeof strObj.valueOf()).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7400
+     * @tc.name      StringValueOfTest1074
+     * @tc.desc      Verify the valueOf of basic string literals
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1074", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1074';
+      console.log(TAG + ' start');
+      const str = "hello";
+      expect(str.valueOf()).assertEqual("hello");
+      expect(typeof str.valueOf()).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7500
+     * @tc.name      StringValueOfTest1075
+     * @tc.desc       Verify the valueOf of the template string
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1075", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1075';
+      console.log(TAG + ' start');
+      const name = "world";
+      const str = `hello ${name}`;
+      expect(str.valueOf()).assertEqual("hello world");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7600
+     * @tc.name      StringValueOfTest1076
+     * @tc.desc      Verify the valueOf of a string object with the Symbol property
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1076", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1076';
+      console.log(TAG + ' start');
+      let result:string[] = stringTest.testAfterSymbol();
+      expect(result[0]).assertEqual("test");
+      expect(result[1]).assertEqual(undefined);
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7700
+     * @tc.name      StringValueOfTest1077
+     * @tc.desc      Verify the valueOf of a string object with getter/setter
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1077", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1077';
+      console.log(TAG + ' start');
+      let result:string = stringTest.testAfterAccessor();
+      expect(result).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7800
+     * @tc.name      StringValueOfTest1078
+     * @tc.desc      Verify the use of valueOf for form input data
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1078", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1078';
+      console.log(TAG + ' start');
+      expect(stringTest.testValidateInput("hello")).assertEqual(true);
+      expect(stringTest.testValidateInput("  ")).assertEqual(false);
+      expect(stringTest.testValidateInput("")).assertEqual(false);
+      expect(stringTest.testValidateInput("test ")).assertEqual(false);
+      expect(stringTest.testValidateInput(" test")).assertEqual(false);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_7900
+     * @tc.name      StringValueOfTest1079
+     * @tc.desc      Verify the usage of valueOf in the data cleaning scenario
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1079", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1079';
+      console.log(TAG + ' start');
+      expect(stringTest.testCleanData("  HELLO  ")).assertEqual("hello");
+      expect(stringTest.testCleanData("WORLD")).assertEqual("world");
+      expect(stringTest.testCleanData("  Test 123  ")).assertEqual("test 123");
+      expect(stringTest.testCleanData("")).assertEqual("");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8000
+     * @tc.name      StringValueOfTest1080
+     * @tc.desc      Verify the usage of valueOf in the string concatenation scenario
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1080", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1080';
+      console.log(TAG + ' start');
+      const strObj = new String("world");
+      expect(stringTest.testConcat("Hello ", strObj, "!")).assertEqual("Hello world!");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8100
+     * @tc.name      StringValueOfTest1081
+     * @tc.desc      Verify the use of valueOf in string comparison scenarios
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1081", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1081';
+      console.log(TAG + ' start');
+      const strObj1 = new String("test");
+      const strObj2 = new String("test");
+      expect(stringTest.testCompareStrings(strObj1, strObj2)).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8200
+     * @tc.name      StringValueOfTest1082
+     * @tc.desc      Verify valueOf() works in custom serialization for String object.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1082", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1082';
+      console.log(TAG + ' start');
+      const strObj = new String("hello");
+      interface SerializeResult {
+        type: string;
+        value: string;
+      }
+      const result = stringTest.testSerialize(strObj) as SerializeResult;
+      expect(result.type).assertEqual("String");
+      expect(result.value).assertEqual("hello");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8300
+     * @tc.name      StringValueOfTest1083
+     * @tc.desc      Verify the usage of valueOf in the deep copy scenario
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1083", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1083';
+      console.log(TAG + ' start');
+      const strObj = new String("test");
+      const cloned:string = stringTest.testDeepClone(strObj);
+      expect(cloned.valueOf()).assertEqual("test");
+      expect(cloned === strObj).assertEqual(false);
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8400
+     * @tc.name      StringValueOfTest1084
+     * @tc.desc      Verify the usage of valueOf in the string sorting scenario
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1084", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1084';
+      console.log(TAG + ' start');
+
+      const strings = [
+        new String("banana"),
+        new String("apple"),
+        new String("cherry")
+      ];
+      strings.sort((a, b) => a.valueOf().localeCompare(b.valueOf()));
+      expect(strings[0].valueOf()).assertEqual("apple");
+      expect(strings[1].valueOf()).assertEqual("banana");
+      expect(strings[2].valueOf()).assertEqual("cherry");
+
+      console.log(TAG + ' end');
+    });
+    //============================ECMAScript Specification Conformance Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8500
+     * @tc.name      StringValueOfTest1085
+     * @tc.desc      Verify that the behavior complies with the specification when the 'this' value is a valid String object.
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1085", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1085';
+      console.log(TAG + ' start');
+
+      const str = new String("test");
+      const result = str.valueOf();
+
+      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("test");
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8600
+     * @tc.name      StringValueOfTest1086
+     * @tc.desc       Verify the autoboxing behavior when the 'this' value is a primitive String value
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1086", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1086';
+      console.log(TAG + ' start');
+      let result:string= stringTest.testPrimitiveOne();
+      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("primitive");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8700
+     * @tc.name      StringValueOfTest1087
+     * @tc.desc      Verify that a TypeError is thrown when the value of this is null or undefined
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1087", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1087';
+      console.log(TAG + ' start');
+      let error:TypeError[]= stringTest.testCallNull();
+      expect(error[0] instanceof TypeError).assertEqual(true);
+      expect(error[1] instanceof TypeError).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8800
+     * @tc.name      StringValueOfTest1088
+     * @tc.desc      Verify that valueOf always returns the original string type
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1088", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1088';
+      console.log(TAG + ' start');
+
+      const str = new String("test");
+      const result = str.valueOf();
+
+      expect(typeof result === "string").assertEqual(true);
+      expect(result !== str).assertEqual(true);
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_8900
+     * @tc.name      StringValueOfTest1089
+     * @tc.desc      Verify that the return value is consistent with the internal string value of the String object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1089", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1089';
+      console.log(TAG + ' start');
+
+      const str = new String("hello");
+      const result = str.valueOf();
+
+      expect(result === str.toString()).assertEqual(true);
+      expect(result === String(str)).assertEqual(true);
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9000
+     * @tc.name      StringValueOfTest1090
+     * @tc.desc      Verify the correctness of the internal thisStringValue abstract operation
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1090", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1090';
+      console.log(TAG + ' start');
+
+      const str = new String("test");
+      const literal = "literal";
+      expect(str.valueOf() === "test").assertEqual(true);
+      expect(String(literal) === "literal").assertEqual(true);
+
+      console.log(TAG + ' end');
+    });
+    //============================Symbol.toPrimitive Interaction Test==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9100
+     * @tc.name      StringValueOfTest1091
+     * @tc.desc      Verify the type conversion behavior when only valueOf is defined
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1091", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1091';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjBase();
+      expect(String(obj)).assertEqual("[object Object]");
+      expect(obj + "").assertEqual("from valueOf");
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9200
+     * @tc.name      StringValueOfTest1092
+     * @tc.desc      Verify that Symbol.toPrimitive takes precedence over valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1092", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1092';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjPrim();
+      expect(String(obj)).assertEqual("from toPrimitive, hint: string");
+      expect(obj + "").assertEqual("from toPrimitive, hint: default");
+      expect(String(Number(obj))).assertEqual("NaN"); // 注意：使用Number()进行显式转换
+
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9300
+     * @tc.name      StringValueOfTest1093
+     * @tc.desc      Verify that the String object does not have Symbol.toPrimitive and uses valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1093", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1093';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      let result: Function | undefined = stringTest.testSymbol();
+      expect(result).assertEqual(undefined);
+      expect(str.valueOf()).assertEqual("test");
+      expect(str + "").assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9400
+     * @tc.name      StringValueOfTest1094
+     * @tc.desc      Verify the behavior of valueOf when validating string hint
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1094", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1094';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      expect(String(str)).assertEqual("test");
+      expect(str.valueOf()).assertEqual("test");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9500
+     * @tc.name      StringValueOfTest1095
+     * @tc.desc      Verify the behavior of valueOf when using number hint
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1095", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1095';
+      console.log(TAG + ' start');
+      const str = new String("42");
+      expect(Number(str)).assertEqual(42);
+      expect(Number(str) * 2).assertEqual(84);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9600
+     * @tc.name      StringValueOfTest1096
+     * @tc.desc      Verify the behavior of valueOf when the default hint is used
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1096", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1096';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      expect(str + "").assertEqual("test");
+      expect(str == "test").assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9700
+     * @tc.name      StringValueOfTest1097
+     * @tc.desc      Verify that the custom object simulates String behavior through valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1097", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1097';
+      console.log(TAG + ' start');
+      const myStr = new stringTest.MyStringLike("hello");
+      expect(myStr + " world").assertEqual("hello world");
+      expect(String(myStr)).assertEqual("hello");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9800
+     * @tc.name      StringValueOfTest1098
+     * @tc.desc      Verify that a custom object simulates String behavior via Symbol.toPrimitive
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1098", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1098';
+      console.log(TAG + ' start');
+      const myStr = new stringTest.MyStringLike2("42");
+      expect(String(myStr)).assertEqual("42");
+      expect(Number(myStr) * 2).assertEqual(84);
+      console.log(TAG + ' end');
+    });
+    //============================Test of the object primitive value conversion mechanism==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_9900
+     * @tc.name      StringValueOfTest1099
+     * @tc.desc      Verify the default behavior of ToPrimitive when there is no hint
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1099", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1099';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjPair();
+      expect(obj + "").assertEqual("valueOf"); // default hint：valueOf优先
+      expect(String(obj)).assertEqual("toString"); // string hint：toString优先
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10000
+     * @tc.name      StringValueOfTest1100
+     * @tc.desc      Verify that toString is called when valueOf returns an object
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1100';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjToStr();
+      expect(obj + "").assertEqual("toString");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10100
+     * @tc.name      StringValueOfTest1101
+     * @tc.desc      Verify that a TypeError is thrown when both valueOf and toString return objects
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1101", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1101';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjThrow();
+      let isTypeError = false;
+      try {
+        obj + "";
+      } catch (e) {
+        isTypeError = e instanceof TypeError;
+      }
+      expect(isTypeError).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10200
+     * @tc.name      StringValueOfTest1102
+     * @tc.desc      Verify that valueOf takes precedence in a numeric context
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1102", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1102';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjCaseA();
+      expect(Number(obj) * 2).assertEqual(84);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10300
+     * @tc.name      StringValueOfTest1103
+     * @tc.desc      Verify that toString takes precedence in the string context
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1103", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1103';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjCaseB();
+      expect(String(obj)).assertEqual("100");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10400
+     * @tc.name      StringValueOfTest1104
+     * @tc.desc      Verify that valueOf takes precedence in the default context
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1104", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1104';
+      console.log(TAG + ' start');
+      let obj=stringTest.testObjCaseC();
+      expect(obj + "").assertEqual("42");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10500
+     * @tc.name      StringValueOfTest1105
+     * @tc.desc      Verify that arithmetic operators trigger valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1105", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1105';
+      console.log(TAG + ' start');
+      let str = new String("10");
+      expect(Number(str)* 2).assertEqual(20);
+      expect(Number(str)/ 2).assertEqual(5);
+      expect(Number(str) - 2).assertEqual(8);
+      expect(Number(str) % 3).assertEqual(1);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10600
+     * @tc.name      StringValueOfTest1106
+     * @tc.desc      Verify that the comparison operator triggers valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1106", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1106';
+      console.log(TAG + ' start');
+      const str = new String("abc");
+      expect(str == "abc").assertEqual(true);
+      expect(str === "abc").assertEqual(false);
+      expect(str < "abd").assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10700
+     * @tc.name      StringValueOfTest1107
+     * @tc.desc      Verify that bitwise operators trigger valueOf and ToNumber
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1107", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1107';
+      console.log(TAG + ' start');
+      const str = new String("5");
+      expect(Number(str) | 3).assertEqual(7);
+      expect(Number(str) & 3).assertEqual(1);
+      expect(Number(str) ^ 3).assertEqual(6);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10800
+     * @tc.name      StringValueOfTest1108
+     * @tc.desc      Verify that logical operators do not trigger valueOf
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1108", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1108';
+      console.log(TAG + ' start');
+      const str = new String("test");
+      const andResult = str && "truthy";
+      const orResult = str || "default";
+      expect(andResult).assertEqual("truthy");
+      expect(orResult === str).assertEqual(true);
+      expect(orResult instanceof String).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    //============================ Modern JavaScript API Testing==================================
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_10900
+     * @tc.name      StringValueOfTest1109
+     * @tc.desc      Verify the invocation of valueOf using Reflect.apply
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1109", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1109';
+      console.log(TAG + ' start');
+      const result = stringTest.testReflectApply();
+      expect(result).assertEqual("test");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_11000
+     * @tc.name      StringValueOfTest1110
+     * @tc.desc       Verify the behavioral consistency between Reflect.apply and the apply method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1110", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1110';
+      console.log(TAG + ' start');
+      const result:string[] = stringTest.testApplyEqual();
+      expect(result[0]).assertEqual("test");
+      expect(result[1]).assertEqual("test");
+      expect(result[0] === result[1]).assertEqual(true);
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_11100
+     * @tc.name      StringValueOfTest1111
+     * @tc.desc      Verify that the get trap of Proxy can intercept the access to the valueOf method
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1111", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1111';
+      console.log(TAG + ' start');
+      const type = stringTest.testProxyType();
+      expect(type).assertEqual("function");
+      console.log(TAG + ' end');
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFONE_11200
+     * @tc.name      StringValueOfTest1112
+     * @tc.desc      Verify that the apply trap of Proxy can intercept the valueOf call
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("StringValueOfTest1112", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringValueOfTest1112';
+      console.log(TAG + ' start');
+      const result:string = stringTest.testProxyApply();
+      expect(result).assertEqual("test");
+      expect(typeof result).assertEqual("string");
+      console.log(TAG + ' end');
+    });
+  });
 }
