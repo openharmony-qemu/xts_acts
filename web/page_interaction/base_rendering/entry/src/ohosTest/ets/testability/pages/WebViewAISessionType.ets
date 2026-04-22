@@ -14,6 +14,7 @@ struct Summarizer {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
 
+  
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: EVENT_ID_SET_SUITE_KEY,
