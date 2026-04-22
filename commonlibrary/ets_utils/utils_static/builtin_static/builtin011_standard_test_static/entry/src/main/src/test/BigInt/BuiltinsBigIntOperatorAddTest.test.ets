@@ -41,17 +41,17 @@ export default function BuiltinsBigIntOperatorAddTest(): void {
     /**
      * @tc.name    builtinsBigIntOperatorAddTest0100
      * @tc.number  SUB_BUILTINS_BIGINT_OPERATOR_ADD_TEST_0100
-     * @tc.desc    Verify operatorAdd with BigInt(0xdecafafecacefade) and BigInt(9007199254740991n)
+     * @tc.desc    Verify operatorAdd with BigInt(0xdecafafecacefade) and BigInt(0x1fffffffffffff)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntOperatorAddTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const bigInt1 = new BigInt("0xdecafafecacefade");
-      const bigInt2 = new BigInt("0x1fffffffffffff");
-      const result = bigInt1.operatorAdd(bigInt2);
-      const expected = new BigInt("0xdecb1afecacefadd");
-      expect(result.equals(expected)).assertTrue();
+      const bigInt1 = BigInt("0xdecafafecacefade");
+      const bigInt2 = BigInt("0x1fffffffffffff");
+      const result = bigInt1.operatorAdd(bigInt2)
+      const expected = BigInt("0xdecb1afecacefadd");
+      expect(result === expected).assertTrue();
     });
 
     /**

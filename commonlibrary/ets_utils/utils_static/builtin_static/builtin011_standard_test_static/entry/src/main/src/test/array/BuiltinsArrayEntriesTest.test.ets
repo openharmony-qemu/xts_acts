@@ -41,31 +41,31 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as number[];
+      const firstValue = first.value as [number, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(10);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as number[];
+      const secondValue = second.value as [number, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(20);
 
       const third = iterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as number[];
+      const thirdValue = third.value as [number, number];
       expect(thirdValue[0]).assertEqual(2);
       expect(thirdValue[1]).assertEqual(30);
 
       const fourth = iterator.next();
       expect(fourth.done).assertEqual(false);
-      const fourthValue = fourth.value as number[];
+      const fourthValue = fourth.value as [number, number];
       expect(fourthValue[0]).assertEqual(3);
       expect(fourthValue[1]).assertEqual(40);
 
       const fifth = iterator.next();
       expect(fifth.done).assertEqual(false);
-      const fifthValue = fifth.value as number[];
+      const fifthValue = fifth.value as [number, number];
       expect(fifthValue[0]).assertEqual(4);
       expect(fifthValue[1]).assertEqual(50);
 
@@ -104,7 +104,7 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as number[];
+      const firstValue = first.value as [number, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(100);
 
@@ -128,14 +128,14 @@ export default function BuiltinsArrayEntriesTest(): void {
       let current = iterator.next();
 
       while (!current.done) {
-        const entry = current.value as (string | number)[];
+        const entry = current.value as [number, string];
         expect(entry[0]).assertEqual(count);
         if (count === 0) {
-          expect(entry[1] as string).assertEqual('hello');
+          expect(entry[1]).assertEqual('hello');
         } else if (count === 1) {
-          expect(entry[1] as string).assertEqual('world');
+          expect(entry[1]).assertEqual('world');
         } else if (count === 2) {
-          expect(entry[1] as string).assertEqual('test');
+          expect(entry[1]).assertEqual('test');
         }
         count = count + 1;
         current = iterator.next();
@@ -158,27 +158,27 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as (boolean | number)[];
+      const firstValue = first.value as [number, boolean];
       expect(firstValue[0]).assertEqual(0);
-      expect(firstValue[1] as boolean).assertEqual(true);
+      expect(firstValue[1]).assertEqual(true);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as (boolean | number)[];
+      const secondValue = second.value as [number, boolean];
       expect(secondValue[0]).assertEqual(1);
-      expect(secondValue[1] as boolean).assertEqual(false);
+      expect(secondValue[1]).assertEqual(false);
 
       const third = iterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as (boolean | number)[];
+      const thirdValue = third.value as [number, boolean];
       expect(thirdValue[0]).assertEqual(2);
-      expect(thirdValue[1] as boolean).assertEqual(true);
+      expect(thirdValue[1]).assertEqual(true);
 
       const fourth = iterator.next();
       expect(fourth.done).assertEqual(false);
-      const fourthValue = fourth.value as (boolean | number)[];
+      const fourthValue = fourth.value as [number, boolean];
       expect(fourthValue[0]).assertEqual(3);
-      expect(fourthValue[1] as boolean).assertEqual(false);
+      expect(fourthValue[1]).assertEqual(false);
 
       const end = iterator.next();
       expect(end.done).assertEqual(true);
@@ -198,19 +198,19 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = entriesIterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as number[];
+      const firstValue = first.value as [number, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(5);
 
       const second = entriesIterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as number[];
+      const secondValue = second.value as [number, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(10);
 
       const third = entriesIterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as number[];
+      const thirdValue = third.value as [number, number];
       expect(thirdValue[0]).assertEqual(2);
       expect(thirdValue[1]).assertEqual(15);
 
@@ -232,13 +232,13 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as number[];
+      const firstValue = first.value as [number, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(1);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as number[];
+      const secondValue = second.value as [number, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(2);
 

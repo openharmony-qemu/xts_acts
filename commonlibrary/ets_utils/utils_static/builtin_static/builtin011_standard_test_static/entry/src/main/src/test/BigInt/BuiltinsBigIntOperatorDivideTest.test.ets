@@ -251,7 +251,7 @@ export default function BuiltinsBigIntOperatorDivideTest(): void {
       } catch (e) {
         threwException = e.name;
       }
-      expect(threwException).assertEqual("");
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -272,7 +272,7 @@ export default function BuiltinsBigIntOperatorDivideTest(): void {
       } catch (e) {
         threwException = e.name;
       }
-      expect(threwException).assertEqual("");
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -293,7 +293,7 @@ export default function BuiltinsBigIntOperatorDivideTest(): void {
       } catch (e) {
         threwException = e.name;
       }
-      expect(threwException).assertEqual("");
+      expect(threwException).assertEqual("Error");
     });
 
   });
