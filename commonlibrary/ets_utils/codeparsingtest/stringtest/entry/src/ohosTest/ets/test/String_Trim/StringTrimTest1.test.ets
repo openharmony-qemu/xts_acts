@@ -26,7 +26,7 @@ export default function StringTrimTest01() {
     //============================Whitespace Character Type Test==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0100
      * @tc.name      StringTrimTest1001
      * @tc.desc      Normal space character (U+0020)
      * @tc.size      MediumTest
@@ -42,7 +42,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0200
      * @tc.name      StringTrimTest1002
      * @tc.desc      Horizontal tab character \t (U+0009)
      * @tc.size      MediumTest
@@ -58,7 +58,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0300
      * @tc.name      StringTrimTest1003
      * @tc.desc      Vertical tab character \v (U+000B)
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0400
      * @tc.name      StringTrimTest1004
      * @tc.desc      Form feed character \f (U+000C)
      * @tc.size      MediumTest
@@ -90,7 +90,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0500
      * @tc.name      StringTrimTest1005
      * @tc.desc      Line feed character \n (U+000A)
      * @tc.size      MediumTest
@@ -106,7 +106,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0600
      * @tc.name      StringTrimTest1006
      * @tc.desc      Carriage return character \r (U+000D)
      * @tc.size      MediumTest
@@ -122,7 +122,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0700
      * @tc.name      StringTrimTest1007
      * @tc.desc      Carriage return and line feed combination \r\n (U+000D U+000A)
      * @tc.size      MediumTest
@@ -138,7 +138,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0800
      * @tc.name      StringTrimTest1008
      * @tc.desc      Line separator character (U+2028)
      * @tc.size      MediumTest
@@ -154,7 +154,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_0900
      * @tc.name      StringTrimTest1009
      * @tc.desc     Paragraph separator character (U+2029)
      * @tc.size      MediumTest
@@ -170,7 +170,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1000
      * @tc.name      StringTrimTest1010
      * @tc.desc      Non-breaking space character (U+00A0)
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1100
      * @tc.name      StringTrimTest1011
      * @tc.desc      Ideographic space character (U+3000)
      * @tc.size      MediumTest
@@ -202,7 +202,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1200
      * @tc.name      StringTrimTest1012
      * @tc.desc      Ogham space mark character (U+1680)
      * @tc.size      MediumTest
@@ -218,7 +218,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1300
      * @tc.name      StringTrimTest1013
      * @tc.desc      EN QUAD character (U+2000)
      * @tc.size      MediumTest
@@ -234,7 +234,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1400
      * @tc.name      StringTrimTest1014
      * @tc.desc      EN QUAD character (U+2001)
      * @tc.size      MediumTest
@@ -250,7 +250,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1500
      * @tc.name      StringTrimTest1015
      * @tc.desc      EN SPACE character (U+2002)
      * @tc.size      MediumTest
@@ -266,7 +266,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1600
      * @tc.name      StringTrimTest1016
      * @tc.desc      EN SPACE character (U+2003)
      * @tc.size      MediumTest
@@ -282,7 +282,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1700
      * @tc.name      StringTrimTest1017
      * @tc.desc      THIN SPACE character (U+2009)
      * @tc.size      MediumTest
@@ -298,7 +298,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1800
      * @tc.name      StringTrimTest1018
      * @tc.desc      HAIR SPACE character (U+200A)
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_1900
      * @tc.name      StringTrimTest1019
      * @tc.desc      NARROW NO-BREAK SPACE character (U+202F)
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2000
      * @tc.name      StringTrimTest1020
      * @tc.desc      MEDIUM MATHEMATICAL SPACE character (U+205F)
      * @tc.size      MediumTest
@@ -346,7 +346,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2100
      * @tc.name      StringTrimTest1021
      * @tc.desc      Mixed multiple whitespace characters
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2200
      * @tc.name      StringTrimTest1022
      * @tc.desc      Consecutive identical whitespace characters
      * @tc.size      MediumTest
@@ -379,7 +379,7 @@ export default function StringTrimTest01() {
 
     //============================Boundary Value Testing==================================
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2300
      * @tc.name      StringTrimTest1023
      * @tc.desc      The string is composed entirely of whitespace characters
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2400
      * @tc.name      StringTrimTest1024
      * @tc.desc      There is only one blank character
      * @tc.size      MediumTest
@@ -417,7 +417,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2500
      * @tc.name      StringTrimTest1025
      * @tc.desc      There is only one non-blank character
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2600
      * @tc.name      StringTrimTest1026
      * @tc.desc      Blank characters will not be deleted in the middle of a string
      * @tc.size      MediumTest
@@ -453,7 +453,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2700
      * @tc.name      StringTrimTest1027
      * @tc.desc      Multiple white space characters in the middle of a string are retained
      * @tc.size      MediumTest
@@ -471,7 +471,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2800
      * @tc.name      StringTrimTest1028
      * @tc.desc      Mixed special characters and white spaces
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_2900
      * @tc.name      StringTrimTest1029
      * @tc.desc      Trimming operation for long strings
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function StringTrimTest01() {
     //============================String Position Test==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3000
      * @tc.name      StringTrimTest1030
      * @tc.desc      Test different numbers of leading spaces
      * @tc.size      MediumTest
@@ -531,7 +531,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3100
      * @tc.name      StringTrimTest1031
      * @tc.desc      Leading multiple whitespace character combinations
      * @tc.size      MediumTest
@@ -548,7 +548,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3200
      * @tc.name      StringTrimTest1032
      * @tc.desc      Test different numbers of trailing spaces
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3300
      * @tc.name      StringTrimTest1033
      * @tc.desc      Various combinations of whitespace characters at the end
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3400
      * @tc.name      StringTrimTest1034
      * @tc.desc      Symmetrical blank characters at both ends
      * @tc.size      MediumTest
@@ -602,7 +602,7 @@ export default function StringTrimTest01() {
 
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3500
      * @tc.name      StringTrimTest1035
      * @tc.desc      The number of blank characters at both ends is different
      * @tc.size      MediumTest
@@ -621,7 +621,7 @@ export default function StringTrimTest01() {
     //============================Return Value Feature Test==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3600
      * @tc.name      StringTrimTest1036
      * @tc.desc      The return value of trim() is of type string
      * @tc.size      MediumTest
@@ -639,7 +639,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3700
      * @tc.name      StringTrimTest1037
      * @tc.desc      Return a brand new string object
      * @tc.size      MediumTest
@@ -657,7 +657,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3800
      * @tc.name      StringTrimTest1038
      * @tc.desc      trim() does not modify the original string
      * @tc.size      MediumTest
@@ -677,7 +677,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_3900
      * @tc.name      StringTrimTest1039
      * @tc.desc      The original string length remains unchanged
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4000
      * @tc.name      StringTrimTest1040
      * @tc.desc      The returned string length is correct
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4100
      * @tc.name      StringTrimTest1041
      * @tc.desc      An all-blank string returns an empty string
      * @tc.size      MediumTest
@@ -736,7 +736,7 @@ export default function StringTrimTest01() {
     //============================Test in Combination with Other String Methods==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4200
      * @tc.name      StringTrimTest1042
      * @tc.desc      Call trimStart() after trim()
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4300
      * @tc.name      StringTrimTest1043
      * @tc.desc      Call trimEnd() after trim()
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4400
      * @tc.name      StringTrimTest1044
      * @tc.desc      trimStart().trimEnd() is equivalent to trim()
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4500
      * @tc.name      StringTrimTest1045
      * @tc.desc      trim and convert to lowercase
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4600
      * @tc.name      StringTrimTest1046
      * @tc.desc      trim then convert to uppercase
      * @tc.size      MediumTest
@@ -827,7 +827,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4700
      * @tc.name      StringTrimTest1047
      * @tc.desc      After trimming, use includes to search
      * @tc.size      MediumTest
@@ -845,7 +845,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4800
      * @tc.name      StringTrimTest1048
      * @tc.desc      Use indexOf to find the position after trimming
      * @tc.size      MediumTest
@@ -863,7 +863,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_4900
      * @tc.name      StringTrimTest1049
      * @tc.desc      Check the starting string after trimming
      * @tc.size      MediumTest
@@ -881,7 +881,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5000
      * @tc.name      StringTrimTest1050
      * @tc.desc      Check the ending string after trimming
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5100
      * @tc.name      StringTrimTest1051
      * @tc.desc      Extract substring with slice after trimming
      * @tc.size      MediumTest
@@ -917,7 +917,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5200
      * @tc.name      StringTrimTest1052
      * @tc.desc      Extract substring after trimming
      * @tc.size      MediumTest
@@ -935,7 +935,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5300
      * @tc.name      StringTrimTest1053
      * @tc.desc      Split string after trimming
      * @tc.size      MediumTest
@@ -953,7 +953,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5400
      * @tc.name      StringTrimTest1054
      * @tc.desc      Replace content after trimming
      * @tc.size      MediumTest
@@ -971,7 +971,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5500
      * @tc.name      StringTrimTest1055
      * @tc.desc      Concatenate strings after trimming
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5600
      * @tc.name      StringTrimTest1056
      * @tc.desc      Repeat string after trimming
      * @tc.size      MediumTest
@@ -1007,7 +1007,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5700
      * @tc.name      StringTrimTest1057
      * @tc.desc      pre-trim padding
      * @tc.size      MediumTest
@@ -1025,7 +1025,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5800
      * @tc.name      StringTrimTest1058
      * @tc.desc      post-trim filling
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_5900
      * @tc.name      StringTrimTest1059
      * @tc.desc      Regular expression matching after trimming
      * @tc.size      MediumTest
@@ -1059,7 +1059,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6000
      * @tc.name      StringTrimTest1060
      * @tc.desc      Regular expression search after trimming
      * @tc.size      MediumTest
@@ -1078,7 +1078,7 @@ export default function StringTrimTest01() {
 
     //============================Practical Application Scenario Testing==================================
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6100
      * @tc.name      StringTrimTest1061
      * @tc.desc      Clean User Input Username
      * @tc.size      MediumTest
@@ -1095,7 +1095,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6200
      * @tc.name      StringTrimTest1062
      * @tc.desc      Clean User Input Email
      * @tc.size      MediumTest
@@ -1112,7 +1112,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6300
      * @tc.name      StringTrimTest1063
      * @tc.desc      Clean Up Whitespace in CSV Data
      * @tc.size      MediumTest
@@ -1132,7 +1132,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6400
      * @tc.name      StringTrimTest1064
      * @tc.desc      Clean the string values in a JSON object
      * @tc.size      MediumTest
@@ -1150,7 +1150,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6500
      * @tc.name      StringTrimTest1065
      * @tc.desc      Clean the search keywords
      * @tc.size      MediumTest
@@ -1167,7 +1167,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6600
      * @tc.name      StringTrimTest1066
      * @tc.desc      Clean and split tags
      * @tc.size      MediumTest
@@ -1186,7 +1186,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6700
      * @tc.name      StringTrimTest1067
      * @tc.desc      Ignore leading and trailing whitespace when comparing
      * @tc.size      MediumTest
@@ -1203,7 +1203,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6800
      * @tc.name      StringTrimTest1068
      * @tc.desc      Ignore both case and whitespace
      * @tc.size      MediumTest
@@ -1220,7 +1220,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_6900
      * @tc.name      StringTrimTest1069
      * @tc.desc      Check if the input is a non-blank string
      * @tc.size      MediumTest
@@ -1239,7 +1239,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7000
      * @tc.name      StringTrimTest1070
      * @tc.desc      Validate required fields
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7100
      * @tc.name      StringTrimTest1071
      * @tc.desc      Clean URL query parameters
      * @tc.size      MediumTest
@@ -1279,7 +1279,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7200
      * @tc.name      StringTrimTest1072
      * @tc.desc      Trim leading and trailing whitespace from filenames
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function StringTrimTest01() {
     //============================Special character and Unicode testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7300
      * @tc.name      StringTrimTest1073
      * @tc.desc      Clean whitespace in Chinese character strings
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7400
      * @tc.name      StringTrimTest1074
      * @tc.desc      Trim mixed Chinese-English strings
      * @tc.size      MediumTest
@@ -1334,7 +1334,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7500
      * @tc.name      StringTrimTest1075
      * @tc.desc      Trim strings containing Emoji characters
      * @tc.size      MediumTest
@@ -1352,7 +1352,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7600
      * @tc.name      StringTrimTest1076
      * @tc.desc      Trim strings mixed with Emoji and text
      * @tc.size      MediumTest
@@ -1370,7 +1370,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7700
      * @tc.name      StringTrimTest1077
      * @tc.desc      Zero-width characters are not whitespace characters
      * @tc.size      MediumTest
@@ -1389,7 +1389,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7800
      * @tc.name      StringTrimTest1078
      * @tc.desc      BOM character (U+FEFF) as whitespace
      * @tc.size      MediumTest
@@ -1407,7 +1407,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_7900
      * @tc.name      StringTrimTest1079
      * @tc.desc      Some control characters are trimmed
      * @tc.type      Function
@@ -1426,7 +1426,7 @@ export default function StringTrimTest01() {
 
     //============================Chained call testing==================================
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8000
      * @tc.name      StringTrimTest1080
      * @tc.desc      Call trim() multiple times consecutively
      * @tc.size      MediumTest
@@ -1444,7 +1444,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8100
      * @tc.name      StringTrimTest1081
      * @tc.desc      Chain call of multiple string methods
      * @tc.size      MediumTest
@@ -1462,7 +1462,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8200
      * @tc.name      StringTrimTest1082
      * @tc.desc      Complex string processing chain
      * @tc.size      MediumTest
@@ -1486,7 +1486,7 @@ export default function StringTrimTest01() {
     //============================Performance-related boundary testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8300
      * @tc.name      StringTrimTest1083
      * @tc.desc      Process a large number of leading whitespace characters
      * @tc.size      MediumTest
@@ -1506,7 +1506,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8400
      * @tc.name      StringTrimTest1084
      * @tc.desc      Process a large number of trailing whitespace characters
      * @tc.size      MediumTest
@@ -1526,7 +1526,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8500
      * @tc.name      StringTrimTest1085
      * @tc.desc      Whitespace and characters appear alternately
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function StringTrimTest01() {
     //============================Strict Mode Test==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8600
      * @tc.name      StringTrimTest1086
      * @tc.desc      Use trim in strict mode
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8700
      * @tc.name      StringTrimTest1087
      * @tc.desc      Chain call in strict mode
      * @tc.size      MediumTest
@@ -1585,7 +1585,7 @@ export default function StringTrimTest01() {
     //============================Methods and Properties Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8800
      * @tc.name      StringTrimTest1088
      * @tc.desc      The parameter length of the trim method
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_8900
      * @tc.name      StringTrimTest1089
      * @tc.desc      The name property of the trim method
      * @tc.size      MediumTest
@@ -1619,7 +1619,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9000
      * @tc.name      StringTrimTest1090
      * @tc.desc      trim is a method on the String prototype
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9100
      * @tc.name      StringTrimTest1091
      * @tc.desc      Enumerability of the trim method
      * @tc.size      MediumTest
@@ -1659,7 +1659,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9200
      * @tc.name      StringTrimTest1092
      * @tc.desc      Call trim via call method
      * @tc.size      MediumTest
@@ -1677,7 +1677,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9300
      * @tc.name      StringTrimTest1093
      * @tc.desc      Call trim via apply method
      * @tc.size      MediumTest
@@ -1695,7 +1695,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9400
      * @tc.name      StringTrimTest1094
      * @tc.desc      Use trim on array-like objects
      * @tc.size      MediumTest
@@ -1714,7 +1714,7 @@ export default function StringTrimTest01() {
     //============================Type Conversion Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9500
      * @tc.name      StringTrimTest1095
      * @tc.desc      Call trim() on String object
      * @tc.size      MediumTest
@@ -1734,7 +1734,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9600
      * @tc.name      StringTrimTest1096
      * @tc.desc      The trim results of String object and primitive string are consistent
      * @tc.size      MediumTest
@@ -1752,7 +1752,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9700
      * @tc.name      StringTrimTest1097
      * @tc.desc      Call trim on number via call method
      * @tc.size      MediumTest
@@ -1771,7 +1771,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9800
      * @tc.name      StringTrimTest1098
      * @tc.desc      Call trim on boolean via call method
      * @tc.size      MediumTest
@@ -1790,7 +1790,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_9900
      * @tc.name      StringTrimTest1099
      * @tc.desc      Call trim on object via call method
      * @tc.size      MediumTest
@@ -1807,7 +1807,7 @@ export default function StringTrimTest01() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_10000
      * @tc.name      StringTrimTest1100
      * @tc.desc      Call trim on array via call method
      * @tc.size      MediumTest
@@ -1827,7 +1827,7 @@ export default function StringTrimTest01() {
     //============================Parameter Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMONE_10100
      * @tc.name      StringTrimTest1101
      * @tc.desc      trim() does not accept parameters, passed parameters are ignored
      * @tc.size      MediumTest

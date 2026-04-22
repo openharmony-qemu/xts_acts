@@ -26,7 +26,7 @@ export default function StringTrimTest02() {
     //============================Special String Construction Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0100
      * @tc.name      StringTrimTest2001
      * @tc.desc      Call trim() on template string
      * @tc.size      MediumTest
@@ -45,7 +45,7 @@ export default function StringTrimTest02() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0200
      * @tc.name      StringTrimTest2002
      * @tc.desc      trim on string literal
      * @tc.size      MediumTest
@@ -64,7 +64,7 @@ export default function StringTrimTest02() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0300
      * @tc.name      StringTrimTest2003
      * @tc.desc      String object trim returns primitive string
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function StringTrimTest02() {
     //============================Exception Scenario Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0400
      * @tc.name      StringTrimTest2004
      * @tc.desc      Primitive value as this for trim
      * @tc.size      MediumTest
@@ -103,7 +103,7 @@ export default function StringTrimTest02() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0500
      * @tc.name      StringTrimTest2005
      * @tc.desc      Object as this for trim
      * @tc.size      MediumTest
@@ -122,7 +122,7 @@ export default function StringTrimTest02() {
     //============================Specification Compliance Testing==================================
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0600
      * @tc.name      StringTrimTest2006
      * @tc.desc      trim() always returns string type
      * @tc.size      MediumTest
@@ -140,7 +140,7 @@ export default function StringTrimTest02() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0700
      * @tc.name      StringTrimTest2007
      * @tc.desc      trim() complies with string immutability specification
      * @tc.size      MediumTest
@@ -160,7 +160,7 @@ export default function StringTrimTest02() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_TRIM_TEST2008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMTWO_0800
      * @tc.name      StringTrimTest2008
      * @tc.desc      Verify all ECMAScript defined whitespace characters are trimmed
      * @tc.size      MediumTest

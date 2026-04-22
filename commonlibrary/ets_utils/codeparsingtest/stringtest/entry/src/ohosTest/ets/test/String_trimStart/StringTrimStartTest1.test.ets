@@ -22,7 +22,7 @@ export default function StringTrimStartTest1() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0100
      * @tc.name      StringTrimStartTest1001
      * @tc.desc      Test string starting with a regular space
      * @tc.size      MediumTest
@@ -39,7 +39,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0200
      * @tc.name      StringTrimStartTest1002
      * @tc.desc      The test string has whitespace at both ends, only remove the leading whitespace
      * @tc.size      MediumTest
@@ -56,7 +56,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0300
      * @tc.name      StringTrimStartTest1003
      * @tc.desc      Test a string without whitespace characters
      * @tc.size      MediumTest
@@ -73,7 +73,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0400
      * @tc.name      StringTrimStartTest1004
      * @tc.desc      Test string with whitespace only at the beginning
      * @tc.size      MediumTest
@@ -90,7 +90,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0500
      * @tc.name      StringTrimStartTest1005
      * @tc.desc      Test a string that only has whitespace at the end, trimStart does not affect the end
      * @tc.size      MediumTest
@@ -107,7 +107,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0600
      * @tc.name      StringTrimStartTest1006
      * @tc.desc      There are whitespace characters in the middle of the test string
      * @tc.size      MediumTest
@@ -124,7 +124,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0700
      * @tc.name      StringTrimStartTest1007
      * @tc.desc      Verify that trimLeft() and trimStart() functions are completely identical
      * @tc.size      MediumTest
@@ -139,7 +139,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0800
      * @tc.name      StringTrimStartTest1008
      * @tc.desc      Test alternating use of two methods
      * @tc.size      MediumTest
@@ -158,7 +158,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_0900
      * @tc.name      StringTrimStartTest1009
      * @tc.desc      Test standard space character
      * @tc.size      MediumTest
@@ -175,7 +175,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1000
      * @tc.name      StringTrimStartTest1010
      * @tc.desc      Test tab character removed
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1100
      * @tc.name      StringTrimStartTest1011
      * @tc.desc      Test line break removed
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1200
      * @tc.name      StringTrimStartTest1012
      * @tc.desc      Test if the carriage return is removed
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1300
      * @tc.name      StringTrimStartTest1013
      * @tc.desc      Test vertical tab removed
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1400
      * @tc.name      StringTrimStartTest1014
      * @tc.desc      Test page break removed
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1500
      * @tc.name      StringTrimStartTest1015
      * @tc.desc      Test non-breaking space character
      * @tc.size      MediumTest
@@ -274,7 +274,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1600
      * @tc.name      StringTrimStartTest1016
      * @tc.desc      Test full-width space character
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1700
      * @tc.name      StringTrimStartTest1017
      * @tc.desc      Testing various Unicode whitespace characters
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1800
      * @tc.name      StringTrimStartTest1018
      * @tc.desc      Test line separator is removed
      * @tc.size      MediumTest
@@ -322,7 +322,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_1900
      * @tc.name      StringTrimStartTest1019
      * @tc.desc      Test paragraph separator removed
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2000
      * @tc.name      StringTrimStartTest1020
      * @tc.desc      Test multiple types of whitespace characters mixed
      * @tc.size      MediumTest
@@ -355,7 +355,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2100
      * @tc.name      StringTrimStartTest1021
      * @tc.desc      Test calling trimStart on an empty string
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2200
      * @tc.name      StringTrimStartTest1022
      * @tc.desc      Test a string that contains only whitespace characters
      * @tc.size      MediumTest
@@ -390,7 +390,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2300
      * @tc.name      StringTrimStartTest1023
      * @tc.desc      Test combinations of various whitespace characters
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2400
      * @tc.name      StringTrimStartTest1024
      * @tc.desc      Test a single whitespace character
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2500
      * @tc.name      StringTrimStartTest1025
      * @tc.desc      Test a single non-whitespace character
      * @tc.size      MediumTest
@@ -441,7 +441,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2600
      * @tc.name      StringTrimStartTest1026
      * @tc.desc      Test a large number of leading whitespace characters
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2700
      * @tc.name      StringTrimStartTest1027
      * @tc.desc      Test long text string
      * @tc.size      MediumTest
@@ -477,7 +477,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2800
      * @tc.name      StringTrimStartTest1028
      * @tc.desc      Test zero-width characters (non-breaking)
      * @tc.size      MediumTest
@@ -493,7 +493,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_2900
      * @tc.name      StringTrimStartTest1029
      * @tc.desc      Test BOM (Byte Order Mark) character
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3000
      * @tc.name      StringTrimStartTest1030
      * @tc.desc      Verify that trimStart does not modify the original string
      * @tc.size      MediumTest
@@ -527,7 +527,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3100
      * @tc.name      StringTrimStartTest1031
      * @tc.desc      Verify that the original string length remains unchanged
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3200
      * @tc.name      StringTrimStartTest1032
      * @tc.desc      Verify that the return is a new string object
      * @tc.size      MediumTest
@@ -562,7 +562,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3300
      * @tc.name      StringTrimStartTest1033
      * @tc.desc      Test multiple calls returning different string objects
      * @tc.size      MediumTest
@@ -579,7 +579,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3400
      * @tc.name      StringTrimStartTest1034
      * @tc.desc      Verify that the return value is of string type
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3500
      * @tc.name      StringTrimStartTest1035
      * @tc.desc      Test that a purely blank string returns an empty string
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3600
      * @tc.name      StringTrimStartTest1036
      * @tc.desc      Return a copy of the original string when there is no whitespace
      * @tc.size      MediumTest
@@ -630,7 +630,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3700
      * @tc.name      StringTrimStartTest1037
      * @tc.desc      Test only removes leading whitespace
      * @tc.size      MediumTest
@@ -647,7 +647,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3800
      * @tc.name      StringTrimStartTest1038
      * @tc.desc      Test chained calls of trimStart and trimEnd
      * @tc.size      MediumTest
@@ -664,7 +664,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_3900
      * @tc.name      StringTrimStartTest1039
      * @tc.desc      Test trimStart and toUpperCase chained calls
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4000
      * @tc.name      StringTrimStartTest1040
      * @tc.desc      Testing trimStart and repeat chained calls
      * @tc.size      MediumTest
@@ -696,7 +696,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4100
      * @tc.name      StringTrimStartTest1041
      * @tc.desc      Test calling trimStart multiple times consecutively
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4200
      * @tc.name      StringTrimStartTest1042
      * @tc.desc      Testing mixed use of trim and trimEnd
      * @tc.size      MediumTest
@@ -729,7 +729,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4300
      * @tc.name      StringTrimStartTest1043
      * @tc.desc      Compare the functional differences between trimStart and trim
      * @tc.size      MediumTest
@@ -745,7 +745,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4400
      * @tc.name      StringTrimStartTest1044
      * @tc.desc      Test the difference between the two in handling blank ranges
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4500
      * @tc.name      StringTrimStartTest1045
      * @tc.desc      Comparing the directional differences between trimStart and trimEnd
      * @tc.size      MediumTest
@@ -779,7 +779,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4600
      * @tc.name      StringTrimStartTest1046
      * @tc.desc      Testing the combination of the two is equivalent to trim
      * @tc.size      MediumTest
@@ -796,7 +796,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4700
      * @tc.name      StringTrimStartTest1047
      * @tc.desc      Use replace to achieve similar functionality
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4800
      * @tc.name      StringTrimStartTest1048
      * @tc.desc      Compare the behavior of regular expressions and trimStart
      * @tc.size      MediumTest
@@ -831,7 +831,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_4900
      * @tc.name      StringTrimStartTest1049
      * @tc.desc      Test leading whitespace of Chinese strings
      * @tc.size      MediumTest
@@ -847,7 +847,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5000
      * @tc.name      StringTrimStartTest1050
      * @tc.desc      Test a string containing Emoji
      * @tc.size      MediumTest
@@ -864,7 +864,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5100
      * @tc.name      StringTrimStartTest1051
      * @tc.desc      Test special Unicode whitespace characters
      * @tc.size      MediumTest
@@ -880,7 +880,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5200
      * @tc.name      StringTrimStartTest1052
      * @tc.desc      Test control character handling
      * @tc.size      MediumTest
@@ -896,7 +896,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5300
      * @tc.name      StringTrimStartTest1053
      * @tc.desc      Test delete character (DEL)
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5400
      * @tc.name      StringTrimStartTest1054
      * @tc.desc      Test multibyte character handling
      * @tc.size      MediumTest
@@ -928,7 +928,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5500
      * @tc.name      StringTrimStartTest1055
      * @tc.desc      Test combined characters (with tones, etc.)
      * @tc.size      MediumTest
@@ -944,7 +944,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5600
      * @tc.name      StringTrimStartTest1056
      * @tc.desc      Test calling trimStart on a String object
      * @tc.size      MediumTest
@@ -961,7 +961,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5700
      * @tc.name      StringTrimStartTest1057
      * @tc.desc      Test original string calling trimStart
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5800
      * @tc.name      StringTrimStartTest1058
      * @tc.desc      Test numbers are forcibly converted to strings
      * @tc.size      MediumTest
@@ -994,7 +994,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_5900
      * @tc.name      StringTrimStartTest1059
      * @tc.desc      The test object is forcibly converted to a string
      * @tc.size      MediumTest
@@ -1009,7 +1009,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6000
      * @tc.name      StringTrimStartTest1060
      * @tc.desc      Test array is forced to be converted to a string
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6100
      * @tc.name      StringTrimStartTest1061
      * @tc.desc      Testing interaction with Symbol
      * @tc.size      MediumTest
@@ -1039,7 +1039,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6200
      * @tc.name      StringTrimStartTest1062
      * @tc.desc      Testing interaction with Symbol
      * @tc.size      MediumTest
@@ -1054,7 +1054,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6300
      * @tc.name      StringTrimStartTest1063
      * @tc.desc      Test undefined as the value of this
      * @tc.size      MediumTest
@@ -1069,7 +1069,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6400
      * @tc.name      StringTrimStartTest1064
      * @tc.desc      Test number as this value (convertible to string)
      * @tc.size      MediumTest
@@ -1084,7 +1084,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6500
      * @tc.name      StringTrimStartTest1065
      * @tc.desc      Test trimStart does not accept parameters
      * @tc.size      MediumTest
@@ -1099,7 +1099,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6600
      * @tc.name      StringTrimStartTest1066
      * @tc.desc      Test passing multiple parameters
      * @tc.size      MediumTest
@@ -1114,7 +1114,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6700
      * @tc.name      StringTrimStartTest1067
      * @tc.desc      Test trimStart in strict mode
      * @tc.size      MediumTest
@@ -1131,7 +1131,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6800
      * @tc.name      StringTrimStartTest1068
      * @tc.desc      Primitive values as this in strict mode
      * @tc.size      MediumTest
@@ -1148,7 +1148,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_6900
      * @tc.name      StringTrimStartTest1069
      * @tc.desc      Trim leading whitespace from user input
      * @tc.size      MediumTest
@@ -1163,7 +1163,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7000
      * @tc.name      StringTrimStartTest1070
      * @tc.desc      Preserve the trailing whitespace of user input
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7100
      * @tc.name      StringTrimStartTest1071
      * @tc.desc      Handle leading whitespace in code strings
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7200
      * @tc.name      StringTrimStartTest1072
      * @tc.desc      Handling leading whitespace for each line in multi-line text
      * @tc.size      MediumTest
@@ -1211,7 +1211,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7300
      * @tc.name      StringTrimStartTest1073
      * @tc.desc      Processing CSV data fields
      * @tc.size      MediumTest
@@ -1228,7 +1228,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7400
      * @tc.name      StringTrimStartTest1074
      * @tc.desc      Handling JSON string values
      * @tc.size      MediumTest
@@ -1244,7 +1244,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7500
      * @tc.name      StringTrimStartTest1075
      * @tc.desc      Handle leading whitespace in template strings
      * @tc.size      MediumTest
@@ -1259,7 +1259,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7600
      * @tc.name      StringTrimStartTest1076
      * @tc.desc      Remove leading whitespace from HTML text content
      * @tc.size      MediumTest
@@ -1274,7 +1274,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7700
      * @tc.name      StringTrimStartTest1077
      * @tc.desc      Trim leading whitespace from file paths
      * @tc.size      MediumTest
@@ -1289,7 +1289,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7800
      * @tc.name      StringTrimStartTest1078
      * @tc.desc      Clear leading spaces from the URL
      * @tc.size      MediumTest
@@ -1304,7 +1304,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_7900
      * @tc.name      StringTrimStartTest1079
      * @tc.desc      Test calling trimStart on a frozen String object
      * @tc.size      MediumTest
@@ -1320,7 +1320,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8000
      * @tc.name      StringTrimStartTest1080
      * @tc.desc      Test the original frozen string
      * @tc.size      MediumTest
@@ -1335,7 +1335,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8100
      * @tc.name      StringTrimStartTest1081
      * @tc.desc      Test sealed String object
      * @tc.size      MediumTest
@@ -1351,7 +1351,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8200
      * @tc.name      StringTrimStartTest1082
      * @tc.desc      Test accessing string through Proxy
      * @tc.size      MediumTest
@@ -1366,7 +1366,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8300
      * @tc.name      StringTrimStartTest1083
      * @tc.desc      Test accessing the string through getter
      * @tc.size      MediumTest
@@ -1381,7 +1381,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8400
      * @tc.name      StringTrimStartTest1084
      * @tc.desc      Test using trimStart after setter
      * @tc.size      MediumTest
@@ -1396,7 +1396,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8500
      * @tc.name      StringTrimStartTest1085
      * @tc.desc      Verify that trimStart is an inherited method
      * @tc.size      MediumTest
@@ -1412,7 +1412,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8600
      * @tc.name      StringTrimStartTest1086
      * @tc.desc      Verify prototype chain relationship
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8700
      * @tc.name      StringTrimStartTest1087
      * @tc.desc      Test a custom class that inherits from String
      * @tc.size      MediumTest
@@ -1444,7 +1444,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8800
      * @tc.name      StringTrimStartTest1088
      * @tc.desc      Test coverage for the trimStart method
      * @tc.size      MediumTest
@@ -1459,7 +1459,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_8900
      * @tc.name      StringTrimStartTest1089
      * @tc.desc      Test the impact of modifying the prototype method
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9000
      * @tc.name      StringTrimStartTest1090
      * @tc.desc      Test restoring after deleting the prototype method
      * @tc.size      MediumTest
@@ -1489,7 +1489,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9100
      * @tc.name      StringTrimStartTest1091
      * @tc.desc      Test the length property of the trimStart function
      * @tc.size      MediumTest
@@ -1504,7 +1504,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9200
      * @tc.name      StringTrimStartTest1092
      * @tc.desc      Use the call method to invoke trimStart
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9300
      * @tc.name      StringTrimStartTest1093
      * @tc.desc      Use the apply method to call trimStart
      * @tc.size      MediumTest
@@ -1534,7 +1534,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9400
      * @tc.name      StringTrimStartTest1094
      * @tc.desc      Use the bind method to bind trimStart
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9500
      * @tc.name      StringTrimStartTest1095
      * @tc.desc      Test the type of trimStart
      * @tc.size      MediumTest
@@ -1564,7 +1564,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9600
      * @tc.name      StringTrimStartTest1096
      * @tc.desc      Test whether trimStart is an instance of Function
      * @tc.size      MediumTest
@@ -1579,7 +1579,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9700
      * @tc.name      StringTrimStartTest1097
      * @tc.desc      Test converting trimStart to a string
      * @tc.size      MediumTest
@@ -1595,7 +1595,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9800
      * @tc.name      StringTrimStartTest1098
      * @tc.desc      Test object literal using trimStart
      * @tc.size      MediumTest
@@ -1610,7 +1610,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_9900
      * @tc.name      StringTrimStartTest1099
      * @tc.desc      Test custom object implementation of toString
      * @tc.size      MediumTest
@@ -1625,7 +1625,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10000
      * @tc.name      StringTrimStartTest1100
      * @tc.desc      Test calling trimStart on Date object
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10100
      * @tc.name      StringTrimStartTest1101
      * @tc.desc      Test calling trimStart on RegExp object
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1102
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10200
      * @tc.name      StringTrimStartTest1102
      * @tc.desc      Test Boolean object calling trimStart
      * @tc.size      MediumTest
@@ -1671,7 +1671,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_TRIMSTART_TEST1103
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10300
      * @tc.name      StringTrimStartTest1103
      * @tc.desc      Test Boolean object calling trimStart
      * @tc.size      MediumTest

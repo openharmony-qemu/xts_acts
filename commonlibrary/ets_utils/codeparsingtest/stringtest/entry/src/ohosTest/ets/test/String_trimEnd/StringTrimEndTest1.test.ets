@@ -25,7 +25,7 @@ export default function StringTrimEndTest1() {
 
     //=================Basic Usage==================
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1001
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0100
      * @tc.name       StringTrimEndTest1001
      * @tc.desc       Test the case where the string contains spaces at the end
      * @tc.size       MediumTest
@@ -41,7 +41,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1002
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0200
      * @tc.name       StringTrimEndTest1002
      * @tc.desc       Test that only trailing spaces are removed and leading spaces are retained
      * @tc.size       MediumTest
@@ -58,7 +58,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1003
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0300
      * @tc.name       StringTrimEndTest1003
      * @tc.desc       Test return original string copy if no trailing spaces
      * @tc.size       MediumTest
@@ -75,24 +75,24 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1004
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0400
      * @tc.name       StringTrimEndTest1004
      * @tc.desc       Test calling trimEnd() on an empty string
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 2
      */
-   it("StringTrimEndTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("StringTrimEndTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1004';
       console.log(TAG + ' start');
       let str = "";
       let result = str.trimEnd();
-     expect(result).assertEqual( "")
-     expect(result.length).assertEqual(0)
-     console.log(TAG + ' end');
+      expect(result).assertEqual( "")
+      expect(result.length).assertEqual(0)
+      console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1005
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0500
      * @tc.name       StringTrimEndTest1005
      * @tc.desc       Test a string containing only whitespace characters
      * @tc.size       MediumTest
@@ -107,9 +107,9 @@ export default function StringTrimEndTest1() {
       expect(result).assertEqual( "")
       expect(result.length).assertEqual(0)
       console.log(TAG + ' end');
-   });
+    });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1006
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0600
      * @tc.name       StringTrimEndTest1006
      * @tc.desc       Test that spaces in the middle of a string are unaffected
      * @tc.size       MediumTest
@@ -127,24 +127,24 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1007
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0700
      * @tc.name       StringTrimEndTest1007
      * @tc.desc       Test multiple middle spaces preserved
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 2
      */
-   it("StringTrimEndTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("StringTrimEndTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1007';
-     console.log(TAG + ' start');
-     let result: string = stringTest.testMultiSpacesBetweenWords();
-     result = result.padEnd(15, " ");
-     expect(result.substring(0, 14)).assertEqual( "Hello    World")
-     expect(result.length).assertEqual(15)
+      console.log(TAG + ' start');
+      let result: string = stringTest.testMultiSpacesBetweenWords();
+      result = result.padEnd(15, " ");
+      expect(result.substring(0, 14)).assertEqual( "Hello    World")
+      expect(result.length).assertEqual(15)
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1008
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0800
      * @tc.name       StringTrimEndTest1008
      * @tc.desc       TestNormalSpaceChar
      * @tc.size       MediumTest
@@ -161,7 +161,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1009
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0900
      * @tc.name       StringTrimEndTest1009
      * @tc.desc       TestHorizontalTabRemoved
      * @tc.size       MediumTest
@@ -178,7 +178,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1010
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1000
      * @tc.name       StringTrimEndTest1010
      * @tc.desc       TestVerticalTabRemoved
      * @tc.size       MediumTest
@@ -195,7 +195,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1011
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1100
      * @tc.name       StringTrimEndTest1011
      * @tc.desc       TestFormFeedRemoved
      * @tc.size       MediumTest
@@ -212,7 +212,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1012
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1200
      * @tc.name       StringTrimEndTest1012
      * @tc.desc       TestNbspRemoved
      * @tc.size       MediumTest
@@ -229,7 +229,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1013
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1300
      * @tc.name       StringTrimEndTest1013
      * @tc.desc      TestNewLineRemoved
      * @tc.size       MediumTest
@@ -246,7 +246,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1014
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1400
      * @tc.name       StringTrimEndTest1014
      * @tc.desc      TestCarriageReturnRemoved
      * @tc.size       MediumTest
@@ -263,7 +263,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1015
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1500
      * @tc.name       StringTrimEndTest1015
      * @tc.desc      TestWindowsNewLineRemoved
      * @tc.size       MediumTest
@@ -280,7 +280,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1016
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1600
      * @tc.name       StringTrimEndTest1016
      * @tc.desc      TestLineSeparatorRemoved
      * @tc.size       MediumTest
@@ -297,7 +297,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1017
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1700
      * @tc.name       StringTrimEndTest1017
      * @tc.desc      TestParagraphSeparatorRemoved
      * @tc.size       MediumTest
@@ -314,7 +314,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1018
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1800
      * @tc.name       StringTrimEndTest1018
      * @tc.desc      TestFullWidthSpaceRemoved
      * @tc.size       MediumTest
@@ -331,7 +331,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1019
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1900
      * @tc.name       StringTrimEndTest1019
      * @tc.desc      TestOghamSpaceMarkRemoved
      * @tc.size       MediumTest
@@ -348,7 +348,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1020
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2000
      * @tc.name       StringTrimEndTest1020
      * @tc.desc      TestEnSpaceRemoved
      * @tc.size       MediumTest
@@ -365,7 +365,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1021
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2100
      * @tc.name       StringTrimEndTest1021
      * @tc.desc      TestEmSpaceRemoved
      * @tc.size       MediumTest
@@ -382,7 +382,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1022
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2200
      * @tc.name       StringTrimEndTest1022
      * @tc.desc      TestNarrowNbspRemoved
      * @tc.size       MediumTest
@@ -399,7 +399,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1023
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2300
      * @tc.name       StringTrimEndTest1023
      * @tc.desc      TestMediumMathSpaceRemoved
      * @tc.size       MediumTest
@@ -416,7 +416,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1024
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2400
      * @tc.name       StringTrimEndTest1024
      * @tc.desc      TestMixedWhitespaceRemoved
      * @tc.size       MediumTest
@@ -433,7 +433,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1025
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2500
      * @tc.name       StringTrimEndTest1025
      * @tc.desc      TestTrailingMixedWhitespaceRemoved
      * @tc.size       MediumTest
@@ -450,7 +450,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1026
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2600
      * @tc.name       StringTrimEndTest1026
      * @tc.desc      TestSingleCharWithSpace
      * @tc.size       MediumTest
@@ -467,7 +467,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1027
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2700
      * @tc.name       StringTrimEndTest1027
      * @tc.desc      TestMassiveWhitespace
      * @tc.size       MediumTest
@@ -484,7 +484,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1028
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2800
      * @tc.name       StringTrimEndTest1028
      * @tc.desc      TestLongStringProcessing
      * @tc.size       MediumTest
@@ -501,7 +501,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1029
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2900
      * @tc.name       StringTrimEndTest1029
      * @tc.desc      TestTrimTrailingKeepLeading
      * @tc.size       MediumTest
@@ -518,7 +518,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1030
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3000
      * @tc.name       StringTrimEndTest1030
      * @tc.desc      TestMiddleSpacesUnaffected
      * @tc.size       MediumTest
@@ -535,7 +535,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1031
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3100
      * @tc.name       StringTrimEndTest1031
      * @tc.desc       TestTrimTrailingWithLeading
      * @tc.size       MediumTest
@@ -552,7 +552,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1032
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3200
      * @tc.name       StringTrimEndTest1032
      * @tc.desc       TestSpaceAfterSymbolRemoved
      * @tc.size       MediumTest
@@ -569,7 +569,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1033
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3300
      * @tc.name       StringTrimEndTest1033
      * @tc.desc       TestSpaceAfterNumberRemoved
      * @tc.size       MediumTest
@@ -586,7 +586,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1034
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3400
      * @tc.name       StringTrimEndTest1034
      * @tc.desc       TestSpaceAfterChineseRemoved
      * @tc.size       MediumTest
@@ -603,7 +603,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1035
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3500
      * @tc.name       StringTrimEndTest1035
      * @tc.desc       TestSpaceAfterJapaneseRemoved
      * @tc.size       MediumTest
@@ -620,7 +620,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1036
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3600
      * @tc.name       StringTrimEndTest1036
      * @tc.desc       TestSpaceAfterKoreanRemoved
      * @tc.size       MediumTest
@@ -637,7 +637,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1037
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3700
      * @tc.name       StringTrimEndTest1037
      * @tc.desc       TestSpaceAfterEmojiRemoved
      * @tc.size       MediumTest
@@ -654,7 +654,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1038
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3800
      * @tc.name       StringTrimEndTest1038
      * @tc.desc       TestSpaceAfterArabicRemoved
      * @tc.size       MediumTest
@@ -671,7 +671,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1039
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3900
      * @tc.name       StringTrimEndTest1039
      * @tc.desc       TestSpaceAfterMultiLangRemoved
      * @tc.size       MediumTest
@@ -688,7 +688,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1040
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4000
      * @tc.name       StringTrimEndTest1040
      * @tc.desc       TestSpaceAfterZeroWidthRemoved
      * @tc.size       MediumTest
@@ -705,7 +705,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1041
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4100
      * @tc.name       StringTrimEndTest1041
      * @tc.desc       TestSpaceAfterCombinedCharRemoved
      * @tc.size       MediumTest
@@ -722,7 +722,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1042
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4200
      * @tc.name       StringTrimEndTest1042
      * @tc.desc       TestSpaceAfterSurrogatePairRemoved
      * @tc.size       MediumTest
@@ -739,7 +739,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1043
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4300
      * @tc.name       StringTrimEndTest1043
      * @tc.desc       TestNewStringReturned
      * @tc.size       MediumTest
@@ -756,7 +756,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1044
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4400
      * @tc.name       StringTrimEndTest1044
      * @tc.desc       TestOriginalStringUnchanged
      * @tc.size       MediumTest
@@ -773,7 +773,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1045
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4500
      * @tc.name       StringTrimEndTest1045
      * @tc.desc       VerifyReturnType
      * @tc.size       MediumTest
@@ -789,7 +789,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1046
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4600
      * @tc.name       StringTrimEndTest1046
      * @tc.desc       TestReturnStrLength
      * @tc.size       MediumTest
@@ -806,7 +806,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1047
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4700
      * @tc.name       StringTrimEndTest1047
      * @tc.desc       TestTrimRightEqualsEnd
      * @tc.size       MediumTest
@@ -825,7 +825,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1048
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4800
      * @tc.name       StringTrimEndTest1048
      * @tc.desc       TestTrimRightWithWhitespaceChars
      * @tc.size       MediumTest
@@ -842,7 +842,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1049
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4900
      * @tc.name       StringTrimEndTest1049
      * @tc.desc       CompareTrimEndTrim
      * @tc.size       MediumTest
@@ -860,7 +860,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1050
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5000
      * @tc.name       StringTrimEndTest1050
      * @tc.desc       TestTrimEndThenTrim
      * @tc.size       MediumTest
@@ -876,7 +876,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1051
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5100
      * @tc.name       StringTrimEndTest1051
      * @tc.desc       TestTwoMethodsTrimEffect
      * @tc.size       MediumTest
@@ -893,7 +893,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1052
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5200
      * @tc.name       StringTrimEndTest1052
      * @tc.desc      TestOrderNoResultImpact
      * @tc.size       MediumTest
@@ -912,7 +912,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1053
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5300
      * @tc.name       StringTrimEndTest1053
      * @tc.desc      TestChainCaseConversion
      * @tc.size       MediumTest
@@ -928,7 +928,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1054
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5400
      * @tc.name       StringTrimEndTest1054
      * @tc.desc      TestChainToLowerCase
      * @tc.size       MediumTest
@@ -944,7 +944,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1055
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5500
      * @tc.name       StringTrimEndTest1055
      * @tc.desc      TestTrimEndConcatStr
      * @tc.size       MediumTest
@@ -960,7 +960,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1056
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5600
      * @tc.name       StringTrimEndTest1056
      * @tc.desc      TestTrimEndSlice
      * @tc.size       MediumTest
@@ -976,7 +976,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1057
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5700
      * @tc.name       StringTrimEndTest1057
      * @tc.desc      TestTrimEndSubstring
      * @tc.size       MediumTest
@@ -992,7 +992,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1058
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5800
      * @tc.name       StringTrimEndTest1058
      * @tc.desc      TestTrimEndReplace
      * @tc.size       MediumTest
@@ -1008,7 +1008,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1059
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5900
      * @tc.name       StringTrimEndTest1059
      * @tc.desc      TestTrimEndSearchSubstr
      * @tc.size       MediumTest
@@ -1024,7 +1024,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1060
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6000
      * @tc.name       StringTrimEndTest1060
      * @tc.desc      TestTrimEndFindIndex
      * @tc.size       MediumTest
@@ -1040,7 +1040,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1061
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6100
      * @tc.name       StringTrimEndTest1061
      * @tc.desc     TestTrimEndCheckEnd
      * @tc.size       MediumTest
@@ -1056,7 +1056,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1062
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6200
      * @tc.name       StringTrimEndTest1062
      * @tc.desc       TestTrimEndCheckStart
      * @tc.size       MediumTest
@@ -1072,7 +1072,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1063
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6300
      * @tc.name       StringTrimEndTest1063
      * @tc.desc       TestTrimEndRepeatStr
      * @tc.size       MediumTest
@@ -1088,7 +1088,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1064
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6400
      * @tc.name       StringTrimEndTest1064
      * @tc.desc       TestTrimEndThenPad
      * @tc.size       MediumTest
@@ -1104,7 +1104,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1065
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6500
      * @tc.name       StringTrimEndTest1065
      * @tc.desc       TestTrimEndPadStart
      * @tc.size       MediumTest
@@ -1120,7 +1120,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1066
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6600
      * @tc.name       StringTrimEndTest1066
      * @tc.desc       TestTrimEndGetChar
      * @tc.size       MediumTest
@@ -1136,7 +1136,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1067
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6700
      * @tc.name       StringTrimEndTest1067
      * @tc.desc       TestTrimEndCharCodeAt
      * @tc.size       MediumTest
@@ -1152,7 +1152,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1068
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6800
      * @tc.name       StringTrimEndTest1068
      * @tc.desc       TestStringTrimEndCall
      * @tc.size       MediumTest
@@ -1169,7 +1169,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1069
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6900
      * @tc.name       StringTrimEndTest1069
      * @tc.desc       TestRawStringLiteralCall
      * @tc.size       MediumTest
@@ -1185,7 +1185,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1070
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7000
      * @tc.name       StringTrimEndTest1070
      * @tc.desc       TestDirectStringCall
      * @tc.size       MediumTest
@@ -1200,7 +1200,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1071
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7100
      * @tc.name       StringTrimEndTest1071
      * @tc.desc       TestTemplateStringTrimEnd
      * @tc.size       MediumTest
@@ -1217,7 +1217,7 @@ export default function StringTrimEndTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1072
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7200
      * @tc.name       StringTrimEndTest1072
      * @tc.desc       TestMultiLineTemplateSpace
      * @tc.size       MediumTest
@@ -1234,7 +1234,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1073
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7300
      * @tc.name       StringTrimEndTest1073
      * @tc.desc       TestConcatenatedStringTrimEnd
      * @tc.size       MediumTest
@@ -1250,7 +1250,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1074
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7400
      * @tc.name       StringTrimEndTest1074
      * @tc.desc       TestArrayJoinedStringTrimEnd
      * @tc.size       MediumTest
@@ -1267,7 +1267,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1075
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7500
      * @tc.name       StringTrimEndTest1075
      * @tc.desc       TestLoopBuiltStringTrimEnd
      * @tc.size       MediumTest
@@ -1286,7 +1286,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1076
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7600
      * @tc.name       StringTrimEndTest1076
      * @tc.desc       TestRecursiveBuiltStringTrimEnd
      * @tc.size       MediumTest
@@ -1301,7 +1301,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1077
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7700
      * @tc.name       StringTrimEndTest1077
      * @tc.desc       TestMaxLengthString
      * @tc.size       MediumTest
@@ -1318,7 +1318,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1078
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7800
      * @tc.name       StringTrimEndTest1078
      * @tc.desc       TestWhitespaceString
      * @tc.size       MediumTest
@@ -1335,7 +1335,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1079
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7900
      * @tc.name       StringTrimEndTest1079
      * @tc.desc      TestTrimEndPerformance
      * @tc.size       MediumTest
@@ -1353,7 +1353,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1080
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8000
      * @tc.name       StringTrimEndTest1080
      * @tc.desc      TestMassWhitespace
      * @tc.size       MediumTest
@@ -1372,7 +1372,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1081
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8100
      * @tc.name       StringTrimEndTest1081
      * @tc.desc      TestTrimEndParamIgnored
      * @tc.size       MediumTest
@@ -1389,7 +1389,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1082
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8200
      * @tc.name       StringTrimEndTest1082
      * @tc.desc      TestMultiParamIgnored
      * @tc.size       MediumTest
@@ -1404,7 +1404,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1083
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8300
      * @tc.name       StringTrimEndTest1083
      * @tc.desc      TestCleanTrailingSpaces
      * @tc.size       MediumTest
@@ -1419,7 +1419,7 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1084
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8400
      * @tc.name       StringTrimEndTest1084
      * @tc.desc       TestTrimLineTrailingSpace
      * @tc.size       MediumTest
@@ -1434,7 +1434,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1085
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8500
      * @tc.name       StringTrimEndTest1085
      * @tc.desc       TestTrimCsvTrailingSpace
      * @tc.size       MediumTest
@@ -1449,7 +1449,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1086
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8600
      * @tc.name       StringTrimEndTest1086
      * @tc.desc       TestFormatLineTrailingSpace
      * @tc.size       MediumTest
@@ -1464,7 +1464,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1087
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8700
      * @tc.name       StringTrimEndTest1087
      * @tc.desc       TestTrimPathTrailingSpace
      * @tc.size       MediumTest
@@ -1479,7 +1479,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1088
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8800
      * @tc.name       StringTrimEndTest1088
      * @tc.desc       TestTrimUrlTrailingSpace
      * @tc.size       MediumTest
@@ -1494,7 +1494,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1089
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8900
      * @tc.name       StringTrimEndTest1089
      * @tc.desc       TestTrimLogTrailingSpace
      * @tc.size       MediumTest
@@ -1509,15 +1509,15 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-    * @tc.number     BUILTINS_STRING_TRIMEND_TEST1090
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9000
      * @tc.name       StringTrimEndTest1090
      * @tc.desc       TestTrimUsernameSpace
-    * @tc.size       MediumTest
+     * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 2
-      */
+     */
     it("StringTrimEndTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-     const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0090';
+      const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0090';
       console.log(TAG + ' start');
       let result :boolean[] = stringTest.testCheckUsername();
       expect(result[0]).assertEqual(true)
@@ -1525,7 +1525,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1091
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9100
      * @tc.name       StringTrimEndTest1091
      * @tc.desc       TestPreTrimEmail
      * @tc.size       MediumTest
@@ -1541,7 +1541,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1092
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9200
      * @tc.name       StringTrimEndTest1092
      * @tc.desc       TestPreTrimCompareStr
      * @tc.size       MediumTest
@@ -1557,7 +1557,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1093
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9300
      * @tc.name       StringTrimEndTest1093
      * @tc.desc       TestPreTrimDbString
      * @tc.size       MediumTest
@@ -1573,7 +1573,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1094
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9400
      * @tc.name       StringTrimEndTest1094
      * @tc.desc       TestEditorAutoClean
      * @tc.size       MediumTest
@@ -1588,7 +1588,7 @@ World   `;
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_TRIMEND_TEST1095
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_9500
      * @tc.name       StringTrimEndTest1095
      * @tc.desc       TestPreserveIndentTrimLineEnd
      * @tc.size       MediumTest
@@ -1602,5 +1602,5 @@ World   `;
       expect(result).assertEqual("    indented line\n        more indented")
       console.log(TAG + ' end');
     })
-})
+  })
 }
