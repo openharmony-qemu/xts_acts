@@ -64,4 +64,4 @@ export const OHCertManagerNativeApiPublicErr0300: (keyUri: string) => number;
 
 export const OHCertValidateEnumTest0100: (param: string) => EnumValues;
 
-export const OHCertManagerNativeApiCredentialTest0100: (keyUri: string) => CredentialResult;
+export const OHCertNativeCredTest0100: (keyUri: string) => CredentialResult;
