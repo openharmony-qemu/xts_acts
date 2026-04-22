@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 export default function drawingTsPath8Test(): void {
   describe('DrawingTsPath8Test', () => {
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7500
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0100
      * @tc.name      testPathGetLastPointEmpty
      * @tc.desc      testPathGetLastPointEmpty
      * @tc.size      MediumTest
@@ -43,7 +43,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7600
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0200
      * @tc.name      testPathGetLastPointWithMoveTo
      * @tc.desc      testPathGetLastPointWithMoveTo
      * @tc.size      MediumTest
@@ -67,7 +67,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7700
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0300
      * @tc.name      testPathGetLastPointWithLineTo
      * @tc.desc      testPathGetLastPointWithLineTo
      * @tc.size      MediumTest
@@ -92,7 +92,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7800
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0400
      * @tc.name      testPathGetLastPointWithQuadTo
      * @tc.desc      testPathGetLastPointWithQuadTo
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_7900
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0500
      * @tc.name      testPathGetLastPointWithCubicTo
      * @tc.desc      testPathGetLastPointWithCubicTo
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8000
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0600
      * @tc.name      testPathGetLastPointWithConicTo
      * @tc.desc      testPathGetLastPointWithConicTo
      * @tc.size      MediumTest
@@ -167,7 +167,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8100
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0700
      * @tc.name      testPathGetLastPointWithClose
      * @tc.desc      testPathGetLastPointWithClose
      * @tc.size      MediumTest
@@ -193,7 +193,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8200
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0800
      * @tc.name      testPathGetLastPointMultipleOperations
      * @tc.desc      testPathGetLastPointMultipleOperations
      * @tc.size      MediumTest
@@ -220,7 +220,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8300
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_0900
      * @tc.name      testPathGetLastPointWithZeroCoordinates
      * @tc.desc      testPathGetLastPointWithZeroCoordinates
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8400
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1000
      * @tc.name      testPathGetLastPointWithNegativeCoordinates
      * @tc.desc      testPathGetLastPointWithNegativeCoordinates
      * @tc.size      MediumTest
@@ -270,7 +270,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8500
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1100
      * @tc.name      testPathGetLastPointWithLargeCoordinates
      * @tc.desc      testPathGetLastPointWithLargeCoordinates
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8600
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1200
      * @tc.name      testPathGetLastPointWithFloatCoordinates
      * @tc.desc      testPathGetLastPointWithFloatCoordinates
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8700
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1300
      * @tc.name      testPathGetLastPointAfterReset
      * @tc.desc      testPathGetLastPointAfterReset
      * @tc.size      MediumTest
@@ -346,7 +346,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8800
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1400
      * @tc.name      testPathGetLastPointMultipleCalls
      * @tc.desc      testPathGetLastPointMultipleCalls
      * @tc.size      MediumTest
@@ -377,7 +377,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_8900
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1500
      * @tc.name      testPathGetLastPointComplexPath
      * @tc.desc      testPathGetLastPointComplexPath
      * @tc.size      MediumTest
@@ -405,7 +405,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9000
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1600
      * @tc.name      testPathGetLastPointAfterTransform
      * @tc.desc      testPathGetLastPointAfterTransform
      * @tc.size      MediumTest
@@ -433,7 +433,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9100
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0100
      * @tc.name      testPathIsEqualTrue
      * @tc.desc      testPathIsEqualTrue
      * @tc.size      MediumTest
@@ -460,7 +460,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9200
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0200
      * @tc.name      testPathIsEqualFalse
      * @tc.desc      testPathIsEqualFalse
      * @tc.size      MediumTest
@@ -487,7 +487,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9300
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0300
      * @tc.name      testPathIsEqualEmptyPaths
      * @tc.desc      testPathIsEqualEmptyPaths
      * @tc.size      MediumTest
@@ -510,7 +510,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9400
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0400
      * @tc.name      testPathIsEqualAfterMoveTo
      * @tc.desc      testPathIsEqualAfterMoveTo
      * @tc.size      MediumTest
@@ -535,7 +535,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9500
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0500
      * @tc.name      testPathIsEqualAfterLineTo
      * @tc.desc      testPathIsEqualAfterLineTo
      * @tc.size      MediumTest
@@ -562,7 +562,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9600
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0600
      * @tc.name      testPathIsEqualAfterCurve
      * @tc.desc      testPathIsEqualAfterCurve
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9700
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0700
      * @tc.name      testPathIsEqualCopyPath
      * @tc.desc      testPathIsEqualCopyPath
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9800
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0800
      * @tc.name      testPathIsEqualDifferentCoordinates
      * @tc.desc      testPathIsEqualDifferentCoordinates
      * @tc.size      MediumTest
@@ -645,7 +645,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_9900
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_0900
      * @tc.name      testPathIsEqualDifferentOperations
      * @tc.desc      testPathIsEqualDifferentOperations
      * @tc.size      MediumTest
@@ -674,7 +674,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10000
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1000
      * @tc.name      testPathIsEqualDifferentFillType
      * @tc.desc      testPathIsEqualDifferentFillType
      * @tc.size      MediumTest
@@ -703,7 +703,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10100
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1100
      * @tc.name      testPathIsEqualOneEmpty
      * @tc.desc      testPathIsEqualOneEmpty
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10200
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1200
      * @tc.name      testPathIsEqualWithNull
      * @tc.desc      testPathIsEqualWithNull
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10300
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1300
      * @tc.name      testPathIsEqualWithUndefined
      * @tc.desc      testPathIsEqualWithUndefined
      * @tc.size      MediumTest
@@ -776,7 +776,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10400
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1400
      * @tc.name      testPathIsEqualMultipleCalls
      * @tc.desc      testPathIsEqualMultipleCalls
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10500
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1500
      * @tc.name      testPathIsEqualComplexPaths
      * @tc.desc      testPathIsEqualComplexPaths
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10600
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1600
      * @tc.name      testPathIsEqualAfterSet
      * @tc.desc      testPathIsEqualAfterSet
      * @tc.size      MediumTest
@@ -872,7 +872,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10700
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1700
      * @tc.name      testPathIsEqualWithConicWeights
      * @tc.desc      testPathIsEqualWithConicWeights
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10800
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1800
      * @tc.name      testPathIsEqualSelfComparison
      * @tc.desc      testPathIsEqualSelfComparison
      * @tc.size      MediumTest
@@ -923,7 +923,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_10900
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1700
      * @tc.name      testPathGetLastPointAfterAddCircle
      * @tc.desc      testPathGetLastPointAfterAddCircle
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_11000
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1800
      * @tc.name      testPathGetLastPointAfterAddRect
      * @tc.desc      testPathGetLastPointAfterAddRect
      * @tc.size      MediumTest
@@ -972,7 +972,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_11100
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_1900
      * @tc.name      testPathIsEqualAfterAddCircle
      * @tc.desc      testPathIsEqualAfterAddCircle
      * @tc.size      MediumTest
@@ -997,7 +997,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_11200
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ISEQUAL_2000
      * @tc.name      testPathIsEqualDifferentDirection
      * @tc.desc      testPathIsEqualDifferentDirection
      * @tc.size      MediumTest
@@ -1022,7 +1022,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_11300
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_1900
      * @tc.name      testPathGetLastPointAfterSetLastPoint
      * @tc.desc      testPathGetLastPointAfterSetLastPoint
      * @tc.size      MediumTest
@@ -1048,7 +1048,7 @@ export default function drawingTsPath8Test(): void {
     })
     
     /**
-     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_11400
+     * @tc.number    SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_GETLASTPOINT_2000
      * @tc.name      testPathGetLastPointAfterRewind
      * @tc.desc      testPathGetLastPointAfterRewind
      * @tc.size      MediumTest
