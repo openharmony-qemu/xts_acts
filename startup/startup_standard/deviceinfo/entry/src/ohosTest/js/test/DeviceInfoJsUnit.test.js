@@ -2169,7 +2169,7 @@ export default function DeviceInfoTest() {
         })
 
         /**
-         * @tc.name   testGetChipType
+         * @tc.name   testGetDeviceColor
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_082
          * @tc.desc   Get DeviceColor.
          * @tc.type   FUNCTION
