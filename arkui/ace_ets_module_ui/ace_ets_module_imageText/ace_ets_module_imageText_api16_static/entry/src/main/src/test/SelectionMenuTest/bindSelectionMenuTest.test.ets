@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -151,9 +151,9 @@ it('bindSelectionMenuTest_static_0003', Level.LEVEL1, async (done: () => void): 
           let point = await Text!.getBoundsCenter();
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
-            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)) as int,
-            y: Math.round(point.y) as int
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(20)) as int, y: Math.round(point.y) as int },
+            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)).toInt(),
+            y: Math.round(point.y).toInt()
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(20)).toInt(), y: Math.round(point.y).toInt() },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
@@ -234,9 +234,9 @@ it('bindSelectionMenuTest_static_0006', Level.LEVEL1, async (done: () => void): 
           let point = await image!.getBoundsCenter();
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
-            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(24)) as int,
-            y: Math.round(point.y) as int
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(24)) as int, y: Math.round(point.y) as int },
+            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(24)).toInt(),
+            y: Math.round(point.y).toInt()
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(24)).toInt(), y: Math.round(point.y).toInt() },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
@@ -319,9 +319,9 @@ it('bindSelectionMenuTest_static_0009', Level.LEVEL1, async (done: () => void): 
           let point = await mixed!.getBoundsCenter();
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
-            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)) as int,
-            y: Math.round(point.y) as int
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50)) as int, y: Math.round(point.y) as int },
+            x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)).toInt(),
+            y: Math.round(point.y).toInt()
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(point.y).toInt() },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
