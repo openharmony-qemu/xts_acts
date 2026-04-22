@@ -31,9 +31,9 @@ export default function TextInputEnumTest() {
      * @tc.desc   Test NODE_TEXT_INPUT_ON_COPY == 7015
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_INPUT_ON_COPY_0100', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_INPUT_ON_COPY_0100', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_INPUT_ON_COPY_0100 START');
       expect(nativeFunc.TextInputEnumTest_001()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_INPUT_ON_COPY_0100 END');
@@ -45,9 +45,9 @@ export default function TextInputEnumTest() {
      * @tc.desc   Test NODE_TEXT_INPUT_ON_WILL_COPY == 7016
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_INPUT_ON_WILL_COPY_0200', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_INPUT_ON_WILL_COPY_0200', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_INPUT_ON_WILL_COPY_0200 START');
       expect(nativeFunc.TextInputEnumTest_002()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_INPUT_ON_WILL_COPY_0200 END');

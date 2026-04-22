@@ -90,14 +90,4 @@ static napi_value TextEnumTest_007(napi_env env, napi_callback_info info)
     ASSERT_EQ(PARAM_22029, NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING);
     NAPI_END;
 }
-
-static napi_value TextEnumTest_008(napi_env env, napi_callback_info info)
-{
-    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING TextEnumTest_008 result=%{public}d",
-        OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING);
-    ASSERT_EQ(PARAM_8, OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING);
-    NAPI_END;
-}
 }

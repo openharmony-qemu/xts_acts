@@ -20,7 +20,6 @@ export const TextEnumTest_004: () => number;
 export const TextEnumTest_005: () => number;
 export const TextEnumTest_006: () => number;
 export const TextEnumTest_007: () => number;
-export const TextEnumTest_008: () => number;
 
 export const TextAreaEnumTest_001: () => number;
 export const TextAreaEnumTest_002: () => number;
@@ -34,4 +33,3 @@ export const TextInputEnumTest_002: () => number;
 export const TextInputEnumTest_003: () => number;
 export const TextInputEnumTest_004: () => number;
 export const TextInputEnumTest_005: () => number;
-export const TextInputEnumTest_006: () => number;

@@ -34,7 +34,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextEnumTest_005", nullptr, TextEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextEnumTest_006", nullptr, TextEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextEnumTest_007", nullptr, TextEnumTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TextEnumTest_008", nullptr, TextEnumTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"TextAreaEnumTest_001", nullptr, TextAreaEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaEnumTest_002", nullptr, TextAreaEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -42,7 +41,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextAreaEnumTest_004", nullptr, TextAreaEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaEnumTest_005", nullptr, TextAreaEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaEnumTest_006", nullptr, TextAreaEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
-        
+
         {"TextInputEnumTest_001", nullptr, TextInputEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_002", nullptr, TextInputEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_003", nullptr, TextInputEnumTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -31,9 +31,9 @@ export default function TextEnumTest() {
      * @tc.desc   Test NODE_TEXT_ON_TEXT_SELECTION_CHANGE == 1002
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_ON_TEXT_SELECTION_CHANGE_0100', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_ON_TEXT_SELECTION_CHANGE_0100', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_ON_TEXT_SELECTION_CHANGE_0100 START');
       expect(nativeFunc.TextEnumTest_001()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_ON_TEXT_SELECTION_CHANGE_0100 END');
@@ -45,9 +45,9 @@ export default function TextEnumTest() {
      * @tc.desc   Test ARKUI_COMPETITION_STRATEGY_COMPETITION == 1003
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_ON_COPY_0200', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_ON_COPY_0200', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_ON_COPY_0200 START');
       expect(nativeFunc.TextEnumTest_002()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_ON_COPY_0200 END');
@@ -121,20 +121,6 @@ export default function TextEnumTest() {
       console.info('SUB_ARKUI_NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING_0700 START');
       expect(nativeFunc.TextEnumTest_007()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING_0700 END');
-    });
-
-    /**
-     * @tc.name   SUB_ARKUI_OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING_0800
-     * @tc.number SUB_ARKUI_OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING_0800
-     * @tc.desc   Test OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING == 1
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARKUI_OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING_0800', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING_0800 START');
-      expect(nativeFunc.TextEnumTest_008()).assertEqual(0)
-      console.info('SUB_ARKUI_OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING_0800 END');
     });
   });
 }

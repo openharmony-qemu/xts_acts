@@ -31,9 +31,9 @@ export default function TextAreaEnumTest() {
      * @tc.desc   Test NODE_TEXT_AREA_ON_COPY == 8014
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_AREA_ON_COPY_0100', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_AREA_ON_COPY_0100', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_AREA_ON_COPY_0100 START');
       expect(nativeFunc.TextAreaEnumTest_001()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_AREA_ON_COPY_0100 END');
@@ -45,9 +45,9 @@ export default function TextAreaEnumTest() {
      * @tc.desc   Test NODE_TEXT_AREA_ON_WILL_COPY == 8015
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_NODE_TEXT_AREA_ON_WILL_COPY_0200', Level.LEVEL1, async () => {
+    it('SUB_ARKUI_NODE_TEXT_AREA_ON_WILL_COPY_0200', Level.LEVEL0, async () => {
       console.info('SUB_ARKUI_NODE_TEXT_AREA_ON_WILL_COPY_0200 START');
       expect(nativeFunc.TextAreaEnumTest_002()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_AREA_ON_WILL_COPY_0200 END');
