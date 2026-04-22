@@ -1077,5 +1077,31 @@ export default function DeviceInfoTest() {
       done();
       console.info('deviceinfo_test_static_4400 : end');
     })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4500
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4500
+     * @tc.desc   Get the DeviceColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4500 start');
+      let deviceColor = deviceinfo.deviceColor;
+      console.info('the value of the DeviceColor is :' + deviceColor);
+      
+      if (deviceColor != "" && deviceColor != null && deviceColor != undefined) {
+        console.info('the value of the DeviceColor is :' + deviceColor);
+        expect(deviceColor).assertInstanceOf('String');
+        done();
+      }
+      else {
+        console.info('the return value DeviceColor is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_4500 : end');
+    })
   })
 }
