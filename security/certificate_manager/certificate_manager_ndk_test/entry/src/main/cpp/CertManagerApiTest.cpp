@@ -533,9 +533,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OHCertManagerNativeApiPrivateErr0200", nullptr, OHCertManagerNativeApiPrivateErr0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0100", nullptr, OHCertManagerNativeApiPublicErr0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0200", nullptr, OHCertManagerNativeApiPublicErr0200, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertManagerNativeApiPublicErr0300", nullptr, OHCertManagerNativeApiPublicErr0300, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertValidateEnumTest0100", nullptr, OHCertValidateEnumTest0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertNativeCredTest0100", nullptr, OHCertNativeCredTest0100, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "OHCertManagerNativeApiPublicErr0300", nullptr, OHCertManagerNativeApiPublicErr0300, 
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OHCertValidateEnumTest0100", nullptr, OHCertValidateEnumTest0100, 
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OHCertNativeCredTest0100", nullptr, OHCertNativeCredTest0100, 
+            nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
