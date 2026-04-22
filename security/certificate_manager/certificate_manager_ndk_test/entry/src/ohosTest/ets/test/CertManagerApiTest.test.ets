@@ -358,7 +358,7 @@ export default function CertManagerApiTest() {
       }
 
       try {
-        let credResult = CertManagerApi.OHCertManagerNativeApiCredentialTest0100(keyUri);
+        let credResult = CertManagerApi.OHCertNativeCredTest0100(keyUri);
         console.info('SUB_Security_CertManager_Credential_0100 result: ' + JSON.stringify(credResult));
 
         expect(credResult.resultCode).assertEqual(0);
