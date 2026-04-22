@@ -1488,7 +1488,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1120
      * @tc.name testURI01Chapter0100
      * @tc.desc Verify URI constructor handles port "NaN"
      * @tc.size MediumTest
@@ -1506,7 +1506,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1010
      * @tc.name testURI01Chapter0101
      * @tc.desc Verify URI constructor throws when port is string "Infinity"
      * @tc.size MediumTest
@@ -1528,7 +1528,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1020
      * @tc.name testURI01Chapter0102
      * @tc.desc Verify URI constructor handles port with scientific notation "1e3"
      * @tc.size MediumTest
@@ -1547,7 +1547,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1030
      * @tc.name testURI01Chapter0103
      * @tc.desc Verify URI constructor handles port with hexadecimal "0xFF"
      * @tc.size MediumTest
@@ -1566,7 +1566,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1040
      * @tc.name testURI01Chapter0104
      * @tc.desc Verify URI constructor handles port with octal "0o777"
      * @tc.size MediumTest
@@ -1585,7 +1585,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1050
      * @tc.name testURI01Chapter0105
      * @tc.desc Verify URI constructor throws when whole URI string is empty
      * @tc.size MediumTest
@@ -1606,7 +1606,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1060
      * @tc.name testURI01Chapter0106
      * @tc.desc Verify URI constructor throws when URI string contains special characters only
      * @tc.size MediumTest
@@ -1628,7 +1628,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1070
      * @tc.name testURI01Chapter0107
      * @tc.desc Verify URI constructor handles Chinese characters in path
      * @tc.size MediumTest
@@ -1646,7 +1646,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1080
      * @tc.name testURI01Chapter0108
      * @tc.desc Verify URI constructor throws when URI string contains emoji in port part
      * @tc.size MediumTest
@@ -1683,7 +1683,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1090
      * @tc.name testURI01Chapter0109
      * @tc.desc Verify URI constructor throws when port contains percent-encoded characters (e.g., %38)
      * @tc.size MediumTest
@@ -1703,7 +1703,7 @@ export default function URI01Test() {
     });
     // =============== path ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1110
      * @tc.name testURI01Chapter0110
      * @tc.desc Test path property with normal URI containing simple path
      * @tc.size MediumTest

@@ -1852,7 +1852,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1010
      * @tc.name testURI04Chapter0100
      * @tc.desc Positive test: URI with percent-encoded double special characters in query value
      * @tc.size MediumTest

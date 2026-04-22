@@ -1777,7 +1777,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1110
      * @tc.name testURI03Chapter0100
      * @tc.desc Test encodedFragment with extremely long fragment string (performance/robustness)
      * @tc.size MediumTest
@@ -1793,7 +1793,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1010
      * @tc.name testURI03Chapter0101
      * @tc.desc Test encodedFragment with fragment containing percent sign not followed by hex digits (illegal)
      * @tc.size MediumTest
@@ -1817,7 +1817,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1020
      * @tc.name testURI03Chapter0102
      * @tc.desc Test encodedFragment with fragment containing only a percent sign
      * @tc.size MediumTest
@@ -1841,7 +1841,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1030
      * @tc.name testURI03Chapter0103
      * @tc.desc Test encodedFragment when fragment contains characters that are valid after percent encoding
      * @tc.size MediumTest
@@ -1857,7 +1857,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1040
      * @tc.name testURI03Chapter0104
      * @tc.desc Test encodedFragment with fragment containing mixed allowed and encoded characters
      * @tc.size MediumTest
@@ -1873,7 +1873,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1050
      * @tc.name testURI03Chapter0105
      * @tc.desc Test encodedFragment with fragment containing control characters (BEL, BS, etc.) already percent-encoded
      * @tc.size MediumTest

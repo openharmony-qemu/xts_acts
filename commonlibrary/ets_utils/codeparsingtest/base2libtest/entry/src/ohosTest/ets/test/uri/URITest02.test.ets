@@ -1637,7 +1637,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1110
      * @tc.name testURI02Chapter0100
      * @tc.desc Verify fragment with Unicode characters that require 3-byte UTF-8 encoding.
      * @tc.size MediumTest
@@ -1654,7 +1654,7 @@ export default function URI02Test() {
     // =============== authority ======================
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1010
      * @tc.name testURI02Chapter0101
      * @tc.desc Test authority with normal URI containing userinfo, host, port.
      * @tc.size MediumTest
@@ -1671,7 +1671,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1020
      * @tc.name testURI02Chapter0102
      * @tc.desc Test authority with host and port only.
      * @tc.size MediumTest
@@ -1688,7 +1688,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1030
      * @tc.name testURI02Chapter0103
      * @tc.desc Test authority with host only.
      * @tc.size MediumTest
@@ -1705,7 +1705,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1040
      * @tc.name testURI02Chapter0104
      * @tc.desc Test URI without authority (scheme:///path).
      * @tc.size MediumTest
@@ -1721,7 +1721,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1050
      * @tc.name testURI02Chapter0105
      * @tc.desc Test authority with userinfo without password.
      * @tc.size MediumTest
@@ -1738,7 +1738,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1060
      * @tc.name testURI02Chapter0106
      * @tc.desc Test port value 0.
      * @tc.size MediumTest
@@ -1752,7 +1752,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1070
      * @tc.name testURI02Chapter0107
      * @tc.desc Test port maximum value 65535.
      * @tc.size MediumTest
@@ -1766,7 +1766,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1080
      * @tc.name testURI02Chapter0108
      * @tc.desc Test default port (no port specified).
      * @tc.size MediumTest
@@ -1780,7 +1780,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1090
      * @tc.name testURI02Chapter0109
      * @tc.desc Test IPv4 host address.
      * @tc.size MediumTest
