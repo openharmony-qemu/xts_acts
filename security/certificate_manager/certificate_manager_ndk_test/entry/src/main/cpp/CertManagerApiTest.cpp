@@ -365,7 +365,7 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     return ret;
 }
 
-static napi_value OHCertManagerNativeApiEnumValidation0100(napi_env env, napi_callback_info info)
+static napi_value OHCertValidateEnumTest0100(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -441,7 +441,7 @@ static napi_value OHCertManagerNativeApiEnumValidation0100(napi_env env, napi_ca
     return resultObj;
 }
 
-static napi_value OHCertManagerNativeApiCredentialTest0100(napi_env env, napi_callback_info info)
+static napi_value OHCertNativeCredTest0100(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -534,8 +534,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OHCertManagerNativeApiPublicErr0100", nullptr, OHCertManagerNativeApiPublicErr0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0200", nullptr, OHCertManagerNativeApiPublicErr0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OHCertManagerNativeApiPublicErr0300", nullptr, OHCertManagerNativeApiPublicErr0300, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertManagerNativeApiEnumValidation0100", nullptr, OHCertManagerNativeApiEnumValidation0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OHCertManagerNativeApiCredentialTest0100", nullptr, OHCertManagerNativeApiCredentialTest0100, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "OHCertValidateEnumTest0100", nullptr, OHCertValidateEnumTest0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OHCertNativeCredTest0100", nullptr, OHCertNativeCredTest0100, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
