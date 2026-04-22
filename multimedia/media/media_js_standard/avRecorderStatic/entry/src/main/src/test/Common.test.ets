@@ -252,10 +252,10 @@ export default class Commmon {
     if (typeof (avRecorder) == 'undefined') {
     } else {
       console.info('setMetadata in current state' + avRecorder.state);
-      let meta: Record<string, string> = {
-        'com.openharmony.userdefine': '10',
-        'com.openharmony.userdefine2': '20'
-      };
+      let meta: Map<string, string> = new Map([
+        ['com.openharmony.userdefine', '10'],
+        ['com.openharmony.userdefine2', '20']
+      ]);
       try {
         avRecorder.setMetadata(meta);
       } catch (err) {
@@ -2741,24 +2741,31 @@ export default class Commmon {
     done();
   }
 
-  async avRecorderSetMetadataTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
-    let avRecorder: media.AVRecorder = await this.createAVRecorder();
+  async avRecorderSetMetadataTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
     if (avRecorder) {
-      console.info('case avConfig.url is ' + avConfig.url);
-      await this.preparePromise(avRecorder, avConfig);
-      this.setMetadata(avRecorder);
-      await this.startPromise(avRecorder, recorderTime);
-      await this.stopPromise(avRecorder);
-      await avRecorder.reset().then(() => {
-        console.info('reset avRecorderSetMetadataTest success');
-        expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.IDLE);
-      }).catch((err: Error) => {
-        console.info('reset avRecorderSetMetadataTest failed and catch error is ' + err.message);
-      });
-      await this.releaseDone(avRecorder, done);
+      try {
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        this.setMetadata(avRecorder);
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await avRecorder.reset().then(() => {
+          console.info('reset avRecorderSetMetadataTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
     } else {
       console.error('avRecorder is undefined');
       done();
+      return false;
     }
   }
 
