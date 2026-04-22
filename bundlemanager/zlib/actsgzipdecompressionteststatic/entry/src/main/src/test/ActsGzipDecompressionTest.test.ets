@@ -3262,6 +3262,44 @@ export default function ActsGzipDecompressionTest() {
       })
 
     /**
+     * @tc.name   acts_zlibCompressFiles_static_0600
+     * @tc.number acts_zlibCompressFiles_static_0600
+     * @tc.desc   test compressFiles strategy fourth parallel pathSeparatorStrategy inFiles empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0600 start==================");
+        let zippath46 = dir + '/test46.zip';
+        try {
+          await Utils.msSleep(1000);
+          zlib.compressFiles([], zippath46, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_SEQUENTIAL,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0600 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0600 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(401);
+            expect(errData.message).assertEqual('BusinessError 401: Parameter error. The type of inFiles must be array.');
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0600 compressFiles error errData is errCode:${errData.code}  message:${errData.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
      * @tc.number    GzipDecompressionAbilityTest_static_8900
      * @tc.name        GzipDecompressionAbilityTest_static_8900
      * @tc.desc        test gzflush correct return value

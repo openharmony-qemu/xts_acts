@@ -186,6 +186,10 @@ class MyNodeAdapterController extends NodeController {
 struct NodeAdapterApiNullUndefined {
   adapterController: MyNodeAdapterController = new MyNodeAdapterController();
 
+  aboutToDisappear(): void {
+    this.adapterController.nodeAdapter?.dispose();
+  }
+
   build() {
     Column({space:3}) {
       NodeContainer(this.adapterController)

@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils';
 
 export default function sliderJsunit1() {
-  describe('appInfoTest_five_3', () => {
+  describe('sliderJsunit1', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/slider1/slider',

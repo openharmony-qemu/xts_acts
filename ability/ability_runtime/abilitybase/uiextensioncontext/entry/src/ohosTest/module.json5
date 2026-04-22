@@ -62,6 +62,15 @@
             ]
           }
         ]
+      },
+      {
+        "name": "EntryAbility2",
+        "srcEntry": "./ets/entryability2/EntryAbility2.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background"
       }
     ],
     "extensionAbilities": [
@@ -72,6 +81,14 @@
         "label": "$string:EntryEmbeddedUIExtAbility_label",
         "type": "embeddedUI"
       },
+    ],
+    "requestPermissions":[
+      {
+        "name": "ohos.permission.SET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.MANAGE_WIFI_CONNECTION"
+      }
     ]
   }
 }

@@ -71,8 +71,10 @@ it('pushNamedRoute19_static_0100', Level.LEVEL2, async (done: () => void): Promi
       inspector.sendEventByKey('pushNamedRoute19_btn1',10,"")
       await CommonFunc.sleep(2000);
 
-      let text1 = inspector.getInspectorByKey('pushNamedRoute19_text2');
-      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('100003');
+      let text1: string | undefined = AppStorage.get<string>('errcode1') as string;
+      console.info('test pushNamedRoute19_static_0100 text1 is', text1);
+      expect(text1).assertEqual('100003');
+      AppStorage.delete('errcode1')
       await CommonFunc.sleep(1000);
 
       console.info('pushNamedRoute19_static_0100 END');

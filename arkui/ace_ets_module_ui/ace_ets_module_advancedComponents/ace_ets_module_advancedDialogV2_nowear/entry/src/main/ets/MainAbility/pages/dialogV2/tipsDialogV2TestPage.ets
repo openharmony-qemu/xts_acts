@@ -33,12 +33,14 @@ struct Index {
       checked: this.checked,
       primaryButton: new AdvancedDialogV2Button({
         content: '取消',
+        textAlign: TextAlign.Start,
         action: () => {
           console.info('Callback when the first button is clicked');
         },
       }),
       secondaryButton: new AdvancedDialogV2Button({
         content: '删除',
+        textAlign: TextAlign.Center,
         role: ButtonRole.ERROR,
         action: () => {
           console.info('Callback when the second button is clicked');

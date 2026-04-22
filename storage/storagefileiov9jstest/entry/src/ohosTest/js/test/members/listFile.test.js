@@ -601,6 +601,342 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_017
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1700
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_017');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.listFileSync(dpath, {
+        filter:{
+          suffix: []
+        }
+      });
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_017 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_018
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1800
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_018');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.listFileSync(dpath, {
+        filter:{
+          suffix: [""]
+        }
+      });
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_018 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_019
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1900
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_019');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let time = new Date().getTime() / 1000;
+      let dirents = fileIO.listFileSync(dpath, {
+        filter:{
+          displayName: []
+        }
+      });
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_019 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_020
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2000
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_020');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = fileIO.listFileSync(dpath, {
+        filter:{
+          displayName: [""]
+        }
+      });
+      console.log('fileIO_test_listfile_sync_020 has dirents.length ' + dirents.length);
+      expect(dirents.length == 0).assertTrue();
+      fileIO.rmdirSync(dpath);
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_020 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_021
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2100
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_021');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let time = new Date().getTime() / 1000;
+      let dirents = fileIO.listFileSync(dpath, {
+        filter:{
+          mimeType: []
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_021 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_023
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2300
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_023');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let time = new Date().getTime() / 1000;
+      let dirents = fileIO.listFileSync(dpath, {
+        filter:{
+          mimeType: [""]
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_023 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_024
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2400
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_024');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = fileIO.listFileSync(dpath, {
+        filter:{
+          excludeMedia: true
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_024 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_025
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2500
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.listFileSync("", {listNum: 2,});
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_025 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_026
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2600
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.listFileSync(null, {listNum: 2,});
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_026 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_027
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2700
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.listFileSync(undefined, {listNum: 2,});
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_027 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_028
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2800
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_028');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.listFileSync(dpath, null);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_028 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_sync_029
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2900
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_sync_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_sync_029');
+    let fpath1 = dpath + '/listfile_sync_013.txt';
+    let fpath2 = dpath + '/listfile_sync_013.doc';
+    let fpath3 = dpath + '/listfile_sync_013.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+    try {
+      let dirents = fileIO.listFileSync(dpath, undefined);
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+    } catch (err) {
+      console.log('fileIO_test_listfile_sync_029 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_listfile_async_000
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0000
    * @tc.desc   Test listFile() interface. Callback.
@@ -1790,6 +2126,381 @@ export default function fileIOListfile() {
     }
   });
 
-  
+  /**
+   * @tc.name   fileIO_test_listfile_async_032
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3200
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_032');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          suffix: [""]
+        }
+      });
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_032 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_033
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_330
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_033');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          displayName: []
+        }
+      });
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_033 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_034
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_340
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_034');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          displayName: [""]
+        }
+      });
+      expect(dirents.length == 0).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_034 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_035
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3500
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_035');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          mimeType: [".txt"]
+        }
+      });
+      console.log('fileIO_test_listfile_async_035 has dirents.length ' + dirents.length);
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_035 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_036
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3600
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_036');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          mimeType: [""]
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_036 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_037
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3700
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_037');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          mimeType: []
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_037 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_038
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3800
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_038');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, {
+        listNum: 0,
+        recursion: false,
+        filter:{
+          excludeMedia: true
+        }
+      });
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_038 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_039
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3900
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.listFile(null, {
+        listNum: 0,
+        recursion: false
+      });
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_039 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_040
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4000
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.listFile(undefined, {
+        listNum: 0,
+        recursion: false
+      });
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_040 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_041
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4100
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.listFile("", {
+        listNum: 0,
+        recursion: false
+      });
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_041 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_042
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4200
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_042');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      await fileIO.listFile(dpath, null);
+      expect(false).assertTrue();
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_042 has failed for ' + err.message + ', code:' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_listfile_async_043
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4300
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_listfile_async_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let dpath = await nextFileName('fileIO_test_listfile_async_043');
+    let fpath1 = dpath + '/listfile_async_025.txt';
+    let fpath2 = dpath + '/listfile_async_025.doc';
+    let fpath3 = dpath + '/listfile_async_025.png';
+    fileIO.mkdirSync(dpath);
+    expect(prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+    expect(prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+    try {
+      let dirents = await fileIO.listFile(dpath, undefined);
+      expect(dirents.length == 3).assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    } catch (err) {
+      console.log('fileIO_test_listfile_async_043 has failed for ' + err.message + ', code:' + err.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
 });
 }

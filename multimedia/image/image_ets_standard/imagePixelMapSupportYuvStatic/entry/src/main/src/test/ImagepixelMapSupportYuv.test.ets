@@ -158,11 +158,8 @@ export default function imagepixelMapSupportYuv() {
         await pixelMap.readPixelsToBuffer(readBuffer)
         result = checkArrayBuffer(readBuffer)
       }else if(type == "callback"){
-        pixelMap.writeBufferToPixels(writeBuffer, (error: BusinessError|null) => {
-          if (error && error.code) {
-            hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
-            result = false
-          } else {
+        try {
+          await pixelMap.writeBufferToPixels(writeBuffer);
           try {
             await pixelMap.readPixelsToBuffer(readBuffer)
             result = checkArrayBuffer(readBuffer)
@@ -170,8 +167,10 @@ export default function imagepixelMapSupportYuv() {
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to read image pixel data  ${error}`)
             result = false
           }
+        } catch (error) {
+          hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
+          result = false
         }
-        });
         await sleep(1000)
       }else {
         pixelMap.writeBufferToPixelsSync(writeBuffer)

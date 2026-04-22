@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,8 +85,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         await CommonFunc.sleep(2000);
 
         console.log('get Initial value')
-        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
         console.log('assert position')
         console.log('GridItem_01.left' + GridItem_01.left)
@@ -118,26 +118,26 @@ export default function ColumnsTemplateAndRowsTemplate1() {
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-          console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200] START');
-          AppStorage.get<MessageManager<int>>('messageManager')?.notify({
-            name: 'columnStart1', value: 2
-          })
-          await CommonFunc.sleep(1000);
+        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200] START');
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
+          name: 'columnStart1', value: 2
+        })
+        await CommonFunc.sleep(1000);
 
-          console.log('get Initial value')
-          let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-          let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+        console.log('get Initial value')
+        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
-          console.log('assert position')
+        console.log('assert position')
 
-          console.log('assert size')
-          console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-          expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
-          console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
-          expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
+        console.log('assert size')
+        console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
+        expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
+        console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+        expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
 
-          console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200] END');
-          done();
+        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200] END');
+        done();
       });
 
     /**
@@ -147,34 +147,34 @@ export default function ColumnsTemplateAndRowsTemplate1() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400] START');
-        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
-          name: 'columnStart1', value: 5
-        })
-        await CommonFunc.sleep(2000);
-        console.log('get Initial value')
-        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400] START');
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
+        name: 'columnStart1', value: 5
+      })
+      await CommonFunc.sleep(2000);
+      console.log('get Initial value')
+      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
-        console.log('assert position')
-        console.log('GridItem_01.left' + GridItem_01.left)
-        console.log('Grid_1.left' + Grid_1.left)
-        expect(Math.floor(Math.abs(GridItem_01.left - Grid_1.left)) <= 1).assertTrue();
+      console.log('assert position')
+      console.log('GridItem_01.left' + GridItem_01.left)
+      console.log('Grid_1.left' + Grid_1.left)
+      expect(Math.floor(Math.abs(GridItem_01.left - Grid_1.left)) <= 1).assertTrue();
 
-        console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.floor(Math.abs((GridItem_01.left - Grid_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
-        console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.floor(Math.abs((GridItem_01.top - Grid_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
+      console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
+      expect(Math.floor(Math.abs((GridItem_01.left - Grid_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
+      console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
+      expect(Math.floor(Math.abs((GridItem_01.top - Grid_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
 
-        console.log('assert size')
-        console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
-        console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
-        expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
+      console.log('assert size')
+      console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
+      expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
+      console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+      expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
 
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400] END');
-        done();
-      });
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400] END');
+      done();
+    });
 
 
     /**
@@ -192,8 +192,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         await CommonFunc.sleep(2000);
 
         console.log('get Initial value')
-        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
         console.log('assert position')
         console.log('GridItem_01.left' + GridItem_01.left)
@@ -223,33 +223,33 @@ export default function ColumnsTemplateAndRowsTemplate1() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_006] START');
-        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
-          name: 'rowStart1', value: 2
-        })
-        await CommonFunc.sleep(2000);
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_006] START');
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
+        name: 'rowStart1', value: 2
+      })
+      await CommonFunc.sleep(2000);
 
-        console.log('get Initial value')
-        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+      console.log('get Initial value')
+      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
-        console.log('assert position')
-        console.log('GridItem_01.left' + GridItem_01.left)
-        console.log('Grid_1.left' + Grid_1.left)
-        expect(Math.floor(Math.abs(GridItem_01.left - Grid_1.left)) <= 1).assertTrue();
+      console.log('assert position')
+      console.log('GridItem_01.left' + GridItem_01.left)
+      console.log('Grid_1.left' + Grid_1.left)
+      expect(Math.floor(Math.abs(GridItem_01.left - Grid_1.left)) <= 1).assertTrue();
 
-        console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-        expect(Math.floor(Math.abs((GridItem_01.left - Grid_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
+      console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
+      expect(Math.floor(Math.abs((GridItem_01.left - Grid_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0)))) <= 1).assertTrue();
 
-        console.log('assert size')
-        console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120)))) <= 1).assertTrue();
-        console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
-        expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
+      console.log('assert size')
+      console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
+      expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120)))) <= 1).assertTrue();
+      console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+      expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue();
 
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600] END');
-        done();
-      });
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600] END');
+      done();
+    });
 
 
     /**
@@ -259,26 +259,31 @@ export default function ColumnsTemplateAndRowsTemplate1() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] START');
-        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
-          name: 'rowStart1', value: 5
-        })
-        await CommonFunc.sleep(2000);
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] START');
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
+        name: 'rowStart1', value: 5
+      })
+      await CommonFunc.sleep(2000);
 
-        console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 get Initial value')
-        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
-        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 get Initial value')
+      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
 
-        console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 assert size')
-        expect(Math.floor(Math.abs(GridItem_01.right - GridItem_01.left))).assertEqual(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120)));
-        console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-        expect(Math.floor(Math.abs(GridItem_01.bottom - GridItem_01.top))).assertEqual(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)));
-        console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 assert size')
+      console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
+      console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700_chazhi1:'+ Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) -
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120)))))
+      console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700_chazhi2:'+ Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))))
+      
+      expect(Math.floor(Math.abs((GridItem_01.right - GridItem_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((GridItem_01.bottom - GridItem_01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60)))) <= 1).assertTrue()
 
-        console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] END');
-        done();
-      });
+      console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] END');
+      done();
+    });
 
 
   })

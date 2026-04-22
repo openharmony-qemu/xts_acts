@@ -1178,5 +1178,44 @@ export default function cameraManagerTest() {
       });
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100--------------");
+      let camerasArray = mCameraDevicesArray;
+      for (let i = 0; i < camerasArray.length; i++) {
+        let cameraOutputCap = getSupportedOutputCapability(camerasArray[i]);
+        console.info("SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100 camera:" +
+        camerasArray[i].cameraId);
+        if (!isEmpty(cameraOutputCap)) {
+          let previewProfilesArray = cameraOutputCap?.previewProfiles;
+          if (isEmpty(previewProfilesArray)) {
+            console.info(TAG +
+              "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100 previewProfilesArray == null || undefined")
+            expect().assertFail();
+          } else {
+            for (let j = 0; j < previewProfilesArray!.length; j++) {
+              let previewOutputPromise =
+                mCameraManager.createDeferredPreviewOutput(previewProfilesArray![j]);
+              if (isEmpty(previewOutputPromise)) {
+                console.info(TAG +
+                  "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CREATE_DEFERRED_PREVIEW_OUTPUT_PROMISE_0100 previewOutputPromise == null || undefined")
+                expect().assertFail();
+              }
+            }
+          }
+        }
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100 PASS");
+      await sleep(1000);
+      done();
+    })
   })
 }

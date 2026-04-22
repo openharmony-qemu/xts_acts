@@ -404,14 +404,14 @@ export default function PlayerLocalTestAudioFormat() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FORMAT_MP3_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FORMAT_MP3_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FORMAT_MP3_0100
      * @tc.desc   Format : MP3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FORMAT_MP3_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIOPLAYER_FORMAT_MP3_0100Adapt001', Level.LEVEL0, async (done: Function) => {
       await mediaTestBase.getFdRead('01.mp3', done).then((testNumber) => {
         fdNumber = testNumber;
       });

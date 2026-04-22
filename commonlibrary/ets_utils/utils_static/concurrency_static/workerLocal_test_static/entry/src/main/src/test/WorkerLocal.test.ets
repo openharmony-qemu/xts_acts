@@ -231,7 +231,7 @@ export default function workerLocalTest() {
         expect(await wl.get()).assertEqual('init')
         wl.set(Promise.resolve('resolve'))
         expect(await wl.get()).assertEqual('resolve')
-        await taskpool.execute(() => {
+        await taskpool.execute(async () => {
           await wl.get().then((res: string) => {
             expect(res).assertEqual('new')
           })

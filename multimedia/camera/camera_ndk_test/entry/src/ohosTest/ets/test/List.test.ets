@@ -37,18 +37,22 @@ import SecureCameraErrorCodeTest from './SecureCameraErrorCodeTest.test';
 import CameraSessionMacroTest from './CameraSessionMacroTest.test';
 import CameraSessionSystemPressureLevelTest from './CameraSessionSystemPressureTest.test.ets';
 import CameraSessionControlCenterTest from './CameraSessionControlCenterTest.test.ets';
+import CameraPhotoSesionProfessionAbilityTest from './CameraPhotoSesionProfessionAbilityTest.test'
+import CameraDevicePropertyTest from './CameraDevicePropertyTest.test'
 
 let voice = call.hasVoiceCapability()
 
 export default function testsuite() {
-  CameraSessionQualityPrioritizationTest();
   PhotoTest();
+  CameraSessionQualityPrioritizationTest();
   SessionTest();
   SecureCameraTest();
   SecureCameraErrorCodeTest();
   CameraManagerTest();
   VideoMirrorTest();
   CameraSessionMacroTest();
+  CameraPhotoSesionProfessionAbilityTest();
+  CameraDevicePropertyTest();
 
   if (voice){
     CameraSessionExposureTest();

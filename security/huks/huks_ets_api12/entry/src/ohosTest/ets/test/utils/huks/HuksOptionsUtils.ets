@@ -167,3 +167,23 @@ export async function CheckWearable() {
     return false;
   }
 }
+
+export async function ClearAllKeys() {
+  let storageLevels: Array<huks.HuksAuthStorageLevel> = [
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE,
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE,
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE
+  ]
+  let huksOptions: huks.HuksOptions = GetEmptyOptions();
+  try {
+    for (let i = 0; i < storageLevels.length; i++) {
+      SetParam(huksOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, storageLevels[i]);
+      let keyAliases = await huks.listAliases(huksOptions);
+      for (let j = 0; j < keyAliases.keyAliases.length; j++) {
+        await huks.deleteKeyItem(keyAliases.keyAliases[j], huksOptions);
+      }
+    }
+  } catch (err) {
+    Logger.error(`ClearAllKeys catch error ${JSON.stringify(err)}`)
+  }
+}

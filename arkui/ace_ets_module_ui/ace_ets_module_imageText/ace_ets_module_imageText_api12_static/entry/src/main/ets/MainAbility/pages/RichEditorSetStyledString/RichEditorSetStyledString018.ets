@@ -56,7 +56,7 @@ struct RichEditorSetStyledString018 {
   @State baseLineStr: string = '';
   @State shadowValues: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  fontStyleAttr1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   // 创建有多种样式组合对象mutableStyledString2
   mutableStyledString1: MutableStyledString = new MutableStyledString('abcde', [{
     start: 0,

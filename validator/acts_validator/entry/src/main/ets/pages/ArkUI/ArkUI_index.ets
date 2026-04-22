@@ -91,7 +91,6 @@ struct IndexPage {
     { title: 'Rating', uri: 'pages/ArkUI/Rating' },
     { title: 'Search', uri: 'pages/ArkUI/Search' },
     { title: 'Magnifier', uri: 'pages/ArkUI/Magnifier' },
-    { title: 'SegmentButton', uri: 'pages/ArkUI/SegmentButton' },
     { title: 'SharedTransition', uri: 'pages/ArkUI/SharedTransition' },
     { title: 'Swiper', uri: 'pages/ArkUI/Swiper' },
     { title: 'Gauge', uri: 'pages/ArkUI/Gauge' },
@@ -159,7 +158,10 @@ struct IndexPage {
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
     { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
     { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
-    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' }
+    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
+    { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
+    { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
+
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

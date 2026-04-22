@@ -15,19 +15,29 @@
 import hilog from '@ohos.hilog';
 import testNapi from 'libUdsNdkex.so'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 
 const TAG = "[ UdsNdkTest ] ------ ";
+let tag = 'ttt:';
 
 export default function UdsNdkexTest() {
   describe('UdsNdkexTest', async () => {
-    beforeAll(async () => {
-    });
-    beforeEach(() => {
-    });
-    afterEach(() => {
-    });
-    afterAll(() => {
-    });
+    beforeEach(async () => {
+      console.log(tag, `beforeEach`);
+      let options:unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let data = await unifiedDataChannel.deleteData(options);
+        let size = JSON.stringify(data).length;
+        console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+        expect().assertFail();
+      }
+    })
+
     // PlainText =======================================================
     /**
      * @tc.name   OH_UdsPlainText_GetType_0100
@@ -436,14 +446,14 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
-     * @tc.name   OH_UdsHyperlink_SetDescription_003
+     * @tc.name   OH_UdsHyperlink_SetDescription_003Adapt001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
      * @tc.desc   OH_UdsHyperlink_SetDescription_003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_UdsHyperlink_SetDescription_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('OH_UdsHyperlink_SetDescription_003Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003');
       let data = testNapi.OH_UdsHyperlink_SetDescription_003();
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003 data= ' + JSON.stringify(data));

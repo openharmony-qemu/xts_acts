@@ -445,6 +445,25 @@ struct WebViewControllerPart3 {
               }
               break;
             }
+            case 'testAccessStep009': {
+              try {
+                Utils.emitEvent(this.controller.accessStep(null), 136010)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 136010)
+              }
+              break;
+            }
+            case 'testAccessStep010': {
+              try {
+                Utils.emitEvent(this.controller.accessStep(undefined), 136020)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 136020)
+              }
+              break;
+            }
+
 
           }
         })

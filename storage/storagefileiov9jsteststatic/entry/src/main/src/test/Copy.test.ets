@@ -26,7 +26,6 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 export const FILE_CONTENT = 'hello world';
 export const CONTENT = 'hello!!!';
-
 export function prepare2GFile(fpath: string) {
   try {
     let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE)
@@ -441,6 +440,53 @@ export default function fileIOCopy() {
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_014 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_016
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_STATIC_1600
+     * @tc.desc   Test copy() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath2G = await Utils.nextFileName('test2G');
+      expect(prepare2GFile(fpath2G)).assertTrue();
+      let destpath = fpath2G + 'dest';
+      let srcDirUri = fileUri.getUriFromPath(fpath2G);
+      let dstDirUri = fileUri.getUriFromPath(destpath);
+      let copySignal: fs.TaskSignal = new fs.TaskSignal;
+      let stat1 = fs.statSync(fpath2G);
+      hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 stat1: ' + stat1.size);
+      let progressListener: fs.ProgressListener = (progress: fs.Progress) => {
+        console.info(`fileIO_copy_async_static_016: ${progress.processedSize}, totalSize16: ${progress.totalSize}`);
+        if (progress.processedSize * 1.0 / progress.totalSize > 0.1) {
+          copySignal.cancel();
+        }
+      }; 
+
+      let options: fs.CopyOptions = {
+        "progressListener" : progressListener,
+        "copySignal" : copySignal,
+      };
+      try {
+        fs.copy(srcDirUri, dstDirUri, options, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 error package: ' + err?.code);
+            let stat2 = fs.statSync(destpath);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 stat2: ' + stat2.size);
+            expect(err?.code == 13900049 && err?.message == 'Operation canceled').assertTrue();
+            expect(stat2.size < stat1.size).assertTrue();
+            fs.unlinkSync(destpath);
+          }
+          hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 succ');
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });

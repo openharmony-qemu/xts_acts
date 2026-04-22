@@ -25,7 +25,7 @@ const driver = Driver.create();
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
     beforeAll(async (done: Function) => {
-      await driver.waitForComponent(ON.id("webcomponent"), 10000);
+      await Utils.waitForComponent(driver, 'webcomponent');
       done()
     });
     beforeEach(async (done: Function) => {

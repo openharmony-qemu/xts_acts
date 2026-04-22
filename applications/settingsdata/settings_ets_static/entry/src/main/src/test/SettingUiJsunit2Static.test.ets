@@ -81,8 +81,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('settings_uri_test_static_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name = '';
-      let uri = settings.getUriSync(name);
+      let uri = settings.getUriSync('');
       console.info("[settings_uri_test_static_002] uri is: " + uri);
       expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
       done();
@@ -119,6 +118,166 @@ export default function settingUiJsunit() {
       expect(value).assertEqual("test getValueSync");
       done();
     });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_def_empty
+     * @tc.number settings_get_value_sync_no_domain_def_empty
+     * @tc.desc   check getValueSync value no domain def value empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_def_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness20_no_domain_def_empty';
+      let defValue = '';
+      let value = settings.getValueSync(abilityContext!, name, '');
+      console.info("[settings_get_value_sync_no_domain_def_empty] value is: " + value);
+      expect(value).assertEqual(defValue);
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_value_sync_domain_key_empty
+     * @tc.number settings_get_value_sync_domain_key_empty
+     * @tc.desc   check getValueSync value domain key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness_domain_key_empty2';
+      let defValue = 'defValue';
+      let value = settings.getValueSync(abilityContext!, '', defValue, settings.domainName.DEVICE_SHARED);
+      console.info("[settings_get_value_sync_domain_key_empty] value is: " + value);
+      expect(value).assertEqual(defValue);
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_value_sync_domain_def_value_empty
+     * @tc.number settings_get_value_sync_domain_def_value_empty
+     * @tc.desc   check getValueSync value domain def empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_domain_def_value_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness_domain_key_empty2';
+      let defValue = '';
+      let value = settings.getValueSync(abilityContext!, name, '', settings.domainName.DEVICE_SHARED);
+      console.info("[settings_get_value_sync_domain_def_value_empty] value is: " + value);
+      expect(value).assertEqual(defValue);
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_value_sync_domain_domain_empty
+     * @tc.number settings_get_value_sync_domain_domain_empty
+     * @tc.desc   check getValueSync value domain def empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_domain_domain_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness_domain_key_empty2';
+      let defValue = '';
+      let value = settings.getValueSync(abilityContext!, name, defValue, '');
+      console.info("[settings_get_value_sync_domain_domain_empty] value is: " + value);
+      expect(value).assertEqual(defValue);
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_key_empty
+     * @tc.number settings_get_value_sync_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(abilityContext!, '', defValue);
+          console.info("[settings_get_value_sync_no_domain_key_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_key_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_value_empty
+     * @tc.number settings_get_value_sync_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let defValue: string = '';
+          let result = settings.getValueSync(abilityContext!, 'getValueSynckey1', '');
+          console.info("[settings_get_value_sync_no_domain_value_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_value_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_key_empty
+     * @tc.number settings_get_value_sync_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(abilityContext!, '', defValue, settings.domainName.DEVICE_SHARED);
+          console.info("[settings_get_value_sync_key_empty] result = " + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_value_empty
+     * @tc.number settings_get_value_sync_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = '';
+          let result: string = settings.getValueSync(abilityContext!, 'keyvalueemptystatic', '', settings.domainName.DEVICE_SHARED);
+          console.info("[settings_get_value_sync_value_empty] result = " + result);
+          expect(result === value).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_value_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
 
     /**
      * @tc.name   settings_get_value_static_119
@@ -165,7 +324,77 @@ export default function settingUiJsunit() {
         done();
       } catch(err){
         console.info("[settings_get_value_033] error is: " + String(err));
-        expect(err.message).assertEqual("Permission denied");
+        expect(err?.code).assertEqual(201);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_value_callback_key_empty
+     * @tc.number settings_get_value_callback_key_empty
+     * @tc.desc   check getValue value callback key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness35';//关键字
+      let value = 'brightness35';//值
+      let domainName = 'secure';
+      try{
+        settings.setValue(abilityContext!, name, value, domainName)
+          .then((data)=>{
+            console.info("[settings_get_value_callback_key_empty] value is:" + data);
+            settings.getValue(abilityContext!, '', domainName).then(ret => {
+              console.info("[settings_get_value_callback_key_empty] value is:" + ret);
+              expect().assertFail();
+              done();
+            })
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_get_value_callback_key_empty] error is:" + err);
+            expect(err.message).assertEqual("Permission denied");
+            done();
+          })
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_35] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_value_callback_domain_empty
+     * @tc.number settings_get_value_callback_domain_empty
+     * @tc.desc   check getValue value callback domain empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_domain_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness35';//关键字
+      let value = 'brightness35';//值
+      let domainName = 'secure';
+      try{
+        settings.setValue(abilityContext!, name, value, domainName)
+          .then((data)=>{
+            console.info("[settings_get_value_callback_domain_empty] value is:" + data);
+            settings.getValue(abilityContext!, name, '').then(ret => {
+              console.info("[settings_get_value_callback_domain_empty] value is:" + ret);
+              expect().assertFail();
+              done();
+            })
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_get_value_callback_domain_empty] error is:" + err);
+            expect(err.code).assertEqual(201);
+            done();
+          })
+        done();
+      }catch (err) {
+        console.error("[settings_get_value_callback_domain_empty] error = " + err);
+        expect().assertFail();
         done();
       }
     });
@@ -198,6 +427,29 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_get_value_no_domain_promise_key_empty
+     * @tc.number settings_get_value_no_domain_promise_key_empty
+     * @tc.desc   check getValue no domain promise key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_no_domain_promise_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let value = 'brightness34'
+      try{
+        settings.setValueSync(abilityContext!, 'nodomainkey', 'value');
+        let result = await settings.getValue(abilityContext!, '');
+        console.info("[settings_get_value_no_domain_promise_key_empty] result is: " + result);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error("[settings_get_value_no_domain_promise_key_empty] error is: " + String(err));
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
      * @tc.name   settings_set_value_127
      * @tc.number settings_set_value_127
      * @tc.desc   check set value sync
@@ -211,14 +463,182 @@ export default function settingUiJsunit() {
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
         let value = settings.setValueSync(abilityContext!, name, defaultValue, domainName);
-        expect().assertFail();
+        expect(value).assertTrue();
         done();
       }catch (err) {
         console.error("[settings_set_value_127] error = " + err);
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_key_empty
+     * @tc.number settings_set_value_sync_domain_key_empty
+     * @tc.desc   check set value sync domain key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let defaultValue = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.setValueSync(abilityContext!, '', defaultValue, domainName);
+        console.info("[settings_set_value_sync_domain_key_empty] value = " + value);
+        expect().assertFail();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_domain_key_empty] error = " + err);
         expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_value_empty
+     * @tc.number settings_set_value_sync_domain_value_empty
+     * @tc.desc   check set value sync domain value empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.setValueSync(abilityContext!, name, '', domainName);
+        console.info("[settings_set_value_sync_domain_value_empty] value = " + value);
+        expect().assertFail();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_domain_value_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_domain_empty
+     * @tc.number settings_set_value_sync_domain_domain_empty
+     * @tc.desc   check set value sync domain domain empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let result = settings.setValueSync(abilityContext!, name, value, '');
+        console.info("[settings_set_value_sync_domain_domain_empty] result = " + result);
+        expect().assertFail();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_domain_domain_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_result_false
+     * @tc.number settings_set_value_sync_domain_result_false
+     * @tc.desc   check set value sync domain domain empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        let result = settings.setValueSync(abilityContext!, '', '', '');
+        console.info("[settings_set_value_sync_domain_result_false] value = " + result);
+        expect(result).assertFalse();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_domain_result_false] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_key_empty
+     * @tc.number settings_set_value_sync_no_domain_key_empty
+     * @tc.desc   check set value sync domain domain empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      try{
+        let result = settings.setValueSync(abilityContext!, '', value);
+        console.info("[settings_set_value_sync_no_domain_key_empty] value = " + result);
+        expect().assertFail();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_no_domain_key_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_value_empty
+     * @tc.number settings_set_value_sync_no_domain_value_empty
+     * @tc.desc   check set value sync no domain value empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      try{
+        let value = settings.setValueSync(abilityContext!, name, '');
+        console.info("[settings_set_value_sync_no_domain_value_empty] value = " + value);
+        expect().assertFail();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_no_domain_value_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_result_value
+     * @tc.number settings_set_value_sync_no_domain_result_value
+     * @tc.desc   check set value sync no domain result false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_result_value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let value = '323445.00';//值
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        let result = settings.setValueSync(abilityContext!, '', '');
+        console.info("[settings_set_value_sync_no_domain_result_value] value = " + result);
+        expect(result).assertFalse();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_sync_no_domain_result_value] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
 
     /**
      * @tc.name   settings_get_value_static_035
@@ -269,17 +689,220 @@ export default function settingUiJsunit() {
       try{
         settings.setValue(abilityContext!, name, value)
           .then((data)=>{
-            expect().assertFail();
+            expect(data).assertTrue();
             done();
           })
           .catch((err: Error)=>{
             console.info("[settings_set_value_113] error is:" + err);
-            expect(err.message).assertEqual("Permission denied");
+            expect(err.code).assertEqual(201);
             done();
           })
       }catch(err){
         console.info("[settings_set_value_113] error is:" + err);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_promise_no_domain_key_empty
+     * @tc.number settings_set_value_promise_no_domain_key_empty
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_promise_no_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, '', value)
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_set_value_promise_no_domain_key_empty] error is:" + err);
+            expect(err.code).assertEqual(201);
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_promise_no_domain_key_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_promise_no_domain_value_empty
+     * @tc.number settings_set_value_promise_no_domain_value_empty
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_promise_no_domain_value_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, name, '')
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_set_value_promise_no_domain_value_empty] error is:" + err);
+            expect(err?.message).assertEqual("Permission denied");
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_promise_no_domain_value_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_promise_domain_key_empty
+     * @tc.number settings_set_value_promise_domain_key_empty
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_promise_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      let domainName = 'secure';
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, '', 'value', domainName)
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_set_value_promise_domain_key_empty] error is:" + err);
+            expect(err?.message).assertEqual("Permission denied");
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_promise_domain_key_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_promise_domain_value_empty
+     * @tc.number settings_set_value_promise_domain_value_empty
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_promise_domain_value_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      let domainName = 'secure';
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, name, '', domainName)
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_set_value_promise_domain_value_empty] error is:" + err);
+            expect(err?.message).assertEqual("Permission denied");
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_promise_domain_value_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_promise_domain_domain_empty
+     * @tc.number settings_set_value_promise_domain_domain_empty
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_promise_domain_domain_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      let domainName = 'secure';
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, name, value, '')
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_set_value_promise_domain_domain_empty] error is:" + err);
+            expect(err?.message).assertEqual("Permission denied");
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_promise_domain_domain_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_domain_key_empty
+     * @tc.number settings_set_value_callback_domain_key_empty
+     * @tc.desc   check setValue no domain callback key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, '', value, (result) => {
+          console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
+          expect(result).assertTrue();
+          done();
+        })
+      } catch(err) {
+        console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_domain_value_empty
+     * @tc.number settings_set_value_callback_domain_value_empty
+     * @tc.desc   check setValue no domain callback value empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_domain_value_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness113valueempty';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.setValue(abilityContext!, name, '', (result) => {
+          console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
+          expect(!result).assertTrue();
+          done();
+        })
+      } catch(err) {
+        console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
+        expect(err?.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -1489,6 +2112,92 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_register_result_false
+     * @tc.number settings_register_result_false
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness118';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {});
+        console.info("[settings_register_result_false] result1 = " + value);
+        await Utils.msSleep(2000);
+        value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {});
+        console.info("[settings_register_result_false] result2 = " + value);
+        expect(value).assertFalse();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_result_false] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_register_key_empty
+     * @tc.number settings_register_key_empty
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness118';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, '', domainName, (err, ret) => {
+          if (err) {
+            console.info("[settings_register_key_empty] error is:" + String(err));
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        })
+        expect(value).assertTrue();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_key_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_register_domain_empty
+     * @tc.number settings_register_domain_empty
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'domain_empty2';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
+        let value = settings.registerKeyObserver(abilityContext!, name, '', (err, ret) => {
+          if (err) {
+            console.info("[settings_register_domain_empty] error is:" + String(err));
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        })
+        expect(value).assertTrue();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_domain_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
      * @tc.name   settings_get_value_static_122
      * @tc.number settings_get_value_static_122
      * @tc.desc   check unregisterKeyObserver
@@ -1518,6 +2227,81 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_unregister_key_empty
+     * @tc.number settings_unregister_key_empty
+     * @tc.desc   check unregisterKeyObserver key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, '', domainName, (err, ret) => {})
+        console.info("[settings_unregister_key_empty] value1 is: " + value);
+        let value2 = settings.unregisterKeyObserver(abilityContext!, '', domainName);
+        console.info("[settings_unregister_key_empty] value2 = " + value2);
+        expect(value2).assertTrue();
+        done();
+      }catch (err) {
+        console.error("[settings_unregister_key_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_unregister_domain_empty
+     * @tc.number settings_unregister_domain_empty
+     * @tc.desc   check unregisterKeyObserver key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'unregister_domain_empty';
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
+        let value = settings.registerKeyObserver(abilityContext!, name, '', (err, ret) => {})
+        console.info("[settings_unregister_domain_empty] value1 is: " + value);
+        let value2 = settings.unregisterKeyObserver(abilityContext!, name, '');
+        console.info("[settings_unregister_domain_empty] value2 = " + value2);
+        expect(value2).assertTrue();
+        done();
+      } catch (err) {
+        console.error("[settings_unregister_key_empty] error = " + err?.code + " message: " + err?.message);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_unregister_result_false
+     * @tc.number settings_unregister_result_false
+     * @tc.desc   check unregisterKeyObserver result false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'unregister_result_false';
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
+        let value = settings.unregisterKeyObserver(abilityContext!, name, domainName);
+        console.info("[settings_unregister_result_false] value = " + value);
+        expect(value).assertFalse();
+        done();
+      } catch (err) {
+        console.error("[settings_unregister_result_false] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+
+    /**
      * @tc.name   open_manager_settings_static_119
      * @tc.number open_manager_settings_static_119
      * @tc.desc   check open manager
@@ -1539,6 +2323,35 @@ export default function settingUiJsunit() {
           }
           done();
         })
+    });
+
+    /**
+     * @tc.name   open_manager_settings_result_false
+     * @tc.number open_manager_settings_result_false
+     * @tc.desc   check open manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('open_manager_settings_result_false', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let tmpAbilityContext: common.UIAbilityContext | undefined;
+        let value = settings.openNetworkManagerSettings(tmpAbilityContext!)
+          .then((status)=> {
+            console.info("[open_manager_settings_result_false] value is:" + status);
+            expect(status).assertFalse();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.error("[open_manager_settings_result_false] catch1 error = " + err?.message);
+            expect(err != undefined).assertTrue();
+            done();
+          })
+      } catch (err) {
+        console.error("[open_manager_settings_result_false] catch2 error = " + err?.message);
+        expect(err != undefined).assertTrue();
+        done();
+      }
     });
 
     /**

@@ -1325,5 +1325,21 @@ export default function nativeBufferTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testNativeBufferAllocFormatDiff
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1800
+     * @tc.desc   test FormatDiff
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferAllocFormatDiff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferAllocFormatDiff();
+        console.info("testNativeBufferAllocFormatDiff result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
   });
 }

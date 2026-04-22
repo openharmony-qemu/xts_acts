@@ -54,5 +54,23 @@ export default function webViewMetaViewportFalse() {
       await Utils.msSleep(1000);
       done();
     })
+
+    /**
+     * @tc.name        SwitchNextPageStatic
+     * @tc.number      SwitchNextPageStatic22222222
+     * @tc.desc        test SwitchNextPageStatic
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('webViewMetaViewportFalse', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
   })
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 Huawei Device Co., Ltd.
+* Copyright (C) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ let STORE_CONFIG2 :data_relationalStore.StoreConfig = {
 let rdbStore : data_relationalStore.RdbStore | undefined;
 let rdbStore1 : data_relationalStore.RdbStore
 let rdbStore2 : data_relationalStore.RdbStore
-let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
+let vbs :Array<data_relationalStore.ValuesBucket> = [];
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,//
@@ -91,9 +91,9 @@ const valueBucket4 :data_relationalStore.ValuesBucket = {
   "data3": 100000.9,
   "data4": new Uint8Array(0),
 }
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
-vbs[2] = valueBucket2
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
+vbs.push(valueBucket2)
 
 const valueBucket3 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
@@ -193,12 +193,13 @@ export default function RelationStoreRdbStoreTest() {
       try {
         let num = await rdbStore!.insert("test", valueBucket0, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect(num == 1).assertEqual(true);
+        done();
       } catch (err) {
         err = err as BusinessError;
         console.error(`Insert is failed, code is ${err.code},message is ${err.message}`);
         expect(err != null ).assertFail();
+        done();
       }
-      done();
     })
 
     /**
@@ -2503,17 +2504,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.delete(predicates).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 0).assertTrue();
-          done();
-        }).catch((error) =>{
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + error);
-          expect(error != null ).assertFail();
-          done();
-        });
+        let num: long = await rdbTrans.delete(predicates);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 0).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
         expect(err != null ).assertFail();
@@ -2538,17 +2534,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.delete(predicates).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.rollback();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num: long = await rdbTrans.delete(predicates);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.rollback();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0002 end *************' + err);
         expect(err != null ).assertFail();
@@ -2569,17 +2560,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0003 start *************');
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.insert("test", valueBucket0).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.rollback();
-          let num1 = await rdbStore!.querySql("select * from test");
-          expect(num1.rowCount == 0 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.insert("test", valueBucket0);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.rollback();
+        let num1 = await rdbStore!.querySql("select * from test");
+        expect(num1.rowCount == 0 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0003 end *************' + err);
         expect(err != null ).assertFail();
@@ -2602,17 +2588,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.insert("test", valueBucket0).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.insert("test", valueBucket0);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0004 end *************' + err);
         expect(err != null ).assertFail();
@@ -2633,17 +2614,12 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0005 start *************');
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.batchInsert("test", vbs).then((num:long)=>{
-          expect(num == 3 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 =await rdbStore!.querySql("select * from test");
-          expect(num1.rowCount == 3 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.batchInsert("test", vbs);
+        expect(num == 3 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 =await rdbStore!.querySql("select * from test");
+        expect(num1.rowCount == 3 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0005 end *************' + err);
         expect(err != null ).assertFail();
@@ -2662,22 +2638,17 @@ export default function RelationStoreRdbStoreTest() {
      */
     it('testTransaction0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0006 start *************');
-      rdbStore!.batchInsert("test", vbs);
+      await rdbStore!.batchInsert("test", vbs);
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.update(valueBucket0,predicates).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.querySql("select * from test");
-          expect(num1.rowCount == 3 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.update(valueBucket0,predicates);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.querySql("select * from test");
+        expect(num1.rowCount == 3 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0006 end *************' + err);
         expect(err != null ).assertFail();
@@ -2695,22 +2666,17 @@ export default function RelationStoreRdbStoreTest() {
      */
     it('testTransaction0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0007 start *************');
-      rdbStore!.batchInsert("test", vbs);
+      await rdbStore!.batchInsert("test", vbs);
       let predicates = new data_relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.update(valueBucket0, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((num:long)=>{
-          expect(num ==1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 =  await rdbStore!.querySql("select * from test");
-          expect(num1.rowCount == 3 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.update(valueBucket0, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        expect(num ==1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 =  await rdbStore!.querySql("select * from test");
+        expect(num1.rowCount == 3 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0007 end *************' + err);
         expect(err != null ).assertFail();
@@ -2733,17 +2699,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.insert("test", valueBucket0, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((num:long)=>{
-          expect(num == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 =await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let num:long = await rdbTrans.insert("test", valueBucket0, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        expect(num == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 =await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0008 end *************' + err);
         expect(err != null ).assertFail();
@@ -2855,17 +2816,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.querySql("select * from test where data1 = 'hello'").then((resultSet:data_relationalStore.ResultSet)=>{
-          expect(resultSet.rowCount == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let resultSet:data_relationalStore.ResultSet = await rdbTrans.querySql("select * from test where data1 = 'hello'");
+        expect(resultSet.rowCount == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 end *************' + err);
         expect(err != null ).assertFail();
@@ -2890,17 +2846,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.querySql("select * from test where data1 = 'hello'").then((resultSet:data_relationalStore.ResultSet)=>{
-          expect(resultSet.rowCount == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0001 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        });
+        let resultSet:data_relationalStore.ResultSet = await rdbTrans.querySql("select * from test where data1 = 'hello'");
+        expect(resultSet.rowCount == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0013 end *************' + err);
         expect(err != null ).assertFail();
@@ -2923,17 +2874,12 @@ export default function RelationStoreRdbStoreTest() {
       predicates.equalTo("data1", "hello");
       try{
         let rdbTrans = await rdbStore!.createTransaction(options);
-        rdbTrans.querySql("select * from test where data1 = ?",['hello']).then((resultSet:data_relationalStore.ResultSet)=>{
-          expect(resultSet.rowCount == 1 ).assertTrue();
-          await rdbTrans.commit();
-          let num1 = await rdbStore!.query(predicates);
-          expect(num1.rowCount == 1 ).assertTrue();
-          done();
-        }).catch((err) => {
-          hilog.info(domain, tag, '%{public}s', '************* testTransaction0014 end *************' + err);
-          expect(err != null ).assertFail();
-          done();
-        })
+        let resultSet:data_relationalStore.ResultSet = await rdbTrans.querySql("select * from test where data1 = ?",['hello']);
+        expect(resultSet.rowCount == 1 ).assertTrue();
+        await rdbTrans.commit();
+        let num1 = await rdbStore!.query(predicates);
+        expect(num1.rowCount == 1 ).assertTrue();
+        done();
       }catch(err){
         hilog.info(domain, tag, '%{public}s', '************* testTransaction0014 end *************' + err);
         expect(err != null ).assertFail();

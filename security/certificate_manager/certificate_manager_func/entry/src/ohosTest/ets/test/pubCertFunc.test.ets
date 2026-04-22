@@ -20,7 +20,18 @@ import { BusinessError } from '@ohos.base';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
-
+function createUnit8Array(len: number){
+  let buf = new ArrayBuffer(len);
+  let uint8Array = new Uint8Array(buf);
+  for (let i = 0; i < len; i++){
+    uint8Array[i] = 0xb1;
+  }
+  return uint8Array
+}
+function generateString(len: number){
+  let str: string = 'a';
+  return str.repeat(len);
+}
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
   0x81, 0x95, 0x31, 0x0b, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x06, 0x13, 0x02, 0x47, 0x52, 0x31,
@@ -152,7 +163,52 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0600
+     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0600
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_PubCertJsApi_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: started.");
+      let uri = "oh:t=ak;o=object;u=100;a=20010045";
+      let uriObject = generateString(255-27);
+      try {
+        await certManager.getPublicCertificate(uri.replace("object", uriObject));
+        expect(null).assertFail();
+      }
+      catch (err) {
+        console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
+        expect(err.code).assertEqual(17500001);
+      }
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: end.");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0700
+     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0700
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_PubCertJsApi_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_0700: started.");
+      let uri = "oh:t=ak;o=object;u=100;a=20010045";
+      let uriObject = generateString(256-27);
+      try {
+        await certManager.getPublicCertificate(uri.replace("object", uriObject));
+        expect(null).assertFail();
+      }
+      catch (err) {
+        console.log("SUB_Security_CertManager_PubCertJsApi_Func_0700 ： e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_0700: end.");
+      done();
+    });
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0900
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0900
@@ -204,7 +260,48 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_2000
+     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_2000
+     * @tc.desc   Call isAuthorizedApp interface with length of keyUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_PubCertJsApi_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_2000 started.");
+      try {
+        await certManager.isAuthorizedApp(generateString(255));
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_PubCertJsApi_Func_2000, e.code = " + err.code);
+      }
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_2000 end.");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_3000
+     * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_3000
+     * @tc.desc   Call isAuthorizedApp interface with length of keyUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_PubCertJsApi_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_3000 started.");
+      try {
+        await certManager.isAuthorizedApp(generateString(256));
+        expect(null).assertFail();
+      }
+      catch (err) {
+        expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_PubCertJsApi_Func_3000, e.code = " + err.code);
+      }
+      console.info("SUB_Security_CertManager_PubCertJsApi_Func_3000 end.");
+      done();
+    });
     /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0010
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0010
@@ -313,7 +410,445 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       done();
     });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0100
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0100
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20480 return 17500003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0100: started ");
+      let keystore: Uint8Array = createUnit8Array(20480);
+      let keystorePwd: string = '123456';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
 
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0100 e.code = " + err.code);
+        expect(err.code).assertEqual(17500003);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0200
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0200
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20481 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200: started ");
+      let keystore: Uint8Array = createUnit8Array(20481);
+      let keystorePwd: string = '123456';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0200 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0300
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0300
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 32 return 17500003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '11111111111111111111111111111111';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0300 e.code = " + err.code);
+        expect(err.code).assertEqual(17500003);
+      }
+      done();
+    });   
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0400
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0400
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 33 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '111111111111111111111111111111111';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0400 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });  
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0500
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0500
+     * @tc.desc   Call installPrivateCertificate interface with type of certAlias is special character return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '@';
+      let keyUri: string | undefined;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0500 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    }); 
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0600
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0600
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 32 available for calling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '11111111111111111111111111111111';
+      let keyUri: string | undefined;
+      try{
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600: installPrivateCertificate success");
+        keyUri = result.uri;
+        await certManager.uninstallPrivateCertificate(keyUri);
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0600 e.code = " + err.code);
+        expect(null).assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_0700
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_0700
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 33 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '111111111111111111111111111111111';
+      let keyUri: string | undefined;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_0700 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+
+    
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1100
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1100
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20480 return 17500003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100: started ");
+      let keystore: Uint8Array = createUnit8Array(20480);
+      let keystorePwd: string = '123456';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1100 e.code = " + err.code);
+        expect(err.code).assertEqual(17500003);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1200
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1200
+     * @tc.desc   Call installPrivateCertificate interface with length of keystore is 20481 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200: started ");
+      let keystore: Uint8Array = createUnit8Array(20481);
+      let keystorePwd: string = '123456';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1200 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1300
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1300
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 32 return 17500003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '11111111111111111111111111111111';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1300 e.code = " + err.code);
+        expect(err.code).assertEqual(17500003);
+      }
+      done();
+    });   
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1400
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1400
+     * @tc.desc   Call installPrivateCertificate interface with length of keystorePwd is 33 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '111111111111111111111111111111111';
+      let certAlias: string = 'appCertAliasDemoRsa';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1400 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });  
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1500
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1500
+     * @tc.desc   Call installPrivateCertificate interface with type of certAlias is special character return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '@';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1500 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    }); 
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1600
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1600
+     * @tc.desc   Call installPrivateCertificate with length of certAlias is 32 is available for calling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '11111111111111111111111111111111';
+      let keyUri: string | undefined;
+	    let level = certManager.AuthStorageLevel.EL1;
+      try{
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600: installPrivateCertificate success");
+        keyUri = result.uri;
+        await certManager.uninstallPrivateCertificate(keyUri);
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1600 e.code = " + err.code);
+        expect(null).assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installPrivateCertificate_Func_1700
+     * @tc.number SUB_Security_CertManager_installPrivateCertificate_Func_1700
+     * @tc.desc   Call installPrivateCertificate interface with length of certAlias is 33 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_installPrivateCertificate_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1700: started ");
+      let keystore: Uint8Array = commonParameter.priRsaCredData;
+      let keystorePwd: string = '123456';
+      let certAlias: string = '111111111111111111111111111111111';
+      let keyUri: string | undefined;
+	  let level = certManager.AuthStorageLevel.EL1;
+      try{
+        await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias, level);
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1700: installPrivateCertificate success");
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_installPrivateCertificate_Func_1700 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100: started. ");
+      let keyUri: string | undefined = generateString(256);
+      try{
+        await certManager.uninstallPrivateCertificate(keyUri);
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0100: end. ");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 257 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200: started. ");
+      let keyUri: string | undefined = generateString(257);
+      try{
+        await certManager.uninstallPrivateCertificate(keyUri);
+        expect(null).assertFail();
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0200: end. ");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: started. ");
+      let keyUri: string | undefined = generateString(256);
+      try{
+          certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
+          expect(err.code).assertEqual(401);
+          console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
+          done();
+        });
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0300: end. ");
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400
+     * @tc.desc   Call uninstallPrivateCertificate interface with length of keyUri is 257 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: started. ");
+      let keyUri: string | undefined = generateString(257);
+      try{
+          certManager.uninstallPrivateCertificate(keyUri, (err, result)=>{
+          expect(err.code).assertEqual(401);
+          console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: end. ");
+          done();
+        });
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0400: end. ");
+        done();
+      }
+    });
     /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0030
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0030
@@ -634,5 +1169,117 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0010
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0010: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0010 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0010 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0011
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0011: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0011 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0011 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0012
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0012: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0012 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0012 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0013
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0013
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0013: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
+        let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
+        }).catch((err: BusinessError) => {
+          if(err.code !== 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0013 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+          }
+        })
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0013 failed. Code: ${error.code}, message: ${error.message}`);
+      }
+      done();
+    });
   })
 }

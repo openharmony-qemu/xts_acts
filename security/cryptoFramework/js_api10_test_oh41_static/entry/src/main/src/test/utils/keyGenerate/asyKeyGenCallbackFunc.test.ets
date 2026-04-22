@@ -67,107 +67,107 @@ async function genPriKey(spec: cpFw.AsyKeySpec): Promise<cpFw.PriKey> {
 }
 
 async function convertKey(algName: string): Promise<boolean> {
+  let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
+  console.log("Callback convertKey: createAsyKeyGenerator succeed.");
+  let spec: cpFw.AsyKeySpec = {
+          algName: "ECC",
+          specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
+        };
+  let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
   return new Promise<boolean>((resolve, reject) => {
-    let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
-    console.log("Callback convertKey: createAsyKeyGenerator succeed.");
-    let spec: cpFw.AsyKeySpec = {
-      algName: "ECC",
-      specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-    };
-    let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
     console.log("Callback convertKey: generatePriKey succeed.");
-    generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null) => {
-      if (err) { // success: error is null, failed: data is undefined
-        console.log("Callback convertKey failed. catch error " + err);
-        reject(err as Error);
-      } else {
-        resolve(true);
-      }
-    });
+        generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null) => {
+            if (err) { // success: error is null, failed: data is undefined
+              console.log("Callback convertKey failed. catch error " + err);
+              reject(err as Error);
+            } else {
+              resolve(true);
+            }
+          });
   });
 }
 
 async function convertDHKey(algName: string): Promise<boolean> {
+  let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
+  console.log("Callback convertKey: createAsyKeyGenerator succeed.");
+  let spec: cpFw.AsyKeySpec = {
+          algName: "ECC",
+          specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
+        };
+  let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
   return new Promise<boolean>((resolve, reject) => {
-    let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
-    console.log("Callback convertKey: createAsyKeyGenerator succeed.");
-    let spec: cpFw.AsyKeySpec = {
-      algName: "ECC",
-      specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-    };
-    let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
     console.log("Callback convertKey: generatePriKey succeed.");
-    generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
-      if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
-        console.log("Callback convertKey failed. catch error " + err);
-        reject(err as Error);
-      } else if (keyPair !== undefined) {
-        let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
-        if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_L_NUM) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_L_NUM)
-        || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_P_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_P_BN)
-        || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_G_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_G_BN)
-        || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_SK_BN)
-        || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_PK_BN)) {
-          resolve(true);
-        } else {
-          resolve(false);
-        }
-      }
-    });
+        generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
+            if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
+              console.log("Callback convertKey failed. catch error " + err);
+              reject(err as Error);
+            } else if (keyPair !== undefined) {
+              let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
+              if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_L_NUM) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_L_NUM)
+              || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_P_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_P_BN)
+              || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_G_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_G_BN)
+              || keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_SK_BN)
+              || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.DH_PK_BN)) {
+                resolve(true);
+              } else {
+                resolve(false);
+              }
+            }
+          });
   });
 }
 
 async function convertX25519Key(algName: string): Promise<boolean> {
+  let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
+  console.log("Callback convertKey: createAsyKeyGenerator succeed.");
+  let spec: cpFw.AsyKeySpec = {
+          algName: "ECC",
+          specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
+        };
+  let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
   return new Promise<boolean>((resolve, reject) => {
-    let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
-    console.log("Callback convertKey: createAsyKeyGenerator succeed.");
-    let spec: cpFw.AsyKeySpec = {
-      algName: "ECC",
-      specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-    };
-    let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
     console.log("Callback convertKey: generatePriKey succeed.");
-    generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
-      if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
-        console.log("Callback convertKey failed. catch error " + err);
-        reject(err as Error);
-      } else if (keyPair !== undefined) {
-        let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
-        if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_SK_BN)
-        || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_PK_BN)) {
-          resolve(true);
-        } else {
-          resolve(false);
-        }
-      }
-    });
+        generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
+            if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
+              console.log("Callback convertKey failed. catch error " + err);
+              reject(err as Error);
+            } else if (keyPair !== undefined) {
+              let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
+              if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_SK_BN)
+              || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.X25519_PK_BN)) {
+                resolve(true);
+              } else {
+                resolve(false);
+              }
+            }
+          });
   });
 }
 
 async function convertEd25519Key(algName: string): Promise<boolean> {
+  let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
+  console.log("Callback convertKey: createAsyKeyGenerator succeed.");
+  let spec: cpFw.AsyKeySpec = {
+          algName: "ECC",
+          specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
+        };
+  let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
   return new Promise<boolean>((resolve, reject) => {
-    let generator: cpFw.AsyKeyGenerator = cpFw.createAsyKeyGenerator(algName);
-    console.log("Callback convertKey: createAsyKeyGenerator succeed.");
-    let spec: cpFw.AsyKeySpec = {
-      algName: "ECC",
-      specType: cpFw.AsyKeySpecType.COMMON_PARAMS_SPEC
-    };
-    let keyPair: cpFw.KeyPair = await genKeyPair(false, spec, algName);
     console.log("Callback convertKey: generatePriKey succeed.");
-    generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
-      if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
-        console.log("Callback convertKey failed. catch error " + err);
-        reject(err as Error);
-      } else if (keyPair !== undefined) {
-        let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
-        if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_SK_BN)
-        || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_PK_BN)) {
-          resolve(true);
-        } else {
-          resolve(false);
-        }
-      }
-    });
+        generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded(), (err: BusinessError<void>|null, keyPair: cpFw.KeyPair|undefined) => {
+            if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
+              console.log("Callback convertKey failed. catch error " + err);
+              reject(err as Error);
+            } else if (keyPair !== undefined) {
+              let keyPairNew: cpFw.KeyPair = keyPair as cpFw.KeyPair;
+              if (keyPairNew.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_SK_BN) == keyPair.priKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_SK_BN)
+              || keyPairNew.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_PK_BN) == keyPair.pubKey.getAsyKeySpec(cpFw.AsyKeySpecItem.ED25519_PK_BN)) {
+                resolve(true);
+              } else {
+                resolve(false);
+              }
+            }
+          });
   });
 }
 

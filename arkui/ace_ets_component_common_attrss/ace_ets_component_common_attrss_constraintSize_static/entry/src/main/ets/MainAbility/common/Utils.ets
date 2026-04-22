@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export class RouterParams {
   view: PageConfig = new PageConfig()
 }
 
-class Size {
+export class Size {
   constraintSize: ConstraintSizeOptions = {
     minWidth: 0,
     maxWidth: Number.MAX_VALUE,
@@ -135,7 +135,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {

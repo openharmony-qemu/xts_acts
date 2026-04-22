@@ -260,11 +260,166 @@ export default function observerManagerSimStateTest1() {
         }, (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(true);
+          observer.off('simStateChange');
           done();
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn2300
+     * @tc.number testTelephonyObserverSimStateChangeOn2300
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOn2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOn2300';
+      console.info(`${caseName} test start`);
+      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
+      if (!hasSimCard) {
+        console.info(`${caseName} failed, No SIM exists in slot 0`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+      try {
+        observer.on("simStateChange", (data: observer.SimStateData) => {
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
+
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            observer.off('simStateChange');
+            done();
+          }else{
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            done();
+          }   
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn2400
+     * @tc.number testTelephonyObserverSimStateChangeOn2400
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOn2400';
+      console.info(`${caseName} test start`);
+      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
+      if (!hasSimCard) {
+        console.info(`${caseName} failed, No SIM exists in slot 0`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+      try {
+        observer.on("simStateChange",  {
+          slotId: 0
+        }, (data: observer.SimStateData) => {
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
+
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            observer.off('simStateChange');
+            done();
+          }else{
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end`);
@@ -438,6 +593,7 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
@@ -462,18 +618,25 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
       console.info(`${caseName} test start`);
-      try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}`);
-          ExpectTrue(data);
-        });
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
-        ExpectFail();
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: number = 1;
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, (data: boolean) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data);
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
         done();
       }
+      
       console.info(`${caseName} test end`);
     });
 
@@ -489,7 +652,7 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 2;
+        let slotId: number = 3;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectFail();
@@ -575,22 +738,38 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
       console.info(`${caseName} test start`);
-      try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          ExpectTrue(data);
-          if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
-              console.info(`${caseName} res: ${res}}`);
-              ExpectTrue(res);
-            });
-          }
-        });
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectFail();
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: number = 1;
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, (data: boolean) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data);
+            if (data) {
+              observer.offGetSimActiveState((res: boolean) => {
+                if (res) {
+                  console.info(`${caseName} res: ${res}`);
+                  ExpectTrue(res);
+                  done();
+                } else {
+                  console.info(`${caseName} in  res else`);
+                  ExpectFail();
+                  done();
+                }  
+              });
+            } else {
+              console.info(`${caseName} in data else`);
+              ExpectFail();
+              done();
+            }
+          });         
+        } catch (error) {
+          console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
         done();
       }
       console.info(`${caseName} test end`);

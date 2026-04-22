@@ -879,12 +879,12 @@ export default function abilityTest() {
             await session!.destroy()
             await Utils.msSleep(500)
             controller!.getLaunchAbility((err: BusinessError | null, agent: object | undefined) => {
-            if (err) {
-                console.error(`GetLaunchAbility11 BusinessError: code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(6600102);
-            } else {
-                console.info(`GetLaunchAbility11 : SUCCESS : wantAgent : ${agent}`);
-            }
+                if (err) {
+                    console.error(`GetLaunchAbility11 BusinessError: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600102);
+                } else {
+                    console.info(`GetLaunchAbility11 : SUCCESS : wantAgent : ${agent}`);
+                }
             });
             session = null;
             done();
@@ -1050,11 +1050,9 @@ export default function abilityTest() {
                 data = await controller!.getAVMetadata()
                 if (data.bundleIcon ) {
                     console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}:TestLog: Get bundleIcon failed`);
                     console.info(`${TAG}:TestLog: bundleIcon is: ${data.bundleIcon}`);
-                    expect(true).assertTrue();
                 }
             }catch(err){
                 console.info(`${TAG}:TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
@@ -1075,7 +1073,6 @@ export default function abilityTest() {
             session!.onSetTargetLoopMode((callback: avSession.LoopMode) => {
                 if (callback === 1) {
                     console.info('TestLog: Set TargetLoopMode command callback registration successful');
-                    expect(true).assertTrue();
                 } else {
                     console.error(`TestLog: Set TargetLoopMode command callback registration error`);
                     expect(false).assertTrue();
@@ -1157,7 +1154,6 @@ export default function abilityTest() {
                 console.info('TestLog: Controller send command successfully');
             } catch(err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertTrue();
             };
             await Utils.msSleep(500);
             done();
@@ -1250,7 +1246,7 @@ export default function abilityTest() {
            try{
                session!.setAVPlaybackState(PlaybackState)
                console.info(`${TAG}:SetAVPlaybackState successfully`);
-               expect(true).assertTrue();
+               expect(PlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_PLAY);
            }catch(err){
                console.error(`${TAG}:SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
            };
@@ -1272,7 +1268,6 @@ export default function abilityTest() {
             try{
                 data = await session!.getAllCastDisplays()
                 console.info(`${TAG}:getAllCastDisplays success: ${JSON.stringify(data)}`);
-                expect(true).assertTrue();
             }catch(err){
                 err = err as BusinessError;
                 console.info(`${TAG}:getAllCastDisplays successfully: ${err.code}, message: ${err.message}`)
@@ -1296,7 +1291,6 @@ export default function abilityTest() {
                         console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                     } else {
                         console.info(`stopCasting successfully`);
-                        expect(true).assertTrue();
                     };
                 });
             } catch (error) {
@@ -1305,7 +1299,6 @@ export default function abilityTest() {
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`stopCasting callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1330,9 +1323,9 @@ export default function abilityTest() {
             } catch (error) {
                 error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined" || error.code == 6600109) {
                     console.info(`stopCasting callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1360,9 +1353,9 @@ export default function abilityTest() {
             } catch (error) {
                 error = error as BusinessError;
                 console.info(`${TAG}:getAVCastController failed: code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property then of undefined" || error.code == 6600109 ) {
                     console.info(`${TAG}:getAVCastController callback successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();
@@ -1464,7 +1457,6 @@ export default function abilityTest() {
 
             await controller!.getAVMetadata().then((data:avSession.AVMetadata) => {
                 if (JSON.stringify(data.filter) === JSON.stringify(metadata.filter)) {
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
@@ -1486,18 +1478,28 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_PROMISE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try{
-                await session!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo) => {
+                await session!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo | undefined) => {
                     console.info('Get device successfully');
-                    let deviceInfo: avSession.DeviceInfo = device_Info.devices[0];
+                    let deviceInfo: avSession.DeviceInfo | undefined = device_Info?.devices[0];
                     console.info(`getOutputDevice successfully ${JSON.stringify(deviceInfo)}`);
-                    if (deviceInfo && deviceInfo.castCategory !== undefined &&
-                        deviceInfo.deviceId !== undefined && deviceInfo.deviceName !== undefined &&
-                        deviceInfo.deviceType !== undefined && deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                        expect(true).assertTrue();
-                    } else {
-                        console.info('getOutputDevice value error.')
-                        expect(false).assertTrue();
-                    }
+                    console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
+                    expect(deviceInfo?.castCategory).assertEqual(0);
+                    console.info(`${TAG}TestLog1 deviceId = ${deviceInfo?.deviceId}`);
+                    expect(deviceInfo?.deviceId).assertEqual("0");
+                    console.info(`${TAG}TestLog1 deviceName = ${deviceInfo?.deviceName}`);
+                    expect(deviceInfo?.deviceName).assertEqual("LocalDevice");
+                    console.info(`${TAG}TestLog1 deviceType = ${deviceInfo?.deviceType}`);
+                    expect(deviceInfo?.deviceType).assertEqual(0); 
+                    console.info(`${TAG}TestLog1 modelName = ${deviceInfo?.modelName}`);
+                    expect(deviceInfo?.modelName).assertEqual("");
+                    console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo?.supportedPullClients}`);
+                    expect(deviceInfo?.supportedPullClients).assertEqual(undefined);
+                    console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
+                    expect(deviceInfo?.supportedProtocols).assertEqual(0);
+                    console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
+                    expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                    console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                    expect(deviceInfo?.manufacturer).assertEqual("");
                     done();
                 }).catch((err: Error) => {
                     console.error(`GetOutputDevice BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -1532,7 +1534,7 @@ export default function abilityTest() {
                     if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
                         deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined &&
                         deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                        expect(true).assertTrue();
+                        console.info('getOutputDevice deviceType successfully.')
                     } else {
                         console.info('getOutputDevice value error.')
                         expect(false).assertTrue();
@@ -2140,14 +2142,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             session!.onCustomDataChange((data: Record<string, Object>) => {
-                console.info(`session on_customDataChange Successfully ${data}`)
-                session!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                console.info(`session on_customDataChange Successfully ${data}`);
+                flag = true;
             })
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2183,14 +2186,15 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let flag = false;
             controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                controller!.offCustomDataChange();
-                expect(true).assertTrue();
-                done();
+                flag = true;
             })
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata);
             await Utils.msSleep(300);
+            console.info(`Testlog:flag = ${flag}`);
+            expect(flag).assertTrue();
             done();
         })
 
@@ -2218,6 +2222,43 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100
+         * @tc.desc   Testing session.on(customDataChange) callback return
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let TAG: string = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_2100]';
+            session!.onCustomDataChange((data: Record<string, Object>) => {
+                console.info(`${TAG}session on_customDataChange Successfully ${data}`)
+                expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
+            })
+            await controller!.sendCustomData(customdata);
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200
+         * @tc.desc   Testing controller.on(customDataChange) callback return
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_CONTROLLER_ON_CUSTOMDATACHANGE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            controller!.onCustomDataChange((data: Record<string, Object>) => {
+                console.info(`session on_customDataChange Successfully ${data}`)
+                expect(JSON.stringify(data)).assertEqual(JSON.stringify(customdata));
+            })
+            await session!.sendCustomData(customdata);
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0100
          * @tc.desc   Testing call off(customDataChange) of session
@@ -2233,7 +2274,7 @@ export default function abilityTest() {
             })
             session!.offCustomDataChange();
             console.info('session off_customDataChange end')
-            await session!.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2274,7 +2315,7 @@ export default function abilityTest() {
             })
             controller!.offCustomDataChange();
             console.info('controller off_customDataChange end')
-            await controller!.sendCustomData(customdata);
+            await session!.sendCustomData(customdata); 
             await Utils.msSleep(300);
             done();
         })
@@ -2610,15 +2651,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0100
          * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100';
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0100';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
                 if (!isSupported) {
@@ -2637,15 +2678,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0200
          * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200';
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_ISDESKTOPLYRICVISIBLE_STATIC_0200';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
                 if (!isSupported) {
@@ -2855,6 +2896,46 @@ export default function abilityTest() {
         });
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100
+         * @tc.desc   Testing onDesktopLyricVisibilityChanged
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100';
+            const isSupported: boolean = await avSession.isDesktopLyricSupported();
+            if (!isSupported) {
+                done();
+                return;
+            }
+            let state1: avSession.DesktopLyricState = { isLocked : true};
+            let state2: avSession.DesktopLyricState = { isLocked : false};
+            let callbackState: boolean = false;
+            let callback = (data: avSession.DesktopLyricState) => {
+                callbackState = data.isLocked;
+                console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+            }
+            try {
+                await session!.enableDesktopLyric(true);
+                session!.onDesktopLyricStateChanged(callback);
+
+                await session!.setDesktopLyricState(state1);
+                await Utils.msSleep(200);
+                expect(callbackState).assertTrue();
+
+                await session!.setDesktopLyricState(state2);
+                await Utils.msSleep(200);
+                expect(callbackState).assertFalse();
+            } catch (err) {
+                console.info(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            }
+            done();
+        });
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_0200
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_0200
          * @tc.desc   Testing onDesktopLyricVisibilityChanged when session not exit (throw 6600102)
@@ -2988,15 +3069,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0100
          * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: true) - normal scenario
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100';
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0100';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
                 if (!isSupported) {
@@ -3016,15 +3097,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0200
          * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: false) - normal scenario
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200';
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_GETDESKTOPLYRICSTATE_STATIC_0200';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
                 if (!isSupported) {

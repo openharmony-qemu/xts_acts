@@ -1860,6 +1860,13 @@ export default function JsonTest() {
       } catch (err) {
         expect(err.code).assertEqual(401);
       }
+
+      try {
+        let obj2 = JSON.parse('');
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
       let person: Person = { name: "John", age: 30, city: "New York" };
 
       let rstArrStr = JSON.stringify(person, [1, 2]);

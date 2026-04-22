@@ -1040,7 +1040,7 @@ export function printSendableTestClass2(arg: SendableTestClass): SendableTestCla
 
 
 // 定义函数的输入/输出类型（避免自引用）
-interface SendableFunc {
+export interface SendableFunc {
   // 可根据实际逻辑补充属性或方法
   call: () => void;
 }

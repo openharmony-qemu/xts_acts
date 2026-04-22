@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,11 +59,11 @@ interface TextLineData {
 let textLineExpectData:TextLineData = { // 0
   "glyphCount": 40,
   "textRange": {"start":0, "end":40},
-  "typographicBounds": {"ascent":-303.39,"descent":112.61,"leading":0,"width":2106.82},
-  "imageBounds": {"left":1,"top":9,"right":2078.39,"bottom":44},
+  "typographicBounds": {"ascent":-303.39,"descent":112.61,"leading":0,"width":2134.11},
+  "imageBounds": {"left":2,"top":8,"right":2105.98,"bottom":41},
   "trailingSpaceWidth": 0,
   "stringIndexForPosition": 1,
-  "offsetForStringIndex": 220.13,
+  "offsetForStringIndex": 221.92,
   "alignmentOffset": 0,
   "enumerateCaretOffsets": [0,0,1]
 }
@@ -91,23 +91,23 @@ export default function TextLineParagraphTest() {
           blue: 0 
         };
 
-        let fontFeatures: Array<text.FontFeature> = new Array<text.FontFeature>(2);
-        fontFeatures[0] = { name: "liga", value: 1 };
-        fontFeatures[1] = { name: "liga2", value: 2 };
-        let fontVariation: Array<text.FontVariation> = new Array<text.FontVariation>(2);
-        fontVariation[0] = { axis: "axis", value: 1 };
-        fontVariation[1] = { axis: "axis2", value: 2 };
-        let textShadows: Array<text.TextShadow> = new Array<text.TextShadow>(2);
+        let fontFeatures: Array<text.FontFeature> = [];
+        fontFeatures.push({ name: "liga", value: 1 } as text.FontFeature);
+        fontFeatures.push({ name: "liga2", value: 2 } as text.FontFeature);
+        let fontVariation: Array<text.FontVariation> = [];
+        fontVariation.push({ axis: "axis", value: 1 } as text.FontVariation);
+        fontVariation.push({ axis: "axis2", value: 2 } as text.FontVariation);
+        let textShadows: Array<text.TextShadow> = [];
         let point1: common2D.Point = { x: 11, y: 12 };
         let point2: common2D.Point = { x: 2, y: 4 };
-        textShadows[0] = {
+        textShadows.push({
           color: myColor,
           point: point1, blurRadius: 12
-        };
-        textShadows[1] = {
+        } as text.TextShadow);
+        textShadows.push({
           color: myColor,
           point: point2, blurRadius: 14
-        };
+        } as text.TextShadow);
         let backgroundRect: text.RectStyle = {
           color: myColor,
           leftTopRadius: 10,

@@ -57,7 +57,7 @@ import { AppStorage, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 @Observed
-class ClassA30 {
+export class ClassA30 {
   @Track public value: number = 1;
 
   constructor(value: number) {

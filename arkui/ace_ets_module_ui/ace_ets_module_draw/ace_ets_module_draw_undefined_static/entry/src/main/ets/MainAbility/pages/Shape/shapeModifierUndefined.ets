@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog'
 import image from '@ohos.multimedia.image'
 
 @Observed
-class MyPointModifier implements AttributeModifier<ShapeAttribute> {
+export class MyPointModifier implements AttributeModifier<ShapeAttribute> {
   public isStroke: boolean = true;
   public isAntiAlias: boolean = true;
   public isStrokeDashOffset: boolean = true;
@@ -67,7 +67,7 @@ class MyPointModifier implements AttributeModifier<ShapeAttribute> {
 }
 
 @Observed
-class MyPointModifier2 implements AttributeModifier<ShapeAttribute> {
+export class MyPointModifier2 implements AttributeModifier<ShapeAttribute> {
   public isViewPort: boolean = true
 
   applyNormalAttribute(instance: ShapeAttribute): void {
@@ -88,7 +88,7 @@ class MyPointModifier2 implements AttributeModifier<ShapeAttribute> {
 }
 
 @Observed
-class MyPointModifier3 implements AttributeModifier<ShapeAttribute> {
+export class MyPointModifier3 implements AttributeModifier<ShapeAttribute> {
   private meshArray: Array<double> = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360]
   public isValue: boolean = true
 
@@ -101,7 +101,7 @@ class MyPointModifier3 implements AttributeModifier<ShapeAttribute> {
 }
 
 @Observed
-class MyPointModifier4 implements AttributeModifier<ShapeAttribute> {
+export class MyPointModifier4 implements AttributeModifier<ShapeAttribute> {
   private meshArray: Array<double> = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360]
   public isValue: boolean = true
 

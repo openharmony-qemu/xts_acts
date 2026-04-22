@@ -51,6 +51,9 @@ export default function MultimodalInputConsumerTest() {
         };
         let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
           console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+          console.info(`${caseName} preKeys: ${JSON.stringify(hotkeyOptions.preKeys)}`);
+          console.info(`${caseName} finalKey: ${JSON.stringify(hotkeyOptions.finalKey)}`);
+          console.info(`${caseName} isRepeat: ${JSON.stringify(hotkeyOptions.isRepeat)}`);
         }
         let ifInputConsumerOnSuccess = 0;
         try {
@@ -444,6 +447,164 @@ export default function MultimodalInputConsumerTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2400
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2400
+     * @tc.desc   Test callback inputConsumer.on interface When the preKeys attribute of hotkeyOptions is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2400";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyOptions: inputConsumer.HotkeyOptions = {
+          preKeys: [],
+          finalKey: 2042,
+          isRepeat: true
+        };
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        };
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          console.info(`${caseName} success`);
+          expect().assertFail();
+          inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          done();
+        } catch (error) {
+          console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2500
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2500
+     * @tc.desc   Test callback inputConsumer.on interface When the isRepeat attribute of hotkeyOptions is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2500";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyOptions: inputConsumer.HotkeyOptions = {
+          preKeys: [ 2045 ],
+          finalKey: 2042,
+          isRepeat: false,
+        };
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        };
+        let ifInputConsumerOnSuccess = 0;
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          console.info(`${caseName} success`);
+          ifInputConsumerOnSuccess++;
+          expect(ifInputConsumerOnSuccess).assertEqual(1);
+          inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          done();
+        } catch (error) {
+          console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect().assertFail();
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2600
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2600
+     * @tc.desc   Test callback inputConsumer.on interface when the hotkeyOptions is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2600";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyOptions: inputConsumer.HotkeyOptions | null = null;
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        };
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          console.info(`${caseName} success`);
+          expect().assertFail();
+          inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          done();
+        } catch (error) {
+          console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2700
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2700
+     * @tc.desc   Test callback inputConsumer.on interface when the hotkeyOptions is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2700";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyOptions: inputConsumer.HotkeyOptions | undefined = undefined;
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        };
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          console.info(`${caseName} success`);
+          expect().assertFail();
+          inputConsumer.off("hotkeyChange", hotkeyOptions, hotkeyCallback);
+          done();
+        } catch (error) {
+          console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -1107,6 +1268,163 @@ export default function MultimodalInputConsumerTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2300
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2300
+     * @tc.desc   Test callback inputConsumer.off interface When the preKeys attribute of hotkeyOptions is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOff_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOff_2300";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        }
+        let hotkeyOption: inputConsumer.HotkeyOptions = {
+          preKeys: [],
+          finalKey: 2042,
+          isRepeat: true
+        };
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
+          inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+          console.info(`${caseName} unsubscribe success`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2400
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2400
+     * @tc.desc   Test callback inputConsumer.off interface When the isRepeat attribute of hotkeyOptions is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOff_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOff_2400";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        }
+        let hotkeyOption: inputConsumer.HotkeyOptions = {
+          preKeys: [ 2045 ],
+          finalKey: 2042,
+          isRepeat: false,
+        };
+        let ifInputConsumerOffSuccess = 0;
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
+          inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+          console.info(`${caseName} unsubscribe success`);
+          ifInputConsumerOffSuccess++;
+          expect(ifInputConsumerOffSuccess).assertEqual(1);
+          done();
+        } catch (error) {
+          console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect().assertFail();
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2500
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2500
+     * @tc.desc   Test callback inputConsumer.off interface when the hotkeyOptionis null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOff_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOff_2500";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        };
+        let hotkeyOption: inputConsumer.HotkeyOptions | null = null;
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
+          inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+          console.info(`${caseName} unsubscribe success`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOff_2600
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOff_2600
+     * @tc.desc   Test callback inputConsumer.off interface when the hotkeyOptionis undefined.
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOff_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOff_2600";
+      console.info(`${caseName} enter`);
+      try {
+        let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
+          console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
+        }
+        let hotkeyOption: inputConsumer.HotkeyOptions | undefined = undefined;
+        try {
+          inputConsumer.on("hotkeyChange", hotkeyOption, hotkeyCallback);
+          inputConsumer.off("hotkeyChange", hotkeyOption, hotkeyCallback);
+          console.info(`${caseName} unsubscribe success`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_1200
      * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_1200
      * @tc.desc   Test callback inputConsumer.on and off interface to subscribe and unsubscribe volume+&down&repeatTrue listening.
@@ -1124,6 +1442,18 @@ export default function MultimodalInputConsumerTest() {
         }
         let callback = (event: KeyEvent) => {
           console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
+          console.info(`${caseName} action is: ${JSON.stringify(event.action)}`);
+          console.info(`${caseName} key is: ${JSON.stringify(event.key)}`);
+          console.info(`${caseName} unicodeChar is: ${JSON.stringify(event.unicodeChar)}`);
+          console.info(`${caseName} keys is: ${JSON.stringify(event.keys)}`);
+          console.info(`${caseName} ctrlKey is: ${JSON.stringify(event.ctrlKey)}`);
+          console.info(`${caseName} altKey is: ${JSON.stringify(event.altKey)}`);
+          console.info(`${caseName} shiftKey is: ${JSON.stringify(event.shiftKey)}`);
+          console.info(`${caseName} logoKey is: ${JSON.stringify(event.logoKey)}`);
+          console.info(`${caseName} fnKey is: ${JSON.stringify(event.fnKey)}`);
+          console.info(`${caseName} capsLock is: ${JSON.stringify(event.capsLock)}`);
+          console.info(`${caseName} numLock is: ${JSON.stringify(event.numLock)}`);
+          console.info(`${caseName} scrollLock is: ${JSON.stringify(event.scrollLock)}`);                    
         }
         let ifInputConsumerOnSuccess = 0;
         try {
@@ -1360,6 +1690,88 @@ export default function MultimodalInputConsumerTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2800
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2800
+     * @tc.desc   Test callback inputConsumer.on and off interface when the options is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2800";
+      console.info(`${caseName} enter`);
+      try {
+        let options: inputConsumer.KeyPressedConfig | null = null;
+        let callback = (event: KeyEvent) => {
+          console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
+        };
+        try {
+          inputConsumer.off("keyPressed");
+          inputConsumer.on("keyPressed", options, callback);
+          inputConsumer.off("keyPressed", callback);
+          inputConsumer.off("keyPressed");
+          console.info(`${caseName} subscribe and unsubscribe success.`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_inputConsumerOn_2900
+     * @tc.number SUB_MMI_Input_Api_IptDev_inputConsumerOn_2900
+     * @tc.desc   Test callback inputConsumer.on and off interface when the options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_inputConsumerOn_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_inputConsumerOn_2900";
+      console.info(`${caseName} enter`);
+      try {
+        let options: inputConsumer.KeyPressedConfig | undefined = undefined;
+        let callback = (event: KeyEvent) => {
+          console.info(`${caseName} KeyEvent is: ${JSON.stringify(event)}`);
+        };
+        try {
+          inputConsumer.off("keyPressed");
+          inputConsumer.on("keyPressed", options, callback);
+          inputConsumer.off("keyPressed", callback);
+          inputConsumer.off("keyPressed");
+          console.info(`${caseName} subscribe and unsubscribe success.`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          if (error.code === 801) {
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+          done();
+        }
+      } catch (error) {
+        console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**

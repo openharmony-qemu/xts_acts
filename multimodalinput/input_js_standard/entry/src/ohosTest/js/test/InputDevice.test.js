@@ -438,14 +438,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_setKeyboardRepeatDelay_test_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_setKeyboardRepeatDelay_test_01 enter`);
+      let ifSetKeyboardRepeatDelaySuccess = 0;
       try {
         inputDevice.setKeyboardRepeatDelay(500, (error) => {
+          ifSetKeyboardRepeatDelaySuccess++;
           if (error) {
             console.info(`InputDevice_setKeyboardRepeatDelay_test_01 failed, error=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`InputDevice_setKeyboardRepeatDelay_test_01 success`);
-            expect(true).assertTrue();
+            expect(ifSetKeyboardRepeatDelaySuccess).assertEqual(1);
           }
         });
       } catch (error) {
@@ -466,10 +468,12 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_setKeyboardRepeatDelay_test_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_setKeyboardRepeatDelay_test_02 enter`);
+      let ifSetKeyboardRepeatDelaySuccess = 0;
       try {
         inputDevice.setKeyboardRepeatDelay(500).then(() => {
+          ifSetKeyboardRepeatDelaySuccess++;
           console.info(`InputDevice_setKeyboardRepeatDelay_test_02 success`);
-          expect(true).assertTrue();
+          expect(ifSetKeyboardRepeatDelaySuccess).assertEqual(1);
         }).catch((error) => {
           console.info(`InputDevice_setKeyboardRepeatDelay_test_02 failed, error=${JSON.stringify(error)}`);
           expect(false).assertTrue();
@@ -492,14 +496,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_setKeyboardRepeatRate_test_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_setKeyboardRepeatRate_test_01 enter`);
+      let ifSetKeyboardRepeatRateSuccess = 0;
       try {
         inputDevice.setKeyboardRepeatRate(60, (error) => {
+          ifSetKeyboardRepeatRateSuccess++;
           if (error) {
             console.info(`InputDevice_setKeyboardRepeatRate_test_01 failed, error=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`InputDevice_setKeyboardRepeatRate_test_01 success`);
-            expect(true).assertTrue();
+            expect(ifSetKeyboardRepeatRateSuccess).assertEqual(1);
           }
         });
       } catch (error) {
@@ -520,10 +526,12 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_setKeyboardRepeatRate_test_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_setKeyboardRepeatRate_test_02 enter`);
+      let ifSetKeyboardRepeatRateSuccess = 0;
       try {
         inputDevice.setKeyboardRepeatRate(60).then(() => {
+          ifSetKeyboardRepeatRateSuccess++;
           console.info(`InputDevice_setKeyboardRepeatRate_test_02 success`);
-          expect(true).assertTrue();
+          expect(ifSetKeyboardRepeatRateSuccess).assertEqual(1);
         }).catch((error) => {
           console.info(`InputDevice_setKeyboardRepeatRate_test_02 failed, error=${JSON.stringify(error)}`);
           expect(false).assertTrue();
@@ -1010,10 +1018,12 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it("InputDevice_GetkeyboardType_Exception_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("InputDevice_GetkeyboardType_Exception_test_02 enter");
+      let ifGetKeyboardTypeSuccess = 0;
       try {
         inputDevice.getKeyboardType(`id`).then((data) => {
+          ifGetKeyboardTypeSuccess++;
           console.info(`GetkeyboardType_Exception_test_02 success`);
-          expect(true).assertTrue();
+          expect(ifGetKeyboardTypeSuccess).assertEqual(1);
         }, (error) => {
           console.info(`GetkeyboardType_Exception_test_02 failed, err=${JSON.stringify(error)}`);
           expect(false).assertTrue();
@@ -1037,14 +1047,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it("InputDevice_SupportKeys_Exception_test_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("InputDevice_SupportKeys_Exception_test_01 enter");
+      let ifSupportKeysSuccess = 0;
       try {
         inputDevice.supportKeys((error, data) => {
+          ifSupportKeysSuccess++;
           if (error) {
             console.info(`SupportKeys_Exception_test_01 failed, err=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`SupportKeys_Exception_test_01 success`);
-            expect(true).assertTrue();
+            expect(ifSupportKeysSuccess).assertEqual(1);
           }
         })
       } catch (error) {
@@ -1066,14 +1078,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it("InputDevice_SupportKeys_Exception_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("InputDevice_SupportKeys_Exception_test_02 enter");
+      let ifSupportKeysSuccess = 0;
       try {
         inputDevice.supportKeys(`id`, [17, 22, 2055], (error, data) => {
+          ifSupportKeysSuccess++;
           if (error) {
             console.info(`SupportKeys_Exception_test_02 failed, err=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`SupportKeys_Exception_test_02 success`);
-            expect(true).assertTrue();
+            expect(ifSupportKeysSuccess).assertEqual(1);
           }
         })
       } catch (error) {
@@ -1137,6 +1151,7 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it("InputDevice_GetDeviceInfo_Exception_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("InputDevice_GetDeviceInfo_Exception_test_02 enter");
+      let ifGetDeviceInfoSuccess = 0;
       try {
         inputDevice.getDeviceList().then((data) => {
           expect(data).assertInstanceOf('Array');
@@ -1145,8 +1160,9 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
           }
           try {
             inputDevice.getDeviceInfo(`data[0]`).then((res) => {
+              ifGetDeviceInfoSuccess++;
               console.info(`GetDeviceInfo_Exception_test_02 success`);
-              expect(true).assertTrue();
+              expect(ifGetDeviceInfoSuccess).assertEqual(1);
             }).catch(error => {
               console.info(`GetDeviceInfo_Exception_test_02 failed, err=${JSON.stringify(error)}`);
               expect(false).assertTrue();
@@ -1195,6 +1211,7 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it("InputDevice_On_Exception_test", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_On_Exception_test enter`);
+      let ifOnSuccess = 0;
       try {
         inputDevice.on();
       } catch (error) {
@@ -1205,12 +1222,13 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
       try {
         inputDevice.on(-1, (data) => {
+          ifOnSuccess++;
           if (error) {
             console.info(`On_Exception_test failed, err=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`On_Exception_test success`);
-            expect(true).assertTrue();
+            expect(ifOnSuccess).assertEqual(1);
           }
         });
       } catch (error) {
@@ -1282,14 +1300,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_SetKeyboardRepeatDelay_Exception_test_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_SetKeyboardRepeatDelay_Exception_test_02 enter`);
+      let ifSetKeyboardRepeatDelaySuccess = 0;
       try {
         inputDevice.setKeyboardRepeatDelay(`delay`, (error) => {
+          ifSetKeyboardRepeatDelaySuccess++;
           if (error) {
             console.info(`SetKeyboardRepeatDelay_Exception_Test_002 failed, err=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`SetKeyboardRepeatDelay_Exception_Test_002 success`);
-            expect(true).assertTrue();
+            expect(ifSetKeyboardRepeatDelaySuccess).assertEqual(1);
           }
         });
       } catch (error) {
@@ -1332,14 +1352,16 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
      */
     it('InputDevice_SetKeyboardRepeatRate_Exception_test_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`InputDevice_SetKeyboardRepeatRate_Exception_test_02 enter`);
+      let ifSetKeyboardRepeatRateSuccess = 0;
       try {
         inputDevice.setKeyboardRepeatRate(`rate`, (error) => {
+          ifSetKeyboardRepeatRateSuccess++;
           if (error) {
             console.info(`SetKeyboardRepeatRate_Exception_Test_002 failed, err=${JSON.stringify(error)}`);
             expect(false).assertTrue();
           } else {
             console.info(`SetKeyboardRepeatRate_Exception_Test_002 success`);
-            expect(true).assertTrue();
+            expect(ifSetKeyboardRepeatRateSuccess).assertEqual(1);
           }
         });
       } catch (error) {

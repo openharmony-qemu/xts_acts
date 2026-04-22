@@ -165,5 +165,196 @@ describe('fileio_unlink', function () {
       expect(null).assertFail();
     }
   });
+
+  /**
+   * @tc.name   fileio_unlink_promise_error_001
+   * @tc.number SUB_DF_FILEIO_UNLINK_PROMISE_ERROR_001
+   * @tc.desc   Test unlink() interface with empty string path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_promise_error_001', Level.LEVEL2, async function () {
+    try {
+      await fileio.unlink("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_promise_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_promise_error_002
+   * @tc.number SUB_DF_FILEIO_UNLINK_PROMISE_ERROR_002
+   * @tc.desc   Test unlink() interface with null path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_promise_error_002', Level.LEVEL2, async function () {
+    try {
+      await fileio.unlink(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_promise_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_promise_error_003
+   * @tc.number SUB_DF_FILEIO_UNLINK_PROMISE_ERROR_003
+   * @tc.desc   Test unlink() interface with undefined path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_promise_error_003', Level.LEVEL2, async function () {
+    try {
+      await fileio.unlink(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_promise_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  // Test cases for unlink(path: string, callback: AsyncCallback<void>): void
+  /**
+   * @tc.name   fileio_unlink_callback_error_001
+   * @tc.number SUB_DF_FILEIO_UNLINK_CALLBACK_ERROR_001
+   * @tc.desc   Test unlink() interface with empty string path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_callback_error_001', Level.LEVEL2, async function (done) {
+    try {
+      fileio.unlink("", function (err) {
+        if (err) {
+          console.log('fileio_unlink_callback_error_001: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_unlink_callback_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_callback_error_002
+   * @tc.number SUB_DF_FILEIO_UNLINK_CALLBACK_ERROR_002
+   * @tc.desc   Test unlink() interface with null path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_callback_error_002', Level.LEVEL2, async function (done) {
+    try {
+      fileio.unlink(null, function (err) {
+        if (err) {
+          console.log('fileio_unlink_callback_error_002: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_unlink_callback_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_callback_error_003
+   * @tc.number SUB_DF_FILEIO_UNLINK_CALLBACK_ERROR_003
+   * @tc.desc   Test unlink() interface with undefined path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_callback_error_003', Level.LEVEL2, async function (done) {
+    try {
+      fileio.unlink(undefined, function (err) {
+        if (err) {
+          console.log('fileio_unlink_callback_error_003: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_unlink_callback_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  // Test cases for unlinkSync(path: string): void
+  /**
+   * @tc.name   fileio_unlink_sync_error_001
+   * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_ERROR_001
+   * @tc.desc   Test unlinkSync() interface with empty string path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_sync_error_001', Level.LEVEL2, async function () {
+    try {
+      fileio.unlinkSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_sync_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_sync_error_002
+   * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_ERROR_002
+   * @tc.desc   Test unlinkSync() interface with null path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_sync_error_002', Level.LEVEL2, async function () {
+    try {
+      fileio.unlinkSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_sync_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_unlink_sync_error_003
+   * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_ERROR_003
+   * @tc.desc   Test unlinkSync() interface with undefined path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_unlink_sync_error_003', Level.LEVEL2, async function () {
+    try {
+      fileio.unlinkSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_unlink_sync_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
 });
 }

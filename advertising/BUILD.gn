@@ -17,5 +17,6 @@ group("advertising") {
   deps = [
     "ads:ActsAdTest",
     "oaid:ActsCloudOAIDTest",
+    "oaid_no_permission:ActsCloudOAIDNoPermissionTest",
   ]
 }

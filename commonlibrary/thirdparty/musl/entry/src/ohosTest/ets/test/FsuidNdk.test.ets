@@ -30,9 +30,9 @@ export default function fsuidNdkTest() {
      * @tc.desc   test setfsgid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFsuidSetfsgid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFsuidSetfsgid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = fsuid.setfsgid();
       expect(a).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function fsuidNdkTest() {
      * @tc.desc   test setfsuid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFsuidSetfsuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFsuidSetfsuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = fsuid.setfsuid();
       expect(a).assertEqual(0);
       done()

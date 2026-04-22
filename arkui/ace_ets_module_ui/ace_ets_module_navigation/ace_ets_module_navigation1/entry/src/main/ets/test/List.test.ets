@@ -63,7 +63,6 @@ import Navigation1 from './CustomNavigation/Navigation1.test'
 import Navigation2 from './CustomNavigation/Navigation2.test'
 import Navigation3 from './CustomNavigation/Navigation3.test'
 import Navigation4 from './CustomNavigation/Navigation4.test'
-
 export default function testsuite() {
   PathStackPage();
 

@@ -158,7 +158,6 @@ export default function netfirewallTest() {
       }
     })
 
-
     /**
      * @tc.name   testNetFirewallAddNetFirewallRule_0200
      * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0200
@@ -180,7 +179,13 @@ export default function netfirewallTest() {
           isEnabled: true,
           appUid: 20001,
           protocol: 6,
-          userId: 100
+          userId: 100,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.com"
+            }
+          ]
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then((result: number) => {
           console.info(`${caseName} rule Id: `, result);
@@ -192,6 +197,55 @@ export default function netfirewallTest() {
           console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
         });
 
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_0300
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0300
+     * @tc.desc   Add a NetFirewallRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRule_01: netFirewall.NetFirewallRule = {
+          name: "rule10",
+          description: "rule10 description",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_DENY,
+          type: netFirewall.NetFirewallRuleType.RULE_DNS,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          userId: 100,
+          localIps: [],
+          remoteIps: [],
+          remotePorts: [],
+          localPorts: [],
+          domains: [],
+          dns: {
+            primaryDns: "11.1.11.1",
+            standbyDns: "11.0.11.2"
+          } 
+        };
+        await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(result != undefined);
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
       }catch (err){
         console.log("test end");
         console.log(`${caseName} catch err is `,JSON.stringify(err));
@@ -234,6 +288,97 @@ export default function netfirewallTest() {
       }
     })
 
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0200
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0200
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0200';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: false,
+          inAction: netFirewall.FirewallRuleAction.RULE_ALLOW,
+          outAction: netFirewall.FirewallRuleAction.RULE_ALLOW
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          ExpectTrue(true);
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectFail();
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0300
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0300
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        await netFirewall.setNetFirewallPolicy(undefined, undefined).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          ExpectFail();
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0400
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0400
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0400';
+      console.info(`${caseName}---Start`);
+      try{
+        await netFirewall.setNetFirewallPolicy(null, null).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          ExpectFail();
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testNetFirewallGetNetFirewallRules0100
@@ -273,7 +418,6 @@ export default function netfirewallTest() {
       }
     })
 
-
     /**
      * @tc.name   testNetFirewallGetNetFirewallRule_0100
      * @tc.number testNetFirewallGetNetFirewallRule_0100
@@ -304,8 +448,278 @@ export default function netfirewallTest() {
       }
     })
 
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallRule_0200
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallRule_0200
+     * @tc.desc   testNetFirewallGetNetFirewallRule_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetFirewallGetNetFirewallRule_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallRule_0200';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRule_01: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "rule10",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_ALLOW,
+          type: ruleType_RULE_IP,
+          isEnabled: true,
+          description: "rule10 description",
+          appUid: 20001,
+          protocol: 6,
+          localIps: [
+            {
+              family: 1,
+              type: 1,
+              address: "10.10.1.1",
+              mask: 24
+            },{
+            family: 1,
+            type: 2,
+            startIp: "10.20.1.1",
+            endIp: "10.20.1.10"
+          }],
+          remoteIps: [
+            {
+              family: 1,
+              type: 1,
+              address: "20.10.1.1",
+              mask: 24
+            },{
+            family: 1,
+            type: 2,
+            startIp: "20.20.1.1",
+            endIp: "20.20.1.10"
+          }],
+          remotePorts: [
+            {
+              startPort: 443,
+              endPort: 443
+            }],
+          localPorts: [
+            {
+              startPort: 1000,
+              endPort: 1000
+            },{
+            startPort: 2000,
+            endPort: 2001
+          }],
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.com"
+            }
+          ],
+          dns: {
+            primaryDns: "11.1.11.1",
+            standbyDns: "11.0.11.2"
+          }
+        };
+        await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
 
+        await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
+          console.info(`${caseName} result:`, JSON.stringify(rule));
+          Current_Ruler_ID = rule.id;
+          ExpectTrue(rule.userId != null);
+          ExpectTrue(rule.name != null);
+          ExpectTrue(rule.direction == netFirewall.NetFirewallRuleDirection.RULE_IN);
+          ExpectTrue(rule.action == netFirewall.FirewallRuleAction.RULE_ALLOW);
+          ExpectTrue(rule.type == netFirewall.NetFirewallRuleType.RULE_IP);
+          ExpectTrue(rule.isEnabled);
+          ExpectTrue(rule.id != null);
+          ExpectTrue(rule.description != null);
+          ExpectTrue(rule.appUid != null);
+          ExpectTrue(rule.protocol != null);
+          if (rule.localIps != undefined) {
+            ExpectTrue(rule.localIps.length != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.remoteIps != undefined) {
+            ExpectTrue(rule.remoteIps.length != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.localPorts != undefined) {
+            ExpectTrue(rule.localPorts.length != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.remotePorts != undefined) {
+            ExpectTrue(rule.remotePorts.length != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.domains != undefined) {
+            ExpectTrue(rule.domains.length != 0);
+          }
+          done();
+        }).catch((error : BusinessError) => {
+          console.error(`${caseName} get firewall rules failed: ` + JSON.stringify(error));
+          ExpectTrue(false);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(false);
+        done();
+      }
+    })
 
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallRule_0300
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallRule_0300
+     * @tc.desc   testNetFirewallGetNetFirewallRule_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetFirewallGetNetFirewallRule_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallRule_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRule_01: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "rule10",
+          direction: ruleDirection_RULE_OUT,
+          action: ruleAction_RULE_DENY,
+          type: ruleType_RULE_DOMAIN,
+          isEnabled: false,
+          description: "rule10 description",
+          appUid: 20001,
+          protocol: 6,
+          localIps: [],
+          remoteIps: [],
+          remotePorts: [],
+          localPorts: [],
+          domains: [],
+          dns: {
+            primaryDns: "11.1.11.1",
+            standbyDns: "11.0.11.2"
+          }
+        };
+        await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
+
+        await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
+          console.info(`${caseName} result:`, JSON.stringify(rule));
+          Current_Ruler_ID = rule.id;
+          ExpectTrue(rule.direction == netFirewall.NetFirewallRuleDirection.RULE_OUT);
+          ExpectTrue(rule.action == netFirewall.FirewallRuleAction.RULE_DENY);
+          ExpectTrue(rule.type == netFirewall.NetFirewallRuleType.RULE_DOMAIN);
+          ExpectTrue(rule.isEnabled == false);
+          if (rule.localIps != undefined) {
+            ExpectTrue(rule.localIps.length == 0);
+          }
+          if (rule.remoteIps != undefined) {
+            ExpectTrue(rule.remoteIps.length == 0);
+          }
+          if (rule.localPorts != undefined) {
+            ExpectTrue(rule.localPorts.length == 0);
+          }
+          if (rule.remotePorts != undefined) {
+            ExpectTrue(rule.remotePorts.length == 0);
+          }
+          if (rule.domains != undefined) {
+            ExpectTrue(rule.domains.length == 0);
+          } else {
+            ExpectFail();
+          }
+          done();
+        }).catch((error : BusinessError) => {
+          console.error(`${caseName} get firewall rules failed: ` + JSON.stringify(error));
+          ExpectTrue(false);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallRule_0400
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallRule_0400
+     * @tc.desc   testNetFirewallGetNetFirewallRule_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetFirewallGetNetFirewallRule_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallRule_0400';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRule_01: netFirewall.NetFirewallRule = {
+          userId: userId,
+          name: "rule10",
+          direction: ruleDirection_RULE_OUT,
+          action: ruleAction_RULE_DENY,
+          type: ruleType_RULE_DNS,
+          isEnabled: false,
+          description: "rule10 description",
+          appUid: 20001,
+          protocol: 6,
+          localIps: [],
+          remoteIps: [],
+          remotePorts: [],
+          localPorts: [],
+          domains: [],
+          dns: {
+            primaryDns: "11.1.11.10",
+            standbyDns: "11.0.11.20"
+          }
+        };
+        await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          Current_Ruler_ID = result;
+        }, (reason: BusinessError) => {
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+          ExpectFail();
+          done();
+        });
+
+        await netFirewall.getNetFirewallRule(userId, Current_Ruler_ID).then((rule: netFirewall.NetFirewallRule) => {
+          console.info(`${caseName} result:`, JSON.stringify(rule));
+          Current_Ruler_ID = rule.id;
+          ExpectTrue(rule.type == netFirewall.NetFirewallRuleType.RULE_DNS);
+          if (rule.dns != undefined) {
+            ExpectTrue(rule.dns.primaryDns != null);
+            ExpectTrue(rule.dns.standbyDns != null);
+          } else {
+            ExpectFail();
+          }
+          done();
+        }).catch((error : BusinessError) => {
+          console.error(`${caseName} get firewall rules failed: ` + JSON.stringify(error));
+          ExpectTrue(false);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(false);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testNetFirewallGetNetFirewallPolicy_0100
@@ -338,6 +752,91 @@ export default function netfirewallTest() {
       }
     })
 
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallPolicy_0200
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallPolicy_0200
+     * @tc.desc   Get NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallGetNetFirewallPolicy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallPolicy_0200';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: true,
+          inAction: ruleAction_RULE_ALLOW,
+          outAction: ruleAction_RULE_ALLOW
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          done();
+        });
+
+        await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
+          console.log(`${caseName} getNetFirewallPolicy success`);
+          console.log('firewall policy: ', JSON.stringify(result));
+          ExpectTrue(result.isOpen);
+          ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_ALLOW);
+          ExpectTrue(result.outAction == netFirewall.FirewallRuleAction.RULE_ALLOW);
+          done();
+        },(reason: BusinessError) => {
+          console.error('get firewall policy failed: ', JSON.stringify(reason));
+          ExpectFail();
+          done();
+        })
+      }catch (err){
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `, err);
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallPolicy_0300
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallPolicy_0300
+     * @tc.desc   Get NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallGetNetFirewallPolicy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallPolicy_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: false,
+          inAction: ruleAction_RULE_DENY,
+          outAction: ruleAction_RULE_DENY
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          done();
+        });
+
+        await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
+          console.log(`${caseName} getNetFirewallPolicy success`);
+          console.log('firewall policy: ', JSON.stringify(result));
+          ExpectTrue(result.isOpen == false);
+          ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_DENY);
+          ExpectTrue(result.outAction == netFirewall.FirewallRuleAction.RULE_DENY);
+          done();
+        },(reason: BusinessError) => {
+          console.error('get firewall policy failed: ', JSON.stringify(reason));
+          ExpectFail();
+          done();
+        })
+      }catch (err){
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `, err);
+        ExpectFail();
+        done();
+      }
+    })
 
     /**
      * @tc.name   testNetFirewallupdateNetFirewallRule_0100

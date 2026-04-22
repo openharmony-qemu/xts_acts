@@ -1083,7 +1083,6 @@ describe('HiAppEventApiTest', function () {
             HiAppEventV9.configure({
                 maxStorage: '100M'
             })
-            expect(true).assertTrue()
         } catch (err) {
             console.info(`testHiAppEventApi37 err ,err code is ${err.code}, err message is ${err.message}`)
             expect().assertFail();

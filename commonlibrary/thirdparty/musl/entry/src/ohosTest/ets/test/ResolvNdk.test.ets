@@ -30,9 +30,9 @@ export default function resolvNdkTest() {
      * @tc.desc   test res_init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResolvResInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResolvResInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = resolv.resInit();
       console.info("Test result= " + result);
       expect(result).assertEqual(0);
@@ -45,9 +45,9 @@ export default function resolvNdkTest() {
      * @tc.desc   test res_mkquery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResolvResMkquery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResolvResMkquery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = -1;
       let result: number = resolv.resMkquery(param);
       console.info("Test result= " + result);
@@ -61,9 +61,9 @@ export default function resolvNdkTest() {
      * @tc.desc   test res_mkquery
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResolvResMkquery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResolvResMkquery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0;
       let result: number = resolv.resMkquery(param);
       console.info("Test result= " + result);
@@ -78,9 +78,9 @@ export default function resolvNdkTest() {
      * @tc.desc   test dn_expand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslReSoLvDnExpand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslReSoLvDnExpand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = false;
       if (resolv.dn_expand() != -1) {
         result = true;

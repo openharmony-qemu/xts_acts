@@ -274,6 +274,8 @@ export default function GraphicTextEnum() {
         expect('0').assertEqual(text.EllipsisMode.START + '');
         expect('1').assertEqual(text.EllipsisMode.MIDDLE + '');
         expect('2').assertEqual(text.EllipsisMode.END + '');
+        expect('3').assertEqual(text.EllipsisMode.MULTILINE_START + '');
+        expect('4').assertEqual(text.EllipsisMode.MULTILINE_MIDDLE + '');
         done();
       } catch (err) {
         console.info(msg + 'test enum value of EllipsisMode error ' + JSON.stringify(err));
@@ -551,6 +553,61 @@ export default function GraphicTextEnum() {
           done();
         } catch (err) {
           console.info(msg + 'test enum value of testLineHeightStyleStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testTextProcessStateStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_ProcessStateStatic_0100
+     * @tc.desc   To test the enum value of TextProcessState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextProcessStateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "testTextProcessStateStatic"
+        console.info(msgStr + 'begin');
+        try {
+          expect(0).assertEqual(text.TextProcessState.INIT);
+          expect(1).assertEqual(text.TextProcessState.INDEXED);
+          expect(2).assertEqual(text.TextProcessState.SHAPED);
+          expect(3).assertEqual(text.TextProcessState.LINE_BROKEN);
+          expect(4).assertEqual(text.TextProcessState.FORMATTED);
+          expect(5).assertEqual(text.TextProcessState.PAINT);
+          expect(6).assertEqual(text.TextProcessState.UPDATE_ATTRIBUTE);
+          console.info(msgStr + 'end');
+          done();
+        } catch (err) {
+          console.info(msgStr + 'test enum value error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testTextDisplayStateStatic
+     * @tc.number SUB_GRAPHIC_Paragraph_TextDisplayStateStatic_0100
+     * @tc.desc   To test the enum value of TextDisplayState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextDisplayStateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = "testTextDisplayStateStatic"
+        console.info(msgStr + 'begin');
+        try {
+          expect(0).assertEqual(text.TextDisplayState.UNKNOWN);
+          expect(1).assertEqual(text.TextDisplayState.ALL);
+          expect(2).assertEqual(text.TextDisplayState.CLIP);
+          expect(3).assertEqual(text.TextDisplayState.OMITTED);
+          console.info(msgStr + 'end');
+          done();
+        } catch (err) {
+          console.info(msgStr + 'test enum value error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }

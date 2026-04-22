@@ -159,6 +159,17 @@ struct clearPrefetchedResourceTest {
               }
               break;
             }
+            case "testClearPrefetchedResource006": {
+              let msg = "testClearPrefetchedResource006"
+              try {
+                webView.WebviewController.clearPrefetchedResource([]);
+                Utils.emitEvent(true, 148340)
+              } catch (err) {
+                console.error(msg + ' clearPrefetchedResource error: ' + err.code + ', Message: ' + err.message);
+                Utils.emitEvent(err.code, 148340)
+              }
+              break;
+            }
           }
         })
       }

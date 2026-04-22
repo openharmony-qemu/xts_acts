@@ -962,5 +962,120 @@ export default function DeviceInfoTest() {
 
       console.info('deviceinfo_test_static_3900 : end');
     })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4000
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4000
+     * @tc.desc   Get the hardwareProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4000 start');
+      let hardwareProfile = deviceinfo.hardwareProfile;
+      console.info('the value of the hardwareProfile is :' + hardwareProfile);
+      
+      if (hardwareProfile != "" && hardwareProfile != null && hardwareProfile != undefined) {
+        console.info('the value of the hardwareProfile is :' + hardwareProfile);
+        expect(hardwareProfile).assertInstanceOf('String');
+        done();
+      }
+      else {
+        console.info('the return value hardwareProfile is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_4000 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4100
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4100
+     * @tc.desc   Get the PerformanceClassLevel.CLASS_LEVEL_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4100 start');
+      let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH;
+      console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH);
+      expect(performanceClass).assertEqual(0);
+      done();
+      console.info('deviceinfo_test_static_4100 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4200
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4200
+     * @tc.desc   Get the PerformanceClassLevel.CLASS_LEVEL_MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4200 start');
+      let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_MEDIUM;
+      console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_MEDIUM);
+      expect(performanceClass).assertEqual(1);
+      done();
+      console.info('deviceinfo_test_static_4200 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4300
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4300
+     * @tc.desc   Get the PerformanceClassLevel.CLASS_LEVEL_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4300 start');
+      let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW;
+      console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW);
+      expect(performanceClass).assertEqual(2);
+      done();
+      console.info('deviceinfo_test_static_4300 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_4400
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4400
+     * @tc.desc   Get the DeviceTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4400 start');
+      let deviceTypes = deviceinfo.DeviceTypes.TYPE_DEFAULT;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_DEFAULT is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('default');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_PHONE;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_PHONE is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('phone');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_TABLET;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_TABLET is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('tablet');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_2IN1;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_2IN1 is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('2in1');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_TV;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_TV is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('tv');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_WEARABLE;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_WEARABLE is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('wearable');
+      deviceTypes = deviceinfo.DeviceTypes.TYPE_CAR;
+      console.info('the value of the deviceinfo DeviceTypes.TYPE_CAR is :' + deviceTypes);
+      expect(deviceTypes).assertEqual('car');
+      done();
+      console.info('deviceinfo_test_static_4400 : end');
+    })
   })
 }

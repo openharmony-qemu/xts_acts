@@ -18,5 +18,6 @@ group("theme") {
     "screenlock_ets:ActsScreenLockETSApiTest",
     "wallpaper_authority_ets:ActsWallpapernAuthorityETSApiTest",
     "wallpaper_ets:ActsWallpaperETSApiTest",
+    "screenlock_ets_static:ActsScreenLockETSApiStaticTest"
   ]
 }

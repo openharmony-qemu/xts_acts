@@ -44,7 +44,7 @@ export default function graphicImagePixelMapAPI22() {
         let id1 = pixelMap.getUniqueId();
         console.info('www data getUniqueId', id1);
         expect(id1).assertLargerOrEqual(0);
-        pixelMap.release();
+        await pixelMap.release();
         let flag2 = pixelMap.isReleased();
         console.info('www data isReleased', flag2);
         expect(flag2).assertTrue();
@@ -113,6 +113,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMapSync error 555', JSON.stringify(err));
         expect().assertFail();
       }
+      await pixelMap.release();
       done();
     });
 
@@ -135,11 +136,13 @@ export default function graphicImagePixelMapAPI22() {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600204).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -157,16 +160,18 @@ export default function graphicImagePixelMapAPI22() {
       }
       let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
       let pixelMap = image.createPixelMapSync(color, opts);
-      pixelMap.release();
+      await pixelMap.release();
       try {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600201).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -188,11 +193,13 @@ export default function graphicImagePixelMapAPI22() {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600205).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -240,6 +247,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error 555', JSON.stringify(err));
         expect().assertFail();
       });
+      await pixelMap.release();
       done();
     });
 
@@ -265,6 +273,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
         expect(Number(err.code) == 7600204).assertTrue();
       });
+      await pixelMap.release();
       done();
     });
 
@@ -283,7 +292,7 @@ export default function graphicImagePixelMapAPI22() {
       }
       let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
       let pixelMap = image.createPixelMapSync(color, opts);
-      pixelMap.release();
+      await pixelMap.release();
       try {
         await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
           console.info('www data createCroppedAndScaledPixelMap pass');
@@ -292,6 +301,7 @@ export default function graphicImagePixelMapAPI22() {
           console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
           expect(Number(err.code) == 7600201).assertTrue();
         });
+        await pixelMap.release();
       } catch(err){
         expect(Number(err.code) == 7600201).assertTrue();
       }
@@ -320,6 +330,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
         expect(Number(err.code) == 7600205).assertTrue();
       });
+      await pixelMap.release();
       done();
     });
 

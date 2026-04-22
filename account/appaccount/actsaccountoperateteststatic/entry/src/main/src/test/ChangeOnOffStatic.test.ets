@@ -554,6 +554,7 @@ export default function ActsAccountOnOffStatic() {
           hilog.info(0x0000, tag, "====>receive change 0800 data: " + data);
           try {
             if (data) {
+              expect(data.length > 0).assertTrue();
               hilog.info(0x0000, tag, "====>data.length: " + data.length);
               for (let i: int = 0; i < data.length; i++) {
                 if (data[i]) {
@@ -588,7 +589,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -667,7 +667,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setAssociatedData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -844,7 +843,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -948,7 +946,6 @@ export default function ActsAccountOnOffStatic() {
               expect().assertFail();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>on ActsAccountChangeOnOff_1300 err:" + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>setCustomData start====");
@@ -969,7 +966,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1017,7 +1013,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();

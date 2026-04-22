@@ -392,6 +392,37 @@ export default function ActsZipInflateTest() {
       })
 
     /**
+     * @tc.number     ACTS_ZipTest_static_83
+     * @tc.name       ACTS_ZipTest_static_83
+     * @tc.desc       test compress2
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('ACTS_ZipTest_static_83', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================ACTS_ZipTest_static_83 start==================");
+        let arrayBufferIn = new ArrayBuffer(0);
+        let arrayBufferOut = new ArrayBuffer(0);
+        let zip: zlib.Zip = zlib.createZipSync();
+        try {
+          await zip.compress2(arrayBufferOut, arrayBufferIn, zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION)
+            .then((data: zlib.ZipOutputInfo) => {
+              hilog.info(domain, tag, 'ACTS_ZipTest_static_83 compress2 success');
+              expect(data).assertFail();
+            })
+        } catch (errData) {
+          errData = errData as BusinessError;
+          hilog.error(domain, tag,
+            `ACTS_ZipTest_static_83 compress2 errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData.code).assertEqual(17800007);
+          expect(errData.message).assertEqual('The input buffer is incorrect, and the output buffer is too small to accommodate the compressed or decompressed data.');
+        }
+        done();
+        hilog.info(domain, tag, "==================ACTS_ZipTest_static_83 end==================");
+      }) 
+
+    /**
      * @tc.number     ACTS_ZipTest_static_107
      * @tc.name       actsZipTest_static_107
      * @tc.desc       test compress2

@@ -54,7 +54,7 @@ export default function pickerOnChangeModiferTest() {
     });
     /* *
     * @tc.number: pickerOnChangeModiferTest_0100
-    * @tc.name  : pickerOnChangeModiferTest_0100
+    * @tc.name  pickerOnChangeModiferTest_0100
     * @tc.desc  : To test the onScollStop interface
     * @tc.level : Level 3
     * @tc.type

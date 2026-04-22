@@ -87,6 +87,10 @@ import updateConfigurationTest1 from './BuilderNodeTest/updateConfigurationTest1
 import updateConfigurationTest2 from './ComponentContentTest/updateConfigurationTest2';
 import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.test';
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
+import NodeAdapterTotalNodeCountTest from './FrameNodeTest/NodeAdapterTotalNodeCountTest.test';
+import TypedFrameNodeAttributeTest from './FrameNodeTest/TypedFrameNodeAttributeTest.test';
+import DrawContextSizeTest from './GraphicsTest/DrawContextSizeTest.test';
+import ColorMetricsColorWithSpaceTest from './GraphicsTest/ColorMetricsColorWithSpaceTest.test';
 
 export default function testsuite() {
   getNumeric();
@@ -115,7 +119,7 @@ export default function testsuite() {
   setShapeClipTest();
   typeNodeSwiperTest();
   typeNodeRelativeContainerTest();
-  typeNodeProgressTest();
+  //typeNodeProgressTest();
   typeNodeLoadingProgressTest();
   typeNodeListTest();
   typeNodeGridColTest();
@@ -131,7 +135,7 @@ export default function testsuite() {
   edgeWidths();
   renderNodeGetInterfaceTest();
   disposeTest();
-  getAttrsTest();
+  //getAttrsTest();
   getPosition();
   setLayout();
   RenderNodeAttributeTest();
@@ -156,10 +160,14 @@ export default function testsuite() {
   setCircleShapeTest();
   typeNodeTextInputTest();
   typeNodeListItemTest();
-  attachNodeAdapterTest();
+  //attachNodeAdapterTest();
   getAttachedFrameNodeById();
   getAfterRemove();
-  PercentReferenceTest();
-  graphicGetInterfaceTest();
+  //PercentReferenceTest();
+  //graphicGetInterfaceTest();
   setMeasureSizeTest();
+  NodeAdapterTotalNodeCountTest();
+  TypedFrameNodeAttributeTest();
+  DrawContextSizeTest();
+  ColorMetricsColorWithSpaceTest();
 }

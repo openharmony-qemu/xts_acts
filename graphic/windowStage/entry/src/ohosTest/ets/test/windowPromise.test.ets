@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import image from '@ohos.multimedia.image';
+import deviceInfo from '@ohos.deviceInfo';
 
 function expectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: string, apiName: string, done: Function,
   code: number) {
@@ -63,6 +64,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       ['#00FF0000', '#0000FF00', '#000000FF', '#00FFFFFF', '#00000000', '#00F900E6', '#00666666', '#00FFF700'];
     let commonKEYColorArr: Array<string> = ['red', 'green', 'blue', 'white', 'black', 'pink', 'grey', 'yellow'];
     let avoidArea1: ohosWindow.AvoidArea;
+    let isFreeWindowMode = false;
     
     beforeAll(async () => {
       let windowClass = windowStage.getMainWindowSync();
@@ -71,6 +73,11 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         let type:ohosWindow.AvoidAreaType = ohosWindow.AvoidAreaType.TYPE_SYSTEM;
         avoidArea1 = windowClass.getWindowAvoidArea(type);
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
+
+        isFreeWindowMode = windowClass.isInFreeWindowMode();
+        //isFreeWindowMode == true 自由窗口模式
+        //isFreeWindowMode == false 非自由窗口模式
+        console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.name   testListener_Sys_AvoidAreaChange_Promise
@@ -1065,36 +1072,104 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       let caseName: string = 'testSetPreferredOrientation_Promise';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      let mainWin: ohosWindow.Window | void = await windowStage.getMainWindow().catch((err: BusinessError) => {
-        unexpectedError(TRUE_FLAG, err, caseName, 'windowStage.getMainWindow', done);
-      });
-      console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
-      expect(!!mainWin).assertTrue();
-      let num = 0
-      let orientationItem = ['UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
-        'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
-        'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED', 'AUTO_ROTATION_LANDSCAPE_RESTRICTED', 'LOCKED',
-        'AUTO_ROTATION_UNSPECIFIED',
-        'USER_ROTATION_PORTRAIT', 'USER_ROTATION_LANDSCAPE', 'USER_ROTATION_PORTRAIT_INVERTED',
-        'USER_ROTATION_LANDSCAPE_INVERTED', 'FOLLOW_DESKTOP', 'UNSPECIFIED'];
-      for (let i = 0; i < orientationItem.length; i++) {
-        await sleep(900)
-        await sleep(900)
-        let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
-        console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
-        console.log(msgStr + 'i : ' + i + ' ,ohosWindow.Orientation : ' + JSON.stringify(orientationItem[i]));
+
+      let testSetPreferredOrientation_Promise_CheckReturnSuccess = async () => {
+        let mainWin: ohosWindow.Window | void = await windowStage.getMainWindow().catch((err: BusinessError) => {
+          unexpectedError(TRUE_FLAG, err, caseName, 'windowStage.getMainWindow', done);
+        });
+        console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+        expect(!!mainWin).assertTrue();
+        let num = 0
+        let orientationItem = ['UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
+          'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
+          'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED', 'AUTO_ROTATION_LANDSCAPE_RESTRICTED', 'LOCKED',
+          'AUTO_ROTATION_UNSPECIFIED',
+          'USER_ROTATION_PORTRAIT', 'USER_ROTATION_LANDSCAPE', 'USER_ROTATION_PORTRAIT_INVERTED',
+          'USER_ROTATION_LANDSCAPE_INVERTED', 'FOLLOW_DESKTOP', 'UNSPECIFIED'];
+        for (let i = 0; i < orientationItem.length; i++) {
+          await sleep(900)
+          await sleep(900)
+          let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
+          console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
+          console.log(msgStr + 'i : ' + i + ' ,ohosWindow.Orientation : ' + JSON.stringify(orientationItem[i]));
+          await (mainWin as ohosWindow.Window).setPreferredOrientation(orientation).then(() => {
+            console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
+            num++
+            if (num == orientationItem.length) {
+              done();
+            }
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
+          });
+          await sleep(900)
+          await sleep(300)
+        }
+      }
+
+      let testSetPreferredOrientation_Promise_CheckReturnFail = async () => {
+        console.error(msgStr + 'Failed to setPreferredOrientation Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: '+ JSON.stringify(isFreeWindowMode));
+
+        let mainWin: ohosWindow.Window | void;  
+
+        let displayClass: display.Display | null = null;
+        try {
+          displayClass = display.getDefaultDisplaySync();
+        } catch (exception) {
+          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
+        }
+        let beforeOrientation = displayClass?.orientation;
+        console.info(msgStr + 'Succeeded in get displayClass.beforeOrientation . beforeOrientation: ' + beforeOrientation);
+        
+        mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
+          console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        });
+        expect(!!mainWin).assertTrue();
+
+        let orientation: ohosWindow.Orientation = ohosWindow.Orientation.PORTRAIT_INVERTED;
         await (mainWin as ohosWindow.Window).setPreferredOrientation(orientation).then(() => {
           console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
-          num++
-          if (num == orientationItem.length) {
-            done();
-          }
         }).catch((err: BusinessError) => {
           console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
         });
         await sleep(900)
         await sleep(300)
+        console.info(msgStr + 'Succeeded in setting window orientation . orientation: ' + orientation);
+
+        try {
+          displayClass = display.getDefaultDisplaySync();
+        } catch (exception) {
+          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
+        }
+        let afterOrientation = displayClass?.orientation;
+        console.info(msgStr + 'Succeeded in get displayClass.afterOrientation . afterOrientation: ' + afterOrientation);
+        
+        expect(beforeOrientation).assertEqual(afterOrientation);
       }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'phone' && isFreeWindowMode === false) {
+        testSetPreferredOrientation_Promise_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'tablet' && isFreeWindowMode === false) {
+        testSetPreferredOrientation_Promise_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+      } else if (isFreeWindowMode === true){
+        testSetPreferredOrientation_Promise_CheckReturnFail();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+
+      done()
+
     })
     /**
      * @tc.name   testSetForbidSplitMove_Promise
@@ -1376,7 +1451,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         // 调用setWindowDecorVisible接口
         try {
           wnd.setWindowDecorVisible(isVisible);
-          expect(true).assertTrue()
+          
           done()
 
         } catch (exception) {
@@ -1412,7 +1487,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         expect(wnd != null).assertTrue();
         try {
           wnd.setWindowDecorHeight(height);
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to set the height of window decor. Cause: ' + JSON.stringify(exception));
@@ -1452,12 +1527,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         });
         (tempWnd as ohosWindow.Window).getWindowDecorHeight()
         console.log(msgStr + 'windowStage.getMainWindow, tempWnd: ' + tempWnd);
-        expect(true).assertTrue()
+        
         done()
       } catch (exception) {
         console.error(msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
         if (exception.code == 801 || exception.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1488,12 +1563,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         promise.then((data: ohosWindow.Window) => {
           let windowClass: ohosWindow.Window = data;
           console.log(msgStr + ' Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msgStr + ' www data111 Failed to create the subwindow. Cause: ' + JSON.stringify(err));
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1503,7 +1578,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       } catch (exception) {
         console.error(msgStr + ' www data222 Failed to create the subwindow. Cause: ' + JSON.stringify(exception));
         if (exception.code == 801 || exception.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1527,12 +1602,12 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         expect(wnd != null).assertTrue();
         try {
           wnd.keepKeyboardOnFocus(true);
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to keep keyboard onFocus. Cause: ' + JSON.stringify(exception));
           if (exception.code == 801 || exception.code == 1300004) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1563,7 +1638,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to shift app window focus1. Cause:' + JSON.stringify(error));
           if (error.code == 801 || error.code == 1300002) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1630,7 +1705,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         try {
           let systemBarProperty = wnd.getWindowSystemBarProperties();
           console.info('Success in obtaining system bar properties. Property: ' + JSON.stringify(systemBarProperty));
-          expect(true).assertTrue()
+          
           done()
         } catch (exception) {
           console.error(msgStr + ' Failed to get system bar properties. Cause: ' + JSON.stringify(exception));
@@ -1782,7 +1857,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         }).catch((error: BusinessError) => {
           console.log(tag + 'www data Failed to setWindowLimits. Cause: ' + JSON.stringify(error));
           if (error.code == 801) {
-            expect(true).assertTrue()
+            
             done()
           } else {
             expect().assertFail();
@@ -1815,7 +1890,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
           let promise = wnd.enableLandscapeMultiWindow()
           promise.then(() => {
             console.info(msgStr + ' Succeeded in making multi-window become landscape.');
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             console.error(msgStr + ' Failed to make multi-window become landscape. Cause: ' + JSON.stringify(err));
@@ -1847,7 +1922,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
           let promise = wnd.disableLandscapeMultiWindow()
           promise.then(() => {
             console.info(msgStr + ' Succeeded in making multi-window become not landscape.');
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             console.error(msgStr + ' Failed to make multi-window become not landscape. Cause: ' + JSON.stringify(err));

@@ -167,11 +167,108 @@ export default function deviceInfoTest() {
         deviceInfo.getDeviceInfo(null, LABEL_DEVICE_NAME);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-    });
+    })
+
+    /**
+     * @tc.name   getDeviceInfo_test_002
+     * @tc.number getDeviceInfo_test_002
+     * @tc.desc   getDeviceInfo with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+  it("getDeviceInfo_test_002", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- getDeviceInfo_test_002  -------- START --------');
+       try {
+         deviceInfo.getDeviceInfo(undefined, LABEL_DEVICE_NAME);
+         console.info(' --- getDeviceInfo_test_002 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- getDeviceInfo_test_002 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- getDeviceInfo_test_002  -------- END --------');
+     })
+
+    /**
+     * @tc.name   getDeviceInfo_test_003
+     * @tc.number getDeviceInfo_test_003
+     * @tc.desc   getDeviceInfo with null parameter label
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDeviceInfo_test_003", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- getDeviceInfo_test_003  -------- START --------');
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         deviceInfo.getDeviceInfo(SELFWANT, null);
+         console.info(' --- getDeviceInfo_test_003 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- getDeviceInfo_test_003 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+       console.info(' --- getDeviceInfo_test_003  -------- END --------');
+     })
+
+    /**
+     * @tc.name   getDeviceInfo_test_004
+     * @tc.number getDeviceInfo_test_004
+     * @tc.desc   getDeviceInfo with undefined parameter label
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDeviceInfo_test_004", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- getDeviceInfo_test_004  -------- START --------');
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         deviceInfo.getDeviceInfo(SELFWANT, undefined);
+         console.info(' --- getDeviceInfo_test_004 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- getDeviceInfo_test_004 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+       console.info(' --- getDeviceInfo_test_004  -------- END --------');
+     })
+
+    /**
+     * @tc.name   getDeviceInfo_test_005
+     * @tc.number getDeviceInfo_test_005
+     * @tc.desc   getDeviceInfo with empty parameter label
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDeviceInfo_test_005", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- getDeviceInfo_test_005  -------- START --------');
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         deviceInfo.getDeviceInfo(SELFWANT, '');
+         console.info(' --- getDeviceInfo_test_005 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- getDeviceInfo_test_005 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 801).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+       console.info(' --- getDeviceInfo_test_005  -------- END --------');
+     })
   })
 }

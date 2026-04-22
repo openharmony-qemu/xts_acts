@@ -1,6 +1,7 @@
 {
   "src": [
     "testability/pages/web",
-    "testability/pages/OnceStringError"
+    "testability/pages/OnceStringError",
+    "testability/pages/clientAuthenticationHandlerConfirm"
   ]
 }

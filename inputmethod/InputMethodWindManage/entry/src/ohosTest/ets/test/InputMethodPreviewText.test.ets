@@ -83,9 +83,9 @@ export default function inputMethodTest() {
     afterEach(
       async () => {
         try {
-          await inputMethod.getController().detach();
           inputMethod.getController().off('setPreviewText');
           inputMethod.getController().off('finishTextPreview');
+          await inputMethod.getController().detach();
           console.info(`clsoe inputMethod success`);
         } catch (error) {
           console.info(`clsoe inputMethod fail, error: [${error.code}, ${error.message}]`);

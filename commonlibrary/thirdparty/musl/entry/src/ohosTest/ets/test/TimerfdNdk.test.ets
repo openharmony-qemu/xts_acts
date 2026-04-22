@@ -30,9 +30,9 @@ export default function timerfdNdkTest() {
      * @tc.desc   test timerfd_create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimerfdTimerfdCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimerfdTimerfdCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = timerfd.timerfd_create(a);
       expect(c).assertEqual(-1);
@@ -45,9 +45,9 @@ export default function timerfdNdkTest() {
      * @tc.desc   test timerfd_gettime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimerfdTimerfdGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimerfdTimerfdGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = timerfd.timerfd_gettime(a);
       expect(c).assertEqual(-1);
@@ -59,9 +59,9 @@ export default function timerfdNdkTest() {
      * @tc.desc   test timerfd_settime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimerfdTimerfdSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimerfdTimerfdSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = timerfd.timerfd_settime(a);
       expect(c).assertEqual(0);

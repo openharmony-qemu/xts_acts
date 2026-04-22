@@ -20,7 +20,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyModifier1 implements AttributeModifier<ImageAttribute> {
   @State public isOnDragEndUndefined: boolean = true;
   @State public isOnDropUndefined: boolean = true;
   @State public message: string = 'Hello World';
@@ -39,7 +39,7 @@ class MyModifier1 implements AttributeModifier<ImageAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<ImageAttribute> {
+export class MyModifier2 implements AttributeModifier<ImageAttribute> {
   @State public isOnDragEnterUndefined: boolean = true;
   @State public isOnDragLeaveUndefined: boolean = true;
   @State public isOnDragMoveUndefined: boolean = true;

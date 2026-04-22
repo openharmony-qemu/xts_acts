@@ -72,6 +72,7 @@ export default function webAttributeTest() {
       let isReturn = false;
       Utils.registerEvent("testOnAlert001", "alert test", 177110, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebAttributeTestButton", "testOnAlert001");
+	  
       await Utils.waitForExist(() => isReturn, "testOnAlert001" + '_returnCheck', true, 1000);
       done();
     })

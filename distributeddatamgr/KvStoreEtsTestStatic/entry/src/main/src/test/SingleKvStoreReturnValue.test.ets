@@ -1054,7 +1054,7 @@ export default function SingleKvStoreReturnValue() {
           let store: factory.SingleKVStore | null = null;
           let kvStoreS1: factory.SingleKVStore | null = null;
 
-          await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
             kvStoreS1 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1114,7 +1114,7 @@ export default function SingleKvStoreReturnValue() {
           let store: factory.SingleKVStore | null = null;
           let kvStoreS2: factory.SingleKVStore | null = null;
 
-          await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
             kvStoreS2 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1173,7 +1173,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS3: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
             kvStoreS3 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1231,31 +1231,28 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS4: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
             kvStoreS4 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
             console.error(TAG+' getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           });
-          kvStoreS4!.getSecurityLevel((err: BusinessError | null, data: factory.SecurityLevel | undefined) => {
-            console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
+          try {
+            let data = await kvStoreS4!.getSecurityLevel();
             expect(data).assertEqual(factory.SecurityLevel.S4);
-
-            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-              console.info(TAG + '  Succeeded closeKVStore S4');
-              await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-                console.info(TAG + '  Succeeded deleteKVStore S4');
-                console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-                done();
-              }).catch((err: Error) => {
-                console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-                done();
-              });
-            }).catch((err: Error) => {
-              console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-              done();
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(async () => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+            console.info(TAG + '  Succeeded deleteKVStore S4');
+            console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+            done();
+            done();
             });
-          });
+            done();
+            });
+          } catch (err) {
+            console.error('getSecurityLevel failed: ' + err);
+          }
 
         } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1289,7 +1286,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS1: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
             kvStoreS1 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1349,7 +1346,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS2: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
             kvStoreS2 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1409,7 +1406,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS3: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
             kvStoreS3 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1469,7 +1466,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS4: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
             kvStoreS4 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {

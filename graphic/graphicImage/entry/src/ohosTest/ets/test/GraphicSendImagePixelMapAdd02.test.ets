@@ -37,6 +37,7 @@ class MySequence1 implements rpc.Parcelable {
       console.error(`www data createPixelMapFromParcel success.`);
       expect(this.pixel_map.isEditable).assertFalse();
       expect(this.pixel_map.isStrideAlignment).assertFalse();
+      this.pixel_map.release();
     } catch(e) {
       let error = e as BusinessError;
       console.error(`www data createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
@@ -61,6 +62,7 @@ class MySequence2 implements rpc.Parcelable {
       console.error(`www data createPixelMapFromParcel success.`);
       expect(this.pixel_map.isEditable).assertTrue();
       expect(this.pixel_map.isStrideAlignment).assertTrue();
+      this.pixel_map.release();
     } catch(e) {
       let error = e as BusinessError;
       console.error(`www data createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
@@ -88,8 +90,11 @@ class MySequence3 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertTrue();
         expect(this.pixel_map.isStrideAlignment).assertTrue();
-        pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+          await pixelMap.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);
@@ -118,8 +123,11 @@ class MySequence4 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertFalse();
         expect(this.pixel_map.isStrideAlignment).assertFalse();
-        pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+          await pixelMap.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);
@@ -1246,6 +1254,10 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
+          console.info('www data sendableImagePixelMapAdd02_0304 success ', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
           console.info('www data sendableImagePixelMapAdd02_0304 ', sendablePixelMap.isEditable,
             sendablePixelMap.isStrideAlignment);
@@ -1273,19 +1285,24 @@ export default function GraphicSendImagePixelMapAdd02() {
       async (done: () => void): Promise<void> => {
         try {
           const color: ArrayBuffer = new ArrayBuffer(96);
-          let opts: image.InitializationOptions = { editable: false, pixelFormat: 3, size: { height: 4, width: 6 } }
+          let opts: image.InitializationOptions = { editable: false, srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.info('www data sendableImagePixelMapAdd02_0305 ', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertTrue();
           let sendablePixelMap : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
           console.info('www data sendableImagePixelMapAdd02_0305 ', sendablePixelMap.isEditable,
             sendablePixelMap.isStrideAlignment);
-          expect(pixelMap.isEditable).assertFalse();
-          expect(pixelMap.isStrideAlignment).assertTrue();
+          expect(sendablePixelMap.isEditable).assertFalse();
+          expect(sendablePixelMap.isStrideAlignment).assertTrue();
           await pixelMap.release();
           await sendablePixelMap.release();
         } catch (err) {
           err = err as BusinessError;
           console.error('www data error sendableImagePixelMapAdd02_0305' + JSON.stringify(err));
-          expect(Number(err.code)).assertEqual(62980104);
+          expect().assertFail();
         }
         done();
       })
@@ -1304,6 +1321,10 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+          console.info('www data sendableImagePixelMapAdd02_0305 ', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap : image.PixelMap = sendableImage.convertToPixelMap(pixelMap);
           console.info('www data sendableImagePixelMapAdd02_0306 ', sendablePixelMap.isEditable,
             sendablePixelMap.isStrideAlignment);
@@ -1333,6 +1354,10 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: false, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+          console.info('www data sendableImagePixelMapAdd02_0305 ', pixelMap.isEditable,
+            pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap: image.PixelMap = sendableImage.convertToPixelMap(pixelMap);
           console.info('www data sendableImagePixelMapAdd02_0307 ', sendablePixelMap.isEditable,
             sendablePixelMap.isStrideAlignment);

@@ -67,7 +67,7 @@ export default function checkboxThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsCheckBoxThemeColors_0100
+     * @tc.name   `ActsCheckBoxThemeColors_0100`
      * @tc.number ActsCheckBoxThemeColors_0100
      * @tc.desc   Check checkbox system colors
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function checkboxThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsCheckBoxThemeColors_0200
+     * @tc.name   `ActsCheckBoxThemeColors_0200`
      * @tc.number ActsCheckBoxThemeColors_0200
      * @tc.desc   Check checkbox theme colors
      * @tc.type   FUNCTION
@@ -118,7 +118,7 @@ export default function checkboxThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsCheckBoxThemeColors_0300
+     * @tc.name   `ActsCheckBoxThemeColors_0300`
      * @tc.number ActsCheckBoxThemeColors_0300
      * @tc.desc   Check checkbox theme colors after change theme
      * @tc.type   FUNCTION

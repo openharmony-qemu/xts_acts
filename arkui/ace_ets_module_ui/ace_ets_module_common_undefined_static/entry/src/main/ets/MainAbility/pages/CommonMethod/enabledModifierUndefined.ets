@@ -14,7 +14,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyEnableModifier implements AttributeModifier<ButtonAttribute> {
+export class MyEnableModifier implements AttributeModifier<ButtonAttribute> {
   public controlValue: boolean | undefined = undefined
 
   applyNormalAttribute(instance: ButtonAttribute): void {

@@ -35,47 +35,53 @@ export default function GraphicImageCreatePixelMap03() {
      */
     it('createUnpremultipliedPixelMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        // Create source pixel map with isEditable: true
-        const srcOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.PREMUL
-        };
-        const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
+        try {
+          // Create source pixel map with isEditable: true
+          const srcOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.PREMUL
+          };
+          const colorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts, image.AllocatorType.DMA);
 
-        // Create destination pixel map with isEditable: true
-        const dstOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: true,
-          alphaType: image.AlphaType.UNPREMUL
-        };
-        const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
+          // Create destination pixel map with isEditable: true
+          const dstOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: true,
+            alphaType: image.AlphaType.UNPREMUL
+          };
+          const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts, image.AllocatorType.DMA);
 
-        console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
-        console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
 
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
+          expect(srcPixelMap.isEditable).assertTrue();
+          expect(dstPixelMap.isEditable).assertTrue();
+          expect(srcPixelMap.isStrideAlignment).assertTrue();
+          expect(dstPixelMap.isStrideAlignment).assertTrue();
 
-        // Test createUnpremultipliedPixelMap with Promise
-        await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+          // Test createUnpremultipliedPixelMap with Promise
+          await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+          await srcPixelMap.release();
+          await dstPixelMap.release();
 
-        console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap001 success`);
-        done();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
-        expect(false).assertTrue();
-        done();
-      }
-    });
+          console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap001 success`);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap001 error: ${error}, code: ${err.code}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
     /**
      * @tc.name    createUnpremultipliedPixelMap002
@@ -87,47 +93,49 @@ export default function GraphicImageCreatePixelMap03() {
      */
     it('createUnpremultipliedPixelMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      try {
-        // Create source pixel map with isEditable: false
-        const srcOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: false,
-          alphaType: image.AlphaType.PREMUL
-        };
-        const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
-        // Create destination pixel map with isEditable: false
-        const dstOpts: image.InitializationOptions = {
-          size: { width: 4, height: 6 },
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          editable: false,
-          alphaType: image.AlphaType.UNPREMUL
-        };
-        const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
-        console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
-        console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
-        // Test createUnpremultipliedPixelMap with Promise
-        await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
-        
-        expect(false).assertTrue();
-        done();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap002 error: ${error}, code: ${err.code}`);
-        expect(error).assertEqual(62980248); // Pixelmap not allow modify
-        done();
-      }
-    });
+        try {
+          // Create source pixel map with isEditable: false
+          const srcOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: false,
+            alphaType: image.AlphaType.PREMUL
+          };
+          const colorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
+
+          // Create destination pixel map with isEditable: false
+          const dstOpts: image.InitializationOptions = {
+            size: { width: 4, height: 6 },
+            srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+            pixelFormat: image.PixelMapFormat.RGBA_8888,
+            editable: false,
+            alphaType: image.AlphaType.UNPREMUL
+          };
+          const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
+          const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
+
+          console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
+          console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
+
+          expect(srcPixelMap.isEditable).assertFalse();
+          expect(dstPixelMap.isEditable).assertFalse();
+          expect(srcPixelMap.isStrideAlignment).assertFalse();
+          expect(dstPixelMap.isStrideAlignment).assertFalse();
+
+          // Test createUnpremultipliedPixelMap with Promise
+          await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap002 error: ${error}, code: ${err.code}`);
+          expect(error).assertEqual(62980248); // Pixelmap not allow modify
+          done();
+        }
+      });
 
     /**
      * @tc.name    createUnpremultipliedPixelMap003
@@ -275,6 +283,8 @@ export default function GraphicImageCreatePixelMap03() {
         
         // Test createUnpremultipliedPixelMap with Promise
         await image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap);
+        await srcPixelMap.release();
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap005 success`);
         done();
@@ -363,6 +373,7 @@ export default function GraphicImageCreatePixelMap03() {
         
         // Test createUnpremultipliedPixelMap with null src
         await image.createUnpremultipliedPixelMap(null, dstPixelMap);
+        await dstPixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -396,6 +407,7 @@ export default function GraphicImageCreatePixelMap03() {
         
         // Test createUnpremultipliedPixelMap with undefined src
         await image.createUnpremultipliedPixelMap(undefined, dstPixelMap);
+        await dstPixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -429,6 +441,7 @@ export default function GraphicImageCreatePixelMap03() {
         
         // Test createUnpremultipliedPixelMap with null dst
         await image.createUnpremultipliedPixelMap(srcPixelMap, null);
+        await srcPixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -462,6 +475,7 @@ export default function GraphicImageCreatePixelMap03() {
         
         // Test createUnpremultipliedPixelMap with undefined dst
         await image.createUnpremultipliedPixelMap(srcPixelMap, undefined);
+        await srcPixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -479,7 +493,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createUnpremultipliedPixelMap011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createUnpremultipliedPixelMap011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Create source pixel map with isEditable: true
         const srcOpts: image.InitializationOptions = {
@@ -490,8 +504,8 @@ export default function GraphicImageCreatePixelMap03() {
           alphaType: image.AlphaType.PREMUL
         };
         const colorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
+        const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts, image.AllocatorType.DMA);
+
         // Create destination pixel map with isEditable: true
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -501,22 +515,29 @@ export default function GraphicImageCreatePixelMap03() {
           alphaType: image.AlphaType.UNPREMUL
         };
         const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
-        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
+        const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts, image.AllocatorType.DMA);
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(true);
-        expect(dstPixelMap.isEditable).assertEqual(true);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertTrue();
+        expect(dstPixelMap.isEditable).assertTrue();
+        expect(srcPixelMap.isStrideAlignment).assertTrue();
+        expect(dstPixelMap.isStrideAlignment).assertTrue();
+
         // Test createUnpremultipliedPixelMap with AsyncCallback
         image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (err) => {
           if (err) {
             console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap011 error: ${err}, code: ${err.code}`);
             expect(false).assertTrue();
+          } else {
+            console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap011 success`);
+            srcPixelMap.release();
+            dstPixelMap.release();
+            done();
           }
-          console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap011 success`);
-          done();
         });
       } catch (error) {
         const err = error as BusinessError;
@@ -534,7 +555,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createUnpremultipliedPixelMap012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createUnpremultipliedPixelMap012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Create source pixel map with isEditable: false
         const srcOpts: image.InitializationOptions = {
@@ -546,7 +567,7 @@ export default function GraphicImageCreatePixelMap03() {
         };
         const colorBuffer = new ArrayBuffer(4 * 6 * 4);
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
-        
+
         // Create destination pixel map with isEditable: false
         const dstOpts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -557,18 +578,27 @@ export default function GraphicImageCreatePixelMap03() {
         };
         const dstColorBuffer = new ArrayBuffer(4 * 6 * 4);
         const dstPixelMap = image.createPixelMapUsingAllocatorSync(dstColorBuffer, dstOpts);
-        
+
         console.info(`${LOG_PREFIX} srcPixelMap isEditable: ${srcPixelMap.isEditable}`);
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
-        
-        expect(srcPixelMap.isEditable).assertEqual(false);
-        expect(dstPixelMap.isEditable).assertEqual(false);
-        
+        console.info(`${LOG_PREFIX} srcPixelMap isStrideAlignment: ${srcPixelMap.isStrideAlignment}`);
+        console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
+
+        expect(srcPixelMap.isEditable).assertFalse();
+        expect(dstPixelMap.isEditable).assertFalse();
+        expect(srcPixelMap.isStrideAlignment).assertFalse();
+        expect(dstPixelMap.isStrideAlignment).assertFalse();
+
         // Test createUnpremultipliedPixelMap with AsyncCallback
         image.createUnpremultipliedPixelMap(srcPixelMap, dstPixelMap, (err) => {
           if (err) {
             console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap012 error: ${err}, code: ${err.code}`);
             expect(err).assertEqual(62980248); // Pixelmap not allow modify
+            done();
+          } else {
+            console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap011 success`);
+            srcPixelMap.release();
+            dstPixelMap.release();
             done();
           }
         });
@@ -588,7 +618,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createUnpremultipliedPixelMap013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createUnpremultipliedPixelMap013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Create source pixel map with isEditable: true
         const srcOpts: image.InitializationOptions = {
@@ -624,6 +654,11 @@ export default function GraphicImageCreatePixelMap03() {
             console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap013 error: ${err}, code: ${err.code}`);
             expect(err).assertEqual(62980248); // Pixelmap not allow modify
             done();
+          } else {
+            console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap011 success`);
+            srcPixelMap.release();
+            dstPixelMap.release();
+            done();
           }
         });
       } catch (error) {
@@ -642,7 +677,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createUnpremultipliedPixelMap014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createUnpremultipliedPixelMap014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Create source pixel map with isEditable: false
         const srcOpts: image.InitializationOptions = {
@@ -678,6 +713,11 @@ export default function GraphicImageCreatePixelMap03() {
             console.error(`${LOG_PREFIX} createUnpremultipliedPixelMap014 error: ${err}, code: ${err.code}`);
             expect(err).assertEqual(62980248); // Pixelmap not allow modify
             done();
+          } else {
+            console.info(`${LOG_PREFIX} createUnpremultipliedPixelMap011 success`);
+            srcPixelMap.release();
+            dstPixelMap.release();
+            done();
           }
         });
       } catch (error) {
@@ -696,7 +736,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -716,6 +756,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -733,7 +774,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -751,6 +792,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -768,7 +810,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -786,6 +828,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -803,7 +846,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -821,6 +864,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -838,7 +882,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -856,6 +900,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -873,7 +918,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -891,6 +936,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -908,7 +954,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -926,6 +972,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -943,7 +990,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -961,6 +1008,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -978,7 +1026,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -996,6 +1044,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1013,7 +1062,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1031,6 +1080,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1048,7 +1098,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1066,6 +1116,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1083,7 +1134,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1101,6 +1152,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1118,7 +1170,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1136,6 +1188,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1153,7 +1206,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1172,6 +1225,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1189,7 +1243,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1208,6 +1262,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1225,7 +1280,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1244,6 +1299,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1261,7 +1317,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('createPixelMapSync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createPixelMapSync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const opts: image.InitializationOptions = {
           size: { width: 4, height: 6 },
@@ -1279,6 +1335,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(false);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1296,7 +1353,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('createPixelMapSync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('createPixelMapSync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const pixelMap = image.createPixelMapSync(null);
         
@@ -1305,7 +1362,6 @@ export default function GraphicImageCreatePixelMap03() {
           console.info(`${LOG_PREFIX} isEditable: ${pixelMap.isEditable}`);
           console.info(`${LOG_PREFIX} isStrideAlignment: ${pixelMap.isStrideAlignment}`);
         }
-        
         expect(pixelMap).assertUndefined();
         done();
       } catch (error) {
@@ -1324,7 +1380,7 @@ export default function GraphicImageCreatePixelMap03() {
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('createPixelMapSync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('createPixelMapSync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const pixelMap = image.createPixelMapSync(undefined);
         
@@ -1376,6 +1432,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1416,6 +1473,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1456,6 +1514,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1535,6 +1594,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1575,6 +1635,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1615,6 +1676,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1655,6 +1717,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1695,6 +1758,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1735,6 +1799,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1775,6 +1840,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1815,6 +1881,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -2008,6 +2075,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -2049,6 +2117,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -2090,6 +2159,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -2131,6 +2201,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -2172,6 +2243,7 @@ export default function GraphicImageCreatePixelMap03() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(false);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;

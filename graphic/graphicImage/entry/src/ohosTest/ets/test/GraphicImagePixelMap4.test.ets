@@ -47,6 +47,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr+ ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap.release();
           done();
         } catch(error){
           console.error(msgStr+ `Failed. code is ${error.code}, message is ${error.message}`);
@@ -79,6 +80,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -111,6 +113,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -144,6 +147,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -177,6 +181,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -210,6 +215,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertTrue();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -243,6 +249,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -276,6 +283,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -308,6 +316,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error}`);
@@ -341,6 +350,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -374,6 +384,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -406,6 +417,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error}`);
@@ -438,6 +450,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.SHARE_MEMORY);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -470,6 +483,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -502,6 +516,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = await image.createPixelMapUsingAllocator(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -535,6 +550,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -568,6 +584,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -600,6 +617,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -632,6 +650,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -665,6 +684,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -698,6 +718,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -731,6 +752,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertTrue();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -764,6 +786,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -797,6 +820,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -829,6 +853,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -862,6 +887,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -895,6 +921,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -926,7 +953,8 @@ export default function graphicImagePixelMap4() {
         try {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap);
-          expect().assertUndefined();
+          expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -959,6 +987,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.SHARE_MEMORY);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -991,6 +1020,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1023,6 +1053,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1056,6 +1087,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1088,6 +1120,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1119,6 +1152,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1150,6 +1184,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1182,6 +1217,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1214,6 +1250,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1246,6 +1283,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertTrue();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1278,6 +1316,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1310,6 +1349,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1340,7 +1380,8 @@ export default function graphicImagePixelMap4() {
         try {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap);
-          expect().assertUndefined();
+          expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1373,6 +1414,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1405,6 +1447,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1435,11 +1478,11 @@ export default function graphicImagePixelMap4() {
         try {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap);
-          expect().assertUndefined();
+          expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
-          expect().assertFail();
           expect().assertFail();
           done();
         }
@@ -1468,6 +1511,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.SHARE_MEMORY);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1498,7 +1542,8 @@ export default function graphicImagePixelMap4() {
         try {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.AUTO);
           console.info(msgStr + ' success', pixelMap);
-          expect().assertUndefined();
+          expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1530,6 +1575,7 @@ export default function graphicImagePixelMap4() {
           let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.DMA);
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);
@@ -1562,6 +1608,7 @@ export default function graphicImagePixelMap4() {
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch(error){
           console.error(msgStr + `Failed. code is ${error.code}, message is ${error.message}`);

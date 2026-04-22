@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,56 +29,56 @@ struct ImageExample {
   @State layoutChildrenState2: string = 'init2'
 
   onLayoutChildrenCompleteByID: () => void = (): void =>  {
-    this.layoutChildrenState1 = this.layoutChildrenState1 +"1"
+    this.layoutChildrenState1 = this.layoutChildrenState1 +'1'
     console.log('lll onLayoutChildrenComplete')
   }
 
   onLayoutChildrenCompleteByID1: () => void = (): void =>  {
-    this.layoutChildrenState2 = this.layoutChildrenState2 +"1"
+    this.layoutChildrenState2 = this.layoutChildrenState2 +'1'
     console.log('lll onLayoutChildrenComplete1')
   }
 
   build() {
     Column() {
-      Text(this.layoutChildrenState).id('initid1')
-      Text(this.layoutChildrenState1).id('initid2')
-      Text(this.layoutChildrenState2).id('initid3')
+      Text(this.layoutChildrenState).id('initid1').height(20)
+      Text(this.layoutChildrenState1).id('initid2').height(15)
+      Text(this.layoutChildrenState2).id('initid3').height(15)
       Column() {
         Row() {
-          Row({ space: 5 }) {
-            Text(this.textString).id("Text_ID")
+          Row({ space: 2 }) {
+            Text(this.textString).id('Text_ID').height(20)
             Image(this.ll)
               .height(20)
               .border({ width: 1 })
               .id('IMAGE_ID')
               .width(this.imageWidth)
           }.id('ROW_ID')
-        }.width('100%')
+        }
 
-        Column() {
-          Button("onLayoutChildrenByID").id("Button1").onClick((event: ClickEvent) => {
+        Column({space:1}) {
+          Button('onLayoutChildrenByID').id('Button1').onClick((event: ClickEvent) => {
             this.listenerForRow.onLayoutChildren(this.onLayoutChildrenCompleteByID);
-          })
-          Button("onLayoutChildrenByID1").id("Button2").onClick((event: ClickEvent) => {
+          }).height(15)
+          Button('onLayoutChildrenByID1').id('Button2').onClick((event: ClickEvent) => {
             this.listenerForRow.onLayoutChildren(this.onLayoutChildrenCompleteByID1);
-          })
-          Button("offLayoutChildrenByID").id("Button3").onClick((event: ClickEvent) => {
+          }).height(15)
+          Button('offLayoutChildrenByID').id('Button3').onClick((event: ClickEvent) => {
             this.listenerForRow.offLayoutChildren(this.onLayoutChildrenCompleteByID);
             this.layoutChildrenState = 'offLayoutChildrenByID';
-            console.info("layoutChildrenState:offLayoutChildrenByID");
-          })
-          Button("offLayoutChildren()").id("Button4").onClick((event: ClickEvent) => {
+            console.info('layoutChildrenState:offLayoutChildrenByID');
+          }).height(15)
+          Button('offLayoutChildren()').id('Button4').onClick((event: ClickEvent) => {
             this.listenerForRow.offLayoutChildren();
             this.layoutChildrenState = 'offLayoutChildrencomplete';
-          })
-          Button("change").id("Button5").onClick((event: ClickEvent) => {
+          }).height(15)
+          Button('change').id('Button5').onClick((event: ClickEvent) => {
             this.textString = this.textString + '1'
             this.imageWidth += 10;
-          })
-        }.padding({ top: 30 })
+          }).height(20)
+        }
 
-      }.padding({ right: 10, top: 10 }).id('Column_ID')
-    }.width('100%')
+      }.id('Column_ID')
+    }.width('100%').height('100%')
   }
   aboutToAppear(): void {
     try {

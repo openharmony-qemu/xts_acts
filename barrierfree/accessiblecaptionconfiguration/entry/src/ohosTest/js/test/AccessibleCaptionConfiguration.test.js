@@ -17,7 +17,7 @@ import accessibility from '@ohos.accessibility'
 import { Driver } from '@ohos.UiTest';
 
 export default function AccessibleCaptionConfiguration() {
-describe('AccessibleCaptionConfiguration', function () {
+describe('AccessibleCaptionConfigurationAdapt001', function () {
   beforeAll(async function (done) {
     let driver = Driver.create();
     console.info(`AccessibleCaptionConfiguration: beforeAll starts`);

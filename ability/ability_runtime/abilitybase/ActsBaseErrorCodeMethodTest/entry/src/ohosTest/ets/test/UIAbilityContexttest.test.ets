@@ -1142,6 +1142,66 @@ export default function UIAbilityContextTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4200 end');
     })
 
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_openLinkError_4300
+     * @tc.number SUB_Ability_AbilityBase_openLinkError_4300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_openLinkError_4300', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4300 start');
+      let link = 'http1://www.example123123.com'
+      try {
+        context.openLink(link, null).then(() => {
+          hilog.info(0x0000, `${TAG}`, '%{public}s', `openLink succeed`);
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_openLinkError_4300 ${error?.code}`);
+          try{expect(error?.code).assertEqual(16000019);}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_openLinkError_4300 ${err?.code}`);
+        try{expect().assertFail();}catch(e){}
+        done();
+      }
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4300 end');
+    })
+
+
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_openLinkError_4400
+     * @tc.number SUB_Ability_AbilityBase_openLinkError_4400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_openLinkError_4400', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4400 start');
+      let link = 'http1://www.example123123.com'
+      try {
+        context.openLink(link, undefined).then(() => {
+          hilog.info(0x0000, `${TAG}`, '%{public}s', `openLink succeed`);
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_openLinkError_4400 ${error?.code}`);
+          try{expect(error?.code).assertEqual(16000019);}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_openLinkError_4400 ${err?.code}`);
+        try{expect().assertFail();}catch(e){}
+        done();
+      }
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_openLinkError_4400 end');
+    })
 
   })
 }

@@ -35,7 +35,7 @@ const DOMAIN = 0xeeee;
 const TAG: string = '[openLinkDemo]';
 let buffer = new ArrayBuffer(640 * 1024);
 
-const TWO_HUNDRED_KB = 200 * 1024;
+const FIVE_HUNDRED_KB = 500 * 1024;
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 // 生成一个指定长度的字符串
 function generateLargeString(length: number): string {
@@ -762,7 +762,7 @@ export default function UIAbilityContext() {
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       // 构造一个超过 200KB 的对象
-      const largeObject = generateLargeString(TWO_HUNDRED_KB + 100)
+      const largeObject = generateLargeString(FIVE_HUNDRED_KB + 100)
       let startWant: Want = {
         bundleName: 'com.test.actsabilityerrcodequerytest',
         abilityName: 'MainAbility1',
@@ -1319,6 +1319,36 @@ export default function UIAbilityContext() {
         let message = (err as BusinessError).message;
         console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
       }
-    })
-  })
+     })
+
+    /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.desc   openAtomicService parameter error, pass null Promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200', Level.LEVEL0, async (done: Function) => {
+       let appId: string = '6918661953712445909';
+       let options: AtomicServiceOptions = {
+         displayId: 0
+       };
+       try {
+         globalThis.context.openAtomicService(null, options)
+           .then((result: common.AbilityResult) => {
+             console.info('openAtomicService succeed');
+           })
+           .catch((err: BusinessError) => {
+             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+           });
+       } catch (err) {
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         expect(err.code).assertEqual(401)
+         console.error(`startAbility failed, code is ${code}, message is ${message}`);
+         done();
+       }
+     })
+   })
 }

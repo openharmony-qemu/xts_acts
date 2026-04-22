@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -98,7 +98,7 @@ struct NativeTextRunTestContext {
         OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
         bool halfLeading = true;
         OH_Drawing_SetTextStyleHalfLeading(txtStyle, halfLeading);
-        const char* fontFamilies[] = { "Roboto" };
+        const char* fontFamilies[] = { "HarmonyOS Sans" };
         OH_Drawing_SetTextStyleFontFamilies(txtStyle, TEXT_RUN_FONT_FAMILIES_COUNT, fontFamilies);
         OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
         OH_Drawing_TypographyHandlerAddText(handler, text.c_str());

@@ -200,8 +200,7 @@ export default function kvStoreBackupCallbackJsunittest() {
     afterEach(async (done: () => void): Promise<void> => {
       console.info(TAG + 'afterEach');
       try { //tmp
-        await publicDeleteBackup(kvStore,files).then((data: Array<[string, int]>) => {
-
+        await publicDeleteBackup(kvStore,files).then(async (data: Array<[string, int]>) => {
             await (kvManager!.closeKVStore(BUNDLE_NAME, STORE_ID) as Promise<void>).then(async () => {
               console.info(TAG + 'afterEach closeKVStore success');
               files = [];

@@ -13,6 +13,11 @@
  * limitations under the License.
  */
 import webViewControllerJsunit from './WebViewController.test'
+import webViewControllerJsunit1 from './WebViewController1.test'
+import webViewControllerJsunit2 from './WebViewController2.test'
+
 export default function testsuite() {
   webViewControllerJsunit();
+  webViewControllerJsunit1();
+  webViewControllerJsunit2();
 }

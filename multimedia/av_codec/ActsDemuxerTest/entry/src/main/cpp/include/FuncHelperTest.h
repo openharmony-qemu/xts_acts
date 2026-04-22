@@ -53,6 +53,25 @@ struct SampleProcessParams {
     bool *isEnd;
 };
 
+// 结构体：封装skip sample帧处理参数
+struct SkipSampleFrameContext {
+    int64_t size;
+    OH_AVCodecBufferAttr &attr;
+    int &audioFrame;
+    int &skipSampleCounts;
+    int &aKeyCount;
+    bool &audioIsEnd;
+    int fd;
+};
+
+// 结构体：封装skip sample验证参数
+struct SkipSampleValidationParams {
+    int audioFrame;
+    uint8_t *addr;
+    size_t buffSize;
+    int fd;
+};
+
 // 路径常量定义
 #ifndef AV_CODEC_PATH
 #define AV_CODEC_PATH "/system/lib64/media/av_codec"
@@ -110,6 +129,12 @@ void SetEndFlag(bool &audioIsEnd, bool &videoIsEnd);
 int ProcessDualTrackLoop(DualTrackParams &params);
 void InitTestResources();
 void CleanupResources();
+int ProcessMp3SkipSampleFrame(SkipSampleFrameContext &ctx);
+int ProcessOggSkipSampleFrame(SkipSampleFrameContext &ctx);
+int ValidateSkipData(uint8_t *addr, size_t buffSize, int audioFrame, uint8_t *expected);
+void CleanupSkipSampleResources(OH_AVFormat *format, int fd);
+int ValidateMp3SkipData(SkipSampleValidationParams &params, OH_AVFormat *format);
+int ValidateOggSkipData(SkipSampleValidationParams &params, OH_AVFormat *format);
 
 #define GET_FILE_SIZE GetFileSizeHelper
 

@@ -257,7 +257,8 @@ export default function RdbPredicatesEtsTest() {
       try {
         let predicates = new relationalStore.RdbPredicates("orders");
         predicates.groupBy(["customer_id"]);
-        predicates.having("");
+        let pr = predicates.having("");
+        expect(typeof(pr) === "object").assertTrue();
         console.log(TAG + " testHaving005 having success");
         expect(true).assertFail();
       } catch (e) {

@@ -92,9 +92,9 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0100', Level.LEVEL0, async (done: 
 
 
       expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
+      Math.round(UIContext.resolveUIContext()!.vp2px(-20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0100 END');
       done();

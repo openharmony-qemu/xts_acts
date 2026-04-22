@@ -98,7 +98,7 @@ export default function DigestAlgorithmSm3Jsunit() {
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
 
-          await globalMd
+          globalMd
             .update(ginBlob)
             .then<cryptoFramework.DataBlob>(() => {
               return globalMd.digest();
@@ -143,8 +143,7 @@ export default function DigestAlgorithmSm3Jsunit() {
           globalMd = cryptoFramework.createMd("SM3");
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
-
-          await globalMd
+          globalMd
             .digest()
             .then((digestBlob: cryptoFramework.DataBlob) => {
               console.log(
@@ -340,7 +339,7 @@ export default function DigestAlgorithmSm3Jsunit() {
           globalHMAC = cryptoFramework.createMac("SM3");
           globalSymKeyGenerator =
             cryptoFramework.createSymKeyGenerator("AES128");
-          await globalSymKeyGenerator
+          globalSymKeyGenerator
             .generateSymKey()
             .then((symKey: cryptoFramework.SymKey) => {
               return globalHMAC!.init(symKey);

@@ -90,10 +90,10 @@ function byteToString(arr:Uint8Array) {
       for(let st = 1; st < bytesLength; st++) {
         store += _arr[st + i].toString(2).slice(2);
       }
-      str += String.fromCharCode(parseInt(store, 2));
+      str += String.fromCharCode(parseInt(store, 2).toInt());
       i += bytesLength - 1;
     } else {
-      str += String.fromCharCode(_arr[i]);
+      str += String.fromCharCode(_arr[i].toInt());
     }
   }
   return str;
@@ -210,7 +210,7 @@ export default function abilityTest() {
         let metric = mediaKeySystem!.getStatistics();
         for (let item of metric) {
           console.log("XX TEST metric" + item.name + ':' + item.value);
-          if (item.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item.value).assertEqual('0');
           }
         }
@@ -221,7 +221,7 @@ export default function abilityTest() {
         let metric2 = mediaKeySystem!.getStatistics();
         for (let item2 of metric2) {
           console.log("XX TEST metric2" + item2.name + ':' + item2.value);
-          if (item2.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item2.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item2.value).assertEqual('64');
           }
         }
@@ -231,7 +231,7 @@ export default function abilityTest() {
         let metric3 = mediaKeySystem!.getStatistics();
         for (let item3 of metric3) {
           console.log("XX TEST metric3" + item3.name + ':' + item3.value);
-          if (item3.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT as string) {
+          if (item3.name === drm.PreDefinedConfigName.CONFIG_SESSION_CURRENT.valueOf()) {
             expect(item3.value).assertEqual('32');
           }
         }
@@ -1012,7 +1012,7 @@ export default function abilityTest() {
             name: "optionalDataName",
             value: "optionalDataValue"
           }];
-          session!.generateMediaKeyRequest("1111/2222", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE as int, optionalData).then((DrmRequest) => {
+          session!.generateMediaKeyRequest("1111/2222", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then((DrmRequest) => {
             console.log("XX DRM_AVPLAYER_0300 generateMediaKeyRequest success", DrmRequest.mediaKeyRequestType,
               DrmRequest.data, DrmRequest.defaultURL);
             session!.destroy();
@@ -2123,7 +2123,7 @@ export default function abilityTest() {
                   0x4E, 0x4A, 0x52, 0x46, 0x38, 0x77, 0x4E, 0x41, 0x3D, 0x3D, 0x3A, 0x42, 0x4E, 0x4F, 0x71, 0x2B, 0x4F,
                   0x68, 0x6D, 0x65, 0x6B, 0x42, 0x41, 0x30, 0x36, 0x72, 0x34, 0x36, 0x47, 0x5A, 0x36, 0x42, 0x41, 0x3D,
                   0x3D]);
-              session!.processMediaKeyResponse(responseArray).then((keyId) => {
+              session!.processMediaKeyResponse(responseArray).then(async (keyId: Uint8Array) => {
                 console.log("XX DRM_AVPLAYER_1900 processMediaKeyResponse success");
                 await Utils.msSleep(1000);
                 let keyIds = drmsys!.getOfflineMediaKeyIds();
@@ -3363,7 +3363,7 @@ export default function abilityTest() {
                   0x3D]);
               keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
                 keySession!.clearMediaKeys();
-                keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
+                keySession!.processMediaKeyResponse(responseArray).then(async (keyId: Uint8Array) => {
                   await Utils.msSleep(1000);
                   expect(sign).assertEqual(2);
                   keySession!.offKeyExpired();
@@ -3458,7 +3458,7 @@ export default function abilityTest() {
                   0x3D]);
               keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
                 keySession!.clearMediaKeys();
-                keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
+                keySession!.processMediaKeyResponse(responseArray).then(async (keyId: Uint8Array) => {
                   await Utils.msSleep(1000);
                   expect(sign).assertEqual(1);
                   keySession!.destroy();
@@ -3550,7 +3550,7 @@ export default function abilityTest() {
                 keySession!.processOfflineReleaseResponse(keyArray, responseArray).then(() => {
                   OfflineKeyState = mediaKeySystem!.getOfflineMediaKeyStatus(keyArray);
                   expect(OfflineKeyState).assertEqual(drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_INACTIVE);
-                  keySession!.restoreOfflineMediaKeys(keyArray).then(() => {
+                  keySession!.restoreOfflineMediaKeys(keyArray).then(async () => {
                     await Utils.msSleep(1000);
                     expect(sign).assertEqual(2);
                     keySession!.offExpirationUpdate();
@@ -3611,7 +3611,8 @@ export default function abilityTest() {
             let licenseRequestStr = byteToString(DrmRequest.data);
             let licenseResponseStr = await getHttpData("http://license.dev.trustdta.com:8080/drmproxy/v3/getLicense?contentId=xuxinsw", licenseRequestStr);
             let licenseResponseByte = stringToUint8Array(licenseResponseStr);
-            keySession!.processMediaKeyResponse(licenseResponseByte).then((keyId) => {
+            try {
+              let keyId: Uint8Array = await keySession!.processMediaKeyResponse(licenseResponseByte);
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate sign is ",sign);
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
@@ -3620,13 +3621,13 @@ export default function abilityTest() {
               mediaKeySystem!.destroy();
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate success");
               done();
-            }).catch((err:Error) =>{
+            } catch (err) {
               console.info("XX SESSION_ON_OFF_0500 processMediaKeyResponse err end", err.code);
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
               expect((err as BusinessError).code).assertEqual(24700201);
-            });
+            }
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0500 generateMediaKeyRequest err end", err.code);
             keySession!.destroy();
@@ -3706,7 +3707,7 @@ export default function abilityTest() {
                 keySession!.processOfflineReleaseResponse(keyArray, responseArray).then(() => {
                   OfflineKeyState = mediaKeySystem!.getOfflineMediaKeyStatus(keyArray);
                   expect(OfflineKeyState).assertEqual(drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_INACTIVE);
-                  keySession!.restoreOfflineMediaKeys(keyArray).then(() => {
+                  keySession!.restoreOfflineMediaKeys(keyArray).then(async () => {
                     await Utils.msSleep(1000);
                     expect(sign).assertEqual(1);
                     keySession!.destroy();
@@ -3767,7 +3768,8 @@ export default function abilityTest() {
             let licenseRequestStr = byteToString(DrmRequest.data);
             let licenseResponseStr = await getHttpData("http://license.dev.trustdta.com:8080/drmproxy/v3/getLicense?contentId=xuxinsw", licenseRequestStr);
             let licenseResponseByte = stringToUint8Array(licenseResponseStr);
-            keySession!.processMediaKeyResponse(licenseResponseByte).then((keyId) => {
+            try {
+              let keyId: Uint8Array = await keySession!.processMediaKeyResponse(licenseResponseByte);
               console.info("XX SESSION_ON_OFF_0600 expirationUpdate sign is ",sign);
               await Utils.msSleep(1000);
               expect(sign).assertEqual(1);
@@ -3775,13 +3777,13 @@ export default function abilityTest() {
               mediaKeySystem!.destroy();
               console.info("XX SESSION_ON_OFF_0600 expirationUpdate success");
               done();
-            }).catch((err:Error) =>{
+            } catch (err) {
               console.info("XX SESSION_ON_OFF_0600 processMediaKeyResponse err end", err.code);
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
               expect((err as BusinessError).code).assertEqual(24700201);
-            });
+            }
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0600 generateMediaKeyRequest err end", err.code);
             keySession!.destroy();
@@ -3867,7 +3869,7 @@ export default function abilityTest() {
             }
             keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
               console.log("XX SESSION_ON_OFF_0700 processMediaKeyResponse success");
-              keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
+              keySession!.processMediaKeyResponse(responseArray2).then(async (keyId: Uint8Array) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(2);
                 keySession!.offKeysChange();
@@ -3974,7 +3976,7 @@ export default function abilityTest() {
             }
             keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
               console.log("XX SESSION_ON_OFF_0700 processMediaKeyResponse success");
-              keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
+              keySession!.processMediaKeyResponse(responseArray2).then(async (keyId: Uint8Array) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(1);
                 keySession!.offKeysChange();
@@ -4044,7 +4046,7 @@ export default function abilityTest() {
                 0x42, 0x30, 0x4D, 0x32, 0x77, 0x33, 0x4E, 0x67, 0x3D, 0x3D, 0x3A, 0x59, 0x7A, 0x56, 0x78, 0x63, 0x48,
                 0x64, 0x70, 0x61, 0x6D, 0x30, 0x34, 0x59, 0x57, 0x45, 0x34, 0x5A, 0x48, 0x6B, 0x79, 0x4D, 0x67, 0x3D,
                 0x3D]);
-            mediaKeySystem!.processKeySystemResponse(arry).then(() => {
+            mediaKeySystem!.processKeySystemResponse(arry).then(async () => {
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
               mediaKeySystem!.offKeySystemRequired();
@@ -4107,7 +4109,7 @@ export default function abilityTest() {
                 0x42, 0x30, 0x4D, 0x32, 0x77, 0x33, 0x4E, 0x67, 0x3D, 0x3D, 0x3A, 0x59, 0x7A, 0x56, 0x78, 0x63, 0x48,
                 0x64, 0x70, 0x61, 0x6D, 0x30, 0x34, 0x59, 0x57, 0x45, 0x34, 0x5A, 0x48, 0x6B, 0x79, 0x4D, 0x67, 0x3D,
                 0x3D]);
-            mediaKeySystem!.processKeySystemResponse(arry).then(() => {
+            mediaKeySystem!.processKeySystemResponse(arry).then(async () => {
               await Utils.msSleep(1000);
               expect(sign).assertEqual(1);
               mediaKeySystem!.destroy();
@@ -4198,7 +4200,7 @@ export default function abilityTest() {
                 keySession!.processOfflineReleaseResponse(keyArray, responseArray).then(() => {
                   OfflineKeyState = mediaKeySystem!.getOfflineMediaKeyStatus(keyArray);
                   expect(OfflineKeyState).assertEqual(drm.OfflineMediaKeyStatus.OFFLINE_MEDIA_KEY_STATUS_INACTIVE);
-                  keySession!.restoreOfflineMediaKeys(keyArray).then(() => {
+                  keySession!.restoreOfflineMediaKeys(keyArray).then(async () => {
                     await Utils.msSleep(1000);
                     expect(sign).assertEqual(1);
                     keySession!.destroy();
@@ -4259,7 +4261,8 @@ export default function abilityTest() {
             let licenseRequestStr = byteToString(DrmRequest.data);
             let licenseResponseStr = await getHttpData("http://license.dev.trustdta.com:8080/drmproxy/v3/getLicense?contentId=xuxinsw", licenseRequestStr);
             let licenseResponseByte = stringToUint8Array(licenseResponseStr);
-            keySession!.processMediaKeyResponse(licenseResponseByte).then((keyId) => {
+            try {
+              let keyId: Uint8Array = await keySession!.processMediaKeyResponse(licenseResponseByte);
               console.info("XX SESSION_ON_OFF_0600 expirationUpdate sign is ",sign);
               await Utils.msSleep(1000);
               expect(sign).assertEqual(1);
@@ -4267,13 +4270,13 @@ export default function abilityTest() {
               mediaKeySystem!.destroy();
               console.info("XX SESSION_ON_OFF_0600 expirationUpdate success");
               done();
-            }).catch((err:Error) =>{
+            } catch (err) {
               console.info("XX SESSION_ON_OFF_0600 processMediaKeyResponse err end", err.code);
               keySession!.destroy();
               mediaKeySystem!.destroy();
               done();
               expect((err as BusinessError).code).assertEqual(24700201);
-            });
+            }
           }).catch((err:Error) =>{
             console.info("XX SESSION_ON_OFF_0600 generateMediaKeyRequest err end", err.code);
             keySession!.destroy();

@@ -85,7 +85,7 @@ export default function CloudDataErrorCode() {
     async (done: () => void): Promise<void> => {
       console.info(TAG + "************* setCloudStrategyTest003 start *************");
       try {
-        await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStrategy.WIFI as Long])
+        await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [Int.toLong(cloudData.NetWorkStrategy.WIFI)])
           .then(() => {
             console.info(TAG + 'Succeeded in setting the cloud strategy');
             expect(cloudData.NetWorkStrategy.WIFI).assertEqual(1)
@@ -116,7 +116,7 @@ export default function CloudDataErrorCode() {
         async (done: () => void): Promise<void> => {
           console.info(TAG + "************* setCloudStrategyTest004 start *************");
           try {
-            await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStrategy.CELLULAR as Long])
+            await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [Int.toLong(cloudData.NetWorkStrategy.CELLULAR)])
               .then(() => {
                 console.info(TAG + 'Succeeded in setting the cloud strategy');
                 expect(cloudData.NetWorkStrategy.CELLULAR).assertEqual(2)

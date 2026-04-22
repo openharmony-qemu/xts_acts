@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -202,7 +202,7 @@ export default function cameraSessionFocusTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsFocusModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
+    mIsFocusModeSupportedArray = Array.create<boolean>(mCameraNum.toInt(), false);
 
     console.info('Exit getCameraSupportDevicesArray');
 
@@ -1470,7 +1470,7 @@ export default function cameraSessionFocusTest() {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         mCameraSession!.offFocusStateChange()
@@ -1503,7 +1503,7 @@ export default function cameraSessionFocusTest() {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         mCameraSession!.offError()

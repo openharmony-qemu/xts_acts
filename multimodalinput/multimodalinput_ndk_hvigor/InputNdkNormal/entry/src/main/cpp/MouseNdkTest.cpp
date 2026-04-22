@@ -38,8 +38,13 @@ static napi_value GetPointerLocation1(napi_env env, napi_callback_info info)
     double displayY;
     Input_Result retResult = OH_Input_GetPointerLocation(&displayId, &displayX, &displayY);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_GetPointerLocation_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION ||
-        retResult == INPUT_DEVICE_NO_POINTER || retResult == INPUT_APP_NOT_FOCUSED) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NO_POINTER) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NO_POINTER) ? 1 : 0, &result);
+    } else if (retResult == INPUT_APP_NOT_FOCUSED) {
+        napi_create_int32(env, (retResult == INPUT_APP_NOT_FOCUSED) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS) ? 1 : 0, &result);
+    };
     return result;
 }
 
@@ -98,10 +103,19 @@ static napi_value RequestInjection1(napi_env env, napi_callback_info info)
     };
     Input_Result retResult = OH_Input_RequestInjection(fnCallBack);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_RequestInjection_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env,
-        (retResult == 801 || retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION ||
-        retResult == INPUT_INJECTION_AUTHORIZING || retResult == INPUT_INJECTION_AUTHORIZED_OTHERS ||
-        retResult == INPUT_INJECTION_OPERATION_FREQUENT || retResult == INPUT_INJECTION_AUTHORIZED) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    } else if (retResult == INPUT_INJECTION_AUTHORIZING) {
+        napi_create_int32(env, (retResult == INPUT_INJECTION_AUTHORIZING) ? 1 : 0, &result);
+    } else if (retResult == INPUT_INJECTION_AUTHORIZED_OTHERS) {
+        napi_create_int32(env, (retResult == INPUT_INJECTION_AUTHORIZED_OTHERS) ? 1 : 0, &result);
+    } else if (retResult == INPUT_INJECTION_OPERATION_FREQUENT) {
+        napi_create_int32(env, (retResult == INPUT_INJECTION_OPERATION_FREQUENT) ? 1 : 0, &result);
+    } else if (retResult == INPUT_INJECTION_AUTHORIZED) {
+        napi_create_int32(env, (retResult == INPUT_INJECTION_AUTHORIZED) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS) ? 1 : 0, &result);
+    };
     return result;
 }
 
@@ -112,9 +126,13 @@ static napi_value QueryAuthorizedStatus1(napi_env env, napi_callback_info info)
     Input_InjectionStatus status;
     Input_Result retResult = OH_Input_QueryAuthorizedStatus(&status);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_QueryAuthorizedStatus_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env,
-        ((retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION) &&
-        (status == UNAUTHORIZED || status == AUTHORIZING)) ? 1 : 0, &result);
+    if (status == UNAUTHORIZED) {
+        napi_create_int32(env, retResult == INPUT_SUCCESS && status == UNAUTHORIZED ? 1 : 0, &result);
+    } else if (status == AUTHORIZING) {
+        napi_create_int32(env, retResult == INPUT_SUCCESS && status == AUTHORIZING ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
     return result;
 }
 
@@ -162,8 +180,11 @@ static napi_value SetPointerVisible1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_SetPointerVisible(false);
-    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_DEVICE_NOT_SUPPORTED ||
-                      retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS) ? 1 : 0, &result);
+    };
     return result;
 }
 
@@ -171,8 +192,11 @@ static napi_value SetPointerVisible2(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Input_Result retResult = OH_Input_SetPointerVisible(true);
-    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_DEVICE_NOT_SUPPORTED ||
-                      retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS) ? 1 : 0, &result);
+    };
     return result;
 }
 
@@ -181,9 +205,15 @@ static napi_value GetPointerStyle1(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t windowId = -1;
     int32_t pointerStyle = -1;
+    int32_t circleStyle = 41;
     Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, ((retResult == INPUT_SUCCESS && (pointerStyle == 0 || pointerStyle == 1))
-                      || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    if (pointerStyle == 0) {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
+    } else if (pointerStyle == circleStyle) {
+        napi_create_int32(env, (retResult == INPUT_SUCCESS && pointerStyle == circleStyle) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
     return result;
 }
 
@@ -194,8 +224,8 @@ static napi_value GetPointerStyle2(napi_env env, napi_callback_info info)
     int32_t pointerStyle = -1;
     int32_t cursorStyle = 48;
     Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, ((retResult == INPUT_SUCCESS && pointerStyle >= -1 && pointerStyle <= cursorStyle)
-                      || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS && pointerStyle >= -1 && pointerStyle <= cursorStyle)
+    ? 1 : 0, &result);
     return result;
 }
 
@@ -236,9 +266,8 @@ static napi_value SetPointerStyle2(napi_env env, napi_callback_info info)
     int32_t pointerStyle1 = -1;
     Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
-    napi_create_int32(env, (retResult1 == INPUT_SUCCESS || retResult1 == INPUT_SERVICE_EXCEPTION) &&
-                      ((retResult2 == INPUT_SUCCESS && pointerStyle1 == 1)  ||
-                      retResult2 == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS)
+    ? 1 : 0, &result);
     return result;
 }
 
@@ -258,12 +287,9 @@ static napi_value SetPointerStyle5(napi_env env, napi_callback_info info)
     int32_t windowId = 0;
     Input_PointerStyle pointerStyle = Input_PointerStyle::SCREENRECORDER_CURSOR;
     int32_t pointerStyle1 = -1;
-    int32_t cursorStyle = 48;
     Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
-    napi_create_int32(env, (retResult1 == INPUT_SUCCESS || retResult1 == INPUT_SERVICE_EXCEPTION) &&
-                      ((retResult2 == INPUT_SUCCESS && pointerStyle1 == cursorStyle)  ||
-                      retResult2 == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS) ? 1 : 0, &result);
     
     return result;
 }
@@ -418,8 +444,11 @@ static napi_value CustomCursor12(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = -1;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
-    retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    };
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -441,8 +470,13 @@ static napi_value CustomCursor13(napi_env env, napi_callback_info info)
     Input_Result retResult1 = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
     int32_t pointerStyle = -1;
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, ((retResult1 == INPUT_INVALID_WINDOWID || retResult1 == INPUT_DEVICE_NOT_SUPPORTED) &&
+    if (retResult1 == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, (retResult1 == INPUT_DEVICE_NOT_SUPPORTED &&
         retResult2 == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, (retResult1 == INPUT_INVALID_WINDOWID &&
+        retResult2 == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
+    };
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -592,7 +626,7 @@ static napi_value CursorInfo12(napi_env env, napi_callback_info info)
     OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
     Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
     Input_Result retResult = OH_Input_GetCursorInfo(cursorInfo, &pixelmap1);
-    napi_create_int32(env, retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
     OH_PixelmapInitializationOptions_Release(options);
     OH_PixelmapNative_Release(pixelmap1);
     OH_PixelmapNative_Destroy(&pixelmap1);
@@ -647,8 +681,11 @@ static napi_value CustomCursor14(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = 0;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_SUCCESS ||
-    retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    if (retResult == INPUT_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
+    };
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -668,8 +705,7 @@ static napi_value CustomCursor15(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = 0;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
-    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -740,8 +776,7 @@ static napi_value GetInterSinceLastInput1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int64_t retResult = OH_Input_GetIntervalSinceLastInput(nullptr);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
-    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
     return result;
 }
 
@@ -766,10 +801,8 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
     Input_Result retResult3 = OH_Input_DispatchToNextHandler(eventId3);
     Input_Result retResult4 = OH_Input_DispatchToNextHandler(eventId4);
     napi_create_int32(env,
-        (retResult1 == INPUT_PARAMETER_ERROR || retResult1 == INPUT_SERVICE_EXCEPTION) &&
-        (retResult2 == INPUT_PARAMETER_ERROR || retResult2 == INPUT_SERVICE_EXCEPTION) &&
-        (retResult3 == INPUT_PARAMETER_ERROR || retResult3 == INPUT_SERVICE_EXCEPTION) &&
-        (retResult4 == INPUT_PARAMETER_ERROR || retResult4 == INPUT_SERVICE_EXCEPTION)
+        (retResult1 == INPUT_PARAMETER_ERROR && retResult2 == INPUT_PARAMETER_ERROR &&
+        retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR)
          ? 1 : 0, &result);
     return result;
 }

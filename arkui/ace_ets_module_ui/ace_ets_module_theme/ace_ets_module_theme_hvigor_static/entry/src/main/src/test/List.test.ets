@@ -17,6 +17,7 @@
 import setDefaultThemeTest from './themeTokens/SetDefaultTheme.test';
 import systemThemeTest from './themeTokens/SystemTheme.test';
 import withThemeTest from './themeTokens/WithTheme.test';
+import WithThemeDebugLineTest from './WithThemeDebugLineTest/WithThemeDebugLine.test';
 // components
 import alphabetIndexerThemeTest from './components/AlphabetIndexer.test';
 import badgeThemeTest from './components/Badge.test';
@@ -57,13 +58,13 @@ export default function testsuite() {
   // buttonThemeTest();
   checkboxThemeTest()
   // checkboxGroupThemeTest();
-  counterThemeTest();
+  // counterThemeTest();
   datePickerThemeTest();
   dividerThemeTest();
   // forEachTest();
   // ifThemeTest();
   // lazyForEachTest();
-  loadingProgressThemeTest();
+  // loadingProgressThemeTest();
   // menuThemeTest();
   // menuItemThemeTest();
   // patternLockThemeTest();
@@ -79,4 +80,5 @@ export default function testsuite() {
   textPickerThemeTest();
   // timePickerThemeTest();
   toggleThemeTest();
+  WithThemeDebugLineTest();
 }

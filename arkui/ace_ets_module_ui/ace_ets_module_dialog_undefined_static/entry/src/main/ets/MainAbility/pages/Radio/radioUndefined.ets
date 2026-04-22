@@ -39,7 +39,7 @@ import hilog from '@ohos.hilog'
 
 type RadioBuilder = @Builder(config:RadioConfiguration) => void;
 
-class MyRadioStyle implements ContentModifier<RadioConfiguration> {
+export class MyRadioStyle implements ContentModifier<RadioConfiguration> {
   public selectedColor: Color = Color.Black;
 
   constructor(colorType: Color) {

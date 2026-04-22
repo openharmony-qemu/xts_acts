@@ -16,10 +16,59 @@
 import hilog from '@ohos.hilog';
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import Want from '@ohos.app.ability.Want';
-import PrintExtension from '../testability/PrintExtension';
+import PrintExtensionAbility from '@ohos.app.ability.PrintExtensionAbility';
+import print from '@ohos.print';
 
 const DOMAIN: int = 0x0023
 const TAG: string = 'printExtensionTestXTS';
+
+export class PrintExtension extends PrintExtensionAbility {
+  onCreate(want: Want): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onCreate');
+  }
+
+  onStartDiscoverPrinter(): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onStartDiscoverPrinter');
+  }
+
+  onStopDiscoverPrinter(): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onStopDiscoverPrinter');
+  }
+
+  onConnectPrinter(): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onConnectPrinter');
+  }
+
+  onDisconnectPrinter(): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onDisconnectPrinter');
+  }
+
+  onStartPrintJob(jobInfo: print.PrintJob): void {
+    hilog.info(0x0023, TAG, 'PrintExtension onStartPrintJob');
+  }
+
+  onCancelPrintJob(jobInfo: print.PrintJob): void {
+    hilog.info(0x0023, TAG, 'PrintExtension onCancelPrintJob');
+  }
+
+  onRequestPrinterCapability(printerId: number): print.PrinterCapability {
+    hilog.info(0x0023, TAG, 'PrintExtension onRequestPrinterCapability');
+    let printerCapability: print.PrinterCapability = {
+      colorMode: 0,
+      duplexMode: 0,
+      pageSize: [],
+      resolution: [],
+      minMargin: {},
+      options: ''
+    };
+    return printerCapability;
+  }
+
+  onDestroy(): void {
+    hilog.info(DOMAIN, TAG, 'PrintExtension onDestroy');
+  }
+}
+
 let printExtension = new PrintExtension();
 
 export default function printExtensionTest() {

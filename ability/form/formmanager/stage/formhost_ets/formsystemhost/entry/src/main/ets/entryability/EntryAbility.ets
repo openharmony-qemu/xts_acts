@@ -23,6 +23,7 @@ export default class EntryAbility extends UIAbility {
   private subscriberTestFinishEvent:CommonEventManager.CommonEventSubscribeInfo = {
     events: ["FMS_FormTestFinish_commonEvent"],
   };
+  private isLiveFormPage: boolean = false;
 
   private finishCallBack: (err:BusinessError, data:CommonEventManager.CommonEventData) => void = 
     (err:BusinessError, data:CommonEventManager.CommonEventData) => {
@@ -35,6 +36,8 @@ export default class EntryAbility extends UIAbility {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     console.info('Ability onCreate');
     AppStorage.setOrCreate('want', want);
+    this.isLiveFormPage = want.parameters?.['isLiveForm'] as boolean;
+
     CommonEventManager.createSubscriber(this.subscriberTestFinishEvent).then(async (data) => {
       console.info(`formsystemhost Subscriber FormFinish data:`, JSON.stringify(data));
       this.subscriberTestFinish = data;
@@ -55,7 +58,12 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     console.info('Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err) => {
+    let page: string = 'pages/Index';
+    if (this.isLiveFormPage) {
+        console.info('onWindowStageCreate live form');
+        page = 'pages/LiveForm';
+    }
+    windowStage.loadContent(page, (err) => {
       if (err.code) {
         console.error(`Failed to load the content. Cause: %{public}s`, JSON.stringify(err));
         return;

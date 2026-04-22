@@ -50,6 +50,7 @@ import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -117,9 +118,17 @@ struct webViewControllerPart2 {
               break;
             }
 
+            case 'emitonSwitchNextPage': {
+              console.log("next page error page");
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: "pages/resumeAndPauseAlltimersError" })
+            }
+
           }
         })
       }
+
 
       Web({ src:'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)

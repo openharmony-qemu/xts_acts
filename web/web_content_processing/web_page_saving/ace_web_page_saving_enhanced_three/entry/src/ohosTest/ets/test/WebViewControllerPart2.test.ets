@@ -71,7 +71,15 @@ export default function webViewControllerPart2() {
      */
     it('testSearchAllAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testSearchAllAsync001", 132040)
-      Utils.registerBaseEvent("testSearchAllAsync001", 2, 132050, done,
+      Utils.registerBaseEvent("testSearchAllAsync001", 2, 132050, null,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("testSearchAllAsync001", 0, 26031003, null,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("testSearchAllAsync001", true, 26031004, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

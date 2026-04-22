@@ -92,7 +92,7 @@ export default function buttonThemeTest() {
     beforeEach(async (): Promise<void> => {
       try {
         if (changeTheme) {
-          if ((AppStorage.get(buttonThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+          if ((AppStorage.get<CustomTheme>(buttonThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
             == redCustomTheme?.colors?.fontEmphasize) {
             AppStorage.setOrCreate(buttonThemeProperty, greenCustomTheme);
           } else {

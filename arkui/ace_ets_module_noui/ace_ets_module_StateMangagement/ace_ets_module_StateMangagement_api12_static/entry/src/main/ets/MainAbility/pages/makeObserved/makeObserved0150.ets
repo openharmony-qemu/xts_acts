@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import {
 import { CommonModifier, TextModifier } from '@ohos.arkui.modifier'
 
 @ObservedV2
-class Info {
+export class Info {
   @Trace id: number = 0;
   @Trace age: number = 0;
 
@@ -46,10 +46,10 @@ class Info {
   }
 }
 
-class A {
+export class A {
 }
 @ObservedV2
-class Info2 {
+export class Info2 {
   @Trace
   id: number = 0;
   @Trace

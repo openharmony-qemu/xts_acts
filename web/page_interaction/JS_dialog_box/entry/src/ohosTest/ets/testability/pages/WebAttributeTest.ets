@@ -74,7 +74,6 @@ struct WebAttributeTest {
   @State title: string = ''
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
-
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isRunJSEnd: number = -1;
@@ -302,7 +301,10 @@ struct WebAttributeTest {
           .onAlert((event) => {
             if (event) {
               console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
+              console.log("event.message:" + event.message);
+              console.log("event.handleCancel:" + event.result.handleCancel);
+              console.log("event.handleConfirm:" + event.result.handleConfirm);
+              console.log("event.handlePromptConfirm:" + event.result.handlePromptConfirm);
               this.alert = event.message
             }
             return false

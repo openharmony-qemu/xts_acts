@@ -62,6 +62,8 @@
         "MainAbility/pages/TextArea/TextAreaSpecialAttrs",
         "MainAbility/pages/TextArea/TextAreaType",
         "MainAbility/pages/TextArea/TextAreaStyle",
+        "MainAbility/pages/TextAreaApi24/TextAreaHorizontalScrolling",
+        "MainAbility/pages/TextArea/TextAreaOrphanCharOptimization",
 
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",
@@ -127,6 +129,16 @@
         "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined02",
         "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined03",
         "MainAbility/pages/TextArea/TextAreaMethodsNull",
-        "MainAbility/pages/TextArea/TextAreaControllerMethodsNull"
+        "MainAbility/pages/TextArea/TextAreaControllerMethodsNull",
+        "MainAbility/pages/TextInput/TextInputMethodsNull",
+        "MainAbility/pages/TextInput/TextInputControllerMethodsNull",
+        "MainAbility/pages/TextInput/TextInputEnableKeyboardOnFocusNullUndefined",
+        "MainAbility/pages/TextInput/TextInputEnterKeyTypeNullUndefined",
+        "MainAbility/pages/TextInput/TextInputInputTypeNullUndefined",
+        "MainAbility/pages/TextInput/TextInputSelectAllNullUndefined",
+        "MainAbility/pages/TextInput/TextInputSelectionMenuHiddenNullUndefined",
+        "MainAbility/pages/TextInput/TextInputContentTypeParam",
+        "MainAbility/pages/TextInputApi24/TextInputOnNeedSoftkeyboard",
+        "MainAbility/pages/TextInput/TextInputOrphanCharOptimization"
     ]
 }

@@ -193,7 +193,7 @@ export default class Utils {
   static async waitForExist<T> (
     stateGetter: () => T,
     testsuite: string,
-    expectValue: string | number | null = null,
+    expectValue: string | number | boolean | null = null,
     interval=3000,
     tryTime=20
   ):Promise<T>{

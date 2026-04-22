@@ -48,9 +48,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         name: string,
         age: number
@@ -66,9 +66,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: number,
         b: number,
@@ -85,9 +85,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         x: number
       }
@@ -103,9 +103,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const boolVal = true;
       const jsonStr = JSON.stringify(boolVal);
       expect(jsonStr).assertEqual("true");
@@ -117,9 +117,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         str: string,
         num: number
@@ -136,9 +136,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         y: number
       }
@@ -154,9 +154,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const nullVal = null;
       const jsonStr = JSON.stringify(nullVal);
       expect(jsonStr).assertEqual("null");
@@ -168,9 +168,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         z: number
       }
@@ -187,9 +187,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = [1, undefined, 3];
       const jsonStr = JSON.stringify(arr);
       expect(jsonStr).assertEqual("[1,null,3]");
@@ -201,9 +201,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let topKey = "";
       JSON.stringify({ a: 1 }, (k, v: string) => {
         topKey = k;
@@ -218,9 +218,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         m: number
       }
@@ -238,9 +238,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: number
       }
@@ -256,9 +256,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const date = new Date("2024-01-01T00:00:00.000Z");
       const jsonStr = JSON.stringify(date);
       expect(jsonStr).assertEqual('"2024-01-01T00:00:00.000Z"');
@@ -270,9 +270,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         p: number
       }
@@ -288,9 +288,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const nanVal = NaN;
       const jsonStr = JSON.stringify(nanVal);
       expect(jsonStr).assertEqual("null");
@@ -302,9 +302,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: A
       }
@@ -325,9 +325,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const infVal = Infinity;
       const jsonStr = JSON.stringify(infVal);
       expect(jsonStr).assertEqual("null");
@@ -339,9 +339,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         x: X
       }
@@ -361,9 +361,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = [1, () => {
       }, 3];
       const jsonStr = JSON.stringify(arr);
@@ -376,9 +376,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: number,
         b: number
@@ -394,9 +394,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const strObj = new String("test");
       const jsonStr = JSON.stringify(strObj);
       expect(jsonStr).assertEqual('"test"');
@@ -408,9 +408,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: number,
         b: number,
@@ -427,9 +427,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const numObj = new Number(10);
       const jsonStr = JSON.stringify(numObj);
       expect(jsonStr).assertEqual("10");
@@ -441,9 +441,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const map = new Map([["a", 1]]);
       const jsonStr = JSON.stringify(map);
       expect(jsonStr).assertEqual("{}");
@@ -455,9 +455,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = [1, 2, 3];
       const jsonStr = JSON.stringify(arr, (k, v: number) => Number(k) === 1 ? undefined : v);
       expect(jsonStr).assertEqual("[1,null,3]");
@@ -469,9 +469,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         num: number,
         flag: boolean
@@ -488,9 +488,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         parent: Parent,
         other: number
@@ -512,9 +512,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         a: number
       }
@@ -530,9 +530,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const boolObj = new Boolean(false);
       const jsonStr = JSON.stringify(boolObj);
       expect(jsonStr).assertEqual("false");
@@ -544,9 +544,9 @@ export default function Json2Test() {
      * @tc.desc   test Json stringify()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json2Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json2Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Obj {
         x: X
       }

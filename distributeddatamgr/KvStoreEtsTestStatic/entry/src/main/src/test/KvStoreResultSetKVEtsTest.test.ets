@@ -167,7 +167,7 @@ export default function KvStoreResultSetTest(){
         });
       }
         if (kvManager) {
-          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
             console.info('afterEach closeKVStore success');
             await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
               console.info('afterEach deleteKVStore success');

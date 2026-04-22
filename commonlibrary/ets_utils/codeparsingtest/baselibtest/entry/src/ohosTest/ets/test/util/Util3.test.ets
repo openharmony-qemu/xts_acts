@@ -671,7 +671,7 @@ export default function Util3Test() {
       try {
         let result1 = range.intersect(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.intersect(undefined);
@@ -697,7 +697,7 @@ export default function Util3Test() {
       try {
         let result1 = range.intersect(null, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.intersect(undefined, tempMidS);
@@ -731,7 +731,7 @@ export default function Util3Test() {
       try {
         let result1 = range.expand(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.expand(undefined);
@@ -755,7 +755,7 @@ export default function Util3Test() {
       try {
         let result1 = range.clamp(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.clamp(undefined);
@@ -782,7 +782,7 @@ export default function Util3Test() {
       try {
         let result1 = range.intersect(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.intersect(undefined);
@@ -808,7 +808,7 @@ export default function Util3Test() {
       try {
         let result1 = range.expand(null, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.expand(undefined, tempMidS);
@@ -818,7 +818,7 @@ export default function Util3Test() {
       try {
         let result3 = range.expand(tempMiDF, null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result4 = range.expand(tempMiDF, undefined);
@@ -844,32 +844,32 @@ export default function Util3Test() {
       try {
         let result1 = range.expand(null, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.expand(undefined, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result3 = range.expand(tempMiDF, null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result4 = range.expand(tempMiDF, undefined);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result5 = range.expand(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result6 = range.expand(undefined);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -889,11 +889,14 @@ export default function Util3Test() {
       try {
         let result1 = range.contains(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
-        let result2 = range.contains(undefined);
+        let result2 = range.contains(401);
       } catch (err) {
+        console.log('111111111: ' + err.code)
+        console.log('111111111: ' + err.name)
+        console.log('111111111: ' + err.message)
         expect(err.code).assertEqual(undefined);
       }
     })
@@ -914,12 +917,12 @@ export default function Util3Test() {
       try {
         let result1 = range.clamp(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.clamp(undefined);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -990,7 +993,7 @@ export default function Util3Test() {
       try {
         let result3 = base64.decodeSync("");
       } catch (err) {
-        expect(err.code).assertEqual('-2');
+        expect(err.code).assertEqual(401);
       }
       let result4 = base64.decodeSync("xxxx");
       expect(result4.toString()).assertEqual('199,28,113');
@@ -1087,12 +1090,12 @@ export default function Util3Test() {
       try {
         let result1 = base64Helper.encodeSync(null);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = base64Helper.encodeSync(undefined);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       let array = new Uint8Array([115, 49, 51]);
       let result3 = base64Helper.encodeSync(array, util.Type.BASIC_URL_SAFE);
@@ -1115,17 +1118,17 @@ export default function Util3Test() {
       try {
         let result2 = base64Helper.decodeSync(null, util.Type.BASIC_URL_SAFE);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let result3 = base64Helper.decodeSync(undefined, util.Type.BASIC_URL_SAFE);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let result4 = base64Helper.decodeSync("", util.Type.BASIC_URL_SAFE);
       } catch (err) {
-        expect(err.code).assertEqual('-2');
+        expect(err.code).assertEqual(401);
       }
       let result5 = base64Helper.decodeSync("aaaaa", util.Type.MIME_URL_SAFE);
       expect(result5.toString()).assertEqual("105,166,154")
@@ -1145,12 +1148,12 @@ export default function Util3Test() {
       try {
         await base64Helper.encode(null);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         await base64Helper.encode(undefined);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1177,12 +1180,12 @@ export default function Util3Test() {
       try {
         let result2 = await base64Helper.encodeToString(null, util.Type.MIME);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let result3 = await base64Helper.encodeToString(undefined, util.Type.MIME);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       let result4 = await base64Helper.encodeToString(array, util.Type.MIME_URL_SAFE);
       expect(result4.length).assertEqual(193)
@@ -1204,12 +1207,12 @@ export default function Util3Test() {
       try {
         let res2 = await base64Helper.decode(null, util.Type.MIME_URL_SAFE);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let res3 = await base64Helper.decode(undefined, util.Type.MIME_URL_SAFE);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         let res4 = await base64Helper.decode("", util.Type.MIME_URL_SAFE);
@@ -1265,12 +1268,12 @@ export default function Util3Test() {
       try {
         const decoded1 = decoder.write(null);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         const decoded2 = decoder.write(undefined);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       const decoded3 = decoder.write("");
       expect(decoded3).assertEqual("");
@@ -1293,12 +1296,12 @@ export default function Util3Test() {
       try {
         const endString1 = decoder.end(null);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       try {
         const endString2 = decoder.end(undefined);
       } catch (err) {
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(401);
       }
       const endString3 = decoder.end("");
       expect(endString3).assertEqual("");
@@ -2443,12 +2446,12 @@ export default function Util3Test() {
       try {
         let result1 = range.intersect(null);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.intersect(undefined);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -2469,12 +2472,12 @@ export default function Util3Test() {
       try {
         let result1 = range.intersect(null, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result2 = range.intersect(undefined, tempMidS);
       } catch (err) {
-        expect(err.code).assertEqual(undefined);
+        expect(err.code).assertEqual(401);
       }
       try {
         let result3 = range.intersect(tempMiDF, null);
@@ -2487,6 +2490,96 @@ export default function Util3Test() {
         expect(err.code).assertEqual(undefined);
       }
     });
+
+    /**
+     * @tc.name   testGetHash_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3539
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let textDecoderOptions: util.TextDecoderOptions = {
+        fatal: false,
+        ignoreBOM: true
+      }
+      let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+      let uint8 = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61, 0x62, 0x63]);
+      let retStr1 = textDecoder.decodeToString(uint8, null);
+      expect(retStr1).assertEqual("abc");
+      let retStr2 = textDecoder.decodeToString(uint8, undefined);
+      expect(retStr2).assertEqual("abc");
+
+      let tempLower = new Temperature(30);
+      let tempUpper = new Temperature(40);
+      let tempMiDF = new Temperature(35);
+      let range = new util.ScopeHelper(tempLower, tempUpper);
+      try {
+        let result1 = range.contains(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = range.contains(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      let tempLower2 = new Temperature(30);
+      let tempUpper2 = new Temperature(40);
+      let range2 = new util.ScopeHelper(tempLower2, tempUpper2);
+      let tempLess2 = new Temperature(20);
+      let tempMore2 = new Temperature(45);
+      let rangeSec2 = new util.ScopeHelper(tempLess2, tempMore2);
+      try {
+        let result3 = range2.contains(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result4 = range2.contains(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetHash_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3540
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let base64Helper = new util.Base64Helper();
+      let array =
+        new Uint8Array([77, 97, 110, 105, 115, 100, 105, 115, 116, 105, 110, 103, 117, 105, 115, 104, 101, 100, 110,
+          111, 116,
+          111, 110, 108, 121, 98, 121, 104, 105, 115, 114, 101, 97, 115, 111, 110, 98, 117, 116, 98, 121, 116, 104, 105,
+          115,
+          115, 105, 110, 103, 117, 108, 97, 114, 112, 97, 115, 115, 105, 111, 110, 102, 114, 111, 109, 111, 116, 104,
+          101,
+          114, 97, 110, 105, 109, 97, 108, 115, 119, 104, 105, 99, 104, 105, 115, 97, 108, 117, 115, 116, 111, 102, 116,
+          104,
+          101, 109, 105, 110, 100, 101, 120, 99, 101, 101, 100, 115, 116, 104, 101, 115, 104, 111, 114, 116, 118, 101,
+          104,
+          101, 109, 101, 110, 99, 101, 111, 102, 97, 110, 121, 99, 97, 114, 110, 97, 108, 112, 108, 101, 97, 115, 117,
+          114,
+          101]);
+      try {
+        let result1 = base64Helper.encodeToStringSync(null, util.Type.MIME);
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result2 = base64Helper.encodeToStringSync(undefined, util.Type.MIME);
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      let result3 = base64Helper.encodeToStringSync(array, util.Type.MIME_URL_SAFE);
+      expect(result3.length).assertEqual(193);
+    })
   })
 }
 

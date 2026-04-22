@@ -498,5 +498,136 @@ export default function fontPart3Test() {
         expect(finallyFollowed).assertEqual(followed);
       }
     });
+    /**
+     * @tc.name   testFontMeasureSingleCharacterWithFeaturesNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2500
+     * @tc.desc   Test for testFontMeasureSingleCharacterWithFeaturesNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontMeasureSingleCharacterWithFeaturesNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
+      const msg = 'testFontMeasureSingleCharacterWithFeaturesNormalStatic';
+      const font = new drawing.Font();
+      font.setSize(70);
+      let fontFeatures : Array<drawing.FontFeature> = [];
+      try {
+        let width = font.measureSingleCharacterWithFeatures("H", fontFeatures);
+        expect(width).assertEqual(52);
+        console.info(msg + 'measureSingleCharacterWithFeatures 1 successed width: ' + width);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let width2 = font.measureSingleCharacterWithFeatures("你", fontFeatures);
+        expect(width2 > 0).assertEqual(true);
+        console.info(msg + 'measureSingleCharacterWithFeatures 2 successed width2: ' + width2);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let width3 = font.measureSingleCharacterWithFeatures("（", fontFeatures);
+        expect(width3 > 0).assertEqual(true);
+        console.info(msg + 'measureSingleCharacterWithFeatures 3 successed width3: ' + width3);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let width4 = font.measureSingleCharacterWithFeatures("｛", fontFeatures);
+        expect(width4 > 0).assertEqual(true);
+        console.info(msg + 'measureSingleCharacterWithFeatures 4 successed width4: ' + width4);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      fontFeatures.push({name: 'calt', value: 40});
+      try {
+        let width5 = font.measureSingleCharacterWithFeatures("8", fontFeatures);
+        expect(width5 > 0).assertEqual(true);
+        console.info(msg + 'measureSingleCharacterWithFeatures 5 successed width5: ' + width5);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      fontFeatures.push({name: 'calt', value: 40});
+      fontFeatures.push({name: 'ccmp', value:11});
+      fontFeatures.push({name: 'frac', value:22});
+      try {
+        let width6 = font.measureSingleCharacterWithFeatures("7", fontFeatures);
+        expect(width6 > 0).assertEqual(true);
+        console.info(msg + 'measureSingleCharacterWithFeatures 6 successed width6: ' + width6);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testFontMeasureSingleCharacterWithFeaturesMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2503
+     * @tc.desc   testFontMeasureSingleCharacterWithFeaturesMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureSingleCharacterWithFeaturesMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testFontMeasureSingleCharacterWithFeaturesMultipleCallsStatic';
+      const font = new drawing.Font();
+      for(let i = 0; i < 20; i++) {
+        font.setSize(70);
+        let fontFeatures : Array<drawing.FontFeature> = [];
+        fontFeatures.push({name: 'calt', value: 40});
+        try {
+          let width = font.measureSingleCharacterWithFeatures("8", fontFeatures);
+          console.info(msg + `measureSingleCharacterWithFeatures step: ${i} success width: ${width}`);
+          expect(width).assertEqual(40);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `measureSingleCharacterWithFeatures  errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
+          expect().assertFail();
+        }
+      }
+    })
+    /**
+     * @tc.name   testFontMeasureSingleCharacterWithFeaturesAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2502
+     * @tc.desc   testFontMeasureSingleCharacterWithFeaturesAbnormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureSingleCharacterWithFeaturesAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testFontMeasureSingleCharacterWithFeaturesAbnormalStatic';
+      const font = new drawing.Font();
+      font.setSize(70);
+      let fontFeatures : Array<drawing.FontFeature> = [];
+      fontFeatures.push({name: 'calt', value: 40});
+      try {
+        font.measureSingleCharacterWithFeatures("", fontFeatures);
+        console.info(msg + `measureSingleCharacterWithFeatures 1 success `);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(25900001);
+      }
+      try {
+        font.measureSingleCharacterWithFeatures("aa", fontFeatures);
+        console.info(msg + `measureSingleCharacterWithFeatures 2 success `);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `measureSingleCharacterWithFeatures 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(25900001);
+      }
+    })
   });
 }

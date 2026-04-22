@@ -54,7 +54,7 @@ import { sleep } from '../testability/pages/Utils';
 
 let tag: string = 'taskPoolAsyncRunner'
 
-export default function taskPoolAsyncRunnerErrorTest() {
+export default function taskPoolAsyncRunnerErrorTest(): void {
   describe('TaskPoolAsyncRunnerErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -77,15 +77,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1001
-     * @tc.name taskPoolAsyncRunnerErrorTest0100
-     * @tc.desc test Common tasks are exceptional
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1001
+      * @tc.name taskPoolAsyncRunnerErrorTest0100
+      * @tc.desc test Common tasks are exceptional
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0100: start`);
         let Count1: number = 0;
@@ -121,15 +121,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1002
-     * @tc.name taskPoolAsyncRunnerErrorTest0200
-     * @tc.desc test GenericsTask throws exceptions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1002
+      * @tc.name taskPoolAsyncRunnerErrorTest0200
+      * @tc.desc test GenericsTask throws exceptions
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0200: start`);
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -165,15 +165,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1003
-     * @tc.name taskPoolAsyncRunnerErrorTest0300
-     * @tc.desc test OnEnqueued callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1003
+      * @tc.name taskPoolAsyncRunnerErrorTest0300
+      * @tc.desc test OnEnqueued callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: start`);
         let Count1: number = 0;
@@ -229,21 +229,19 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1004
-     * @tc.name taskPoolAsyncRunnerErrorTest0400
-     * @tc.desc test OnStartExecution callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1004
+      * @tc.name taskPoolAsyncRunnerErrorTest0400
+      * @tc.desc test OnStartExecution callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: start`);
-        let Count1: number = 0;
-        let Count2: number = 0;
-        let lock1 = new Mutex();
-        let lock2 = new Mutex();
+        let Count1 = new AtomicInt(0);
+        let Count2 = new AtomicInt(0);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -257,9 +255,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
-              lock1.lock();
-              Count1++;
-              lock1.unlock();
+              Count1.fetchAdd(1);
             }
           });
           task2.onStartExecution(() => {
@@ -271,9 +267,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
-              lock2.lock();
-              Count2++;
-              lock2.unlock();
+              Count2.fetchAdd(1);
             }
           });
           try {
@@ -288,32 +282,28 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${err.message}`);
           }
         }
-        while (Count1 < 10 || Count2 < 10) {
+        while (Count1.load() < 10 || Count2.load() < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1);
-        expect(10).assertEqual(Count2);
-        Count1 = 0;
-        Count2 = 0;
+        expect(10).assertEqual(Count1.load());
+        expect(10).assertEqual(Count2.load());
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: end`);
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1005
-     * @tc.name taskPoolAsyncRunnerErrorTest0500
-     * @tc.desc test OnExecutionFailed callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1005
+      * @tc.name taskPoolAsyncRunnerErrorTest0500
+      * @tc.desc test OnExecutionFailed callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: start`);
-        let Count1: number = 0;
-        let Count2: number = 0;
-        let lock1 = new Mutex();
-        let lock2 = new Mutex();
+        let Count1 = new AtomicInt(0);
+        let Count2 = new AtomicInt(0);
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -327,9 +317,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
-              lock1.lock();
-              Count1++;
-              lock1.unlock();
+              Count1.fetchAdd(1);
             }
           });
           task2.onExecutionFailed((e: Error) => {
@@ -341,9 +329,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
-              lock2.lock();
-              Count2++;
-              lock2.unlock();
+              Count2.fetchAdd(1);
             }
           });
           try {
@@ -358,13 +344,11 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${err.message}`);
           }
         }
-        while (Count1 < 10 || Count2 < 10) {
+        while (Count1.load() < 10 || Count2.load() < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1);
-        expect(10).assertEqual(Count2);
-        Count1 = 0;
-        Count2 = 0;
+        expect(10).assertEqual(Count1.load());
+        expect(10).assertEqual(Count2.load());
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: end`);
 
       })
@@ -380,9 +364,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
     it('taskPoolAsyncRunnerErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0600: start`);
-        let Count1: number = 0;
+        let Count1 = new AtomicInt(0);
         let Count2: number = 0;
-        let lock = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -401,9 +384,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute errorRCJ:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
-              lock.lock();
-              Count1++;
-              lock.unlock();
+              Count1.fetchAdd(1);
             }
           });
           task2.onExecutionSucceeded(() => {
@@ -420,7 +401,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
           });
           try {
             asyncRunner.execute(task1).catch((err: Error) => {
-              Count1++
+              Count1.fetchAdd(1)
               console.log(`${tag} taskPoolAsyncRunnerErrorTest0600 then ${task1.name} catch: ${JSON.stringify(err)}`);
             });
             asyncRunner.execute(task2).catch((err: Error) => {
@@ -432,12 +413,11 @@ export default function taskPoolAsyncRunnerErrorTest() {
             console.info(`${tag} execute error:${err.message}`);
           }
         }
-        while (Count1 < 10 || Count2 < 10) {
+        while (Count1.load() < 10 || Count2 < 10) {
           await sleep(100);
         }
-        expect(10).assertEqual(Count1);
+        expect(10).assertEqual(Count1.load());
         expect(10).assertEqual(Count2);
-        Count1 = 0;
         Count2 = 0;
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: end`);
 

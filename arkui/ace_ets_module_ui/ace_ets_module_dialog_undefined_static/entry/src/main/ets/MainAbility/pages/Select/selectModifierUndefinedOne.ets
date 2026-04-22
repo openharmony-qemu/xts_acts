@@ -11,7 +11,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class ModifierMenuOutline implements AttributeModifier<SelectAttribute> {
+export class ModifierMenuOutline implements AttributeModifier<SelectAttribute> {
   @State public isUndefined: boolean = false;
 
   applyNormalAttribute(instance: SelectAttribute): void {

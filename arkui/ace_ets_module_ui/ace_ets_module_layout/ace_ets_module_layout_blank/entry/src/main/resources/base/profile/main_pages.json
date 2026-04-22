@@ -4,6 +4,8 @@
         "MainAbility/pages/Blank/Blank",
         "MainAbility/pages/Blank/blankParentWidth",
         "MainAbility/pages/Blank/blank3",
-        "MainAbility/pages/Blank/BlankColorNullUndefined"
+        "MainAbility/pages/Blank/BlankColorNullUndefined",
+        "MainAbility/pages/ComponentContent/ComponentContentReuseNullUndefined",
+        "MainAbility/pages/ComponentContent/ReactiveComponentContentReuseNullUndefined"
     ]
 }

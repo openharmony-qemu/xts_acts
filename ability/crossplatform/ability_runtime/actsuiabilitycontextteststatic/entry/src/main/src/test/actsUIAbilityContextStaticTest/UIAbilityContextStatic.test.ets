@@ -213,6 +213,8 @@ export default function UIAbilityContextStatic() {
           expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
           expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          expect(moduleContext.resourceManager!= null).assertTrue();
+          expect(moduleContext.applicationInfo.name).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
           hilog.info(domain, tag, "testCreateAreaModeContextStatic001 abilityContext err");
@@ -393,6 +395,8 @@ export default function UIAbilityContextStatic() {
           expect(displayContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
           expect(displayContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(displayContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
+          expect(displayContext.resourceManager!= null).assertTrue();
+          expect(displayContext.applicationInfo.name).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
           hilog.info(domain, tag, "testCreateDisplayContextStatic001 abilityContext err");
@@ -558,7 +562,7 @@ export default function UIAbilityContextStatic() {
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
         })
-        await Utils.msSleep(1000);
+        await Utils.msSleep(500);
         let AbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext
         await Utils.msSleep(2000);
         let isTerminating: boolean = AbilityContext.isTerminating();
@@ -571,5 +575,30 @@ export default function UIAbilityContextStatic() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SetOnNewWantSkipScenarios_Static_0100
+     * @tc.number SetOnNewWantSkipScenarios_Static_0100
+     * @tc.desc   SetOnNewWantSkipScenarios_Static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetOnNewWantSkipScenarios_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG: string = 'SetOnNewWantSkipScenarios_Static_0100';
+      hilog.info(0x0000, tag, TAG + '---------------testcase is start---------------')
+      let scenarios: int = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
+      contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
+      contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+      context?.setOnNewWantSkipScenarios(scenarios).then(() => {
+        hilog.info(0x0000, tag, TAG + 'SetOnNewWantSkipScenarios_Static_0100 succeed');
+        done();
+      }).catch((err: Error) => {
+        hilog.info(0x0000, tag, `${TAG} SetOnNewWantSkipScenarios_Static_0100 failed, code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+        done();
+      });
+      hilog.info(0x0000, tag, TAG + '---------------testcase is end---------------')
+    });
   })
 }

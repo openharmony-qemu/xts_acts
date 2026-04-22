@@ -30,6 +30,14 @@ let profile: eSIM.DownloadableProfile = {
     accessType: 0
   }]
 };
+
+let profile1: eSIM.DownloadableProfile = {
+  activationCode: '123456',
+  confirmationCode: '',
+  carrierName: '',
+  accessRules: []
+};
+
 const SLOT_0: int = 0;
 const SLOT_1: int = 1;
 const SLOT_2: int = 2;
@@ -68,10 +76,17 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data = await eSIM.addProfile(profile);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
-          hilog.info(domain, tag, `${caseName} test end`);
-          done();
+          if(data){
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectTrue(data);
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }else{
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }
         } catch (error) {
           let err = error as BusinessError;
           if (err?.code === 801) {
@@ -83,6 +98,43 @@ export default function EsimPublic1() {
           } else {
             hilog.error(domain, tag, `${caseName} AddProfile failed, promise: err->${JSON.stringify(err)}`);
             expect(err?.code).assertEqual(3120002);
+            hilog.error(domain, tag, `${caseName} test end`);
+            done();
+          }
+        }
+      });
+
+    /**
+     * @tc.number    SUB_Telephony_Esim_AddProfile_0800
+     * @tc.name      testTelephonyEsimAddProfile_static_0800
+     * @tc.desc      Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testTelephonyEsimAddProfile_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyEsimAddProfile_static_0800';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          let data = await eSIM.addProfile(profile1);
+          if(data){
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectTrue(data);
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }else{
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }
+        } catch (error) {
+          let err = error as BusinessError;
+          if (err?.code === 801) {
+            hilog.error(domain, tag,
+              `${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
+            expect(err?.code).assertEqual(801);
             hilog.error(domain, tag, `${caseName} test end`);
             done();
           }
@@ -105,12 +157,12 @@ export default function EsimPublic1() {
           let isEsimSupport: boolean = eSIM.isSupported(SLOT_0);
           if (isEsimSupport) {
             hilog.info(domain, tag, `eSIM is supported`);
-            ExpectTrue(true);
+            ExpectTrue(isEsimSupport);
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           } else {
             hilog.info(domain, tag, `${caseName} eSIM is not supported`);
-            ExpectFail();
+            ExpectTrue(!isEsimSupport);
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           }
@@ -136,10 +188,17 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data: boolean = eSIM.isSupported(SLOT_1);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
-          hilog.info(domain, tag, `${caseName} test end`);
-          done();
+          if(data){
+            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            ExpectTrue(data);
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }else{
+            hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName} test end`);
+            done();
+          }
         } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
@@ -163,8 +222,8 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data: boolean = eSIM.isSupported(SLOT_2);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
+          hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
+          ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error) {
@@ -190,8 +249,8 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data: boolean = eSIM.isSupported(SLOT_3);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
-          ExpectTrue(true);
+          hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
+          ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         } catch (error) {

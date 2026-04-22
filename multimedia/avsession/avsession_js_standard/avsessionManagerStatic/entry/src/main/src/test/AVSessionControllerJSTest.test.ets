@@ -331,7 +331,6 @@ export default function abilityTest() {
                 expect(receivedParam['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
                 expect(receivedString2 == UPDATE_LYRICS_EVENT).assertTrue();
                 expect(receivedParam2['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200 Session event change event not received");
                 expect(true).assertFalse();
@@ -367,7 +366,6 @@ export default function abilityTest() {
                 console.log(TAG + "Received session event change event");
                 expect(receivedString == UPDATE_LYRICS_EVENT).assertTrue();
                 expect(receivedParam['lyrics'] == UPDATE_LYRICS_WANT_PARAMS['lyrics']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -402,7 +400,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received session event change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -434,7 +431,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received session event change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "Session event change event not received");
                 expect(true).assertFalse();
@@ -460,7 +456,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -638,7 +633,6 @@ export default function abilityTest() {
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "Received extras change event");
                 expect(receivedExtras['extrasKey'] == CUSTOM_EXTRAS['extrasKey']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100 Extras change event not received");
                 expect(true).assertFalse();
@@ -672,7 +666,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200 Success, not received extras change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200 failed, extras change event received");
                 expect(true).assertFalse();
@@ -703,7 +696,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300 Success, not received extras change event");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300 failed, extras change event received");
                 expect(true).assertFalse();
@@ -733,7 +725,6 @@ export default function abilityTest() {
             Utils.msSleep(200).then(() => {
                 if (receivedCallback) {
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Received queue items change");
-                    expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
                     expect(true).assertFalse();
@@ -765,7 +756,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -796,7 +786,6 @@ export default function abilityTest() {
             Utils.msSleep(200).then(() => {
                 if (receivedCallback) {
                     console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Received queue Title change");
-                    expect(true).assertTrue();
                 } else {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
                     expect(true).assertFalse();
@@ -828,7 +817,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -861,7 +849,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -894,7 +881,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -926,7 +912,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Received queue items change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 Session queue items change  not received");
                 expect(true).assertFalse();
@@ -958,7 +943,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -992,7 +976,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -1025,7 +1008,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Received queue Title change");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 Session queue Title change  not received");
                 expect(true).assertFalse();
@@ -1051,7 +1033,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1094,7 +1075,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1137,7 +1117,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -1184,7 +1163,6 @@ export default function abilityTest() {
             await Utils.msSleep(200)
             if (receivedCallback) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 Received skipToQueueItem ");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 skipToQueueItem not received");
                 expect(true).assertFalse();
@@ -1215,7 +1193,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (receivedCallback && receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200 Received skipToQueueItem ");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200skipToQueueItem not received");
                 expect(true).assertFalse();
@@ -1247,7 +1224,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1303,7 +1279,6 @@ export default function abilityTest() {
                             expect(true).assertFalse();
                         } else {
                             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 finished");
-                            expect(true).assertTrue();
                         }
                         done();
                     });
@@ -1354,8 +1329,8 @@ export default function abilityTest() {
                 await session!.setAVPlaybackState(playbackState);
                 Utils.msSleep(200);
                 let currentPlaybackState = controller!.getAVPlaybackStateSync();
-                console.log(`Get playback state: ${playbackState}`);
-                expect(currentPlaybackState.state).assertEqual(0);
+                console.log(`Get playback state: ${playbackState.state}`);
+                expect(currentPlaybackState.state).assertEqual(avSession.PlaybackState.PLAYBACK_STATE_INITIAL);
             } catch (err) {
                 expect(true).assertFalse();
             }
@@ -1449,6 +1424,8 @@ export default function abilityTest() {
                 let outputDeviceInfo = controller!.getOutputDeviceSync();
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
+                expect(outputDeviceInfo.devices[0].castCategory).assertEqual(0);
+                expect(outputDeviceInfo.devices[0].castCategory == 1).assertFalse();
             } catch (err) {
                 expect(true).assertFalse();
             }
@@ -1530,5 +1507,427 @@ export default function abilityTest() {
                 done();
             };
         })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001
+         * @tc.desc   controller test on(outputDeviceChange) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onOutputDeviceChange(() => {
+                    console.info('on outputDeviceChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002
+         * @tc.desc   controller test on(outputDeviceChange) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onOutputDeviceChange(() => {
+                    console.info('on outputDeviceChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003
+         * @tc.desc   controller test on(outputDeviceChange)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OUTPUTDEVICECHANGE_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => { 
+            try {
+                controller!.offOutputDeviceChange();
+                controller!.onOutputDeviceChange((state: avSession.ConnectionState, device: avSession.OutputDeviceInfo) => {
+                    console.info(`on outputDeviceChange state: ${state}, device : ${device}`);
+                    expect(state).assertLargerOrEqual(0);
+                });
+                controller!.offOutputDeviceChange((state: avSession.ConnectionState, device: avSession.OutputDeviceInfo) => {
+                    console.info(`on outputDeviceChange state: ${state}, device : ${device}`);
+                    expect(state).assertLargerOrEqual(0);
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001
+         * @tc.desc   controller test on(ValidCommandChange) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onValidCommandChange(() => {
+                    console.info('on ValidCommandChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002
+         * @tc.desc   controller test on(ValidCommandChange) errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            await Utils.msSleep(500)
+            try {
+                controller!.onValidCommandChange(() => {
+                    console.info('on ValidCommandChange entry11');
+                    done();
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003
+         * @tc.desc   controller test on(ValidCommandChange)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_VALIDCOMMANDCHANGE_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                controller!.offValidCommandChange();
+                controller!.onValidCommandChange((validCommands: avSession.AVControlCommandType[]) => {
+                    console.info(`validCommandChange : SUCCESS : size : ${validCommands.length}`);
+                    console.info(`validCommandChange : SUCCESS : validCommands : ${validCommands.values()}`);
+                    expect(validCommands.values()).assertInstanceOf('String');
+                });
+                controller!.offValidCommandChange((validCommands: avSession.AVControlCommandType[]) => {
+                    console.info(`validCommandChange : SUCCESS : size : ${validCommands.length}`);
+                    console.info(`validCommandChange : SUCCESS : validCommands : ${validCommands.values()}`);
+                    expect(validCommands.values()).assertInstanceOf('String');
+                });
+            } catch (error) {
+                error = error as BusinessError;
+                console.info(`on ValidCommandChange entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+        
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing on off playbackstate change callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_OFF_PLAYBACKSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            try{
+                let filter: Array<string> = ['state','speed','position','bufferedTime','loopMode','isFavorite','activeItemId',
+                    'volume','maxVolume','muted','duration','videoWidth','videoHeight','extras'];
+                controller!.offPlaybackStateChange();   
+                controller!.onPlaybackStateChange(filter, (playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                });
+                controller!.offPlaybackStateChange((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`offPlaybackStateChange success : ${JSON.stringify(playbackstate)}`)
+                }); 
+                controller!.onPlaybackStateChangeAll((playbackstate: avSession.AVPlaybackState) => {
+                    console.info(`onPlaybackStateChangeAll success : ${playbackstate}`)
+                });
+            }catch(err){
+                console.info(`playbackStateChange failed : ${err.code}  ${err.message}`)
+                expect().assertFail()
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGE_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGE_STATIC_0101
+         * @tc.desc   Testing onMetadataChange callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGE_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let flag = 0;
+            const filter: Array<string> = ['assetId', 'title', 'artist', 'author'];
+
+            let changedata1: avSession.AVMetadata = {
+                assetId: '9527',
+                title: "lose yourselfl",
+                artist: "Emineml",
+                author: "ST1"
+            };
+
+            controller!.onMetadataChange(filter, (metadata: avSession.AVMetadata) => {
+                console.info(`onMetadataChange assetId : ${metadata.assetId}`);
+                expect(metadata?.assetId).assertEqual(changedata1?.assetId);
+                expect(metadata?.title).assertEqual(changedata1?.title);
+                expect(metadata?.artist).assertEqual(changedata1?.artist);
+                expect(metadata?.author).assertEqual(changedata1?.author);
+                expect(metadata?.avQueueName).assertEqual(changedata1?.avQueueName);
+                expect(metadata?.avQueueId).assertEqual(changedata1?.avQueueId);
+                expect(metadata?.avQueueImage).assertEqual(changedata1?.avQueueImage);
+                expect(metadata?.album).assertEqual(changedata1?.album);
+                expect(metadata?.writer).assertEqual(changedata1?.writer);
+                expect(metadata?.composer).assertEqual(changedata1?.composer);
+                expect(metadata?.duration).assertEqual(changedata1?.duration);
+                expect(metadata?.mediaImage).assertEqual(changedata1?.mediaImage);
+                expect(metadata?.publishDate).assertEqual(changedata1?.publishDate);
+                expect(metadata?.subtitle).assertEqual(changedata1?.subtitle);
+                expect(metadata?.description).assertEqual(changedata1?.description);
+                expect(metadata?.lyric).assertEqual(changedata1?.lyric);
+                expect(metadata?.singleLyricText).assertEqual(changedata1?.singleLyricText);
+                expect(metadata?.previousAssetId).assertEqual(changedata1?.previousAssetId);
+                expect(metadata?.nextAssetId).assertEqual(changedata1?.nextAssetId);
+                expect(metadata?.filter).assertEqual(changedata1?.filter);
+                expect(metadata?.drmSchemes).assertEqual(changedata1?.drmSchemes);
+                expect(metadata?.displayTags).assertEqual(changedata1?.displayTags);
+                flag ++;
+            });
+
+            await session!.setAVMetadata(changedata1);
+            await Utils.msSleep(500);
+
+            controller!.offMetadataChange((metadata: avSession.AVMetadata) => {
+                console.info(`offMatadataChange secces : ${JSON.stringify(metadata)}`);
+            });
+
+            await session!.setAVMetadata(changedata1);
+            await Utils.msSleep(500);
+
+            if (flag != 1) {
+                console.info(`metadatachange callback failed flag:${flag}`);
+                expect().assertFail();
+            };
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGEALL_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGEALL_STATIC_0101
+         * @tc.desc   Testing onMetadataChangeAll callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONMETADATACHNGEALL_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const filter: Array<string> = ['assetId', 'title', 'artist', 'author'];
+
+            let changedata1: avSession.AVMetadata = {
+                assetId: '9527',
+                title: "lose yourselfl",
+                artist: "Emineml",
+                author: "ST1"
+            };
+
+            controller!.onMetadataChangeAll((metadata: avSession.AVMetadata) => {
+                console.info(`onMatadataChange assetId : ${metadata?.assetId}`);
+                expect(metadata?.assetId).assertEqual(changedata1?.assetId);
+                expect(metadata?.title).assertEqual(changedata1?.title);
+                expect(metadata?.artist).assertEqual(changedata1?.artist);
+                expect(metadata?.author).assertEqual(changedata1?.author);
+                expect(metadata?.avQueueName).assertEqual(changedata1?.avQueueName);
+                expect(metadata?.avQueueId).assertEqual(changedata1?.avQueueId);
+                expect(metadata?.avQueueImage).assertEqual(changedata1?.avQueueImage);
+                expect(metadata?.album).assertEqual(changedata1?.album);
+                expect(metadata?.writer).assertEqual(changedata1?.writer);
+                expect(metadata?.composer).assertEqual(changedata1?.composer);
+                expect(metadata?.duration).assertEqual(changedata1?.duration);
+                expect(metadata?.mediaImage).assertEqual(changedata1?.mediaImage);
+                expect(metadata?.publishDate).assertEqual(changedata1?.publishDate);
+                expect(metadata?.subtitle).assertEqual(changedata1?.subtitle);
+                expect(metadata?.description).assertEqual(changedata1?.description);
+                expect(metadata?.lyric).assertEqual(changedata1?.lyric);
+                expect(metadata?.singleLyricText).assertEqual(changedata1?.singleLyricText);
+                expect(metadata?.previousAssetId).assertEqual(changedata1?.previousAssetId);
+                expect(metadata?.nextAssetId).assertEqual(changedata1?.nextAssetId);
+                expect(metadata?.filter).assertEqual(changedata1?.filter);
+                expect(metadata?.drmSchemes).assertEqual(changedata1?.drmSchemes);
+                expect(metadata?.displayTags).assertEqual(changedata1?.displayTags);
+            });
+
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCALLMETADATACHNGE_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCALLMETADATACHNGE_STATIC_0101
+         * @tc.desc   Testing onCallMetadataChange callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONCALLMETADATACHNGE_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const filter: Array<string> = ['name', 'phoneNumber'];
+
+            let callMetadate1: avSession.CallMetadata = {
+                name: '12345678',
+                phoneNumber: '65432111'
+            };
+
+            controller!.onCallMetadataChange(filter, (callmetadata: avSession.CallMetadata) => {
+                console.info(`onCallMatadataChange name : ${callmetadata.name}`);
+                expect(callmetadata.name).assertEqual(callMetadate1.name);
+                expect(callmetadata.phoneNumber).assertEqual(callMetadate1.phoneNumber);
+                expect(callmetadata?.avatar).assertEqual(callMetadate1?.avatar);
+            });
+
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHNGE_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHNGE_STATIC_0101
+         * @tc.desc   Testing onCallStateChange callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHNGE_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const filter: Array<string> = ['state', 'muted'];
+
+            let AVCallState1: avSession.AVCallState = {
+                state: avSession.CallState.CALL_STATE_DIALING,
+                muted: false
+            };
+
+            controller!.onCallStateChange(filter, (callstate: avSession.AVCallState) => {
+                console.info(`onCallStateChange state : ${callstate.state}`);
+                expect(callstate.state).assertEqual(AVCallState1.state);
+                expect(callstate.muted).assertEqual(AVCallState1.muted);
+            });
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_STATIC_0101
+         * @tc.desc   Testing onPlaybackStateChange callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGE_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let flag = 0;
+            const filter: Array<string> = ['state', 'speed'];
+
+            let playbackstate1: avSession.AVPlaybackState = {
+                state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
+                speed: 1.5
+            };   
+
+            controller!.onPlaybackStateChange(filter, (playbackState: avSession.AVPlaybackState) => {
+                console.info(`onPlaybackStateChange state : ${playbackState.state}`);
+                expect(playbackState.state).assertEqual(playbackstate1.state);
+                expect(playbackState.speed).assertEqual(playbackstate1.speed);
+                expect(playbackState?.position).assertEqual(playbackstate1?.position);
+                expect(playbackState?.bufferedTime).assertEqual(playbackstate1?.bufferedTime);
+                expect(playbackState?.isFavorite).assertEqual(playbackstate1?.isFavorite);
+                expect(playbackState?.activeItemId).assertEqual(playbackstate1?.activeItemId);
+                expect(playbackState?.volume).assertEqual(playbackstate1?.volume);
+                expect(playbackState?.maxVolume).assertEqual(playbackstate1?.maxVolume);
+                flag ++;
+            });
+
+            await session!.setAVPlaybackState(playbackstate1);
+            await Utils.msSleep(500);
+
+             controller!.offPlaybackStateChange((playbackState: avSession.AVPlaybackState) => {
+                console.info(`offPlaybackStateChange secces : ${JSON.stringify(playbackState)}`);
+            });
+
+            await session!.setAVPlaybackState(playbackstate1);
+            await Utils.msSleep(500);
+
+            if (flag != 1) {
+                console.info(`PlaybackStateChange callback failed flag:${flag}`);
+                expect().assertFail();
+            };
+            done();
+        })
+
+        /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGEALL_STATIC_0101
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGEALL_STATIC_0101
+         * @tc.desc   Testing onPlaybackStateChangeAll callback registration
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYBACKSTATECHANGEALL_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const filter: Array<string> = ['state', 'speed'];
+
+            let playbackstate1: avSession.AVPlaybackState = {
+                state: avSession.PlaybackState.PLAYBACK_STATE_PLAY,
+                speed: 1.5
+            };
+
+            controller!.onPlaybackStateChangeAll((playbackState: avSession.AVPlaybackState) => {
+                console.info(`onPlaybackStateChangeAll state : ${playbackState.state}`);
+                expect(playbackState.state).assertEqual(playbackstate1.state);
+                expect(playbackState.speed).assertEqual(playbackstate1.speed);
+                expect(playbackState?.position).assertEqual(playbackstate1?.position);
+                expect(playbackState?.bufferedTime).assertEqual(playbackstate1?.bufferedTime);
+                expect(playbackState?.isFavorite).assertEqual(playbackstate1?.isFavorite);
+                expect(playbackState?.activeItemId).assertEqual(playbackstate1?.activeItemId);
+                expect(playbackState?.volume).assertEqual(playbackstate1?.volume);
+                expect(playbackState?.maxVolume).assertEqual(playbackstate1?.maxVolume);
+            });
+
+            done();
+        })
+
+
+
     })
 }

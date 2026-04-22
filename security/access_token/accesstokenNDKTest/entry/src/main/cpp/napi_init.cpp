@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,11 +32,24 @@ static napi_value OsCheckSelfPermissionA(napi_env env,
     return result;
 }
 
+static napi_value OsCheckSelfPermissionB(napi_env env,
+                                         napi_callback_info info)
+                                         {
+    const char* str = "ohos.permission.GET_BUNDLE_INFO";
+    bool returnValue = OH_AT_CheckSelfPermission(str);
+
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_get_boolean(env, returnValue, &result));
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"osCheckSelfPermissionA", nullptr, OsCheckSelfPermissionA, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"osCheckSelfPermissionB", nullptr, OsCheckSelfPermissionB, nullptr,
          nullptr, nullptr, napi_default, nullptr}};
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

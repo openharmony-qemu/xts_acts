@@ -89,7 +89,7 @@ it('Grid_ScrollStartandStop3_static_0400', Level.LEVEL0, async (done: () => void
       console.info('[Grid_ScrollStartandStop3_static_0400] START');
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_scrollBar')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`) as Int,
         Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`) as Int,
         Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`) as Int,

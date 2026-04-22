@@ -32,36 +32,39 @@ class MyColumnModifierTest implements GestureModifier {
 @Component
 struct addParallelGestureTest1 {
   @State modifier: MyColumnModifierTest = new MyColumnModifierTest()
-  @State str:string = '1'
+  @State str: string = '1'
 
-  aboutToAppear(): void{
+  aboutToAppear(): void {
     console.traceHybridStack()
   }
 
   build() {
-    Column({space:10}) {
+    Column() {
       Column() {
-        Text(this.str).fontSize(16)
+        Text(this.str)
           .id('addParallelGestureTest1_text')
-          .height(200)
-          .width(250)
+          .height('100%')
+          .width('100%')
           .backgroundColor(Color.Pink)
           .gesture(
             TapGesture()
               .onAction((event: GestureEvent) => {
                 console.log("testTag text tap1")
               }))
-      }
+      }.height('60%')
+      .width('90%')
       .gestureModifier(this.modifier)
       .borderWidth(1)
 
       Button('get')
-        .onClick(()=>{
+        .onClick(() => {
           this.str = this.modifier.text
         })
         .id('addParallelGestureTest1_get')
+        .height('10%')
     }
     .width('100%')
+    .height('90')
   }
 }
 

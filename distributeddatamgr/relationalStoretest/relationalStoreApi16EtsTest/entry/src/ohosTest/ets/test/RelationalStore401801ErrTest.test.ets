@@ -1072,12 +1072,30 @@ export default function relationalStoreInterfaceErrTest() {
             }
           }
         }
+
+        let changeInfos = (changeInfos: Array<relationalStore.ChangeInfo>) => {
+          for(let i =0; i< changeInfos.length; i++){
+              console.info(`changeInfos: ${JSON.stringify(changeInfos[i])}`);
+          }
+        }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+              changeInfos);
             console.info(TAG + 'on success.');
           }
         } catch (err) {
@@ -1099,6 +1117,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0200 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         let storeObserver = (devices: Array<string>) => {
           if (devices != undefined) {
@@ -1221,11 +1240,36 @@ export default function relationalStoreInterfaceErrTest() {
           console.info(`progress: ${progressDetail}`);
         }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).on('autoSyncProgress', progressDetail);
             console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on('storeObservice', true, () => {
+              console.info(TAG + 'on success.');
+            });
+     
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off('storeObservice', true, () => {
+              console.info(TAG + 'on success.');
+            });
+     
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
@@ -1272,6 +1316,7 @@ export default function relationalStoreInterfaceErrTest() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0800 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        STORE_CONFIG.vector = true;
         let sqlExecutionInfo = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
           console.info(`sql: ${sqlExecutionInfo.sql[0]}`);
           console.info(`totalTime: ${sqlExecutionInfo.totalTime}`);
@@ -1310,12 +1355,30 @@ export default function relationalStoreInterfaceErrTest() {
             }
           }
         }
+
+        let changeInfos = (changeInfos: Array<relationalStore.ChangeInfo>) => {
+          for(let i =0; i< changeInfos.length; i++){
+              console.info(`changeInfos: ${JSON.stringify(changeInfos[i])}`);
+          }
+        }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
+            console.info(TAG + 'off success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+              changeInfos);
             console.info(TAG + 'off success.');
           }
         } catch (err) {
@@ -1337,6 +1400,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0200 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
@@ -1441,6 +1505,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0600 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         let progressDetail = (progressDetail: relationalStore.ProgressDetails) => {
           console.info(TAG + `progress: ${progressDetail}`);
@@ -1495,6 +1560,7 @@ export default function relationalStoreInterfaceErrTest() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0800 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        STORE_CONFIG.vector = true;
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).off('statistics');
@@ -2265,5 +2331,682 @@ export default function relationalStoreInterfaceErrTest() {
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600 end-----")
       })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0300
+     * @tc.desc   Test sync callback null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_sync_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0100 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+        (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, null,
+          (err: BusinessError) => {
+            if (err) {
+              console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+              expect().assertFail()
+            }
+          })
+       }
+      }catch(err){
+         console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+         expect(err.code).assertEqual("401")
+      }
+
+     try{
+        if (store != undefined) {
+        (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, undefined,
+          (err: BusinessError) => {
+            if (err) {
+              console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+              expect().assertFail()
+            }
+          })
+        }
+      }catch(err){
+         console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+         expect(err.code).assertEqual("401")
+      }
+  
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0300 end-----")
+    })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0400
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0400
+     * @tc.desc   Test sync promise null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0400 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       try{
+         if (store != undefined) {
+         await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, null)
+         expect().assertFail()
+        }
+       }catch(err){
+          console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+       }
+ 
+      try{
+         if (store != undefined) {
+          await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, undefined)
+          expect().assertFail()
+         }
+       }catch(err){
+          console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+       }
+   
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0400 end-----")
+     })
+
+       /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0500
+     * @tc.desc   Test sync callback null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_sync_ErrTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0500 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      await store.close();
+      let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+      predicates.inAllDevices();
+     try{
+        if (store != undefined) {
+        (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, predicates,
+          (err: BusinessError) => {
+            if (err) {
+              console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+              expect().assertFail()
+            }
+          })
+        }
+      }catch(err){
+         console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+         expect(err.code).assertEqual("14800014")
+      }
+  
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0500 end-----")
+    })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0600
+     * @tc.desc   Test sync promise 14800010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0600 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      await store.close();
+      let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+      predicates.inAllDevices();
+      try{
+         if (store != undefined) {
+          await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_PUSH, predicates)
+          expect().assertFail()
+         }
+       }catch(err){
+          console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("14800014")
+       }
+   
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0600 end-----")
+     })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0700
+     * @tc.desc   Test sync promise SYNC_MODE_CLOUD_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0700 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+      predicates.inAllDevices();
+      try{
+         if (store != undefined) {
+          let rescult = await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates)
+          expect(typeof(rescult) === "object").assertTrue()
+         }
+       }catch(err){
+          console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+       }
+   
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0700 end-----")
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0800
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0800
+     * @tc.desc   Test sync promise SYNC_MODE_TIME_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it('SUB_DistributedData_RelationalStore_sync_ErrTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0800 start-----")
+        let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+       predicates.inAllDevices();
+       try{
+          if (store != undefined) {
+           let rescult = await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, predicates)
+           expect(typeof(rescult) === "object").assertTrue()
+          }
+        }catch(err){
+           console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+           expect(err.code).assertEqual("401")
+        }
+    
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0800 end-----")
+      })
+
+       /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0900
+     * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0900
+     * @tc.desc   Test sync promise SYNC_MODE_NATIVE_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+       it('SUB_DistributedData_RelationalStore_sync_ErrTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+       async () => {
+         console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0900 start-----")
+         let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.inAllDevices();
+        try{
+           if (store != undefined) {
+            let rescult = await (store as relationalStore.RdbStore).sync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, predicates)
+            expect(typeof(rescult) === "object").assertTrue()
+           }
+         }catch(err){
+            console.error(TAG + 'Failed to sync.Code: ' + err.code + ',message:' + err.message);
+            expect(err.code).assertEqual("401")
+         }
+     
+         console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0900 end-----")
+       })
+
+      /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0100
+     * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0100
+     * @tc.desc   Test cloudSync callback SYNC_MODE_PUSH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0100 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH,
+            (progressDetails) => {
+              console.info(TAG + `Progess: ${progressDetails}`);
+            }, (err: BusinessError) => {
+              if (err) {
+                console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+                expect(!err).assertFail();
+              }
+              console.info(TAG + 'Cloud sync succeeded');
+            });
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+   
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0100 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0200
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0200
+   * @tc.desc   Test cloudSync callback SYNC_MODE_PULL
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0200 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PULL,
+            (progressDetails) => {
+              console.info(TAG + `Progess: ${progressDetails}`);
+            }, (err: BusinessError) => {
+              if (err) {
+                console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+                expect(!err).assertFail();
+              }
+              console.info(TAG + 'Cloud sync succeeded');
+            });
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+      
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0200 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0300
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0300
+   * @tc.desc   Test cloudSync promise SYNC_MODE_PULL
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0300 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+          await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PULL,
+            (progressDetails) => {
+              console.info(TAG + `Progess: ${progressDetails}`);
+            })
+            expect().assertFail()
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+     
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0300 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0400
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0400
+   * @tc.desc   Test cloudSync promise SYNC_MODE_PUSH
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0400 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+          await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH,
+            (progressDetails) => {
+              console.info(TAG + `Progess: ${progressDetails}`);
+            })
+            expect().assertFail()
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+     
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0400 end-----")
+    })
+     
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0500
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0500
+   * @tc.desc   Test cloudSync promise SYNC_MODE_NATIVE_FIRST
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0500 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try{
+        if (store != undefined) {
+          await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
+            (progressDetails) => {
+              console.info(TAG + `Progess: ${progressDetails}`);
+              expect(progressDetails.code).assertEqual(3)
+            })
+            
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0500 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0600
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0600
+   * @tc.desc   Test cloudSync SyncModeTest SYNC_MODE_PULL, tables
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0600 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store  = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      const tables = ["table1", "table2"];
+      try{
+        if (store != undefined) {
+          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PULL, tables,
+            (progressDetail: relationalStore.ProgressDetails) => {
+              console.info(TAG + `Progess: ${progressDetail}`);
+            }, (err: BusinessError) => {
+              if (err) {
+                console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+                expect(!err).assertFail();
+              }
+              console.info('Cloud sync succeeded');
+            });
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+      
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0600 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0700
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0700
+   * @tc.desc   Test cloudSync SyncModeTest SYNC_MODE_PUSH, tables
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0700 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      const tables = ["table1", "table2"];
+
+      try{
+        if (store != undefined) {
+          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH, tables,
+            (progressDetail: relationalStore.ProgressDetails) => {
+              console.info(TAG + `Progess: ${progressDetail}`);
+            }, (err: BusinessError) => {
+              if (err) {
+                console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+                expect(!err).assertFail();
+              }
+              console.info('Cloud sync succeeded');
+            });
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+      
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0700 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0800
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0800
+   * @tc.desc   Test cloudSync SyncModeTest SYNC_MODE_NATIVE_FIRST, tables
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0800 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      const tables = ["table1", "table2"];
+
+      try{
+        if (store != undefined) {
+          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, tables,
+            (progressDetail: relationalStore.ProgressDetails) => {
+              console.info(TAG + `Progess: ${progressDetail}`);
+              expect(progressDetail.code).assertEqual(3);
+            }, (err: BusinessError) => {
+              
+              console.info('Cloud sync succeeded');
+            });
+        }
+      }catch (err) {
+        console.error(TAG + 'Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("401");
+      }
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_SyncModeTest_0800 end-----")
+    })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500
+     * @tc.desc   Test cloudSync promise SYNC_MODE_NATIVE_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       try{
+         if (store != undefined) {
+         await store.close();
+         await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
+           (progressDetails) => {
+             console.info(TAG + `Progess: ${progressDetails}`);
+             expect(progressDetails.code).assertEqual(3);
+           })
+         }
+       }catch(err) {
+           console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+           expect(err.code).assertEqual("14800014");
+       }
+    
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500 end-----")
+     })
+
+   /**
+    * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600
+    * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600
+    * @tc.desc   Test cloudSync callback SYNC_MODE_NATIVE_FIRST
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       try{
+         if (store != undefined) {
+         await store.close();
+         (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
+           (progressDetails) => {
+             console.info(TAG + `Progess: ${progressDetails}`);
+             expect(progressDetails.code).assertEqual(3);
+           }, (err: BusinessError) => {     
+             console.info(TAG + 'Cloud sync succeeded');
+           });
+         }
+       }catch(err) {
+           console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+           expect(err.code).assertEqual("14800014");
+       }
+    
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600 end-----")
+     })
+
+      /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0700
+     * @tc.desc   Test cloudSync callback tables return 14800014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0700 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      const tables = ["table1", "table2"];
+      try{
+        if (store != undefined) {
+        await store.close();
+        (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, tables, 
+          (progressDetails) => {
+            console.info(TAG + `Progess: ${progressDetails}`);
+            expect(progressDetails.code).assertEqual(3);
+          }, (err: BusinessError) => {
+            console.info(TAG + 'Cloud sync succeeded');
+          });
+        }
+      }catch(err) {
+          console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("14800014");
+      }
+   
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0700 end-----")
+    })
+
+  /**
+   * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0800
+   * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0800
+   * @tc.desc   Test cloudSync callback tables return 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0800 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      const tables = [];
+      try{
+        if (store != undefined) {
+        (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, tables, 
+          (progressDetails) => {
+            console.info(TAG + `Progess: ${progressDetails}`);
+            expect(progressDetails.code).assertEqual(3);
+          }, (err: BusinessError) => {
+            console.info(TAG + 'Cloud sync succeeded');
+          });
+        }
+      }catch(err) {
+          console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401");
+      }
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0800 end-----")
+    })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0900
+     * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0900
+     * @tc.desc   Test cloudSync promise tables return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0900 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       const tables = [];
+       try{
+         if (store != undefined) {
+         await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PULL, tables, 
+           (progressDetails) => {
+             console.info(TAG + `Progess: ${progressDetails}`);
+             expect(progressDetails.code).assertEqual(3);
+           })
+         }
+       }catch(err) {
+           console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+           expect(err.code).assertEqual("401");
+       }
+    
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0900 end-----")
+     })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_1000
+     * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_1000
+     * @tc.desc   Test cloudSync promise tables return 14800014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async () => {
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_1000 start-----")
+       let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+       let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       const tables = ["tables1", "tables1"];
+       try{
+         if (store != undefined) {
+         await store.close();
+         await (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH, tables, 
+           (progressDetails) => {
+             console.info(TAG + `Progess: ${progressDetails}`);
+             expect(progressDetails.code).assertEqual(3);
+           })
+         }
+       }catch(err) {
+           console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
+           expect(err.code).assertEqual("14800014");
+       }
+    
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_1000 end-----")
+     })
+
+
   })
 }

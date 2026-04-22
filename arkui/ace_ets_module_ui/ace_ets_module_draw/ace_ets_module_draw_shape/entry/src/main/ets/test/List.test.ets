@@ -50,6 +50,7 @@ import ShapeNullUndefined2Test from './Shape/ShapeNullUndefined2.test';
 import ShapeNullUndefined3Test from './Shape/ShapeNullUndefined3.test';
 import ShapeNullUndefined4Test from './Shape/ShapeNullUndefined4.test';
 import ShapeNullUndefined5Test from './Shape/ShapeNullUndefined5.test';
+import BaseShapeWidthHeightNullUndefinedTest from './Shape/BaseShapeWidthHeightNullUndefined.test';
 import lineStartPointNullUndefinedTest from './Line/lineStartPointNullUndefinedTest.test';
 import pathCommandsNullUndefinedTest from './Path/pathCommandsNullUndefinedTest.test';
 import polygonPointsNullUndefinedTest from './Polygon/polygonPointsNullUndefinedTest.test';
@@ -100,6 +101,7 @@ export default function testsuite() {
   ShapeNullUndefined3Test();
   ShapeNullUndefined4Test();
   ShapeNullUndefined5Test();
+  BaseShapeWidthHeightNullUndefinedTest();
   lineStartPointNullUndefinedTest();
   pathCommandsNullUndefinedTest();
   polygonPointsNullUndefinedTest();

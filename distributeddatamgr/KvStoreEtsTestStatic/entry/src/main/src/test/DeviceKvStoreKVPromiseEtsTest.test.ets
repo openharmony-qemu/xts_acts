@@ -103,7 +103,7 @@ export default function deviceKvStorePromiseTest(){
       }
       console.info('beforeAll config:'+ JSON.stringify(config));
       kvManager = factory.createKVManager(config);
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store : factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store : factory.DeviceKVStore) => {
         kvStore = store;
         console.info('beforeAll getKVStore for getDeviceId success');
       }).catch((err: Error) => {
@@ -156,7 +156,7 @@ export default function deviceKvStorePromiseTest(){
 
     beforeEach(async (done: () => void) => {
       console.info('beforeEach' + JSON.stringify(options));
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store : factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store : factory.DeviceKVStore) => {
         kvStore = store;
         console.info('beforeEach getKVStore success');
         done();
@@ -251,7 +251,7 @@ export default function deviceKvStorePromiseTest(){
         for (let i = 0 ; i < 4095; i++) {
           str += 'x';
         }
-        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then((data) => {
+        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0400 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then((data) => {
@@ -283,7 +283,7 @@ export default function deviceKvStorePromiseTest(){
     it('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0100');
       try {
-        await kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
+        await kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then((data) => {
@@ -364,7 +364,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0200');
       try {
         let intValue = 987654321 as long;
-        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then((data) => {
+        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0200 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_INT_ELEMENT).then((data) => {
@@ -397,7 +397,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0300');
       try {
         let intValue = Number.MAX_VALUE;
-        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then((data) => {
+        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0300 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_INT_ELEMENT).then((data) => {
@@ -430,7 +430,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0400');
       try {
         let intValue = Number.MIN_VALUE;
-        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then((data) => {
+        await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0400 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_INT_ELEMENT).then((data) => {
@@ -462,7 +462,7 @@ export default function deviceKvStorePromiseTest(){
     it('SUB_DDM_DKV_DEVICEKVSTORE_GETINT_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETINT_PROMISE_0100');
       try {
-        await kvStore!.put(KEY_TEST_INT_ELEMENT, VALUE_TEST_INT_ELEMENT).then((data) => {
+        await kvStore!.put(KEY_TEST_INT_ELEMENT, VALUE_TEST_INT_ELEMENT).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETINT_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_INT_ELEMENT).then((data) => {
@@ -520,7 +520,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETBOOLEAN_PROMISE_0100');
       try {
         let boolValue = false;
-        await kvStore!.put(KEY_TEST_BOOLEAN_ELEMENT, boolValue).then((data) => {
+        await kvStore!.put(KEY_TEST_BOOLEAN_ELEMENT, boolValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETBOOLEAN_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_BOOLEAN_ELEMENT).then((data) => {
@@ -578,7 +578,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0100');
       try {
         let floatValue = 123456.654321;
-        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then((data) => {
+        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
@@ -611,7 +611,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0200');
       try {
         let floatValue = 123456.0;
-        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then((data) => {
+        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0200 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
@@ -644,7 +644,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0300');
       try {
         let floatValue = 123456.00;
-        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then((data) => {
+        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, floatValue).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0300 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
@@ -677,7 +677,7 @@ export default function deviceKvStorePromiseTest(){
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0100');
       try {
         let str = 'this is a test string';
-        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then((data) => {
+        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
@@ -713,7 +713,7 @@ export default function deviceKvStorePromiseTest(){
         for (let i = 0 ; i < 4096; i++) {
           str += 'x';
         }
-        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then((data) => {
+        await kvStore!.put(KEY_TEST_STRING_ELEMENT, str).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0200 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
@@ -770,7 +770,7 @@ export default function deviceKvStorePromiseTest(){
     it('SUB_DDM_DKV_DEVICEKVSTORE_DELETEINT_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEINT_PROMISE_0100');
       try {
-        await kvStore!.put(KEY_TEST_INT_ELEMENT, VALUE_TEST_INT_ELEMENT).then((data) => {
+        await kvStore!.put(KEY_TEST_INT_ELEMENT, VALUE_TEST_INT_ELEMENT).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEINT_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.delete(KEY_TEST_INT_ELEMENT).then((data) => {
@@ -802,7 +802,7 @@ export default function deviceKvStorePromiseTest(){
     it('SUB_DDM_DKV_DEVICEKVSTORE_DELETEFLOAT_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEFLOAT_PROMISE_0100');
       try {
-        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
+        await kvStore!.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEFLOAT_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.delete(KEY_TEST_FLOAT_ELEMENT).then((data) => {
@@ -834,7 +834,7 @@ export default function deviceKvStorePromiseTest(){
     it('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBOOLEAN_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBOOLEAN_PROMISE_0100');
       try {
-        await kvStore!.put(KEY_TEST_BOOLEAN_ELEMENT, VALUE_TEST_BOOLEAN_ELEMENT).then((data) => {
+        await kvStore!.put(KEY_TEST_BOOLEAN_ELEMENT, VALUE_TEST_BOOLEAN_ELEMENT).then(async (data: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBOOLEAN_PROMISE_0100 put success');
           expect(data == undefined).assertTrue();
           await kvStore!.delete(KEY_TEST_BOOLEAN_ELEMENT).then((data) => {
@@ -1345,7 +1345,7 @@ export default function deviceKvStorePromiseTest(){
       try {
         let entries = putBatchString(10, 'batch_test_string_key');
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0100 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0100 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_string_key').then((entrys: factory.Entry[]|undefined) => {
@@ -1395,7 +1395,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0200 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0200 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_number_key').then((entrys: factory.Entry[] | undefined) => {
@@ -1441,7 +1441,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0300 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0300 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_number_key').then((entrys: factory.Entry[]) => {
@@ -1487,7 +1487,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0400 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0400 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_number_key').then((entrys: factory.Entry[] | undefined) => {
@@ -1534,7 +1534,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0500 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0500 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_bool_key').then((entrys: factory.Entry[] | undefined) => {
@@ -1581,7 +1581,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0600 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0600 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.getEntries(localDeviceId, 'batch_test_bool_key').then((entrys: factory.Entry[] | undefined) => {
@@ -1630,7 +1630,7 @@ export default function deviceKvStorePromiseTest(){
           keys.push(key + i);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0100 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0100 putBatch success');
           expect(err == undefined).assertTrue();
           await kvStore!.deleteBatch(keys).then((err) => {
@@ -1700,7 +1700,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0300 entries: ' + JSON.stringify(entries));
-        await kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0300 putBatch success');
           expect(err == undefined).assertTrue();
           let keys = ['batch_test_string_key1', 'batch_test_string_keya'];
@@ -2348,7 +2348,7 @@ export default function deviceKvStorePromiseTest(){
           entries.push(entry);
         }
         console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 entries: ' + JSON.stringify(entries));
-        kvStore!.putBatch(entries).then((err) => {
+        await kvStore!.putBatch(entries).then(async (err: undefined) => {
           console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 putBatch success');
           expect(err == undefined).assertTrue();
           let query = new factory.Query();

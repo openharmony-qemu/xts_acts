@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export class TestValues {
 interface ViewOBJ {
   $attrs: ZIndex;
 }
-interface ZIndex{
+export interface ZIndex{
   zIndex: number;
 }
 export class BasePageConfig {
@@ -80,15 +80,15 @@ export default class Utils {
     })
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext" ) as common.Context
     let fileData: Uint8Array|undefined;
-    waitForCompletion(async ()=>{ fileData = await abilityContext.resourceManager.getRawFileContent(fileName); })
+    fileData = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData!.length; i++) {
-          result += String.fromCharCode((fileData as Uint8Array)[i]);
+          result += String.fromCharCode((fileData as Uint8Array)[i].toInt());
         }
         resolve(result);
       } else {
@@ -261,9 +261,9 @@ export default class Utils {
   }
 
   static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode.toInt(), keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode.toInt(), keyText)
       return up
     }
 

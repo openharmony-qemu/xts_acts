@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default function taskPoolTaskExecuteDelayedTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskExecuteDelayed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -69,9 +69,10 @@ export default function taskPoolTaskExecuteDelayedTest() {
       await new Promise<boolean>((resolve, _) => {
         for (let i = 0; i < repeatCount; i++) {
           let task: taskpool.Task = new taskpool.Task(testFun2, cycleCount, step)
-          await taskpool.executeDelayed(50, task)
-            .then((num?:number) => {
-              allPoints += Number(num as Number)
+          taskpool.executeDelayed(50, task)
+            .then((result: Any) => {
+              const num = result as Number;
+              allPoints += Number(num)
               callbackTime++;
               if (callbackTime == repeatCount) {
                 resolve(true)

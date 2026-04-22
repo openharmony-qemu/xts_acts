@@ -1245,6 +1245,340 @@ export default function soundPoolTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1000
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1000', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1000 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundPool.load(null, (err, soundId_) => {
+          if (err) {
+              console.info(`${TAG}: Test loadCallback(uri) with invalid uri success, error: [${err.code}, ${err.message}]`);
+              expect(err.code).assertEqual(5400103);
+          } else {
+            console.info(`${TAG}: Test loadCallback(uri) with invalid uri fail, load success! soundId: ${soundId_}`);
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1100
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1100', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1100 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundPool.load(undefined, (err, soundId_) => {
+          if (err) {
+              console.info(`${TAG}: Test loadCallback(uri) with invalid uri success, error: [${err.code}, ${err.message}]`);
+              expect(err.code).assertEqual(5400103);
+          } else {
+            console.info(`${TAG}: Test loadCallback(uri) with invalid uri fail, load success! soundId: ${soundId_}`);
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1200
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1200', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1200 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        await soundPool.load(null).then((soundId_) => {
+          console.info(`${TAG}: Test load(uri) with invalid uri fail, load success! soundId: ${soundId_}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          console.info(`${TAG}: Test loadCallback(uri) with invalid uri success, error: [${error.code}, ${error.message}]`);
+          expect(error.code).assertEqual(5400103);
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1300
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1300', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        await soundPool.load(undefined).then((soundId_) => {
+          console.info(`${TAG}: Test load(uri) with invalid uri fail, load success! soundId: ${soundId_}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          console.info(`${TAG}: Test loadCallback(uri) with invalid uri success, error: [${error.code}, ${error.message}]`);
+          expect(error.code).assertEqual(5400103);
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1400
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1400 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundPool.load(null, undefined, null, (err, soundId_) => {
+          if (err) {
+            if (err.code == 5400103) {
+              console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd fail, errCode != 5400102, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd fail, load success! soundId: ${soundId_}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1500
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_1500 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundPool.load(undefined, null, undefined, (err, soundId_) => {
+          if (err) {
+            if (err.code == 5400103) {
+              console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd fail, errCode != 5400102, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test loadCallback(fd, offset, length) with invalid fd fail, load success! soundId: ${soundId_}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1600
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0700 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        await soundPool.load(null, undefined, null).then((soundId) => {
+          console.info(`${TAG}: Test load(fd, offset, length) with invalid fd fail, load success! soundId: ${soundId}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 5400103) {
+            console.info(`${TAG}: Test load(fd, offset, length) with invalid fd success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test load(fd, offset, length) with invalid fd fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1700
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_1700 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        await soundPool.load(undefined, null, undefined).then((soundId) => {
+          console.info(`${TAG}: Test load(fd, offset, length) with invalid fd fail, load success! soundId: ${soundId}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 5400103) {
+            console.info(`${TAG}: Test load(fd, offset, length) with invalid fd success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test load(fd, offset, length) with invalid fd fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0100
      * @tc.desc   Function test
@@ -1359,6 +1693,92 @@ export default function soundPoolTest() {
             console.info(`${TAG}: Test unload with unloaded soundId success, error: [${error.code}, ${error.message}]`);
           } else {
             console.info(`${TAG}: Test unload with unloaded soundId fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0400
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0400 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        await soundPool.unload(null).then(() => {
+          console.info(`${TAG}: Test unload with invalid soundId fail, unload Success! unload soundId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 5400103) {
+            console.info(`${TAG}: Test unload with invalid soundId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test unload with invalid soundId fail, errCode != 5400103, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0500
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0500 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        await soundPool.unload(undefined).then(() => {
+          console.info(`${TAG}: Test unload with invalid soundId fail, unload Success! unload soundId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 5400103) {
+            console.info(`${TAG}: Test unload with invalid soundId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test unload with invalid soundId fail, errCode != 5400103, error: [${error.code}, ${error.message}]`);
             expectFalse();
           }
         })
@@ -1501,6 +1921,104 @@ export default function soundPoolTest() {
           } else {
             console.info(`${TAG}: Test unloadCallback with unloaded soundId fail, unload Success! unload soundId: ${(soundId +
               1)}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0400
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0400 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.unload(null, (err) => {
+          if (err) {
+            if (err.code == 5400103) {
+              console.info(`${TAG}: Test unloadCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test unloadCallback with invalid soundId fail, errCode != 5400103, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test unloadCallback with invalid soundId fail, unload Success! unload soundId: -1`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0500
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0500 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.unload(undefined, (err) => {
+          if (err) {
+            if (err.code == 5400103) {
+              console.info(`${TAG}: Test unloadCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test unloadCallback with invalid soundId fail, errCode != 5400103, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test unloadCallback with invalid soundId fail, unload Success! unload soundId: -1`);
             expectFalse();
           }
           done();
@@ -2082,6 +2600,92 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool.stop(streamId_);
         }
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1300
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1300', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        await soundPool.play(null, PlayParameters).then((streamId) => {
+          console.info(`${TAG}: Test play with invalid soundId fail, play success! streamId: ${streamId}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test play(soundID, params) with invalid soundId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test play(soundID, params) with invalid soundId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1400 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        await soundPool.play(undefined, PlayParameters).then((streamId) => {
+          console.info(`${TAG}: Test play with invalid soundId fail, play success! streamId: ${streamId}`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test play(soundID, params) with invalid soundId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test play(soundID, params) with invalid soundId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expectFalse();
@@ -2747,6 +3351,299 @@ export default function soundPoolTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(null, PlayParameters, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(undefined, PlayParameters, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1500 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(soundId, null, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1300 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(soundId, undefined, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1700
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1700 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(null, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(TAG + `catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1800
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1800 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        soundPool.play(undefined, (err, streamId) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test playCallback with invalid soundId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test playCallback with invalid soundId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test playCallback with invalid soundId fail, play success! streamId: ${streamId}`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(TAG + `catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0100
      * @tc.desc   Function test
@@ -2868,6 +3765,98 @@ export default function soundPoolTest() {
             console.info(`${TAG}: Test stop with unplayed streamId success, error: [${error.code}, ${error.message}]`);
           } else {
             console.info(`${TAG}: Test stop with unplayed streamId fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0400 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.stop(null).then(() => {
+          console.info(`${TAG}: Test stop with invalid streamId fail, stop success! stop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test stop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test stop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0500 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.stop(undefined).then(() => {
+          console.info(`${TAG}: Test stop with invalid streamId fail, stop success! stop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test stop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test stop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
             expectFalse();
           }
         })
@@ -3032,6 +4021,110 @@ export default function soundPoolTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0400 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        soundPool.stop(null, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test stopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test stopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test stopCallback with invalid streamId fail, stop success! stop streamId: -1`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0500 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        soundPool.stop(undefined, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test stopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test stopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test stopCallback with invalid streamId fail, stop success! stop streamId: -1`);
+            expectFalse();
+          }
+          done();
+          return;
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0100
      * @tc.desc   Function test
@@ -3169,6 +4262,202 @@ export default function soundPoolTest() {
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0400 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setLoop(null, loop).then(() => {
+          console.info(`${TAG}: Test setLoop with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setLoop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setLoop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0500 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setLoop(undefined, loop).then(() => {
+          console.info(`${TAG}: Test setLoop with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setLoop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setLoop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0600 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setLoop(streamId, null).then(() => {
+          console.info(`${TAG}: Test setLoop with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setLoop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setLoop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertUndefined;
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0700
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0700 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setLoop(streamId, undefined).then(() => {
+          console.info(`${TAG}: Test setLoop with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setLoop with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setLoop with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertUndefined;
       }
       done();
       return;
@@ -3320,6 +4609,226 @@ export default function soundPoolTest() {
           } else {
             console.info(`${TAG}: Test setLoopCallback with unplayed streamId fail, setLoop success! setLoop streamId: ${(streamId +
               1)}`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0400
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0400 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setLoop(null, loop, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0500 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setLoop(undefined, loop, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0200 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setLoop(streamId, null, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, setLoop success! setLoop streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0700
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0700 in`);
+      try {
+        let streamId = 0;
+        let loop = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setLoop(streamId, undefined, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setLoopCallback with invalid streamId fail, setLoop success! setLoop streamId: -1`);
             expectFalse();
           }
         })
@@ -3513,6 +5022,198 @@ export default function soundPoolTest() {
             console.info(`${TAG}: Test setPriority with unplayed streamId success, error: [${error.code}, ${error.message}]`);
           } else {
             console.info(`${TAG}: Test setPriority with unplayed streamId fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0500 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setPriority(null, 0).then(() => {
+          console.info(`${TAG}: Test setPriority with invalid priority fail, setPriority success! priority: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setPriority with invalid priority success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setPriority with invalid priority fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0600 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setPriority(undefined, 0).then(() => {
+          console.info(`${TAG}: Test setPriority with invalid priority fail, setPriority success! priority: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setPriority with invalid priority success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setPriority with invalid priority fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0700
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0700 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setPriority(streamId, null).then(() => {
+          console.info(`${TAG}: Test setPriority with invalid priority fail, setPriority success! priority: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setPriority with invalid priority success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setPriority with invalid priority fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0800
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0800 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        await soundPool.setPriority(streamId, undefined).then(() => {
+          console.info(`${TAG}: Test setPriority with invalid priority fail, setPriority success! priority: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setPriority with invalid priority success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setPriority with invalid priority fail, errCode != 401, error: [${error.code}, ${error.message}]`);
             expectFalse();
           }
         })
@@ -3725,6 +5426,222 @@ export default function soundPoolTest() {
             }
           } else {
             console.info(`${TAG}: Test setPriorityCallback with unplayed streamId fail, setPriority success! streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0500', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0500 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setPriority(null, 0, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, setPriority success! setPriority priority: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0600', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0600 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setPriority(undefined, 0, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, setPriority success! setPriority priority: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0700
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0700 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setPriority(streamId, null, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, setPriority success! setPriority priority: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0800
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0800 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(200);
+        soundPool.setPriority(streamId, undefined, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setPriorityCallback with invalid priority fail, setPriority success! setPriority priority: -1`);
             expectFalse();
           }
         })
@@ -4019,6 +5936,100 @@ export default function soundPoolTest() {
               console.info(`${TAG}: Test setRate with unplayed streamId fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
               expectFalse();
             }
+          })
+          await sleep(2000);
+          await soundPool.stop(streamId);
+        } catch (error) {
+          console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+          expectFalse();
+        }
+      } else {
+        console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0700 in`);
+      if (deviceInfo.deviceType === 'default') {
+        try {
+          let streamId = 0;
+          await createSoundPool();
+          if (!soundPool) {
+            console.error(`${TAG}:createSoundPool soundPool is null`);
+            expectFalse();
+            done();
+            return;
+          }
+          soundPool.on('error', (error) => {
+            console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+            expectFalse();
+          })
+          soundId = await soundPool.load(fd1, 0, length1);
+          await sleep(2000);
+          streamId = await soundPool.play(soundId);
+          await sleep(200);
+          await soundPool.setRate(null, audio.AudioRendererRate.RENDER_RATE_DOUBLE).then(() => {
+            console.info(`${TAG}: Test setRate with invalid rate success, setRate success! rate: -1 will be change to normal`);
+          }).catch((error: BusinessError) => {
+            console.info(`${TAG}: Test setRate with invalid rate fail, error: [${error.code}, ${error.message}]`);
+            expect(error.code).assertEqual(401);
+          })
+          await sleep(2000);
+          await soundPool.stop(streamId);
+        } catch (error) {
+          console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+          expectFalse();
+        }
+      } else {
+        console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0800 in`);
+      if (deviceInfo.deviceType === 'default') {
+        try {
+          let streamId = 0;
+          await createSoundPool();
+          if (!soundPool) {
+            console.error(`${TAG}:createSoundPool soundPool is null`);
+            expectFalse();
+            done();
+            return;
+          }
+          soundPool.on('error', (error) => {
+            console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+            expectFalse();
+          })
+          soundId = await soundPool.load(fd1, 0, length1);
+          await sleep(2000);
+          streamId = await soundPool.play(soundId);
+          await sleep(200);
+          await soundPool.setRate(undefined, audio.AudioRendererRate.RENDER_RATE_DOUBLE).then(() => {
+            console.info(`${TAG}: Test setRate with invalid rate success, setRate success! rate: -1 will be change to normal`);
+          }).catch((error: BusinessError) => {
+            console.info(`${TAG}: Test setRate with invalid rate fail, error: [${error.code}, ${error.message}]`);
+            expect(error.code).assertEqual(401);
           })
           await sleep(2000);
           await soundPool.stop(streamId);
@@ -4375,6 +6386,117 @@ export default function soundPoolTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0700', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0700 in`);
+      if (deviceInfo.deviceType === 'default') {
+        try {
+          let streamId = 0;
+          await createSoundPool();
+          if (!soundPool) {
+            console.error(`${TAG}:createSoundPool soundPool is null`);
+            expectFalse();
+            done();
+            return;
+          }
+          soundPool.on('error', (error) => {
+            console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+            expectFalse();
+            done();
+            return;
+          })
+          soundId = await soundPool.load(fd1, 0, length1);
+          await sleep(2000);
+          streamId = await soundPool.play(soundId);
+          await sleep(200);
+          soundPool.setRate(null, audio.AudioRendererRate.RENDER_RATE_HALF, (err) => {
+            if (err) {
+              console.info(`${TAG}: Test setRateCallback with invalid rate fail, error: [${err.code}, ${err.message}]`);
+              expect(err.code).assertEqual(401);
+            } else {
+              console.info(`${TAG}: Test setRateCallback with invalid rate success, rate: -1 will be changed to normal`);
+            }
+          })
+          await sleep(2000);
+          await soundPool.stop(streamId);
+          done();
+          return;
+        } catch (error) {
+          console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+          expectFalse();
+          done();
+          return;
+        }
+      } else {
+        console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0800 in`);
+      if (deviceInfo.deviceType === 'default') {
+        try {
+          let streamId = 0;
+          await createSoundPool();
+          if (!soundPool) {
+            console.error(`${TAG}:createSoundPool soundPool is null`);
+            expectFalse();
+            done();
+            return;
+          }
+          soundPool.on('error', (error) => {
+            console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+            expectFalse();
+            done();
+            return;
+          })
+          soundId = await soundPool.load(fd1, 0, length1);
+          await sleep(2000);
+          streamId = await soundPool.play(soundId);
+          await sleep(200);
+          soundPool.setRate(undefined, audio.AudioRendererRate.RENDER_RATE_HALF, (err) => {
+            if (err) {
+              console.info(`${TAG}: Test setRateCallback with invalid rate fail, error: [${err.code}, ${err.message}]`);
+              expect(err.code).assertEqual(401);
+            } else {
+              console.info(`${TAG}: Test setRateCallback with invalid rate success, rate: -1 will be changed to normal`);
+            }
+          })
+          await sleep(2000);
+          await soundPool.stop(streamId);
+          done();
+          return;
+        } catch (error) {
+          console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+          expectFalse();
+          done();
+          return;
+        }
+      } else {
+        console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
+        done();
+        return;
+      }
+    })
+
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0100
      * @tc.desc   Function test
@@ -4683,6 +6805,156 @@ export default function soundPoolTest() {
             console.info(`${TAG}: Test setVolume with unplayed streamId success, error: [${error.code}, ${error.message}]`);
           } else {
             console.info(`${TAG}: Test setVolume with unplayed streamId fail, errCode != 5400102, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0800
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0800 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.setVolume(streamId, null, undefined).then(() => {
+          console.info(`${TAG}: Test setVolume with invalid streamId fail, setVolume success! streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setVolume with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setVolume with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0900
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0900', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0900 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.setVolume(undefined, left, null).then(() => {
+          console.info(`${TAG}: Test setVolume with invalid streamId fail, setVolume success! streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setVolume with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setVolume with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+      }
+      done();
+      return;
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_1000
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_1000', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_1000 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.setVolume(null, undefined, right).then(() => {
+          console.info(`${TAG}: Test setVolume with invalid streamId fail, setVolume success! streamId: -1`);
+          expectFalse();
+        }).catch((error: BusinessError) => {
+          if (error.code == 401) {
+            console.info(`${TAG}: Test setVolume with invalid streamId success, error: [${error.code}, ${error.message}]`);
+          } else {
+            console.info(`${TAG}: Test setVolume with invalid streamId fail, errCode != 401, error: [${error.code}, ${error.message}]`);
             expectFalse();
           }
         })
@@ -5045,6 +7317,174 @@ export default function soundPoolTest() {
           } else {
             console.info(`${TAG}: Test setVolumeCallback with unplayed streamId fail, setVolume success! streamId: ${(streamId +
               1)}`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0800
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0800', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0800 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        soundPool.setVolume(null, undefined, right, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, setVolume success! streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0900
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0900', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0900 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        soundPool.setVolume(undefined, left, null, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, setVolume success! streamId: -1`);
+            expectFalse();
+          }
+        })
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_1000
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_1000', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0800 in`);
+      try {
+        let streamId = 0;
+        let left = 0.8;
+        let right = 0.2;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        soundPool.setVolume(streamId, null, undefined, (err) => {
+          if (err) {
+            if (err.code == 401) {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId success, error: [${err.code}, ${err.message}]`);
+            } else {
+              console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, errCode != 401, error: [${err.code}, ${err.message}]`);
+              expectFalse();
+            }
+          } else {
+            console.info(`${TAG}: Test setVolumeCallback with invalid streamId fail, setVolume success! streamId: -1`);
             expectFalse();
           }
         })
@@ -6000,5 +8440,329 @@ export default function soundPoolTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0100', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0200', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0300', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+            }
+        soundPool.on(null, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0400', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0500', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0600', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0700', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0800', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (soundId: number) => {
+          console.info('Succeeded in loadComplete, soundId：' + soundId);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_0900', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+            }
+        soundPool.on(null, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1000', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, () => {
+          console.info('Succeeded in playFinished');
+        });
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1100', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(null, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_NULL_UNDEFINED_1200', Level.LEVEL0, async (done: Function) => {
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on(undefined, (error: BusinessError) => {
+          console.error('error happened,and error message is :' + error.message);
+        })
+      } catch (err) {
+        console.error('soundPoolNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    })
   })
 }

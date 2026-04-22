@@ -23,6 +23,14 @@ class SampleChild {
 }
 
 @ObservedV2
+class TestSampleClass {
+  @Trace id: number = 0;
+  count: number = 1;
+}
+
+
+
+@ObservedV2
 class Sample {
   @Trace sampleChild: SampleChild = new SampleChild();
 }
@@ -125,5 +133,92 @@ export default function PersistenceV2NullUndefinedTest() {
         expect().assertFail();
       }
     });
+
+        // ========== globalConnect Tests ==========
+
+    /**
+     * @tc.name   PersistenceV2_globalConnect_param_null_001
+     * @tc.number SUB_ARUI_PERSISTENCEV2_GLOBALCONNECT_PARAM_NULL_001
+     * @tc.desc   Test PersistenceV2.globalConnect with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistenceV2_globalConnect_param_null_001', Level.LEVEL2, () => {
+      console.info('[PersistenceV2_globalConnect_param_null_001] START');
+      try {
+        const options: null = null;
+
+        // Test globalConnect with null parameter
+        const result = PersistenceV2.globalConnect<TestSampleClass>(options);
+
+        // Verify behavior when null is passed
+        console.info('[PersistenceV2_globalConnect_param_null_001] result: ' + JSON.stringify(result));
+        // Expected: may return undefined or throw error
+        expect(result).assertUndefined();
+      } catch (err) {
+        console.error('[PersistenceV2_globalConnect_param_null_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for null parameter
+        console.info('[PersistenceV2_globalConnect_param_null_001] Expected error caught');
+      }
+      console.info('[PersistenceV2_globalConnect_param_null_001] END');
+    });
+
+    /**
+     * @tc.name   PersistenceV2_globalConnect_param_undefined_001
+     * @tc.number SUB_ARUI_PERSISTENCEV2_GLOBALCONNECT_PARAM_UNDEFINED_001
+     * @tc.desc   Test PersistenceV2.globalConnect with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistenceV2_globalConnect_param_undefined_001', Level.LEVEL2, () => {
+      console.info('[PersistenceV2_globalConnect_param_undefined_001] START');
+      try {
+        const options: undefined = undefined;
+
+        // Test globalConnect with undefined parameter
+        const result = PersistenceV2.globalConnect<TestSampleClass>(options);
+
+        // Verify behavior when undefined is passed
+        console.info('[PersistenceV2_globalConnect_param_undefined_001] result: ' + JSON.stringify(result));
+        // Expected: may return undefined or throw error
+        expect(result).assertUndefined();
+      } catch (err) {
+        console.error('[PersistenceV2_globalConnect_param_undefined_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for undefined parameter
+        console.info('[PersistenceV2_globalConnect_param_undefined_001] Expected error caught');
+      }
+      console.info('[PersistenceV2_globalConnect_param_undefined_001] END');
+    });
+    
+    /**
+     * @tc.name   PersistenceV2_save_keyOrType_string_empty_001
+     * @tc.number SUB_ARUI_PERSISTENCEV2_SAVE_KEYORTYPE_STRING_EMPTY_001
+     * @tc.desc   Test PersistenceV2.save with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('PersistenceV2_save_keyOrType_string_empty_001', Level.LEVEL2, () => {
+      console.info('[PersistenceV2_save_keyOrType_string_empty_001] START');
+      try {
+        const emptyKey: string = '';
+
+        // Test save with empty string key
+        PersistenceV2.save<string>(emptyKey);
+
+        console.info('[PersistenceV2_save_keyOrType_string_empty_001] save called with empty string key');
+        // Expected: may fail silently or with warning
+        console.info('[PersistenceV2_save_keyOrType_string_empty_001] END');
+      } catch (err) {
+        console.error('[PersistenceV2_save_keyOrType_string_empty_001] Expected Error: ' + JSON.stringify(err));
+        // Expected behavior: may throw error for empty key
+        expect().assertFail();
+        console.info('[PersistenceV2_save_keyOrType_string_empty_001] Expected error caught');
+      }
+    });
+
+
   });
 }

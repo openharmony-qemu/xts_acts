@@ -763,6 +763,7 @@ export default function windowErrCode401_1() {
         done()
       }
     })
+    
     /**
      * @tc.name   testOnWindowSizeChangeErrCode401_0100
      * @tc.number testOnWindowSizeChangeErrCode401_0100
@@ -1022,5 +1023,6 @@ export default function windowErrCode401_1() {
         done()
       }
     })
+
   })
 }

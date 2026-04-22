@@ -25,6 +25,7 @@ import {
   ArrayBufferToString,
   stringToArrayBuffer
 } from './utils';
+import connection from '@ohos.net.connection';
 
 let UDPAddr1: socket.NetAddress = {
   address: '127.0.0.1',
@@ -37,6 +38,43 @@ let UDPAddr2: socket.NetAddress = {
   port: 8080,
   family: 1
 };
+
+function isValidIp(ip: string): boolean {
+  if (typeof ip !== 'string' || ip.length === 0) {
+    return false;
+  }
+
+  const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  if (ipv4Regex.test(ip)) {
+    return true;
+  }
+
+  const ipv6Regex = new RegExp(
+    '^(' +
+      '([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,7}:|' +
+      '([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|' +
+      '([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|' +
+      '([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|' +
+      '[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|' +
+      ':((:[0-9a-fA-F]{1,4}){1,7}|:)|' +
+      'fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|' +
+      '::(ffff(:0{1,4}){0,1}:){0,1}' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|' +
+      '([0-9a-fA-F]{1,4}:){1,4}:' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])' +
+      ')$'
+  );
+  if (ipv6Regex.test(ip)) {
+    return true;
+  }
+
+  return false;
+}
 
 export default function UDPSocketTest() {
   describe('UDPSocketTest', () => {
@@ -2888,6 +2926,97 @@ export default function UDPSocketTest() {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
         expectFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOnListening0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_OnListening_0100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketUDPSocketOnListening0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketUDPSocketOnListening0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        udp.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
+        udp.on('listening',() => {
+          console.info("on listening success");
+        });
+        udp.bind(UDPAddr1, (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} err: ${JSON.stringify(err)}`);
+            expectFail();
+          }
+          console.info(`${caseName} test end`);
+          udp.off('error',(err:BusinessError) => {
+            console.error("off error,err:" + JSON.stringify(err));
+          });
+          udp.off('listening');
+          udp.close();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrGetListeningUdpInfo0100
+     * @tc.number SUB_NetworkMgr_Get_Listening_Udp_Info_0100
+     * @tc.desc   Get current UDP port states
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrGetListeningUdpInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
+      let caseName: string = 'testNetworkMgrGetListeningUdpInfo0100';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
+          if (data !== undefined && data.udpPortStatesInfo !== undefined) {
+            console.info(`${caseName} udpPortStatesInfo length: ${data.udpPortStatesInfo.length}`);
+
+            for (let i = 0; i < data.udpPortStatesInfo.length; i++) {
+              const udpItem = data.udpPortStatesInfo[i];
+              console.info(`${caseName} udpItem[${i}]: ${JSON.stringify(udpItem)}`);
+
+              expectTrue(typeof udpItem.udpLocalIp === 'string');
+              expectTrue(isValidIp(udpItem.udpLocalIp));
+
+              expectTrue(typeof udpItem.udpLocalPort === 'number');
+              expectTrue(udpItem.udpLocalPort >= 0 && udpItem.udpLocalPort <= 65535);
+
+              expectTrue(typeof udpItem.udpUid === 'number');
+              expectTrue(udpItem.udpUid >= 0);
+
+              expectTrue(typeof udpItem.udpPid === 'number');
+              expectTrue(udpItem.udpPid >= 0);
+            }
+
+            expectTrue(data.udpPortStatesInfo.length >= 0);
+          } else {
+            expectTrue(data === undefined);
+            console.info(`${caseName} error: data or its port states info is undefined`);
+            expectTrue(false);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} error fetching system net port states, errorCode:${error.code} ${JSON.stringify(error)}`);
+          expectFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName}---End`);
         done();
       }
     });

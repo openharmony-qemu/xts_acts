@@ -131,5 +131,64 @@ export default function webViewController() {
       await Utils.msSleep(2000);
       done();
     })
+
+    /**
+     * @tc.number      SUB_WEB_SECURE_DNS_MODE_OFF_0100
+     * @tc.name        testSecureDnsModeOFFStatic
+     * @tc.desc        test SecureDnsModeOFF
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+
+    it('testSecureDnsModeOFFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("emitSecureDnsModeOFF", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("testSecureDnsModeOFF", 0, 202603091, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name        testSecureDnsModeSECUREONLYStatic
+     * @tc.number      SUB_WEB_SECURE_DNS_MODE_SECURE_ONLY_0100
+     * @tc.desc        test SecureDnsModeSECUREONLY
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testSecureDnsModeSECUREONLYStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent("emitSecureDnsModeSECUREONLY", 10)
+        await Utils.msSleep(2000)
+        Utils.registerEvent("testSecureDnsModeSECUREONLY", 2, 202603093, done);
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+
+    /**
+     * @tc.name   testOnSwitchNextPage
+     * @tc.number SUB_WEB_EMITONSWITCHNEXTPAGE_TITLE_0100
+     * @tc.desc   test HistoryItem title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.msSleep(8000);
+        done()
+      })
   })
 }

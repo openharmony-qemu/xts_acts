@@ -113,7 +113,11 @@ export default function openLinkTest() {
       console.log(`${tag}, it begin`);
       let want: Want|null = null
       let options: StartOptions|null = {
-        displayId: 0
+        displayId: 0,
+        minWindowWidth:100,
+        minWindowHeight:100,
+        maxWindowWidth:100,
+        maxWindowHeight:100
       };
       try {
         context.startAbility(want, options, (err: BusinessError) => {
@@ -1868,7 +1872,6 @@ export default function openLinkTest() {
       }
     });
 
-
     /**
      * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5800
      * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5800
@@ -2593,10 +2596,10 @@ export default function openLinkTest() {
           console.log(`${tag}, set colorMode to DARK, current: ${context.config.colorMode}`);
           expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK).assertTrue();
         } else if (colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET) {
-          context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
+          context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
           await sleep(2000);
           console.log(`${tag}, set colorMode to DARK, current: ${context.config.colorMode}`);
-          expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT).assertTrue();
+          expect(context.config.colorMode === colorMode).assertTrue();
         }
         context.setColorMode(colorMode);
         await sleep(2000);

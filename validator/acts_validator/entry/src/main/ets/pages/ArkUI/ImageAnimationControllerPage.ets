@@ -183,7 +183,7 @@ struct AnimationControllerPage {
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
 
-      Column({ space: 10 }) {
+      Column() {
         Row({ space: 3 }) {
           Image(this.animatedDrawable1)
             .borderColor(Color.Red)
@@ -215,7 +215,7 @@ struct AnimationControllerPage {
         }
 
         Divider().width('100%').height(10)
-        Row({ space: 4 }) {
+        Row({ space: 3 }) {
           Button('c1 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
@@ -251,7 +251,7 @@ struct AnimationControllerPage {
         }
 
         Divider().width('100%').height(10)
-        Row({ space: 4 }) {
+        Row({ space: 3 }) {
           Button('c2 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
@@ -287,7 +287,7 @@ struct AnimationControllerPage {
         }
 
         Divider().width('100%').height(10)
-        Row({ space: 4 }) {
+        Row({ space: 3 }) {
           Button('c3 start')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
@@ -323,7 +323,7 @@ struct AnimationControllerPage {
         }
 
         Divider().width('100%').height(10)
-        Row({ space: 4 }) {
+        Row({ space: 3 }) {
           Button('c1 status')
             .height('6%').fontSize(10).padding({ left: 5, right: 5 })
             .onClick(() => {
@@ -370,15 +370,12 @@ struct AnimationControllerPage {
                 }
               }
             })
-        }
-
-        Button('确认')
-          .margin(10)
-          .width('30%')
-          .height('6%')
+          Button('确认')
+          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
           .onClick(() => {
             this.Vue = true;
           })
+        }
       }
       .height('70%')
       .width('100%')

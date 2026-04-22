@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { Entry, Component, AttributeModifier, TabsAttribute, FP, LayoutStyle, Ba
   BarPosition, TabContent, Text, Color, SubTabBarStyle, BottomTabBarStyle } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
+export class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
     barGridAlignMarginNumber: number = 0
     barGridAlignGutterNumber: number = 0
     barGridAlignSmNumber: int = 0
@@ -39,7 +39,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
       })
     }
   }
-  class TabsTrdModifier2 implements AttributeModifier<TabsAttribute>{
+  export class TabsTrdModifier2 implements AttributeModifier<TabsAttribute>{
     barGridAlignMarginString: FP = '0.00fp'
     barGridAlignGutterString: FP = '0.00fp'
     applyNormalAttribute(instance: TabsAttribute): void {
@@ -52,7 +52,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
       })
     }
   }
-  class TabsTrdModifier3 implements AttributeModifier<TabsAttribute>{
+  export class TabsTrdModifier3 implements AttributeModifier<TabsAttribute>{
     applyNormalAttribute(instance: TabsAttribute): void {
 
       instance.barGridAlign({
@@ -63,7 +63,7 @@ class TabsTrdModifier1 implements AttributeModifier<TabsAttribute>{
       })
     }
   }
-  class TabsTrdModifier4 implements AttributeModifier<TabsAttribute>{
+  export class TabsTrdModifier4 implements AttributeModifier<TabsAttribute>{
     barModeMarginNumber: number = 0
     barModeNonScrollableLayoutStyle: LayoutStyle = LayoutStyle.ALWAYS_CENTER
     barModeMode: BarMode = BarMode.Fixed

@@ -125,7 +125,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -182,9 +182,9 @@ export default class Utils {
     await Utils.sleep(1000);
   }
 
-  static getComponentRect(key: string): RectValue {
+  static async getComponentRect(key: string): Promise<RectValue> {
     let strJson = inspector.getInspectorByKey(key);
-    waitForCompletion(async ()=>{await Utils.sleep(1000);})
+    await Utils.sleep(1000);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -202,9 +202,9 @@ export default class Utils {
   }
 
 
-  static getComponentByKey(componentKey: string): jsonx.JsonElement {
+  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
     let strJson = inspector.getInspectorByKey(componentKey);
-    waitForCompletion(async ()=>{await Utils.sleep(2000);})
+    await Utils.sleep(2000);
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
@@ -237,19 +237,19 @@ export default class Utils {
     Utils.performTouch(x, y, x, y, TouchType.Up);
   }
 
-  static performTouchDownUp(id: string): boolean {
-    let down = Utils.performTouchComponentCenter(id, TouchType.Down)
+  static async performTouchDownUp(id: string): Promise<boolean> {
+    let down = await Utils.performTouchComponentCenter(id, TouchType.Down)
     if (down) {
-      let up = Utils.performTouchComponentCenter(id, TouchType.Up)
+      let up = await Utils.performTouchComponentCenter(id, TouchType.Up)
       return up
     }
 
     return false;
   }
 
-  static performTouchComponentCenter(id: string, type: TouchType): boolean {
+  static async performTouchComponentCenter(id: string, type: TouchType): Promise<boolean> {
     console.info('performTouchComponent id : ' + id);
-    return Utils.performTouchRectCenter(0, 0, Utils.getComponentRect(id), type);
+    return Utils.performTouchRectCenter(0, 0, await Utils.getComponentRect(id), type);
   }
 
   static performTouchRectCenter(rootX: number, rootY: number, rect: RectValue, type: TouchType): boolean {
@@ -308,7 +308,7 @@ export default class Utils {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,
@@ -326,12 +326,12 @@ export default class Utils {
     return result
   }
 
-  static performMouseEvent(id: string, button: MouseButton, action: MouseAction): boolean {
+  static async performMouseEvent(id: string, button: MouseButton, action: MouseAction): Promise<boolean> {
     console.info('performMouseEvent id : ' + id);
     console.info('performMouseEvent button : ' + button);
     console.info('performMouseEvent action : ' + action);
 
-    let targetComponentRect = Utils.getComponentRect(id);
+    let targetComponentRect = await Utils.getComponentRect(id);
     let screenX = (targetComponentRect.right + targetComponentRect.left) * 0.5;
     let screenY = (targetComponentRect.bottom + targetComponentRect.top) * 0.5;
     let x = (targetComponentRect.right + targetComponentRect.left) * 0.5;

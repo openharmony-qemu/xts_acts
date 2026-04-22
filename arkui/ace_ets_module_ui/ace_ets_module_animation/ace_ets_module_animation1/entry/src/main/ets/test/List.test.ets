@@ -63,6 +63,13 @@ import Matrix4TransitUndefinedTest from './matrix4/Matrix4TransitUndefined.test'
 import GlobalPxNullUndefined from './global/GlobalPxNullUndefined.test';
 import AnimateToImmediatelyNullUndefined from './global/AnimateToImmediatelyNullUndefined.test';
 import AnimateToNullUndefined from './global/AnimateToNullUndefined.test';
+import ForegroundBlurStyleTest from './nullandundefinedTestTest/ForegroundBlurStyleTest.test';
+import BackgroundBlurStyleTest from './nullandundefinedTestTest/BackgroundBlurStyleTest.test';
+import ImageBlurTest from './nullandundefinedTestTest/ImageBlurTest.test';
+import BackdropBlurTest from './nullandundefinedTestTest/BackdropBlurTest.test';
+import UniversalAttributesTest from './nullandundefinedTestTest/UniversalAttributesTest.test';
+import QueryNavDestinationInfoTest from './nullandundefinedTestTest/QueryNavDestinationInfoTest.test';
+
 
 export default function testsuite() {
   animateJsunit();
@@ -115,4 +122,10 @@ export default function testsuite() {
   GlobalPxNullUndefined();
   AnimateToImmediatelyNullUndefined();
   AnimateToNullUndefined();
+  BackgroundBlurStyleTest();
+  ForegroundBlurStyleTest();
+  ImageBlurTest();
+  BackdropBlurTest();
+  UniversalAttributesTest();
+  QueryNavDestinationInfoTest();
 }

@@ -29,7 +29,7 @@
                 "power-shell timeout -o 86400000",
                 "power-shell setmode 602",
                 "uinput -T -m 300 1279 280 200",
-                "uinput -T -d 300 600 -m 300 600 300 100 -u 300 100",
+                "uinput -T -d 300 600 -u 300 100",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
             ],
             "teardown-command": [

@@ -53,7 +53,9 @@ let changedata: avSession.AVMetadata = {
   filter: 2,
   drmSchemes: ['123123','456456'],
   skipIntervals: 10,
-  displayTags: 1
+  displayTags: 1,
+  rewindSkipIntervals: 10,
+  fastForwardSkipIntervals: 10
 };
 
 let playbackstate: avSession.AVPlaybackState = {
@@ -723,26 +725,22 @@ export default function abilityTest() {
       let callMetadata6: callMetadata6 = {
         name: '12345678'
       };
-      try {
-        session.setCallMetadata(callMetadata6, (err: BusinessError, data: ESObject) => {
-          if (err) {
-            console.info(`${TAG}: setCallMetadataCallback set name error: code: ${err.code}, message: ${err.message}`);
+      session.setCallMetadata(callMetadata6, (err: BusinessError, data: ESObject) => {
+        if (err) {
+          console.info(`${TAG}: setCallMetadataCallback set name error: code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TAG}: setCallMetadataCallback set name successfully`);
+          controller.getCallMetadata().then((data: ESObject) => {
+            console.info(`${TAG}: getCallMetadata name is: ${data.name}`);
+            expect(data.name).assertEqual(callMetadata6.name);
+          }).catch((err: BusinessError) => {
+            console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
-          } else {
-            console.info(`${TAG}: setCallMetadataCallback set name successfully`);
-            controller.getCallMetadata().then((data: ESObject) => {
-              console.info(`${TAG}: getCallMetadata name is: ${data.name}`);
-              expect(data.name).assertEqual(callMetadata6.name);
-            }).catch((err: BusinessError) => {
-              console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
-            });
-          }
-        })
-      } catch (error) {
-        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
-        expect(false).assertTrue();
-      }
+          });
+        }
+      })
+      await sleep(300);
       done();
     })
 
@@ -3390,7 +3388,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3416,7 +3416,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
@@ -3449,7 +3449,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3476,7 +3478,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {

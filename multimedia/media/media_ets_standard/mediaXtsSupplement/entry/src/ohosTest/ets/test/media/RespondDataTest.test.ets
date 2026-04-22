@@ -1298,6 +1298,326 @@ export default function RespondDataTest() {
         done();
       }
     });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_049
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_049
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_049', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        let header:Record<string, string> = {
+          'Transfer-Encoding':'xxx',
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'content-length' : 'xxx'
+        };
+        AppStorage.setOrCreate('key', '');
+        let redirectUrl: string = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(null,header,redirectUrl);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_050
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_050
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_050', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        let header:Record<string, string> = {
+          'Transfer-Encoding':'xxx',
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'content-length' : 'xxx'
+        };
+        AppStorage.setOrCreate('key', '');
+        let redirectUrl: string = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(undefined,header,redirectUrl);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_051
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_051
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_051', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let redirectUrl: string = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(1,null,redirectUrl);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_052
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_052
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_052', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let redirectUrl: string = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(1,undefined,redirectUrl);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_053
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_053
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_053', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        let header:Record<string, string> = {
+          'Transfer-Encoding':'xxx',
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'content-length' : 'xxx'
+        };
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(1,header,null);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_054
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_054
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_054', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_048';
+      try {
+        let header:Record<string, string> = {
+          'Transfer-Encoding':'xxx',
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'content-length' : 'xxx'
+        };
+        await getAVPlayerRequest(testName, url_1a1v_ts, (request: media.MediaSourceLoadingRequest) => {
+          request.respondHeader(1,header,undefined);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_055
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_055
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_055', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_009';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let buffer: ArrayBuffer = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.respondData(null,0,buffer);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_056
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_056
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_056', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_009';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let buffer: ArrayBuffer = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.respondData(undefined,0,buffer);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_057
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_057
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_057', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_009';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let buffer: ArrayBuffer = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.respondData(1,null,buffer);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_058
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_058
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_058', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_009';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let buffer: ArrayBuffer = AppStorage.get('key') as ESObject;
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.respondData(1,undefined,buffer);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_059
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_059
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_059', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_039';
+      try {
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.finishLoading(null,media.LoadingRequestError.LOADING_ERROR_ACCESS_TIMEOUT);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_060
+     * @tc.name      MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_060
+     * @tc.desc      Testing RespondData
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_060', Level.LEVEL0, async (done: Function) => {
+      const  testName = 'MEDIA_KIT_MULTI_MEDIA_RESPOND_DATA_039';
+      try {
+        await getAVPlayerRequest(testName, url_1a1v_mpd, (request: media.MediaSourceLoadingRequest) => {
+          request.finishLoading(undefined,media.LoadingRequestError.LOADING_ERROR_ACCESS_TIMEOUT);
+          console.info(TAG,'SUCCEED',request);
+          done();
+        })
+      } catch (error) {
+        console.info(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect(error).assertFail();
+        done();
+      }
+    });
   })
 }
 

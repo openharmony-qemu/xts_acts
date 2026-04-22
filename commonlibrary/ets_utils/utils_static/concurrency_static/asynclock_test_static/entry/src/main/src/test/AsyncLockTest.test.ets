@@ -100,30 +100,30 @@ export default function AsyncLockTest() {
 
         // ==================== A. AsyncLock 类测试 ====================
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_CLASS_0100
-         * @tc.name ConstructorAndType001
-         * @tc.desc Test AsyncLock constructor and instance type
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('ConstructorAndType001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_CLASS_0100
+     * @tc.name ConstructorAndType001
+     * @tc.desc Test AsyncLock constructor and instance type
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('ConstructorAndType001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: () => void): void => {
             let lock: AsyncLock = new AsyncLock();
             expect(lock instanceof AsyncLock).assertTrue();
             expect(typeof lock.name).assertEqual("string");
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_CLASS_0200
-         * @tc.name RequestAndGetExistingLock001
-         * @tc.desc Test request creates new lock and returns same instance for same name
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('RequestAndGetExistingLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_CLASS_0200
+     * @tc.name RequestAndGetExistingLock001
+     * @tc.desc Test request creates new lock and returns same instance for same name
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('RequestAndGetExistingLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: () => void): void => {
             let lock1: AsyncLock = AsyncLock.request("testLock");
             let lock2: AsyncLock = AsyncLock.request("testLock");
             let lock3: AsyncLock = AsyncLock.request("otherLock");
@@ -156,15 +156,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_CLASS_0400
-         * @tc.name QueryState001
-         * @tc.desc Test query returns AsyncLockState with held and pending arrays
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('QueryState001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_CLASS_0400
+     * @tc.name QueryState001
+     * @tc.desc Test query returns AsyncLockState with held and pending arrays
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('QueryState001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: () => void): void => {
             let lockName: string = "queryLock";
             AsyncLock.request(lockName);
 
@@ -174,18 +174,35 @@ export default function AsyncLockTest() {
             done();
         });
 
-
-        // ==================== B. lockAsync 基础重载测试 ====================
-
         /**
-         * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0100
-         * @tc.name LockAsyncBasicTypes001
-         * @tc.desc Test lockAsync with various callback return types
+         * @tc.number SUB_ASYNC_LOCK_CLASS_0500
+         * @tc.name QueryNonExistentLock001
+         * @tc.desc Test query for non-existent lock returns state with empty arrays
          * @tc.size SmallTest
          * @tc.type Function
          * @tc.level Level 1
          */
-        it('LockAsyncBasicTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('QueryNonExistentLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+            try {
+                let state: AsyncLockState = AsyncLock.query("nonExistentLock");
+                expect().assertFail();
+            } catch (err) {
+                expect(err instanceof Error).assertTrue();
+            }
+            done();
+        });
+
+        // ==================== B. lockAsync 基础重载测试 ====================
+
+    /**
+     * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0100
+     * @tc.name LockAsyncBasicTypes001
+     * @tc.desc Test lockAsync with various callback return types
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('LockAsyncBasicTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let currenttid = StdProcess.tid();
             let numberResult: int = await lock.lockAsync<int>(() => {
@@ -219,15 +236,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0200
-         * @tc.name LockAsyncAsyncCallback001
-         * @tc.desc Test lockAsync with async callback
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('LockAsyncAsyncCallback001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0200
+     * @tc.name LockAsyncAsyncCallback001
+     * @tc.desc Test lockAsync with async callback
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('LockAsyncAsyncCallback001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
 
             let result: string = await lock.lockAsync<string>(async () => {
@@ -239,15 +256,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0300
-         * @tc.name LockAsyncVoid001
-         * @tc.desc Test lockAsync with void return type
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('LockAsyncVoid001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_LOCKASYNC_0300
+     * @tc.name LockAsyncVoid001
+     * @tc.desc Test lockAsync with void return type
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('LockAsyncVoid001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let result = await lock.lockAsync<void>(() => {});
             expect(result).assertUndefined();
@@ -300,15 +317,15 @@ export default function AsyncLockTest() {
 
         // ==================== C. lockAsync 带 mode 重载测试 ====================
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_MODE_0100
-         * @tc.name LockAsyncSharedMode001
-         * @tc.desc Test lockAsync with SHARED mode allows concurrent execution
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('LockAsyncSharedMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_MODE_0100
+     * @tc.name LockAsyncSharedMode001
+     * @tc.desc Test lockAsync with SHARED mode allows concurrent execution
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('LockAsyncSharedMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let executionOrder: int[] = [];
 
@@ -332,15 +349,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_MODE_0200
-         * @tc.name LockAsyncExclusiveMode001
-         * @tc.desc Test lockAsync with EXCLUSIVE mode executes sequentially
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('LockAsyncExclusiveMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_MODE_0200
+     * @tc.name LockAsyncExclusiveMode001
+     * @tc.desc Test lockAsync with EXCLUSIVE mode executes sequentially
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('LockAsyncExclusiveMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let executionOrder: int[] = [];
 
@@ -419,15 +436,15 @@ export default function AsyncLockTest() {
 
         // ==================== D. lockAsync 带 options 重载测试 ====================
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_OPTIONS_0100
-         * @tc.name LockAsyncDefaultOptions001
-         * @tc.desc Test lockAsync with default AsyncLockOptions
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('LockAsyncDefaultOptions001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_OPTIONS_0100
+     * @tc.name LockAsyncDefaultOptions001
+     * @tc.desc Test lockAsync with default AsyncLockOptions
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('LockAsyncDefaultOptions001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let options: AsyncLockOptions<void> = new AsyncLockOptions<void>();
 
@@ -548,15 +565,15 @@ export default function AsyncLockTest() {
 
         // ==================== E. AsyncLockOptions 类测试 ====================
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_OPTIONS_CLASS_0100
-         * @tc.name AsyncLockOptionsDefaults001
-         * @tc.desc Test AsyncLockOptions default values
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('AsyncLockOptionsDefaults001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_OPTIONS_CLASS_0100
+     * @tc.name AsyncLockOptionsDefaults001
+     * @tc.desc Test AsyncLockOptions default values
+     * @tc.size SmallTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('AsyncLockOptionsDefaults001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: () => void): void => {
             let options1: AsyncLockOptions<void> = new AsyncLockOptions<void>();
             expect(options1.isAvailable).assertFalse();
             expect(options1.signal).assertNull();
@@ -706,15 +723,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_GENERIC_0500
-         * @tc.name GenericWithMode001
-         * @tc.desc Test generic types with SHARED and EXCLUSIVE modes
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('GenericWithMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_GENERIC_0500
+     * @tc.name GenericWithMode001
+     * @tc.desc Test generic types with SHARED and EXCLUSIVE modes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('GenericWithMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
 
             let sharedResult: int = await lock.lockAsync<int>(() => {
@@ -816,15 +833,15 @@ export default function AsyncLockTest() {
 
         // ==================== H. 并发场景测试 ====================
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_CONCURRENT_0100
-         * @tc.name ConcurrentSharedLocks001
-         * @tc.desc Test multiple SHARED locks execute concurrently
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('ConcurrentSharedLocks001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_CONCURRENT_0100
+     * @tc.name ConcurrentSharedLocks001
+     * @tc.desc Test multiple SHARED locks execute concurrently
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ConcurrentSharedLocks001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let executionTimes: long[] = [];
 
@@ -843,15 +860,15 @@ export default function AsyncLockTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_ASYNC_LOCK_CONCURRENT_0200
-         * @tc.name ConcurrentExclusiveLocks001
-         * @tc.desc Test multiple EXCLUSIVE locks execute sequentially
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('ConcurrentExclusiveLocks001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_ASYNC_LOCK_CONCURRENT_0200
+     * @tc.name ConcurrentExclusiveLocks001
+     * @tc.desc Test multiple EXCLUSIVE locks execute sequentially
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ConcurrentExclusiveLocks001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
             let executionOrder: int[] = [];
 

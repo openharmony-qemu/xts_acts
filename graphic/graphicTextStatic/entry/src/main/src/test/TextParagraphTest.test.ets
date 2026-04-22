@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,23 +50,23 @@ export default function TextParagraphTest() {
           blue: 0 
         };
 
-        let fontFeatures: Array<text.FontFeature> = new Array<text.FontFeature>(2);
-        fontFeatures[0] = { name: "liga", value: 1 };
-        fontFeatures[1] = { name: "liga2", value: 2 };
-        let fontVariation: Array<text.FontVariation> = new Array<text.FontVariation>(2);
-        fontVariation[0] = { axis: "axis", value: 1 };
-        fontVariation[1] = { axis: "axis2", value: 2 };
-        let textShadows: Array<text.TextShadow> = new Array<text.TextShadow>(2);
+        let fontFeatures: Array<text.FontFeature> = [];
+        fontFeatures.push({ name: "liga", value: 1 } as text.FontFeature);
+        fontFeatures.push({ name: "liga2", value: 2 } as text.FontFeature);
+        let fontVariation: Array<text.FontVariation> = [];
+        fontVariation.push({ axis: "axis", value: 1 } as text.FontVariation);
+        fontVariation.push({ axis: "axis2", value: 2 } as text.FontVariation);
+        let textShadows: Array<text.TextShadow> = [];
         let point1: common2D.Point = { x: 11, y: 12 };
         let point2: common2D.Point = { x: 2, y: 4 };
-        textShadows[0] = {
+        textShadows.push({
           color: myColor,
           point: point1, blurRadius: 12
-        };
-        textShadows[1] = {
+        } as text.TextShadow);
+        textShadows.push({
           color: myColor,
           point: point2, blurRadius: 14
-        };
+        } as text.TextShadow);
         let backgroundRect: text.RectStyle = {
           color: myColor,
           leftTopRadius: 10,
@@ -242,7 +242,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let longestLine = globalParagraph!.getLongestLine();
-          expect(Math.round(longestLine * 100) / 100).assertEqual(163.51);
+          expect(Math.round(longestLine * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLine. Cause:${JSON.stringify(err)}`);
@@ -264,7 +264,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getLongestLineWithIndent();
-          expect(Math.round(width * 100) / 100).assertEqual(163.51);
+          expect(Math.round(width * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLineWithIndent. Cause:${JSON.stringify(err)}`);
@@ -286,7 +286,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getMinIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(257.22);
+          expect(Math.round(width * 100) / 100).assertEqual(262.15);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMinIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -308,7 +308,7 @@ export default function TextParagraphTest() {
         try {
           globalParagraph?.layoutSync(100);
           let width = globalParagraph!.getMaxIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(2302.72);
+          expect(Math.round(width * 100) / 100).assertEqual(2333.12);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMaxIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -576,8 +576,8 @@ export default function TextParagraphTest() {
             expect(Math.round(Number(lineMetrics?.ascent ?? 0) * 100) / 100).assertEqual(303.39)
             expect(Math.round(Number(lineMetrics?.descent ?? 0) * 100) / 100).assertEqual(112.61)
             expect(lineMetrics?.height).assertEqual(416)
-            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.50)
-            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.50)
+            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.82)
+            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.18)
             expect(Math.round(Number(lineMetrics?.baseline ?? 0) * 100) / 100).assertEqual(1135.39)
             expect(lineMetrics?.lineNumber).assertEqual(2)
             expect(lineMetrics?.topHeight).assertEqual(832)

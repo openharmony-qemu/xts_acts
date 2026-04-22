@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 
-class WaterFlowDataSource implements IDataSource<string> {
+export class WaterFlowDataSource implements IDataSource<string> {
   private dataArray: number[] = []
   private listeners: DataChangeListener[] = []
 
@@ -82,7 +82,7 @@ struct ViewHolder {
 
   aboutToDisappear(): void {
     console.info(`ViewHolder: aboutToDisappear(${this.item})`)
-    this.disappearCount++
+    setTimeout(()=>{this.disappearCount++},0)
   }
 
   build() {

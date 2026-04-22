@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,9 +15,11 @@
  */
 import BorderOptionsTest1 from './BorderOptions/BorderOptionsTest1.test';
 import LocalizedBorderRadiuses from './borderRadiusTest/LocalizedBorderRadiuses.test';
+import BorderRadiusRenderStrategyTest from './borderRadiusTest/BorderRadiusRenderStrategyTest.test';
 import onSizeChange from './onSizeChangeTest/onSizeChange.test';
 export default function testsuite() {
   BorderOptionsTest1();
   LocalizedBorderRadiuses();
+  BorderRadiusRenderStrategyTest();
   onSizeChange();
 }

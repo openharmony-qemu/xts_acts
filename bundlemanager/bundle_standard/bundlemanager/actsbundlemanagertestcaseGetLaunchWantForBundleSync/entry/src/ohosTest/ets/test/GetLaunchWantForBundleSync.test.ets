@@ -163,7 +163,7 @@ export default function testGetLaunchWantForBundleSync() {
       } catch (error) {
         hilog.info(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'get LaunchWant failed, err is: %{public}s', JSON.stringify(error));
         expect(error.code).assertEqual(ERROR_CODE_PARAM_CHECK_ERROR);
-        expect(error.message).assertEqual(ERROR_MESSAGE_PARAM_CHECK_ERROR_NULL_STRING);
+        expect(error.message).assertEqual(ERROR_MESSAGE_PARAM_CHECK_ERROR);
         hilog.info(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
         done();
       }

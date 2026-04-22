@@ -17,7 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 import wifiMg from '@ohos.wifiManager'
-
+let driver;
+let skipping = false;
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
 }
@@ -48,7 +49,6 @@ async function checkSavedNet()
 }
 
 async function clickTest() {
-      let driver = Driver.create();
       await driver.delayMs(1500);
       try {
           let button = await driver.findComponent(ON.text("取消"));
@@ -62,7 +62,6 @@ async function clickTest() {
 async function clickRequestPermission() {
     try {
         console.info('[wifi_js] clickRequestPermission start');
-        let driver = Driver.create();
         await driver.delayMs(3000);
         let button = await driver.findComponent(ON.text("本次使用", MatchPattern.CONTAINS));
         await button.click();
@@ -76,7 +75,6 @@ async function clickRequestPermission() {
 async function scrollSearchLocation() {
     try {
         console.info('[wifi_js] scrollSearchLocation start');
-        let driver = Driver.create();
         await driver.delayMs(2000);
         let scrollBar = await driver.findComponent(ON.type('Scroll'));
         let button = await scrollBar.scrollSearch(ON.type('Toggle'));
@@ -103,6 +101,7 @@ export default function actsWifiManagerCandidateNetWorkTest() {
     describe('actsWifiManagerCandidateNetWorkTest', function () {
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            driver = Driver.create();
             await scrollSearchLocation();
             await clickRequestPermission();
             done();
@@ -112,7 +111,11 @@ export default function actsWifiManagerCandidateNetWorkTest() {
             checkWifiPowerOn();
         })
         afterEach(async function (done) {
-            await clickTest();
+            if (skipping){
+                console.info('[wifi_js]111111111111111111111');
+            }else{
+                await clickTest();
+            }
             done();
         })
 
@@ -582,7 +585,8 @@ export default function actsWifiManagerCandidateNetWorkTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_WiFi_XTS_CandidateNetWork_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            skipping = true;
             let wifiDeviceConfig = {
                 "ssid": "TEST_TYPE_OPEN",
                 "bssid": "22:9b:e6:48:1f:5c",
@@ -652,11 +656,10 @@ export default function actsWifiManagerCandidateNetWorkTest() {
                         refusedAction = true;
                     }
                 });
-                let drivers = Driver.create();
-                await drivers.delayMs(900);
-                let buttons = await drivers.findComponent(ON.text("取消"));
+                await driver.delayMs(900);
+                let buttons = await driver.findComponent(ON.text("取消"));
                 await buttons.click();
-                await drivers.delayMs(900);
+                await driver.delayMs(900);
                 expect(refusedAction).assertTrue();
             
                 wifiMg.connectToCandidateConfigWithUserAction(getNetworkId).then(result => {
@@ -674,7 +677,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
                     }
                 });
                 if (!apiNotSupport) {
-                    let driver = Driver.create();
                     await driver.delayMs(900);
                     let button = await driver.findComponent(ON.text("连接"));
                     await button.click();
@@ -710,7 +712,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
                 }
                 done();
         })
-
         /**
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0008
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0008
@@ -719,7 +720,7 @@ export default function actsWifiManagerCandidateNetWorkTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_WiFi_XTS_CandidateNetWork_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await wifiMg.connectToCandidateConfigWithUserAction(-1).then(() => {
                 console.info("[wifi_test]connectToCandidateConfigWithUserAction success");
                 console.info("[wifi_test]test <Parameter validation failed> fail");

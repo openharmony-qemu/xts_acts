@@ -53,7 +53,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -348,13 +348,18 @@ export default function ErrorCode201() {
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
-                     expect(err.code == 801 || err.code == 201).assertTrue()
-                     done();
+                     if (err.code === 801) {
+                        expect(err.code).assertEqual(801);
+                     } else {
+                        expect(err.code).assertEqual(201);
+                     }
+                    done();
                  })
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
+                
                 expect(exception.code == 801 || exception.code == 201).assertTrue()
                 done()
             };
@@ -507,7 +512,11 @@ export default function ErrorCode201() {
                 done()
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
-                expect(err.code == 201 || err.code == 801).assertTrue();
+                if (err.code === 801) {
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(201);
+                }
                 done()
             });
         } catch (exception) {
@@ -584,12 +593,123 @@ export default function ErrorCode201() {
         }
     });
 
+    /**
+    * @tc.number    SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static_0200
+    * @tc.name      test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static
+    * @tc.desc      getVisibleWindowInfo测试错误码返回值201覆盖
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it('test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static ';
+        hilog.info(domain, tag, caseName + 'begin');
+        let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+        try {
+        let windowClass2: window.Window = windowStageStart.getMainWindowSync();
+        let res = windowClass2.getWindowProperties()
+        window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
+            waitForCompletion(async () => {
+            hilog.info(domain, tag, caseName + 'Succeeded in calling getVisibleWindowInfo.');
+            expect(false).assertTrue();
+            await terminateAbility(caseName);
+            done();
+            })
+        }).catch((err: Error): PromiseLike<void> | undefined => {
+            waitForCompletion(async () => {
+            hilog.error(domain, tag,
+            caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err.code));
+            expect(err.code === 201).assertTrue();
+            await terminateAbility(caseName);
+            done()
+            })
+        });
+        } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, caseName + 'Failed2 to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
+        await terminateAbility(caseName);
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
+    /**
+    * @tc.name   testGetAllMainWindowInfo_ERRORCODE_201_static_0200
+    * @tc.number testGetAllMainWindowInfo_ERRORCODE_201_static_0200
+    * @tc.desc   getAllMainWindowInfo测试错误码返回值201覆盖
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("testGetAllMainWindowInfo_ERRORCODE_201_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetAllMainWindowInfo_ERRORCODE_201_static_0200";
+        console.log(caseName + " begin");
+        try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(caseName + ' windowId: ' + windowId);
+        let windowInfoArray = await window.getAllMainWindowInfo();
+        console.info(caseName + ' getAllMainWindowInfo windowInfoArray.length: ' +
+        JSON.stringify(windowInfoArray.length));
+        console.info(caseName + ' getAllMainWindowInfo windowInfoArray: ' + JSON.stringify(windowInfoArray));
+        expect(false).assertTrue();
+        done();
+        } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
-
-
-
-
+    /**
+    * @tc.name   testGetMainWindowSnapshot_ERRORCODE_201_static_0400
+    * @tc.number testGetMainWindowSnapshot_ERRORCODE_201_static_0400
+    * @tc.desc   getMainWindowSnapshot测试返回值201覆盖
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("testGetMainWindowSnapshot_ERRORCODE_201_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetMainWindowSnapshot_ERRORCODE_201_static_0400";
+        console.log(caseName + " begin");
+        try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        let windowId: int = windowClass.getWindowProperties().id;
+        console.info(caseName + ' windowId: ' + windowId);
+        let windowIdArray: Array<int> = [windowId];
+        let configs: window.WindowSnapshotConfiguration = {
+            useCache: true
+        }
+        await window.getMainWindowSnapshot(windowIdArray, configs)
+        expect(true).assertFail();
+        done()
+        } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
     })
 

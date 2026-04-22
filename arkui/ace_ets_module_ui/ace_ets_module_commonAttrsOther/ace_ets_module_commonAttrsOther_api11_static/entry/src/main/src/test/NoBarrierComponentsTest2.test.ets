@@ -108,19 +108,18 @@ export default function noBarrierComponentsTest() {
      */
 it('noBarrierComponents_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents001 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("textAlign1");
-          await CommonFunc.sleep(2000);
-          console.info('noBarrierComponents001 START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
-          console.info('noBarrierComponents001 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents001 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("textAlign1");
+        await CommonFunc.sleep(2000);
+        console.info('noBarrierComponents001 START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
+        console.info('noBarrierComponents001 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents001 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -131,19 +130,18 @@ it('noBarrierComponents_static_001', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents002 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("textAlign2");
-          await CommonFunc.sleep(2000);
-          console.info('noBarrierComponents002 START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
-          console.info('noBarrierComponents002 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents002 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("textAlign2");
+        await CommonFunc.sleep(2000);
+        console.info('noBarrierComponents002 START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
+        console.info('noBarrierComponents002 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents002 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -154,19 +152,18 @@ it('noBarrierComponents_static_002', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents003 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("textAlign3");
-          await CommonFunc.sleep(2000);
-          console.info('noBarrierComponents003 START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
-          console.info('noBarrierComponents003 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents002 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("textAlign3");
+        await CommonFunc.sleep(2000);
+        console.info('noBarrierComponents003 START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Text");
+        console.info('noBarrierComponents003 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents002 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -177,19 +174,18 @@ it('noBarrierComponents_static_003', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents004 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("list");
-          await CommonFunc.sleep(2000);
-          console.info('noBarrierComponents004 START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("List");
-          console.info('noBarrierComponents004 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents004 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("list");
+        await CommonFunc.sleep(2000);
+        console.info('noBarrierComponents004 START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("List");
+        console.info('noBarrierComponents004 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents004 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -200,19 +196,18 @@ it('noBarrierComponents_static_004', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents005 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Grid");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Grid");
-          console.info('noBarrierComponents005 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents005 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Grid");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Grid");
+        console.info('noBarrierComponents005 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents005 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -223,19 +218,18 @@ it('noBarrierComponents_static_005', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents006 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("AlphabetIndexer");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Stack");
-          console.info('noBarrierComponents006 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents006 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("AlphabetIndexer");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Stack");
+        console.info('noBarrierComponents006 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents006 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -246,19 +240,18 @@ it('noBarrierComponents_static_006', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents006 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Blank");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
-          console.info('noBarrierComponents007 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents007 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Blank");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
+        console.info('noBarrierComponents007 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents007 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -269,19 +262,18 @@ it('noBarrierComponents_static_007', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents008 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Button");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Button");
-          console.info('noBarrierComponents008 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents008 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Button");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Button");
+        console.info('noBarrierComponents008 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents008 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -292,19 +284,18 @@ it('noBarrierComponents_static_008', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents010 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Checkbox");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Checkbox");
-          console.info('noBarrierComponents010 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents010 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Checkbox");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Checkbox");
+        console.info('noBarrierComponents010 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents010 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -315,19 +306,18 @@ it('noBarrierComponents_static_010', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents011 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("DataPanel");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("DataPanel");
-          console.info('noBarrierComponents011 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents011 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("DataPanel");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("DataPanel");
+        console.info('noBarrierComponents011 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents011 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -338,19 +328,18 @@ it('noBarrierComponents_static_011', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents011 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("DatePicker");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("DatePicker");
-          console.info('noBarrierComponents012 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents012 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("DatePicker");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("DatePicker");
+        console.info('noBarrierComponents012 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents012 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -361,19 +350,18 @@ it('noBarrierComponents_static_012', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents013 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("FormComponent");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("FormComponent");
-          console.info('noBarrierComponents013 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents013 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("FormComponent");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("FormComponent");
+        console.info('noBarrierComponents013 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents013 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -384,19 +372,18 @@ it('noBarrierComponents_static_013', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents014 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Divider");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Divider");
-          console.info('noBarrierComponents014 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents014 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Divider");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Divider");
+        console.info('noBarrierComponents014 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents014 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -407,19 +394,18 @@ it('noBarrierComponents_static_014', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents015 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Gauge");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Gauge");
-          console.info('noBarrierComponents015 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents015 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Gauge");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Gauge");
+        console.info('noBarrierComponents015 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents015 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -430,19 +416,18 @@ it('noBarrierComponents_static_015', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents016 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Image");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Image");
-          console.info('noBarrierComponents016 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents016 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Image");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Image");
+        console.info('noBarrierComponents016 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents016 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -453,19 +438,18 @@ it('noBarrierComponents_static_016', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents017 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Marquee");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Marquee");
-          console.info('noBarrierComponents017 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents017 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Marquee");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Marquee");
+        console.info('noBarrierComponents017 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents017 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -476,19 +460,18 @@ it('noBarrierComponents_static_017', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents018 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("PatternLock");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("PatternLock");
-          console.info('noBarrierComponents018 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents018 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("PatternLock");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("PatternLock");
+        console.info('noBarrierComponents018 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents018 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -499,19 +482,18 @@ it('noBarrierComponents_static_018', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents019 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Progress");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Progress");
-          console.info('noBarrierComponents019 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents019 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Progress");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Progress");
+        console.info('noBarrierComponents019 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents019 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -522,19 +504,18 @@ it('noBarrierComponents_static_019', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents009 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("QRCode");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("QRCode");
-          console.info('noBarrierComponents009 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents009 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("QRCode");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("QRCode");
+        console.info('noBarrierComponents009 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents009 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -545,19 +526,18 @@ it('noBarrierComponents_static_009', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents020 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Radio");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Radio");
-          console.info('noBarrierComponents020 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents020 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Radio");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Radio");
+        console.info('noBarrierComponents020 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents020 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -568,19 +548,18 @@ it('noBarrierComponents_static_020', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents021 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Rating");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Rating");
-          console.info('noBarrierComponents021 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents021 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Rating");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Rating");
+        console.info('noBarrierComponents021 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents021 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
 
     
@@ -592,19 +571,18 @@ it('noBarrierComponents_static_021', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents023 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("RichText");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
-          console.info('noBarrierComponents023 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents023 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("RichText");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
+        console.info('noBarrierComponents023 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents023 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -615,19 +593,18 @@ it('noBarrierComponents_static_023', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents024 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Search");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Search");
-          console.info('noBarrierComponents024 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents024 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Search");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Search");
+        console.info('noBarrierComponents024 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents024 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -638,19 +615,18 @@ it('noBarrierComponents_static_024', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_026', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents026 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Slider");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Slider");
-          console.info('noBarrierComponents026 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents026 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Slider");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Slider");
+        console.info('noBarrierComponents026 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents026 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -661,19 +637,18 @@ it('noBarrierComponents_static_026', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_027', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents027 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("Toggle");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Toggle");
-          console.info('noBarrierComponents027 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents027 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("Toggle");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Toggle");
+        console.info('noBarrierComponents027 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents027 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -684,19 +659,18 @@ it('noBarrierComponents_static_027', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_028', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents028 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("TimePicker");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("TimePicker");
-          console.info('noBarrierComponents028 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents028 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("TimePicker");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("TimePicker");
+        console.info('noBarrierComponents028 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents028 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
     
 /**
@@ -707,19 +681,18 @@ it('noBarrierComponents_static_028', Level.LEVEL0, async (done: () => void): Pro
      */
 it('noBarrierComponents_static_030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents030 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey("XComponent");
-          await CommonFunc.sleep(2000);
-          console.info(' START  :' + JSON.stringify(strJson));
-          expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("XComponent");
-          console.info('noBarrierComponents030 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('noBarrierComponents030 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 5000)
+      await CommonFunc.sleep(5000);
+      try {
+        let strJson = inspector.getInspectorByKey("XComponent");
+        await CommonFunc.sleep(2000);
+        console.info(' START  :' + JSON.stringify(strJson));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("XComponent");
+        console.info('noBarrierComponents030 END ');
+      } catch (err) {
+        expect().assertFail()
+        console.info('noBarrierComponents030 ERR  ' + JSON.stringify(err));
+      }
+      done();
     });
   })
 }

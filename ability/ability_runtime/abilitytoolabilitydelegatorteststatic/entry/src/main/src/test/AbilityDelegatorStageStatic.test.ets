@@ -106,37 +106,33 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor callback`);
-          abilityDelegator.removeAbilityMonitor(monitor, (err: BusinessError<void> | null) => {
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
-            if (err?.code) {
-              hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
-              expect().assertFail();
-              done();
-              hilog.info(domain, tag, `${itName} end`);
-              return;
-            }
+          try {
+            await abilityDelegator.removeAbilityMonitor(monitor);
             hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
             await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
             await Utils.msSleep(2000);
-
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
             const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
             await context.moveAbilityToBackground()
               .catch((err): void => {
                 if(err instanceof BusinessError){
                     hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-                    if(err?.code == 16000061) {
+                    if(err?.code === 16000061) {
                       done();
                     }
                 }
               });
             await Utils.msSleep(2000);
-
             expect(isOnBackground).assertFalse();
             done();
             hilog.info(domain, tag, `${itName} end`);
-          })
+          } catch (err) {
+            hilog.info(domain, tag, `${itName} removeAbilityMonitor callback fail`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
         } catch (err) {
           if(err instanceof BusinessError){
               hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
@@ -177,26 +173,27 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} removeAbilityMonitor promise`);
-          abilityDelegator.removeAbilityMonitor(monitor).then(() => {
+          try {
+            await abilityDelegator.removeAbilityMonitor(monitor);
             hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
 
-            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
-            await Utils.msSleep(2000);
+                     hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+                     await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+                     await Utils.msSleep(2000);
 
-            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
-            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-            await context.moveAbilityToBackground();
-            await Utils.msSleep(2000);
+                     hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+                     const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+                     await context.moveAbilityToBackground();
+                     await Utils.msSleep(2000);
 
-            expect(isOnBackground).assertFalse();
+                     expect(isOnBackground).assertFalse();
 
-            done();
-            hilog.info(domain, tag, `${itName} end`);
-          }).catch((e) => {
+                     done();
+                     hilog.info(domain, tag, `${itName} end`);
+          } catch (e) {
             if (e instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} removeAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
-                if(e?.code == 16000061) {
+                if(e?.code === 16000061) {
                   done();
                 } else {
                   expect().assertFail();
@@ -204,11 +201,11 @@ export default function AbilityDelegatorStageStaticTest() {
                 }
                 hilog.info(domain, tag, `${itName} end`);
             }
-          })
+          }
         } catch (err) {
           if(err instanceof BusinessError){
               hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-              if(err?.code == 16000061) {
+              if(err?.code === 16000061) {
                 done();
               } else {
                 expect().assertFail();
@@ -265,7 +262,7 @@ export default function AbilityDelegatorStageStaticTest() {
           expect(isOnBackground).assertFalse();
         } catch (err) {
           hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          if(err?.code == 16000061) {
+          if(err?.code === 16000061) {
             done();
           } else {
             expect().assertFail();
@@ -304,7 +301,7 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, (err: BusinessError<void> | null) => {
+            abilityDelegator.waitAbilityMonitor(monitor, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
               if (err?.code) {
                 hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
@@ -314,6 +311,7 @@ export default function AbilityDelegatorStageStaticTest() {
                 return;
               }
               hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
@@ -366,7 +364,7 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, 10000, (err: BusinessError<void> | null) => {
+            abilityDelegator.waitAbilityMonitor(monitor, 10000, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
               if (err?.code) {
                 hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
@@ -376,6 +374,7 @@ export default function AbilityDelegatorStageStaticTest() {
                 return;
               }
               hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
             })
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
             await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
@@ -427,8 +426,9 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor, 10000).then(() => {
+            abilityDelegator.waitAbilityMonitor(monitor, 10000).then((data: UIAbility) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
             }).catch((e) => {
               if (e instanceof BusinessError){
                   hilog.info(domain, tag,
@@ -492,8 +492,9 @@ export default function AbilityDelegatorStageStaticTest() {
               onAbilityBackground: onAbilityBackgroundCallback
             };
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
-            abilityDelegator.waitAbilityMonitor(monitor).then(() => {
+            abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
             }).catch((e) => {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag,
@@ -669,22 +670,23 @@ export default function AbilityDelegatorStageStaticTest() {
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} doAbilityForeground`);
-            abilityDelegator.doAbilityForeground(ability).then(() => {
+            try {
+              await abilityDelegator.doAbilityForeground(ability);
               hilog.info(domain, tag, `${itName} doAbilityForeground success`);
 
-              await Utils.msSleep(2000);
-              const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
-              expect(isOnBackground).assertTrue();
-              done();
-              hilog.info(domain, tag, `${itName} end`);
-            }).catch((e) => {
+                         await Utils.msSleep(2000);
+                         const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
+                         expect(isOnBackground).assertTrue();
+                         done();
+                         hilog.info(domain, tag, `${itName} end`);
+            } catch (e) {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag,
                     `${itName} doAbilityForeground fail error code: ${e?.code} msg: ${e?.message}`);
                   expect().assertFail();
                   hilog.info(domain, tag, `${itName} end`);
               }
-            })
+            }
           } catch (err) {
             if(err instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
@@ -726,22 +728,23 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
 
             hilog.info(domain, tag, `${itName} doAbilityBackground`);
-            abilityDelegator.doAbilityBackground(ability).then(() => {
+            try {
+              await abilityDelegator.doAbilityBackground(ability);
               hilog.info(domain, tag, `${itName} doAbilityBackground success`);
-              await Utils.msSleep(2000);
+                         await Utils.msSleep(2000);
 
-              const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
-              expect(isOnBackground).assertTrue();
+                         const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
+                         expect(isOnBackground).assertTrue();
 
-              done();
-              hilog.info(domain, tag, `${itName} end`);
-            }).catch((e) => {
+                         done();
+                         hilog.info(domain, tag, `${itName} end`);
+            } catch (e) {
               if(e instanceof BusinessError){
                   hilog.info(domain, tag, `${itName} doAbilityBackground fail error code: ${e?.code} msg: ${e?.message}`);
                   expect().assertFail();
                   hilog.info(domain, tag, `${itName} end`);
               }
-            })
+            }
           } catch (err) {
             if(err instanceof BusinessError){
                 hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);

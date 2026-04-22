@@ -208,6 +208,57 @@ export default function specialWindowTest(context: common.UIAbilityContext, wind
         });
     })
     /**
+     * @tc.name   testCreate_MainWindow_Callback_0100
+     * @tc.number testCreate_MainWindow_Callback_0100
+     * @tc.desc   Create a system window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreate_MainWindow_Callback_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testCreate_MainWindow_Callback_0100';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      window.create(context, 'testCreate_MainWindow_Callback_0100', window.WindowType.TYPE_MAIN, async (err: BusinessError, data) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(msgStr + `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1003);
+          done();
+        }
+        else{
+          console.info(msgStr + 'Succeeded in creating the window. Data: ' + JSON.stringify(data));
+          expect(true).assertFail();
+          done();
+        }
+        
+      });
+    })
+    /**
+     * @tc.name   testCreate_MainWindow_Promise_0100
+     * @tc.number testCreate_MainWindow_Promise_0100
+     * @tc.desc   Create a system window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreate_MainWindow_Promise_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testCreate_MainWindow_Promise_0100';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      await window.create(context, 'testCreate_DialogWindow_Promise', window.WindowType.TYPE_MAIN)
+        .then(async (data) => {
+          console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+          expect(true).assertFail();
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.error(msgStr + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1003);
+          done();
+        });
+    })
+    /**
      * @tc.name   testGetSubWindow_SubWinNumIsOne_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SPECIALWINDOW_JS_API_0050
      * @tc.desc   Gets all the child Windows under the WindowStage instance

@@ -1521,6 +1521,367 @@ export default function ActsZipTest() {
             console.info("==================actsZipTest13 end==================");
         })
 
+
+        /**
+         * @tc.name   actsZipTest13x
+         * @tc.number ACTS_ZipTest_13x
+         * @tc.desc   test deflate and inflate PARTIAL_FLUSH
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+           it('actsZipTest13x', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+            console.info("==================actsZipTest13x start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zStream: zlib.ZStream = {
+                nextIn: arrayBufferIn,
+                availableIn: 1,
+                nextOut: arrayBufferOut,
+                availableOut: 1
+            };
+            let zip = zlib.createZipSync();
+            await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data) => {
+                console.info('deflateInit success')
+                expect(data).assertEqual(0)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                expect(errData).assertFail()
+            })
+            await zip.deflate({ availableOut: 8 }, zlib.CompressFlushMode.FINISH).then((data) => {
+                console.info('deflate success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                expect(errData).assertFail()
+            })
+            await zip.deflateEnd({ nextOut: arrayBufferOut }).then(data => {
+                console.info('deflateEnd success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflateInit({ nextIn: arrayBufferOut, availableIn: 1, nextOut: arrayBufferOut, availableOut: 1 }
+            ).then(data => {
+                console.info('inflateInit success');
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflate({ availableIn: 8, availableOut: 8 }, zlib.CompressFlushMode.PARTIAL_FLUSH).then((data) => {
+                console.info('inflate success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflateEnd({ nextOut: arrayBufferOut }).then((data) => {
+                console.info('inflateEnd success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            done();
+            console.info("==================actsZipTest13x end==================");
+        })
+
+
+        /**
+         * @tc.name   actsZipTest13y
+         * @tc.number ACTS_ZipTest_13y
+         * @tc.desc   test deflate and inflate SYNC_FLUSH
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('actsZipTest13y', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+                console.info("==================actsZipTest13y start==================");
+                let str = 'hello world!';
+                let arrayBufferIn = new ArrayBuffer(str.length);
+                let byteArray = new Uint8Array(arrayBufferIn);
+                for (let i = 0, j = str.length; i < j; i++) {
+                    byteArray[i] = str.charCodeAt(i)
+                }
+                let arrayBufferOut = new ArrayBuffer(100);
+                let zStream: zlib.ZStream = {
+                    nextIn: arrayBufferIn,
+                    availableIn: 1,
+                    nextOut: arrayBufferOut,
+                    availableOut: 1
+                };
+                let zip = zlib.createZipSync();
+                await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data) => {
+                    console.info('deflateInit success')
+                    expect(data).assertEqual(0)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                    expect(errData).assertFail()
+                })
+                await zip.deflate({ availableOut: 8 }, zlib.CompressFlushMode.FINISH).then((data) => {
+                    console.info('deflate success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                    expect(errData).assertFail()
+                })
+                await zip.deflateEnd({ nextOut: arrayBufferOut }).then(data => {
+                    console.info('deflateEnd success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflateInit({ nextIn: arrayBufferOut, availableIn: 1, nextOut: arrayBufferOut, availableOut: 1 }
+                ).then(data => {
+                    console.info('inflateInit success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflate({ availableIn: 8, availableOut: 8 }, zlib.CompressFlushMode.SYNC_FLUSH).then((data) => {
+                    console.info('inflate success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflateEnd({ nextOut: arrayBufferOut }).then((data) => {
+                    console.info('inflateEnd success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                done();
+                console.info("==================actsZipTest13y end==================");
+            })
+
+
+        /**
+         * @tc.name   actsZipTest13z
+         * @tc.number ACTS_ZipTest_13z
+         * @tc.desc   test deflate and inflate FULL_FLUSH
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('actsZipTest13z', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+                console.info("==================actsZipTest13z start==================");
+                let str = 'hello world!';
+                let arrayBufferIn = new ArrayBuffer(str.length);
+                let byteArray = new Uint8Array(arrayBufferIn);
+                for (let i = 0, j = str.length; i < j; i++) {
+                    byteArray[i] = str.charCodeAt(i)
+                }
+                let arrayBufferOut = new ArrayBuffer(100);
+                let zStream: zlib.ZStream = {
+                    nextIn: arrayBufferIn,
+                    availableIn: 1,
+                    nextOut: arrayBufferOut,
+                    availableOut: 1
+                };
+                let zip = zlib.createZipSync();
+                await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data) => {
+                    console.info('deflateInit success')
+                    expect(data).assertEqual(0)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                    expect(errData).assertFail()
+                })
+                await zip.deflate({ availableOut: 8 }, zlib.CompressFlushMode.FINISH).then((data) => {
+                    console.info('deflate success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                    expect(errData).assertFail()
+                })
+                await zip.deflateEnd({ nextOut: arrayBufferOut }).then(data => {
+                    console.info('deflateEnd success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflateInit({ nextIn: arrayBufferOut, availableIn: 1, nextOut: arrayBufferOut, availableOut: 1 }
+                ).then(data => {
+                    console.info('inflateInit success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflate({ availableIn: 8, availableOut: 8 }, zlib.CompressFlushMode.FULL_FLUSH).then((data) => {
+                    console.info('inflate success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                await zip.inflateEnd({ nextOut: arrayBufferOut }).then((data) => {
+                    console.info('inflateEnd success')
+                    expect(data).assertEqual(zlib.ReturnStatus.OK)
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail()
+                })
+                done();
+                console.info("==================actsZipTest13z end==================");
+            })
+
+
+        /**
+         * @tc.name   actsZipTest13l
+         * @tc.number ACTS_ZipTest_13l
+         * @tc.desc   test deflate and inflate BLOCK
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('actsZipTest13l', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+                    console.info("==================actsZipTest13l start==================");
+                    let str = 'hello world!';
+                    let arrayBufferIn = new ArrayBuffer(str.length);
+                    let byteArray = new Uint8Array(arrayBufferIn);
+                    for (let i = 0, j = str.length; i < j; i++) {
+                        byteArray[i] = str.charCodeAt(i)
+                    }
+                    let arrayBufferOut = new ArrayBuffer(100);
+                    let zStream: zlib.ZStream = {
+                        nextIn: arrayBufferIn,
+                        availableIn: 1,
+                        nextOut: arrayBufferOut,
+                        availableOut: 1
+                    };
+                    let zip = zlib.createZipSync();
+                    await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data) => {
+                        console.info('deflateInit success')
+                        expect(data).assertEqual(0)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                        expect(errData).assertFail()
+                    })
+                    await zip.deflate({ availableOut: 8 }, zlib.CompressFlushMode.FINISH).then((data) => {
+                        console.info('deflate success')
+                        expect(data).assertEqual(zlib.ReturnStatus.OK)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                        expect(errData).assertFail()
+                    })
+                    await zip.deflateEnd({ nextOut: arrayBufferOut }).then(data => {
+                        console.info('deflateEnd success')
+                        expect(data).assertEqual(zlib.ReturnStatus.OK)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                        expect(errData).assertFail()
+                    })
+                    await zip.inflateInit({ nextIn: arrayBufferOut, availableIn: 1, nextOut: arrayBufferOut, availableOut: 1 }
+                    ).then(data => {
+                        console.info('inflateInit success');
+                        expect(data).assertEqual(zlib.ReturnStatus.OK)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                        expect(errData).assertFail()
+                    })
+                    await zip.inflate({ availableIn: 8, availableOut: 8 }, zlib.CompressFlushMode.BLOCK).then((data) => {
+                        console.info('inflate success')
+                        expect(data).assertEqual(zlib.ReturnStatus.OK)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                        expect(errData).assertFail()
+                    })
+                    await zip.inflateEnd({ nextOut: arrayBufferOut }).then((data) => {
+                        console.info('inflateEnd success')
+                        expect(data).assertEqual(zlib.ReturnStatus.OK)
+                    }).catch((errData: base.BusinessError) => {
+                        console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                        expect(errData).assertFail()
+                    })
+                    done();
+                    console.info("==================actsZipTest13l end==================");
+                })
+         
+        /**
+         * @tc.name   actsZipTest13m
+         * @tc.number ACTS_ZipTest_13m
+         * @tc.desc   test deflate and inflate TREES
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+           it('actsZipTest13m', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+            console.info("==================actsZipTest13m start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zStream: zlib.ZStream = {
+                nextIn: arrayBufferIn,
+                availableIn: 1,
+                nextOut: arrayBufferOut,
+                availableOut: 1
+            };
+            let zip = zlib.createZipSync();
+            await zip.deflateInit(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED).then((data) => {
+                console.info('deflateInit success')
+                expect(data).assertEqual(0)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                expect(errData).assertFail()
+            })
+            await zip.deflate({ availableOut: 8 }, zlib.CompressFlushMode.FINISH).then((data) => {
+                console.info('deflate success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`)
+                expect(errData).assertFail()
+            })
+            await zip.deflateEnd({ nextOut: arrayBufferOut }).then(data => {
+                console.info('deflateEnd success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflateInit({ nextIn: arrayBufferOut, availableIn: 1, nextOut: arrayBufferOut, availableOut: 1 }
+            ).then(data => {
+                console.info('inflateInit success');
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflate({ availableIn: 8, availableOut: 8 }, zlib.CompressFlushMode.TREES).then((data) => {
+                console.info('inflate success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            await zip.inflateEnd({ nextOut: arrayBufferOut }).then((data) => {
+                console.info('inflateEnd success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail()
+            })
+            done();
+            console.info("==================actsZipTest13m end==================");
+        })
+ 
+    
+
         /**
          * @tc.name   actsZipTest14
          * @tc.number ACTS_ZipTest_14
@@ -9918,6 +10279,83 @@ export default function ActsZipTest() {
         })
 
         /**
+         * @tc.name   actsZipTest154
+         * @tc.number ACTS_ZipTest_154
+         * @tc.desc   test inflateGetHeader with missing GzHeader property values
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest154', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest154 start==================");
+
+            let zip = zlib.createZipSync();
+            await zip.inflateInit2(ZStreamComplete, 28).then(data => {
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                expect(errData).assertFail();
+            })
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_isText_false).then(data => {
+                    console.info('inflateGetHeader with isText false success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_hcrc_true).then(data => {
+                    console.info('inflateGetHeader with hcrc true success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_done_false).then(data => {
+                    console.info('inflateGetHeader with done false success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+            console.info("==================actsZipTest154 end==================");
+            done();        
+        })
+
+        /**
+         * @tc.name   actsZipTest155
+         * @tc.number ACTS_ZipTest_155
+         * @tc.desc   test inflateGetHeader with complete GzHeader property values
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest155', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest155 start==================");
+            let zip = zlib.createZipSync();
+            await zip.inflateInit2(ZStreamComplete, 28).then(data => {
+                expect(data).assertEqual(zlib.ReturnStatus.OK)
+            }).catch((errData: base.BusinessError) => {
+                expect(errData).assertFail();
+            })
+
+            try {
+                await zip.inflateGetHeader(ZStreamComplete, gzHeader_complete).then(data => {
+                    console.info('inflateGetHeader with gzHeader_complete success');
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                expect().assertFail();
+            }
+            console.info("==================actsZipTest155 end==================");
+            done();
+            
+        })
+
+        /**
          * @tc.name   actsZipTest99
          * @tc.number ACTS_ZipTest_99
          * @tc.desc   test inflateGetDictionary
@@ -17579,9 +18017,738 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
-                expect(errData.message).assertEqual("The parameter check failed")
+		expect(errData.message).assertEqual("The parameter check failed")
             }
             console.info("==================actsZipTest131 end==================");
+            done();
+        })
+
+
+        /**
+         * @tc.name   inflateValidateStrmNullUndefined
+         * @tc.number ACTS_ZipTest_133
+         * @tc.desc   test inflateValidate strm is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateValidateStrmNullUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateValidateStrmNullUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateValidate(null, 1).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            try {
+                await zip.inflateValidate(undefined, 1).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateValidateStrmNullUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateSyncPointStrmUndefined
+         * @tc.number ACTS_ZipTest_134
+         * @tc.desc   test inflateSyncPoint strm is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateSyncPointStrmUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateSyncPointStrmUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateSyncPoint(undefined).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateSyncPointStrmUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateSyncStrmUndefined
+         * @tc.number ACTS_ZipTest_135
+         * @tc.desc   test inflateSync strm is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateSyncStrmUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateSyncStrmUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateSync(undefined).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateSyncStrmUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateSetDictionaryStrmUndefined
+         * @tc.number ACTS_ZipTest_136
+         * @tc.desc   test inflateSetDictionary strm is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateSetDictionaryStrmUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateSetDictionaryStrmUndefined start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateSetDictionary(undefined, arrayBufferIn).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateSetDictionaryStrmUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateResetKeepStrmUndefined
+         * @tc.number ACTS_ZipTest_137
+         * @tc.desc   test inflateResetKeep strm is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateResetKeepStrmUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateResetKeepStrmUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateResetKeep(undefined).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateResetKeepStrmUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateReset2StrmNullUndefined
+         * @tc.number ACTS_ZipTest_138
+         * @tc.desc   test inflateReset2 strm is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateReset2StrmNullUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateReset2StrmNullUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateReset2(null, 15).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            try {
+                await zip.inflateReset2(undefined, 15).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateReset2StrmNullUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflatePrimeStrmUndefined
+         * @tc.number ACTS_ZipTest_139
+         * @tc.desc   test inflatePrime strm is undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflatePrimeStrmUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflatePrimeStrmUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflatePrime(undefined, 5, 2).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflatePrimeStrmUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateInit2StrmNullUndefined
+         * @tc.number ACTS_ZipTest_140
+         * @tc.desc   test inflateInit2 strm is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateInit2StrmNullUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateInit2StrmNullUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateInit2(null, 15).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            try {
+                await zip.inflateInit2(undefined, 15).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateInit2StrmNullUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateGetHeaderStrmNull
+         * @tc.number ACTS_ZipTest_141
+         * @tc.desc   test inflateGetHeader strm is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateGetHeaderStrmNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateGetHeaderStrmNull start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateGetHeader(null, gzHeader_complete).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateGetHeaderStrmNull end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   inflateBackInitStrmNullUndefined
+         * @tc.number ACTS_ZipTest_142
+         * @tc.desc   test inflateBackInit strm is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('inflateBackInitStrmNullUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================inflateBackInitStrmNullUndefined start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateBackInit(null, 15, arrayBufferOut).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            try {
+                await zip.inflateBackInit(undefined, 15, arrayBufferOut).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================inflateBackInitStrmNullUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInitCompressLevelNoCompression
+         * @tc.number ACTS_ZipTest_144
+         * @tc.desc   test deflateInit with COMPRESS_LEVEL_NO_COMPRESSION
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInitCompressLevelNoCompression', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInitCompressLevelNoCompression start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION).then((data) => {
+                    console.info('deflateInit COMPRESS_LEVEL_NO_COMPRESSION success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit COMPRESS_LEVEL_NO_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            console.info("==================deflateInitCompressLevelNoCompression end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInit2StrmNullUndefined
+         * @tc.number ACTS_ZipTest_145
+         * @tc.desc   test deflateInit2 strm is null or undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('deflateInit2StrmNullUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================deflateInit2StrmNullUndefined start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.deflateInit2(null, zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, 
+                    zlib.CompressMethod.DEFLATED, 15, zlib.MemLevel.MEM_LEVEL_DEFAULT, 
+                    zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            try {
+                await zip.deflateInit2(undefined, zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, 
+                    zlib.CompressMethod.DEFLATED, 15, zlib.MemLevel.MEM_LEVEL_DEFAULT, 
+                    zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================deflateInit2StrmNullUndefined end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInit2LevelEnum
+         * @tc.number ACTS_ZipTest_146
+         * @tc.desc   test deflateInit2 with COMPRESS_LEVEL_BEST_COMPRESSION and COMPRESS_LEVEL_DEFAULT_COMPRESSION
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInit2LevelEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInit2LevelEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((data) => {
+                    console.info('deflateInit2 COMPRESS_LEVEL_BEST_COMPRESSION success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_LEVEL_BEST_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((data) => {
+                    console.info('deflateInit2 COMPRESS_LEVEL_DEFAULT_COMPRESSION success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_LEVEL_DEFAULT_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            console.info("==================deflateInit2LevelEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInit2MemLevelMax
+         * @tc.number ACTS_ZipTest_147
+         * @tc.desc   test deflateInit2 with MEM_LEVEL_MAX
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInit2MemLevelMax', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInit2MemLevelMax start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_MAX, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((data) => {
+                    console.info('deflateInit2 MEM_LEVEL_MAX success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 MEM_LEVEL_MAX errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            console.info("==================deflateInit2MemLevelMax end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInit2StrategyEnum
+         * @tc.number ACTS_ZipTest_148
+         * @tc.desc   test deflateInit2 with strategy enum
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInit2StrategyEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInit2StrategyEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED).then((data) => {
+                    console.info('deflateInit2 COMPRESS_STRATEGY_FILTERED success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_STRATEGY_FILTERED errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY).then((data) => {
+                    console.info('deflateInit2 COMPRESS_STRATEGY_HUFFMAN_ONLY success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_STRATEGY_HUFFMAN_ONLY errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_RLE).then((data) => {
+                    console.info('deflateInit2 COMPRESS_STRATEGY_RLE success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_STRATEGY_RLE errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15, 
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED).then((data) => {
+                    console.info('deflateInit2 COMPRESS_STRATEGY_FIXED success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2 COMPRESS_STRATEGY_FIXED errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            console.info("==================deflateInit2StrategyEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateFlushModeEnum
+         * @tc.number ACTS_ZipTest_149
+         * @tc.desc   test deflate with flush mode enum
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateFlushModeEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateFlushModeEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION).then((data) => {
+                    console.info('deflateInit success');
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressFlushMode.PARTIAL_FLUSH).then((data) => {
+                    console.info('deflate PARTIAL_FLUSH success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(0);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflate PARTIAL_FLUSH errData is errCode:${errData.code}  message:${errData.message}`);
+		    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressFlushMode.SYNC_FLUSH).then((data) => {
+                    console.info('deflate SYNC_FLUSH success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(0);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflate SYNC_FLUSH errData is errCode:${errData.code}  message:${errData.message}`);
+		    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressFlushMode.BLOCK).then((data) => {
+                    console.info('deflate BLOCK success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(0);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflate BLOCK errData is errCode:${errData.code}  message:${errData.message}`);
+		    expect().assertFail();
+                })
+            await zip.deflateReset({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 });
+            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressFlushMode.TREES).then((data) => {
+                    console.info('deflate TREES success, data: ' + JSON.stringify(data));
+                    expect().assertFail();
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflate TREES errData is errCode:${errData.code}  message:${errData.message}`);
+		            expect(errData.code).assertEqual(17800004)
+                    expect(errData.message).assertEqual("Compression or decompression stream error, which may be caused by an initialization error in the zlib stream structure or a modified structure.")
+                })
+            console.info("==================deflateFlushModeEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateParamsLevelAndStrategyEnum
+         * @tc.number ACTS_ZipTest_150
+         * @tc.desc   test deflateParams with level and strategy enum
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateParamsLevelAndStrategyEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateParamsLevelAndStrategyEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION).then((data) => {
+                    console.info('deflateInit success');
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((data) => {
+                    console.info('deflateParams COMPRESS_LEVEL_BEST_SPEED success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_LEVEL_BEST_SPEED errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((data) => {
+                    console.info('deflateParams COMPRESS_LEVEL_BEST_COMPRESSION success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_LEVEL_BEST_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED).then((data) => {
+                    console.info('deflateParams COMPRESS_STRATEGY_FILTERED success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_STRATEGY_FILTERED errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY).then((data) => {
+                    console.info('deflateParams COMPRESS_STRATEGY_HUFFMAN_ONLY success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_STRATEGY_HUFFMAN_ONLY errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressStrategy.COMPRESS_STRATEGY_RLE).then((data) => {
+                    console.info('deflateParams COMPRESS_STRATEGY_RLE success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_STRATEGY_RLE errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            await zip.deflateParams({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED).then((data) => {
+                    console.info('deflateParams COMPRESS_STRATEGY_FIXED success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateParams COMPRESS_STRATEGY_FIXED errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect(errData).assertFail();
+                })
+            console.info("==================deflateParamsLevelAndStrategyEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   compress2LevelEnum
+         * @tc.number ACTS_ZipTest_151
+         * @tc.desc   test compress2 with level enum
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('compress2LevelEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================compress2LevelEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.compress2(arrayBufferOut, arrayBufferIn, zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION).then((data) => {
+                console.info('compress2 COMPRESS_LEVEL_BEST_COMPRESSION success, data: ' + JSON.stringify(data));
+                expect(data.status).assertEqual(zlib.ReturnStatus.OK);
+            }).catch((errData: base.BusinessError) => {
+                console.error(`compress2 COMPRESS_LEVEL_BEST_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                expect().assertFail();
+            })
+            await zip.compress2(arrayBufferOut, arrayBufferIn, zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION).then((data) => {
+                console.info('compress2 COMPRESS_LEVEL_DEFAULT_COMPRESSION success, data: ' + JSON.stringify(data));
+                expect(data.status).assertEqual(zlib.ReturnStatus.OK);
+            }).catch((errData: base.BusinessError) => {
+                console.error(`compress2 COMPRESS_LEVEL_DEFAULT_COMPRESSION errData is errCode:${errData.code}  message:${errData.message}`);
+                expect().assertFail();
+            })
+            console.info("==================compress2LevelEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest152
+         * @tc.number ACTS_ZipTest_152
+         * @tc.desc   test inflateSetDictionary with null first parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('actsZipTest152', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+            console.info("==================actsZipTest152 start==================");
+             let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflateSetDictionary(null, arrayBufferIn).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
+            console.info("==================actsZipTest152 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest153
+         * @tc.number ACTS_ZipTest_153
+         * @tc.desc   test inflatePrime with null first parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('actsZipTest153', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+            console.info("==================actsZipTest153 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            try {
+                await zip.inflatePrime(null, 5, 2).then(data => {
+                    console.info('inflatePrime with null strm success')
+                    expect(data).assertFail()
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+		expect(errData.message).assertEqual("The parameter check failed")
+            }
             done();
         })
     })

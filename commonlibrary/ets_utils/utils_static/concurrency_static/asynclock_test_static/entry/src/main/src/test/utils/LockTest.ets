@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -113,15 +113,17 @@ export async function exclusiveMultiWorkerTest() {
     let worker = new EAWorker()
     worker.start()
     let job1 = worker.run<string>((): string => {
-      let flag = ""
-      let result: Promise<void> | null = null;
-      result = exclusiveMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
-      await result.then(():void => {
-        flag = 'PASSED'
-      }, (e: Error):void => {
-        flag = 'FAILED: ' + e.message
-      });
-      return flag
+      return waitForCompletion(async () => {
+        let flag = ""
+        let result: Promise<void> | null = null;
+        result = exclusiveMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
+        await result.then(():void => {
+          flag = 'PASSED'
+        }, (e: Error):void => {
+          flag = 'FAILED: ' + e.message
+        });
+        return flag
+      })
     })
     let workerresult = job1.Await()
     worker.join()
@@ -201,15 +203,17 @@ export async function sharedMultiWorkerTest() {
     let worker = new EAWorker()
     worker.start()
     let job1 = worker.run<string>((): string => {
-      let flag = ""
-      let result: Promise<void> | null = null;
-      result = sharedMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
-      await result.then(():void => {
-        flag = 'PASSED'
-      }, (e: Error):void => {
-        flag = 'FAILED: ' + e.message
-      });
-      return flag
+      return waitForCompletion(async () => {
+        let flag = ""
+        let result: Promise<void> | null = null;
+        result = sharedMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
+        await result.then(():void => {
+          flag = 'PASSED'
+        }, (e: Error):void => {
+          flag = 'FAILED: ' + e.message
+        });
+        return flag
+      })
     })
     let workerresult = job1.Await()
     worker.join()
@@ -333,7 +337,7 @@ export function abortTest(): Promise<string> {
       throw new Error('Test failed. Promise is fulfilled.')
     },
     (err: Error) => {
-      if (!err.message.includes('AsyncLock:: Operation aborted by signal')) {
+      if (err.message !== 'Aborted') {
         throw new Error('Test failed. Wrong error value.');
       }
     });
@@ -499,11 +503,11 @@ export async function multipleWakeupTest(): Promise<string> {
     await sleep(100)
   }
   let count = 10;
-  let promises: Array<Promise<void>> = new Array<Promise<void>>(count);
+  let promises: Array<Promise<void>> = new Array<Promise<void>>();
   let lock = AsyncLock.request(lockName);
   for (let i = 0; i < count; ++i) {
-    promises[i] = lock.lockAsync<void>(async (): Promise<void> => {
-    }, AsyncLockMode.SHARED);
+    promises.push(lock.lockAsync<void>(async (): Promise<void> => {
+    }, AsyncLockMode.SHARED));
   }
   await p;
   return check("multipleWakeupTest", Promise.all(promises));
@@ -622,26 +626,28 @@ export async function sequentialLockWorkerTest() {
   flagBuf[0] = 0;
   let data:lockType_sequentialLockWorkerTest ={ test: "sequentialLockWorkerTest", lockName: lockNameB, timeout: Number(100), flagBuf: flagBuf }
   let p1 = new Promise<void>((resolve) => {
-    let worker = new EAWorker()
-    worker.start()
-    let job1 = worker.run<string>((): string => {
-      let flag = ""
-      let result: Promise<void> | null = null;
-      result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
-      await result.then(():void => {
-        flag = 'PASSED'
-      }, (e: Error):void => {
-        flag = 'FAILED: ' + e.message
-      });
-      return flag
-    })
-    job1.Await()
-    worker.join()
-    resolve(undefined);
+      let worker = new EAWorker()
+      worker.start()
+      let job1 = worker.run<string>((): string => {
+        return waitForCompletion(async () => {
+          let flag = ""
+          let result: Promise<void> | null = null;
+          result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
+          await result.then(():void => {
+            flag = 'PASSED'
+          }, (e: Error):void => {
+            flag = 'FAILED: ' + e.message
+          });
+          return flag
+        })
+      })
+      job1.Await()
+      worker.join()
+      resolve(undefined);
   });
   let p = new Promise<void>((resolve, reject) => {
     let lockA = new AsyncLock();
-    lockA.lockAsync((): void =>{
+    lockA.lockAsync(async (): Promise<void> =>{
       // busy loop
       hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', '>bloop');
       while (Atomics.load(flagBuf, 0) != 1) {
@@ -817,7 +823,7 @@ function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<Any
   let lockName = "fourThreadsApplyForSameLock" + (mode == AsyncLockMode.EXCLUSIVE ? "_exclusive" : "shared");
   let tidBuf = createInt();
   tidBuf[0] = 0;
-  let promises = new Array<Promise<Any>>(4);
+  let promises = new Array<Promise<Any>>();
   for (let i: int = 0; i < 4; ++i) {
     promises.push(taskpool.execute(applyLockJob, lockName, mode, tidBuf, 0));
   }
@@ -952,11 +958,11 @@ export function pressureTest(): Promise<string> {
     taskBuf[i] = 0;
   }
   let lockName = "pressureLock";
-  let promises = new Array<Promise<Any>>(100);
+  let promises = new Array<Promise<Any>>();
   for (let i = 0; i < taskBuf.length; ++i) {
     let timeout = i % 10;
     let p = taskpool.execute(pressureWorker, lockName, timeout, taskBuf) as Promise<Any>;
-    promises[i] = p;
+    promises.push(p);
   }
   return check("pressureTest", Promise.all(promises));
 }
@@ -1052,17 +1058,19 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
     let data: lockType = { test: lockName, lockName: lockName, timeout: 3000 }
     worker.start()
     let job = worker.run<string>((): string => {
-      let flag = ""
-      let result: Promise<void> | null = null;
-      result = workersetDelayRequestAndCloseWorkerInstantlyTest(data.lockName, data.timeout);
-      await result.then(():void => {
-        hilog.info(0x00000, "zcq ", "worker pass");
-        flag = 'PASSED'
-      }, (e: Error):void => {
-        hilog.info(0x00000, "zcq ", "worker fail" + e.message);
-        flag = 'FAILED: ' + e.message
-      });
-      return flag
+      return waitForCompletion(async () => {
+        let flag = ""
+        let result: Promise<void> | null = null;
+        result = workersetDelayRequestAndCloseWorkerInstantlyTest(data.lockName, data.timeout);
+        await result.then(():void => {
+          hilog.info(0x00000, "zcq ", "worker pass");
+          flag = 'PASSED'
+        }, (e: Error):void => {
+          hilog.info(0x00000, "zcq ", "worker fail" + e.message);
+          flag = 'FAILED: ' + e.message
+        });
+        return flag
+      })
     })
     let workerresult: string = job.Await()
     if (workerresult === 'PASSED') {

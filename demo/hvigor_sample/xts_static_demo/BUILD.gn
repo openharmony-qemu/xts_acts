@@ -17,7 +17,7 @@ ohos_js_app_static_suite("demo_xts_static_ohosTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "XTS_DEMO"
+  hap_name = "ActsXTS_DEMOAdapt001StaticTest"
   part_name = "XTS_DEMO"
   subsystem_name = "XTS_DEMO"
 }

@@ -5,7 +5,8 @@
     "testability/pages/WebViewEnumAndFontLibrary",
     "testability/pages/webViewController",
     "testability/pages/webViewMenuShowResult",
-  	"testability/pages/WebViewBypassVsyncCondition"
+  	"testability/pages/WebViewBypassVsyncCondition",
+    "testability/pages/WebViewEnableDefaultContextMenu"
   ]
 }
 

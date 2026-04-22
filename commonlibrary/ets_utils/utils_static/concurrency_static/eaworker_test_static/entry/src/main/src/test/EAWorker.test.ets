@@ -281,9 +281,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest002';
         console.info(`${TAG} test start`);
@@ -310,9 +310,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest003';
         console.info(`${TAG} test start`);
@@ -339,9 +339,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest004';
         console.info(`${TAG} test start`);
@@ -369,9 +369,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest005';
         console.info(`${TAG} test start`);
@@ -405,9 +405,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest006';
         console.info(`${TAG} test start`);
@@ -437,9 +437,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest007';
         console.info(`${TAG} test start`);
@@ -454,7 +454,7 @@ export default function EAWorkerTest() {
             async (taskInstance: taskpool.Task): Promise<string> => {
               let taskStr: string = '';
               await taskpool.execute(taskInstance).then((res) => {
-                taskStr = res;
+                taskStr = res as string;
               });
               return taskStr;
             },
@@ -544,9 +544,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest010';
         console.info(`${TAG} test start`);
@@ -573,9 +573,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest011';
         console.info(`${TAG} test start`);
@@ -607,9 +607,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest012';
         console.info(`${TAG} test start`);
@@ -639,9 +639,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest013';
         console.info(`${TAG} test start`);
@@ -674,9 +674,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest014';
         console.info(`${TAG} test start`);
@@ -705,9 +705,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest015';
         console.info(`${TAG} test start`);
@@ -734,9 +734,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest016';
         console.info(`${TAG} test start`);
@@ -761,9 +761,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest017';
         console.info(`${TAG} test start`);
@@ -803,9 +803,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest018';
         console.info(`${TAG} test start`);
@@ -842,9 +842,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest019';
         console.info(`${TAG} test start`);
@@ -887,9 +887,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest020';
         console.info(`${TAG} test start`);
@@ -931,9 +931,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest021';
         console.info(`${TAG} test start`);
@@ -947,7 +947,7 @@ export default function EAWorkerTest() {
                 return SUCCESS_MSG;
               }).then((result) => {
                 try {
-                  expect(result).assertEqual(SUCCESS_MSG);
+                  expect(result as string).assertEqual(SUCCESS_MSG);
                   resolve(undefined);
                 } catch (err) {
                   err = err as Error;
@@ -975,9 +975,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest022';
         console.info(`${TAG} test start`);
@@ -1007,9 +1007,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest023';
         console.info(`${TAG} test start`);
@@ -1039,9 +1039,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest024';
         console.info(`${TAG} test start`);
@@ -1071,9 +1071,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest025';
         console.info(`${TAG} test start`);
@@ -1103,9 +1103,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest026';
         console.info(`${TAG} test start`);
@@ -1141,9 +1141,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest027';
         console.info(`${TAG} test start`);
@@ -1175,9 +1175,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest028';
         console.info(`${TAG} test start`);
@@ -1220,9 +1220,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest029';
         console.info(`${TAG} test start`);
@@ -1266,9 +1266,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest030';
         console.info(`${TAG} test start`);
@@ -1311,9 +1311,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('EAWorkerTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest031';
         console.info(`${TAG} test start`);
@@ -1357,9 +1357,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('EAWorkerTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'EAWorkerTest033';
         console.info(`${TAG} test start`);
@@ -1395,9 +1395,9 @@ export default function EAWorkerTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('EAWorkerTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
+    it('EAWorkerTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       const TAG: string = 'EAWorkerTest034';
       console.info(`${TAG} test start`);
       let worker = new EAWorker();
@@ -1619,7 +1619,7 @@ export default function EAWorkerTest() {
           let worker = new EAWorker();
           worker.start()
           let workerThreadId: number = 0;
-          const mainThreadId = StdProcess.tid;
+          const mainThreadId = StdProcess.tid();
           let worker1 = worker.run<undefined>((): undefined => {
             workerThreadId = StdProcess.tid();
             return undefined;
@@ -1764,7 +1764,7 @@ export default function EAWorkerTest() {
         let person: Person = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 person.age = 25;
                 resolve(person)
@@ -1835,7 +1835,7 @@ export default function EAWorkerTest() {
         worker.start()
         let inputPerson = new Person(23);
         try {
-          const result = worker.run((input: Person): void => {
+          const result = worker.run<Promise<void>>((input: Person): void => {
             throw new Error('Custom worker error')
           }, inputPerson).Await();
           worker.join()
@@ -1904,7 +1904,7 @@ export default function EAWorkerTest() {
         let inputTuple: [number, string] = [1, 'test'];
         try {
           const workerPromise = new Promise<[number, string]>((resolve, reject) => {
-            worker.run((input: [number, string]) => {
+            worker.run<void>((input: [number, string]) => {
               try {
                 const result: [number, string] = [input[0] + 2, input[1].toUpperCase()];
                 resolve(result);
@@ -1952,15 +1952,17 @@ export default function EAWorkerTest() {
 
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
-            worker.run((input: () => Promise<number>) => {
-              try {
-                const value = await input();
-                const additionalValue = await Promise.resolve(10);
-                resolve((): Promise<number> => Promise.resolve(value + additionalValue))
-              } catch (err) {
-                err = err as Error;
-                reject(err);
-              }
+            worker.run<void>((input: () => Promise<number>) => {
+              waitForCompletion(async () => {
+                try {
+                  const value = await input();
+                  const additionalValue = await Promise.resolve(10);
+                  resolve((): Promise<number> => Promise.resolve(value + additionalValue))
+                } catch (err) {
+                  err = err as Error;
+                  reject(err);
+                }
+              })
             }, inputFunction);
           });
           const resultFunc = await workerPromise;
@@ -1994,7 +1996,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run((input: Person) => {
+            worker.run<void>((input: Person) => {
               try {
                 input.age = 25;
                 resolve(input);
@@ -2119,7 +2121,7 @@ export default function EAWorkerTest() {
         const inputNum = 1;
         try {
           const workerPromise = new Promise<bigint>((resolve, reject) => {
-            worker.run(async () => {
+            worker.run<Promise<void>>(async () => {
               try {
                 const result = BigInt(inputNum)
                 resolve(result);
@@ -2160,7 +2162,7 @@ export default function EAWorkerTest() {
         const inputLiteral: Literal = 'pending';
         try {
           const workerPromise = new Promise<Literal>((resolve, reject) => {
-            worker.run(async (input: Literal) => {
+            worker.run<Promise<void>>(async (input: Literal) => {
               try {
                 if (input == 'pending') {
                   input = 'success';
@@ -2201,7 +2203,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(async (input: Person) => {
+            worker.run<Promise<void>>(async (input: Person) => {
               try {
                 input.age = 25;
                 resolve(input);
@@ -2245,7 +2247,7 @@ export default function EAWorkerTest() {
         let inputDouble: Double = 0;
         try {
           const workerPromise = new Promise<null>((resolve, reject) => {
-            worker.run(async (input: undefined) => {
+            worker.run<Promise<void>>(async (input: undefined) => {
               try {
                 inputDouble = 1;
                 resolve(null);
@@ -2286,7 +2288,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Status>((resolve, reject) => {
-            worker.run(async (input: Status) => {
+            worker.run<Promise<void>>(async (input: Status) => {
               try {
                 input = Status.SUCCESS;
                 resolve(input);
@@ -2332,7 +2334,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
-            worker.run(async (input: () => Promise<number>) => {
+            worker.run<Promise<void>>(async (input: () => Promise<number>) => {
               try {
                 const value = await input();
                 const additionalValue = await Promise.resolve(10);
@@ -2380,7 +2382,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<taskpool.Task>((resolve, reject) => {
-            worker.run(async (input?: string) => {
+            worker.run<Promise<void>>(async (input?: string) => {
               try {
                 const taskName: string = input !== undefined ? input : 'taskName';
                 let task: taskpool.Task = new taskpool.Task(taskName, taskFunc, 20);
@@ -2422,7 +2424,7 @@ export default function EAWorkerTest() {
         worker.start()
         try {
           const workerPromise = new Promise<() => number>((resolve, reject) => {
-            worker.run((input: () => number) => {
+            worker.run<void>((input: () => number) => {
               try {
                 const age: number = input();
                 resolve((): number => age);
@@ -2462,7 +2464,7 @@ export default function EAWorkerTest() {
         let person: Person = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 person.age = 25;
                 resolve(person);
@@ -2504,7 +2506,7 @@ export default function EAWorkerTest() {
         const inputChar: Char = c'4';
         try {
           const workerPromise = new Promise<Char[]>((resolve, reject) => {
-            worker.run(async (input: Char): Promise<void> => {
+            worker.run<Promise<void>>(async (input: Char): Promise<void> => {
               try {
                 arr[2] = input;
                 resolve(arr);
@@ -2580,7 +2582,7 @@ export default function EAWorkerTest() {
         array[1] = 0;
         try {
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (input: Int32Array): Promise<void> => {
+            worker.run<Promise<void>>(async (input: Int32Array): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 1s');
@@ -2635,7 +2637,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');
@@ -2691,7 +2693,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');
@@ -2745,7 +2747,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');

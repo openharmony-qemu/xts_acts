@@ -20,4 +20,8 @@ ohos_js_app_static_suite("ActsGetMultipleAccountsStaticTest") {
   hap_name = "ActsGetMultipleAccountsStaticTest"
   part_name = "os_account"
   subsystem_name = "account"
+  deps = [ 
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountaccessibleFirst:ActsAccountAccessibleFirst",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountaccessibleSecond:ActsAccountAccessibleSecond"
+  ]
 }

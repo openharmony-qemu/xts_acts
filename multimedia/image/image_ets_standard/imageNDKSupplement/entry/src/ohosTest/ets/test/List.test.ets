@@ -58,6 +58,7 @@ import ImagePackerNativeTest from './ImagePackerNativeTest.test';
 import ImagePictureNativeTest from './ImagePictureNativeTest.test';
 import OHImageSourceNativeSupplementTest from './OHImageSourceNativeSupplement.test';
 import ImageOHImageSourceInfoCreate from './ImageOHImageSourceInfoCreate.test';
+import ImageReceiverSuppTest from './ImageReceiverSupp.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -105,4 +106,5 @@ export default function testsuite() {
   ImagePictureNativeTest();
   OHImageSourceNativeSupplementTest()
   ImageOHImageSourceInfoCreate();
+  ImageReceiverSuppTest();
 }

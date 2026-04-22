@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import getLastHitTest from './getLastHitTest.test'
+import onTouchIconUrlReceived from './OnTouchIconUrlReceivedTest.test'
 export default function testsuite() {
   getLastHitTest();
+  onTouchIconUrlReceived();
 }

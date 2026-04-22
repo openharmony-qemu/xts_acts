@@ -82,7 +82,7 @@ export default function noBarrierComponentsTest() {
      */
 it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents025 START');
-      setTimeout(() => {
+      await CommonFunc.sleep(500);
       try {
         let strJson = inspector.getInspectorByKey("Select");
         await CommonFunc.sleep(1000);
@@ -94,7 +94,6 @@ it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Prom
         console.info('noBarrierComponents025 ERR  ' + JSON.stringify(err));
       }
       done();
-      }, 500)
     });
 
     

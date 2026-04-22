@@ -106,7 +106,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -268,9 +268,9 @@ export default class Utils {
   }
 
   static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode.toInt(), keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode.toInt(), keyText)
       return up
     }
 

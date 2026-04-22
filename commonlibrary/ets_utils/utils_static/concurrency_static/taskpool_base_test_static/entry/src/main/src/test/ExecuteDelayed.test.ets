@@ -23,7 +23,7 @@ export default function executeDelayedTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('ExecuteDelayedTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ExecuteDelayedTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ExecuteDelayedTest001';
         console.info(`${TAG} test start`);
@@ -57,7 +57,7 @@ export default function executeDelayedTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('ExecuteDelayedTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ExecuteDelayedTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG: string = 'ExecuteDelayedTest002';
       console.info(`${TAG} test start`);
       let expectedErrorCaught = false;
@@ -90,7 +90,7 @@ export default function executeDelayedTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('ExecuteDelayedTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ExecuteDelayedTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ExecuteDelayedTest003';
         console.info(`${TAG} test start`);
@@ -127,7 +127,7 @@ export default function executeDelayedTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('ExecuteDelayedTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('ExecuteDelayedTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ExecuteDelayedTest004';
         console.info(`${TAG} test start`);

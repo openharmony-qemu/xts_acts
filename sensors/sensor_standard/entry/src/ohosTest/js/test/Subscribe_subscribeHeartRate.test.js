@@ -137,4 +137,57 @@ describe("SensorJsTest_sensor_30", function () {
             done();
         }, 500);
     })
+
+    /**
+     * @tc.name   subscribeHeartRate_SensorJsTest004
+     * @tc.number subscribeHeartRate_SensorJsTest004
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("subscribeHeartRate_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
+        console.info('----------------------subscribeHeartRate_SensorJsTest004---------------------------');
+        sensor.subscribeHeartRate({
+            success: function (data) {
+                console.info("subscribeHeartRate_SensorJsTest004 success:" + JSON.stringify(data));
+                expect(data.heartRate !== undefined).assertTrue();
+            },
+            fail: function (data, code) {
+                console.error('subscribeHeartRate_SensorJsTest004 failed. Code: ' + code + '; Data: ' + data);
+                expect(code).assertEqual(1001);
+            },
+        });
+        setTimeout(() => {
+            sensor.unsubscribeHeartRate();
+            done();
+        }, 500);
+    })
+
+    /**
+     * @tc.name   subscribeHeartRate_SensorJsTest005
+     * @tc.number subscribeHeartRate_SensorJsTest005
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("subscribeHeartRate_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
+        console.info('----------------------subscribeHeartRate_SensorJsTest005---------------------------');
+        sensor.getOnBodyState({
+            complete: function (data) {
+                console.info("subscribeHeartRate_SensorJsTest005 success:" + JSON.stringify(data));
+                expect(data !== undefined).assertTrue();
+            },
+            fail: function (data, code) {
+                console.error('subscribeHeartRate_SensorJsTest005 failed. Code: ' + code + '; Data: ' + data);
+                expect(code).assertEqual(1001);
+            },
+        });
+        setTimeout(() => {
+            sensor.unsubscribeHeartRate();
+            done();
+        }, 500);
+    })
+
 })}

@@ -23,7 +23,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 
 const DOMAIN = 0x0000;
 const TAG: string = 'testTag';
-const BUNDLE_NAME: string = 'com.example.uiextensioncontentsession.static';
+const BUNDLE_NAME: string = 'com.example.uiextensioncontentsessionerrorcode.static';
 const ABILITY_NAME: string = 'EntryEmbeddedUIExtAbility';
 const TEST_CASE_KEY: string = 'caseTag';
 let testCaseName: string = '';

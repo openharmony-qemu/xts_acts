@@ -71,9 +71,9 @@ const valueBucket1: relationalStore.ValuesBucket = {
   "data3": 100000.5,
   "data4": new Uint8Array([3, 4, 5]),
 }
-let vbs: Array<relationalStore.ValuesBucket> = new Array<relationalStore.ValuesBucket>(2);
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
+let vbs: Array<relationalStore.ValuesBucket> = [];
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
 
 export default function RdbErrorCode14800011() {
 

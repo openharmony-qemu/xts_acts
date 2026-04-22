@@ -127,7 +127,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -315,7 +315,7 @@ export default class Utils {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as Int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

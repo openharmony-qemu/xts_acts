@@ -332,6 +332,54 @@ export default function SaveToExistingContactViaUITest() {
     });
 
     /**
+     * @tc.name   contactsApi_saveToExistingContactViaUI_empty_test_3800
+     * @tc.number contactsApi_saveToExistingContactViaUI_empty_test_3800
+     * @tc.desc   Function test with undefined context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_saveToExistingContactViaUI_empty_test_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_saveToExistingContactViaUI_empty_test_3800";
+        console.info(`${caseName} test start`);
+        try {
+            let testContact: contact.Contact = {};
+            const result = await contact.saveToExistingContactViaUI(undefined, testContact);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : saveToExistingContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_saveToExistingContactViaUI_empty_test_3900
+     * @tc.number contactsApi_saveToExistingContactViaUI_empty_test_3900
+     * @tc.desc   Function test with undefined contact object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_saveToExistingContactViaUI_empty_test_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_saveToExistingContactViaUI_empty_test_3900";
+        console.info(`${caseName} test start`);
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const result = await contact.saveToExistingContactViaUI(context, undefined);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : saveToExistingContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error != null).assertTrue();
+            done();
+        }
+    });
+
+    /**
      * @tc.name   testTelephonyContactSaveToExistingContactViaUI0300
      * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0300
      * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15

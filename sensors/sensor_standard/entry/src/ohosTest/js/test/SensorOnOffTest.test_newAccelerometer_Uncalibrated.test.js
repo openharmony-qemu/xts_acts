@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function SensorJsTest_sensor_40() {
 describe("SensorJsTest_sensor_40", function () {
+    let sensortempcode = true;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.x)).assertEqual("number");
@@ -185,7 +186,7 @@ describe("SensorJsTest_sensor_40", function () {
     it("newAccelerometer_Uncalibrated_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, callback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -279,7 +280,7 @@ describe("SensorJsTest_sensor_40", function () {
         sensor.on(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, onSensorCallback);
         sensor.off(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, onSensorCallback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -571,6 +572,1459 @@ describe("SensorJsTest_sensor_40", function () {
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
             expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+            done();
+        }
+    })
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest032
+     * @tc.number newAccelerometer_Uncalibrated_SensorJsTest032
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it("newAccelerometer_Uncalibrated_SensorJsTest032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        console.info('---------newAccelerometer_Uncalibrated_SensorJsTest032--------------');
+        async function onSensorCallback(data) {
+            sensor.on(null, null, null, (data) => {}, { interval: 100000000 });
+            sensor.on(undefined, undefined, undefined, (data) => {}, { interval: 100000000 });
+            sensor.off(null, null, (data) => {}, { interval: 100000000 });
+            sensor.off(undefined, undefined, (data) => {}, { interval: 100000000 });
+            sensor.once(null, (data) => {}, { interval: 100000000 });
+            sensor.once(undefined, (data) => {}, { interval: 100000000 });
+            done();
+        }
+        try {
+            sensor.on(invalid, onSensorCallback);
+            sensor.getSingleSensor(sensor.SensorId.FUSION_PRESSURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(typeof(data)).assertEqual("object");
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.AMBIENT_TEMPERATURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.temperature === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.HEART_RATE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.heartRate === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.HUMIDITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.humidity === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.PROXIMITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.distance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.WEAR_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.value === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorId.FUSION_PRESSURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.fusionPressure === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+
+            sensor.once(sensor.SensorId.AMBIENT_TEMPERATURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.temperature === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.HEART_RATE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.heartRate === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.HUMIDITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.humidity === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.PEDOMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.steps === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.PEDOMETER_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.scalar === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.PROXIMITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.distance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorId.WEAR_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.value === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.intensity === 1).assertTrue();
+                    expect(data.colorTemperature === 1).assertTrue();
+                    expect(data.infraredLuminance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.temperature === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.pressure === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HALL,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.status === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HEART_RATE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.heartRate === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.humidity === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.alpha === 1).assertTrue();
+                    expect(data.beta === 1).assertTrue();
+                    expect(data.gamma === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.distance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.w === 6).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.scalar === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on(sensor.SensorType.SENSOR_TYPE_ID_WEAR_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.value === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.on('sensorStatusChange',(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.timestamp === 1).assertTrue();
+                    expect(data.sensorId === 2).assertTrue();
+                    expect(data.sensorIndex === 1).assertTrue();
+                    expect(data.isSensorOnline === true).assertTrue();
+                    expect(data.deviceId === 1).assertTrue();
+                    expect(data.deviceName === device).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.intensity === 1).assertTrue();
+                    expect(data.colorTemperature === 1).assertTrue();
+                    expect(data.infraredLuminance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.temperature === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.pressure === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HALL,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.status === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HEART_RATE,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.heartRate === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.humidity === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.biasX === 1).assertTrue();
+                    expect(data.biasY === 3).assertTrue();
+                    expect(data.biasZ === 2).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.alpha === 1).assertTrue();
+                    expect(data.beta === 1).assertTrue();
+                    expect(data.gamma === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.steps === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.scalar === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.distance === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.x === 2).assertTrue();
+                    expect(data.y === 3).assertTrue();
+                    expect(data.z === 5).assertTrue();
+                    expect(data.w === 6).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.scalar === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            sensor.once(sensor.SensorType.SENSOR_TYPE_ID_WEAR_DETECTION,(error, data) => {
+                if (error) {
+                    done();
+                } else {
+                    try {
+                    expect(data.value === 1).assertTrue();
+                    done();
+                    } catch (error) {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                    done();
+                    }
+                }
+            })
+            let data = await sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.GYROSCOPE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.BAROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.HALL);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.PROXIMITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.HUMIDITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.ORIENTATION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.GRAVITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.LINEAR_ACCELEROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.ROTATION_VECTOR);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.AMBIENT_TEMPERATURE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.SIGNIFICANT_MOTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.PEDOMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.HEART_RATE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensor(sensor.SensorId.FUSION_PRESSURE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.GYROSCOPE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.AMBIENT_LIGHT);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.MAGNETIC_FIELD);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.BAROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.HALL);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.PROXIMITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.HUMIDITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.ORIENTATION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.GRAVITY);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.LINEAR_ACCELEROMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.ROTATION_VECTOR);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.AMBIENT_TEMPERATURE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.SIGNIFICANT_MOTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.PEDOMETER_DETECTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.PEDOMETER);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.HEART_RATE);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.WEAR_DETECTION);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
+            expect(data !== undefined).assertTrue();
+            let data = await sensor.getSingleSensorSync(sensor.SensorId.FUSION_PRESSURE);
+            expect(data !== undefined).assertTrue();
+
+            sensor.transformCoordinateSystem([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.transformCoordinateSystem([], {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.transformCoordinateSystem(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+            })
+            sensor.transformCoordinateSystem(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+            })
+            let data = await sensor.transformCoordinateSystem(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+            })
+            let data = await sensor.transformCoordinateSystem(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+            })
+            let data = await sensor.transformCoordinateSystem(([] , {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+            }));
+
+            sensor.transformRotationMatrix([], {'x':1, 'y':2}, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.transformRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.transformRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.transformRotationMatrix([], {'x':1, 'y':2}, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.transformRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.transformRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            
+
+            sensor.createQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createQuaternion(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createQuaternion(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getQuaternion(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getQuaternion(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getDirection([1, 2, 3, 1, 2, 3, 1, 2, 3, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getDirection([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getDirection(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getDirection(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getDirection([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getDirection(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getDirection(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getOrientation([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getOrientation(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getOrientation(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getOrientation([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getOrientation(null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getOrientation(undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createRotationMatrix(gravity[9, 9, 9], geomagnetic[30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createRotationMatrix([], [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.createRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(gravity[9, 9, 9], geomagnetic[30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix([], [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getGeomagneticField(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getGeomagneticField(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getGeomagneticField(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getGeomagneticField(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getInclination([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix([9, 9, 9], [30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix([], [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(undefined, [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(null, [30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+
+            let data = await sensor.transformCoordinateSystem([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5] , { 'x': 1, 'y': 2 })
+            expect(data.length > 0).assertTrue();
+            sensor.transformCoordinateSystem([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(data.length > 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+
+            let data = await sensor.transformRotationMatrix([], {'x':1, 'y':2});
+            expect(data.length === 0).assertTrue();
+
+            sensor.createQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(data.length === 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion([0, 0, 0])
+            expect(data.length === 0).assertTrue();
+
+            sensor.getQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(data.length === 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion([0, 0, 0])
+            expect(data.length === 0).assertTrue();
+
+            let data = await sensor.getDirection([1,1,1]);
+            expect(data.length === 0).assertTrue();
+
+            let data = await sensor.getOrientation([2,2,2])
+            expect(data.length === 0).assertTrue();
+
+            sensor.createRotationMatrix([0,1,2], [0,1,2], (error, data) => {
+                if (error) {
+                    expect(data.rotation !== undefined).assertTrue();
+                    expect(data.inclination !== undefined).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            
+        } catch (error) {
+            console.info("newAccelerometer_Uncalibrated_SensorJsTest032 error:" + error);
+            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+            expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
             done();
         }
     })

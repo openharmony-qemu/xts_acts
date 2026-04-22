@@ -97,7 +97,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
           .radioStyle({ checkedBackgroundColor: '' })
           .key("ArkUX_Stage_Radio_CheckedBackgroundColor_0800")
           .onChange((isChecked: boolean) => {
@@ -108,7 +108,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
           .radioStyle({ checkedBackgroundColor: null })
           .key("ArkUX_Stage_Radio_CheckedBackgroundColor_0900")
           .onChange((isChecked: boolean) => {
@@ -119,7 +119,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
           .radioStyle({ checkedBackgroundColor: undefined })
           .key("ArkUX_Stage_Radio_CheckedBackgroundColor_1000")
           .onChange((isChecked: boolean) => {
@@ -130,7 +130,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
           .radioStyle({ checkedBackgroundColor: "rgb(255,0,0)" })
           .radioStyle({ checkedBackgroundColor: undefined })
           .key("ArkUX_Stage_Radio_CheckedBackgroundColor_1100")
@@ -142,7 +142,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
           .radioStyle({ checkedBackgroundColor: 'color' })
           .key("ArkUX_Stage_Radio_CheckedBackgroundColor_1200")
           .onChange((isChecked: boolean) => {
@@ -225,7 +225,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_switch_outline_off"))
+          .borderColor($r("sys.color.radio_bg_color_unchecked"))
           .radioStyle({ uncheckedBorderColor: '' })
           .key("ArkUX_Stage_Radio_UncheckedBorderColor_0800")
           .onChange((isChecked: boolean) => {
@@ -236,7 +236,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_switch_outline_off"))
+          .borderColor($r("sys.color.radio_bg_color_unchecked"))
           .radioStyle({ uncheckedBorderColor: null })
           .key("ArkUX_Stage_Radio_UncheckedBorderColor_0900")
           .onChange((isChecked: boolean) => {
@@ -247,7 +247,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_switch_outline_off"))
+          .borderColor($r("sys.color.radio_bg_color_unchecked"))
           .radioStyle({ uncheckedBorderColor: undefined })
           .key("ArkUX_Stage_Radio_UncheckedBorderColor_1000")
           .onChange((isChecked: boolean) => {
@@ -258,7 +258,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_switch_outline_off"))
+          .borderColor($r("sys.color.radio_bg_color_unchecked"))
           .radioStyle({ uncheckedBorderColor: "rgb(255,0,0)" })
           .radioStyle({ uncheckedBorderColor: undefined })
           .key("ArkUX_Stage_Radio_UncheckedBorderColor_1100")
@@ -270,7 +270,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_switch_outline_off"))
+          .borderColor($r("sys.color.radio_bg_color_unchecked"))
           .radioStyle({ uncheckedBorderColor: 'bgr(138,43,226)' })
           .key("ArkUX_Stage_Radio_UncheckedBorderColor_1200")
           .onChange((isChecked: boolean) => {
@@ -353,7 +353,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_color_foreground_contrary"))
           .radioStyle({ indicatorColor: '' })
           .key("ArkUX_Stage_Radio_IndicatorColor_0800")
           .onChange((isChecked: boolean) => {
@@ -364,7 +364,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_color_foreground_contrary"))
           .radioStyle({ indicatorColor: null })
           .key("ArkUX_Stage_Radio_IndicatorColor_0900")
           .onChange((isChecked: boolean) => {
@@ -375,7 +375,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_color_foreground_contrary"))
           .radioStyle({ indicatorColor: undefined })
           .key("ArkUX_Stage_Radio_IndicatorColor_1000")
           .onChange((isChecked: boolean) => {
@@ -386,7 +386,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_color_foreground_contrary"))
           .radioStyle({ indicatorColor: "rgb(138,43,226)" })
           .radioStyle({ indicatorColor: undefined })
           .key("ArkUX_Stage_Radio_IndicatorColor_1100")
@@ -398,7 +398,7 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_color_foreground_contrary"))
           .radioStyle({ indicatorColor: 'bgr(138,43,226)' })
           .key("ArkUX_Stage_Radio_IndicatorColor_1200")
           .onChange((isChecked: boolean) => {
@@ -423,9 +423,9 @@ struct RadioTest {
           .checked(false)
           .width(50)
           .height(50)
-          .borderColor($r("sys.color.ohos_id_color_emphasize"))
-          .backgroundColor($r("sys.color.ohos_id_color_switch_outline_off"))
-          .foregroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+          .borderColor($r("sys.color.radio_bg_color_checked"))
+          .backgroundColor($r("sys.color.radio_bg_color_unchecked"))
+          .foregroundColor($r("sys.color.radio_color_foreground_contrary"))
           .key("ArkUX_Stage_Radio_0100")
           .onChange((isChecked: boolean) => {
             console.log('Radio38 status is' + isChecked)

@@ -18,7 +18,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyMonopolizeModifier implements AttributeModifier<CommonAttribute> {
+export class MyMonopolizeModifier implements AttributeModifier<CommonAttribute> {
   @State public controlValue: boolean | undefined = true
 
   applyNormalAttribute(instance: CommonAttribute): void {

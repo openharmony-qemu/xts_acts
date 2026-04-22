@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ namespace {
     const int TEST_TEXT_ALIGN = 1;
     const int INVALID_ATTRIBUTE_ID = 9999;
     const int INVALID_VALUE = -1;
-    constexpr const char* TEST_FONT_FILE_PATH = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+    constexpr const char* TEST_FONT_FILE_PATH = "/system/fonts/HarmonyOS_Sans.ttf";
     constexpr const char* SYMBOL_FILE = "/system/fonts/HMSymbolVF.ttf";
 }
 

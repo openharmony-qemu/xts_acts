@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
+import deviceInfo from '@ohos.deviceInfo';
 interface Capability{
   foldStatus:string;
   foldDisplayMode:string;
@@ -78,6 +79,8 @@ export default function ActsDisplayNdkApi14Test() {
     let orientation:string[];
     let code:number = 0;
     let displayFoldStatus:number;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -502,9 +505,11 @@ export default function ActsDisplayNdkApi14Test() {
       try{
         let PixelMap = testNapi.getDisplayCapture(0);
         console.log(caseName + ' getDisplayCapture result:'+ JSON.stringify(PixelMap));
-        if(Number(PixelMap) == 801){
+        if (deviceType === 'tv' || deviceType === 'car' || deviceType === 'wearable'){
+          let code_err = Number(PixelMap);
+          expect(code_err).assertEqual(801);
           done();
-        }else{
+        }else if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1'){
           PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
             let PixelMapWidth = imageInfo.size.width;
             let PixelMapHeight = imageInfo.size.height;
@@ -514,7 +519,8 @@ export default function ActsDisplayNdkApi14Test() {
             done();
           })
 
-        }
+        } 
+        done();
 
       } catch (err) {
         console.log(caseName + ': fail:'+ err + ' '+err.code);
@@ -644,7 +650,8 @@ export default function ActsDisplayNdkApi14Test() {
           })
         }).catch((err: BusinessError) => {
           console.log(caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
-          if(err.code == 801){
+          if (deviceType === 'tv' || deviceType === 'car' || deviceType === 'wearable' || !canIUse("SyatemCapability.Sensors.Sensor")){
+            expect(err.code).assertEqual(801)
             done();
           }else{
             expect(false).assertTrue();
@@ -845,6 +852,44 @@ export default function ActsDisplayNdkApi14Test() {
         done();
       }
     })
+    /**
+     * @tc.name   testCaptureWithBlacklistnull
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0300
+     * @tc.desc   截屏过滤窗口null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCaptureWithBlacklistnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName = 'testCaptureWithBlacklistnull';
+      let windowClass = windowStage.getMainWindowSync();
+      let windowId = windowClass.getWindowProperties().id;
+      console.info(caseName+ ' Succeeded in get window id:'+windowId);
+      let captureOption: screenshot.CaptureOption = {
+        "displayId": display.getDefaultDisplaySync().id,
+        "blackWindowIds":[]
+      };
+      try {
+      let promise = screenshot.capture(captureOption);
+      promise.then(async (pixelMap: image.PixelMap) => {
+        console.info(caseName+' Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
+        pixelMap.release(); // PixelMap使用完后及时释放内存
+        done();
+      }).catch((err: BusinessError) => {
+        console.error(caseName+` Failed to save screenshot. Code: ${err.code}, message: ${err.message}`);
+        if(err.code == 801){
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+      });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
     /**
      * @tc.name   testCapture_0100
@@ -893,6 +938,65 @@ export default function ActsDisplayNdkApi14Test() {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect().assertFail();
         done()
+      }
+    })
+
+    /**
+    * @tc.name   tesScreenHot_pick
+    * @tc.number tesScreenHot_pick
+    * @tc.desc   tesScreenHot_pick
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('tesScreenHot_pick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+        let caseName = 'tesScreenHot_pick';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let test_tesScreenHot_pick_CheckReturnSuccess = async () => {
+        try {
+          console.log(msgStr + 'XTS无法选取区,会导致后续用例无法执行,因此PC直接返回');
+          done()
+        } catch (e) {
+          console.error(msgStr + 'Failed to pick Code: ' + JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
+        };
+      }
+
+      let test_tesScreenHot_pick_CheckReturnFail = async () => {
+        try {
+          await screenshot.pick().then((pickInfo: screenshot.PickInfo) => {
+            console.log(msgStr + 'pick Pixel bytes number: ' + pickInfo.pixelMap.getPixelBytesNumber());
+            console.log(msgStr + 'pick Rect: ' + pickInfo.pickRect);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + 'Failed to pick. Code: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(801)
+            done()
+          });
+        } catch (e) {
+          console.error(msgStr + 'Failed to pick Code: ' + JSON.stringify(e));
+          expect(e.code).assertEqual(801)
+          done();
+        };
+      }
+      if (deviceType === 'phone') {
+        test_tesScreenHot_pick_CheckReturnFail();
+      } else if (deviceType === '2in1') {
+        test_tesScreenHot_pick_CheckReturnSuccess();
+      } else if (deviceType === 'tv') {
+        test_tesScreenHot_pick_CheckReturnFail();
+      } else if (deviceType === 'tablet') {
+        test_tesScreenHot_pick_CheckReturnFail();
+      } else if (deviceType === 'car') {
+        test_tesScreenHot_pick_CheckReturnFail();
+      } else if (deviceType === 'wearable') {
+        test_tesScreenHot_pick_CheckReturnFail();
+      } else {
+        console.info("====>Current device not support makeMirror, deviceType is: " + deviceType);
+        test_tesScreenHot_pick_CheckReturnFail();
       }
     })
 

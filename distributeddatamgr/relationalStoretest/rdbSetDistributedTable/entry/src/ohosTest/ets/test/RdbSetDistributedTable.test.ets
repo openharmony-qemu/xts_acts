@@ -22,6 +22,7 @@ import { BusinessError, Device, deviceInfo } from '@kit.BasicServicesKit';
 let context  =  abilityDelegatorRegistry.getAbilityDelegator().getAppContext().getApplicationContext()
 const TAG = "[RELATIONAL_STORE_SETDISTRIBUTEDTABLE_JSKITS_TEST]"
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+let currentDeviceIsWatch = false;
 
 let getPermission = async () => {
   console.info('getPermission isstart');
@@ -146,6 +147,12 @@ export default function RdbSetDistributedTable() {
   describe('setDistributedTableTest', () => {
     beforeAll(async () => {
       console.info(TAG + "beforeAll");
+      await getPermission();
+      await sleep(1000);
+      await drivenFn();
+      await sleep(1000);
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === "wearable" ? true : false;
     })
 
     beforeEach(async () => {
@@ -251,6 +258,9 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(null).assertFail();
         }
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
           console.info('setDistributedTables EMPLOYEE DEVICE_COLLABORATION successfully');
@@ -259,6 +269,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE DEVICE_COLLABORATION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         }
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0002 end *************");  
     })
@@ -384,6 +395,39 @@ export default function RdbSetDistributedTable() {
       console.log(TAG + "************* setDistributedTableTest0005 end *************");  
     })
 
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_0600
+     * @tc.name   setDistributedTableTest0006
+     * @tc.desc   rdbStore1 has schema set SINGLE_VERSION fail due to bundlename is fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('setDistributedTableTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setDistributedTableTest0006 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        console.info(`setDistributedTables EMPLOYEE begin`);
+        try {
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_INVALID);
+          console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
+          expect(null).assertFail();
+        } catch (err) {
+          console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+      }
+      console.log(TAG + "************* setDistributedTableTest0006 end *************");  
+    })
+
+
 
     /**
      * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_0700
@@ -436,6 +480,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -444,6 +491,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+       }
       }
       console.log(TAG + "************* setDistributedTableTest0008 end *************");  
     })
@@ -468,6 +516,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -476,6 +527,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         }
+      }
       } 
       console.log(TAG + "************* setDistributedTableTest0009 end *************");  
     })
@@ -531,6 +583,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore2.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -539,6 +594,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0011 end *************");  
     })
@@ -563,6 +619,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore2.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -571,6 +630,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0012 end *************");  
     })
@@ -595,6 +655,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore3.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -603,6 +666,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0013 end *************");  
     })
@@ -627,6 +691,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore3.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -635,6 +702,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0014 end *************");  
     })
@@ -659,6 +727,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore3.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -667,6 +738,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0015 end *************");  
     })
@@ -755,6 +827,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore6.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
@@ -763,6 +838,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         } 
+      }
       }
       console.log(TAG + "************* setDistributedTableTest0018 end *************");  
     })
@@ -892,6 +968,37 @@ export default function RdbSetDistributedTable() {
       console.log(TAG + "************* setCloudDistributedTableTest0001 end *************");  
     })
 
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_2300
+     * @tc.name   setCloudDistributedTableTest0002
+     * @tc.desc   setCloudDistributedTable fail due to type is COLLABORATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('setCloudDistributedTableTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setCloudDistributedTableTest0002 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        console.info(`setCloudDistributedTables EMPLOYEE begin`);
+        try {
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_COLLABORATION);
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("801");
+        } 
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0002 end *************");  
+    })
+
       /**
      * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_2400
      * @tc.name   setCloudDistributedTableTest0003
@@ -921,6 +1028,37 @@ export default function RdbSetDistributedTable() {
         }
       }  
       console.log(TAG + "************* setCloudDistributedTableTest0003 end *************");  
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_2500
+     * @tc.name   setCloudDistributedTableTest0004
+     * @tc.desc   setCloudDistributedTable fail due to type is invaid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudDistributedTableTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setCloudDistributedTableTest0004 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        console.info(`setCloudDistributedTables EMPLOYEE begin`);
+        try {
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_INVALID);
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0004 end *************");  
     })
 
 
@@ -983,6 +1121,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
           console.info('setDistributedTables EMPLOYEE successfully');
@@ -991,6 +1132,7 @@ export default function RdbSetDistributedTable() {
           console.error(`setDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         }  
+      }
       }
       console.log(TAG + "************* setMulteDistributedTest0001 end *************");  
     })
@@ -1023,6 +1165,9 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         }
         console.info(`setCloudDistributedTables EMPLOYEE begin`);
+        if(currentDeviceIsWatch) {
+          console.info("currentDevice is not support")
+        } else { 
         try {
           await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
           console.info('setCloudDistributedTables EMPLOYEE successfully');
@@ -1031,8 +1176,273 @@ export default function RdbSetDistributedTable() {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
           expect(err.code).assertEqual(14800000);
         }  
+      }
       }     
       console.log(TAG + "************* setMulteDistributedTest0002 end *************");     
+    })
+
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_2900
+     * @tc.name   setCloudDistributedTableTest0006
+     * @tc.desc   setCloudDistributedTable param is err type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudDistributedTableTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setCloudDistributedTableTest0006 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          rdbStore.setDistributedTables([], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_COLLABORATION, (err) => {
+            if(err){
+              expect(err.code).assertEqual("801");
+            }else{
+              expect().assertFail();
+            }
+          });
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("801");
+        } 
+
+        try {
+          rdbStore.setDistributedTables(null, relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_SINGLE, (err)=>{
+            if(err){
+              expect(err.code).assertEqual("401");
+            }else{
+              expect().assertFail();
+            }
+          });
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+
+        try {
+         rdbStore.setDistributedTables(undefined, relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_SINGLE, (err)=>{
+          if(err){
+            expect(err.code).assertEqual("401");
+          }else{
+            expect().assertFail();
+          }
+         });
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0006 end *************");  
+    })
+
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3000
+     * @tc.name   setCloudDistributedTableTest0007
+     * @tc.desc   setCloudDistributedTable param is err type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudDistributedTableTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setCloudDistributedTableTest0007 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, null);
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+
+        try {
+          await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, undefined);
+          console.info('setCloudDistributedTables EMPLOYEE successfully');
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        } 
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0007 end *************");  
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3100
+     * @tc.name   setCloudDistributedTableTest0008
+     * @tc.desc   setCloudDistributedTable param is err type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudDistributedTableTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setCloudDistributedTableTest0008 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          await rdbStore.close();
+          rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_SINGLE, (err) =>{
+            console.info('setCloudDistributedTables EMPLOYEE successfully');
+            expect().assertFail();
+          });
+
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("14800014");
+        } 
+
+        try {
+          await rdbStore.close();
+          rdbStore.setDistributedTables(["EMPLOYEE"], (err) =>{
+            console.info('setCloudDistributedTables EMPLOYEE successfully');
+            expect().assertFail();
+          });
+
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("14800014");
+        } 
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0008 end *************");  
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3200
+     * @tc.name   setObtainDistributedTableName0001
+     * @tc.desc   obtainDistributedTableName 14800014 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setObtainDistributedTableName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setObtainDistributedTableName0001 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          await rdbStore.close();
+          await rdbStore.obtainDistributedTableName("1234569797", "EMPLOYEE")
+          console.info(TAG + "obtainDistributedTableName table success");
+          expect().assertFail();
+        } catch (err) {
+          console.info(TAG + "obtainDistributedTableName table failed");
+          expect(err.code).assertEqual("14800014");
+        }
+      }
+      console.log(TAG + "************* setObtainDistributedTableName0001 end *************");  
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3300
+     * @tc.name   setObtainDistributedTableName0002
+     * @tc.desc    obtainDistributedTableName 14800014 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setObtainDistributedTableName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* setObtainDistributedTableName0002 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          await rdbStore.close();
+          rdbStore.obtainDistributedTableName("1234569797", "EMPLOYEE", (err) => {
+            console.info(TAG + "obtainDistributedTableName table success");
+            expect().assertFail();
+          })
+          
+        } catch (err) {
+          console.info(TAG + "obtainDistributedTableName table failed");
+          expect(err.code).assertEqual("14800014");
+        }
+      }
+      console.log(TAG + "************* setObtainDistributedTableName0002 end *************");  
+    })
+
+     /**
+     * @tc.number SUB_DistributedData_RelationalStore_CrossDevice_SDK_ThirdPartyApp_3500
+     * @tc.name   setCloudDistributedTableTest0010
+     * @tc.desc   setCloudDistributedTable param is err type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('setCloudDistributedTableTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.log(TAG + "************* setCloudDistributedTableTest0010 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, null, (err) => {
+            if(err){
+              expect().assertFail();
+            }else{
+              console.info('setCloudDistributedTables EMPLOYEE successfully');
+              try {
+                rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, undefined, (err) =>{
+                  if(err){
+                    console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+                    expect().assertFail();
+                  }else{
+                    console.info('setCloudDistributedTables EMPLOYEE successfully');
+                    done();
+                  }
+                });
+              } catch (err) {
+                console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+                expect(err.code).assertEqual("401");
+              } 
+            }
+          });
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        }
+   
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest0010 end *************");  
     })
   })
 }

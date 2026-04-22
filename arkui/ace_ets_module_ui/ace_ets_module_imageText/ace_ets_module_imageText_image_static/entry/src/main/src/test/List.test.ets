@@ -24,6 +24,7 @@ import ImageAnimationControllerERRORTest from './drawableDescriptorTest/Animatio
 import ImageLoaderTest from './ImageLoader/ImageLoader.test';
 import ImageOrientationTest from './imageTest/ImageOrientationTest.test';
 import ImageHdrBrightnessTest from './imageTest/ImageHdrBrightness.test';
+import ListImageTest from './ListImageTest/ListImage.test';
 export default function testsuite() {
   blendNodeTest();
   getUIContextApiTest();
@@ -35,4 +36,5 @@ export default function testsuite() {
   ImageLoaderTest();
   ImageOrientationTest();
   ImageHdrBrightnessTest();
+  ListImageTest();
 }

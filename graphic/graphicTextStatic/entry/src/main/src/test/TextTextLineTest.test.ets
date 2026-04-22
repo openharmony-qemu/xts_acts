@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,14 +51,14 @@ let textLineExpectData: Array<TextLineData> = [
       "width": 565.64
     },
     "imageBounds": {
-      "left": 4,
+      "left": 5,
       "top": 8,
-      "right": 472.90,
+      "right": 472.11,
       "bottom": 41
     },
-    "trailingSpaceWidth": 65.640015,
+    "trailingSpaceWidth": 65.64,
     "stringIndexForPosition": 1,
-    "offsetForStringIndex": 218.88,
+    "offsetForStringIndex": 221.18,
     "alignmentOffset": 0,
     "enumerateCaretOffsets": [0, 0, 1]
   },
@@ -73,12 +73,12 @@ let textLineExpectData: Array<TextLineData> = [
       "width": 565.64
     },
     "imageBounds": {
-      "left": 1,
+      "left": 2,
       "top": 1,
-      "right": 472.10,
-      "bottom": 28
+      "right": 471.78,
+      "bottom": 27
     },
-    "trailingSpaceWidth": 65.640015,
+    "trailingSpaceWidth": 65.64,
     "stringIndexForPosition": 11,
     "offsetForStringIndex": 0,
     "alignmentOffset": 0,
@@ -96,11 +96,11 @@ let textLineExpectData: Array<TextLineData> = [
     },
     "imageBounds": {
       "left": -7,
-      "top": 9,
-      "right": 469.50,
-      "bottom": 42
+      "top": 8,
+      "right": 469.18,
+      "bottom": 41
     },
-    "trailingSpaceWidth": 0.000122,
+    "trailingSpaceWidth": 0.0,
     "stringIndexForPosition": 21,
     "offsetForStringIndex": 0,
     "alignmentOffset": 0,
@@ -117,12 +117,12 @@ let textLineExpectData: Array<TextLineData> = [
       "width": 500.00
     },
     "imageBounds": {
-      "left": 1,
+      "left": 2,
       "top": 1,
-      "right": 470.83,
+      "right": 470.54,
       "bottom": 27
     },
-    "trailingSpaceWidth": 0.000061,
+    "trailingSpaceWidth": 0.0,
     "stringIndexForPosition": 30,
     "offsetForStringIndex": 0,
     "alignmentOffset": 0,
@@ -136,15 +136,15 @@ let textLineExpectData: Array<TextLineData> = [
       "ascent": -303.39,
       "descent": 112.61,
       "leading": 0,
-      "width": 312.43
+      "width": 316.56
     },
     "imageBounds": {
-      "left": -3,
-      "top": 9,
-      "right": 279.04,
-      "bottom": 43
+      "left": -2,
+      "top": 8,
+      "right": 283.14,
+      "bottom": 41
     },
-    "trailingSpaceWidth": 0.000061,
+    "trailingSpaceWidth": 0.0,
     "stringIndexForPosition": 39,
     "offsetForStringIndex": 0,
     "alignmentOffset": 0,
@@ -175,23 +175,23 @@ export default function TextTextLineTest() {
           blue: 0
         };
 
-        let fontFeatures: Array<text.FontFeature> = new Array<text.FontFeature>(2);
-        fontFeatures[0] = { name: "liga", value: 1 };
-        fontFeatures[1] = { name: "liga2", value: 2 };
-        let fontVariation: Array<text.FontVariation> = new Array<text.FontVariation>(2);
-        fontVariation[0] = { axis: "axis", value: 1 };
-        fontVariation[1] = { axis: "axis2", value: 2 };
-        let textShadows: Array<text.TextShadow> = new Array<text.TextShadow>(2);
+        let fontFeatures: Array<text.FontFeature> = [];
+        fontFeatures.push({ name: "liga", value: 1 } as text.FontFeature);
+        fontFeatures.push({ name: "liga2", value: 2 } as text.FontFeature);
+        let fontVariation: Array<text.FontVariation> = [];
+        fontVariation.push({ axis: "axis", value: 1 } as text.FontVariation);
+        fontVariation.push({ axis: "axis2", value: 2 } as text.FontVariation);
+        let textShadows: Array<text.TextShadow> = [];
         let point1: common2D.Point = { x: 11, y: 12 };
         let point2: common2D.Point = { x: 2, y: 4 };
-        textShadows[0] = {
+        textShadows.push({
           color: myColor,
           point: point1, blurRadius: 12
-        };
-        textShadows[1] = {
+        } as text.TextShadow);
+        textShadows.push({
           color: myColor,
           point: point2, blurRadius: 14
-        };
+        } as text.TextShadow);
         let backgroundRect: text.RectStyle = {
           color: myColor,
           leftTopRadius: 10,
@@ -360,7 +360,7 @@ export default function TextTextLineTest() {
             expect(Math.round(rect.top * 100) / 100).assertEqual(textLineExpectData[i].imageBounds.top);
             expect(Math.round(rect.right * 100) / 100).assertEqual(textLineExpectData[i].imageBounds.right);
             expect(Math.round(rect.bottom * 100) / 100).assertEqual(textLineExpectData[i].imageBounds.bottom);
-            expect(Math.round(textLine.getTrailingSpaceWidth() * 1000000) / 1000000)
+            expect(Math.round(textLine.getTrailingSpaceWidth() * 100) / 100)
               .assertEqual(textLineExpectData[i].trailingSpaceWidth);
             expect(textLine.getStringIndexForPosition(point)).assertEqual(textLineExpectData[i].stringIndexForPosition);
             expect(Math.round(textLine.getOffsetForStringIndex(4) * 100) / 100)

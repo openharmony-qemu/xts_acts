@@ -150,14 +150,14 @@ export default function unRegisterChangeTest () {
      */
     // it('unRegisterChange_010', Level.LEVEL0, async example(done: Function) =>{
     /**
-     * @tc.name   unRegisterChange_010
+     * @tc.name   unRegisterChange_010Adapt001
      * @tc.number unRegisterChange_010
      * @tc.desc   unRegisterChange_010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('unRegisterChange_010', Level.LEVEL0, async (done: Function) =>{
+    it('unRegisterChange_010Adapt001', Level.LEVEL0, async (done: Function) =>{
       const testNum = 'unRegisterChange_010';
       try {
         let albumUri = '';

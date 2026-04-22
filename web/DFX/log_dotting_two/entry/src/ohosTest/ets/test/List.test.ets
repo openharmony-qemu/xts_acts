@@ -25,6 +25,8 @@ import webDownloadErrorCode from './WebDownloadErrorCode.test'
 import webViewControllerErrorCodeSecond from './WebViewControllerErrorCodeSecond.test'
 import webResourceHandlerTest from './webResourceHandlerTest.test'
 import webHttpBodyStreamTest from './webHttpBodyStreamTest.test'
+import webResourceResponseGetResponseDataExTest from './WebResourceResponseGetResponseDataEx.test'
+
 
 export default function testsuite() {
   webErrorCode()
@@ -40,4 +42,5 @@ export default function testsuite() {
   webViewControllerErrorCodeSecond()
   webResourceHandlerTest()
   webHttpBodyStreamTest()
+  webResourceResponseGetResponseDataExTest()
 }

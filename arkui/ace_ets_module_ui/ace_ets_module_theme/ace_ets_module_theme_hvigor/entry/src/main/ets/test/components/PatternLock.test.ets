@@ -70,7 +70,7 @@ export default function patternLockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsPatternLockThemeColors_0100
+     * @tc.name   `ActsPatternLockThemeColors_0100`
      * @tc.number ActsPatternLockThemeColors_0100
      * @tc.desc   Check system colors values of PatternLock component
      * @tc.type   FUNCTION
@@ -100,7 +100,7 @@ export default function patternLockThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsPatternLockThemeColors_0200
+     * @tc.name   `ActsPatternLockThemeColors_0200`
      * @tc.number ActsPatternLockThemeColors_0200
      * @tc.desc   Check custom colors values of PatternLock component
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function patternLockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsPatternLockThemeColors_0300
+     * @tc.name   `ActsPatternLockThemeColors_0300`
      * @tc.number ActsPatternLockThemeColors_0300
      * @tc.desc   Check custom colors values of PatternLock component
      * @tc.type   FUNCTION

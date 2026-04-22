@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -22,9 +22,34 @@ import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import uniformDataStruct from '@ohos.data.uniformDataStruct';
 let tag: string = 'testTag';
+let optionsValid: unifiedDataChannel.Options = {
+  intention: unifiedDataChannel.Intention.DATA_HUB
+};
 
 export default function UDMFAddApiStaticTest() {
   describe("UDMFAddApiStaticTest", (): void => {
+    beforeAll(() => {	 
+      console.info("beforeAll");	 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
+        let size = data.length;	 
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
+      }).catch((error) => {	 
+        let err: BusinessError = error as BusinessError;	 
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
+      });	 
+    })
+
+    afterAll(() => { 
+      console.info("afterAll"); 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
+        let size = data.length; 
+        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
+      }).catch((error) => { 
+        let err: BusinessError = error as BusinessError; 
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
+      }); 
+    })
+
     /**
          * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100
          * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100
@@ -115,6 +140,43 @@ export default function UDMFAddApiStaticTest() {
           console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0200 end');
           done();
         });
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Insert data throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+         * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0300
+         * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0300
+         * @tc.desc   insertData insertData callback test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+    it('SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0300 start');
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is a plain text example',
+        textAbstract: 'This is a text abstract'
+      }
+      let text = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.PLAIN_TEXT, plainText);
+      let unifiedData = new unifiedDataChannel.UnifiedData(text);
+
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+        key: '',
+        visibility: unifiedDataChannel.Visibility.OWN_PROCESS
+      }
+      try {
+        let key = await unifiedDataChannel.insertData(options, unifiedData);
+        console.log(tag, `Succeeded in inserting data. key = ${key}`);
+        expect(key).assertContain('SystemShare/com.example.udmfetstest.static');
+        console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0300 end');
+        done();
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Insert data throws an exception. code is ${error.code}, message is ${error.message} `);
@@ -506,7 +568,7 @@ export default function UDMFAddApiStaticTest() {
         await unifiedDataChannel.deleteData(querydataoptions);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
       console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0100 end');
@@ -559,7 +621,7 @@ export default function UDMFAddApiStaticTest() {
         await unifiedDataChannel.deleteData(querydataoptions);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
       console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0200 end');
@@ -611,7 +673,7 @@ export default function UDMFAddApiStaticTest() {
         await unifiedDataChannel.deleteData(querydataoptions);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
       console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0300 end');
@@ -669,7 +731,7 @@ export default function UDMFAddApiStaticTest() {
         })
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
         done();
       }
@@ -727,7 +789,7 @@ export default function UDMFAddApiStaticTest() {
         })
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
         done();
       }
@@ -784,8 +846,68 @@ export default function UDMFAddApiStaticTest() {
         })
       } catch (e) {
         let error: BusinessError = e as BusinessError;
-        console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0700
+       * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFQueryDataDataStaticTest_0700
+       * @tc.desc   insertData queryData callback test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+    it('SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0700 start');
+      let querydataoptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: 'udmf://DataHub/com.example.udmfetstest.static/fn8dCV3T1NZ;VX>AMWGG`uzlktZ?luYj'
+      };
+      try {
+        unifiedDataChannel.queryData(querydataoptions, (err, ret) => {
+          if (ret !== undefined) {
+            let size = ret.length;
+            console.log(tag, `data.size = ${size}`);
+            expect(size).assertEqual(0);
+            done();
+          }
+        })
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0800
+       * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFQueryDataDataStaticTest_0800
+       * @tc.desc   insertData queryData callback test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+    it('SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFQueryDataStaticTest_0800 start');
+      let querydataoptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: 'udmf://DataHub/com.example.udmfetstest.static/fn8dCV3T1NZ;VX>AMWGG`uzlktZ?luYj'
+      };
+      try {
+        let ret = await unifiedDataChannel.queryData(querydataoptions)
+        let size = ret.length;
+        console.log(tag, `data.size = ${size}`);
+        expect(size).assertEqual(0);
+        done();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `QueryData data throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
+        done()
       }
     })
 
@@ -1018,6 +1140,65 @@ export default function UDMFAddApiStaticTest() {
         console.error(tag, `Delete data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
         done();
+      }
+    })
+
+    /**
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0500
+       * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0500
+       * @tc.desc   deletedata callback test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+    it('SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0500 start');
+      let deletedataoptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: 'udmf://DataHub/com.example.udmfetstest.static/fn8dCV3T1NZ;VX>AMWGG`uzlktZ?luYj'
+      };
+      try {
+        unifiedDataChannel.deleteData(deletedataoptions, (err, ret) => {
+          if (ret !== undefined) {
+            let size = ret.length;
+            console.log(tag, `data.size = ${size}`);
+            expect(size).assertEqual(0);
+            done();
+          }
+        })
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `DeleteData data throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0600
+       * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0600
+       * @tc.desc   deletedata promise test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+    it('SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFDeleteDataStaticTest_0600 start');
+      let querydataoptions: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: 'udmf://DataHub/com.example.udmfetstest.static/fn8dCV3T1NZ;VX>AMWGG`uzlktZ?luYj'
+      };
+      try {
+        let ret = await unifiedDataChannel.queryData(querydataoptions)
+        let size = ret.length;
+        console.log(tag, `data.size = ${size}`);
+        expect(size).assertEqual(0);
+        done();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `DeleteData data throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
+        done()
       }
     })
 

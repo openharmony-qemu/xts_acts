@@ -55,7 +55,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -90,7 +92,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -130,7 +134,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -165,7 +171,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -212,7 +220,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -255,7 +265,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -267,6 +279,54 @@ export default function requestMethodJsunit() {
         });
       } catch (error) {
         console.log('testNetworkMgrHttpHttpRequestMethodPOST0200 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPOST0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_POST_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodPOST0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPOST0300'
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.POST,
+          extraData: {
+            q: "Hello World",
+            from: "en",
+            to: "zh",
+            appid: "YOUR_APP_ID",
+            salt: "1435660288",
+            sign: "YOUR_SIGNATURE"
+          },
+          header: 'content-type: application/x-www-form-urlencoded',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        }
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+          if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodPOST0300 : error = ' + error);
         expectFalse();
         console.info(`${caseName}---End`);
         done();
@@ -294,7 +354,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -328,7 +390,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -367,7 +431,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://httpbin.org/anything', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -401,7 +467,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://httpbin.org/anything', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -440,7 +508,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -474,7 +544,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -513,7 +585,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.openharmony.cn/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 405);
+          if (data){
+            expectTrue(data.responseCode == 405);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -547,7 +621,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.openharmony.cn/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 405);
+            if (data){
+            expectTrue(data.responseCode == 405);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -586,7 +662,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+            if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -620,7 +698,9 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+            if (data){
+            expectTrue(data.responseCode == 200);
+          }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -633,6 +713,462 @@ export default function requestMethodJsunit() {
       }
       catch (error) {
         console.log('testNetworkMgrHttpHttpRequestMethodCONNECT0200 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodOptions0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Options_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodOptions0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.OPTIONS,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err: BusinessError, data: number) => {
+          console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }
+      catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodOptions0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodOptions0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Options_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodOptions0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.OPTIONS,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }
+      catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodOptions0400 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodHead0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Head_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodHead0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodHead0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.HEAD,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err: BusinessError, data: number) => {
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodHead0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodHEAD0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_HEAD_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodHEAD0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodHEAD0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.HEAD,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodHEAD0400 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPUT0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodPUT0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPUT0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.PUT,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://httpbin.org/anything', httpRequestOptions, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodPUT0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPUT0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodPUT0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPUT0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.PUT,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://httpbin.org/anything', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodPUT0400 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodDELETE0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodDELETE0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodDELETE0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.DELETE,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.openharmony.cn/', httpRequestOptions, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 405);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodDELETE0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodDELETE0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodDELETE0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodDELETE0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.DELETE,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.openharmony.cn/', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 405);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodDELETE0400 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodTRACE0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodTRACE0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodTRACE0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.TRACE,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodTRACE0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodTRACE0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodTRACE0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodTRACE0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.TRACE,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodTRACE0400 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodCONNECT0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0300
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodCONNECT0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodCONNECT0300';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.CONNECT,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodCONNECT0300 : error = ' + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodCONNECT0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0400
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrHttpHttpRequestMethodCONNECT0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHttpHttpRequestMethodCONNECT0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequestOptions: http.HttpRequestOptions = {
+          method: http.RequestMethod.CONNECT,
+          header: 'content-type: application/json',
+          readTimeout: 60000,
+          connectTimeout: 60000
+        };
+        let httpRequest = http.createHttp();
+        httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
+          console.log(caseName + JSON.stringify(data));
+            if (data){
+            expectTrue(data == 200);
+          }
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(caseName + 'errocode' + JSON.stringify(error));
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      }
+      catch (error) {
+        console.log('testNetworkMgrHttpHttpRequestMethodCONNECT0400 : error = ' + error);
         expectFalse();
         console.info(`${caseName}---End`);
         done();

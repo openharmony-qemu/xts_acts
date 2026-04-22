@@ -37,12 +37,12 @@ export default function webOnPermissionRequest() {
         if (!("WebOnPermissionRequest" == pages.name)) {
           console.info("get WebOnPermissionRequest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebOnPermissionRequestTestButton"), 10000);
           console.info("push WebOnPermissionRequest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnPermissionRequest page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebOnPermissionRequestTestButton"), 10000);
       console.log("waitForComponent WebOnPermissionRequestTestButton");
       done()
     });
@@ -90,5 +90,60 @@ export default function webOnPermissionRequest() {
         });
       await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
     })
+
+    /**
+     * @tc.name   testPermissionRequestGrantGroup002
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0200
+     * @tc.desc   test permissionRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestGrantGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitPermissionRequestGrant002", 160860)
+      Utils.registerBaseEvent("testPermissionRequestGrantGroup002", '"grant"', 160900,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+    })
+	
+
+    /**
+     * @tc.name   testPermissionRequestGrantGroup003
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0300
+     * @tc.desc   test permissionRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestGrantGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitPermissionRequestGrant003", 160860)
+      Utils.registerBaseEvent("testPermissionRequestGrantGroup003", '"grant"', 160920,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+    })
+
+    /**
+     * @tc.name   testPermissionRequestGrantGroup004
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0400
+     * @tc.desc   test permissionRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPermissionRequestGrantGroup004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      Utils.emitEvent("emitPermissionRequestGrant004", 160860)
+      let isReturn = false;
+      Utils.registerEvent("testPermissionRequestGrantGroup004",'"grant"', 160940, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
+      await Utils.waitForExist(() => isReturn, "testPermissionRequestGrantGroup004" + '_returnCheck', true, 1000);
+      done();
+    })
+
+
+
   })
 }

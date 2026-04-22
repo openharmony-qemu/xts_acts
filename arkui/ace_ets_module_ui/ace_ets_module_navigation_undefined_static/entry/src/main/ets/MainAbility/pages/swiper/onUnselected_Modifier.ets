@@ -25,7 +25,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class SwiperModifierSwitched implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifierSwitched implements AttributeModifier<SwiperAttribute> {
   public isUndefined: Boolean = false
   public testIndex :string = 'swiperIndex'
 

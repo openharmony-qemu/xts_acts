@@ -65,7 +65,7 @@ export default function PingTraceRouteNDKTest() {
      * @tc.level  LEVEL1
      */
     it("testNetworkManagerTraceRoute_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      if (!canIUse("SystemCapability.Location.Location.Core")) {
+      if (!canIUse("SystemCapability.Location.Location.Core") || !canIUse("SystemCapability.Location.Location.Geocode")) {
         console.log("skipping test");
         done();
         return;

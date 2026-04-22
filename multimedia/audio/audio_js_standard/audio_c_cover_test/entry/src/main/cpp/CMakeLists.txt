@@ -11,5 +11,6 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                         ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED AudioTest.cpp Audio1Test.cpp AudioEnumTest.cpp ExportsApiTest.cpp)
-target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so librawfile.z.so libhilog_ndk.z.so)
+add_library(entry SHARED AudioTest.cpp Audio1Test.cpp AudioEnumTest.cpp ExportsApiTest.cpp AudioMidiTest.cpp)
+target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so librawfile.z.so libhilog_ndk.z.so
+                                   libohmidi.so libdeviceinfo_ndk.z.so)

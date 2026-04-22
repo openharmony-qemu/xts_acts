@@ -90,6 +90,7 @@ export default function ActsOsAccountTest() {
       try {
         let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(null);
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0100 domainInfo: " + domainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -116,6 +117,7 @@ export default function ActsOsAccountTest() {
       try {
         let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(undefined);
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0200 domainInfo: " + domainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -143,6 +145,7 @@ export default function ActsOsAccountTest() {
       try {
         let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(-1);
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0300 domainInfo: " + domainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -169,6 +172,7 @@ export default function ActsOsAccountTest() {
       try {
         let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(100000);
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0400 domainInfo: " + domainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -221,7 +225,14 @@ export default function ActsOsAccountTest() {
       try {
         let domainInfo: osAccount.DomainAccountInfo = await accountManager.getOsAccountDomainInfo(100);
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0600 domainInfo: " + domainInfo);
-        expect(domainInfo == null).assertTrue();
+        if (domainInfo) {
+          expect(domainInfo.domain).not().assertUndefined();
+          expect(domainInfo.accountName).not().assertUndefined();
+          expect(domainInfo.serverConfigId).not().assertUndefined();
+          expect(domainInfo.additionalInfo).not().assertUndefined();
+        } else {
+          expect(domainInfo == null).assertTrue();
+        }
         console.info("====>ActsOsAccountGetOsAccountDomainInfo_0600 end====");
         done();
       } catch (err) {
@@ -355,11 +366,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(null, undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(401);
@@ -382,11 +394,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(undefined, null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(401);
@@ -409,11 +422,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start addServerConfig");
         await osAccount.DomainServerConfigManager.addServerConfig(null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -436,11 +450,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start addServerConfig");
         await osAccount.DomainServerConfigManager.addServerConfig(undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -463,11 +478,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start removeServerConfig");
         await osAccount.DomainServerConfigManager.removeServerConfig(null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: removeServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -490,11 +506,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start removeServerConfig");
         await osAccount.DomainServerConfigManager.removeServerConfig(undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: removeServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -517,11 +534,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateServerConfig");
         await osAccount.DomainServerConfigManager.updateServerConfig(null, undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -544,11 +562,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateServerConfig");
         await osAccount.DomainServerConfigManager.updateServerConfig(undefined, null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -571,11 +590,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getServerConfig");
         await osAccount.DomainServerConfigManager.getServerConfig(null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -598,11 +618,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getServerConfig");
         await osAccount.DomainServerConfigManager.getServerConfig(undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -625,11 +646,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(null);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -652,11 +674,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(undefined);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(401);
@@ -688,11 +711,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -728,11 +752,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -764,11 +789,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -803,11 +829,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateAccountInfo");
         await osAccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateAccountInfo");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -834,11 +861,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start addServerConfig");
         await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(12300002);
@@ -878,11 +906,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start addServerConfig");
         await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(12300211);
@@ -934,11 +963,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start addServerConfig");
         await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(12300211);
@@ -1020,12 +1050,18 @@ export default function ActsOsAccountTest() {
       };
       try {
         console.info(tag + "start addServerConfig");
-        let configInfo1 = await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+        let configInfo1: osAccount.DomainServerConfig = await osAccount.DomainServerConfigManager.addServerConfig(configParams);
         console.info(tag + "addServerConfig config1: " + JSON.stringify(configInfo1));
+        expect(configInfo1.id).not().assertUndefined();
+        expect(configInfo1.domain).not().assertUndefined();
+        expect(configInfo1.parameters).not().assertUndefined();
         let configInfo12 = await osAccount.DomainServerConfigManager.addServerConfig(configParams1);
         console.info(tag + "addServerConfig config12: " + JSON.stringify(configInfo12));
-        let configInfo2 = await osAccount.DomainServerConfigManager.getServerConfig(configInfo1.id);
+        let configInfo2: osAccount.DomainServerConfig = await osAccount.DomainServerConfigManager.getServerConfig(configInfo1.id);
         console.info(tag + "getServerConfig config1: " + JSON.stringify(configInfo2));
+        expect(configInfo2.id).not().assertUndefined();
+        expect(configInfo2.domain).not().assertUndefined();
+        expect(configInfo2.parameters).not().assertUndefined();
         try {
           console.info(tag + "start addServerConfig again");
           await osAccount.DomainServerConfigManager.addServerConfig(configParams);
@@ -1057,8 +1093,11 @@ export default function ActsOsAccountTest() {
         }
         try {
           console.info(tag + "start updateServerConfig success");
-          await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, configParams);
-          console.info(tag + "updateServerConfig success");
+          let ret: osAccount.DomainServerConfig = await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, configParams);
+          console.info(tag + "updateServerConfig ret: " + JSON.stringify(ret));
+          expect(ret.id).not().assertUndefined();
+          expect(ret.domain).not().assertUndefined();
+          expect(ret.parameters).not().assertUndefined();
         } catch (err) {
           console.info(tag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
@@ -1083,7 +1122,7 @@ export default function ActsOsAccountTest() {
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: addServerConfig");
         } else {
           expect(err.code).assertEqual(12300211);
@@ -1110,11 +1149,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start removeServerConfig");
         await osAccount.DomainServerConfigManager.removeServerConfig(configId);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: removeServerConfig");
         } else {
           expect(err.code).assertEqual(12300212);
@@ -1145,11 +1185,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateServerConfig");
         await osAccount.DomainServerConfigManager.updateServerConfig(serverConfigId, configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateServerConfig");
         } else {
           expect(err.code).assertEqual(12300212);
@@ -1180,11 +1221,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateServerConfig");
         await osAccount.DomainServerConfigManager.updateServerConfig(serverConfigId, configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateServerConfig");
         } else {
           expect(err.code).assertEqual(12300212);
@@ -1212,11 +1254,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start updateServerConfig");
         await osAccount.DomainServerConfigManager.updateServerConfig(serverConfigId, configParams);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: updateServerConfig");
         } else {
           expect(err.code).assertEqual(12300212);
@@ -1243,11 +1286,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getServerConfig");
         await osAccount.DomainServerConfigManager.getServerConfig(configId);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getServerConfig");
         } else {
           expect(err.code).assertEqual(12300212);
@@ -1280,11 +1324,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1314,11 +1359,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1350,11 +1396,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1383,11 +1430,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1419,11 +1467,12 @@ export default function ActsOsAccountTest() {
       try {
         console.info(tag + "start getAccountServerConfig");
         await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1451,12 +1500,14 @@ export default function ActsOsAccountTest() {
       };
       try {
         console.info(tag + "start getAccountServerConfig");
-        await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
-        expect().assertFail();
+        let ret: osAccount.DomainServerConfig = await osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo);
+        expect(ret.id).assertUndefined();
+        expect(ret.domain).assertUndefined();
+        expect(ret.parameters).assertUndefined();
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
@@ -1488,7 +1539,7 @@ export default function ActsOsAccountTest() {
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
-        if (err.code == 801) {
+        if (err.code === 801) {
           console.info(tag + "Current device not support API: getAllServerConfigs");
         } else {
           expect().assertFail();
@@ -1496,5 +1547,31 @@ export default function ActsOsAccountTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number     SUB_Account_OsAccount_IsDomainSupported_0100
+     * @tc.name       SUB_Account_OsAccount_IsDomainSupported_0100
+     * @tc.desc       isDomainAccountSupported promise
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL3
+     */
+    it('SUB_Account_OsAccount_IsDomainSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 start====");
+        try {
+          let status: boolean = await osAccount.isDomainAccountSupported();
+          console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 status: " + status);
+          if (status) {
+            expect(status).assertTrue();
+          } else {
+            expect(status).assertFalse();
+          }
+        } catch (err) {
+          console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
   });
 }

@@ -17,15 +17,25 @@ import { formInfo } from '@kit.FormKit';
 import { UIExtensionContentSession } from '@kit.AbilityKit';
 import hilog from '@ohos.hilog';
 import LiveFormExtensionAbility, { LiveFormInfo } from '@ohos.app.form.LiveFormExtensionAbility';
+import commonEventManager from '@ohos.commonEventManager';
 
 const TAG = 'LiveFormExtAbility';
 
 export default class LiveFormExtAbility extends LiveFormExtensionAbility {
+  private liveFormCreateEvent = 'LiveFormExtensionAbility_Create';
+  private publishLiveFormCreateCallBack = () => {
+    hilog.info(0x0000, TAG, '====> liveFormCreateCallBack ====>');
+  }
+
   onLiveFormCreate(liveFormInfo: LiveFormInfo, session: UIExtensionContentSession) {
     let formId: string = liveFormInfo.formId;
     let rect: formInfo.Rect = liveFormInfo.rect;
     let borderRadius: number = liveFormInfo.borderRadius;
     hilog.info(0x0000, TAG, `onLiveFormCreate, formId: ${formId}, borderRadius: ${borderRadius}, width: ${rect.width}`);
+    let commonEventPublishData : commonEventManager.CommonEventPublishData = {
+      code: 0
+    };
+    commonEventManager.publish(this.liveFormCreateEvent, commonEventPublishData, this.publishLiveFormCreateCallBack);
 
     try {
       this.context.startAbilityByLiveForm({});

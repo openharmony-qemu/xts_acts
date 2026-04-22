@@ -137,6 +137,10 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       expect(certManager.CertificatePurpose.PURPOSE_ALL).assertEqual(1);
       expect(certManager.CertificatePurpose.PURPOSE_SIGN).assertEqual(2);
       expect(certManager.CertificatePurpose.PURPOSE_ENCRYPT).assertEqual(3);
+      expect(certManager.CertFileFormat.PEM_DER).assertEqual(0);
+      expect(certManager.CertFileFormat.P7B).assertEqual(1);
+      expect(certManager.CertScope.CURRENT_USER).assertEqual(1);
+      expect(certManager.CertScope.GLOBAL_USER).assertEqual(2);
       done();
     });
 
@@ -738,7 +742,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         });
         keyStore = await MdObj.digest();
         if (keyStore != undefined && keyStore.data != undefined) {
-          console.warn(`Security_CertManager_PriCertJsApi_Func_2100 keyStore data is: ${keyStore.data}}`);
+          console.warn(`Security_CertManager_PriCertJsApi_Func_2100 keyStore data is: ${keyStore.data}`);
           let result: certManager.CMResult = await signVerifyPromise.signVerifyNormalProcess(gAppKeyUri2, keyStore.data,
             signSpec, verifySpec);
           expect(result.outData == null).assertTrue();

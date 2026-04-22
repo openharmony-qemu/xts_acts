@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * You may obtain firstParam copy of the License at
+ * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -46,6 +46,7 @@
 #include <unistd.h>
 #include <utmp.h>
 #include <atomic>
+#include <sys/wait.h>
 #include <securec.h>
 
 #define NAMELEN 16
@@ -108,6 +109,15 @@ extern "C" void _pthread_cleanup_pop(struct __ptcb *, int a);
 extern "C" void _pthread_cleanup_push(struct __ptcb *, void (*)(void *), void *);
 extern "C" int delete_module(const char *a, unsigned b);
 extern "C" pid_t pthread_gettid_np(pthread_t t);
+
+// 获取线程指针：使用内建函数（不需要链接符号）
+static inline void *GetTp()
+{
+    return __builtin_thread_pointer();
+}
+
+// 定义一个 thread_local 变量（initial-exec 模型确保在主模块）
+static __thread int g_testVar __attribute__((tls_model("initial-exec"))) = 42;
 
 static napi_value DlaDdr(napi_env env, napi_callback_info info)
 {
@@ -869,14 +879,24 @@ static napi_value Uflow(napi_env env, napi_callback_info info)
 
 static napi_value Tlsgetaddr(napi_env env, napi_callback_info infoS)
 {
-    errno = NO_ERROR;
+    int resultCode = NO_ERROR;
     pid_t pid = fork();
-    if (pid == PARAM_0) {
-        __tls_get_addr((tls_mod_off_t[]){});
-        exit(PARAM_0);
+    if (pid == 0) {
+        int *expectedAddr = &g_testVar;
+        void *tp = GetTp();
+        ptrdiff_t offset = (char *)expectedAddr - (char *)tp;
+        size_t ti[2] = {1, (size_t)offset};  // 主程序模块 ID 通常为 1
+        int *gotAddr = (int *)__tls_get_addr(ti);
+        if (gotAddr != expectedAddr) {
+            exit(FAILD);
+        }
+        exit(0);
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, errno, &result);
+    int status;
+    waitpid(pid, &status, 0);
+    resultCode = (WIFEXITED(status) && WEXITSTATUS(status) == 0) ? 0 : -1;
+    napi_value result;
+    napi_create_int32(env, resultCode, &result);
     return result;
 }
 

@@ -17,7 +17,7 @@ import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect, Level}from '
 import mediaquery from '@system.mediaquery';
 
 export default function mediaquery_vioTest() {
-describe('mediaquery_vioTest', function() {
+describe('mediaquery_vioTestAdapt001', function() {
     let testResult;
     let test;
     beforeAll(function() {

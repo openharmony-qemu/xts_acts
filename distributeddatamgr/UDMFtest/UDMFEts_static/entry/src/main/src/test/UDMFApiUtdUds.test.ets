@@ -26,9 +26,34 @@ const REFERENCE_URL =
     "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
 let tag = 'ttt:';
 let TAG = "[ttt]"
+let optionsValid: unifiedDataChannel.Options = {
+  intention: unifiedDataChannel.Intention.DATA_HUB
+};
 
 export default function UDMFApiUtdUds() {
     describe('UDMFApiUtdUds', () => {
+    beforeAll(() => {	 
+      console.info("beforeAll");	 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
+        let size = data.length;	 
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
+      }).catch((error) => {	 
+        let err: BusinessError = error as BusinessError;	 
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
+      });	 
+    })
+
+    afterAll(() => { 
+      console.info("afterAll"); 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
+        let size = data.length; 
+        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
+      }).catch((error) => { 
+        let err: BusinessError = error as BusinessError; 
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
+      }); 
+    })
+
         /**
          * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1060
          * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1060
@@ -557,40 +582,42 @@ export default function UDMFApiUtdUds() {
             let unifiedData = new unifiedDataChannel.UnifiedData();
             let contentFormRecord = new unifiedDataChannel.UnifiedRecord("openharmony.pixel-map", pixelMap);
             unifiedData.addRecord(contentFormRecord)
-            unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
-                let options1:unifiedDataChannel.Options ={
-                    intention: unifiedDataChannel.Intention.DATA_HUB,
-                    key:data
-                }
-                unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                    let size = ret.length;
-                    console.info(`data.size = ${size}`);
-                    for (let i = 0; i < size; i++) {
-                        let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
-                        let size = records.length;
-                        for (let j = 0; j < size; j++) {
-                            let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                            let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
-                            if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
-                                expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
-                                expect(imageInfo.size.height).assertEqual(opt.size.height);
-                                expect(imageInfo.size.width).assertEqual(opt.size.width);
-                            }
+            try {
+              let data: string = await unifiedDataChannel.insertData(options, unifiedData);
+              let options1:unifiedDataChannel.Options ={
+                  intention: unifiedDataChannel.Intention.DATA_HUB,
+                  key:data
+              }
+              try {
+                let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
+                let size = ret.length;
+                console.info(`data.size = ${size}`);
+                for (let i = 0; i < size; i++) {
+                    let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                        let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                        let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
+                        if (record != undefined) {
+                            let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo()
+                            expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
+                            expect(imageInfo.size.height).assertEqual(opt.size.height);
+                            expect(imageInfo.size.width).assertEqual(opt.size.width);
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                }).catch((err) => {
-                    expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                });
+                }
                 await unifiedDataChannel.deleteData(options1);
-            }).catch((err) => {
-                expect().assertFail();
                 done();
-            });
+              } catch (err) {
+                expect().assertFail();
+                await unifiedDataChannel.deleteData(options1);
+                done();
+              }
+              await unifiedDataChannel.deleteData(options1);
+            } catch (err) {
+              expect().assertFail();
+              done();
+            }
             console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000 end");
         });
 
@@ -616,42 +643,44 @@ export default function UDMFApiUtdUds() {
             let unifiedData = new unifiedDataChannel.UnifiedData();
             let contentFormRecord = new unifiedDataChannel.UnifiedRecord("openharmony.pixel-map", pixelMap);
             unifiedData.addRecord(contentFormRecord)
-            unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
-                let options1:unifiedDataChannel.Options ={
-                    intention: unifiedDataChannel.Intention.DATA_HUB,
-                    key:data
-                }
-                unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                    let size = ret.length;
-                    console.info(`data.size = ${size}`);
-                    for (let i = 0; i < size; i++) {
-                        let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
-                        let size = records.length;
-                        for (let j = 0; j < size; j++) {
-                            let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                            let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
-                            if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
-                                expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
-                                expect(imageInfo.size.height).assertEqual(opt.size.height);
-                                expect(imageInfo.size.width).assertEqual(opt.size.width);
-                                expect(imageInfo.pixelFormat).assertEqual(opt.pixelFormat);
-                                expect(imageInfo.alphaType).assertEqual(opt.alphaType);
-                            }
+            try {
+              let data: string = await unifiedDataChannel.insertData(options, unifiedData);
+              let options1:unifiedDataChannel.Options ={
+                  intention: unifiedDataChannel.Intention.DATA_HUB,
+                  key:data
+              }
+              try {
+                let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
+                let size = ret.length;
+                console.info(`data.size = ${size}`);
+                for (let i = 0; i < size; i++) {
+                    let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                        let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                        let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
+                        if (record != undefined) {
+                            let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo()
+                            expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
+                            expect(imageInfo.size.height).assertEqual(opt.size.height);
+                            expect(imageInfo.size.width).assertEqual(opt.size.width);
+                            expect(imageInfo.pixelFormat).assertEqual(opt.pixelFormat);
+                            expect(imageInfo.alphaType).assertEqual(opt.alphaType);
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                }).catch((err) => {
-                    expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                });
+                }
                 await unifiedDataChannel.deleteData(options1);
-            }).catch((err) => {
-                expect().assertFail();
                 done();
-            });
+              } catch (err) {
+                expect().assertFail();
+                await unifiedDataChannel.deleteData(options1);
+                done();
+              }
+              await unifiedDataChannel.deleteData(options1);
+            } catch (err) {
+              expect().assertFail();
+              done();
+            }
             console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100 end");
         });
 
@@ -677,44 +706,46 @@ export default function UDMFApiUtdUds() {
             let unifiedData = new unifiedDataChannel.UnifiedData();
             let contentFormRecord = new unifiedDataChannel.UnifiedRecord("openharmony.pixel-map", pixelMap);
             unifiedData.addRecord(contentFormRecord)
-            unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
-                let options1:unifiedDataChannel.Options ={
-                    intention: unifiedDataChannel.Intention.DATA_HUB,
-                    key:data
-                }
-                unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                    let size = ret.length;
-                    console.info(`data.size = ${size}`);
-                    for (let i = 0; i < size; i++) {
-                        let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
-                        let size = records.length;
-                        for (let j = 0; j < size; j++) {
-                            let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                            let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
-                            if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
-                                expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
-                                expect(imageInfo.size.height).assertEqual(opt.size.height);
-                                expect(imageInfo.size.width).assertEqual(opt.size.width);
-                                expect(imageInfo.pixelFormat).assertEqual(3);
-                                expect(imageInfo.alphaType).assertEqual(2);
-                                expect(imageInfo.density).assertEqual(0);
-                                expect(imageInfo.stride).assertEqual(800);
-                            }
+            try {
+              let data: string = await unifiedDataChannel.insertData(options, unifiedData);
+              let options1:unifiedDataChannel.Options ={
+                  intention: unifiedDataChannel.Intention.DATA_HUB,
+                  key:data
+              }
+              try {
+                let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
+                let size = ret.length;
+                console.info(`data.size = ${size}`);
+                for (let i = 0; i < size; i++) {
+                    let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                        let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                        let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
+                        if (record != undefined) {
+                            let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo()
+                            expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
+                            expect(imageInfo.size.height).assertEqual(opt.size.height);
+                            expect(imageInfo.size.width).assertEqual(opt.size.width);
+                            expect(imageInfo.pixelFormat).assertEqual(3);
+                            expect(imageInfo.alphaType).assertEqual(2);
+                            expect(imageInfo.density).assertEqual(0);
+                            expect(imageInfo.stride).assertEqual(800);
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                }).catch((err) => {
-                    expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                });
+                }
                 await unifiedDataChannel.deleteData(options1);
-            }).catch((err) => {
-                expect().assertFail();
                 done();
-            });
+              } catch (err) {
+                expect().assertFail();
+                 await unifiedDataChannel.deleteData(options1);
+                done();
+              }
+              await unifiedDataChannel.deleteData(options1);
+            } catch (err) {
+              expect().assertFail();
+              done();
+            }
             console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500 end");
         });
 
@@ -740,46 +771,48 @@ export default function UDMFApiUtdUds() {
             let unifiedData = new unifiedDataChannel.UnifiedData();
             let contentFormRecord = new unifiedDataChannel.UnifiedRecord("openharmony.pixel-map", pixelMap);
             unifiedData.addRecord(contentFormRecord)
-            unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
-                let options1:unifiedDataChannel.Options ={
-                    intention: unifiedDataChannel.Intention.DATA_HUB,
-                    key:data
-                }
-                unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                    let size = ret.length;
-                    console.info(`data.size = ${size}`);
-                    for (let i = 0; i < size; i++) {
-                        let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
-                        let size = records.length;
-                        for (let j = 0; j < size; j++) {
-                            let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                            let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
-                            if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
-                                expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
-                                expect(imageInfo.size.height).assertEqual(opt.size.height);
-                                expect(imageInfo.size.width).assertEqual(opt.size.width);
-                                expect(imageInfo.pixelFormat).assertEqual(3);
-                                expect(imageInfo.alphaType).assertEqual(2);
-                                expect(imageInfo.density).assertEqual(0);
-                                expect(imageInfo.stride).assertEqual(800);
-                                expect(imageInfo.mimeType).assertEqual("");
-                                expect(imageInfo.isHdr).assertEqual(false);
-                            }
+            try {
+              let data: string = await unifiedDataChannel.insertData(options, unifiedData);
+              let options1:unifiedDataChannel.Options ={
+                  intention: unifiedDataChannel.Intention.DATA_HUB,
+                  key:data
+              }
+              try {
+                let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
+                let size = ret.length;
+                console.info(`data.size = ${size}`);
+                for (let i = 0; i < size; i++) {
+                    let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                        let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                        let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
+                        if (record != undefined) {
+                            let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo()
+                            expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
+                            expect(imageInfo.size.height).assertEqual(opt.size.height);
+                            expect(imageInfo.size.width).assertEqual(opt.size.width);
+                            expect(imageInfo.pixelFormat).assertEqual(3);
+                            expect(imageInfo.alphaType).assertEqual(2);
+                            expect(imageInfo.density).assertEqual(0);
+                            expect(imageInfo.stride).assertEqual(800);
+                            expect(imageInfo.mimeType).assertEqual("");
+                            expect(imageInfo.isHdr).assertEqual(false);
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                }).catch((err) => {
-                    expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                });
+                }
                 await unifiedDataChannel.deleteData(options1);
-            }).catch((err) => {
-                expect().assertFail();
                 done();
-            });
+              } catch (err) {
+                expect().assertFail();
+                await unifiedDataChannel.deleteData(options1);
+                done();
+              }
+              await unifiedDataChannel.deleteData(options1);
+            } catch (err) {
+              expect().assertFail();
+              done();
+            }
             console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700 end");
         });
 
@@ -804,46 +837,48 @@ export default function UDMFApiUtdUds() {
             let unifiedData = new unifiedDataChannel.UnifiedData();
             let contentFormRecord = new unifiedDataChannel.UnifiedRecord("openharmony.pixel-map", pixelMap);
             unifiedData.addRecord(contentFormRecord)
-            unifiedDataChannel.insertData(options, unifiedData).then((data) =>{
-                let options1:unifiedDataChannel.Options ={
-                    intention: unifiedDataChannel.Intention.DATA_HUB,
-                    key:data
-                }
-                unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                    let size = ret.length;
-                    console.info(`data.size = ${size}`);
-                    for (let i = 0; i < size; i++) {
-                        let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
-                        let size = records.length;
-                        for (let j = 0; j < size; j++) {
-                            let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                            let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
-                            if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
-                                expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
-                                expect(imageInfo.size.height).assertEqual(opt.size.height);
-                                expect(imageInfo.size.width).assertEqual(opt.size.width);
-                                expect(imageInfo.pixelFormat).assertEqual(4);
-                                expect(imageInfo.alphaType).assertEqual(2);
-                                expect(imageInfo.density).assertEqual(0);
-                                expect(imageInfo.stride).assertEqual(800);
-                                expect(imageInfo.mimeType).assertEqual("");
-                                expect(imageInfo.isHdr).assertEqual(false);
-                            }
+            try {
+              let data: string = await unifiedDataChannel.insertData(options, unifiedData);
+              let options1:unifiedDataChannel.Options ={
+                  intention: unifiedDataChannel.Intention.DATA_HUB,
+                  key:data
+              }
+              try {
+                let ret: Array<unifiedDataChannel.UnifiedData> = await unifiedDataChannel.queryData(options1);
+                let size = ret.length;
+                console.info(`data.size = ${size}`);
+                for (let i = 0; i < size; i++) {
+                    let records: Array<unifiedDataChannel.UnifiedRecord> = ret[i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                        let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                        let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
+                        if (record != undefined) {
+                            let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo()
+                            expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
+                            expect(imageInfo.size.height).assertEqual(opt.size.height);
+                            expect(imageInfo.size.width).assertEqual(opt.size.width);
+                            expect(imageInfo.pixelFormat).assertEqual(4);
+                            expect(imageInfo.alphaType).assertEqual(2);
+                            expect(imageInfo.density).assertEqual(0);
+                            expect(imageInfo.stride).assertEqual(800);
+                            expect(imageInfo.mimeType).assertEqual("");
+                            expect(imageInfo.isHdr).assertEqual(false);
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                }).catch((err) => {
-                    expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
-                    done();
-                });
+                }
                 await unifiedDataChannel.deleteData(options1);
-            }).catch((err) => {
-                expect().assertFail();
                 done();
-            });
+              } catch (err) {
+                expect().assertFail();
+                await unifiedDataChannel.deleteData(options1);
+                done();
+              }
+              await unifiedDataChannel.deleteData(options1);
+            } catch (err) {
+              expect().assertFail();
+              done();
+            }
             console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900 end");
         });
 

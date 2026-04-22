@@ -38,6 +38,7 @@ import { Callback } from '@ohos.base'
 import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
   public str: string = '';
 }
@@ -116,6 +117,13 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   Utils.emitEvent(webview.WebCookieManager.isThirdPartyCookieAllowed(), 30033)
                 }, 3000)
                 break;
+              }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webEumClass' })
+                console.log('push URL success')
               }
 
 

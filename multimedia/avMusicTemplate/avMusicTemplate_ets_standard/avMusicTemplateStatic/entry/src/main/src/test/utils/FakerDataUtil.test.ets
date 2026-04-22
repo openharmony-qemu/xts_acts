@@ -52,26 +52,26 @@ export class FakerDataUtil {
   static getMediaEntity(tag: string = 'tag'): avMusicTemplate.MediaEntity {
     return {
       mediaId: `123456_${tag}`,
-      mediaType: 1 as avMusicTemplate.EntityType,
+      mediaType: avMusicTemplate.EntityType.fromValue(1),
       parentId: `654321_${tag}`,
-      parentMediaType: 1 as avMusicTemplate.EntityType,
+      parentMediaType: avMusicTemplate.EntityType.fromValue(1),
       title: `title_${tag}`,
       desc: `desc_${tag}`,
       imageUrl: `https://123test.${tag}.com`,
-      playState: 1 as avMusicTemplate.PlaybackState,
+      playState: avMusicTemplate.PlaybackState.fromValue(1),
     }
   }
 
   static getRanking(tag: string = 'tag'): avMusicTemplate.Ranking {
     return {
       mediaId: `123456_${tag}`,
-      mediaType: 1 as avMusicTemplate.EntityType,
+      mediaType: avMusicTemplate.EntityType.fromValue(1),
       parentId: `654321_${tag}`,
-      parentMediaType: 1 as avMusicTemplate.EntityType,
+      parentMediaType: avMusicTemplate.EntityType.fromValue(1),
       title: `title_${tag}`,
       desc: `desc_${tag}`,
       imageUrl: `https://123test.${tag}.com`,
-      playState: 1 as avMusicTemplate.PlaybackState,
+      playState: avMusicTemplate.PlaybackState.fromValue(1),
       topElements: [FakerDataUtil.getMediaEntity()]
     }
   }
@@ -80,13 +80,13 @@ export class FakerDataUtil {
   static getBanner(tag: string = 'tag'): avMusicTemplate.Banner {
     return {
       mediaId: `123456_${tag}`,
-      mediaType: 1 as avMusicTemplate.EntityType,
+      mediaType: avMusicTemplate.EntityType.fromValue(1),
       parentId: `654321_${tag}`,
-      parentMediaType: 1 as avMusicTemplate.EntityType,
+      parentMediaType: avMusicTemplate.EntityType.fromValue(1),
       title: `title_${tag}`,
       desc: `desc_${tag}`,
       imageUrl: `https://123test.${tag}.com`,
-      playState: 1 as avMusicTemplate.PlaybackState,
+      playState: avMusicTemplate.PlaybackState.fromValue(1),
       isSupportOnePlay: true,
     }
   }
@@ -94,13 +94,13 @@ export class FakerDataUtil {
   static getAlbum(tag: string = 'tag'): avMusicTemplate.Album {
     return {
       mediaId: `123456_${tag}`,
-      mediaType: 1 as avMusicTemplate.EntityType,
+      mediaType: avMusicTemplate.EntityType.fromValue(1),
       parentId: `654321_${tag}`,
-      parentMediaType: 1 as avMusicTemplate.EntityType,
+      parentMediaType: avMusicTemplate.EntityType.fromValue(1),
       title: `title_${tag}`,
       desc: `desc_${tag}`,
       imageUrl: `https://123test.${tag}.com`,
-      playState: 1 as avMusicTemplate.PlaybackState,
+      playState: avMusicTemplate.PlaybackState.fromValue(1),
       singer: 'a singer',
       playCounts: '1000w',
       favSubscribeData: FakerDataUtil.getFavSubscribeData(),
@@ -131,7 +131,7 @@ export class FakerDataUtil {
       title: 'title_aaaa',
       hasMoreData: true,
       totalSize: 2,
-      memberMediaType: 1 as avMusicTemplate.EntityType,
+      memberMediaType: avMusicTemplate.EntityType.fromValue(1),
       topElements: topElements,
     }
     return result;
@@ -170,9 +170,9 @@ export class FakerDataUtil {
       pageSize: 3,
       hasMoreData: true,
       totalSize: 4,
-      memberMediaType: searchType as avMusicTemplate.EntityType,
+      memberMediaType: avMusicTemplate.EntityType.fromValue(searchType),
       elements: [FakerDataUtil.getMediaEntity()],
-      sort: 1 as avMusicTemplate.Sort,
+      sort: avMusicTemplate.Sort.fromValue(1),
       episodeRange: episodeRange,
     }
   }
@@ -184,9 +184,9 @@ export class FakerDataUtil {
     return {
       entityId: entityId,
       pageIndex: 3,
-      type: 2 as avMusicTemplate.EntityType,
-      subEntityType: 2 as avMusicTemplate.EntityType,
-      sort: 1 as avMusicTemplate.Sort,
+      type: avMusicTemplate.EntityType.fromValue(2),
+      subEntityType: avMusicTemplate.EntityType.fromValue(2),
+      sort: avMusicTemplate.Sort.fromValue(1),
       episodeRange: episodeRange,
     }
   }
@@ -226,20 +226,20 @@ export class FakerDataUtil {
     let tag = 'ASingle';
     return {
       mediaId: `123456_${tag}`,
-      mediaType: 1 as avMusicTemplate.EntityType,
+      mediaType: avMusicTemplate.EntityType.fromValue(1),
       parentId: `654321_${tag}`,
-      parentMediaType: 1 as avMusicTemplate.EntityType,
+      parentMediaType: avMusicTemplate.EntityType.fromValue(1),
       title: `title_${tag}`,
       desc: `desc_${tag}`,
       imageUrl: `https://123test.${tag}.com`,
-      playState: 1 as avMusicTemplate.PlaybackState, // extents from MediaEntity
+      playState: avMusicTemplate.PlaybackState.fromValue(1), // extents from MediaEntity
       isVip: isVip,
       singer: `singer_${tag}`,
       playInfo: FakerDataUtil.getPlayInfo(),
       favSubscribeData: FakerDataUtil.getFavSubscribeData(),
       tags: ['111', '2222'],
       settings: [FakerDataUtil.getSettingItem()],
-      downloadStatus: 1 as avMusicTemplate.DownloadStatus,
+      downloadStatus: avMusicTemplate.DownloadStatus.fromValue(1),
       downloadProgress: 50,
     }
   }
@@ -269,11 +269,11 @@ export class FakerDataUtil {
     bufferArr.fill(3, 0, 95);
     let opts: image.InitializationOptions = {
       editable: true,
-      pixelFormat: 3 as image.PixelMapFormat,
+      pixelFormat: image.PixelMapFormat.fromValue(3),
       size: {
         height: 4, width: 6
       },
-      alphaType: 3 as image.AlphaType
+      alphaType: image.AlphaType.fromValue(3)
     };
     return image.createPixelMap(color, opts);
   }
@@ -290,7 +290,7 @@ export class FakerDataUtil {
     return {
       buttonId: 'Bid123456',
       buttonText: 'A button',
-      buttonType: 1 as avMusicTemplate.ButtonType,
+      buttonType: avMusicTemplate.ButtonType.fromValue(1),
     }
   }
 
@@ -337,7 +337,7 @@ export class FakerDataUtil {
     }
     let res: avMusicTemplate.DialogInfo = {
       dialogId: dialogId,
-      dialogType: 1 as avMusicTemplate.DialogType,
+      dialogType: avMusicTemplate.DialogType.fromValue(1),
       title: 'Title_adsfa',
       text: actionType || 'teaasdfgasdfa',
       buttons: [FakerDataUtil.getDialogButtonInfo()],
@@ -348,13 +348,13 @@ export class FakerDataUtil {
   }
 
   static async getMemberPurchaseInfo(mType?: avMusicTemplate.MemberPurchaseType): Promise<avMusicTemplate.MemberPurchaseInfo> {
-    mType = mType ?? 'normal' as avMusicTemplate.MemberPurchaseType;
+    mType = mType ?? avMusicTemplate.MemberPurchaseType.fromValue('normal');
     return {
       id: 'MemberPurchaseInfo_id_123456',
       diagramUrl: 'https://111.222.com',
       diagramData: await FakerDataUtil.getPixelMap(),
       diagramContent: 'sdfasdfasf2334asdfa',
-      memberPurchaseType: mType,
+      memberPurchaseType: mType!,
     }
   }
 
@@ -374,7 +374,7 @@ export class FakerDataUtil {
       id: 'settingItem2341234',
       title: 'tqweradf23',
       desc: '23safdasfawe234',
-      settingType: 0 as avMusicTemplate.SettingType,
+      settingType: avMusicTemplate.SettingType.fromValue(0),
       settingValue: true,
       mediaId: 'mid234123123'
     }

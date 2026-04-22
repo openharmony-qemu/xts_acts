@@ -427,14 +427,22 @@ export default function sceneResourcesTest() {
         console.info(msg + " Succeed in Environment environmentImage set envImage3 EQUIRECTANGULAR ");
 
         // Test null parameter for createImage
-        // let nullImage = await rf.createImage(null);
-        // expect(nullImage != null).assertTrue();
-        // console.info(msg + " createImage with null parameter returned undefined");
+        try {
+          let nullImage = await rf.createImage(null);
+          console.info(msg + " createImage with null node: " + JSON.stringify(nullImage));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createImage with null node catch error: " + JSON.stringify(err));
+        }
 
         // Test undefined parameter for createImage
-        // let undefinedImage = await rf.createImage(undefined);
-        // expect(undefinedImage != null).assertTrue();
-        // console.info(msg + " createImage with undefined parameter returned undefined");
+        try {
+          let undefinedImage = await rf.createImage(undefined);
+          console.info(msg + " createImage with undefined node: " + JSON.stringify(undefinedImage));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createImage with undefined node catch error: " + JSON.stringify(err));
+        }
 
         console.info(msg + " test completed successfully");
         done();
@@ -1872,21 +1880,33 @@ export default function sceneResourcesTest() {
           console.info(msg + " material && material.colorShader == False");
           expect(material && material.colorShader).assertTrue();
         }
-        /* task_0204 第一个参数为null/undefined时,崩溃
+
         // Test null parameter for createShader
-        let nullShader = await rf.createShader(null);
-        expect(nullShader != null).assertTrue();
-        console.info(msg + " createShader with null parameter returned undefined");
+        try {
+          let nullShader = await rf.createShader(null);
+          console.info(msg + " createShader with null parameter: " + JSON.stringify(nullShader));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createShader with null parameter catch error: " + JSON.stringify(err));
+        }
 
         // Test undefined parameter for createShader
-        let undefinedShader = await rf.createShader(undefined);
-        expect(undefinedShader != null).assertTrue();
-        console.info(msg + " createShader with undefined parameter returned undefined");
-        */
+        try {
+          let undefinedShader = await rf.createShader(undefined);
+          console.info(msg + " createShader with undefined parameter: " + JSON.stringify(undefinedShader));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createShader with undefined parameter catch error: " + JSON.stringify(err));
+        }
+
         // Test null parameter for setShaderInputs
         try {
           if (material && material.colorShader) {
             material.colorShader.setShaderInputs(null);
+          }
+          else{
+            console.info(msg + " material && material.colorShader == False");
+            expect(material && material.colorShader).assertTrue();
           }
         } catch (err) {
           console.info(msg + " setShaderInputs with null error: " + JSON.stringify(err));
@@ -1896,6 +1916,10 @@ export default function sceneResourcesTest() {
         try {
           if (material && material.colorShader) {
             material.colorShader.setShaderInputs(undefined);
+          }
+          else{
+            console.info(msg + " material && material.colorShader == False");
+            expect(material && material.colorShader).assertTrue();
           }
         } catch (err) {
           console.info(msg + " setShaderInputs with undefined error: " + JSON.stringify(err));
@@ -2504,8 +2528,7 @@ export default function sceneResourcesTest() {
         expect(thresholdHardValue).assertEqual(1);
 
         // Test 3: Set 'thresholdSoft' property value with undefined (should return true)
-        let dataUndefined:undefined;
-        let result3 = effect.setPropertyValue('thresholdSoft', dataUndefined);
+        let result3 = effect.setPropertyValue('thresholdSoft', undefined);
         console.info(msg + " set thresholdSoft with undefined result: " + result3);
         expect(result3).assertFalse();
         console.info(msg + " thresholdSoft property with undefined set successfully");

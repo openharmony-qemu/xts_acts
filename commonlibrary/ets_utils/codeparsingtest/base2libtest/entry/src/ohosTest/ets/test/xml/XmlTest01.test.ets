@@ -74,6 +74,34 @@ export default function XmlTest_01() {
       });
 
     /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0300
+     * @tc.name      ConstructorTest0003
+     * @tc.desc      Test invalid parameter value input
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('ConstructorTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'ConstructorTest0003';
+        console.log(TAG + ' start');
+
+        try{
+          let testArrayBuffer = new ArrayBuffer(8000)
+          let testConstructor = new xml.XmlSerializer(testArrayBuffer, "INVALID-CODE")
+
+          expect(testConstructor).assertInstanceOf("Object")
+          expect(testConstructor instanceof xml.XmlSerializer).assertTrue()
+
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+          expect(String(err)).assertContain("utf-8")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0400
      * @tc.name      ConstructorTest0004
      * @tc.desc      Test passing an overly large ArrayBuffer
@@ -246,6 +274,72 @@ export default function XmlTest_01() {
         expect(result).assertContain("desc=\"\"")
         expect(result).assertContain("status=\"\"")
         expect(result).assertContain("tag=\"\"")
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0500
+     * @tc.name      SetAttributesTest0005
+     * @tc.desc      Test passing XML illegal characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SetAttributesTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'SetAttributesTest0005';
+        console.log(TAG + ' start');
+
+        let testArrayBuffer = new ArrayBuffer(2048)
+        let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
+        try {
+          testConstructor.startElement("div")
+          testConstructor.setAttributes("id#001", "value1")
+          testConstructor.setAttributes("id&name", "value2")
+          testConstructor.setAttributes("123-key", "value3")
+          testConstructor.setAttributes("", "emptyKey") // Error location: cannot pass empty key
+          testConstructor.endElement()
+
+          let uint8 = new Uint8Array(testArrayBuffer)
+          let result = util.TextDecoder.create().decodeToString(uint8)
+
+          expect(result).assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0600
+     * @tc.name      SetAttributesTest0006
+     * @tc.desc      Test passing null/undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SetAttributesTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'SetAttributesTest0006';
+        console.log(TAG + ' start');
+
+        try {
+          let testArrayBuffer = new ArrayBuffer(2048)
+          let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
+          testConstructor.startElement("div1")
+          testConstructor.setAttributes("test", null)
+          testConstructor.endElement()
+          testConstructor.startElement("div2")
+          testConstructor.setAttributes("text", undefined)
+          testConstructor.endElement()
+
+          let uint8 = new Uint8Array(testArrayBuffer)
+          let result = util.TextDecoder.create().decodeToString(uint8)
+
+          expect(result).assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
@@ -810,6 +904,30 @@ export default function XmlTest_01() {
 
       });
 
+     /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0400
+     * @tc.name      StartElementTest0004
+     * @tc.desc      Empty Tag Name Exception Test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('StartElementTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'StartElementTest0004';
+        console.log(TAG + ' start');
+        const arrayBuffer4 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer4);
+
+        try {
+          serializer.startElement('');
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
     /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0500
      * @tc.name      StartElementTest0005
@@ -907,6 +1025,79 @@ export default function XmlTest_01() {
         let result = util.TextDecoder.create().decodeToString(uint8);
 
         expect(result).assertContain('<note>Happy</note>');
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0900
+     * @tc.name      StartElementTest0009
+     * @tc.desc      The parameter 'name' is an empty string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('StartElementTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'StartElementTest0009';
+        console.log(TAG + ' start');
+        const arrayBuffer9 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer9);
+
+        try {
+          serializer.startElement("");
+          serializer.endElement();
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1000
+     * @tc.name      StartElementTest0010
+     * @tc.desc      The parameter 'name' is undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('StartElementTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'StartElementTest0010';
+        console.log(TAG + ' start');
+        const arrayBuffer10 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer10);
+        try {
+          serializer.startElement(undefined);
+          serializer.endElement();
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1100
+     * @tc.name      StartElementTest0011
+     * @tc.desc      The parameter 'name' is null
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('StartElementTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'StartElementTest0011';
+        console.log(TAG + ' start');
+        const arrayBuffer11 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer11);
+        try {
+          serializer.startElement(null);
+          serializer.endElement();
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 
@@ -1132,6 +1323,31 @@ export default function XmlTest_01() {
       });
 
     /**
+     /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0400
+     * @tc.name      EndElementTest0004
+     * @tc.desc      Empty Tag Name Exception Test
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('EndElementTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'EndElementTest0004';
+        console.log(TAG + ' start');
+        const arrayBuffer4 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer4);
+
+        try {
+          serializer.startElement('');
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0500
      * @tc.name      EndElementTest0005
      * @tc.desc      Illegal character tag test
@@ -1230,6 +1446,80 @@ export default function XmlTest_01() {
         let result = util.TextDecoder.create().decodeToString(uint8);
 
         expect(result).assertContain('<note>Happy</note>');
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0900
+     * @tc.name      EndElementTest0009
+     * @tc.desc      The parameter 'name' is an empty string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('EndElementTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'EndElementTest0009';
+        console.log(TAG + ' start');
+        const arrayBuffer9 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer9);
+        try {
+          serializer.startElement("");
+          serializer.endElement();
+          expect().assertFail()
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1000
+     * @tc.name      EndElementTest0010
+     * @tc.desc      The parameter 'name' is undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('EndElementTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'EndElementTest0011';
+        console.log(TAG + ' start');
+        const arrayBuffer10 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer10);
+
+        try {
+          serializer.startElement(undefined);
+          serializer.endElement();
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
+
+      });
+
+    /**
+     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1100
+     * @tc.name      EndElementTest0011
+     * @tc.desc      The parameter 'name' is null
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('EndElementTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = 'EndElementTest0011';
+        console.log(TAG + ' start');
+        const arrayBuffer11 = new ArrayBuffer(1024);
+        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer11);
+
+        try {
+          serializer.startElement(null);
+          serializer.endElement();
+          expect().assertFail();
+        } catch (err) {
+          console.error(`${TAG} fail,err:${err}`);
+          expect(err.name).assertEqual("BusinessError")
+        }
 
       });
 

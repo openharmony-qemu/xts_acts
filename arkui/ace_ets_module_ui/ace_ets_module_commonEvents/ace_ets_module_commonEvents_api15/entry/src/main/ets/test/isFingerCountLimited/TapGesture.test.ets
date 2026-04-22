@@ -72,14 +72,14 @@ export default function tapGestureTest() {
     });
 
     /**
-     * @tc.name   TapGesture1_0200
+     * @tc.name   TapGesture1_0200Adapt001
      * @tc.number TapGesture1_0200
      * @tc.desc   To test whether isFingerCountLimited is effective.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('TapGesture1_0200', Level.LEVEL0, async (done: Function) => {
+    it('TapGesture1_0200Adapt001', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('TapGesture1_0200 START');
       let driver = await Driver.create()

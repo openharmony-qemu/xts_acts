@@ -419,7 +419,7 @@ struct ndkBlanklessInfoWithKeyTest {
               let msg = 'testndkBlanklessInfoWithKey014'
               let num: number = -1
               this.isPageEnd = -1;
-              testNapi.clearBlanklessLoadingCache101(this.webTag);
+              testNapi.clearBlanklessLoadingCache100(this.webTag);
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
               let num1: number = testNapi.doblankless_Success100(this.webTag);
@@ -445,14 +445,47 @@ struct ndkBlanklessInfoWithKeyTest {
               }
               break;
             }
+            case 'testndkBlanklessInfoWithKey015': {
+              let msg = 'testndkBlanklessInfoWithKey015'
+              let num: number = -1
+              this.isPageEnd = -1;
+              testNapi.clearBlanklessLoadingCache(this.webTag);
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, '1111111');
+              let num1: number = testNapi.doblankless_INVALID_ARGS_GET_ZERO(this.webTag);
+              console.log(`${msg}`, 'first loadUrl finish:' + num1);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'second loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_GET_ZERO(this.webTag);
+              console.log(msg, `预期值：-2`,`1 实际值${num}`);
+              this.isPageEnd = -1;
+              await this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              console.log(`${msg}`, 'third loadUrl finish');
+              num = testNapi.doblankless_INVALID_ARGS_GET_ZERO(this.webTag);
+              console.log(msg, `预期值：-2`,`2 实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ZERO 0:' + num);
+              if (num == 801) {
+                Utils.emitEvent(-2, 148241)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ZERO 1:' + num);
+              } else {
+                Utils.emitEvent(num, 148241)
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ZERO 2:' + num);
+              }
+              break;
+            }
           }
         })
       }
 
       Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .onPageBegin(() => {
+        .onLoadIntercept((event) => {
           this.isPageEnd = 0
+          return false;
         })
     }
   }

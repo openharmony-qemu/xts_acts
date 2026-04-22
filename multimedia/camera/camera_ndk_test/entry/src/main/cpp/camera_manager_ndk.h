@@ -184,6 +184,7 @@ public:
     Camera_ErrorCode GetSupportedOutputCapability(void);
     Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
+    Camera_ErrorCode CreateDeferredPreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
     Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
     int AdjustHeifIdx(int idx);
@@ -218,6 +219,7 @@ public:
     Camera_ErrorCode MetadataOutputStop(void);
     Camera_ErrorCode MetadataOutputRelease(void);
     Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+    bool IsMetadataObjectTypeValid();
  	Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
 
     Camera_ErrorCode SessionAddInput(void);
@@ -357,6 +359,7 @@ public:
     Camera_ErrorCode EnableMovingPhoto(int useCaseCode, bool enable);
     Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
     Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
+    Camera_ErrorCode AddDeferredSurface(int useCaseCode, char* surfaceId);
     Camera_ErrorCode GetMainImage(int useCaseCode);
     Camera_ErrorCode GetUncompressedImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
@@ -367,6 +370,8 @@ public:
     Camera_ErrorCode IsTorchSupported(int useCaseCode);
     Camera_ErrorCode IsTorchSupportedByTorchMode(int useCaseCode);
     Camera_ErrorCode SetTorchMode(int useCaseCode);
+    bool IsTorchLevelControlSupported();
+    Camera_ErrorCode SetTorchModeOnWithLevel(double level);
     Camera_ErrorCode GetExposureValue(int useCaseCode);
     Camera_ErrorCode GetFocalLength(int useCaseCode);
     Camera_ErrorCode SetSmoothZoom(int useCaseCode);
@@ -414,6 +419,55 @@ public:
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
     Camera_ErrorCode CameraOcclusionDetectChangeTest(void);
+    Camera_ErrorCode TestRegisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode TestUnregisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode IsExposureMeteringModeSupported(int useCaseCode);
+    Camera_ErrorCode GetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode SetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode GetSupportedISORange(int useCaseCode);
+    Camera_ErrorCode getIso(int useCaseCode);
+    Camera_ErrorCode setIso(int useCaseCode);
+
+    Camera_ErrorCode GetCameraDevices(void);
+
+    Camera_ErrorCode TestPhyAptNullSession();
+    Camera_ErrorCode TestPhyAptNullApts();
+    Camera_ErrorCode TestPhyAptNoInput();
+    Camera_ErrorCode TestPhyAptNoOutput();
+
+    Camera_ErrorCode TestDelPhyApts();
+    Camera_ErrorCode TestDelPhyAptsNullSession();
+    Camera_ErrorCode TestDelPhyAptsNullApts();
+
+    Camera_ErrorCode TestLensDistNullCam();
+    Camera_ErrorCode TestLensDistNullLens();
+    Camera_ErrorCode TestLensDistNullSize();
+
+    Camera_ErrorCode TestIntrinsicNullCam();
+    Camera_ErrorCode TestIntrinsicNullData();
+    Camera_ErrorCode TestIntrinsicNullSize();
+
+    Camera_ErrorCode TestSensorSizeNullCam();
+    Camera_ErrorCode TestSensorSizeNullW();
+    Camera_ErrorCode TestSensorSizeNullH();
+
+    Camera_ErrorCode TestEqFocalNullCam();
+    Camera_ErrorCode TestEqFocalNullData();
+    Camera_ErrorCode TestEqFocalNullSize();
+    Camera_ErrorCode TestEqFocal();
+
+    Camera_ErrorCode TestIsLogicNullCam();
+    Camera_ErrorCode TestIsLogicNullFlag();
+    Camera_ErrorCode TestIsLogic();
+
+    Camera_ErrorCode TestLogicCamDevsNullCam();
+    Camera_ErrorCode TestLogicCamDevsNullData();
+    Camera_ErrorCode TestLogicCamDevsNullSize();
+    Camera_ErrorCode TestLogicCamDevs();
+    Camera_ErrorCode DeleteConstituentCameraDevices(int useCaseCode);
+    Camera_ErrorCode GetLensFocalLength(int useCaseCode);
+    Camera_ErrorCode GetMinimumFocusDistance(int useCaseCode);
+
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

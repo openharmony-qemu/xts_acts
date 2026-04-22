@@ -23,7 +23,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
+import { Callback, RecordData ,BusinessError } from '@ohos.base'
 interface PageBeginParam {
   url: string
 }
@@ -31,6 +31,7 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
   @State showNativeMediaPlayer: boolean = false;
   @State nodeWidth : number = 300;
   @State nodeHeight : number = 150;
@@ -81,6 +82,22 @@ struct WebComponent {
                 Utils.emitEvent('success', 24087)
               } catch (error) {
                 Utils.emitEvent('fail', 24087)
+              }
+              break;
+            }
+
+            case 'emitWebviewSetBackForwardCacheOptions02': {
+              try {
+                let options = new webview.BackForwardCacheOptions();
+                options.size = 3;
+                options.timeToLive = 10;
+                this.controllerOne.getTitle();
+                this.controllerOne.setBackForwardCacheOptions(options);
+                Utils.emitEvent('success', 240871)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 240871);
               }
               break;
             }

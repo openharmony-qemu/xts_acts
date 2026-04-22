@@ -802,10 +802,10 @@ export default function fileIOOpen() {
           });
         done();
       });
-    } catch (e) {
-      console.log('fileIO_test_open_async_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(false).assertTrue();
-    }
+     } catch (e) {
+       console.log('fileIO_test_open_async_014 has failed for ' + e.message + ', code: ' + e.code);
+       expect(false).assertTrue();
+     }
   });
 
   /**
@@ -1257,6 +1257,631 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_test_open_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_001
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_001
+   * @tc.desc   Test open() interface with empty string path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_001', Level.LEVEL2, async function () {
+    try {
+      await fileIO.open("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_open_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_002
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_002
+   * @tc.desc   Test open() interface with null path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_002', Level.LEVEL2, async function () {
+    try {
+      await fileIO.open(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_open_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_003
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_003
+   * @tc.desc   Test open() interface with undefined path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_003', Level.LEVEL2, async function () {
+    try {
+      await fileIO.open(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_open_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_004
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_004
+   * @tc.desc   Test open() interface with null mode. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_004', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileIO_open_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      await fileIO.open(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_open_error_004: ' + e.message + ', code: ' + e.code);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_005
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_005
+   * @tc.desc   Test open() interface with undefined mode. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_005', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileIO_open_error_005');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      let file = await fileIO.open(fpath, undefined);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_open_error_005: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for open(path: string, callback: AsyncCallback<File>): void
+  /**
+   * @tc.name   fileIO_open_error_006
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_006
+   * @tc.desc   Test open() interface with empty string path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_006', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open("", function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_006: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_006: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_007
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_007
+   * @tc.desc   Test open() interface with null path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_007', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open(null, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_007: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid argument').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_007: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_008
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_008
+   * @tc.desc   Test open() interface with undefined path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_008', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open(undefined, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_008: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid argument').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_008: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_009
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_009
+   * @tc.desc   Test open() interface with null mode. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_009', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileIO_open_error_009');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.open(fpath, null, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_009: ' + err.message + ', code: ' + err.code);
+        }
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_009: ' + e.message + ', code: ' + e.code);
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_010
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_010
+   * @tc.desc   Test open() interface with undefined mode. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_010', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileIO_open_error_010');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.open(fpath, undefined, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_010: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_010: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for open(path: string, mode: number, callback: AsyncCallback<File>): void
+  /**
+   * @tc.name   fileIO_open_error_011
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_011
+   * @tc.desc   Test open() interface with empty string path. Callback with mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_011', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open("", 0, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_011: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_011: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_012
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_012
+   * @tc.desc   Test open() interface with null path. Callback with mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_012', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open(null, 0, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_012: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid argument').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_012: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_013
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_013
+   * @tc.desc   Test open() interface with undefined path. Callback with mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_013', Level.LEVEL2, async function (done) {
+    try {
+      fileIO.open(undefined, 0, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_013: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid argument').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_013: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_014
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_014
+   * @tc.desc   Test open() interface with null mode. Callback with mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_014', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileIO_open_error_014');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.open(fpath, null, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_014: ' + err.message + ', code: ' + err.code);
+        }
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_014: ' + e.message + ', code: ' + e.code);
+      fileIO.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_open_error_015
+   * @tc.number SUB_DF_FILEIO_OPEN_ERROR_015
+   * @tc.desc   Test open() interface with undefined mode. Callback with mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_open_error_015', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileIO_open_error_015');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.open(fpath, undefined, function (err, file) {
+        if (err) {
+          console.log('fileIO_open_error_015: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_open_error_015: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for openSync(path: string, mode?: number): File
+  /**
+   * @tc.name   fileIO_openSync_error_001
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_ERROR_001
+   * @tc.desc   Test openSync() interface with empty string path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_openSync_error_001', Level.LEVEL2, async function () {
+    try {
+      fileIO.openSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_openSync_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_openSync_error_002
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_ERROR_002
+   * @tc.desc   Test openSync() interface with null path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_openSync_error_002', Level.LEVEL2, async function () {
+    try {
+      fileIO.openSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_openSync_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_openSync_error_003
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_ERROR_003
+   * @tc.desc   Test openSync() interface with undefined path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_openSync_error_003', Level.LEVEL2, async function () {
+    try {
+      fileIO.openSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_openSync_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_openSync_error_004
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_ERROR_004
+   * @tc.desc   Test openSync() interface with null mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_openSync_error_004', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileIO_openSync_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileIO.openSync(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_openSync_error_004: ' + e.message + ', code: ' + e.code);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_openSync_error_005
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_ERROR_005
+   * @tc.desc   Test openSync() interface with undefined mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileIO_openSync_error_005', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileIO_openSync_error_005');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      let file = fileIO.openSync(fpath, undefined);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_openSync_error_005: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_035
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3500
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+it('fileIO_test_open_async_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_035');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = await fileIO.open(fpath, fileIO.OpenMode.UNCACHE);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.read(file.fd, new ArrayBuffer(4096))
+        .then((readLen) => {
+          expect(readLen == FILE_CONTENT.length).assertTrue();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        });
+    } catch (e) {
+      console.log('fileIO_test_open_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_036
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3600
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_036');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let length = 20;
+
+    try {
+      fileIO.open(fpath, fileIO.OpenMode.UNCACHE, (err, file) => {
+        if(err) {
+          console.log('fileIO_test_open_async_036 error package' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.write(file.fd, new ArrayBuffer(length))
+          .then((bytesWritten) => {
+            expect(bytesWritten == length).assertTrue();
+            fileIO.closeSync(file);
+            fileIO.unlinkSync(fpath);
+          });
+        });
+        done();
+    } catch (e) {
+      console.log('fileIO_test_open_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_037
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3700
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_037');
+
+    try {
+      let file = await fileIO.open(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_open_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_async_038
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3800
+   * @tc.desc   Test open() interfaces. mode=0o10000000000. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_async_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_open_async_038');
+
+    try {
+      fileIO.open(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY, (err, file) => {
+        if(err) {
+          console.log('fileIO_test_open_async_038 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        expect(isIntNum(file.fd)).assertTrue();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_open_async_038 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_sync_039
+   * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3900
+   * @tc.desc   Test openSync() interfaces. mode=0o10000000000.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_sync_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_open_sync_039');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.UNCACHE);
+      expect(isIntNum(file.fd)).assertTrue();
+      let readlen = fileIO.readSync(file.fd, new ArrayBuffer(4096));
+      expect(readlen == FILE_CONTENT.length).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_open_sync_039 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_open_sync_040
+   * @tc.number SUB_DF_FILEIO_OPEN_SYNC_4000
+   * @tc.desc   Test openSync() interfaces. mode=0o10000000000.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_open_sync_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_open_sync_040');
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.UNCACHE | fileIO.OpenMode.CREATE );
+      expect(isIntNum(file.fd)).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_open_sync_040 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
     }
   });

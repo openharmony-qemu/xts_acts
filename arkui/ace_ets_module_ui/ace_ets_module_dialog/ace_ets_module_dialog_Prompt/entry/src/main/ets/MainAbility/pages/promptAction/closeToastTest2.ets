@@ -23,7 +23,7 @@ struct closeToastTest {
   build() {
     Column({ space: 10 }) {
       Button('Open Toast')
-        .id('open')
+        .id('openT')
         .onClick(() => {
           promptAction.openToast({
             message: 'Toast Massage',
@@ -62,6 +62,6 @@ struct closeToastTest {
             }
           }, 4500)
         })
-    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+    }.height('100%').width('100%').justifyContent(FlexAlign.Start)
   }
 }

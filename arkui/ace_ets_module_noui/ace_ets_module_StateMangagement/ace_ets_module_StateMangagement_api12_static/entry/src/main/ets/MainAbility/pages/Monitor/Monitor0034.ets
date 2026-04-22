@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ import {
 let prompt= new PromptAction()
 
 @ObservedV2
-class Monitor0034Class {
+export class Monitor0034Class {
   @Trace
   private _name: string = 'Tom';
 
@@ -53,7 +53,7 @@ class Monitor0034Class {
 }
 
 @ObservedV2
-class Monitor0034ChildClass extends Monitor0034Class {
+export class Monitor0034ChildClass extends Monitor0034Class {
   @Monitor(['name'])
   onNameChange(monitor: IMonitor) {
     prompt.showToast({ message: `name: ${monitor.value<Any>()?.now}`, duration: 2000 })

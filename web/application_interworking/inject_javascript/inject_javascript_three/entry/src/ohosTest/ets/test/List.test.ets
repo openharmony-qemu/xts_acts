@@ -26,6 +26,8 @@ import webJavaScriptOnDocumentStartSpecial from './WebJavaScriptOnDocumentStartS
 import webJavaScriptOnDocumentEndSpecial from './WebJavaScriptOnDocumentEndSpecial.test';
 import webJavaScriptProxySpecial from './WebJavaScriptProxySpecial.test';
 import webJavaScriptAccessSpecial from './WebJavaScriptAccessSpecial.test';
+import WebRunJavaScriptOnHeadEndEmptyArray from './WebRunJavaScriptOnHeadEndEmptyArray.test'
+import WebRunJavaScriptOnDocumentStartEmptyArray from './WebRunJavaScriptOnDocumentStartEmptyArray.test'
 
 
 export default function testsuite() {
@@ -42,4 +44,6 @@ export default function testsuite() {
   webJavaScriptOnDocumentEndSpecial();
   webJavaScriptProxySpecial();
   webJavaScriptAccessSpecial();
+  WebRunJavaScriptOnHeadEndEmptyArray()
+  WebRunJavaScriptOnDocumentStartEmptyArray()
 }

@@ -54,16 +54,13 @@ export default function CalendarPickerDialogBGBlurStyleTest() {
       console.info("CalendarPickerDialogBGBlurStyleTest after each called");
     });
 
-
-    
-    
-/**
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_001
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_001
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThinID'));
       await (button?.click() as Promise<void>);
@@ -80,17 +77,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_002
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_002
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('RegularID'));
       await (button?.click() as Promise<void>);
@@ -107,17 +104,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_003
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_003
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThickID'));
       await (button?.click() as Promise<void>);
@@ -134,17 +131,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_004
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_004
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -161,17 +158,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_005
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_005
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_REGULAR_ID'));
       await (button?.click() as Promise<void>);
@@ -188,17 +185,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_006
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_006
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_006
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -215,17 +212,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_007
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_007
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_007
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -242,17 +239,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_008
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_008
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_008
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('NONE_ID'));
       await (button?.click() as Promise<void>);
@@ -264,17 +261,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: 
       expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_009
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_009
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_009
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -291,17 +288,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: 
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0010
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0010
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -318,17 +315,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done:
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0011
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0011
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_REGULAR_ID'));
       await (button?.click() as Promise<void>);
@@ -345,17 +342,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done:
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0012
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0012
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0012
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -372,17 +369,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done:
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0013
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0013
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0013
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -399,44 +396,17 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done:
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      done();
-    })
-    
-    
-/**
-     * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0014
-     * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0014
-     * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0014
-     * @tc.level    Level.LEVEL0
-     */
-it('CalendarPickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('nullID'));
-      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree.getArray('$children')[1];
-      let column = dialog.getArray('$children')[0];
-      let backgroundBlurStyle: string = column.getElement('$attrs').getElement('backgroundBlurStyle').getString('value');
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if (uniRenderFlag == 'false') {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
-      } else {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
-      }
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
       done();
     })
-    
-    
-/**
+
+    /**
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0015
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0015
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0015
      * @tc.level    Level.LEVEL0
      */
-it('CalendarPickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CalendarPickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -453,60 +423,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done:
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      done();
-    })
-    
-    
-/**
-     * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0016
-     * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0016
-     * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0016
-     * @tc.level    Level.LEVEL0
-     */
-it('CalendarPickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('100ID'));
-      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree.getArray('$children')[1];
-      let column = dialog.getArray('$children')[0];
-      let backgroundBlurStyle: string = column.getElement('$attrs').getElement('backgroundBlurStyle').getString('value');
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if (uniRenderFlag == 'false') {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
-      } else {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
-      }
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
-      done();
-    })
-    
-    
-/**
-     * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0017
-     * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0017
-     * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0017
-     * @tc.level    Level.LEVEL0
-     */
-it('CalendarPickerDialogBGBlurStyleTest_static_0017', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('-100ID'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree.getArray('$children')[1];
-      let column = dialog.getArray('$children')[0];
-      let backgroundBlurStyle: string = column.getElement('$attrs').getElement('backgroundBlurStyle').getString('value');
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if (uniRenderFlag == 'false') {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
-      } else {
-        expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
-      }
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
       done();
     })
   })

@@ -1127,7 +1127,7 @@ export default function builtinsStringBuilderTestConstructor() {
      * @tc.level   LEVEL0
      */
     it('builtinsStringBuilderTestConstructor0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const charCodes: number[] = [0, 1, 127, 255, 1000, 32767, 65535];
+      const charCodes: int[] = [0, 1, 127, 255, 1000, 32767, 65535];
       let testString: string = "";
       for (const code of charCodes) {
         testString += String.fromCharCode(code);
@@ -1205,7 +1205,7 @@ export default function builtinsStringBuilderTestConstructor() {
      * @tc.level   LEVEL0
      */
     it('builtinsStringBuilderTestConstructor0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const charCodes: number[] = [10, 32, 65, 97, 255, 1000, 2000, 65535];
+      const charCodes: int[] = [10, 32, 65, 97, 255, 1000, 2000, 65535];
       let testString: string = "";
       for (const code of charCodes) {
         testString += String.fromCharCode(code);
@@ -1263,7 +1263,7 @@ export default function builtinsStringBuilderTestConstructor() {
      * @tc.level   LEVEL0
      */
     it('builtinsStringBuilderTestConstructor0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const controlCodes: number[] = [7, 8, 9, 10, 11, 12, 13, 27];
+      const controlCodes: int[] = [7, 8, 9, 10, 11, 12, 13, 27];
       let testString: string = "";
       for (const code of controlCodes) {
         testString += String.fromCharCode(code);
@@ -1399,13 +1399,13 @@ export default function builtinsStringBuilderTestConstructor() {
      * @tc.level   LEVEL0
      */
     it('builtinsStringBuilderTestConstructor0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const array1: number[] = [72, 101, 108, 108, 111];
+      const array1: int[] = [72, 101, 108, 108, 111];
       const arrayStr1: string = String.fromCharCode(...array1);
       const builder1: StringBuilder = new StringBuilder(arrayStr1);
       const result1: string = builder1.toString();
       expect(result1).assertEqual("Hello");
 
-      const array2: number[] = [72, 101, 108, 108, 111, 0, 0, 0, 87, 111, 114, 108, 100];
+      const array2: int[] = [72, 101, 108, 108, 111, 0, 0, 0, 87, 111, 114, 108, 100];
       let arrayStr2: string = "";
       for (const code of array2) {
         arrayStr2 += String.fromCharCode(code);
@@ -1417,7 +1417,7 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(result2.charCodeAt(6)).assertEqual(0);
       expect(result2.charCodeAt(7)).assertEqual(0);
 
-      const array3: number[] = [72, 101, 108, 108, 111, -111, 114, 108, 100];
+      const array3: int[] = [72, 101, 108, 108, 111, -111, 114, 108, 100];
       let arrayStr3: string = "";
       for (const code of array3) {
         const normalizedCode = code < 0 ? 256 + (code % 256) : code;
@@ -1448,7 +1448,7 @@ export default function builtinsStringBuilderTestConstructor() {
       const int8Array = new Int8Array([-128, -1, 0, 127, 128]);
       let int8Str: string = "";
       for (let i = 0; i < int8Array.length; i++) {
-        int8Str += String.fromCharCode(int8Array[i] & 0xFF);
+        int8Str += String.fromCharCode(int8Array[i].toInt() & 0xFF);
       }
       const builder1: StringBuilder = new StringBuilder(int8Str);
       const result1: string = builder1.toString();
@@ -1457,7 +1457,7 @@ export default function builtinsStringBuilderTestConstructor() {
       const uint8Array = new Uint8Array([0, 255, 256, -1]);
       let uint8Str: string = "";
       for (let i = 0; i < uint8Array.length; i++) {
-        uint8Str += String.fromCharCode(uint8Array[i]);
+        uint8Str += String.fromCharCode(uint8Array[i].toInt());
       }
       const builder2: StringBuilder = new StringBuilder(uint8Str);
       const result2: string = builder2.toString();
@@ -1475,7 +1475,7 @@ export default function builtinsStringBuilderTestConstructor() {
      * @tc.level   LEVEL0
      */
     it('builtinsStringBuilderTestConstructor0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const boundaryChars: number[] = [
+      const boundaryChars: int[] = [
         0,
         1,
         127,

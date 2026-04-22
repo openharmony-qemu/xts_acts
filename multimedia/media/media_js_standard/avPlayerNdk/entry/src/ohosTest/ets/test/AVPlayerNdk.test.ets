@@ -2183,6 +2183,34 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvPlayerSetLoudness014
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0140
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain3(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetLoudness015
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0150
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain4(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvPlayerGetMediaDescription001
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_MEDIA_DESCRIPTION001
      * @tc.desc   test OH_AVPlayer_GetMediaDescription
@@ -2290,6 +2318,36 @@ export default function AVPlayerNdkTest() {
       let result: number = avplayer.getPlaybackStatisticMetricsAbnormal();
       console.info(`testOhAvPlayerGetPlaybackStatisticMetricsAbnormal001 result = ${result}`);
       expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVFORMAT_SETUINT_0001
+     * @tc.name   testOhAvFormatSetUint001
+     * @tc.desc   test OH_AVFormat_SetUintValue
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvFormatSetUint001', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.avFormatSetUint("test", 123);
+      console.info(`testOhAvFormatSetUint001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVFORMAT_SETUINT_0002
+     * @tc.name   testOhAvFormatSetUint002
+     * @tc.desc   test OH_AVFormat_SetUintValue
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvFormatSetUint002', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.avFormatSetUintWithNull("test", 123);
+      console.info(`testOhAvFormatSetUint002 result = ${result}`);
+      expect(result).assertEqual(1);
       done();
     });
 

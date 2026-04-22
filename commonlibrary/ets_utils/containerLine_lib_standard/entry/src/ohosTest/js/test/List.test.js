@@ -1284,14 +1284,14 @@ describe("ListTest", function () {
   });
 
   /**
-   * @tc.name   testGet065 
+   * @tc.name   testGet065Adapt001
    * @tc.number testGet065 
    * @tc.desc   Gets the element corresponding to the specified index. For example: list.get.bind({}, 1)().
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it("testGet065 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+  it("testGet065Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let list = new List();
     try {
       list.get.bind({}, 1)();

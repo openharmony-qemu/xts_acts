@@ -119,5 +119,20 @@ export default function abilityTest() {
       expect(AppStorage.get<string>("stdResult4")).assertContain(msg);
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_TestRunner_OnStop_0500
+     * @tc.number SUB_Ability_AbilityTools_TestRunner_OnStop_0500
+     * @tc.desc   Verify that testRunner onStop can be called normally and print logs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_TestRunner_OnStop_0500', Level.LEVEL0, async (done: Function) => {
+      console.log('SUB_Ability_AbilityTools_TestRunner_OnStop_0500 --- start');
+      msg = 'TestRunner onStop log message for testing';
+      expect(AppStorage.get<string>("stdResult5")).assertContain(msg);
+      done();
+    })
   })
 }

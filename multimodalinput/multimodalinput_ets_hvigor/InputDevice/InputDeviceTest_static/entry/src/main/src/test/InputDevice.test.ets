@@ -139,7 +139,7 @@ export default function InputDeviceTest() {
         let caseName = "SUB_MMI_Input_Api_InputDevice_0400";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+          await inputDevice.getDeviceList().then(async (ids: Array<Int>) => {
             hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
             expect(ids).assertInstanceOf('Array');
             if(ids.length > 0) {

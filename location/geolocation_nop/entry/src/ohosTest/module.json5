@@ -43,6 +43,14 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.MANAGE_SECURE_SETTINGS"
+        },
+      {
+        "name": "ohos.permission.CONTROL_LOCATION_SWITCH"
+        }
     ]
   }
 }

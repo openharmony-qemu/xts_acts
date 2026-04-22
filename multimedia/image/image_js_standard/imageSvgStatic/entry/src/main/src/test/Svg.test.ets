@@ -138,20 +138,20 @@ export default function imageSvg() {
           done();
         } else {
           console.info(`${testNum} create imagesource success`);
-          imageSourceApi.createPixelMap(decodeOpts, (err: BusinessError|null, pixelmap: image.PixelMap|undefined) => {
-            if (err && err.code) {
-              console.info(`${testNum} createPixelMap create pixelmap failed err: ${err}`);
-              expect(false).assertTrue();
-              done();
-              return;
-            }
+          try {
+            let pixelmap = await imageSourceApi.createPixelMap(decodeOpts);
             console.info(`${testNum} createPixelMap success`);
             expect(pixelmap != undefined).assertTrue();
             let imageInfo: image.ImageInfo = await pixelmap!.getImageInfo();
             expect(imageInfo.size.width).assertEqual(4);
             expect(imageInfo.size.height).assertEqual(2);
             packingPromise(done, testNum, pixelmap!, packOpts);
-          });
+          } catch (err) {
+            console.info(`${testNum} createPixelMap create pixelmap failed err: ${err}`);
+            expect(false).assertTrue();
+            done();
+            return;
+          }
         }
       };
 

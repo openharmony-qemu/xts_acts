@@ -31,6 +31,9 @@ import certFrameworkCertCmsTestUnit from './CertCms.test';
 import certFrameworkCertCheckCrlTestUnit from './CertLocalCRLVerification.test';
 import certFrameworkCmsVerifyTestUnit from './CmsVerify.test';
 import certFrameworkCmsDecryptTestUnit from './CmsDecrypt.test';
+import certExtensionFuncTestUnit from './CertExtension.test';
+import certFrameworkX500NNameTestUnit from './CertX500DistinguishedNameUtf8.test';
+import certFrameworkMatchPrivateTestUnit from './CertPrivateMatch.test';
 
 export default function testsuite() {
   certFrameworkSelectCertsJsAPIFunctionTestUnit();
@@ -53,4 +56,7 @@ export default function testsuite() {
   certFrameworkCertCheckCrlTestUnit();
   certFrameworkCmsVerifyTestUnit();
   certFrameworkCmsDecryptTestUnit();
+  certExtensionFuncTestUnit();
+  certFrameworkX500NNameTestUnit();
+  certFrameworkMatchPrivateTestUnit();
 }

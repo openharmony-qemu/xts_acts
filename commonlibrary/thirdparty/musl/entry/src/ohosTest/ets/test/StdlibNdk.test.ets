@@ -32,9 +32,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test ldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLdiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLdiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.ldiv(89, 23);
       expect(result['quot']).assertEqual(3);
       expect(result['rem']).assertEqual(20);
@@ -47,9 +47,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test ldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLdiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLdiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.ldiv(0, 1);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(0);
@@ -62,9 +62,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test ldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLdiv003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLdiv003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.ldiv(1, 0);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(1);
@@ -77,9 +77,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test ldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLdiv004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLdiv004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.ldiv(0, 0);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(0);
@@ -92,9 +92,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLdiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLdiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.lldiv(89, 23);
       expect(result['quot']).assertEqual(3);
       expect(result['rem']).assertEqual(20);
@@ -107,9 +107,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLdiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLdiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.lldiv(0, 1);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(0);
@@ -122,9 +122,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLdiv003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLdiv003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.lldiv(1, 0);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(1);
@@ -137,9 +137,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lldiv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLdiv004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLdiv004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: object = stdlib.lldiv(0, 0);
       expect(result['quot']).assertEqual(0);
       expect(result['rem']).assertEqual(0);
@@ -152,9 +152,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lcong48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLcong48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLcong48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let oldData: number = stdlib.lcong48(1, 2, 3, 4, 5, 6, 7);
       let newData: number = stdlib.lcong48(6, 6, 6, 6, 6, 6, 6);
       console.info("Test rand oldData = " + JSON.stringify(oldData));
@@ -170,9 +170,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lcong48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLcong48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLcong48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let newData: number = stdlib.lcong48(1, 2, 3, 4, 5, 6, 7);
       console.info("Test rand newData = " + JSON.stringify(newData));
       let result = (null != newData)
@@ -186,9 +186,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.labs(1)
       expect(result).assertEqual(1);
       done()
@@ -200,9 +200,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.labs(0)
       expect(result).assertEqual(0);
       done()
@@ -214,9 +214,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.labs(-1)
       expect(result).assertEqual(1);
       done()
@@ -228,9 +228,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.llabs(1)
       expect(result).assertEqual(1);
       done()
@@ -242,9 +242,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.llabs(0)
       expect(result).assertEqual(0);
       done()
@@ -256,9 +256,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test labs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLLabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLLabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.llabs(-1)
       expect(result).assertEqual(1);
       done()
@@ -270,9 +270,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test jrand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibJrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibJrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let oldData: number = stdlib.jrand48(1, 2, 3);
       let newData: number = stdlib.jrand48(6, 6, 6);
       console.info("Test rand oldData = " + JSON.stringify(oldData));
@@ -288,9 +288,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test jrand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibJrand48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibJrand48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let newData: number = stdlib.jrand48(1, 2, 3);
       console.info("Test rand newData = " + JSON.stringify(newData));
       let result = (null != newData)
@@ -305,9 +305,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test rand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0;
       let result: number = stdlib.rand(param)
       console.info("Test result = " + JSON.stringify(result));
@@ -321,9 +321,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test rand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 1;
       let result: number = stdlib.rand(param)
       console.info("Test result = " + JSON.stringify(result));
@@ -337,9 +337,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test rand_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRandR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRandR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 0;
       let result: number = stdlib.randR(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -353,9 +353,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test rand_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRandR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRandR002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 1;
       let result: number = stdlib.randR(param);
       console.info("Test result = " + JSON.stringify(result));
@@ -369,9 +369,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let oldData: number = stdlib.random();
       let newData: number = stdlib.random();
       console.info("Test random oldData = " + JSON.stringify(oldData));
@@ -387,9 +387,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test random
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRandom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRandom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let oldData: number = stdlib.random();
       console.info("Test random oldData = " + JSON.stringify(oldData));
       let result = oldData != null;
@@ -403,9 +403,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test seed48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSeed48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSeed48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.seed48(0);
       let b = (a != null);
       expect(b).assertTrue();
@@ -418,9 +418,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mktemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkTemp(0);
       expect(result).assertEqual(0)
       done()
@@ -432,9 +432,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mktemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkTemp(1);
       expect(result).assertEqual(-1)
       done()
@@ -446,9 +446,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mktemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkTemp(2);
       expect(result).assertEqual(-1)
       done()
@@ -460,9 +460,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp(0);
       expect(result).assertEqual(0)
       done()
@@ -474,9 +474,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp(1);
       expect(result).assertEqual(-1)
       done()
@@ -488,9 +488,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp(2);
       expect(result).assertEqual(-1)
       done()
@@ -502,9 +502,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS(0);
       expect(result).assertEqual(0)
       done()
@@ -516,9 +516,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS(1);
       expect(result).assertEqual(-1)
       done()
@@ -530,9 +530,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS(2);
       expect(result).assertEqual(-1)
       done()
@@ -544,9 +544,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(0, 0);
       expect(result).assertEqual(0)
       done()
@@ -558,9 +558,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(1, 0);
       expect(result).assertEqual(-1)
       done()
@@ -572,9 +572,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(2, 0);
       expect(result).assertEqual(-1)
       done()
@@ -586,9 +586,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(0, 1);
       expect(result).assertEqual(0)
       done()
@@ -600,9 +600,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(1, 1);
       expect(result).assertEqual(-1)
       done()
@@ -614,9 +614,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(2, 1);
       expect(result).assertEqual(-1)
       done()
@@ -628,9 +628,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(0, 2);
       expect(result).assertEqual(0)
       done()
@@ -642,9 +642,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(1, 2);
       expect(result).assertEqual(-1)
       done()
@@ -656,9 +656,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp(2, 2);
       expect(result).assertEqual(-1)
       done()
@@ -670,9 +670,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(0, 0);
       expect(result).assertEqual(0)
       done()
@@ -684,9 +684,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(1, 0);
       expect(result).assertEqual(-1)
       done()
@@ -698,9 +698,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(2, 0);
       expect(result).assertEqual(-1)
       done()
@@ -712,9 +712,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(0, 1);
       expect(result).assertEqual(0)
       done()
@@ -726,9 +726,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(1, 1);
       expect(result).assertEqual(-1)
       done()
@@ -740,9 +740,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(2, 1);
       expect(result).assertEqual(-1)
       done()
@@ -754,9 +754,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(0, 2);
       expect(result).assertEqual(0)
       done()
@@ -768,9 +768,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(1, 2);
       expect(result).assertEqual(-1)
       done()
@@ -782,9 +782,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS(2, 2);
       expect(result).assertEqual(-1)
       done()
@@ -797,9 +797,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp64(0);
       expect(result).assertEqual(0)
       done()
@@ -811,9 +811,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp64(1);
       expect(result).assertEqual(-1)
       done()
@@ -825,9 +825,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTemp64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTemp64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTemp64(2);
       expect(result).assertEqual(-1)
       done()
@@ -839,9 +839,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS64(0);
       expect(result).assertEqual(0)
       done()
@@ -853,9 +853,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS64(1);
       expect(result).assertEqual(-1)
       done()
@@ -867,9 +867,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkstempS64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkSTempS64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkSTempS64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkSTempS64(2);
       expect(result).assertEqual(-1)
       done()
@@ -881,9 +881,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(0, 0);
       expect(result).assertEqual(0)
       done()
@@ -895,9 +895,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(1, 0);
       expect(result).assertEqual(-1)
       done()
@@ -909,9 +909,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(2, 0);
       expect(result).assertEqual(-1)
       done()
@@ -923,9 +923,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(0, 1);
       expect(result).assertEqual(0)
       done()
@@ -937,9 +937,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(1, 1);
       expect(result).assertEqual(-1)
       done()
@@ -951,9 +951,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(2, 1);
       expect(result).assertEqual(-1)
       done()
@@ -965,9 +965,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(0, 2);
       expect(result).assertEqual(0)
       done()
@@ -979,9 +979,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(1, 2);
       expect(result).assertEqual(-1)
       done()
@@ -993,9 +993,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemp64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTemp64009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTemp64009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTemp64(2, 2);
       expect(result).assertEqual(-1)
       done()
@@ -1007,9 +1007,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(0, 0);
       expect(result).assertEqual(0)
       done()
@@ -1021,9 +1021,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(1, 0);
       expect(result).assertEqual(-1)
       done()
@@ -1035,9 +1035,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(2, 0);
       expect(result).assertEqual(-1)
       done()
@@ -1049,9 +1049,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(0, 1);
       expect(result).assertEqual(0)
       done()
@@ -1063,9 +1063,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(1, 1);
       expect(result).assertEqual(-1)
       done()
@@ -1077,9 +1077,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(2, 1);
       expect(result).assertEqual(-1)
       done()
@@ -1091,9 +1091,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(0, 2);
       expect(result).assertEqual(0)
       done()
@@ -1105,9 +1105,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(1, 2);
       expect(result).assertEqual(-1)
       done()
@@ -1119,9 +1119,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkostemps64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkOSTempS64009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkOSTempS64009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.mkOSTempS64(2, 2);
       expect(result).assertEqual(-1)
       done()
@@ -1133,9 +1133,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test getloadavg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibGetloadavg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibGetloadavg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.getloadavg();
       expect(result).assertEqual(3)
       done()
@@ -1147,9 +1147,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test getsubopt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibGetsubopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibGetsubopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.getsubopt();
       expect(result).assertEqual(0)
       done()
@@ -1161,9 +1161,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test grantpt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibGrantpt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibGrantpt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.grantpt();
       expect(result).assertEqual(0)
       done()
@@ -1174,9 +1174,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand(0);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1188,9 +1188,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand(1);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1202,9 +1202,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand(-1);
       let b = (a > 0)
       expect(b).assertTrue();
@@ -1216,9 +1216,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand48(0);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1230,9 +1230,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand48002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand48(1);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1244,9 +1244,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrand48003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrand48003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srand48(-1);
       let b = (a > 0)
       expect(b).assertTrue();
@@ -1258,9 +1258,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srandom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srandom(0);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1272,9 +1272,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srandom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrandom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrandom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srandom(1);
       let b = (a != null)
       expect(b).assertTrue();
@@ -1286,9 +1286,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test srandom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSrandom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSrandom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.srandom(-1);
       let b = (a > 0)
       expect(b).assertTrue();
@@ -1301,9 +1301,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '12345.6789';
       let strtodResult: number = stdlib.strtod(a);
       console.info("Test strtodResult= " + strtodResult);
@@ -1317,9 +1317,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '-232.23e4';
       let strtodResult: number = stdlib.strtod(a);
       console.info("Test strtodResult= " + strtodResult);
@@ -1333,9 +1333,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123.456';
       let strtofResult: number = stdlib.strtof(a);
       console.info("Test strtofResult= " + strtofResult);
@@ -1350,9 +1350,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '-123';
       let strtofResult: number = stdlib.strtof(a);
       console.info("Test strtofResult= " + strtofResult);
@@ -1366,9 +1366,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123AB_20';
       let b = 10;
       let strtolResult: number = stdlib.strtol(a, b);
@@ -1383,9 +1383,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123';
       let b = 10;
       let strtolResult: number = stdlib.strtol(a, b);
@@ -1400,9 +1400,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtold
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '12345.6789';
       let strtoldResult: number = stdlib.strtold(a);
       console.info("Test strtoldResult= " + strtoldResult);
@@ -1416,9 +1416,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtold
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtold002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtold002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '-232.23e4';
       let strtoldResult: number = stdlib.strtold(a);
       console.info("Test strtoldResult= " + strtoldResult);
@@ -1432,9 +1432,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123AB_20';
       let b = 10;
       let strtollResult: number = stdlib.strtoll(a, b);
@@ -1449,9 +1449,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123';
       let b = 10;
       let strtollResult: number = stdlib.strtoll(a, b);
@@ -1466,9 +1466,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoul
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123AB_20';
       let b = 10;
       let strtoulResult: number = stdlib.strtoul(a, b);
@@ -1483,9 +1483,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoul
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123';
       let b = 10;
       let strtoulResult: number = stdlib.strtoul(a, b);
@@ -1500,9 +1500,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123AB_20';
       let b = 10;
       let strtoullResult: number = stdlib.strtoull(a, b);
@@ -1517,9 +1517,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtoull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrtoull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrtoull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = '123';
       let b = 10;
       let strtoullResult: number = stdlib.strtoull(a, b);
@@ -1534,9 +1534,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test setenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = "TEST"
       let c = "2"
       let d = 0
@@ -1551,9 +1551,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test setenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSetenv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSetenv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = ""
       let c = "2"
       let d = 0
@@ -1567,9 +1567,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test system
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSystem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSystem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.system();
       expect(a).assertEqual(1);
       done()
@@ -1581,9 +1581,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test unsetenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibUnsetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibUnsetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = "";
       let a: number = stdlib.unsetenv(b);
       expect(a).assertEqual(-1);
@@ -1596,9 +1596,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test posixMemAlign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibPosixMemAlign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibPosixMemAlign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.posixMemAlign();
       expect(a).assertEqual(0);
       done()
@@ -1610,9 +1610,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test erand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibERand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibERand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let b = 2;
       let c = 3;
@@ -1631,9 +1631,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test drand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibDRand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibDRand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: boolean = false;
       let data: number = stdlib.drand48();
       if (data >= 0 && data < 1) {
@@ -1649,9 +1649,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test div
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibDiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibDiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstNum = -5;
       let secondNum = 3;
       let data: string = stdlib.div(firstNum, secondNum);
@@ -1665,9 +1665,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test abs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAbs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAbs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstNum = -1;
       let data: number = stdlib.abs(firstNum);
       expect(data).assertEqual(1);
@@ -1680,9 +1680,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = " Atof";
       let resultTrue = 0;
       let result: number = stdlib.atof(param);
@@ -1696,9 +1696,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122";
       let resultTrue = 122;
       let result: number = stdlib.atof(param);
@@ -1712,9 +1712,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "atof";
       let resultTrue = 0;
       let result: number = stdlib.atof(param);
@@ -1727,9 +1727,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "";
       let resultTrue = 0;
       let result: number = stdlib.atof(param);
@@ -1743,9 +1743,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122 5s";
       let resultTrue = 122;
       let result: number = stdlib.atof(param);
@@ -1759,9 +1759,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a";
       let resultTrue = 0;
       let result: number = stdlib.atof(param);
@@ -1775,9 +1775,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a122";
       let resultTrue = 0;
       let result: number = stdlib.atof(param);
@@ -1791,9 +1791,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122s5";
       let resultTrue = 122;
       let result: number = stdlib.atof(param);
@@ -1807,9 +1807,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtof009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtof009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "-122";
       let resultTrue = -122;
       let result: number = stdlib.atof(param);
@@ -1823,9 +1823,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = " Atoi";
       let resultTrue = 0;
       let result: number = stdlib.atoi(param);
@@ -1839,9 +1839,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122";
       let resultTrue = 122;
       let result: number = stdlib.atoi(param);
@@ -1855,9 +1855,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "atoi";
       let resultTrue = 0;
       let result: number = stdlib.atoi(param);
@@ -1870,9 +1870,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "";
       let resultTrue = 0;
       let result: number = stdlib.atoi(param);
@@ -1886,9 +1886,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122 5s";
       let resultTrue = 122;
       let result: number = stdlib.atoi(param);
@@ -1902,9 +1902,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a";
       let resultTrue = 0;
       let result: number = stdlib.atoi(param);
@@ -1918,9 +1918,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a122";
       let resultTrue = 0;
       let result: number = stdlib.atoi(param);
@@ -1934,9 +1934,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122s5";
       let resultTrue = 122;
       let result: number = stdlib.atoi(param);
@@ -1950,9 +1950,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoi009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoi009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "-122";
       let resultTrue = -122;
       let result: number = stdlib.atoi(param);
@@ -1965,9 +1965,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = " Atol";
       let resultTrue = 0;
       let result: number = stdlib.atol(param);
@@ -1981,9 +1981,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122";
       let resultTrue = 122;
       let result: number = stdlib.atol(param);
@@ -1997,9 +1997,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "atol";
       let resultTrue = 0;
       let result: number = stdlib.atol(param);
@@ -2012,9 +2012,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "";
       let resultTrue = 0;
       let result: number = stdlib.atol(param);
@@ -2028,9 +2028,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122 5s";
       let resultTrue = 122;
       let result: number = stdlib.atol(param);
@@ -2044,9 +2044,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a";
       let resultTrue = 0;
       let result: number = stdlib.atol(param);
@@ -2060,9 +2060,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a122";
       let resultTrue = 0;
       let result: number = stdlib.atol(param);
@@ -2076,9 +2076,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122s5";
       let resultTrue = 122;
       let result: number = stdlib.atol(param);
@@ -2092,9 +2092,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtol009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtol009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "-122";
       let resultTrue = -122;
       let result: number = stdlib.atol(param);
@@ -2108,9 +2108,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = " Atoll";
       let resultTrue = 0;
       let result: number = stdlib.atoll(param);
@@ -2124,9 +2124,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122";
       let resultTrue = 122;
       let result: number = stdlib.atoll(param);
@@ -2140,9 +2140,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "atoll";
       let resultTrue = 0;
       let result: number = stdlib.atoll(param);
@@ -2156,9 +2156,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "";
       let resultTrue = 0;
       let result: number = stdlib.atoll(param);
@@ -2172,9 +2172,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122 5s";
       let resultTrue = 122;
       let result: number = stdlib.atoll(param);
@@ -2188,9 +2188,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a";
       let resultTrue = 0;
       let result: number = stdlib.atoll(param);
@@ -2204,9 +2204,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "a122";
       let resultTrue = 0;
       let result: number = stdlib.atoll(param);
@@ -2220,9 +2220,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "122s5";
       let resultTrue = 122;
       let result: number = stdlib.atoll(param);
@@ -2236,9 +2236,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atoll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtoll009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtoll009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = "-122";
       let resultTrue = -122;
       let result: number = stdlib.atoll(param);
@@ -2252,9 +2252,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test aligned_alloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAlignedAlloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAlignedAlloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param = 3;
       let resultValue = 1;
       let result: number = stdlib.alignedAlloc(param);
@@ -2268,9 +2268,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test at_quick_exit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtQuickExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtQuickExit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 0;
       let result: number = stdlib.atQuickExit();
       expect(result).assertEqual(resultValue);
@@ -2283,9 +2283,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test calloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibCalloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibCalloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 1;
       let result: number = stdlib.calloc();
       expect(result).assertEqual(resultValue);
@@ -2298,9 +2298,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test getenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibGetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibGetenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 1;
       let result: number = stdlib.getenv();
       expect(result).assertEqual(resultValue);
@@ -2313,9 +2313,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test free
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibFree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibFree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 1;
       let result: number = stdlib.free();
       expect(result).assertEqual(resultValue);
@@ -2328,9 +2328,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test bsearch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibBsearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibBsearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 1;
       let result: number = stdlib.bsearch();
       expect(result).assertEqual(resultValue);
@@ -2343,9 +2343,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test clearenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibClearenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibClearenv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultValue = 0;
       let result: number = stdlib.clearenv();
       expect(result).assertEqual(resultValue);
@@ -2357,9 +2357,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mkdtemp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMkDTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMkDTemp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.mkDTemp();
       expect(a).assertEqual(0);
       done()
@@ -2370,9 +2370,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test mblen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibMblen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibMblen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.mblen();
       expect(a).assertEqual(1);
       done()
@@ -2384,9 +2384,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test initstate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibInitState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibInitState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.initState();
       expect(a).assertEqual(0);
       done()
@@ -2398,9 +2398,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test lrand48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibLrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibLrand48001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let oldData: number = stdlib.lrand48();
       let newData: number = stdlib.lrand48();
       let result = oldData != newData
@@ -2414,9 +2414,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test qsort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibQsort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibQsort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.qsort(1);
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(2);
@@ -2428,9 +2428,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test ptsname
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibPtsName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibPtsName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = stdlib.ptsName();
       expect(a).assertEqual(0);
       done()
@@ -2442,9 +2442,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test realPath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRealPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRealPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.realPath();
       expect(result).assertEqual(0);
       done()
@@ -2456,9 +2456,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test atexit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibAtexit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibAtexit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stdlib.atexit();
       expect(result).assertEqual(0);
       done()
@@ -2470,9 +2470,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test unsetenv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibUnsetenv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibUnsetenv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = "test";
       let a: number = stdlib.unsetenv(b);
       expect(a).assertEqual(1);
@@ -2485,9 +2485,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test setstate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibSetState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibSetState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.setState();
       expect(data).assertEqual(0);
       done();
@@ -2499,9 +2499,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtof_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrToFL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrToFL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.strToFL();
       expect(data).assertEqual(0);
       done();
@@ -2513,9 +2513,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtod_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrToDL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrToDL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.strToDL();
       expect(data).assertEqual(0);
       done();
@@ -2527,9 +2527,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test strtold_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibStrToLdL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibStrToLdL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.strToLdL();
       expect(data).assertEqual(0);
       done();
@@ -2541,9 +2541,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test valloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibValloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibValloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.valloc();
       expect(data).assertEqual(0);
       done();
@@ -2555,9 +2555,9 @@ export default function stdlibNdkTest() {
      * @tc.desc   test valloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdlibRealloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdlibRealloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdlib.realloc();
       expect(data).assertEqual(0);
       done();

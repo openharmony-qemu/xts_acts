@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,22 +22,16 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-import common from "@ohos.app.ability.common";
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
-    AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
-    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
-    AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
     try {
-      // windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
-        windowStage.loadContent('MainAbility/pages/popup/popup', (err: BusinessError<void> | null): void => {
-
+      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
@@ -57,10 +51,11 @@ class EntryAbility extends UIAbility {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties?.windowRect;
             AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
-            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
-            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
+            AppStorage.setOrCreate<number>('winTop as Int', wRect?.top ?? 0);
+            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop as Int:' + wRect?.top);
           } catch (exception) {
-            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag',
+              'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
           // Obtain a UIContext instance.
           if (windowClass !== null) {

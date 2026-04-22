@@ -106,7 +106,7 @@ export default class Utils {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -179,10 +179,10 @@ export default class Utils {
     } as RectValue
   }
 
-  static getComponentByKey(componentKey: string): jsonx.JsonElement {
+  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
     let strJson = inspector.getInspectorByKey(componentKey);
     console.info("======================================= " + componentKey);
-    waitForCompletion(async ()=>{await Utils.sleep(2000)})
+    await Utils.sleep(2000)
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
@@ -202,10 +202,10 @@ export default class Utils {
     return result;
   }
 
-  static performClick(id: string): boolean {
+  static async performClick(id: string): Promise<boolean> {
     console.info('performClick id : ' + id);
     let result = inspector.sendEventByKey(id, 10, '');
-    waitForCompletion(async ()=>{await Utils.sleep(1000)})
+    await Utils.sleep(1000)
     console.info('performClick result : ' + result);
     return result
   }

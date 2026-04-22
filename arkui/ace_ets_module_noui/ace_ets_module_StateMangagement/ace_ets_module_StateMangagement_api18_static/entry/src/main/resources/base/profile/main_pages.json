@@ -18,6 +18,9 @@
     "MainAbility/pages/AddMonitor/AddMonitorObservedV2Array",
     "MainAbility/pages/AddMonitor/AddMonitorObservedV2Date",
     "MainAbility/pages/AddMonitor/AddMonitorParentChild",
-    "MainAbility/pages/AddMonitor/AddMonitorTwoDimensionalArray"
+    "MainAbility/pages/AddMonitor/AddMonitorTwoDimensionalArray",
+    "MainAbility/pages/Prefetcher/BasicPrefetcherMethods",
+    "MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods",
+    "MainAbility/pages/ReuseObject/ReuseObjectRaw"
   ]
 }

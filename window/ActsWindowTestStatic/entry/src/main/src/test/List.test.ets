@@ -20,8 +20,10 @@ import WindowOrientationTest from "./WindowOrientation.test";
 import WindowPropertiesTest from "./WindowProperties.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
+import WindowLayoutStaticTest from "./WindowLayoutStatic.test";
+import WindowImmersiveStaticTest from "./WindowImmersiveStatic.test";
 export default function testsuite() {
-  WindowImmersiveTest();
+  WindowLayoutStaticTest();
   WindowLayoutTest();
   WindowModalTest();
   WindowZindexTest();
@@ -29,4 +31,6 @@ export default function testsuite() {
   WindowPropertiesTest();
   WindowKeyBoardTest();
   WindowFocusTest();
+  WindowImmersiveTest();
+  WindowImmersiveStaticTest();
 }

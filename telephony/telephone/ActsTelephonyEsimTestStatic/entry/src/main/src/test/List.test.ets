@@ -18,14 +18,23 @@ import EsimPublic1 from './EsimPublic1.test';
 import eSIM from '@ohos.telephony.esim';
 import { canIUse } from '@internal.full.global'
 const SLOT_0: int = 0;
+const SLOT_1: int = 1;
 
 export default function testsuite() {
     if (canIUse("SystemCapability.Telephony.CoreService.Esim")) {
-     if (eSIM.isSupported(SLOT_0)) {
-          EsimPublic1();
-      } else {
-          EmptyTest();
-      } 
+      let slotId=-1
+      if (eSIM.isSupported(SLOT_0)) {
+        slotId=0
+      } else if(eSIM.isSupported(SLOT_1)){
+        slotId=1
+      }
+
+      if(slotId!=-1){
+        EsimPublic1();
+      }else{
+        EmptyTest();
+      }
+
     } else {
       EmptyTest();
     }

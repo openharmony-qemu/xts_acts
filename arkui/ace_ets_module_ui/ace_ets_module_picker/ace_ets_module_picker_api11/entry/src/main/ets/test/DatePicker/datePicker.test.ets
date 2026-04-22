@@ -18,7 +18,7 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level 
 import Utils from '../../MainAbility/common/Utils'
 
 export default function datePickerLunarJsunit() {
-  describe('datePickerLunarTest', () =>{
+  describe('datePickerLunarTestAdapt001', () =>{
     beforeEach(async (done:Function) => {
       console.info("flex beforeEach start");
       let options:router.RouterOptions = {

@@ -21,6 +21,7 @@ export default function customComponentEventTest() {
   describe('CustomComponentEventTest', () => {
 
     beforeAll(async (done: Function) => {
+      done()
     });
 
     /**

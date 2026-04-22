@@ -45,7 +45,7 @@ export default function EveryModulusTest() {
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_212
      * @tc.name    test_type_of_212
-     * @tc.desc    Testing Type.of with string type
+     * @tc.desc    Testing Class.of with string type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
@@ -53,8 +53,8 @@ export default function EveryModulusTest() {
     it('test_type_of_212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_212";
         try {
-            let a = Type.of("OpenHarmony");
-            expect(String(a)).assertEqual("string");
+            let a = Class.of("OpenHarmony");
+            expect(a).assertEqual(Class.from<string>());
         } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
@@ -73,9 +73,7 @@ export default function EveryModulusTest() {
         let TAG = "test_type_of_213";
         try {
             const num = 3.14;
-            const typeDesc = String(Type.of(num));
-            const validTypes = ["number", "double", "Number"];
-            expect(validTypes.includes(typeDesc)).assertTrue();
+            expect(Class.of(num)).assertEqual(Class.from<double>());
             expect(typeof num === "number").assertTrue();
             expect(num > 3.13 && num < 3.15).assertTrue();
         } catch (err) {
@@ -87,7 +85,7 @@ export default function EveryModulusTest() {
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_214
      * @tc.name    test_type_of_214
-     * @tc.desc    Testing Type.of with boolean type
+     * @tc.desc    Testing Class.of with boolean type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
@@ -95,8 +93,8 @@ export default function EveryModulusTest() {
     it('test_type_of_214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_214";
         try {
-            let a = Type.of(true);
-            expect(String(a)).assertEqual("boolean");
+            let a = Class.of(true);
+            expect(a).assertEqual(Class.from<boolean>());
         } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
@@ -104,31 +102,9 @@ export default function EveryModulusTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_215
-     * @tc.name    test_type_of_215
-     * @tc.desc    Testing Type.of with function type (specific signature)
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('test_type_of_215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        let TAG = "test_type_of_215";
-        try {
-            let func = () => {
-                console.log("test");
-            };
-            let a = Type.of(func);
-            expect(String(a)).assertEqual("(): void");
-        } catch (err) {
-            console.error(`${TAG} is fail, err is ${err}`);
-            expect().assertFail();
-        }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_OF_216
      * @tc.name    test_type_of_null_216
-     * @tc.desc    Testing Type.of with null type
+     * @tc.desc    Testing Class.of with null type
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
@@ -136,8 +112,8 @@ export default function EveryModulusTest() {
     it('test_type_of_null_216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_null_216";
         try {
-            let a = Type.of(null);
-            expect(String(a)).assertEqual("null");
+            let a = Class.of(null);
+            expect(a).assertEqual(Class.from<null>());
         } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();

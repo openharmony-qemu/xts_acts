@@ -119,13 +119,14 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err + "code:" + JSON.stringify(err))
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           console.log("Get preferences success");
           expect(preferences != undefined).assertTrue();
+          done()
         }
       })
-      done()
     })
 
 
@@ -319,11 +320,10 @@ export default function preferenceTest() {
      */
     it('testPreferencesPutArrayNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.clear();
-      mPreferences!.put(KEY_TEST_INT_ARRAY_ELEMENT, new Array<number>(1, 2, 3), (err: BusinessError | null) :void => {
-        let pre = await mPreferences!.get(KEY_TEST_INT_ARRAY_ELEMENT, 0) as Array<number>;
-        expect(3).assertEqual(pre.length);
-        done();
-      });
+      await mPreferences!.put(KEY_TEST_INT_ARRAY_ELEMENT, new Array<number>(1, 2, 3));
+      let pre = await mPreferences!.get(KEY_TEST_INT_ARRAY_ELEMENT, 0) as Array<number>;
+      expect(3).assertEqual(pre.length);
+      done();
     })
 
 
@@ -407,22 +407,21 @@ export default function preferenceTest() {
     it('testPreferencesPutInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.clear();
       let val: long = 4;
-      mPreferences!.put(KEY_TEST_INT_ELEMENT, val, (err: BusinessError | null) :void => {
-        hilog.info(domain, tag, '%{public}s', TAG + "put end");
-        await mPreferences!.flush(); // del
-        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
-        let pre = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "get end, value:" + pre);
-        expect(val).assertEqual(pre);
-        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
-        await mPreferences!.flush();
-        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
-        let pre2 = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "get pre2 is:" + pre2);
-        expect(val).assertEqual(pre2);
-        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
-        done();
-      });
+      await mPreferences!.put(KEY_TEST_INT_ELEMENT, val);
+      hilog.info(domain, tag, '%{public}s', TAG + "put end");
+      await mPreferences!.flush(); // del
+      hilog.info(domain, tag, '%{public}s', TAG + "flush end");
+      let pre = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
+      hilog.info(domain, tag, '%{public}s', TAG + "get end, value:" + pre);
+      expect(val).assertEqual(pre);
+      hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
+      await mPreferences!.flush();
+      hilog.info(domain, tag, '%{public}s', TAG + "flush end");
+      let pre2 = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
+      hilog.info(domain, tag, '%{public}s', TAG + "get pre2 is:" + pre2);
+      expect(val).assertEqual(pre2);
+      hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
+      done();
     })
 
 
@@ -502,23 +501,26 @@ export default function preferenceTest() {
       dataPreferences.getPreferences(context!, NAME, (err : BusinessError | null, preferences : dataPreferences.Preferences | undefined): void => {
         // if(err != null){
         if(err && err.code != 0){
-          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
+          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err);
           expect(false).assertTrue();
+          done();
         }else{
-          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
+          hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success");
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.removePreferencesFromCache(context!, NAME, (err  : BusinessError | null) : void => {
         // if(err != null){
         if(err && err.code != 0){
-          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache error: " + err)
+          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache error: " + err);
           expect(false).assertTrue();
+          done();
         }else{
-          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache success")
+          hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache success");
+          done();
         }
       })
-      done();
     })
 
 
@@ -563,8 +565,6 @@ export default function preferenceTest() {
 
       });
       hilog.info(domain, tag, '%{public}s', "SUB_DDM_Preferences_removePreferencesFromCacheSync_0100 1235");
-
-      done();
     })
 
 
@@ -687,11 +687,10 @@ export default function preferenceTest() {
     it('testPreferencesClear0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "test");
       await mPreferences!.flush();
-      mPreferences!.clear((err : BusinessError | null) : void => {
-        let pre = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue")
-        expect("defaultvalue").assertEqual(pre);
-        done();
-      });
+      await mPreferences!.clear();
+      let pre = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue")
+      expect("defaultvalue").assertEqual(pre);
+      done();
     });
 
 
@@ -706,7 +705,7 @@ export default function preferenceTest() {
     it('testPreferencesClear0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "test");
       await mPreferences!.flush();
-      await mPreferences!.clear().then(() : void => {
+      await mPreferences!.clear().then(async () => {
         let per = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue");
         expect("defaultvalue").assertEqual(per);
         done();
@@ -732,20 +731,23 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.deletePreferences(context!, NAME, (err : BusinessError | null) : void => {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Delete preferences err: " + err)
           expect(false).assertTrue();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Delete preferences success")
+          done();
         }
       })
-      done()
     });
 
 
@@ -800,7 +802,6 @@ export default function preferenceTest() {
         done();
         console.log("PreferencesRemovePreferencesFromCacheSync0100 end.");
       });
-      done();
     });
 
     

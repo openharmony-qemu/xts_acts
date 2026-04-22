@@ -17,6 +17,8 @@ group("msdp") {
     "device_status:msdp_device_status_test",
     "device_status_static:ActsMsdpDeviceStatusStaticTest",
     "device_status_motionpermissiontest:ActsMsdpDeviceStatusMotionPermissionTest",
-    "device_status_nopermissiontest:ActsMsdpDeviceStatusNoPermissionTest"
+    "device_status_nopermissiontest:ActsMsdpDeviceStatusNoPermissionTest",
+    "motion_withpermission_static:ActsMsdpMotionWithPermissionStaticTest",
+    "deviceStatus_nopermissiontest_static:ActsMsdpMotionNoPermissionStaticTest"
   ]
 }

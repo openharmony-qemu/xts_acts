@@ -54,7 +54,7 @@ export default function pickerOnScrollStopTest() {
     });
     /* *
     * @tc.number: pickerOnScrollStopTest_0100
-    * @tc.name  : pickerOnScrollStopTest_0100
+    * @tc.name  pickerOnScrollStopTest_0100
     * @tc.desc  : To test the onScollStop interface
     * @tc.level : Level 3
     * @tc.type

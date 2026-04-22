@@ -75,9 +75,10 @@ it('setShapeClipTest_static_0010', Level.LEVEL0, async (done: () => void): Promi
       let strJson: string = inspector.getInspectorByKey('SetShapeClip_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setShapeClipTest_0010] component obj is: " + JSON.stringify(obj));
-      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('label'))).assertEqual('"{\\"rect\\":{\\"top\\":0,\\"left\\":0,\\"right\\":150,\\"bottom\\":150},\\"roundRect\\":null,\\"circle\\":null,\\"oval\\":null,\\"path\\":null}"');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('label'))).assertEqual('"{\\"rect\\":{\\"left\\":0,\\"top\\":0,\\"right\\":150,\\"bottom\\":150},\\"roundRect\\":null,\\"circle\\":null,\\"oval\\":null,\\"path\\":null}"');
       console.info('[setShapeClipTest_0010] END');
       done();
+      
     });  
   })
 }

@@ -31,6 +31,9 @@ group("window") {
     "ActsWindowKeyBoardTestStatic:ActsWindowKeyBoardStaticTest",
     "ActsWindowOrientationTestStatic:ActsWindowOrientationStaticTest",
     "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
-    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest"
+    "ActsWindowLifeCycleTestStatic:ActsWindowLifeCycleStaticTest",
+    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest",
+    "ActsWindowUiExtensionTestStatic:ActsWindowUiExtensionTestStaticTest",
+    "ActsWindowFloatViewTest:ActsWindowFloatViewTest"
   ]
 }

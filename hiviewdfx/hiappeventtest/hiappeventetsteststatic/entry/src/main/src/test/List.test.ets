@@ -22,6 +22,12 @@ import addWatcherTest from "./AddWatcher.test";
 import addProcessorTest from "./AddProcessor.test";
 import addProcessorTestFromConfigTest from "./AddProcessorFromConfig.test";
 import configEventPolicyTest from "./ConfigEventPolicy.test";
+import configEventPolicyStrongTest from "./HiappeventConfigEventPolicy.test"
+import hiAppEventStrongTest from "./HiAppEventDFXEx.test"
+import Hiviewdfx_HiAppEventTest from "./HiAppEventStatic.test"
+import removeProcessorStrongTest from "./RemoveProcessorStatic.test"
+import removeWatcherStrongTest from "./RemoveWatcherStatic.test"
+import setEventConfigStrongTest from "./SetEventConfigStatic.test"
 
 export default function testsuite() {
     writeTest();
@@ -34,4 +40,10 @@ export default function testsuite() {
     addProcessorTest();
     addProcessorTestFromConfigTest();
     configEventPolicyTest();
+    configEventPolicyStrongTest();
+    hiAppEventStrongTest();
+    Hiviewdfx_HiAppEventTest();
+    removeProcessorStrongTest();
+    removeWatcherStrongTest();
+    setEventConfigStrongTest();
 }

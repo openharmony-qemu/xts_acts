@@ -28,6 +28,7 @@ export default function InjectOfflineResourcesTest() {
 
   describe('injectOfflineResourcesTest', (): void => {
     beforeAll(async (): Promise<void> => {
+      await Utils.msSleep(2000);
       console.log("App start")
     });
 
@@ -61,9 +62,9 @@ export default function InjectOfflineResourcesTest() {
      * @tc.desc   test injectOfflineResources
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testInjectOfflineResources002", 10)
         await Utils.msSleep(500);
@@ -79,9 +80,9 @@ export default function InjectOfflineResourcesTest() {
      * @tc.desc   test OfflineResourceType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOfflineResourceTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOfflineResourceTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)
         await Utils.msSleep(500);
@@ -96,6 +97,24 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
         await Utils.msSleep(4000);
+        done();
+      })
+
+    /**
+     * @tc.name   SwitchNextPage
+     * @tc.number SUB_WEB_SwitchNextPage_STATIC_0100
+     * @tc.desc   SwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
+        await Utils.msSleep(5000);
         done();
       })
   })

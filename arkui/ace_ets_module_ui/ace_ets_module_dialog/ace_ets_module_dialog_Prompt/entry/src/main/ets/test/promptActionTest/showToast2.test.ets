@@ -44,7 +44,7 @@ export default function showToastTest () {
     });
     /* *
     * @tc.number: showToast_0100
-    * @tc.name  : showToast_0100
+    * @tc.name  showToast_0100
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :
@@ -67,7 +67,7 @@ export default function showToastTest () {
     });
     /* *
     * @tc.number: showToast_0200
-    * @tc.name  : showToast_0200
+    * @tc.name  showToast_0200
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :
@@ -91,7 +91,7 @@ export default function showToastTest () {
     });
      /* *
     * @tc.number: showToast_0300
-    * @tc.name  : showToast_0300
+    * @tc.name  showToast_0300
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :
@@ -115,7 +115,7 @@ export default function showToastTest () {
     });
      /* *
     * @tc.number: SUB_ACE_PROMPTACTION_BLURSTYLE_0040
-    * @tc.name  : showToast_0400
+    * @tc.name  showToast_0400
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :

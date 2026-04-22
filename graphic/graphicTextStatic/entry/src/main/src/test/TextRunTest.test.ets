@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,9 +44,8 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       // run 0
       "glyphCount": 9,
       "glyphs": [140, 258, 228, 2, 328, 346, 262, 218, 280],
-      "positions": [{ "x": 0, "y": 0 }, { "x": 51.18, "y": 0 }, { "x": 102.74, "y": 0 }, { "x": 153.24, "y": 0 },
-        { "x": 218.88, "y": 0 }, { "x": 271.30, "y": 0 }, { "x": 322.90, "y": 0 }, { "x": 363.61, "y": 0 },
-        { "x": 412.38, "y": 0 }],
+      "positions": [{"y":0,"x":0},{"y":0,"x":52.39},{"y":0,"x":104.72},{"y":0,"x":155.54},{"y":0,"x":221.18},
+        {"y":0,"x":274.31},{"y":0,"x":326.64},{"y":0,"x":368.18},{"y":0,"x":417.22}],
       "offSets": [{ "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 },
         { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }],
       "stringIndices": [0],
@@ -58,9 +57,9 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 565.64
       },
       "imageBounds": {
-        "left": 4,
+        "left": 5,
         "top": 8,
-        "right": 434.38,
+        "right": 440.22,
         "bottom": 41
       },
     }
@@ -70,9 +69,8 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       // run 0
       "glyphCount": 9,
       "glyphs": [217, 329, 300, 371, 292, 2, 249, 300, 376],
-      "positions": [{ "x": 527.12, "y": 0 }, { "x": 579.54, "y": 0 }, { "x": 623.49, "y": 0 }, { "x": 674.86, "y": 0 },
-        { "x": 732.78, "y": 0 }, { "x": 784.34, "y": 0 }, { "x": 849.98, "y": 0 }, { "x": 893.16, "y": 0 },
-        { "x": 944.34, "y": 0 }],
+      "positions": [{"y":0,"x":533.74},{"y":0,"x":586.87},{"y":0,"x":632.58},{"y":0,"x":684.26},{"y":0,"x":743.57},
+        {"y":0,"x":795.90},{"y":0,"x":861.54},{"y":0,"x":905.93},{"y":0,"x":957.42}],
       "offSets": [{ "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 },
         { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }],
       "stringIndices": [10],
@@ -84,10 +82,10 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 565.64
       },
       "imageBounds": {
-        "left": 1,
+        "left": 2,
         "top": 1,
-        "right": 438.22,
-        "bottom": 28
+        "right": 445.68,
+        "bottom": 27
       },
     }
   ],
@@ -96,9 +94,8 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       // run 0
       "glyphCount": 9,
       "glyphs": [276, 346, 290, 326, 333, 2, 300, 370, 228],
-      "positions": [{ "x": 1058.88, "y": 0 }, { "x": 1099.56, "y": 0 }, { "x": 1151.15, "y": 0 },
-        { "x": 1211.48, "y": 0 }, { "x": 1263.90, "y": 0 }, { "x": 1311.46, "y": 0 }, { "x": 1377.10, "y": 0 },
-        { "x": 1428.47, "y": 0 }, { "x": 1477.41, "y": 0 }],
+      "positions": [{"y":0,"x":1073.28},{"y":0,"x":1114.79},{"y":0,"x":1167.12},{"y":0,"x":1228.06},
+        {"y":0,"x":1281.18},{"y":0,"x":1329.16},{"y":0,"x":1394.80},{"y":0,"x":1446.49},{"y":0,"x":1497.02}],
       "offSets": [{ "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 },
         { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }],
       "stringIndices": [20],
@@ -111,9 +108,9 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       },
       "imageBounds": {
         "left": -7,
-        "top": 9,
-        "right": 438.53,
-        "bottom": 42
+        "top": 8,
+        "right": 443.74,
+        "bottom": 41
       },
     }
   ],
@@ -122,9 +119,8 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       // run 0
       "glyphCount": 9,
       "glyphs": [329, 2, 341, 258, 228, 2, 284, 189, 385],
-      "positions": [{ "x": 1527.91, "y": 0 }, { "x": 1572.88, "y": 0 }, { "x": 1638.52, "y": 0 },
-        { "x": 1683.30, "y": 0 }, { "x": 1734.86, "y": 0 }, { "x": 1785.36, "y": 0 }, { "x": 1851.00, "y": 0 },
-        { "x": 1891.65, "y": 0 }, { "x": 1942.12, "y": 0 }],
+      "positions": [{"y":0,"x":1547.85},{"y":0,"x":1594.58},{"y":0,"x":1660.22},{"y":0,"x":1706.72},
+        {"y":0,"x":1759.05},{"y":0,"x":1809.87},{"y":0,"x":1875.51},{"y":0,"x":1917.09},{"y":0,"x":1968.10}],
       "offSets": [{ "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 },
         { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }],
       "stringIndices": [29],
@@ -136,9 +132,9 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 500
       },
       "imageBounds": {
-        "left": 1,
+        "left": 2,
         "top": 1,
-        "right": 433.21,
+        "right": 439.26,
         "bottom": 27
       },
     }
@@ -156,21 +152,21 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "ascent": -16.70,
         "descent": 20.81,
         "leading": 0,
-        "width": 40.39
+        "width": 41.42
       },
       "imageBounds": {
-        "left": 188.57,
+        "left": 184.44,
         "top": 1,
-        "right": 194.57,
-        "bottom": 6
+        "right": 191.44,
+        "bottom": 7
       },
     },
     {
       // run 1
       "glyphCount": 5,
       "glyphs": [377, 2, 224, 300, 250],
-      "positions": [{ "x": 1990.29, "y": 0 }, { "x": 2039.93, "y": 0 }, { "x": 2105.57, "y": 0 },
-        { "x": 2157.99, "y": 0 }, { "x": 2209.91, "y": 0 }],
+      "positions": [{"y":0,"x":2016.56},{"y":0,"x":2067.74},{"y":0,"x":2133.38},{"y":0,"x":2186.51},
+        {"y":0,"x":2238.74}],
       "offSets": [{ "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }, { "x": 0, "y": 0 }],
       "stringIndices": [39],
       "stringRange": { "start": 39, "end": 5 },
@@ -178,13 +174,13 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "ascent": -16.70,
         "descent": 20.81,
         "leading": 0,
-        "width": 272.04
+        "width": 275.14
       },
       "imageBounds": {
-        "left": 293.60,
-        "top": 9,
-        "right": 472.36,
-        "bottom": 43
+        "left": 290.50,
+        "top": 8,
+        "right": 471.82,
+        "bottom": 41
       },
     }
   ],
@@ -214,23 +210,23 @@ export default function TextRunTest() {
           blue: 0
         };
 
-        let fontFeatures: Array<text.FontFeature> = new Array<text.FontFeature>(2);
-        fontFeatures[0] = { name: "liga", value: 1 };
-        fontFeatures[1] = { name: "liga2", value: 2 };
-        let fontVariation: Array<text.FontVariation> = new Array<text.FontVariation>(2);
-        fontVariation[0] = { axis: "axis", value: 1 };
-        fontVariation[1] = { axis: "axis2", value: 2 };
-        let textShadows: Array<text.TextShadow> = new Array<text.TextShadow>(2);
+        let fontFeatures: Array<text.FontFeature> = [];
+        fontFeatures.push({ name: "liga", value: 1 } as text.FontFeature);
+        fontFeatures.push({ name: "liga2", value: 2 } as text.FontFeature);
+        let fontVariation: Array<text.FontVariation> = [];
+        fontVariation.push({ axis: "axis", value: 1 } as text.FontVariation);
+        fontVariation.push({ axis: "axis2", value: 2 } as text.FontVariation);
+        let textShadows: Array<text.TextShadow> = [];
         let point1: common2D.Point = { x: 11, y: 12 };
         let point2: common2D.Point = { x: 2, y: 4 };
-        textShadows[0] = {
+        textShadows.push({
           color: myColor,
           point: point1, blurRadius: 12
-        };
-        textShadows[1] = {
+        } as text.TextShadow);
+        textShadows.push({
           color: myColor,
           point: point2, blurRadius: 14
-        };
+        } as text.TextShadow);
         let backgroundRect: text.RectStyle = {
           color: myColor,
           leftTopRadius: 10,

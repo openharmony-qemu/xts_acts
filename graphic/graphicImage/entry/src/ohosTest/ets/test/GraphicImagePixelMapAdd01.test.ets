@@ -53,10 +53,12 @@ export default function GraphicImagePixelMapAdd01() {
               `${LOG_PREFIX} opacityNullParam: As expected, failed with null parameter. Code: ${error.code}`
             );
             expect(error.code).assertUndefined();
+            pixelMap?.release();
             done();
           } else {
             console.error(`${LOG_PREFIX} opacityNullParam: Unexpectedly succeeded with null parameter`);
             expect().assertFail();
+            pixelMap?.release();
             done();
           }
         });
@@ -89,6 +91,7 @@ export default function GraphicImagePixelMapAdd01() {
         // 测试正常参数
         await pixelMap.opacity(0.5);
         console.info(`${LOG_PREFIX} opacityValidParam: Succeeded with valid parameter.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityValidParam failed: code ${error.code}, message ${error.message}`);
@@ -119,6 +122,7 @@ export default function GraphicImagePixelMapAdd01() {
         // 测试 AntiAliasingLevel.NONE 枚举值
         await pixelMap.scale(1.0, 1.0, image.AntiAliasingLevel.NONE);
         console.info(`${LOG_PREFIX} scaleValidParamNone: Succeeded with AntiAliasingLevel.NONE.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleValidParamNone failed: code ${error.code}, message ${error.message}`);
@@ -149,6 +153,7 @@ export default function GraphicImagePixelMapAdd01() {
         // 测试 AntiAliasingLevel.HIGH 枚举值
         await pixelMap.scale(1.0, 1.0, image.AntiAliasingLevel.HIGH);
         console.info(`${LOG_PREFIX} scaleValidParamHigh: Succeeded with AntiAliasingLevel.HIGH.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleValidParamHigh failed: code ${error.code}, message ${error.message}`);
@@ -181,8 +186,11 @@ export default function GraphicImagePixelMapAdd01() {
           if (error) {
             console.error(`${LOG_PREFIX} flipHorizontalTrue failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            pixelMap?.release();
+            done();
           } else {
             console.info(`${LOG_PREFIX} flipHorizontalTrue: Succeeded with horizontal=true, vertical=true.`);
+            pixelMap?.release();
             done();
           }
         });
@@ -217,8 +225,11 @@ export default function GraphicImagePixelMapAdd01() {
           if (error) {
             console.error(`${LOG_PREFIX} flipHorizontalFalse failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            pixelMap?.release();
+            done();
           } else {
             console.info(`${LOG_PREFIX} flipHorizontalFalse: Succeeded with horizontal=true, vertical=false.`);
+            pixelMap?.release();
             done();
           }
         });
@@ -258,10 +269,13 @@ export default function GraphicImagePixelMapAdd01() {
                 `${LOG_PREFIX} flipHorizontalFalseVerticalTrue failed: code ${error.code}, message ${error.message}`
               );
               expect().assertFail();
+              pixelMap?.release();
+              done();
             } else {
               console.info(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalTrue: Succeeded with horizontal=false, vertical=true.`
               );
+              pixelMap?.release();
               done();
             }
           });
@@ -301,10 +315,12 @@ export default function GraphicImagePixelMapAdd01() {
                 `${LOG_PREFIX} flipHorizontalFalseVerticalFalse failed: code ${error.code}, message ${error.message}`
               );
               expect().assertFail();
+              pixelMap?.release();
             } else {
               console.info(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalFalse: Succeeded with horizontal=false, vertical=false.`
               );
+              pixelMap?.release();
               done();
             }
           });
@@ -335,6 +351,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, opts);
         expect(pixelMap !== null).assertTrue();
         console.info(`${LOG_PREFIX} createPixelMap001: Succeeded in creating pixel map.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMap001 failed: ${error}`);
@@ -361,6 +378,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(null, opts);
         console.info(`${LOG_PREFIX} createPixelMapNull001 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapNull001: Failed with null buffer as expected, code: ${error}`);
@@ -383,6 +401,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, null);
         console.info(`${LOG_PREFIX} createPixelMapNull002 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapNull002: Failed with null options as expected, code: ${error}`);
@@ -409,6 +428,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(undefined, opts);
         console.info(`${LOG_PREFIX} createPixelMapUndefined001 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(
@@ -433,6 +453,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, undefined);
         console.info(`${LOG_PREFIX} createPixelMapUndefined002 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(
@@ -462,6 +483,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} createPixelMapInvalidSize001 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapInvalidSize001: Failed with width 0 as expected, code: ${error}`);
@@ -489,6 +511,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} createPixelMapInvalidSize002 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapInvalidSize002: Failed with height 0 as expected, code: ${error}`);
@@ -516,6 +539,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} createPixelMapInvalidSize003 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(
@@ -545,6 +569,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} createPixelMapInvalidSize004 success `, JSON.stringify(pixelMap));
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(
@@ -597,6 +622,9 @@ export default function GraphicImagePixelMapAdd01() {
             `${LOG_PREFIX} createPixelMapDifferentFormats001: Succeeded in creating pixel maps with different formats.`
           );
           expect(pixelMap3 !== null).assertTrue();
+          await pixelMap1?.release();
+          await pixelMap2?.release();
+          await pixelMap3?.release();
           done();
         } catch (error) {
           console.error(`${LOG_PREFIX} createPixelMapDifferentFormats001 failed: ${error}`);
@@ -627,10 +655,12 @@ export default function GraphicImagePixelMapAdd01() {
           if (error) {
             console.error(`${LOG_PREFIX} createPixelMapAsync001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            pixelMap?.release();
             done();
           } else {
             console.info(`${LOG_PREFIX} createPixelMapAsync001: Succeeded in creating pixel map.`);
             expect(pixelMap !== null).assertTrue();
+            pixelMap?.release();
             done();
           }
         });
@@ -661,6 +691,7 @@ export default function GraphicImagePixelMapAdd01() {
         const pixelMap = await image.createPixelMap(color, opts);
         console.info(`${LOG_PREFIX} createPixelMapPromise001: Succeeded in creating pixel map.`);
         expect(pixelMap !== null).assertTrue();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapPromise001 failed: ${error}`);
@@ -725,6 +756,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapARGB8888001 failed: ${error}`);
@@ -760,6 +792,7 @@ export default function GraphicImagePixelMapAdd01() {
         // expect(pixelMap !== null).assertTrue();
         // expect(pixelMap.isEditable).assertTrue();
         expect().assertFail();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapRGBA101010201 failed: ${error}`);
@@ -793,6 +826,7 @@ export default function GraphicImagePixelMapAdd01() {
           `${LOG_PREFIX} createPixelMapYCBCRP01001: Succeeded in creating pixel map with YCBCR_P010 format.`
         );
         expect().assertFail();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapYCBCRP01001 failed: ${error}`);
@@ -826,6 +860,7 @@ export default function GraphicImagePixelMapAdd01() {
           `${LOG_PREFIX} createPixelMapYCRCBP01001: Succeeded in creating pixel map with YCRCB_P010 format.`
         );
         expect().assertFail();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapYCRCBP01001 failed: ${error}`);
@@ -859,6 +894,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapASTC4x401 failed: ${error}`);
@@ -893,6 +929,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapPREMUL001 failed: ${error}`);
@@ -931,6 +968,7 @@ export default function GraphicImagePixelMapAdd01() {
           expect(pixelMap !== null).assertTrue();
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(`${LOG_PREFIX} createPixelMapFIT_TARGET_SIZE001 failed: ${error}`);
@@ -958,11 +996,12 @@ export default function GraphicImagePixelMapAdd01() {
           const pixelMap = await image.createPixelMap(null, opts);
           console.info(`${LOG_PREFIX} createPixelMapNullBuffer001: Succeeded .`, JSON.stringify(pixelMap));
           expect().assertUndefined();
+          done();
         } catch (err) {
           console.info(`${LOG_PREFIX} createPixelMapNullBuffer001: error .`, JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapNullBuffer001: Failed with null buffer as expected, code: ${error}`);
         expect().assertFail();
@@ -1076,6 +1115,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapEditableFalse001 failed: ${error}`);
@@ -1107,6 +1147,7 @@ export default function GraphicImagePixelMapAdd01() {
                 `${LOG_PREFIX} createPixelMapCallbackARGB8888001 failed: code ${error.code}, message ${error.message}`
               );
               expect().assertFail();
+              pixelMap?.release();
               done();
             } else {
               console.info(
@@ -1121,6 +1162,7 @@ export default function GraphicImagePixelMapAdd01() {
               expect(pixelMap !== null).assertTrue();
               expect(pixelMap.isEditable).assertTrue();
               expect(pixelMap.isStrideAlignment).assertFalse();
+              pixelMap?.release();
               done();
             }
           });
@@ -1155,6 +1197,7 @@ export default function GraphicImagePixelMapAdd01() {
                 `${LOG_PREFIX} createPixelMapCallbackPREMUL001 failed: code ${error.code}, message ${error.message}`
               );
               expect().assertFail();
+              pixelMap?.release();
               done();
             } else {
               console.info(
@@ -1169,6 +1212,7 @@ export default function GraphicImagePixelMapAdd01() {
               expect(pixelMap !== null).assertTrue();
               expect(pixelMap.isEditable).assertTrue();
               expect(pixelMap.isStrideAlignment).assertFalse();
+              pixelMap?.release();
               done();
             }
           });
@@ -1204,6 +1248,7 @@ export default function GraphicImagePixelMapAdd01() {
                   + `${error.message}`
               );
               expect().assertFail();
+              pixelMap?.release();
               done();
             } else {
               console.info(
@@ -1218,6 +1263,7 @@ export default function GraphicImagePixelMapAdd01() {
               expect(pixelMap !== null).assertTrue();
               expect(pixelMap.isEditable).assertTrue();
               expect(pixelMap.isStrideAlignment).assertFalse();
+              pixelMap?.release();
               done();
             }
           });
@@ -1253,9 +1299,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
 
-        pixelMap
-          .createScaledPixelMap(1.0, 3.0)
-          .then(scaledMap => {
+        pixelMap.createScaledPixelMap(1.0, 3.0).then(async (scaledMap) => {
             console.info(
               `${LOG_PREFIX} createScaledPixelMap001: Scaled isEditable = ${scaledMap.isEditable}, isStrideAlignment = `
                 + `${scaledMap.isStrideAlignment}`
@@ -1271,6 +1315,8 @@ export default function GraphicImagePixelMapAdd01() {
             );
             expect(info.size.width).assertEqual(4);
             expect(info.size.height).assertEqual(12);
+            await pixelMap?.release();
+            await scaledMap?.release();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1313,9 +1359,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
 
-        pixelMap
-          .createScaledPixelMap(2.0, 1.0)
-          .then(scaledMap => {
+        await pixelMap.createScaledPixelMap(2.0, 1.0).then(async (scaledMap) => {
             console.info(
               `${LOG_PREFIX} createScaledPixelMap002: Succeeded .`,
               scaledMap.isEditable,
@@ -1332,6 +1376,8 @@ export default function GraphicImagePixelMapAdd01() {
             );
             expect(info.size.width).assertEqual(8);
             expect(info.size.height).assertEqual(4);
+            await pixelMap?.release();
+            await scaledMap?.release();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1374,9 +1420,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
 
-        await pixelMap
-          .createScaledPixelMap(0.5, 0.5)
-          .then(scaledMap => {
+        pixelMap.createScaledPixelMap(0.5, 0.5).then(async (scaledMap) => {
             console.info(
               `${LOG_PREFIX} createScaledPixelMap003: Succeeded .`,
               scaledMap.isEditable,
@@ -1393,6 +1437,8 @@ export default function GraphicImagePixelMapAdd01() {
             );
             expect(info.size.width).assertEqual(2);
             expect(info.size.height).assertEqual(2);
+            await pixelMap?.release();
+            await scaledMap?.release();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1431,9 +1477,7 @@ export default function GraphicImagePixelMapAdd01() {
         console.info(`${LOG_PREFIX} createScaledPixelMapInvalid001: success.`, pixelMap.isEditable);
         expect(pixelMap.isEditable).assertTrue();
 
-        pixelMap
-          .createScaledPixelMap(-1, 0)
-          .then(scaledMap => {
+        await pixelMap.createScaledPixelMap(-1, 0).then(async (scaledMap) => {
             console.info(`${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`, scaledMap.isEditable);
             console.info(
               `${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`,
@@ -1441,6 +1485,8 @@ export default function GraphicImagePixelMapAdd01() {
             );
             expect(scaledMap.isEditable).assertFalse();
             expect(scaledMap.isStrideAlignment).assertFalse();
+            await pixelMap?.release();
+            await scaledMap?.release();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1478,9 +1524,7 @@ export default function GraphicImagePixelMapAdd01() {
         console.info(`${LOG_PREFIX} createScaledPixelMapInvalid002: Starting test with zero scale.`);
         expect(pixelMap.isEditable).assertTrue();
 
-        pixelMap
-          .createScaledPixelMap(0, 0)
-          .then(scaledMap => {
+        pixelMap.createScaledPixelMap(0, 0).then(async (scaledMap) => {
             console.info(`${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`, scaledMap.isEditable);
             console.info(
               `${LOG_PREFIX} createScaledPixelMapInvalid001: scaledMap success.`,
@@ -1488,6 +1532,8 @@ export default function GraphicImagePixelMapAdd01() {
             );
             expect(scaledMap.isEditable).assertFalse();
             expect(scaledMap.isStrideAlignment).assertFalse();
+            await pixelMap?.release();
+            await scaledMap?.release();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1530,6 +1576,7 @@ export default function GraphicImagePixelMapAdd01() {
         );
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncARGB8888001 failed: ${error}`);
@@ -1562,6 +1609,7 @@ export default function GraphicImagePixelMapAdd01() {
             JSON.stringify(pixelMap)
           );
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(`${LOG_PREFIX} createPixelMapSyncRGBA101010201 failed: ${error}`);
@@ -1593,6 +1641,7 @@ export default function GraphicImagePixelMapAdd01() {
           JSON.stringify(pixelMap)
         );
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncYCBCRP01001 failed: ${error}`);
@@ -1623,6 +1672,7 @@ export default function GraphicImagePixelMapAdd01() {
           JSON.stringify(pixelMap)
         );
         expect(pixelMap).assertUndefined();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncYCRCBP01001 failed: ${error}`);
@@ -1657,6 +1707,7 @@ export default function GraphicImagePixelMapAdd01() {
         );
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncASTC4x401 failed: ${error}`);
@@ -1693,6 +1744,7 @@ export default function GraphicImagePixelMapAdd01() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncPREMUL001 failed: ${error}`);
@@ -1732,6 +1784,7 @@ export default function GraphicImagePixelMapAdd01() {
           expect(pixelMap !== null).assertTrue();
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(`${LOG_PREFIX} createPixelMapSyncFIT_TARGET_SIZE001 failed: ${error}`);
@@ -1761,6 +1814,7 @@ export default function GraphicImagePixelMapAdd01() {
           const pixelMap = image.createPixelMapSync(nullBuffer, opts);
           console.info(`${LOG_PREFIX} createPixelMapSyncNullBuffer001: success `, JSON.stringify(pixelMap));
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(
@@ -1792,6 +1846,7 @@ export default function GraphicImagePixelMapAdd01() {
           const pixelMap = image.createPixelMapSync(undefinedBuffer, opts);
           console.info(`${LOG_PREFIX} createPixelMapSyncUndefinedBuffer001: success`, JSON.stringify(pixelMap));
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(
@@ -1820,6 +1875,7 @@ export default function GraphicImagePixelMapAdd01() {
           const pixelMap = image.createPixelMapSync(color, nullOpts);
           console.info(`${LOG_PREFIX} createPixelMapSyncNullOptions001: success `, JSON.stringify(pixelMap));
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(
@@ -1847,6 +1903,7 @@ export default function GraphicImagePixelMapAdd01() {
           const pixelMap = image.createPixelMapSync(color, undefinedOpts);
           console.info(`${LOG_PREFIX} createPixelMapSyncUndefinedOptions001: success`, JSON.stringify(pixelMap));
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(
@@ -1886,6 +1943,7 @@ export default function GraphicImagePixelMapAdd01() {
           );
           expect(pixelMap !== null).assertTrue();
           expect(pixelMap.isEditable).assertFalse();
+          await pixelMap?.release();
           done();
         } catch (error) {
           console.error(`${LOG_PREFIX} createPixelMapSyncEditableFalse001 failed: ${error}`);
@@ -1918,6 +1976,7 @@ export default function GraphicImagePixelMapAdd01() {
         console.info(`${LOG_PREFIX} createPixelMapSyncNoBuffer001: Succeeded in creating pixel map with only options.`);
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertTrue();
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} createPixelMapSyncNoBuffer001 failed: ${error}`);

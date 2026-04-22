@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIODup() {
   describe('fileIO_fs_dup', function () {
@@ -169,6 +169,42 @@ export default function fileIODup() {
     } catch (e) {
       console.log('fileIO_test_dup_sync_005 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_dup_sync_006
+   * @tc.number SUB_DF_FILEIO_DUP_SYNC_0600
+   * @tc.desc   Test dup() interface. Fd is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_dup_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.dup(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_dup_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_dup_sync_007
+   * @tc.number SUB_DF_FILEIO_DUP_SYNC_0700
+   * @tc.desc   Test dup() interface. Fd is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_dup_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.dup(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_dup_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 });

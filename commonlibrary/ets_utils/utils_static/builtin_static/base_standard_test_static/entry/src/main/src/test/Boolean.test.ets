@@ -13,9 +13,9 @@ export default function booleanTest() {
      * @tc.desc Boolean()transfer parameters 0 return false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBooleanConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBooleanConstructor0001";
       try {
         let result = new Boolean(0);
@@ -32,9 +32,9 @@ export default function booleanTest() {
      * @tc.desc Boolean()transfer parameters null  return false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBooleanConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBooleanConstructor0002";
       try {
         let result = new Boolean(null);
@@ -51,9 +51,9 @@ export default function booleanTest() {
      * @tc.desc Boolean()transfer parameters undefined  return false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBooleanConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBooleanConstructor0003";
       try {
         let result = new Boolean(undefined);
@@ -70,9 +70,9 @@ export default function booleanTest() {
      * @tc.desc Boolean()transfer parameters ""  return false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBooleanConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBooleanConstructor0004";
       try {
         let result = new Boolean("");
@@ -89,9 +89,9 @@ export default function booleanTest() {
      * @tc.desc Boolean()transfer parameters false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBooleanConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBooleanConstructor0005";
       try {
         let bfalse = new Boolean(false);
@@ -109,9 +109,9 @@ export default function booleanTest() {
      * @tc.desc Test the function of the Boolean() function
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBoolean0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBoolean0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBoolean0006";
       try {
         let value = true;
@@ -129,9 +129,9 @@ export default function booleanTest() {
      * @tc.desc Test the function of the Boolean() function
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBoolean0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBoolean0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBoolean0007";
       try {
         let value = "true";
@@ -149,9 +149,9 @@ export default function booleanTest() {
      * @tc.desc Test the function of the Boolean() function
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBoolean0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBoolean0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBoolean0008";
       try {
         let value = "false";
@@ -290,13 +290,13 @@ export default function booleanTest() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1600
-     * @tc.name testBoolean.prototype.toString0006
+     * @tc.name testBooleanprototypetoString0006Adapt001
      * @tc.desc Test the function of the interface prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBoolean.prototype.toString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBooleanprototypetoString0006Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBoolean.prototype.toString0006';
       try {
         expect(String(Boolean(true))).assertEqual('true');
@@ -308,13 +308,13 @@ export default function booleanTest() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1700
-     * @tc.name textBoolean.prototype.toString0007
+     * @tc.name textBooleanprototypetoString0007Adapt002
      * @tc.desc Test the function of the interface prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('textBoolean.prototype.toString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('textBooleanprototypetoString0007Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'textBoolean.prototype.toString0007';
       try {
         expect(String(Boolean("true"))).assertEqual('true');
@@ -326,13 +326,13 @@ export default function booleanTest() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1800
-     * @tc.name textBoolean.prototype.toString0008
+     * @tc.name textBooleanprototypetoString0008Adapt002
      * @tc.desc Test the function of the interface prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('textBoolean.prototype.toString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('textBooleanprototypetoString0008Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'textBoolean.prototype.toString0008';
       try {
         expect(String(Boolean("false"))).assertEqual('true');
@@ -345,13 +345,13 @@ export default function booleanTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_2000
-     * @tc.name textBoolean.prototype.toString0010
+     * @tc.name textBooleanprototypetoString0010Adapt002
      * @tc.desc Test the function of the interface prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('textBoolean.prototype.toString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('textBooleanprototypetoString0010Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'textBoolean.prototype.toString0010';
       try {
         const result = new Boolean({} as object);

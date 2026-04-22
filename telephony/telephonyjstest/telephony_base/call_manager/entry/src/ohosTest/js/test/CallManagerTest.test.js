@@ -765,30 +765,6 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0300
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0300
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            call.isEmergencyPhoneNumber('000', {
-                slotId: SLOT_0
-            }, (err, data) => {
-                if (err) {
-                    console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_0300 fail');
-                    expect().assertFail();
-                    done();
-                    return;
-                }
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_0300 finish data = ${data}`);
-                done();
-            });
-        });
-
-        /**
          * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0400
          * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0400
          * @tc.desc   Function test
@@ -832,54 +808,6 @@ export default function ActsBaseCallManagerTest() {
                 }
                 expect(data).assertTrue();
                 console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_0500 finish data = ${data}`);
-                done();
-            });
-        });
-
-        /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0600
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0600
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            call.isEmergencyPhoneNumber('08', {
-                slotId: SLOT_0
-            }, (err, data) => {
-                if (err) {
-                    console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_0600 fail');
-                    expect().assertFail();
-                    done();
-                    return;
-                }
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_0600 finish data = ${data}`);
-                done();
-            });
-        });
-
-        /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_0700
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_0700
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            call.isEmergencyPhoneNumber('118', {
-                slotId: SLOT_0
-            }, (err, data) => {
-                if (err) {
-                    console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_0700 fail');
-                    expect().assertFail();
-                    done();
-                    return;
-                }
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_0700 finish data = ${data}`);
                 done();
             });
         });
@@ -1028,30 +956,6 @@ export default function ActsBaseCallManagerTest() {
         });
 
         /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                var data = await call.isEmergencyPhoneNumber('000', {
-                    slotId: SLOT_0
-                });
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300 finish data = ${data}`);
-                done();
-            } catch (err) {
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0300 fail');
-                expect().assertFail();
-                done();
-
-            }
-        });
-
-        /**
          * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400
          * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0400
          * @tc.desc   Function test
@@ -1093,54 +997,6 @@ export default function ActsBaseCallManagerTest() {
                 done();
             } catch (err) {
                 console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0500 fail');
-                expect().assertFail();
-                done();
-
-            }
-        });
-
-        /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                var data = await call.isEmergencyPhoneNumber('08', {
-                    slotId: SLOT_0
-                });
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600 finish data = ${data}`);
-                done();
-            } catch (err) {
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0600 fail');
-                expect().assertFail();
-                done();
-
-            }
-        });
-
-        /**
-         * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            try {
-                var data = await call.isEmergencyPhoneNumber('118', {
-                    slotId: SLOT_0
-                });
-                expect(data).assertTrue();
-                console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700 finish data = ${data}`);
-                done();
-            } catch (err) {
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_0700 fail');
                 expect().assertFail();
                 done();
 

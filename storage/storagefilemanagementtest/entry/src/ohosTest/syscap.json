@@ -4,9 +4,6 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.FileManagement.StorageService.SpatialStatistics",
-                    "SystemCapability.FileManagement.StorageService.Volume",
-                    "SystemCapability.FileManagement.StorageService.Encryption",
                     "SystemCapability.FileManagement.AppFileService.FolderAuthorization"
                 ]
             }

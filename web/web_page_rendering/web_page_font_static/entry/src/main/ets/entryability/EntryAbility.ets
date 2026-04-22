@@ -31,7 +31,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('pages/enableFollowSystemFontWeight', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('pages/webViewMinLogicalFontSize', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {

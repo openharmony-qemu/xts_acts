@@ -158,7 +158,6 @@ struct AccessibilityCustom {
         Row() {
           Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
         }
-        .height('5%')
         Row() {
           Column() {
             Button(`不支持`)
@@ -182,7 +181,7 @@ struct AccessibilityCustom {
         }
         .height('10%')
         ContentSlot(this.nodeContent)
-      }.height('80%')
+      }.height('60%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -212,7 +211,7 @@ struct AccessibilityCustom {
 
         this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
-      .height('10%')
+      .height('30%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)

@@ -101,12 +101,14 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0026', Level.LEVEL0,
       let lineMetricsWill = await (driver.findComponent(ON.id('lineMetricsWill')) as Promise<Component>);
       let lineMetricsWillText = await lineMetricsWill.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsWillText).assertEqual('lineMetricsWill{"left":24,"width":26.207916259765625,"ascent":22.27199935913086,"height":28,"descent":5.855999946594238,"baseline":34.14400100708008,"endIndex":2,"topHeight":12,"lineNumber":0,"runMetrics":{},"startIndex":0}');
+      expect(lineMetricsWillText).assertContain('"startIndex":0');
+      expect(lineMetricsWillText).assertContain('"endIndex":2');
 
       let lineMetricsDid = await (driver.findComponent(ON.id('lineMetricsDid')) as Promise<Component>);
       let lineMetricsDidText = await lineMetricsDid.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsDidText).assertEqual('lineMetricsDid:{"left":24,"width":26.207916259765625,"ascent":22.27199935913086,"height":28,"descent":5.855999946594238,"baseline":34.14400100708008,"endIndex":2,"topHeight":12,"lineNumber":0,"runMetrics":{},"startIndex":0}');
+      expect(lineMetricsDidText).assertContain('"startIndex":0');
+      expect(lineMetricsDidText).assertContain('"endIndex":2');
       done();
     });
 

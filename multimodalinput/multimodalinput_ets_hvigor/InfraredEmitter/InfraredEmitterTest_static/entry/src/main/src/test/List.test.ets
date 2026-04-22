@@ -14,7 +14,9 @@
  */
 
 import InfraredEmitterTest from "./InfraredEmitter.test";
+import InfraredEmitterComplementTest from "./InfraredEmitterComplement.test";
 
 export default function testsuite() {
     InfraredEmitterTest();
+    InfraredEmitterComplementTest();
 }

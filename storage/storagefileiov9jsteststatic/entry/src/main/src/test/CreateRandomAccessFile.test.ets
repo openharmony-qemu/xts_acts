@@ -34,7 +34,7 @@ export function initReadfile(fpath: string) {
   for (let times = 0; times < 1; times++){
     let charCode = 'a'.charCodeAt(0);
     for(let i = 0; i < 26; i++){
-      arr_names.fill(String.fromCharCode(charCode));
+      arr_names.fill(String.fromCharCode(charCode.toInt()));
       hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_000 earr_names:' + arr_names);
       fs.writeSync(file.fd, arr_names.join(''));
       charCode++;
@@ -466,7 +466,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == stat.size).assertTrue();
           ws.write(data);
@@ -515,7 +515,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 2).assertTrue();
           ws.write(data);
@@ -564,7 +564,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 8).assertTrue();
           ws.write(data);
@@ -1012,7 +1012,7 @@ export default function fileIOCreateRandomAccessFile() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let readlength = data.length;
           expect(readlength == 10).assertTrue();
           ws.write(data);

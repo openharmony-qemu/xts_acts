@@ -744,5 +744,307 @@ export default function colorFilterTest() {
         expect(e.code).assertEqual(401);
       }
     });
+    /**
+     * @tc.name   testColorFilterCreateLightingColorFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0700
+     * @tc.desc   Test for testColorFilterCreateLightingColorFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testColorFilterCreateLightingColorFilterNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
+      const msg = 'testColorFilterCreateLightingColorFilterNormalStatic';
+      let mulColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 0};
+      let addColor : common2D.Color = { alpha: 255, red: 255, green: 255, blue: 255};
+      try {
+        let colorFilter = drawing.ColorFilter.createLightingColorFilter(mulColor, addColor);
+        console.info(msg + ' createLightingColorFilter colorFilter successed');
+        expect(colorFilter != null || colorFilter != undefined).assertTrue()
+        if(colorFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter2 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter2 successed');
+        expect(colorFilter2 != null || colorFilter2 != undefined).assertTrue()
+        if(colorFilter2 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter3 = drawing.ColorFilter.createLightingColorFilter(0xFFFFFFFF.toInt(), 0x00000000.toInt());
+        console.info(msg + ' createLightingColorFilter colorFilter3 successed');
+        expect(colorFilter3 != null || colorFilter3 != undefined).assertTrue()
+        if(colorFilter3 == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter4 = drawing.ColorFilter.createLightingColorFilter(300, 100);
+        console.info(msg + ' createLightingColorFilter colorFilter4 successed');
+        expect(colorFilter4 != null || colorFilter4 != undefined).assertTrue()
+        if(colorFilter4 == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter5 = drawing.ColorFilter.createLightingColorFilter(addColor, 100);
+        console.info(msg + ' createLightingColorFilter colorFilter5 successed');
+        expect(colorFilter5 != null || colorFilter5 != undefined).assertTrue()
+        if(colorFilter5 == undefined){
+          console.info(msg + ' 5 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter6 = drawing.ColorFilter.createLightingColorFilter(300, mulColor);
+        console.info(msg + ' createLightingColorFilter colorFilter6 successed');
+        expect(colorFilter6 != null || colorFilter6 != undefined).assertTrue()
+        if(colorFilter6 == undefined){
+          console.info(msg + ' 6 test failed');
+          expect().assertFail();
+        }
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter6 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testColorFilterCreateLightingColorFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0702
+     * @tc.desc   Test for testColorFilterCreateLightingColorFilterMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testColorFilterCreateLightingColorFilterMultipleCallsStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2 , () => {
+      const msg = 'testColorFilterCreateLightingColorFilterMultipleCallsStatic';
+      for (let i = 0; i < 20; i++) {
+        let randomNumber1 = Math.floor(Math.random() * 100).toInt();
+        let randomNumber2 = Math.floor(Math.random() * 200).toInt();
+        console.info(msg + ` randomNumber1 is: ${randomNumber1}, randomNumber2 is: ${randomNumber2}, step i is: ${i}}`);
+        try {
+          let colorFilter = drawing.ColorFilter.createLightingColorFilter(randomNumber1, randomNumber2);
+          console.info(msg + ' createLightingColorFilter colorFilter successed' + i);
+          expect(colorFilter != null || colorFilter != undefined).assertTrue()
+          if(colorFilter == undefined){
+            console.info(msg + ' test failed step: ' + i);
+            expect().assertFail();
+          }
+        } catch( e ) {
+          e = e as BusinessError ;
+          console.info(msg + ` createLightingColorFilter colorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.name   testColorFilterCreateLightingColorFilterAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0703
+     * @tc.desc   Test for testColorFilterCreateLightingColorFilterAbnormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testColorFilterCreateLightingColorFilterAbnormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
+      const msg = 'testColorFilterCreateLightingColorFilterAbnormalStatic';
+      let mulColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 0};
+      let addColor : common2D.Color = { alpha: 255, red: 0, green: 0, blue: 125 };
+      try {
+        let colorFilter1 = drawing.ColorFilter.createLightingColorFilter(mulColor, 200);
+        expect(colorFilter1 != null || colorFilter1 != undefined).assertTrue();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let colorFilter2 = drawing.ColorFilter.createLightingColorFilter(0xffff0000.toInt(), addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter2 successed');
+        expect(colorFilter2 != null || colorFilter2 != undefined).assertTrue();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      mulColor = { alpha: -1, red: 0, green: 0, blue: 0};
+      try {
+        let colorFilter3 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter3 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter4 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter4 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor = { alpha: 256, red: 0, green: 0, blue: 0};
+      try {
+        let colorFilter5 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter5 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter6 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter6 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter6 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor  = { alpha: 255, red: -1, green: 0, blue: 0};
+      try {
+        let colorFilter7 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter7 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter7 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter8 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter8 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter8 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor  = { alpha: 255, red: 256, green: 0, blue: 0};
+      try {
+        let colorFilter9 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter9 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter9 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter10 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter10 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter10 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor = { alpha: 255, red: 255, green: -1, blue: 0};
+      try {
+        let colorFilter9 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter9 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter9 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter10 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter10 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter10 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor = { alpha: 255, red: 255, green: 256, blue: 0};
+      try {
+        let colorFilter11 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter11 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter11 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter12 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter12 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter12 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor = { alpha: 255, red: 255, green: 255, blue: -1};
+      try {
+        let colorFilter13 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter13 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter13 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter14 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter14 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter14 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      mulColor = { alpha: 255, red: 255, green: 255, blue: 256};
+      try {
+        let colorFilter15 = drawing.ColorFilter.createLightingColorFilter(mulColor , addColor );
+        console.info(msg + ' createLightingColorFilter colorFilter15 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter15 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let colorFilter16 = drawing.ColorFilter.createLightingColorFilter(addColor , mulColor );
+        console.info(msg + ' createLightingColorFilter colorFilter16 successed');
+        expect().assertFail();
+      } catch( e ) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLightingColorFilter colorFilter16 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+    });
   });
 }

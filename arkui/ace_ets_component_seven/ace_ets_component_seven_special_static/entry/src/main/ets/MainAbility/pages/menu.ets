@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { Entry, Component, Column, AttributeModifier, MenuAttribute, Dimension, 
   FontWeight, FontStyle, Menu, MenuItem, MenuItemOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TestMenuModifier implements AttributeModifier<MenuAttribute> {
+export class TestMenuModifier implements AttributeModifier<MenuAttribute> {
   mRadius: Dimension | BorderRadiuses = '12vp'
   mFontColor: ResourceColor = '#FF123654'
   mFont: Font = { size: 20, weight: FontWeight.Normal, family: 'medium', style: FontStyle.Normal }

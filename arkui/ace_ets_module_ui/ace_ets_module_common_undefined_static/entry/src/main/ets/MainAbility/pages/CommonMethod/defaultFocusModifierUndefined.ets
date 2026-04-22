@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class DefaultFocusModifier implements AttributeModifier<CommonAttribute> {
+export class DefaultFocusModifier implements AttributeModifier<CommonAttribute> {
 
   applyNormalAttribute(instance: CommonAttribute): void {
     instance.defaultFocus(undefined); // 否则根据状态启用或禁用拖拽

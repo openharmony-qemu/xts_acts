@@ -33,7 +33,7 @@ function myMenu() {
 }
 
 @Observed
-class MyModifier1 implements AttributeModifier<NavDestinationAttribute> {
+export class MyModifier1 implements AttributeModifier<NavDestinationAttribute> {
   public isUndefined1: boolean = true;
   public isUndefined2: boolean = true;
   public isUndefined3: boolean = true;
@@ -51,7 +51,7 @@ class MyModifier1 implements AttributeModifier<NavDestinationAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<NavDestinationAttribute> {
+export class MyModifier2 implements AttributeModifier<NavDestinationAttribute> {
   public isUndefined4: boolean = true;
   public isUndefined5: boolean = true;
   public cnt1: int = 0;

@@ -36,7 +36,6 @@ import {
   WrappedBuilder,
   ContentModifier,
   GestureEvent,
-  SymbolGlyphModifier,
   SelectOption,
   NavDestination,
   AvoidanceMode,
@@ -57,6 +56,7 @@ import {
   SelectAttribute,
   AttributeModifier
 } from '@ohos.arkui.component';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 

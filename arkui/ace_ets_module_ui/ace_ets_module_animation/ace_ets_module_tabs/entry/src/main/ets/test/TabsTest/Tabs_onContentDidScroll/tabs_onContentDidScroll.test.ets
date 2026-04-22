@@ -44,7 +44,7 @@ export default function tabs_onContentDidScrollTest() {
     });
 
     /**
-     * @tc.name   tabs_onContentDidScroll_0010
+     * @tc.name   tabs_onContentDidScroll_0100
      * @tc.number tabs_onContentDidScroll_0010
      * @tc.desc   The Tabs page scrolling triggers the onContentDidScroll callback.
      * @tc.type   FUNCTION

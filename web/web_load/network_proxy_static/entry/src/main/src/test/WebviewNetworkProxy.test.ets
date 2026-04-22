@@ -48,15 +48,55 @@ export default function webviewNetworkProxy() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
+
+
     /**
-     * @tc.name   testNetworkProxySchemeFilterMatchAllSchemes
+     * @tc.name   testGetProxyRulesStatic002
+     * @tc.number SUB_WEB_NETWORKPROXY_1500
+     * @tc.desc   test getProxyRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetProxyRulesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testGetProxyRules2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetProxyRules2', true, 2025021912, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetBypassRulesStatic002
+     * @tc.number SUB_WEB_NETWORKPROXY_1400
+     * @tc.desc   test getBypassRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetBypassRulesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testGetBypassRules2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetBypassRules2', true, 2025021902, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testNetworkProxySchemeFilterMatchAllSchemesStatic
      * @tc.number SUB_WEB_NETWORKPROXY_0100
      * @tc.desc   test ProxySchemeFilter MATCH_ALL_SCHEMES
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testNetworkProxySchemeFilterMatchAllSchemes',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNetworkProxySchemeFilterMatchAllSchemesStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       await Utils.msSleep(3000);
       Utils.emitEvent('testNetworkProxySchemeFilterMatchAllSchemes', 10);
@@ -69,14 +109,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testNetworkProxySchemeFilterMatchHttp
+     * @tc.name   testNetworkProxySchemeFilterMatchHttpStatic
      * @tc.number SUB_WEB_NETWORKPROXY_0200
      * @tc.desc   test ProxySchemeFilter MATCH_HTTP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNetworkProxySchemeFilterMatchHttp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testNetworkProxySchemeFilterMatchHttpStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testNetworkProxySchemeFilterMatchHttp', 10);
       await Utils.msSleep(2000);
@@ -88,14 +128,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testNetworkProxySchemeFilterMatchHttps
+     * @tc.name   testNetworkProxySchemeFilterMatchHttpsStatic
      * @tc.number SUB_WEB_NETWORKPROXY_0300
      * @tc.desc   test ProxySchemeFilter MATCH_HTTPS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testNetworkProxySchemeFilterMatchHttps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNetworkProxySchemeFilterMatchHttpsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testNetworkProxySchemeFilterMatchHttps', 10);
       await Utils.msSleep(2000);
@@ -107,14 +147,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testInsertProxyRule
+     * @tc.name   testInsertProxyRuleStatic
      * @tc.number SUB_WEB_NETWORKPROXY_0400
      * @tc.desc   test insertProxyRule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInsertProxyRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInsertProxyRuleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertProxyRule', 10);
       await Utils.msSleep(2000);
@@ -126,14 +166,33 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testInsertDirectRule
+     * @tc.name   testInsertProxyRuleStatic2
      * @tc.number SUB_WEB_NETWORKPROXY_0500
+     * @tc.desc   test insertProxyRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertProxyRuleStatic2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testInsertProxyRule2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testInsertProxyRule2', true, 2025021841, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testInsertDirectRuleStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_0600
      * @tc.desc   test insertDirectRule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInsertDirectRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInsertDirectRuleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertDirectRule', 10);
       await Utils.msSleep(2000);
@@ -145,14 +204,52 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testInsertBypassRule
-     * @tc.number SUB_WEB_NETWORKPROXY_0600
+     * @tc.name   testInsertDirectRuleStatic2
+     * @tc.number SUB_WEB_NETWORKPROXY_0700
+     * @tc.desc   test insertDirectRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleStatic2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testInsertDirectRule2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testInsertDirectRule2', true, 2025021851, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testInsertDirectRuleStatic3
+     * @tc.number SUB_WEB_NETWORKPROXY_0800
+     * @tc.desc   test insertDirectRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleStatic3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testInsertDirectRule3', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testInsertDirectRule3', true, 2025021852, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testInsertBypassRuleStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_0900
      * @tc.desc   test insertBypassRule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInsertBypassRule',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInsertBypassRuleStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertBypassRule', 10);
       await Utils.msSleep(2000);
@@ -164,14 +261,33 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testBypassHostnamesWithoutPeriod
-     * @tc.number SUB_WEB_NETWORKPROXY_0700
+     * @tc.name   testInsertBypassRuleStatic2
+     * @tc.number SUB_WEB_NETWORKPROXY_1000
+     * @tc.desc   test insertBypassRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertBypassRuleStatic2',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        Utils.emitEvent('testInsertBypassRule2', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testInsertBypassRule2', true, 2025021861, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testBypassHostnamesWithoutPeriodStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1100
      * @tc.desc   test bypassHostnamesWithoutPeriod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testBypassHostnamesWithoutPeriod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testBypassHostnamesWithoutPeriodStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testBypassHostnamesWithoutPeriod', 10);
       await Utils.msSleep(2000);
@@ -183,14 +299,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testClearImplicitRules
-     * @tc.number SUB_WEB_NETWORKPROXY_0800
+     * @tc.name   testClearImplicitRulesStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1200
      * @tc.desc   test clearImplicitRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testClearImplicitRules',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testClearImplicitRulesStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testClearImplicitRules', 10);
       await Utils.msSleep(2000);
@@ -202,14 +318,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testEnableReverseBypass
-     * @tc.number SUB_WEB_NETWORKPROXY_0900
+     * @tc.name   testEnableReverseBypassStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1300
      * @tc.desc   test enableReverseBypass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testEnableReverseBypass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testEnableReverseBypassStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testEnableReverseBypass', 10);
       await Utils.msSleep(2000);
@@ -221,33 +337,33 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testGetBypassRules
-     * @tc.number SUB_WEB_NETWORKPROXY_1000
+     * @tc.name   testGetBypassRulesStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1400
      * @tc.desc   test getBypassRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testGetBypassRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testGetBypassRulesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
-      Utils.emitEvent('testGetBypassRules', 10);
-      await Utils.msSleep(2000);
-      Utils.registerEvent('testGetBypassRules', true, 202502190, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('networkProxyButton', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
+        Utils.emitEvent('testGetBypassRules', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetBypassRules', true, 202502190, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
 
     /**
-     * @tc.name   testGetProxyRules
-     * @tc.number SUB_WEB_NETWORKPROXY_1100
+     * @tc.name   testGetProxyRulesStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1500
      * @tc.desc   test getProxyRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testGetProxyRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testGetProxyRulesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testGetProxyRules', 10);
       await Utils.msSleep(2000);
@@ -259,18 +375,18 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testIsReverseBypassEnabled
-     * @tc.number SUB_WEB_NETWORKPROXY_1200
+     * @tc.name   testIsReverseBypassEnabledTrueStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_0000
      * @tc.desc   test isReverseBypassEnabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testIsReverseBypassEnabled',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsReverseBypassEnabledTrueStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
-      Utils.emitEvent('testIsReverseBypassEnabled', 10);
+      Utils.emitEvent('testIsReverseBypassEnabledTrue', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testIsReverseBypassEnabled', false, 202502192, done);
+      Utils.registerEvent('testIsReverseBypassEnabledTrue', true, 202502192, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('networkProxyButton', 10, '');
       await Utils.msSleep(2000);
@@ -278,14 +394,33 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testGetSchemeFilter
-     * @tc.number SUB_WEB_NETWORKPROXY_1300
+     * @tc.name   testIsReverseBypassEnabledFalseStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_302502192
+     * @tc.desc   test isReverseBypassEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsReverseBypassEnabledFalseStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        Utils.emitEvent('testIsReverseBypassEnabledFalse', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testIsReverseBypassEnabledFalse', false, 302502192, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('networkProxyButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetSchemeFilterStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1700
      * @tc.desc   test getSchemeFilter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testGetSchemeFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testGetSchemeFilterStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testGetSchemeFilter', 10);
       await Utils.msSleep(2000);
@@ -297,14 +432,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testProxyGetUrl
-     * @tc.number SUB_WEB_NETWORKPROXY_1300
+     * @tc.name   testProxyGetUrlStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_1800
      * @tc.desc   test getUrl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testProxyGetUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testProxyGetUrlStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testProxyGetUrl', 10);
       await Utils.msSleep(2000);
@@ -316,14 +451,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testApplyProxyOverride
-     * @tc.number SUB_WEB_NETWORKPROXY_1500
+     * @tc.name   testApplyProxyOverrideStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_202502195
      * @tc.desc   test applyProxyOverride
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testApplyProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testApplyProxyOverrideStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testApplyProxyOverride', 10);
       await Utils.msSleep(2000);
@@ -335,14 +470,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   testRemoveProxyOverride
-     * @tc.number SUB_WEB_NETWORKPROXY_1600
+     * @tc.name   testRemoveProxyOverrideStatic
+     * @tc.number SUB_WEB_NETWORKPROXY_202502196
      * @tc.desc   test removeProxyOverride
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testRemoveProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testRemoveProxyOverrideStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testRemoveProxyOverride', 10);
       await Utils.msSleep(2000);
@@ -354,14 +489,14 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @tc.name   emitonSwitchNextPage
-     * @tc.number emitonSwitchNextPage
+     * @tc.name   emitOnSwitchNextPageStatic
+     * @tc.number emitonSwitchNextPage8888888
      * @tc.desc   emitonSwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitOnSwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitonSwitchNextPage', 10);
       await Utils.msSleep(2000);

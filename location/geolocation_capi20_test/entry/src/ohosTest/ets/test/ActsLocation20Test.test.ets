@@ -135,7 +135,7 @@ export default function ActsLocation20Test() {
       done();
     })
     afterAll(async (done: Function) => {
-      geoLocationManager.disableLocation()
+      await changedLocationMode();
       done();
     }
     )

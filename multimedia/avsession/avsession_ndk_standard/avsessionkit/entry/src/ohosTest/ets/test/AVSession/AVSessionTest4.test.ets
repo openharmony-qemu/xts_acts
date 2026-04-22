@@ -319,6 +319,46 @@ export default function AVSessionTest4() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0100
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeAudioSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0100 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0200
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeVideoSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaType_0200 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
       
     /**
      * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaType002
@@ -1217,5 +1257,66 @@ export default function AVSessionTest4() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaTypeNullSuccess_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaTypeNullSuccess_0100
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType null interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaTypeNullSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetMediaTypeNullSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionBuilderSetMediaTypeNullSuccess_0100 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionGetAppNameNullSuccess_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionGetAppNameNullSuccess_0100
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAppName null interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionGetAppNameNullSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionGetAppNameNullSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEDIA_AVSESSION_AVMediaDescriptionGetAppNameNullSuccess_0100 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVSessionCreateNullInvalidParam_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVSessionCreateNullInvalidParam_0100
+     * @tc.desc   testing OH_AVSession_Create sessionTag null interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVSessionCreateNullInvalidParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionCreateNullInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEDIA_AVSESSION_AVSessionCreateNullInvalidParam_0100 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });  
+
   })
 }

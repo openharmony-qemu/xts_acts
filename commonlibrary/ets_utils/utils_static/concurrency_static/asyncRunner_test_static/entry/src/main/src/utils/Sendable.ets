@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ export class SendableClass {
   constructor(num: number) {
     this.num = num;
   }
-  GetNum() {
+  GetNum(): number {
     return this.num;
   }
 }
@@ -39,12 +39,12 @@ export class SimpleSendable{
 
 // @Sendable
 class SendableArrayClass {
-  public arr: Array<number> = new Array<number>(100);
+  public arr: Array<number> = Array.create<number>(100, NaN);
 }
 
 // @Sendable
 function sendableArrayFunc() : number {
-  let arr: number[] = new Array<number>(100);
+  let arr: number[] = Array.create<number>(100, NaN);
   return arr[0];
 }
 
@@ -62,7 +62,7 @@ export class SendableClassTest {
     this.func = func;
   }
   public func: FuncType;
-  foo() {
+  foo(): number {
     let num : number = sendableArrayFunc();
     return num;
   }
@@ -77,8 +77,7 @@ function sendableFunctionTop() {
 // @Sendable
 class SendableClassTop {
   public num :number = 200;
-  say() {
+  say(): number {
     return this.num;
   }
 }
-
