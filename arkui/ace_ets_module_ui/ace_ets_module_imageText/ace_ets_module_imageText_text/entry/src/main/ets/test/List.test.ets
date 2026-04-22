@@ -146,6 +146,7 @@ import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test
 import TextOnWillCopyTest from './TextTest/TextOnWillCopy.test';
 import TextGetCharacter from './TextTest/TextGetCharacter.test';
 import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
+import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimization.test';
 
 
 
@@ -284,5 +285,5 @@ export default function testsuite() {
   TextOnWillCopyTest();
   TextGetCharacter();
   TextLayoutManagerMethodsTest();
-
+  TextOrphanCharOptimizationTest();
 }

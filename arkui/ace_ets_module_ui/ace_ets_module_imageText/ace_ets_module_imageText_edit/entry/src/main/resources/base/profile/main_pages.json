@@ -65,6 +65,7 @@
         "MainAbility/pages/TextArea/TextAreaType",
         "MainAbility/pages/TextArea/TextAreaStyle",
         "MainAbility/pages/TextAreaApi24/TextAreaHorizontalScrolling",
+        "MainAbility/pages/TextArea/TextAreaOrphanCharOptimization",
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",
         "MainAbility/pages/TextInputApi11/input_keytype",
@@ -140,6 +141,7 @@
         "MainAbility/pages/TextInput/TextInputSelectAllNullUndefined",
         "MainAbility/pages/TextInput/TextInputSelectionMenuHiddenNullUndefined",
         "MainAbility/pages/TextInput/TextInputContentTypeParam",
-        "MainAbility/pages/TextInputApi24/TextInputOnNeedSoftkeyboard"
+        "MainAbility/pages/TextInputApi24/TextInputOnNeedSoftkeyboard",
+        "MainAbility/pages/TextInput/TextInputOrphanCharOptimization"
     ]
 }

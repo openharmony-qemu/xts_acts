@@ -133,7 +133,8 @@
         "MainAbility/pages/Text/LayoutManagerTextCommonProbePage",
         "MainAbility/pages/Text/TextOnWillCopy",
         "MainAbility/pages/Text/TextLayoutManagerMethods",
-        "MainAbility/pages/Text/TextGetCharacter"
+        "MainAbility/pages/Text/TextGetCharacter",
+        "MainAbility/pages/Text/TextOrphanCharOptimization"
 
     ]
 }
