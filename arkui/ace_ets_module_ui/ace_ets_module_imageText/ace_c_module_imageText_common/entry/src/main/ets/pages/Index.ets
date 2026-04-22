@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import nativerender from 'libnativerender.so'
+// import nativerender from 'libnativerender.so'
 
 @Entry
 @Component

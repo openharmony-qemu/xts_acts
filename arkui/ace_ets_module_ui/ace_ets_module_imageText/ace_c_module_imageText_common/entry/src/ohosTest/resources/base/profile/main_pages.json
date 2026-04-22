@@ -1,7 +1,5 @@
 {
   "src": [
-    "MainAbility/pages/XTSIndex",
-    "MainAbility/pages/testgesture",
-    "MainAbility/pages/nativeDragDropTest/NativeDragDropTest"
+    "MainAbility/pages/XTSIndex"
   ]
 }
