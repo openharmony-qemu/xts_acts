@@ -448,21 +448,21 @@ static napi_value OHCertNativeCredTest0100(napi_env env, napi_callback_info info
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
-    size_t str_length;
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
-    if (str_length >= SIZE_MAX) {
+    size_t strLength;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &strLength);
+    if (strLength >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
 
-    char* buffer = (char*)malloc(str_length + 1);
+    char* buffer = (char*)malloc(strLength + 1);
     if (buffer == nullptr) {
         napi_throw_error(env, nullptr, "malloc buffer error");
         return nullptr;
     }
 
     size_t copied;
-    napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
+    napi_get_value_string_utf8(env, args[0], buffer, strLength + 1, &copied);
     std::string identity = buffer;
     free(buffer);
     
