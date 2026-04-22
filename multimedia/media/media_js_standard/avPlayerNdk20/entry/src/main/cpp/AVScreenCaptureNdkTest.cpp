@@ -919,7 +919,7 @@ static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0200(napi_env env
     OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_StrategyForPrivacyMaskMode(CaptureStrategy, -1);
     int32_t res = 1;
-    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (errcode == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         res = 0;
     }
     napi_value retValue;
@@ -945,7 +945,7 @@ static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0400(napi_env env
     OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_StrategyForPrivacyMaskMode(CaptureStrategy, 2);
     int32_t res = 1;
-    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (errcode == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         res = 0;
     }
     napi_value retValue;
