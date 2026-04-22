@@ -407,7 +407,7 @@ export default function ApertureTest() {
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
 
           // 验证设置的值与获取的值一致
-          expect(currentAperture).assertEqual(minAperture);
+          expect(currentAperture).assertEqual(minAperture.apertures[0]);
         }
 
         console.info(TAG, testName + ' success.');
@@ -544,7 +544,7 @@ export default function ApertureTest() {
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
 
           // 验证设置的值与获取的值一致
-          expect(currentAperture).assertEqual(maxAperture);
+          expect(currentAperture).assertEqual(maxAperture.apertures[0]);
         }
 
         console.info(TAG, testName + ' success.');
@@ -682,7 +682,7 @@ export default function ApertureTest() {
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
 
           // 验证设置的值与获取的值一致
-          expect(currentAperture).assertEqual(middleAperture);
+          expect(currentAperture).assertEqual(middleAperture.apertures[0]);
         }
 
         console.info(TAG, testName + ' success.');
