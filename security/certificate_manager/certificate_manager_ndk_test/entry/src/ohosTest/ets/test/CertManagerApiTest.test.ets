@@ -302,7 +302,7 @@ export default function CertManagerApiTest() {
     it('SUB_Security_CertManager_Enum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('SUB_Security_CertManager_Enum_0100 start');
       try {
-        let enumValues = CertManagerApi.OHCertManagerNativeApiEnumValidation0100('');
+        let enumValues = CertManagerApi.OHCertValidateEnumTest0100('');
         console.info('SUB_Security_CertManager_Enum_0100 enumValues: ' + JSON.stringify(enumValues));
 
         expect(enumValues.OH_CM_SUCCESS).assertEqual(0);
