@@ -2593,14 +2593,6 @@ int VIDEO_HWDEC_API_ADD_0040()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0050
- * @tc.number VIDEO_HWDEC_API_ADD_0050
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0050()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
@@ -2613,14 +2605,6 @@ int VIDEO_HWDEC_API_ADD_0050()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0060
- * @tc.number VIDEO_HWDEC_API_ADD_0060
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0060()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
@@ -2628,14 +2612,6 @@ int VIDEO_HWDEC_API_ADD_0060()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0070
- * @tc.number VIDEO_HWDEC_API_ADD_0070
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0070()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
@@ -2643,14 +2619,6 @@ int VIDEO_HWDEC_API_ADD_0070()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0080
- * @tc.number VIDEO_HWDEC_API_ADD_0080
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0080()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
@@ -2658,14 +2626,6 @@ int VIDEO_HWDEC_API_ADD_0080()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0090
- * @tc.number VIDEO_HWDEC_API_ADD_0090
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0090()
 {
     const int64_t kInvalidTimestamp = -100000000;
@@ -2674,14 +2634,6 @@ int VIDEO_HWDEC_API_ADD_0090()
     return SUCCESS_CODE;
 }
 
-/**
- * @tc.name   VIDEO_HWDEC_API_ADD_0100
- * @tc.number VIDEO_HWDEC_API_ADD_0100
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HWDEC_API_ADD_0100()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
