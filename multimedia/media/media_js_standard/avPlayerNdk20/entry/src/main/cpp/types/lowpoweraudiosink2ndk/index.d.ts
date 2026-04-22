@@ -55,5 +55,7 @@ export const OH_LowPowerAudioSink_GetParameter0200: () => number;
 export const OH_AVSamplesBuffer_GetRemainedCapacity0100: () => number;
 export const OH_LowPowerAudioSink_SetLoudnessGain0100: () => number;
 export const OH_LowPowerAudioSink_SetLoudnessGain0200: () => number;
+export const OH_LowPowerAudioSink_SetLoudnessGain0300: () => number;
+export const OH_LowPowerAudioSink_SetLoudnessGain0400: () => number;
 export const OH_LowPowerAudioSink_SetPlaybackSpeed0100: () => number;
 export const OH_LowPowerAudioSink_SetPlaybackSpeed0200: () => number;
