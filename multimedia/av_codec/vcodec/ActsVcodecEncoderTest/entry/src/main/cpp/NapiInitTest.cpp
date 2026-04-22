@@ -143,8 +143,8 @@ static std::vector<TestFunction> GetApiTestFunctionsPart2()
         VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0020Test,
         VideoEncodeSyncApi0030Test, VideoEncodeSyncApi0040Test, VideoEncodeSyncApi0050Test,
         VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test, VideoEncodeSyncApi0080Test,
-        VideoEncodeApiAdd0010,VideoEncodeApiAdd0020,VideoEncodeApiAdd0030,
-        VideoEncodeApiAdd0040,VideoEncodeApiAdd0050
+        VideoEncodeApiAdd0010, VideoEncodeApiAdd0020, VideoEncodeApiAdd0030,
+        VideoEncodeApiAdd0040, VideoEncodeApiAdd0050
     };
 }
 

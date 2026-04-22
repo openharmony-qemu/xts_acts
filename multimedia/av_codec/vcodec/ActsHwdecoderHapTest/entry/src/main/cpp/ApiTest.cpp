@@ -2668,8 +2668,9 @@ int VIDEO_HWDEC_API_ADD_0080()
  */
 int VIDEO_HWDEC_API_ADD_0090()
 {
+    const int64_t kInvalidTimestamp = -100000000;
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, -1, -100000000));
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, -1, kInvalidTimestamp));
     return SUCCESS_CODE;
 }
 
