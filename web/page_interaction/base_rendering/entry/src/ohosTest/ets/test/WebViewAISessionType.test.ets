@@ -69,14 +69,10 @@ export default function WebViewAISessionTypeSuite() {
      * @tc.level      Level 1
      */
     it('testWebViewLanguageModel01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewLanguageModel01", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewLanguageModel01",'onCreateAISession', 20250420, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel01");
-      await Utils.waitForExist(() => isReturn, "testWebViewLanguageModel01" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewLanguageModel01", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewLanguageModel01", 'onCreateAISession', 20250420, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel01");
     })
-
 
 
     /**
@@ -88,12 +84,9 @@ export default function WebViewAISessionTypeSuite() {
      * @tc.level      Level 1
      */
     it('testWebViewLanguageModel02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewLanguageModel02", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewLanguageModel02",'onExecuteAIAction', 20250421, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel02");
-      await Utils.waitForExist(() => isReturn, "testWebViewLanguageModel02" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewLanguageModel02", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewLanguageModel02", 'onExecuteAIAction', 20250421, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel02");
     })
 
 
@@ -106,30 +99,24 @@ export default function WebViewAISessionTypeSuite() {
      * @tc.level      Level 1
      */
     it('testWebViewLanguageModel03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewLanguageModel03", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewLanguageModel03",'onDestroyAIAction', 20250422, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel03");
-      await Utils.waitForExist(() => isReturn, "testWebViewLanguageModel03" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewLanguageModel03", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewLanguageModel03", 'onDestroyAIAction', 20250422, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageModel03");
     })
 
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0400
-     * @tc.name       testWebViewLanguageModel04
+     * @tc.name       testWebViewLanguageDetector04
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewLanguageDetector04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewLanguageDetector04", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewLanguageDetector04",'onCreateAISession', 20250423, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageDetector04");
-      await Utils.waitForExist(() => isReturn, "testWebViewLanguageDetector04" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewLanguageDetector04", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewLanguageDetector04", 'onCreateAISession', 20250423, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewLanguageDetector04");
     })
 
 
@@ -143,12 +130,9 @@ export default function WebViewAISessionTypeSuite() {
      * @tc.level      Level 1
      */
     it('testWebViewProofreader05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewProofreader05", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewProofreader05",'onCreateAISession', 20250425, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewProofreader05");
-      await Utils.waitForExist(() => isReturn, "testWebViewProofreader05" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewProofreader05", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewProofreader05", 'onCreateAISession', 20250425, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewProofreader05");
     })
 
 
@@ -161,132 +145,108 @@ export default function WebViewAISessionTypeSuite() {
      * @tc.level      Level 1
      */
     it('testWebViewProofreader06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewProofreader06", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewProofreader06",'onDestroyAISession', 20250426, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewProofreader06");
-      await Utils.waitForExist(() => isReturn, "testWebViewProofreader06" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewProofreader06", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewProofreader06", 'onDestroyAISession', 20250426, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewProofreader06");
     })
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0700
-     * @tc.name       testWebViewProofreader07
+     * @tc.name       testWebViewWriter07
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewWriter07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewWriter07", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewWriter07",'onCreateAISession', 20250427, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter07");
-      await Utils.waitForExist(() => isReturn, "testWebViewWriter07" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewWriter07", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewWriter07", 'onCreateAISession', 20250427, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter07");
     })
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0800
-     * @tc.name       testWebViewProofreader08
+     * @tc.name       testWebViewWriter08
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewWriter08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewWriter08", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewWriter08",'onDestroyAISession', 20250428, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter08");
-      await Utils.waitForExist(() => isReturn, "testWebViewWriter08" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewWriter08", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewWriter08", 'onDestroyAISession', 20250428, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter08");
     })
 
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0900
-     * @tc.name       testWebViewProofreader09
+     * @tc.name       testWebViewWriter09
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewWriter09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewWriter09", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewWriter09",'onCreateAISession', 20250429, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter09");
-      await Utils.waitForExist(() => isReturn, "testWebViewWriter09" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewWriter09", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewWriter09", 'onCreateAISession', 20250429, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter09");
     })
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0100
-     * @tc.name       testWebViewProofreader10
+     * @tc.name       testWebViewWriter10
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewWriter10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewWriter10", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewWriter10",'onDestroyAISession', 20250430, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter10");
-      await Utils.waitForExist(() => isReturn, "testWebViewWriter10" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewWriter10", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewWriter10", 'onDestroyAISession', 20250430, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewWriter10");
     })
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0110
-     * @tc.name       testWebViewProofreader11
+     * @tc.name       testWebViewTranslator11
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewTranslator11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewTranslator11", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewTranslator11",'onExecuteAIAction', 20250431, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator11");
-      await Utils.waitForExist(() => isReturn, "testWebViewTranslator11" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewTranslator11", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewTranslator11", 'onExecuteAIAction', 20250431, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator11");
     })
 
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0120
-     * @tc.name       testWebViewProofreader12
+     * @tc.name       testWebViewTranslator12
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewTranslator12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewSummarizer12", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewTranslator12",'onCreateAISession', 20250432, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator12");
-      await Utils.waitForExist(() => isReturn, "testWebViewTranslator12" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewSummarizer12", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewTranslator12", 'onCreateAISession', 20250432, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator12");
     })
 
     /**
      * @tc.number     SUB_WEB_SESSION_OPTIONS_0130
-     * @tc.name       testWebViewProofreader13
+     * @tc.name       testWebViewTranslator13
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('testWebViewTranslator13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitWebViewSummarizer13", EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent("testWebViewTranslator13",'onDestroyAISession', 20250433, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator13");
-      await Utils.waitForExist(() => isReturn, "testWebViewTranslator13" + '_returnCheck', true, 1000);
-      done();
+      Utils.emitEvent("emitWebViewSummarizer13", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testWebViewTranslator13", 'onDestroyAISession', 20250433, done);
+      await Utils.waitAndClickComponent(driver, "WebViewAiSessionOptionsButton","testWebViewTranslator13");
     })
 
 
