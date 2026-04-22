@@ -50,7 +50,16 @@ enum ApiTestCaseNumber {
     TEST_CASE_AV1_CAP_API_0014 = 25,
     TEST_CASE_AV1_CAP_API_0015 = 26,
     TEST_CASE_WVC1_CAP_API_0016 = 27,
-    TEST_CASE_AV1_CAP_API_0017 = 28
+    TEST_CASE_AV1_CAP_API_0017 = 28,
+    TEST_CASE_CAP_API_0018 = 29,
+    TEST_CASE_CAP_API_0019 = 30,
+    TEST_CASE_CAP_API_0020 = 31,
+    TEST_CASE_CAP_API_0021 = 32,
+    TEST_CASE_CAP_API_0022 = 33,
+    TEST_CASE_CAP_API_0023 = 34,
+    TEST_CASE_CAP_API_0024 = 35,
+    TEST_CASE_CAP_API_0025 = 36,
+    TEST_CASE_CAP_API_0026 = 37
 };
 
 // Function Test case number enum
@@ -116,7 +125,16 @@ static const TestFunction API_TEST_FUNCTIONS[] = {
     VideoAv1DecCapApi0014,           // 25
     VideoAv1DecCapApi0015,           // 26
     VideoWvc1DecCapApi0016,          // 27
-    VideoAv1DecCapApi0017            // 28
+    VideoAv1DecCapApi0017,           // 28
+    VideoEncCapApi0018,              // 29
+    VideoDecCapApi0019,              // 30
+    VideoEncCapApi0020,              // 31
+    VideoDecCapApi0021,              // 32
+    VideoEncCapApi0022,              // 33
+    VideoDecCapApi0023,              // 34
+    VideoDecCapApi0024,              // 35
+    VideoDecCapApi0025,              // 36
+    VideoDecCapApi0026               // 37
 };
 
 // Function Test function lookup table
