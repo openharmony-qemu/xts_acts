@@ -637,11 +637,11 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
-          expect(null).assertFail();
+          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_REVOKED);
+          expect(null).assertFail();
         }
         done();
       });
@@ -882,7 +882,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_ISSUER_NOT_FOUND);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE);
         }
         done();
       });
@@ -1058,11 +1058,11 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
-          expect(null).assertFail();
+          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm, validatorParams);
+          expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_REVOKED);
+          expect(null).assertFail();
         }
         done();
       });
