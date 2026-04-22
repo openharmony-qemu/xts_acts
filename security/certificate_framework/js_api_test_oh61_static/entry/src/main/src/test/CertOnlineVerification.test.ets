@@ -610,7 +610,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
         done();
       });
 
-      /**
+    /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_8400
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_8400
      * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，开启OCSP吊销检查且允许在线OCSP检查且吊销的功能测试
