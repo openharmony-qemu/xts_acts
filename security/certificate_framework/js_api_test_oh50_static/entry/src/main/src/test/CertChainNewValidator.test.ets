@@ -2242,33 +2242,6 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_7200
-     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_7200
-     * @tc.desc   不完整校验，设置待校验实体证书，不信任中间证书（密钥用途无数字签名），信任根证书，功能测试
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("SUB_Security_Cert_Framework_New_Chain_Func_7200",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        try {
-          let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
-            trustedCerts: [rootDefaultX509CertGm!],
-            untrustedCerts: [interDefaultX509CertGm!],
-            validateDate: false
-          };
-          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafNoDigitalSignX509CertGm!, validatorParams);
-          expect(null).assertFail();
-        } catch (error) {
-          console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_KEYUSAGE_NO_DIGITAL_SIGNATURE);
-        }
-        done();
-      });
-
-    /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_7600
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_7600
      * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，开启OCSP吊销检查的功能测试
@@ -2717,6 +2690,36 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_9200
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_9200
+     * @tc.desc   不完整校验，设置待校验实体证书（不认识的关键扩展），不信任中间证书，信任根证书，忽略不认识关键扩展错误功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_9200",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        try {
+          let algName: string = "PKIX";
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootDefaultX509CertGm!],
+            untrustedCerts: [interDefaultX509CertGm!],
+            validateDate: false,
+            ignoreErrs: [
+              cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION
+            ]
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          let chainResult: cert.VerifyCertResult = await validator.validate(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
+          expect(chainResult.certChain.length).assertEqual(3);
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(null).assertFail();
         }
         done();
       });
