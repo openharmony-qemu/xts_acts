@@ -2136,11 +2136,11 @@ export default function DeviceInfoTest() {
             let chipType = deviceinfo.chipType;
             
             if (chipType != "" && chipType != null && chipType != undefined) {
-                console.info('the value of the deviceinfo chipType is :' + chipType);
+                console.info('the value of the deviceinfo ChipType is :' + chipType);
                 expect(chipType).assertInstanceOf('String');
 				done();
             } else {
-                console.info('the return value ProductModeAlias is null or incorrect.');
+                console.info('the return value ChipType is null or incorrect.');
                 expect().assertFail();
                 done();               
             }
@@ -2166,6 +2166,31 @@ export default function DeviceInfoTest() {
             done();
 
             console.info('device_info_test_081 end');
+        })
+
+        /**
+         * @tc.name   testGetChipType
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_082
+         * @tc.desc   Get DeviceColor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetDeviceColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('device_info_test_082 start');
+            let deviceCorlor = deviceinfo.deviceCorlor;
+            
+            if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
+                console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
+                expect(deviceCorlor).assertInstanceOf('String');
+				done();
+            } else {
+                console.info('the return value DeviceColor is null or incorrect.');
+                expect().assertFail();
+                done();               
+            }
+
+            console.info('device_info_test_082 end');
         })
     })
 }
