@@ -46,11 +46,11 @@
         });
 
         beforeEach(async () => {
-            console.info(TAG, 'beforeAll case');
+            console.info(TAG, 'beforeEach case');
         });
 
         afterEach(async () => {
-            console.info(TAG, 'afterAll case');
+            console.info(TAG, 'afterEach case');
             if (videoPlayer) {
                 try {
                     await videoPlayer.release();
@@ -79,7 +79,7 @@
         it('SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_CALLBACK_0100', Level.LEVEL1, async (done: Function) => {
             const testName = 'SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_CALLBACK_0100';
             try {
-                media.createVideoPlayer((error, Player) => {
+                media.createVideoPlayer((error, player) => {
                     if (error) {
                         console.error(TAG, `${testName} error: ${error.message}`);
                         expect().assertFail();
@@ -100,20 +100,20 @@
         });
 
         /**
-         * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0200
+         * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0100
          * @tc.name   Test createVideoPlayer with Promise
          * @tc.desc   Test createVideoPlayer returning Promise<VideoPlayer>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
          */
-        it('SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0200', Level.LEVEL1, async (done: Function) => {
-            const testName = 'SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0200';
+        it('SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0100', Level.LEVEL1, async (done: Function) => {
+            const testName = 'SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0100';
             try {
                 const player = await media.createVideoPlayer();
                 expect(player).not().assertNull();
                 videoPlayer = player;
-                except(videoPlayer.state).assertEqual('idle');
+                expect(videoPlayer.state).assertEqual('idle');
                 console.info(TAG, `${testName} success`);
                 done();
             } catch (error) {
@@ -125,8 +125,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0100
-         * @tc.name   Test seek with timMs and AsyncCallback
-         * @tc.desc   Test seek with vaild timeUs and callback
+         * @tc.name   Test seek with timeMs and AsyncCallback
+         * @tc.desc   Test seek with valid timeMs and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -146,11 +146,11 @@
                     if (error) {
                         console.error(TAG, `${testName} error: ${error.message}`);
                         expect().assertFail();
-                        doen();
+                        done();
                         return;
                     }
                     expect(result).assertLarger(0);
-                    console.info(TAG, `${testName} success, seekDoneTime: `${result}`);
+                    console.info(TAG, `${testName} success, seekDoneTime: ${result}`);
                     done();
                 });
             } catch (error) {
@@ -162,8 +162,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0200
-         * @tc.name   Test seek with timMs, SeekMode and AsyncCallback
-         * @tc.desc   Test seek with timMs, SeekMode and Callback
+         * @tc.name   Test seek with timeMs, SeekMode and AsyncCallback
+         * @tc.desc   Test seek with timeMs, SeekMode and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -179,16 +179,16 @@
                 await videoPlayer.prepare();
                 await videoPlayer.play();
 
-                const SeekMode = media.SeekMode.SEEK_TIME_SYNC;
+                const seekMode = media.SeekMode.SEEK_NEXT_SYNC;
                 videoPlayer.seek(SEEK_TIME, seekMode, (error, result) => {
                     if (error) {
                         console.error(TAG, `${testName} error: ${error.message}`);
                         expect().assertFail();
-                        doen();
+                        done();
                         return;
                     }
                     expect(result).assertLarger(0);
-                    console.info(TAG, `${testName} success, seekDoneTime: `${result}`);
+                    console.info(TAG, `${testName} success, seekDoneTime: ${result}`);
                     done();
                 });
             } catch (error) {
@@ -380,8 +380,8 @@
 
        /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0100
-         * @tc.name   Test seek with timeUs and Promise
-         * @tc.desc   Test seek with vaild timeUs returning Promise<number>
+         * @tc.name   Test seek with timeMs and Promise
+         * @tc.desc   Test seek with vaild timeMs returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -410,8 +410,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0200
-         * @tc.name   Test seek with timeUs and Promise
-         * @tc.desc   Test seek with vaild timeUs returning Promise<number>
+         * @tc.name   Test seek with timeMs,SeekMode and Promise
+         * @tc.desc   Test seek with timeMs,SeekMode returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -441,8 +441,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0100
-         * @tc.name   Test setVolume with vaild volume and AsyncCallback
-         * @tc.desc   Test setVolume with vaild volume and callback
+         * @tc.name   Test setVolume with valid volume and AsyncCallback
+         * @tc.desc   Test setVolume with valid volume and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -469,7 +469,7 @@
                     done();
                 });
             } catch (error) {
-                console.error(TAG, `${testName} expection: ${error}`);
+                console.error(TAG, `${testName} exception: ${error}`);
                 expect().assertFail();
                 done();
             }
@@ -494,7 +494,7 @@
                 await videoPlayer.prepare();
 
                 let completedCount = 0;
-                const volume = [0.0, 1.0];
+                const volumes = [0.0, 1.0];
 
                 volumes.forEach((volume) => {
                     videoPlayer?.setVolume(volume, (error) => {
@@ -510,7 +510,7 @@
                   });
                 });
             } catch (error) {
-                console.error(TAG, `${testName} expection: ${error}`);
+                console.error(TAG, `${testName} exception: ${error}`);
                 expect().assertFail();
                 done();
             }
@@ -548,7 +548,7 @@
                   });
                 });
             } catch (error) {
-                console.error(TAG, `${testName} expection: ${error}`);
+                console.error(TAG, `${testName} exception: ${error}`);
                 expect().assertFail();
                 done();
             }
@@ -586,7 +586,7 @@
                   });
                 });
             } catch (error) {
-                console.error(TAG, `${testName} expection: ${error}`);
+                console.error(TAG, `${testName} exception: ${error}`);
                 expect().assertFail();
                 done();
             }
@@ -594,8 +594,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0100
-         * @tc.name   Test setVolume with invaild volume and Promise
-         * @tc.desc   Test setVolume with invaild volume returning Promise<void>
+         * @tc.name   Test setVolume with valid volume and Promise
+         * @tc.desc   Test setVolume with valid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -623,8 +623,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0200
-         * @tc.name   Test setVolume with invaild volume and Promise
-         * @tc.desc   Test setVolume with invaild volume returning Promise<void>
+         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -655,8 +655,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0300
-         * @tc.name   Test setVolume with invaild volume and Promise
-         * @tc.desc   Test setVolume with invaild volume returning Promise<void>
+         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -687,8 +687,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0400
-         * @tc.name   Test setVolume with invaild volume and Promise
-         * @tc.desc   Test setVolume with invaild volume returning Promise<void>
+         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -719,8 +719,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0100
-         * @tc.name   Test setSpeed with vaild speed and AsyncCallback
-         * @tc.desc   Test setSpeed with vaild speed and callback
+         * @tc.name   Test setSpeed with valid speed and AsyncCallback
+         * @tc.desc   Test setSpeed with valid speed and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -744,11 +744,11 @@
                             return;
                         }
                         expect(result).assertEqual(speed);
-                        console.error(TAG, `${testName} success, speed: ${result}`);
+                        console.info(TAG, `${testName} success, speed: ${result}`);
                         done();
                 });
             } catch (error) {
-              console.error(TAG, `${testName} expection: ${error}`);
+              console.error(TAG, `${testName} exception: ${error}`);
               expect().assertFail();
               done();
             }
@@ -756,8 +756,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0200
-         * @tc.name   Test setSpeed with invaild speed
-         * @tc.desc   Test setSpeed with invaild speed values
+         * @tc.name   Test setSpeed with invalid speed
+         * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -779,7 +779,7 @@
                     done();
                 });
             } catch (error) {
-              console.error(TAG, `${testName} expection: ${error}`);
+              console.error(TAG, `${testName} exception: ${error}`);
               expect().assertFail();
               done();
             }
@@ -787,8 +787,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0300
-         * @tc.name   Test setSpeed with invaild speed
-         * @tc.desc   Test setSpeed with invaild speed values
+         * @tc.name   Test setSpeed with invalid speed
+         * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -810,7 +810,7 @@
                     done();
                 });
             } catch (error) {
-              console.error(TAG, `${testName} expection: ${error}`);
+              console.error(TAG, `${testName} exception: ${error}`);
               expect().assertFail();
               done();
             }
@@ -818,8 +818,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0400
-         * @tc.name   Test setSpeed with invaild speed
-         * @tc.desc   Test setSpeed with invaild speed values
+         * @tc.name   Test setSpeed with invalid speed
+         * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -841,7 +841,7 @@
                     done();
                 });
             } catch (error) {
-              console.error(TAG, `${testName} expection: ${error}`);
+              console.error(TAG, `${testName} exception: ${error}`);
               expect().assertFail();
               done();
             }
@@ -849,8 +849,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0100
-         * @tc.name   Test setSpeed with vaild speed and Promise
-         * @tc.desc   Test setSpeed with vaild speed and returning Promise<number>
+         * @tc.name   Test setSpeed with valid speed and Promise
+         * @tc.desc   Test setSpeed with valid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -879,8 +879,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0200
-         * @tc.name   Test setSpeed with invaild speed and Promise
-         * @tc.desc   Test setSpeed with invaild speed and returning Promise<number>
+         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -911,8 +911,8 @@
 
        /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0300
-         * @tc.name   Test setSpeed with invaild speed and Promise
-         * @tc.desc   Test setSpeed with invaild speed and returning Promise<number>
+         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -943,8 +943,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0400
-         * @tc.name   Test setSpeed with invaild speed and Promise
-         * @tc.desc   Test setSpeed with invaild speed and returning Promise<number>
+         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -1017,7 +1017,7 @@
                 console.info(TAG, `${testName} success`);
                 done();
               } catch (error) {
-                console.error(TAG, `${testName} error: ${error}`);
+                console.error(TAG, `${testName} exception: ${error}`);
                 expect().assertFail();
                 done();
               }
@@ -1026,8 +1026,8 @@
         //个人新增16913
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0700
-         * @tc.name   Test seek with null timeUs (callback)
-         * @tc.desc   Test seek with null timeUs parameter
+         * @tc.name   Test seek with null timeMs (callback)
+         * @tc.desc   Test seek with null timeMs parameter
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -1060,8 +1060,8 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0800
-         * @tc.name   Test seek with null timeMs (callback)
-         * @tc.desc   Test seek with null timeMs parameter
+         * @tc.name   Test seek with undefined timeMs (Callback)
+         * @tc.desc   Test seek with undefined timeMs parameter
          * @tc.size   MEDIUM
          * @tc.type   Function
          * @tc.level  Level 1
@@ -1282,7 +1282,7 @@
                 await videoPlayer.play();
 
                 const result = await videoPlayer.seek(SEEK_TIME, media.SeekMode.SEEK_CLOSEST);
-                expect(result),assertLarger(0);
+                expect(result).assertLarger(0);
                 console.info(TAG, `${testName} success for mode SEEK_CLOSEST, seekDoneTime: ${result}`);
                 console.info(TAG, `${testName} success`);
                 done();
@@ -1313,7 +1313,7 @@
                 await videoPlayer.play();
 
                 const result = await videoPlayer.seek(SEEK_TIME, media.SeekMode.SEEK_CONTINUOUS);
-                expect(result),assertLarger(0);
+                expect(result).assertLarger(0);
                 console.info(TAG, `${testName} success for mode SEEK_CONTINUOUS, seekDoneTime: ${result}`);
                 console.info(TAG, `${testName} success`);
                 done();
