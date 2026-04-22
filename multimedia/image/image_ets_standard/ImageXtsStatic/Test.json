@@ -12,7 +12,6 @@
         {
             "type": "ShellKit",
 
-
             "run-command": [
                 "hilog -Q pidoff",
                 "rm -rf /storage/media/100/local/files/Videos/*",
@@ -25,9 +24,6 @@
                 "mkdir -p /data/tmp/case",
                 "chmod -R 777 /data/tmp/case "
             ],
-
-
-
             "teardown-command": [
                 "power-shell setmode 600",
                 "rm -rf /data/app/el2/100/database/ohos.acts.multimedia.image.xts.static/*",
