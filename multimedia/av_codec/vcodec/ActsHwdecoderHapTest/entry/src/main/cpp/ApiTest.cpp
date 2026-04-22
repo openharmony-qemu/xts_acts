@@ -2592,5 +2592,100 @@ int VIDEO_HWDEC_API_ADD_0040()
     ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, 0, attr));
     return SUCCESS_CODE;
 }
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0050
+ * @tc.number VIDEO_HWDEC_API_ADD_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0050()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    OH_AVCodecBufferAttr attr;
+    attr.pts = -1;
+    attr.size = -1;
+    attr.offset = -1;
+    attr.flags = AVCODEC_BUFFER_FLAGS_INCOMPLETE_FRAME;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, -1, attr));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0060
+ * @tc.number VIDEO_HWDEC_API_ADD_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0060()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_RenderOutputData(vdec_, -1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0070
+ * @tc.number VIDEO_HWDEC_API_ADD_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0070()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_GetInputBuffer(vdec_, -1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0080
+ * @tc.number VIDEO_HWDEC_API_ADD_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0080()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_RenderOutputBuffer(vdec_, -1));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0090
+ * @tc.number VIDEO_HWDEC_API_ADD_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0090()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, -1, -100000000));
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0100
+ * @tc.number VIDEO_HWDEC_API_ADD_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VIDEO_HWDEC_API_ADD_0100()
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_FreeOutputBuffer(vdec_, -1));
+    return SUCCESS_CODE;
+}
 } // namespace Media
 } // namespace OHOS
