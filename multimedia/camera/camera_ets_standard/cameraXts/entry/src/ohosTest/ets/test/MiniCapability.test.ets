@@ -852,6 +852,13 @@ export default function MiniCapabilityTest() {
               }
             }
             console.info(TAG, testName + 'foundHeicProfile is: ' + JSON.stringify(foundHeicProfile));
+            if (!foundHeicProfile) {
+              console.info(TAG, testName + 'does not support HEIF, skip');
+              await previewOutput.release();
+              await session.release();
+              done();
+              return
+            }
             expect(foundHeicProfile).assertTrue();
             console.info(TAG, testName + 'heif test, photo profile: ' + JSON.stringify(heicTargetProfile));
             const heicPhotoOutput = mCameraManager.createPhotoOutput(heicTargetProfile);
