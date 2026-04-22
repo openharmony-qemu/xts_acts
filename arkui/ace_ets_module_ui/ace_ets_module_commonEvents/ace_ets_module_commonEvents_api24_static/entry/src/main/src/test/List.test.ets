@@ -20,6 +20,7 @@ import CommonKeyEventTest from './CommonKeyEventTest/CommonKeyEvent.test';
 import GestureStaticSuiteTest from './GestureStaticSuite/GestureStaticSuite.test';
 import UIContextGestureTest from './UIContextGestureTest/UIContextGesture.test';
 import UIContextUIObserverApiTest from './UIContextUIObserverApiTest/UIContextUIObserverApi.test';
+import AutoHideComponentUniqueIdsTest from './autoHideComponentUniqueIds/AutoHideComponentUniqueIdsTest.test';
 
 export default function testsuite() {
   DragControllerTest();
@@ -29,4 +30,5 @@ export default function testsuite() {
   GestureStaticSuiteTest();
   UIContextGestureTest();
   UIContextUIObserverApiTest();
+  AutoHideComponentUniqueIdsTest();
 }
