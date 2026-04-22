@@ -19,7 +19,7 @@ export default function StringStartsWithTest2() {
     //==================== Chain calls and complex expressions ====================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0100
      * @tc.name      StringStartsWith.test2001
      * @tc.desc      Verify chained string methods with startsWith
      * @tc.size      MediumTest
@@ -37,7 +37,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0200
      * @tc.name      StringStartsWith.test2002
      * @tc.desc      Verify multiple calls to startsWith
      * @tc.size      MediumTest
@@ -56,7 +56,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0300
      * @tc.name      StringStartsWith.test2003
      * @tc.desc      Verify matching with template strings
      * @tc.size      MediumTest
@@ -75,7 +75,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0400
      * @tc.name      StringStartsWith.test2004
      * @tc.desc      Verify matching with dynamic template strings (Corrected Expectation)
      * @tc.size      MediumTest
@@ -98,7 +98,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0500
      * @tc.name      StringStartsWith.test2005
      * @tc.desc      Verify combining startsWith with AND operator
      * @tc.size      MediumTest
@@ -116,7 +116,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0600
      * @tc.name      StringStartsWith.test2006
      * @tc.desc      Verify combining startsWith with OR operator
      * @tc.size      MediumTest
@@ -134,7 +134,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0700
      * @tc.name      StringStartsWith.test2007
      * @tc.desc      Verify combining startsWith with NOT operator
      * @tc.size      MediumTest
@@ -152,7 +152,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0800
      * @tc.name      StringStartsWith.test2008
      * @tc.desc      Verify using startsWith in a ternary operator
      * @tc.size      MediumTest
@@ -171,7 +171,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0900
      * @tc.name      StringStartsWith.test2009
      * @tc.desc      Verify nested ternary operators
      * @tc.size      MediumTest
@@ -196,7 +196,7 @@ export default function StringStartsWithTest2() {
     //==================== Performance and extreme cases test ====================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1000
      * @tc.name      StringStartsWith.test2010
      * @tc.desc      Verify matching on very long strings
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1100
      * @tc.name      StringStartsWith.test2011
      * @tc.desc      Verify matching with a long search string
      * @tc.size      MediumTest
@@ -234,7 +234,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1200
      * @tc.name      StringStartsWith.test2012
      * @tc.desc      Verify mismatch on a very long string
      * @tc.size      MediumTest
@@ -252,7 +252,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1300
      * @tc.name      StringStartsWith.test2013
      * @tc.desc      Verify behavior with negative Infinity position
      * @tc.size      MediumTest
@@ -270,7 +270,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1400
      * @tc.name      StringStartsWith.test2014
      * @tc.desc      Verify behavior with a very large negative position
      * @tc.size      MediumTest
@@ -288,7 +288,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1500
      * @tc.name      StringStartsWith.test2015
      * @tc.desc      Verify matching a repeated single character
      * @tc.size      MediumTest
@@ -308,7 +308,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1600
      * @tc.name      StringStartsWith.test2016
      * @tc.desc      Verify matching a repeated pattern string
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1700
      * @tc.name      StringStartsWith.test2017
      * @tc.desc      Verify fast fail on a long string mismatch
      * @tc.size      MediumTest
@@ -345,7 +345,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1800
      * @tc.name      StringStartsWith.test2018
      * @tc.desc      Verify full match on a long string
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function StringStartsWithTest2() {
     //==================== Strict mode and special environments ====================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1900
      * @tc.name      StringStartsWith.test2019
      * @tc.desc      Verify startsWith in strict mode
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2000
      * @tc.name      StringStartsWith.test2020
      * @tc.desc      Verify this binding in strict mode
      * @tc.size      MediumTest
@@ -401,7 +401,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2100
      * @tc.name      StringStartsWith.test2021
      * @tc.desc      Verify calling with call method
      * @tc.size      MediumTest
@@ -418,7 +418,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2200
      * @tc.name      StringStartsWith.test2022
      * @tc.desc      Verify calling with apply method
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2300
      * @tc.name      StringStartsWith.test2023
      * @tc.desc      Verify calling with bind method
      * @tc.size      MediumTest
@@ -452,7 +452,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2400
      * @tc.name      StringStartsWith.test2024
      * @tc.desc      Verify behavior on array objects
      * @tc.size      MediumTest
@@ -469,7 +469,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2500
      * @tc.name      StringStartsWith.test2025
      * @tc.desc      Verify behavior on String wrapper objects
      * @tc.size      MediumTest
@@ -487,7 +487,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2600
      * @tc.name      StringStartsWith.test2026
      * @tc.desc      Verify behavior on custom objects with toString
      * @tc.size      MediumTest
@@ -504,7 +504,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2700
      * @tc.name      StringStartsWith.test2027
      * @tc.desc      Verify with iterator protocol
      * @tc.size      MediumTest
@@ -521,7 +521,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2800
      * @tc.name      StringStartsWith.test2028
      * @tc.desc      Verify methods on the prototype chain
      * @tc.size      MediumTest
@@ -541,7 +541,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2900
      * @tc.name      StringStartsWith.test2029
      * @tc.desc      Verify modifying prototype method
      * @tc.size      MediumTest
@@ -558,7 +558,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3000
      * @tc.name      StringStartsWith.test2030
      * @tc.desc      Verify on frozen strings
      * @tc.size      MediumTest
@@ -575,7 +575,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3100
      * @tc.name      StringStartsWith.test2031
      * @tc.desc      Verify on sealed strings
      * @tc.size      MediumTest
@@ -592,7 +592,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3200
      * @tc.name      StringStartsWith.test2032
      * @tc.desc      12.7.1 Verify on Proxy wrapped strings
      * @tc.size      MediumTest
@@ -609,7 +609,7 @@ export default function StringStartsWithTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST2033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3300
      * @tc.name      StringStartsWith.test2033
      * @tc.desc      Verify across frames or windows
      * @tc.size      MediumTest

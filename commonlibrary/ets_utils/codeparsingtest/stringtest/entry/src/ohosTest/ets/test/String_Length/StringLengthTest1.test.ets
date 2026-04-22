@@ -19,12 +19,12 @@ export default function StringLengthTest1() {
     });
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     });
 
 
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0100
      * @tc.name      StringLengthTest1001
      * @tc.desc      Test string length with letters, digits and symbols
      * @tc.size      MediumTest
@@ -45,7 +45,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0200
      * @tc.name      StringLengthTest1002
      * @tc.desc      Test string length for Chinese characters (each Chinese character is 1 code unit in UTF-16)
      * @tc.size      MediumTest
@@ -64,7 +64,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0300
      * @tc.name      StringLengthTest1003
      * @tc.desc      Test the length property of an empty string
      * @tc.size      MediumTest
@@ -83,7 +83,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0400
      * @tc.name      StringLengthTest1004
      * @tc.desc      Test the length property of a single character string
      * @tc.size      MediumTest
@@ -104,7 +104,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0500
      * @tc.name      StringLengthTest1005
      * @tc.desc      Test length statistics of various whitespace characters
      * @tc.size      MediumTest
@@ -127,7 +127,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0600
      * @tc.name      StringLengthTest1006
      * @tc.desc      Test scenarios with various whitespace characters in strings
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0700
      * @tc.name      StringLengthTest1007
      * @tc.desc      Test length of Latin letters (BMP characters)
      * @tc.size      MediumTest
@@ -165,7 +165,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0800
      * @tc.name      StringLengthTest1008
      * @tc.desc      Test length of Cyrillic characters
      * @tc.size      MediumTest
@@ -182,7 +182,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0900
      * @tc.name      StringLengthTest1009
      * @tc.desc      Test length of Greek characters
      * @tc.size      MediumTest
@@ -199,9 +199,9 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1000
      * @tc.name      StringLengthTest1010
-     * @tc.desc      Test length of Greek characters
+     * @tc.desc      Compare strings with different lengths
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -209,14 +209,15 @@ export default function StringLengthTest1() {
     it("StringLengthTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1010';
       console.log(TAG + 'start');
-      const str1 = "ΑΒΓ";
-      const str2 = "αβγ";
-      expect(str1.length).assertEqual(3);
-      expect(str2.length).assertEqual(3);
+      const str1 = "hello";
+      const str2 = "world";
+      const str3 = "hi";
+      expect(str1.length === str2.length).assertEqual(true);
+      expect(str1.length > str3.length).assertEqual(true);
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1100
      * @tc.name      StringLengthTest1011
      * @tc.desc      Test emoji character length (most emojis occupy 2 code units)
      * @tc.size      MediumTest
@@ -237,7 +238,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1200
      * @tc.name      StringLengthTest1012
      * @tc.desc      Test complex emojis consisting of multiple code units
      * @tc.size      MediumTest
@@ -256,7 +257,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1300
      * @tc.name      StringLengthTest1013
      * @tc.desc      Test rare Chinese characters outside the Basic Multilingual Plane (BMP)
      * @tc.size      MediumTest
@@ -275,7 +276,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1400
      * @tc.name      StringLengthTest1014
      * @tc.desc      Test mathematical alphanumeric symbols
      * @tc.size      MediumTest
@@ -294,7 +295,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1500
      * @tc.name      StringLengthTest1015
      * @tc.desc      Test the effect of zero-width characters on the length property
      * @tc.size      MediumTest
@@ -315,7 +316,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1600
      * @tc.name      StringLengthTest1016
      * @tc.desc      Test the length of combining character sequences
      * @tc.size      MediumTest
@@ -336,7 +337,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1700
      * @tc.name      StringLengthTest1017
      * @tc.desc      Test the length differences between various Unicode normalization forms
      * @tc.size      MediumTest
@@ -357,7 +358,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1800
      * @tc.name      StringLengthTest1019
      * @tc.desc      Test empty string length
      * @tc.size      MediumTest
@@ -376,7 +377,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1900
      * @tc.name      StringLengthTest1020
      * @tc.desc      Test single-character string length
      * @tc.size      MediumTest
@@ -393,7 +394,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2000
      * @tc.name      StringLengthTest1021
      * @tc.desc      Test 1000-character string
      * @tc.size      MediumTest
@@ -408,7 +409,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2100
      * @tc.name      StringLengthTest1022
      * @tc.desc      Test 10000-character string
      * @tc.size      MediumTest
@@ -423,7 +424,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2200
      * @tc.name      StringLengthTest1023
      * @tc.desc      Test 1000000-character string
      * @tc.size      MediumTest
@@ -438,7 +439,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2300
      * @tc.name      StringLengthTest1024
      * @tc.desc      Test string length near Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -453,7 +454,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2400
      * @tc.name      StringLengthTest1025
      * @tc.desc      Test string lengths at 2^31 and 2^32 boundaries
      * @tc.size      MediumTest
@@ -470,7 +471,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2500
      * @tc.name      StringLengthTest1026
      * @tc.desc      Modify length in strict mode, expect error
      * @tc.size      MediumTest
@@ -487,7 +488,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2600
      * @tc.name      StringLengthTest1027
      * @tc.desc      Test whether the length property appears in the for...in loop
      * @tc.size      MediumTest
@@ -502,7 +503,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2700
      * @tc.name      StringLengthTest1028
      * @tc.desc      Test whether the length property appears in the Object.keys() result
      * @tc.size      MediumTest
@@ -523,7 +524,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2800
      * @tc.name      StringLengthTest1029
      * @tc.desc      Attempt to delete the length property in strict mode
      * @tc.size      MediumTest
@@ -539,7 +540,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2900
      * @tc.name      StringLengthTest1030
      * @tc.desc      View the full descriptor of the length property
      * @tc.size      MediumTest
@@ -557,7 +558,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3000
      * @tc.name      StringLengthTest1031
      * @tc.desc      Traverse the string by using the length property and charAt method
      * @tc.size      MediumTest
@@ -577,7 +578,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3100
      * @tc.name      StringLengthTest1032
      * @tc.desc      Implement string reversal using the length property
      * @tc.size      MediumTest
@@ -592,7 +593,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3200
      * @tc.name      StringLengthTest1033
      * @tc.desc      Use the length property as parameters for substring/slice methods
      * @tc.size      MediumTest
@@ -610,7 +611,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3300
      * @tc.name      StringLengthTest1034
      * @tc.desc      Safe substring with length
      * @tc.size      MediumTest
@@ -626,7 +627,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3400
      * @tc.name      StringLengthTest1035
      * @tc.desc      Compare str and split length
      * @tc.size      MediumTest
@@ -642,7 +643,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3500
      * @tc.name      StringLengthTest1036
      * @tc.desc      Split char equals str length
      * @tc.size      MediumTest
@@ -659,7 +660,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3600
      * @tc.name      StringLengthTest1037
      * @tc.desc      Check find result with length
      * @tc.size      MediumTest
@@ -675,7 +676,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3700
      * @tc.name      StringLengthTest1038
      * @tc.desc      Check inclusion with length & indexOf
      * @tc.size      MediumTest
@@ -691,7 +692,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3800
      * @tc.name      StringLengthTest1039
      * @tc.desc      Compare length before/after trim
      * @tc.size      MediumTest
@@ -709,7 +710,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3900
      * @tc.name      StringLengthTest1040
      * @tc.desc      Check empty after trim with length
      * @tc.size      MediumTest
@@ -726,7 +727,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4000
      * @tc.name      StringLengthTest1041
      * @tc.desc      Test length after repeat
      * @tc.size      MediumTest
@@ -743,7 +744,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4100
      * @tc.name      StringLengthTest1042
      * @tc.desc      Verify repeat length = len × times
      * @tc.size      MediumTest
@@ -759,9 +760,9 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4200
      * @tc.name      StringLengthTest1043
-     * @tc.desc      Verify repeat length = len × times
+     * @tc.desc      Test length after padStart/padEnd
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -777,7 +778,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4300
      * @tc.name      StringLengthTest1044
      * @tc.desc      No pad if target < length
      * @tc.size      MediumTest
@@ -793,7 +794,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4400
      * @tc.name      StringLengthTest1045
      * @tc.desc      Test replace impact on length
      * @tc.size      MediumTest
@@ -810,7 +811,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4500
      * @tc.name      StringLengthTest1046
      * @tc.desc      Test escape char length
      * @tc.size      MediumTest
@@ -830,7 +831,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4600
      * @tc.name      StringLengthTest1047
      * @tc.desc      Test Unicode escape length
      * @tc.size      MediumTest
@@ -848,7 +849,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4700
      * @tc.name      StringLengthTest1048
      * @tc.desc      Test ASCII control length
      * @tc.size      MediumTest
@@ -867,9 +868,9 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4800
      * @tc.name      StringLengthTest1049
-     * @tc.desc      Test ASCII control length
+     * @tc.desc      Test zero-width character length
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -884,7 +885,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4900
      * @tc.name      StringLengthTest1050
      * @tc.desc      Test length of HTML entity strings
      * @tc.size      MediumTest
@@ -902,7 +903,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5000
      * @tc.name      StringLengthTest1051
      * @tc.desc      Test currency symbol length
      * @tc.size      MediumTest
@@ -921,7 +922,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5100
      * @tc.name      StringLengthTest1052
      * @tc.desc      Test string literal length
      * @tc.size      MediumTest
@@ -937,7 +938,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5200
      * @tc.name      StringLengthTest1053
      * @tc.desc      Test String constructor length
      * @tc.size      MediumTest
@@ -955,7 +956,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5300
      * @tc.name      StringLengthTest1054
      * @tc.desc      Test String object length
      * @tc.size      MediumTest
@@ -972,7 +973,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5400
      * @tc.name      StringLengthTest1055
      * @tc.desc      Test length of converted number strings
      * @tc.size      MediumTest
@@ -992,7 +993,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5500
      * @tc.name      StringLengthTest1056
      * @tc.desc      Test length of boolean strings
      * @tc.size      MediumTest
@@ -1007,7 +1008,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5600
      * @tc.name      StringLengthTest1057
      * @tc.desc      Test length of object strings
      * @tc.size      MediumTest
@@ -1025,7 +1026,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5700
      * @tc.name      StringLengthTest1058
      * @tc.desc      Test length of null & undefined strings
      * @tc.size      MediumTest
@@ -1040,7 +1041,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5800
      * @tc.name      StringLengthTest1059
      * @tc.desc      Test iteration count vs length via for...of
      * @tc.size      MediumTest
@@ -1060,7 +1061,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5900
      * @tc.name      StringLengthTest1060
      * @tc.desc      Iteration count differs from length for surrogate pairs
      * @tc.size      MediumTest
@@ -1080,7 +1081,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6000
      * @tc.name      StringLengthTest1061
      * @tc.desc      Compare length with spread operator array
      * @tc.size      MediumTest
@@ -1096,7 +1097,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6100
      * @tc.name      StringLengthTest1062
      * @tc.desc      Array length differs from string length with surrogate pairs
      * @tc.size      MediumTest
@@ -1112,7 +1113,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6200
      * @tc.name      StringLengthTest1063
      * @tc.desc      Convert string with Array.from
      * @tc.size      MediumTest
@@ -1130,7 +1131,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6300
      * @tc.name      StringLengthTest1064
      * @tc.desc      Count chars with for...of
      * @tc.size      MediumTest
@@ -1146,7 +1147,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6400
      * @tc.name      StringLengthTest1065
      * @tc.desc      Access chars with index
      * @tc.size      MediumTest
@@ -1164,7 +1165,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6500
      * @tc.name      StringLengthTest1066
      * @tc.desc      Access boundary indexes
      * @tc.size      MediumTest
@@ -1182,7 +1183,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6600
      * @tc.name      StringLengthTest1067
      * @tc.desc      Traverse string in reverse order using length
      * @tc.size      MediumTest
@@ -1197,7 +1198,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6700
      * @tc.name      StringLengthTest1068
      * @tc.desc      Test length after concatenation
      * @tc.size      MediumTest
@@ -1216,7 +1217,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6800
      * @tc.name      StringLengthTest1069
      * @tc.desc      Test string concatenation using concat method
      * @tc.size      MediumTest
@@ -1233,7 +1234,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6900
      * @tc.name      StringLengthTest1070
      * @tc.desc      Test string concatenation using template literals
      * @tc.size      MediumTest
@@ -1250,7 +1251,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7000
      * @tc.name      StringLengthTest1071
      * @tc.desc      Test length of string joined from array
      * @tc.size      MediumTest
@@ -1267,7 +1268,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7100
      * @tc.name      StringLengthTest1072
      * @tc.desc      Test length with separator join
      * @tc.size      MediumTest
@@ -1285,7 +1286,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7200
      * @tc.name      StringLengthTest1073
      * @tc.desc      Verify string length within specified range
      * @tc.size      MediumTest
@@ -1302,7 +1303,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7300
      * @tc.name      StringLengthTest1074
      * @tc.desc      Check if string is empty using length
      * @tc.size      MediumTest
@@ -1312,14 +1313,14 @@ export default function StringLengthTest1() {
     it("StringLengthTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1074';
       console.log(TAG + 'start');
-      let result = stringTest.testValidLength();
+      let result = stringTest.testEmptyByLength();
       expect(result.case1).assertEqual(true);
       expect(result.case2).assertEqual(false);
-      expect(result.case3).assertEqual(false);
+      expect(result.case3).assertEqual(true);
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7400
      * @tc.name      StringLengthTest1075
      * @tc.desc      Truncate string based on length
      * @tc.size      MediumTest
@@ -1335,7 +1336,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7500
      * @tc.name      StringLengthTest1076
      * @tc.desc      Ensure safe substring extraction using length
      * @tc.size      MediumTest
@@ -1351,7 +1352,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7600
      * @tc.name      StringLengthTest1077
      * @tc.desc      Manual implementation of left padding
      * @tc.size      MediumTest
@@ -1367,7 +1368,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7700
      * @tc.name      StringLengthTest1078
      * @tc.desc      Manual implementation of right padding
      * @tc.size      MediumTest
@@ -1383,7 +1384,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7800
      * @tc.name      StringLengthTest1079
      * @tc.desc      Implement fixed width formatting using length
      * @tc.size      MediumTest
@@ -1399,7 +1400,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7900
      * @tc.name      StringLengthTest1080
      * @tc.desc      Implement string center alignment
      * @tc.size      MediumTest
@@ -1414,7 +1415,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8000
      * @tc.name      StringLengthTest1081
      * @tc.desc      Count words by combining length and split
      * @tc.size      MediumTest
@@ -1431,7 +1432,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8100
      * @tc.name      StringLengthTest1082
      * @tc.desc      Compare length before and after processing
      * @tc.size      MediumTest
@@ -1447,7 +1448,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8200
      * @tc.name      StringLengthTest1083
      * @tc.desc      Distinguish between length of String constructor and string instance
      * @tc.size      MediumTest
@@ -1463,7 +1464,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8300
      * @tc.name      StringLengthTest1084
      * @tc.desc      String.length represents the number of parameters the String function expects
      * @tc.size      MediumTest
@@ -1480,7 +1481,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8400
      * @tc.name      StringLengthTest1085
      * @tc.desc      Use length in tag function
      * @tc.size      MediumTest
@@ -1496,7 +1497,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8500
      * @tc.name      StringLengthTest1086
      * @tc.desc      Use String.raw and length
      * @tc.size      MediumTest
@@ -1513,7 +1514,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8600
      * @tc.name      StringLengthTest1087
      * @tc.desc      Compare the length before and after serialization
      * @tc.size      MediumTest
@@ -1530,7 +1531,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8700
      * @tc.name      StringLengthTest1088
      * @tc.desc      Test the length after JSON parsing
      * @tc.size      MediumTest
@@ -1546,7 +1547,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8800
      * @tc.name      StringLengthTest1089
      * @tc.desc      Use length to determine the match result
      * @tc.size      MediumTest
@@ -1563,7 +1564,7 @@ export default function StringLengthTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8900
      * @tc.name      StringLengthTest1090
      * @tc.desc      Count the number of replacements
      * @tc.size      MediumTest
@@ -1583,23 +1584,6 @@ export default function StringLengthTest1() {
       expect(result.length).assertEqual(11);
       console.log(TAG + "end");
     });
-    /**
-     * @tc.number    BUILTINS_STRING_LENGTH_TEST1091
-     * @tc.name      StringLengthTest1091
-     * @tc.desc      Compare strings with different lengths
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("StringLengthTest1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringLengthTest1091';
-      console.log(TAG + 'start');
-      const str1 = "hello";
-      const str2 = "world";
-      const str3 = "hi";
-      expect(str1.length === str2.length).assertEqual(true);
-      expect(str1.length > str3.length).assertEqual(true);
-      console.log(TAG + "end");
-    });
+
   });
 }

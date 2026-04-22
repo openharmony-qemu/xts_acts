@@ -12,7 +12,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0100
      * @tc.name      StringReplaceTest2001
      * @tc.desc      Call methods like toUpperCase after replace
      * @tc.size      MediumTest
@@ -30,7 +30,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0200
      * @tc.name      StringReplaceTest2002
      * @tc.desc      Chained call of multiple string methods
      * @tc.size      MediumTest
@@ -53,7 +53,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0300
      * @tc.name      StringReplaceTest2003
      * @tc.desc      Remove HTML tags from text
      * @tc.size      MediumTest
@@ -71,7 +71,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0400
      * @tc.name      StringReplaceTest2004
      * @tc.desc      Format numbers as phone numbers
      * @tc.size      MediumTest
@@ -89,7 +89,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0500
      * @tc.name      StringReplaceTest2005
      * @tc.desc   Convert date from one format to another
      * @tc.size      MediumTest
@@ -107,7 +107,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0600
      * @tc.name      StringReplaceTest2006
      * @tc.desc      Format numbers as currency
      * @tc.size      MediumTest
@@ -127,7 +127,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0700
      * @tc.name      StringReplaceTest2007
      * @tc.desc      Chained call of multiple string methods
      * @tc.size      MediumTest
@@ -150,7 +150,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0800
      * @tc.name      StringReplaceTest2008
      * @tc.desc     Replace multiple consecutive spaces with a single space
      * @tc.size      MediumTest
@@ -168,7 +168,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_0900
      * @tc.name      StringReplaceTest2009
      * @tc.desc      Chained call of multiple string methods
      * @tc.size      MediumTest
@@ -191,7 +191,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1000
      * @tc.name      StringReplaceTest2010
      * @tc.desc      Keep only letters and numbers
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1100
      * @tc.name      StringReplaceTest2011
      * @tc.desc      Normalize newlines across different systems
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1200
      * @tc.name      StringReplaceTest2012
      * @tc.desc      Replace special characters in URL
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1300
      * @tc.name      StringReplaceTest2013
      * @tc.desc      Replace variable placeholders in a template
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1400
      * @tc.name      StringReplaceTest2014
      * @tc.desc      Replace based on conditions
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1500
      * @tc.name      StringReplaceTest2015
      * @tc.desc      Process nested template variables
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1600
      * @tc.name      StringReplaceTest2016
      * @tc.desc      Convert camelCase to kebab-case
      * @tc.size      MediumTest
@@ -357,7 +357,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1700
      * @tc.name      StringReplaceTest2017
      * @tc.desc      Convert kebab-case to camelCase
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1800
      * @tc.name      StringReplaceTest2018
      * @tc.desc      Convert snake_case to camelCase
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_1900
      * @tc.name      StringReplaceTest2019
      * @tc.desc      Hide the middle 4 digits of a phone number
      * @tc.size      MediumTest
@@ -411,7 +411,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2000
      * @tc.name      StringReplaceTest2020
      * @tc.desc      Mask part of the email characters
      * @tc.size      MediumTest
@@ -429,7 +429,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2100
      * @tc.name      StringReplaceTest2021
      * @tc.desc      Hide the middle part of the ID card number
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2200
      * @tc.name      StringReplaceTest2022
      * @tc.desc      Hide the middle part of the bank card number
      * @tc.size      MediumTest
@@ -465,7 +465,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2300
      * @tc.name      StringReplaceTest2023
      * @tc.desc      Format date by region
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function StringReplaceTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2400
      * @tc.name      StringReplaceTest2024
      * @tc.desc      Format numbers for different regions
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function StringReplaceTest2() {
     });
     //--------------------replace-----------------------
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2500
      * @tc.name      StringReplaceTest2025
      * @tc.desc      Create a custom object to implement Symbol.replace
      * @tc.size      MediumTest
@@ -520,7 +520,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2600
      * @tc.name      StringReplaceTest2026
      * @tc.desc      Control replacement behavior with a custom object
      * @tc.size      MediumTest
@@ -535,7 +535,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2700
      * @tc.name      StringReplaceTest2027
      * @tc.desc      The Symbol.replace method returns undefined
      * @tc.size      MediumTest
@@ -550,7 +550,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2800
      * @tc.name      StringReplaceTest2028
      * @tc.desc      Using replacement in Symbol.replace
      * @tc.size      MediumTest
@@ -565,7 +565,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_2900
      * @tc.name      StringReplaceTest2029
      * @tc.desc      Using replacement in Symbol.replace
      * @tc.size      MediumTest
@@ -582,7 +582,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3000
      * @tc.name      StringReplaceTest2030
      * @tc.desc      Directly call the Symbol.replace method
      * @tc.size      MediumTest
@@ -597,7 +597,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3100
      * @tc.name      StringReplaceTest2031
      * @tc.desc      Rewrite the Symbol.replace method of RegExp
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3200
      * @tc.name      StringReplaceTest2032
      * @tc.desc      Compare the behavioral differences between regular expressions and strings as patterns
      * @tc.size      MediumTest
@@ -630,7 +630,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3300
      * @tc.name      StringReplaceTest2033
      * @tc.desc      Compare the performance of multiple replaces and a single regex
      * @tc.size      MediumTest
@@ -648,7 +648,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3400
      * @tc.name      StringReplaceTest2034
      * @tc.desc      Precompiling regular expressions improves performance
      * @tc.size      MediumTest
@@ -667,7 +667,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3500
      * @tc.name      StringReplaceTest2035
      * @tc.desc      Replacement of complex regular expressions
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3600
      * @tc.name      StringReplaceTest2036
      * @tc.desc      Test the maximum number of capture groups
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3700
      * @tc.name      StringReplaceTest2037
      * @tc.desc      replace does not modify the original string
      * @tc.size      MediumTest
@@ -715,7 +715,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3800
      * @tc.name      StringReplaceTest2038
      * @tc.desc      Return a new string object even if there is no match
      * @tc.size      SmallTest
@@ -731,7 +731,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_3900
      * @tc.name      StringReplaceTest2039
      * @tc.desc      The return value is always of type string
      * @tc.size      SmallTest
@@ -746,7 +746,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4000
      * @tc.name      StringReplaceTest2040
      * @tc.desc      No matter what the input is, the return value is always of string type
      * @tc.size      SmallTest
@@ -761,7 +761,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4100
      * @tc.name      StringReplaceTest2041
      * @tc.desc      Convert String wrapper object to primitive string
      * @tc.size      SmallTest
@@ -777,7 +777,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4200
      * @tc.name      StringReplaceTest2042
      * @tc.desc      String directly calls replace
      * @tc.size      SmallTest
@@ -793,7 +793,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4300
      * @tc.name      StringReplaceTest2043
      * @tc.desc      Call using the call method
      * @tc.size      SmallTest
@@ -808,7 +808,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4400
      * @tc.name      StringReplaceTest2044
      * @tc.desc      Call using the apply method
      * @tc.size      SmallTest
@@ -823,7 +823,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4500
      * @tc.name      StringReplaceTest2045
      * @tc.desc      Call using the bind method
      * @tc.size      SmallTest
@@ -838,7 +838,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4600
      * @tc.name      StringReplaceTest2046
      * @tc.desc      Access replace from String.prototype
      * @tc.size      SmallTest
@@ -853,7 +853,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4700
      * @tc.name      StringReplaceTest2047
      * @tc.desc      Override the replace method on an instance
      * @tc.size      SmallTest
@@ -868,7 +868,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4800
      * @tc.name      StringReplaceTest2048
      * @tc.desc      Special behavior of matching empty strings
      * @tc.size      SmallTest
@@ -884,7 +884,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_4900
      * @tc.name      StringReplaceTest2049
      * @tc.desc      Optional group matches an empty string
      * @tc.size      SmallTest
@@ -900,7 +900,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5000
      * @tc.name      StringReplaceTest2050
      * @tc.desc      The lastIndex of a non-global regular expression does not affect matching
      * @tc.size      SmallTest
@@ -918,7 +918,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5100
      * @tc.name      StringReplaceTest2051
      * @tc.desc      Regular expression status after replacement
      * @tc.size      SmallTest
@@ -935,7 +935,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + 'end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5200
      * @tc.name      StringReplaceTest2052
      * @tc.desc      Dynamically build regular expressions
      * @tc.size      SmallTest
@@ -954,7 +954,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5300
      * @tc.name      StringReplaceTest2053
      * @tc.desc      Create regex from user input (needs escaping)
      * @tc.size      SmallTest
@@ -973,7 +973,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5400
      * @tc.name      StringReplaceTest2054
      * @tc.desc      Combination of various special modes
      * @tc.size      SmallTest
@@ -989,7 +989,7 @@ export default function StringReplaceTest2() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST2055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACETWO_5500
      * @tc.name      StringReplaceTest2055
      * @tc.desc      Complex conditional replacement logic
      * @tc.size      SmallTest
@@ -1011,4 +1011,3 @@ export default function StringReplaceTest2() {
     });
   });
 };
-

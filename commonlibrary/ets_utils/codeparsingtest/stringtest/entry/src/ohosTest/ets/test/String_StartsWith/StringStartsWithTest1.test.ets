@@ -11,16 +11,16 @@ export default function StringStartsWithTest1() {
       // Presets an action, which is performed before each unit test case starts.
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
+      // Presets an clear action, which is performed after each unit test case ends.
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // Presets an clear action, which is performed after all test cases of the test suite end.
     });
 
     //========================== Basic Function Test ============================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0100
      * @tc.name      StringStartsWith.test1001
      * @tc.desc      Verify complete match at the beginning of the string
      * @tc.size      MediumTest
@@ -38,7 +38,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0200
      * @tc.name      StringStartsWith.test1002
      * @tc.desc      Verify partial match at the beginning of the string
      * @tc.size      MediumTest
@@ -56,7 +56,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0300
      * @tc.name      StringStartsWith.test1003
      * @tc.desc      Verify no match at the beginning of the string
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0400
      * @tc.name      StringStartsWith.test1004
      * @tc.desc      Verify no match when search string is in the middle or end
      * @tc.size      MediumTest
@@ -93,7 +93,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0500
      * @tc.name      StringStartsWith.test1005
      * @tc.desc      Verify return type and value for a true matching condition
      * @tc.size      MediumTest
@@ -114,7 +114,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0600
      * @tc.name      StringStartsWith.test1006
      * @tc.desc      Verify return type and value for a false matching condition
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0700
      * @tc.name      StringStartsWith.test1007
      * @tc.desc      Verify match when search string equals the original string
      * @tc.size      MediumTest
@@ -153,7 +153,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0800
      * @tc.name      StringStartsWith.test1008
      * @tc.desc      Verify no match when search string is longer than original string
      * @tc.size      MediumTest
@@ -173,7 +173,7 @@ export default function StringStartsWithTest1() {
     //========================== Parameter Type Test ============================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0900
      * @tc.name      StringStartsWith.test1009
      * @tc.desc      Verify matching with standard string type parameter
      * @tc.size      MediumTest
@@ -191,7 +191,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1000
      * @tc.name      StringStartsWith.test1010
      * @tc.desc      Verify implicit conversion of number type searchString
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1100
      * @tc.name      StringStartsWith.test1011
      * @tc.desc      Verify implicit conversion of boolean type searchString
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1200
      * @tc.name      StringStartsWith.test1012
      * @tc.desc      Verify implicit conversion of undefined searchString
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1300
      * @tc.name      StringStartsWith.test1013
      * @tc.desc      Verify implicit conversion of null searchString
      * @tc.size      MediumTest
@@ -266,7 +266,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1400
      * @tc.name      StringStartsWith.test1014
      * @tc.desc      Verify implicit conversion of object type searchString
      * @tc.size      MediumTest
@@ -284,7 +284,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1500
      * @tc.name      StringStartsWith.test1015
      * @tc.desc      Verify implicit conversion of array type searchString
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1600
      * @tc.name      StringStartsWith.test1016
      * @tc.desc      Verify passing RegExp throws TypeError
      * @tc.size      MediumTest
@@ -320,7 +320,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1700
      * @tc.name      StringStartsWith.test1017
      * @tc.desc      Verify match with valid number position
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1800
      * @tc.name      StringStartsWith.test1018
      * @tc.desc      Verify implicit conversion of string number position
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1900
      * @tc.name      StringStartsWith.test1019
      * @tc.desc      Verify behavior with negative position parameter
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2000
      * @tc.name      StringStartsWith.test1020
      * @tc.desc      Verify behavior with float position parameter
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2100
      * @tc.name      StringStartsWith.test1021
      * @tc.desc      Verify behavior with NaN position parameter
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2200
      * @tc.name      StringStartsWith.test1022
      * @tc.desc      Verify behavior with undefined position parameter
      * @tc.size      MediumTest
@@ -430,7 +430,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2300
      * @tc.name      StringStartsWith.test1023
      * @tc.desc      Verify behavior with null position parameter
      * @tc.size      MediumTest
@@ -448,7 +448,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2400
      * @tc.name      StringStartsWith.test1024
      * @tc.desc      Verify match when position exceeds string length
      * @tc.size      MediumTest
@@ -469,7 +469,7 @@ export default function StringStartsWithTest1() {
     //========================== Boundary Value Test ============================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2500
      * @tc.name      StringStartsWith.test1025
      * @tc.desc      Verify matching when both strings are empty
      * @tc.size      MediumTest
@@ -487,7 +487,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2600
      * @tc.name      StringStartsWith.test1026
      * @tc.desc      Verify matching when original string is empty and search string is non-empty
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2700
      * @tc.name      StringStartsWith.test1027
      * @tc.desc      Verify non-empty string always starts with empty string at any position
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2800
      * @tc.name      StringStartsWith.test1028
      * @tc.desc      Verify single character string matching
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2900
      * @tc.name      StringStartsWith.test1029
      * @tc.desc      Verify single character string starts with empty string
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3000
      * @tc.name      StringStartsWith.test1030
      * @tc.desc      Verify searching from position 0
      * @tc.size      MediumTest
@@ -581,7 +581,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3100
      * @tc.name      StringStartsWith.test1031
      * @tc.desc      Verify behavior when position equals string length
      * @tc.size      MediumTest
@@ -600,7 +600,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3200
      * @tc.name      StringStartsWith.test1032
      * @tc.desc      Verify behavior when position is greater than string length
      * @tc.size      MediumTest
@@ -619,7 +619,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3300
      * @tc.name      StringStartsWith.test1033
      * @tc.desc      Verify behavior when position is Infinity
      * @tc.size      MediumTest
@@ -640,7 +640,7 @@ export default function StringStartsWithTest1() {
     //========================== Position Parameter Test ============================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3400
      * @tc.name      StringStartsWith.test1034
      * @tc.desc      Verify matching from position 0 by default
      * @tc.size      MediumTest
@@ -659,7 +659,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3500
      * @tc.name      StringStartsWith.test1035
      * @tc.desc      Verify matching from the middle of the string
      * @tc.size      MediumTest
@@ -678,7 +678,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3600
      * @tc.name      StringStartsWith.test1036
      * @tc.desc      Verify matching at the very end of the string
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3700
      * @tc.name      StringStartsWith.test1037
      * @tc.desc      Verify position parameter as a mathematical expression
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3800
      * @tc.name      StringStartsWith.test1038
      * @tc.desc      Verify position parameter calculated from string length
      * @tc.size      MediumTest
@@ -734,7 +734,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3900
      * @tc.name      StringStartsWith.test1039
      * @tc.desc      Verify skipping characters using position parameter
      * @tc.size      MediumTest
@@ -753,7 +753,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4000
      * @tc.name      StringStartsWith.test1040
      * @tc.desc      Verify match when search string overlaps with position
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4100
      * @tc.name      StringStartsWith.test1041
      * @tc.desc      Verify case sensitivity with exact match
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4200
      * @tc.name      StringStartsWith.test1042
      * @tc.desc      Verify case sensitivity with full uppercase string
      * @tc.size      MediumTest
@@ -810,7 +810,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4300
      * @tc.name      StringStartsWith.test1043
      * @tc.desc      Verify case sensitivity with full lowercase string
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4400
      * @tc.name      StringStartsWith.test1044
      * @tc.desc      Verify case sensitivity with mixed case string
      * @tc.size      MediumTest
@@ -849,7 +849,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4500
      * @tc.name      StringStartsWith.test1045
      * @tc.desc      Verify matching with space characters
      * @tc.size      MediumTest
@@ -868,7 +868,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4600
      * @tc.name      StringStartsWith.test1046
      * @tc.desc      Verify matching with tab characters
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4700
      * @tc.name      StringStartsWith.test1047
      * @tc.desc      Verify matching with newline characters
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4800
      * @tc.name      StringStartsWith.test1048
      * @tc.desc      Verify matching with carriage return characters
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4900
      * @tc.name      StringStartsWith.test1049
      * @tc.desc      Verify matching with multiple types of whitespace
      * @tc.size      MediumTest
@@ -942,7 +942,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5000
      * @tc.name      StringStartsWith.test1050
      * @tc.desc      Verify matching with escape characters
      * @tc.size      MediumTest
@@ -961,7 +961,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5100
      * @tc.name      StringStartsWith.test1051
      * @tc.desc      Verify matching with quote characters
      * @tc.size      MediumTest
@@ -980,7 +980,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5200
      * @tc.name      StringStartsWith.test1052
      * @tc.desc      Verify matching with backslash in paths
      * @tc.size      MediumTest
@@ -1001,7 +1001,7 @@ export default function StringStartsWithTest1() {
     //========= Unicode and Multi-byte Character Test =========
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5300
      * @tc.name      StringStartsWith.test1053
      * @tc.desc      Verify matching with Chinese characters
      * @tc.size      MediumTest
@@ -1020,7 +1020,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5400
      * @tc.name      StringStartsWith.test1054
      * @tc.desc      Verify matching with mixed Chinese and English characters
      * @tc.size      MediumTest
@@ -1039,7 +1039,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5500
      * @tc.name      StringStartsWith.test1055
      * @tc.desc      Verify matching with a single Emoji
      * @tc.size      MediumTest
@@ -1058,7 +1058,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5600
      * @tc.name      StringStartsWith.test1056
      * @tc.desc      Verify matching with multiple Emojis
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5700
      * @tc.name      StringStartsWith.test1057
      * @tc.desc      Verify Emoji position calculation (Surrogate pairs)
      * @tc.size      MediumTest
@@ -1094,7 +1094,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5800
      * @tc.name      StringStartsWith.test1058
      * @tc.desc      Verify matching with Unicode escape sequences
      * @tc.size      MediumTest
@@ -1113,7 +1113,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5900
      * @tc.name      StringStartsWith.test1059
      * @tc.desc      Verify matching with special Unicode symbols
      * @tc.size      MediumTest
@@ -1131,7 +1131,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6000
      * @tc.name      StringStartsWith.test1060
      * @tc.desc      Verify matching with partial multi-byte characters
      * @tc.size      MediumTest
@@ -1152,7 +1152,7 @@ export default function StringStartsWithTest1() {
     //========================== Exception Handling Test ============================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6100
      * @tc.name      StringStartsWith.test1061
      * @tc.desc      Verify TypeError when passing a direct regex
      * @tc.size      MediumTest
@@ -1170,7 +1170,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6200
      * @tc.name      StringStartsWith.test1062
      * @tc.desc      Verify TypeError when passing a regex with flags
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6300
      * @tc.name      StringStartsWith.test1063
      * @tc.desc      Verify TypeError when passing a RegExp object
      * @tc.size      MediumTest
@@ -1206,7 +1206,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6400
      * @tc.name      StringStartsWith.test1064
      * @tc.desc      Verify TypeError when this is null
      * @tc.size      MediumTest
@@ -1224,7 +1224,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6500
      * @tc.name      StringStartsWith.test1065
      * @tc.desc      Verify TypeError when this is undefined
      * @tc.size      MediumTest
@@ -1242,7 +1242,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6600
      * @tc.name      StringStartsWith.test1066
      * @tc.desc      Verify handling of custom toString throwing error
      * @tc.size      MediumTest
@@ -1260,7 +1260,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6700
      * @tc.name      StringStartsWith.test1067
      * @tc.desc      Compare startsWith and endsWith on the same string
      * @tc.size      MediumTest
@@ -1279,7 +1279,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6800
      * @tc.name      StringStartsWith.test1068
      * @tc.desc      Use startsWith and endsWith at different positions
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6900
      * @tc.name      StringStartsWith.test1069
      * @tc.desc      Verify includes is true when startsWith is true
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7000
      * @tc.name      StringStartsWith.test1070
      * @tc.desc      Verify includes is true while startsWith is false
      * @tc.size      MediumTest
@@ -1336,7 +1336,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7100
      * @tc.name      StringStartsWith.test1071
      * @tc.desc      Verify indexOf alignment when startsWith is true
      * @tc.size      MediumTest
@@ -1355,7 +1355,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7200
      * @tc.name      StringStartsWith.test1072
      * @tc.desc      Verify startsWith behavior when indexOf returns index > 0
      * @tc.size      MediumTest
@@ -1375,7 +1375,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7300
      * @tc.name      StringStartsWith.test1073
      * @tc.desc      Verify startsWith on a sliced sub-string
      * @tc.size      MediumTest
@@ -1394,7 +1394,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7400
      * @tc.name      StringStartsWith.test1074
      * @tc.desc      Verify startsWith on a substring
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7500
      * @tc.name      StringStartsWith.test1075
      * @tc.desc      Verify startsWith after case conversion
      * @tc.size      MediumTest
@@ -1432,7 +1432,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7600
      * @tc.name      StringStartsWith.test1076
      * @tc.desc      Simulate case-insensitive matching using conversion
      * @tc.size      MediumTest
@@ -1451,7 +1451,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7700
      * @tc.name      StringStartsWith.test1077
      * @tc.desc      Verify startsWith after trimming whitespace
      * @tc.size      MediumTest
@@ -1470,7 +1470,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7800
      * @tc.name      StringStartsWith.test1078
      * @tc.desc      Verify matching with leading spaces using position
      * @tc.size      MediumTest
@@ -1489,7 +1489,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7900
      * @tc.name      StringStartsWith.test1079
      * @tc.desc      Verify startsWith on repeated strings
      * @tc.size      MediumTest
@@ -1508,7 +1508,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8000
      * @tc.name      StringStartsWith.test1080
      * @tc.desc      Verify matching a repeated pattern
      * @tc.size      MediumTest
@@ -1526,7 +1526,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8100
      * @tc.name      StringStartsWith.test1081
      * @tc.desc      Verify startsWith after padStart
      * @tc.size      MediumTest
@@ -1545,7 +1545,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8200
      * @tc.name      StringStartsWith.test1082
      * @tc.desc      Verify checking for padding characters
      * @tc.size      MediumTest
@@ -1563,7 +1563,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8300
      * @tc.name      StringStartsWith.test1083
      * @tc.desc      Verify startsWith after string replacement
      * @tc.size      MediumTest
@@ -1582,7 +1582,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8400
      * @tc.name      StringStartsWith.test1084
      * @tc.desc      Verify startsWith after replacing the start of the string
      * @tc.size      MediumTest
@@ -1600,7 +1600,7 @@ export default function StringStartsWithTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8500
      * @tc.name      StringStartsWith.test1085
      * @tc.desc      Verify startsWith on elements of a split string array
      * @tc.size      MediumTest
@@ -1621,7 +1621,7 @@ export default function StringStartsWithTest1() {
     //==================== Actual Application Scenario Test ====================
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8600
      * @tc.name      StringStartsWith.test1086
      * @tc.desc      Verify URL protocol
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8700
      * @tc.name      StringStartsWith.test1087
      * @tc.desc      Verify URL domain
      * @tc.size      MediumTest
@@ -1658,7 +1658,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8800
      * @tc.name      StringStartsWith.test1088
      * @tc.desc      Verify absolute file path
      * @tc.size      MediumTest
@@ -1676,7 +1676,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8900
      * @tc.name      StringStartsWith.test1089
      * @tc.desc      Verify relative file path
      * @tc.size      MediumTest
@@ -1695,7 +1695,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9000
      * @tc.name      StringStartsWith.test1090
      * @tc.desc      Verify Windows file path
      * @tc.size      MediumTest
@@ -1713,7 +1713,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9100
      * @tc.name      StringStartsWith.test1091
      * @tc.desc      Verify file prefix
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9200
      * @tc.name      StringStartsWith.test1092
      * @tc.desc      Verify command line flag
      * @tc.size      MediumTest
@@ -1750,7 +1750,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9300
      * @tc.name      StringStartsWith.test1093
      * @tc.desc      Verify command line short flag
      * @tc.size      MediumTest
@@ -1769,7 +1769,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9400
      * @tc.name      StringStartsWith.test1094
      * @tc.desc      Verify Base64 data URI
      * @tc.size      MediumTest
@@ -1787,7 +1787,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9500
      * @tc.name      StringStartsWith.test1095
      * @tc.desc      Verify JSON data format string
      * @tc.size      MediumTest
@@ -1805,7 +1805,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9600
      * @tc.name      StringStartsWith.test1096
      * @tc.desc      Verify line starts with specific character
      * @tc.size      MediumTest
@@ -1823,7 +1823,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9700
      * @tc.name      StringStartsWith.test1097
      * @tc.desc      Verify line indentation
      * @tc.size      MediumTest
@@ -1842,7 +1842,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9800
      * @tc.name      StringStartsWith.test1098
      * @tc.desc      Verify phone number prefix
      * @tc.size      MediumTest
@@ -1860,7 +1860,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9900
      * @tc.name      StringStartsWith.test1099
      * @tc.desc      Verify credit card prefix
      * @tc.size      MediumTest
@@ -1878,7 +1878,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_10000
      * @tc.name      StringStartsWith.test1100
      * @tc.desc      Verify variable naming prefix
      * @tc.size      MediumTest
@@ -1897,7 +1897,7 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_STARTSWITH_TEST1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_10100
      * @tc.name      StringStartsWith.test1101
      * @tc.desc      Verify class name starts with uppercase
      * @tc.size      MediumTest

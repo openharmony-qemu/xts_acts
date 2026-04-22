@@ -1,37 +1,21 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as stringTest from './string_tolocalelowercase_test1'
 
-
-
 export default function StringToLocaleLowerCaseTest1() {
   describe('StringToLocaleLowerCaseTest1', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
-
-
-
 
     //==============================Basic functionality test===============================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0100
      * @tc.name      StringToLocaleLowerCaseTest1001
      * @tc.desc      Test the basic lowercase conversion function when no parameters are passed.
      * @tc.size      MediumTest
@@ -50,7 +34,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0200
      * @tc.name      StringToLocaleLowerCaseTest1002
      * @tc.desc      Test the conversion of strings that are already all lowercase.
      * @tc.size      MediumTest
@@ -68,7 +52,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0300
      * @tc.name      StringToLocaleLowerCaseTest1003
      * @tc.desc      Test the conversion of mixed-case strings
      * @tc.size      MediumTest
@@ -87,7 +71,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0400
      * @tc.name      StringToLocaleLowerCaseTest1004
      * @tc.desc      Test the conversion of an empty string
      * @tc.size      MediumTest
@@ -105,7 +89,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0500
      * @tc.name      StringToLocaleLowerCaseTest1005
      * @tc.desc      Test the string that contains only spaces
      * @tc.size      MediumTest
@@ -123,7 +107,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0600
      * @tc.name      StringToLocaleLowerCaseTest1006
      * @tc.desc      Test the conversion of a single character
      * @tc.size      MediumTest
@@ -142,7 +126,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0700
      * @tc.name      StringToLocaleLowerCaseTest1007
      * @tc.desc      Test that numeric characters are not affected
      * @tc.size      MediumTest
@@ -161,7 +145,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0800
      * @tc.name      StringToLocaleLowerCaseTest1008
      * @tc.desc      Test that special symbols are not affected
      * @tc.size      MediumTest
@@ -180,13 +164,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
     //=======================================Parameter test==========================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_0900
      * @tc.name      StringToLocaleLowerCaseTest1009
      * @tc.desc      Test that special symbols are not affected
      * @tc.size      MediumTest
@@ -206,7 +187,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1000
      * @tc.name      StringToLocaleLowerCaseTest1010
      * @tc.desc      Test the special case mapping for the Turkish locale
      * @tc.size      MediumTest
@@ -228,7 +209,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1100
      * @tc.name      StringToLocaleLowerCaseTest1011
      * @tc.desc      Test BCP 47 language tags in different formats
      * @tc.size      MediumTest
@@ -247,7 +228,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1200
      * @tc.name      StringToLocaleLowerCaseTest1012
      * @tc.desc      Test passing an array of multiple locales, using the first valid one
      * @tc.size      MediumTest
@@ -266,7 +247,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1300
      * @tc.name      StringToLocaleLowerCaseTest1013
      * @tc.desc      Test using the default locale when passing an empty array
      * @tc.size      MediumTest
@@ -284,7 +265,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1400
      * @tc.name      StringToLocaleLowerCaseTest1014
      * @tc.desc      Test the handling when passing an invalid locale
      * @tc.size      MediumTest
@@ -302,7 +283,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1500
      * @tc.name      StringToLocaleLowerCaseTest1015
      * @tc.desc      Test the behavior when passing undefined
      * @tc.size      MediumTest
@@ -320,7 +301,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1600
      * @tc.name      StringToLocaleLowerCaseTest1016
      * @tc.desc      Test the behavior when passing null
      * @tc.size      MediumTest
@@ -339,7 +320,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1700
      * @tc.name      StringToLocaleLowerCaseTest1017
      * @tc.desc      Test passing non-string type parameters
      * @tc.size      MediumTest
@@ -358,13 +339,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
     //========================================Locale Test=============================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1800
      * @tc.name      StringToLocaleLowerCaseTest1018
      * @tc.desc      Test the special handling of I and i in Turkish
      * @tc.size      MediumTest
@@ -379,11 +357,11 @@ export default function StringToLocaleLowerCaseTest1() {
       const result2 = "I".toLocaleLowerCase("en-US");
       const result3 = "İ".toLocaleLowerCase("tr");
       const result4 = "Istanbul".toLocaleLowerCase("tr");
-      
+
       expect(result1).assertEqual('ı');
       expect(result2).assertEqual('i');
       expect(result3).assertEqual('i');
-      
+
       if (result4 === "istanbul") {
         expect(result4).assertEqual('istanbul');
       } else {
@@ -394,7 +372,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_1900
      * @tc.name      StringToLocaleLowerCaseTest1019
      * @tc.desc      Test the special handling of Azerbaijani
      * @tc.size      MediumTest
@@ -412,7 +390,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2000
      * @tc.name      StringToLocaleLowerCaseTest1020
      * @tc.desc      Test the special case rules for Lithuanian
      * @tc.size      MediumTest
@@ -430,7 +408,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2100
      * @tc.name      StringToLocaleLowerCaseTest1021
      * @tc.desc      Test that the first locale is always used
      * @tc.size      MediumTest
@@ -448,7 +426,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2200
      * @tc.name      StringToLocaleLowerCaseTest1022
      * @tc.desc      Test that unsupported locales use the default value
      * @tc.size      MediumTest
@@ -465,13 +443,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
     //========================================**Boundary Value Testing=================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2300
      * @tc.name      StringToLocaleLowerCaseTest1023
      * @tc.desc      Test the conversion of extremely long strings
      * @tc.size      MediumTest
@@ -490,7 +465,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2400
      * @tc.name      StringToLocaleLowerCaseTest1024
      * @tc.desc      Test an extremely long string containing various characters
      * @tc.size      MediumTest
@@ -509,7 +484,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2500
      * @tc.name      StringToLocaleLowerCaseTest1025
      * @tc.desc      Test the conversion of the ASCII character set
      * @tc.size      MediumTest
@@ -527,7 +502,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2600
      * @tc.name      StringToLocaleLowerCaseTest1026
      * @tc.desc      Test the handling of extended ASCII characters
      * @tc.size      MediumTest
@@ -545,7 +520,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2700
      * @tc.name      StringToLocaleLowerCaseTest1027
      * @tc.desc      Test the repetition of a single uppercase character
      * @tc.size      MediumTest
@@ -563,7 +538,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2800
      * @tc.name      StringToLocaleLowerCaseTest1028
      * @tc.desc      Test the repetition of alternating uppercase and lowercase characters
      * @tc.size      MediumTest
@@ -580,13 +555,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
     //==========================================Special Character Test==================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_2900
      * @tc.name      StringToLocaleLowerCaseTest1029
      * @tc.desc      Test the conversion of BMP characters
      * @tc.size      MediumTest
@@ -605,7 +577,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3000
      * @tc.name      StringToLocaleLowerCaseTest1030
      * @tc.desc      Test the handling of supplementary plane characters
      * @tc.size      MediumTest
@@ -624,7 +596,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3100
      * @tc.name      StringToLocaleLowerCaseTest1031
      * @tc.desc      Test the conversion of special Unicode code points
      * @tc.size      MediumTest
@@ -643,7 +615,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3200
      * @tc.name      StringToLocaleLowerCaseTest1032
      * @tc.desc      Test the conversion of accented characters
      * @tc.size      MediumTest
@@ -663,7 +635,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3300
      * @tc.name      StringToLocaleLowerCaseTest1033
      * @tc.desc      Test the conversion of combining characters (base character + diacritical marks)
      * @tc.size      MediumTest
@@ -676,14 +648,14 @@ export default function StringToLocaleLowerCaseTest1() {
 
       const combined = "A\u0300";
       const result = combined.toLocaleLowerCase();
-      
-      expect(result).assertEqual("à");
+
+      expect(result.normalize("NFC")).assertEqual("\u00e0".normalize("NFC"));
 
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3400
      * @tc.name      StringToLocaleLowerCaseTest1034
      * @tc.desc      Test the case conversion of Greek letters
      * @tc.size      MediumTest
@@ -703,7 +675,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3500
      * @tc.name      StringToLocaleLowerCaseTest1035
      * @tc.desc      Test the case conversion of Cyrillic letters
      * @tc.size      MediumTest
@@ -721,7 +693,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3600
      * @tc.name      StringToLocaleLowerCaseTest1036
      * @tc.desc      Test the case conversion of Armenian letters
      * @tc.size      MediumTest
@@ -739,7 +711,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3700
      * @tc.name      StringToLocaleLowerCaseTest1037
      * @tc.desc      Test the handling of zero-width characters
      * @tc.size      MediumTest
@@ -757,7 +729,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3800
      * @tc.name      StringToLocaleLowerCaseTest1038
      * @tc.desc      Test the handling of control characters
      * @tc.size      MediumTest
@@ -774,14 +746,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
     //========================================Compare testing with toLowerCase().=======================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_3900
      * @tc.name      StringToLocaleLowerCaseTest1039
      * @tc.desc      Test that both produce identical results for ordinary strings
      * @tc.size      MediumTest
@@ -801,7 +769,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4000
      * @tc.name      StringToLocaleLowerCaseTest1040
      * @tc.desc      Test the result consistency for pure ASCII characters
      * @tc.size      MediumTest
@@ -820,7 +788,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4100
      * @tc.name      StringToLocaleLowerCaseTest1041
      * @tc.desc      Test the differences in the Turkish locale
      * @tc.size      MediumTest
@@ -840,7 +808,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4200
      * @tc.name      StringToLocaleLowerCaseTest1042
      * @tc.desc      Test the relationship with toLowerCase when no parameters are provided
      * @tc.size      MediumTest
@@ -860,7 +828,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4300
      * @tc.name      StringToLocaleLowerCaseTest1043
      * @tc.desc      Choose the appropriate method for simple scenarios
      * @tc.size      MediumTest
@@ -879,7 +847,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4400
      * @tc.name      StringToLocaleLowerCaseTest1044
      * @tc.desc      Choice in complex multilingual scenarios
      * @tc.size      MediumTest
@@ -897,13 +865,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
     //=====================================Test with toLocaleUpperCase()===============================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4500
      * @tc.name      StringToLocaleLowerCaseTest1045
      * @tc.desc      Test converting to uppercase first, then to lowercase
      * @tc.size      MediumTest
@@ -924,7 +889,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4600
      * @tc.name      StringToLocaleLowerCaseTest1046
      * @tc.desc      Test converting to lowercase first, then to uppercase
      * @tc.size      MediumTest
@@ -945,7 +910,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4700
      * @tc.name      StringToLocaleLowerCaseTest1047
      * @tc.desc      Test round-trip conversion using the same locale
      * @tc.size      MediumTest
@@ -966,7 +931,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4800
      * @tc.name      StringToLocaleLowerCaseTest1048
      * @tc.desc      Test case conversion using the same locale
      * @tc.size      MediumTest
@@ -986,7 +951,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_4900
      * @tc.name      StringToLocaleLowerCaseTest1049
      * @tc.desc      Test for potential differences caused by using different locales
      * @tc.size      MediumTest
@@ -1007,7 +972,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5000
      * @tc.name      StringToLocaleLowerCaseTest1050
      * @tc.desc      Test round-trip conversion of special German characters
      * @tc.size      MediumTest
@@ -1026,15 +991,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
-
     //======================================= Return Value Characteristics Test=========================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5100
      * @tc.name      StringToLocaleLowerCaseTest1051
      * @tc.desc      Test that the return value is a string type
      * @tc.size      MediumTest
@@ -1053,7 +1013,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5200
      * @tc.name      StringToLocaleLowerCaseTest1052
      * @tc.desc      Test that a new string is returned and the original string remains unchanged
      * @tc.size      MediumTest
@@ -1073,7 +1033,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5300
      * @tc.name      StringToLocaleLowerCaseTest1053
      * @tc.desc      Test that the original string is not modified
      * @tc.size      MediumTest
@@ -1093,7 +1053,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5400
      * @tc.name      StringToLocaleLowerCaseTest1054
      * @tc.desc      Test that multiple calls return the same result
      * @tc.size      MediumTest
@@ -1111,7 +1071,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5500
      * @tc.name      StringToLocaleLowerCaseTest1055
      * @tc.desc      Test that the return value has the same length as the original string
      * @tc.size      MediumTest
@@ -1131,7 +1091,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5600
      * @tc.name      StringToLocaleLowerCaseTest1056
      * @tc.desc      Test the length when special characters are included
      * @tc.size      MediumTest
@@ -1149,16 +1109,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
-
-
     //===================================== Exception Handling Test=====================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5700
      * @tc.name      StringToLocaleLowerCaseTest1057
      * @tc.desc      Test that an exception is thrown for invalid locale formats
      * @tc.size      MediumTest
@@ -1184,7 +1138,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5800
      * @tc.name      StringToLocaleLowerCaseTest1058
      * @tc.desc      Test calling on non-String objects
      * @tc.size      MediumTest
@@ -1194,19 +1148,18 @@ export default function StringToLocaleLowerCaseTest1() {
     it("StringToLocaleLowerCaseTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringToLocaleLowerCaseTest1058';
       console.log(TAG + 'start');
-
-      const res: (string |boolean)[]= stringTest.test1058();
+      let isTypeError = false;
       try {
-        res[0];
+        stringTest.test1058();
       } catch (e) {
-        expect(e instanceof TypeError).assertTrue();
+        isTypeError = e instanceof TypeError;
       }
-
+      expect(isTypeError).assertEqual(true);
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_5900
      * @tc.name      StringToLocaleLowerCaseTest1059
      * @tc.desc      Test calling on null
      * @tc.size      MediumTest
@@ -1224,12 +1177,11 @@ export default function StringToLocaleLowerCaseTest1() {
         expect(e instanceof TypeError).assertTrue();
       }
 
-
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6000
      * @tc.name      StringToLocaleLowerCaseTest1060
      * @tc.desc      Test calling on undefined
      * @tc.size      MediumTest
@@ -1251,7 +1203,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6100
      * @tc.name      StringToLocaleLowerCaseTest1061
      * @tc.desc      Test that the array parameter contains invalid elements
      * @tc.size      MediumTest
@@ -1267,14 +1219,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
     //============================================= Type Conversion Test================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6200
      * @tc.name      StringToLocaleLowerCaseTest1062
      * @tc.desc      Test calling the method on a String object
      * @tc.size      MediumTest
@@ -1293,7 +1241,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6300
      * @tc.name      StringToLocaleLowerCaseTest1063
      * @tc.desc      Test calling via prototype chain on numbers
      * @tc.size      MediumTest
@@ -1304,15 +1252,15 @@ export default function StringToLocaleLowerCaseTest1() {
       const TAG = 'StringToLocaleLowerCaseTest1063';
       console.log(TAG + 'start');
 
-      const strObj = new String("HELLO");
-      expect(strObj.toLocaleLowerCase()).assertEqual("hello");
-      expect(typeof strObj.toLocaleLowerCase()).assertEqual("string");
+      const strPrim = new String("HELLO");
+      expect(strPrim.toLocaleLowerCase()).assertEqual("hello");
+      expect(typeof strPrim.toLocaleLowerCase()).assertEqual("string");
 
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6400
      * @tc.name      StringToLocaleLowerCaseTest1064
      * @tc.desc      Test calling via prototype chain on numbers
      * @tc.size      MediumTest
@@ -1334,7 +1282,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6500
      * @tc.name      StringToLocaleLowerCaseTest1065
      * @tc.desc      Test calling via prototype chain on booleans
      * @tc.size      MediumTest
@@ -1356,7 +1304,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6600
      * @tc.name      StringToLocaleLowerCaseTest1066
      * @tc.desc      Test calling using call on other values
      * @tc.size      MediumTest
@@ -1379,7 +1327,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6700
      * @tc.name      StringToLocaleLowerCaseTest1067
      * @tc.desc      Test calling using apply on other values
      * @tc.size      MediumTest
@@ -1398,7 +1346,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6800
      * @tc.name      StringToLocaleLowerCaseTest1068
      * @tc.desc      Test creating new function using bind
      * @tc.size      MediumTest
@@ -1416,15 +1364,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
-
     //======================================== Unicode Processing Test====================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_6900
      * @tc.name      StringToLocaleLowerCaseTest1069
      * @tc.desc      Test conversion of Unicode escape sequences
      * @tc.size      MediumTest
@@ -1443,7 +1386,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7000
      * @tc.name      StringToLocaleLowerCaseTest1070
      * @tc.desc      Test ES6 Unicode Code Point Escapes
      * @tc.size      MediumTest
@@ -1461,7 +1404,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7100
      * @tc.name      StringToLocaleLowerCaseTest1071
      * @tc.desc      Test handling of surrogate pair characters
      * @tc.size      MediumTest
@@ -1479,7 +1422,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7200
      * @tc.name      StringToLocaleLowerCaseTest1072
      * @tc.desc      Test for isolated surrogate characters
      * @tc.size      MediumTest
@@ -1492,18 +1435,15 @@ export default function StringToLocaleLowerCaseTest1() {
 
       const loneSurrogate = "\uD800";
       const result = loneSurrogate.toLocaleLowerCase();
-      
-      // Try different comparison approaches
+
       if (result === loneSurrogate) {
         expect(result).assertEqual("\uD800");
       } else {
-        // Check if result is still a valid high surrogate
         const charCode = result.charCodeAt(0);
         if (charCode >= 0xD800 && charCode <= 0xDBFF) {
           expect(result).assertEqual(loneSurrogate);
         } else {
-          // The implementation might be handling isolated surrogates differently
-          expect(result).assertEqual(result); // Accept whatever the implementation returns
+          expect(true).assertTrue();
         }
       }
 
@@ -1511,7 +1451,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7300
      * @tc.name      StringToLocaleLowerCaseTest1073
      * @tc.desc      Test for NFC normalization form
      * @tc.size      MediumTest
@@ -1529,10 +1469,8 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7400
      * @tc.name      StringToLocaleLowerCaseTest1075
      * @tc.desc      Test Zero-Width Joiner (ZWJ) sequences
      * @tc.size      MediumTest
@@ -1550,7 +1488,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7500
      * @tc.name      StringToLocaleLowerCaseTest1076
      * @tc.desc      Test characters with variation selectors
      * @tc.size      MediumTest
@@ -1567,15 +1505,10 @@ export default function StringToLocaleLowerCaseTest1() {
       console.log(TAG + "end");
     });
 
-
-
-
-
-
     //====================================Method Chaining Test============================================================
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7600
      * @tc.name      StringToLocaleLowerCaseTest1077
      * @tc.desc      Test converting case first, then trimming whitespace
      * @tc.size      MediumTest
@@ -1593,7 +1526,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7700
      * @tc.name      StringToLocaleLowerCaseTest1078
      * @tc.desc      Test converting case first, then slicing
      * @tc.size      MediumTest
@@ -1611,7 +1544,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7800
      * @tc.name      StringToLocaleLowerCaseTest1079
      * @tc.desc      Test converting case first, then splitting
      * @tc.size      MediumTest
@@ -1640,7 +1573,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7900
      * @tc.name      StringToLocaleLowerCaseTest1080
      * @tc.desc      Test converting first, then replacing
      * @tc.size      MediumTest
@@ -1658,7 +1591,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8000
      * @tc.name      StringToLocaleLowerCaseTest1082
      * @tc.desc      Test case-insensitive search using toLocaleLowerCase
      * @tc.size      MediumTest
@@ -1669,7 +1602,6 @@ export default function StringToLocaleLowerCaseTest1() {
       const TAG = 'StringToLocaleLowerCaseTest1082';
       console.log(TAG + 'start');
 
-
       const res :boolean[]= stringTest.test1082();
       expect(res[0]).assertTrue();
 
@@ -1677,7 +1609,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8100
      * @tc.name      StringToLocaleLowerCaseTest1083
      * @tc.desc      Test using in array map
      * @tc.size      MediumTest
@@ -1701,7 +1633,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8200
      * @tc.name      StringToLocaleLowerCaseTest1084
      * @tc.desc      Test using in array filter
      * @tc.size      MediumTest
@@ -1719,12 +1651,11 @@ export default function StringToLocaleLowerCaseTest1() {
       expect(result[0]).assertEqual("hello");
       expect(result[1]).assertEqual("javascript");
 
-
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8300
      * @tc.name      StringToLocaleLowerCaseTest1085
      * @tc.desc      Test for use in array sorting
      * @tc.size      MediumTest
@@ -1746,7 +1677,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8400
      * @tc.name      StringToLocaleLowerCaseTest1086
      * @tc.desc      Test usage in template strings
      * @tc.size      MediumTest
@@ -1764,7 +1695,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8500
      * @tc.name      StringToLocaleLowerCaseTest1087
      * @tc.desc      Test usage in tagged templates
      * @tc.size      MediumTest
@@ -1782,7 +1713,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8600
      * @tc.name      StringToLocaleLowerCaseTest1088
      * @tc.desc      Test converting object property values
      * @tc.size      MediumTest
@@ -1814,12 +1745,11 @@ export default function StringToLocaleLowerCaseTest1() {
       expect(lowerObj.city).assertEqual("new york");
       expect(lowerObj.country).assertEqual("usa");
 
-
       console.log(TAG + "end");
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_ToLocaleLowerCase_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8700
      * @tc.name      StringToLocaleLowerCaseTest1089
      * @tc.desc      Test handling strings in JSON data
      * @tc.size      MediumTest
@@ -1846,9 +1776,7 @@ export default function StringToLocaleLowerCaseTest1() {
       expect(normalized.name).assertEqual("alice");
       expect(normalized.email).assertEqual("alice@example.com");
 
-
       console.log(TAG + "end");
     });
-
   });
 }

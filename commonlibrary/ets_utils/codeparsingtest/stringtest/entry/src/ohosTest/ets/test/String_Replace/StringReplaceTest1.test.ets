@@ -13,7 +13,7 @@ export default function StringReplaceTest1() {
 
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0100
      * @tc.name      StringReplaceTest1001
      * @tc.desc      Use RegExp object as pattern to replace first occurrence
      * @tc.size      MediumTest
@@ -30,7 +30,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0200
      * @tc.name      StringReplaceTest1002
      * @tc.desc      Use regular expression to match multiple numeric characters
      * @tc.size      MediumTest
@@ -47,7 +47,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0300
      * @tc.name      StringReplaceTest1003
      * @tc.desc      Use i flag for case-insensitive replacement
      * @tc.size      MediumTest
@@ -64,7 +64,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0400
      * @tc.name      StringReplaceTest1004
      * @tc.desc      Use g flag to replace all matched occurrences
      * @tc.size      MediumTest
@@ -81,7 +81,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0500
      * @tc.name      StringReplaceTest1005
      * @tc.desc      Use both g and i flags for global case-insensitive replacement
      * @tc.size      MediumTest
@@ -98,7 +98,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0600
      * @tc.name      StringReplaceTest1006
      * @tc.desc      Use m flag with line start anchor for multiline replacement
      * @tc.size      MediumTest
@@ -115,7 +115,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0700
      * @tc.name      StringReplaceTest1007
      * @tc.desc      Use s flag to make dot match newline characters
      * @tc.size      MediumTest
@@ -132,7 +132,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0800
      * @tc.name      StringReplaceTest1008
      * @tc.desc      Use u flag to handle Unicode characters
      * @tc.size      MediumTest
@@ -149,7 +149,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_0900
      * @tc.name      StringReplaceTest1009
      * @tc.desc      Use u flag to handle Unicode characters
      * @tc.size      MediumTest
@@ -166,7 +166,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1000
      * @tc.name      StringReplaceTest1010
      * @tc.desc      Combine multiple flags g, i, m for replacement
      * @tc.size      MediumTest
@@ -183,7 +183,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1100
      * @tc.name      StringReplaceTest1011
      * @tc.desc      Regex without flags only replaces first match
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1200
      * @tc.name      StringReplaceTest1012
      * @tc.desc      Use capture groups and reference in replacement string
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1300
      * @tc.name      StringReplaceTest1013
      * @tc.desc      Use multiple capture groups for date format conversion
      * @tc.size      MediumTest
@@ -234,7 +234,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1400
      * @tc.name      StringReplaceTest1014
      * @tc.desc      Use nested capture groups in replacement
      * @tc.size      MediumTest
@@ -251,7 +251,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1500
      * @tc.name      StringReplaceTest1015
      * @tc.desc      Use non-capturing groups (?:...) in regex
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1600
      * @tc.name      StringReplaceTest1016
      * @tc.desc      Mix capture groups and non-capturing groups
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1700
      * @tc.name      StringReplaceTest1017
      * @tc.desc      Use named capture groups and reference in replacement
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1800
      * @tc.name      StringReplaceTest1018
      * @tc.desc      Reference non-existent named capture group
      * @tc.size      MediumTest
@@ -319,7 +319,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_1900
      * @tc.name      StringReplaceTest1019
      * @tc.desc      Use ^ and $ boundary anchors for replacement
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2000
      * @tc.name      StringReplaceTest1020
      * @tc.desc      Use \b word boundary for precise matching
      * @tc.size      MediumTest
@@ -353,7 +353,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2100
      * @tc.name      StringReplaceTest1021
      * @tc.desc      Use positive lookahead (?=...) for conditional matching
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2200
      * @tc.name      StringReplaceTest1022
      * @tc.desc      Use negative lookahead (?!...) for exclusion matching
      * @tc.size      MediumTest
@@ -387,7 +387,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2300
      * @tc.name      StringReplaceTest1023
      * @tc.desc      Use positive lookbehind (?<=...) for prefix matching
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2400
      * @tc.name      StringReplaceTest1024
      * @tc.desc      Use negative lookbehind (?<!...) for exclusion prefix matching
      * @tc.size      MediumTest
@@ -421,7 +421,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2500
      * @tc.name      StringReplaceTest1025
      * @tc.desc      Assertion matches but does not consume characters
      * @tc.size      MediumTest
@@ -438,7 +438,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2600
      * @tc.name      StringReplaceTest1026
      * @tc.desc      Use greedy quantifier * for maximum match
      * @tc.size      MediumTest
@@ -455,7 +455,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2700
      * @tc.name      StringReplaceTest1027
      * @tc.desc      Use lazy quantifier *? for minimum match
      * @tc.size      MediumTest
@@ -472,7 +472,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2800
      * @tc.name      StringReplaceTest1028
      * @tc.desc      Use lazy quantifier *? for minimum match
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function StringReplaceTest1() {
     });
     //============================Special Replacement Patterns==================================
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_2900
      * @tc.name      StringReplaceTest1029
      * @tc.desc      Use to insert a literal $
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function StringReplaceTest1() {
 
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3000
      * @tc.name      StringReplaceTest1030
      * @tc.desc      Use $& to reference the entire matched substring
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3100
      * @tc.name      StringReplaceTest1031
      * @tc.desc      Use the $& special replacement pattern multiple times within the replacement string
      * @tc.size      MediumTest
@@ -541,7 +541,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3200
      * @tc.name      StringReplaceTest1032
      * @tc.desc      Use the $` special replacement pattern to insert the text preceding the match
      * @tc.size      MediumTest
@@ -557,7 +557,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3300
      * @tc.name      StringReplaceTest1033
      * @tc.desc      Use $' to insert the text following the matched substring
      * @tc.size      MediumTest
@@ -573,7 +573,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3400
      * @tc.name      StringReplaceTest1034
      * @tc.desc      Reference the nth capturing group using $n
      * @tc.size      MediumTest
@@ -589,7 +589,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3500
      * @tc.name      StringReplaceTest1035
      * @tc.desc      Referencing an undefined capturing group index
      * @tc.size      MediumTest
@@ -605,7 +605,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3600
      * @tc.name      StringReplaceTest1036
      * @tc.desc      The capturing group is present but unmatched because of an alternation branch
      * @tc.size      MediumTest
@@ -621,7 +621,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3700
      * @tc.name      StringReplaceTest1037
      * @tc.desc      Use the $10 or higher-numbered capturing groups
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3800
      * @tc.name      StringReplaceTest1038
      * @tc.desc      Test the boundary condition for 99 capturing groups
      * @tc.size      MediumTest
@@ -659,7 +659,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_3900
      * @tc.name      StringReplaceTest1039
      * @tc.desc      Reference a named capture group using the $<groupName> syntax
      * @tc.size      MediumTest
@@ -675,7 +675,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4000
      * @tc.name      StringReplaceTest1040
      * @tc.desc      Use multiple special replacement patterns together in the replacement string
      * @tc.size      MediumTest
@@ -692,7 +692,7 @@ export default function StringReplaceTest1() {
     });
     //============================Function as a substitute==================================
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4100
      * @tc.name      StringReplaceTest1041
      * @tc.desc      Use arrow function as replacement
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4200
      * @tc.name      StringReplaceTest1042
      * @tc.desc      Use a regular function as the replacement
      * @tc.size      MediumTest
@@ -723,7 +723,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4300
      * @tc.name      StringReplaceTest1043
      * @tc.desc      Get the matched substring
      * @tc.size      MediumTest
@@ -742,7 +742,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4400
      * @tc.name      StringReplaceTest1044
      * @tc.desc      Test Description: Get the content matched by the capture group
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4500
      * @tc.name      StringReplaceTest1045
      * @tc.desc      Get the offset of the matched substring in the original string
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4600
      * @tc.name      StringReplaceTest1046
      * @tc.desc      Get the original string
      * @tc.size      MediumTest
@@ -788,7 +788,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4700
      * @tc.name      StringReplaceTest1047
      * @tc.desc      Use rest parameters when there are no named groups
      * @tc.size      MediumTest
@@ -804,7 +804,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4800
      * @tc.name      StringReplaceTest1048
      * @tc.desc      The function returns a string as the replacement content
      * @tc.size      MediumTest
@@ -820,7 +820,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_4900
      * @tc.name      StringReplaceTest1049
      * @tc.desc      Return string as replacement content
      * @tc.size      MediumTest
@@ -837,7 +837,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5000
      * @tc.name      StringReplaceTest1050
      * @tc.desc      Number return value auto-converts to string
      * @tc.size      MediumTest
@@ -852,7 +852,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5100
      * @tc.name      StringReplaceTest1051
      * @tc.desc      Test description: undefined becomes "undefined"
      * @tc.size      MediumTest
@@ -867,7 +867,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5200
      * @tc.name      StringReplaceTest1052
      * @tc.desc       null becomes "null"
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5300
      * @tc.name      StringReplaceTest1053
      * @tc.desc     Object return calls toString()
      * @tc.size      MediumTest
@@ -897,7 +897,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5400
      * @tc.name      StringReplaceTest1054
      * @tc.desc     'g' flag triggers multiple function calls
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5500
      * @tc.name      StringReplaceTest1055
      * @tc.desc     Different offset for each match
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5600
      * @tc.name      StringReplaceTest1056
      * @tc.desc     Arrow function preserves lexical 'this'
      * @tc.size      MediumTest
@@ -944,7 +944,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5700
      * @tc.name      StringReplaceTest1057
      * @tc.desc     Arrow function preserves lexical 'this'
      * @tc.size      MediumTest
@@ -959,7 +959,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5800
      * @tc.name      StringReplaceTest1058
      * @tc.desc     The 'this' of a regular function depends on how it is called.
      * @tc.size      MediumTest
@@ -974,7 +974,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_5900
      * @tc.name      StringReplaceTest1059
      * @tc.desc     Explicitly binding 'this' using bind
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6000
      * @tc.name      StringReplaceTest1060
      * @tc.desc      Calling/replacing functions using call or apply
      * @tc.size      MediumTest
@@ -1004,7 +1004,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6100
      * @tc.name      StringReplaceTest1061
      * @tc.desc     Replacer function throwing an exception will abort the replacement
      * @tc.size      MediumTest
@@ -1019,7 +1019,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6200
      * @tc.name      StringReplaceTest1062
      * @tc.desc      Exceptions in global replacement stop subsequent replacements
      * @tc.size      MediumTest
@@ -1034,7 +1034,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6300
      * @tc.name      StringReplaceTest1063
      * @tc.desc      Throw Exception in Global Replacement
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6400
      * @tc.name      StringReplaceTest1064
      * @tc.desc      Using variables from the outer scope in a function
      * @tc.size      MediumTest
@@ -1070,7 +1070,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6500
      * @tc.name      StringReplaceTest1065
      * @tc.desc     Modifying outer variables inside a function
      * @tc.size      MediumTest
@@ -1085,7 +1085,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6600
      * @tc.name      StringReplaceTest1066
      * @tc.desc     Modifying external variables in a function
      * @tc.size      MediumTest
@@ -1101,7 +1101,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6700
      * @tc.name      StringReplaceTest1067
      * @tc.desc     Accessing and Modifying the Original String via Closure
      * @tc.size      MediumTest
@@ -1117,7 +1117,7 @@ export default function StringReplaceTest1() {
     });
     //=============Boundary Value and Exception Handling===============
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6800
      * @tc.name       StringReplaceTest1068
      * @tc.desc       Call replace on an empty string
      * @tc.size       MediumTest
@@ -1133,7 +1133,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_6900
      * @tc.name       StringReplaceTest1069
      * @tc.desc      Match empty string
      * @tc.size       MediumTest
@@ -1149,7 +1149,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7000
      * @tc.name       StringReplaceTest1070
      * @tc.desc       The string contains only spaces
      * @tc.size       MediumTest
@@ -1165,7 +1165,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7100
      * @tc.name       StringReplaceTest1071
      * @tc.desc       The string consists of only special characters.
      * @tc.size       MediumTest
@@ -1181,7 +1181,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7200
      * @tc.name       StringReplaceTest1072
      * @tc.desc       If the pattern parameter is null, it will be converted to the string "null"
      * @tc.size       MediumTest
@@ -1197,7 +1197,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7300
      * @tc.name       StringReplaceTest1073
      * @tc.desc       If the pattern parameter is undefined, it will be converted to the string "undefined".
      * @tc.size       MediumTest
@@ -1212,7 +1212,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7400
      * @tc.name       StringReplaceTest1074
      * @tc.desc       The replacement parameter is null, which is automatically converted to the string "null"
      * @tc.size       MediumTest
@@ -1227,7 +1227,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7500
      * @tc.name       StringReplaceTest1075
      * @tc.desc       If the replacement parameter is undefined, it will be converted to the string "undefined".
      * @tc.size       MediumTest
@@ -1242,7 +1242,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7600
      * @tc.name       StringReplaceTest1076
      * @tc.desc       Numbers are converted to strings
      * @tc.size       MediumTest
@@ -1257,7 +1257,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7700
      * @tc.name       StringReplaceTest1077
      * @tc.desc       Boolean values are converted to strings.
      * @tc.size       MediumTest
@@ -1272,7 +1272,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7800
      * @tc.name       StringReplaceTest1078
      * @tc.desc       Objects are converted to strings.
      * @tc.size       MediumTest
@@ -1287,7 +1287,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_7900
      * @tc.name       StringReplaceTest1079
      * @tc.desc       Arrays are converted to strings.
      * @tc.size       MediumTest
@@ -1302,7 +1302,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8000
      * @tc.name       StringReplaceTest1080
      * @tc.desc       The object implements the Symbol.toPrimitive method.
      * @tc.size       MediumTest
@@ -1317,7 +1317,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8100
      * @tc.name       StringReplaceTest1081
      * @tc.desc       Conversion order of the pattern object
      * @tc.size       MediumTest
@@ -1332,7 +1332,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8200
      * @tc.name       StringReplaceTest1082
      * @tc.desc      Handle very long strings
      * @tc.size       MediumTest
@@ -1347,7 +1347,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8300
      * @tc.name       StringReplaceTest1083
      * @tc.desc      Replace a large number of matches at once
      * @tc.size       MediumTest
@@ -1363,7 +1363,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8400
      * @tc.name       StringReplaceTest1084
      * @tc.desc       Replace with a very long string
      * @tc.size       MediumTest
@@ -1378,7 +1378,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8500
      * @tc.name       StringReplaceTest1085
      * @tc.desc      Replace strings containing Unicode characters
      * @tc.size       MediumTest
@@ -1394,7 +1394,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8600
      * @tc.name       StringReplaceTest1086
      * @tc.desc      Replace strings containing emojis
      * @tc.size       MediumTest
@@ -1410,7 +1410,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8700
      * @tc.name       StringReplaceTest1087
      * @tc.desc      Replace strings containing escape characters
      * @tc.size       MediumTest
@@ -1426,7 +1426,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8800
      * @tc.name       StringReplaceTest1088
      * @tc.desc      Replace surrogate pairs as complete characters
      * @tc.size       MediumTest
@@ -1442,7 +1442,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_8900
      * @tc.name       StringReplaceTest1089
      * @tc.desc      Incorrect splitting of surrogate pairs
      * @tc.size       MediumTest
@@ -1458,7 +1458,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9000
      * @tc.name       StringReplaceTest1090
      * @tc.desc      Replace after using normalize()
      * @tc.size       MediumTest
@@ -1475,7 +1475,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9100
      * @tc.name       StringReplaceTest1091
      * @tc.desc      Replace zero-width characters
      * @tc.size       MediumTest
@@ -1491,7 +1491,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9200
      * @tc.name       StringReplaceTest1092
      * @tc.desc      Replace BOM characters
      * @tc.size       MediumTest
@@ -1507,7 +1507,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9300
      * @tc.name       StringReplaceTest1093
      * @tc.desc      Global regular expressions maintain lastIndex
      * @tc.size       MediumTest
@@ -1522,7 +1522,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9400
      * @tc.name       StringReplaceTest1094
      * @tc.desc      Manually setting lastIndex affects replacement
      * @tc.size       MediumTest
@@ -1540,7 +1540,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9500
      * @tc.name       StringReplaceTest1095
      * @tc.desc      lastIndex of regular expressions with the y flag
      * @tc.size       MediumTest
@@ -1556,7 +1556,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9600
      * @tc.name       StringReplaceTest1096
      * @tc.desc      Freeze regular expressions using Object.freeze
      * @tc.size       MediumTest
@@ -1571,7 +1571,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9700
      * @tc.name       StringReplaceTest1097
      * @tc.desc      Reuse the same regular expression object multiple times
      * @tc.size       MediumTest
@@ -1591,7 +1591,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9800
      * @tc.name       StringReplaceTest1098
      * @tc.desc      Call replace in strict mode
      * @tc.size       MediumTest
@@ -1608,7 +1608,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_9900
      * @tc.name       StringReplaceTest1099
      * @tc.desc       Behavior in non-strict mode
      * @tc.size       MediumTest
@@ -1624,7 +1624,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10000
      * @tc.name       StringReplaceTest1100
      * @tc.desc       Regular expression syntax error
      * @tc.size       MediumTest
@@ -1639,7 +1639,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10100
      * @tc.name       StringReplaceTest1101
      * @tc.desc       Invalid regular expression flag
      * @tc.size       MediumTest
@@ -1654,7 +1654,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + ' end');
     })
     /**
-     * @tc.number     BUILTINS_STRING_REPLACE_TEST1102
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10200
      * @tc.name       StringReplaceTest1102
      * @tc.desc       The pattern is a circularly referenced object
      * @tc.size       MediumTest
@@ -1669,7 +1669,7 @@ export default function StringReplaceTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1103
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10300
      * @tc.name      StringReplaceTest1103
      * @tc.desc       replace only replaces the first occurrence, replaceAll replaces all occurrences
      * @tc.size      MediumTest
@@ -1690,7 +1690,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1104
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10400
      * @tc.name      StringReplaceTest1104
      * @tc.desc       replaceAll requires the regular expression to have the 'g' flag.
      * @tc.size      MediumTest
@@ -1711,7 +1711,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1105
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10500
      * @tc.name      StringReplaceTest1105
      * @tc.desc       Replace after finding matches using match
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1106
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10600
      * @tc.name      StringReplaceTest1106
      * @tc.desc       Obtain matching substrings via match() and implement dynamic string replacement
      * @tc.size      MediumTest
@@ -1751,7 +1751,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1107
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10700
      * @tc.name      StringReplaceTest1107
      * @tc.desc       Replace the separator characters
      * @tc.size      MediumTest
@@ -1768,7 +1768,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1108
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10800
      * @tc.name      StringReplaceTest1108
      * @tc.desc       Replace first, then split.
      * @tc.size      MediumTest
@@ -1787,7 +1787,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1109
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_10900
      * @tc.name      StringReplaceTest1109
      * @tc.desc       Dynamically construct regular expressions for replacement
      * @tc.size      MediumTest
@@ -1807,7 +1807,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1110
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_11000
      * @tc.name      StringReplaceTest1110
      * @tc.desc      First, use the test method to verify if there is a match.
      * @tc.size      MediumTest
@@ -1827,7 +1827,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1111
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_11100
      * @tc.name      StringReplaceTest1111
      * @tc.desc      Replace after obtaining detailed match information using exec
      * @tc.size      MediumTest
@@ -1849,7 +1849,7 @@ export default function StringReplaceTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACE_TEST1112
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEONE_11200
      * @tc.name      StringReplaceTest1112
      * @tc.desc      Chain multiple replace methods
      * @tc.size      MediumTest

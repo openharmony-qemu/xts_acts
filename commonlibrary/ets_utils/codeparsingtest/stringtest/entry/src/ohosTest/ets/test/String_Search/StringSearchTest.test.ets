@@ -10,7 +10,7 @@ export default function StringSearchTest1() {
 
     //============================Basic Function Test==================================
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0100
      * @tc.name      StringSearchTest1001
      * @tc.desc      Verify that the search method can find a single character in a string
      * @tc.size      SmallTest
@@ -27,7 +27,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0200
      * @tc.name      StringSearchTest1002
      * @tc.desc      Verify that the search method returns -1 for non-existent characters
      * @tc.size      SmallTest
@@ -44,7 +44,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0300
      * @tc.name      StringSearchTest1003
      * @tc.desc      Verify that the search method returns the position of the first match
      * @tc.size      SmallTest
@@ -60,7 +60,7 @@ export default function StringSearchTest1() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0400
      * @tc.name      StringSearchTest1004
      * @tc.desc      Verify that the search method can match partial substrings
      * @tc.size      SmallTest
@@ -77,7 +77,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0500
      * @tc.name      StringSearchTest1005
      * @tc.desc      Verify that the search method can match partial substrings
      * @tc.size      SmallTest
@@ -94,7 +94,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0600
      * @tc.name      StringSearchTest1006
      * @tc.desc      Verify that the search method returns 0 for empty strings
      * @tc.size      SmallTest
@@ -120,7 +120,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0700
      * @tc.name      StringSearchTest1008
      * @tc.desc      Verify that the search method uses i flag for case-insensitive matching
      * @tc.size      SmallTest
@@ -137,7 +137,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0800
      * @tc.name      StringSearchTest1009
      * @tc.desc      Verify the search method's matching behavior in mixed-case strings
      * @tc.size      SmallTest
@@ -157,7 +157,7 @@ export default function StringSearchTest1() {
 
     //============================Parameter Type Test==================================
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_0900
      * @tc.name      StringSearchTest1010
      * @tc.desc      Verify that the search method works with standard RegExp object
      * @tc.size      SmallTest
@@ -175,7 +175,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1000
      * @tc.name      StringSearchTest1011
      * @tc.desc      Verify that the search method works with literal RegExp object
      * @tc.size      SmallTest
@@ -192,7 +192,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1100
      * @tc.name      StringSearchTest1012
      * @tc.desc      Verify that the search method works with RegExp object with flags
      * @tc.size      SmallTest
@@ -209,7 +209,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1200
      * @tc.name      StringSearchTest1013
      * @tc.desc      Verify that the search method works with ordinary string parameter
      * @tc.size      SmallTest
@@ -226,7 +226,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1300
      * @tc.name      StringSearchTest1014
      * @tc.desc      Verify that the search method handles strings with special regex characters
      * @tc.size      SmallTest
@@ -243,7 +243,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1400
      * @tc.name      StringSearchTest1015
      * @tc.desc      Verify that the search method handles empty string parameter
      * @tc.size      SmallTest
@@ -260,7 +260,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1500
      * @tc.name      StringSearchTest1016
      * @tc.desc      Verify that the search method works with custom Symbol.search method
      * @tc.size      SmallTest
@@ -276,7 +276,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1600
      * @tc.name      StringSearchTest1017
      * @tc.desc      Verify that the search method works when Symbol.search returns a number
      * @tc.size      SmallTest
@@ -292,7 +292,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1700
      * @tc.name      StringSearchTest1018
      * @tc.desc      Verify that the search method works when Symbol.search returns -1 (not found)
      * @tc.size      SmallTest
@@ -308,7 +308,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1800
      * @tc.name      StringSearchTest1019
      * @tc.desc      Verify that the search method works when Symbol.search throws an exception
      * @tc.size      SmallTest
@@ -324,7 +324,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_1900
      * @tc.name      StringSearchTest1020
      * @tc.desc      Verify that the search method handles number parameter
      * @tc.size      SmallTest
@@ -340,7 +340,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2000
      * @tc.name      StringSearchTest1021
      * @tc.desc      Verify that the search method handles boolean parameter
      * @tc.size      SmallTest
@@ -356,7 +356,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2100
      * @tc.name      StringSearchTest1022
      * @tc.desc      Verify that the search method handles null parameter
      * @tc.size      SmallTest
@@ -372,7 +372,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2200
      * @tc.name      StringSearchTest1023
      * @tc.desc      Verify that the search method handles undefined parameter
      * @tc.size      SmallTest
@@ -388,7 +388,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2300
      * @tc.name      StringSearchTest1024
      * @tc.desc      Verify that the search method handles array parameter
      * @tc.size      SmallTest
@@ -404,7 +404,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2400
      * @tc.name      StringSearchTest1025
      * @tc.desc      Verify that the search method handles plain object parameter
      * @tc.size      SmallTest
@@ -421,7 +421,7 @@ export default function StringSearchTest1() {
 
     //============================Regular expression feature testing==================================
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2500
      * @tc.name      StringSearchTest1026
      * @tc.desc      Verify that the search method works with \d digit character class
      * @tc.size      SmallTest
@@ -438,7 +438,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2600
      * @tc.name      StringSearchTest1027
      * @tc.desc      Verify that the search method works with \D non-digit character class
      * @tc.size      SmallTest
@@ -455,7 +455,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2700
      * @tc.name      StringSearchTest1028
      * @tc.desc      Verify that the search method works with \w word character class
      * @tc.size      SmallTest
@@ -472,7 +472,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2800
      * @tc.name      StringSearchTest1029
      * @tc.desc      Verify that the search method works with \W non-word character class
      * @tc.size      SmallTest
@@ -489,7 +489,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_2900
      * @tc.name      StringSearchTest1030
      * @tc.desc      Verify that the search method works with \s whitespace character class
      * @tc.size      SmallTest
@@ -506,7 +506,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3000
      * @tc.name      StringSearchTest1031
      * @tc.desc      Verify that the search method works with \S non-whitespace character class
      * @tc.size      SmallTest
@@ -523,7 +523,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3100
      * @tc.name      StringSearchTest1032
      * @tc.desc      Verify that the search method works with custom character set [aeiou]
      * @tc.size      SmallTest
@@ -540,7 +540,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3200
      * @tc.name      StringSearchTest1033
      * @tc.desc      Verify that the search method works with negated character set [^a-z]
      * @tc.size      SmallTest
@@ -557,7 +557,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3300
      * @tc.name      StringSearchTest1034
      * @tc.desc      Verify that the search method works with character range [0-9]
      * @tc.size      SmallTest
@@ -574,7 +574,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3400
      * @tc.name      StringSearchTest1035
      * @tc.desc      Verify that the search method works with ^ start anchor matching string beginning
      * @tc.size      SmallTest
@@ -591,7 +591,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3500
      * @tc.name      StringSearchTest1036
      * @tc.desc      Verify that the search method does not match ^ anchor at non-start position
      * @tc.size      SmallTest
@@ -608,7 +608,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3600
      * @tc.name      StringSearchTest1037
      * @tc.desc      Verify that the search method works with $ end anchor matching string ending
      * @tc.size      SmallTest
@@ -625,7 +625,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3700
      * @tc.name      StringSearchTest1038
      * @tc.desc      Verify that the search method does not match $ anchor at non-end position
      * @tc.size      SmallTest
@@ -642,7 +642,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3800
      * @tc.name      StringSearchTest1039
      * @tc.desc      Verify that the search method works with \b word boundary anchor
      * @tc.size      SmallTest
@@ -659,7 +659,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_3900
      * @tc.name      StringSearchTest1040
      * @tc.desc      Verify that the search method works with \B non-word boundary anchor
      * @tc.size      SmallTest
@@ -676,7 +676,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4000
      * @tc.name      StringSearchTest1041
      * @tc.desc      Verify that the search method works with * quantifier matching zero or more times
      * @tc.size      SmallTest
@@ -693,7 +693,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4100
      * @tc.name      StringSearchTest1042
      * @tc.desc      Verify that the search method works with + quantifier matching one or more times
      * @tc.size      SmallTest
@@ -710,7 +710,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4200
      * @tc.name      StringSearchTest1043
      * @tc.desc      Verify that the search method works with ? quantifier matching zero or one time
      * @tc.size      SmallTest
@@ -727,7 +727,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4300
      * @tc.name      StringSearchTest1044
      * @tc.desc      Verify that the search method works with {n} quantifier matching exactly n times
      * @tc.size      SmallTest
@@ -744,7 +744,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4400
      * @tc.name      StringSearchTest1045
      * @tc.desc      Verify that the search method works with {n,} quantifier matching at least n times
      * @tc.size      SmallTest
@@ -761,7 +761,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4500
      * @tc.name      StringSearchTest1046
      * @tc.desc      Verify that the search method works with {n,m} quantifier matching n to m times
      * @tc.size      SmallTest
@@ -778,7 +778,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4600
      * @tc.name      StringSearchTest1047
      * @tc.desc      Verify that the search method works with *? non-greedy quantifier
      * @tc.size      SmallTest
@@ -795,7 +795,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4700
      * @tc.name      StringSearchTest1048
      * @tc.desc      Verify that the search method works with +? non-greedy quantifier
      * @tc.size      SmallTest
@@ -812,7 +812,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4800
      * @tc.name      StringSearchTest1049
      * @tc.desc      Verify that the search method works with ?? non-greedy quantifier
      * @tc.size      SmallTest
@@ -829,7 +829,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_4900
      * @tc.name      StringSearchTest1050
      * @tc.desc      Verify that the search method works with capturing group ()
      * @tc.size      SmallTest
@@ -846,7 +846,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5000
      * @tc.name      StringSearchTest1051
      * @tc.desc      Verify that the search method works with non-capturing group (?:)
      * @tc.size      SmallTest
@@ -863,7 +863,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5100
      * @tc.name      StringSearchTest1052
      * @tc.desc      Verify that the search method works with named capturing group (?<name>)
      * @tc.size      SmallTest
@@ -880,7 +880,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5200
      * @tc.name      StringSearchTest1053
      * @tc.desc      Verify that the search method works with backreference \\1
      * @tc.size      SmallTest
@@ -897,7 +897,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5300
      * @tc.name      StringSearchTest1054
      * @tc.desc      Verify that the search method works with named backreference \\k<name>
      * @tc.size      SmallTest
@@ -914,7 +914,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5400
      * @tc.name      StringSearchTest1055
      * @tc.desc      Verify that the search method works with simple alternation |
      * @tc.size      SmallTest
@@ -931,7 +931,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5500
      * @tc.name      StringSearchTest1056
      * @tc.desc      Verify that the search method works with multiple alternation options
      * @tc.size      SmallTest
@@ -948,7 +948,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5600
      * @tc.name      StringSearchTest1057
      * @tc.desc      Verify that the search method works with alternation precedence
      * @tc.size      SmallTest
@@ -965,7 +965,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5700
      * @tc.name      StringSearchTest1058
      * @tc.desc      Verify that the search method works with positive lookahead (?=)
      * @tc.size      SmallTest
@@ -982,7 +982,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5800
      * @tc.name      StringSearchTest1059
      * @tc.desc      Verify that the search method works with negative lookahead (?!)
      * @tc.size      SmallTest
@@ -999,7 +999,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_5900
      * @tc.name      StringSearchTest1060
      * @tc.desc      Verify that the search method works with positive lookbehind (?<=)
      * @tc.size      SmallTest
@@ -1016,7 +1016,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6000
      * @tc.name      StringSearchTest1061
      * @tc.desc      Verify that the search method works with negative lookbehind (?<!)
      * @tc.size      SmallTest
@@ -1033,7 +1033,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6100
      * @tc.name      StringSearchTest1062
      * @tc.desc      Verify that the search method works with g flag (global) - no effect on search
      * @tc.size      SmallTest
@@ -1051,7 +1051,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6200
      * @tc.name      StringSearchTest1063
      * @tc.desc      Verify that the search method works with i flag (case-insensitive)
      * @tc.size      SmallTest
@@ -1068,7 +1068,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6300
      * @tc.name      StringSearchTest1064
      * @tc.desc      Verify that the search method works with m flag (multiline)
      * @tc.size      SmallTest
@@ -1085,7 +1085,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6400
      * @tc.name      StringSearchTest1065
      * @tc.desc      Verify that the search method works with s flag (dotAll) - dot matches newlines
      * @tc.size      SmallTest
@@ -1102,7 +1102,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6500
      * @tc.name      StringSearchTest1066
      * @tc.desc      Verify that the search method works with u flag (Unicode)
      * @tc.size      SmallTest
@@ -1119,7 +1119,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6600
      * @tc.name      StringSearchTest1067
      * @tc.desc      Verify that the search method works with combined flags
      * @tc.size      SmallTest
@@ -1136,7 +1136,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6700
      * @tc.name      StringSearchTest1068
      * @tc.desc      Verify that the search method works with dot . matching any character (except newline)
      * @tc.size      SmallTest
@@ -1153,7 +1153,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6800
      * @tc.name      StringSearchTest1069
      * @tc.desc      Verify that the search method works with escaped special characters
      * @tc.size      SmallTest
@@ -1170,7 +1170,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_6900
      * @tc.name      StringSearchTest1070
      * @tc.desc      Verify that the search method works with tab character \t
      * @tc.size      SmallTest
@@ -1187,7 +1187,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7000
      * @tc.name      StringSearchTest1071
      * @tc.desc      Verify that the search method works with newline character \n
      * @tc.size      SmallTest
@@ -1204,7 +1204,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7100
      * @tc.name      StringSearchTest1072
      * @tc.desc      Verify that the search method works with carriage return character \r
      * @tc.size      SmallTest
@@ -1221,7 +1221,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7200
      * @tc.name      StringSearchTest1073
      * @tc.desc      Verify that the search method works with Unicode escape \u
      * @tc.size      SmallTest
@@ -1238,7 +1238,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7300
      * @tc.name      StringSearchTest1074
      * @tc.desc      Verify that the search method works with hexadecimal escape \x
      * @tc.size      SmallTest
@@ -1255,7 +1255,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7400
      * @tc.name      StringSearchTest1075
      * @tc.desc      Verify that the search method ignores RegExp lastIndex property
      * @tc.size      SmallTest
@@ -1274,7 +1274,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7500
      * @tc.name      StringSearchTest1076
      * @tc.desc      Verify that the search method does not modify RegExp lastIndex property
      * @tc.size      SmallTest
@@ -1294,7 +1294,7 @@ export default function StringSearchTest1() {
 
     //============================Boundary value test==================================
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7600
      * @tc.name      StringSearchTest1077
      * @tc.desc      Verify that the search method works with empty string searching any pattern
      * @tc.size      SmallTest
@@ -1311,7 +1311,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7700
      * @tc.name      StringSearchTest1078
      * @tc.desc      Verify that the search method works with empty string searching empty pattern
      * @tc.size      SmallTest
@@ -1328,7 +1328,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7800
      * @tc.name      StringSearchTest1079
      * @tc.desc      Verify that the search method works with empty string searching start anchor
      * @tc.size      SmallTest
@@ -1345,7 +1345,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_7900
      * @tc.name      StringSearchTest1080
      * @tc.desc      Verify that the search method works with empty string searching end anchor
      * @tc.size      SmallTest
@@ -1362,7 +1362,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8000
      * @tc.name      StringSearchTest1081
      * @tc.desc      Verify that the search method works with single character string matching
      * @tc.size      SmallTest
@@ -1379,7 +1379,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8100
      * @tc.name      StringSearchTest1082
      * @tc.desc      Verify that the search method works with single character string not matching
      * @tc.size      SmallTest
@@ -1396,7 +1396,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8200
      * @tc.name      StringSearchTest1083
      * @tc.desc      Verify that the search method works with single character string matching dot
      * @tc.size      SmallTest
@@ -1413,7 +1413,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8300
      * @tc.name      StringSearchTest1084
      * @tc.desc      Verify that the search method works with long string matching at start
      * @tc.size      SmallTest
@@ -1430,7 +1430,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8400
      * @tc.name      StringSearchTest1085
      * @tc.desc      Verify that the search method works with long string matching at end
      * @tc.size      SmallTest
@@ -1447,7 +1447,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8500
      * @tc.name      StringSearchTest1086
      * @tc.desc      Verify that the search method works with long string matching in middle
      * @tc.size      SmallTest
@@ -1464,7 +1464,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8600
      * @tc.name      StringSearchTest1087
      * @tc.desc      Verify that the search method works with long string not matching
      * @tc.size      SmallTest
@@ -1481,7 +1481,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8700
      * @tc.name      StringSearchTest1088
      * @tc.desc      Verify that the search method returns index 0 when matching at start
      * @tc.size      SmallTest
@@ -1498,7 +1498,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8800
      * @tc.name      StringSearchTest1089
      * @tc.desc      Verify that the search method returns maximum index when matching at end
      * @tc.size      SmallTest
@@ -1515,7 +1515,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_8900
      * @tc.name      StringSearchTest1090
      * @tc.desc      Verify that the search method returns -1 when no match found
      * @tc.size      SmallTest
@@ -1532,7 +1532,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9000
      * @tc.name      StringSearchTest1091
      * @tc.desc      Verify that the search method correctly distinguishes between 0 and -1
      * @tc.size      SmallTest
@@ -1551,7 +1551,7 @@ export default function StringSearchTest1() {
 
     //============================Special Regex Characters Test==================================
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9100
      * @tc.name      StringSearchTest1092
      * @tc.desc      Verify that the search method works with escaped dot character
      * @tc.size      SmallTest
@@ -1568,7 +1568,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9200
      * @tc.name      StringSearchTest1093
      * @tc.desc      Verify that the search method works with escaped asterisk character
      * @tc.size      SmallTest
@@ -1585,7 +1585,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9300
      * @tc.name      StringSearchTest1094
      * @tc.desc      Verify that the search method works with escaped plus character
      * @tc.size      SmallTest
@@ -1602,7 +1602,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9400
      * @tc.name      StringSearchTest1095
      * @tc.desc      Verify that the search method works with escaped question mark character
      * @tc.size      SmallTest
@@ -1619,7 +1619,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9500
      * @tc.name      StringSearchTest1096
      * @tc.desc      Verify that the search method works with escaped square bracket character
      * @tc.size      SmallTest
@@ -1636,7 +1636,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9600
      * @tc.name      StringSearchTest1097
      * @tc.desc      Verify that the search method works with escaped parenthesis character
      * @tc.size      SmallTest
@@ -1653,7 +1653,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9700
      * @tc.name      StringSearchTest1098
      * @tc.desc      Verify that the search method works with escaped curly brace character
      * @tc.size      SmallTest
@@ -1670,7 +1670,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9800
      * @tc.name      StringSearchTest1099
      * @tc.desc      Verify that the search method works with escaped pipe character
      * @tc.size      SmallTest
@@ -1687,7 +1687,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_9900
      * @tc.name      StringSearchTest1100
      * @tc.desc      Verify that the search method works with escaped caret character
      * @tc.size      SmallTest
@@ -1704,7 +1704,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10000
      * @tc.name      StringSearchTest1101
      * @tc.desc      Verify that the search method works with escaped dollar character
      * @tc.size      SmallTest
@@ -1721,7 +1721,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1102
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10100
      * @tc.name      StringSearchTest1102
      * @tc.desc      Verify that the search method works with escaped backslash character
      * @tc.size      SmallTest
@@ -1738,7 +1738,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1103
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10200
      * @tc.name      StringSearchTest1103
      * @tc.desc      Verify that the search method works with escaped forward slash character
      * @tc.size      SmallTest
@@ -1755,7 +1755,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1104
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10300
      * @tc.name      StringSearchTest1104
      * @tc.desc      Verify that the search method works with space character
      * @tc.size      SmallTest
@@ -1772,7 +1772,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1105
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10400
      * @tc.name      StringSearchTest1105
      * @tc.desc      Verify that the search method works with multiple spaces
      * @tc.size      SmallTest
@@ -1789,7 +1789,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1106
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10500
      * @tc.name      StringSearchTest1106
      * @tc.desc      Verify that the search method works with tab character
      * @tc.size      SmallTest
@@ -1806,7 +1806,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1107
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10600
      * @tc.name      StringSearchTest1107
      * @tc.desc      Verify that the search method works with newline character
      * @tc.size      SmallTest
@@ -1823,7 +1823,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1108
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10700
      * @tc.name      StringSearchTest1108
      * @tc.desc      Verify that the search method works with carriage return character
      * @tc.size      SmallTest
@@ -1840,7 +1840,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1109
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10800
      * @tc.name      StringSearchTest1109
      * @tc.desc      Verify that the search method works with CRLF combination
      * @tc.size      SmallTest
@@ -1857,7 +1857,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1110
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_10900
      * @tc.name      StringSearchTest1110
      * @tc.desc      Verify that the search method works with mixed whitespace characters
      * @tc.size      SmallTest
@@ -1874,7 +1874,7 @@ export default function StringSearchTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_Search_TEST1111
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHONE_11000
      * @tc.name      StringSearchTest1111
      * @tc.desc      Verify that the search method works with null character
      * @tc.size      SmallTest

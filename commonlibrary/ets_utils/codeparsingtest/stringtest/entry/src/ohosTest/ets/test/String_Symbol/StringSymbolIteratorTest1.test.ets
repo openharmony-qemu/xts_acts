@@ -35,7 +35,7 @@ export default function StringSymbolIteratorTest1() {
     //==========================Basic Function Test============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0100
      * @tc.name      StringSymbol.iteratorTest1001
      * @tc.desc      Clean User Input Username
      * @tc.size      MediumTest
@@ -53,7 +53,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0200
      * @tc.name      StringSymbol.iteratorTest1002
      * @tc.desc      Verify Symbol.iterator on prototype vs own property
      * @tc.size      MediumTest
@@ -72,7 +72,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0300
      * @tc.name      StringSymbol.iteratorTest1003
      * @tc.desc      Verify iterator protocol compliance
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0400
      * @tc.name      StringSymbol.iteratorTest1004
      * @tc.desc      Iterate string literal and verify first value
      * @tc.size      MediumTest
@@ -113,7 +113,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0500
      * @tc.name      StringSymbol.iteratorTest1005
      * @tc.desc      Iterate String object created by constructor
      * @tc.size      MediumTest
@@ -134,7 +134,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0600
      * @tc.name      StringSymbol.iteratorTest1006
      * @tc.desc      Iterate string expression result
      * @tc.size      MediumTest
@@ -156,7 +156,7 @@ export default function StringSymbolIteratorTest1() {
     //==========================Iterator Protocol Test==============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0700
      * @tc.name      StringSymbol.iteratorTest1007
      * @tc.desc      Verify next() returns correct iterator result object step by step
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0800
      * @tc.name      StringSymbol.iteratorTest1008
      * @tc.desc      Verify continuous calling of next() collects all characters
      * @tc.size      MediumTest
@@ -214,7 +214,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_0900
      * @tc.name      StringSymbol.iteratorTest1009
      * @tc.desc      Verify behavior after iteration is complete
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1000
      * @tc.name      StringSymbol.iteratorTest1010
      * @tc.desc      Verify iterator object is iterable and returns itself
      * @tc.size      MediumTest
@@ -261,7 +261,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1100
      * @tc.name      StringSymbol.iteratorTest1011
      * @tc.desc      Verify multiple calls return independent iterators
      * @tc.size      MediumTest
@@ -284,7 +284,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1200
      * @tc.name      StringSymbol.iteratorTest1012
      * @tc.desc      Verify iterator maintains current iteration position
      * @tc.size      MediumTest
@@ -308,7 +308,7 @@ export default function StringSymbolIteratorTest1() {
     //====================Unicode Code Point Processing Test===========================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1300
      * @tc.name      StringSymbol.iteratorTest1013
      * @tc.desc      Verify iteration over basic ASCII characters using spread syntax
      * @tc.size      MediumTest
@@ -329,7 +329,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1400
      * @tc.name      StringSymbol.iteratorTest1014
      * @tc.desc      Verify iteration over digit characters using for...of loop
      * @tc.size      MediumTest
@@ -352,7 +352,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1500
      * @tc.name      StringSymbol.iteratorTest1015
      * @tc.desc      Verify iteration over special ASCII characters using spread syntax
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1600
      * @tc.name      StringSymbol.iteratorTest1016
      * @tc.desc      Verify iteration over Chinese characters using spread syntax
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1700
      * @tc.name      StringSymbol.iteratorTest1017
      * @tc.desc      Verify iteration over Japanese Kana characters using for...of loop
      * @tc.size      MediumTest
@@ -422,7 +422,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1800
      * @tc.name      StringSymbol.iteratorTest1018
      * @tc.desc      Verify iteration over Korean Hangul characters using spread syntax
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_1900
      * @tc.name      StringSymbol.iteratorTest1019
      * @tc.desc      Verify iteration over mixed surrogate pairs and basic characters using for...of loop
      * @tc.size      MediumTest
@@ -467,7 +467,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2000
      * @tc.name      StringSymbol.iteratorTest1020
      * @tc.desc      Verify iteration over character with combining diacritical mark
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2100
      * @tc.name      StringSymbol.iteratorTest1021
      * @tc.desc      Verify iteration over ZWJ sequence
      * @tc.size      MediumTest
@@ -510,7 +510,7 @@ export default function StringSymbolIteratorTest1() {
     //==========================Empty String and Boundary Value Test=============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2200
      * @tc.name      StringSymbol.iteratorTest1022
      * @tc.desc      Verify iterator behavior on empty string
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2300
      * @tc.name      StringSymbol.iteratorTest1023
      * @tc.desc      Verify spread syntax on empty string
      * @tc.size      MediumTest
@@ -552,7 +552,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2400
      * @tc.name      StringSymbol.iteratorTest1024
      * @tc.desc      Verify for...of loop on empty string
      * @tc.size      MediumTest
@@ -572,7 +572,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2500
      * @tc.name      StringSymbol.iteratorTest1025
      * @tc.desc      Verify spread syntax on single ASCII character
      * @tc.size      MediumTest
@@ -593,7 +593,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2600
      * @tc.name      StringSymbol.iteratorTest1026
      * @tc.desc      Verify iterator behavior on single Unicode character
      * @tc.size      MediumTest
@@ -619,7 +619,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2700
      * @tc.name      StringSymbol.iteratorTest1027
      * @tc.desc      Verify iteration over whitespace characters (space, tab, newline, carriage return)
      * @tc.size      MediumTest
@@ -642,7 +642,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2800
      * @tc.name      StringSymbol.iteratorTest1028
      * @tc.desc      Verify iteration over invisible zero-width characters
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_2900
      * @tc.name      StringSymbol.iteratorTest1029
      * @tc.desc      Verify iteration over control characters
      * @tc.size      MediumTest
@@ -683,7 +683,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3000
      * @tc.name      StringSymbol.iteratorTest1030
      * @tc.desc      Verify iteration over medium-length string (100 'a's)
      * @tc.size      MediumTest
@@ -704,7 +704,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3100
      * @tc.name      StringSymbol.iteratorTest1031
      * @tc.desc      Verify for-of iteration over long string (40000 chars)
      * @tc.size      MediumTest
@@ -726,7 +726,7 @@ export default function StringSymbolIteratorTest1() {
     //=========================Compatibility Test with Iteration Syntax===========================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3200
      * @tc.name      StringSymbol.iteratorTest1032
      * @tc.desc      Verify basic for-of iteration over string "hello" using existing helper
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3300
      * @tc.name      StringSymbol.iteratorTest1033
      * @tc.desc      Verify for-of with break on space character (element-by-element assertion)
      * @tc.size      MediumTest
@@ -777,7 +777,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3400
      * @tc.name      StringSymbol.iteratorTest1034
      * @tc.desc      Verify for-of with continue to skip digit characters (element-by-element assertion)
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3500
      * @tc.name      StringSymbol.iteratorTest1035
      * @tc.desc      Verify spread syntax to convert string to char array
      * @tc.size      MediumTest
@@ -825,7 +825,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3600
      * @tc.name      StringSymbol.iteratorTest1036
      * @tc.desc      Verify spreading a string as function parameters
      * @tc.size      MediumTest
@@ -848,7 +848,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3700
      * @tc.name      StringSymbol.iteratorTest1037
      * @tc.desc      Use spread syntax in array literals
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3800
      * @tc.name      StringSymbol.iteratorTest1038
      * @tc.desc      Extract string characters using array destructuring assignment
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_3900
      * @tc.name      StringSymbol.iteratorTest1039
      * @tc.desc      Use array destructuring to swap variables
      * @tc.size      MediumTest
@@ -921,7 +921,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4000
      * @tc.name      StringSymbol.iteratorTest1040
      * @tc.desc      Use default values when destructuring
      * @tc.size      MediumTest
@@ -943,7 +943,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4100
      * @tc.name      StringSymbol.iteratorTest1041
      * @tc.desc      Create a Set from a string
      * @tc.size      MediumTest
@@ -964,7 +964,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4200
      * @tc.name      StringSymbol.iteratorTest1042
      * @tc.desc      Create a Map from a string
      * @tc.size      MediumTest
@@ -985,7 +985,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4300
      * @tc.name      StringSymbol.iteratorTest1043
      * @tc.desc      Iterate over strings with Promise.all
      * @tc.size      MediumTest
@@ -1008,7 +1008,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4400
      * @tc.name      StringSymbol.iteratorTest1044
      * @tc.desc      Use Array.from to convert a string to an array
      * @tc.size      MediumTest
@@ -1036,7 +1036,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4500
      * @tc.name      StringSymbol.iteratorTest1045
      * @tc.desc      Use Array.from with a mapping function
      * @tc.size      MediumTest
@@ -1061,7 +1061,7 @@ export default function StringSymbolIteratorTest1() {
     //===========================Manual Iteration Control Test=============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4600
      * @tc.name      StringSymbol.iteratorTest1046
      * @tc.desc      Verify that next() returns a complete result object
      * @tc.size      MediumTest
@@ -1083,7 +1083,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4700
      * @tc.name      StringSymbol.iteratorTest1047
      * @tc.desc      Verify that next() ignores passed parameters
      * @tc.size      MediumTest
@@ -1104,7 +1104,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4800
      * @tc.name      StringSymbol.iteratorTest1048
      * @tc.desc      Verify that next() consumes only what is requested
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_4900
      * @tc.name      StringSymbol.iteratorTest1049
      * @tc.desc      Verify whether the iterator has a return() method
      * @tc.size      MediumTest
@@ -1145,7 +1145,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5000
      * @tc.name      StringSymbol.iteratorTest1050
      * @tc.desc      Verify iterator status after it is exhausted
      * @tc.size      MediumTest
@@ -1170,7 +1170,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5100
      * @tc.name      StringSymbol.iteratorTest1051
      * @tc.desc      Verify the iterator cannot be reset
      * @tc.size      MediumTest
@@ -1195,7 +1195,7 @@ export default function StringSymbolIteratorTest1() {
     //=====================Surrogate Pair and Grapheme Cluster Test============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5200
      * @tc.name      StringSymbol.iteratorTest1052
      * @tc.desc      Isolated high surrogate should be iterated as one code unit
      * @tc.size      MediumTest
@@ -1206,7 +1206,7 @@ export default function StringSymbolIteratorTest1() {
       const TAG = 'StringSymbol.iteratorTest1052';
       console.log(TAG + 'start');
 
-      const str = "\uD83D"; 
+      const str = "\uD83D";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
       expect(chars.length).assertEqual(1);
       expect(chars[0]).assertEqual("\uD83D");
@@ -1215,7 +1215,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5300
      * @tc.name      StringSymbol.iteratorTest1053
      * @tc.desc      Verify combining character sequences
      * @tc.size      MediumTest
@@ -1226,7 +1226,7 @@ export default function StringSymbolIteratorTest1() {
       const TAG = 'StringSymbol.iteratorTest1053';
       console.log(TAG + 'start');
 
-      const str = "e\u0301"; 
+      const str = "e\u0301";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
       expect(chars.length).assertEqual(2);
       expect(chars[0]).assertEqual("e");
@@ -1236,7 +1236,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5400
      * @tc.name      StringSymbol.iteratorTest1054
      * @tc.desc      Multiple combining marks should expand to multiple symbols
      * @tc.size      MediumTest
@@ -1247,7 +1247,7 @@ export default function StringSymbolIteratorTest1() {
       const TAG = 'StringSymbol.iteratorTest1054';
       console.log(TAG + 'start');
 
-      const str = "a\u0300\u0301\u0302"; 
+      const str = "a\u0300\u0301\u0302";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
       expect(chars.length).assertEqual(4);
 
@@ -1255,7 +1255,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5500
      * @tc.name      StringSymbol.iteratorTest1055
      * @tc.desc      Emoji sequence should be split when iterated
      * @tc.size      MediumTest
@@ -1274,7 +1274,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5600
      * @tc.name      StringSymbol.iteratorTest1056
      * @tc.desc      Variant selectors should increase the number of iterated symbols
      * @tc.size      MediumTest
@@ -1293,7 +1293,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5700
      * @tc.name      StringSymbol.iteratorTest1057
      * @tc.desc      Regional indicator symbols should be iterated separately
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5800
      * @tc.name      StringSymbol.iteratorTest1058
      * @tc.desc      Tag characters should be split when iterated
      * @tc.size      MediumTest
@@ -1321,8 +1321,6 @@ export default function StringSymbolIteratorTest1() {
      */
     it("StringSymbol.iteratorTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbol.iteratorTest1058';
-      console.log(TAG + 'start');
-
       const str = "\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
       expect(chars.length > 1).assertTrue();
@@ -1333,7 +1331,7 @@ export default function StringSymbolIteratorTest1() {
     //======================Iterator State Management Test============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_5900
      * @tc.name      StringSymbol.iteratorTest1059
      * @tc.desc      Independent iterators should maintain separate state
      * @tc.size      MediumTest
@@ -1361,7 +1359,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6000
      * @tc.name      StringSymbol.iteratorTest1060
      * @tc.desc      Interleaving next() calls on two iterators should work correctly
      * @tc.size      MediumTest
@@ -1385,7 +1383,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6100
      * @tc.name      StringSymbol.iteratorTest1061
      * @tc.desc      Iterator references should be shared when assigned
      * @tc.size      MediumTest
@@ -1407,7 +1405,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6200
      * @tc.name      StringSymbol.iteratorTest1062
      * @tc.desc      Iterator passed as a parameter should advance on each next()
      * @tc.size      MediumTest
@@ -1428,7 +1426,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6300
      * @tc.name      StringSymbol.iteratorTest1063
      * @tc.desc      Partial iteration should continue correctly on subsequent next()
      * @tc.size      MediumTest
@@ -1452,7 +1450,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6400
      * @tc.name      StringSymbol.iteratorTest1064
      * @tc.desc      After releasing an iterator reference, a new iterator should work
      * @tc.size      MediumTest
@@ -1479,7 +1477,7 @@ export default function StringSymbolIteratorTest1() {
     //========================Exceptional Case Test==============================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6500
      * @tc.name      StringSymbol.iteratorTest1065
      * @tc.desc      Invoke String iterator on a non-string value
      * @tc.size      MediumTest
@@ -1502,7 +1500,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6600
      * @tc.name      StringSymbol.iteratorTest1066
      * @tc.desc      Invoke String iterator on null should throw TypeError
      * @tc.size      MediumTest
@@ -1520,7 +1518,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6700
      * @tc.name      StringSymbol.iteratorTest1067
      * @tc.desc      Invoke String iterator on undefined should throw TypeError
      * @tc.size      MediumTest
@@ -1538,7 +1536,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6800
      * @tc.name      StringSymbol.iteratorTest1068
      * @tc.desc      next() should return a result object without throwing
      * @tc.size      MediumTest
@@ -1561,7 +1559,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_6900
      * @tc.name      StringSymbol.iteratorTest1069
      * @tc.desc      Modified iterator next() should be observable
      * @tc.size      MediumTest
@@ -1581,7 +1579,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7000
      * @tc.name      StringSymbol.iteratorTest1070
      * @tc.desc      Reassigning a string during iteration should not affect next() result
      * @tc.size      MediumTest
@@ -1603,7 +1601,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7100
      * @tc.name      StringSymbol.iteratorTest1071
      * @tc.desc      Mutating a String object should not affect iteration content
      * @tc.size      MediumTest
@@ -1623,7 +1621,7 @@ export default function StringSymbolIteratorTest1() {
     //========================Interaction Test with Other String Methods===========================
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7200
      * @tc.name      StringSymbol.iteratorTest1072
      * @tc.desc      Compare iterator result with charAt outputs
      * @tc.size      MediumTest
@@ -1647,7 +1645,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7300
      * @tc.name      StringSymbol.iteratorTest1073
      * @tc.desc      Unicode surrogate pairs differ between charAt and iterating symbols
      * @tc.size      MediumTest
@@ -1669,7 +1667,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7400
      * @tc.name      StringSymbol.iteratorTest1074
      * @tc.desc      charCodeAt returns UTF-16 code units while iteration returns code points
      * @tc.size      MediumTest
@@ -1691,7 +1689,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7500
      * @tc.name      StringSymbol.iteratorTest1075
      * @tc.desc      Compare split() result with iterator expansion
      * @tc.size      MediumTest
@@ -1715,7 +1713,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7600
      * @tc.name      StringSymbol.iteratorTest1076
      * @tc.desc      split() splits UTF-16 code units while iterator yields code points
      * @tc.size      MediumTest
@@ -1740,7 +1738,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7700
      * @tc.name      StringSymbol.iteratorTest1077
      * @tc.desc      Extract code points from iterated characters
      * @tc.size      MediumTest
@@ -1762,7 +1760,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7800
      * @tc.name      StringSymbol.iteratorTest1078
      * @tc.desc      Rebuild string from code points
      * @tc.size      MediumTest
@@ -1781,7 +1779,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_7900
      * @tc.name      StringSymbol.iteratorTest1079
      * @tc.desc      Verify iterating a trimmed string
      * @tc.size      MediumTest
@@ -1807,7 +1805,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8000
      * @tc.name      StringSymbol.iteratorTest1080
      * @tc.desc      Verify iterating an uppercased string
      * @tc.size      MediumTest
@@ -1833,7 +1831,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8100
      * @tc.name      StringSymbol.iteratorTest1081
      * @tc.desc      Verify iterating a sliced string
      * @tc.size      MediumTest
@@ -1859,7 +1857,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8200
      * @tc.name      StringSymbol.iteratorTest1082
      * @tc.desc      Verify using includes on iterated character array
      * @tc.size      MediumTest
@@ -1882,7 +1880,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8300
      * @tc.name      StringSymbol.iteratorTest1083
      * @tc.desc      Verify using indexOf on iterated character array
      * @tc.size      MediumTest
@@ -1903,7 +1901,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8400
      * @tc.name      StringSymbol.iteratorTest1084
      * @tc.desc      Verify using join on iterated character array
      * @tc.size      MediumTest
@@ -1924,7 +1922,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8500
      * @tc.name      StringSymbol.iteratorTest1085
      * @tc.desc      Use regex test with filter on iterated character array
      * @tc.size      MediumTest
@@ -1948,7 +1946,7 @@ export default function StringSymbolIteratorTest1() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_SYMBOL.ITERATOR_TEST1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORONE_8600
      * @tc.name      StringSymbol.iteratorTest1086
      * @tc.desc      Use regex replace with map on iterated character array
      * @tc.size      MediumTest

@@ -23,7 +23,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0100
      * @tc.name      StringReplaceAllTest2001
      * @tc.desc      Simple template string replacement
      * @tc.size      MediumTest
@@ -39,7 +39,7 @@ export default function StringReplaceAllTest2() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0200
      * @tc.name      StringReplaceAllTest2002
      * @tc.desc      Modify query parameters in URL string
      * @tc.size      MediumTest
@@ -58,7 +58,7 @@ export default function StringReplaceAllTest2() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0300
      * @tc.name      StringReplaceAllTest2003
      * @tc.desc      Replace var with let and single quotes with double quotes in code string
      * @tc.size      MediumTest
@@ -78,7 +78,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0400
      * @tc.name      StringReplaceAllTest2004
      * @tc.desc      Replace currency symbols with currency codes
      * @tc.size      MediumTest
@@ -99,7 +99,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0500
      * @tc.name      StringReplaceAllTest2005
      * @tc.desc      Convert date separator from slash to hyphen
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0600
      * @tc.name      StringReplaceAllTest2006
      * @tc.desc      Remove password field from JSON string
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0700
      * @tc.name      StringReplaceAllTest2007
      * @tc.desc      Rename keys in JSON string
      * @tc.size      MediumTest
@@ -155,7 +155,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0800
      * @tc.name      StringReplaceAllTest2008
      * @tc.desc      Convert Windows path separators to Unix style
      * @tc.size      MediumTest
@@ -173,7 +173,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0900
      * @tc.name      StringReplaceAllTest2009
      * @tc.desc      Normalize multiple consecutive slashes in path
      * @tc.size      MediumTest
@@ -191,7 +191,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1000
      * @tc.name      StringReplaceAllTest2010
      * @tc.desc      Replace non-overlapping substrings in sequence
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1100
      * @tc.name      StringReplaceAllTest2011
      * @tc.desc      Replace non-overlapping matched substrings
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1200
      * @tc.name      StringReplaceAllTest2012
      * @tc.desc      Replace all non-overlapping matched substrings completely
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1300
      * @tc.name      StringReplaceAllTest2013
      * @tc.desc      Replace characters in string object
      * @tc.size      MediumTest
@@ -260,7 +260,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1400
      * @tc.name      StringReplaceAllTest2014
      * @tc.desc      Replace characters in non-string object converted to string
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1500
      * @tc.name      StringReplaceAllTest2015
      * @tc.desc      Replace separators in array converted to string
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1600
      * @tc.name      StringReplaceAllTest2016
      * @tc.desc      Replace content in date object converted to string
      * @tc.size      MediumTest
@@ -305,7 +305,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1700
      * @tc.name      StringReplaceAllTest2017
      * @tc.desc      Replace content in custom object's string representation
      * @tc.size      MediumTest
@@ -328,7 +328,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1800
      * @tc.name      StringReplaceAllTest2018
      * @tc.desc      Replace characters in string wrapped in custom object
      * @tc.size      MediumTest
@@ -354,7 +354,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1900
      * @tc.name      StringReplaceAllTest2019
      * @tc.desc      Replace characters in proxy-wrapped string object
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2000
      * @tc.name      StringReplaceAllTest2020
      * @tc.desc      Replace characters in frozen string object
      * @tc.size      MediumTest
@@ -389,7 +389,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2100
      * @tc.name      StringReplaceAllTest2021
      * @tc.desc      Basic character replacement in string
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2200
      * @tc.name      StringReplaceAllTest2022
      * @tc.desc      Replace characters in read-only string attribute
      * @tc.size      MediumTest
@@ -422,7 +422,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2300
      * @tc.name      StringReplaceAllTest2023
      * @tc.desc      Regex lastIndex is reset after replaceAll
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2400
      * @tc.name      StringReplaceAllTest2024
      * @tc.desc      Test regex lastIndex behavior in replaceAll
      * @tc.size      MediumTest
@@ -457,7 +457,7 @@ export default function StringReplaceAllTest2() {
       console.log(TAG + " end");
     });
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2500
      * @tc.name      StringReplaceAllTest2025
      * @tc.desc      Continue processing after replaceAll
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2600
      * @tc.name      StringReplaceAllTest2026
      * @tc.desc      Using replaceAll in template strings
      * @tc.size      MediumTest
@@ -491,7 +491,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2700
      * @tc.name      StringReplaceAllTest2027
      * @tc.desc      Behavior of replaceAll in strict mode
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2800
      * @tc.name      StringReplaceAllTest2028
      * @tc.desc      replaceAll behaves the same in non-strict mode
      * @tc.size      MediumTest
@@ -525,7 +525,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2900
      * @tc.name      StringReplaceAllTest2029
      * @tc.desc      NaN is converted to the string "NaN"
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3000
      * @tc.name      StringReplaceAllTest2030
      * @tc.desc      NaN is converted to the string "NaN"
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3100
      * @tc.name      StringReplaceAllTest2031
      * @tc.desc      Infinity is converted to the string "Infinity"
      * @tc.size      MediumTest
@@ -577,7 +577,7 @@ export default function StringReplaceAllTest2() {
     });
 
     /**
-     * @tc.number    BUILTINS_STRING_REPLACEALL_TEST2032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3200
      * @tc.name      StringReplaceAllTest2032
      * @tc.desc      -0 is converted to the string "0"
      * @tc.size      MediumTest

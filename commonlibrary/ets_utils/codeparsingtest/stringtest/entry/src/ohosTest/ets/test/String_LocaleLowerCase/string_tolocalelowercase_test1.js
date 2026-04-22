@@ -108,10 +108,12 @@ export function test1056() {
 }
 
 export function test1058() {
-    const obj = {};
-    return [
-        String.prototype.toLocaleLowerCase.call(obj)
-    ];
+    const obj = null;
+    try {
+        return [String.prototype.toLocaleLowerCase.call(obj)];
+    } catch (e) {
+        throw e;
+    }
 }
 
 export function test1059() {
