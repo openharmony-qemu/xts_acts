@@ -22,7 +22,7 @@ export default function URI04Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    // =============== encodedFragment12+ ======================
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_0100
      * @tc.name testURI04Chapter0001
@@ -1852,7 +1852,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOUR_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFOURONE_0100
      * @tc.name testURI04Chapter0100
      * @tc.desc Positive test: URI with percent-encoded double special characters in query value
      * @tc.size MediumTest

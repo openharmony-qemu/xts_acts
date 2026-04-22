@@ -1637,7 +1637,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0100
      * @tc.name testURI02Chapter0100
      * @tc.desc Verify fragment with Unicode characters that require 3-byte UTF-8 encoding.
      * @tc.size MediumTest
@@ -1651,10 +1651,8 @@ export default function URI02Test() {
       expect(uriObj.fragment).assertEqual(unicodeStr);
     });
 
-    // =============== authority ======================
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0200
      * @tc.name testURI02Chapter0101
      * @tc.desc Test authority with normal URI containing userinfo, host, port.
      * @tc.size MediumTest
@@ -1671,7 +1669,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0300
      * @tc.name testURI02Chapter0102
      * @tc.desc Test authority with host and port only.
      * @tc.size MediumTest
@@ -1688,7 +1686,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0400
      * @tc.name testURI02Chapter0103
      * @tc.desc Test authority with host only.
      * @tc.size MediumTest
@@ -1705,7 +1703,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0500
      * @tc.name testURI02Chapter0104
      * @tc.desc Test URI without authority (scheme:///path).
      * @tc.size MediumTest
@@ -1721,7 +1719,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0600
      * @tc.name testURI02Chapter0105
      * @tc.desc Test authority with userinfo without password.
      * @tc.size MediumTest
@@ -1738,7 +1736,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0700
      * @tc.name testURI02Chapter0106
      * @tc.desc Test port value 0.
      * @tc.size MediumTest
@@ -1752,7 +1750,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0800
      * @tc.name testURI02Chapter0107
      * @tc.desc Test port maximum value 65535.
      * @tc.size MediumTest
@@ -1766,7 +1764,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_0900
      * @tc.name testURI02Chapter0108
      * @tc.desc Test default port (no port specified).
      * @tc.size MediumTest
@@ -1780,7 +1778,7 @@ export default function URI02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWOONE_1000
      * @tc.name testURI02Chapter0109
      * @tc.desc Test IPv4 host address.
      * @tc.size MediumTest

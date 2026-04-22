@@ -23,7 +23,6 @@ export default function URI01Test() {
       // This API supports only one parameter: clear action function.
     });
 
-    // =============== scheme ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_0100
      * @tc.name testURI01Chapter0001
@@ -1480,7 +1479,6 @@ export default function URI01Test() {
       const uriObj = new uri.URI('http://example.com:/path');
       const uriString = uriObj.toString();
 
-      // 空端口应该被忽略，不输出端口号
       const isValid = uriString === 'http://example.com/path' ||
         uriString === 'http://example.com:/path';
 
@@ -1488,7 +1486,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0100
      * @tc.name testURI01Chapter0100
      * @tc.desc Verify URI constructor handles port "NaN"
      * @tc.size MediumTest
@@ -1506,7 +1504,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0200
      * @tc.name testURI01Chapter0101
      * @tc.desc Verify URI constructor throws when port is string "Infinity"
      * @tc.size MediumTest
@@ -1528,7 +1526,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0300
      * @tc.name testURI01Chapter0102
      * @tc.desc Verify URI constructor handles port with scientific notation "1e3"
      * @tc.size MediumTest
@@ -1547,7 +1545,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0400
      * @tc.name testURI01Chapter0103
      * @tc.desc Verify URI constructor handles port with hexadecimal "0xFF"
      * @tc.size MediumTest
@@ -1566,7 +1564,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0500
      * @tc.name testURI01Chapter0104
      * @tc.desc Verify URI constructor handles port with octal "0o777"
      * @tc.size MediumTest
@@ -1585,7 +1583,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0600
      * @tc.name testURI01Chapter0105
      * @tc.desc Verify URI constructor throws when whole URI string is empty
      * @tc.size MediumTest
@@ -1606,7 +1604,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONETWO_0700
      * @tc.name testURI01Chapter0106
      * @tc.desc Verify URI constructor throws when URI string contains special characters only
      * @tc.size MediumTest
@@ -1628,7 +1626,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONEONE_0100
      * @tc.name testURI01Chapter0107
      * @tc.desc Verify URI constructor handles Chinese characters in path
      * @tc.size MediumTest
@@ -1646,7 +1644,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONEONE_0200
      * @tc.name testURI01Chapter0108
      * @tc.desc Verify URI constructor throws when URI string contains emoji in port part
      * @tc.size MediumTest
@@ -1675,7 +1673,6 @@ export default function URI01Test() {
         expect(hasExpectedError).assertTrue();
       }
 
-      // 验证 uriObj 未被创建
       if (uriObj === null) {
         const nullString = String(uriObj);
         expect(nullString === 'null').assertTrue();
@@ -1683,7 +1680,7 @@ export default function URI01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONEONE_0300
      * @tc.name testURI01Chapter0109
      * @tc.desc Verify URI constructor throws when port contains percent-encoded characters (e.g., %38)
      * @tc.size MediumTest
@@ -1701,9 +1698,9 @@ export default function URI01Test() {
         expect(threw).assertTrue();
       }
     });
-    // =============== path ======================
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONE_1110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestONEONE_0400
      * @tc.name testURI01Chapter0110
      * @tc.desc Test path property with normal URI containing simple path
      * @tc.size MediumTest

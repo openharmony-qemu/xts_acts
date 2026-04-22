@@ -23,7 +23,6 @@ export default function URI03Test() {
       // This API supports only one parameter: clear action function.
     });
 
-    // =============== authority ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_0100
      * @tc.name testURI03Chapter0001
@@ -1777,7 +1776,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0100
      * @tc.name testURI03Chapter0100
      * @tc.desc Test encodedFragment with extremely long fragment string (performance/robustness)
      * @tc.size MediumTest
@@ -1793,7 +1792,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0200
      * @tc.name testURI03Chapter0101
      * @tc.desc Test encodedFragment with fragment containing percent sign not followed by hex digits (illegal)
      * @tc.size MediumTest
@@ -1817,7 +1816,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0300
      * @tc.name testURI03Chapter0102
      * @tc.desc Test encodedFragment with fragment containing only a percent sign
      * @tc.size MediumTest
@@ -1841,7 +1840,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0400
      * @tc.name testURI03Chapter0103
      * @tc.desc Test encodedFragment when fragment contains characters that are valid after percent encoding
      * @tc.size MediumTest
@@ -1857,7 +1856,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0500
      * @tc.name testURI03Chapter0104
      * @tc.desc Test encodedFragment with fragment containing mixed allowed and encoded characters
      * @tc.size MediumTest
@@ -1873,7 +1872,7 @@ export default function URI03Test() {
       });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREE_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTHREEONE_0600
      * @tc.name testURI03Chapter0105
      * @tc.desc Test encodedFragment with fragment containing control characters (BEL, BS, etc.) already percent-encoded
      * @tc.size MediumTest
