@@ -136,16 +136,15 @@ export default function BuiltinsArrayEntriesTest() {
       const arr = new Array<boolean>(true, false, true);
       const iterator = arr.entries();
 
-      const expected = [[0, true], [1, false], [2, true]];
-      let result: (boolean | number)[][] = [];
+      const expected: [number, boolean][] = [[0, true], [1, false], [2, true]];
+      let result: [number, boolean][] = [];
 
       let next = iterator.next();
       while (!next.done) {
-        const entry = next.value as (boolean | number)[];
-        result.push([Number(entry[0]), entry[1] as boolean]);
+        const entry = next.value as [number, boolean];
+        result.push([entry[0], entry[1]]);
         next = iterator.next();
       }
-
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
         expect(result[i][0]).assertEqual(expected[i][0]);
