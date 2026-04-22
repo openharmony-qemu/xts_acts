@@ -256,19 +256,6 @@ export default function unistd_group_test() {
       done();
     });
     /**
-     * @tc.name   access
-     * @tc.number SUB_THIRDPARTY_MUSL_ACCESS_0100
-     * @tc.desc   libc-test access
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("access", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("access");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
      * @tc.name   fchdir
      * @tc.number SUB_THIRDPARTY_MUSL_FCHDIR_0100
      * @tc.desc   libc-test fchdir

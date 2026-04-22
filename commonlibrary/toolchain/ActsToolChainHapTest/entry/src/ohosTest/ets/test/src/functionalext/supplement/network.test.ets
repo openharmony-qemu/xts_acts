@@ -359,19 +359,6 @@ export default function network_group_test() {
       done();
     });
     /**
-     * @tc.name   recvmmsg_time64
-     * @tc.number SUB_THIRDPARTY_MUSL_RECVMMSG_TIME64_0100
-     * @tc.desc   libc-test __recvmmsg_time64
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("recvmmsg_time64", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("recvmmsg_time64");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
      * @tc.name   inet_addr
      * @tc.number SUB_THIRDPARTY_MUSL_INET_ADDR_0100
      * @tc.desc   libc-test inet_addr

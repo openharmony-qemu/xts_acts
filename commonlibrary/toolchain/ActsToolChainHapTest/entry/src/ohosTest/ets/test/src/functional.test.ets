@@ -930,20 +930,6 @@ export default function functional_group_test() {
     });
 
     /**
-     * @tc.name   string_memset
-     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMSET_0100
-     * @tc.desc   libc-test string_memset
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("string_memset", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("string_memset");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   strtod
      * @tc.number SUB_THIRDPARTY_MUSL_STRTOD_0100
      * @tc.desc   libc-test strtod

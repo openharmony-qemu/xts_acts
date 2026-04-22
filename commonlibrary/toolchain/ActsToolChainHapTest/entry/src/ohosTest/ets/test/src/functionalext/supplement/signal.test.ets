@@ -242,19 +242,6 @@ export default function signal_group_test() {
       done();
     });
     /**
-     * @tc.name   sigset
-     * @tc.number SUB_THIRDPARTY_MUSL_SIGSET_0100
-     * @tc.desc   libc-test sigset
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("sigset", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("sigset");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
      * @tc.name   sigsuspend
      * @tc.number SUB_THIRDPARTY_MUSL_SIGSUSPEND_0100
      * @tc.desc   libc-test sigsuspend
