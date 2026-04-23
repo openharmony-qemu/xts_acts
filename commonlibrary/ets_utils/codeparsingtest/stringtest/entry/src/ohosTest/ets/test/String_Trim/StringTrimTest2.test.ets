@@ -35,13 +35,13 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2001';
-      console.log(TAG + 'start');
+
       'use strict';
       const name = "world";
       const str = `  hello ${name}  `;
       const result = str.trim();
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -54,13 +54,13 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2002';
-      console.log(TAG + 'start');
+
       'use strict';
       const literal = "  test  ";
       const result = literal.trim();
       expect(result).assertEqual("test");
       expect(typeof literal).assertEqual("string");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -73,14 +73,14 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2003';
-      console.log(TAG + 'start');
+
       'use strict';
       const strObj = new String("  test  ");
       const result = strObj.trim();
       expect(result).assertEqual("test");
       expect(typeof result).assertEqual("string");
       expect(stringTest.testTrimBool()).assertEqual(false);
-      console.log(TAG + "end");
+
     });
 
     //============================Exception Scenario Testing==================================
@@ -95,11 +95,11 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2004';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : string = stringTest.testTrimCall("  test  ");
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -112,11 +112,11 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2005';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : string = stringTest.testTrimCallObj1();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     //============================Specification Compliance Testing==================================
@@ -131,12 +131,12 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2006';
-      console.log(TAG + 'start');
+
       'use strict';
       expect(typeof "  test  ".trim()).assertEqual("string");
       expect(typeof "".trim()).assertEqual("string");
       expect(typeof "noSpace".trim()).assertEqual("string");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -149,14 +149,14 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2007';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const before = str;
       str.trim();
       expect(str === before).assertEqual(true);
       expect(str).assertEqual("  test  ");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -169,7 +169,7 @@ export default function StringTrimTest02() {
      */
     it("StringTrimTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest2008';
-      console.log(TAG + 'start');
+
       'use strict';
       const whitespaceChars = [
         '\u0009', // TAB
@@ -202,7 +202,7 @@ export default function StringTrimTest02() {
         const str = char + "test" + char;
         expect(str.trim() === "test").assertEqual(true);
       });
-      console.log(TAG + "end");
+
     });
   })
 }

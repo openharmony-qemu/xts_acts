@@ -35,10 +35,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1001';
-      console.log(TAG + 'start');
+
       const str = "  test  ";
       expect(str).assertEqual("  test  ");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -51,10 +51,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1002';
-      console.log(TAG + 'start');
+
       const str = "\t\ttest\t\t";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -67,10 +67,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1003';
-      console.log(TAG + 'start');
+
       const str = "\v\vtest\v\v";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -83,10 +83,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1004';
-      console.log(TAG + 'start');
+
       const str = "\f\ftest\f\f";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -99,10 +99,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1005';
-      console.log(TAG + 'start');
+
       const str = "\n\ntest\n\n";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -115,10 +115,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1006';
-      console.log(TAG + 'start');
+
       const str = "\r\rtest\r\r";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -131,10 +131,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1007';
-      console.log(TAG + 'start');
+
       const str = "\r\ntest\r\n";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -147,10 +147,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1008';
-      console.log(TAG + 'start');
+
       const str = "\u2028test\u2028";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -163,10 +163,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1009';
-      console.log(TAG + 'start');
+
       const str = "\u2029test\u2029";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -179,10 +179,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1010';
-      console.log(TAG + 'start');
+
       const str = "\u00A0test\u00A0";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -195,10 +195,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1011';
-      console.log(TAG + 'start');
+
       const str = "\u3000test\u3000";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -211,10 +211,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1012';
-      console.log(TAG + 'start');
+
       const str = "\u1680test\u1680";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -227,10 +227,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1013';
-      console.log(TAG + 'start');
+
       const str = "\u2000test\u2000";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -243,10 +243,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1014';
-      console.log(TAG + 'start');
+
       const str = "\u2001test\u2001";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -259,10 +259,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1015';
-      console.log(TAG + 'start');
+
       const str = "\u2002test\u2002";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -275,10 +275,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1016';
-      console.log(TAG + 'start');
+
       const str = "\u2003test\u2003";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -291,10 +291,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1017';
-      console.log(TAG + 'start');
+
       const str = "\u2009test\u2009";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -307,10 +307,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1018';
-      console.log(TAG + 'start');
+
       const str = "\u200Atest\u200A";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -323,10 +323,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1019';
-      console.log(TAG + 'start');
+
       const str = "\u202Ftest\u202F";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -339,10 +339,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1020';
-      console.log(TAG + 'start');
+
       const str = "\u205Ftest\u205F";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -355,10 +355,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1021';
-      console.log(TAG + 'start');
+
       const str = " \t\n\r\ftest \t\n\r\f";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -371,10 +371,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1022';
-      console.log(TAG + 'start');
+
       const str = "     test     ";
       expect(str.trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     //============================Boundary Value Testing==================================
@@ -388,13 +388,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1023';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "    \t\n\r   ";
       const result = str.trim();
       expect(result).assertEqual("")
       expect(result.length).assertEqual(0);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -407,13 +407,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1024';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = " ";
       const result = str.trim();
       expect(result).assertEqual("");
       expect(result.length).assertEqual(0);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -426,12 +426,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1025';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "a";
       const result = str.trim();
       expect(result).assertEqual("a");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -444,12 +444,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1026';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "hello world";
       const result = str.trim();
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -462,12 +462,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1027';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello    world  ";
       const result = str.trim();
       expect(result).assertEqual("hello    world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -480,12 +480,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1028';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  @#$%  test  !@#$  ";
       const result = str.trim();
       expect(result).assertEqual("@#$%  test  !@#$");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -498,13 +498,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1029';
-      console.log(TAG + 'start');
+
       'use strict';
       const longStr = "    " + "a".repeat(10000) + "    ";
       const result = longStr.trim();
       expect(result.length).assertEqual(10000);
       expect(result === "a".repeat(10000)).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
 
@@ -520,14 +520,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1030';
-      console.log(TAG + 'start');
+
       'use strict';
       expect("test".trim()).assertEqual("test");
       expect(" test".trim()).assertEqual("test");
       expect("  test".trim()).assertEqual("test");
       expect("   test".trim()).assertEqual("test");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -540,11 +540,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1031';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = " \t\nhello";
       expect(str.trim()).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -557,13 +557,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1032';
-      console.log(TAG + 'start');
+
       'use strict';
       expect("test".trim()).assertEqual("test");
       expect("test ".trim()).assertEqual("test");
       expect("test  ".trim()).assertEqual("test");
       expect("test   ".trim()).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -576,11 +576,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1033';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "hello \t\n";
       expect(str.trim()).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -593,11 +593,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1034';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello  ";
       expect(str.trim()).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
 
@@ -611,11 +611,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1035';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "   hello  ";
       expect(str.trim()).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
     //============================Return Value Feature Test==================================
@@ -630,12 +630,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1036';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim();
       expect(typeof result).assertEqual("string");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -648,12 +648,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1037';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim();
       expect(result !== str).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -666,14 +666,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1038';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const original = str;
       str.trim();
       expect(str).assertEqual("  test  ");
       expect(str === original).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -686,14 +686,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1039';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const originalLength = str.length;
       str.trim();
       expect(str.length).assertEqual(8);
       expect(str.length === originalLength).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -706,13 +706,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1040';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim();
       expect(result.length).assertEqual(4);
       expect(str.length - result.length).assertEqual(4);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -725,12 +725,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1041';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "    ";
       const result = str.trim();
       expect(result.length).assertEqual(0);
-      console.log(TAG + "end");
+
     });
 
     //============================Test in Combination with Other String Methods==================================
@@ -745,12 +745,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1042';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim().trimStart();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -763,12 +763,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1043';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim().trimEnd();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -781,13 +781,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1044';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result1 = str.trim();
       const result2 = str.trimStart().trimEnd();
       expect(result1 === result2).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -800,12 +800,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1045';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  HELLO  ";
       const result = str.trim().toLowerCase();
       expect(result).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -818,12 +818,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1046';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello  ";
       const result = str.trim().toUpperCase();
       expect(result).assertEqual("HELLO");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -836,12 +836,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1047';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().includes("world");
       expect(result).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -854,12 +854,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1048';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().indexOf("world");
       expect(result).assertEqual(6);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -872,12 +872,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1049';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().startsWith("hello");
       expect(result).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -890,12 +890,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1050';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().endsWith("world");
       expect(result).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -908,12 +908,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1051';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().slice(0, 5);
       expect(result).assertEqual("hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -926,12 +926,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1052';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().substring(6, 11);
       expect(result).assertEqual("world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -944,12 +944,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1053';
-      console.log(TAG + 'start');
+
       let result: string[] = stringTest.testTrimSplit()
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual("hello");
       expect(result[1]).assertEqual("world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -962,12 +962,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1054';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello world  ";
       const result = str.trim().replace("world", "js");
       expect(result).assertEqual("hello js");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -980,12 +980,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1055';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello  ";
       const result = str.trim().concat(" world");
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -998,12 +998,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1056';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  ab  ";
       const result = str.trim().repeat(3);
       expect(result).assertEqual("ababab");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1016,12 +1016,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1057';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim().padStart(10, "*");
       expect(result).assertEqual("******test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1034,12 +1034,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1058';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim().padEnd(10, "*");
       expect(result).assertEqual("test******");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1052,10 +1052,10 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1059';
-      console.log(TAG + 'start');
+
       let result:string=stringTest.testTrimMatch()
       expect(result).assertEqual("123");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1068,12 +1068,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1060';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  hello123  ";
       const result = str.trim().search(/\d/);
       expect(result).assertEqual(5);
-      console.log(TAG + "end");
+
     });
 
     //============================Practical Application Scenario Testing==================================
@@ -1087,11 +1087,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1061';
-      console.log(TAG + 'start');
+
       'use strict';
       let result : string = stringTest.testClearUsername("admin");
       expect(result).assertEqual("用户名有效: admin");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1104,11 +1104,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1062';
-      console.log(TAG + 'start');
+
       'use strict';
       let result = stringTest.testValidateEmail("Test@Example.COM");
       expect(result).assertTrue();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1121,14 +1121,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1063';
-      console.log(TAG + 'start');
+
       'use strict';
       const csvLine = "  John  ,  Doe  ,  25  ";
       const cleanData = csvLine.split(",").map(item => item.trim());
       expect(cleanData[0]).assertEqual("John");
       expect(cleanData[1]).assertEqual("Doe");
       expect(cleanData[2]).assertEqual("25");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1141,12 +1141,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1064';
-      console.log(TAG + 'start');
+
       'use strict';
       let result = stringTest.testCleanedData();
       expect(result.name).assertEqual("John");
       expect(result.email).assertEqual("john@example.com");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1159,11 +1159,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1065';
-      console.log(TAG + 'start');
+
       'use strict';
       let result = stringTest.testSearchProducts("  phone  ");
       expect(result[0]).assertEqual("iPhone");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1176,13 +1176,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1066';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : string[] = stringTest.testParseTags(" js , html , css ");
       expect(result[0]).assertEqual("js");
       expect(result[1]).assertEqual("html");
       expect(result[2]).assertEqual("css");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1195,11 +1195,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1067';
-      console.log(TAG + 'start');
+
       'use strict';
       let result : boolean = stringTest.testCompareIgnoreWhitespace("  hello  ", "hello");
       expect(result).assertTrue();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1212,11 +1212,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1068';
-      console.log(TAG + 'start');
+
       'use strict';
       let result : boolean = stringTest.testCaseAndWhitespace("  HELLO  ", "hello");
       expect(result).assertTrue();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1229,13 +1229,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1069';
-      console.log(TAG + 'start');
+
       'use strict';
       let result : boolean = stringTest.testNonEmptyString("  test  ") === true &&
         stringTest.testNonEmptyString("    ") === false &&
         stringTest.testNonEmptyString("") === false;
       expect(result).assertTrue();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1248,13 +1248,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1070';
-      console.log(TAG + 'start');
+
       'use strict';
       let result : string | null = stringTest.testDateRequired("  ", "姓名");
       let result1 : string | null = stringTest.testDateRequired("张三", "姓名");
       expect(result).assertEqual("姓名 是必填项");
       expect(result1).assertNull();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1267,7 +1267,7 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1071';
-      console.log(TAG + 'start');
+
       'use strictD';
       let result : Record<string,string> = stringTest.testCleanUrlParams({
         "  q  ": "  javascript  ",
@@ -1275,7 +1275,7 @@ export default function StringTrimTest() {
       }) as Record<string,string>;
       expect(result.q).assertEqual("javascript");
       expect(result.page).assertEqual("1");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1288,11 +1288,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1072';
-      console.log(TAG + 'start');
+
       'use strictD';
       let result : string = stringTest.testSanitizeFilename("  my document.pdf  ");
       expect(result).assertEqual("my_document.pdf");
-      console.log(TAG + "end");
+
     });
 
     //============================Special character and Unicode testing==================================
@@ -1307,12 +1307,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1073';
-      console.log(TAG + 'start');
+
       'use strictD';
       const str = "  你好世界  ";
       const result = str.trim();
       expect(result).assertEqual("你好世界");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1330,7 +1330,7 @@ export default function StringTrimTest() {
       const str = "  Hello 世界  ";
       const result = str.trim();
       expect(result).assertEqual("Hello 世界");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1343,12 +1343,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1075';
-      console.log(TAG + 'start');
+
       'use strictD';
       const str = "    ";
       const result = str.trim();
       expect(result).assertEqual("");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1361,12 +1361,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1076';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  Hello  World  ";
       const result = str.trim();
       expect(result).assertEqual("Hello  World");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1379,13 +1379,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1077';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "\u200Btest\u200B";
       const result = str.trim();
       expect(result).assertEqual("\u200Btest\u200B");
       expect(result.length).assertEqual(6);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1398,12 +1398,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1078';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "\uFEFFtest\uFEFF";
       const result = str.trim();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1416,12 +1416,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1079';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "\x00test\x00";
       const result = str.trim();
       expect(result.length).assertEqual(6);
-      console.log(TAG + "end");
+
     });
 
     //============================Chained call testing==================================
@@ -1435,12 +1435,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1080';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim().trim().trim();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1453,12 +1453,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1081';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  HELLO WORLD  ";
       const result = str.trim().toLowerCase().replace("world", "js");
       expect(result).assertEqual("hello js");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1471,7 +1471,7 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1082';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  The Quick Brown Fox  ";
       const result = str.trim()
@@ -1480,7 +1480,7 @@ export default function StringTrimTest() {
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
       expect(result).assertEqual("The Quick Brown Fox");
-      console.log(TAG + "end");
+
     });
 
     //============================Performance-related boundary testing==================================
@@ -1495,14 +1495,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1083';
-      console.log(TAG + 'start');
+
       'use strict';
       const manySpaces = " ".repeat(100000);
       const str = manySpaces + "test";
       const result = str.trim();
       expect(result).assertEqual("test");
       expect(result.length).assertEqual(4);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1515,14 +1515,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1084';
-      console.log(TAG + 'start');
+
       'use strict';
       const manySpaces = " ".repeat(100000);
       const str = "test" + manySpaces;
       const result = str.trim();
       expect(result).assertEqual("test");
       expect(result.length).assertEqual(4);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1535,13 +1535,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1085';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = " a b c d e ";
       const result = str.trim();
       expect(result).assertEqual("a b c d e");
       expect(result.length).assertEqual(9);
-      console.log(TAG + "end");
+
     });
 
     //============================Strict Mode Test==================================
@@ -1556,12 +1556,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1086';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result = str.trim();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1574,12 +1574,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1087';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  TEST  ";
       const result = str.trim().toLowerCase();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     //============================Methods and Properties Testing==================================
@@ -1594,11 +1594,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1088';
-      console.log(TAG + 'start');
+
       'use strict';
       const trimParamLength : number = stringTest.testTrimParamLength();
       expect(trimParamLength).assertEqual(0);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1611,11 +1611,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1089';
-      console.log(TAG + 'start');
+
       'use strict';
       const trimMethodName : string = stringTest.testTrimMethodName();
       expect(trimMethodName).assertEqual("trim");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1628,7 +1628,7 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1090';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : boolean = stringTest.testHasOwnProperty();
       const result1 : boolean = stringTest.testHasOwnProperty1();
@@ -1636,7 +1636,7 @@ export default function StringTrimTest() {
       expect(result).assertFalse();
       expect(result1).assertTrue();
       expect(result2).assertTrue();
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1655,7 +1655,7 @@ export default function StringTrimTest() {
       expect(result[0]).assertEqual(false);
       expect(result[1]).assertEqual(true);
       expect(result[2]).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1668,12 +1668,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1092';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result : string = stringTest.testTrimCall(str);
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1686,12 +1686,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1093';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result : string = stringTest.testTrimApply(str);
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1704,11 +1704,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1094';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : string[] = stringTest.testTrimCallBind();
       expect(result[0]).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     //============================Type Conversion Testing==================================
@@ -1723,14 +1723,14 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1095';
-      console.log(TAG + 'start');
+
       'use strict';
       const strObj = new String("  test  ");
       const result = strObj.trim();
       expect(result).assertEqual("test");
       expect(typeof result).assertEqual("string");
       expect(typeof strObj).assertEqual("object");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1743,12 +1743,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1096';
-      console.log(TAG + 'start');
+
       'use strict';
       const strPrim = "  test  ";
       const strObj = new String("  test  ");
       expect(strPrim.trim() === strObj.trim()).assertEqual(true);
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1761,13 +1761,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1097';
-      console.log(TAG + 'start');
+
       'use strict';
       const num = 123;
       const result : string = stringTest.testTrimCall(num);
       expect(result).assertEqual("123");
       expect(typeof result).assertEqual("string");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1780,13 +1780,13 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1098';
-      console.log(TAG + 'start');
+
       'use strict';
       const bool = true;
       const result : string = stringTest.testTrimCall(bool);
       expect(result).assertEqual("true");
       expect(typeof result).assertEqual("string");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1799,11 +1799,11 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1099';
-      console.log(TAG + 'start');
+
       'use strict';
       const result : string = stringTest.testTrimCallObj();
       expect(result).assertEqual("test");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1816,12 +1816,12 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1100';
-      console.log(TAG + 'start');
+
       'use strict';
       const arr = [1, 2, 3];
       const result : string = stringTest.testTrimCall(arr);
       expect(result).assertEqual("1,2,3");
-      console.log(TAG + "end");
+
     });
 
     //============================Parameter Testing==================================
@@ -1836,7 +1836,7 @@ export default function StringTrimTest() {
      */
     it("StringTrimTest1101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimTest1101';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "  test  ";
       const result1 : string = str.trim();
@@ -1846,7 +1846,7 @@ export default function StringTrimTest() {
       expect(result2).assertEqual("test");
       expect(result3).assertEqual("test");
       expect(result1 === result2 && result2 === result3).assertEqual(true);
-      console.log(TAG + "end");
+
     });
   });
 }

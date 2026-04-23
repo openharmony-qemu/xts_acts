@@ -44,7 +44,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2001';
-      console.log(TAG + 'start');
+
 
       const str = "e\u0301"; // e + combining acute accent
       const normalized = str.normalize("NFC");
@@ -52,7 +52,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(chars.length).assertEqual(1);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -65,7 +65,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2002';
-      console.log(TAG + 'start');
+
 
       const str = "e\u0301";
       const nfcStr = str.normalize("NFC");
@@ -77,7 +77,7 @@ export default function StringSymbolIteratorTest2() {
       expect(nfcChars.length).assertEqual(1);
       expect(nfdChars.length).assertEqual(2);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -90,7 +90,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2003';
-      console.log(TAG + 'start');
+
 
       const str = "ab".repeat(3);
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -103,7 +103,7 @@ export default function StringSymbolIteratorTest2() {
       expect(chars[4]).assertEqual("a");
       expect(chars[5]).assertEqual("b");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -116,14 +116,14 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2004';
-      console.log(TAG + 'start');
+
 
       const str = "".repeat(10);
       const chars: string[] = stringTest.testStringSpreadToArray(str);
 
       expect(chars.length).assertEqual(0);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -136,7 +136,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2005';
-      console.log(TAG + 'start');
+
 
       const str = "hello".padStart(10, " ");
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -151,7 +151,7 @@ export default function StringSymbolIteratorTest2() {
       expect(chars[8]).assertEqual("l");
       expect(chars[9]).assertEqual("o");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -164,7 +164,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2006';
-      console.log(TAG + 'start');
+
 
       const str = "hello".padEnd(10, ".");
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -179,7 +179,7 @@ export default function StringSymbolIteratorTest2() {
         expect(chars[i]).assertEqual(".");
       }
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -192,7 +192,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2007';
-      console.log(TAG + 'start');
+
 
       const strObj = new String("hello");
       const str = strObj.toString();
@@ -205,7 +205,7 @@ export default function StringSymbolIteratorTest2() {
       expect(chars[3]).assertEqual("l");
       expect(chars[4]).assertEqual("o");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -218,7 +218,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2008';
-      console.log(TAG + 'start');
+
 
       const strObj = new String("hello");
       const str = strObj.valueOf();
@@ -231,7 +231,7 @@ export default function StringSymbolIteratorTest2() {
       expect(chars[3]).assertEqual("l");
       expect(chars[4]).assertEqual("o");
 
-      console.log(TAG + "end");
+
     });
 
     //========================Practical Application Scenario Test============================
@@ -246,14 +246,14 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2009';
-      console.log(TAG + 'start');
+
 
       const str = "hello world";
       const res: number[] = stringTest.testFreqLR(str) as number[];
       expect(res[0]).assertEqual(3);
       expect(res[1]).assertEqual(2);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -266,7 +266,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2010';
-      console.log(TAG + 'start');
+
 
       const str = "hello";
       const res: Array<number | boolean> = stringTest.testUniqueHello(str) as Array<number | boolean>;
@@ -276,7 +276,7 @@ export default function StringSymbolIteratorTest2() {
       expect(res[3] as boolean).assertTrue();
       expect(res[4] as boolean).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -289,13 +289,13 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2011';
-      console.log(TAG + 'start');
+
 
       const str = "hello";
       const reversed: string = stringTest.testReverseJoin(str);
       expect(reversed).assertEqual("olleh");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -308,13 +308,13 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2012';
-      console.log(TAG + 'start');
+
 
       const str = "hello";
       const upper: string = stringTest.testUpperJoin(str);
       expect(upper).assertEqual("HELLO");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -327,7 +327,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2013';
-      console.log(TAG + 'start');
+
 
       const str = "a1b2c3";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -335,7 +335,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(filtered).assertEqual("abc");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -348,7 +348,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2014';
-      console.log(TAG + 'start');
+
 
       const str = "hello world";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -356,7 +356,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(noSpaces).assertEqual("helloworld");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -369,7 +369,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2015';
-      console.log(TAG + 'start');
+
 
       const str = "abc123";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -380,7 +380,7 @@ export default function StringSymbolIteratorTest2() {
       expect(allLetters).assertFalse();
       expect(allDigits).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -393,7 +393,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2016';
-      console.log(TAG + 'start');
+
 
       const str = "abc";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -405,7 +405,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(inRange).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -418,7 +418,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2017';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World ";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -426,7 +426,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(result).assertEqual("helloworld");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -439,7 +439,7 @@ export default function StringSymbolIteratorTest2() {
      */
     it("StringSymbolIteratorTest2018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSymbolIteratorTest2018';
-      console.log(TAG + 'start');
+
 
       const str = "hello";
       const chars: string[] = stringTest.testStringSpreadToArray(str);
@@ -447,7 +447,7 @@ export default function StringSymbolIteratorTest2() {
 
       expect(result).assertEqual("HeLlO");
 
-      console.log(TAG + "end");
+
     });
 
   });

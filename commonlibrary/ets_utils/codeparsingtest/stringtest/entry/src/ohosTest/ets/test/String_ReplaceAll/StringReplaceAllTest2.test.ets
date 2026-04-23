@@ -32,12 +32,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2001';
-      console.log(TAG + 'start');
+
       'use strict';
       let result = stringTest.testSimpleTemp();
       expect(result).assertEqual("Hello Alice, welcome to Wonderland");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0200
      * @tc.name      StringReplaceAllTest2002
@@ -48,15 +48,15 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2002';
-      console.log(TAG + 'start');
+
       'use strict';
       const url = "https://example.com?user=old&page=1";
       const result = url
         .replaceAll("user=old", "user=new")
         .replaceAll("page=1", "page=2");
       expect(result).assertEqual("https://example.com?user=new&page=2");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0300
      * @tc.name      StringReplaceAllTest2003
@@ -67,15 +67,15 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2003';
-      console.log(TAG + 'start');
+
       'use strict';
       const code = "var name = 'John'; var age = 30;";
       const result = code
         .replaceAll("var ", "let ")
         .replaceAll("'", "\"");
       expect(result).assertEqual("let name = \"John\"; let age = 30;");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0400
@@ -87,7 +87,7 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2004';
-      console.log(TAG + 'start');
+
       'use strict';
       const price = "Price: $100, €200, ¥300";
       const result = price
@@ -95,8 +95,8 @@ export default function StringReplaceAllTest2() {
         .replaceAll("€", "EUR ")
         .replaceAll("¥", "JPY ");
       expect(result).assertEqual("Price: USD 100, EUR 200, JPY 300");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0500
@@ -108,13 +108,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2005';
-      console.log(TAG + 'start');
+
       'use strict';
       const date = "2021/12/25";
       const result = date.replaceAll("/", "-");
       expect(result).assertEqual("2021-12-25");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0600
@@ -126,13 +126,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2006';
-      console.log(TAG + 'start');
+
       'use strict';
       const json = '{"name":"John","password":"secret","age":30}';
       const result = json.replaceAll(/"password":"[^"]*",/g, "");
       expect(result).assertEqual("{\"name\":\"John\",\"age\":30}");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0700
@@ -144,15 +144,15 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2007';
-      console.log(TAG + 'start');
+
       'use strict';
       const json = '{"oldName":"John","oldAge":30}';
       const result = json
         .replaceAll('"oldName"', '"name"')
         .replaceAll('"oldAge"', '"age"');
       expect(result).assertEqual('{"name":"John","age":30}');
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0800
@@ -164,13 +164,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2008';
-      console.log(TAG + 'start');
+
       'use strict';
       const path = "folder\\subfolder\\file.txt";
       const result = path.replaceAll("\\", "/");
       expect(result).assertEqual("folder/subfolder/file.txt");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_0900
@@ -182,13 +182,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2009';
-      console.log(TAG + 'start');
+
       'use strict';
       const path = "folder//subfolder///file.txt";
       const result = path.replaceAll(/\/+/g, "/");
       expect(result).assertEqual("folder/subfolder/file.txt");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1000
@@ -200,13 +200,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2010';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "aaa";
       const result = str.replaceAll("aa", "b");
       expect(result).assertEqual("ba");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1100
@@ -218,13 +218,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2011';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "ababa";
       const result = str.replaceAll("aba", "X");
       expect(result).assertEqual("Xba");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1200
@@ -236,13 +236,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2012';
-      console.log(TAG + 'start');
+
       'use strict';
       const str = "aaaa";
       const result = str.replaceAll("aa", "b");
       expect(result).assertEqual("bb");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1300
@@ -256,8 +256,8 @@ export default function StringReplaceAllTest2() {
       const TAG = 'StringReplaceAllTest2013';
       let result: string = stringTest.testStringObject();
       expect(result).assertEqual("heLLo");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1400
@@ -271,8 +271,8 @@ export default function StringReplaceAllTest2() {
       const TAG = 'StringReplaceAllTest2014';
       let result: string = stringTest.testNonStringObj();
       expect(result).assertEqual("1X3");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1500
@@ -286,8 +286,8 @@ export default function StringReplaceAllTest2() {
       const TAG = 'StringReplaceAllTest2015';
       let result: string = stringTest.testArrayAs();
       expect(result).assertEqual("1-2-3");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_1600
@@ -314,7 +314,7 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2017';
-      console.log(TAG + 'start');
+
       class CustomStringObj {
         toString(): string {
           return "hello world";
@@ -466,12 +466,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2025';
-      console.log(TAG + 'start');
+
       const str = "hello world";
       const result = str.replaceAll("l", "L").split(" ");
       expect(result.toString()).assertEqual("heLLo,worLd");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2600
@@ -483,12 +483,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2026';
-      console.log(TAG + 'start');
+
       const name = "John";
       const greeting = `Hello ${name}`.replaceAll("John", "Alice");
       expect(greeting).assertEqual("Hello Alice");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2700
@@ -500,12 +500,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2027';
-      console.log(TAG + 'start');
+
       const str = "test";
       const result = str.replaceAll("e", "E");
       expect(result).assertEqual("tEst");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2800
@@ -517,12 +517,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2028';
-      console.log(TAG + 'start');
+
       const str = "test";
       const result = str.replaceAll("e", "E");
       expect(result).assertEqual("tEst");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_2900
@@ -534,13 +534,13 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2029';
-      console.log(TAG + 'start');
+
       const retObj: (string | string[])[] = stringTest.testReplaceAllChars();
       let bool : boolean = retObj[1][0] === "h" && retObj[1][1] === "e" && retObj[1][2] === "l" && retObj[1][3] === "l" && retObj[1][4] === "o";
       expect(retObj[0]).assertEqual("heLLo");
       expect(bool).assertTrue();
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3000
@@ -552,12 +552,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2030';
-      console.log(TAG + 'start');
+
       const str = "NaN value NaN";
       const result = str.replaceAll(String(NaN), "NOT_A_NUMBER");
       expect(result).assertEqual("NOT_A_NUMBER value NOT_A_NUMBER");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3100
@@ -569,12 +569,12 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2031';
-      console.log(TAG + 'start');
+
       const str = "Infinity value Infinity";
       const result = str.replaceAll(String(Infinity), "∞");
       expect(result).assertEqual("∞ value ∞");
-      console.log(TAG + "end");
     });
+
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACEALLTWO_3200
@@ -586,11 +586,11 @@ export default function StringReplaceAllTest2() {
      */
     it("StringReplaceAllTest2032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceAllTest2032';
-      console.log(TAG + 'start');
+
       const str = "0 value 0";
       const result = str.replaceAll(String(-0), "ZERO");
       expect(result).assertEqual("ZERO value ZERO");
-      console.log(TAG + "end");
     });
+
   });
 }
