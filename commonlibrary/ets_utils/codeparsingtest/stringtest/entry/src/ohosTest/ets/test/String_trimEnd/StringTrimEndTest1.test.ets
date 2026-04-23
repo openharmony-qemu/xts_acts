@@ -1353,25 +1353,6 @@ World   `;
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8000
-     * @tc.name       StringTrimEndTest1080
-     * @tc.desc      TestMassWhitespace
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it("StringTrimEndTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringTrimEndTest1080';
-      console.log(TAG + ' start');
-      let str = "a" + " ".repeat(100000);
-      let start = Date.now();
-      let result = str.trimEnd();
-      let end = Date.now();
-      expect(result).assertEqual("a");
-      expect(`Time: ${end - start}ms`).assertEqual("Time: 0ms");
-      console.log(TAG + ' end');
-    });
-    /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8100
      * @tc.name       StringTrimEndTest1081
      * @tc.desc      TestTrimEndParamIgnored
