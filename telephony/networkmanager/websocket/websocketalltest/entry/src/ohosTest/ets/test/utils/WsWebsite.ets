@@ -13,9 +13,9 @@ class OutValue {
   message: string = ""
 }
 
-let current_url: string = 'websocket-echo.moyufangge.com';
+let current_url: string = 'wss://websocket-echo.moyufangge.com';
 let URLARRAY:Array<string> =
-  ['websocket-echo.moyufangge.com','wss://whale.tooly.top/ws','wss://echo.websocket.events','wss://ws.ifelse.io/','ws://echo.websocket.org'];
+  ['wss://websocket-echo.moyufangge.com','wss://whale.tooly.top/ws','wss://echo.websocket.events','wss://ws.ifelse.io/','ws://echo.websocket.org'];
 let caseName: string = 'Search URL ';
 let ws : webSocket.WebSocket;
 let websiteIndex = -1;
