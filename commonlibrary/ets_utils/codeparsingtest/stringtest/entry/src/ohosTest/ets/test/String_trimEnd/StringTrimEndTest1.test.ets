@@ -34,12 +34,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1001';
-      console.log(TAG + ' start');
+
       let result: string = stringTest.testStringWithTrailingSpaces();
       expect(result).assertEqual("Hello World")
       expect(result.length).assertEqual(11)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0200
      * @tc.name       StringTrimEndTest1002
@@ -50,13 +50,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1002';
-      console.log(TAG + ' start');
+
       let str = "   Hello World   ";
       let result = str.trimEnd();
       expect(result).assertEqual("   Hello World")
       expect(result.length).assertEqual(14)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0300
      * @tc.name       StringTrimEndTest1003
@@ -67,13 +67,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1003';
-      console.log(TAG + ' start');
+
       let str = new String("Hello World");
       let result = str.trimEnd();
       expect(result).assertEqual("Hello World")
       expect(result === str).assertEqual(false)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0400
      * @tc.name       StringTrimEndTest1004
@@ -84,13 +84,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1004';
-      console.log(TAG + ' start');
+
       let str = "";
       let result = str.trimEnd();
       expect(result).assertEqual( "")
       expect(result.length).assertEqual(0)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0500
      * @tc.name       StringTrimEndTest1005
@@ -101,13 +101,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1005';
-      console.log(TAG + ' start');
+
       let str = "     ";
       let result = str.trimEnd();
       expect(result).assertEqual( "")
       expect(result.length).assertEqual(0)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0600
      * @tc.name       StringTrimEndTest1006
@@ -118,14 +118,14 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1006';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello World")
       expect(result.indexOf(" ")).assertEqual(5)
 
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0700
      * @tc.name       StringTrimEndTest1007
@@ -136,13 +136,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1007';
-      console.log(TAG + ' start');
+
       let result: string = stringTest.testMultiSpacesBetweenWords();
       result = result.padEnd(15, " ");
       expect(result.substring(0, 14)).assertEqual( "Hello    World")
       expect(result.length).assertEqual(15)
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0800
      * @tc.name       StringTrimEndTest1008
@@ -153,13 +153,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1008';
-      console.log(TAG + ' start');
+
       let str = "Hello\u0020\u0020\u0020";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_0900
      * @tc.name       StringTrimEndTest1009
@@ -170,13 +170,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1009';
-      console.log(TAG + ' start');
+
       let str = "Hello\t\t\t";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1000
      * @tc.name       StringTrimEndTest1010
@@ -187,13 +187,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1010';
-      console.log(TAG + ' start');
+
       let str = "Hello\v\v";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1100
      * @tc.name       StringTrimEndTest1011
@@ -204,13 +204,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1011';
-      console.log(TAG + ' start');
+
       let str = "Hello\f\f";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1200
      * @tc.name       StringTrimEndTest1012
@@ -221,13 +221,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1012';
-      console.log(TAG + ' start');
+
       let str = "Hello\u00A0\u00A0";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1300
      * @tc.name       StringTrimEndTest1013
@@ -238,13 +238,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1013';
-      console.log(TAG + ' start');
+
       let str = "Hello\n\n\n";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1400
      * @tc.name       StringTrimEndTest1014
@@ -255,13 +255,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1014';
-      console.log(TAG + ' start');
+
       let str = "Hello\r\r";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1500
      * @tc.name       StringTrimEndTest1015
@@ -272,13 +272,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1015';
-      console.log(TAG + ' start');
+
       let str = "Hello\r\n\r\n";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1600
      * @tc.name       StringTrimEndTest1016
@@ -289,13 +289,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1016';
-      console.log(TAG + ' start');
+
       let str = "Hello\u2028\u2028";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1700
      * @tc.name       StringTrimEndTest1017
@@ -306,13 +306,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1017';
-      console.log(TAG + ' start');
+
       let str = "Hello\u2029\u2029";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1800
      * @tc.name       StringTrimEndTest1018
@@ -323,13 +323,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1018';
-      console.log(TAG + ' start');
+
       let str = "Hello\u3000\u3000";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_1900
      * @tc.name       StringTrimEndTest1019
@@ -340,13 +340,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1019';
-      console.log(TAG + ' start');
+
       let str = "Hello\u1680\u1680";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2000
      * @tc.name       StringTrimEndTest1020
@@ -357,13 +357,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1020';
-      console.log(TAG + ' start');
+
       let str = "Hello\u2002\u2002";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2100
      * @tc.name       StringTrimEndTest1021
@@ -374,13 +374,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1021';
-      console.log(TAG + ' start');
+
       let str = "Hello\u2003\u2003";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2200
      * @tc.name       StringTrimEndTest1022
@@ -391,13 +391,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1022';
-      console.log(TAG + ' start');
+
       let str = "Hello\u202F\u202F";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2300
      * @tc.name       StringTrimEndTest1023
@@ -408,13 +408,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1023';
-      console.log(TAG + ' start');
+
       let str = "Hello\u205F\u205F";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2400
      * @tc.name       StringTrimEndTest1024
@@ -425,13 +425,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1024';
-      console.log(TAG + ' start');
+
       let str = "Hello \t\n\r";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2500
      * @tc.name       StringTrimEndTest1025
@@ -442,13 +442,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1025';
-      console.log(TAG + ' start');
+
       let str = "Hello World \t \n \r ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello World");
       expect(result.length).assertEqual(11);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2600
      * @tc.name       StringTrimEndTest1026
@@ -459,13 +459,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1026';
-      console.log(TAG + ' start');
+
       let str = "A   ";
       let result = str.trimEnd();
       expect(result).assertEqual("A");
       expect(result.length).assertEqual(1);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2700
      * @tc.name       StringTrimEndTest1027
@@ -476,13 +476,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1027';
-      console.log(TAG + ' start');
+
       let str = " ".repeat(1000);
       let result = str.trimEnd();
       expect(result).assertEqual("");
       expect(result.length).assertEqual(0);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2800
      * @tc.name       StringTrimEndTest1028
@@ -493,13 +493,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1028';
-      console.log(TAG + ' start');
+
       let str = "A".repeat(10000) + "   ";
       let result = str.trimEnd();
       expect(result.length).assertEqual(10000);
       expect(result === "A".repeat(10000)).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_2900
      * @tc.name       StringTrimEndTest1029
@@ -510,13 +510,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1029';
-      console.log(TAG + ' start');
+
       let str = "   Hello";
       let result = str.trimEnd();
       expect(result).assertEqual( "   Hello");
       expect(result.length).assertEqual(8);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3000
      * @tc.name       StringTrimEndTest1030
@@ -527,13 +527,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1030';
-      console.log(TAG + ' start');
+
       let str = "Hel   lo";
       let result = str.trimEnd();
       expect(result).assertEqual(  "Hel   lo");
       expect(result.length).assertEqual(8);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3100
      * @tc.name       StringTrimEndTest1031
@@ -544,13 +544,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1031';
-      console.log(TAG + ' start');
+
       let str = "   Hello   ";
       let result = str.trimEnd();
       expect(result).assertEqual(  "   Hello");
       expect(result.length).assertEqual(8);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3200
      * @tc.name       StringTrimEndTest1032
@@ -561,13 +561,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1032';
-      console.log(TAG + ' start');
+
       let str = "@#$%^&*()   ";
       let result = str.trimEnd();
       expect(result).assertEqual("@#$%^&*()");
       expect(result.length).assertEqual(9);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3300
      * @tc.name       StringTrimEndTest1033
@@ -578,13 +578,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1033';
-      console.log(TAG + ' start');
+
       let str = "12345   ";
       let result = str.trimEnd();
       expect(result).assertEqual("12345");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3400
      * @tc.name       StringTrimEndTest1034
@@ -595,13 +595,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1034';
-      console.log(TAG + ' start');
+
       let str = "你好世界   ";
       let result = str.trimEnd();
       expect(result).assertEqual("你好世界");
       expect(result.length).assertEqual(4);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3500
      * @tc.name       StringTrimEndTest1035
@@ -612,13 +612,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1035';
-      console.log(TAG + ' start');
+
       let str = "こんにちは   ";
       let result = str.trimEnd();
       expect(result).assertEqual("こんにちは");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3600
      * @tc.name       StringTrimEndTest1036
@@ -629,13 +629,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1036';
-      console.log(TAG + ' start');
+
       let str = "안녕하세요   ";
       let result = str.trimEnd();
       expect(result).assertEqual("안녕하세요");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3700
      * @tc.name       StringTrimEndTest1037
@@ -646,13 +646,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1037';
-      console.log(TAG + ' start');
+
       let str = "Hello🎉🎊   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello🎉🎊");
       expect(result.length).assertEqual(9);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3800
      * @tc.name       StringTrimEndTest1038
@@ -663,13 +663,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1038';
-      console.log(TAG + ' start');
+
       let str = "مرحبا   ";
       let result = str.trimEnd();
       expect(result).assertEqual("مرحبا");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_3900
      * @tc.name       StringTrimEndTest1039
@@ -680,13 +680,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1039';
-      console.log(TAG + ' start');
+
       let str = "Hello世界🎉   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello世界🎉");
       expect(result.length).assertEqual(9);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4000
      * @tc.name       StringTrimEndTest1040
@@ -697,13 +697,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1040';
-      console.log(TAG + ' start');
+
       let str = "Hello\u200B   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello\u200B");
       expect(result.length).assertEqual(6);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4100
      * @tc.name       StringTrimEndTest1041
@@ -714,13 +714,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1041';
-      console.log(TAG + ' start');
+
       let str = "café\u0301   ";
       let result = str.trimEnd();
       expect(result).assertEqual("café\u0301");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4200
      * @tc.name       StringTrimEndTest1042
@@ -731,13 +731,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1042';
-      console.log(TAG + ' start');
+
       let str = "Hello\uD83D\uDE00   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello\uD83D\uDE00");
       expect(result.length).assertEqual(7);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4300
      * @tc.name       StringTrimEndTest1043
@@ -748,13 +748,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1043';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd();
       expect(result === str).assertEqual(false);
       expect(result === str).assertEqual(false);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4400
      * @tc.name       StringTrimEndTest1044
@@ -765,13 +765,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1044';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let original = str;
       expect (str).assertEqual("Hello   ");
       expect(str === original).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4500
      * @tc.name       StringTrimEndTest1045
@@ -782,7 +782,7 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0045';
-      console.log(TAG + ' start');
+
       let result: (string | boolean)[] = stringTest.testReturnTypeIsString();
       expect(result[0]).assertEqual("string");
       expect(result[1]).assertEqual(false);
@@ -798,13 +798,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1046';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd();
       expect (result.length).assertEqual(5);
       expect(result.length === str.length - 3).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4700
      * @tc.name       StringTrimEndTest1047
@@ -815,15 +815,15 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1047';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result1 = str.trimEnd();
       let result2 = str.trimRight();
       expect (result1).assertEqual("Hello");
       expect(result2).assertEqual("Hello");
       expect(result1 === result2).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4800
      * @tc.name       StringTrimEndTest1048
@@ -834,13 +834,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1048';
-      console.log(TAG + ' start');
+
       let str = "Hello \t\n\r";
       let result = str.trimRight();
       expect(result).assertEqual("Hello");
       expect(result.length).assertEqual(5);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_4900
      * @tc.name       StringTrimEndTest1049
@@ -851,14 +851,14 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1049';
-      console.log(TAG + ' start');
+
       let str = "   Hello   ";
       let trimEndResult = str.trimEnd();
       let trimResult = str.trim();
       expect(trimEndResult).assertEqual("   Hello");
       expect(trimResult).assertEqual("Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5000
      * @tc.name       StringTrimEndTest1050
@@ -869,12 +869,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1050';
-      console.log(TAG + ' start');
+
       let str = "   Hello   ";
       let result = str.trimEnd().trim();
       expect(result).assertEqual("Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5100
      * @tc.name       StringTrimEndTest1051
@@ -885,13 +885,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1051';
-      console.log(TAG + ' start');
+
       let str = "   Hello   ";
       let result = str.trimStart().trimEnd();
       expect(result).assertEqual("Hello");
       expect(result === str.trim()).assertEqual( true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5200
      * @tc.name       StringTrimEndTest1052
@@ -902,15 +902,15 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1052';
-      console.log(TAG + ' start');
+
       let str = "   Hello   ";
       let result1 = str.trimStart().trimEnd();
       let result2 = str.trimEnd().trimStart();
       expect(result1).assertEqual("Hello");
       expect(result2).assertEqual("Hello");
       expect(result1 === result2).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5300
      * @tc.name       StringTrimEndTest1053
@@ -921,12 +921,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1053';
-      console.log(TAG + ' start');
+
       let str = "hello   ";
       let result = str.trimEnd().toUpperCase();
       expect(result).assertEqual("HELLO");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5400
      * @tc.name       StringTrimEndTest1054
@@ -937,12 +937,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1054';
-      console.log(TAG + ' start');
+
       let str = "HELLO   ";
       let result = str.trimEnd().toLowerCase();
       expect(result).assertEqual("hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5500
      * @tc.name       StringTrimEndTest1055
@@ -953,12 +953,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1055';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd().concat(" World");
       expect(result).assertEqual("Hello World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5600
      * @tc.name       StringTrimEndTest1056
@@ -969,12 +969,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1056';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd().slice(0, 5);
       expect(result).assertEqual( "Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5700
      * @tc.name       StringTrimEndTest1057
@@ -985,12 +985,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1057';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd().substring(6);
       expect(result).assertEqual("World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5800
      * @tc.name       StringTrimEndTest1058
@@ -1001,12 +1001,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1058';
-      console.log(TAG + ' start');
+
       let str = "hello world   ";
       let result = str.trimEnd().replace("world", "there");
       expect(result).assertEqual("hello there");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_5900
      * @tc.name       StringTrimEndTest1059
@@ -1017,12 +1017,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1059';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd().includes("World");
       expect(result).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6000
      * @tc.name       StringTrimEndTest1060
@@ -1033,12 +1033,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1060';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd().indexOf("World");
       expect(result).assertEqual(6);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6100
      * @tc.name       StringTrimEndTest1061
@@ -1049,12 +1049,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1061';
-      console.log(TAG + ' start');
+
       let str = "Hello World   ";
       let result = str.trimEnd().endsWith("World");
       expect(result).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6200
      * @tc.name       StringTrimEndTest1062
@@ -1065,12 +1065,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1062';
-      console.log(TAG + ' start');
+
       let str = "   Hello World   ";
       let result = str.trimEnd().startsWith("   ");
       expect(result).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6300
      * @tc.name       StringTrimEndTest1063
@@ -1081,12 +1081,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1063';
-      console.log(TAG + ' start');
+
       let str = "Hi   ";
       let result = str.trimEnd().repeat(3);
       expect(result).assertEqual("HiHiHi");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6400
      * @tc.name       StringTrimEndTest1064
@@ -1097,12 +1097,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1064';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd().padEnd(10, "!");
       expect(result).assertEqual("Hello!!!!!");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6500
      * @tc.name       StringTrimEndTest1065
@@ -1113,12 +1113,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1065';
-      console.log(TAG + ' start');
+
       let str = "5   ";
       let result = str.trimEnd().padStart(3, "0");
       expect(result).assertEqual("005");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6600
      * @tc.name       StringTrimEndTest1066
@@ -1129,12 +1129,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1066';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd().charAt(0);
       expect(result).assertEqual( "H");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6700
      * @tc.name       StringTrimEndTest1067
@@ -1145,12 +1145,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1067';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       let result = str.trimEnd().charCodeAt(0);
       expect(result).assertEqual(72);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6800
      * @tc.name       StringTrimEndTest1068
@@ -1161,13 +1161,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1068';
-      console.log(TAG + ' start');
+
       let strObj = new String("Hello   ");
       let result = strObj.trimEnd();
       expect(result).assertEqual( "Hello");
       expect(typeof result).assertEqual( "string");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_6900
      * @tc.name       StringTrimEndTest1069
@@ -1178,12 +1178,12 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1069';
-      console.log(TAG + ' start');
+
       let result = "Hello   ".trimEnd();
       expect(result).assertEqual("Hello");
       expect(typeof result).assertEqual( "string");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7000
      * @tc.name       StringTrimEndTest1070
@@ -1194,11 +1194,11 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1070';
-      console.log(TAG + ' start');
+
       let result = ("Hello" + "   ").trimEnd();
       expect(result).assertEqual("Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7100
      * @tc.name       StringTrimEndTest1071
@@ -1209,13 +1209,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1071';
-      console.log(TAG + ' start');
+
       let name = "World";
       let str = `Hello ${name}   `;
       let result = str.trimEnd();
       expect(result).assertEqual("Hello World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7200
      * @tc.name       StringTrimEndTest1072
@@ -1226,13 +1226,13 @@ export default function StringTrimEndTest() {
      */
     it("StringTrimEndTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1072';
-      console.log(TAG + ' start');
+
       let str = `Hello
 World   `;
       let result = str.trimEnd();
       expect(result).assertEqual( "Hello\nWorld");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7300
      * @tc.name       StringTrimEndTest1073
@@ -1243,12 +1243,12 @@ World   `;
      */
     it("StringTrimEndTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1073';
-      console.log(TAG + ' start');
+
       let str = "Hello" + " " + "World" + "   ";
       let result = str.trimEnd();
       expect(result).assertEqual("Hello World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7400
      * @tc.name       StringTrimEndTest1074
@@ -1259,13 +1259,13 @@ World   `;
      */
     it("StringTrimEndTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1074';
-      console.log(TAG + ' start');
+
       let arr = ["Hello", "World"];
       let str = arr.join(" ") + "   ";
       let result = str.trimEnd();
       expect(result).assertEqual( "Hello World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7500
      * @tc.name       StringTrimEndTest1075
@@ -1276,15 +1276,15 @@ World   `;
      */
     it("StringTrimEndTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1075';
-      console.log(TAG + ' start');
+
       let str = "";
       for (let i = 0; i < 5; i++) {
         str += i + " ";
       }
       let result = str.trimEnd();
       expect(result).assertEqual( "0 1 2 3 4");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7600
      * @tc.name       StringTrimEndTest1076
@@ -1295,11 +1295,11 @@ World   `;
      */
     it("StringTrimEndTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1076';
-      console.log(TAG + ' start');
+
       let result: string = stringTest.testRecursivelyGeneratedString();
       expect(result).assertEqual("3 2 1");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7700
      * @tc.name       StringTrimEndTest1077
@@ -1310,13 +1310,13 @@ World   `;
      */
     it("StringTrimEndTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1077';
-      console.log(TAG + ' start');
+
       let targetLen = Number.MAX_SAFE_INTEGER / 1000;
       let str = "a".repeat(0) + "   ";
       let result = str.trimEnd();
       expect(targetLen).assertEqual(Number.MAX_SAFE_INTEGER / 1000);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7800
      * @tc.name       StringTrimEndTest1078
@@ -1327,13 +1327,13 @@ World   `;
      */
     it("StringTrimEndTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1078';
-      console.log(TAG + ' start');
+
       let str = "a" + " ".repeat(999999);
       let result = str.trimEnd();
       expect(result).assertEqual( "a");
       expect(result.length).assertEqual(1);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_7900
      * @tc.name       StringTrimEndTest1079
@@ -1344,14 +1344,14 @@ World   `;
      */
     it("StringTrimEndTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1079';
-      console.log(TAG + ' start');
+
       let str = "Hello   ";
       for (let i = 0; i < 1000; i++) {
         str = str.trimEnd() + "   ";
       }
       expect(str.trimEnd()).assertEqual("Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8100
      * @tc.name       StringTrimEndTest1081
@@ -1362,13 +1362,13 @@ World   `;
      */
     it("StringTrimEndTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1081';
-      console.log(TAG + ' start');
+
       //let str = "Hello   ";
       //let result = str.trimEnd(" World");
       let result: string = stringTest.testParamIgnoredByPassing();
       expect(result).assertEqual( "Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8200
      * @tc.name       StringTrimEndTest1082
@@ -1379,11 +1379,11 @@ World   `;
      */
     it("StringTrimEndTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1082';
-      console.log(TAG + ' start');
+
       let result: string = stringTest.testMultiParamPassing();
       expect(result).assertEqual("Hello");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8300
      * @tc.name       StringTrimEndTest1083
@@ -1394,11 +1394,11 @@ World   `;
      */
     it("StringTrimEndTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1083';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testCleanUserInput();
       expect(result).assertEqual("Hello World");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGTRIMEND_8400
      * @tc.name       StringTrimEndTest1084
@@ -1409,7 +1409,7 @@ World   `;
      */
     it("StringTrimEndTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1084';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testProcessMultiLineText();
       expect(result).assertEqual( "Line 1\nLine 2\nLine 3");
       console.log(TAG + ' end');
@@ -1424,7 +1424,7 @@ World   `;
      */
     it("StringTrimEndTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1085';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testProcessCsvData();
       expect(result).assertEqual("John, Doe, 30");
       console.log(TAG + ' end');
@@ -1439,7 +1439,7 @@ World   `;
      */
     it("StringTrimEndTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringTrimEndTest1086';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testFormatCodeString();
       expect(result).assertEqual("function hello() {\n  return 'world';\n}");
       console.log(TAG + ' end');
@@ -1454,7 +1454,7 @@ World   `;
      */
     it("StringTrimEndTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0087';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testCleanFilePath();
       expect(result).assertEqual("/home/user/documents");
       console.log(TAG + ' end');
@@ -1469,7 +1469,7 @@ World   `;
      */
     it("StringTrimEndTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0088';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testProcessUrlString();
       expect(result).assertEqual("https://example.com/path")
       console.log(TAG + ' end');
@@ -1484,7 +1484,7 @@ World   `;
      */
     it("StringTrimEndTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0089';
-      console.log(TAG + ' start');
+
       let result :string = stringTest.testCleanLogLine();
       expect(result).assertEqual( "[ERROR] Connection failed")
       console.log(TAG + ' end');
@@ -1499,7 +1499,7 @@ World   `;
      */
     it("StringTrimEndTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0090';
-      console.log(TAG + ' start');
+
       let result :boolean[] = stringTest.testCheckUsername();
       expect(result[0]).assertEqual(true)
       expect(result[1]).assertEqual( false)
@@ -1515,7 +1515,7 @@ World   `;
      */
     it("StringTrimEndTest1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0091';
-      console.log(TAG + ' start');
+
       let result :boolean[] = stringTest.testValidateEmail();
       expect(result[0]).assertEqual(true)
       expect(result[1]).assertEqual( false)
@@ -1531,7 +1531,7 @@ World   `;
      */
     it("StringTrimEndTest1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0092';
-      console.log(TAG + ' start');
+
       let result :boolean[] = stringTest.testPreTrimCompareStr();
       expect(result[0]).assertEqual(true)
       expect(result[1]).assertEqual( false)
@@ -1547,7 +1547,7 @@ World   `;
      */
     it("StringTrimEndTest1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0093';
-      console.log(TAG + ' start');
+
       let result :(string|number)[] = stringTest.testPreCleanDbData();
       expect(result[0]).assertEqual("Hello World")
       expect(result[1]).assertEqual(  123)
@@ -1563,7 +1563,7 @@ World   `;
      */
     it("StringTrimEndTest1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0094';
-      console.log(TAG + ' start');
+
       let result :string= stringTest.testAutoCleanLineEndSpaces();
       expect(result).assertEqual("function test() {\n  return true;\n}")
       console.log(TAG + ' end');
@@ -1578,7 +1578,7 @@ World   `;
      */
     it("StringTrimEndTest1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringTrimEndTest1ChapterrmatCodeString0095';
-      console.log(TAG + ' start');
+
       let result :string= stringTest.testPreserveIndentTrimLineEnd();
       expect(result).assertEqual("    indented line\n        more indented")
       console.log(TAG + ' end');

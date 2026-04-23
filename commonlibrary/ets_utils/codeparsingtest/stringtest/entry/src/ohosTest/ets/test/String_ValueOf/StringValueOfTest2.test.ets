@@ -18,12 +18,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1113", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1113';
-      console.log(TAG + ' start');
+
       const result:string = stringTest.testProxyOverride();
       expect(result).assertEqual("modified: test");
       expect(typeof result).assertEqual("string");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0200
      * @tc.name      StringValueOfTest1114
@@ -34,12 +34,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1114", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1114';
-      console.log(TAG + ' start');
+
       const result:boolean[] = stringTest.testValueDesc();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0300
      * @tc.name      StringValueOfTest1115
@@ -50,12 +50,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1115", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1115';
-      console.log(TAG + ' start');
+
       const result:string = stringTest.testFrozenValue();
       expect(result).assertEqual("frozen valueOf");
       expect(typeof result).assertEqual("string");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0400
      * @tc.name      StringValueOfTest1116
@@ -66,12 +66,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1116", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1116';
-      console.log(TAG + ' start');
+
       const result:string[] = stringTest.testDeleteFallback();
       expect(result[0]).assertEqual("custom valueOf");
       expect(result[1]).assertEqual("test");
-      console.log(TAG + ' end');
     });
+
     //================================In-depth Testing of Return Value Characteristics==================================
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0500
@@ -83,13 +83,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1117", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1117';
-      console.log(TAG + ' start');
+
       const str = new String("test");
       const result1 = str.valueOf();
       const result2 = str.valueOf();
       expect(result1 === result2).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0600
      * @tc.name      StringValueOfTest1118
@@ -100,14 +100,14 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1118", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1118';
-      console.log(TAG + ' start');
+
       const str = new String("test");
       const result = str.valueOf();
       const setResult:boolean = Reflect.set(Object(result), 0, "T");
       expect(setResult).assertEqual(false);
       expect(result).assertEqual("test");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0700
      * @tc.name      StringValueOfTest1119
@@ -118,13 +118,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1119", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1119';
-      console.log(TAG + ' start');
+
       const original = "test";
       const str = new String(original);
       const result = str.valueOf();
       expect(result === original).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0800
      * @tc.name      StringValueOfTest1120
@@ -135,12 +135,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1120", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1120';
-      console.log(TAG + ' start');
+
       const str = new String("test");
       const result = str.valueOf();
       expect(result === "test").assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_0900
      * @tc.name      StringValueOfTest1121
@@ -151,12 +151,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1121", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1121';
-      console.log(TAG + ' start');
+
       const result:(string | boolean)[] = stringTest.testCustomPropValueOf();
       expect(result[0]).assertEqual("test");
       expect(result[1]).assertEqual(false);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1000
      * @tc.name      StringValueOfTest1122
@@ -167,11 +167,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1122", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1122';
-      console.log(TAG + ' start');
+
       const result:boolean = stringTest.testLoopValueOf();
       expect(result).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1100
      * @tc.name      StringValueOfTest1123
@@ -182,12 +182,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1123", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1123';
-      console.log(TAG + ' start');
+
       const result:boolean[] = stringTest.testCompareTwoStrings();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     //===================================Complete Testing of Exception Handling=================================
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1200
@@ -199,12 +199,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1124", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1124';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testNullValueOfThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1300
      * @tc.name      StringValueOfTest1125
@@ -215,12 +215,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1125", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1125';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testUndefValueOfThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1400
      * @tc.name      StringValueOfTest1126
@@ -231,13 +231,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1126", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1126';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testStrictNullMsg();
       expect(result[0]).assertEqual(true);
       const msg:string = result[1] as string;
       expect(msg.length > 0).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1500
      * @tc.name      StringValueOfTest1127
@@ -248,12 +248,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1127", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1127';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testNumValueOfThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1600
      * @tc.name      StringValueOfTest1128
@@ -264,12 +264,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1128", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1128';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testBoolValueOfThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1700
      * @tc.name      StringValueOfTest1129
@@ -280,12 +280,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1129", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1129';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testPlainObjThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1800
      * @tc.name      StringValueOfTest1130
@@ -296,12 +296,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1130", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1130';
-      console.log(TAG + ' start');
+
       const result:(boolean | string)[] = stringTest.testArrThrow();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual("TypeError");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_1900
      * @tc.name      StringValueOfTest1131
@@ -312,11 +312,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1131", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1131';
-      console.log(TAG + ' start');
+
       const ok:boolean = stringTest.testInvalidValueOf();
       expect(ok).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     //=====================================Prototype Chain Depth Test=======================================================
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2000
@@ -328,13 +328,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1132", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1132';
-      console.log(TAG + ' start');
+
       const result:boolean[] = stringTest.testStrObjProto();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual(false);
       expect(result[2]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2100
      * @tc.name      StringValueOfTest1133
@@ -345,13 +345,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1133", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1133';
-      console.log(TAG + ' start');
+
       const result:boolean[] = stringTest.testProtoValueRef();
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertEqual(false);
       expect(result[2]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2200
      * @tc.name      StringValueOfTest1134
@@ -362,13 +362,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1134", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1134';
-      console.log(TAG + ' start');
+
       const result:boolean[] = stringTest.testValueOfOwn();
       expect(result[0]).assertEqual(false);
       expect(result[1]).assertEqual(true);
       expect(result[2]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2300
      * @tc.name      StringValueOfTest1135
@@ -379,11 +379,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1135", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1135';
-      console.log(TAG + ' start');
+
       const ok:boolean = stringTest.testDeleteStrValueOf();
       expect(ok).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2400
      * @tc.name      StringValueOfTest1136
@@ -394,12 +394,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1136", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1136';
-      console.log(TAG + ' start');
+
       const result:(string | boolean)[] = stringTest.testInstanceValueOf();
       expect(result[0]).assertEqual("instance valueOf");
       expect(result[1]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2500
      * @tc.name      StringValueOfTest1137
@@ -410,11 +410,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1137", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1137';
-      console.log(TAG + ' start');
+
       const out:string = stringTest.testProtoWrap();
       expect(out).assertEqual("overridden: test");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2600
      * @tc.name      StringValueOfTest1138
@@ -425,11 +425,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1138", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1138';
-      console.log(TAG + ' start');
+
       const out:string = stringTest.testMyStringValueOf();
       expect(out).assertEqual("[test]");
-      console.log(TAG + ' end');
     });
+
     //===================================Serialization Depth Test=======================================================
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2700
@@ -441,12 +441,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1139", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1139';
-      console.log(TAG + ' start');
+
       const str = new String("test");
       const json:string = JSON.stringify(str);
       expect(json).assertEqual("\"test\"");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2800
      * @tc.name      StringValueOfTest1140
@@ -457,11 +457,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1140", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1140';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testJsonObjWrap();
       expect(json).assertEqual('{"name":"John","age":30}');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_2900
      * @tc.name      StringValueOfTest1141
@@ -472,11 +472,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1141", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1141';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testJsonArrWrap();
       expect(json).assertEqual('["a","b","c"]');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3000
      * @tc.name      StringValueOfTest1142
@@ -487,11 +487,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1142", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1142';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testStrToJson();
       expect(json).assertEqual("\"custom json\"");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3100
      * @tc.name      StringValueOfTest1143
@@ -502,13 +502,13 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1143", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1143';
-      console.log(TAG + ' start');
+
       const result:(string | boolean)[] = stringTest.testObjToJsonValueOf();
       expect(result[0]).assertEqual("\"test\"");
       expect(result[1]).assertEqual(true);
       expect(result[2]).assertEqual(true);
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3200
      * @tc.name      StringValueOfTest1144
@@ -519,12 +519,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1144", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1144';
-      console.log(TAG + ' start');
+
       const result:(string | boolean)[] = stringTest.testCircularStrJson();
       expect(result[1]).assertEqual(true);
       expect(result[0]).assertEqual("\"test\"");
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3300
      * @tc.name      StringValueOfTest1145
@@ -535,12 +535,12 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1145", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1145';
-      console.log(TAG + ' start');
+
       const result:(string | boolean)[] = stringTest.testCircularObjJson();
       expect(result[1]).assertEqual(true);
       expect(result[0]).assertEqual('{"name":"test"}');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3400
      * @tc.name      StringValueOfTest1146
@@ -551,11 +551,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1146", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1146';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testCircularObjReplacer();
       expect(json).assertEqual('{"name":"test"}');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3500
      * @tc.name      StringValueOfTest1147
@@ -566,11 +566,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1147", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1147';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testJsonValueOfOverride();
       expect(json).assertEqual('{"value":"test"}');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3600
      * @tc.name      StringValueOfTest1148
@@ -581,11 +581,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1148", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1148';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testJsonValueOfObject();
       expect(json).assertEqual('{"value":"test"}');
-      console.log(TAG + ' end');
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGVALUEOFTWO_3700
      * @tc.name      StringValueOfTest1149
@@ -596,11 +596,11 @@ export default function StringValueOfTest2(){
      */
     it("StringValueOfTest1149", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringValueOfTest1149';
-      console.log(TAG + ' start');
+
       const json:string = stringTest.testJsonValueOfUndefined();
       expect(json).assertEqual('{"value":"test"}');
-      console.log(TAG + ' end');
     });
+
 
   });
 }
