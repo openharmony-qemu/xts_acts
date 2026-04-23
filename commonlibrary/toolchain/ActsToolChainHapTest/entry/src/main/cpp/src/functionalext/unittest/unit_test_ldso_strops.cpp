@@ -94,7 +94,7 @@ TEST_FUN g_gFunArray[] = { StropsTest0010, StropsTest0020, StropsTest0030, Strop
 
 static int UnittestLdsoStropsTestImpl(void)
 {
-    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
     for (int pos = 0; pos < num; ++pos) {
         g_gFunArray[pos]();
     }

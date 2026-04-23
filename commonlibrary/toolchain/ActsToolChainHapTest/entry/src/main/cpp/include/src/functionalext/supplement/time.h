@@ -21,5 +21,14 @@ int ClockGetcpuclockidTest();
 int ClockGetresTest();
 int ClockSettimeTest();
 int DifftimeSupTest();
+int GmtimeRSupTest();
+int GmtimeSupTest();
+int NanosleepTest();
+int TimerCreateTest();
+int TimerGetoverrunTest();
+int TimerGettimeTest();
+int TimerSettimeTest();
+int TimespecGetTest();
+int UtimeSupTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_TIME_H_H

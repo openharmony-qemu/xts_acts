@@ -31,5 +31,57 @@ export default function FunctionalextSupplementTempTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   mkostemp
+     * @tc.number SUB_THIRDPARTY_MUSL_MKOSTEMP_0100
+     * @tc.desc   libc-test mkostemp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mkostemp", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mkostemp");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mkostemps
+     * @tc.number SUB_THIRDPARTY_MUSL_MKOSTEMPS_0100
+     * @tc.desc   libc-test mkostemps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mkostemps", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mkostemps");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mkstemp
+     * @tc.number SUB_THIRDPARTY_MUSL_MKSTEMP_0100
+     * @tc.desc   libc-test mkstemp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mkstemp", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mkstemp");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mkstemps
+     * @tc.number SUB_THIRDPARTY_MUSL_MKSTEMPS_0100
+     * @tc.desc   libc-test mkstemps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mkstemps", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mkstemps");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

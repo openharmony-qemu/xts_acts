@@ -202,7 +202,7 @@ TEST_FUN g_gFunArray[] = {
 
 static int AtoiTestWithArgs(int argc, char* argv[])
 {
-    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
     for (int pos = 0; pos < num; ++pos) {
         g_gFunArray[pos]();
     }

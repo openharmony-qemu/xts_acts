@@ -35,7 +35,7 @@ constexpr size_t K_SETVBUF_PROBE_BUF_BYTES = 1024U;
  * @tc.desc      : Verify ftell with invalid parameter
  * @tc.level     : Level 2
  */
-void Ftell0100(void)
+void FtellInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -57,7 +57,7 @@ void Ftell0100(void)
  * @tc.desc      : Verify fwrite with invalid parameter
  * @tc.level     : Level 2
  */
-void Fwrite0100(void)
+void FwriteInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -80,7 +80,7 @@ void Fwrite0100(void)
  * @tc.desc      : Verify getc with invalid parameter
  * @tc.level     : Level 2
  */
-void Getc0100(void)
+void GetcInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -102,7 +102,7 @@ void Getc0100(void)
  * @tc.desc      : Verify pclose with invalid parameter
  * @tc.level     : Level 2
  */
-void Pclose0100(void)
+void PcloseInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -124,7 +124,7 @@ void Pclose0100(void)
  * @tc.desc      : Verify rewind with invalid parameter
  * @tc.level     : Level 2
  */
-void Rewind0100(void)
+void RewindInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -146,7 +146,7 @@ void Rewind0100(void)
  * @tc.desc      : Verify setvbuf with invalid parameter
  * @tc.level     : Level 2
  */
-void Setvbuf0100(void)
+void SetvbufInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -169,7 +169,7 @@ void Setvbuf0100(void)
  * @tc.desc      : Verify wcsnrtombs with invalid parameter
  * @tc.level     : Level 2
  */
-void Wcsnrtombs0100(void)
+void WcsnrtombsInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -196,7 +196,7 @@ void Wcsnrtombs0100(void)
  * @tc.desc      : Verify unsetenv with invalid parameter
  * @tc.level     : Level 2
  */
-void Unsetenv0100(void)
+void UnsetenvInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -240,7 +240,7 @@ static void Readdir0100(void)
  * @tc.desc      : Verify pthread_join with invalid parameter
  * @tc.level     : Level 2
  */
-void PthreadJoin0100(void)
+void PthreadJoinInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -264,7 +264,7 @@ void PthreadJoin0100(void)
  * @tc.desc      : Verify pthread_kill with invalid parameter
  * @tc.level     : Level 2
  */
-void PthreadKill0100(void)
+void PthreadKillInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -288,7 +288,7 @@ void PthreadKill0100(void)
  * @tc.desc      : Verify pthread_setschedparam with invalid parameter
  * @tc.level     : Level 2
  */
-void PthreadSetschedparam0100(void)
+void PthreadSetschedparamInvalid0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -310,18 +310,18 @@ void PthreadSetschedparam0100(void)
 
 static int InvalidParamBTestImpl(int argc, char* argv[])
 {
-    Ftell0100();
-    Fwrite0100();
-    Getc0100();
-    Pclose0100();
-    Rewind0100();
-    Setvbuf0100();
-    Wcsnrtombs0100();
-    Unsetenv0100();
+    FtellInvalid0100();
+    FwriteInvalid0100();
+    GetcInvalid0100();
+    PcloseInvalid0100();
+    RewindInvalid0100();
+    SetvbufInvalid0100();
+    WcsnrtombsInvalid0100();
+    UnsetenvInvalid0100();
     Readdir0100();
-    PthreadJoin0100();
-    PthreadKill0100();
-    PthreadSetschedparam0100();
+    PthreadJoinInvalid0100();
+    PthreadKillInvalid0100();
+    PthreadSetschedparamInvalid0100();
 
     return T_STATUS;
 }

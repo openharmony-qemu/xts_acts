@@ -141,4 +141,79 @@
         }                                                 \
     } while (0)
 
+// Thread test functions
+int CallOnceTest(void);
+int CndBroadcastTest(void);
+int CndTimedwaitTest(void);
+int CndWaitTest(void);
+int MtxTimedlockTest(void);
+int MtxTrylockTest(void);
+int MtxUnlockTest(void);
+int PthreadBarrierWaitTest(void);
+int PthreadCondInitTest(void);
+int PthreadCondTimedwaitSupTest(void);
+int PthreadDetachTest(void);
+int PthreadEqualTest(void);
+int PthreadJoinTest(void);
+int PthreadMutexTimedlockTest(void);
+int PthreadRwlockTimedrdlockTest(void);
+int PthreadRwlockTimedwrlockTest(void);
+int PthreadSelfTest(void);
+int PthreadSetschedprioTest(void);
+int PthreadSpinLockTest(void);
+int PthreadSpinTrylockTest(void);
+int PthreadSpinUnlockTest(void);
+int ThrdCreateTest(void);
+int ThrdCurrentTest(void);
+int ThrdDetachTest(void);
+int ThrdEqualTest(void);
+int ThrdJoinTest(void);
+int ThrdSleepTest(void);
+
+// Stdio test functions
+int AsprintfTest(void);
+int DprintfTest(void);
+int FgetlnTest(void);
+int FgetposTest(void);
+int FgetsTest(void);
+int FgetwsTest(void);
+int FlockfileTest(void);
+int FprintfTest(void);
+int FputcTest(void);
+int FputsTest(void);
+int FputwcTest(void);
+int FputwsTest(void);
+int FreopenTest(void);
+int FseekoTest(void);
+int FtellTest(void);
+int FtrylockfileTest(void);
+int FunlockfileTest(void);
+int FwideTest(void);
+int FwprintfTest(void);
+int FwriteTest(void);
+int GetcTest(void);
+int GetcUnlockedTest(void);
+int GetcharTest(void);
+int GetcharUnlockedTest(void);
+int GetdelimTest(void);
+int GetlineTest(void);
+int PutwTest(void);
+int RemoveTest(void);
+int RenameTest(void);
+int SetbufTest(void);
+int SetbufferTest(void);
+int SetlinebufTest(void);
+int SetvbufTest(void);
+int UngetwcTest(void);
+int VdprintfTest(void);
+int VfprintfTest(void);
+int VfscanfTest(void);
+int VfwprintfTest(void);
+int VfwscanfTest(void);
+
+// Unistd test functions
+int AccessTest(void);
+int FchdirTest(void);
+int NiceTest(void);
+
 #endif

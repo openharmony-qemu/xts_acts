@@ -17,12 +17,28 @@
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_UNISTD_H_H
 
 int AccessTest();
-int AcctTest();
 int AlarmTest();
 int ChdirTest();
-int ChownTest();
 int CtermidTest();
-int Dup3Test();
-int ExitTest();
+int FchdirTest();
+int GetcwdTest();
+int GetgroupsTest();
+int GetloginTest();
+int GetloginRTest();
+int GetpgrpTest();
+int GetpgidTest();
+int GetppidTest();
+int GetsidTest();
+int GethostnameTest();
+int LinkTest();
+int NiceTest();
+int PauseTest();
+int Pipe2Test();
+int SetpgrpTest();
+int SetsidTest();
+int SetuidTest();
+int SleepTest();
+int UsleepTest();
+int WritevTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_UNISTD_H_H

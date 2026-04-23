@@ -195,28 +195,28 @@ void StrndupMusl0300(void)
 }
 
 /**
- * @tc.name      : strndup_0400
+ * @tc.name      : Strndup0400
  * @tc.desc      : Buffer overflow security test
  * @tc.level     : Level 1
  */
-void strndup_0400(void)
+void Strndup0400(void)
 {
     char* dst = nullptr;
     char unsafe_src[kUnsafeSrcBufElems] = { 'h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd' };
     size_t copy_len = kUnsafeBufCopyLen;
     dst = __strndup((const char*)unsafe_src, copy_len);
-    EXPECT_PTRNE("strndup_0400", dst, nullptr);
-    EXPECT_EQ("strndup_0400", strncmp(dst, unsafe_src, copy_len), 0);
-    EXPECT_EQ("strndup_0400", dst[copy_len], '\0');
+    EXPECT_PTRNE("Strndup0400", dst, nullptr);
+    EXPECT_EQ("Strndup0400", strncmp(dst, unsafe_src, copy_len), 0);
+    EXPECT_EQ("Strndup0400", dst[copy_len], '\0');
     free(dst);
 }
 
 /**
- * @tc.name      : strndup_0500
+ * @tc.name      : Strndup0500
  * @tc.desc      : Memory management test: Multiple allocations and releases to verify no memory leaks
  * @tc.level     : Level 1
  */
-void strndup_0500(void)
+void Strndup0500(void)
 {
     char* dst1 = nullptr;
     char* dst2 = nullptr;
@@ -226,11 +226,11 @@ void strndup_0500(void)
     const char* src3 = "Memory management test 3";
 
     dst1 = __strndup(src1, strlen(src1));
-    EXPECT_PTRNE("strndup_0500", dst1, nullptr);
+    EXPECT_PTRNE("Strndup0500", dst1, nullptr);
     dst2 = __strndup(src2, strlen(src2) + kExtraBeyondStrlen); // n larger than source string length
-    EXPECT_PTRNE("strndup_0500", dst2, nullptr);
+    EXPECT_PTRNE("Strndup0500", dst2, nullptr);
     dst3 = __strndup(src3, K_COPY_LEN_ZERO); // n is 0
-    EXPECT_PTRNE("strndup_0500", dst3, nullptr);
+    EXPECT_PTRNE("Strndup0500", dst3, nullptr);
     free(dst1);
     free(dst2);
     free(dst3);
@@ -265,11 +265,11 @@ void* ThreadFunc(void* arg)
 }
 
 /**
- * @tc.name      : strndup_0600
+ * @tc.name      : Strndup0600
  * @tc.desc      : Multi-thread concurrent call stability test for __strndup function
  * @tc.level     : Level 1
  */
-void strndup_0600(void)
+void Strndup0600(void)
 {
     pthread_t threads[kConcurrentThreads];
     struct thread_data thread_data[kConcurrentThreads];
@@ -282,11 +282,11 @@ void strndup_0600(void)
 
     for (int i = 0; i < kConcurrentThreads; i++) {
         ret = pthread_create(&threads[i], nullptr, ThreadFunc, &thread_data[i]);
-        EXPECT_EQ("strndup_0600", ret, 0);
+        EXPECT_EQ("Strndup0600", ret, 0);
     }
 
     for (int i = 0; i < kConcurrentThreads; i++) {
-        EXPECT_EQ("strndup_0600", pthread_join(threads[i], nullptr), 0);
+        EXPECT_EQ("Strndup0600", pthread_join(threads[i], nullptr), 0);
     }
 
     // Verify all threads completed successfully
@@ -296,7 +296,7 @@ void strndup_0600(void)
     }
 
     int expected_success = kConcurrentThreads * kThreadLoopIterations;
-    EXPECT_EQ("strndup_0600", total_success, expected_success);
+    EXPECT_EQ("Strndup0600", total_success, expected_success);
 }
 #endif
 
@@ -309,9 +309,9 @@ static int StrndupTestImpl(int argc, char* argv[])
     StrndupMusl0100();
     StrndupMusl0200();
     StrndupMusl0300();
-    strndup_0400();
-    strndup_0500();
-    strndup_0600();
+    Strndup0400();
+    Strndup0500();
+    Strndup0600();
 #endif
     return T_STATUS;
 }

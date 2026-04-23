@@ -73,7 +73,7 @@ TEST_FUN g_gFunArray[] = { SetApplicationTargetSdkVersion0010,
 int ApplicationTargetSdkVersionTestTest(void)
 {
     int origin = get_application_target_sdk_version();
-    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
     for (int pos = 0; pos < num; ++pos) {
         g_gFunArray[pos]();
     }

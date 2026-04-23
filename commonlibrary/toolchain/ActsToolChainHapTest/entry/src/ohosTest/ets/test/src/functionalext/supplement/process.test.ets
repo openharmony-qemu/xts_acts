@@ -59,6 +59,19 @@ export default function process_group_test() {
       done();
     });
     /**
+     * @tc.name   fork
+     * @tc.number SUB_THIRDPARTY_MUSL_FORK_0100
+     * @tc.desc   libc-test fork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('fork', Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest('fork');
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
      * @tc.name   posix_spawn
      * @tc.number SUB_THIRDPARTY_MUSL_POSIX_SPAWN_0100
      * @tc.desc   libc-test posix_spawn
