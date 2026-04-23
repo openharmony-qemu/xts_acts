@@ -28,6 +28,13 @@ export const COMMON_WAIT_DURATION: number = 500;
 const domain = 0x0000;
 const tag = 'ListTest';
 
+
+export function resourceName(): string {
+  let timestamp = Date.now();
+  let filename = `avRecorder_${timestamp}.mp4`;
+  return filename;
+}
+
 export async function getFd(pathName: string):Promise<int> {
   console.info(TAG, 'case come in getFd');
   let appContext: Context = Hypium.get("Context") as Context;
@@ -44,11 +51,6 @@ export function sleep(ms: int): Promise<int> {
       resolve(0);
     }, ms);
   });
-}
-export function resourceName(): string {
-  let timestamp = Date.now();
-  let filename = `avRecorder_${timestamp}.mp4`;
-  return filename;
 }
 
 export async function getPermission(name?: Permissions): Promise<void> {
