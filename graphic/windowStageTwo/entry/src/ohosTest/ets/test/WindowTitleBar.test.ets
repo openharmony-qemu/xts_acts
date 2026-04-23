@@ -717,14 +717,14 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
+     * @tc.name   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_185Adapt001
      * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_1600
      * @tc.desc   test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_185Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_spacingBetweenButtons_12vp_24vp_18.5';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -917,14 +917,14 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
+     * @tc.name   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_185Adapt001
      * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_2200
      * @tc.desc   test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_185Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setDecorButtonStyle_closeButtonRightMargin_8vp_22vp_18.5';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

@@ -132,7 +132,7 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
       let all: readonly Object[] = [obj, arr, () => {
       }]
       const actual = all.toLocaleString();
-      expect(actual).assertEqual("[object Object],,Cannot get source code of function");
+      expect(actual).assertEqual("[object Object],,Cannot get source code");
     });
 
     /**

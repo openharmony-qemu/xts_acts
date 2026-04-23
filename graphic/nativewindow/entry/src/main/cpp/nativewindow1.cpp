@@ -1292,7 +1292,8 @@ napi_value testNativeWindowNativeObjectUnreferenceNormal(napi_env env, napi_call
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int fenceFd = -1;
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
-
+    OH_NativeWindow_NativeObjectReference(nativeWindow);
+    OH_NativeWindow_NativeObjectReference(nativeWindowBuffer);
     int32_t magicId = OH_NativeWindow_NativeObjectUnreference(nativeWindow);
     if (magicId != 0) {
         napi_create_int32(env, CONSTANT_1, &result);

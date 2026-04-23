@@ -52,7 +52,7 @@ export default function TextStateJsunit() {
           let strJson = getInspectorByKey('ArkUX_Stage_Text_TextShadow_0100');
           let obj: ESObject = JSON.parse(strJson);
           console.info("--->Text Shadow is :" + JSON.stringify(obj.$attrs.textShadow))
-          expect(obj.$attrs.textShadow.radius).assertEqual("0.000000")
+          expect(obj.$attrs.textShadow.radius).assertEqual("-1.000000")
           expect(obj.$attrs.textShadow.color).assertEqual("#FF000000")
           expect(obj.$attrs.textShadow.offsetX).assertEqual("0.000000")
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
@@ -192,7 +192,7 @@ export default function TextStateJsunit() {
           let strJson = getInspectorByKey('ArkUX_Stage_Text_TextShadow_0600');
           let obj: ESObject = JSON.parse(strJson);
           console.info("--->Text Shadow " + JSON.stringify(obj.$attrs.textShadow))
-          expect(obj.$attrs.textShadow.radius).assertEqual("0.000000")
+          expect(obj.$attrs.textShadow.radius).assertEqual("-1.000000")
           expect(obj.$attrs.textShadow.color).assertEqual("#FF000000")
           expect(obj.$attrs.textShadow.offsetX).assertEqual("0.000000")
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")

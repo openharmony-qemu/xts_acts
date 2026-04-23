@@ -17,7 +17,7 @@ ohos_js_app_static_suite("avsession_framework_js_static_hap") {
   # test_hap = true
   # testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAvsessionFrameworkJsStaticTest"
+  hap_name = "ActsAvsessionManagerStaticTest"
   subsystem_name = "multimedia"
   part_name = "av_session"
 }

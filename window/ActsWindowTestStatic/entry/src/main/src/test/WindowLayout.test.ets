@@ -2031,12 +2031,14 @@ export default function WindowLayoutTest() {
                 (subWin! as window.Window).setAspectRatio(1).then(async ()=> {
                     console.info(msgStr + 'Succeeded in calling setAspectRatio.');
                     expect(true).assertFail();
+                     done()
                 }).catch(async (err: Error) => {
                     console.error(msgStr + 'Failed to call setAspectRatio. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
+                     done()
                 });
-                done()
+               
             } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
@@ -2097,12 +2099,13 @@ export default function WindowLayoutTest() {
                 (subWin! as window.Window).resetAspectRatio().then(async ()=> {
                     console.info(msgStr + 'Succeeded in calling resetAspectRatio.');
                     expect(true).assertFail();
+                    done()
                 }).catch(async (err: Error) => {
                     console.error(msgStr + 'Failed to call resetAspectRatio. Cause: ' + err!.code+'message:'+err!.message);
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
+                    done()
                 });
-                done()
             } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
@@ -2122,40 +2125,44 @@ export default function WindowLayoutTest() {
             console.log(caseName + 'begin.');
             let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             let windowClass:window.Window = windowStageStart.getMainWindowSync();
+            console.log(caseName + 'Succeed in get mainwindow');
             let timer = 0;
-            try {
-                const callback = (cb: window.RectChangeOptions) => {
-                    console.log(caseName + ' cb: ' + JSON.stringify(cb));
-                    timer++;
-                };
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.moveWindowToAsync(50, 50);
-                await Utils.msSleep(200);
-                console.log(caseName + ' timer: ' + timer);
-                if (isFreeWindowMode == true) {
-                    expect(timer).assertEqual(1);
-                } else {
-                    expect(timer).assertEqual(0);
-                }
-                windowClass.offRectChangeInGlobalDisplay();
-                await terminateAbility(caseName);
-                done();
-            } catch (err) {
-                err = err as BusinessError;
-                console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                await terminateAbility(caseName);
-                if (err.code == 801) {
-                    expect(err.message != null).assertTrue();
-                    done()
-                } else {
+                try {
+                    const callback = (cb: window.RectChangeOptions) => {
+                        console.log(caseName + ' cb: ' + JSON.stringify(cb));
+                        timer++;
+                    };
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    console.log(caseName + 'Succeed onRectChangeInGlobalDisplay');
+                    await windowClass.maximize()
+                    await Utils.msSleep(200);
+                    console.log(caseName + ' timer: ' + timer);
+                    if (isFreeWindowMode == true) {
+                        expect(timer).assertEqual(1);
+                        await windowClass.recover();
+                        console.log(caseName + 'Succeed recover window');
+                    } else {
+                        expect(timer).assertEqual(0);
+                    }
                     windowClass.offRectChangeInGlobalDisplay();
-                    expect(true).assertFail();
+                    await terminateAbility(caseName);
                     done();
+                } catch (err) {
+                    err = err as BusinessError;
+                    console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                    await terminateAbility(caseName);
+                    if (err.code == 801) {
+                        expect(err.message != null).assertTrue();
+                        done()
+                    } else {
+                        windowClass.offRectChangeInGlobalDisplay();
+                        expect(true).assertFail();
+                        done();
+                    }
                 }
-            }
-        })
+        });
         /**
          * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0100
          * @tc.name       testOnOcclusionStatewithDestoryedSubwindow_static
@@ -2727,11 +2734,12 @@ export default function WindowLayoutTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
             (win as window.Window).maximize().then(()=>{
+                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
                 (win as window.Window).moveWindowToGlobal(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                    err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -2744,6 +2752,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -2816,6 +2825,7 @@ export default function WindowLayoutTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
             (win as window.Window).maximize().then(()=>{
+                hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
                 let moveConfiguration:window.MoveConfiguration = {
                     displayId:0
                 };
@@ -2823,7 +2833,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -2836,6 +2846,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
@@ -2997,7 +3008,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):PromiseLike<void>|undefined => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -3010,6 +3021,7 @@ export default function WindowLayoutTest() {
                             expect(err!.code).assertEqual(801);
                             done();
                         });
+                        await Utils.msSleep(1000)
                         done();
                     }else{
                         hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')

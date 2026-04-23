@@ -507,6 +507,50 @@ static napi_value OH_Values_PutFloatVector_0100(napi_env env, napi_callback_info
     return returncode;
 }
 
+static napi_value OH_Values_IsNull_Abormal_0100(napi_env env, napi_callback_info info)
+{
+    OH_Data_Values *values = OH_Values_Create();
+    NAPI_ASSERT(env, values != nullptr, "OH_Values_Create is fail.");
+    double realVal = 1.1;
+    int ret = OH_Values_PutReal(values, realVal);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Values_PutReal is fail.");
+    int index = 2;
+    bool val;
+    ret = OH_Values_IsNull(values, index, &val);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull is fail.");
+    napi_value result;
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
+}
+
+napi_value OH_Values_IsNull_Abormal_0200(napi_env env, napi_callback_info info)
+{
+    OH_Data_Values *values = OH_Values_Create();
+    NAPI_ASSERT(env, values != nullptr, "OH_Values_IsNull_Abormal_0200 is fail.");
+    double realVal = 1.1;
+    int ret = OH_Values_PutReal(values, realVal);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Values_IsNull_Abormal_0200 is fail.");
+    int index = -1;
+    bool val;
+    ret = OH_Values_IsNull(values, index, &val);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0200 is fail.");
+    napi_value result;
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
+}
+
+napi_value OH_Values_IsNull_Abormal_0300(napi_env env, napi_callback_info info)
+{
+    OH_Data_Values *values = nullptr;
+    int index = 0;
+    bool val;
+    int ret = OH_Values_IsNull(values, index, &val);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Values_IsNull_Abormal_0300 is fail.");
+    napi_value result;
+    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -519,6 +563,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Values_Put_0100", nullptr, OH_Values_Put_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Value_PutFloatVector_0100", nullptr, OH_Value_PutFloatVector_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Values_PutFloatVector_0100", nullptr, OH_Values_PutFloatVector_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Values_IsNull_Abormal_0100", nullptr, OH_Values_IsNull_Abormal_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Values_IsNull_Abormal_0200", nullptr, OH_Values_IsNull_Abormal_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Values_IsNull_Abormal_0300", nullptr, OH_Values_IsNull_Abormal_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

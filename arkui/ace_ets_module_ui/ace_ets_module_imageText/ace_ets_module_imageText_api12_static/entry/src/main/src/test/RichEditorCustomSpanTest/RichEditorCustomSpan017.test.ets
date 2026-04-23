@@ -98,7 +98,7 @@ export default function RichEditorCustomSpan017() {
       let imageTop = await (driver.findComponent(ON.id('imageTop')) as Promise<Component>);
       await imageTop.click();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.click(getBounds.left + 200, getBounds.top + 50);
       await CommonFunc.sleep(500);
       let onClickFlag = await (driver.findComponent(ON.id('onClickFlag')) as Promise<Component>);
       let onClickFlagText = await onClickFlag.getText();

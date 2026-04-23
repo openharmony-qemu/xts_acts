@@ -14,6 +14,7 @@
  */
 import Ability from '@ohos.app.ability.UIAbility';
 import commonEvent from '@ohos.commonEvent';
+import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 let context11;
 export default class MainAbility11 extends Ability {
   onCreate(want, launchParam) {
@@ -22,7 +23,7 @@ export default class MainAbility11 extends Ability {
     globalThis.ability11 = this.context;
     context11 = this.context;
     var listKey11 = [];
-    let AbilityLifecycleCallback = {
+    let AbilityLifecycleCallback:AbilityLifecycleCallback = {
       onAbilityCreate(ability) {
         let abilityname = ability.context.abilityInfo.name;
         console.log('[Demo] AbilityLifecycleCallback11 onAbilityCreate abilityname:'
@@ -87,7 +88,7 @@ export default class MainAbility11 extends Ability {
       }
     }
     globalThis.applicationContext11 = globalThis.ability11.getApplicationContext();
-    let lifecycleid = globalThis.applicationContext11.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+    let lifecycleid = globalThis.applicationContext11.on('abilityLifecycle', AbilityLifecycleCallback);
     console.log('[Demo] registerAbilityLifecycleCallback11 number: ' + JSON.stringify(lifecycleid));
     console.log('[Demo] registerAbilityLifecycleCallback11 listKey: ' + JSON.stringify(listKey11));
     globalThis.list11 = listKey11;

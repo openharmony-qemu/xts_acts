@@ -17,6 +17,7 @@ group("ActsStartuiServiceExtension") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsappmanagerenterprisetest:ActsAppManagerEnterpriseTest",
       "actsstartuiserviceextensionrely:ActsStartUiServiceExtensionRely",
       "actsstartuiserviceextensiontest:ActsStartUiServiceExtensionTest",
       "actsstartuiserviceextensionenterprisetest:ActsStartUiServiceExtensionEnterpriseTest",

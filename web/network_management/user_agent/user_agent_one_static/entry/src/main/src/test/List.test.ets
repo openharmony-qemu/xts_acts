@@ -13,7 +13,14 @@
  * limitations under the License.
  */
 
-import geolocationPermissions from './geolocationPermissions.test'
+import geolocationPermissions from './GeolocationPermissions.test'
+import webUserAgentMetadata from './WebUserAgentMetadata.test';
+import webSetUserAgentClientHintsEnabled from './WebSetUserAgentClientHintsEnabled.test';
+import webSetAppCustomUserAgent from './WebSetAppCustomUserAgent.test';
+
 export default function testsuite() {
+    webUserAgentMetadata();
+    webSetUserAgentClientHintsEnabled();
+    webSetAppCustomUserAgent();
     geolocationPermissions();
 }

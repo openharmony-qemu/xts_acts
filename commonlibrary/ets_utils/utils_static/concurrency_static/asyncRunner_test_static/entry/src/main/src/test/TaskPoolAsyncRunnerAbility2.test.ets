@@ -79,7 +79,7 @@ import { BusinessError } from "@ohos.base";
 // import { AsyncLock } from '../testability/pages/SendableTest';
 import { sleep } from '../testability/pages/Utils';
 
-export default function taskPoolAsyncRunnerAbility2() {
+export default function taskPoolAsyncRunnerAbility2(): void {
   describe('TaskPoolAsyncRunnerAbility2', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

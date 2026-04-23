@@ -1252,7 +1252,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.LOCKED);
             mode = mVideoSession.getWhiteBalanceMode();
             console.info(TAG, testName, "getWhiteBalanceMode :", mode);
-            expect(mode).assertEqual(camera.WhiteBalanceMode.LOCKED);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.MANUAL);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }

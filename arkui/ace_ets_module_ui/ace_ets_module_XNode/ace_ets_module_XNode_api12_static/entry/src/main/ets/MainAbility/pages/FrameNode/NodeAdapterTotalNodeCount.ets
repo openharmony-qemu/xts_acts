@@ -44,9 +44,9 @@ export class TestNodeAdapter extends NodeAdapter {
   }
 
   loadData(): void {
-    this.data = new Array<string>(this.totalNodeCount);
+    this.data = [];
     for (let i = 0; i < this.totalNodeCount; i++) {
-      this.data[i as Int] = 'Test Item ' + i;
+      this.data.push('Test Item ' + i);
     }
   }
 

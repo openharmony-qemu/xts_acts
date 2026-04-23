@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "include/NapiInitCommonTest.h"
 
 // Font SetLinearText related functions
@@ -264,7 +265,7 @@ napi_value DrawingFontIsThemeFontFollowed(napi_env env, napi_callback_info info)
 }
 
 // Font GetMetrics Part2 related functions
-napi_value DrawingFontGetMetricsPart2(napi_env env, napi_callback_info info)
+napi_value DrawingFontGetMetrics(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
@@ -380,7 +381,7 @@ napi_value DrawingFontFeatures(napi_env env, napi_callback_info info)
         static const std::array<DrawingNativeFn, FONT_FEATURES_HANDLER_COUNT> handlers = {
             OHOS::Rosen::Drawing::TestFontFeaturesAddFeatureNormal,
             OHOS::Rosen::Drawing::TestFontFeaturesAddFeatureAbNormal,
-            OHOS::Rosen::Drawing::TestFontFeaturesandFeatureDestroyNULL,
+            OHOS::Rosen::Drawing::TestFontFeaturesandFeatureDestroyNull,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -925,7 +926,7 @@ napi_value DrawingPenColor(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPenSetColorNormal,
             OHOS::Rosen::Drawing::TestPenSetColorNull,
             OHOS::Rosen::Drawing::TestPenSetColorAbnormal,
-            OHOS::Rosen::Drawing::TestPenSetColorMaximum,
+            OHOS::Rosen::Drawing::TestPenSetColorMaximum
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -1149,8 +1150,9 @@ napi_value DrawingPenSetColor4f(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<DrawingNativeFn, PEN_SET_COLOR4F_HANDLER_COUNT> handlers = {
-            OHOS::Rosen::Drawing::TestPenSetColorFNormal,
-            OHOS::Rosen::Drawing::TestPenSetColorFAbnormal,
+            OHOS::Rosen::Drawing::TestPenSetColor4FNormal,
+            OHOS::Rosen::Drawing::TestPenSetColor4FNull,
+            OHOS::Rosen::Drawing::TestPenSetColor4FAbnormal,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -1182,4 +1184,3 @@ napi_value DrawingPixelMap(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
-

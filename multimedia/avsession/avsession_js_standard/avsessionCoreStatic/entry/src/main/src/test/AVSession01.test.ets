@@ -162,6 +162,67 @@ export default function abilityTest() {
 
 
         /**
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_RETURNS_2100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_RETURNS_2100
+         * @tc.desc   test onSetLoopMode callback return value traverse
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_RETURNS_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = '[SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_RETURNS_2100]';
+            let callbackMode:avSession.LoopMode | undefined;
+            session!.onSetLoopMode((loopMode:avSession.LoopMode)=>{
+                console.info(`${TAG}TestLog: onSetLoopMode callback triggers successfully, callback value is ${loopMode}.`);
+                callbackMode = loopMode;
+            });
+
+            await controller!.sendControlCommand({
+                command: 'setLoopMode',
+                parameter: avSession.LoopMode.LOOP_MODE_SINGLE
+            });
+            console.info(`${TAG}TestLog: Controller send command successfully, mode is single`);
+            await Utils.msSleep(200);
+            expect(callbackMode).assertEqual(avSession.LoopMode.LOOP_MODE_SINGLE);
+
+            await controller!.sendControlCommand({
+                command: 'setLoopMode',
+                parameter: avSession.LoopMode.LOOP_MODE_CUSTOM
+            });
+            console.info(`${TAG}TestLog: Controller send command successfully, mode is customed`);
+            await Utils.msSleep(200);
+            expect(callbackMode).assertEqual(avSession.LoopMode.LOOP_MODE_CUSTOM);
+
+            await controller!.sendControlCommand({
+                command: 'setLoopMode',
+                parameter: avSession.LoopMode.LOOP_MODE_LIST
+            });
+            console.info(`${TAG}TestLog: Controller send command successfully, mode is list-play`);
+            await Utils.msSleep(200);
+            expect(callbackMode).assertEqual(avSession.LoopMode.LOOP_MODE_LIST);
+
+            await controller!.sendControlCommand({
+                command: 'setLoopMode',
+                parameter: avSession.LoopMode.LOOP_MODE_SEQUENCE
+            });
+            console.info(`${TAG}TestLog: Controller send command successfully, mode is sequence`);
+            await Utils.msSleep(200);
+            expect(callbackMode).assertEqual(avSession.LoopMode.LOOP_MODE_SEQUENCE);
+
+            await controller!.sendControlCommand({
+                command: 'setLoopMode',
+                parameter: avSession.LoopMode.LOOP_MODE_SHUFFLE
+            });
+            console.info(`${TAG}TestLog: Controller send command successfully, mode is shuffle`);
+            await Utils.msSleep(200);
+            expect(callbackMode).assertEqual(avSession.LoopMode.LOOP_MODE_SHUFFLE);
+
+            await Utils.msSleep(300);
+            done();
+        })
+
+
+        /**
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0100
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_STATIC_0100
          * @tc.desc   test setBackgroundPlayMode - set mode as enable

@@ -30,6 +30,7 @@ import web_webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -99,6 +100,13 @@ struct webViewOnSslErrorEvent {
               this.controller.clearSslCache();
               this.controller.loadUrl('https://expired.badssl.com')
               break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webErrorPage' })
+              console.log('push URL success')
             }
           }
         })

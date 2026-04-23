@@ -79,10 +79,10 @@ it('onMeasureSize1_static_001', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let text_01: RectValue = CommonFunc.getComponentRect('onMeasureSize1_text_01') as RectValue;
-      let text_02: RectValue = CommonFunc.getComponentRect('onMeasureSize1_text_02') as RectValue;
-      let text_03: RectValue = CommonFunc.getComponentRect('onMeasureSize1_text_03') as RectValue;
-      let Column_1: RectValue = CommonFunc.getComponentRect('onMeasureSize1_Column_1') as RectValue;
+      let text_01: RectValue = await CommonFunc.getComponentRect('onMeasureSize1_text_01') as RectValue;
+      let text_02: RectValue = await CommonFunc.getComponentRect('onMeasureSize1_text_02') as RectValue;
+      let text_03: RectValue = await CommonFunc.getComponentRect('onMeasureSize1_text_03') as RectValue;
+      let Column_1: RectValue = await CommonFunc.getComponentRect('onMeasureSize1_Column_1') as RectValue;
 
       console.log('assert position')
       expect(Math.abs(Math.round(text_01.left - Column_1.left) - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();

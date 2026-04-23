@@ -14,7 +14,7 @@ export class Event {
     });
   }
 
-  public Fire(val: boolean = true) {
+  public Fire(val: boolean = true): void {
     this.resolveFn!(val);
   }
 
@@ -32,7 +32,7 @@ export class BaseClass {
     })
   }
 
-  public async increaseCount() {
+  public async increaseCount(): Promise<void> {
     await this.lock_.lockAsync((): void => {
       this.count++;
     })
@@ -43,7 +43,7 @@ export class BaseClass {
 export class CountClass {
   public count: int = 0
 
-  public setCount(value: int) {
+  public setCount(value: int): void {
     this.count = value
   }
 
@@ -59,7 +59,7 @@ export class SharedJob<T> {
     this.jobs = jobs;
   }
 
-  public Await() {
+  public Await(): void {
     for (let job of this.jobs) {
       (job as Job<void>).Await();
     }

@@ -432,15 +432,39 @@ export default function ActsOANoPermissionTestStatic() {
      * @tc.desc     no ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS.
      * @tc.type     FUNCTION
      * @tc.size     MEDIUMTEST
-     * @tc.level    LEVEL3
+     * @tc.level    LEVEL0
      */
-    it('SUB_Account_OsAccount_NoPermission_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Account_OsAccount_NoPermission_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_4300 ";
         hilog.info(0x0000, tag, logTag + "start====");
         let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
         try {
           await accountManager.getOsAccountLocalIds();
+          hilog.info(0x0000, tag, logTag + "run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, logTag + 'getOsAccountLocalIds err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_NoPermission_static_4400
+     * @tc.name     SUB_Account_OsAccount_NoPermission_static_4400
+     * @tc.desc     no ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS.
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
+     */
+    it('SUB_Account_OsAccount_NoPermission_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_4400 ";
+        hilog.info(0x0000, tag, logTag + "start====");
+        let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+        try {
+          await accountManager.getOsAccountNameByLocalId(100);
           hilog.info(0x0000, tag, logTag + "run err");
           expect().assertFail();
         } catch (err) {

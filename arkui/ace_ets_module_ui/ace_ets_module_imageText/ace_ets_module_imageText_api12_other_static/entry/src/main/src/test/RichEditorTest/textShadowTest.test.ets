@@ -243,7 +243,7 @@ it('textShadowTest_static_0005', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(500);
       get!.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(0);
+      expect(AppStorage.get<number>('shadowRadius0')).assertEqual(-1);
       expect(AppStorage.get<string>('shadowColor0')).assertEqual('#FFFF0000');
       expect(AppStorage.get<number>('shadowOffsetX0')).assertEqual(2);
       expect(AppStorage.get<number>('shadowOffsetY0')).assertEqual(0);

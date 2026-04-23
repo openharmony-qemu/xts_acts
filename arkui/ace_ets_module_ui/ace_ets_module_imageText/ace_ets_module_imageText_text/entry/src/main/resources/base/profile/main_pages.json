@@ -36,6 +36,8 @@
         "MainAbility/pages/Span/SpanTextShadowTest",
         "MainAbility/pages/Span/SpanUIJsunit",
         "MainAbility/pages/Span/SpanPropertiesNullUndefinedTest",
+        "MainAbility/pages/Span/SpanFontConfigsTest",
+        "MainAbility/pages/Span/SpanFontWeightTest",
 
         "MainAbility/pages/SymbolSpan/SymbolSpanApi1",
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
@@ -128,6 +130,11 @@
         "MainAbility/pages/Text/TextSpecialAttrsNull",
         "MainAbility/pages/Text/TextMethodsNull",
         "MainAbility/pages/Text/TextEditMenuOptionsNull",
-        "MainAbility/pages/Text/LayoutManagerTextCommonProbePage"
+        "MainAbility/pages/Text/LayoutManagerTextCommonProbePage",
+        "MainAbility/pages/Text/TextOnWillCopy",
+        "MainAbility/pages/Text/TextLayoutManagerMethods",
+        "MainAbility/pages/Text/TextGetCharacter",
+        "MainAbility/pages/Text/TextOrphanCharOptimization"
+
     ]
 }

@@ -28,6 +28,10 @@
       {
         "name": "ArkTSPartialUpdate",
         "value": "true"
+      },
+      {
+        "name": "ohos.arkui.UIMaterial.state",
+        "value": "disable"
       }
     ],
     "abilities": [

@@ -55,6 +55,9 @@ import openMenuNullUndefinedTest from './MenuNullUndefined/openMenu.test';
 import updateMenuNullUndefinedTest from './MenuNullUndefined/updateMenu.test';
 import closeMenuNullUndefinedTest from './MenuNullUndefined/closeMenu.test';
 import MenuItemNullTest from './MenuItemNullTest/MenuItemNullTest.test';
+import scrollBarTest from './MenuTest/scrollBar.test.ets';
+import maxHeightTest from './MenuTest/maxHeight.test.ets';
+
 export default function testsuite() {
   openMenuNullUndefinedTest();
   updateMenuNullUndefinedTest();
@@ -96,4 +99,6 @@ export default function testsuite() {
   maskBackgroundBlurStyleTest();
   BindMenuWithResponse();
   MenuItemNullTest();
+  scrollBarTest();
+  maxHeightTest();
 }

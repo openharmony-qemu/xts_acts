@@ -16,9 +16,14 @@
 import MutexLockTest from "./MutexLock.test";
 import RWLockTest from "./RWLock.test";
 import CombLockTest from "./CombLock.test";
-
+import MutexLockEnhancedTest from "./MutexLockEnhanced.test";
+import RWLockEnhancedTest from "./RWLockEnhanced.test";
+import CombLockEnhancedTest from "./CombLockEnhanced.test";
 export default function testsuite() {
   MutexLockTest()
   RWLockTest()
   CombLockTest()
+  MutexLockEnhancedTest()
+  RWLockEnhancedTest()
+  CombLockEnhancedTest()
 }

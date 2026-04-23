@@ -54,7 +54,7 @@ export default function SevenPointZeroResMgrStageTest() {
     });
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0100
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0100
      * @tc.name    getResourceName_test_0100
      * @tc.desc    app string resource
      * @tc.size    MEDIUM
@@ -73,7 +73,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0200
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0200
      * @tc.name    getResourceName_test_0200
      * @tc.desc    app media resource
      * @tc.size    MEDIUM
@@ -92,7 +92,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0400
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0400
      * @tc.name    getResourceName_test_0300
      * @tc.desc    app color resource
      * @tc.size    MEDIUM
@@ -111,7 +111,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0500
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0500
      * @tc.name    getResourceName_test_0400
      * @tc.desc    app float resource
      * @tc.size    MEDIUM
@@ -130,7 +130,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0800
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0800
      * @tc.name    getResourceName_test_0500
      * @tc.desc    app strarray resource
      * @tc.size    MEDIUM
@@ -149,7 +149,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0300
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0300
      * @tc.name    getResourceName_test_0600
      * @tc.desc    app boolean resource
      * @tc.size    MEDIUM
@@ -168,7 +168,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0600
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0600
      * @tc.name    getResourceName_test_0700
      * @tc.desc    app integer resource
      * @tc.size    MEDIUM
@@ -187,7 +187,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0700
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0700
      * @tc.name    getResourceName_test_0800
      * @tc.desc    app plural resource
      * @tc.size    MEDIUM
@@ -206,7 +206,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_0900
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0900
      * @tc.name    getResourceName_test_0900
      * @tc.desc    app symbol resource
      * @tc.size    MEDIUM
@@ -225,7 +225,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1200
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1200
      * @tc.name    getResourceName_test_1000
      * @tc.desc    system string resource
      * @tc.size    MEDIUM
@@ -244,7 +244,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1500
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1500
      * @tc.name    getResourceName_test_1100
      * @tc.desc    system media resource
      * @tc.size    MEDIUM
@@ -263,7 +263,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1400
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1400
      * @tc.name    getResourceName_test_1200
      * @tc.desc    system color resource
      * @tc.size    MEDIUM
@@ -282,7 +282,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1300
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1300
      * @tc.name    getResourceName_test_1300
      * @tc.desc    system float resource
      * @tc.size    MEDIUM
@@ -301,7 +301,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1700
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1700
      * @tc.name    getResourceName_test_1800
      * @tc.desc    null parameter
      * @tc.size    MEDIUM
@@ -320,7 +320,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1800
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1800
      * @tc.name    getResourceName_test_1900
      * @tc.desc    undefined parameter
      * @tc.size    MEDIUM
@@ -339,7 +339,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1900
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1900
      * @tc.name    getResourceName_test_2000
      * @tc.desc    invalid resource id
      * @tc.size    MEDIUM
@@ -358,7 +358,7 @@ export default function SevenPointZeroResMgrStageTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_ResourceManager_GerResourceName_1600
+     * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_1600
      * @tc.name    getResourceName_test_2100
      * @tc.desc    system overlay color resource
      * @tc.size    MEDIUM

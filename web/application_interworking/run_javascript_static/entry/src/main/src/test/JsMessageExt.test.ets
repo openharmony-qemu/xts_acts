@@ -291,6 +291,24 @@ export default function jsMessageExt() {
     })
 
     /**
+     * @tc.name   testJsMessageExtGetStringStaticError
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETSTRING_0200
+     * @tc.desc   test JsMessageExtGetString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsMessageExtGetStringStaticError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetStringError', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetStringError', 17100014, 100020, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
      * @tc.name   testJsMessageExtGetNumberStatic001
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETNUMBER_0100
      * @tc.desc   test JsMessageExtGetNumber
@@ -308,7 +326,23 @@ export default function jsMessageExt() {
       done()
     })
 
-
+    /**
+     * @tc.name   testJsMessageExtGetNumberStaticError
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETNUMBER_0200
+     * @tc.desc   test JsMessageExtGetNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsMessageExtGetNumberStaticError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetNumberError', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetNumberError', 17100014, 100021, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
 
     /**
      * @tc.name   testJsMessageExtGetBooleanStatic002
@@ -322,6 +356,24 @@ export default function jsMessageExt() {
       Utils.emitEvent('testJsMessageExtGetBoolean002', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetBoolean002', false, 100016, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testJsMessageExtGetBooleanStaticError
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETBOOLEAN_0300
+     * @tc.desc   test JsMessageExtGetBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsMessageExtGetBooleanStaticError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetBooleanError', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetBooleanError', 17100014, 100022, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -347,6 +399,24 @@ export default function jsMessageExt() {
     })
 
     /**
+     * @tc.name   testJsMessageExtGetArrayBufferStaticError
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAYBUFFER_0200
+     * @tc.desc   test JsMessageExtGetArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsMessageExtGetArrayBufferStaticError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetArrayBufferError', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetArrayBufferError', 17100014, 100023, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
      * @tc.name   testJsMessageExtGetArrayStatic001
      * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0100
      * @tc.desc   test JsMessageExtGetArray
@@ -358,6 +428,24 @@ export default function jsMessageExt() {
       Utils.emitEvent('testJsMessageExtGetArray001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testJsMessageExtGetArray001', true, 100018, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testJsMessageExtGetArrayStaticError
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0200
+     * @tc.desc   test JsMessageExtGetArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testJsMessageExtGetArrayStaticError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetArrayError', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetArrayError', 17100014, 100024, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -383,8 +471,26 @@ export default function jsMessageExt() {
     })
 
     /**
+     * @tc.name   testJsMessageExtGetErrorDescriptionStatic002
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETERRORDESCRIPTION_0200
+     * @tc.desc   test JsMessageExtGetErrorDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testJsMessageExtGetErrorDescriptionStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent('testJsMessageExtGetErrorDescription002', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testJsMessageExtGetErrorDescription002', true, 100025, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('JsMessageExtButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
      * @tc.name   SwitchNextPageStatic
-     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0200
+     * @tc.number SUB_WEB_JSMESSAGEEXT_GETARRAY_0300
      * @tc.desc   test JsMessageExtGetArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

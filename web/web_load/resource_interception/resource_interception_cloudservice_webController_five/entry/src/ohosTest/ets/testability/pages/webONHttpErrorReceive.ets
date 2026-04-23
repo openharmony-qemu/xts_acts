@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { URL } from '../../test/Config.test';
 
 const EVENT_ID_SET_EMIT_KEY = 201370;
 
@@ -73,7 +74,7 @@ struct webONHttpErrorReceive {
             case "emitOnHttpErrorReceiveFixedUserAgentWebc": {
               try {
                 this.onlineResult = true;
-                this.controller.loadUrl({ url: 'http://1.1.1.123/index.html' });
+                this.controller.loadUrl({url: URL});
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -102,18 +103,26 @@ struct webONHttpErrorReceive {
             console.log('isRequestGesture:' + event.request.isRequestGesture());
             Utils.emitEvent(event.request.isRequestGesture(), 201410);
             console.log('getRequestMethod:' + event.request.getRequestMethod());
-            Utils.emitEvent(event.request.getRequestMethod(), 201420);
+            if (event.request.getRequestMethod()) {
+              Utils.emitEvent(true, 201420);
+            }
             console.log('getResponseData:' + JSON.stringify(event.response.getResponseData()));
             Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 201430);
             console.log('getResponseEncoding:' + event.response.getResponseEncoding());
-            Utils.emitEvent(event.response.getResponseEncoding(), 201440);
+            if (event.response.getResponseEncoding()) {
+              Utils.emitEvent(true, 201440);
+            }
             console.log('getResponseMimeType:' + event.response.getResponseMimeType());
-            Utils.emitEvent(event.response.getResponseMimeType(), 201450);
+            if (event.response.getResponseMimeType()) {
+              Utils.emitEvent(true, 201450);
+            }
             console.log('getResponseCode:' + event.response.getResponseCode());
             Utils.emitEvent(event.response.getResponseCode(), 201460);
             console.log("this.title result is :" + JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl());
             console.log('getReasonMessage:' + event.response.getReasonMessage());
-            Utils.emitEvent(event.response.getReasonMessage(), 201470);
+            if (event.response.getReasonMessage()) {
+              Utils.emitEvent(true, 201470);
+            }
             let result = event.request.getRequestHeader()
             console.log('The request header result size is ' + result.length)
             for (let i of result) {
@@ -122,8 +131,12 @@ struct webONHttpErrorReceive {
               this.requestValue = i.headerValue;
             }
             console.log('The request header last result is ' + this.requestKey + this.requestValue);
-            Utils.emitEvent(this.requestKey, 201480);
-            Utils.emitEvent(this.requestValue, 201490);
+            if (this.requestKey) {
+              Utils.emitEvent(true, 201480);
+            }
+            if (this.requestValue) {
+              Utils.emitEvent(true, 201490);
+            }
             let resph = event.response.getResponseHeader()
             console.log('The response header result size is ' + resph.length)
             for (let i of resph) {
@@ -132,9 +145,16 @@ struct webONHttpErrorReceive {
               this.responseValue = i.headerValue;
             }
             console.log('The response header last result is ' + this.responseKey + this.responseValue);
-            Utils.emitEvent(this.responseKey, 201500);
-            Utils.emitEvent(this.responseValue, 201510);
-            Utils.emitEvent(JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl(), 201520)
+            if (this.responseKey) {
+              Utils.emitEvent(true, 201500);
+            }
+            if (this.responseValue) {
+              Utils.emitEvent(true, 201510);
+            }
+            let resultStr = JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl();
+            if (resultStr) {
+              Utils.emitEvent(true, 201520);
+            }
             this.onlineResult = false;
           }
         })

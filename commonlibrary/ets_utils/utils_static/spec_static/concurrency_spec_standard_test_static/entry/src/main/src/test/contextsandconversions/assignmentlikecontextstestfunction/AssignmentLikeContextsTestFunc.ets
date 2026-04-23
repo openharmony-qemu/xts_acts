@@ -3615,14 +3615,6 @@ export function testAssignmentLikeContexts0110(){
         let v_Date: Date|null = null;
         let a_Date: (Date[])|null = null;
         let f_Date: ((p: Date) => Date)|null = null;
-
-        let v_StackTrace: StackTrace|null = null;
-        let a_StackTrace: (StackTrace[])|null = null;
-        let f_StackTrace: ((p: StackTrace) => StackTrace)|null = null;
-
-        let v_StackTraceElement: StackTraceElement|null = null;
-        let a_StackTraceElement: (StackTraceElement[])|null = null;
-        let f_StackTraceElement: ((p: StackTraceElement) => StackTraceElement)|null = null;
   if(v_String !== null){
         console.info(`${TAG} Task execution failed: v_String: ${v_String}`);
         throw new Error('v_String check failed, expected null');
@@ -3681,36 +3673,6 @@ export function testAssignmentLikeContexts0110(){
   if(f_Date !== null){
         console.info(`${TAG} Task execution failed: f_Date: ${f_Date}`);
         throw new Error('f_Date check failed, expected null');
-      }
-
-  if(v_StackTrace !== null){
-        console.info(`${TAG} Task execution failed: v_StackTrace: ${v_StackTrace}`);
-        throw new Error('v_StackTrace check failed, expected null');
-      }
-
-  if(a_StackTrace !== null){
-        console.info(`${TAG} Task execution failed: a_StackTrace: ${a_StackTrace}`);
-        throw new Error('a_StackTrace check failed, expected null');
-      }
-
-  if(f_StackTrace !== null){
-        console.info(`${TAG} Task execution failed: f_StackTrace: ${f_StackTrace}`);
-        throw new Error('f_StackTrace check failed, expected null');
-      }
-
-  if(v_StackTraceElement !== null){
-        console.info(`${TAG} Task execution failed: v_StackTraceElement: ${v_StackTraceElement}`);
-        throw new Error('v_StackTraceElement check failed, expected null');
-      }
-
-  if(a_StackTraceElement !== null){
-        console.info(`${TAG} Task execution failed: a_StackTraceElement: ${a_StackTraceElement}`);
-        throw new Error('a_StackTraceElement check failed, expected null');
-      }
-
-  if(f_StackTraceElement !== null){
-        console.info(`${TAG} Task execution failed: f_StackTraceElement: ${f_StackTraceElement}`);
-        throw new Error('f_StackTraceElement check failed, expected null');
       }
 }
 

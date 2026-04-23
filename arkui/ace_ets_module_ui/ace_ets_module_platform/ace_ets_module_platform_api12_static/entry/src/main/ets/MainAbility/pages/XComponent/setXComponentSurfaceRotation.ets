@@ -48,13 +48,14 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct SetXComponentSurfaceRotation1 {
   xComponentController: XComponentController = new XComponentController()
-  @State SurfaceRotation: Required<SurfaceRotationOptions> | null = null
+  // @State SurfaceRotation: Required<SurfaceRotationOptions> | null = null
+  @State rotationString: string = ''
   private surfaceId: string = ''
   private xComponentContext: Record<string, () => void> = {} as Record<string, () => void>
 
   build() {
     Column() {
-      Text(JSON.stringify(this.SurfaceRotation)).id("setXComponentSurfaceRotation_text")
+      Text(this.rotationString).id("setXComponentSurfaceRotation_text")
         .fontSize(12)
       XComponent({
         type: XComponentType.TEXTURE,
@@ -62,9 +63,10 @@ struct SetXComponentSurfaceRotation1 {
       } as XComponentOptions)
         .id('xcomponent')
         .onLoad((): void => {
-          this.SurfaceRotation = { lock: false }
-          this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)
-          this.SurfaceRotation = this.xComponentController.getXComponentSurfaceRotation()
+          let SurfaceRotation: SurfaceRotationOptions = { lock: false }
+          this.xComponentController.setXComponentSurfaceRotation(SurfaceRotation)
+          this.rotationString = JSON.stringifyJsonElement(JSON.parseJsonElement(JSON.stringify(
+            this.xComponentController.getXComponentSurfaceRotation())))
 
           let a: Required<SurfaceRotationOptions> = { lock: false }
           console.log("===================================== " + JSON.stringify(a));

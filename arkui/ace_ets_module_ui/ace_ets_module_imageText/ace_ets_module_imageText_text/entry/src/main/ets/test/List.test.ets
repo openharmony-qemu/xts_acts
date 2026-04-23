@@ -46,6 +46,8 @@ import SpanPageTest from './SpanTest/SpanPageTest.test';
 import SpanTextShadowTest from './SpanTest/SpanTextShadowTest.test';
 import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
 import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
+import SpanFontConfigsTest from './SpanTest/SpanFontConfigsTest.test';
+import SpanFontWeightTest from './SpanTest/SpanFontWeightTest.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
@@ -141,6 +143,11 @@ import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
 import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test';
+import TextOnWillCopyTest from './TextTest/TextOnWillCopy.test';
+import TextGetCharacter from './TextTest/TextGetCharacter.test';
+import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
+import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimization.test';
+
 
 
 export default function testsuite() {
@@ -177,6 +184,8 @@ export default function testsuite() {
   SpanTextShadowTest()
   SpanUIJsunitTest()
   SpanPropertiesNullUndefinedTest()
+  SpanFontConfigsTest()
+  SpanFontWeightTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
@@ -273,4 +282,8 @@ export default function testsuite() {
   TextMethodsNullTest();
   TextEditMenuOptionsNullTest();
   LayoutManagerTextCommonTest();
+  TextOnWillCopyTest();
+  TextGetCharacter();
+  TextLayoutManagerMethodsTest();
+  TextOrphanCharOptimizationTest();
 }

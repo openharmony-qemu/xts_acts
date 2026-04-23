@@ -81,7 +81,7 @@ export default class MainAbilityA extends UIAbility {
 
     globalThis.ApplicationContextMultitonA = this.context.getApplicationContext();
     let callBackId:number = globalThis.ApplicationContextMultitonA
-        .registerAbilityLifecycleCallback(AbilityLifecycleCallback);
+        .on('abilityLifecycle', AbilityLifecycleCallback);
     globalThis.mainMultitonAbilityAListKey = listKey
     globalThis.mainMultitonAbilityACallBackId = callBackId
     hilog.info(0x0000, TEST_TAG, `callBackId :${callBackId}`);
@@ -91,7 +91,7 @@ export default class MainAbilityA extends UIAbility {
   onDestroy() {
     hilog.info(0x0000, TEST_TAG, '%{public}s', 'Ability onDestroy');
     globalThis.ApplicationContextMultitonA
-      .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId,
+      .off('abilityLifecycle', globalThis.mainAbilityACallBackId,
         (error: base.BusinessError, data: ESObject) => {
           hilog.info(0x0000, TEST_TAG, 'unregisterAbilityLifecycleCallback err: %{public}s', JSON.stringify(error) ?? '');
         });

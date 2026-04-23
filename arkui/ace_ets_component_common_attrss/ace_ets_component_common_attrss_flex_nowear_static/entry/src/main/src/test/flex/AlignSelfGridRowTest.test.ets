@@ -147,8 +147,8 @@ export default function alignSelfGridRowTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
       //Get component rect and parent component rect
-      let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-      let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+      let parentRect = await Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+      let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
       console.log('parentComponentKey is ' + data.pageConfig.parentComponentKey + 'componentKey is ' +
       data.pageConfig.componentKey)
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!

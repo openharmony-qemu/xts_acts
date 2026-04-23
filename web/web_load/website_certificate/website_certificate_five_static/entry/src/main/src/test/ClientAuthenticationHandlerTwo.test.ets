@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level} from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -39,22 +39,21 @@ export default function ClientAuthenticationHandlerTestTwo() {
     })
     /**
      * @tc.name   testClientAuthenticationHandlerConfirmStatic002
-     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCONFIRM_CREDENTIALTYPE_API_00156
+     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCONFIRM_CREDENTIALTYPE_API_001
      * @tc.desc   test clientAuthenticationHandler confirm string wrong ssl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testClientAuthenticationHandlerConfirmStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testClientAuthenticationHandlerConfirmStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClientAuthenticationHandlerConfirm002', 10);
       await Utils.msSleep(2000);
       Utils.registerEvent('emitClientAuthenticationHandlerConfirm002', true, 25131101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('clientAuthenticationHandlerButtonTwo', 10, '');
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
-
     /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      SUB_WEB_SwitchNextPageStatic_25131101

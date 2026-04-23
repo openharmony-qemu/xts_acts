@@ -126,7 +126,7 @@ export default function onDisAppearTest() {
       AppStorage.setOrCreate<boolean>('_isShow', data.testValue.setValue.isShow)
       await Utils.sleep(2000);
       //Get text content,check content is changeDisAppear
-      let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);
+      let compareTextObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.compareTextKey);
       console.info('compareTextObj.getElement($attrs).getString(content): ' + compareTextObj.getElement('$attrs').getString('content'));
       expect(compareTextObj.getElement('$attrs').getString('content')).assertEqual(data.testValue.expectValue?.changeDisAppear);
     });

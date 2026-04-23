@@ -50,5 +50,19 @@ export default function IsInRenderStateReturnValueTest(){
       expect(nativeFunc.TestIsInRenderStateReturnValue002()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.name   SUB_ARKUI_Util_TestMoveToParamTest_1000
+     * @tc.number SUB_ARKUI_Util_TestMoveToParamTest_1000
+     * @tc.desc   SUB_ARKUI_Util_TestMoveToParamTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_Util_TestMoveToParamTest_1000', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestMoveToParam001()).assertEqual(0)
+      done()
+    })
+
   })
 }

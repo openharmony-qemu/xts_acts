@@ -91,6 +91,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_noware_api14_static:ActsAceEtsModuleCommonEventsNoWearApi14StaticTest",
       "ace_ets_module_commonEvents_nowear_api11_static:ActsAceEtsModuleCommonEventsNoWearApi11StaticTest",
       "ace_ets_module_commonEvents_api11_static:ActsAceEtsModuleCommonEventsApi11StaticTest",
+      "ace_ets_module_commonEvents_api24_static:ActsAceEtsModuleCommonEventsApi24StaticTest"
     ]
   }
 }

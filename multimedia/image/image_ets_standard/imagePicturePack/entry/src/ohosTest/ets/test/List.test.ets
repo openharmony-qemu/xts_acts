@@ -14,7 +14,9 @@
  */
 
 import imagePicturePack from './imagePicturePack.test';
+import imagePicturePackThumbnail from './ImagePicturePackThumbnail.test.ets';
 
 export default function testsuite() {
   imagePicturePack();
+  imagePicturePackThumbnail();
 }

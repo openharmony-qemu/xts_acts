@@ -307,5 +307,292 @@ export default function ActsHiDebugHiProfilerTest() {
       }
       console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1200 end");
     })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300
+     * @tc.name testHidebugHiprofilerInterface13
+     * @tc.desc 验证调用OH_HiDebug_StartProfiler接口失败，再调用OH_HiDebug_StopProfiler接口，返回值11400430
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 start");
+      try {
+        let res = testNapi.stopProfiler();
+        expect(res == 11400430).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1400
+     * @tc.name testHidebugHiprofilerInterface14
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400120
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1400 start");
+      try {
+        expect(testNapi.checkHidebugTraceStorageLimit() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1400 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1400 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1500
+     * @tc.name testHidebugHiprofilerInterface15
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400400
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1500 start");
+      try {
+        expect(testNapi.checkHidebugSuccess() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1500 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1500 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1600
+     * @tc.name testHidebugHiprofilerInterface16
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400420
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1600 start");
+      try {
+        expect(testNapi.checkHidebugPermissionDenied() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1600 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1600 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1700
+     * @tc.name testHidebugHiprofilerInterface17
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400421
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1700 start");
+      try {
+        expect(testNapi.checkHidebugAlreadyStarted() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1700 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1700 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1800
+     * @tc.name testHidebugHiprofilerInterface18
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400422
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1800 start");
+      try {
+        expect(testNapi.checkHidebugNotStarted() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1800 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1800 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1900
+     * @tc.name testHidebugHiprofilerInterface19
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400423
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1900 start");
+      try {
+        expect(testNapi.checkHidebugProcessOverlimit() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1900 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1900 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1900 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2000
+     * @tc.name testHidebugHiprofilerInterface20
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400424
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2000 start");
+      try {
+        expect(testNapi.checkHidebugConflict() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2000 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2000 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2100
+     * @tc.name testHidebugHiprofilerInterface21
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400425
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2100 start");
+      try {
+        expect(testNapi.checkHidebugAutoStoppedByDuration() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2100 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2100 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2200
+     * @tc.name testHidebugHiprofilerInterface22
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400426
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2200 start");
+      try {
+        expect(testNapi.checkHidebugDailyQuotaExceeded() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2200 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2200 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2300
+     * @tc.name testHidebugHiprofilerInterface23
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400427
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2300 start");
+      try {
+        expect(testNapi.checkHidebugCpuOverloaded() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2300 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2300 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2400
+     * @tc.name testHidebugHiprofilerInterface24
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400428
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2400 start");
+      try {
+        expect(testNapi.checkHidebugMemPressureCritical() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2400 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2400 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2500
+     * @tc.name testHidebugHiprofilerInterface25
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400429
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2500 start");
+      try {
+        expect(testNapi.checkHidebugStoragePressureCritical() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2500 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2500 end");
+    })
   })
 }

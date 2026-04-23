@@ -19,6 +19,8 @@
 namespace Acts {
 namespace Huks {
 
+int SecurityHuksNapiSignVerifySm20100();
+
 } // namespace Huks
 } // namespace Acts
 

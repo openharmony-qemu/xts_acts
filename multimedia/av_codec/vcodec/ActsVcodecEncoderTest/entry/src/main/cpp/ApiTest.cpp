@@ -889,6 +889,86 @@ int VideoEncodeSyncApi0080Test()
     return 0;
 }
 
+int VideoEncodeApiAdd0010()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVErrCode ret = AV_ERR_OK;
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        ret = OH_VideoEncoder_FreeOutputData(venc_, -1);
+        ASSERT_EQ(ret, AV_ERR_INVALID_STATE);
+    return 0;
+} else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiAdd0020()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVErrCode ret = AV_ERR_OK;
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        OH_AVCodecBufferAttr attr;
+        attr.pts = -1;
+        attr.size = -1;
+        attr.offset = 0;
+        attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
+        ret = OH_VideoEncoder_PushInputData(venc_, -1, attr);
+        ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
+    return 0;
+} else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiAdd0030()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVErrCode ret = AV_ERR_OK;
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        ret = OH_VideoEncoder_PushInputBuffer(venc_, -1);
+        ASSERT_EQ(ret, AV_ERR_INVALID_STATE);
+    return 0;
+} else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiAdd0040()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVErrCode ret = AV_ERR_OK;
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        ret = OH_VideoEncoder_PushInputParameter(venc_, -1);
+        ASSERT_EQ(ret, AV_ERR_OPERATE_NOT_PERMIT);
+    return 0;
+} else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiAdd0050()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVErrCode ret = AV_ERR_OK;
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        ret = OH_VideoEncoder_FreeOutputBuffer(venc_, -1);
+        ASSERT_EQ(ret, AV_ERR_INVALID_STATE);
+    return 0;
+} else {
+        return 0;
+    }
+}
+
 void InitApiTest()
 {
     TestSetUpTestCase();

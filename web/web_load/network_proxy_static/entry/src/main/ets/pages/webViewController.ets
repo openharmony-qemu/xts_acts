@@ -23,7 +23,7 @@ import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 type OnProxyConfigChangeCallback = () => void
@@ -173,6 +173,11 @@ struct webviewController {
       }
 
       Web({ src: 'www.example.com', controller: this.controller })
+        .webFixedFont(undefined)
+        .webFixedFont('fixed')
+        .webSansSerifFont(undefined)
+        .webSansSerifFont('serif')
+        .javaScriptProxy(undefined)
     }
   }
 }

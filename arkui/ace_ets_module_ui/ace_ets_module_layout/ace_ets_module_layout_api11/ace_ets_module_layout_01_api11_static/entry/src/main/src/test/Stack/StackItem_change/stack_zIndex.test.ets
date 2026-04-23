@@ -41,7 +41,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-function imageComparisonAssert(left: double, top: double) {
+async function imageComparisonAssert(left: double, top: double) {
   let theWinTop:long = 0;
   let theWinLeft:long = 0;
   let isTrue = true
@@ -49,7 +49,7 @@ function imageComparisonAssert(left: double, top: double) {
     // let winTop = window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext'));
     const uiContext = AppStorage.get<UIContext>('uiContext');
     let windowClass: window.Window | undefined = undefined;
-    waitForCompletion(async ()=>{ windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext); })
+    windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
     let properties: window.WindowProperties = windowClass!.getWindowProperties();
     theWinTop = properties.windowRect.top + top as long
     theWinLeft = properties.windowRect.left + left + uiContext!.vp2px(10) as long
@@ -57,7 +57,7 @@ function imageComparisonAssert(left: double, top: double) {
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
   }
-  waitForCompletion(async ()=>{ await CommonFunc.sleep(3000); })
+  await CommonFunc.sleep(3000);
   let screenshotOptions: screenshot.ScreenshotOptions = {
     "screenRect": {
       "left": theWinLeft,
@@ -105,7 +105,7 @@ function imageComparisonAssert(left: double, top: double) {
     isTrue = false;
   }
   ;
-  waitForCompletion(async ()=>{ await CommonFunc.sleep(5000); })
+  await CommonFunc.sleep(5000);
   return isTrue;
 }
 
