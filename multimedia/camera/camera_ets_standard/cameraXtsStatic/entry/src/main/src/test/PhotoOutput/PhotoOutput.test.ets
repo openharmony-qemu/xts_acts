@@ -644,8 +644,7 @@ export default function PhotoOutputToStaticTest():void {
         } else {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
-          console.info(TAG, testName, 'isMirrorSupported',isSupported);
-          if (mPhotoOutput!.isMirrorSupported()&&mPhotoOutput!.isMovingPhotoSupported()) {
+          if (mPhotoOutput!.isMirrorSupported() && mPhotoOutput!.isMovingPhotoSupported()) {
             let captureLocation: camera.Location = {
               latitude: 0,
               longitude: 0,
@@ -696,8 +695,7 @@ export default function PhotoOutputToStaticTest():void {
         } else {
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
-          let isSupported: boolean = mPhotoOutput!.isMirrorSupported();
-          if (mPhotoOutput!.isMirrorSupported()&&mPhotoOutput!.isMovingPhotoSupported()) {
+          if (mPhotoOutput!.isMirrorSupported() && mPhotoOutput!.isMovingPhotoSupported()) {
             let captureLocation: camera.Location = {
               latitude: 0,
               longitude: 0,
@@ -872,7 +870,7 @@ export default function PhotoOutputToStaticTest():void {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect(Number(error.code)).assertEqual(7400104);
       } finally {
-        await releasePhotoSession();
+        releasePhotoSession();
         done();
       }
     })
@@ -897,7 +895,7 @@ export default function PhotoOutputToStaticTest():void {
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(7400104);
+        expect(error.code).assertEqual(7400104);
       } finally {
         releasePhotoSession();
         done();
@@ -1013,7 +1011,7 @@ export default function PhotoOutputToStaticTest():void {
             count = 1;
           })
           console.info(TAG, testName, "Entering start");
-          if (mPhotoOutput!.isMirrorSupported()) {
+          if (mPhotoOutput!.isMirrorSupported() && mPhotoOutput!.isMovingPhotoSupported()) {
             mPhotoOutput!.offError();
             mPhotoOutput!.enableMirror(true);
             await Utils.msSleep(500);
