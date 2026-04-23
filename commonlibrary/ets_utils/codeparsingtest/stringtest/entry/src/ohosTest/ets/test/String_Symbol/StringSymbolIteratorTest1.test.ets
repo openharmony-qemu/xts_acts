@@ -705,7 +705,7 @@ export default function StringSymbolIteratorTest() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATOR_3100
-     * @tc.name      StringSymbol_iteratorTest1031
+     * @tc.name      StringSymbolIteratorTest1031
      * @tc.desc      Verify for-of iteration over long string (40000 chars)
      * @tc.size      MediumTest
      * @tc.type      Function

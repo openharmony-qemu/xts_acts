@@ -128,7 +128,7 @@ export default function StringSearchTest() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCH_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTHREE_0700
      * @tc.name      StringSearchTest1008
      * @tc.desc      Verify that the search method uses i flag for case-insensitive matching
      * @tc.size      SmallTest

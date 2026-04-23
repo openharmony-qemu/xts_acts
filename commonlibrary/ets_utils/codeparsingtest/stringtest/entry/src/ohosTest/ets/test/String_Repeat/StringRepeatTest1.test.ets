@@ -308,7 +308,7 @@ interface CustomStringIterator {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("testStringRepeatest01Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStringRepeatTest01Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStringRepeatTest01Chapter0017';
       console.log(TAG + 'start');
       'use strict';
@@ -676,7 +676,7 @@ interface CustomStringIterator {
     })
     /**
      * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4000
-     * @tc.name       testStringRepeatOfTest01Chapter0040
+     * @tc.name       testStringRepeatTest01Chapter0040
      * @tc.desc       RepeatBackslash
      * @tc.size       MediumTest
      * @tc.type       Function
