@@ -50,7 +50,6 @@ export default function URI05Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    // =============== constructor ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFIVE_0100
      * @tc.name testURI05Chapter0001
@@ -59,17 +58,14 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let thrown = false;
+    it('testURI05Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let rawStr = 'https://example.com/control' + '\x07\x08\x0C\x0A\x0D\x09\x0B\x00' + 'path';
         new uri.URI(rawStr);
-      } catch (err) {
-        thrown = true;
-        let error = err as ErrorWithCode;
-        expect(error.code).assertEqual(10200002);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200002);
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -80,17 +76,14 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let thrown = false;
+    it('testURI05Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let rawStr = 'https://example.com/\\\'"path';
         new uri.URI(rawStr);
-      } catch (err) {
-        thrown = true;
-        let error = err as ErrorWithCode;
-        expect(error.code).assertEqual(10200002);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.code).assertEqual(10200002);
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -101,16 +94,12 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'https://example.com/?escaped=%00%07%08%09%0A%0D%0B%1B%7F';
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('escaped=')).assertTrue();
-
     });
 
     /**
@@ -121,18 +110,14 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const emojis = '👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴';
       const encoded = encodeURIComponent(emojis);
       const uriStr = 'https://example.com/?emoji=' + encoded;
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('emoji=')).assertTrue();
-
     });
 
     /**
@@ -143,23 +128,10 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const encoded = '%DC%04';
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
-      try {
-        uriObj = new uri.URI('https://example.com/?q=' + encoded);
-      } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError === null).assertTrue();
-      expect(uriObj !== null).assertTrue();
-
-      if (uriObj) {
-        const uriString = uriObj.toString();
-      }
+    it('testURI05Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const encoded: string = '%DC%04';
+      const uriObj: uri.URI = new uri.URI('https://example.com/?q=' + encoded);
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -170,23 +142,10 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const encoded = '%ED%A0%BD%DC%04';
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
-      try {
-        uriObj = new uri.URI('https://example.com/?q=' + encoded);
-      } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError === null).assertTrue();
-      expect(uriObj !== null).assertTrue();
-
-      if (uriObj) {
-        const uriString = uriObj.toString();
-      }
+    it('testURI05Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const encoded: string = '%ED%A0%BD%DC%04';
+      const uriObj: uri.URI = new uri.URI('https://example.com/?q=' + encoded);
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -197,16 +156,12 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'https://example.com/0';
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
       expect(uriObj.path.includes('0')).assertTrue();
-
     });
 
     /**
@@ -217,16 +172,12 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'https://example.com/NaN';
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
       expect(uriObj.path.includes('NaN')).assertTrue();
-
     });
 
     /**
@@ -237,7 +188,7 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let size = 10000;
       let ans = '[';
       while (ans.length < size) {
@@ -247,13 +198,9 @@ export default function URI05Test() {
       const encoded = encodeURIComponent(ans);
       const uriStr = 'https://example.com/?tree=' + encoded;
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('tree=')).assertTrue();
-
     });
 
     /**
@@ -264,18 +211,14 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '{k1:value1,k2:value2}';
       const result = str.substring(0, str.length - 2);
       const uriStr = 'https://example.com/path/' + encodeURIComponent(result);
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
       expect(uriObj.path.includes('k1:value1,k2:value')).assertTrue();
-
     });
 
     /**
@@ -286,18 +229,15 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const longStr = 'a'.repeat(1000000);
       const encoded = encodeURIComponent(longStr);
       const uriStr = 'https://example.com/?big=' + encoded;
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('big=')).assertTrue();
-
+      expect(uriObj.query.length > 100000).assertTrue();
     });
 
     /**
@@ -308,16 +248,12 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const longStr = 'a'.repeat(5000000);
       const encoded = encodeURIComponent(longStr);
       const uriStr = 'https://example.com/?gc=' + encoded;
-      let uriObj: uri.URI | null = new uri.URI(uriStr);
-
+      const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-
-      const uriString = uriObj.toString();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
     });
 
     /**
@@ -328,7 +264,7 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'https://example.com/?' +
         'zero=0&' +
         'nan=NaN&' +
@@ -357,15 +293,11 @@ export default function URI05Test() {
         'sci1=1e3&sci2=2.5e-2&' +
         'bigIntSuffix=9007199254740991n';
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('zero=0')).assertTrue();
       expect(uriObj.query.includes('nan=NaN')).assertTrue();
       expect(uriObj.query.includes('inf=Infinity')).assertTrue();
-
     });
 
     /**
@@ -376,18 +308,14 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'https://example.com/?boolTrue=true&boolFalse=false&zero=0&nan=NaN&null=null&undefined=undefined';
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('boolTrue=true')).assertTrue();
       expect(uriObj.query.includes('boolFalse=false')).assertTrue();
       expect(uriObj.query.includes('null=null')).assertTrue();
-
     });
 
     /**
@@ -398,19 +326,15 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testURI05Chapter0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = [72, 101, 108, 108, 111];
       const arrStr = JSON.stringify(arr);
       const encoded = encodeURIComponent(arrStr);
       const uriStr = 'https://example.com/?arr=' + encoded;
       const uriObj = new uri.URI(uriStr);
-      const uriString = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('arr=')).assertTrue();
-
     });
 
     /**
@@ -421,12 +345,10 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-
+    it('testURI05Chapter0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       interface NestedInner {
         f: Object;
       }
-
       interface NestedOuter {
         d: Object;
         e: NestedInner;
@@ -449,7 +371,6 @@ export default function URI05Test() {
 
       let mapEntry: [string, Object] = ["key1", "value1" as Object];
       let setData: Object = new Set<number>([1, 2, 3]) as Object;
-      let promiseData: Object = new Promise<string>((resolve) => resolve('done')) as Object;
       let regexData: Object = /abc/gi as Object;
       let uint8Data: Object = new Uint8Array([72, 101, 108]) as Object;
 
@@ -467,7 +388,7 @@ export default function URI05Test() {
         uint8: uint8Data,
         map: mapEntry as Object,
         set: setData,
-        promise: promiseData,
+        promise: new Promise<string>((resolve) => resolve('done')) as Object,
         regex: regexData
       };
 
@@ -475,10 +396,7 @@ export default function URI05Test() {
       let encoded: string = encodeURIComponent(objStr);
       let uriStr: string = 'https://example.com/?obj=' + encoded;
       let uriObj: uri.URI = new uri.URI(uriStr);
-      const uriString: string = uriObj.toString();
-
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
-      expect(uriString !== undefined && uriString !== '').assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
       expect(uriObj.query.includes('obj=')).assertTrue();
     });
@@ -491,24 +409,11 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
-      try {
-        uriObj = new uri.URI('https://example.com/?bad=%gg');
-      } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError === null).assertTrue();
+    it('testURI05Chapter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const uriObj: uri.URI = new uri.URI('https://example.com/?bad=%gg');
       expect(uriObj !== null).assertTrue();
-
-      if (uriObj) {
-        const uriString = uriObj.toString();
-        expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-        expect(uriObj.query.includes('bad=')).assertTrue();
-      }
+      expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
+      expect(uriObj.query.includes('bad=')).assertTrue();
     });
 
     /**
@@ -519,23 +424,11 @@ export default function URI05Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testURI05Chapter0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
-      try {
-        uriObj = new uri.URI('https://example.com/?q={unencoded}');
-      } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError === null).assertTrue();
+    it('testURI05Chapter0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const uriObj: uri.URI = new uri.URI('https://example.com/?q={unencoded}');
       expect(uriObj !== null).assertTrue();
-
-      if (uriObj) {
-        expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-        expect(uriObj.query.includes('q=')).assertTrue();
-      }
+      expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
+      expect(uriObj.query.includes('q=')).assertTrue();
     });
   });
 }

@@ -39,9 +39,9 @@ export default function URL02Test() {
         "!\"#$%'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const escapes: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41\\123";
       const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
-      const url =
+      const urlObj =
         URL.parseURL(`https://example.com/?ascii=${encodeURIComponent(ascii)}&escapes=${encodeURIComponent(escapes)}&emojis=${encodeURIComponent(emojis)}`);
-      const params: url.URLParams = url.params;
+      const params: url.URLParams = urlObj.params;
       expect(params.get("ascii")).assertEqual(ascii);
       expect(params.get("escapes")).assertEqual(escapes);
       expect(params.get("emojis")).assertEqual(emojis);
@@ -102,8 +102,8 @@ export default function URL02Test() {
         const v: string = pair[1];
         return `${encodeURIComponent(k)}=${encodeURIComponent(v)}`;
       }).join("&");
-      const url = URL.parseURL(`https://example.com/?${query}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?${query}`);
+      const params: url.URLParams = urlObj.params;
       for (const pair of pairs) {
         const k: string = pair[0];
         const v: string = pair[1];
@@ -138,8 +138,8 @@ export default function URL02Test() {
         const v: string = pair[1];
         return `${k}=${encodeURIComponent(v)}`;
       }).join("&");
-      const url = URL.parseURL(`https://example.com/?${query}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?${query}`);
+      const params: url.URLParams = urlObj.params;
       for (const pair of pairs) {
         const k: string = pair[0];
         const v: string = pair[1];
@@ -157,8 +157,8 @@ export default function URL02Test() {
      */
     it("testURL02Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const invalidEncoded: string = "%ED%B0%84%ED%A0%BD%ED%BF%B4";
-      const url = URL.parseURL(`https://example.com/?invalid=${invalidEncoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?invalid=${invalidEncoded}`);
+      const params: url.URLParams = urlObj.params;
       const decodedValue: string | null = params.get("invalid");
 
       expect(decodedValue !== null).assertTrue();
@@ -173,14 +173,14 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1");
+      const params: url.URLParams = urlObj.params;
       params.append("b", "2");
-      expect(url.search).assertEqual("?a=1&b=2");
+      expect(urlObj.search).assertEqual("?a=1&b=2");
       params.set("a", "10");
-      expect(url.search).assertEqual("?a=10&b=2");
+      expect(urlObj.search).assertEqual("?a=10&b=2");
       params.delete("b");
-      expect(url.search).assertEqual("?a=10");
+      expect(urlObj.search).assertEqual("?a=10");
     });
 
     /**
@@ -192,8 +192,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?key=1&key=2&key=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?key=1&key=2&key=3");
+      const params: url.URLParams = urlObj.params;
       const result: string[] = params.getAll("key");
 
       expect(result.length).assertEqual(3);
@@ -214,8 +214,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?x=1&y=2&x=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?x=1&y=2&x=3");
+      const params: url.URLParams = urlObj.params;
       const entries: [string, string][] = [];
       params.forEach((value: string, key: string): void => {
         entries.push([key, value]);
@@ -232,6 +232,7 @@ export default function URL02Test() {
       expect(entries[2][0]).assertEqual("x");
       expect(entries[2][1]).assertEqual("3");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_0800
      * @tc.name testURL02Chapter0008
@@ -243,8 +244,8 @@ export default function URL02Test() {
     it("testURL02Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const escapes: string = "\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41\\123";
       const encoded: string = encodeURIComponent(escapes);
-      const url = URL.parseURL(`https://example.com/?escapes=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?escapes=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("escapes")).assertEqual(escapes);
     });
 
@@ -259,8 +260,8 @@ export default function URL02Test() {
     it("testURL02Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
       const encoded: string = encodeURIComponent(emojis);
-      const url = URL.parseURL(`https://example.com/?emojis=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?emojis=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("emojis")).assertEqual(emojis);
     });
 
@@ -275,8 +276,8 @@ export default function URL02Test() {
     it("testURL02Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longValue: string = "a".repeat(100000);
       const encoded: string = encodeURIComponent(longValue);
-      const url = URL.parseURL(`https://example.com/?long=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?long=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("long")).assertEqual(longValue);
     });
 
@@ -292,8 +293,8 @@ export default function URL02Test() {
       const original: string = "{k1:value1,k2:value2}";
       const sliced: string = original.substring(0, original.length - 2);
       const encoded: string = encodeURIComponent(sliced);
-      const url = URL.parseURL(`https://example.com/?sliced=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?sliced=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("sliced")).assertEqual(sliced);
     });
 
@@ -316,8 +317,8 @@ export default function URL02Test() {
       const obj: TestObject = { a: 1, b: "test", c: [1, 2, 3] };
       const jsonStr: string = JSON.stringify(obj);
       const encoded: string = encodeURIComponent(jsonStr);
-      const url = URL.parseURL(`https://example.com/?obj=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?obj=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("obj")).assertEqual(jsonStr);
     });
 
@@ -332,8 +333,8 @@ export default function URL02Test() {
     it("testURL02Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arrStr: string = "[72,101,108,108,111]";
       const encoded: string = encodeURIComponent(arrStr);
-      const url = URL.parseURL(`https://example.com/?arr=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?arr=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       expect(params.get("arr")).assertEqual(arrStr);
     });
 
@@ -346,9 +347,9 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url =
+      const urlObj =
         URL.parseURL("https://example.com/?hex=0x0102&octal=0o123&binary=0b1010&sci=1e3&decimal=123.456&bigint=12345678901234567890");
-      const params: url.URLParams = url.params;
+      const params: url.URLParams = urlObj.params;
       expect(params.get("hex")).assertEqual("0x0102");
       expect(params.get("octal")).assertEqual("0o123");
       expect(params.get("binary")).assertEqual("0b1010");
@@ -366,8 +367,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?true=true&false=false&zero=0&empty=&null=null&undefined=undefined");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?true=true&false=false&zero=0&empty=&null=null&undefined=undefined");
+      const params: url.URLParams = urlObj.params;
       expect(params.get("true")).assertEqual("true");
       expect(params.get("false")).assertEqual("false");
       expect(params.get("zero")).assertEqual("0");
@@ -385,8 +386,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&%21%40%23=%24%25%5E");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&%21%40%23=%24%25%5E");
+      const params: url.URLParams = urlObj.params;
       expect(params.has("a")).assertTrue();
       expect(params.get("!@#")).assertEqual("$%^");
       expect(params.has("!@#")).assertTrue();
@@ -403,8 +404,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       const keys: string[] = [];
       for (const k of params.keys()) {
         keys.push(k);
@@ -425,8 +426,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       const values: string[] = [];
       for (const v of params.values()) {
         values.push(v);
@@ -447,8 +448,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       const entries: [string, string][] = [];
       for (const e of params.entries()) {
         entries.push(e);
@@ -482,10 +483,10 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?c=3&a=1&b=2");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?c=3&a=1&b=2");
+      const params: url.URLParams = urlObj.params;
       params.sort();
-      expect(url.search).assertEqual("?a=1&b=2&c=3");
+      expect(urlObj.search).assertEqual("?a=1&b=2&c=3");
     });
 
     /**
@@ -497,8 +498,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       expect(params.toString()).assertEqual("a=1&b=2&c=3");
     });
 
@@ -511,8 +512,8 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       const entries: [string, string][] = [];
       params.forEach((value: string, key: string): void => {
         entries.push([key, value]);
@@ -546,12 +547,12 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/");
+      const params: url.URLParams = urlObj.params;
       params.append("key", "value1");
       params.append("key", "value2");
       params.append("key", "value3");
-      expect(url.search).assertEqual("?key=value1&key=value2&key=value3");
+      expect(urlObj.search).assertEqual("?key=value1&key=value2&key=value3");
 
       const values: string[] = params.getAll("key");
       expect(values.length).assertEqual(3);
@@ -570,10 +571,10 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?key=1&key=2&other=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?key=1&key=2&other=3");
+      const params: url.URLParams = urlObj.params;
       params.set("key", "10");
-      expect(url.search).assertEqual("?key=10&other=3");
+      expect(urlObj.search).assertEqual("?key=10&other=3");
 
       const values: string[] = params.getAll("key");
       expect(values.length).assertEqual(1);
@@ -590,12 +591,13 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com/?a=1&b=2&c=3");
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL("https://example.com/?a=1&b=2&c=3");
+      const params: url.URLParams = urlObj.params;
       params.delete("b");
-      expect(url.search).assertEqual("?a=1&c=3");
+      expect(urlObj.search).assertEqual("?a=1&c=3");
       expect(params.has("b")).assertFalse();
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_2600
      * @tc.name testURL02Chapter0026
@@ -607,8 +609,8 @@ export default function URL02Test() {
     it("testURL02Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const invalidUnicode: string = "\\udc04\\ud83d\\udff4";
       const encoded: string = encodeURIComponent(invalidUnicode);
-      const url = URL.parseURL(`https://example.com/?invalid=${encoded}`);
-      const params: url.URLParams = url.params;
+      const urlObj = URL.parseURL(`https://example.com/?invalid=${encoded}`);
+      const params: url.URLParams = urlObj.params;
       const result: string | null = params.get("invalid");
       expect(result !== null).assertTrue();
     });
@@ -844,23 +846,10 @@ export default function URL02Test() {
      */
     it("testURL02Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const invalidEncoded: string = "%ED%B0%84%ED%A0%BD%ED%BF%B4";
-      const urlObj = URL.parseURL(`https://example.com/?invalid=${invalidEncoded}`);
-
-      let params: url.URLParams | null = null;
-      let caughtError: Error | null = null;
-
-      try {
-        params = urlObj.params;
-      } catch (e) {
-        caughtError = e as Error;
-      }
-      expect(caughtError === null).assertTrue();
-      expect(params !== null).assertTrue();
-
-      if (params) {
-        const value: string | null = params.get("invalid");
-        expect(value !== null).assertTrue();
-      }
+      const uriObj: uri.URI = new uri.URI(`https://example.com/?invalid=${invalidEncoded}`);
+      const query: string = uriObj.query;
+      expect(query !== null).assertTrue();
+      expect(query.includes(invalidEncoded)).assertTrue();
     });
 
     /**
@@ -873,42 +862,12 @@ export default function URL02Test() {
      */
     it("testURL02Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const encodedHigh = "%ED%A0%80";
-      const encodedLow = "%ED%B0%80";
-      const encodedMixed = "%ED%A0%80%ED%A0%80";
-
-      const baseUrl = "https://example.com/?";
-      const highParam = "high=" + encodedHigh;
-      const lowParam = "low=" + encodedLow;
-      const mixedParam = "mixed=" + encodedMixed;
-
-      const urlString = baseUrl + highParam + "&" + lowParam + "&" + mixedParam;
-
-      let urlObj: ESObject | null = null;
-      let caughtError: Error | null = null;
-
-      try {
-        urlObj = URL.parseURL(urlString);
-      } catch (e) {
-        caughtError = e as Error;
-      }
-
-      expect(caughtError === null).assertTrue();
-      expect(urlObj !== null).assertTrue();
-
-      if (urlObj) {
-        const params: ESObject = urlObj.params;
-
-        expect(params.has("high")).assertTrue();
-        expect(params.has("low")).assertTrue();
-        expect(params.has("mixed")).assertTrue();
-        const highValue: string | null = params.get("high");
-        const lowValue: string | null = params.get("low");
-        const mixedValue: string | null = params.get("mixed");
-        expect(highValue !== null).assertTrue();
-        expect(lowValue !== null).assertTrue();
-        expect(mixedValue !== null).assertTrue();
-      }
+      const encodedHigh: string = "%ED%A0%80";
+      const encodedLow: string = "%ED%B0%80";
+      const encodedMixed: string = "%ED%A0%80%ED%A0%80";
+      const urlString: string = `https://example.com/?high=${encodedHigh}&low=${encodedLow}&mixed=${encodedMixed}`;
+      const uriObj: uri.URI = new uri.URI(urlString);
+      expect(uriObj.toString()).assertEqual(urlString);
     });
 
     /**
@@ -1057,8 +1016,6 @@ export default function URL02Test() {
       expect(params.get("space")).assertEqual(pairs[3][1]);
     });
 
-    // =============== username ======================
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestTWO_4300
      * @tc.name testURL02Chapter0043
@@ -1068,10 +1025,10 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com");
-      url.username = "john";
-      expect(url.username).assertEqual("john");
-      expect(url.href).assertEqual("https://john@example.com/");
+      const urlObj = URL.parseURL("https://example.com");
+      urlObj.username = "john";
+      expect(urlObj.username).assertEqual("john");
+      expect(urlObj.href).assertEqual("https://john@example.com/");
     });
 
     /**
@@ -1119,12 +1076,12 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://example.com");
+      const urlObj = URL.parseURL("https://example.com");
       const numericStrings: string[] = ["123", "0", "-1", "3.14", "true", "false"];
       for (let i: number = 0; i < numericStrings.length; i++) {
         const val: string = numericStrings[i];
-        url.username = val;
-        expect(url.username).assertEqual(val);
+        urlObj.username = val;
+        expect(urlObj.username).assertEqual(val);
       }
     });
 
@@ -1138,10 +1095,10 @@ export default function URL02Test() {
      */
     it("testURL02Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longUsername: string = "a".repeat(1000);
-      const url = URL.parseURL("https://example.com");
-      url.username = longUsername;
-      expect(url.username).assertEqual(longUsername);
-      expect(url.href).assertEqual(`https://${encodeURIComponent(longUsername)}@example.com/`);
+      const urlObj = URL.parseURL("https://example.com");
+      urlObj.username = longUsername;
+      expect(urlObj.username).assertEqual(longUsername);
+      expect(urlObj.href).assertEqual(`https://${encodeURIComponent(longUsername)}@example.com/`);
     });
 
     /**
@@ -1154,10 +1111,10 @@ export default function URL02Test() {
      */
     it("testURL02Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longUsername: string = "a".repeat(1000);
-      const url = URL.parseURL("https://example.com");
-      url.username = longUsername;
-      expect(url.username).assertEqual(longUsername);
-      expect(url.href).assertEqual(`https://${encodeURIComponent(longUsername)}@example.com/`);
+      const urlObj = URL.parseURL("https://example.com");
+      urlObj.username = longUsername;
+      expect(urlObj.username).assertEqual(longUsername);
+      expect(urlObj.href).assertEqual(`https://${encodeURIComponent(longUsername)}@example.com/`);
     });
 
     /**
@@ -1169,11 +1126,11 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const url = URL.parseURL("https://john@example.com/");
-      expect(url.username).assertEqual("john");
-      url.username = "";
-      expect(url.username).assertEqual("");
-      expect(url.href).assertEqual("https://example.com/");
+      const urlObj = URL.parseURL("https://john@example.com/");
+      expect(urlObj.username).assertEqual("john");
+      urlObj.username = "";
+      expect(urlObj.username).assertEqual("");
+      expect(urlObj.href).assertEqual("https://example.com/");
     });
   });
 }

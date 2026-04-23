@@ -842,6 +842,7 @@ export default function URL01Test() {
       expect(myUrl.hostname).assertEqual('example.com');
       expect(myUrl.host).assertEqual('example.com');
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4500
      * @tc.name testURL01Chapter0045
@@ -861,7 +862,6 @@ export default function URL01Test() {
       expect(myUrl.host).assertEqual('example.com:8080');
     });
 
-    // =============== href ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4600
      * @tc.name testURL01Chapter0046
@@ -982,7 +982,6 @@ export default function URL01Test() {
       expect(myUrl.href).assertEqual(longUrl);
     });
 
-    // =============== origin ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5300
      * @tc.name testURL01Chapter0053
@@ -1037,7 +1036,6 @@ export default function URL01Test() {
       expect(myUrl.origin).assertEqual('null');
     });
 
-    // =============== password ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5700
      * @tc.name testURL01Chapter0057
@@ -1124,7 +1122,6 @@ export default function URL01Test() {
       expect(myUrl.href).assertEqual('https://user:pass%3Aword@example.com/');
     });
 
-    // =============== pathname ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6200
      * @tc.name testURL01Chapter0062
@@ -1236,7 +1233,6 @@ export default function URL01Test() {
       expect(myUrl.pathname).assertEqual('//a//b');
     });
 
-    // =============== port ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6900
      * @tc.name testURL01Chapter0069
@@ -1389,7 +1385,6 @@ export default function URL01Test() {
       expect(myUrl.host).assertEqual('example.com');
     });
 
-    // =============== protocol ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7800
      * @tc.name testURL01Chapter0078
@@ -1491,7 +1486,6 @@ export default function URL01Test() {
       expect(myUrl.href).assertEqual('file://example.com/');
     });
 
-    // =============== search ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8400
      * @tc.name testURL01Chapter0084
