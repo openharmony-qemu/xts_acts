@@ -84,10 +84,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0100
      * @tc.name      testNumericalEqualityOperators0001
-     * @tc.desc      'A comparison that uses the operators ''=='' and ''==='' is evaluated to true if both 
-     *               operands are of Type char and have the same value, i.e., both operands represent the same Unicode code point. 
-     *               The result produced by a != b and !(a == b) is the same in all cases. The result produced by a !== b and !
-     *               (a === b) is the same.'
+     * @tc.desc      Verify equality and inequality operators for char type values with same and different Unicode code points
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -108,7 +105,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0200
      * @tc.name      testNumericalEqualityOperators0002
-     * @tc.desc      Integer equality params: 11 == 11 is true
+     * @tc.desc      Verify equality of two identical byte values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -121,7 +118,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0300
      * @tc.name      testNumericalEqualityOperators0003
-     * @tc.desc      Integer equality params: 23 === 45 is false
+     * @tc.desc      Verify inequality of byte and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -134,7 +131,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0400
      * @tc.name      testNumericalEqualityOperators0004
-     * @tc.desc      Integer equality params: 55 != 12 is true
+     * @tc.desc      Verify inequality of byte and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -147,7 +144,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0500
      * @tc.name      testNumericalEqualityOperators0005
-     * @tc.desc      Integer equality params: 13 !== 24 is true
+     * @tc.desc      Verify inequality of byte and long values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -160,7 +157,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0600
      * @tc.name      testNumericalEqualityOperators0006
-     * @tc.desc      Integer equality params: 33 == 33.0f is true
+     * @tc.desc      Verify equality of byte and float values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -173,7 +170,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0700
      * @tc.name      testNumericalEqualityOperators0007
-     * @tc.desc      Integer equality params: 21 == 21.0 is true
+     * @tc.desc      Verify equality of byte and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -186,7 +183,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0800
      * @tc.name      testNumericalEqualityOperators0008
-     * @tc.desc      Integer equality params: 127 == 127n is true
+     * @tc.desc      Verify equality of byte and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -199,7 +196,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_0900
      * @tc.name      testNumericalEqualityOperators0009
-     * @tc.desc      Integer equality params: -3 == -3 is true
+     * @tc.desc      Verify equality of negative short and byte values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -212,7 +209,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1000
      * @tc.name      testNumericalEqualityOperators0010
-     * @tc.desc      Integer equality params: -1 === 1 is false
+     * @tc.desc      Verify inequality of negative and positive short values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -225,7 +222,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1100
      * @tc.name      testNumericalEqualityOperators0011
-     * @tc.desc      Integer equality params: 127 != 128 is true
+     * @tc.desc      Verify inequality of short and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -238,7 +235,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1200
      * @tc.name      testNumericalEqualityOperators0012
-     * @tc.desc      Integer equality params: -128 !== -122 is true
+     * @tc.desc      Verify inequality of negative short and long values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -251,7 +248,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1300
      * @tc.name      testNumericalEqualityOperators0013
-     * @tc.desc      Integer equality params: 1 == 1.0f is true
+     * @tc.desc      Verify equality of short and float values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -264,7 +261,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1400
      * @tc.name      testNumericalEqualityOperators0014
-     * @tc.desc      Integer equality params: 32767 == 32767.0 is true
+     * @tc.desc      Verify equality of short and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -277,7 +274,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1500
      * @tc.name      testNumericalEqualityOperators0015
-     * @tc.desc      Integer equality params: -32768 == -32768n is true
+     * @tc.desc      Verify equality of negative short and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -290,7 +287,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1600
      * @tc.name      testNumericalEqualityOperators0016
-     * @tc.desc      Integer equality params: 13 == 13 is true
+     * @tc.desc      Verify equality of int and byte values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -303,7 +300,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1700
      * @tc.name      testNumericalEqualityOperators0017
-     * @tc.desc      Integer equality params: 127 === 145 is false
+     * @tc.desc      Verify inequality of int and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -316,7 +313,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1800
      * @tc.name      testNumericalEqualityOperators0018
-     * @tc.desc      Integer equality params: -1 != 1 is true
+     * @tc.desc      Verify inequality of negative and positive int values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -329,7 +326,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_1900
      * @tc.name      testNumericalEqualityOperators0019
-     * @tc.desc      Integer equality params: 897 !== 789 is true
+     * @tc.desc      Verify inequality of int and long values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -342,7 +339,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2000
      * @tc.name      testNumericalEqualityOperators0020
-     * @tc.desc      Integer equality params: 1342 == 1342.0f is true
+     * @tc.desc      Verify equality of int and float values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -355,7 +352,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2100
      * @tc.name      testNumericalEqualityOperators0021
-     * @tc.desc      Integer equality params: -9 == -9.0 is true
+     * @tc.desc      Verify equality of negative int and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -368,7 +365,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2200
      * @tc.name      testNumericalEqualityOperators0022
-     * @tc.desc      Integer equality params: 40000 == 40000n is true
+     * @tc.desc      Verify equality of int and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -381,7 +378,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2300
      * @tc.name      testNumericalEqualityOperators0023
-     * @tc.desc      Integer equality params: 1 == 1 is true
+     * @tc.desc      Verify equality of long and byte values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -394,7 +391,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2400
      * @tc.name      testNumericalEqualityOperators0024
-     * @tc.desc      Integer equality params: 32768 === -32768 is false
+     * @tc.desc      Verify inequality of long and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -407,7 +404,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2500
      * @tc.name      testNumericalEqualityOperators0025
-     * @tc.desc      Integer equality params: 2341 != 12311 is true
+     * @tc.desc      Verify inequality of long and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -420,7 +417,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2600
      * @tc.name      testNumericalEqualityOperators0026
-     * @tc.desc      Integer equality params: 2 !== -2 is true
+     * @tc.desc      Verify inequality of positive and negative long values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -433,7 +430,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2700
      * @tc.name      testNumericalEqualityOperators0027
-     * @tc.desc      Integer equality params: 231 == 231.0f is true
+     * @tc.desc      Verify equality of long and float values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -446,7 +443,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2800
      * @tc.name      testNumericalEqualityOperators0028
-     * @tc.desc      Integer equality params: -1 == -1.0 is true
+     * @tc.desc      Verify equality of negative long and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -459,7 +456,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_2900
      * @tc.name      testNumericalEqualityOperators0029
-     * @tc.desc      Integer equality params: 213 == 213n is true
+     * @tc.desc      Verify equality of long and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -472,7 +469,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3000
      * @tc.name      testNumericalEqualityOperators0030
-     * @tc.desc      Integer equality params: 33.0f == 33 is true
+     * @tc.desc      Verify equality of float and byte values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -485,7 +482,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3100
      * @tc.name      testNumericalEqualityOperators0031
-     * @tc.desc      Integer equality params: 32766.9f === 32767 is false
+     * @tc.desc      Verify inequality of float and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -498,7 +495,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3200
      * @tc.name      testNumericalEqualityOperators0032
-     * @tc.desc      Integer equality params: 11.9f != 12 is true
+     * @tc.desc      Verify inequality of float and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -511,7 +508,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3300
      * @tc.name      testNumericalEqualityOperators0033
-     * @tc.desc      Integer equality params: -0.1f !== 0 is true
+     * @tc.desc      Verify inequality of negative float and long values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -524,7 +521,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3400
      * @tc.name      testNumericalEqualityOperators0034
-     * @tc.desc      Integer equality params: 3.14159f == 3.14159f is true
+     * @tc.desc      Verify equality of two identical float values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -537,7 +534,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3500
      * @tc.name      testNumericalEqualityOperators0035
-     * @tc.desc      Integer equality params: -3.0f == -3.0 is true
+     * @tc.desc      Verify equality of negative float and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -550,7 +547,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3600
      * @tc.name      testNumericalEqualityOperators0036
-     * @tc.desc      Integer equality params: 14678.0f == 14678n is true
+     * @tc.desc      Verify equality of float and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -563,7 +560,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3700
      * @tc.name      testNumericalEqualityOperators0037
-     * @tc.desc      Integer equality params: 127.0 == 127 is true
+     * @tc.desc      Verify equality of double and byte values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -576,7 +573,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3800
      * @tc.name      testNumericalEqualityOperators0038
-     * @tc.desc      Integer equality params: 7.1 === 7 is false
+     * @tc.desc      Verify inequality of double and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -589,7 +586,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_3900
      * @tc.name      testNumericalEqualityOperators0039
-     * @tc.desc      Integer equality params: 12321.1 != 12321 is true
+     * @tc.desc      Verify inequality of double and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -602,7 +599,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4000
      * @tc.name      testNumericalEqualityOperators0040
-     * @tc.desc      Integer equality params: 9863.0 !== 4 is true
+     * @tc.desc      Verify inequality of double and long values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -615,7 +612,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4100
      * @tc.name      testNumericalEqualityOperators0041
-     * @tc.desc      Integer equality params: 11.0 == 11.0f is true
+     * @tc.desc      Verify equality of double and float values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -628,7 +625,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4200
      * @tc.name      testNumericalEqualityOperators0042
-     * @tc.desc      Integer equality params: 387.321 == 387.321 is true
+     * @tc.desc      Verify equality of two identical double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -641,7 +638,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4300
      * @tc.name      testNumericalEqualityOperators0043
-     * @tc.desc      Integer equality params: 90.0 == 90n is true
+     * @tc.desc      Verify equality of double and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -654,7 +651,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4400
      * @tc.name      testNumericalEqualityOperators0044
-     * @tc.desc      Integer equality params: 1n == 0b1 is true
+     * @tc.desc      Verify equality of binary literal byte and bigint values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -667,7 +664,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4500
      * @tc.name      testNumericalEqualityOperators0045
-     * @tc.desc      Integer equality params: 1111n === 1112 is false
+     * @tc.desc      Verify inequality of bigint and short values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -678,22 +675,9 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4600
-     * @tc.name      testNumericalEqualityOperators0046
-     * @tc.desc      Integer equality params: 1111n == 1112 is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left: bigint = 1111n
-      let right: short = 1112
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4700
      * @tc.name      testNumericalEqualityOperators0047
-     * @tc.desc      Integer equality params: -2147483648n != -2147483648 is false
+     * @tc.desc      Verify equality of negative bigint and int values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -706,7 +690,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4800
      * @tc.name      testNumericalEqualityOperators0048
-     * @tc.desc      Integer equality params: 2n !== 2 is false
+     * @tc.desc      Verify equality of bigint and long values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -719,7 +703,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_4900
      * @tc.name      testNumericalEqualityOperators0049
-     * @tc.desc      Integer equality params: 36n === 35.0f is false
+     * @tc.desc      Verify inequality of bigint and float values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -732,7 +716,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5000
      * @tc.name      testNumericalEqualityOperators0050
-     * @tc.desc      Integer equality params: 24n === 24.1 is false
+     * @tc.desc      Verify inequality of bigint and double values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -745,7 +729,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5100
      * @tc.name      testNumericalEqualityOperators0051
-     * @tc.desc      Integer equality params: 121n === 212n is false
+     * @tc.desc      Verify inequality of two different bigint values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -758,7 +742,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5200
      * @tc.name      testNumericalEqualityOperators0052
-     * @tc.desc      Integer equality params: 2 === 1 is false
+     * @tc.desc      Verify inequality of two different byte values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -771,7 +755,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5300
      * @tc.name      testNumericalEqualityOperators0053
-     * @tc.desc      Integer equality params: 1 != 2 is true
+     * @tc.desc      Verify inequality of two different byte values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -784,7 +768,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5400
      * @tc.name      testNumericalEqualityOperators0054
-     * @tc.desc      Integer equality params: -2 !== -1 is true
+     * @tc.desc      Verify inequality of two different negative byte values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -797,7 +781,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5500
      * @tc.name      testNumericalEqualityOperators0055
-     * @tc.desc      Integer equality params: -34 == -34 is true
+     * @tc.desc      Verify equality of negative byte and short values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -810,7 +794,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5600
      * @tc.name      testNumericalEqualityOperators0056
-     * @tc.desc      Integer equality params: 3 != 3 is false
+     * @tc.desc      Verify equality of byte and short values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -823,7 +807,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5700
      * @tc.name      testNumericalEqualityOperators0057
-     * @tc.desc      Integer equality params: 11 !== 11 is false
+     * @tc.desc      Verify equality of byte and short values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -836,7 +820,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5800
      * @tc.name      testNumericalEqualityOperators0058
-     * @tc.desc      Integer equality params: 0b1000011 == 67 is true
+     * @tc.desc      Verify equality of binary literal byte and int values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -849,7 +833,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_5900
      * @tc.name      testNumericalEqualityOperators0059
-     * @tc.desc      Integer equality params: 2 === 1 is false
+     * @tc.desc      Verify inequality of byte and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -862,7 +846,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6000
      * @tc.name      testNumericalEqualityOperators0060
-     * @tc.desc      Integer equality params: 88 !== 99 is true
+     * @tc.desc      Verify inequality of byte and int values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -875,7 +859,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6100
      * @tc.name      testNumericalEqualityOperators0061
-     * @tc.desc      Integer equality params: 2 == 2 is true
+     * @tc.desc      Verify equality of byte and long values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -888,7 +872,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6200
      * @tc.name      testNumericalEqualityOperators0062
-     * @tc.desc      Integer equality params: 4 === 4 is true
+     * @tc.desc      Verify equality of byte and long values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -901,7 +885,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6300
      * @tc.name      testNumericalEqualityOperators0063
-     * @tc.desc      Integer equality params: 100 != 1000 is true
+     * @tc.desc      Verify inequality of byte and long values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -914,7 +898,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6400
      * @tc.name      testNumericalEqualityOperators0064
-     * @tc.desc      Integer equality params: 22 != 23.0f is true
+     * @tc.desc      Verify inequality of byte and float values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -927,7 +911,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6500
      * @tc.name      testNumericalEqualityOperators0065
-     * @tc.desc      Integer equality params: 33 !== -33.0f is true
+     * @tc.desc      Verify inequality of byte and negative float values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -940,7 +924,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6600
      * @tc.name      testNumericalEqualityOperators0066
-     * @tc.desc      Integer equality params: 1 != 1.2 is true
+     * @tc.desc      Verify inequality of byte and double values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -953,7 +937,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6700
      * @tc.name      testNumericalEqualityOperators0067
-     * @tc.desc      Integer equality params: 24 !== 789.2 is true
+     * @tc.desc      Verify inequality of byte and double values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -966,7 +950,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6800
      * @tc.name      testNumericalEqualityOperators0068
-     * @tc.desc      Integer equality params: 1 != 2n is true
+     * @tc.desc      Verify inequality of byte and bigint values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -979,7 +963,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6900
      * @tc.name      testNumericalEqualityOperators0069
-     * @tc.desc      Integer equality params: 1 !== 2n is true
+     * @tc.desc      Verify inequality of byte and bigint values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -992,7 +976,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7000
      * @tc.name      testNumericalEqualityOperators0070
-     * @tc.desc      Floating number equality
+     * @tc.desc      Verify inequality between normal float and NaN values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1008,7 +992,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7100
      * @tc.name      testNumericalEqualityOperators0071
-     * @tc.desc      Floating number equality
+     * @tc.desc      Verify that NaN is not equal to itself
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1021,7 +1005,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7200
      * @tc.name      testNumericalEqualityOperators0072
-     * @tc.desc      Floating number equality
+     * @tc.desc      Verify equality between positive zero and negative zero
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1036,7 +1020,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7300
      * @tc.name      testNumericalEqualityOperators0073
-     * @tc.desc      Floating number equality
+     * @tc.desc      Verify inequality of two different double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1053,7 +1037,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7400
      * @tc.name      testNumericalEqualityOperators0074
-     * @tc.desc      Floating number equality
+     * @tc.desc      Verify inequality between normal double and infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1074,7 +1058,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7500
      * @tc.name      testNumericalEqualityOperators0075
-     * @tc.desc      Integer and double infinity equality params: 5 == 5 is true
+     * @tc.desc      Verify equality of two identical integer values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1087,7 +1071,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7600
      * @tc.name      testNumericalEqualityOperators0076
-     * @tc.desc      Integer and double infinity equality params: 10 != 5 is true
+     * @tc.desc      Verify inequality of two different integer values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1098,35 +1082,9 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7700
-     * @tc.name      testNumericalEqualityOperators0077
-     * @tc.desc      Integer and double infinity equality params: 5 != 5 is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 5
-      let right = 5
-      expect(left).assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7800
-     * @tc.name      testNumericalEqualityOperators0078
-     * @tc.desc      Integer and double infinity equality params: 10 == 5 is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 10
-      let right = 5
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7900
      * @tc.name      testNumericalEqualityOperators0079
-     * @tc.desc      Integer and double infinity equality params: 1 == 1.0 is true
+     * @tc.desc      Verify equality of integer and double values with equivalent numeric values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1139,7 +1097,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8000
      * @tc.name      testNumericalEqualityOperators0080
-     * @tc.desc      Integer and double infinity equality params: 0 != 0.5 is true
+     * @tc.desc      Verify inequality of integer and double values with different values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1152,7 +1110,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8100
      * @tc.name      testNumericalEqualityOperators0081
-     * @tc.desc      Integer and double infinity equality params: 0 == -0 is true
+     * @tc.desc      Verify equality between zero and negative zero values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1163,100 +1121,9 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8200
-     * @tc.name      testNumericalEqualityOperators0082
-     * @tc.desc      Integer and double infinity equality params: 5 === 5 is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 5
-      let right = 5
-      expect(left).assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8300
-     * @tc.name      testNumericalEqualityOperators0083
-     * @tc.desc      Integer and double infinity equality params: 10 !== 5 is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 10
-      let right = 5
-      expect(left).not().assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8400
-     * @tc.name      testNumericalEqualityOperators0084
-     * @tc.desc      Integer and double infinity equality params: 5 !== 5 is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 5
-      let right = 5
-      expect(left).assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8500
-     * @tc.name      testNumericalEqualityOperators0085
-     * @tc.desc      Integer and double infinity equality params: 10 === 5 is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 10
-      let right = 5
-      expect(left).not().assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8600
-     * @tc.name      testNumericalEqualityOperators0086
-     * @tc.desc      Integer and double infinity equality params: 1 === 1.0 is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 1
-      let right = 1.0
-      expect(left).assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8700
-     * @tc.name      testNumericalEqualityOperators0087
-     * @tc.desc      Integer and double infinity equality params: 0 !== 0.5 is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 0
-      let right = 0.5
-      expect(left).not().assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8800
-     * @tc.name      testNumericalEqualityOperators0088
-     * @tc.desc      Integer and double infinity equality params: 0 === -0 is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 0
-      let right = -0
-      expect(left).assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_8900
      * @tc.name      testNumericalEqualityOperators0089
-     * @tc.desc      Integer and double infinity equality params: 0.1 != Double.POSITIVE_INFINITY is true
+     * @tc.desc      Verify inequality between double and positive infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1269,7 +1136,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9000
      * @tc.name      testNumericalEqualityOperators0090
-     * @tc.desc      Integer and double infinity equality params: 0.1 == Double.POSITIVE_INFINITY is false
+     * @tc.desc      Verify inequality between double and positive infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1282,7 +1149,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9100
      * @tc.name      testNumericalEqualityOperators0091
-     * @tc.desc      Integer and double infinity equality params: Double.POSITIVE_INFINITY != 0.1 is true
+     * @tc.desc      Verify inequality between positive infinity and double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1295,7 +1162,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9200
      * @tc.name      testNumericalEqualityOperators0092
-     * @tc.desc      Integer and double infinity equality params: Double.POSITIVE_INFINITY == 0.1 is false
+     * @tc.desc      Verify inequality between positive infinity and double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1308,7 +1175,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9300
      * @tc.name      testNumericalEqualityOperators0093
-     * @tc.desc      Integer and double infinity equality params: Double.NEGATIVE_INFINITY != 0.1 is true
+     * @tc.desc      Verify inequality between negative infinity and double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1321,7 +1188,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9400
      * @tc.name      testNumericalEqualityOperators0094
-     * @tc.desc      Integer and double infinity equality params: Double.NEGATIVE_INFINITY == 0.1 is false
+     * @tc.desc      Verify inequality between negative infinity and double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1334,7 +1201,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9500
      * @tc.name      testNumericalEqualityOperators0095
-     * @tc.desc      Integer and double infinity equality params: 0.1 != Double.NEGATIVE_INFINITY is true
+     * @tc.desc      Verify inequality between double and negative infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1347,7 +1214,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9600
      * @tc.name      testNumericalEqualityOperators0096
-     * @tc.desc      Integer and double infinity equality params: 0.1 == Double.NEGATIVE_INFINITY is false
+     * @tc.desc      Verify inequality between double and negative infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1360,7 +1227,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9700
      * @tc.name      testNumericalEqualityOperators0097
-     * @tc.desc      Integer and double infinity equality params: 0.3 !== Double.POSITIVE_INFINITY is true
+     * @tc.desc      Verify inequality between double and positive infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1373,7 +1240,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9800
      * @tc.name      testNumericalEqualityOperators0098
-     * @tc.desc      Integer and double infinity equality params: 0.3 === Double.POSITIVE_INFINITY is false
+     * @tc.desc      Verify inequality between double and positive infinity values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1386,7 +1253,7 @@ export default function NumericalEqualityOperatorsTest() {
     /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9900
      * @tc.name      testNumericalEqualityOperators0099
-     * @tc.desc      Integer and double infinity equality params: Double.POSITIVE_INFINITY !== 0.3 is true
+     * @tc.desc      Verify inequality between positive infinity and double values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

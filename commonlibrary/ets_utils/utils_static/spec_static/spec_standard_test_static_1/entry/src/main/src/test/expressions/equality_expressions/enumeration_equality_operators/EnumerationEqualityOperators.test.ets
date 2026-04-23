@@ -37,22 +37,8 @@ enum Enum_1 { first, second, third = 0 }
 enum Enum_2 { first = 11, second = 11, third = 11 }
 enum Enum_3 { first = "A", second = "B", third = "A" }
 enum Enum_4 { first = "ABC", second = "ABC", third = "ABC" }
-enum Enum_5 { first, second, third = 0 }
-enum Enum_6 { first = 11, second = 11, third = 11 }
-enum Enum_7 { first = "A", second = "B", third = "A" }
-enum Enum_8 { first = "ABC", second = "ABC", third = "ABC" }
-enum Enum_9 { first, second, third = 0 }
-enum Enum_10 { first = 11, second = 11, third = 11 }
-enum Enum_11 { first = "A", second = "B", third = "A" }
-enum Enum_12 { first = "ABC", second = "ABC", third = "ABC" }
-enum Enum_13 { first, second, third = 0 }
-enum Enum_14 { first = 11, second = 11, third = 11 }
-enum Enum_15 { first = "A", second = "B", third = "A" }
-enum Enum_16 { first = "ABC", second = "ABC", third = "ABC" }
 enum Enum1_17 { first }
-enum Enum2_17 { first }
 enum Enum1_18 { first = "A" }
-enum Enum2_18 { first = "A" }
 export default function EnumerationEqualityOperatorsTest() {
   describe("EnumerationEqualityOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -98,9 +84,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_5: Enum_5[] = [Enum_5.first, Enum_5.second, Enum_5.third]
-      let foo_5: (i: int) => Enum_5 = (i: int): Enum_5 => arr_5[i]
-      expect(foo_5(0) != foo_5(1) && foo_5(1) != arr_5[2] && foo_5(0) == Enum_5.third).assertTrue()
+      let arr_5: Enum_1[] = [Enum_1.first, Enum_1.second, Enum_1.third]
+      let foo_5: (i: int) => Enum_1 = (i: int): Enum_1 => arr_5[i]
+      expect(foo_5(0) != foo_5(1) && foo_5(1) != arr_5[2] && foo_5(0) == Enum_1.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0300
@@ -111,9 +97,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_6: Enum_6[] = [Enum_6.first, Enum_6.second, Enum_6.third]
-      let foo_6: (i: int) => Enum_6 = (i: int): Enum_6 => arr_6[i]
-      expect(foo_6(0) == foo_6(1) && foo_6(1) == arr_6[2] && foo_6(0) == Enum_6.third).assertTrue()
+      let arr_6: Enum_2[] = [Enum_2.first, Enum_2.second, Enum_2.third]
+      let foo_6: (i: int) => Enum_2 = (i: int): Enum_2 => arr_6[i]
+      expect(foo_6(0) == foo_6(1) && foo_6(1) == arr_6[2] && foo_6(0) == Enum_2.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0400
@@ -124,9 +110,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_7: Enum_7[] = [Enum_7.first, Enum_7.second, Enum_7.third]
-      let foo_7: (i: int) => Enum_7 = (i: int): Enum_7 => arr_7[i]
-      expect(foo_7(0) != foo_7(1) && foo_7(1) != arr_7[2] && foo_7(0) == Enum_7.third).assertTrue()
+      let arr_7: Enum_3[] = [Enum_3.first, Enum_3.second, Enum_3.third]
+      let foo_7: (i: int) => Enum_3 = (i: int): Enum_3 => arr_7[i]
+      expect(foo_7(0) != foo_7(1) && foo_7(1) != arr_7[2] && foo_7(0) == Enum_3.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0500
@@ -137,9 +123,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_8: Enum_8[] = [Enum_8.first, Enum_8.second, Enum_8.third]
-      let foo_8: (i: int) => Enum_8 = (i: int): Enum_8 => arr_8[i]
-      expect(foo_8(0) == foo_8(1) && foo_8(1) == arr_8[2] && foo_8(0) == Enum_8.third).assertTrue()
+      let arr_8: Enum_4[] = [Enum_4.first, Enum_4.second, Enum_4.third]
+      let foo_8: (i: int) => Enum_4 = (i: int): Enum_4 => arr_8[i]
+      expect(foo_8(0) == foo_8(1) && foo_8(1) == arr_8[2] && foo_8(0) == Enum_4.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0600
@@ -150,10 +136,10 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum_9.first !== Enum_9.second && Enum_9.second !== Enum_9.third && Enum_9.first === Enum_9.third).assertTrue()
-      expect(Enum_10.first === Enum_10.second && Enum_10.second === Enum_10.third && Enum_10.first === Enum_10.third).assertTrue()
-      expect(Enum_11.first !== Enum_11.second && Enum_11.second !== Enum_11.third && Enum_11.first === Enum_11.third).assertTrue()
-      expect(Enum_12.first === Enum_12.second && Enum_12.second === Enum_12.third && Enum_12.first === Enum_12.third).assertTrue()
+      expect(Enum_1.first !== Enum_1.second && Enum_1.second !== Enum_1.third && Enum_1.first === Enum_1.third).assertTrue()
+      expect(Enum_2.first === Enum_2.second && Enum_2.second === Enum_2.third && Enum_2.first === Enum_2.third).assertTrue()
+      expect(Enum_3.first !== Enum_3.second && Enum_3.second !== Enum_3.third && Enum_3.first === Enum_3.third).assertTrue()
+      expect(Enum_4.first === Enum_4.second && Enum_4.second === Enum_4.third && Enum_4.first === Enum_4.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0700
@@ -164,9 +150,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_13: Enum_13[] = [Enum_13.first, Enum_13.second, Enum_13.third]
-      let foo_13: (i: int) => Enum_13 = (i: int): Enum_13 => arr_13[i]
-      expect(foo_13(0) !== foo_13(1) && foo_13(1) !== arr_13[2] && foo_13(0) === Enum_13.third).assertTrue()
+      let arr_13: Enum_1[] = [Enum_1.first, Enum_1.second, Enum_1.third]
+      let foo_13: (i: int) => Enum_1 = (i: int): Enum_1 => arr_13[i]
+      expect(foo_13(0) !== foo_13(1) && foo_13(1) !== arr_13[2] && foo_13(0) === Enum_1.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0800
@@ -177,9 +163,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_14: Enum_14[] = [Enum_14.first, Enum_14.second, Enum_14.third]
-      let foo_14: (i: int) => Enum_14 = (i: int): Enum_14 => arr_14[i]
-      expect(foo_14(0) === foo_14(1) && foo_14(1) === arr_14[2] && foo_14(0) === Enum_14.third).assertTrue()
+      let arr_14: Enum_2[] = [Enum_2.first, Enum_2.second, Enum_2.third]
+      let foo_14: (i: int) => Enum_2 = (i: int): Enum_2 => arr_14[i]
+      expect(foo_14(0) === foo_14(1) && foo_14(1) === arr_14[2] && foo_14(0) === Enum_2.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_0900
@@ -190,9 +176,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_15: Enum_15[] = [Enum_15.first, Enum_15.second, Enum_15.third]
-      let foo_15: (i: int) => Enum_15 = (i: int): Enum_15 => arr_15[i]
-      expect(foo_15(0) !== foo_15(1) && foo_15(1) !== arr_15[2] && foo_15(0) === Enum_15.third).assertTrue()
+      let arr_15: Enum_3[] = [Enum_3.first, Enum_3.second, Enum_3.third]
+      let foo_15: (i: int) => Enum_3 = (i: int): Enum_3 => arr_15[i]
+      expect(foo_15(0) !== foo_15(1) && foo_15(1) !== arr_15[2] && foo_15(0) === Enum_3.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_1000
@@ -203,9 +189,9 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr_16: Enum_16[] = [Enum_16.first, Enum_16.second, Enum_16.third]
-      let foo_16: (i: int) => Enum_16 = (i: int): Enum_16 => arr_16[i]
-      expect(foo_16(0) === foo_16(1) && foo_16(1) === arr_16[2] && foo_16(0) === Enum_16.third).assertTrue()
+      let arr_16: Enum_4[] = [Enum_4.first, Enum_4.second, Enum_4.third]
+      let foo_16: (i: int) => Enum_4 = (i: int): Enum_4 => arr_16[i]
+      expect(foo_16(0) === foo_16(1) && foo_16(1) === arr_16[2] && foo_16(0) === Enum_4.third).assertTrue()
     })
    /**
     * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_1100
@@ -216,8 +202,8 @@ export default function EnumerationEqualityOperatorsTest() {
     * @tc.level     Level 2
     */
     it("testEnumerationEqualityOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum1_17.first).assertEqual(Enum2_17.first);
-      expect(Enum1_18.first).assertEqual(Enum2_18.first);
+      expect(Enum1_17.first).assertEqual(Enum1_17.first);
+      expect(Enum1_18.first).assertEqual(Enum1_18.first);
     })
   })
 }

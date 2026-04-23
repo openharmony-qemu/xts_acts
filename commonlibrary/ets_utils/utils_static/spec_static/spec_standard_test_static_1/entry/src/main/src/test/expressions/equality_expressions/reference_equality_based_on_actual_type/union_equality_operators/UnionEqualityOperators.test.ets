@@ -33,412 +33,181 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
+
+enum Color { Red, Green, Blue }
+
+function assertIsNotEqual(ps: string, qs: string): string {
+    return `\n${ps} != ${qs}, expected true, got false`;
+}
+
+function assertIsEqual(ps: string, qs: string): string {
+    return `\n${ps} == ${qs}, expected false, got true`;
+}
+
 function func_17_2(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_10_2(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_31_1(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_33_2(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_33_1(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_24_1(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_5_1(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_29_1(p: number|Size|boolean, q: boolean|Size, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_12_1(p: int|boolean, q: string|long, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_6_2(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_29_2(p: number|Size|boolean, q: boolean|Size, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_12_2(p: int|boolean, q: string|long, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_14_2(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_17_1(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_22_2(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_22_1(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_9_1(p: number|Size|boolean, q: number|Size|boolean, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_32_1(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_30_2(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_27_1(p: number|Size|boolean, q: number|Size|boolean, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_20_1(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_2_1(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_10_1(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_1_1(p: int|boolean, q: string|long, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_5_2(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_6_1(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_4_2(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_4_1(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
-enum Color { Red, Green, Blue }
 function func_28_2(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_13_2(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
-}
-function func_3_1(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
-}
-function func_3_2(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_30_1(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_8_2(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_27_2(p: number|Size|boolean, q: number|Size|boolean, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_8_1(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_18_1(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_21_1(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_14_1(p: byte|short|Error, q: char|long|Error, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
-}
-function func_9_2(p: number|Size|boolean, q: number|Size|boolean, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_11_1(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+    return (p == q && q == p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_28_1(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_13_1(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_32_2(p: long|bigint, q: bigint|int, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_31_2(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_11_2(p: boolean|bigint, q: bigint|string, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_18_2(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_24_2(p: Error|number|boolean, q: string|number|boolean, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_21_2(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_20_2(p: number|string|boolean, q: char|Error|string|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_1_2(p: int|boolean, q: string|long, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_16_1(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_2_2(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p != q || q != p) ? assertIsEqual(ps, qs) : '';
 }
 function func_16_2(p: number|string, q: Object|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_26_2(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_26_1(p: Color|string, q: number|Color|null, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 function func_19_2(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+    return (p != q && q != p) ? '' : assertIsNotEqual(ps, qs);
 }
 function func_19_1(p: Object|string, q: Error|string, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+    return (p == q || q == p) ? assertIsEqual(ps, qs) : '';
 }
 export default function unionEqualityOperators() {
   describe("unionEqualityOperators", () => {

@@ -54,13 +54,13 @@ export default function EqualityExpressionsTest() {
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0100
      * @tc.name      testEqualityExpressions0001
-     * @tc.desc      comparison with literals - decimal literal
+     * @tc.desc      Verify equality and inequality operations for decimal literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -77,7 +77,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0200
      * @tc.name      testEqualityExpressions0002
-     * @tc.desc      comparison with literals - hex literal
+     * @tc.desc      Verify equality and inequality operations for hexadecimal literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -94,7 +94,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0300
      * @tc.name      testEqualityExpressions0003
-     * @tc.desc      comparison with literals - octal literal
+     * @tc.desc      Verify equality and inequality operations for octal literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -111,7 +111,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0400
      * @tc.name      testEqualityExpressions0004
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality and inequality operations for binary literals
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -128,7 +128,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0500
      * @tc.name      testEqualityExpressions0005
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality comparison between null values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -143,7 +143,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0600
      * @tc.name      testEqualityExpressions0006
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing null values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -158,7 +158,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0700
      * @tc.name      testEqualityExpressions0007
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality comparison between undefined values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -173,7 +173,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0800
      * @tc.name      testEqualityExpressions0008
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality comparison for floating-point number values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -188,7 +188,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_0900
      * @tc.name      testEqualityExpressions0009
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing floating-point numbers
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -203,7 +203,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1000
      * @tc.name      testEqualityExpressions0010
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify inequality comparison between different boolean values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -218,7 +218,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1100
      * @tc.name      testEqualityExpressions0011
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing different booleans
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -233,7 +233,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1200
      * @tc.name      testEqualityExpressions0012
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify inequality comparison between different single characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -248,7 +248,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1300
      * @tc.name      testEqualityExpressions0013
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing different single characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -263,7 +263,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1400
      * @tc.name      testEqualityExpressions0014
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality comparison for identical string values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -278,7 +278,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1500
      * @tc.name      testEqualityExpressions0015
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing identical strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -293,7 +293,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1600
      * @tc.name      testEqualityExpressions0016
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify inequality comparison between different integer values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -308,7 +308,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1700
      * @tc.name      testEqualityExpressions0017
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing different integers
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -323,7 +323,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1800
      * @tc.name      testEqualityExpressions0018
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for empty Object arrays
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -338,7 +338,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_1900
      * @tc.name      testEqualityExpressions0019
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for identical function expressions
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -353,7 +353,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2000
      * @tc.name      testEqualityExpressions0020
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify reference equality for arrays containing identical functions
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -368,7 +368,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2100
      * @tc.name      testEqualityExpressions0021
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify logical operation results combined with equality expressions
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -385,7 +385,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2200
      * @tc.name      testEqualityExpressions0022
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equality of relational operation results
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -400,7 +400,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2300
      * @tc.name      testEqualityExpressions0023
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify equivalence of inequality and negated equality operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -416,7 +416,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2400
      * @tc.name      testEqualityExpressions0024
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify direct equality assertion for identical boolean values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -430,7 +430,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2500
      * @tc.name      testEqualityExpressions0025
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify direct equality assertion for identical integer values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -444,7 +444,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2600
      * @tc.name      testEqualityExpressions0026
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify direct equality assertion for identical character values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -458,7 +458,7 @@ export default function EqualityExpressionsTest() {
     /**
      * @tc.number    SUB_EQUALITY_EXPRESSIONS_TEST_2700
      * @tc.name      testEqualityExpressions0027
-     * @tc.desc      comparison with literals - binary literal
+     * @tc.desc      Verify direct equality assertion for identical floating-point values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

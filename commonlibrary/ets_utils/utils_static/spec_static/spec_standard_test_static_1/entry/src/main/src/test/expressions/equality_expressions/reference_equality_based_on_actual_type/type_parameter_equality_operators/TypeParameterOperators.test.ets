@@ -33,61 +33,53 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
+
+function expectNotEqualTrue<P, Q>(p: P, q: Q, ps: string, qs: string): string {
+  return p != q && q != p ? '' : `\n${ps} != ${qs}, expected true, got false`;
+}
+
+function expectEqualTrue<P, Q>(p: P, q: Q, ps: string, qs: string): string {
+  return p == q && q == p ? '' : `\n${ps} == ${qs}, expected true, got false`;
+}
+
+function expectNotEqualFalse<P, Q>(p: P, q: Q, ps: string, qs: string): string {
+  return p != q || q != p ? `\n${ps} != ${qs}, expected false, got true` : '';
+}
+
+function expectEqualFalse<P, Q>(p: P, q: Q, ps: string, qs: string): string {
+  return p == q || q == p ? `\n${ps} == ${qs}, expected false, got true` : '';
+}
+
 function func_35_2<P, Q>(p: P, q: Q, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+  return expectNotEqualTrue(p, q, ps, qs);
 }
+
 function func_18_1<P>(p: P, q: Object, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+  return expectEqualTrue(p, q, ps, qs);
 }
+
 function func_7_1<P, Q>(p: P, q: Q, ps: string, qs: string): string {
-    if (p == q && q == p) {
-        return ''
-    } else {
-        return '\n' + ps + ' == ' + qs + ', expected true, got false'
-    }
+  return expectEqualTrue(p, q, ps, qs);
 }
+
 function func_15_2<P>(p: P, q: Object, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+  return expectNotEqualFalse(p, q, ps, qs);
 }
+
 function func_39_1<P, Q>(p: P, q: Q, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+  return expectEqualFalse(p, q, ps, qs);
 }
+
 function func_1_2<P, Q>(p: P, q: Q, ps: string, qs: string): string {
-    if (p != q || q != p) {
-        return '\n' + ps + ' != ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+  return expectNotEqualFalse(p, q, ps, qs);
 }
+
 function func_49_2<P>(p: P, q: Object, ps: string, qs: string): string {
-    if (p != q && q != p) {
-        return ''
-    } else {
-        return '\n' + ps + ' != ' + qs + ', expected true, got false'
-    }
+  return expectNotEqualTrue(p, q, ps, qs);
 }
+
 function func_49_1<P>(p: P, q: Object, ps: string, qs: string): string {
-    if (p == q || q == p) {
-        return '\n' + ps + ' == ' + qs + ', expected false, got true'
-    } else {
-        return ''
-    }
+  return expectEqualFalse(p, q, ps, qs);
 }
 enum Color { Red, Green = 0, Blue }
 export default function TypeParameterOperatorsTest() {
@@ -192,18 +184,6 @@ export default function TypeParameterOperatorsTest() {
       let failed: string = ''
       failed += func_7_1<Object, Object>(false, new Boolean(false), "false", "new Boolean(false)")
       failed += func_1_2<Object, Object>(false, new Boolean(false), "false", "new Boolean(false)")
-      expect(failed).assertEqual('');
-    })
-    /**
-     * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_0600
-     * @tc.name      testTypeParameterOperators0006
-     * @tc.desc      A value of type Object can be compared to a value of any reference type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeParameterOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let failed: string = ''
       expect(failed).assertEqual('');
     })
     /**
@@ -639,18 +619,6 @@ export default function TypeParameterOperatorsTest() {
       expect(failed).assertEqual('');
     })
     /**
-     * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_2800
-     * @tc.name      testTypeParameterOperators0028
-     * @tc.desc      A value of type Object can be compared to a value of any reference type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeParameterOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let failed: string = ''
-      expect(failed).assertEqual('');
-    })
-    /**
      * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_2900
      * @tc.name      testTypeParameterOperators0029
      * @tc.desc      A value of type Object can be compared to a value of any reference type.
@@ -923,18 +891,6 @@ export default function TypeParameterOperatorsTest() {
       expect(failed).assertEqual('');
     })
     /**
-     * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_3900
-     * @tc.name      testTypeParameterOperators0039
-     * @tc.desc      A value of type Object can be compared to a value of any reference type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeParameterOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let failed: string = ''
-      expect(failed).assertEqual('');
-    })
-    /**
      * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_4000
      * @tc.name      testTypeParameterOperators0040
      * @tc.desc      A value of type Object can be compared to a value of any reference type.
@@ -998,18 +954,6 @@ export default function TypeParameterOperatorsTest() {
       let failed: string = ''
       failed += func_49_1<bigint>(new BigInt(1), new BigInt(2), "new BigInt(1)", "new BigInt(2)")
       failed += func_49_2<bigint>(new BigInt(1), new BigInt(2), "new BigInt(1)", "new BigInt(2)")
-      expect(failed).assertEqual('');
-    })
-    /**
-     * @tc.number    SUB_TYPE_PARAMETER_EQUALITY_OPERATORS_4400
-     * @tc.name      testTypeParameterOperators0044
-     * @tc.desc      A value of type Object can be compared to a value of any reference type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeParameterOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let failed: string = ''
       expect(failed).assertEqual('');
     })
     /**

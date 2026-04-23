@@ -413,7 +413,6 @@ enum TestEnum13600 {
   One = -50000
 }
 
-let testValue: byte = 16
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
