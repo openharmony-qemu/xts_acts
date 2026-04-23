@@ -30,4 +30,5 @@ hcpptest_suite("ActsKvStoreTest") {
     "-lm",
     "-lpthread",
   ]
+  external_deps = [ "bounds_cheching_function:libsec_static" ]
 }
