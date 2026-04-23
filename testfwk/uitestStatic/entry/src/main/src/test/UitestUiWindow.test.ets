@@ -68,6 +68,21 @@ async function initSpite(driver: Driver, window: UiWindow | null) {
   } else {
     console.log(`${tag}, initSpite null`);
   }
+    let stepFirst = await driver.findComponent(ON.text('下一步'))
+    if (stepFirst != null) {
+        await stepFirst.click()
+        await driver.delayMs(1000)
+    }
+    let stepSecond = await driver.findComponent(ON.text('下一步'))
+    if (stepSecond != null) {
+        await stepSecond.click()
+        await driver.delayMs(1000)
+    }
+    let stepThird = await driver.findComponent(ON.text('完成'))
+    if (stepThird != null) {
+        await stepThird.click()
+        await driver.delayMs(1000)
+    }
   await driver.delayMs(3000);
 }
 
@@ -228,7 +243,7 @@ export default function uitestUiWindowTest() {
       try {
         if (window != null) {
           await window.resume();
-          await driver!.delayMs(waitUiReadyMs);
+          await driver!.delayMs(waitUiReadyMs * 8);
         }
       } catch (err) {
         err = err as BusinessError;
@@ -256,7 +271,7 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowResizeA_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
+      await driver!.delayMs(waitUiReadyMs * 5)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testWindowResizeA_static  window , ${JSON.stringify(window)}`);
       expect(window != null).assertTrue();
@@ -385,7 +400,7 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowMoveTo_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
+      await driver!.delayMs(waitUiReadyMs * 5)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testWindowMoveTo_static window, ${JSON.stringify(window)} `);
       expect(window != null).assertTrue();
