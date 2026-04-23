@@ -17,7 +17,7 @@ import { afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hyp
 import http from '@ohos.net.http';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
-const XTS_TEST_HTTP_URL: string = 'http://23.106.128.32:21084/';
+const XTS_TEST_HTTP_URL: string = 'http://146.56.217.118:7806/';
 
 const ExpectFail = () => {
   try {
