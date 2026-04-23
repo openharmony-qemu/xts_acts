@@ -1,8 +1,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as startsWithTest from './string_startswith_test1';
 
-export default function StringStartsWithTest1() {
-  describe('StringStartsWithTest1', () => {
+export default function StringStartsWithTest() {
+  describe('StringStartsWithTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -20,15 +20,15 @@ export default function StringStartsWithTest1() {
     //========================== Basic Function Test ============================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0100
-     * @tc.name      StringStartsWith.test1001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0100
+     * @tc.name      StringStartsWithTest1001
      * @tc.desc      Verify complete match at the beginning of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1001';
+    it("StringStartsWithTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1001';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -38,15 +38,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0200
-     * @tc.name      StringStartsWith.test1002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0200
+     * @tc.name      StringStartsWithTest1002
      * @tc.desc      Verify partial match at the beginning of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1002';
+    it("StringStartsWithTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1002';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -56,15 +56,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0300
-     * @tc.name      StringStartsWith.test1003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0300
+     * @tc.name      StringStartsWithTest1003
      * @tc.desc      Verify no match at the beginning of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1003';
+    it("StringStartsWithTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1003';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -74,15 +74,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0400
-     * @tc.name      StringStartsWith.test1004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0400
+     * @tc.name      StringStartsWithTest1004
      * @tc.desc      Verify no match when search string is in the middle or end
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1004';
+    it("StringStartsWithTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1004';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -93,15 +93,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0500
-     * @tc.name      StringStartsWith.test1005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0500
+     * @tc.name      StringStartsWithTest1005
      * @tc.desc      Verify return type and value for a true matching condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1005';
+    it("StringStartsWithTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1005';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -114,15 +114,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0600
-     * @tc.name      StringStartsWith.test1006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0600
+     * @tc.name      StringStartsWithTest1006
      * @tc.desc      Verify return type and value for a false matching condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1006';
+    it("StringStartsWithTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1006';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -135,15 +135,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0700
-     * @tc.name      StringStartsWith.test1007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0700
+     * @tc.name      StringStartsWithTest1007
      * @tc.desc      Verify match when search string equals the original string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1007';
+    it("StringStartsWithTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1007';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -153,15 +153,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0800
-     * @tc.name      StringStartsWith.test1008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0800
+     * @tc.name      StringStartsWithTest1008
      * @tc.desc      Verify no match when search string is longer than original string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1008';
+    it("StringStartsWithTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1008';
       console.log(TAG + 'start');
 
       const str = "Hi";
@@ -173,15 +173,15 @@ export default function StringStartsWithTest1() {
     //========================== Parameter Type Test ============================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0900
-     * @tc.name      StringStartsWith.test1009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_0900
+     * @tc.name      StringStartsWithTest1009
      * @tc.desc      Verify matching with standard string type parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1009';
+    it("StringStartsWithTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1009';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -191,15 +191,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1000
-     * @tc.name      StringStartsWith.test1010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1000
+     * @tc.name      StringStartsWithTest1010
      * @tc.desc      Verify implicit conversion of number type searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1010';
+    it("StringStartsWithTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1010';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testNumberConversion();
@@ -209,15 +209,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1100
-     * @tc.name      StringStartsWith.test1011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1100
+     * @tc.name      StringStartsWithTest1011
      * @tc.desc      Verify implicit conversion of boolean type searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1011';
+    it("StringStartsWithTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1011';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testBooleanConversion();
@@ -227,15 +227,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1200
-     * @tc.name      StringStartsWith.test1012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1200
+     * @tc.name      StringStartsWithTest1012
      * @tc.desc      Verify implicit conversion of undefined searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1012';
+    it("StringStartsWithTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1012';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testUndefinedConversion();
@@ -247,15 +247,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1300
-     * @tc.name      StringStartsWith.test1013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1300
+     * @tc.name      StringStartsWithTest1013
      * @tc.desc      Verify implicit conversion of null searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1013';
+    it("StringStartsWithTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1013';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testNullConversion();
@@ -266,15 +266,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1400
-     * @tc.name      StringStartsWith.test1014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1400
+     * @tc.name      StringStartsWithTest1014
      * @tc.desc      Verify implicit conversion of object type searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1014';
+    it("StringStartsWithTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1014';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testObjectConversion();
@@ -284,15 +284,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1500
-     * @tc.name      StringStartsWith.test1015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1500
+     * @tc.name      StringStartsWithTest1015
      * @tc.desc      Verify implicit conversion of array type searchString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1015';
+    it("StringStartsWithTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1015';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testArrayConversion();
@@ -302,15 +302,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1600
-     * @tc.name      StringStartsWith.test1016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1600
+     * @tc.name      StringStartsWithTest1016
      * @tc.desc      Verify passing RegExp throws TypeError
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1016';
+    it("StringStartsWithTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1016';
       console.log(TAG + 'start');
 
       const isTypeError: boolean = startsWithTest.testRegExpException();
@@ -320,15 +320,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1700
-     * @tc.name      StringStartsWith.test1017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1700
+     * @tc.name      StringStartsWithTest1017
      * @tc.desc      Verify match with valid number position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1017';
+    it("StringStartsWithTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1017';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -338,15 +338,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1800
-     * @tc.name      StringStartsWith.test1018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1800
+     * @tc.name      StringStartsWithTest1018
      * @tc.desc      Verify implicit conversion of string number position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1018';
+    it("StringStartsWithTest1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1018';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testPositionStringNumber();
@@ -356,15 +356,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_1900
-     * @tc.name      StringStartsWith.test1019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_1900
+     * @tc.name      StringStartsWithTest1019
      * @tc.desc      Verify behavior with negative position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1019';
+    it("StringStartsWithTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1019';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -375,15 +375,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2000
-     * @tc.name      StringStartsWith.test1020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2000
+     * @tc.name      StringStartsWithTest1020
      * @tc.desc      Verify behavior with float position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1020';
+    it("StringStartsWithTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1020';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -394,15 +394,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2100
-     * @tc.name      StringStartsWith.test1021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2100
+     * @tc.name      StringStartsWithTest1021
      * @tc.desc      Verify behavior with NaN position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1021';
+    it("StringStartsWithTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1021';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -412,15 +412,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2200
-     * @tc.name      StringStartsWith.test1022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2200
+     * @tc.name      StringStartsWithTest1022
      * @tc.desc      Verify behavior with undefined position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1022';
+    it("StringStartsWithTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1022';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -430,15 +430,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2300
-     * @tc.name      StringStartsWith.test1023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2300
+     * @tc.name      StringStartsWithTest1023
      * @tc.desc      Verify behavior with null position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1023';
+    it("StringStartsWithTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1023';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testPositionNull();
@@ -448,15 +448,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2400
-     * @tc.name      StringStartsWith.test1024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2400
+     * @tc.name      StringStartsWithTest1024
      * @tc.desc      Verify match when position exceeds string length
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1024';
+    it("StringStartsWithTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1024';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -469,15 +469,15 @@ export default function StringStartsWithTest1() {
     //========================== Boundary Value Test ============================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2500
-     * @tc.name      StringStartsWith.test1025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2500
+     * @tc.name      StringStartsWithTest1025
      * @tc.desc      Verify matching when both strings are empty
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1025';
+    it("StringStartsWithTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1025';
       console.log(TAG + 'start');
 
       const str = "";
@@ -487,15 +487,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2600
-     * @tc.name      StringStartsWith.test1026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2600
+     * @tc.name      StringStartsWithTest1026
      * @tc.desc      Verify matching when original string is empty and search string is non-empty
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1026';
+    it("StringStartsWithTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1026';
       console.log(TAG + 'start');
 
       const str = "";
@@ -505,15 +505,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2700
-     * @tc.name      StringStartsWith.test1027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2700
+     * @tc.name      StringStartsWithTest1027
      * @tc.desc      Verify non-empty string always starts with empty string at any position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1027';
+    it("StringStartsWithTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1027';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -526,15 +526,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2800
-     * @tc.name      StringStartsWith.test1028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2800
+     * @tc.name      StringStartsWithTest1028
      * @tc.desc      Verify single character string matching
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1028';
+    it("StringStartsWithTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1028';
       console.log(TAG + 'start');
 
       const str = "a";
@@ -545,15 +545,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_2900
-     * @tc.name      StringStartsWith.test1029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_2900
+     * @tc.name      StringStartsWithTest1029
      * @tc.desc      Verify single character string starts with empty string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1029';
+    it("StringStartsWithTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1029';
       console.log(TAG + 'start');
 
       const str = "a";
@@ -563,15 +563,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3000
-     * @tc.name      StringStartsWith.test1030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3000
+     * @tc.name      StringStartsWithTest1030
      * @tc.desc      Verify searching from position 0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1030';
+    it("StringStartsWithTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1030';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -581,15 +581,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3100
-     * @tc.name      StringStartsWith.test1031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3100
+     * @tc.name      StringStartsWithTest1031
      * @tc.desc      Verify behavior when position equals string length
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1031';
+    it("StringStartsWithTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1031';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -600,15 +600,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3200
-     * @tc.name      StringStartsWith.test1032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3200
+     * @tc.name      StringStartsWithTest1032
      * @tc.desc      Verify behavior when position is greater than string length
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1032';
+    it("StringStartsWithTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1032';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -619,15 +619,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3300
-     * @tc.name      StringStartsWith.test1033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3300
+     * @tc.name      StringStartsWithTest1033
      * @tc.desc      Verify behavior when position is Infinity
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1033';
+    it("StringStartsWithTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1033';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -640,15 +640,15 @@ export default function StringStartsWithTest1() {
     //========================== Position Parameter Test ============================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3400
-     * @tc.name      StringStartsWith.test1034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3400
+     * @tc.name      StringStartsWithTest1034
      * @tc.desc      Verify matching from position 0 by default
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1034';
+    it("StringStartsWithTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1034';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -659,15 +659,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3500
-     * @tc.name      StringStartsWith.test1035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3500
+     * @tc.name      StringStartsWithTest1035
      * @tc.desc      Verify matching from the middle of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1035';
+    it("StringStartsWithTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1035';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -678,15 +678,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3600
-     * @tc.name      StringStartsWith.test1036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3600
+     * @tc.name      StringStartsWithTest1036
      * @tc.desc      Verify matching at the very end of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1036';
+    it("StringStartsWithTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1036';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -697,15 +697,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3700
-     * @tc.name      StringStartsWith.test1037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3700
+     * @tc.name      StringStartsWithTest1037
      * @tc.desc      Verify position parameter as a mathematical expression
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1037';
+    it("StringStartsWithTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1037';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -716,15 +716,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3800
-     * @tc.name      StringStartsWith.test1038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3800
+     * @tc.name      StringStartsWithTest1038
      * @tc.desc      Verify position parameter calculated from string length
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1038';
+    it("StringStartsWithTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1038';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -734,15 +734,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_3900
-     * @tc.name      StringStartsWith.test1039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_3900
+     * @tc.name      StringStartsWithTest1039
      * @tc.desc      Verify skipping characters using position parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1039';
+    it("StringStartsWithTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1039';
       console.log(TAG + 'start');
 
       const str = "abcabc";
@@ -753,15 +753,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4000
-     * @tc.name      StringStartsWith.test1040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4000
+     * @tc.name      StringStartsWithTest1040
      * @tc.desc      Verify match when search string overlaps with position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1040';
+    it("StringStartsWithTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1040';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -772,15 +772,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4100
-     * @tc.name      StringStartsWith.test1041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4100
+     * @tc.name      StringStartsWithTest1041
      * @tc.desc      Verify case sensitivity with exact match
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1041';
+    it("StringStartsWithTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1041';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -791,15 +791,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4200
-     * @tc.name      StringStartsWith.test1042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4200
+     * @tc.name      StringStartsWithTest1042
      * @tc.desc      Verify case sensitivity with full uppercase string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1042';
+    it("StringStartsWithTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1042';
       console.log(TAG + 'start');
 
       const str = "HELLO WORLD";
@@ -810,15 +810,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4300
-     * @tc.name      StringStartsWith.test1043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4300
+     * @tc.name      StringStartsWithTest1043
      * @tc.desc      Verify case sensitivity with full lowercase string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1043';
+    it("StringStartsWithTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1043';
       console.log(TAG + 'start');
 
       const str = "hello world";
@@ -829,15 +829,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4400
-     * @tc.name      StringStartsWith.test1044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4400
+     * @tc.name      StringStartsWithTest1044
      * @tc.desc      Verify case sensitivity with mixed case string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1044';
+    it("StringStartsWithTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1044';
       console.log(TAG + 'start');
 
       const str = "HeLLo WoRLd";
@@ -849,15 +849,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4500
-     * @tc.name      StringStartsWith.test1045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4500
+     * @tc.name      StringStartsWithTest1045
      * @tc.desc      Verify matching with space characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1045';
+    it("StringStartsWithTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1045';
       console.log(TAG + 'start');
 
       const str = " Hello World";
@@ -868,15 +868,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4600
-     * @tc.name      StringStartsWith.test1046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4600
+     * @tc.name      StringStartsWithTest1046
      * @tc.desc      Verify matching with tab characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1046';
+    it("StringStartsWithTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1046';
       console.log(TAG + 'start');
 
       const str = "\tHello World";
@@ -887,15 +887,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4700
-     * @tc.name      StringStartsWith.test1047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4700
+     * @tc.name      StringStartsWithTest1047
      * @tc.desc      Verify matching with newline characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1047';
+    it("StringStartsWithTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1047';
       console.log(TAG + 'start');
 
       const str = "\nHello World";
@@ -906,15 +906,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4800
-     * @tc.name      StringStartsWith.test1048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4800
+     * @tc.name      StringStartsWithTest1048
      * @tc.desc      Verify matching with carriage return characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1048';
+    it("StringStartsWithTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1048';
       console.log(TAG + 'start');
 
       const str = "\rHello World";
@@ -924,15 +924,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_4900
-     * @tc.name      StringStartsWith.test1049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_4900
+     * @tc.name      StringStartsWithTest1049
      * @tc.desc      Verify matching with multiple types of whitespace
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1049';
+    it("StringStartsWithTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1049';
       console.log(TAG + 'start');
 
       const str = " \t\nHello World";
@@ -942,15 +942,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5000
-     * @tc.name      StringStartsWith.test1050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5000
+     * @tc.name      StringStartsWithTest1050
      * @tc.desc      Verify matching with escape characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1050';
+    it("StringStartsWithTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1050';
       console.log(TAG + 'start');
 
       const str = "\\Hello World";
@@ -961,15 +961,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5100
-     * @tc.name      StringStartsWith.test1051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5100
+     * @tc.name      StringStartsWithTest1051
      * @tc.desc      Verify matching with quote characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1051';
+    it("StringStartsWithTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1051';
       console.log(TAG + 'start');
 
       const str = '"Hello" World';
@@ -980,15 +980,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5200
-     * @tc.name      StringStartsWith.test1052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5200
+     * @tc.name      StringStartsWithTest1052
      * @tc.desc      Verify matching with backslash in paths
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1052';
+    it("StringStartsWithTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1052';
       console.log(TAG + 'start');
 
       const str = "\\path\\to\\file";
@@ -1001,15 +1001,15 @@ export default function StringStartsWithTest1() {
     //========= Unicode and Multi-byte Character Test =========
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5300
-     * @tc.name      StringStartsWith.test1053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5300
+     * @tc.name      StringStartsWithTest1053
      * @tc.desc      Verify matching with Chinese characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1053';
+    it("StringStartsWithTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1053';
       console.log(TAG + 'start');
 
       const str = "你好世界";
@@ -1020,15 +1020,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5400
-     * @tc.name      StringStartsWith.test1054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5400
+     * @tc.name      StringStartsWithTest1054
      * @tc.desc      Verify matching with mixed Chinese and English characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1054';
+    it("StringStartsWithTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1054';
       console.log(TAG + 'start');
 
       const str = "Hello世界World";
@@ -1039,15 +1039,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5500
-     * @tc.name      StringStartsWith.test1055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5500
+     * @tc.name      StringStartsWithTest1055
      * @tc.desc      Verify matching with a single Emoji
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1055';
+    it("StringStartsWithTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1055';
       console.log(TAG + 'start');
 
       const str = "😀Hello World";
@@ -1058,15 +1058,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5600
-     * @tc.name      StringStartsWith.test1056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5600
+     * @tc.name      StringStartsWithTest1056
      * @tc.desc      Verify matching with multiple Emojis
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1056';
+    it("StringStartsWithTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1056';
       console.log(TAG + 'start');
 
       const str = "😀🎉🎊Hello";
@@ -1076,15 +1076,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5700
-     * @tc.name      StringStartsWith.test1057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5700
+     * @tc.name      StringStartsWithTest1057
      * @tc.desc      Verify Emoji position calculation (Surrogate pairs)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1057';
+    it("StringStartsWithTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1057';
       console.log(TAG + 'start');
 
       const str = "😀Hello";
@@ -1094,15 +1094,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5800
-     * @tc.name      StringStartsWith.test1058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5800
+     * @tc.name      StringStartsWithTest1058
      * @tc.desc      Verify matching with Unicode escape sequences
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1058';
+    it("StringStartsWithTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1058';
       console.log(TAG + 'start');
 
       const str = "\u0048\u0065\u006c\u006c\u006f";
@@ -1113,15 +1113,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_5900
-     * @tc.name      StringStartsWith.test1059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_5900
+     * @tc.name      StringStartsWithTest1059
      * @tc.desc      Verify matching with special Unicode symbols
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1059';
+    it("StringStartsWithTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1059';
       console.log(TAG + 'start');
 
       const str = "♠♣♥♦Hello";
@@ -1131,15 +1131,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6000
-     * @tc.name      StringStartsWith.test1060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6000
+     * @tc.name      StringStartsWithTest1060
      * @tc.desc      Verify matching with partial multi-byte characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1060';
+    it("StringStartsWithTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1060';
       console.log(TAG + 'start');
 
       const str = "你好世界";
@@ -1152,15 +1152,15 @@ export default function StringStartsWithTest1() {
     //========================== Exception Handling Test ============================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6100
-     * @tc.name      StringStartsWith.test1061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6100
+     * @tc.name      StringStartsWithTest1061
      * @tc.desc      Verify TypeError when passing a direct regex
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1061';
+    it("StringStartsWithTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1061';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testRegexError();
@@ -1170,15 +1170,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6200
-     * @tc.name      StringStartsWith.test1062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6200
+     * @tc.name      StringStartsWithTest1062
      * @tc.desc      Verify TypeError when passing a regex with flags
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1062';
+    it("StringStartsWithTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1062';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testRegexFlagsError();
@@ -1188,15 +1188,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6300
-     * @tc.name      StringStartsWith.test1063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6300
+     * @tc.name      StringStartsWithTest1063
      * @tc.desc      Verify TypeError when passing a RegExp object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1063';
+    it("StringStartsWithTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1063';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testRegExpObjectError();
@@ -1206,15 +1206,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6400
-     * @tc.name      StringStartsWith.test1064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6400
+     * @tc.name      StringStartsWithTest1064
      * @tc.desc      Verify TypeError when this is null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1064';
+    it("StringStartsWithTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1064';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testNullThisError();
@@ -1224,15 +1224,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6500
-     * @tc.name      StringStartsWith.test1065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6500
+     * @tc.name      StringStartsWithTest1065
      * @tc.desc      Verify TypeError when this is undefined
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1065';
+    it("StringStartsWithTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1065';
       console.log(TAG + 'start');
 
       const result: boolean = startsWithTest.testUndefinedThisError();
@@ -1242,15 +1242,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6600
-     * @tc.name      StringStartsWith.test1066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6600
+     * @tc.name      StringStartsWithTest1066
      * @tc.desc      Verify handling of custom toString throwing error
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1066';
+    it("StringStartsWithTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1066';
       console.log(TAG + 'start');
 
       const result: string = startsWithTest.testToStringError();
@@ -1260,15 +1260,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6700
-     * @tc.name      StringStartsWith.test1067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6700
+     * @tc.name      StringStartsWithTest1067
      * @tc.desc      Compare startsWith and endsWith on the same string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1067';
+    it("StringStartsWithTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1067';
       console.log(TAG + 'start');
 
       const str = "Hello World Hello";
@@ -1279,15 +1279,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6800
-     * @tc.name      StringStartsWith.test1068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6800
+     * @tc.name      StringStartsWithTest1068
      * @tc.desc      Use startsWith and endsWith at different positions
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1068';
+    it("StringStartsWithTest1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1068';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1298,15 +1298,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_6900
-     * @tc.name      StringStartsWith.test1069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_6900
+     * @tc.name      StringStartsWithTest1069
      * @tc.desc      Verify includes is true when startsWith is true
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1069';
+    it("StringStartsWithTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1069';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1317,15 +1317,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7000
-     * @tc.name      StringStartsWith.test1070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7000
+     * @tc.name      StringStartsWithTest1070
      * @tc.desc      Verify includes is true while startsWith is false
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1070';
+    it("StringStartsWithTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1070';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1336,15 +1336,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7100
-     * @tc.name      StringStartsWith.test1071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7100
+     * @tc.name      StringStartsWithTest1071
      * @tc.desc      Verify indexOf alignment when startsWith is true
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1071';
+    it("StringStartsWithTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1071';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1355,15 +1355,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7200
-     * @tc.name      StringStartsWith.test1072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7200
+     * @tc.name      StringStartsWithTest1072
      * @tc.desc      Verify startsWith behavior when indexOf returns index > 0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1072';
+    it("StringStartsWithTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1072';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1375,15 +1375,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7300
-     * @tc.name      StringStartsWith.test1073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7300
+     * @tc.name      StringStartsWithTest1073
      * @tc.desc      Verify startsWith on a sliced sub-string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1073';
+    it("StringStartsWithTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1073';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1394,15 +1394,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7400
-     * @tc.name      StringStartsWith.test1074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7400
+     * @tc.name      StringStartsWithTest1074
      * @tc.desc      Verify startsWith on a substring
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1074';
+    it("StringStartsWithTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1074';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1413,15 +1413,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7500
-     * @tc.name      StringStartsWith.test1075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7500
+     * @tc.name      StringStartsWithTest1075
      * @tc.desc      Verify startsWith after case conversion
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1075';
+    it("StringStartsWithTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1075';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1432,15 +1432,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7600
-     * @tc.name      StringStartsWith.test1076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7600
+     * @tc.name      StringStartsWithTest1076
      * @tc.desc      Simulate case-insensitive matching using conversion
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1076';
+    it("StringStartsWithTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1076';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1451,15 +1451,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7700
-     * @tc.name      StringStartsWith.test1077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7700
+     * @tc.name      StringStartsWithTest1077
      * @tc.desc      Verify startsWith after trimming whitespace
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1077';
+    it("StringStartsWithTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1077';
       console.log(TAG + 'start');
 
       const str = "  Hello World";
@@ -1470,15 +1470,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7800
-     * @tc.name      StringStartsWith.test1078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7800
+     * @tc.name      StringStartsWithTest1078
      * @tc.desc      Verify matching with leading spaces using position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1078';
+    it("StringStartsWithTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1078';
       console.log(TAG + 'start');
 
       const str = "  Hello World";
@@ -1489,15 +1489,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_7900
-     * @tc.name      StringStartsWith.test1079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_7900
+     * @tc.name      StringStartsWithTest1079
      * @tc.desc      Verify startsWith on repeated strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1079';
+    it("StringStartsWithTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1079';
       console.log(TAG + 'start');
 
       const str = "abc".repeat(3);
@@ -1508,15 +1508,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8000
-     * @tc.name      StringStartsWith.test1080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8000
+     * @tc.name      StringStartsWithTest1080
      * @tc.desc      Verify matching a repeated pattern
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1080';
+    it("StringStartsWithTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1080';
       console.log(TAG + 'start');
 
       const str = "Hello".repeat(2);
@@ -1526,15 +1526,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8100
-     * @tc.name      StringStartsWith.test1081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8100
+     * @tc.name      StringStartsWithTest1081
      * @tc.desc      Verify startsWith after padStart
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1081';
+    it("StringStartsWithTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1081';
       console.log(TAG + 'start');
 
       const str = "5".padStart(3, "0");
@@ -1545,15 +1545,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8200
-     * @tc.name      StringStartsWith.test1082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8200
+     * @tc.name      StringStartsWithTest1082
      * @tc.desc      Verify checking for padding characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1082';
+    it("StringStartsWithTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1082';
       console.log(TAG + 'start');
 
       const str = "abc".padStart(10, "xyz");
@@ -1563,15 +1563,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8300
-     * @tc.name      StringStartsWith.test1083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8300
+     * @tc.name      StringStartsWithTest1083
      * @tc.desc      Verify startsWith after string replacement
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1083';
+    it("StringStartsWithTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1083';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1582,15 +1582,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8400
-     * @tc.name      StringStartsWith.test1084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8400
+     * @tc.name      StringStartsWithTest1084
      * @tc.desc      Verify startsWith after replacing the start of the string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1084';
+    it("StringStartsWithTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1084';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -1600,15 +1600,15 @@ export default function StringStartsWithTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8500
-     * @tc.name      StringStartsWith.test1085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8500
+     * @tc.name      StringStartsWithTest1085
      * @tc.desc      Verify startsWith on elements of a split string array
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1085';
+    it("StringStartsWithTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1085';
       console.log(TAG + 'start');
 
       const str = "Hello,World,Test";
@@ -1621,15 +1621,15 @@ export default function StringStartsWithTest1() {
     //==================== Actual Application Scenario Test ====================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8600
-     * @tc.name      StringStartsWith.test1086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8600
+     * @tc.name      StringStartsWithTest1086
      * @tc.desc      Verify URL protocol
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1086';
+    it("StringStartsWithTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1086';
       console.log(TAG + 'start');
 
       const url = "https://example.com";
@@ -1640,15 +1640,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8700
-     * @tc.name      StringStartsWith.test1087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8700
+     * @tc.name      StringStartsWithTest1087
      * @tc.desc      Verify URL domain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1087';
+    it("StringStartsWithTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1087';
       console.log(TAG + 'start');
 
       const url = "https://example.com/path";
@@ -1658,15 +1658,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8800
-     * @tc.name      StringStartsWith.test1088
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8800
+     * @tc.name      StringStartsWithTest1088
      * @tc.desc      Verify absolute file path
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1088';
+    it("StringStartsWithTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1088';
       console.log(TAG + 'start');
 
       const path = "/usr/local/bin";
@@ -1676,15 +1676,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_8900
-     * @tc.name      StringStartsWith.test1089
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8900
+     * @tc.name      StringStartsWithTest1089
      * @tc.desc      Verify relative file path
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1089';
+    it("StringStartsWithTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1089';
       console.log(TAG + 'start');
 
       const path = "./folder/file.txt";
@@ -1695,15 +1695,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9000
-     * @tc.name      StringStartsWith.test1090
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9000
+     * @tc.name      StringStartsWithTest1090
      * @tc.desc      Verify Windows file path
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1090';
+    it("StringStartsWithTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1090';
       console.log(TAG + 'start');
 
       const path = "C:\\Users\\Documents";
@@ -1713,15 +1713,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9100
-     * @tc.name      StringStartsWith.test1091
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9100
+     * @tc.name      StringStartsWithTest1091
      * @tc.desc      Verify file prefix
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1091';
+    it("StringStartsWithTest1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1091';
       console.log(TAG + 'start');
 
       const filename = "backup_20231215.zip";
@@ -1731,15 +1731,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9200
-     * @tc.name      StringStartsWith.test1092
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9200
+     * @tc.name      StringStartsWithTest1092
      * @tc.desc      Verify command line flag
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1092';
+    it("StringStartsWithTest1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1092';
       console.log(TAG + 'start');
 
       const arg = "--verbose";
@@ -1750,15 +1750,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9300
-     * @tc.name      StringStartsWith.test1093
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9300
+     * @tc.name      StringStartsWithTest1093
      * @tc.desc      Verify command line short flag
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1093';
+    it("StringStartsWithTest1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1093';
       console.log(TAG + 'start');
 
       const arg = "-v";
@@ -1769,15 +1769,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9400
-     * @tc.name      StringStartsWith.test1094
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9400
+     * @tc.name      StringStartsWithTest1094
      * @tc.desc      Verify Base64 data URI
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1094';
+    it("StringStartsWithTest1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1094';
       console.log(TAG + 'start');
 
       const dataUri = "data:image/png;base64,iVBORw0KG...";
@@ -1787,15 +1787,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9500
-     * @tc.name      StringStartsWith.test1095
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9500
+     * @tc.name      StringStartsWithTest1095
      * @tc.desc      Verify JSON data format string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1095';
+    it("StringStartsWithTest1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1095';
       console.log(TAG + 'start');
 
       const json = '{"name": "John"}';
@@ -1805,15 +1805,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9600
-     * @tc.name      StringStartsWith.test1096
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9600
+     * @tc.name      StringStartsWithTest1096
      * @tc.desc      Verify line starts with specific character
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1096';
+    it("StringStartsWithTest1096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1096';
       console.log(TAG + 'start');
 
       const line = "# Heading";
@@ -1823,15 +1823,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9700
-     * @tc.name      StringStartsWith.test1097
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9700
+     * @tc.name      StringStartsWithTest1097
      * @tc.desc      Verify line indentation
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1097';
+    it("StringStartsWithTest1097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1097';
       console.log(TAG + 'start');
 
       const line = "    indented text";
@@ -1842,15 +1842,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9800
-     * @tc.name      StringStartsWith.test1098
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9800
+     * @tc.name      StringStartsWithTest1098
      * @tc.desc      Verify phone number prefix
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1098';
+    it("StringStartsWithTest1098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1098';
       console.log(TAG + 'start');
 
       const phone = "+86-13800138000";
@@ -1860,15 +1860,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_9900
-     * @tc.name      StringStartsWith.test1099
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_9900
+     * @tc.name      StringStartsWithTest1099
      * @tc.desc      Verify credit card prefix
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1099';
+    it("StringStartsWithTest1099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1099';
       console.log(TAG + 'start');
 
       const cardNumber = "4111111111111111";
@@ -1878,15 +1878,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_10000
-     * @tc.name      StringStartsWith.test1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0100
+     * @tc.name      StringStartsWithTest1100
      * @tc.desc      Verify variable naming prefix
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1100';
+    it("StringStartsWithTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1100';
       console.log(TAG + 'start');
 
       const identifier = "_privateVar";
@@ -1897,15 +1897,15 @@ export default function StringStartsWithTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_10100
-     * @tc.name      StringStartsWith.test1101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHONE_0200
+     * @tc.name      StringStartsWithTest1101
      * @tc.desc      Verify class name starts with uppercase
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test1101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test1101';
+    it("StringStartsWithTest1101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest1101';
       console.log(TAG + 'start');
 
       const className = "MyClass";

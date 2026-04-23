@@ -31,8 +31,8 @@ interface CustomStringIterator {
     //=================String.prototype.repeat()==================
 
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0001
-     * @tc.name       test StringRepeatTest01Chapter0001
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0100
+     * @tc.name       testStringRepeatTest01Chapter0001
      * @tc.desc       TestOnceReturnOrig
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -49,8 +49,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0002
-     * @tc.name       test StringRepeatTest01Chapter0002
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0200
+     * @tc.name       testStringRepeatTest01Chapter0002
      * @tc.desc       TestRepeatTwoBasic
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -67,8 +67,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0003
-     * @tc.name       test StringRepeatTest01Chapter0003
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0300
+     * @tc.name       testStringRepeatTest01Chapter0003
      * @tc.desc       TestRepeatOverTwo
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -85,8 +85,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0004
-     * @tc.name       test StringRepeatTest01Chapter0004
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0400
+     * @tc.name       testStringRepeatTest01Chapter0004
      * @tc.desc       TestZeroReturnEmpty
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -103,8 +103,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0005
-     * @tc.name       test StringRepeatTest01Chapter0005
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0500
+     * @tc.name       testStringRepeatTest01Chapter0005
      * @tc.desc      TestSingleCharRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -120,8 +120,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0006
-     * @tc.name       test StringRepeatTest01Chapter0006
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0600
+     * @tc.name       testStringRepeatTest01Chapter0006
      * @tc.desc      TestSpaceRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -137,8 +137,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0007
-     * @tc.name       test StringRepeatTest01Chapter0007
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0700
+     * @tc.name       testStringRepeatTest01Chapter0007
      * @tc.desc      LongStrRepeatFew
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -155,8 +155,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0008
-     * @tc.name       test StringRepeatTest01Chapter0008
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0800
+     * @tc.name       testStringRepeatTest01Chapter0008
      * @tc.desc       CountZeroBoundary
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -172,8 +172,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0009
-     * @tc.name       test StringRepeatTest01Chapter0009
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_0900
+     * @tc.name       testStringRepeatTest01Chapter0009
      * @tc.desc       CountNegZeroCase
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -188,8 +188,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0010
-     * @tc.name       test StringRepeatTest01Chapter0010
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1000
+     * @tc.name       testStringRepeatTest01Chapter0010
      * @tc.desc       MinValidPositive
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -205,8 +205,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0011
-     * @tc.name       test StringRepeatTest01Chapter0011
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1100
+     * @tc.name       testStringRepeatTest01Chapter0011
      * @tc.desc       CountLargeInt
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -222,8 +222,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0012
-     * @tc.name       test StringRepeatTest01Chapter0012
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1200
+     * @tc.name       testStringRepeatTest01Chapter0012
      * @tc.desc        NegDecimalThrow
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -237,8 +237,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0013
-     * @tc.name       test StringRepeatTest01Chapter0013
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1300
+     * @tc.name       testStringRepeatTest01Chapter0013
      * @tc.desc        NegInfinityThrow
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -252,8 +252,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0014
-     * @tc.name       test StringRepeatTest01Chapter0014
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1400
+     * @tc.name       testStringRepeatTest01Chapter0014
      * @tc.desc        PosInfinityThrow
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -267,8 +267,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0015
-     * @tc.name       test StringRepeatTest01Chapter0015
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1500
+     * @tc.name       testStringRepeatTest01Chapter0015
      * @tc.desc        PosFloatFloor
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -284,8 +284,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0016
-     * @tc.name       test StringRepeatTest01Chapter0016
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1600
+     * @tc.name       testStringRepeatTest01Chapter0016
      * @tc.desc       PosFloatLessThanOne
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -301,8 +301,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0017
-     * @tc.name       test StringRepeatTest01Chapter0017
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1700
+     * @tc.name       testStringRepeatTest01Chapter0017
      * @tc.desc      CountFloat3Point5
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -318,8 +318,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0018
-     * @tc.name       test StringRepeatTest01Chapter0018
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1800
+     * @tc.name       testStringRepeatTest01Chapter0018
      * @tc.desc      CountNumberStringConversion
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -334,8 +334,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0019
-     * @tc.name       test StringRepeatTest01Chapter0019
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_1900
+     * @tc.name       testStringRepeatTest01Chapter0019
      * @tc.desc      CountEmptyStringToZero
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -350,8 +350,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0020
-     * @tc.name       test StringRepeatTest01Chapter0020
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2000
+     * @tc.name       testStringRepeatTest01Chapter0020
      * @tc.desc      CountNonNumberStringToNaN
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -366,8 +366,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0021
-     * @tc.name       test StringRepeatTest01Chapter0021
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2100
+     * @tc.name       testStringRepeatTest01Chapter0021
      * @tc.desc      CountTrueTo1
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -382,8 +382,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0022
-     * @tc.name       test StringRepeatTest01Chapter0022
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2200
+     * @tc.name       testStringRepeatTest01Chapter0022
      * @tc.desc      CountFalseTo0
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -398,8 +398,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0023
-     * @tc.name       test StringRepeatTest01Chapter0023
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2300
+     * @tc.name       testStringRepeatTest01Chapter0023
      * @tc.desc      CountNullToZero
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -414,8 +414,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0024
-     * @tc.name       test StringRepeatTest01Chapter0024
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2400
+     * @tc.name       testStringRepeatTest01Chapter0024
      * @tc.desc      CountUndefinedToNaN
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -430,8 +430,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0025
-     * @tc.name       test StringRepeatTest01Chapter0025
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2500
+     * @tc.name       testStringRepeatTest01Chapter0025
      * @tc.desc      CountObjectToNaN
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -446,8 +446,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0026
-     * @tc.name       test StringRepeatTest01Chapter0026
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2600
+     * @tc.name       testStringRepeatTest01Chapter0026
      * @tc.desc      CountObjectWithValueOf
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -462,8 +462,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0027
-     * @tc.name       test StringRepeatTest01Chapter0027
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2700
+     * @tc.name       testStringRepeatTest01Chapter0027
      * @tc.desc      CountObjectWithToString
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -478,8 +478,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0028
-     * @tc.name       test StringRepeatTest01Chapter0028
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2800
+     * @tc.name       testStringRepeatTest01Chapter0028
      * @tc.desc      CountArrayConversion
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -494,8 +494,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0029
-     * @tc.name       test StringRepeatTest01Chapter0029
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_2900
+     * @tc.name       testStringRepeatTest01Chapter0029
      * @tc.desc       CountNegativeRangeError
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -510,8 +510,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0030
-     * @tc.name       test StringRepeatTest01Chapter0030
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3000
+     * @tc.name       testStringRepeatTest01Chapter0030
      * @tc.desc       CountExceedMaxLengthRangeError
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -526,8 +526,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0031
-     * @tc.name       test StringRepeatTest01Chapter0031
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3100
+     * @tc.name       testStringRepeatTest01Chapter0031
      * @tc.desc        CountInfinityRangeError
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -541,8 +541,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0032
-     * @tc.name       test StringRepeatTest01Chapter0032
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3200
+     * @tc.name       testStringRepeatTest01Chapter0032
      * @tc.desc       ThisValueNull
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -557,8 +557,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0033
-     * @tc.name       test StringRepeatTest01Chapter0033
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3300
+     * @tc.name       testStringRepeatTest01Chapter0033
      * @tc.desc        ThisIsUndefined
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -572,8 +572,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0034
-     * @tc.name       test StringRepeatTest01Chapter0034
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3400
+     * @tc.name       testStringRepeatTest01Chapter0034
      * @tc.desc       ThisIsSymbol
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -587,8 +587,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0035
-     * @tc.name       test StringRepeatTest01Chapter0035
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3500
+     * @tc.name       testStringRepeatTest01Chapter0035
      * @tc.desc       EmptyStringRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -606,8 +606,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0036
-     * @tc.name       test StringRepeatTest01Chapter0036
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3600
+     * @tc.name       testStringRepeatTest01Chapter0036
      * @tc.desc       EmptyStringRepeatZero
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -623,8 +623,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0037
-     * @tc.name       test StringRepeatTest01Chapter0037
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3700
+     * @tc.name       testStringRepeatTest01Chapter0037
      * @tc.desc       RepeatNewlineCharacter
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -641,8 +641,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0038
-     * @tc.name       test StringRepeatTest01Chapter0038
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3800
+     * @tc.name       testStringRepeatTest01Chapter0038
      * @tc.desc       RepeatTabCharacter
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -658,8 +658,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0039
-     * @tc.name       test StringRepeatTest01Chapter0039
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_3900
+     * @tc.name       testStringRepeatTest01Chapter0039
      * @tc.desc       RepeatCarriageReturn
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -675,8 +675,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0040
-     * @tc.name       test StringRepeatOfTest01Chapter0040
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4000
+     * @tc.name       testStringRepeatOfTest01Chapter0040
      * @tc.desc       RepeatBackslash
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -692,8 +692,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0041
-     * @tc.name       test StringRepeatTest01Chapter0041
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4100
+     * @tc.name       testStringRepeatTest01Chapter0041
      * @tc.desc      RepeatStringWithQuotes
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -710,8 +710,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0042
-     * @tc.name       test StringRepeatTest01Chapter0042
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4200
+     * @tc.name       testStringRepeatTest01Chapter0042
      * @tc.desc      RepeatZeroWidthCharacter
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -727,8 +727,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0043
-     * @tc.name       test StringRepeatTest01Chapter0043
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4300
+     * @tc.name       testStringRepeatTest01Chapter0043
      * @tc.desc       RepeatASCIIControlCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -743,8 +743,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0044
-     * @tc.name       test StringRepeatTest01Chapter0044
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4400
+     * @tc.name       testStringRepeatTest01Chapter0044
      * @tc.desc       RepeatChineseCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -760,8 +760,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0045
-     * @tc.name       test StringRepeatTest01Chapter0045
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4500
+     * @tc.name       testStringRepeatTest01Chapter0045
      * @tc.desc       RepeatJapaneseCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -777,8 +777,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0046
-     * @tc.name       test StringRepeatTest01Chapter0046
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4600
+     * @tc.name       testStringRepeatTest01Chapter0046
      * @tc.desc       RepeatKoreanCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -794,8 +794,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0047
-     * @tc.name       test StringRepeatTest01Chapter0047
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4700
+     * @tc.name       testStringRepeatTest01Chapter0047
      * @tc.desc       RepeatGreekLetters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -811,8 +811,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0048
-     * @tc.name       test StringRepeatTest01Chapter0048
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4800
+     * @tc.name       testStringRepeatTest01Chapter0048
      * @tc.desc       RepeatCyrillicCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -828,8 +828,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0049
-     * @tc.name       test StringRepeatTest01Chapter0049
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_4900
+     * @tc.name       testStringRepeatTest01Chapter0049
      * @tc.desc       RepeatEmoji
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -845,8 +845,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0050
-     * @tc.name       test StringRepeatTest01Chapter0050
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5000
+     * @tc.name       testStringRepeatTest01Chapter0050
      * @tc.desc       RepeatComplexEmojiWithModifiers
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -862,8 +862,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0051
-     * @tc.name       test StringRepeatTest01Chapter0051
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5100
+     * @tc.name       testStringRepeatTest01Chapter0051
      * @tc.desc       RepeatSpecialUnicodeCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -879,8 +879,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0052
-     * @tc.name       test StringRepeatTest01Chapter0052
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5200
+     * @tc.name       testStringRepeatTest01Chapter0052
      * @tc.desc       RepeatSurrogatePairCharacters
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -896,8 +896,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0053
-     * @tc.name       test StringRepeatTest01Chapter0053
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5300
+     * @tc.name       testStringRepeatTest01Chapter0053
      * @tc.desc      RepeatMixedBMPAndSurrogatePair
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -913,8 +913,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0054
-     * @tc.name       test StringRepeatTest01Chapter0054
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5400
+     * @tc.name       testStringRepeatTest01Chapter0054
      * @tc.desc        RepeatWithCustomObjectViaCallApply
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -928,8 +928,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0055
-     * @tc.name       test StringRepeatTest01Chapter0055
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5500
+     * @tc.name       testStringRepeatTest01Chapter0055
      * @tc.desc        TestNumberRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -943,8 +943,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0056
-     * @tc.name       test StringRepeatTest01Chapter0056
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5600
+     * @tc.name       testStringRepeatTest01Chapter0056
      * @tc.desc       TestBooleanRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -958,8 +958,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0057
-     * @tc.name       test StringRepeatTest01Chapter0057
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5700
+     * @tc.name       testStringRepeatTest01Chapter0057
      * @tc.desc       TestDateRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -974,8 +974,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0058
-     * @tc.name       test StringRepeatTest01Chapter0058
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5800
+     * @tc.name       testStringRepeatTest01Chapter0058
      * @tc.desc       TestArrayRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -989,8 +989,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0059
-     * @tc.name       test StringRepeatTest01Chapter0059
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_5900
+     * @tc.name       testStringRepeatTest01Chapter0059
      * @tc.desc       TestStringPrototype
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1004,8 +1004,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0060
-     * @tc.name       test StringRepeatTest01Chapter0060
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6000
+     * @tc.name       testStringRepeatTest01Chapter0060
      * @tc.desc       TestDelAddProto
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1019,8 +1019,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0061
-     * @tc.name       test StringRepeatTest01Chapter0061
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6100
+     * @tc.name       testStringRepeatTest01Chapter0061
      * @tc.desc        TestRepeatConcat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1036,8 +1036,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0062
-     * @tc.name       test StringRepeatTest01Chapter0062
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6200
+     * @tc.name       testStringRepeatTest01Chapter0062
      * @tc.desc        TestConcatRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1053,8 +1053,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0063
-     * @tc.name       test StringRepeatTest01Chapter0063
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6300
+     * @tc.name       testStringRepeatTest01Chapter0063
      * @tc.desc        TestRepeatSlice
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1070,8 +1070,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0064
-     * @tc.name       test StringRepeatTest01Chapter0064
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6400
+     * @tc.name       testStringRepeatTest01Chapter0064
      * @tc.desc        TestSliceRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1087,8 +1087,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0065
-     * @tc.name       test StringRepeatTest01Chapter0065
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6500
+     * @tc.name       testStringRepeatTest01Chapter0065
      * @tc.desc        TestRepeatToUpper
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1103,8 +1103,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0066
-     * @tc.name       test StringRepeatTest01Chapter0066
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6600
+     * @tc.name       testStringRepeatTest01Chapter0066
      * @tc.desc       TestToLowerRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1119,8 +1119,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0067
-     * @tc.name       test StringRepeatTest01Chapter0067
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6700
+     * @tc.name       testStringRepeatTest01Chapter0067
      * @tc.desc       TestSpaceRepeatTrim
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1136,8 +1136,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0068
-     * @tc.name       test StringRepeatTest01Chapter0068
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6800
+     * @tc.name       testStringRepeatTest01Chapter0068
      * @tc.desc       TestTrimRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1153,8 +1153,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0069
-     * @tc.name       test StringRepeatTest01Chapter0069
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_6900
+     * @tc.name       testStringRepeatTest01Chapter0069
      * @tc.desc        TestSplitJoinRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1168,8 +1168,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0070
-     * @tc.name       test StringRepeatTest01Chapter0070
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7000
+     * @tc.name       testStringRepeatTest01Chapter0070
      * @tc.desc       TestRepeatThenReplace
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1184,8 +1184,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0071
-     * @tc.name       test StringRepeatTest01Chapter0071
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7100
+     * @tc.name       testStringRepeatTest01Chapter0071
      * @tc.desc       TestReplaceThenRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1200,8 +1200,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0072
-     * @tc.name       test StringRepeatTest01Chapter0072
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7200
+     * @tc.name       testStringRepeatTest01Chapter0072
      * @tc.desc       TestRepeatThenPadStart
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1217,8 +1217,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0073
-     * @tc.name       test StringRepeatTest01Chapter0073
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7300
+     * @tc.name       testStringRepeatTest01Chapter0073
      * @tc.desc       TestPadEndThenRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1234,8 +1234,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0074
-     * @tc.name       test StringRepeatTest01Chapter0074
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7400
+     * @tc.name       testStringRepeatTest01Chapter0074
      * @tc.desc       TestSearchSubstringInRepeatResult
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1252,8 +1252,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0075
-     * @tc.name       test StringRepeatTest01Chapter0075
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7500
+     * @tc.name       testStringRepeatTest01Chapter0075
      * @tc.desc       TestRepeatIncludes
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1270,8 +1270,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0076
-     * @tc.name       test StringRepeatTest01Chapter0076
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7600
+     * @tc.name       testStringRepeatTest01Chapter0076
      * @tc.desc       TestRepeatStartsWith
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1288,8 +1288,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0077
-     * @tc.name       test StringRepeatTest01Chapter0077
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7700
+     * @tc.name       testStringRepeatTest01Chapter0077
      * @tc.desc       TestRepeatEndsWith
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1306,8 +1306,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0078
-     * @tc.name       test StringRepeatTest01Chapter0078
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7800
+     * @tc.name       testStringRepeatTest01Chapter0078
      * @tc.desc        TestRepeatCharAt
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1325,8 +1325,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0079
-     * @tc.name       test StringRepeatTest01Chapter0079
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_7900
+     * @tc.name       testStringRepeatTest01Chapter0079
      * @tc.desc       TestRepeatCharCodeAt
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1343,8 +1343,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0080
-     * @tc.name       test StringRepeatTest01Chapter0080
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8000
+     * @tc.name       testStringRepeatTest01Chapter0080
      * @tc.desc        TestThrowOnExceedMaxLength
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1359,8 +1359,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0081
-     * @tc.name       test StringRepeatTest01Chapter0081
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8100
+     * @tc.name       testStringRepeatTest01Chapter0081
      * @tc.desc        TestLongStrRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1377,8 +1377,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0082
-     * @tc.name       test StringRepeatTest01Chapter0082
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8200
+     * @tc.name       testStringRepeatTest01Chapter0082
      * @tc.desc        TestShortStrRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1394,8 +1394,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0083
-     * @tc.name       test StringRepeatTest01Chapter0083
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8300
+     * @tc.name       testStringRepeatTest01Chapter0083
      * @tc.desc        TestRepeatChain
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1413,8 +1413,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0084
-     * @tc.name       test StringRepeatTest01Chapter0084
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8400
+     * @tc.name       testStringRepeatTest01Chapter0084
      * @tc.desc        TestStrictModeRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1429,8 +1429,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0085
-     * @tc.name       test StringRepeatTest01Chapter0085
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8500
+     * @tc.name       testStringRepeatTest01Chapter0085
      * @tc.desc        TestStrictModeThrow
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1444,8 +1444,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0086
-     * @tc.name       test StringRepeatTest01Chapter0086
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8600
+     * @tc.name       testStringRepeatTest01Chapter0086
      * @tc.desc        TestNonStrictRepeat
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1459,8 +1459,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0087
-     * @tc.name       test StringRepeatTest01Chapter0087
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8700
+     * @tc.name       testStringRepeatTest01Chapter0087
      * @tc.desc        TestRepeatSeparator
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1476,8 +1476,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0088
-     * @tc.name       test StringRepeatTest01Chapter0088
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8800
+     * @tc.name       testStringRepeatTest01Chapter0088
      * @tc.desc        TestRepeatIndent
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1493,8 +1493,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0089
-     * @tc.name       test StringRepeatTest01Chapter0089
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_8900
+     * @tc.name       testStringRepeatTest01Chapter0089
      * @tc.desc       TestRepeatDecor
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1510,8 +1510,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0090
-     * @tc.name       test StringRepeatTest01Chapter0090
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9000
+     * @tc.name       testStringRepeatTest01Chapter0090
      * @tc.desc       TestRepeatLeadingZero
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1525,8 +1525,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0091
-     * @tc.name       test StringRepeatTest01Chapter0091
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9100
+     * @tc.name       testStringRepeatTest01Chapter0091
      * @tc.desc       TestRepeatAlign
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1540,8 +1540,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0092
-     * @tc.name       test StringRepeatTest01Chapter0092
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9200
+     * @tc.name       testStringRepeatTest01Chapter0092
      * @tc.desc       TestRepeatTestData
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1556,8 +1556,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0093
-     * @tc.name       test StringRepeatTest01Chapter0093
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9300
+     * @tc.name       testStringRepeatTest01Chapter0093
      * @tc.desc       TestRepeatKey
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1573,8 +1573,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0094
-     * @tc.name       test StringRepeatTest01Chapter0094
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9400
+     * @tc.name       testStringRepeatTest01Chapter0094
      * @tc.desc       TestRepeatPadLength
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -1588,8 +1588,8 @@ interface CustomStringIterator {
       console.log(TAG + 'end');
     })
     /**
-     * @tc.number     SUB_String_RepeatTEST01_0095
-     * @tc.name       test StringRepeatTest01Chapter0095
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_STRINGREPEAT_9500
+     * @tc.name       testStringRepeatTest01Chapter0095
      * @tc.desc      TestRepeatAsciiArt
      * @tc.size       MediumTest
      * @tc.type       Function

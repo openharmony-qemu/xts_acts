@@ -1710,7 +1710,7 @@ export default function StringSearchTest2() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0100
      * @tc.name      StringSearchTest1211
      * @tc.desc      Verify search on multiline template literal string
      * @tc.size      SmallTest
@@ -1728,7 +1728,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0200
      * @tc.name      StringSearchTest1212
      * @tc.desc      Verify search on String constructor created object
      * @tc.size      SmallTest
@@ -1745,7 +1745,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0300
      * @tc.name      StringSearchTest1213
      * @tc.desc      Verify String object and primitive string behave the same
      * @tc.size      SmallTest
@@ -1764,7 +1764,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0400
      * @tc.name      StringSearchTest1214
      * @tc.desc      Verify search on empty String object
      * @tc.size      SmallTest
@@ -1781,7 +1781,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0500
      * @tc.name      StringSearchTest1215
      * @tc.desc      Verify search after converting number to string
      * @tc.size      SmallTest
@@ -1799,7 +1799,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0600
      * @tc.name      StringSearchTest1216
      * @tc.desc      Verify search after converting boolean to string
      * @tc.size      SmallTest
@@ -1817,7 +1817,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0700
      * @tc.name      StringSearchTest1217
      * @tc.desc      Verify search after converting array to string
      * @tc.size      SmallTest
@@ -1835,7 +1835,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0800
      * @tc.name      StringSearchTest1218
      * @tc.desc      Verify search after converting object to string
      * @tc.size      SmallTest
@@ -1852,7 +1852,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_0900
      * @tc.name      StringSearchTest1219
      * @tc.desc      Verify search on string containing only spaces
      * @tc.size      SmallTest
@@ -1869,7 +1869,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_10900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_1000
      * @tc.name      StringSearchTest1220
      * @tc.desc      Verify search on string containing only digits
      * @tc.size      SmallTest
@@ -1886,7 +1886,7 @@ line2`;
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWO_11000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSEARCHTWOONE_1100
      * @tc.name      StringSearchTest1221
      * @tc.desc      Verify search on string containing only special characters
      * @tc.size      SmallTest

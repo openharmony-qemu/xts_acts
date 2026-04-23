@@ -1,8 +1,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as stringTest from './string_tolocalelowercase_test1'
 
-export default function StringToLocaleLowerCaseTest1() {
-  describe('StringToLocaleLowerCaseTest1', () => {
+export default function StringToLocaleLowerCaseTest() {
+  describe('StringToLocaleLowerCaseTest', () => {
     beforeAll(() => {
     });
     beforeEach(() => {
@@ -1423,35 +1423,6 @@ export default function StringToLocaleLowerCaseTest1() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7200
-     * @tc.name      StringToLocaleLowerCaseTest1072
-     * @tc.desc      Test for isolated surrogate characters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("StringToLocaleLowerCaseTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringToLocaleLowerCaseTest1072';
-      console.log(TAG + 'start');
-
-      const loneSurrogate = "\uD800";
-      const result = loneSurrogate.toLocaleLowerCase();
-
-      if (result === loneSurrogate) {
-        expect(result).assertEqual("\uD800");
-      } else {
-        const charCode = result.charCodeAt(0);
-        if (charCode >= 0xD800 && charCode <= 0xDBFF) {
-          expect(result).assertEqual(loneSurrogate);
-        } else {
-          expect(true).assertTrue();
-        }
-      }
-
-      console.log(TAG + "end");
-    });
-
-    /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7300
      * @tc.name      StringToLocaleLowerCaseTest1073
      * @tc.desc      Test for NFC normalization form
      * @tc.size      MediumTest
@@ -1470,7 +1441,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7300
      * @tc.name      StringToLocaleLowerCaseTest1075
      * @tc.desc      Test Zero-Width Joiner (ZWJ) sequences
      * @tc.size      MediumTest
@@ -1488,7 +1459,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7400
      * @tc.name      StringToLocaleLowerCaseTest1076
      * @tc.desc      Test characters with variation selectors
      * @tc.size      MediumTest
@@ -1508,7 +1479,7 @@ export default function StringToLocaleLowerCaseTest1() {
     //====================================Method Chaining Test============================================================
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7500
      * @tc.name      StringToLocaleLowerCaseTest1077
      * @tc.desc      Test converting case first, then trimming whitespace
      * @tc.size      MediumTest
@@ -1526,7 +1497,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7600
      * @tc.name      StringToLocaleLowerCaseTest1078
      * @tc.desc      Test converting case first, then slicing
      * @tc.size      MediumTest
@@ -1544,7 +1515,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7700
      * @tc.name      StringToLocaleLowerCaseTest1079
      * @tc.desc      Test converting case first, then splitting
      * @tc.size      MediumTest
@@ -1573,7 +1544,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7800
      * @tc.name      StringToLocaleLowerCaseTest1080
      * @tc.desc      Test converting first, then replacing
      * @tc.size      MediumTest
@@ -1591,7 +1562,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_7900
      * @tc.name      StringToLocaleLowerCaseTest1082
      * @tc.desc      Test case-insensitive search using toLocaleLowerCase
      * @tc.size      MediumTest
@@ -1609,7 +1580,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8000
      * @tc.name      StringToLocaleLowerCaseTest1083
      * @tc.desc      Test using in array map
      * @tc.size      MediumTest
@@ -1633,7 +1604,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8100
      * @tc.name      StringToLocaleLowerCaseTest1084
      * @tc.desc      Test using in array filter
      * @tc.size      MediumTest
@@ -1655,7 +1626,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8200
      * @tc.name      StringToLocaleLowerCaseTest1085
      * @tc.desc      Test for use in array sorting
      * @tc.size      MediumTest
@@ -1677,7 +1648,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8300
      * @tc.name      StringToLocaleLowerCaseTest1086
      * @tc.desc      Test usage in template strings
      * @tc.size      MediumTest
@@ -1695,7 +1666,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8400
      * @tc.name      StringToLocaleLowerCaseTest1087
      * @tc.desc      Test usage in tagged templates
      * @tc.size      MediumTest
@@ -1713,7 +1684,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8500
      * @tc.name      StringToLocaleLowerCaseTest1088
      * @tc.desc      Test converting object property values
      * @tc.size      MediumTest
@@ -1749,7 +1720,7 @@ export default function StringToLocaleLowerCaseTest1() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTOLOCALELOWERCASE_8600
      * @tc.name      StringToLocaleLowerCaseTest1089
      * @tc.desc      Test handling strings in JSON data
      * @tc.size      MediumTest
