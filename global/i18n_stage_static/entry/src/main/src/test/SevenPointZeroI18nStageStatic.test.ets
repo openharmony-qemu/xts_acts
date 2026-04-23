@@ -600,7 +600,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0100
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0100
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0100
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -617,7 +617,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0200
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0200
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0200
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -634,7 +634,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0300
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0300
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0300
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0400
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0400
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0400
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -668,7 +668,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0500
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0500
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0500
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -685,7 +685,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0600
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0600
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0600
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -702,7 +702,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0700
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0700
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0700
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -719,7 +719,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0800
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0800
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0800
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -737,7 +737,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_0900
-     * @tc.number SUB_GLOBAL_detectEncoding_static_0900
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_0900
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -755,7 +755,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_1000
-     * @tc.number SUB_GLOBAL_detectEncoding_static_1000
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_1000
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -772,7 +772,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   SUB_GLOBAL_detectEncoding_static_1100
-     * @tc.number SUB_GLOBAL_detectEncoding_static_1100
+     * @tc.number SUB_GLOBAL_DETECTENCODING_STATIC_1100
      * @tc.desc   with detectEncoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -789,7 +789,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolDateTimeFormat_static_0700
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_0700
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_0700
      * @tc.desc   test SymbolDateTimeFormat with undefined amPMSymbol param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -811,7 +811,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_0300
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1000
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_1000
      * @tc.desc   test SymbolNumberFormat with custom 0 character
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -833,7 +833,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_0500
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1200
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_1200
      * @tc.desc   test SymbolNumberFormat with empty SymbolNumberFormatOptions param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -855,7 +855,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_0900
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_1600
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_1600
      * @tc.desc   test SymbolNumberFormat with empty nan option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -877,7 +877,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_1300
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2000
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_2000
      * @tc.desc   test SymbolNumberFormat with empty minusSign param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -899,7 +899,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_1700
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2400
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_2400
      * @tc.desc   test SymbolNumberFormat with empty plusSign param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -921,7 +921,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   test_SymbolNumberFormat_static_2100
-     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_2800
+     * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_2800
      * @tc.desc   test SymbolNumberFormat with resolvedOptions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -943,7 +943,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   i18n_setAppDefaultTimeZoneById_static_0400
-     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0400
+     * @tc.number SUB_GLOBAL_APPSSETTINGTIMEZONE_STATIC_0400
      * @tc.desc   test getAppDefaultTimeZone with Asia/Shanghai
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -958,7 +958,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   i18n_setAppDefaultTimeZoneById_static_0100
-     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0100
+     * @tc.number SUB_GLOBAL_APPSSETTINGTIMEZONE_STATIC_0100
      * @tc.desc   test setAppDefaultTimeZoneById with Asia/Hong_Kong
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -976,7 +976,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   i18n_setAppDefaultTimeZoneById_static_0200
-     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0200
+     * @tc.number SUB_GLOBAL_APPSSETTINGTIMEZONE_STATIC_0200
      * @tc.desc   test setAppDefaultTimeZoneById with America/New_York
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -994,7 +994,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   i18n_setAppDefaultTimeZoneById_static_0300
-     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0300
+     * @tc.number SUB_GLOBAL_APPSSETTINGTIMEZONE_STATIC_0300
      * @tc.desc   test setAppDefaultTimeZoneById with America/New_York
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1017,7 +1017,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name   i18n_setAppDefaultTimeZoneById_static_0500
-     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_static_0500
+     * @tc.number SUB_GLOBAL_APPSSETTINGTIMEZONE_STATIC_0500
      * @tc.desc   test getAppDefaultTimeZone with Asia/123
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
