@@ -1,6 +1,8 @@
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent';
 import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";
 import Utils from './Util.test';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -28,12 +30,16 @@ export default function Hiviewdfx_HiAppEventTest(){
        **/
     it("SUB_HiAppEvent_setEventConfig_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,async (done: () => void): Promise<void> =>{
       await Utils.msSleep(1000)
-      hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params);
-      let a:int = 1;
-      let b:int = 1;
-      expect(a).assertEqual(b);
-      done()
-      hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params);
+      hilog.info(domain, tag, 'SUB_HiAppEvent_setEventConfig_0100 start')
+      hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
+        hilog.info(domain, tag, `SUB_HiAppEvent_setEventConfig_0100 Successfully set sampling stack parameters.`);
+        done();
+      }).catch((err:Error) => {
+        hilog.error(domain, tag, `SUB_HiAppEvent_setEventConfig_0100 Code: ${err?.code}, message: ${err?.message}`);
+        expect(false).assertTrue();
+        done();
+      })
+      hilog.info(domain, tag, 'SUB_HiAppEvent_setEventConfig_0100 end')
     })
 
     
