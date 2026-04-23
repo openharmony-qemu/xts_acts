@@ -14,7 +14,7 @@
  */
 
 #include "common/common.h"
-#include "../manager/PluginManagerTest.h"
+#include "../manager/plugin_manager.h"
 #include "arkui/native_type.h"
 #include "arkui/native_node.h"
 
