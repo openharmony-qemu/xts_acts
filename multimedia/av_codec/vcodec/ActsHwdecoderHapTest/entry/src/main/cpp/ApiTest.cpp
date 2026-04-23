@@ -2615,7 +2615,7 @@ int VIDEO_HWDEC_API_ADD_0060()
 int VIDEO_HWDEC_API_ADD_0070()
 {
     vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
-    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_GetInputBuffer(vdec_, -1));
+    ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoDecoder_PushInputBuffer(vdec_, -1));
     return SUCCESS_CODE;
 }
 

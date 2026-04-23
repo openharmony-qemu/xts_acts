@@ -30,7 +30,7 @@ static constexpr int RESULT_ERROR = -1;
 
 // Handler count constants for std::array sizes (avoid magic numbers).
 static constexpr size_t HWH265_HDR2SDR_COUNT = 1;
-static constexpr size_t API_TEST_COUNT = 127;
+static constexpr size_t API_TEST_COUNT = 133;
 static constexpr size_t FUNC2_TEST_COUNT = 48;
 static constexpr size_t FUNC_TEST_COUNT = 24;
 static constexpr size_t STATE_TEST_COUNT = 43;
