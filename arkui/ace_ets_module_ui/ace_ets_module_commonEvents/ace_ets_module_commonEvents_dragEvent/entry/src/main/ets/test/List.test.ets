@@ -27,6 +27,7 @@ import DragModifier from './DragEvent/DragModifier.test';
 import normalDrag from './DragEvent/normalDrag.test';
 import dragSpringLoading from './DragEvent/dragSpringLoading.test';
 import enableInternalDropAnimation from './DragEvent/enableInternalDropAnimation.test';
+import AutoHideComponentUniqueIdsTest from './autoHideComponentUniqueIds/AutoHideComponentUniqueIdsTest.test'
 
 export default function testsuite() {
   ACTION_CANCELED_BEFORE_DRAG_APITest();
@@ -43,4 +44,5 @@ export default function testsuite() {
   mouseEventTest();
   touchEventTest();
   getResultTest();
+  AutoHideComponentUniqueIdsTest();
 }
