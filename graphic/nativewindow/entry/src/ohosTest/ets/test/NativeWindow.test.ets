@@ -1183,6 +1183,22 @@ export default function nativeWindowTest() {
 
 
     /**
+     * @tc.name   testNativeWindowNativeWindowHandleOptCodeAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0926
+     * @tc.desc   testNativeWindowNativeWindowHandleOptCodeAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowNativeWindowHandleOptCodeAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowNativeWindowHandleOptCodeAbnormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+
+    /**
      * @tc.name   testNativeWindowNativeWindowSetSetScalingModeV2Nullptr
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1300
      * @tc.desc   testNativeWindowNativeWindowSetSetScalingModeV2Nullptr

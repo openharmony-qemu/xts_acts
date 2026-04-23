@@ -274,6 +274,7 @@ napi_value testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal(napi_env 
 napi_value testNativeWindowNativeWindowHandleOptNullptr(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowNativeWindowHandleOptCodeAbnormal(napi_env env, napi_callback_info info);
 
 // Native Window 2
 napi_value testNativeWindowNativeWindowHandleOptSetGetFormatNormal(napi_env env, napi_callback_info info);

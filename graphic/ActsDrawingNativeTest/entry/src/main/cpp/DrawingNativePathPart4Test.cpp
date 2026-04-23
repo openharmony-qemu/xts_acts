@@ -86,11 +86,11 @@ int TestPathGetPointDataNull()
     uint32_t count = DRAWING_NUMBER_10;
     OH_Drawing_Point2D points[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetPointData(nullptr, points, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetPointData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetPointData(path, points, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart4TestTearDown();
@@ -196,11 +196,11 @@ int TestPathGetVerbDataNull()
     uint32_t count = DRAWING_NUMBER_10;
     OH_Drawing_PathIteratorVerb verbs[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetVerbData(nullptr, verbs, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetVerbData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetVerbData(path, verbs, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart4TestTearDown();
@@ -304,11 +304,11 @@ int TestPathGetConicWeightNull()
     uint32_t count = DRAWING_NUMBER_10;
     float conicWeights[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetConicWeightData(nullptr, conicWeights, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetConicWeightData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetConicWeightData(path, conicWeights, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart4TestTearDown();
@@ -437,11 +437,11 @@ int TestPathConvertToSvgStringNull()
     char str[DRAWING_NUMBER_10] = {0};
     size_t strSize = sizeof(str);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathConvertToSvgString(nullptr, str, &strSize);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathConvertToSvgString(path, nullptr, &strSize);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathConvertToSvgString(path, str, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart4TestTearDown();
@@ -462,7 +462,7 @@ int TestPathConvertToSvgStringAbnormal()
     char str[DRAWING_NUMBER_1] = {0};
     size_t strSize = sizeof(str);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathConvertToSvgString(path, str, &strSize);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart4TestTearDown();
@@ -596,6 +596,9 @@ int TestPathIsEqualNull()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(equal, false);
     errorCode = OH_Drawing_PathIsEqual(path, nullptr, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    errorCode = OH_Drawing_PathIsEqual(path, other, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(equal, false);
     OH_Drawing_PathDestroy(path);
