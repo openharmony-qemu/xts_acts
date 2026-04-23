@@ -6225,6 +6225,7 @@ export default function audioCapturer() {
       await audioCapturer.release();
       done();
     })
+    
     /**
  	   * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000 
  	   * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_1000 
