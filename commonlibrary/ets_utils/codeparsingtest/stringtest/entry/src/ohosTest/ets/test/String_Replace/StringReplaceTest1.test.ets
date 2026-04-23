@@ -22,11 +22,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1001';
-      console.log(TAG + 'start');
+      
       const str = "hello world, hello javascript";
       const result = str.replace(/hello/, "hi");
       expect(result).assertEqual("hi world, hello javascript");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -39,11 +39,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1002';
-      console.log(TAG + 'start');
+      
       const str = "apple123banana456";
       const result = str.replace(/[0-9]+/, "NUMBER");
       expect(result).assertEqual("appleNUMBERbanana456");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -56,11 +56,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1003';
-      console.log(TAG + 'start');
+      
       const str = "Hello HELLO hello";
       const result = str.replace(/hello/i, "hi");
       expect(result).assertEqual("hi HELLO hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -73,11 +73,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1004';
-      console.log(TAG + 'start');
+      
       const str = "hello world, hello javascript";
       const result = str.replace(/hello/g, "hi");
       expect(result).assertEqual("hi world, hi javascript");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -90,11 +90,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1005';
-      console.log(TAG + 'start');
+      
       const str = "Hello HELLO hello";
       const result = str.replace(/hello/gi, "hi");
       expect(result).assertEqual("hi hi hi");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -107,11 +107,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1006';
-      console.log(TAG + 'start');
+      
       const str = "line1\nline2\nline3";
       const result2 = str.replace(/^line/g, "row");
       expect(result2).assertEqual("row1\nline2\nline3");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -124,11 +124,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1007';
-      console.log(TAG + 'start');
+      
       const str = "hello\nworld";
       const result2 = str.replace(/hello.world/, "replaced");
       expect(result2).assertEqual("hello\nworld");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -141,11 +141,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1008';
-      console.log(TAG + 'start');
+      
       const str = "\u{1F600} hello";
       const result = str.replace(/\u{1F600}/u, "emoji");
       expect(result).assertEqual("emoji hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -158,11 +158,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1009';
-      console.log(TAG + 'start');
+      
       const str = " hello";
       const result = str.replace(/\u{1F600}/u, "emoji");
       expect(result).assertEqual(" hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -175,11 +175,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1010';
-      console.log(TAG + 'start');
+      
       const str = "Hello\nWorld\nHELLO";
       const result = str.replace(/^hello/gim, "hi");
       expect(result).assertEqual("hi\nWorld\nhi");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -192,11 +192,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1011';
-      console.log(TAG + 'start');
+      
       const str = "cat dog cat bird";
       const result = str.replace(/cat/, "tiger");
       expect(result).assertEqual("tiger dog cat bird");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -209,11 +209,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1012';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/(\w+) (\w+)/, "$2 $1");
       expect(result).assertEqual("world hello");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -226,11 +226,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1013';
-      console.log(TAG + 'start');
+      
       const str = "2024-03-09";
       const result = str.replace(/(\d{4})-(\d{2})-(\d{2})/, "$3/$2/$1");
       expect(result).assertEqual("09/03/2024");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -243,11 +243,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1014';
-      console.log(TAG + 'start');
+      
       const str = "abc123";
       const result = str.replace(/((abc)(123))/, "$2-$3");
       expect(result).assertEqual("abc-123");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -260,11 +260,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1015';
-      console.log(TAG + 'start');
+      
       const str = "hello123world";
       const result = str.replace(/(?:hello)(\d+)(world)/, "[$1]-$2");
       expect(result).assertEqual("[123]-world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -277,11 +277,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1016';
-      console.log(TAG + 'start');
+      
       const str = "abc123def456";
       const result = str.replace(/(abc)(?:\d+)(def)(\d+)/, "$1-$2-$3");
       expect(result).assertEqual("abc-def-456");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -294,11 +294,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1017';
-      console.log(TAG + 'start');
+      
       const str = "John Smith";
       const result = str.replace(/(?<first>\w+) (?<last>\w+)/, "$<last>, $<first>");
       expect(result).assertEqual("Smith, John");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -311,11 +311,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1018';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const result = str.replace(/hello/, "$<nonexist>");
       expect(result).assertEqual("$<nonexist>");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -328,11 +328,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1019';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result2 = str.replace(/world$/, "javascript");
       expect(result2).assertEqual("hello javascript");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -345,11 +345,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1020';
-      console.log(TAG + 'start');
+      
       const str = "cat category catalog";
       const result = str.replace(/\bcat\b/g, "dog");
       expect(result).assertEqual("dog category catalog");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -362,11 +362,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1021';
-      console.log(TAG + 'start');
+      
       const str = "hello123 world456";
       const result = str.replace(/\d+(?= )/g, "NUM");
       expect(result).assertEqual("helloNUM world456");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -379,11 +379,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1022';
-      console.log(TAG + 'start');
+      
       const str = "hello123 world456";
       const result = str.replace(/\d+(?! )/g, "NUM");
       expect(result).assertEqual("helloNUM3 worldNUM");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -396,11 +396,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1023';
-      console.log(TAG + 'start');
+      
       const str = "price: $100, $200";
       const result = str.replace(/(?<=\$)\d+/g, "XXX");
       expect(result).assertEqual("price: $XXX, $XXX");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -413,11 +413,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1024';
-      console.log(TAG + 'start');
+      
       const str = "price: 100$, 200$";
       const result = str.replace(/(?<!\$)\d+/g, "NUM");
       expect(result).assertEqual("price: NUM$, NUM$");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -430,11 +430,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1025';
-      console.log(TAG + 'start');
+      
       const str = "abc";
       const result = str.replace(/(?=b)/, "X");
       expect(result).assertEqual("aXbc");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -447,11 +447,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1026';
-      console.log(TAG + 'start');
+      
       const str = "<div>content</div>";
       const result = str.replace(/<.*>/, "[TAG]");
       expect(result).assertEqual("[TAG]");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -464,11 +464,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1027';
-      console.log(TAG + 'start');
+      
       const str = "<div>content</div>";
       const result = str.replace(/<.*?>/, "[TAG]");
       expect(result).assertEqual("[TAG]content</div>");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -481,11 +481,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1028';
-      console.log(TAG + 'start');
+      
       const str = "<div>content</div>";
       const result = str.replace(/<.*?>/, "[TAG]");
       expect(result).assertEqual("[TAG]content</div>");
-      console.log(TAG + "end");
+
     });
     //============================Special Replacement Patterns==================================
     /**
@@ -498,11 +498,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1029';
-      console.log(TAG + 'start');
+      
       const str = "price: 100";
       const result = str.replace(/100/, "$$200");
       expect(result).assertEqual("price: $200");
-      console.log(TAG + "end");
+
     });
 
 
@@ -516,11 +516,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1030';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/world/, "beautiful $&");
       expect(result).assertEqual("hello beautiful world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -533,11 +533,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1031';
-      console.log(TAG + 'start');
+      
       const str = "cat";
       const result = str.replace(/cat/, "$& $& $&");
       expect(result).assertEqual("cat cat cat");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -550,11 +550,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1032';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/world/, "$`");
       expect(result).assertEqual("hello hello ");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3300
@@ -566,11 +566,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1033';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/hello/, "$'");
       expect(result).assertEqual(" world world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3400
@@ -582,11 +582,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1034';
-      console.log(TAG + 'start');
+      
       const str = "apple,orange";
       const result = str.replace(/(\w+),(\w+)/, "$2,$1");
       expect(result).assertEqual("orange,apple");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3500
@@ -598,11 +598,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1035';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const result = str.replace(/hello/, "$2");
       expect(result).assertEqual("$2");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3600
@@ -614,11 +614,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1036';
-      console.log(TAG + 'start');
+      
       const str = "abc";
       const result = str.replace(/(a)|(b)/, "$2");
       expect(result).assertEqual("bc");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3700
@@ -630,11 +630,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1037';
-      console.log(TAG + 'start');
+      
       const str = "1-2-3-4-5-6-7-8-9-10";
       const result = str.replace(/(1)-(2)-(3)-(4)-(5)-(6)-(7)-(8)-(9)-(10)/, "$10");
       expect(result).assertEqual("10");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3800
@@ -646,7 +646,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1038';
-      console.log(TAG + 'start');
+      
       const str = "a".repeat(100);
       let pattern = "";
       for (let i = 1; i <= 99; i++) {
@@ -656,7 +656,7 @@ export default function StringReplaceTest() {
       const regex = new RegExp(pattern);
       const result = str.replace(regex, "$99");
       expect(result).assertEqual("a");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_3900
@@ -668,11 +668,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1039';
-      console.log(TAG + 'start');
+      
       const str = "2024-03-09";
       const result = str.replace(/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/, "$<day>/$<month>/$<year>");
       expect(result).assertEqual("09/03/2024");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4000
@@ -684,11 +684,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1040';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/(\w+) (\w+)/, "Matched: $&, Before: $`, Groups: $1-$2");
       expect(result).assertEqual("Matched: hello world, Before: , Groups: hello-world");
-      console.log(TAG + "end");
+
     });
     //============================Function as a substitute==================================
     /**
@@ -701,11 +701,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1041';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/world/, match => match.toUpperCase());
       expect(result).assertEqual("hello WORLD");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4200
@@ -717,10 +717,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1042';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testUseRegularFunction()
       expect(result).assertEqual("hello WORLD");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4300
@@ -732,14 +732,14 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1043';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/world/, (match) => {
         console.log(match);
         return match;
       });
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4400
@@ -751,10 +751,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1044';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testCaptureGroupParameters()
       expect(result).assertEqual("world hello");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4500
@@ -766,10 +766,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1045';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testOffsetParameter()
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4600
@@ -781,10 +781,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1046';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testStringParameter()
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -797,10 +797,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1047';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testWithoutNamedGroups();
       expect(result).assertEqual("hello world");
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -813,11 +813,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1048';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const result = str.replace(/hello/, () => "world");
       expect(result).assertEqual("world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_4900
@@ -829,12 +829,12 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1049';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const result = str.replace(/hello/, () => "world");
       console.log(result);
       expect(result).assertEqual("world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5000
@@ -846,10 +846,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1050';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testReturningNumber()
       expect(result).assertEqual("value: 123");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5100
@@ -861,10 +861,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1051';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testReturningUndefined()
       expect(result).assertEqual("undefined");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5200
@@ -876,10 +876,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1052';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testReturningNull()
       expect(result).assertEqual("null");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5300
@@ -891,10 +891,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1053';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testReturningObject()
       expect(result).assertEqual("world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5400
@@ -906,10 +906,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1054';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testFunctionMultipleTimes()
       expect(result).assertEqual("a[1]b[2]c[3]");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5500
@@ -921,12 +921,12 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1055';
-      console.log(TAG + 'start');
+      
       let result: string[] = stringTest.testDifferentOffsetEachCall()
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(4);
       expect(result[2]).assertEqual(8);
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5600
@@ -938,10 +938,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1056';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testTheOriginalStrings()
       expect(result).assertEqual("Symbol(test)");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5700
@@ -953,10 +953,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1057';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testThisArrowFunctions()
       expect(result).assertEqual("PREFIX-hello world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5800
@@ -968,10 +968,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1058';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest. testThisRegularFunctions()
       expect(result).assertEqual("undefinedhello");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_5900
@@ -983,10 +983,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1059';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest. testBindingUsingBind()
       expect(result).assertEqual("PREFIX-hello world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6000
@@ -998,10 +998,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1060';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest. testUsingCallApply()
       expect(result).assertEqual("hello-SUFFIX");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6100
@@ -1013,10 +1013,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1061';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testFunctionThrowsException()
       expect(result).assertEqual("Replacer error");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6200
@@ -1028,10 +1028,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1062';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testGlobalReplacement()
       expect(result).assertEqual("2");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6300
@@ -1043,14 +1043,14 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1063';
-      console.log(TAG + 'start');
+      
       const str = "1 apple, 2 oranges, 3 bananas";
       const result = str.replace(/\d+/g, (match) => {
         const num = parseInt(match);
         return num > 1 ? `(${num})` : match;
       });
       expect(result).assertEqual("1 apple, (2) oranges, (3) bananas");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6400
@@ -1062,12 +1062,12 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1064';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const replacement = "world";
       const result = str.replace(/hello/, () => replacement);
       expect(result).assertEqual("world");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6500
@@ -1079,10 +1079,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1065';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testModifyingExternalState()
       expect(result).assertEqual("abc");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6600
@@ -1094,11 +1094,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1066';
-      console.log(TAG + 'start');
+      
       const res = stringTest.testCaptureNumbersAndRemove();
       expect(res.replacedStr).assertEqual("abc");
       expect(res.capturedNumbers).assertDeepEquals(["1","2","3"]);
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_6700
@@ -1110,10 +1110,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1067';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testTheOriginalString()
       expect(result).assertEqual("modified");
-      console.log(TAG + "end");
+
     });
     //=============Boundary Value and Exception Handling===============
     /**
@@ -1142,7 +1142,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1069';
-      console.log(TAG + 'start');
+      
       const str = "aabc";
       const result = str.replace(/a?/, "X");
       expect(result).assertEqual("Xabc")
@@ -1158,7 +1158,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1070';
-      console.log(TAG + 'start');
+      
       const str = "   ";
       const result = str.replace(/ /, "-");
       expect(result).assertEqual("-  ")
@@ -1174,7 +1174,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1071';
-      console.log(TAG + 'start');
+      
       const str = "!@#$%&";
       const result = str.replace(/@/, "AT");
       expect(result).assertEqual("!AT#$%&")
@@ -1190,7 +1190,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1072';
-      console.log(TAG + 'start');
+      
       const str = "null value";
       const result = str.replace('null', "undefined");
       expect(result).assertEqual("undefined value")
@@ -1206,7 +1206,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1073';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsUndefinedPattern()
       expect(result).assertEqual("defined variable")
       console.log(TAG + 'end');
@@ -1221,10 +1221,10 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1074';
-      console.log(TAG + 'start');
+      
       const result: string = stringTest.testReplaceWithNullValue();
       expect(result).assertEqual("null");
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGREPLACE_7500
@@ -1236,7 +1236,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1075';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsReplacementUndefined()
       expect(result).assertEqual("undefined")
       console.log(TAG + 'end');
@@ -1251,7 +1251,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1076';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsNumberPattern()
       expect(result).assertEqual("456 is a number")
       console.log(TAG + 'end');
@@ -1266,7 +1266,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1077';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsBooleanPattern()
       expect(result).assertEqual("yes or false")
       console.log(TAG + 'end');
@@ -1281,7 +1281,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1078';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsObjectPattern()
       expect(result).assertEqual("object")
       console.log(TAG + 'end');
@@ -1296,7 +1296,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1079';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testIsArrayPattern()
       expect(result).assertEqual("array")
       console.log(TAG + 'end');
@@ -1311,7 +1311,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1080';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testSymbolToPrimitive()
       expect(result).assertEqual("hi world")
       console.log(TAG + 'end');
@@ -1326,7 +1326,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1081';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testValueToStringOrder()
       expect(result).assertEqual("test replaced")
       console.log(TAG + 'end');
@@ -1341,7 +1341,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1082';
-      console.log(TAG + 'start');
+      
       let result: number = stringTest.testLongString()
       expect(result).assertEqual(10000)
       console.log(TAG + 'end');
@@ -1356,7 +1356,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1083';
-      console.log(TAG + 'start');
+      
       const str = "x".repeat(1000);
       const result = str.replace(/x/g, "y");
       expect(result).assertEqual("y".repeat(1000))
@@ -1372,7 +1372,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1084';
-      console.log(TAG + 'start');
+      
       let result: number = stringTest.testLongReplacementString()
       expect(result).assertEqual(10000)
       console.log(TAG + 'end');
@@ -1387,7 +1387,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1085';
-      console.log(TAG + 'start');
+      
       const str = "hello 你好";
       const result = str.replace(/你好/, "world");
       expect(result).assertEqual("hello world")
@@ -1403,7 +1403,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1086';
-      console.log(TAG + 'start');
+      
       const str = "hello  world";
       const result = str.replace(/\s+/g, " ");
       expect(result).assertEqual("hello world")
@@ -1419,7 +1419,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1087';
-      console.log(TAG + 'start');
+      
       const str = "line1\nline2\ttab";
       const result = str.replace(/\n/, " ");
       expect(result).assertEqual("line1 line2\ttab")
@@ -1435,7 +1435,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1088';
-      console.log(TAG + 'start');
+      
       const str = "hello　world";
       const result = str.replace(/\u3000/g, " X ");
       expect(result).assertEqual("hello X world")
@@ -1451,7 +1451,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1089';
-      console.log(TAG + 'start');
+      
       const str = "hello \uD834\uDF06 world";
       const result = str.replace(/\uD834/, "X");
       expect(result).assertEqual("hello X\uDF06 world")
@@ -1467,7 +1467,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1090';
-      console.log(TAG + 'start');
+      
       const str = "café";
       const normalized = str.normalize("NFC");
       const result = normalized.replace(/é/, "e");
@@ -1484,7 +1484,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1091';
-      console.log(TAG + 'start');
+      
       const str = "hello\u200Bworld";
       const result = str.replace(/\u200B/, " ");
       expect(result).assertEqual("hello world")
@@ -1500,7 +1500,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1092';
-      console.log(TAG + 'start');
+      
       const str = "\uFEFFhello world";
       const result = str.replace(/\uFEFF/, "");
       expect(result).assertEqual("hello world")
@@ -1516,7 +1516,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1093';
-      console.log(TAG + 'start');
+      
       let result: number = stringTest.testLastIndexOfRegex()
       expect(result).assertEqual(0)
       console.log(TAG + 'end');
@@ -1531,7 +1531,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1094';
-      console.log(TAG + 'start');
+      
       const str = "hello hello hello";
       const regex = /hello/g;
       regex.lastIndex = 6;
@@ -1549,7 +1549,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1095';
-      console.log(TAG + 'start');
+      
       let testData = stringTest.testLastIndexStickyMode()
       expect(testData.result).assertEqual("hello world hello")
       expect(testData.lastIndex).assertEqual(0)
@@ -1565,7 +1565,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1096';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testFrozenRegex()
       expect(result).assertEqual("hello javascript")
       console.log(TAG + 'end');
@@ -1580,7 +1580,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1097';
-      console.log(TAG + 'start');
+      
       const regex = /\d+/g;
       const str1 = "abc123def";
       const str2 = "xyz456uvw";
@@ -1600,7 +1600,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1098';
-      console.log(TAG + 'start');
+      
       "use strict";
       const str = "hello world";
       const result = str.replace(/world/, "javascript");
@@ -1617,7 +1617,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1099';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str.replace(/world/, "javascript");
       expect(result).assertEqual("hello javascript")
@@ -1633,7 +1633,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,(): void=> {
       const TAG = 'StringReplaceTest1100';
-      console.log(TAG + 'start');
+      
       let result: string = stringTest.testInvalidRegex();
       expect(result).assertEqual("SyntaxError");
       console.log(TAG + ' end');
@@ -1648,7 +1648,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1101';
-      console.log(TAG + 'start');
+      
       let errorType = stringTest.testInvalidFlagCombo();
       expect(errorType).assertEqual("SyntaxError");
       console.log(TAG + ' end');
@@ -1663,7 +1663,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1102';
-      console.log(TAG + 'start');
+      
       let errorType = stringTest.testCircularRefObject();
       expect(errorType).assertEqual("TypeError");
       console.log(TAG + ' end');
@@ -1678,7 +1678,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1103';
-      console.log(TAG + 'start');
+      
 
       const str = "aaa";
       const result1 = str.replace("a", "b");
@@ -1686,7 +1686,7 @@ export default function StringReplaceTest() {
       expect(result1).assertEqual("baa");
       expect(result2).assertEqual("bbb");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1699,7 +1699,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1104';
-      console.log(TAG + 'start');
+      
 
       const str = "aaa";
       const result1 = str.replace(/a/, "b");
@@ -1707,7 +1707,7 @@ export default function StringReplaceTest() {
       expect(result1).assertEqual("baa");
       expect(result2).assertEqual("bbb");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1720,11 +1720,11 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1105';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testReplaceEmptyCharacters();
       expect(result).assertEqual("hi world");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1737,7 +1737,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1106';
-      console.log(TAG + 'start');
+      
 
       const str = "price: $100, $200";
       const matches = str.match(/\$\d+/g);
@@ -1747,7 +1747,7 @@ export default function StringReplaceTest() {
       });
       expect(result).assertEqual("price: $200, $400");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1760,7 +1760,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1107';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testReplaceAndSplit();
       expect(result).assertDeepEquals(["a", "b", "c"]);
 
@@ -1777,13 +1777,13 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1108';
-      console.log(TAG + 'start');
+      
       const str = "a1b2c3";
       const replaced = str.replace(/\d/g, "-");
       const parts = replaced.split("-");
       expect(parts).assertDeepEquals(["a", "b", "c", ""]);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1796,14 +1796,14 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1109';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const pattern = "hello";
       const regex = new RegExp(pattern, "g");
       const result = str.replace(regex, "hi");
       expect(result).assertEqual("hi world");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1816,14 +1816,14 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1110';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const regex = /hello/;
       if (regex.test(str)) {
         const result = str.replace(regex, "hi");
         expect(result).assertEqual("hi world");
       }
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1836,7 +1836,7 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1111';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const regex = /(\w+) (\w+)/;
       const match = regex.exec(str);
@@ -1845,7 +1845,7 @@ export default function StringReplaceTest() {
         const result = str.replace(regex, `${match[2]} ${match[1]}`);
         expect(result).assertEqual("world hello");
       }
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1858,13 +1858,13 @@ export default function StringReplaceTest() {
      */
     it("StringReplaceTest1112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringReplaceTest1112';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const result = str
         .replace(/hello/, "hi")
         .replace(/world/, "javascript");
       expect(result).assertEqual("hi javascript");
-      console.log(TAG + "end");
+
     });
   });
 }

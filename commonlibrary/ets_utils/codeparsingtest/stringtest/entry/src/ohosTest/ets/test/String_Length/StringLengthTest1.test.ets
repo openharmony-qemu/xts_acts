@@ -33,7 +33,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1001';
-      console.log(TAG + 'start');
+      
       const str1 = "hello";
       const str2 = "12345";
       const str3 = "!@#$%";
@@ -42,8 +42,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(5);
       expect(str3.length).assertEqual(5);
       expect(str4.length).assertEqual(12);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0200
      * @tc.name      StringLengthTest1002
@@ -54,15 +54,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1002';
-      console.log(TAG + 'start');
+      
       const str1 = "你好";
       const str2 = "中文测试";
       const str3 = "Hello世界";
       expect(str1.length).assertEqual(2);
       expect(str2.length).assertEqual(4);
       expect(str3.length).assertEqual(7);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0300
      * @tc.name      StringLengthTest1003
@@ -73,15 +73,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1003';
-      console.log(TAG + 'start');
+      
       const str1 = "";
       const str2 = '';
       const str3 = ``;
       expect(str1.length).assertEqual(0);
       expect(str2.length).assertEqual(0);
       expect(str3.length).assertEqual(0);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0400
      * @tc.name      StringLengthTest1004
@@ -92,7 +92,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1004';
-      console.log(TAG + 'start');
+      
       const str1 = "a";
       const str2 = "中";
       const str3 = " ";
@@ -101,8 +101,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(1);
       expect(str3.length).assertEqual(1);
       expect(str4.length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0500
      * @tc.name      StringLengthTest1005
@@ -113,7 +113,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1005';
-      console.log(TAG + 'start');
+      
       const str1 = " ";
       const str2 = "\t";
       const str3 = "\n";
@@ -124,8 +124,8 @@ export default function StringLengthTest() {
       expect(str3.length).assertEqual(1);
       expect(str4.length).assertEqual(1);
       expect(str5.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0600
      * @tc.name      StringLengthTest1006
@@ -136,15 +136,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1006';
-      console.log(TAG + 'start');
+      
       const str1 = "hello world";
       const str2 = "  hello  ";
       const str3 = "line1\nline2";
       expect(str1.length).assertEqual(11);
       expect(str2.length).assertEqual(9);
       expect(str3.length).assertEqual(11);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0700
      * @tc.name      StringLengthTest1007
@@ -155,15 +155,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1007';
-      console.log(TAG + 'start');
+      
       const str1 = "ABC";
       const str2 = "abc";
       const str3 = "ÄÖÜ";
       expect(str1.length).assertEqual(3);
       expect(str2.length).assertEqual(3);
       expect(str3.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0800
      * @tc.name      StringLengthTest1008
@@ -174,13 +174,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1008';
-      console.log(TAG + 'start');
+      
       const str1 = "Привет";
       const str2 = "мир";
       expect(str1.length).assertEqual(6);
       expect(str2.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_0900
      * @tc.name      StringLengthTest1009
@@ -191,13 +191,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1009';
-      console.log(TAG + 'start');
+      
       const str1 = "ΑΒΓ";
       const str2 = "αβγ";
       expect(str1.length).assertEqual(3);
       expect(str2.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1000
      * @tc.name      StringLengthTest1010
@@ -208,14 +208,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1010';
-      console.log(TAG + 'start');
+      
       const str1 = "hello";
       const str2 = "world";
       const str3 = "hi";
       expect(str1.length === str2.length).assertEqual(true);
       expect(str1.length > str3.length).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1100
      * @tc.name      StringLengthTest1011
@@ -226,7 +226,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1011';
-      console.log(TAG + 'start');
+      
       const str1 = "😄";
       const str2 = "🎉";
       const str3 = "❤️";
@@ -235,8 +235,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(2);
       expect(str3.length).assertEqual(2);
       expect(str4.length).assertEqual(6);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1200
      * @tc.name      StringLengthTest1012
@@ -247,15 +247,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1012';
-      console.log(TAG + 'start');
+      
       const str1 = "👨‍👩‍👧‍👦";
       const str2 = "🏳️‍🌈";
       const str3 = "👍🏻";
       expect(str1.length).assertEqual(11);
       expect(str2.length).assertEqual(6);
       expect(str3.length).assertEqual(4);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1300
      * @tc.name      StringLengthTest1013
@@ -266,15 +266,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1013';
-      console.log(TAG + 'start');
+      
       const str1 = "𠮷";
       const str2 = "𡠀";
       const str3 = "𠮷𡠀";
       expect(str1.length).assertEqual(2);
       expect(str2.length).assertEqual(2);
       expect(str3.length).assertEqual(4);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1400
      * @tc.name      StringLengthTest1014
@@ -285,15 +285,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1014';
-      console.log(TAG + 'start');
+      
       const str1 = "𝑥";
       const str2 = "𝑦";
       const str3 = "∀𝑥∈ℝ";
       expect(str1.length).assertEqual(2);
       expect(str2.length).assertEqual(2);
       expect(str3.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1500
      * @tc.name      StringLengthTest1015
@@ -304,7 +304,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1015';
-      console.log(TAG + 'start');
+      
       const str1 = "a\u200Bb";
       const str2 = "a\u200Cb";
       const str3 = "a\u200Db";
@@ -313,8 +313,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(3);
       expect(str3.length).assertEqual(3);
       expect(str4.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1600
      * @tc.name      StringLengthTest1016
@@ -325,7 +325,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1016';
-      console.log(TAG + 'start');
+      
       const str1 = "é";
       const str2 = "e\u0301";
       const str3 = "ñ";
@@ -334,8 +334,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(2);
       expect(str3.length).assertEqual(1);
       expect(str4.length).assertEqual(2);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1700
      * @tc.name      StringLengthTest1017
@@ -346,7 +346,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1017';
-      console.log(TAG + 'start');
+      
       const str1 = "é";
       const str2 = "e\u0301";
       const str3 = str1.normalize("NFD");
@@ -355,8 +355,8 @@ export default function StringLengthTest() {
       expect(str2.length).assertEqual(2);
       expect(str3.length).assertEqual(2);
       expect(str4.length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1800
      * @tc.name      StringLengthTest1019
@@ -367,15 +367,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1019';
-      console.log(TAG + 'start');
+      
       const str1 = "";
       const str2 = String();
       const str3 = String("");
       expect(str1.length).assertEqual(0);
       expect(str2.length).assertEqual(0);
       expect(str3.length).assertEqual(0);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_1900
      * @tc.name      StringLengthTest1020
@@ -386,13 +386,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1020';
-      console.log(TAG + 'start');
+      
       const str1 = "a";
       const str2 = "\0";
       expect(str1.length).assertEqual(1);
       expect(str2.length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2000
      * @tc.name      StringLengthTest1021
@@ -403,11 +403,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1021';
-      console.log(TAG + 'start');
+      
       const str1 = "a".repeat(1000);
       expect(str1.length).assertEqual(1000);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2100
      * @tc.name      StringLengthTest1022
@@ -418,11 +418,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1022';
-      console.log(TAG + 'start');
+      
       const str1 = "a".repeat(10000);
       expect(str1.length).assertEqual(10000);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2200
      * @tc.name      StringLengthTest1023
@@ -433,11 +433,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1023';
-      console.log(TAG + 'start');
+      
       const str1 = "a".repeat(1000000);
       expect(str1.length).assertEqual(1000000);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2300
      * @tc.name      StringLengthTest1024
@@ -448,11 +448,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1024';
-      console.log(TAG + 'start');
+      
       const maxLen = 2 ** 53 - 1;
       expect(Number.MAX_SAFE_INTEGER).assertEqual(maxLen);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2400
      * @tc.name      StringLengthTest1025
@@ -463,13 +463,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1025';
-      console.log(TAG + 'start');
+      
       const len1 = 2 ** 31 - 1;
       const len2 = 2 ** 32 - 1;
       expect(len1).assertEqual(2147483647);
       expect(len2).assertEqual(4294967295);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2500
      * @tc.name      StringLengthTest1026
@@ -480,13 +480,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1026';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testModifylength();
       expect(result.isTypeError).assertEqual(true);
       expect(result.length).assertEqual(5);
       expect(result.content).assertEqual("hello");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2600
      * @tc.name      StringLengthTest1027
@@ -497,11 +497,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1027';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testForInLoop();
       expect(result).assertEqual(false);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2700
      * @tc.name      StringLengthTest1028
@@ -512,7 +512,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1028';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testObjectKeys();
       expect(result.hasLength).assertEqual(false);
       expect(result.keys.length).assertEqual(5);
@@ -521,8 +521,8 @@ export default function StringLengthTest() {
       expect(result.keys[2]).assertEqual("2");
       expect(result.keys[3]).assertEqual("3");
       expect(result.keys[4]).assertEqual("4");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2800
      * @tc.name      StringLengthTest1029
@@ -533,12 +533,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1029';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testStrictDeleteLength();
       expect(result.isTypeError).assertEqual(true);
       expect(result.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_2900
      * @tc.name      StringLengthTest1030
@@ -549,14 +549,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1030';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testAllDeleteLength() ;
       expect(result.value).assertEqual(5);
       expect(result.writable).assertEqual(false);
       expect(result.enumerable).assertEqual(false);
       expect(result.configurable).assertEqual(false);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3000
      * @tc.name      StringLengthTest1031
@@ -567,7 +567,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1031';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testTraverseString();
       expect(result.length).assertEqual(5);
       expect(result[0]).assertEqual("h");
@@ -575,8 +575,8 @@ export default function StringLengthTest() {
       expect(result[2]).assertEqual("l");
       expect(result[3]).assertEqual("l");
       expect(result[4]).assertEqual("o");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3100
      * @tc.name      StringLengthTest1032
@@ -587,11 +587,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1032';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testReverseStringLength();
       expect(result).assertEqual("olleh");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3200
      * @tc.name      StringLengthTest1033
@@ -602,14 +602,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1033';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testLengthSlice();
       expect(result.substringFull).assertEqual("hello world");
       expect(result.sliceFull).assertEqual("hello world");
       expect(result.substringPartial).assertEqual("world");
       expect(result.slicePartial).assertEqual("world");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3300
      * @tc.name      StringLengthTest1034
@@ -620,12 +620,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1034';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testSafeSubstr();
       expect(result.case1).assertEqual("hello");
       expect(result.case2).assertEqual("hel");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3400
      * @tc.name      StringLengthTest1035
@@ -636,12 +636,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1035';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testCompareLength();
       expect(result.strLength).assertEqual(5);
       expect(result.arrLength).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3500
      * @tc.name      StringLengthTest1036
@@ -652,13 +652,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1036';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testSplitLength();
       expect(result.strLength).assertEqual(5);
       expect(result.arrLength).assertEqual(5);
       expect(result.isRecovered).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3600
      * @tc.name      StringLengthTest1037
@@ -669,12 +669,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1037';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testFindLength();
       expect(result.isIndexValid).assertEqual(true);
       expect(result.isFound).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3700
      * @tc.name      StringLengthTest1038
@@ -685,12 +685,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1038';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testCheckInclusion();
       expect(result.hasWorld).assertEqual(true);
       expect(result.hasXyz).assertEqual(false);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3800
      * @tc.name      StringLengthTest1039
@@ -701,14 +701,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1039';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testTrimLength();
       expect(result.original).assertEqual(9);
       expect(result.trimmed).assertEqual(5);
       expect(result.trimStart).assertEqual(7);
       expect(result.trimEnd).assertEqual(7);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_3900
      * @tc.name      StringLengthTest1040
@@ -719,13 +719,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1040';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testTrimEmpty();
       expect(result.allSpaces).assertEqual(true);
       expect(result.hasChar).assertEqual(false);
       expect(result.emptyStr).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4000
      * @tc.name      StringLengthTest1041
@@ -736,13 +736,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1041';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testRepeatLength();
       expect(result.repeat3).assertEqual(6);
       expect(result.repeat0).assertEqual(0);
       expect(result.repeat5).assertEqual(10);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4100
      * @tc.name      StringLengthTest1042
@@ -753,12 +753,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1042';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testRepeatCalc();
       expect(result.repeatedLength).assertEqual(50);
       expect(result.isEqual).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4200
      * @tc.name      StringLengthTest1043
@@ -769,14 +769,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1043';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testPadLength();
       expect(result.padStart).assertEqual(10);
       expect(result.padEnd).assertEqual(10);
       expect(result.padStartWith).assertEqual(10);
       expect(result.padEndWith).assertEqual(10);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4300
      * @tc.name      StringLengthTest1044
@@ -787,12 +787,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1044';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testPadNoFill();
       expect(result.padStart).assertEqual(5);
       expect(result.padEnd).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4400
      * @tc.name      StringLengthTest1045
@@ -803,13 +803,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1045';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testReplaceLength();
       expect(result.replace).assertEqual(8);
       expect(result.replaceFirst).assertEqual(12);
       expect(result.replaceAll).assertEqual(13);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4500
      * @tc.name      StringLengthTest1046
@@ -820,7 +820,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1046';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testEscapeLength();
       expect(result.slashN).assertEqual(2);
       expect(result.newLine).assertEqual(1);
@@ -828,8 +828,8 @@ export default function StringLengthTest() {
       expect(result.tab).assertEqual(1);
       expect(result.doubleSlash).assertEqual(2);
       expect(result.singleSlash).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4600
      * @tc.name      StringLengthTest1047
@@ -840,14 +840,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1047';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testUnicodeLen();
       expect(result.literalU).assertEqual(6);
       expect(result.charA).assertEqual(1);
       expect(result.literalEmoji).assertEqual(9);
       expect(result.emoji).assertEqual(2);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4700
      * @tc.name      StringLengthTest1048
@@ -858,15 +858,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1048';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testAsciiLen();
       expect(result.nullChar).assertEqual(1);
       expect(result.hex00).assertEqual(1);
       expect(result.hex01).assertEqual(1);
       expect(result.hex1F).assertEqual(1);
       expect(result.hex7F).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4800
      * @tc.name      StringLengthTest1049
@@ -877,13 +877,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1049';
-      console.log(TAG + 'start');
+      
       expect("\u200B".length).assertEqual(1);
       expect("\u200C".length).assertEqual(1);
       expect("\u200D".length).assertEqual(1);
       expect("\uFEFF".length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_4900
      * @tc.name      StringLengthTest1050
@@ -894,14 +894,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1050';
-      console.log(TAG + 'start');
+      
       expect("&lt;".length).assertEqual(4);
       expect("<".length).assertEqual(1);
       expect("&amp;".length).assertEqual(5);
       expect("&".length).assertEqual(1);
       expect("&#65;".length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5000
      * @tc.name      StringLengthTest1051
@@ -912,15 +912,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1051';
-      console.log(TAG + 'start');
+      
       expect("$".length).assertEqual(1);
       expect("€".length).assertEqual(1);
       expect("£".length).assertEqual(1);
       expect("¥".length).assertEqual(1);
       expect("₹".length).assertEqual(1);
       expect("₽".length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5100
      * @tc.name      StringLengthTest1052
@@ -931,12 +931,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1052';
-      console.log(TAG + 'start');
+      
       expect("hello".length).assertEqual(5);
       expect('hello'.length).assertEqual(5);
       expect(`hello`.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5200
      * @tc.name      StringLengthTest1053
@@ -947,14 +947,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1053';
-      console.log(TAG + 'start');
+      
       expect(String("hello").length).assertEqual(5);
       expect(String(123).length).assertEqual(3);
       expect(String(true).length).assertEqual(4);
       expect(String(null).length).assertEqual(4);
       expect(String(undefined).length).assertEqual(9);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5300
      * @tc.name      StringLengthTest1054
@@ -965,13 +965,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1054';
-      console.log(TAG + 'start');
+      
       const strObj = new String("hello");
       expect(strObj.length).assertEqual(5);
       expect(typeof strObj).assertEqual("object");
       expect(strObj.valueOf().length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5400
      * @tc.name      StringLengthTest1055
@@ -982,7 +982,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1055';
-      console.log(TAG + 'start');
+      
       expect(String(0).length).assertEqual(1);
       expect(String(123).length).assertEqual(3);
       expect(String(3.14).length).assertEqual(4);
@@ -990,8 +990,8 @@ export default function StringLengthTest() {
       expect(String(1e10).length).assertEqual(11);
       expect(String(Infinity).length).assertEqual(8);
       expect(String(NaN).length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5500
      * @tc.name      StringLengthTest1056
@@ -1002,11 +1002,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1056';
-      console.log(TAG + 'start');
+      
       expect(String(true).length).assertEqual(4);
       expect(String(false).length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5600
      * @tc.name      StringLengthTest1057
@@ -1017,14 +1017,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1057';
-      console.log(TAG + 'start');
+      
       expect(String({}).length).assertEqual(15);
       expect(String({ a: 1 }).length).assertEqual(15);
       expect(String([1, 2, 3]).length).assertEqual(5);
       expect(String([]).length).assertEqual(0);
       expect(String([1]).length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5700
      * @tc.name      StringLengthTest1058
@@ -1035,11 +1035,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1058';
-      console.log(TAG + 'start');
+      
       expect(String(null).length).assertEqual(4);
       expect(String(undefined).length).assertEqual(9);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5800
      * @tc.name      StringLengthTest1059
@@ -1050,7 +1050,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1059';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       let count = 0;
       for (let char of str) {
@@ -1058,8 +1058,8 @@ export default function StringLengthTest() {
       }
       expect(count).assertEqual(5);
       expect(str.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_5900
      * @tc.name      StringLengthTest1060
@@ -1070,7 +1070,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1060';
-      console.log(TAG + 'start');
+      
       const str = "😄hello";
       let count = 0;
       for (let char of str) {
@@ -1078,8 +1078,8 @@ export default function StringLengthTest() {
       }
       expect(str.length).assertEqual(7);
       expect(count).assertEqual(6);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6000
      * @tc.name      StringLengthTest1061
@@ -1090,12 +1090,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1061';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testSpreadLength();
       expect(result.strLength).assertEqual(5);
       expect(result.arrLength).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6100
      * @tc.name      StringLengthTest1062
@@ -1106,12 +1106,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1062';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testSurrogateLength();
       expect(result.strLength).assertEqual(4);
       expect(result.arrLength).assertEqual(4);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6200
      * @tc.name      StringLengthTest1063
@@ -1122,14 +1122,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1063';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const arr = Array.from(str);
       expect(str.length).assertEqual(5);
       expect(arr.length).assertEqual(5);
       expect(arr.join("")).assertEqual("hello");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6300
      * @tc.name      StringLengthTest1064
@@ -1140,12 +1140,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1064';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testCountChars();
       expect(result.hello).assertEqual(5);
       expect(result.emoji).assertEqual(2);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6400
      * @tc.name      StringLengthTest1065
@@ -1156,14 +1156,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1065';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       let result = stringTest.testAccessByIndex();
       expect(result.firstChar).assertEqual("h");
       expect(result.lastChar).assertEqual("o");
       expect(result.middleChar).assertEqual("l");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6500
      * @tc.name      StringLengthTest1066
@@ -1174,14 +1174,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1066';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testBoundaryIndex();
       expect(result.firstIndex).assertEqual("h");
       expect(result.beyondLastIndex).assertEqual(undefined);
       expect(result.lastIndex).assertEqual("o");
       expect(result.negativeIndex).assertEqual(undefined);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6600
      * @tc.name      StringLengthTest1067
@@ -1192,11 +1192,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1067';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testReverseIter();
       expect(result).assertEqual("olleh");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6700
      * @tc.name      StringLengthTest1068
@@ -1207,15 +1207,15 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1068';
-      console.log(TAG + 'start');
+      
       const str1 = "hello";
       const str2 = "world";
       const result = str1 + " " + str2;
       expect(str1.length).assertEqual(5);
       expect(str2.length).assertEqual(5);
       expect(result.length).assertEqual(11);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6800
      * @tc.name      StringLengthTest1069
@@ -1226,13 +1226,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1069';
-      console.log(TAG + 'start');
+      
       const str = "hello";
       const result = str.concat(" ", "world");
       expect(result.length).assertEqual(11);
       expect(str.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_6900
      * @tc.name      StringLengthTest1070
@@ -1243,13 +1243,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1070';
-      console.log(TAG + 'start');
+      
       const a = "hello";
       const b = "world";
       const result = `${a} ${b}`;
       expect(result.length).assertEqual(11);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7000
      * @tc.name      StringLengthTest1071
@@ -1260,13 +1260,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1071';
-      console.log(TAG + 'start');
+      
       const arr = ["h", "e", "l", "l", "o"];
       const str = arr.join("");
       expect(str.length).assertEqual(5);
       expect(arr.length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7100
      * @tc.name      StringLengthTest1072
@@ -1277,14 +1277,14 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1072';
-      console.log(TAG + 'start');
+      
       const arr = ["a", "b", "c"];
       const str = arr.join(",");
       expect(str).assertEqual("a,b,c");
       expect(str.length).assertEqual(5);
       expect(arr.length).assertEqual(3);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7200
      * @tc.name      StringLengthTest1073
@@ -1295,13 +1295,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1073';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testValidLength();
       expect(result.case1).assertEqual(true);
       expect(result.case2).assertEqual(false);
       expect(result.case3).assertEqual(false);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7300
      * @tc.name      StringLengthTest1074
@@ -1312,13 +1312,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1074';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testEmptyByLength();
       expect(result.case1).assertEqual(true);
       expect(result.case2).assertEqual(false);
       expect(result.case3).assertEqual(true);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7400
      * @tc.name      StringLengthTest1075
@@ -1329,12 +1329,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1075';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testTruncate();
       expect(result.case1).assertEqual("hello...");
       expect(result.case2).assertEqual("hi");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7500
      * @tc.name      StringLengthTest1076
@@ -1345,12 +1345,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1076';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testSafeSubstring();
       expect(result.case1).assertEqual("ell");
       expect(result.case2).assertEqual("llo");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7600
      * @tc.name      StringLengthTest1077
@@ -1361,12 +1361,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1077';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testLeftPad();
       expect(result.case1).assertEqual("005");
       expect(result.case2).assertEqual("     hello");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7700
      * @tc.name      StringLengthTest1078
@@ -1377,12 +1377,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1078';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testRightPad();
       expect(result.case1).assertEqual("500");
       expect(result.case2).assertEqual("hello     ");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7800
      * @tc.name      StringLengthTest1079
@@ -1393,12 +1393,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1079';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testFormatFixed();
       expect(result.case1).assertEqual("hello     ");
       expect(result.case2).assertEqual("hello");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_7900
      * @tc.name      StringLengthTest1080
@@ -1409,11 +1409,11 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1080';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testCenter();
       expect(result.case1).assertEqual("    hi    ");
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8000
      * @tc.name      StringLengthTest1081
@@ -1424,13 +1424,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1081';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testCountWords();
       expect(result.case1).assertEqual(2);
       expect(result.case2).assertEqual(0);
       expect(result.case3).assertEqual(0);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8100
      * @tc.name      StringLengthTest1082
@@ -1441,12 +1441,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1082';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testLengthCompare();
       expect(result.originalLen).assertEqual(17);
       expect(result.normalizedLen).assertEqual(11);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8200
      * @tc.name      StringLengthTest1083
@@ -1457,12 +1457,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1083';
-      console.log(TAG + 'start');
+      
       expect(String.length).assertEqual(1);
       expect("hello".length).assertEqual(5);
       expect(new String("hello").length).assertEqual(5);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8300
      * @tc.name      StringLengthTest1084
@@ -1473,13 +1473,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1084';
-      console.log(TAG + 'start');
+      
       expect(String.length).assertEqual(1);
       expect(String.fromCharCode.length).assertEqual(1);
       expect(String.fromCodePoint.length).assertEqual(1);
       expect(String.raw.length).assertEqual(1);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8400
      * @tc.name      StringLengthTest1085
@@ -1490,12 +1490,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1085';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testLengthInTagFunction();
       expect(result.stringsLength).assertEqual(3);
       expect(result.valuesLength).assertEqual(2);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8500
      * @tc.name      StringLengthTest1086
@@ -1506,13 +1506,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1086';
-      console.log(TAG + 'start');
+      
       const str1 = `hello\nworld`;
       const str2 = String.raw`hello\nworld`;
       expect(str1.length).assertEqual(11);
       expect(str2.length).assertEqual(12);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8600
      * @tc.name      StringLengthTest1087
@@ -1523,13 +1523,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1087';
-      console.log(TAG + 'start');
+      
       const str = 'hello "world"';
       const json = JSON.stringify(str);
       expect(str.length).assertEqual(13);
       expect(json.length).assertEqual(17);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8700
      * @tc.name      StringLengthTest1088
@@ -1540,12 +1540,12 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1088';
-      console.log(TAG + 'start');
+      
       let result = stringTest.testJsonParseLength();
       expect(result.jsonLength).assertEqual(14);
       expect(result.parsedLength).assertEqual(11);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8800
      * @tc.name      StringLengthTest1089
@@ -1556,13 +1556,13 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1089';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       const matches = str.match(/o/g);
       const matchCount = matches !== null ? matches.length : 0;
       expect(matchCount).assertEqual(2);
-      console.log(TAG + "end");
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGLENGTH_8900
      * @tc.name      StringLengthTest1090
@@ -1573,7 +1573,7 @@ export default function StringLengthTest() {
      */
     it("StringLengthTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringLengthTest1090';
-      console.log(TAG + 'start');
+      
       const str = "hello world";
       let count = 0;
       const result = str.replace(/o/g, () => {
@@ -1582,8 +1582,8 @@ export default function StringLengthTest() {
       });
       expect(count).assertEqual(2);
       expect(result.length).assertEqual(11);
-      console.log(TAG + "end");
     });
+
 
   });
 }
