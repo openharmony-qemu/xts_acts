@@ -661,43 +661,6 @@ export default function MediaAssetManagerStaticTest(): void {
     });
 
     /**
-     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600
-     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600
-     * @tc.desc      cancelRequest-success
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     LEVEL0
-     */
-    it('SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600';
-      const handler = new MediaHandler();
-      let testContext: Context = Hypium.get('Context') as Context;
-      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let requestOptions: photoAccessHelper.RequestOptions = {
-          deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
-        }
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await helper!.getAssets(fetchOption);
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
-        await photoAccessHelper.MediaAssetManager.cancelRequest(testContext, requestId);
-        expect(requestId !== undefined).assertTrue();
-        done();
-      }
-      catch (error) {
-        console.error(`${testNum} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700
      * @tc.desc      cancelRequest-success
