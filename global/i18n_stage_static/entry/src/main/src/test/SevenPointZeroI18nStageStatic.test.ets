@@ -788,23 +788,23 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name   test_SymbolDateTimeFormat_static_0700
+     * @tc.name   testSymbolDateTimeFormatStatic_0700
      * @tc.number SUB_GLOBAL_I18N_CUSTOMSYMBOL_STATIC_0700
      * @tc.desc   test SymbolDateTimeFormat with undefined amPMSymbol param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SymbolDateTimeFormat_static_0700', Level.LEVEL2, async (): Promise<void> => {
+    it('testSymbolDateTimeFormatStatic_0700', Level.LEVEL2, async (): Promise<void> => {
       let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
       let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": undefined };
       try {
         let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
         symbolFormat.resolvedOptions();
-        console.log('test_SymbolDateTimeFormat_static_0700 result:');
+        console.log('testSymbolDateTimeFormatStatic_0700 result:');
         expect(false).assertTrue();
       } catch (e) {
-        console.log('test_SymbolDateTimeFormat_static_0700 catch error:', e.code + e.message);
+        console.log('testSymbolDateTimeFormatStatic_0700 catch error:', e.code + e.message);
         expect(Number(e.code) === 401).assertTrue();
       }
     })
