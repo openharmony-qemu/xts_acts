@@ -36,14 +36,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0100
-     * @tc.name      StringSymbol.iteratorTest2001
+     * @tc.name      StringSymbolIteratorTest2001
      * @tc.desc      Verify iterating a normalized (NFC) string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2001';
+    it("StringSymbolIteratorTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2001';
       console.log(TAG + 'start');
 
       const str = "e\u0301"; // e + combining acute accent
@@ -57,14 +57,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0200
-     * @tc.name      StringSymbol.iteratorTest2002
+     * @tc.name      StringSymbolIteratorTest2002
      * @tc.desc      Compare iteration results of NFC vs NFD forms
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2002';
+    it("StringSymbolIteratorTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2002';
       console.log(TAG + 'start');
 
       const str = "e\u0301";
@@ -82,14 +82,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0300
-     * @tc.name      StringSymbol.iteratorTest2003
+     * @tc.name      StringSymbolIteratorTest2003
      * @tc.desc      Verify repeat() result when repeating non-empty strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2003';
+    it("StringSymbolIteratorTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2003';
       console.log(TAG + 'start');
 
       const str = "ab".repeat(3);
@@ -108,14 +108,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0400
-     * @tc.name      StringSymbol.iteratorTest2004
+     * @tc.name      StringSymbolIteratorTest2004
      * @tc.desc      Verify repeat() result when repeating empty strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2004';
+    it("StringSymbolIteratorTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2004';
       console.log(TAG + 'start');
 
       const str = "".repeat(10);
@@ -128,14 +128,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0500
-     * @tc.name      StringSymbol.iteratorTest2005
+     * @tc.name      StringSymbolIteratorTest2005
      * @tc.desc      Verify padStart iteration result
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2005';
+    it("StringSymbolIteratorTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2005';
       console.log(TAG + 'start');
 
       const str = "hello".padStart(10, " ");
@@ -156,14 +156,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0600
-     * @tc.name      StringSymbol.iteratorTest2006
+     * @tc.name      StringSymbolIteratorTest2006
      * @tc.desc      Verify padEnd iteration result
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2006';
+    it("StringSymbolIteratorTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2006';
       console.log(TAG + 'start');
 
       const str = "hello".padEnd(10, ".");
@@ -184,14 +184,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0700
-     * @tc.name      StringSymbol.iteratorTest2007
+     * @tc.name      StringSymbolIteratorTest2007
      * @tc.desc      Verify toString iteration result
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2007';
+    it("StringSymbolIteratorTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2007';
       console.log(TAG + 'start');
 
       const strObj = new String("hello");
@@ -210,14 +210,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0800
-     * @tc.name      StringSymbol.iteratorTest2008
+     * @tc.name      StringSymbolIteratorTest2008
      * @tc.desc      Verify valueOf iteration result
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2008';
+    it("StringSymbolIteratorTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2008';
       console.log(TAG + 'start');
 
       const strObj = new String("hello");
@@ -238,14 +238,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_0900
-     * @tc.name      StringSymbol.iteratorTest2009
+     * @tc.name      StringSymbolIteratorTest2009
      * @tc.desc      Use iterator to count character frequency
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2009';
+    it("StringSymbolIteratorTest2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2009';
       console.log(TAG + 'start');
 
       const str = "hello world";
@@ -258,14 +258,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1000
-     * @tc.name      StringSymbol.iteratorTest2010
+     * @tc.name      StringSymbolIteratorTest2010
      * @tc.desc      Use iterator to obtain unique characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2010';
+    it("StringSymbolIteratorTest2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2010';
       console.log(TAG + 'start');
 
       const str = "hello";
@@ -281,14 +281,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1100
-     * @tc.name      StringSymbol.iteratorTest2011
+     * @tc.name      StringSymbolIteratorTest2011
      * @tc.desc      Use iterator to reverse a string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2011';
+    it("StringSymbolIteratorTest2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2011';
       console.log(TAG + 'start');
 
       const str = "hello";
@@ -300,14 +300,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1200
-     * @tc.name      StringSymbol.iteratorTest2012
+     * @tc.name      StringSymbolIteratorTest2012
      * @tc.desc      Use iterator to uppercase characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2012';
+    it("StringSymbolIteratorTest2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2012';
       console.log(TAG + 'start');
 
       const str = "hello";
@@ -319,14 +319,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1300
-     * @tc.name      StringSymbol.iteratorTest2013
+     * @tc.name      StringSymbolIteratorTest2013
      * @tc.desc      Use iterator to filter non-numeric characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2013';
+    it("StringSymbolIteratorTest2013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2013';
       console.log(TAG + 'start');
 
       const str = "a1b2c3";
@@ -340,14 +340,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1400
-     * @tc.name      StringSymbol.iteratorTest2014
+     * @tc.name      StringSymbolIteratorTest2014
      * @tc.desc      Use iterator to remove spaces
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2014';
+    it("StringSymbolIteratorTest2014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2014';
       console.log(TAG + 'start');
 
       const str = "hello world";
@@ -361,14 +361,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1500
-     * @tc.name      StringSymbol.iteratorTest2015
+     * @tc.name      StringSymbolIteratorTest2015
      * @tc.desc      Verify character types using iterator and every
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2015';
+    it("StringSymbolIteratorTest2015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2015';
       console.log(TAG + 'start');
 
       const str = "abc123";
@@ -385,14 +385,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1600
-     * @tc.name      StringSymbol.iteratorTest2016
+     * @tc.name      StringSymbolIteratorTest2016
      * @tc.desc      Verify character code range using iterator and every
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2016';
+    it("StringSymbolIteratorTest2016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2016';
       console.log(TAG + 'start');
 
       const str = "abc";
@@ -410,14 +410,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1700
-     * @tc.name      StringSymbol.iteratorTest2017
+     * @tc.name      StringSymbolIteratorTest2017
      * @tc.desc      Use iterator chain: filter then map then join
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2017';
+    it("StringSymbolIteratorTest2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2017';
       console.log(TAG + 'start');
 
       const str = "Hello World ";
@@ -431,14 +431,14 @@ export default function StringSymbolIteratorTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSYMBOLITERATORTWO_1800
-     * @tc.name      StringSymbol.iteratorTest2018
+     * @tc.name      StringSymbolIteratorTest2018
      * @tc.desc      Use iterator chain to alternate upper/lower by index
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringSymbol.iteratorTest2018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringSymbol.iteratorTest2018';
+    it("StringSymbolIteratorTest2018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringSymbolIteratorTest2018';
       console.log(TAG + 'start');
 
       const str = "hello";

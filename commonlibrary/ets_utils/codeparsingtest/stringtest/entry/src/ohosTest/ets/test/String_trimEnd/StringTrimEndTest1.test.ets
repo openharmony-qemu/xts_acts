@@ -1,7 +1,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as stringTest from './string_trimend_test01';
-export default function StringTrimEndTest1() {
-  describe('StringTrimEndTest1', () => {
+export default function StringTrimEndTest() {
+  describe('StringTrimEndTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

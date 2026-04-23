@@ -1,7 +1,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as stringTest from './string_trimstart_test';
-export default function StringTrimStartTest1() {
-  describe('StringTrimStartTest1', () => {
+export default function StringTrimStartTest() {
+  describe('StringTrimStartTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1625,7 +1625,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTARTONE_0100
      * @tc.name      StringTrimStartTest1100
      * @tc.desc      Test calling trimStart on Date object
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTARTONE_0200
      * @tc.name      StringTrimStartTest1101
      * @tc.desc      Test calling trimStart on RegExp object
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTARTONE_0300
      * @tc.name      StringTrimStartTest1102
      * @tc.desc      Test Boolean object calling trimStart
      * @tc.size      MediumTest
@@ -1671,7 +1671,7 @@ export default function StringTrimStartTest1() {
       console.log(TAG + "end");
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTART_10300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGTRIMSTARTONE_0400
      * @tc.name      StringTrimStartTest1103
      * @tc.desc      Test Boolean object calling trimStart
      * @tc.size      MediumTest

@@ -20,14 +20,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0100
-     * @tc.name      StringStartsWith.test2001
+     * @tc.name      StringStartsWithTest2001
      * @tc.desc      Verify chained string methods with startsWith
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2001';
+    it("StringStartsWithTest2001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2001';
       console.log(TAG + 'start');
 
       const str = "  Hello World  ";
@@ -38,14 +38,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0200
-     * @tc.name      StringStartsWith.test2002
+     * @tc.name      StringStartsWithTest2002
      * @tc.desc      Verify multiple calls to startsWith
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2002';
+    it("StringStartsWithTest2002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2002';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -57,14 +57,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0300
-     * @tc.name      StringStartsWith.test2003
+     * @tc.name      StringStartsWithTest2003
      * @tc.desc      Verify matching with template strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2003';
+    it("StringStartsWithTest2003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2003';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -76,14 +76,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0400
-     * @tc.name      StringStartsWith.test2004
+     * @tc.name      StringStartsWithTest2004
      * @tc.desc      Verify matching with dynamic template strings (Corrected Expectation)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2004';
+    it("StringStartsWithTest2004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2004';
       console.log(TAG + 'start');
 
       const result: boolean[] = startsWithTest.testDynamicTemplateString();
@@ -99,14 +99,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0500
-     * @tc.name      StringStartsWith.test2005
+     * @tc.name      StringStartsWithTest2005
      * @tc.desc      Verify combining startsWith with AND operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2005';
+    it("StringStartsWithTest2005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2005';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -117,14 +117,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0600
-     * @tc.name      StringStartsWith.test2006
+     * @tc.name      StringStartsWithTest2006
      * @tc.desc      Verify combining startsWith with OR operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2006';
+    it("StringStartsWithTest2006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2006';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -135,14 +135,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0700
-     * @tc.name      StringStartsWith.test2007
+     * @tc.name      StringStartsWithTest2007
      * @tc.desc      Verify combining startsWith with NOT operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2007';
+    it("StringStartsWithTest2007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2007';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -153,14 +153,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0800
-     * @tc.name      StringStartsWith.test2008
+     * @tc.name      StringStartsWithTest2008
      * @tc.desc      Verify using startsWith in a ternary operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2008';
+    it("StringStartsWithTest2008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2008';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -172,14 +172,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_0900
-     * @tc.name      StringStartsWith.test2009
+     * @tc.name      StringStartsWithTest2009
      * @tc.desc      Verify nested ternary operators
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2009';
+    it("StringStartsWithTest2009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2009';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -197,14 +197,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1000
-     * @tc.name      StringStartsWith.test2010
+     * @tc.name      StringStartsWithTest2010
      * @tc.desc      Verify matching on very long strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2010';
+    it("StringStartsWithTest2010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2010';
       console.log(TAG + 'start');
 
       const longStr = "a".repeat(1000000);
@@ -216,14 +216,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1100
-     * @tc.name      StringStartsWith.test2011
+     * @tc.name      StringStartsWithTest2011
      * @tc.desc      Verify matching with a long search string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2011';
+    it("StringStartsWithTest2011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2011';
       console.log(TAG + 'start');
 
       const str = "a".repeat(10000);
@@ -235,14 +235,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1200
-     * @tc.name      StringStartsWith.test2012
+     * @tc.name      StringStartsWithTest2012
      * @tc.desc      Verify mismatch on a very long string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2012';
+    it("StringStartsWithTest2012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2012';
       console.log(TAG + 'start');
 
       const longStr = "b" + "a".repeat(1000000);
@@ -253,14 +253,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1300
-     * @tc.name      StringStartsWith.test2013
+     * @tc.name      StringStartsWithTest2013
      * @tc.desc      Verify behavior with negative Infinity position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2013';
+    it("StringStartsWithTest2013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2013';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -271,14 +271,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1400
-     * @tc.name      StringStartsWith.test2014
+     * @tc.name      StringStartsWithTest2014
      * @tc.desc      Verify behavior with a very large negative position
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2014';
+    it("StringStartsWithTest2014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2014';
       console.log(TAG + 'start');
 
       const str = "Hello";
@@ -289,14 +289,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1500
-     * @tc.name      StringStartsWith.test2015
+     * @tc.name      StringStartsWithTest2015
      * @tc.desc      Verify matching a repeated single character
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2015';
+    it("StringStartsWithTest2015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2015';
       console.log(TAG + 'start');
 
       const str = "a".repeat(1000);
@@ -309,14 +309,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1600
-     * @tc.name      StringStartsWith.test2016
+     * @tc.name      StringStartsWithTest2016
      * @tc.desc      Verify matching a repeated pattern string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2016';
+    it("StringStartsWithTest2016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2016';
       console.log(TAG + 'start');
 
       const str = "abc".repeat(1000);
@@ -328,14 +328,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1700
-     * @tc.name      StringStartsWith.test2017
+     * @tc.name      StringStartsWithTest2017
      * @tc.desc      Verify fast fail on a long string mismatch
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2017';
+    it("StringStartsWithTest2017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2017';
       console.log(TAG + 'start');
 
       const str = "a".repeat(1000000);
@@ -346,14 +346,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1800
-     * @tc.name      StringStartsWith.test2018
+     * @tc.name      StringStartsWithTest2018
      * @tc.desc      Verify full match on a long string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2018';
+    it("StringStartsWithTest2018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2018';
       console.log(TAG + 'start');
 
       const str = "a".repeat(10000);
@@ -367,14 +367,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_1900
-     * @tc.name      StringStartsWith.test2019
+     * @tc.name      StringStartsWithTest2019
      * @tc.desc      Verify startsWith in strict mode
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2019';
+    it("StringStartsWithTest2019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2019';
       console.log(TAG + 'start');
 
       const str = "Hello World";
@@ -385,14 +385,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2000
-     * @tc.name      StringStartsWith.test2020
+     * @tc.name      StringStartsWithTest2020
      * @tc.desc      Verify this binding in strict mode
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2020';
+    it("StringStartsWithTest2020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2020';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testStrictThis()).assertTrue();
@@ -402,14 +402,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2100
-     * @tc.name      StringStartsWith.test2021
+     * @tc.name      StringStartsWithTest2021
      * @tc.desc      Verify calling with call method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2021';
+    it("StringStartsWithTest2021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2021';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testCall()).assertTrue();
@@ -419,14 +419,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2200
-     * @tc.name      StringStartsWith.test2022
+     * @tc.name      StringStartsWithTest2022
      * @tc.desc      Verify calling with apply method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2022';
+    it("StringStartsWithTest2022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2022';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testApply()).assertTrue();
@@ -436,14 +436,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2300
-     * @tc.name      StringStartsWith.test2023
+     * @tc.name      StringStartsWithTest2023
      * @tc.desc      Verify calling with bind method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2023';
+    it("StringStartsWithTest2023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2023';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testBind()).assertTrue();
@@ -453,14 +453,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2400
-     * @tc.name      StringStartsWith.test2024
+     * @tc.name      StringStartsWithTest2024
      * @tc.desc      Verify behavior on array objects
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2024';
+    it("StringStartsWithTest2024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2024';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testArrayObjError()).assertTrue();
@@ -470,14 +470,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2500
-     * @tc.name      StringStartsWith.test2025
+     * @tc.name      StringStartsWithTest2025
      * @tc.desc      Verify behavior on String wrapper objects
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2025';
+    it("StringStartsWithTest2025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2025';
       console.log(TAG + 'start');
 
       const strObj = new String("Hello World");
@@ -488,14 +488,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2600
-     * @tc.name      StringStartsWith.test2026
+     * @tc.name      StringStartsWithTest2026
      * @tc.desc      Verify behavior on custom objects with toString
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2026';
+    it("StringStartsWithTest2026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2026';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testCustomObj()).assertTrue();
@@ -505,14 +505,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2700
-     * @tc.name      StringStartsWith.test2027
+     * @tc.name      StringStartsWithTest2027
      * @tc.desc      Verify with iterator protocol
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2027';
+    it("StringStartsWithTest2027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2027';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testIterator()).assertTrue();
@@ -522,14 +522,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2800
-     * @tc.name      StringStartsWith.test2028
+     * @tc.name      StringStartsWithTest2028
      * @tc.desc      Verify methods on the prototype chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2028';
+    it("StringStartsWithTest2028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2028';
       console.log(TAG + 'start');
 
       const res: boolean[] = startsWithTest.testProtoChain();
@@ -542,14 +542,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_2900
-     * @tc.name      StringStartsWith.test2029
+     * @tc.name      StringStartsWithTest2029
      * @tc.desc      Verify modifying prototype method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2029';
+    it("StringStartsWithTest2029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2029';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testModifyProto()).assertTrue();
@@ -559,14 +559,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3000
-     * @tc.name      StringStartsWith.test2030
+     * @tc.name      StringStartsWithTest2030
      * @tc.desc      Verify on frozen strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2030';
+    it("StringStartsWithTest2030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2030';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testFrozen()).assertTrue();
@@ -576,14 +576,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3100
-     * @tc.name      StringStartsWith.test2031
+     * @tc.name      StringStartsWithTest2031
      * @tc.desc      Verify on sealed strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2031';
+    it("StringStartsWithTest2031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2031';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testSealed()).assertTrue();
@@ -593,14 +593,14 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3200
-     * @tc.name      StringStartsWith.test2032
+     * @tc.name      StringStartsWithTest2032
      * @tc.desc      12.7.1 Verify on Proxy wrapped strings
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2032';
+    it("StringStartsWithTest2032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2032';
       console.log(TAG + 'start');
 
       expect(startsWithTest.testProxy()).assertTrue();
@@ -610,17 +610,21 @@ export default function StringStartsWithTest2() {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITHTWO_3300
-     * @tc.name      StringStartsWith.test2033
+     * @tc.name      StringStartsWithTest2033
      * @tc.desc      Verify across frames or windows
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("StringStartsWith.test2033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'StringStartsWith.test2033';
+    it("StringStartsWithTest2033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'StringStartsWithTest2033';
       console.log(TAG + 'start');
 
-      expect(true).assertTrue();
+      const res: boolean[] = startsWithTest.testStartsWithCrossContext();
+      expect(res[0]).assertTrue();
+      expect(res[1]).assertTrue();
+      expect(res[2]).assertTrue();
+      expect(res[3]).assertTrue();
 
       console.log(TAG + "end");
     });
