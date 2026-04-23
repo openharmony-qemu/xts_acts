@@ -30,7 +30,7 @@ import stringToWellFormedBasicTest from './String_ToWellFormed/StringToWellForme
 
 import StringReplaceTest1 from './String_Replace/StringReplaceTest1.test';
 import StringReplaceTest2 from './String_Replace/StringReplaceTest2.test';
-import StringReplaceAllTest1 from '.String_ReplaceAll/StringReplaceAllTest1.test';
+import StringReplaceAllTest1 from './String_ReplaceAll/StringReplaceAllTest1.test';
 import StringReplaceAllTest2 from './String_ReplaceAll/StringReplaceAllTest2.test';
 import StringTrimTest01 from './String_Trim/StringTrimTest1.test';
 import StringTrimTest02 from './String_Trim/StringTrimTest2.test';
