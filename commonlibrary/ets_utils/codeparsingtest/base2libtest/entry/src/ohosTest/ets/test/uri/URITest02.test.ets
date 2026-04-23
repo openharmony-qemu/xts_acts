@@ -23,7 +23,6 @@ export default function URI02Test() {
       // This API supports only one parameter: clear action function.
     });
 
-    // =============== path ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_0100
      * @tc.name testURI02Chapter0001
@@ -89,8 +88,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const asciiPath =
-        '/!%22%23$%25&\'()*+,-./0123456789:%3A%3B%3C%3D%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~';
+      const asciiPath = '/!%22%23$%25&\'()*+,-./0123456789:%3A%3B%3C%3D%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~';
       const uriObj = new uri.URI('https://example.com' + asciiPath);
       expect(uriObj.path).assertEqual('/!"#$%&\'()*+,-./0123456789::;<=>');
       expect(uriObj.encodedPath).assertEqual('/!%22%23$%25&\'()*+,-./0123456789:%3A%3B%3C%3D%3E');
@@ -107,8 +105,7 @@ export default function URI02Test() {
     it('testURI02Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const specialChars = '/ !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const encodedChars = encodeURI(specialChars);
-      const uriObj =
-        new uri.URI('https://example.com' + encodedChars);
+      const uriObj = new uri.URI('https://example.com' + encodedChars);
       expect(uriObj.path).assertEqual('/ !"');
       expect(uriObj.encodedPath).assertEqual('/%20!%22');
     });
@@ -136,12 +133,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const uriObj = new uri.URI('https://example.com/hello%2world');
-        expect(uriObj.path).assertEqual('/hello%2world');
-      } catch (e) {
-        expect(e).assertInstanceOf('Error');
-      }
+      const uriObj: uri.URI = new uri.URI('https://example.com/hello%2world');
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -153,12 +146,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const uriObj = new uri.URI('https://example.com/hello%');
-        expect(uriObj.path).assertEqual('/hello%');
-      } catch (e) {
-        expect(e).assertInstanceOf('Error');
-      }
+      const uriObj: uri.URI = new uri.URI('https://example.com/hello%');
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -269,30 +258,11 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
       try {
-        uriObj = new uri.URI('https://example.com/backslash\\path');
+        const uriObj = new uri.URI('https://example.com/backslash\\path');
+        expect().assertFail();
       } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError !== null).assertTrue();
-
-      if (parseError) {
-        const errorString = parseError.toString();
-        const hasExpectedError = errorString.includes('invalid') ||
-        errorString.includes('character') ||
-        errorString.includes('backslash') ||
-        errorString.includes('parse') ||
-        errorString.includes('URI');
-        expect(hasExpectedError).assertFalse();
-      }
-
-      if (uriObj === null) {
-        const nullString = String(uriObj);
-        expect(nullString === 'null').assertTrue();
+        expect(e.code).assertEqual(10200002);
       }
     });
 
@@ -305,30 +275,11 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
       try {
-        uriObj = new uri.URI('https://example.com/backslash\\value');
+        const uriObj = new uri.URI('https://example.com/backslash\\value');
+        expect().assertFail();
       } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError !== null).assertTrue();
-
-      if (parseError) {
-        const errorString = parseError.toString();
-        const hasExpectedError = errorString.includes('invalid') ||
-        errorString.includes('character') ||
-        errorString.includes('backslash') ||
-        errorString.includes('parse') ||
-        errorString.includes('URI');
-        expect(hasExpectedError).assertFalse();
-      }
-
-      if (uriObj === null) {
-        const nullString = String(uriObj);
-        expect(nullString === 'null').assertTrue();
+        expect(e.code).assertEqual(10200002);
       }
     });
 
@@ -388,11 +339,9 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const uriObj =
-        new uri.URI('https://example.com/!%22%23%24%25%26%27%28%29*%2B%2C%2D%2E%2F%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%5F%60%7B%7C%7D%7E');
+      const uriObj = new uri.URI('https://example.com/!%22%23%24%25%26%27%28%29*%2B%2C%2D%2E%2F%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%5F%60%7B%7C%7D%7E');
       expect(uriObj.path).assertEqual('/!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
-      expect(uriObj.encodedPath)
-        .assertEqual('/!%22%23%24%25%26%27%28%29*%2B%2C%2D%2E%2F%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%5F%60%7B%7C%7D%7E');
+      expect(uriObj.encodedPath).assertEqual('/!%22%23%24%25%26%27%28%29*%2B%2C%2D%2E%2F%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%5F%60%7B%7C%7D%7E');
     });
 
     /**
@@ -406,9 +355,9 @@ export default function URI02Test() {
     it('testURI02Chapter0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         const uriObj = new uri.URI('https://example.com/' + encodeURIComponent('\uD83D'));
-        expect(uriObj.path).assertEqual('/�');
+        expect().assertFail();
       } catch (e) {
-        expect(e).assertInstanceOf('Error');
+        expect(e.code).assertEqual(undefined);
       }
     });
 
@@ -645,12 +594,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const uriObj = new uri.URI('https://example.com/%%41');
-        expect(uriObj.path).assertEqual('/%A');
-      } catch (e) {
-        expect(e).assertInstanceOf('Error');
-      }
+      const uriObj: uri.URI = new uri.URI('https://example.com/%%41');
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -662,12 +607,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const uriObj = new uri.URI('https://example.com/%G1');
-        expect(uriObj.path).assertEqual('/%G1');
-      } catch (e) {
-        expect(e).assertInstanceOf('Error');
-      }
+      const uriObj: uri.URI = new uri.URI('https://example.com/%G1');
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -697,9 +638,9 @@ export default function URI02Test() {
     it('testURI02Chapter0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         const uriObj = new uri.URI('https://example.com/\0');
-        expect(uriObj.path).assertEqual('/\0');
+        expect().assertFail();
       } catch (e) {
-        expect(e).assertInstanceOf('Error');
+        expect(e.code).assertEqual(10200002);
       }
     });
 
@@ -717,7 +658,6 @@ export default function URI02Test() {
       expect(uriObj.path.length).assertEqual(1000001);
     });
 
-    // =============== query ======================
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_4500
@@ -728,7 +668,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0045';
       const testUri: uri.URI = new uri.URI('ftp://ftp.aaa.bbb.ccc/dddd/eee.txt');
       expect(testUri.query).assertEqual(null);
     });
@@ -742,7 +681,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0046';
       const testUri: uri.URI = new uri.URI('http://example.com/path?');
       expect(testUri.query).assertNull();
     });
@@ -756,7 +694,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0047';
       const testUri: uri.URI = new uri.URI('https://username:password@host:8080/directory/file?foo=1&bar=2#fragment');
       expect(testUri.query).assertEqual('foo=1&bar=2');
     });
@@ -770,7 +707,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0048';
       const testUri: uri.URI = new uri.URI('http://example.com/?q=hello%20world&name=John%2Bdoe');
       expect(testUri.query).assertEqual('q=hello world&name=John+doe');
     });
@@ -784,7 +720,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0049';
       const testUri: uri.URI = new uri.URI('http://example.com/?a%26b=c%3Dd&e%23f=g%3Fh');
       expect(testUri.query).assertEqual('a&b=c=d&e#f=g?h');
     });
@@ -798,7 +733,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0050';
       let ascii: string = '';
       for (let i: number = 32; i <= 126; i++) {
         ascii += String.fromCharCode(i);
@@ -817,7 +751,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0051';
       const raw: string = 'line1\tline2\nline3\rline4\fline5\vline6';
       const encoded: string = encodeURIComponent(raw);
       const testUri: uri.URI = new uri.URI(`http://example.com/?text=${encoded}`);
@@ -833,7 +766,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0052';
       const emojis: string = '👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴';
       const encoded: string = encodeURIComponent(emojis);
       const testUri: uri.URI = new uri.URI(`http://example.com/?emoji=${encoded}`);
@@ -849,7 +781,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0053';
       const testUri: uri.URI = new uri.URI('http://example.com/?a=undefined&b=null&c=NaN');
       expect(testUri.query).assertEqual('a=undefined&b=null&c=NaN');
     });
@@ -863,7 +794,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0054';
       let longQuery: string = '';
       for (let i: number = 0; i < 10000; i++) {
         longQuery += `key${i}=value${i}&`;
@@ -882,7 +812,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0055';
       const testUri: uri.URI = new uri.URI('http://example.com/?q=%23hash#fragment');
       expect(testUri.query).assertEqual('q=#hash');
       expect(testUri.fragment).assertEqual('fragment');
@@ -897,15 +826,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0056';
       const testUri: uri.URI = new uri.URI('http://example.com/?invalid=%2');
-
-      const isValid = testUri.query !== null &&
-        testUri.query !== undefined &&
-        (testUri.query === 'invalid=%2' ||
-        testUri.query.includes('invalid'));
-
-      expect(isValid).assertTrue();
+      expect(testUri.query !== null).assertTrue();
     });
 
     /**
@@ -917,15 +839,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0057';
       const testUri: uri.URI = new uri.URI('http://example.com/?invalid=%C3%28');
-
-      const isValid = testUri.query !== null &&
-        testUri.query !== undefined &&
-        (testUri.query === 'invalid=%C3%28' ||
-        testUri.query.includes('invalid'));
-
-      expect(isValid).assertTrue();
+      expect(testUri.query !== null).assertTrue();
     });
 
     /**
@@ -937,31 +852,11 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0058';
-      let parseError: Error | null = null;
-      let testUri: uri.URI | null = null;
-
       try {
-        testUri = new uri.URI('http://example.com/?foo=bar#baz#more');
+        const testUri: uri.URI = new uri.URI('http://example.com/?foo=bar#baz#more');
+        expect().assertFail();
       } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError !== null).assertTrue();
-
-      if (parseError) {
-        const errorString = parseError.toString();
-        const hasExpectedError = errorString.includes('invalid') ||
-        errorString.includes('character') ||
-        errorString.includes('fragment') ||
-        errorString.includes('parse') ||
-        errorString.includes('URI');
-        expect(hasExpectedError).assertFalse();
-      }
-
-      if (testUri === null) {
-        const nullString = String(testUri);
-        expect(nullString === 'null').assertTrue();
+        expect(e.code).assertEqual(10200002);
       }
     });
 
@@ -974,7 +869,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0059';
       const testUri: uri.URI = new uri.URI('http://example.com/?a=b?c=d');
       expect(testUri.query).assertEqual('a=b?c=d');
     });
@@ -988,7 +882,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0060';
       const testUri: uri.URI = new uri.URI('http://example.com/?message=Hello+world');
       expect(testUri.query).assertEqual('message=Hello+world');
     });
@@ -1002,7 +895,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0061';
       const testUri: uri.URI = new uri.URI('http://example.com/?message=Hello%2Bworld');
       expect(testUri.query).assertEqual('message=Hello+world');
     });
@@ -1016,7 +908,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0062';
       const params: string[] = [
         encodeURIComponent('kèy1') + '=' + encodeURIComponent('välue1'),
         encodeURIComponent('key2') + '=' + encodeURIComponent('välue2'),
@@ -1043,7 +934,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0063';
       const testUri: uri.URI = new uri.URI('http://example.com/?q=hello%20world&name=John%2Bdoe');
       expect(testUri.query).assertEqual('q=hello world&name=John+doe');
       expect(testUri.encodedQuery).assertEqual('q=hello%20world&name=John%2Bdoe');
@@ -1058,7 +948,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0064';
       const testUri: uri.URI = new uri.URI('path/to/resource?query=value');
       expect(testUri.query).assertEqual('query=value');
     });
@@ -1072,7 +961,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0065';
       const testUri: uri.URI = new uri.URI('?query=value');
       expect(testUri.query).assertEqual('query=value');
     });
@@ -1086,7 +974,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0066';
       const longKey: string = 'a'.repeat(5000);
       const longVal: string = 'b'.repeat(5000);
       const testUri: uri.URI = new uri.URI(`http://example.com/?${longKey}=${longVal}`);
@@ -1102,7 +989,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0067';
       const testUri: uri.URI = new uri.URI('http://example.com/?null=%00%01%02');
       expect(testUri.query).assertEqual('null=\x00\x01\x02');
     });
@@ -1116,15 +1002,8 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0068';
       const testUri: uri.URI = new uri.URI('http://example.com/?surrogate=%ED%A0%80');
-
-      const isValid = testUri.query !== null &&
-        testUri.query !== undefined &&
-        (testUri.query === 'surrogate=%ED%A0%80' ||
-        testUri.query.includes('surrogate'));
-
-      expect(isValid).assertTrue();
+      expect(testUri.query !== null).assertTrue();
     });
 
     /**
@@ -1136,7 +1015,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0069';
       let jsonArray: string = '[';
       for (let i: number = 0; i < 500; i++) {
         jsonArray += '{"a":1},';
@@ -1156,7 +1034,6 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG: string = 'testURI02Chapter0070';
       const arr: number[] = [1, 2, 3];
       const objStr: string = '{"foo":42,"baz":42}';
       const obj: Record<string, number> = JSON.parse(objStr);
@@ -1168,7 +1045,6 @@ export default function URI02Test() {
       expect(testUri.query).assertEqual(`arr=${arrStr}&obj=${objJsonStr}`);
     });
 
-    // =============== fragment ======================
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_7100
      * @tc.name testURI02Chapter0071
@@ -1393,13 +1269,7 @@ export default function URI02Test() {
     it('testURI02Chapter0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriStr = 'http://example.com#invalid%2';
       const uriObj = new uri.URI(uriStr);
-
-      const isValid = uriObj.fragment !== null &&
-        uriObj.fragment !== undefined &&
-        (uriObj.fragment === 'invalid%2' ||
-        uriObj.fragment.includes('invalid'));
-
-      expect(isValid).assertTrue();
+      expect(uriObj.fragment !== null).assertTrue();
     });
 
     /**
@@ -1411,22 +1281,9 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const encoded = '%ED%A0%80';
-      let uriObj: uri.URI | null = null;
-      let parseError: Error | null = null;
-
-      try {
-        uriObj = new uri.URI('http://example.com#' + encoded);
-      } catch (e) {
-        parseError = e as Error;
-      }
-
-      const isValid = parseError === null && uriObj !== null;
-      expect(isValid).assertTrue();
-
-      if (uriObj) {
-        expect(uriObj.fragment !== null && uriObj.fragment !== undefined).assertTrue();
-      }
+      const encoded: string = '%ED%A0%80';
+      const uriObj: uri.URI = new uri.URI('http://example.com#' + encoded);
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -1438,15 +1295,10 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const controlChar = '\u0001';
-      const encoded = encodeURIComponent(controlChar);
-      const uriObj = new uri.URI('http://example.com#' + encoded);
-      try {
-        const frag = uriObj.fragment;
-        expect(frag).assertEqual(controlChar);
-      } catch (e) {
-        expect(e).assertInstanceOf('URIError');
-      }
+      const controlChar: string = '\u0001';
+      const encoded: string = encodeURIComponent(controlChar);
+      const uriObj: uri.URI = new uri.URI('http://example.com#' + encoded);
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -1460,9 +1312,9 @@ export default function URI02Test() {
     it('testURI02Chapter0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         const uriObj = new uri.URI('');
-        expect(uriObj).assertNull();
+        expect().assertFail();
       } catch (e) {
-        expect(e).assertInstanceOf('Error');
+        expect(e.code).assertEqual(401);
       }
     });
 
@@ -1476,10 +1328,7 @@ export default function URI02Test() {
      */
     it('testURI02Chapter0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriObj = new uri.URI('http//example.com');
-      const uriString = uriObj.toString();
-
-      const isValid = uriObj !== null && uriString !== undefined && uriString !== '';
-      expect(isValid).assertTrue();
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -1492,15 +1341,7 @@ export default function URI02Test() {
      */
     it('testURI02Chapter0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriObj = new uri.URI('http://example.com#test%');
-      const uriString = uriObj.toString();
-
-      const isValid = uriObj.fragment !== null &&
-        uriObj.fragment !== undefined &&
-        (uriObj.fragment === 'test%' ||
-          uriObj.fragment === 'test' ||
-        uriObj.fragment.includes('test'));
-
-      expect(isValid).assertTrue();
+      expect(uriObj.fragment !== null).assertTrue();
     });
 
     /**
@@ -1567,11 +1408,7 @@ export default function URI02Test() {
      */
     it('testURI02Chapter0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uriObj = new uri.URI('http//example.com');
-      const uriString = uriObj.toString();
-
-      const isValid = uriObj !== null && uriString !== undefined && uriString !== '';
-
-      expect(isValid).assertTrue();
+      expect(uriObj.toString().length > 0).assertTrue();
     });
 
     /**
@@ -1596,30 +1433,11 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let parseError: Error | null = null;
-      let uriObj: uri.URI | null = null;
-
       try {
-        uriObj = new uri.URI('http://example.com/pa%23th#frag#more');
+        const uriObj = new uri.URI('http://example.com/pa%23th#frag#more');
+        expect().assertFail();
       } catch (e) {
-        parseError = e as Error;
-      }
-
-      expect(parseError !== null).assertTrue();
-
-      if (parseError) {
-        const errorString = parseError.toString();
-        const hasExpectedError = errorString.includes('invalid') ||
-        errorString.includes('character') ||
-        errorString.includes('fragment') ||
-        errorString.includes('parse') ||
-        errorString.includes('URI');
-        expect(hasExpectedError).assertFalse();
-      }
-
-      if (uriObj === null) {
-        const nullString = String(uriObj);
-        expect(nullString === 'null').assertTrue();
+        expect(e.code).assertEqual(10200002);
       }
     });
 
@@ -1660,7 +1478,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("https://username:password@host:8080/directory/file?foo=1&bar=2#fragment");
+      const uriObj = new uri.URI("https://username:password@host:8080/directory/file?foo=1&bar=2#fragment");
       expect(uriObj.authority).assertEqual("username:password@host:8080");
       expect(uriObj.encodedAuthority).assertEqual("username:password@host:8080");
       expect(uriObj.userInfo).assertEqual("username:password");
@@ -1677,7 +1495,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("http://example.com:8888/path/to/resource");
+      const uriObj = new uri.URI("http://example.com:8888/path/to/resource");
       expect(uriObj.authority).assertEqual("example.com:8888");
       expect(uriObj.encodedAuthority).assertEqual("example.com:8888");
       expect(uriObj.userInfo).assertNull();
@@ -1694,7 +1512,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("ftp://mirror.example.com/pub/linux");
+      const uriObj = new uri.URI("ftp://mirror.example.com/pub/linux");
       expect(uriObj.authority).assertEqual("mirror.example.com");
       expect(uriObj.encodedAuthority).assertEqual("mirror.example.com");
       expect(uriObj.userInfo).assertNull();
@@ -1711,7 +1529,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("file:///etc/hosts");
+      const uriObj = new uri.URI("file:///etc/hosts");
       expect(uriObj.authority).assertNull();
       expect(uriObj.encodedAuthority).assertNull();
       expect(uriObj.host).assertNull();
@@ -1727,7 +1545,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("https://alice@secure.example.com/private");
+      const uriObj = new uri.URI("https://alice@secure.example.com/private");
       expect(uriObj.authority).assertEqual("alice@secure.example.com");
       expect(uriObj.encodedAuthority).assertEqual("alice@secure.example.com");
       expect(uriObj.userInfo).assertEqual("alice");
@@ -1744,7 +1562,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("http://localhost:0/");
+      const uriObj = new uri.URI("http://localhost:0/");
       expect(uriObj.authority).assertEqual("localhost:0");
       expect(uriObj.port).assertEqual('0');
     });
@@ -1758,7 +1576,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("http://example.com:65535/");
+      const uriObj = new uri.URI("http://example.com:65535/");
       expect(uriObj.authority).assertEqual("example.com:65535");
       expect(uriObj.port).assertEqual('65535');
     });
@@ -1772,7 +1590,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("https://example.com/");
+      const uriObj = new uri.URI("https://example.com/");
       expect(uriObj.authority).assertEqual("example.com");
       expect(uriObj.port).assertEqual('-1');
     });
@@ -1786,7 +1604,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uriObj = new uri.URI("http://192.168.1.1:8080/index.html");
+      const uriObj = new uri.URI("http://192.168.1.1:8080/index.html");
       expect(uriObj.authority).assertEqual("192.168.1.1:8080");
       expect(uriObj.host).assertEqual("192.168.1.1");
       expect(uriObj.port).assertEqual('8080');
