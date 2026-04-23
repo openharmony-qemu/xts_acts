@@ -2180,7 +2180,7 @@ export default function DeviceInfoTest() {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let deviceCorlor = deviceinfo.deviceCorlor;
             
-            if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
+            if (deviceCorlor != null && deviceCorlor != undefined) {
                 console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
                 expect(deviceCorlor).assertInstanceOf('String');
 				done();
