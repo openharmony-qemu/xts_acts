@@ -70,7 +70,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_CALLBACK_0100
-         * @tc.name   Test createVideoPlayer with AsyncCallback
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_CALLBACK_0100
          * @tc.desc   Test createVideoPlayer with valid callback
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -101,7 +101,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0100
-         * @tc.name   Test createVideoPlayer with Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROMISE_0100
          * @tc.desc   Test createVideoPlayer returning Promise<VideoPlayer>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -125,7 +125,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0100
-         * @tc.name   Test seek with timeMs and AsyncCallback
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0100
          * @tc.desc   Test seek with valid timeMs and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -162,7 +162,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0200
-         * @tc.name   Test seek with timeMs, SeekMode and AsyncCallback
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0200
          * @tc.desc   Test seek with timeMs, SeekMode and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -200,7 +200,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0300
-         * @tc.name   Test seek with different SeekMode values
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0300
          * @tc.desc   Test seek with all SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -245,7 +245,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0400
-         * @tc.name   Test seek with different SeekMode values
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0400
          * @tc.desc   Test seek with all SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -290,7 +290,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0500
-         * @tc.name   Test seek with different SeekMode values
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0500
          * @tc.desc   Test seek with all SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -335,7 +335,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0600
-         * @tc.name   Test seek with different SeekMode values
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0600
          * @tc.desc   Test seek with all SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -380,7 +380,7 @@
 
        /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0100
-         * @tc.name   Test seek with timeMs and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0100
          * @tc.desc   Test seek with vaild timeMs returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -410,7 +410,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0200
-         * @tc.name   Test seek with timeMs,SeekMode and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_0200
          * @tc.desc   Test seek with timeMs,SeekMode returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -441,7 +441,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0100
-         * @tc.name   Test setVolume with valid volume and AsyncCallback
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0100
          * @tc.desc   Test setVolume with valid volume and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -477,7 +477,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0200
-         * @tc.name   Test setVolume with boundary values
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0200
          * @tc.desc   Test setVolume with 0.0 and 1.0
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -518,7 +518,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0300
-         * @tc.name   Test setVolume with invalid volume
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0300
          * @tc.desc   Test setVolume with invalid volume values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -556,7 +556,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0400
-         * @tc.name   Test setVolume with invalid volume
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_CALLBACK_0400
          * @tc.desc   Test setVolume with invalid volume values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -594,7 +594,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0100
-         * @tc.name   Test setVolume with valid volume and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0100
          * @tc.desc   Test setVolume with valid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -623,7 +623,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0200
-         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0200
          * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -655,7 +655,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0300
-         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0300
          * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -687,7 +687,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0400
-         * @tc.name   Test setVolume with invalid volume and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_VOLUME_PROMISE_0400
          * @tc.desc   Test setVolume with invalid volume returning Promise<void>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -719,7 +719,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0100
-         * @tc.name   Test setSpeed with valid speed and AsyncCallback
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0100
          * @tc.desc   Test setSpeed with valid speed and callback
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -756,7 +756,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0200
-         * @tc.name   Test setSpeed with invalid speed
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0200
          * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -787,7 +787,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0300
-         * @tc.name   Test setSpeed with invalid speed
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0300
          * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -818,7 +818,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0400
-         * @tc.name   Test setSpeed with invalid speed
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_CALLBACK_0400
          * @tc.desc   Test setSpeed with invalid speed values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -849,7 +849,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0100
-         * @tc.name   Test setSpeed with valid speed and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0100
          * @tc.desc   Test setSpeed with valid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -879,7 +879,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0200
-         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0200
          * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -911,7 +911,7 @@
 
        /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0300
-         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0300
          * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -943,7 +943,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0400
-         * @tc.name   Test setSpeed with invalid speed and Promise
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SET_SPEED_PROMISE_0400
          * @tc.desc   Test setSpeed with invalid speed and returning Promise<number>
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -975,7 +975,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROPERTIES_0100
-         * @tc.name   Test createVideoPlayer properties coverage
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_CREATE_VIDEO_PLAYER_PROPERTIES_0100
          * @tc.desc   Test createVideoPlayer with url, fdSrc, loop, currentTime properties
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1026,7 +1026,7 @@
         //个人新增16913
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0700
-         * @tc.name   Test seek with null timeMs (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0700
          * @tc.desc   Test seek with null timeMs parameter
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1060,7 +1060,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0800
-         * @tc.name   Test seek with undefined timeMs (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_0800
          * @tc.desc   Test seek with undefined timeMs parameter
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1094,7 +1094,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_NULL_UNDEFINED_0100
-         * @tc.name   Test seek with null timeMs and SeekMode (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_NULL_UNDEFINED_0100
          * @tc.desc   Test seek with null timeMs parameter with SeekMode
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1128,7 +1128,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_NULL_UNDEFINED_0200
-         * @tc.name   Test seek with undefined timeMs and SeekMode (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_NULL_UNDEFINED_0200
          * @tc.desc   Test seek with undefined timeMs parameter with SeekMode
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1162,7 +1162,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0100
-         * @tc.name   Test seek with SEEK_PREV_SYNC SeekMode (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0100
          * @tc.desc   Test seek with SEEK_PREV_SYNC parameter with SeekMode
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1196,7 +1196,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0200
-         * @tc.name   Test seek with SEEK_CLOSEST SeekMode (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0200
          * @tc.desc   Test seek with SEEK_CLOSEST parameter with SeekMode
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1230,7 +1230,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0300
-         * @tc.name   Test seek with SEEK_CONTINUOUS SeekMode (Callback)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_CALLBACK_SEEKMODE_0300
          * @tc.desc   Test seek with SEEK_CONTINUOUS parameter with SeekMode
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1264,7 +1264,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0100
-         * @tc.name   Test seek with SEEK_CLOSEST and SEEK_CONTINUOUS modes (Promise)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0100
          * @tc.desc   Test seek with SEEK_CLOSEST and SEEK_CONTINUOUS SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1295,7 +1295,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0200
-         * @tc.name   Test seek with SEEK_CLOSEST and SEEK_CONTINUOUS modes (Promise)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0200
          * @tc.desc   Test seek with SEEK_CLOSEST and SEEK_CONTINUOUS SeekMode values
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1326,7 +1326,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0300
-         * @tc.name   Test seek with null (Promise)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0300
          * @tc.desc   Test seek with null
          * @tc.size   MEDIUM
          * @tc.type   Function
@@ -1360,7 +1360,7 @@
 
         /**
          * @tc.number SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0400
-         * @tc.name   Test seek with undefined (Promise)
+         * @tc.name   SUB_MEDIA_VIDEO_PLAYER_SEEK_PROMISE_SEEK_MODE_0400
          * @tc.desc   Test seek with undefined
          * @tc.size   MEDIUM
          * @tc.type   Function
