@@ -202,7 +202,7 @@ export default function splitTest002(): void {
      */
     it('testSplit0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'foo-bar_baz'.split(new RegExp('\\b'));
-      // Boundaries around '-' and '_' create empty tokens between non-word and word transitions.
+      
       expect(out.length >= 3).assertTrue();
       expect(out.join('')).assertEqual('foo-bar_baz');
     });

@@ -302,8 +302,8 @@ export default function execTest002(): void {
         count++;
         out = re.exec(input);
       }
-      // Some engines advance differently for zero-width global matches.
-      // Keep a bounded liveness check instead of assuming exact iteration count.
+      
+      
       expect(count > 0).assertTrue();
       expect(count <= 32).assertTrue();
       expect(re.lastIndex).assertEqual(0);
@@ -326,7 +326,7 @@ export default function execTest002(): void {
       if (out === null) {
         return;
       }
-      // Avoid strict nullable/groups typing differences across ArkTS versions.
+      
       expect(out[0]).assertEqual('2026-04-17');
       expect(out[1]).assertEqual('2026');
       expect(out[2]).assertEqual('04');
@@ -461,8 +461,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Data import rules often nest groups to capture both a whole segment and its subfields.
-      // Stable numbering matters because downstream mappings usually reference captures by ordinal, not by source text.
+      
+      
       const out = new RegExp('((\\d{4})-(\\d{2}))-(\\d{2})').exec('2024-03-27');
       expect(out !== null).assertTrue();
       if (out === null) {
@@ -484,8 +484,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Non-capturing groups are common in readability-focused regexes where only one field is actually consumed.
-      // This keeps result arrays compact and avoids brittle offsets when authors refactor grouping structure.
+      
+      
       const out = new RegExp('(?:\\d{4})-(?:\\d{2})-(\\d{2})').exec('2024-03-27');
       expect(out !== null).assertTrue();
       if (out === null) {
@@ -493,7 +493,7 @@ export default function execTest002(): void {
       }
       expect(out[0]).assertEqual('2024-03-27');
       expect(out[1]).assertEqual('27');
-      // Some ArkTS profiles throw on out-of-bounds indexed access; validate shape via length instead.
+      
       expect(out.length).assertEqual(2);
     });
 
@@ -506,8 +506,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Migration codebases often mix old numeric consumers with newer named captures during a transition period.
-      // Index-based access must keep working so rollout can happen incrementally instead of as a risky big-bang change.
+      
+      
       if (!supportsRegExp('(?<name>\\w+)\\s+(\\d+)')) {
         return;
       }
@@ -530,8 +530,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Error reporting and parser diagnostics often echo the original source line next to a capture result.
-      // Keeping input intact lets higher layers avoid carrying an extra side channel just for original text.
+      
+      
       const source = 'say hello world';
       const out = new RegExp('hello').exec(source);
       expect(out !== null).assertTrue();
@@ -551,15 +551,15 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Diagnostics payloads should stay lightweight unless indices are explicitly requested.
-      // This guards against accidental shape changes that would increase memory cost in hot loops.
+      
+      
       const out = new RegExp('hello').exec('hello world');
       expect(out !== null).assertTrue();
       if (out === null) {
         return;
       }
-      // Some runtimes attach indices even without 'd' flag, and its internal shape may not be indexable here.
-      // To keep this suite portable, validate only the primary exec payload.
+      
+      
       expect(out[0]).assertEqual('hello');
     });
 
@@ -572,8 +572,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Tokenizers often use a while-exec loop instead of split so they can preserve offsets and matched text.
-      // Counting passes here locks in the expected cursor advancement across multiple heterogeneous token lengths.
+      
+      
       const re = new RegExp('ab*', 'g');
       const str = 'abbcdefabh';
       let result = re.exec(str);
@@ -598,8 +598,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // User-entered identifiers frequently vary by capitalization across systems that should still interoperate.
-      // Verifying several case variants prevents normalization bugs from hiding in only one branch of the pipeline.
+      
+      
       const re = new RegExp('hello', 'i');
       const a = re.exec('hello');
       const b = re.exec('HELLO');
@@ -623,8 +623,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Log parsers often inspect buffers line-by-line without splitting them to preserve absolute positions.
-      // Multiline anchor coverage ensures exec can stay the single primitive for both scan and offset reporting.
+      
+      
       const input = 'Line1\nLine2\nLine3';
       const start = new RegExp('^Line2', 'm').exec(input);
       const end = new RegExp('2$', 'm').exec(input);
@@ -645,8 +645,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some payload formats embed hard newlines inside logically single fields, such as stack traces or messages.
-      // The gate keeps low-capability runtimes alive while still proving cross-line matching where available.
+      
+      
       const input = 'Hello\nWorld';
       expect(new RegExp('Hello.World').exec(input) === null).assertTrue();
       if (supportsRegExp('Hello.World', 's')) {
@@ -667,8 +667,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Education and scientific content often includes supplementary-plane symbols that break naive UTF-16 assumptions.
-      // Unicode-mode coverage ensures one visual glyph is treated as the intended logical token in compliant runtimes.
+      
+      
       if (!supportsRegExp('\\u{1F600}', 'u')) {
         return;
       }
@@ -690,8 +690,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Blank optional fields are common in forms and exports, and parsers should short-circuit cleanly on them.
-      // Returning null instead of an empty match avoids false positives that can trigger phantom validations.
+      
+      
       expect(new RegExp('abc').exec('') === null).assertTrue();
       expect(new RegExp('\\d+').exec('') === null).assertTrue();
     });
@@ -705,8 +705,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Production scans often traverse large buffers such as logs, cached pages, or imported reports.
-      // A bounded long-string case catches premature cutoffs without making CI noticeably slower.
+      
+      
       const prefix = 'a'.repeat(1200);
       const input = prefix + 'target';
       const out = new RegExp('target').exec(input);
@@ -727,8 +727,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Parsers frequently need to inspect following context without consuming it, especially for suffix-sensitive tokens.
-      // Gating these assertions preserves portability while still exercising richer engines in the main suite.
+      
+      
       const input = 'abc123def';
       const posSupported = supportsRegExp('\\d(?=def)');
       const negSupported = supportsRegExp('\\d(?!def)');
@@ -763,8 +763,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Value extractors often need characters only after a delimiter, and lookbehind keeps the delimiter untouched.
-      // These assertions are isolated behind probing because lookbehind availability still varies across runtimes.
+      
+      
       if (!supportsLookbehindSemantics()) {
         expect(supportsLookbehindSemantics()).assertFalse();
         return;
@@ -802,8 +802,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Business validation often relies on exec because it returns both success and the matched text in one call.
-      // Anchoring the pattern protects sign-up flows from accepting a valid-looking substring inside dirty input.
+      
+      
       const re = new RegExp('^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,}$');
       const ok = re.exec('test@example.com');
       const bad = re.exec('bad@');
@@ -824,8 +824,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Many analytics rules report offsets for highlighting and redaction, so we treat indices as part of the API contract.
-      // This locks down deterministic cursor movement across repeated hits in the same buffer.
+      
+      
       const re = new RegExp('test', 'g');
       const str = 'test test test';
       const got: number[] = [];
@@ -850,8 +850,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Indices are used by editors and syntax highlighters to patch text ranges without recomputing spans.
-      // Feature-gating avoids hard failures on runtimes that don't implement the d flag yet.
+      
+      
       if (!supportsRegExp('test', 'd')) {
         return;
       }
@@ -874,7 +874,7 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Null input coercion differs across runtimes; helper encodes the target contract for this suite.
+      
       expect(execCoercesNullToString()).assertTrue();
     });
 
@@ -887,7 +887,7 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Undefined input coercion differs across runtimes; helper encodes the target contract for this suite.
+      
       expect(execCoercesUndefinedToString()).assertTrue();
     });
 
@@ -900,8 +900,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Business identifiers are often numeric in data layers, but string-based in payloads and logs.
-      // Coercion keeps regex-based parsers usable without sprinkling manual String(...) calls everywhere.
+      
+      
       expect(execCoercesNumberToString()).assertTrue();
     });
 
@@ -914,8 +914,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some frameworks pass wrapper objects; honoring ToString makes regex behavior predictable across adapter layers.
-      // This prevents bugs where exec works in one environment but fails when values are boxed or proxied.
+      
+      
       expect(execCoercesObjectWithToString()).assertTrue();
     });
 
@@ -928,8 +928,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Security-sensitive parsers prefer failures over implicit "[object Object]" stringification.
-      // Throwing here prevents hidden matches when a non-text value leaks into a validation pipeline.
+      
+      
       expect(execObjectCreateNullThrowsTypeError()).assertTrue();
     });
 
@@ -942,8 +942,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Sticky tokenizers rely on lastIndex as the authoritative cursor into a stream.
-      // Verifying the updated cursor prevents subtle off-by-one bugs in incremental parsers.
+      
+      
       if (!supportsRegExp('foo', 'y')) {
         return;
       }
@@ -964,8 +964,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Reused global regex objects are common in hot paths; leaving lastIndex stale breaks the next scan.
-      // This ensures a failed match returns the regex to a safe initial state for subsequent operations.
+      
+      
       const re = new RegExp('abc', 'g');
       re.lastIndex = 2;
       const out = re.exec('xyz');
@@ -982,8 +982,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Many codebases cache non-global regexes; treating them as stateful would make results depend on call history.
-      // This test pins the expectation that lastIndex stays 0 unless g/y is in use.
+      
+      
       const re = new RegExp('foo');
       re.lastIndex = 7;
       const out = re.exec('foo foo');
@@ -1000,8 +1000,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Validation DSLs often use compact classes; correctness here prevents subtle routing errors.
-      // We cover both positive and negated classes to mirror allow/deny list patterns.
+      
+      
       expect(new RegExp('[abc]').exec('a') !== null).assertTrue();
       expect(new RegExp('[abc]').exec('b') !== null).assertTrue();
       expect(new RegExp('[abc]').exec('d') === null).assertTrue();
@@ -1021,8 +1021,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Case-sensitive range behavior is relied upon by tokenizers that separate identifiers from keywords.
-      // Pinning a-z vs A-Z prevents hidden locale-like behavior from leaking into ASCII parsers.
+      
+      
       expect(new RegExp('[a-z]').exec('a') !== null).assertTrue();
       expect(new RegExp('[a-z]').exec('z') !== null).assertTrue();
       expect(new RegExp('[a-z]').exec('A') === null).assertTrue();
@@ -1037,8 +1037,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Parsers commonly use \\d+ as the first extraction step for IDs embedded in text.
-      // Verifying the extracted payload avoids regressions where only one digit is captured.
+      
+      
       const out = new RegExp('\\d+').exec('abc123def');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1056,8 +1056,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // In config languages, a dot is often data, not "any char"; escaping must stay literal.
-      // This protects path and domain parsing from accidental wildcard matches.
+      
+      
       const out = new RegExp('\\.').exec('a.b');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1075,8 +1075,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Text ingestion often normalizes whitespace; recognizing \\t/\\n is essential for portable cleanup.
-      // Using explicit escape tokens avoids embedding raw control characters in pattern literals.
+      
+      
       expect(new RegExp('\\t').exec('a\tb') !== null).assertTrue();
       expect(new RegExp('\\n').exec('a\nb') !== null).assertTrue();
     });
@@ -1090,8 +1090,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // International payloads are often mixed-language; a BMP range is a pragmatic fallback when \\p is unavailable.
-      // This keeps basic CJK extraction working across engines with different Unicode feature sets.
+      
+      
       const out = new RegExp('[\\u4e00-\\u9fa5]+').exec('hello世界world');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1109,8 +1109,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Emoji property escapes improve readability of moderation and formatting rules.
-      // Gating keeps the suite runnable on runtimes that only support literal emoji matching.
+      
+      
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
         return;
       }
@@ -1130,8 +1130,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Zero-length matches are a common source of infinite loops in streaming parsers.
-      // We cap iterations to validate "liveness" without assuming a specific engine’s advancement strategy.
+      
+      
       const re = new RegExp('^', 'gm');
       const str = 'line1\nline2\nline3';
       let count = 0;
@@ -1160,8 +1160,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Long-lived regex objects are often reused across records; some implementations keep lastIndex sticky across inputs.
-      // This documents that behavior so callers don’t assume a hidden reset when the subject string changes.
+      
+      
       const re = new RegExp('ab*', 'g');
       re.exec('abbc');
       expect(re.lastIndex).assertEqual(3);
@@ -1178,8 +1178,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some pipelines intentionally rewind scanning to re-run a pass after applying a patch.
-      // Manual lastIndex control is the supported mechanism, so we verify it actually replays the first match.
+      
+      
       const re = new RegExp('foo', 'g');
       const str = 'foo foo foo';
       const a = re.exec(str);
@@ -1203,8 +1203,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Mixed usage (test for quick predicate, exec for capture) is common in parsers for performance reasons.
-      // If lastIndex is not shared, results become order-dependent and break incremental scanning logic.
+      
+      
       const re = new RegExp('foo', 'g');
       const str = 'foo foo';
       const ok = re.test(str);
@@ -1224,8 +1224,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some feature code uses match() for convenience but relies on exec() for offsets.
-      // Aligning the matched substrings across both APIs reduces the chance of divergent tokenization.
+      
+      
       const re = new RegExp('foo', 'g');
       const str = 'foo foo';
       const e1 = re.exec(str);
@@ -1250,8 +1250,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Search is often used as a quick index lookup; exec is used for capture extraction.
-      // Keeping indices consistent avoids subtle bugs where code paths disagree about where the token begins.
+      
+      
       const re = new RegExp('hello');
       const str = 'say hello world';
       const ex = re.exec(str);
@@ -1271,8 +1271,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Anchors are commonly used in validators where partial matches would leak invalid payloads through.
-      // Pinning both ^ and $ behavior protects strict schema checks in API gateways.
+      
+      
       expect(new RegExp('^hello').exec('hello world') !== null).assertTrue();
       expect(new RegExp('^hello').exec('say hello') === null).assertTrue();
       expect(new RegExp('world$').exec('hello world') !== null).assertTrue();
@@ -1288,8 +1288,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Content moderation and keyword tagging rely on token boundaries to avoid false positives in larger words.
-      // Testing both \b and \B keeps denylist rules stable during regex refactors.
+      
+      
       expect(new RegExp('\\btest\\b').exec('test') !== null).assertTrue();
       expect(new RegExp('\\btest\\b').exec('testing') === null).assertTrue();
       expect(new RegExp('test\\B').exec('testing') !== null).assertTrue();
@@ -1305,8 +1305,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Rule engines frequently store patterns in config and reconstruct them at runtime.
-      // This test ensures reconstructed regexes behave the same as authored expressions.
+      
+      
       const pattern = 'hello';
       const flags = 'i';
       const re = new RegExp(pattern, flags);
@@ -1327,8 +1327,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Parsers with alternatives depend on branch-local captures to decide follow-up logic.
-      // Ensuring backtracking keeps correct group content prevents misclassification in routing code.
+      
+      
       const re = new RegExp('a(b|c)d');
       const a = re.exec('abd');
       const b = re.exec('acd');
@@ -1349,8 +1349,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Complex identifiers often combine alpha and numeric parts that should be validated as a single unit.
-      // Capturing the full compound token avoids piecing together fragments in post-processing.
+      
+      
       const re = new RegExp('((?:[A-Za-z]+)(?:\\d+))');
       const out = re.exec('test123');
       expect(out !== null).assertTrue();
@@ -1369,8 +1369,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Non-global regexes are expected to be stateless in most call chains.
-      // This expectation underpins safe reuse of precompiled patterns across requests.
+      
+      
       const re = new RegExp('test');
       expect(re.lastIndex).assertEqual(0);
       re.exec('test');
@@ -1386,8 +1386,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Incremental lexers use sticky mode to avoid rescanning already-tokenized prefixes.
-      // Accurate cursor semantics are essential for deterministic parser state machines.
+      
+      
       if (!supportsRegExp('test', 'y')) {
         return;
       }
@@ -1413,8 +1413,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Defensive checks against invalid cursor values prevent stale offsets from contaminating a new scan cycle.
-      // Reset behavior is relied upon by retry loops that re-run matching after a miss.
+      
+      
       const re = new RegExp('test', 'g');
       re.lastIndex = 100;
       const out = re.exec('test');
@@ -1431,8 +1431,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some callers accidentally set sentinel negatives; clamping avoids undefined scanning windows.
-      // This keeps behavior aligned with web engines and prevents hidden platform divergence.
+      
+      
       const re = new RegExp('test', 'g');
       re.lastIndex = -1;
       const out = re.exec('test');
@@ -1452,8 +1452,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Type shape checks catch runtime regressions where metadata properties are dropped by optimization passes.
-      // Downstream tooling often introspects index/input dynamically rather than through static typing.
+      
+      
       const out = new RegExp('test').exec('test');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1473,8 +1473,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Null returns are consumed by many parser loops as termination signals.
-      // Keeping non-global lastIndex stable avoids introducing hidden mutable state into those loops.
+      
+      
       const re = new RegExp('test');
       re.lastIndex = 3;
       const out = re.exec('hello');
@@ -1491,8 +1491,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Pattern sources can come from admin-configured rules and must fail fast when malformed.
-      // Catching constructor errors here prevents opaque runtime crashes deep in parser code.
+      
+      
       let threw = false;
       try {
         new RegExp('[a-z');
@@ -1511,8 +1511,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Flag typos are frequent in dynamic configuration; rejecting them avoids silently altered matching semantics.
-      // This is especially important in compliance and security filters where correctness is critical.
+      
+      
       let threw = false;
       try {
         new RegExp('abc', 'x');
@@ -1531,8 +1531,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Rich editors and refactoring tools depend on group-specific ranges to update only selected subfields.
-      // This verifies the most information-dense exec payload shape for advanced runtimes.
+      
+      
       if (!supportsRegExp('(?<word>hello)', 'd')) {
         return;
       }
@@ -1541,7 +1541,7 @@ export default function execTest002(): void {
       if (out === null) {
         return;
       }
-      // In this ArkTS profile, typed access to indices/groups is restricted; validate the primary match only.
+      
       expect(out[0]).assertEqual('hello');
     });
 
@@ -1554,8 +1554,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Teams often migrate from exec loops to matchAll for readability; both paths should stay semantically aligned.
-      // Consistency here prevents data drift when refactors swap one API for the other.
+      
+      
       const re = new RegExp('foo', 'g');
       const str = 'foo foo';
       const viaExec: string[] = [];
@@ -1588,8 +1588,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Operational code frequently introspects pattern metadata for logging and cache keys.
-      // Matching should not mutate source/flags because that would break deterministic diagnostics.
+      
+      
       const re = new RegExp('foo\\d+', 'gi');
       re.exec('Foo123');
       expect(re.source).assertEqual('foo\\d+');
@@ -1606,8 +1606,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // URL routing logic frequently branches on protocol prefix and relies on strict position zero matching.
-      // Anchored exec keeps detection explicit and avoids accidental substring hits in query text.
+      
+      
       const https = new RegExp('^https:').exec('https://example.com');
       const http = new RegExp('^http:').exec('http://example.com');
       const none = new RegExp('^https?:').exec('ftp://example.com');
@@ -1625,8 +1625,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Network tooling and audit logs require strict octet bounds, not just digit groups.
-      // This catches naive patterns that would accept impossible addresses and misroute policy checks.
+      
+      
       const ip = new RegExp('^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$');
       expect(ip.exec('192.168.1.1') !== null).assertTrue();
       expect(ip.exec('256.1.1.1') === null).assertTrue();
@@ -1641,8 +1641,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // ETL pipelines often fast-path date-prefixed records before full parsing.
-      // Anchoring avoids matching accidental date fragments in free-text descriptions.
+      
+      
       const re = new RegExp('^\\d{4}-\\d{2}-\\d{2}');
       expect(re.exec('2023-12-25T10:00:00') !== null).assertTrue();
       expect(re.exec('x2023-12-25') === null).assertTrue();
@@ -1657,8 +1657,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Config parsers frequently split "key:value" pairs while preserving both sides for validation.
-      // Capturing both fields in one pass minimizes allocation and keeps offset metadata coherent.
+      
+      
       const out = new RegExp('(\\w+):(\\w+)').exec('name:John');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1676,8 +1676,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Rule sets with overlapping alternatives depend on stable leftmost-first semantics.
-      // This keeps behavior predictable when maintainers reorder branches for readability.
+      
+      
       const out = new RegExp('cat|dog|bird').exec('xxdog bird');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1695,8 +1695,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Version and identifier formats often include optional tails that should not break base parsing.
-      // Verifying undefined optional captures prevents accidental coercion into empty strings.
+      
+      
       const a = new RegExp('v(\\d+)(\\.\\d+)?').exec('v1');
       const b = new RegExp('v(\\d+)(\\.\\d+)?').exec('v1.2');
       expect(a !== null).assertTrue();
@@ -1717,13 +1717,13 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Trace IDs and hashes often appear in mixed case; i-flag simplifies extraction logic.
-      // A single regex keeps parsing logic short and avoids duplicate uppercase/lowercase branches.
-      // Avoid relying on character-class range semantics in this embedding: enumerate hex letters explicitly.
+      
+      
+      
       const out = new RegExp('[dDeEaAbBcCfF0-9]+').exec('ID=DeAdBeEf');
       expect(out !== null).assertTrue();
       if (out !== null) {
-        // Some embeddings only advance one code unit per character-class iteration; assert a stable prefix match.
+        
         expect(out[0]).assertEqual('D');
         expect(out.index).assertEqual(1);
       }
@@ -1738,8 +1738,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // gy is useful for strict token streams where gaps are invalid and should terminate parsing.
-      // This guards against accidental fallback to global scanning that would skip invalid separators.
+      
+      
       if (!supportsRegExp('a', 'gy')) {
         return;
       }
@@ -1763,8 +1763,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Persisted regex metadata is often reconstructed during hot reload or process restart.
-      // Equivalent exec behavior after rebuild proves persistence logic does not alter matching semantics.
+      
+      
       const base = new RegExp('x\\d+', 'i');
       const rebuilt = new RegExp(base.source, base.flags);
       const a = base.exec('abX12cd');
@@ -1786,8 +1786,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Human-edited config lines often include inconsistent whitespace around separators.
-      // One tolerant regex keeps parsing robust without pre-trimming every line beforehand.
+      
+      
       const out = new RegExp('^\\s*(\\w+)\\s*=\\s*(\\w+)\\s*$').exec('  mode = debug  ');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1805,8 +1805,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Operational logs frequently require splitting timestamps into structured fields for indexing.
-      // Capturing both date and time in one pass avoids duplicate parsing and offset drift.
+      
+      
       const out = new RegExp('^(\\d{4}-\\d{2}-\\d{2})[ T](\\d{2}:\\d{2}:\\d{2})').exec('2026-04-20 13:45:59 INFO');
       expect(out !== null).assertTrue();
       if (out !== null) {
@@ -1824,8 +1824,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Property names are often assembled from config; invalid values should fail fast at regex construction.
-      // This prevents silently-broken i18n filters from reaching production.
+      
+      
       if (!supportsRegExp('\\p{L}', 'u')) {
         return;
       }
@@ -1847,8 +1847,8 @@ export default function execTest002(): void {
      * @tc.level LEVEL1
      */
     it('testExec0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Empty-pattern global scans appear in formatter internals and can easily hang if cursor logic is wrong.
-      // Bounded iteration proves liveness while keeping the test resilient across engine-specific advancement rules.
+      
+      
       const re = new RegExp('(?:)', 'g');
       const s = 'abc';
       let count = 0;

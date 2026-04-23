@@ -293,7 +293,7 @@ export default function regExpComplete002Test(): void {
       const re = new RegExp('b');
       re.lastIndex = 2;
       expect(re.test('abc')).assertTrue();
-      // Some engines preserve lastIndex for non-global test(), others normalize it to 0.
+      
       expect(re.lastIndex === 2 || re.lastIndex === 0).assertTrue();
       re.lastIndex = 2;
       expect(re.test('xyz')).assertFalse();

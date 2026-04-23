@@ -110,7 +110,7 @@ export default function toStringTest002(): void {
      */
     it('testToString0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('x', 'mig');
-      // JS engines normalize flag order; verify output is normalized.
+      
       expect(re.flags).assertEqual('gim');
       expect(re.toString()).assertEqual('/x/gim');
     });

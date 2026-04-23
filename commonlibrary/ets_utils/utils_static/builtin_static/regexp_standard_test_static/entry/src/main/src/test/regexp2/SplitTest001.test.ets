@@ -807,7 +807,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // \G is non-standard in JS engines; emulate "start-anchored token" with ^ to keep this case portable.
+      
       const out = 'test test'.split(new RegExp("^test\\s*", ""));
       expect(out.length).assertEqual(2);
       expect(out[0]).assertEqual('');
@@ -917,7 +917,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // ArkTS split signature accepts integer limit; use a large int to model Infinity's "no practical cap".
+      
       expect('a b c'.split(new RegExp("\\s", ""), 2147483647).length).assertEqual(3);
     });
 
@@ -930,7 +930,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // -Infinity coerces to 0 in JS limit semantics.
+      
       expect('a b c'.split(new RegExp("\\s", ""), 0).length).assertEqual(0);
     });
 
@@ -943,7 +943,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // NaN coerces to 0 in JS limit semantics.
+      
       expect('a b c'.split(new RegExp("\\s", ""), 0).length).assertEqual(0);
     });
 
@@ -1194,7 +1194,7 @@ export default function splitTest(): void {
         expect(ctorThrew).assertTrue();
         return;
       }
-      // If atomic groups are supported, ensure the pattern is operational instead of forcing a throw-only expectation.
+      
       expect('aaab'.split(new RegExp('(?>a*)b')).length >= 1).assertTrue();
     });
 

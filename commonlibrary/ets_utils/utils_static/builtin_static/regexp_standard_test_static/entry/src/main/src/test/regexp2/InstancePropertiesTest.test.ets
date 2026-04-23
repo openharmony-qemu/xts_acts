@@ -77,8 +77,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Instance metadata (source) is used by rule introspection and dynamic UI/debug tooling; it must be stable and unescaped as specified.
-      // If source drifts, systems that serialize/compare patterns for caching or policy enforcement break without obvious runtime errors.
+      
+      
       const regex1 = new RegExp('abc', 'i');
       const regex2 = new RegExp('\\d+', 'g');
       const regex3 = new RegExp('\\w+');
@@ -96,8 +96,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Some security-hardening styles attempt to 鈥減atch鈥?RegExp.source; spec treats it as read-only, and strict mode should enforce that.
-      // Keeping this behavior prevents libraries from relying on mutable metadata and accidentally diverging across engines.
+      
+      
       expect(assignSourceStrictStillOriginal()).assertTrue();
     });
 
@@ -110,8 +110,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // flags is frequently logged and compared for feature parity; ordering/contents are part of the observable contract.
-      // This protects tooling that normalizes patterns by stringifying flags and expects consistent results across devices.
+      
+      
       const regex1 = new RegExp('abc', 'gim');
       const regex2 = new RegExp('test');
       expect(regex1.flags).assertEqual('gim');
@@ -127,8 +127,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Optional features must be discoverable without throwing so apps can remain portable (feature-detect then choose a fallback).
-      // This negative probe ensures 鈥渦nsupported鈥?is reported consistently rather than crashing property tests.
+      
+      
       if (supportsRegExp('hello', 's')) {
         const r = new RegExp('hello', 's');
         expect(r.dotAll).assertTrue();
@@ -147,8 +147,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // When dotAll is supported, the instance must reflect it via flags so higher-level logic can audit/serialize behavior.
-      // This avoids 鈥渇lag accepted but not surfaced鈥?situations that break cross-runtime compatibility checks.
+      
+      
       if (!supportsRegExp('hello', 's')) {
         return;
       }
@@ -165,9 +165,9 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // These booleans are often used as quick capability checks (e.g., 鈥渋sGlobal?鈥? without parsing the flags string.
-      // Keeping them consistent prevents subtle logic bugs where apps think they鈥檙e scanning globally but aren鈥檛 (or vice versa).
-      // We cover both true/false sides to avoid implementations that default everything to falsy/truthy.
+      
+      
+      
       expect(new RegExp('test', 'g').global).assertTrue();
       expect(new RegExp('test').global).assertFalse();
       expect(new RegExp('test', 'i').ignoreCase).assertTrue();
@@ -185,8 +185,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // dotAll drives multiline record extraction; apps check dotAll directly to decide safe pattern rewrites.
-      // Feature-gating keeps this suite portable while still validating the property when the runtime supports it.
+      
+      
       if (!supportsRegExp('test', 's')) {
         return;
       }
@@ -202,9 +202,9 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Default property values must be predictable so libraries can reason about behavior without special-casing 鈥渦nset flags鈥?
-      // Sticky/unicode booleans are used by tokenizers and i18n code to choose algorithmic paths; wrong defaults mis-route logic.
-      // We assert both enabled and default-disabled values to catch 鈥渁lways true/always false鈥?regressions.
+      
+      
+      
       expect(new RegExp('test').dotAll).assertFalse();
       expect(new RegExp('test').sticky).assertFalse();
       expect(new RegExp('test').unicode).assertFalse();
@@ -229,8 +229,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // hasIndices is a capability used by highlighters/redactors that require match spans, not just text.
-      // We gate by ctor support so unsupported builds can still run the suite and keep a clear portability signal.
+      
+      
       if (!supportsRegExp('test', 'd')) {
         return;
       }
@@ -250,8 +250,8 @@ export default function instancePropertiesTest(): void {
      * @tc.level LEVEL1
      */
     it('testRegExpInstance0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // When d is absent, hasIndices must be false to keep feature detection trustworthy.
-      // This prevents consumers from attempting to read indices and failing later with confusing runtime errors.
+      
+      
       expect(regexpLiteralWithoutDNotHasIndices()).assertTrue();
     });
 

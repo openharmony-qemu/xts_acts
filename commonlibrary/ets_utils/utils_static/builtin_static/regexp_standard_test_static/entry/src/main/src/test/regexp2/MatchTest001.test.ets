@@ -97,8 +97,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // Baseline iterator semantics: many consumers replace manual exec loops with matchAll for clarity and performance.
-        // We keep this as a regression anchor so later flag/capture tests fail with clear attribution.
+        
+        
         const regex: RegExp = new RegExp("t(e)(st(\\d?))", "g");
         const str: string = "test1test2";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -116,8 +116,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // Interop requirement: apps commonly mix String.matchAll and RegExp[@@matchAll] depending on input type.
-        // Ensuring consistent results prevents subtle cross-platform divergences in shared regex libraries.
+        
+        
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test test test";
         const result: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -133,8 +133,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // Iterator protocol is a contract relied on by stream-style pipelines (consume one match at a time).
-        // This protects against implementations that eagerly materialize arrays and lose incremental behavior.
+        
+        
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test test";
         const result: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -153,8 +153,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // ECMA-262 ties @@matchAll to the same match record shape as RegExp.prototype.exec; nested captures
-        // must stay addressable or exec-shaped integrations (splitters, parsers) silently read wrong slots.
+        
+        
         const regex: RegExp = new RegExp("t(e)(st(\\d?))", "g");
         const str: string = "test1";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -163,7 +163,7 @@ export default function matchTest(): void {
         expect(matchResult.done).assertFalse();
         const match: RegExpMatchArray = matchResult.value as RegExpMatchArray;
 
-        // Callers that re-slice the original string or merge matches with other indices need stable offset metadata, not only the full match string.
+        
         expect(Array.isArray(match)).assertTrue();
         expect(match[0]).assertEqual("test1");
         expect(match.index).assertEqual(0);
@@ -179,8 +179,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // groups being undefined (not {}) is observable and used by consumers to branch between named-group and legacy paths.
-        // Keeping this consistent avoids “present but empty” surprises that complicate downstream typing and serialization.
+        
+        
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test";
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -203,7 +203,7 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // String.prototype.matchAll delegates here and requires a global RegExp; non-global receivers throw (TypeError).
+        
         const regex: RegExp = new RegExp("test");
         const str: string = "test test";
         let threw: boolean = false;
@@ -215,11 +215,11 @@ export default function matchTest(): void {
           isTypeError = e instanceof TypeError;
         }
         if (threw) {
-          // Some embeddings throw non-TypeError for this path; keep the core "throws on non-global" contract.
+          
           expect(threw).assertTrue();
           return;
         }
-        // Some engines allow non-global matchAll but may yield an empty iterator; assert the iterator shape exists.
+        
         const it = regexpSymbolMatchAll(regex, str);
         const step = it.next();
         expect(step !== null).assertTrue();
@@ -235,8 +235,8 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // Global scanning is the primary production use-case (collect all occurrences); result count is an easy correctness signal.
-        // This keeps regressions in lastIndex/progress from hiding behind “first match still works”.
+        
+        
         const regex: RegExp = new RegExp("test", "g");
         const str: string = "test test test";
         const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -252,7 +252,7 @@ export default function matchTest(): void {
        * @tc.level LEVEL1
        */
       it('testMatch0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        // Same global requirement as testMatch0105: non-global RegExp with String.matchAll must throw.
+        
         const regex: RegExp = new RegExp("\\d+");
         const str: string = "123 456 789";
         let threw: boolean = false;
@@ -304,8 +304,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Lookahead is used to validate context without consuming it (e.g., “amount before currency label”).
-          // This prevents parsers from needing brittle substring logic and guards against engines that accidentally consume context.
+          
+          
           const regex: RegExp = new RegExp("\\d+(?= dollars)", "g");
           const str: string = "100 dollars, 200 dollars";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -324,8 +324,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Negative lookahead is a common “exclude a suffix” business rule (e.g., currency vs unit disambiguation).
-          // This ensures the engine does not fall back to a partial/incorrect match when the forbidden context is present.
+          
+          
           const regex: RegExp = new RegExp("\\d{3}(?! dollars)", "g");
           const str: string = "100 dollars, 200 euro";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -343,8 +343,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Anchor semantics underpin line-based processing (logs/configs); multiline mode must treat each line as a valid start.
-          // We assert indices to ensure callers can map matches back to exact offsets for highlighting and slicing.
+          
+          
           const regex: RegExp = new RegExp("^test", "gm");
           const str: string = "test\ntest";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -363,8 +363,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // End-of-line anchoring is used for suffix validation per record; multiline must not collapse to “end of whole string”.
-          // Stable index reporting prevents downstream consumers from misplacing annotations on multi-line text.
+          
+          
           const regex: RegExp = new RegExp("test$", "gm");
           const str: string = "test\ntest";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -383,8 +383,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Word boundaries implement “token” matching (whole-word search); substring matches would be incorrect in many UIs.
-          // This guards against engines that degrade \b semantics and start matching inside longer identifiers.
+          
+          
           const regex: RegExp = new RegExp("\\btest\\b", "g");
           const str: string = "test testing";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -403,8 +403,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Real-world text contains non-BMP characters; matching must work at the code point level to support modern UX.
-          // This prevents regressions where surrogate-pair handling causes missed matches or corrupted extraction.
+          
+          
           const emoji = String.fromCodePoint(0x1F600);
           const regex: RegExp = new RegExp(emoji, 'g');
           const str: string = 'Hello ' + emoji + ' World';
@@ -445,8 +445,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Many codebases still use exec loops; matchAll must remain a drop-in replacement for correctness and maintainability.
-          // Comparing two independent RegExp instances avoids shared-state false positives around lastIndex.
+          
+          
           const pattern: string = "test";
           const regex1: RegExp = new RegExp(pattern, "g");
           const regex2: RegExp = new RegExp(pattern, "g");
@@ -478,8 +478,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Captures are the business payload (fields) produced by matchAll; if they drift, extraction pipelines silently corrupt data.
-          // We validate capture-slot shape so matchAll stays aligned with exec-style group numbering.
+          
+          
           const regex: RegExp = new RegExp("t(e)(st(\\d?))", "g");
           const str: string = "test1test2";
 
@@ -503,8 +503,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Unlike exec, matchAll should be “non-invasive”: it must not mutate lastIndex and interfere with other scans.
-          // This protects shared RegExp instances in services where different components may iterate independently.
+          
+          
           const regex1: RegExp = new RegExp("test", "g");
           const regex2: RegExp = new RegExp("test", "g");
           const str: string = "test test";
@@ -552,8 +552,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Receiver/this-value handling is a protocol contract: Symbol.matchAll must work when invoked through helpers and wrappers.
-          // This guards against regressions where matchAll only works for direct method calls.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -594,8 +594,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Even without indices support, the core matchAll results must remain correct and structured.
-          // This prevents optional metadata (d) from affecting baseline extraction behavior.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -615,8 +615,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // This 'd not supported' path is a portability guarantee: suites should still validate core semantics on minimal runtimes.
-          // Ensuring matchAll continues to work avoids feature gating from accidentally disabling all matching.
+          
+          
           const regex: RegExp = new RegExp("\\w+", "g");
           const str: string = "a b";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -656,8 +656,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Subclassing/species changes often appear in framework code; basic subclass instances must still behave predictably.
-          // This anchors behavior so later inheritance-specific tests can focus on overrides rather than baseline iteration.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test test";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -698,8 +698,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Non-string inputs appear naturally via loose typing; matchAll must follow ToString rules for web-compat behavior.
-          // This prevents surprising mismatches when data flows from JSON/forms into regex utilities.
+          
+          
           const regex: RegExp = new RegExp("1", "g");
           const num: number = 123;
           const str: string = String(num);
@@ -719,8 +719,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Default object stringification is relied on by many debugging/templating flows; behavior should be consistent.
-          // This guards against runtimes that special-case objects and skip ToString conversion.
+          
+          
           const regex: RegExp = new RegExp("object", "g");
           const obj: object = {};
           const str: string = String(obj);
@@ -740,8 +740,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Domain objects commonly implement toString for display/extraction; matchAll must respect that contract.
-          // This keeps business wrappers interoperable with regex-based parsing without bespoke adapters.
+          
+          
           const obj: CustomObject = {
             toString: (): string => {
               return "test 123";
@@ -788,8 +788,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // HTML-like extraction is a realistic workload: captures drive downstream rendering/sanitization.
-          // We assert tag and content groups to ensure capture alignment, not only presence of matches.
+          
+          
           const regex: RegExp = new RegExp("<(\\w+)>([^<]*)<\\/\\1>", "g");
           const html: string = "<div>content</div><span>text</span>";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, html);
@@ -811,8 +811,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // URL query parsing is common in analytics/routing; capture groups map directly to key/value business fields.
-          // This prevents regressions where separators are mishandled and fields are extracted incorrectly.
+          
+          
           const regex: RegExp = new RegExp("[?&](\\w+)=([^&]+)", "g");
           const url: string = "https://example.com?name=John&age=25";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, url);
@@ -834,8 +834,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Log parsing is a production-critical pipeline; named positional groups become severity/date/message fields.
-          // If capture ordering drifts, monitoring and incident triage consume corrupted data without obvious failures.
+          
+          
           const regex: RegExp = new RegExp("\\[(\\d{4}-\\d{2}-\\d{2})\\]\\s*\\[(\\w+)\\]\\s*(.+)", "g");
           const log: string = "[2024-01-15] [ERROR] Database connection failed";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, log);
@@ -856,8 +856,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Date extraction is frequently used in ETL; correctness depends on matching whole tokens, not substrings.
-          // This guards against boundary handling regressions that create false positives inside longer strings.
+          
+          
           const regex: RegExp = new RegExp("\\b(\\d{4})-(\\d{2})-(\\d{2})\\b", "g");
           const text: string = "Dates: 2024-01-15, 2023-12-25";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -877,8 +877,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Monetary parsing drives pricing logic; capturing both formatted and integer values must remain stable.
-          // This helps ensure regex-based extraction doesn’t break when engines change numeric tokenization behavior.
+          
+          
           const regex: RegExp = new RegExp("\\$\\s*(\\d+(?:\\.\\d{2})?)", "g");
           const text: string = "Prices: $19.99, $100, $5.50";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -899,8 +899,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Phone extraction is business-critical for contact parsing; permissive separators must stay interoperable across datasets.
-          // This guards against regressions where one accepted format silently drops from matching.
+          
+          
           const regex: RegExp = new RegExp("\\b\\d{3}[-.\\s]?\\d{3}[-.\\s]?\\d{4}\\b", "g");
           const text: string = "Call us at 123-456-7890 or 555.123.4567";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, text);
@@ -923,8 +923,8 @@ export default function matchTest(): void {
           if (!supportsRegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g")) {
             return;
           }
-          // Named groups map directly to structured fields, reducing positional coupling in consumers.
-          // Verifying groups across multiple matches protects ETL pipelines from subtle schema drift.
+          
+          
           const regex: RegExp = new RegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g");
           const str: string = "2024-01-15 and 2023-12-25";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -974,8 +974,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Nested alternation/capture combinations are high-risk for engine backtracking bugs.
-          // This test ensures complex capture slots remain stable for parser-style workloads.
+          
+          
           const regex: RegExp = new RegExp("((a|b)(c|d))+", "g");
           const str: string = "ac bd ad bc";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -999,8 +999,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Alternation-heavy patterns are common in keyword classification and purpose matching.
-          // Ensuring full coverage prevents missed categories in downstream business routing.
+          
+          
           const regex: RegExp = new RegExp("cat|dog|bird|fish", "g");
           const str: string = "cat dog bird fish cat";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1023,8 +1023,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Multiline boundaries are core to line-oriented processing in logs and config files.
-          // Index checks ensure consumers can map matches back to original text coordinates.
+          
+          
           const regex: RegExp = new RegExp("^test", "gm");
           const str: string = "test\nline2\ntest\nline4";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1044,8 +1044,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Runtime-generated patterns are common when rules are loaded from config.
-          // This keeps constructor + matchAll behavior aligned for dynamic deployments.
+          
+          
           const pattern: string = "test";
           const regex: RegExp = new RegExp(pattern, "g");
           const str: string = "test test test";
@@ -1064,8 +1064,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // User-provided terms with case-folding are a realistic search scenario in UI/business tools.
-          // This protects case-insensitive global matching from locale/runtime regressions.
+          
+          
           const userInput: string = "test";
           const regex: RegExp = new RegExp(userInput, "gi");
           const str: string = "TEST test Test";
@@ -1084,8 +1084,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // High-cardinality match streams reveal iterator progress and memory issues quickly.
-          // Boundary checks on first/last result catch truncation or ordering defects.
+          
+          
           const regex: RegExp = new RegExp("\\d", "g");
           const str: string = "0123456789";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1127,8 +1127,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Early termination is common in “find first N” flows; iterator must support safe partial consumption.
-          // This prevents hidden eager evaluation that wastes time or memory on large inputs.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456 789";
           let count: number = 0;
@@ -1152,8 +1152,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // First-hit retrieval is a frequent pattern in validation and autocomplete.
-          // Breaking after one iteration should still yield a valid, stable first match object.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456 789";
           let first: RegExpMatchArray | undefined = undefined;
@@ -1198,8 +1198,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Constructor-based regex is the deployment path in restricted ArkTS profiles.
-          // This ensures parity with literal-like behavior for core global iteration.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test test";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1219,8 +1219,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Escaped constructor patterns are prone to double-escaping bugs in generated code.
-          // This keeps numeric token extraction reliable across build pipelines.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1240,8 +1240,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Joining keyword lists into one pattern is a common optimization for bulk matching.
-          // This verifies dynamic alternation still preserves complete result coverage.
+          
+          
           const keywords: string[] = ["cat", "dog", "bird"];
           const pattern: string = keywords.join("|");
           const regex: RegExp = new RegExp(pattern, "gi");
@@ -1286,8 +1286,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Sticky+global semantics are used by tokenizer-style scanners that require contiguous progress.
-          // This ensures matchAll honors sticky anchoring and doesn't silently skip separators.
+          
+          
           const regex: RegExp = new RegExp("[abc]", "gy");
           const str: string = "ab-c";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1305,8 +1305,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Explicit lastIndex anchoring is central to resumable scanning workflows.
-          // Verifying index output protects cursor-based parsers from off-by-one state drift.
+          
+          
           const regex: RegExp = new RegExp("test", "gy");
           regex.lastIndex = 3;
           const str: string = "testest";
@@ -1347,8 +1347,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Unicode mode must treat emoji as whole code points to avoid split matches.
-          // This protects i18n text handling in user-facing features.
+          
+          
           const emoji = String.fromCodePoint(0x1F600);
           const regex: RegExp = new RegExp(emoji + '+', 'gu');
           const str: string = emoji + emoji + emoji;
@@ -1366,8 +1366,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Surrogate-pair iteration correctness is required for consistent emoji counting/search.
-          // Each yielded item should map to one visual symbol in unicode mode.
+          
+          
           const regex: RegExp = new RegExp(".", "gu");
           const emoji = String.fromCodePoint(0x1F600);
           const str: string = emoji + emoji;
@@ -1408,8 +1408,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // DotAll is widely used for multiline blob parsing (logs, payload snippets).
-          // This validates newline-inclusive matching without custom preprocessing.
+          
+          
           const regex: RegExp = new RegExp("a.b", "gs");
           const str: string = "a\nb a\tb";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1449,8 +1449,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Multiline anchors must remain predictable for per-line rule engines.
-          // Index assertions ensure line boundary handling stays stable.
+          
+          
           const regex: RegExp = new RegExp("^test", "gm");
           const str: string = "test\ntest";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1490,8 +1490,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Case-insensitive bulk matching underpins user search and moderation filters.
-          // This prevents case-folding regressions from reducing recall.
+          
+          
           const regex: RegExp = new RegExp("test", "gi");
           const str: string = "TEST test TeSt";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1532,8 +1532,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Combined flags should compose cleanly, not override each other.
-          // This protects configs that rely on shared flag bundles.
+          
+          
           const regex: RegExp = new RegExp("test", "gi");
           const str: string = "TEST test";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1549,8 +1549,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // g+i+m interactions are common in text processing stacks.
-          // Ensuring combined behavior prevents environment-specific mismatches.
+          
+          
           const regex: RegExp = new RegExp("test", "gim");
           const str: string = "TEST\nTest";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1588,8 +1588,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Capture group payloads are often consumed directly as extracted fields.
-          // This anchors single-group shape for downstream mapping logic.
+          
+          
           const regex: RegExp = new RegExp("t(e)st", "g");
           const str: string = "test test";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1608,8 +1608,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Multi-group extraction is core to tuple-like parsing tasks.
-          // Group order must remain deterministic for stable consumers.
+          
+          
           const regex: RegExp = new RegExp("(\\w+)\\s+(\\w+)", "g");
           const str: string = "hello world foo bar";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1629,8 +1629,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Nested capture hierarchies are fragile during engine/refactor changes.
-          // This test protects subgroup indexing contracts.
+          
+          
           const regex: RegExp = new RegExp("t(e)(st(\\d?))", "g");
           const str: string = "test1test2";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1650,8 +1650,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Non-capturing groups are used to optimize patterns without changing outputs.
-          // This ensures they do not pollute capture slots.
+          
+          
           const regex: RegExp = new RegExp("t(?:e)st", "g");
           const str: string = "test test";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1671,8 +1671,8 @@ export default function matchTest(): void {
           if (!supportsRegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g")) {
             return;
           }
-          // Named captures support schema-like extraction and clearer business code.
-          // Verifying values across matches catches silent group-object drift.
+          
+          
           const regex: RegExp = new RegExp("(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})", "g");
           const str: string = "2024-01-15 and 2023-12-25";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1698,8 +1698,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Absent named groups should be explicitly undefined for predictable branching.
-          // This avoids ambiguity between “missing” and “empty object”.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456";
           const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1737,8 +1737,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // matchAll should not mutate caller-owned regex cursor state.
-          // This is critical when the same regex instance is shared across routines.
+          
+          
           const regex: RegExp = new RegExp("[a-c]", "g");
           const originalLastIndex: Int = 1;
           regex.lastIndex = originalLastIndex;
@@ -1756,8 +1756,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Default cursor semantics (starting at 0) are assumed by most callers.
-          // This protects first-pass coverage from hidden offset bugs.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           regex.lastIndex = 0;
           const str: string = "test test";
@@ -1774,8 +1774,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Out-of-range cursors must degrade to empty results, not crashes.
-          // This keeps robust behavior when upstream state becomes stale.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           regex.lastIndex = 100;
           const str: string = "test test";
@@ -1814,8 +1814,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Explicit iterator stepping is used in streaming parsers.
-          // Ensuring next()/done flow prevents infinite loops and missed tails.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test test";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -1842,8 +1842,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // for-of is the idiomatic consumer path for matchAll.
-          // This validates real-world traversal semantics and payload shape.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456 789";
           let matchCount: number = 0;
@@ -1864,8 +1864,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Array.from is a common materialization step in app logic.
-          // Match counts here detect iterator truncation regressions.
+          
+          
           const regex: RegExp = new RegExp("test", "g");
           const str: string = "test test test";
           const matches: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1881,8 +1881,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Explicit conversion plus value checks protect ordering guarantees.
-          // This helps catch unstable iteration order under optimization.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456 789";
           const matches: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -1901,8 +1901,8 @@ export default function matchTest(): void {
          * @tc.level LEVEL1
          */
         it('testMatch0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-          // Partial consumption must preserve iterator continuity.
-          // This is important for paged/interruptible processing flows.
+          
+          
           const regex: RegExp = new RegExp("\\d+", "g");
           const str: string = "123 456 789";
           const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);

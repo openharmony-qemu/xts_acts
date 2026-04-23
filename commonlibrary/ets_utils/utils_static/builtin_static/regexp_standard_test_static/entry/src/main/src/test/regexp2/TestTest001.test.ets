@@ -336,10 +336,10 @@ export default function testTest(): void {
      */
     it('testTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const s = String(functionToStringForTest0114);
-      // Reflective tooling often consumes function source strings, so stability here
-      // prevents cross-engine regressions in regex coercion semantics.
+      
+      
       const v = new RegExp('.').test(s);
-      // Keep type sanity and also verify the actual match outcome.
+      
       expect(typeof v).assertEqual('boolean');
       expect(v).assertTrue();
     });
@@ -779,7 +779,7 @@ export default function testTest(): void {
       const re = new RegExp('\\Gtest', 'g');
       const first = re.test(str);
       const second = re.test(str);
-      // Engines that implement \G anchor should match only at the current index, then stop after the gap.
+      
       expect(first).assertTrue();
       expect(second).assertFalse();
     });
@@ -1535,7 +1535,7 @@ export default function testTest(): void {
      */
     it('testTest0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const v = regexpTestCallRegexLikeObject();
-      // Keep type sanity and also verify the actual match outcome.
+      
       expect(typeof v).assertEqual('boolean');
       expect(v).assertTrue();
     });

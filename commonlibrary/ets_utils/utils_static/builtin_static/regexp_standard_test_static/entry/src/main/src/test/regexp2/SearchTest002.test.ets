@@ -98,7 +98,7 @@ export default function searchTest002(): void {
       re.lastIndex = 5;
       const idx = 'baaa'.search(re);
       expect(idx).assertEqual(1);
-      // String.search does not consume global lastIndex state.
+      
       expect(re.lastIndex).assertEqual(5);
     });
 
@@ -177,7 +177,7 @@ export default function searchTest002(): void {
         const [input, re, expected] = cases[i];
         expect(input.search(re)).assertEqual(expected);
       }
-      // Greedy/lazy are both 0 here; actual consumed length is validated via match().
+      
       const greedy = 'a123b456b'.match(new RegExp('a.*b'));
       const lazy = 'a123b456b'.match(new RegExp('a.*?b'));
       expect(greedy !== null).assertTrue();
@@ -259,7 +259,7 @@ export default function searchTest002(): void {
       if (supportsRegExp('\\u{1F600}', 'u')) {
         expect(input.search(new RegExp('\\u{1F600}', 'u'))).assertEqual(3);
       }
-      // Without 'u', \u{...} may be a syntax error; do not construct it.
+      
       expect(input.search(new RegExp('😀'))).assertEqual(3);
     });
 
@@ -275,11 +275,11 @@ export default function searchTest002(): void {
       const input = 'price=100USD';
       const posLa = supportsRegExp('\\d+(?=USD)');
       const negLa = supportsRegExp('\\d+(?!EUR)');
-      // Positive lookahead: '100' only if followed by 'USD'.
+      
       if (posLa) {
         expect(input.search(new RegExp('\\d+(?=USD)'))).assertEqual(6);
       }
-      // Negative lookahead: '100' only if NOT followed by 'EUR'.
+      
       if (negLa) {
         expect(input.search(new RegExp('\\d+(?!EUR)'))).assertEqual(6);
       }
@@ -298,8 +298,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // String.search accepts RegExp; if a non-RegExp is provided, it's coerced.
-      // ArkTS typing may be strict, so we route through any.
+      
+      
       const text = 'abc[def]ghi';
       expect(text.search('[def]')).assertEqual(4);
       expect(text.search('xyz')).assertEqual(-1);
@@ -486,7 +486,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Non-RegExp argument is coerced via RegExp constructor semantics.
+      
       const text: string = 'id=2026';
       expect(text.search('2026')).assertEqual(3);
       expect(text.search('2027')).assertEqual(-1);
@@ -1282,7 +1282,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Avoid direct Symbol.* usage (not supported in this ArkTS profile); helper encapsulates it safely.
+      
       expect(searchStringEqualsRegExpSymbolSearch()).assertTrue();
     });
 
@@ -1317,7 +1317,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Symbol.search is not directly expressible here; helper validates custom Symbol.search semantics.
+      
       expect(searchCustomSymbolSearchObject()).assertTrue();
     });
 
@@ -1330,8 +1330,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Business inputs often come from typed fields; coercion prevents silent mismatch between numbers and text.
-      // The contract is "search by ToString", so tests pin compatibility across engine updates.
+      
+      
       const str = 'abc123';
       expect(str.search(String(123))).assertEqual(3);
       expect(str.search(String(12))).assertEqual(3);
@@ -1346,8 +1346,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Logs and telemetry strings can contain "null"/"undefined" tokens; regressions here break parsing rules.
-      // Keeping coercion behavior stable avoids platform-specific branching at call sites.
+      
+      
       const str = 'null undefined';
       expect(str.search(String(null))).assertEqual(0);
       expect(str.search(String(undefined))).assertEqual(5);
@@ -1362,7 +1362,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Symbol.toPrimitive is not directly usable in this ArkTS profile; helper encapsulates the behavior check.
+      
       expect(searchObjectWithSymbolToPrimitive()).assertTrue();
     });
 
@@ -1375,8 +1375,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Configuration values can be booleans/arrays but still end up compared against string payloads.
-      // The standardized ToString path avoids hidden "smart conversions" that differ per runtime.
+      
+      
       expect('true false'.search(String(true))).assertEqual(0);
       expect('a,b,c'.search(String([',']))).assertEqual(1);
     });
@@ -1390,7 +1390,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Symbol values are handled via helper to keep this file compile-safe.
+      
       expect(searchSymbolParameterThrows()).assertTrue();
     });
 
@@ -1403,7 +1403,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // BigInt feature checks and coercion are implemented in helper to avoid unsupported typing constructs.
+      
       expect(searchBigIntCoerces()).assertTrue();
     });
 
@@ -1416,7 +1416,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // RegExp.prototype[Symbol.search] invalid-this checks are wrapped in helper for compile safety.
+      
       expect(regexpSearchCallUndefinedThrows()).assertTrue();
       expect(regexpSearchCallNullThrows()).assertTrue();
     });
@@ -1430,8 +1430,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Many business patterns are written with captures for later extraction, yet search must remain index-only.
-      // This protects callers that rely on search as a lightweight predicate without allocating match arrays.
+      
+      
       const str = '2023-12-25';
       expect(str.search(new RegExp('(\\d{4})-(\\d{2})-(\\d{2})'))).assertEqual(0);
       expect('xx2023-12-25'.search(new RegExp('(\\d{4})-(\\d{2})-(\\d{2})'))).assertEqual(2);
@@ -1446,8 +1446,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Non-capturing groups reduce overhead when only structure is needed; engines must not treat them specially.
-      // Alternation is a core DSL primitive for routing/validation rules in many business strings.
+      
+      
       expect('abc123'.search(new RegExp('(?:abc)\\d+'))).assertEqual(0);
       expect('dog'.search(new RegExp('cat|dog'))).assertEqual(0);
     });
@@ -1461,8 +1461,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Named groups are common in readable validators, but not every runtime enables them.
-      // Feature-gating keeps test suites portable without weakening coverage where supported.
+      
+      
       const str = 'John Smith';
       if (supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
         expect(str.search(new RegExp('(?<first>\\w+)\\s(?<last>\\w+)'))).assertEqual(0);
@@ -1480,8 +1480,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Atomic groups are used to limit catastrophic backtracking in untrusted-input validators.
-      // If the engine doesn't support the syntax, the test must not crash the whole suite.
+      
+      
       const str = 'abc';
       if (supportsRegExp('(?>a*)bc')) {
         expect(str.search(new RegExp('(?>a*)bc'))).assertEqual(0);
@@ -1499,8 +1499,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Possessive quantifiers are another mitigation against backtracking blowups in prod workloads.
-      // The suite keeps coverage where supported while remaining runnable on minimal engines.
+      
+      
       const str = 'aaab';
       if (supportsRegExp('a*+b')) {
         expect(str.search(new RegExp('a*+b'))).assertEqual(0);
@@ -1518,8 +1518,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Engines differ in error messages, but they must not accept malformed patterns silently.
-      // Pinning "throws" prevents regressions that would turn invalid configs into surprising matches.
+      
+      
       let threw = false;
       try {
         new RegExp('[a-z');
@@ -1538,8 +1538,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Flag parsing is part of the compatibility contract; accepting unknown flags can hide app bugs.
-      // A deterministic throw makes it safe to validate user-provided config at startup.
+      
+      
       let threw = false;
       try {
         new RegExp('test', 'x');
@@ -1558,8 +1558,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Unicode mode tightens syntax validation; failing early avoids data-dependent parsing in production.
-      // Feature-gating prevents false failures on engines that do not implement the u flag.
+      
+      
       if (!supportsRegExp('a', 'u')) {
         return;
       }
@@ -1581,8 +1581,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Unicode properties are commonly used in international input filters; rejecting invalid names is critical.
-      // This locks behavior so configuration errors are caught during testing rather than after release.
+      
+      
       if (!supportsRegExp('\\p{L}', 'u')) {
         return;
       }
@@ -1604,9 +1604,9 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Frameworks sometimes use call/apply against primitive-like values; coercion should remain standard.
-      // This keeps low-level polyfills and cross-runtime adapters from needing special casing.
-      // Some ArkTS profiles do not expose String.prototype; coercion behavior is equivalent via String(123).
+      
+      
+      
       expect(String(123).search(new RegExp('2'))).assertEqual(1);
     });
 
@@ -1619,8 +1619,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // ArkTS typing may not allow calling search() without arguments; keep this case compile-safe.
-      // Explicit undefined coercion is the key behavior needed by callers.
+      
+      
       const str = 'Hello';
       const b: number = str.search(String(undefined));
       expect(b).assertEqual(-1);
@@ -1635,8 +1635,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Test suites must adapt to multiple engines without "skipping everything" or hard failing.
-      // The probing helper is a contract: if it returns true, the syntax must be usable in later tests.
+      
+      
       const dotAllOk = supportsRegExp('.', 's');
       const propOk = supportsRegExp('\\p{L}', 'u');
       expect(typeof dotAllOk).assertEqual('boolean');
@@ -1652,8 +1652,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Many callers only need containment checks; search is used as a fast predicate in pipelines.
-      // This test anchors the convention "!== -1 means present" across refactors.
+      
+      
       const hasPattern = (s: string, pattern: RegExp): boolean => s.search(pattern) !== -1;
       expect(hasPattern('Hello World', new RegExp('world', 'i'))).assertTrue();
       expect(hasPattern('Hello World', new RegExp('WORLD'))).assertFalse();
@@ -1668,8 +1668,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Email checks are frequently used for UX gating; over-permissive matches create downstream failures.
-      // Anchoring with ^$ ensures we validate the whole string rather than a substring.
+      
+      
       const emailPattern = new RegExp('^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,}$');
       expect('test@example.com'.search(emailPattern)).assertEqual(0);
       expect('bad@'.search(emailPattern)).assertEqual(-1);
@@ -1684,8 +1684,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Protocol routing is a common business decision; it must be stable to avoid mis-classifying endpoints.
-      // Checking exact prefix at index 0 prevents false positives in query strings.
+      
+      
       const detectProtocol = (url: string): string => {
         if (url.search(new RegExp('^https:')) === 0) {
           return 'HTTPS';
@@ -1709,8 +1709,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // IP validators are security-relevant; accepting out-of-range octets breaks allowlists and routing rules.
-      // The pattern is stricter than a naive \\d{1,3} and prevents "999.999.999.999" from passing.
+      
+      
       const ip = new RegExp('^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$');
       expect('192.168.1.1'.search(ip)).assertEqual(0);
       expect('256.1.1.1'.search(ip)).assertEqual(-1);
@@ -1725,8 +1725,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Input normalization is expensive; allowing a few canonical formats reduces friction in onboarding flows.
-      // Anchoring avoids accepting numbers embedded in longer strings.
+      
+      
       const phone = new RegExp('^(\\([0-9]{3}\\)\\s?|[0-9]{3}-)[0-9]{3}-[0-9]{4}$');
       expect('123-456-7890'.search(phone)).assertEqual(0);
       expect('1234567890'.search(phone)).assertEqual(-1);
@@ -1741,8 +1741,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Date parsing pipelines often rely on quick prefix recognition before full parsing.
-      // Using search with ^ avoids scanning and makes purpose explicit for large payload strings.
+      
+      
       const date = new RegExp('^\\d{4}-\\d{2}-\\d{2}');
       expect('2023-12-25T00:00:00Z'.search(date)).assertEqual(0);
       expect('x2023-12-25'.search(date)).assertEqual(-1);
@@ -1757,8 +1757,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Apps may ship config-driven patterns with multiple flags; search must remain a first-match primitive.
-      // This prevents callers from incorrectly assuming g changes the returned index.
+      
+      
       const str = 'Test\nTEST\ntest';
       expect(str.search(new RegExp('test', 'gim'))).assertEqual(0);
       expect(str.search(new RegExp('^test', 'im'))).assertEqual(0);
@@ -1773,8 +1773,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // In monitoring pipelines, multiline payloads are common; dotAll changes whether '.' spans records.
-      // Feature-gating ensures we validate behavior without breaking runtimes lacking the s flag.
+      
+      
       const str = 'a\nb';
       if (supportsRegExp('.+', 'sm')) {
         expect(str.search(new RegExp('.+', 'sm'))).assertEqual(0);
@@ -1792,7 +1792,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Regex-like object integration is exercised via helper to avoid index-signature/object-literal type syntax.
+      
       expect(regexpSearchRegexLikeIndex()).assertTrue();
     });
 
@@ -1805,10 +1805,10 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Callers sometimes pass callbacks mistakenly; ToString coercion makes this debuggable rather than silent.
-      // We assert behavior relative to an explicit string to avoid engine-dependent formatting differences.
+      
+      
       const str = 'function test() {}';
-      // Function expressions are not supported; helper checks ToString coercion for function values.
+      
       expect(searchFunctionCoerces()).assertTrue();
     });
 
@@ -1821,8 +1821,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // Real business input can contain regex metacharacters; escaping prevents "pattern injection".
-      // This test documents the safe helper approach rather than relying on ad-hoc replacements.
+      
+      
       const escapeForCharClass = (ch: string): string => ch.replace(new RegExp('[-\\\\\\]^\"]', 'g'), '\\$&');
       const findCharPosition = (s: string, ch: string): number => {
         const safe: string = escapeForCharClass(ch);
@@ -1841,8 +1841,8 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      // This is a common parsing building block for IDs and telemetry fields.
-      // A stable -1 sentinel is relied upon to trigger fallback parsing logic.
+      
+      
       const findFirstNumber = (s: string): number => s.search(new RegExp('\\d'));
       expect(findFirstNumber('abc123def')).assertEqual(3);
       expect(findFirstNumber('abcdef')).assertEqual(-1);

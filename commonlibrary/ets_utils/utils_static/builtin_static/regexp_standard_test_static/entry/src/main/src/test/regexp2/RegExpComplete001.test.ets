@@ -779,7 +779,7 @@ export default function regExpCompleteTest(): void {
         expect(threw).assertTrue();
         return;
       }
-      // If atomic groups are supported, assert construction succeeded and the value behaves like a RegExp.
+      
       const re = new RegExp('(?>(a|ab))+c');
       expect(re instanceof RegExp).assertTrue();
       expect(typeof re.test('anything')).assertEqual('boolean');
