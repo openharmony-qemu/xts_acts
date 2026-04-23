@@ -63,7 +63,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     ' -b ' + abilityDelegatorArguments.bundleName;
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
     let debug = abilityDelegatorArguments.parameters['-D'];
-    if (debug == 'true') {
+    if (debug === 'true') {
       cmd += ' -D';
     }
     console.info('cmd : ' + cmd);

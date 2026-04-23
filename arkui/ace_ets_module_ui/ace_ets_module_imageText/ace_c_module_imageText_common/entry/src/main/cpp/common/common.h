@@ -203,7 +203,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         napi_create_int32(env, SUCCESS, &result);                                                                      \
         auto nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(                                                      \
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));                              \
-        if (componentName !== nullptr) {                                                                               \
+        if ((componentName) != nullptr) {                                                                              \
             nodeAPI->disposeNode(componentName);                                                                       \
         }                                                                                                              \
         return result;                                                                                                 \
