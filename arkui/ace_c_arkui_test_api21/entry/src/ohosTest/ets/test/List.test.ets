@@ -37,6 +37,7 @@ import SourceFlingEdgeTest from './list/SourceFlingEdgeTest.test'
 import SourceScrollBarTest from './list/SourceScrollBarTest.test'
 import SourceBtnScrollerTest from './list/SourceBtnScrollerTest.test'
 import CustomNodeEventTest from './custom/CustomNodeEventTest.test'
+import CrossLanguageTreeOperatingStatusTest from "./CrossLanguage/CrossLanguageTreeOperatingStatusTest.test";
 
 export default function testsuite() {
   NodeUtilsMethodTest(); // 此条特殊用例请放在首行，勿动
@@ -64,4 +65,5 @@ export default function testsuite() {
   SourceScrollBarTest();
   SourceBtnScrollerTest();
   CustomNodeEventTest();
+  CrossLanguageTreeOperatingStatusTest();
 }

@@ -49,3 +49,4 @@ export const TestNodeErrorCode008: () => number;
 export const TestNodeErrorCode009: () => number;
 export const TestNodeErrorCode010: () => number;
 export const TestNodeErrorCode011: () => number;
+export const testCrossLanguageTreeOperatingStatus: () => number;
