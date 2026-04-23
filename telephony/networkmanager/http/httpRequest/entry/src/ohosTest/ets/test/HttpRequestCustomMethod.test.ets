@@ -17,7 +17,7 @@ import { afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hyp
 import http from '@ohos.net.http';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
-const XTS_TEST_HTTP_URL: string = 'http://146.56.217.118:7806/';
+const XTS_TEST_HTTP_URL: string = 'https://webdav.moyufangge.com/';
 
 const ExpectFail = () => {
   try {
