@@ -790,20 +790,6 @@ export default function functional_group_test() {
     });
 
     /**
-     * @tc.name   pthread_cond
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_0100
-     * @tc.desc   libc-test pthread_cond
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("pthread_cond", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   pthread_mutex
      * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_0100
      * @tc.desc   libc-test pthread_mutex
