@@ -7,6 +7,8 @@
         "MainAbility/pages/common/TextOnWillChangeOptionsTest",
 
         "MainAbility/pages/TextArea/TextAreaOnCutJsunitTest",
+        "MainAbility/pages/TextAreaApi26/TextAreaOnWillCopy",
+        "MainAbility/pages/TextAreaApi26/TextAreaOnWillCut",
         "MainAbility/pages/TextAreaApi11/TextAreaCallback",
         "MainAbility/pages/TextAreaApi11/TextAreaSelect",
         "MainAbility/pages/TextAreaApi11/textAreaux",
@@ -64,7 +66,6 @@
         "MainAbility/pages/TextArea/TextAreaStyle",
         "MainAbility/pages/TextAreaApi24/TextAreaHorizontalScrolling",
         "MainAbility/pages/TextArea/TextAreaOrphanCharOptimization",
-
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",
         "MainAbility/pages/TextInputApi11/input_keytype",
@@ -117,6 +118,8 @@
         "MainAbility/pages/TextInputApi22/TextInputSetStyledPlaceholder",
         "MainAbility/pages/TextInputApi22/TextInputOnWillAttachIME",
         "MainAbility/pages/TextInputApi23/TextInputTextDirection",
+        "MainAbility/pages/TextInputApi26/TextInputOnWillCopy",
+        "MainAbility/pages/TextInputApi26/TextInputOnWillCut",
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuation",
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
