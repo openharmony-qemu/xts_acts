@@ -252,10 +252,10 @@ export default class Commmon {
     if (typeof (avRecorder) == 'undefined') {
     } else {
       console.info('setMetadata in current state' + avRecorder.state);
-      let meta: Map<string, string> = new Map([
-        ['com.openharmony.userdefine', '10'],
-        ['com.openharmony.userdefine2', '20']
-      ]);
+      let meta: Record<string, string> = {
+        'com.openharmony.userdefine': '10',
+        'com.openharmony.userdefine2': '20'
+      };
       try {
         avRecorder.setMetadata(meta);
       } catch (err) {
