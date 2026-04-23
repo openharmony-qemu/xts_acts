@@ -343,11 +343,11 @@ export default function TelephonyVcardManagerStatic() {
           context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
           await vcard.importVCard(context, "", accountId);
           hilog.info(domain, tag, `${caseName} success`);
-          expect(err.code === 8300001).assertTrue();
+          expect().assertFail();
           done();
         } catch (error) {
-          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
-          expect(err.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         }
@@ -369,11 +369,11 @@ export default function TelephonyVcardManagerStatic() {
           context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
           await vcard.importVCard(context, "");
           hilog.info(domain, tag, `${caseName} success`);
-          expect(err.code === 8300001).assertTrue();
+          expect().assertFail();
           done();
         } catch (error) {
-          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
-          expect(err.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         }
@@ -430,10 +430,10 @@ export default function TelephonyVcardManagerStatic() {
           await rdFile(context, vcardContacts, new Date().getTime() + '');
           let accountId: int = 0;
           vcard.importVCard(context, filePath, accountId, (err) => {
-            hilog.info(domain, tag, `${caseName} error ${JSON.stringify(err.code)}`);
-            expect(err.code === 8300003).assertTrue();
+            hilog.info(domain, tag, `${caseName} error ${JSON.stringify(err?.code)}`);
+            expect(err?.code === 8300003).assertTrue();
             done();
-          })
+          });
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
           expect().assertFail();
@@ -854,12 +854,12 @@ export default function TelephonyVcardManagerStatic() {
             charset: "GBK"
           };
           await vcard.exportVCard(context, predicates, options);
-          hilog.info(domain, tag, `${caseName} success`);
-          expect(err.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} failed`);
+          expect().assertFail();
           done();
         } catch (error) {
-          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
-          expect(err.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} success, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         }
