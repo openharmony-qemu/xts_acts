@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 - 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,16 @@
 #include <IPCKit/ipc_kit.h>
 
 static const char *TEST_STR = "STUB_DESCRIPTOR";
+
+static const uint8_t UINT8_VALUE = 255;
+static const uint16_t UINT16_VALUE = 65535;
+static const uint32_t UINT32_VALUE = 4294967295U;
+static const uint64_t UINT64_VALUE = 18446744073709551615ULL;
+static constexpr int MAX_MEMORY_SIZE = 204800;
+static constexpr uint32_t UINT8_WRITE_SIZE = 4;
+static constexpr uint32_t UINT16_WRITE_SIZE = 4;
+static constexpr uint32_t UINT32_WRITE_SIZE = 4;
+static constexpr uint32_t UINT64_WRITE_SIZE = 8;
 
 int OnRemoteRequestStub(uint32_t code, const OHIPCParcel *data, OHIPCParcel *reply,
     void *userData)
@@ -914,6 +924,625 @@ static napi_value OHIPCParcelReadInterfaceToken(napi_env env, napi_callback_info
     return result;
 }
 
+static napi_value OHIPCParcelWriteUint8_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        int ret = OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint8_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = OH_IPCParcel_WriteUint8(nullptr, UINT8_VALUE);
+    napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint8_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    int ret = -1;
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT8_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            ret = OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        }
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+        OH_IPCParcel_Destroy(parcel);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint8_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT8_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        }
+        int ret = OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint8_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        uint8_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint8(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            if (readValue == UINT8_VALUE) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            }  else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint8_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        uint8_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint8(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            bool isSame = std::is_same<decltype(readValue), uint8_t>::value;
+            if (isSame) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint8_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        uint8_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint8(nullptr, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint8_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint8(parcel, UINT8_VALUE);
+        uint8_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint8(parcel, nullptr);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint8_0500(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    uint8_t val = 0;
+    int ret = 0;
+    if (parcel != nullptr) {
+        ret = OH_IPCParcel_ReadUint8(parcel, &val);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint16_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        int ret = OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint16_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = OH_IPCParcel_WriteUint16(nullptr, UINT16_VALUE);
+    napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint16_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = -1;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT16_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            ret = OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        }
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+        OH_IPCParcel_Destroy(parcel);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint16_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT16_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        }
+        int ret = OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint16_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        uint16_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint16(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            if (readValue == UINT16_VALUE) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint16_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        uint16_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint16(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            bool isSame = std::is_same<decltype(readValue), uint16_t>::value;
+            if (isSame) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint16_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        uint16_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint16(nullptr, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint16_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint16(parcel, UINT16_VALUE);
+        uint16_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint16(parcel, nullptr);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint16_0500(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    uint16_t val = 0;
+    int ret = 0;
+    if (parcel != nullptr) {
+        ret = OH_IPCParcel_ReadUint16(parcel, &val);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint32_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        int ret = OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint32_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = OH_IPCParcel_WriteUint32(nullptr, UINT32_VALUE);
+    napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint32_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    int ret = -1;
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT32_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            ret = OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        }
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+        OH_IPCParcel_Destroy(parcel);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint32_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT32_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        }
+        int ret = OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint32_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        uint32_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint32(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            if (readValue == UINT32_VALUE) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint32_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        uint32_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint32(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            bool isSame = std::is_same<decltype(readValue), uint32_t>::value;
+            if (isSame) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint32_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        uint32_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint32(nullptr, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint32_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint32(parcel, UINT32_VALUE);
+        uint32_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint32(parcel, nullptr);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint32_0500(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    uint32_t val = 0;
+    int ret = 0;
+    if (parcel != nullptr) {
+        ret = OH_IPCParcel_ReadUint32(parcel, &val);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint64_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        int ret = OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+static napi_value OHIPCParcelWriteUint64_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = OH_IPCParcel_WriteUint64(nullptr, UINT64_VALUE);
+    napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint64_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    int ret = -1;
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT64_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            ret = OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        }
+        napi_create_int32(env, ret == OH_IPC_SUCCESS ? 0 : 1, &result);
+        OH_IPCParcel_Destroy(parcel);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelWriteUint64_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        constexpr uint32_t writeCount = MAX_MEMORY_SIZE / UINT64_WRITE_SIZE;
+        for (uint32_t i = 0; i < writeCount; i++) {
+            OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        }
+        int ret = OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_WRITE_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint64_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        uint64_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint64(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            if (readValue == UINT64_VALUE) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint64_0200(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        uint64_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint64(parcel, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        if (ret == OH_IPC_SUCCESS) {
+            bool isSame = std::is_same<decltype(readValue), uint64_t>::value;
+            if (isSame) {
+                napi_create_int32(env, OH_IPC_SUCCESS, &result);
+            } else {
+                napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+            }
+        } else {
+            napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+        }
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint64_0300(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        uint64_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint64(nullptr, &readValue);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint64_0400(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    if (parcel != nullptr) {
+        OH_IPCParcel_WriteUint64(parcel, UINT64_VALUE);
+        uint64_t readValue = 0;
+        int ret = OH_IPCParcel_ReadUint64(parcel, nullptr);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_CHECK_PARAM_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
+static napi_value OHIPCParcelReadUint64_0500(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OHIPCParcel *parcel = OH_IPCParcel_Create();
+    uint64_t val = 0;
+    int ret = 0;
+    if (parcel != nullptr) {
+        ret = OH_IPCParcel_ReadUint64(parcel, &val);
+        OH_IPCParcel_Destroy(parcel);
+        napi_create_int32(env, ret == OH_IPC_PARCEL_READ_ERROR ? 0 : 1, &result);
+    } else {
+        napi_create_int32(env, OH_IPC_ERROR_CODE_BASE, &result);
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1030,6 +1659,78 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHIPCParcelWriteInterfaceToken", nullptr, OHIPCParcelWriteInterfaceToken,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHIPCParcelReadInterfaceToken", nullptr, OHIPCParcelReadInterfaceToken,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint8_0100", nullptr, OHIPCParcelWriteUint8_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint8_0200", nullptr, OHIPCParcelWriteUint8_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint8_0300", nullptr, OHIPCParcelWriteUint8_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint8_0400", nullptr, OHIPCParcelWriteUint8_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint8_0100", nullptr, OHIPCParcelReadUint8_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint8_0200", nullptr, OHIPCParcelReadUint8_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint8_0300", nullptr, OHIPCParcelReadUint8_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint8_0400", nullptr, OHIPCParcelReadUint8_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint8_0500", nullptr, OHIPCParcelReadUint8_0500,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint16_0100", nullptr, OHIPCParcelWriteUint16_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint16_0200", nullptr, OHIPCParcelWriteUint16_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint16_0300", nullptr, OHIPCParcelWriteUint16_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint16_0400", nullptr, OHIPCParcelWriteUint16_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint16_0100", nullptr, OHIPCParcelReadUint16_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint16_0200", nullptr, OHIPCParcelReadUint16_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint16_0300", nullptr, OHIPCParcelReadUint16_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint16_0400", nullptr, OHIPCParcelReadUint16_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint16_0500", nullptr, OHIPCParcelReadUint16_0500,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint32_0100", nullptr, OHIPCParcelWriteUint32_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint32_0200", nullptr, OHIPCParcelWriteUint32_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint32_0300", nullptr, OHIPCParcelWriteUint32_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint32_0400", nullptr, OHIPCParcelWriteUint32_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint32_0100", nullptr, OHIPCParcelReadUint32_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint32_0200", nullptr, OHIPCParcelReadUint32_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint32_0300", nullptr, OHIPCParcelReadUint32_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint32_0400", nullptr, OHIPCParcelReadUint32_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint32_0500", nullptr, OHIPCParcelReadUint32_0500,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint64_0100", nullptr, OHIPCParcelWriteUint64_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint64_0200", nullptr, OHIPCParcelWriteUint64_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint64_0300", nullptr, OHIPCParcelWriteUint64_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelWriteUint64_0400", nullptr, OHIPCParcelWriteUint64_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint64_0100", nullptr, OHIPCParcelReadUint64_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint64_0200", nullptr, OHIPCParcelReadUint64_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint64_0300", nullptr, OHIPCParcelReadUint64_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint64_0400", nullptr, OHIPCParcelReadUint64_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHIPCParcelReadUint64_0500", nullptr, OHIPCParcelReadUint64_0500,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
