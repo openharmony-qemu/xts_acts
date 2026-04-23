@@ -18,11 +18,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1222", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1222';
-      console.log(TAG + ' start');
+
       const str = "aaaaa";
       const result = str.search(/a/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -35,11 +35,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1223", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1223';
-      console.log(TAG + ' start');
+
       const str = "radar";
       const result = str.search(/radar/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -52,12 +52,12 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1224", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1224';
-      console.log(TAG + ' start');
+
       const str = "";
       expect(str.length).assertEqual(0);
       const result = str.search(/a/);
       expect(result).assertEqual(-1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -70,12 +70,12 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1225", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1225';
-      console.log(TAG + ' start');
+
       const str = "a";
       expect(str.length).assertEqual(1);
       const result = str.search(/a/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -88,12 +88,12 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1226", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1226';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(100000);
       expect(str.length).assertEqual(100000);
       const result = str.search(/a/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     //============================Actual application scenario test==================================
@@ -107,11 +107,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1227", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1227';
-      console.log(TAG + ' start');
+
       const email = "user@example.com";
       const atIndex = email.search(/@/);
       expect(atIndex).assertEqual(4);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -124,11 +124,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1228", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1228';
-      console.log(TAG + ' start');
+
       const email = "user@example.com";
       const domainIndex = email.search(/@[\w.]+/);
       expect(domainIndex).assertEqual(4);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -141,11 +141,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1229", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1229';
-      console.log(TAG + ' start');
+
       const email = "user@example.com";
       const index = email.search(/^[\w.-]+@[\w.-]+\.\w+$/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -158,11 +158,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1230", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1230';
-      console.log(TAG + ' start');
+
       const url = "https://example.com";
       const index = url.search(/^https?:\/\//);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -175,11 +175,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1231", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1231';
-      console.log(TAG + ' start');
+
       const url = "https://www.example.com/path";
       const index = url.search(/\/\/([^\/]+)/);
       expect(index).assertEqual(6);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -192,11 +192,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1232", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1232';
-      console.log(TAG + ' start');
+
       const url = "https://example.com/path/to/page";
       const index = url.search(/\/path\/to/);
       expect(index).assertEqual(19);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -209,11 +209,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1233", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1233';
-      console.log(TAG + ' start');
+
       const date = "2024-01-15";
       const index = date.search(/-/);
       expect(index).assertEqual(4);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -226,11 +226,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1234", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1234';
-      console.log(TAG + ' start');
+
       const date = "2024-01-15";
       const index = date.search(/^\d{4}/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -243,11 +243,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1235", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1235';
-      console.log(TAG + ' start');
+
       const datetime = "2024-01-15 10:30:45";
       const index = datetime.search(/\d{2}:\d{2}:\d{2}/);
       expect(index).assertEqual(11);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -260,11 +260,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1236", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1236';
-      console.log(TAG + ' start');
+
       const phone = "13800138000";
       const index = phone.search(/^\d+$/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -277,11 +277,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1237", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1237';
-      console.log(TAG + ' start');
+
       const phone = "138-0013-8000";
       const index = phone.search(/^\d{3}-\d{4}-\d{4}/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -294,11 +294,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1238", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1238';
-      console.log(TAG + ' start');
+
       const phone = "+86 13800138000";
       const index = phone.search(/^\+\d{2}/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -311,11 +311,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1239", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1239';
-      console.log(TAG + ' start');
+
       const html = "<div class='container'>";
       const index = html.search(/<div/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -328,11 +328,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1240", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1240';
-      console.log(TAG + ' start');
+
       const html = "<p>content</p>";
       const index = html.search(/<\/p>/);
       expect(index).assertEqual(10);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -345,11 +345,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1241", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1241';
-      console.log(TAG + ' start');
+
       const html = "<input type='text' name='username'>";
       const index = html.search(/type='text'/);
       expect(index).assertEqual(7);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -362,11 +362,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1242", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1242';
-      console.log(TAG + ' start');
+
       const json = '{"name":"John","age":30}';
       const index = json.search(/"name"/);
       expect(index).assertEqual(1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -379,11 +379,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1243", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1243';
-      console.log(TAG + ' start');
+
       const json = '{"name":"John","age":30}';
       const index = json.search(/"John"/);
       expect(index).assertEqual(8);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -396,11 +396,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1244", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1244';
-      console.log(TAG + ' start');
+
       const json = '{"name":"John","age":30}';
       const index = json.search(/30/);
       expect(index).assertEqual(21);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -413,11 +413,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1245", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1245';
-      console.log(TAG + ' start');
+
       const log = "[ERROR] Connection failed at 2024-01-15";
       const index = log.search(/\[ERROR\]/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -430,11 +430,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1246", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1246';
-      console.log(TAG + ' start');
+
       const log = "[2024-01-15 10:30:45] User logged in";
       const index = log.search(/\d{4}-\d{2}-\d{2}/);
       expect(index).assertEqual(1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -447,11 +447,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1247", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1247';
-      console.log(TAG + ' start');
+
       const log = "Request from 192.168.1.1 at 10:30";
       const index = log.search(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/);
       expect(index).assertEqual(13);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -464,11 +464,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1248", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1248';
-      console.log(TAG + ' start');
+
       const code = "function hello() { return 'world'; }";
       const index = code.search(/function\s+\w+/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -481,11 +481,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1249", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1249';
-      console.log(TAG + ' start');
+
       const code = "const name = 'John';";
       const index = code.search(/const\s+\w+/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -498,11 +498,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1250", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1250';
-      console.log(TAG + ' start');
+
       const code = "// This is a comment\nconst x = 1;";
       const index = code.search(/\/\/.*$/m);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -515,11 +515,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1251", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1251';
-      console.log(TAG + ' start');
+
       const text = "The quick brown fox";
       const index = text.search(/\bfox\b/);
       expect(index).assertEqual(16);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -532,11 +532,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1252", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1252';
-      console.log(TAG + ' start');
+
       const text = "Hello world. How are you?";
       const index = text.search(/\.\s*/);
       expect(index).assertEqual(11);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -549,11 +549,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1253", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1253';
-      console.log(TAG + ' start');
+
       const text = "hello hello world";
       const index = text.search(/\b(\w+)\s+\1\b/);
       expect(index).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -566,11 +566,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1254", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1254';
-      console.log(TAG + ' start');
+
       const password = "abc123";
       const index = password.search(/\d/);
       expect(index !== -1).assertTrue();
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -583,11 +583,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1255", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1255';
-      console.log(TAG + ' start');
+
       const password = "Abc123";
       const index = password.search(/[A-Z]/);
       expect(index !== -1).assertTrue();
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -600,11 +600,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1256", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1256';
-      console.log(TAG + ' start');
+
       const password = "abc123!";
       const index = password.search(/[!@#$%^&*]/);
       expect(index !== -1).assertTrue();
-      console.log(TAG + ' end');
+
     });
 
     //============================Performance Optimization Test==================================
@@ -618,11 +618,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1257", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1257';
-      console.log(TAG + ' start');
+
       const str = "hello world";
       const result = str.search(/world/);
       expect(result).assertEqual(6);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -635,11 +635,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1258", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1258';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(1000);
       const result = str.search(/a+a+a+a+a/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -652,11 +652,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1259", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1259';
-      console.log(TAG + ' start');
+
       const str = "<div>content</div>";
       const result = str.search(/<div>.*?<\/div>/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -669,11 +669,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1260", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1260';
-      console.log(TAG + ' start');
+
       const str = "hello world";
       const result = str.includes("world");
       expect(result).assertTrue();
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -686,13 +686,13 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1261", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1261';
-      console.log(TAG + ' start');
+
       const str = "hello world";
       const index1 = str.indexOf("world");
       const index2 = str.search(/world/);
       expect(index1).assertEqual(6);
       expect(index2).assertEqual(6);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -705,11 +705,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1262", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1262';
-      console.log(TAG + ' start');
+
       const str = "hello123world";
       const result = str.search(/\d+/);
       expect(result).assertEqual(5);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -722,7 +722,7 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1263", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1263';
-      console.log(TAG + ' start');
+
       const regex = /\d+/;
       const str1 = "abc123";
       const str2 = "def456";
@@ -730,7 +730,7 @@ export default function StringSearchTest3() {
       const result2 = str2.search(regex);
       expect(result1).assertEqual(3);
       expect(result2).assertEqual(3);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -743,7 +743,7 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1264", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1264';
-      console.log(TAG + ' start');
+
       const regex = /test/;
       const strings = ["test1", "test2", "test3"];
       let found = false;
@@ -754,7 +754,7 @@ export default function StringSearchTest3() {
         }
       }
       expect(found).assertTrue();
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -767,11 +767,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1265", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1265';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(10000) + "b";
       const result = str.search(/a/);
       expect(result).assertEqual(0);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -784,11 +784,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1266", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1266';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(10000);
       const result = str.search(/b/);
       expect(result).assertEqual(-1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -801,11 +801,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1267", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1267';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(1000);
       const result = str.search(/b/);
       expect(result).assertEqual(-1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -818,11 +818,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1268", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1268';
-      console.log(TAG + ' start');
+
       const str = "a".repeat(20) + "b";
       const result = str.search(/^(a+)+$/);
       expect(result).assertEqual(-1);
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -835,11 +835,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1269", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1269';
-      console.log(TAG + ' start');
+
       const str = "hello world";
       const result = str.search(/world/);
       expect(typeof result).assertEqual("number");
-      console.log(TAG + ' end');
+
     });
 
     /**
@@ -852,11 +852,11 @@ export default function StringSearchTest3() {
      */
     it("StringSearchTest1270", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringSearchTest1270';
-      console.log(TAG + ' start');
+
       const str = "hello world";
       const result = str.search(/world/);
       expect(result).assertEqual(6);
-      console.log(TAG + ' end');
+
     });
   });
 }

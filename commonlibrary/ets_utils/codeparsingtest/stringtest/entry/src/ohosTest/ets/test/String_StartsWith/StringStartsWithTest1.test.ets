@@ -29,12 +29,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1001';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -47,12 +47,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1002';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hel")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -65,12 +65,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1003';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -83,13 +83,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1004';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World")).assertFalse();
       expect(str.startsWith("llo")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -102,7 +102,7 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1005';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       const result = str.startsWith("Hel");
@@ -110,7 +110,7 @@ export default function StringStartsWithTest() {
       expect(typeof result).assertEqual("boolean");
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -123,7 +123,7 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1006';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       const result = str.startsWith("xyz");
@@ -131,7 +131,7 @@ export default function StringStartsWithTest() {
       expect(typeof result).assertEqual("boolean");
       expect(result).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -144,12 +144,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1007';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -162,12 +162,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1008';
-      console.log(TAG + 'start');
+
 
       const str = "Hi";
       expect(str.startsWith("Hello World")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     //========================== Parameter Type Test ============================
@@ -182,12 +182,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1009';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -200,12 +200,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1010';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testNumberConversion();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -218,12 +218,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1011';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testBooleanConversion();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -236,14 +236,14 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1012';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testUndefinedConversion();
       expect(result).assertTrue();
 
       expect("undefined value".startsWith("undefined")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -256,13 +256,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1013';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testNullConversion();
       expect(result).assertTrue();
       expect("null pointer".startsWith("null")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -275,12 +275,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1014';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testObjectConversion();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -293,12 +293,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1015';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testArrayConversion();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -311,12 +311,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1016';
-      console.log(TAG + 'start');
+
 
       const isTypeError: boolean = startsWithTest.testRegExpException();
       expect(isTypeError).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -329,12 +329,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1017';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World", 6)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -347,12 +347,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1018';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testPositionStringNumber();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -365,13 +365,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1019';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello", -1)).assertTrue();
       expect(str.startsWith("Hello", -100)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -384,13 +384,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1020';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World", 6.9)).assertTrue();
       expect(str.startsWith("World", 6.1)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -403,12 +403,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1021';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello", NaN)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -421,12 +421,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1022';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello", undefined)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -439,12 +439,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1023';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testPositionNull();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -457,13 +457,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1024';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("", 100)).assertTrue();
       expect(str.startsWith("H", 100)).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     //========================== Boundary Value Test ============================
@@ -478,12 +478,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1025';
-      console.log(TAG + 'start');
+
 
       const str = "";
       expect(str.startsWith("")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -496,12 +496,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1026';
-      console.log(TAG + 'start');
+
 
       const str = "";
       expect(str.startsWith("a")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -514,7 +514,7 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1027';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("")).assertTrue();
@@ -522,7 +522,7 @@ export default function StringStartsWithTest() {
       expect(str.startsWith("", 5)).assertTrue();
       expect(str.startsWith("", 100)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -535,13 +535,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1028';
-      console.log(TAG + 'start');
+
 
       const str = "a";
       expect(str.startsWith("a")).assertTrue();
       expect(str.startsWith("b")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -554,12 +554,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1029';
-      console.log(TAG + 'start');
+
 
       const str = "a";
       expect(str.startsWith("")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -572,12 +572,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1030';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello", 0)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -590,13 +590,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1031';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("", 5)).assertTrue();
       expect(str.startsWith("a", 5)).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -609,13 +609,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1032';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("", 1000)).assertTrue();
       expect(str.startsWith("a", 1000)).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -628,13 +628,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1033';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("", Infinity)).assertTrue();
       expect(str.startsWith("H", Infinity)).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     //========================== Position Parameter Test ============================
@@ -649,13 +649,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1034';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.startsWith("Hello", 0)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -668,13 +668,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1035';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World", 6)).assertTrue();
       expect(str.startsWith("Wor", 6)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -687,13 +687,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1036';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("", 5)).assertTrue();
       expect(str.startsWith("o", 4)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -706,13 +706,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1037';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const pos = 2 + 4;
       expect(str.startsWith("World", pos)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -725,12 +725,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1038';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("d", str.length - 1)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -743,13 +743,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1039';
-      console.log(TAG + 'start');
+
 
       const str = "abcabc";
       expect(str.startsWith("abc", 0)).assertTrue();
       expect(str.startsWith("abc", 3)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -762,13 +762,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1040';
-      console.log(TAG + 'start');
+
 
       const str = "Hello";
       expect(str.startsWith("ello", 1)).assertTrue();
       expect(str.startsWith("llo", 2)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -781,13 +781,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1041';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.startsWith("hello")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -800,13 +800,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1042';
-      console.log(TAG + 'start');
+
 
       const str = "HELLO WORLD";
       expect(str.startsWith("HELLO")).assertTrue();
       expect(str.startsWith("hello")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -819,13 +819,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1043';
-      console.log(TAG + 'start');
+
 
       const str = "hello world";
       expect(str.startsWith("hello")).assertTrue();
       expect(str.startsWith("HELLO")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -838,14 +838,14 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1044';
-      console.log(TAG + 'start');
+
 
       const str = "HeLLo WoRLd";
       expect(str.startsWith("HeLLo")).assertTrue();
       expect(str.startsWith("Hello")).assertFalse();
       expect(str.startsWith("HELLO")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -858,13 +858,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1045';
-      console.log(TAG + 'start');
+
 
       const str = " Hello World";
       expect(str.startsWith(" ")).assertTrue();
       expect(str.startsWith(" Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -877,13 +877,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1046';
-      console.log(TAG + 'start');
+
 
       const str = "\tHello World";
       expect(str.startsWith("\t")).assertTrue();
       expect(str.startsWith("\tHello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -896,13 +896,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1047';
-      console.log(TAG + 'start');
+
 
       const str = "\nHello World";
       expect(str.startsWith("\n")).assertTrue();
       expect(str.startsWith("\nHello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -915,12 +915,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1048';
-      console.log(TAG + 'start');
+
 
       const str = "\rHello World";
       expect(str.startsWith("\r")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -933,12 +933,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1049';
-      console.log(TAG + 'start');
+
 
       const str = " \t\nHello World";
       expect(str.startsWith(" \t\n")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -951,13 +951,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1050';
-      console.log(TAG + 'start');
+
 
       const str = "\\Hello World";
       expect(str.startsWith("\\")).assertTrue();
       expect(str.startsWith("\\Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -970,13 +970,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1051';
-      console.log(TAG + 'start');
+
 
       const str = '"Hello" World';
       expect(str.startsWith('"')).assertTrue();
       expect(str.startsWith('"Hello"')).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -989,13 +989,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1052';
-      console.log(TAG + 'start');
+
 
       const str = "\\path\\to\\file";
       expect(str.startsWith("\\")).assertTrue();
       expect(str.startsWith("\\path")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     //========= Unicode and Multi-byte Character Test =========
@@ -1010,13 +1010,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1053';
-      console.log(TAG + 'start');
+
 
       const str = "你好世界";
       expect(str.startsWith("你好")).assertTrue();
       expect(str.startsWith("世界")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1029,13 +1029,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1054';
-      console.log(TAG + 'start');
+
 
       const str = "Hello世界World";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.startsWith("世界", 5)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1048,13 +1048,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1055';
-      console.log(TAG + 'start');
+
 
       const str = "😀Hello World";
       expect(str.startsWith("😀")).assertTrue();
       expect(str.startsWith("😀Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1067,12 +1067,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1056';
-      console.log(TAG + 'start');
+
 
       const str = "😀🎉🎊Hello";
       expect(str.startsWith("😀🎉🎊")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1085,12 +1085,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1057';
-      console.log(TAG + 'start');
+
 
       const str = "😀Hello";
       expect(str.startsWith("Hello", 2)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1103,13 +1103,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1058';
-      console.log(TAG + 'start');
+
 
       const str = "\u0048\u0065\u006c\u006c\u006f";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.startsWith("\u0048")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1122,12 +1122,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1059';
-      console.log(TAG + 'start');
+
 
       const str = "♠♣♥♦Hello";
       expect(str.startsWith("♠♣♥♦")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1140,13 +1140,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1060';
-      console.log(TAG + 'start');
+
 
       const str = "你好世界";
       expect(str.startsWith("你")).assertTrue();
       expect(str.startsWith("你 好")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     //========================== Exception Handling Test ============================
@@ -1161,12 +1161,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1061';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testRegexError();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1179,12 +1179,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1062';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testRegexFlagsError();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1197,12 +1197,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1063';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testRegExpObjectError();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1215,12 +1215,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1064';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testNullThisError();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1233,12 +1233,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1065';
-      console.log(TAG + 'start');
+
 
       const result: boolean = startsWithTest.testUndefinedThisError();
       expect(result).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1251,12 +1251,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1066';
-      console.log(TAG + 'start');
+
 
       const result: string = startsWithTest.testToStringError();
       expect(result).assertEqual("toString error");
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1269,13 +1269,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1067';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World Hello";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.endsWith("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1288,13 +1288,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1068';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World", 6)).assertTrue();
       expect(str.endsWith("World")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1307,13 +1307,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1069';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("Hello")).assertTrue();
       expect(str.includes("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1326,13 +1326,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1070';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.includes("World")).assertTrue();
       expect(str.startsWith("World")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1345,13 +1345,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1071';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.startsWith("World", 6)).assertTrue();
       expect(str.indexOf("World")).assertEqual(6);
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1364,14 +1364,14 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1072';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.indexOf("World")).assertEqual(6);
       expect(str.startsWith("World")).assertFalse();
       expect(str.startsWith("World", 6)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1384,13 +1384,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1073';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const sliced = str.slice(6);
       expect(sliced.startsWith("World")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1403,13 +1403,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1074';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const sub = str.substring(6);
       expect(sub.startsWith("World")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1422,13 +1422,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1075';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       expect(str.toLowerCase().startsWith("hello")).assertTrue();
       expect(str.toUpperCase().startsWith("HELLO")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1441,13 +1441,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1076';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const search = "HELLO";
       expect(str.toLowerCase().startsWith(search.toLowerCase())).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1460,13 +1460,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1077';
-      console.log(TAG + 'start');
+
 
       const str = "  Hello World";
       expect(str.startsWith("Hello")).assertFalse();
       expect(str.trim().startsWith("Hello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1479,13 +1479,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1078';
-      console.log(TAG + 'start');
+
 
       const str = "  Hello World";
       expect(str.startsWith("  ")).assertTrue();
       expect(str.startsWith("Hello", 2)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1498,13 +1498,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1079';
-      console.log(TAG + 'start');
+
 
       const str = "abc".repeat(3);
       expect(str.startsWith("abc")).assertTrue();
       expect(str.startsWith("abcabc")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1517,12 +1517,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1080';
-      console.log(TAG + 'start');
+
 
       const str = "Hello".repeat(2);
       expect(str.startsWith("HelloHello")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1535,13 +1535,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1081';
-      console.log(TAG + 'start');
+
 
       const str = "5".padStart(3, "0");
       expect(str.startsWith("00")).assertTrue();
       expect(str.startsWith("0")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1554,12 +1554,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1082';
-      console.log(TAG + 'start');
+
 
       const str = "abc".padStart(10, "xyz");
       expect(str.startsWith("xyzxyzx")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1572,13 +1572,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1083';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const replaced = str.replace("Hello", "Hi");
       expect(replaced.startsWith("Hi")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1591,13 +1591,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1084';
-      console.log(TAG + 'start');
+
 
       const str = "Hello World";
       const replaced = str.replace("Hello", "Goodbye");
       expect(replaced.startsWith("Goodbye")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGSTARTSWITH_8500
@@ -1609,14 +1609,14 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1085';
-      console.log(TAG + 'start');
+
 
       const str = "Hello,World,Test";
       const parts = str.split(",");
       expect(parts[0].startsWith("Hello")).assertTrue();
       expect(parts[1].startsWith("World")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
     //==================== Actual Application Scenario Test ====================
 
@@ -1630,13 +1630,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1086';
-      console.log(TAG + 'start');
+
 
       const url = "https://example.com";
       expect(url.startsWith("https://")).assertTrue();
       expect(url.startsWith("http://")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1649,12 +1649,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1087';
-      console.log(TAG + 'start');
+
 
       const url = "https://example.com/path";
       expect(url.startsWith("https://example.com")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1667,12 +1667,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1088';
-      console.log(TAG + 'start');
+
 
       const path = "/usr/local/bin";
       expect(path.startsWith("/")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1685,13 +1685,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1089';
-      console.log(TAG + 'start');
+
 
       const path = "./folder/file.txt";
       expect(path.startsWith("./")).assertTrue();
       expect(path.startsWith("../")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1704,12 +1704,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1090';
-      console.log(TAG + 'start');
+
 
       const path = "C:\\Users\\Documents";
       expect(path.startsWith("C:")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1722,12 +1722,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1091';
-      console.log(TAG + 'start');
+
 
       const filename = "backup_20231215.zip";
       expect(filename.startsWith("backup_")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1740,13 +1740,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1092';
-      console.log(TAG + 'start');
+
 
       const arg = "--verbose";
       expect(arg.startsWith("--")).assertTrue();
       expect(arg.startsWith("-")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1759,13 +1759,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1093';
-      console.log(TAG + 'start');
+
 
       const arg = "-v";
       expect(arg.startsWith("-")).assertTrue();
       expect(arg.startsWith("--")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1778,12 +1778,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1094';
-      console.log(TAG + 'start');
+
 
       const dataUri = "data:image/png;base64,iVBORw0KG...";
       expect(dataUri.startsWith("data:image/")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1796,12 +1796,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1095';
-      console.log(TAG + 'start');
+
 
       const json = '{"name": "John"}';
       expect(json.startsWith("{")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1814,12 +1814,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1096';
-      console.log(TAG + 'start');
+
 
       const line = "# Heading";
       expect(line.startsWith("#")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1832,13 +1832,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1097';
-      console.log(TAG + 'start');
+
 
       const line = "    indented text";
       expect(line.startsWith("    ")).assertTrue();
       expect(line.startsWith("\t")).assertFalse();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1851,12 +1851,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1098';
-      console.log(TAG + 'start');
+
 
       const phone = "+86-13800138000";
       expect(phone.startsWith("+86")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1869,12 +1869,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1099';
-      console.log(TAG + 'start');
+
 
       const cardNumber = "4111111111111111";
       expect(cardNumber.startsWith("4")).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1887,13 +1887,13 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1100';
-      console.log(TAG + 'start');
+
 
       const identifier = "_privateVar";
       expect(identifier.startsWith("_")).assertTrue();
       expect(/^[a-zA-Z_$]/.test(identifier)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
 
     /**
@@ -1906,12 +1906,12 @@ export default function StringStartsWithTest() {
      */
     it("StringStartsWithTest1101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'StringStartsWithTest1101';
-      console.log(TAG + 'start');
+
 
       const className = "MyClass";
       expect(/^[A-Z]/.test(className)).assertTrue();
 
-      console.log(TAG + "end");
+
     });
   });
 }
