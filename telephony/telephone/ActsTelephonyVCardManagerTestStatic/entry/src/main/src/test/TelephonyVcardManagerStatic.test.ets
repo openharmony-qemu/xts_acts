@@ -430,11 +430,9 @@ export default function TelephonyVcardManagerStatic() {
           await rdFile(context, vcardContacts, new Date().getTime() + '');
           let accountId: int = 0;
           vcard.importVCard(context, filePath, accountId, (err) => {
-            if (err) {
-              hilog.info(domain, tag, `${caseName} error ${JSON.stringify(err.code)}`);
-              expect(err.code === 8300003).assertTrue();
-              done();
-            }
+            hilog.info(domain, tag, `${caseName} error ${JSON.stringify(err.code)}`);
+            expect(err.code === 8300003).assertTrue();
+            done();
           })
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
