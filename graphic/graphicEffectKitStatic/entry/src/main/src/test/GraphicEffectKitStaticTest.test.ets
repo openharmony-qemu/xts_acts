@@ -53,7 +53,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         // effectKit test codes
         hilog.info(domain, tag, '%{public}s', 'effectKit test START');
@@ -106,7 +106,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let radius = 30;
@@ -137,7 +137,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = 'testTileMode'
         console.log(msg + ' begin')
@@ -156,7 +156,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let bright1 = 0.0;
@@ -188,7 +188,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
@@ -209,7 +209,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
@@ -230,7 +230,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let colorMatrix: Array<number> = [
           0.2126, 0.7152, 0.0722, 0, 0,
@@ -257,7 +257,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let colorPicker: effectKit.ColorPicker = await effectKit.createColorPicker(pixelMap!);
@@ -291,7 +291,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -323,7 +323,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -351,7 +351,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -380,7 +380,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -408,7 +408,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -435,7 +435,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -463,7 +463,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
 
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
@@ -514,7 +514,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!, (error, colorPicker) => {
           if (error) {
@@ -536,7 +536,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
@@ -558,7 +558,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'effectKit test START');
         const opts: image.InitializationOptions = {
@@ -627,7 +627,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data testGetTopProportionColors_2 '
         let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
@@ -663,7 +663,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data testGetTopProportionColors_2 '
         let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
@@ -795,7 +795,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -824,7 +824,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -853,7 +853,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic003 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -881,7 +881,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic004 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -909,7 +909,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -937,7 +937,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -965,7 +965,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -994,7 +994,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1023,7 +1023,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1051,7 +1051,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1079,7 +1079,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1108,7 +1108,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1137,7 +1137,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1173,7 +1173,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1209,7 +1209,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1245,7 +1245,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1281,7 +1281,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1317,7 +1317,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1353,7 +1353,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1389,7 +1389,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
