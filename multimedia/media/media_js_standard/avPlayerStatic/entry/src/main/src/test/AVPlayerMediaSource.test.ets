@@ -248,5 +248,6 @@ export default function AVPlayerMediaSource() {
       expect(id).not().assertUndefined()
       expect(id.length).assertLarger(0)
       done();
+    });
   })
 }
