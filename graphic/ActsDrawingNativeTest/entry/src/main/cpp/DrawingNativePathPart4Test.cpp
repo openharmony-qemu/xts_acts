@@ -329,7 +329,7 @@ int TestPathGetConicWeightAbnormal()
     OH_Drawing_PathConicTo(path, 50.0f, 50.0f, 100.0f, 100.0f, 0.5f);
     OH_Drawing_PathClose(path);
     uint32_t count = 0;
-    float conicWeights[count];
+    float conicWeights[1];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetConicWeightData(path, conicWeights, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(count, DRAWING_NUMBER_1);
