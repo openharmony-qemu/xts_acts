@@ -40,6 +40,7 @@ export default function testsuite() {
     SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
+    IsMyCardTest();
   } 
   QueryKeyTest();
   QueryByEmailTest();
@@ -47,7 +48,6 @@ export default function testsuite() {
   QueryContactTest();
   UpdateContactTest();
   QueryGroupsTest();
-  IsMyCardTest();
   ContactTest();
   ContactsTest()
   AddContactsTest();
