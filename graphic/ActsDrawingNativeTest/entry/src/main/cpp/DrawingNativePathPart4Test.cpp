@@ -491,6 +491,141 @@ int TestPathConvertToSvgStringMultipleCalls()
     DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
+
+int TestPathGetLastPointNormal()
+{
+    DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Point2D point[1] = {};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(point[0].x, 100.0f);
+    EXPECT_EQ(point[0].y, 100.0f);
+    // 4. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathGetLastPointNull()
+{
+    DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_Point2D point[1] = {};
+    // 2. Create an empty path
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(point[0].x, 0);
+    EXPECT_EQ(point[0].y, 0);
+    // 3. Passing in a nullptr
+    errorCode = OH_Drawing_PathGetLastPoint(nullptr, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_PathGetLastPoint(path, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 4. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathGetLastPointMultipleCalls()
+{
+    DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Point2D point[1] = {};
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(point[0].x, 100.0f);
+        EXPECT_EQ(point[0].y, 100.0f);
+    }
+    // 5. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualNormal()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(path, other, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(equal, true);
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualNull()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(nullptr, other, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    errorCode = OH_Drawing_PathIsEqual(path, nullptr, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualMultipleCalls()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(path, other, &equal);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(equal, true);
+    }
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

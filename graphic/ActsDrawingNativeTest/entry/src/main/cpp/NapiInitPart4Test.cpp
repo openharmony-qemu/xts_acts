@@ -141,6 +141,12 @@ napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringNull,
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringAbnormal,
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathGetLastPointNormal,
+            OHOS::Rosen::Drawing::TestPathGetLastPointNull,
+            OHOS::Rosen::Drawing::TestPathGetLastPointMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathIsEqualNormal,
+            OHOS::Rosen::Drawing::TestPathIsEqualNull,
+            OHOS::Rosen::Drawing::TestPathIsEqualMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
