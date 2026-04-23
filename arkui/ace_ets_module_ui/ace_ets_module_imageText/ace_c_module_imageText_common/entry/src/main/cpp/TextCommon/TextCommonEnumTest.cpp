@@ -28,7 +28,7 @@ static napi_value TextEnumTest_001(napi_env env, napi_callback_info info)
         "NODE_TEXT_ON_TEXT_SELECTION_CHANGE TextEnumTest_001 result=%{public}d",
         NODE_TEXT_ON_TEXT_SELECTION_CHANGE);
     ASSERT_EQ(PARAM_1002, NODE_TEXT_ON_TEXT_SELECTION_CHANGE);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_002(napi_env env, napi_callback_info info)
@@ -38,7 +38,7 @@ static napi_value TextEnumTest_002(napi_env env, napi_callback_info info)
         "NODE_TEXT_ON_COPY TextEnumTest_002 result=%{public}d",
         NODE_TEXT_ON_COPY);
     ASSERT_EQ(PARAM_1003, NODE_TEXT_ON_COPY);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_003(napi_env env, napi_callback_info info)
@@ -48,7 +48,7 @@ static napi_value TextEnumTest_003(napi_env env, napi_callback_info info)
         "NODE_TEXT_ON_WILL_COPY TextEnumTest_003 result=%{public}d",
         NODE_TEXT_ON_WILL_COPY);
     ASSERT_EQ(PARAM_1004, NODE_TEXT_ON_WILL_COPY);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_004(napi_env env, napi_callback_info info)
@@ -58,7 +58,7 @@ static napi_value TextEnumTest_004(napi_env env, napi_callback_info info)
         "NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION TextEnumTest_004 result=%{public}d",
         NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION);
     ASSERT_EQ(PARAM_1047, NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_005(napi_env env, napi_callback_info info)
@@ -68,7 +68,7 @@ static napi_value TextEnumTest_005(napi_env env, napi_callback_info info)
         "NODE_TEXT_CONTROLLER TextEnumTest_005 result=%{public}d",
         NODE_TEXT_CONTROLLER);
     ASSERT_EQ(PARAM_1054, NODE_TEXT_CONTROLLER);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_006(napi_env env, napi_callback_info info)
@@ -78,7 +78,7 @@ static napi_value TextEnumTest_006(napi_env env, napi_callback_info info)
         "NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION TextEnumTest_006 result=%{public}d",
         NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION);
     ASSERT_EQ(PARAM_22028, NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 
 static napi_value TextEnumTest_007(napi_env env, napi_callback_info info)
@@ -88,6 +88,6 @@ static napi_value TextEnumTest_007(napi_env env, napi_callback_info info)
         "NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING TextEnumTest_007 result=%{public}d",
         NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING);
     ASSERT_EQ(PARAM_22029, NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING);
-    NAPI_END;
+    NAPI_END(Custom);
 }
 }

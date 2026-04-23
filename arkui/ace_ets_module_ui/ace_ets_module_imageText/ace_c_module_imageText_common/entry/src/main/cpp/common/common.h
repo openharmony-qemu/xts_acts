@@ -137,7 +137,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
             std::string assertStr = "assert equal failed, expect is " + std::to_string(expect) + " and result is " +   \
                                     std::to_string(result);                                                            \
             char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
+            memcpy(assertChars, assertStr.c_str());                                                                    \
             napi_throw_error((env), nullptr, assertChars);                                                             \
             napi_value errorResult = nullptr;                                                                          \
             napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
@@ -151,7 +151,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
             std::string assertStr = "assert not equal failed, expect is " + std::to_string(expect) +                   \
                                     " and result is " + std::to_string(result);                                        \
             char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
+            memcpy(assertChars, assertStr.c_str());                                                                    \
             napi_throw_error((env), nullptr, assertChars);                                                             \
             napi_value errorResult = nullptr;                                                                          \
             napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
@@ -197,10 +197,11 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
-#define NAPI_END                                                                                                       \
+#define NAPI_END(componentName)                                                                                        \
     do {                                                                                                               \
         napi_value result = nullptr;                                                                                   \
         napi_create_int32(env, SUCCESS, &result);                                                                      \
+        disposeNode(componentName)                                                                                     \
         return result;                                                                                                 \
     } while (0)
 
