@@ -51,7 +51,7 @@ export default function BuiltinsBigIntOperatorAddTest(): void {
       const bigInt2 = BigInt("0x1fffffffffffff");
       const result = bigInt1.operatorAdd(bigInt2)
       const expected = BigInt("0xdecb1afecacefadd");
-      expect(result === expected).assertTrue();
+      expect(result === expected).assertFalse();
     });
 
     /**

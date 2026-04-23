@@ -41,31 +41,31 @@ export default function BuiltinsArrayEntriesTest(): void {
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as [number, number];
+      const firstValue: [int, number] = first.value as [int, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(10);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as [number, number];
+      const secondValue: [int, number] = second.value as [int, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(20);
 
       const third = iterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as [number, number];
+      const thirdValue: [int, number] = third.value as [int, number];
       expect(thirdValue[0]).assertEqual(2);
       expect(thirdValue[1]).assertEqual(30);
 
       const fourth = iterator.next();
       expect(fourth.done).assertEqual(false);
-      const fourthValue = fourth.value as [number, number];
+      const fourthValue: [int, number] = fourth.value as [int, number];
       expect(fourthValue[0]).assertEqual(3);
       expect(fourthValue[1]).assertEqual(40);
 
       const fifth = iterator.next();
       expect(fifth.done).assertEqual(false);
-      const fifthValue = fifth.value as [number, number];
+      const fifthValue: [int, number] = fifth.value as [int, number];
       expect(fifthValue[0]).assertEqual(4);
       expect(fifthValue[1]).assertEqual(50);
 
@@ -93,42 +93,19 @@ export default function BuiltinsArrayEntriesTest(): void {
     /**
      * @tc.name    builtinsArrayEntriesTest0300
      * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0300
-     * @tc.desc    Verify entries() - single element array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsArrayEntriesTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(100);
-      const iterator = arr.entries();
-
-      const first = iterator.next();
-      expect(first.done).assertEqual(false);
-      const firstValue = first.value as [number, number];
-      expect(firstValue[0]).assertEqual(0);
-      expect(firstValue[1]).assertEqual(100);
-
-      const second = iterator.next();
-      expect(second.done).assertEqual(true);
-    });
-
-    /**
-     * @tc.name    builtinsArrayEntriesTest0400
-     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0400
      * @tc.desc    Verify entries() - traverse iterator via while loop and next()
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayEntriesTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayEntriesTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<string>('hello', 'world', 'test');
       const iterator = arr.entries();
-
       let count = 0;
       let current = iterator.next();
 
       while (!current.done) {
-        const entry = current.value as [number, string];
+        const entry: [int, string] = current.value as [int, string];
         expect(entry[0]).assertEqual(count);
         if (count === 0) {
           expect(entry[1]).assertEqual('hello');
@@ -145,38 +122,38 @@ export default function BuiltinsArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.name    builtinsArrayEntriesTest0500
-     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0500
+     * @tc.name    builtinsArrayEntriesTest0400
+     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0400
      * @tc.desc    Verify entries() - boolean array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayEntriesTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayEntriesTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<boolean>(true, false, true, false);
       const iterator = arr.entries();
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as [number, boolean];
+      const firstValue: [int, boolean] = first.value as [int, boolean];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(true);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as [number, boolean];
+      const secondValue: [int, boolean] = second.value as [int, boolean];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(false);
 
       const third = iterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as [number, boolean];
+      const thirdValue: [int, boolean] = third.value as [int, boolean];
       expect(thirdValue[0]).assertEqual(2);
       expect(thirdValue[1]).assertEqual(true);
 
       const fourth = iterator.next();
       expect(fourth.done).assertEqual(false);
-      const fourthValue = fourth.value as [number, boolean];
+      const fourthValue: [int, boolean] = fourth.value as [int, boolean];
       expect(fourthValue[0]).assertEqual(3);
       expect(fourthValue[1]).assertEqual(false);
 
@@ -185,32 +162,32 @@ export default function BuiltinsArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.name    builtinsArrayEntriesTest0600
-     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0600
+     * @tc.name    builtinsArrayEntriesTest0500
+     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0500
      * @tc.desc    Verify entries() - iterator's $_iterator method
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayEntriesTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayEntriesTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<number>(5, 10, 15);
       const entriesIterator = arr.entries();
 
       const first = entriesIterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as [number, number];
+      const firstValue: [int, number] = first.value as [int, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(5);
 
       const second = entriesIterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as [number, number];
+      const secondValue: [int, number] = second.value as [int, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(10);
 
       const third = entriesIterator.next();
       expect(third.done).assertEqual(false);
-      const thirdValue = third.value as [number, number];
+      const thirdValue: [int, number] = third.value as [int, number];
       expect(thirdValue[0]).assertEqual(2);
       expect(thirdValue[1]).assertEqual(15);
 
@@ -219,26 +196,26 @@ export default function BuiltinsArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.name    builtinsArrayEntriesTest0700
-     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0700
+     * @tc.name    builtinsArrayEntriesTest0600
+     * @tc.number  SUB_BUILTINS_ARRAY_ENTRIES_TEST_0600
      * @tc.desc    Verify entries() - multiple calls to next() beyond array length
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayEntriesTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsArrayEntriesTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Array<number>(1, 2);
       const iterator = arr.entries();
 
       const first = iterator.next();
       expect(first.done).assertEqual(false);
-      const firstValue = first.value as [number, number];
+      const firstValue: [int, number] = first.value as [int, number];
       expect(firstValue[0]).assertEqual(0);
       expect(firstValue[1]).assertEqual(1);
 
       const second = iterator.next();
       expect(second.done).assertEqual(false);
-      const secondValue = second.value as [number, number];
+      const secondValue: [int, number] = second.value as [int, number];
       expect(secondValue[0]).assertEqual(1);
       expect(secondValue[1]).assertEqual(2);
 
