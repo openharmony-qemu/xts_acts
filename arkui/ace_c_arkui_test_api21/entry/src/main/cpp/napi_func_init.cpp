@@ -23,6 +23,7 @@
 #include "refresh/RefreshEventTypeTest.cpp"
 #include "waterFlow/WaterFlowEventTypeTest.cpp"
 #include "grid/GridEventTypeTest.cpp"
+#include "CrossLanguage/CrossLanguageTreeOperatingStatusTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -93,7 +94,9 @@ namespace ArkUICapiTest
             {"TestNodeErrorCode010", nullptr, TestNodeErrorCode010, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestNodeErrorCode011", nullptr, TestNodeErrorCode011, nullptr, nullptr, nullptr,
-                napi_default, nullptr}, 
+                napi_default, nullptr},
+            {"testCrossLanguageTreeOperatingStatus", nullptr, testCrossLanguageTreeOperatingStatus,
+ 	            nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
