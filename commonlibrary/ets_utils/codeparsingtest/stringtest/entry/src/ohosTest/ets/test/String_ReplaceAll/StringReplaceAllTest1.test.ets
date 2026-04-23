@@ -1,6 +1,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as stringTest from './string_replaceall_test01';
-export default function StringReplaceAllTest() {
+export default function StringReplaceAllTest1() {
   describe('StringReplaceAllTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

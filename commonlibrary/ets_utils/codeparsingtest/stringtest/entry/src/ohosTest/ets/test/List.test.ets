@@ -39,9 +39,9 @@ import StringSymbolIteratorTest1 from './String_Symbol/StringSymbolIteratorTest1
 import StringSymbolIteratorTest2 from './String_Symbol/StringSymbolIteratorTest2.test';
 import StringTrimEndTest1 from './String_trimEnd/StringTrimEndTest1.test';
 import StringTrimStartTest1 from './String_trimStart/StringTrimStartTest1.test';
-import StringValueOfTest1 from '.String_ValueOf/StringValueOfTest1.test';
+import StringValueOfTest1 from './String_ValueOf/StringValueOfTest1.test';
 import StringToLocaleLowerCaseTest1 from './String_LocaleLowerCase/StringToLocaleLowerCaseTest1.test';
-import StringSearchTest1 from './String_Search/StringSearchTest.test';
+import StringSearchTest1 from './String_Search/StringSearchTest1.test';
 import StringSearchTest2 from './String_Search/StringSearchTest2.test';
 import StringSearchTest3 from './String_Search/StringSearchTest3.test';
 import StringStartsWithTest1 from './String_StartsWith/StringStartsWithTest1.test';
