@@ -58,7 +58,7 @@ import ExpressionsEvaluationTest from "./expressions/evaluation_of_expressions/E
 import ExpressionEvaluationCompletionTest from "./expressions/evaluation_of_expressions/normal_and_abrupt_completion_of_expression_evaluation/ExpressionEvaluationCompletion.test";
 import ExpressionEvaluationOrderTest from "./expressions/evaluation_of_expressions/order_of_expression_evaluation/ExpressionEvaluationOrder.test";
 import ExpressionEvaluationTypeTest from "./expressions/evaluation_of_expressions/type_of_expression/ExpressionEvaluationType.test";
-// import ExpressionsExponentiationTest from "./expressions/exponentiation_expression/ExpressionsExponentiation.test";
+import ExpressionsExponentiationTest from "./expressions/exponentiation_expression/ExpressionsExponentiation.test";
 // import ExpressionsObjectFieldsTest from "./expressions/field_access_expressions/accessing_current_object_fields/ExpressionsObjectFields.test";
 // import ExpressionsAccessFieldTest from "./expressions/field_access_expressions/accessing_static_fields/ExpressionsAccessField.test";
 // import ExpressionsSuperClassTest from "./expressions/field_access_expressions/accessing_superclass_fields/ExpressionsSuperClass.test";
@@ -195,7 +195,7 @@ export default function testsuite() {
   ExpressionEvaluationCompletionTest();
   ExpressionEvaluationOrderTest();
   ExpressionEvaluationTypeTest();
-  // ExpressionsExponentiationTest();
+  ExpressionsExponentiationTest();
   // ExpressionsObjectFieldsTest();
   // ExpressionsAccessFieldTest();
   // ExpressionsSuperClassTest();

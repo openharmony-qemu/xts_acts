@@ -103,7 +103,7 @@ export default function ExpressionEvaluationArgumentsTest() {
      * @tc.level     Level 2
      */
     it("testExpressionEvaluationArguments0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      a_1 = b_1 = c_1 = false;  // reset due to jit mode warmup
+      a_1 = b_1 = c_1 = false;
       test_1(ta_1(), tb_1(), tc_1(), td_1());
       expect(a_1).assertEqual(true);
     })

@@ -102,7 +102,7 @@ export default function ExpressionsEvaluationTest() {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_EVALUATION_0100
+     * @tc.number    SUB_EXPRESSIONS_EVALUATION_TEST_0100
      * @tc.name      testExpressionsEvaluation0001
      * @tc.desc      An expression may occur: - inside a declaration of type (class or interface),
      *               i.e. in a field initializer, static initializer, constructor declaration, method
@@ -120,7 +120,7 @@ export default function ExpressionsEvaluationTest() {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_EVALUATION_0200
+     * @tc.number    SUB_EXPRESSIONS_EVALUATION_TEST_0200
      * @tc.name      testExpressionsEvaluation0002
      * @tc.desc      An expression may occur: - inside a function body;
      * @tc.size      MediumTest
@@ -133,7 +133,7 @@ export default function ExpressionsEvaluationTest() {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_EVALUATION_0300
+     * @tc.number    SUB_EXPRESSIONS_EVALUATION_TEST_0300
      * @tc.name      testExpressionsEvaluation0003
      * @tc.desc      Expressions may contain assignments, increment operators, decrement operators,
      *               method calls and function calls; as a result, an evaluation of an expression can
@@ -143,27 +143,22 @@ export default function ExpressionsEvaluationTest() {
      * @tc.level     Level 2
      */
     it("testExpressionsEvaluation0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      sg_2 = "a"; // reset due to jit mode warmup
+      sg_2 = "a";
       ig_2 = 42;
-      // assignment side effect
       let i: int = (sg_2 += "b").length + (ig_2 = 43);
       expect(i).assertEqual(45)
       expect(sg_2).assertEqual("ab")
       expect(ig_2).assertEqual(43)
-      // increment side effect
       let k: int = ig_2++ + ++ig_2;
       expect(k).assertEqual(88)
       expect(ig_2).assertEqual(45)
-      // decrement side effect
       let j: int = ig_2-- + --ig_2;
       expect(j).assertEqual(88)
       expect(ig_2).assertEqual(43)
-      // function call side effect
       let m: int = foo_2(j, sg_2);
       expect(m).assertEqual(86)
       expect(ig_2).assertEqual(-1)
       expect(sg_2).assertEqual("abab")
-      // method call side effect
       let n: int = new A_2().meth(m, sg_2);
       expect(n).assertEqual(82)
       expect(ig_2).assertEqual(1)
