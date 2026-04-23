@@ -63,10 +63,10 @@ import ExpressionsObjectFieldsTest from "./expressions/field_access_expressions/
 import ExpressionsAccessFieldTest from "./expressions/field_access_expressions/accessing_static_fields/ExpressionsAccessField.test";
 import ExpressionsSuperClassTest from "./expressions/field_access_expressions/accessing_superclass_fields/ExpressionsSuperClass.test";
 import ExpressionsFieldTest from "./expressions/field_access_expressions/ExpressionsField.test";
-// import ExpressionsFunctionCall1Test from "./expressions/function_call_expression/ExpressionsFunctionCall1.test";
-// import ExpressionsFunctionCall2Test from "./expressions/function_call_expression/ExpressionsFunctionCall2.test";
-// import ExpressionsFunctionStepTest from "./expressions/function_call_expression/step_1_selection_of_function/ExpressionsFunctionStep.test";
-// import ExpressionsFunctionStep2Test from "./expressions/function_call_expression/step_2_semantic_correctness_check/ExpressionsFunctionStep2.test";
+import ExpressionsFunctionCallTest from "./expressions/function_call_expression/ExpressionsFunctionCall.test";
+import ExpressionsFunctionCallOneTest from "./expressions/function_call_expression/ExpressionsFunctionCallOne.test";
+// import ExpressionsFunctionStepTest from "./expressions/function_call_expression/step_selection_of_function/ExpressionsFunctionStep.test";
+// import ExpressionsFunctionStepOneTest from "./expressions/function_call_expression/step_semantic_correctness_check/ExpressionsFunctionStepOne.test";
 // import ExpressionsIndexingArray1Test from "./expressions/indexing_expression/array_indexing_expression/ExpressionsIndexingArray1.test";
 // import ExpressionsIndexingArray2Test from "./expressions/indexing_expression/array_indexing_expression/ExpressionsIndexingArray2.test";
 // import ExpressionsIndexingArray3Test from "./expressions/indexing_expression/array_indexing_expression/ExpressionsIndexingArray3.test";
@@ -200,10 +200,10 @@ export default function testsuite() {
   ExpressionsAccessFieldTest();
   ExpressionsSuperClassTest();
   ExpressionsFieldTest();
-  // ExpressionsFunctionCall1Test();
-  // ExpressionsFunctionCall2Test();
+  ExpressionsFunctionCallTest();
+  ExpressionsFunctionCallOneTest();
   // ExpressionsFunctionStepTest();
-  // ExpressionsFunctionStep2Test();
+  // ExpressionsFunctionStepOneTest();
   // ExpressionsIndexingArray1Test();
   // ExpressionsIndexingArray2Test();
   // ExpressionsIndexingArray3Test();

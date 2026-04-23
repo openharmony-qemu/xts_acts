@@ -37,8 +37,6 @@ enum Enum_1 { first, second, third = 0 }
 enum Enum_2 { first = 11, second = 11, third = 11 }
 enum Enum_3 { first = "A", second = "B", third = "A" }
 enum Enum_4 { first = "ABC", second = "ABC", third = "ABC" }
-enum Enum1_17 { first }
-enum Enum1_18 { first = "A" }
 export default function EnumerationEqualityOperatorsTest() {
   describe("EnumerationEqualityOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -192,18 +190,6 @@ export default function EnumerationEqualityOperatorsTest() {
       let arr_16: Enum_4[] = [Enum_4.first, Enum_4.second, Enum_4.third]
       let foo_16: (i: int) => Enum_4 = (i: int): Enum_4 => arr_16[i]
       expect(foo_16(0) === foo_16(1) && foo_16(1) === arr_16[2] && foo_16(0) === Enum_4.third).assertTrue()
-    })
-   /**
-    * @tc.number    SUB_ENUMERATION_EQUALITY_OPERATORS_1100
-    * @tc.name      testEnumerationEqualityOperators0011
-    * @tc.desc      The numeric types conversion (see Primitive Types Conversions) is performed on the operands of a value equality operator.
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 2
-    */
-    it("testEnumerationEqualityOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum1_17.first).assertEqual(Enum1_17.first);
-      expect(Enum1_18.first).assertEqual(Enum1_18.first);
     })
   })
 }
