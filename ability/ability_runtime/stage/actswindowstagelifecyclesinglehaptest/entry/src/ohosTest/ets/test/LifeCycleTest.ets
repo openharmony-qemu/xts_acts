@@ -183,10 +183,10 @@ export default function lifecycleTest() {
           expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
           expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
           globalThis.applicationContext
-            .off('abilityLifecycle', tempCallbackId, (error: base.BusinessError, data: ESObject) => {
+            .unregisterAbilityLifecycleCallback(tempCallbackId, (error: base.BusinessError, data: ESObject) => {
               console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                 ",data: " + JSON.stringify(data));
-              expect(error).assertNull();
+              expect(error.code).assertEqual(0);
               console.log("------------Singlehap_WindowStageLifeCycleTest_0100 END-------------");
               done();
             });
@@ -259,10 +259,10 @@ export default function lifecycleTest() {
           expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
           expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
           globalThis.applicationContext1
-            .off('abilityLifecycle', globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+            .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
               console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                 ",data: " + JSON.stringify(data));
-              expect(error).assertNull();
+              expect(error.code).assertEqual(0);
               done();
             })
         }
@@ -340,7 +340,7 @@ export default function lifecycleTest() {
           expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
           expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
           globalThis.applicationContext1
-            .off('abilityLifecycle', globalThis.callbackid1)
+            .unregisterAbilityLifecycleCallback(globalThis.callbackid1)
             .then((error: base.BusinessError, data: ESObject) => {
               console.info(TAG + ' unregisterAbilityLifecycleCallback successful. Data: ' + data);
               done();
@@ -420,7 +420,7 @@ export default function lifecycleTest() {
             subscriber = undefined;
           });
           globalThis.applicationContext3
-            .off('abilityLifecycle', globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
+            .unregisterAbilityLifecycleCallback(globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
               console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
                 ",data: " + JSON.stringify(data));
             })
@@ -530,7 +530,7 @@ export default function lifecycleTest() {
             expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
             expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
             globalThis.applicationContext1
-              .off('abilityLifecycle', globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               })
@@ -608,7 +608,7 @@ export default function lifecycleTest() {
             expect(listTemp.split("MainAbility2 onWindowStageInactive").length - 1).assertEqual(3);
             expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertEqual(3);
             globalThis.applicationContext1
-              .off('abilityLifecycle', globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
                 console.log("------------Singlehap_WindowStageLifeCycleTest_0600 END-------------");
@@ -697,7 +697,7 @@ export default function lifecycleTest() {
             expect(listTemp.split("MainAbility2 onWindowStageInactive").length - 1).assertEqual(2);
             expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
             globalThis.applicationContext1
-              .off('abilityLifecycle', globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
                 console.log("------------Singlehap_WindowStageLifeCycleTest_0700 END-------------");
@@ -776,11 +776,11 @@ export default function lifecycleTest() {
               subscriber = undefined;
             });
             expect(id1 + 1).assertEqual(id);
-            globalThis.applicationContext6.off('abilityLifecycle', id1, (error: base.BusinessError, data: ESObject) => {
+            globalThis.applicationContext6.unregisterAbilityLifecycleCallback(id1, (error: base.BusinessError, data: ESObject) => {
               console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                 ",data: " + JSON.stringify(data));
             });
-            globalThis.applicationContext6.off('abilityLifecycle', id, (error: base.BusinessError, data: ESObject) => {
+            globalThis.applicationContext6.unregisterAbilityLifecycleCallback(id, (error: base.BusinessError, data: ESObject) => {
               console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                 ",data: " + JSON.stringify(data));
             });
@@ -847,7 +847,7 @@ export default function lifecycleTest() {
             expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageInactive") !== -1).assertTrue();
             expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageDestroy") !== -1).assertTrue();
             globalThis.applicationContext9
-              .off('abilityLifecycle', globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
@@ -914,7 +914,7 @@ export default function lifecycleTest() {
             expect(listTemp.split("Hap1MainAbility2 onWindowStageInactive").length - 1).assertEqual(2);
             expect(listTemp.split("Hap1MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
             globalThis.applicationContext9
-              .off('abilityLifecycle', globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
                 done();
@@ -1000,12 +1000,12 @@ export default function lifecycleTest() {
             expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
 
             globalThis.applicationContext11
-              .off('abilityLifecycle', id1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
             globalThis.applicationContext11
-              .off('abilityLifecycle', id2, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id2, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
@@ -1104,12 +1104,12 @@ export default function lifecycleTest() {
             expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
             expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
             globalThis.applicationContext12
-              .off('abilityLifecycle', id1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
             globalThis.applicationContext12
-              .off('abilityLifecycle', id2, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id2, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
@@ -1254,22 +1254,22 @@ export default function lifecycleTest() {
             expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") != -1).assertTrue();
             expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") != -1).assertTrue();
             globalThis.applicationContext1
-              .off('abilityLifecycle', id1, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id1, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
             globalThis.applicationContext1
-              .off('abilityLifecycle', id3, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id3, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
             globalThis.applicationContext12
-              .off('abilityLifecycle', id2, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id2, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
             globalThis.applicationContext12
-              .off('abilityLifecycle', id4, (error: base.BusinessError, data: ESObject) => {
+              .unregisterAbilityLifecycleCallback(id4, (error: base.BusinessError, data: ESObject) => {
                 console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
                   ",data: " + JSON.stringify(data));
               });
