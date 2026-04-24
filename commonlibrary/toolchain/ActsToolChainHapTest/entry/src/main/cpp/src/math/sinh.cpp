@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,58 +13,75 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DD t[] = {
 #include "crlibm/sinh.h"
-#include "ucb/sinh.h"
 #include "sanity/sinh.h"
 #include "special/sinh.h"
+#include "ucb/sinh.h"
 
 };
 
-static int SinhTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DD *p;
+static int SinhTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e;
+    int i;
+    int err = 0;
+    struct DD* p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = sinh(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = sinh(p->x);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s sinh(%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s sinh(%a)=%a, want %s",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
 #endif
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			if (fabsf(d) < 2.0f || p->r != ROUND_TO_NEAREST)
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-		}
-	}
-	return !!err;
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            if (fabsf(d) < 2.0f || p->r != ROUND_TO_NEAREST) {
+                printf("X ");
+            } else {
+                err++;
+            }
+            printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %a + %a\n",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
+        }
+    }
+    return !!err;
 }
 
 int SinhTest(void)
 {
     return SinhTest_impl();
 }
-
