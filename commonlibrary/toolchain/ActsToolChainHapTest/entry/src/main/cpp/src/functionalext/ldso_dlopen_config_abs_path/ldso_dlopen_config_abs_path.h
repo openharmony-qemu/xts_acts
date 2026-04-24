@@ -16,11 +16,12 @@
 #define LIBC_TEST_FUNCTIONALEXT_LDSO_DLOPEN_CONFIG_ABS_PATH_LDSO_DLOPEN_CONFIG_ABS_PATH_H
 
 #include <dlfcn.h>
-#include <stdio.h>
+#include <cstdio>
 
-static inline bool InitDlopenConfigAbsPathPolicy(void) {
+static inline bool InitDlopenConfigAbsPathPolicy(void)
+{
     typedef bool (*func_t)(void);
-    static func_t func = NULL;
+    static func_t func = nullptr;
     if (!func) {
         func = (func_t)dlsym(RTLD_DEFAULT, "InitDlopenConfigAbsPathPolicy");
         if (!func) {
@@ -31,9 +32,10 @@ static inline bool InitDlopenConfigAbsPathPolicy(void) {
     return func();
 }
 
-static inline bool CheckPrerequisites(void) {
+static inline bool CheckPrerequisites(void)
+{
     typedef bool (*func_t)(void);
-    static func_t func = NULL;
+    static func_t func = nullptr;
     if (!func) {
         func = (func_t)dlsym(RTLD_DEFAULT, "CheckPrerequisites");
         if (!func) {
@@ -44,9 +46,10 @@ static inline bool CheckPrerequisites(void) {
     return func();
 }
 
-static inline bool OpenSo(bool arg1, bool arg2) {
+static inline bool OpenSo(bool arg1, bool arg2)
+{
     typedef bool (*func_t)(bool, bool);
-    static func_t func = NULL;
+    static func_t func = nullptr;
     if (!func) {
         func = (func_t)dlsym(RTLD_DEFAULT, "OpenSo");
         if (!func) {
@@ -59,9 +62,10 @@ static inline bool OpenSo(bool arg1, bool arg2) {
 
 typedef void(FuncType)(bool flag);
 
-static inline bool dlopen_config_abs_path_policy_func(bool flag) {
+static inline bool dlopen_config_abs_path_policy_func(bool flag)
+{
     typedef bool (*func_t)(bool);
-    static func_t func = NULL;
+    static func_t func = nullptr;
     if (!func) {
         func = (func_t)dlsym(RTLD_DEFAULT, "dlopen_config_abs_path_policy_func");
         if (!func) {

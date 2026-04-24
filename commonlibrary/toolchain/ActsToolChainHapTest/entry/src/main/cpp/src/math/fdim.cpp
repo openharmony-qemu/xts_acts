@@ -24,38 +24,38 @@ static struct DdD t[] = {
 };
 
 static int FdimTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DdD *p;
+    #pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e, i, err = 0;
+    struct DdD *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = fdim(p->x, p->x2);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = fdim(p->x, p->x2);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
 #ifndef __aarch64__
-		if (!Checkexceptall(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s fdim(%a,%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
+        if (!Checkexceptall(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s fdim(%a,%a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
 #endif
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkcr(y, p->y, p->r)) {
-			printf("%s:%d: %s fdim(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkcr(y, p->y, p->r)) {
+            printf("%s:%d: %s fdim(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, y, d, d-p->dy, p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int FdimTest(void)

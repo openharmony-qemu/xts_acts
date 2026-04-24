@@ -26,40 +26,40 @@ static struct DD t[] = {
 };
 
 static int Pow10Test_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DD *p;
+    #pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e, i, err = 0;
+    struct DD *p;
     
     typedef double (*pow10_func)(double);
     pow10_func pow10 = (pow10_func)dlsym(RTLD_DEFAULT, "pow10");
     
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
         
-		y = pow10(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        y = pow10(p->x);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s pow10(%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			printf("%s:%d: %s pow10(%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s pow10(%a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            printf("%s:%d: %s pow10(%a) want %a got %a ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int Pow10Test(void)

@@ -20,10 +20,9 @@
 static struct FF t[] = {
 #include "sanity/expm1f.h"
 #include "special/expm1f.h"
-
 };
 
-static void Expm1fTestOne(struct FF* p, int* err)
+static void Expm1fTestOne(struct FF *p, int *err)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -40,8 +39,13 @@ static void Expm1fTestOne(struct FF* p, int* err)
     if (!Checkexcept(e, p->e, p->r)) {
         const double excX = static_cast<double>(p->x);
         const double excY = static_cast<double>(p->y);
-        printf(
-            "%s:%d: bad fp exception: %s expm1f(%a)=%a, want %s", p->file, p->line, Rstr(p->r), excX, excY, Estr(p->e));
+        printf("%s:%d: bad fp exception: %s expm1f(%a)=%a, want %s",
+               p->file,
+               p->line,
+               Rstr(p->r),
+               excX,
+               excY,
+               Estr(p->e));
         printf(" got %s\n", Estr(e));
         (*err)++;
     }
