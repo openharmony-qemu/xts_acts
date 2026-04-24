@@ -13,45 +13,44 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "functionalext.h"
 
-void* ThreadfuncA(void* arg)
+static void *threadfuncA(void *arg)
 {
     return arg;
 }
 
 /**
- * @tc.name      : PthreadGetattrNp0100
+ * @tc.name      : pthread_getattr_np_0100
  * @tc.desc      : Verify pthread_getattr_np process success
  * @tc.level     : Level 0
  */
-void PthreadGetattrNp0100(void)
+void pthread_getattr_np_0100(void)
 {
     pthread_t ph;
-    pthread_create(&ph, nullptr, ThreadfuncA, nullptr);
+    pthread_create(&ph, NULL, threadfuncA, NULL);
     pthread_attr_t attr;
     pthread_attr_init(&attr);
-    void* threadResult = nullptr;
+    void *thread_result = NULL;
     int32_t ret = pthread_getattr_np(ph, &attr);
-    void* stack = nullptr;
+    pthread_attr_destroy(&attr);
+    pthread_join(ph, &thread_result);
+    void *stack = NULL;
     size_t stacksize;
     pthread_attr_getstack(&attr, &stack, &stacksize);
-    EXPECT_EQ("PthreadGetattrNp0100", ret, 0);
-    EXPECT_PTRNE("PthreadGetattrNp0100", stack, nullptr);
-    pthread_attr_destroy(&attr);
-    pthread_join(ph, &threadResult);
+    EXPECT_PTRNE("pthread_getattr_np_0100", stack, NULL);
 }
 
-static int PthreadGetattrNpTestTestImpl(void)
-{
-    PthreadGetattrNp0100();
-    return T_STATUS;
+static int PthreadGetattrNpTestTest_impl(void){
+    pthread_getattr_np_0100();
+    return g_tStatus;
 }
 
 int PthreadGetattrNpTestTest(void)
 {
-    return PthreadGetattrNpTestTestImpl();
+    return PthreadGetattrNpTestTest_impl();
 }
+

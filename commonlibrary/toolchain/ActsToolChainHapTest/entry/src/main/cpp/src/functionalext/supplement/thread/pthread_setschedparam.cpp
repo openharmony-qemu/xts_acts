@@ -13,49 +13,48 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
-#include <semaphore.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <semaphore.h>
 #include "functionalext.h"
 
-static int32_t g_priorityTen = 10;
-static int32_t g_priorityHundred = 100;
+static int32_t priorityTen = 10;
+static int32_t priorityHundred = 100;
 static sem_t g_sem;
 
-void* ThreadfuncA(void* arg)
+void *threadfuncA(void *arg)
 {
     sem_wait(&g_sem);
     return arg;
 }
 
 /**
- * @tc.name      : PthreadSetschedparam0100
+ * @tc.name      : pthread_setschedparam_0100
  * @tc.desc      : Verify pthread_setschedparam process success when scheduling policy is SCHED_OTHER and priority is 0
  * @tc.level     : Level 1
  */
-void PthreadSetschedparam0100(void)
+static void pthread_setschedparam_0100(void)
 {
     pthread_t tid;
     sem_init(&g_sem, 0, 0);
-    pthread_create(&tid, nullptr, ThreadfuncA, nullptr);
+    pthread_create(&tid, NULL, threadfuncA, NULL);
     struct sched_param sched;
     sched.sched_priority = 0;
     int32_t ret = pthread_setschedparam(tid, SCHED_OTHER, &sched);
-    EXPECT_EQ("PthreadSetschedparam0100", ret, 0);
+    EXPECT_EQ("pthread_setschedparam_0100", ret, 0);
     int32_t semRet = sem_post(&g_sem);
-    EXPECT_EQ("PthreadSetschedparam0100", semRet, 0);
-    pthread_join(tid, nullptr);
+    EXPECT_EQ("pthread_setschedparam_0100", semRet, 0);
+    pthread_join(tid, NULL);
     sem_destroy(&g_sem);
 }
 
-static int PthreadSetschedparamTestTestImpl(void)
-{
-    PthreadSetschedparam0100();
-    return T_STATUS;
+static int PthreadSetschedparamTestTest_impl(void){
+    pthread_setschedparam_0100();
+    return g_tStatus;
 }
 
 int PthreadSetschedparamTestTest(void)
 {
-    return PthreadSetschedparamTestTestImpl();
+    return PthreadSetschedparamTestTest_impl();
 }

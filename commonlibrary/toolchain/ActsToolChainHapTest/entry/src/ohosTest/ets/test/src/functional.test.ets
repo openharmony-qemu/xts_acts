@@ -790,6 +790,20 @@ export default function functional_group_test() {
     });
 
     /**
+     * @tc.name   pthread_cond
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_0100
+     * @tc.desc   libc-test pthread_cond
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_cond", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_cond");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   pthread_mutex
      * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_0100
      * @tc.desc   libc-test pthread_mutex
@@ -1023,6 +1037,71 @@ export default function functional_group_test() {
      */
     it("tls_local_exec", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("tls_local_exec");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   qsort
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_0100
+     * @tc.desc   libc-test qsort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("qsort", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("qsort");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   renameat2_test
+     * @tc.number SUB_THIRDPARTY_MUSL_RENAMEAT2_TEST_0100
+     * @tc.desc   libc-test renameat2_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("renameat2_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("renameat2_test");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   socket
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_0100
+     * @tc.desc   libc-test socket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("socket", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("socket");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   string_strchr
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHR_0100
+     * @tc.desc   libc-test string_strchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("string_strchr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("string_strchr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   tgmath
+     * @tc.number SUB_THIRDPARTY_MUSL_TGMATH_0100
+     * @tc.desc   libc-test tgmath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("tgmath", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tgmath");
       expect(result).assertEqual(0);
       done();
     });
