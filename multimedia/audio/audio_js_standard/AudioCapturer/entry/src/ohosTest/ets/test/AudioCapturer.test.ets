@@ -6337,7 +6337,7 @@ export default function audioCapturer() {
           expect(false).assertTrue();
         } catch (error) {
           console.log(`${Tag}: Error occurred, message: ${(error as BusinessError).message}, code: ${(error as BusinessError).code}`);
-          expect((error as BusinessError).code).assertEqual(6800301);
+          expect((error as BusinessError).code).assertEqual(6800103);
         } finally {
           try {
             await audioCapturer.release();
@@ -6466,7 +6466,7 @@ export default function audioCapturer() {
         expect(false).assertTrue();
       } catch (error) {
         console.log(`${Tag}: Error occurred, message: ${(error as BusinessError).message}, code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(6800301);
+        expect((error as BusinessError).code).assertEqual(6800103);
       } finally {
         try {
           await audioCapturer.release();
