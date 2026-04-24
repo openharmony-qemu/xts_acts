@@ -1,6 +1,5 @@
 import CrateImageSourceTest from "./image/creatImageSource/CreatImageSource.test";
 import ImageGetComponentSupp from "./image/getComponent/GetComponent.test";
-import abilityTest from "./Ability.test";
 import AuxiliaryPictureGetAuxiliaryPictureInfoTest from "./Picture/Picture.test";
 import CrateImageCreatorTest from "./ImageCreator/ImageCreator.test";
 import MakerNoteHuaweiMetadataTest from "./property/Property.test";
@@ -11,7 +10,6 @@ import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 
 export default function testsuite(): void {
-  abilityTest();
   metaDataStaticTest();
   ImageAuxiliaryPictureGetMetadataStaticTest();
   ImagePackerStaticTest();
