@@ -634,6 +634,7 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
+        ExpectFail();
         done();
       }
       
@@ -770,6 +771,7 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
+        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
@@ -791,9 +793,9 @@ export default function observerManagerSimStateTest1() {
         observer.offGetSimActiveState((data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           num++;
+          ExpectTrue(num === 1);
+          done();
         });
-        ExpectTrue(num === 1);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectFail();
