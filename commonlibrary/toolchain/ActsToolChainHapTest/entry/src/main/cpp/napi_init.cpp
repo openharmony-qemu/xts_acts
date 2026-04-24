@@ -38,12 +38,15 @@
 #include "src/functionalext/supplement/errno.h"
 #include "src/functionalext/supplement/exit.h"
 #include "src/functionalext/supplement/fcntl.h"
+#include "src/functionalext/supplement/ipc.h"
 #include "src/functionalext/supplement/ldso.h"
 #include "src/functionalext/supplement/legacy.h"
 #include "src/functionalext/supplement/linux.h"
 #include "src/functionalext/supplement/locale.h"
+#include "src/functionalext/supplement/lock_info.h"
 #include "src/functionalext/supplement/malloc.h"
 #include "src/functionalext/supplement/manual/env.h"
+#include "src/functionalext/supplement/manual/network.h"
 #include "src/functionalext/supplement/math.h"
 #include "src/functionalext/supplement/misc.h"
 #include "src/functionalext/supplement/multibyte.h"
@@ -56,11 +59,13 @@
 #include "src/functionalext/supplement/stat.h"
 #include "src/functionalext/supplement/stdio.h"
 #include "src/functionalext/supplement/stdlib.h"
+#include "src/functionalext/supplement/search.h"
 #include "src/functionalext/supplement/string.h"
 #include "src/functionalext/supplement/termios.h"
 #include "src/functionalext/supplement/thread.h"
 #include "src/functionalext/supplement/time.h"
 #include "src/functionalext/supplement/unistd.h"
+#include "src/functionalext/unittest.h"
 #include "src/functionalext/symver.h"
 #include "src/functionalext/time.h"
 #include "src/math.h"
@@ -388,6 +393,7 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "ilogbl", &IlogblTest },
     { "imaxabs", &ImaxabsTest },
     { "imaxdiv", &ImaxdivTest },
+    { "functionalext_fcvt", &FunctionalextFcvtTest },
     { "index", &IndexTest },
     { "inet_addr", &InetAddrTest },
     { "inet_aton", &InetAtonTest },
@@ -403,6 +409,9 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "res_querydomain", &ResQuerydomainTest },
     { "sendmmsg", &SendmmsgTest },
     { "invalid_param_b", &InvalidParamBTest },
+    { "invalid_param", &InvalidParamTest },
+    { "pthread_fortify_test", &PthreadFortifyTestTest },
+    { "select_test", &SelectTestTest },
     { "isalnum", &IsalnumTest },
     { "isalpha", &IsalphaTest },
     { "isascii", &IsasciiTest },
@@ -426,6 +435,10 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "killpg", &KillpgTest },
     { "labs", &LabsTest },
     { "langinfo_sup", &LanginfoSupTest },
+    { "localeconv_sup", &LocaleconvSupTest },
+    { "newlocale_sup", &NewlocaleSupTest },
+    { "setlocale_sup", &SetlocaleSupTest },
+    { "uselocale_sup", &UselocaleSupTest },
     { "large_size_test", &LargeSizeTestTest },
     { "lcong48", &Lcong48Test },
     { "ldiv", &LdivTest },
@@ -513,6 +526,17 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "pthread_barrier_init", &PthreadBarrierInitTest },
     { "pthread_barrierattr_init", &PthreadBarrierattrInitTest },
     { "pthread_barrierattr_setpshared", &PthreadBarrierattrSetpsharedTest },
+    { "pthread_create", &PthreadCreateTestTest },
+    { "pthread_exit", &PthreadExitTestTest },
+    { "pthread_getattr_np", &PthreadGetattrNpTestTest },
+    { "pthread_getschedparam", &PthreadGetschedparamTestTest },
+    { "pthread_getspecific", &PthreadGetspecificTestTest },
+    { "pthread_key_create", &PthreadKeyCreateTestTest },
+    { "pthread_mutex_lock", &PthreadMutexLockTestTest },
+    { "pthread_mutex_unlock", &PthreadMutexUnlockTestTest },
+    { "pthread_once", &PthreadOnceTestTest },
+    { "pthread_setspecific", &PthreadSetspecificTestTest },
+    { "pthread_setschedparam", &PthreadSetschedparamTestTest },
     { "pthread_cond_broadcast", &PthreadCondBroadcastTest },
     { "pthread_cond_destroy", &PthreadCondDestroyTest },
     { "pthread_cond_signal", &PthreadCondSignalTest },
@@ -553,6 +577,12 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "rand", &RandTest },
     { "rand_r", &RandRTest },
     { "readdir", &ReaddirTest },
+    { "alphasort", &AlphasortTest },
+    { "fdopendir", &FdopendirTest },
+    { "opendir", &OpendirTest },
+    { "rewinddir", &RewinddirTest },
+    { "seekdir", &SeekdirTest },
+    { "telldir", &TelldirTest },
     { "realloc", &ReallocTest },
     { "realpath", &RealpathTest },
     { "regexec", &RegexecTest },
@@ -668,9 +698,25 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "wcstol", &WcstolTest },
     { "wcstold", &WcstoldTest },
     { "wcstoll", &WcstollTest },
+    { "wcstoimax", &WcstoimaxTest },
+    { "wcstoumax", &WcstoumaxTest },
     { "wcstombs", &WcstombsTest },
     { "wcstoull", &WcstoullTest },
+    { "qsort", &QsortTest },
+    { "renameat2_test", &Renameat2TestTest },
+    { "socket", &SocketTest },
+    { "string_strchr", &StringStrchrTest },
+    { "tgmath", &TgmathTest },
     { "wcswcs", &WcswcsTest },
+    { "memmem", &MemmemTest },
+    { "memrchr", &MemrchrTest },
+    { "stpcpy", &StpcpyTest },
+    { "stpncpy", &StpncpyTest },
+    { "strrchr", &StrrchrTest },
+    { "wcscpy", &WcscpyTest },
+    { "wcsdup", &WcsdupTest },
+    { "wcsncpy", &WcsncpyTest },
+    { "wcspbrk", &WcspbrkTest },
     { "wcswidth", &WcswidthTest },
     { "wcsxfrm", &WcsxfrmTest },
     { "wctob", &WctobTest },
@@ -690,6 +736,9 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "dl_multithread_test", &DlMultithreadTest },
     { "fdopen", &FdopenTest },
     { "fcntl", &FcntlTest },
+    { "creat", &CreatTest },
+    { "openat", &OpenatTest },
+    { "open", &OpenTest },
     { "fopencookie_test", &FopencookieTest },
     { "inet_pton", &InetPtonTest },
     { "pthread_cond", &PthreadCondTest },
@@ -780,6 +829,61 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "access", &AccessTest },
     { "fchdir", &FchdirTest },
     { "nice", &NiceTest },
+    { "ldso_dlopen_config_abs_path_1", &LdsoDlopenConfigAbsPath1Test },
+    { "ldso_dlopen_config_abs_path_2", &LdsoDlopenConfigAbsPath2Test },
+    { "ldso_dlopen_config_abs_path_3", &LdsoDlopenConfigAbsPath3Test },
+    { "ldso_dlopen_config_abs_path_4", &LdsoDlopenConfigAbsPath4Test },
+    { "ldso_dlopen_config_abs_path_5", &LdsoDlopenConfigAbsPath5Test },
+    { "ldso_dlopen_config_abs_path_6", &LdsoDlopenConfigAbsPath6Test },
+    { "ldso_dlopen_config_abs_path_7", &LdsoDlopenConfigAbsPath7Test },
+    { "ldso_dlopen_config_abs_path_8", &LdsoDlopenConfigAbsPath8Test },
+    { "ldso_dlopen_config_abs_path_9", &LdsoDlopenConfigAbsPath9Test },
+    { "ldso_dlopen_config_abs_path_10", &LdsoDlopenConfigAbsPath10Test },
+    { "ldso_dlopen_config_abs_path_11", &LdsoDlopenConfigAbsPath11Test },
+    { "ldso_dlopen_config_abs_path_12", &LdsoDlopenConfigAbsPath12Test },
+    { "ldso_dlopen_config_abs_path_13", &LdsoDlopenConfigAbsPath13Test },
+    { "ldso_dlopen_config_abs_path_14", &LdsoDlopenConfigAbsPath14Test },
+    { "ldso_dlopen_config_abs_path_15", &LdsoDlopenConfigAbsPath15Test },
+    { "ldso_dlopen_config_abs_path_16", &LdsoDlopenConfigAbsPath16Test },
+    { "iswalpha", &IswalphaTest },
+    { "iswblank", &IswblankTest },
+    { "iswcntrl", &IswcntrlTest },
+    { "iswdigit", &IswdigitTest },
+    { "iswlower", &IswlowerTest },
+    { "iswprint", &IswprintTest },
+    { "iswpunct", &IswpunctTest },
+    { "iswspace", &IswspaceTest },
+    { "iswupper", &IswupperTest },
+    { "iswxdigit", &IswxdigitTest },
+    { "towlower", &TowlowerTest },
+    { "towupper", &TowupperTest },
+    { "towupper_l", &TowupperLTest },
+    { "__fpending", &FpendingTest },
+    { "__fpurge", &FpurgeTest },
+    { "__freadable", &FreadableTest },
+    { "__freading", &FreadingTest },
+    { "__fseterr", &FseterrTest },
+    { "__fwritable", &FwritableTest },
+    { "__fwriting", &FwritingTest },
+    { "_flushlbf", &FlushlbfTest },
+    { "a_cxa_atexit", &ACxaAtexitTest },
+    { "double_exit", &DoubleExitTest },
+    { "gethostbyname2", &Gethostbyname2Test },
+    { "gethostbyname_r", &GethostbynameRTest },
+    { "lfind", &LfindTest },
+    { "tdestroy", &TdestroyTest },
+    { "unittest_fatal_message", &UnittestFatalMessageTest },
+    { "unittest_fatal_message_assert_fail_dialog", &UnittestFatalMessageAssertFailDialogTest },
+    { "duplocale", &DuplocaleTest },
+    { "__errno_location", &ErrnoLocationTest },
+    { "semtimedop", &SemtimedopTest },
+    { "pthread_internal_lock_info", &PthreadInternalLockInfoTest },
+    { "wcsnrtombs", &WcsnrtombsTest },
+    { "sched_rr_get_interval", &SchedRrGetIntervalTest },
+    { "setitimer", &SetitimerTest },
+    { "fsetpos", &FsetposTest },
+    { "getwc", &GetwcTest },
+    { "rewind", &RewindTest },
 };
 } // namespace
 

@@ -27,5 +27,7 @@ int ResMkqueryTest();
 int ResQueryTest();
 int ResQuerydomainTest();
 int SendmmsgTest();
+int Gethostbyname2Test();
+int GethostbynameRTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_NETWORK_H_H
