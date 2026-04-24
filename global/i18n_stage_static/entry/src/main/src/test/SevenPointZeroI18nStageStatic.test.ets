@@ -798,15 +798,10 @@ export default function SevenPointZeroI18nStageStaticTest() {
     it('testSymbolDateTimeFormatStatic_0700', Level.LEVEL2, async (): Promise<void> => {
       let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
       let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": undefined };
-      try {
-        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
-        symbolFormat.resolvedOptions();
-        console.log('testSymbolDateTimeFormatStatic_0700 result:');
-        expect(false).assertTrue();
-      } catch (e) {
-        console.log('testSymbolDateTimeFormatStatic_0700 catch error:', e.code + e.message);
-        expect(Number(e.code) === 401).assertTrue();
-      }
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let options = symbolFormat.resolvedOptions();
+      console.log('testSymbolDateTimeFormatStatic_0700 result:'+ options.amPMSymbol);
+      expect(options.amPMSymbol?.toString()).assertEqual('AM,PM');
     })
 
     /**
@@ -1008,6 +1003,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         timeZone: value,
         dateStyle: 'long',
         timeStyle: 'long',
+        hour12: true
       });
       let date: Date = new Date(2025, 4, 13, 12, 30);
       let dateFormat = dateTimeFormat.format(date);
