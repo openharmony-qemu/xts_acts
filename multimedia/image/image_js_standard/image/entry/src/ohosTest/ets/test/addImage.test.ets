@@ -877,7 +877,7 @@ export default function addImage() {
                     height: 4, width: 6
                 }
             };
-            createIncrementalSourcePromise(done,
+            await createIncrementalSourcePromise(done,
                 "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0100", "noSourceOpts",undefined);
         });
         /**
@@ -894,7 +894,7 @@ export default function addImage() {
                     height: 4, width: 6
                 }
             };
-            createIncrementalSourcePromise(done,
+            await createIncrementalSourcePromise(done,
                 "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_PROMISE_0200", "sourceOpts", opts);
         });
         /**
@@ -911,7 +911,7 @@ export default function addImage() {
                     height: 4, width: 6
                 }
             };
-            createIncrementalSourceCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100",
+            await createIncrementalSourceCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0100",
                 "noSourceOpts", undefined);
         });
         /**
@@ -928,7 +928,7 @@ export default function addImage() {
                     height: 4, width: 6
                 }
             };
-            createIncrementalSourceCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200",
+            await createIncrementalSourceCb(done, "SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_PNG_CALLBACK_0200",
                 "sourceOpts", opts);
         });
     });
