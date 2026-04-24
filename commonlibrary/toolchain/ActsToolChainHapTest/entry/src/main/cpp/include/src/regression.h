@@ -20,5 +20,26 @@ int DaemonFailureTest();
 int DnExpandEmptyTest();
 int DnExpandPtr0Test();
 int ExecleEnvTest();
+int setenv_oomTest();
+int pthread_create_oomTest();
+int ftello_unflushed_appendTest();
+int tls_get_new_dtvTest();
+int malloc_oomTest();
 
+int execle_envTest();
+int IconvRoundtripsTest();
+int MallocDoubleFreeCheckTest();
+int MallocEncodePointerTest();
+int MallocFreePerformanceTest();
+int MallocModifyPointerTest();
+int MallocMultiThreadPerformanceTest();
+int MallocSafeUnlinkTest();
+int PthreadRobustDetachTest();
+int PthreadCondSmasherTest();
+int PthreadCondattrSetclockTest();
+int PthreadOnceDeadlockTest();
+int PthreadRwlockEbusyTest();
+int RaiseRaceTest();
+int SigaltstackTest();
+int SscanfEofTest();
 #endif // SRC_REGRESSION_H_H

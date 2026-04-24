@@ -18,4 +18,7 @@
 
 int DaemonTest();
 
+int daemonTest();
+int FutimesTest();
+int GetloadavgTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LEGACY_H_H

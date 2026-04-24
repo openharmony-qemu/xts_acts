@@ -23,4 +23,18 @@ int ExecveTest();
 int ExecvpTest();
 int ExecvpeTest();
 
+int FexecveTest();
+int FexecverelyTest();
+int PosixSpawnTest();
+int PosixSpawnattrGetflagsTest();
+int PosixSpawnattrGetpgroupTest();
+int PosixSpawnattrGetsigdefaultTest();
+int PosixSpawnattrGetsigmaskTest();
+int PosixSpawnattrSetflagsTest();
+int PosixSpawnattrSetpgroupTest();
+int PosixSpawnattrSetsigdefaultTest();
+int PosixSpawnattrSetsigmaskTest();
+int PosixSpawnpTest();
+int PosixSpawnFileActionsAddopenTest();
+int WaitidTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_PROCESS_H_H

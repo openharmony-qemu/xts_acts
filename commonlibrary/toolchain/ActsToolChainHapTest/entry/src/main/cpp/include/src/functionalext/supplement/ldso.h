@@ -20,4 +20,5 @@ int AGnuUnwindFindExidxTest();
 int DlIteratePhdrTest();
 int DladdrTest();
 
+int dl_iterate_phdrTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LDSO_H_H

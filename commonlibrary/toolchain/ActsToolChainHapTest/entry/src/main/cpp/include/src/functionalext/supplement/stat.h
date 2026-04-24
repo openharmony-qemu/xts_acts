@@ -18,4 +18,10 @@
 
 int ChmodTest();
 
+int chmodTest();
+int FchmodTest();
+int FchmodatTest();
+int FutimesatTest();
+int UmaskTest();
+int UtimensatTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_STAT_H_H

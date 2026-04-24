@@ -27,6 +27,15 @@
 #define CMPFLAG 0
 #define ERREXPECT (-1)
 #define ONREXPECT 1
+#ifndef t_status
+#define t_status T_STATUS
+#endif
+#ifndef FILE_ABSOLUTE_PATH
+#define FILE_ABSOLUTE_PATH(src, dst)                     \
+    do {                                                 \
+        (void)snprintf((dst), sizeof(dst), "%s", (src)); \
+    } while (0)
+#endif
 #ifndef TEST_MODE
 #define TEST_MODE 0666
 #endif
@@ -43,11 +52,10 @@
             t_error("[%s] failed \n", fun); \
     } while (0)
 
-#define EXPECT_EQ(fun, a, b)                                                  \
-    do {                                                                      \
-        if ((a) != (b))                                                       \
-            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),       \
-                    (long long)(b));                                         \
+#define EXPECT_EQ(fun, a, b)                                                             \
+    do {                                                                                 \
+        if ((a) != (b))                                                                  \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a), (long long)(b)); \
     } while (0)
 
 #define EXPECT_LT(fun, a, b)                                                              \
@@ -88,9 +96,9 @@
     } while (0)
 
 /* floating point comparison */
-#define FLOAT_EQUAL(fun, a, b)                                   \
-    do {                                                         \
-        if (!(fabs((a) - (b)) <= EPS))                           \
+#define FLOAT_EQUAL(fun, a, b)                                                 \
+    do {                                                                       \
+        if (!(fabs((a) - (b)) <= EPS))                                         \
             t_error("[%s] failed %g != %g \n", fun, (double)(a), (double)(b)); \
     } while (0)
 
@@ -120,11 +128,10 @@
             t_error("[%s] failed %ld != %ld \n", fun, a, b); \
     } while (0)
 
-#define EXPECT_LONGLONGEQ(fun, a, b)                                        \
-    do {                                                                    \
-        if ((long long)(a) != (long long)(b))                              \
-            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),      \
-                    (long long)(b));                                        \
+#define EXPECT_LONGLONGEQ(fun, a, b)                                                     \
+    do {                                                                                 \
+        if ((long long)(a) != (long long)(b))                                            \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a), (long long)(b)); \
     } while (0)
 
 #define EXPECT_GT(fun, a, b)                               \

@@ -24,6 +24,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <unistd.h>
 
 #ifdef __cplusplus
@@ -32,12 +33,26 @@ extern "C" {
 
 extern volatile int g_tStatus;
 #define T_STATUS g_tStatus
+#ifndef t_status
+#define t_status T_STATUS
+#endif
+#ifndef FILE_ABSOLUTE_PATH
+#define FILE_ABSOLUTE_PATH(src, dst)                     \
+    do {                                                 \
+        (void)snprintf((dst), sizeof(dst), "%s", (src)); \
+    } while (0)
+#endif
+#ifndef t_memfill
+#define t_memfill TMemfill
+#endif
 
 #define T_LOC2(l) __FILE__ ":" #l
 #define T_LOC1(l) T_LOC2(l)
 #define t_error(...) TPrintf(T_LOC1(__LINE__) ": " __VA_ARGS__)
+#define t_printf(...) TPrintf(__VA_ARGS__)
 
 int TPrintf(const char* s, ...);
+int TMemfill(void);
 
 void TFdfill(void);
 

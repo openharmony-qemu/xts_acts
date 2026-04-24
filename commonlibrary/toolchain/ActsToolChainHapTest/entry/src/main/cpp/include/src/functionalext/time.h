@@ -22,4 +22,16 @@ int CtimeTest();
 int CtimeRTest();
 int DifftimeTest();
 
+int asctimeTest();
+int asctime_rTest();
+int difftimeTest();
+int GmtimeTest();
+int GmtimeRTest();
+int LocaltimeTest();
+int LocaltimeRTest();
+int MktimeTest();
+int StrftimeExtTest();
+int StrftimeLTest();
+int StrptimeExtTest();
+int TimegmTest();
 #endif // SRC_FUNCTIONALEXT_TIME_H_H
