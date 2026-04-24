@@ -53,7 +53,7 @@ export default function LazyForEachReleaseStrategyTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LazyForEachReleaseStrategyTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('lazyForEachReleaseStrategyTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LazyForEachReleaseStrategyTest_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -74,7 +74,7 @@ export default function LazyForEachReleaseStrategyTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LazyForEachReleaseStrategyTest_0200', Level.LEVEL0, async (done: Function) => {
+    it('lazyForEachReleaseStrategyTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LazyForEachReleaseStrategyTest_0200 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LazyForEach_Item_1');
@@ -93,7 +93,7 @@ export default function LazyForEachReleaseStrategyTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LazyForEachReleaseStrategyTest_0300', Level.LEVEL0, async (done: Function) => {
+    it('lazyForEachReleaseStrategyTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LazyForEachReleaseStrategyTest_0300 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LazyForEach_Item_2');
