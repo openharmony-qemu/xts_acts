@@ -39,7 +39,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimPlugin_getDefaultBoidsSimWorld
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1320
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1800
      * @tc.desc   Test getDefaultBoidsSimWorld returns valid world when plugin loaded
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialVelocity_defaultValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1150
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0100
      * @tc.desc   Test initialVelocity default value is (0,0,0) when not set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialVelocity_setValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1160
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0200
      * @tc.desc   Test initialVelocity can be set and retrieved correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialPosition_defaultValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1170
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0300
      * @tc.desc   Test initialPosition default value is (NaN,NaN,NaN) when not set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialPosition_setValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1180
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0400
      * @tc.desc   Test initialPosition can be set and retrieved correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +246,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialRotation_defaultValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1190
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0500
      * @tc.desc   Test initialRotation default value is (NaN,NaN,NaN,NaN) when not set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -290,7 +290,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_initialRotation_setValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1200
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0600
      * @tc.desc   Test initialRotation can be set and retrieved correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_boundaryMinMax_defaultValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1210
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0700
      * @tc.desc   Test boundaryMinPos and boundaryMaxPos default values are (0,0,0)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_boundaryMinMax_setValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1220
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0800
      * @tc.desc   Test boundaryMinPos and boundaryMaxPos can be set correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_rangeValues_zero
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1230
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_0900
      * @tc.desc   Test all range-restricted parameters with boundary value 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -494,7 +494,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimParameters_rangeValues_positive
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1240
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1000
      * @tc.desc   Test all range-restricted parameters with positive values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -563,7 +563,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimGravityParameters_defaultAndSetValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1250
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1100
      * @tc.desc   Test BoidsSimGravityParameters radius and accelerationMag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -610,7 +610,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimRepulsionParameters_defaultAndSetValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1260
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1200
      * @tc.desc   Test BoidsSimRepulsionParameters radius and accelerationMag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -657,7 +657,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_playPauseStop
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1270
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1300
      * @tc.desc   Test play, pause, stop methods and isPlaying property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -692,7 +692,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_addSetGetComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1280
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1400
      * @tc.desc   Test add, set, get methods for BoidsSimComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -736,7 +736,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_addSetGetGravityComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1290
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1500
      * @tc.desc   Test add, set, get methods for BoidsSimGravityComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -780,7 +780,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_addSetGetRepulsionComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1300
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1600
      * @tc.desc   Test add, set, get methods for BoidsSimRepulsionComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -824,7 +824,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_getComponentNullWhenNotExists
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1310
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1700
      * @tc.desc   Test get methods return null when component doesn't exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -863,7 +863,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimPlugin_getDefaultBoidsSimWorld_nullScene
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1330
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_1900
      * @tc.desc   Test getDefaultBoidsSimWorld with null scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -892,7 +892,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_nullNodeParameter
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1340
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_2000
      * @tc.desc   Test methods with null node parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -949,7 +949,7 @@ export default function sceneBoidsSimTest() {
 
     /**
      * @tc.name   testBoidsSimWorld_nullParamsParameter
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_BOIDSSIM_API_1350
+     * @tc.number SUB_BASIC_GRAPHICS3D_SCENEBOIDSSIM_2100
      * @tc.desc   Test add methods with null/undefined params parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
