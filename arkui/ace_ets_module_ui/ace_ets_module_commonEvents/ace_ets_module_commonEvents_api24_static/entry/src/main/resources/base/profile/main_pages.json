@@ -6,7 +6,12 @@
     "MainAbility/pages/CommonEventApiProbe/CommonEventApiProbe",
     "MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe",
     "MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe",
-    "MainAbility/pages/autoHideComponentUniqueIds/AutoHideComponentUniqueIdsPage"
-
+    "MainAbility/pages/autoHideComponentUniqueIds/AutoHideComponentUniqueIdsPage",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_ClickEvent",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_TouchEvent",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_MouseEvent",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_AxisEvent",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_EventLocationInfo",
+    "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_FingerInfo"
   ]
 }
