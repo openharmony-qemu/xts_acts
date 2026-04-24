@@ -622,14 +622,14 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @tc.name   testPreferencesGetpreferencesMaxValuePromise0100
+         * @tc.name   testPreferencesGetpreferencesMaxValuePromiseTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2600
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesGetPreferencesMaxValuePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesGetpreferencesMaxValuePromiseTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               let mPreferences = await dataPreferences.getPreferences(context, NAME_MAX);
               console.info( TAG + "mPreferences is " + mPreferences);
@@ -638,21 +638,21 @@ export default function preferencesPromiseTest(){
               expect(ret).assertEqual('333333');
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesGetPreferencesMaxValuePromise0100 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesGetpreferencesMaxValuePromiseTest_0100 err:" + err.code + "message:" + err.message);
               expect().assertFail();
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesGetpreferencesMaxValuePromise0200
+         * @tc.name   testPreferencesGetpreferencesMaxValuePromiseTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2700
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-          it("testPreferencesGetPreferencesMaxValuePromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+          it("testPreferencesGetpreferencesMaxValuePromiseTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               let mPreferences = await dataPreferences.getPreferences(context, NAME_MAX1);
               console.info( TAG + "mPreferences is " + mPreferences);
@@ -661,21 +661,21 @@ export default function preferencesPromiseTest(){
               expect().assertFail();
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesGetPreferencesMaxValuePromise0200 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesGetpreferencesMaxValuePromiseTest_0200 err:" + err.code + "message:" + err.message);
               expect(15500000).assertEqual(err.code);
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesDeletePreferencesMaxValuePromise0100
+         * @tc.name   testPreferencesDeletePreferencesMaxValuePromiseTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2800
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-          it("testPreferencesDeletePreferencesMaxValuePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+          it("testPreferencesDeletePreferencesMaxValuePromiseTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
@@ -683,21 +683,21 @@ export default function preferencesPromiseTest(){
               console.info( TAG + "deletePreferences success");
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesDeletePreferencesMaxValuePromise0100 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesDeletePreferencesMaxValuePromiseTest_0100 err:" + err.code + "message:" + err.message);
               expect().assertFail();
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesDeletePreferencesMaxValuePromise0200
+         * @tc.name   testPreferencesDeletePreferencesMaxValuePromiseTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2900
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesDeletePreferencesMaxValuePromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesDeletePreferencesMaxValuePromiseTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length);
@@ -706,21 +706,21 @@ export default function preferencesPromiseTest(){
               expect().assertFail();
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesDeletePreferencesMaxValuePromise0200 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesDeletePreferencesMaxValuePromiseTest_0200 err:" + err.code + "message:" + err.message);
               expect(15500000).assertEqual(err.code)
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesRemovePreferencesMaxValuePromiseErr0100
+         * @tc.name   testPreferencesRemovePreferencesMaxValuePromiseErrTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3000
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemovePreferencesMaxValuePromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemovePreferencesMaxValuePromiseErrTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
@@ -728,21 +728,21 @@ export default function preferencesPromiseTest(){
               console.info( TAG + "removePreferencesFromCache is success");
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesRemovePreferencesMaxValuePromiseErr0100 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesRemovePreferencesMaxValuePromiseErrTest_0100 err:" + err.code + "message:" + err.message);
               expect().assertFail();
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesRemovePreferencesPromiseErr0200
+         * @tc.name   testPreferencesRemovePreferencesMaxValuePromiseErrTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3100
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemovePreferencesPromiseErr0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemovePreferencesMaxValuePromiseErrTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length);
@@ -751,43 +751,43 @@ export default function preferencesPromiseTest(){
               expect().assertFail();
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesRemovePreferencesPromiseErr0200 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesRemovePreferencesMaxValuePromiseErrTest_0200 err:" + err.code + "message:" + err.message);
               expect(15500000).assertEqual(err.code)
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesRemoveSyncMaxValuePromiseErr0100
+         * @tc.name   testPreferencesRemoveSyncMaxValuePromiseErrTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3200
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemoveSyncMaxValuePromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemoveSyncMaxValuePromiseErrTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
               dataPreferences.removePreferencesFromCacheSync(context, NAME_MAX1);
-              console.info( TAG + "testPreferencesRemoveSyncMaxValuePromiseErr0100 is success");
+              console.info( TAG + "testPreferencesRemoveSyncMaxValuePromiseErrTest_0100 is success");
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesRemoveSyncMaxValuePromiseErr0100 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesRemoveSyncMaxValuePromiseErrTest_0100 err:" + err.code + "message:" + err.message);
               expect().assertFail();
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesRemoveSyncMaxValuePromiseErr0200
+         * @tc.name   testPreferencesRemoveSyncMaxValuePromiseErrTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3300
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemoveSyncMaxValuePromiseErr0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemoveSyncMaxValuePromiseErrTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length);
@@ -795,21 +795,21 @@ export default function preferencesPromiseTest(){
               console.info( TAG + "removePreferencesFromCacheSync is success");
               done();
             } catch (err) {
-              console.error( TAG + "testPreferencesRemoveSyncMaxValuePromiseErr0200 err:" + err.code + "message:" + err.message);
+              console.error( TAG + "testPreferencesRemoveSyncMaxValuePromiseErrTest_0200 err:" + err.code + "message:" + err.message);
               expect().assertFail();
               done();
             }
         })
 
         /**
-         * @tc.name   testPreferencesGetPreferencesMaxValueCallBack0100
+         * @tc.name   testPreferencesGetPreferencesMaxValueCallBackTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3400
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesGetPreferencesMaxValueCallBack0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesGetPreferencesMaxValueCallBackTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               dataPreferences.getPreferences(context, NAME_MAX, async (err, mPreferences) =>{
                 if (err) {
@@ -832,14 +832,14 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @tc.name   testPreferencesGetPreferencesMaxValueCallBack0200
+         * @tc.name   testPreferencesGetPreferencesMaxValueCallBackTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3500
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesGetPreferencesMaxValueCallBack0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesGetPreferencesMaxValueCallBackTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               dataPreferences.getPreferences(context, NAME_MAX, (err, mPreferences) =>{
                 if (err) {
@@ -860,7 +860,7 @@ export default function preferencesPromiseTest(){
           })
 
         /**
-         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackErr0100
+         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackErrTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3600
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
@@ -868,7 +868,7 @@ export default function preferencesPromiseTest(){
          * @tc.level  LEVEL2
          */
         
-        it("testPreferencesDeletePreferencesMaxValueCallBackErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesDeletePreferencesMaxValueCallBackErrTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
@@ -890,14 +890,14 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackErr0200
+         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackErrTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3700
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesDeletePreferencesMaxValueCallBackErr0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesDeletePreferencesMaxValueCallBackErrTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length);
@@ -919,14 +919,14 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @tc.name   testPreferencesRemovePreferencesMaxValueCallBackErr0100
+         * @tc.name   testPreferencesRemovePreferencesMaxValueCallBackTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3800
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemovePreferencesMaxValueCallBackErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemovePreferencesMaxValueCallBackTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
@@ -948,14 +948,14 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @tc.name   testPreferencesRemovePreferencesMaxValueCallBackErr0200
+         * @tc.name   testPreferencesRemovePreferencesMaxValueCallBackTest_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3900
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("testPreferencesRemovePreferencesMaxValueCallBackErr0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesRemovePreferencesMaxValueCallBackTest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length);
@@ -975,6 +975,5 @@ export default function preferencesPromiseTest(){
               done();
             }
           })
-
     })
 }
