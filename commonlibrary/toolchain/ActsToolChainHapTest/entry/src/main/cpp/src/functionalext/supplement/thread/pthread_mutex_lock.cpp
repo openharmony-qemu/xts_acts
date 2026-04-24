@@ -13,123 +13,123 @@
  * limitations under the License.
  */
 
-#include <climits>
-#include <cstdlib>
+#include <limits.h>
 #include <pthread.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "functionalext.h"
 
 static pthread_mutex_t g_mutex;
 static int32_t g_count = 0;
-static int32_t g_runMaxCount = 1000;
+static int32_t g_run_max_count = 1000;
 
-void* ThreadfuncA(void* arg)
+static void *threadfuncA(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("PthreadMutexLock0100", ret, 0);
+    EXPECT_EQ("pthread_mutex_lock_0100", ret, 0);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
 
-void* ThreadfuncB(void* arg)
+static void *threadfuncB(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("PthreadMutexLock0200", ret, 0);
+    EXPECT_EQ("pthread_mutex_lock_0200", ret, 0);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
 
-void* ThreadfuncC(void* arg)
+static void *threadfuncC(void *arg)
 {
     g_count++;
     int32_t ret = pthread_mutex_lock(&g_mutex);
     if (g_count == INT_MAX) {
-        EXPECT_EQ("PthreadMutexLock0300", ret, EAGAIN);
+        EXPECT_EQ("pthread_mutex_lock_0300", ret, EAGAIN);
     }
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
 
-void* ThreadfuncD(void* arg)
+
+static void *threadfuncD(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("PthreadMutexLock0400", ret, EDEADLK);
+    EXPECT_EQ("pthread_mutex_lock_0400", ret, EDEADLK);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
 
 /**
- * @tc.name:      PthreadMutexLock0100
+ * @tc.name:      pthread_mutex_lock_0100
  * @tc.desc:      Verify process pthread_mutex_lock once success when pthread_mutex_init second args is null.
  * @tc.level:     level 0
  */
-void PthreadMutexLock0100(void)
+static void pthread_mutex_lock_0100(void)
 {
-    pthread_mutex_init(&g_mutex, nullptr);
+    pthread_mutex_init(&g_mutex, NULL);
     pthread_t tid1;
-    int32_t ret = pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
-    pthread_join(tid1, nullptr);
+    int32_t ret = pthread_create(&tid1, NULL, threadfuncA, NULL);
+    pthread_join(tid1, NULL);
 }
 
 /**
- * @tc.name:      PthreadMutexLock0200
+ * @tc.name:      pthread_mutex_lock_0200
  * @tc.desc:      Verify process pthread_mutex_lock twice success when pthread_mutex_init second args is
  *                PTHREAD_MUTEX_NORMAL.
  * @tc.level:     level 1
  */
-void PthreadMutexLock0200(void)
+void pthread_mutex_lock_0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
-    pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid2;
-    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
-    pthread_join(tid2, nullptr);
+    pthread_create(&tid2, NULL, threadfuncB, NULL);
+    pthread_join(tid2, NULL);
 }
 
 /**
- * @tc.name:      PthreadMutexLock0300
+ * @tc.name:      pthread_mutex_lock_0300
  * @tc.desc:      Verify process pthread_mutex_lock once success when pthread_mutex_init second args is
  *                PTHREAD_MUTEX_RECURSIVE.
  * @tc.level:     level 2
  */
-void PthreadMutexLock0300(void)
+void pthread_mutex_lock_0300(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
-    pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid3;
-    for (int32_t i = 0; i <= g_runMaxCount; i++) {
-        pthread_create(&tid3, nullptr, ThreadfuncC, nullptr);
-        pthread_join(tid3, nullptr);
+    for (int32_t i = 0; i <= g_run_max_count; i++) {
+        pthread_create(&tid3, NULL, threadfuncC, NULL);
+        pthread_join(tid3, NULL);
     }
 }
 
 /**
- * @tc.name:      PthreadMutexLock0400
+ * @tc.name:      pthread_mutex_lock_0400
  * @tc.desc:      Verify process pthread_mutex_lock twice success when pthread_mutex_init second args is
  *                PTHREAD_MUTEX_RECURSIVE.
  * @tc.level:     level 2
  */
-void PthreadMutexLock0400(void)
+void pthread_mutex_lock_0400(void)
 {
     int32_t type = PTHREAD_MUTEX_ERRORCHECK;
-    pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid4;
-    pthread_create(&tid4, nullptr, ThreadfuncD, nullptr);
-    pthread_join(tid4, nullptr);
+    pthread_create(&tid4, NULL, threadfuncD, NULL);
+    pthread_join(tid4, NULL);
 }
 
-static int PthreadMutexLockTestTestImpl(void)
-{
-    PthreadMutexLock0100();
-    PthreadMutexLock0200();
-    PthreadMutexLock0300();
-    PthreadMutexLock0400();
-    return T_STATUS;
+static int PthreadMutexLockTestTest_impl(void){
+    pthread_mutex_lock_0100();
+    pthread_mutex_lock_0200();
+    pthread_mutex_lock_0300();
+    pthread_mutex_lock_0400();
+    return g_tStatus;
 }
 
 int PthreadMutexLockTestTest(void)
 {
-    return PthreadMutexLockTestTestImpl();
+    return PthreadMutexLockTestTest_impl();
 }

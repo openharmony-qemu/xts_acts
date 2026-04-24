@@ -13,75 +13,73 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "functionalext.h"
 
 static pthread_mutex_t g_mutex;
 
-void* ThreadfuncA(void* arg)
+static void *threadfuncA(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_unlock(&g_mutex);
-    EXPECT_EQ("PthreadMutexUnLock0100", ret, 0);
+    EXPECT_EQ("pthread_mutex_un_lock_0100", ret, 0);
     return arg;
 }
 
-void* ThreadfuncB(void* arg)
+static void *threadfuncB(void *arg)
 {
     pthread_mutex_lock(&g_mutex);
     return arg;
 }
 
-void* ThreadfuncC(void* arg)
+static void *threadfuncC(void *arg)
 {
     int32_t ret = pthread_mutex_unlock(&g_mutex);
-    EXPECT_EQ("PthreadMutexUnLock0200", ret, EPERM);
+    EXPECT_EQ("pthread_mutex_un_lock_0200", ret, EPERM);
     return arg;
 }
 
 /**
- * @tc.name:      PthreadMutexUnLock0100
+ * @tc.name:      pthread_mutex_un_lock_0100
  * @tc.desc:      Verify process pthread_mutex_un_lock once success.
  * @tc.level:     level 0.
  */
-void PthreadMutexUnLock0100(void)
+static void pthread_mutex_un_lock_0100(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
-    pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
+    pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid1;
-    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
-    pthread_join(tid1, nullptr);
+    pthread_create(&tid1, NULL, threadfuncA, NULL);
+    pthread_join(tid1, NULL);
 }
 
 /**
- * @tc.name:      PthreadMutexUnLock0200
+ * @tc.name:      pthread_mutex_un_lock_0200
  * @tc.desc:      Verify process pthread_mutex_un_lock fail. Because can not release a mutex pointed to a mutex
  *                that is not this thread.
  * @tc.level:     level 2.
  */
-void PthreadMutexUnLock0200(void)
+static void pthread_mutex_un_lock_0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
-    pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
-    pthread_t tid2;
-    pthread_t tid3;
-    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
-    pthread_join(tid2, nullptr);
-    pthread_create(&tid3, nullptr, ThreadfuncC, nullptr);
-    pthread_join(tid3, nullptr);
+    pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
+    pthread_t tid2, tid3;
+    pthread_create(&tid2, NULL, threadfuncB, NULL);
+    pthread_join(tid2, NULL);
+    pthread_create(&tid3, NULL, threadfuncC, NULL);
+    pthread_join(tid3, NULL);
     pthread_mutex_destroy(&g_mutex);
 }
 
-static int PthreadMutexUnlockTestTestImpl(void)
-{
-    PthreadMutexUnLock0100();
-    PthreadMutexUnLock0200();
-    return T_STATUS;
+static int PthreadMutexUnlockTestTest_impl(void){
+    pthread_mutex_un_lock_0100();
+    pthread_mutex_un_lock_0200();
+    return g_tStatus;
 }
 
 int PthreadMutexUnlockTestTest(void)
 {
-    return PthreadMutexUnlockTestTestImpl();
+    return PthreadMutexUnlockTestTest_impl();
 }

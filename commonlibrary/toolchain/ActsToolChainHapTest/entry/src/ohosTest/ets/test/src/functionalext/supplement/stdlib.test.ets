@@ -230,5 +230,44 @@ export default function stdlib_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   wcstoimax
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOIMAX_0100
+     * @tc.desc   libc-test wcstoimax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcstoimax", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcstoimax");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   wcstoumax
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOUMAX_0100
+     * @tc.desc   libc-test wcstoumax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcstoumax", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcstoumax");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   functionalext_fcvt
+     * @tc.number SUB_THIRDPARTY_MUSL_FUNCTIONALEXT_FCVT_0100
+     * @tc.desc   libc-test functionalext_fcvt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("functionalext_fcvt", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("functionalext_fcvt");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

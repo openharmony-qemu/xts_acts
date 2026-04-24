@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -26,42 +26,40 @@ void OnceRun(void)
     g_count++;
 }
 
-void* ThreadfuncA(void* arg)
+static void *threadfuncA(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
-    EXPECT_EQ("PthreadOnce0100", ret, 0);
+    EXPECT_EQ("pthread_once_0100", ret, 0);
     return arg;
 }
 
-void* ThreadfuncB(void* arg)
+static void *threadfuncB(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
-    EXPECT_EQ("PthreadOnce0100", ret, 0);
+    EXPECT_EQ("pthread_once_0100", ret, 0);
     return arg;
 }
 
 /**
- * @tc.name:      PthreadOnce0100
+ * @tc.name:      pthread_once_0100
  * @tc.desc:      Verify process pthread_mutex_once success.
  * @tc.level:     level 0.
  */
-void PthreadOnce0100(void)
+void pthread_once_0100(void)
 {
-    pthread_t tid1;
-    pthread_t tid2;
-    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
-    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
-    pthread_join(tid1, nullptr);
-    pthread_join(tid2, nullptr);
+    pthread_t tid1, tid2;
+    pthread_create(&tid1, NULL, threadfuncA, NULL);
+    pthread_create(&tid2, NULL, threadfuncB, NULL);
+    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
 }
 
-static int PthreadOnceTestTestImpl(void)
-{
-    PthreadOnce0100();
-    return T_STATUS;
+static int PthreadOnceTestTest_impl(void){
+    pthread_once_0100();
+    return g_tStatus;
 }
 
 int PthreadOnceTestTest(void)
 {
-    return PthreadOnceTestTestImpl();
+    return PthreadOnceTestTest_impl();
 }
