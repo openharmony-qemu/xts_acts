@@ -25,39 +25,39 @@ static struct DD t[] = {
 };
 
 static int J0Test_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, bad, err = 0;
-	struct DD *p;
+    #pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e, i, bad, err = 0;
+    struct DD *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = j0(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = j0(p->x);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s j0(%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			if (fabsf(d) < 0x1p52f)
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: %s j0(%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s j0(%a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            if (fabsf(d) < 0x1p52f)
+                printf("X ");
+            else
+                err++;
+            printf("%s:%d: %s j0(%a) want %a got %a ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+        }
+    }
+    return !!err;
 }
 
 int J0Test(void)

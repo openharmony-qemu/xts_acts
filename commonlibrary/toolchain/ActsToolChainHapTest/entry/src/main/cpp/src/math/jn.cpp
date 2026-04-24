@@ -24,39 +24,39 @@ static struct DiD t[] = {
 };
 
 static int JnTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DiD *p;
+    #pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e, i, err = 0;
+    struct DiD *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = jn(p->i, p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = jn(p->i, p->x);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s jn(%lld, %a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->i, p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			if (fabsf(d) < 3.0f)
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: %s jn(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->i, p->x, p->y, y, d, d-p->dy, p->dy);
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s jn(%lld, %a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            if (fabsf(d) < 3.0f)
+                printf("X ");
+            else
+                err++;
+            printf("%s:%d: %s jn(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, y, d, d-p->dy, p->dy);
+        }
+    }
+    return !!err;
 }
 
 int JnTest(void)

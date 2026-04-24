@@ -30,39 +30,39 @@ static struct LlLi t[] = {
 };
 
 static int RemquolTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	int yi;
-	long double y;
-	float d;
-	int e, i, err = 0;
-	struct LlLi *p;
+    #pragma STDC FENV_ACCESS ON
+    int yi;
+    long double y;
+    float d;
+    int e, i, err = 0;
+    struct LlLi *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = remquol(p->x, p->x2, &yi);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = remquol(p->x, p->x2, &yi);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s remquol(%La,%La)=%La,%lld, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkcr(y, p->y, p->r) ||
-		(!isnan(p->y) && (yi & 7) != (p->i & 7)) ||
-		(!isnan(p->y) && (yi < 0) != (p->i < 0))) {
-			printf("%s:%d: %s remquol(%La,%La) want %La,%lld got %La,%d ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, y, yi, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s remquol(%La,%La)=%La,%lld, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkcr(y, p->y, p->r) ||
+        (!isnan(p->y) && (yi & 7) != (p->i & 7)) ||
+        (!isnan(p->y) && (yi < 0) != (p->i < 0))) {
+            printf("%s:%d: %s remquol(%La,%La) want %La,%lld got %La,%d ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, y, yi, d, d-p->dy, p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int RemquolTest(void)

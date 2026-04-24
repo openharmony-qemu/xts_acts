@@ -32,38 +32,38 @@ static struct LL t[] = {
 };
 
 static int Exp10lTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	long double y;
-	float d;
-	int e, i, err = 0;
-	struct LL *p;
+    #pragma STDC FENV_ACCESS ON
+    long double y;
+    float d;
+    int e, i, err = 0;
+    struct LL *p;
 
-	typedef long double (*exp10l_func)(long double);
-	exp10l_func exp10l = (exp10l_func)dlsym(RTLD_DEFAULT, "exp10l");
+    typedef long double (*exp10l_func)(long double);
+    exp10l_func exp10l = (exp10l_func)dlsym(RTLD_DEFAULT, "exp10l");
     
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = exp10l(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+    for (i = 0; i < sizeof t/sizeof *t; i++) {
+        p = t + i;
+        if (p->r < 0)
+            continue;
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = exp10l(p->x);
+        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s exp10l(%La)=%La, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperrl(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			printf("%s:%d: %s exp10l(%La) want %La got %La ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s exp10l(%La)=%La, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperrl(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            printf("%s:%d: %s exp10l(%La) want %La got %La ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int Exp10lTest(void)
